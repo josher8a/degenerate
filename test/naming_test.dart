@@ -317,4 +317,66 @@ void main() {
       expect(dartReservedWords.contains('String'), isFalse);
     });
   });
+
+  group('unicode safety', () {
+    // Naming functions index into strings by UTF-16 code unit. These tests
+    // pin the invariant that no operation produces a string containing an
+    // unpaired surrogate, even when the input has astral characters (emoji,
+    // U+10000+) whose UTF-16 representation is a surrogate pair.
+    bool isWellFormedUtf16(String s) {
+      for (var i = 0; i < s.length; i++) {
+        final cu = s.codeUnitAt(i);
+        if (cu >= 0xD800 && cu <= 0xDBFF) {
+          if (i + 1 >= s.length) return false;
+          final next = s.codeUnitAt(i + 1);
+          if (next < 0xDC00 || next > 0xDFFF) return false;
+          i++;
+        } else if (cu >= 0xDC00 && cu <= 0xDFFF) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    const inputs = [
+      'foo😀Bar',
+      '😀foo',
+      'Test😀test',
+      'pet_😀_store',
+      '𐐀word', // U+10400 Deseret capital, has lower mapping
+      'word𐐀test',
+      '🚀🚀rocket',
+      'Café😀Latte',
+    ];
+
+    for (final input in inputs) {
+      test('preserves UTF-16 well-formedness for ${jsonEscape(input)}', () {
+        expect(isWellFormedUtf16(toPascalCase(input)), isTrue);
+        expect(isWellFormedUtf16(toCamelCase(input)), isTrue);
+        expect(isWellFormedUtf16(sanitizeDartName(input)), isTrue);
+        expect(isWellFormedUtf16(sanitizeFieldName(input)), isTrue);
+        expect(isWellFormedUtf16(operationMethodName(input)), isTrue);
+      });
+    }
+
+    test('astral character with case mapping is cased correctly', () {
+      // U+10400 (𐐀) lowercases to U+10428 (𐐨). This works because Dart's
+      // toLowerCase on the substring containing the full surrogate pair
+      // applies the proper Unicode case mapping.
+      expect(toCamelCase('𐐀word'), '𐐨word');
+      expect(toPascalCase('word𐐀test'), 'Word𐐨test');
+    });
+  });
+}
+
+String jsonEscape(String s) {
+  final buf = StringBuffer();
+  for (final r in s.runes) {
+    if (r >= 0x20 && r < 0x7F) {
+      buf.writeCharCode(r);
+    } else {
+      buf.write('\\u{${r.toRadixString(16)}}');
+    }
+  }
+  return buf.toString();
 }
