@@ -6,13 +6,91 @@ import 'package:degenerate/src/naming.dart';
 /// Regex to strip angle brackets, commas, and whitespace from type names.
 final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
 
+/// Fields shared (same Dart name and type) by every variant of [union],
+/// resolving `$ref` variants via [typeRegistry]. These are hoisted onto the
+/// sealed base as getters. Returns empty if any variant can't be resolved to
+/// an object or the variants share no field.
+///
+/// Shared between the emitter (to emit the getters) and the file emitter (to
+/// import the types those getters reference) so both agree on the set.
+List<IrField> discriminatedUnionCommonFields(
+  IrDiscriminatedUnion union,
+  Map<String, IrType> typeRegistry,
+) {
+  final discKey = union.discriminatorProperty;
+
+  List<IrField>? variantFields(IrType variantType) {
+    var resolved = variantType;
+    if (resolved is IrTypeRef) {
+      final target = typeRegistry[resolved.name];
+      if (target == null) return null;
+      resolved = target;
+    }
+    if (resolved is! IrObject) return null;
+    return resolved.fields.where((f) => f.originalName != discKey).toList();
+  }
+
+  final perVariant = <List<IrField>>[];
+  for (final variantType in union.mapping.values) {
+    final fields = variantFields(variantType);
+    if (fields == null) return const [];
+    perVariant.add(fields);
+  }
+  if (perVariant.length < 2) return const [];
+
+  IrField? matchIn(List<IrField> fields, IrField f) {
+    for (final g in fields) {
+      if (g.name == f.name && irTypeName(g.type) == irTypeName(f.type)) {
+        return g;
+      }
+    }
+    return null;
+  }
+
+  // OneOf-eligible unions can't be reconstructed in the unknown variant's
+  // getter (their runtime parser is `parse`, not `fromJson`), so skip them.
+  bool isUnionField(IrType type) {
+    var t = type;
+    if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
+    return switch (t) {
+      IrUntaggedUnion(:final variants) => isOneOfEligible(variants),
+      IrAnyOf(:final variants) => isOneOfEligible(variants),
+      _ => false,
+    };
+  }
+
+  final result = <IrField>[];
+  for (final f in perVariant.first) {
+    if (isUnionField(f.type)) continue;
+    final matches = [for (final fields in perVariant) matchIn(fields, f)];
+    if (matches.any((m) => m == null)) continue; // not present in every variant
+    // The hoisted getter is non-null only when the field is required (and
+    // non-nullable) in every variant; otherwise it must be nullable so each
+    // variant's narrower getter remains a valid override. isRequired carries
+    // this decision to the getter emitters.
+    final requiredInAll = matches.every(
+      (m) => m!.isRequired && !m.type.isNullable,
+    );
+    result.add(
+      IrField(f.name, f.originalName, f.type, isRequired: requiredInAll),
+    );
+  }
+  return result;
+}
+
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {
   /// Creates an emitter for the given discriminated [union].
-  const DiscriminatedUnionEmitter(this.union);
+  ///
+  /// [typeRegistry] is used to resolve `$ref` variants to their fields when
+  /// hoisting fields shared by every variant onto the sealed base.
+  const DiscriminatedUnionEmitter(this.union, {this.typeRegistry = const {}});
 
   /// The discriminated union IR to emit.
   final IrDiscriminatedUnion union;
+
+  /// Registry of all named IR types, for resolving ref-variant fields.
+  final Map<String, IrType> typeRegistry;
 
   /// The Dart getter name for the discriminator property.
   String get _discDartName => toCamelCase(union.discriminatorProperty);
@@ -63,7 +141,8 @@ class DiscriminatedUnionEmitter {
                 )
                 ..body = Code('return this is $unknownClassName;'),
             ),
-          ),
+          )
+          ..methods.addAll(commonFields.map(_baseCommonGetter)),
       ),
     );
 
@@ -82,6 +161,46 @@ class DiscriminatedUnionEmitter {
     if (union.description == null) return [];
     return formatDocComment(union.description!);
   }
+
+  /// Fields shared by every variant, hoisted onto the sealed base as nullable
+  /// getters so common data can be read without pattern-matching.
+  List<IrField> get commonFields =>
+      discriminatedUnionCommonFields(union, typeRegistry);
+
+  /// Abstract getter on the base for a hoisted common field. Non-null when the
+  /// field is required in every variant (see [discriminatedUnionCommonFields]).
+  Method _baseCommonGetter(IrField f) => Method(
+    (m) => m
+      ..name = f.name
+      ..type = MethodType.getter
+      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..docs.add('/// Shared by all variants of this union.'),
+  );
+
+  /// Override getter for a hoisted field on a variant whose payload exposes it
+  /// directly (a `$ref` wrapper field).
+  Method _forwardCommonGetter(IrField f, String payloadField) => Method(
+    (m) => m
+      ..name = f.name
+      ..type = MethodType.getter
+      ..annotations.add(refer('override'))
+      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..body = Code('return $payloadField.${f.name};'),
+  );
+
+  /// Override getter for a hoisted field on the unknown variant, read from the
+  /// raw JSON. Required fields are cast directly (an unknown variant of a known
+  /// family still carries the shared fields); optional fields read null-safely.
+  Method _unknownCommonGetter(IrField f) => Method(
+    (m) => m
+      ..name = f.name
+      ..type = MethodType.getter
+      ..annotations.add(refer('override'))
+      ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
+      ..body = Code(
+        'return ${buildFromJsonCode(f.type, "json['${f.originalName}']", isOptional: !f.isRequired)};',
+      ),
+  );
 
   Constructor _buildFromJson(String unknownClassName) {
     final cases = union.mapping.entries
@@ -176,7 +295,8 @@ class DiscriminatedUnionEmitter {
           buildToStringOverride(
             "return '${escapeNameForString(union.name)}.unknown(\$json)';",
           ),
-        ),
+        )
+        ..methods.addAll(commonFields.map(_unknownCommonGetter)),
     );
   }
 
@@ -202,11 +322,16 @@ class DiscriminatedUnionEmitter {
         .where((f) => f.originalName != _discJsonKey)
         .toList();
 
+    final commonNames = commonFields.map((f) => f.name).toSet();
     final fieldDecls = fields.map(
       (f) => Field(
         (b) => b
           ..name = f.name
           ..modifier = FieldModifier.final$
+          // A hoisted field's getter overrides the base's abstract getter.
+          ..annotations.addAll(
+            commonNames.contains(f.name) ? [refer('override')] : const [],
+          )
           ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
       ),
     );
@@ -427,7 +552,10 @@ class DiscriminatedUnionEmitter {
           return buildToStringOverride(
             "return '${escapeNameForString(className)}($fieldStr)';",
           );
-        }()),
+        }())
+        ..methods.addAll(
+          commonFields.map((f) => _forwardCommonGetter(f, fieldName)),
+        ),
     );
   }
 }

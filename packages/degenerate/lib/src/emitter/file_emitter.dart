@@ -255,7 +255,8 @@ class FileEmitter {
       IrObject() => ModelEmitter(type, typeRegistry: typeRegistry).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
-      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
+      IrDiscriminatedUnion() =>
+        DiscriminatedUnionEmitter(type, typeRegistry: typeRegistry).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
@@ -684,6 +685,13 @@ class FileEmitter {
             }
           }
           if (isDirectBytes(variant)) needsTypedData = true;
+        }
+        // Fields hoisted onto the sealed base are exposed as getters whose
+        // return types must be imported. Resolving them needs the registry.
+        if (typeRegistry != null) {
+          for (final f in discriminatedUnionCommonFields(type, typeRegistry)) {
+            checkField(f.type);
+          }
         }
       case IrUntaggedUnion(:final name, :final variants):
         names.add(name);
