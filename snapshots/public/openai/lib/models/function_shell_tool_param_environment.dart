@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param.dart';import 'container_reference_param.dart';import 'local_environment_param.dart';sealed class FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param.dart';import 'container_auto_param_network_policy.dart';import 'container_auto_param_skills.dart';import 'container_memory_limit.dart';import 'container_reference_param.dart';import 'local_environment_param.dart';import 'local_skill_param.dart';sealed class FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellToolParamEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -9,6 +9,15 @@ factory FunctionShellToolParamEnvironment.fromJson(Map<String, dynamic> json) { 
   'container_reference' => FunctionShellToolParamEnvironmentContainerReference.fromJson(json),
   _ => FunctionShellToolParamEnvironment$Unknown(json),
 }; }
+
+/// Build the `container_auto` variant.
+factory FunctionShellToolParamEnvironment.containerAuto({List<String>? fileIds, ContainerMemoryLimit? memoryLimit, ContainerAutoParamNetworkPolicy? networkPolicy, List<ContainerAutoParamSkills>? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam(type: 'container_auto', fileIds: fileIds, memoryLimit: memoryLimit, networkPolicy: networkPolicy, skills: skills)); }
+
+/// Build the `local` variant.
+factory FunctionShellToolParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellToolParamEnvironmentLocal(LocalEnvironmentParam(type: 'local', skills: skills)); }
+
+/// Build the `container_reference` variant.
+factory FunctionShellToolParamEnvironment.containerReference({required String containerId}) { return FunctionShellToolParamEnvironmentContainerReference(ContainerReferenceParam(type: 'container_reference', containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source_cors.dart';sealed class AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSource();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory AccountsByAccountIdPipelinesDeprecatedRequestSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory AccountsByAccountIdPipelinesDeprecatedRequestSource.fromJson(Map<String,
   'http' => AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp.fromJson(json),
   _ => AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown(json),
 }; }
+
+/// Build the `binding` variant.
+factory AccountsByAccountIdPipelinesDeprecatedRequestSource.binding({required CloudflarePipelinesWorkersPipelinesBindingSourceFormat format}) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(CloudflarePipelinesWorkersPipelinesBindingSource(type: 'binding', format: format)); }
+
+/// Build the `http` variant.
+factory AccountsByAccountIdPipelinesDeprecatedRequestSource.http({bool? authentication, CloudflarePipelinesWorkersPipelinesHttpSourceCors? cors, required CloudflarePipelinesWorkersPipelinesHttpSourceFormat format, }) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp(CloudflarePipelinesWorkersPipelinesHttpSource(type: 'http', authentication: authentication, cors: cors, format: format)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -9,6 +9,12 @@ factory ChatCompletionRequestAssistantMessageContentPart.fromJson(Map<String, dy
   _ => ChatCompletionRequestAssistantMessageContentPart$Unknown(json),
 }; }
 
+/// Build the `text` variant.
+factory ChatCompletionRequestAssistantMessageContentPart.text({required String text}) { return ChatCompletionRequestAssistantMessageContentPartText(ChatCompletionRequestMessageContentPartText(type: 'text', text: text)); }
+
+/// Build the `refusal` variant.
+factory ChatCompletionRequestAssistantMessageContentPart.refusal({required String refusal}) { return ChatCompletionRequestAssistantMessageContentPartRefusal(ChatCompletionRequestMessageContentPartRefusal(type: 'refusal', refusal: refusal)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

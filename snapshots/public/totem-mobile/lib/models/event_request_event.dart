@@ -3,6 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'accept_stick_event.dart';
 import 'ban_participant_event.dart';
+import 'end_reason.dart';
 import 'end_room_event.dart';
 import 'force_pass_stick_event.dart';
 import 'pass_stick_event.dart';
@@ -26,6 +27,42 @@ sealed class EventRequestEvent {
       'unban_participant' => EventRequestEventUnbanParticipant.fromJson(json),
       _ => EventRequestEvent$Unknown(json),
     };
+  }
+
+  /// Build the `ban_participant` variant.
+  factory EventRequestEvent.banParticipant({required String participantSlug}) {
+    return EventRequestEventBanParticipant(
+      BanParticipantEvent(
+        type: 'ban_participant',
+        participantSlug: participantSlug,
+      ),
+    );
+  }
+
+  /// Build the `end_room` variant.
+  factory EventRequestEvent.endRoom({required EndReason reason}) {
+    return EventRequestEventEndRoom(
+      EndRoomEvent(type: 'end_room', reason: reason),
+    );
+  }
+
+  /// Build the `reorder` variant.
+  factory EventRequestEvent.reorder({required List<String> talkingOrder}) {
+    return EventRequestEventReorder(
+      ReorderEvent(type: 'reorder', talkingOrder: talkingOrder),
+    );
+  }
+
+  /// Build the `unban_participant` variant.
+  factory EventRequestEvent.unbanParticipant({
+    required String participantSlug,
+  }) {
+    return EventRequestEventUnbanParticipant(
+      UnbanParticipantEvent(
+        type: 'unban_participant',
+        participantSlug: participantSlug,
+      ),
+    );
   }
 
   /// The discriminator value identifying this variant.

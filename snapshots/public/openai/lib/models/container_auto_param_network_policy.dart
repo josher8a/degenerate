@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';import 'container_network_policy_domain_secret_param.dart';/// Network access policy for the container.
 sealed class ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPolicy();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,9 @@ factory ContainerAutoParamNetworkPolicy.fromJson(Map<String, dynamic> json) { re
   'allowlist' => ContainerAutoParamNetworkPolicyAllowlist.fromJson(json),
   _ => ContainerAutoParamNetworkPolicy$Unknown(json),
 }; }
+
+/// Build the `allowlist` variant.
+factory ContainerAutoParamNetworkPolicy.allowlist({required List<String> allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? domainSecrets, }) { return ContainerAutoParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam(type: 'allowlist', allowedDomains: allowedDomains, domainSecrets: domainSecrets)); }
 
 /// The discriminator value identifying this variant.
 String get type;

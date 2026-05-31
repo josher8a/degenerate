@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_ai.dart';import 'workers_binding_kind_analytics_engine.dart';import 'workers_binding_kind_assets.dart';import 'workers_binding_kind_browser.dart';import 'workers_binding_kind_d1.dart';import 'workers_binding_kind_data_blob.dart';import 'workers_binding_kind_dispatch_namespace.dart';import 'workers_binding_kind_durable_object_namespace.dart';import 'workers_binding_kind_hyperdrive.dart';import 'workers_binding_kind_images.dart';import 'workers_binding_kind_inherit.dart';import 'workers_binding_kind_json.dart';import 'workers_binding_kind_kv_namespace.dart';import 'workers_binding_kind_mtls_certificate.dart';import 'workers_binding_kind_pipelines.dart';import 'workers_binding_kind_plain_text.dart';import 'workers_binding_kind_queue.dart';import 'workers_binding_kind_r2_bucket.dart';import 'workers_binding_kind_ratelimit.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_kind_secrets_store_secret.dart';import 'workers_binding_kind_send_email.dart';import 'workers_binding_kind_service.dart';import 'workers_binding_kind_text_blob.dart';import 'workers_binding_kind_vectorize.dart';import 'workers_binding_kind_version_metadata.dart';import 'workers_binding_kind_vpc_service.dart';import 'workers_binding_kind_wasm_module.dart';import 'workers_binding_kind_workflow.dart';/// A binding to allow the Worker to communicate with resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_ai.dart';import 'workers_binding_kind_analytics_engine.dart';import 'workers_binding_kind_assets.dart';import 'workers_binding_kind_browser.dart';import 'workers_binding_kind_d1.dart';import 'workers_binding_kind_data_blob.dart';import 'workers_binding_kind_dispatch_namespace.dart';import 'workers_binding_kind_dispatch_namespace_outbound.dart';import 'workers_binding_kind_durable_object_namespace.dart';import 'workers_binding_kind_hyperdrive.dart';import 'workers_binding_kind_images.dart';import 'workers_binding_kind_inherit.dart';import 'workers_binding_kind_json.dart';import 'workers_binding_kind_kv_namespace.dart';import 'workers_binding_kind_mtls_certificate.dart';import 'workers_binding_kind_pipelines.dart';import 'workers_binding_kind_plain_text.dart';import 'workers_binding_kind_queue.dart';import 'workers_binding_kind_r2_bucket.dart';import 'workers_binding_kind_ratelimit.dart';import 'workers_binding_kind_ratelimit_simple.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_kind_secrets_store_secret.dart';import 'workers_binding_kind_send_email.dart';import 'workers_binding_kind_service.dart';import 'workers_binding_kind_text_blob.dart';import 'workers_binding_kind_vectorize.dart';import 'workers_binding_kind_version_metadata.dart';import 'workers_binding_kind_vpc_service.dart';import 'workers_binding_kind_wasm_module.dart';import 'workers_binding_kind_workflow.dart';import 'workers_binding_name.dart';import 'workers_namespace_identifier.dart';/// A binding to allow the Worker to communicate with resources.
 sealed class WorkersBindingItem {const WorkersBindingItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -37,6 +37,96 @@ factory WorkersBindingItem.fromJson(Map<String, dynamic> json) { return switch (
   'workflow' => WorkersBindingItemWorkflow.fromJson(json),
   _ => WorkersBindingItem$Unknown(json),
 }; }
+
+/// Build the `ai` variant.
+factory WorkersBindingItem.ai({required WorkersBindingName name}) { return WorkersBindingItemAi(WorkersBindingKindAi(type: 'ai', name: name)); }
+
+/// Build the `analytics_engine` variant.
+factory WorkersBindingItem.analyticsEngine({required String dataset, required WorkersBindingName name, }) { return WorkersBindingItemAnalyticsEngine(WorkersBindingKindAnalyticsEngine(type: 'analytics_engine', dataset: dataset, name: name)); }
+
+/// Build the `assets` variant.
+factory WorkersBindingItem.assets({required WorkersBindingName name}) { return WorkersBindingItemAssets(WorkersBindingKindAssets(type: 'assets', name: name)); }
+
+/// Build the `browser` variant.
+factory WorkersBindingItem.browser({required WorkersBindingName name}) { return WorkersBindingItemBrowser(WorkersBindingKindBrowser(type: 'browser', name: name)); }
+
+/// Build the `d1` variant.
+factory WorkersBindingItem.d1({required String id, required WorkersBindingName name, }) { return WorkersBindingItemD1(WorkersBindingKindD1(type: 'd1', id: id, name: name)); }
+
+/// Build the `data_blob` variant.
+factory WorkersBindingItem.dataBlob({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemDataBlob(WorkersBindingKindDataBlob(type: 'data_blob', name: name, $part: $part)); }
+
+/// Build the `dispatch_namespace` variant.
+factory WorkersBindingItem.dispatchNamespace({required WorkersBindingName name, required String namespace, WorkersBindingKindDispatchNamespaceOutbound? outbound, }) { return WorkersBindingItemDispatchNamespace(WorkersBindingKindDispatchNamespace(type: 'dispatch_namespace', name: name, namespace: namespace, outbound: outbound)); }
+
+/// Build the `durable_object_namespace` variant.
+factory WorkersBindingItem.durableObjectNamespace({String? className, String? dispatchNamespace, String? environment, required WorkersBindingName name, WorkersNamespaceIdentifier? namespaceId, String? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace(type: 'durable_object_namespace', className: className, dispatchNamespace: dispatchNamespace, environment: environment, name: name, namespaceId: namespaceId, scriptName: scriptName)); }
+
+/// Build the `hyperdrive` variant.
+factory WorkersBindingItem.hyperdrive({required String id, required WorkersBindingName name, }) { return WorkersBindingItemHyperdrive(WorkersBindingKindHyperdrive(type: 'hyperdrive', id: id, name: name)); }
+
+/// Build the `images` variant.
+factory WorkersBindingItem.images({required WorkersBindingName name}) { return WorkersBindingItemImages(WorkersBindingKindImages(type: 'images', name: name)); }
+
+/// Build the `inherit` variant.
+factory WorkersBindingItem.inherit({required String name, String? oldName, String? versionId, }) { return WorkersBindingItemInherit(WorkersBindingKindInherit(type: 'inherit', name: name, oldName: oldName, versionId: versionId)); }
+
+/// Build the `json` variant.
+factory WorkersBindingItem.json({required Map<String,dynamic> json, required WorkersBindingName name, }) { return WorkersBindingItemJson(WorkersBindingKindJson(type: 'json', json: json, name: name)); }
+
+/// Build the `kv_namespace` variant.
+factory WorkersBindingItem.kvNamespace({required WorkersBindingName name, required WorkersNamespaceIdentifier namespaceId, }) { return WorkersBindingItemKvNamespace(WorkersBindingKindKvNamespace(type: 'kv_namespace', name: name, namespaceId: namespaceId)); }
+
+/// Build the `mtls_certificate` variant.
+factory WorkersBindingItem.mtlsCertificate({required String certificateId, required WorkersBindingName name, }) { return WorkersBindingItemMtlsCertificate(WorkersBindingKindMtlsCertificate(type: 'mtls_certificate', certificateId: certificateId, name: name)); }
+
+/// Build the `pipelines` variant.
+factory WorkersBindingItem.pipelines({required WorkersBindingName name, required String pipeline, }) { return WorkersBindingItemPipelines(WorkersBindingKindPipelines(type: 'pipelines', name: name, pipeline: pipeline)); }
+
+/// Build the `plain_text` variant.
+factory WorkersBindingItem.plainText({required WorkersBindingName name, required String text, }) { return WorkersBindingItemPlainText(WorkersBindingKindPlainText(type: 'plain_text', name: name, text: text)); }
+
+/// Build the `queue` variant.
+factory WorkersBindingItem.queue({required WorkersBindingName name, required String queueName, }) { return WorkersBindingItemQueue(WorkersBindingKindQueue(type: 'queue', name: name, queueName: queueName)); }
+
+/// Build the `r2_bucket` variant.
+factory WorkersBindingItem.r2Bucket({required String bucketName, WorkersBindingKindR2BucketJurisdiction? jurisdiction, required WorkersBindingName name, }) { return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket(type: 'r2_bucket', bucketName: bucketName, jurisdiction: jurisdiction, name: name)); }
+
+/// Build the `ratelimit` variant.
+factory WorkersBindingItem.ratelimit({required WorkersBindingName name, required String namespaceId, required WorkersBindingKindRatelimitSimple simple, }) { return WorkersBindingItemRatelimit(WorkersBindingKindRatelimit(type: 'ratelimit', name: name, namespaceId: namespaceId, simple: simple)); }
+
+/// Build the `secret_key` variant.
+factory WorkersBindingItem.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, String? keyBase64, Map<String,dynamic>? keyJwk, required WorkersBindingName name, required List<WorkersBindingKindSecretKeyUsages> usages, }) { return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
+
+/// Build the `secret_text` variant.
+factory WorkersBindingItem.secretText({required WorkersBindingName name, required String text, }) { return WorkersBindingItemSecretText(WorkersBindingKindSecretText(type: 'secret_text', name: name, text: text)); }
+
+/// Build the `secrets_store_secret` variant.
+factory WorkersBindingItem.secretsStoreSecret({required WorkersBindingName name, required String secretName, required String storeId, }) { return WorkersBindingItemSecretsStoreSecret(WorkersBindingKindSecretsStoreSecret(type: 'secrets_store_secret', name: name, secretName: secretName, storeId: storeId)); }
+
+/// Build the `send_email` variant.
+factory WorkersBindingItem.sendEmail({List<String>? allowedDestinationAddresses, List<String>? allowedSenderAddresses, String? destinationAddress, required WorkersBindingName name, }) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail(type: 'send_email', allowedDestinationAddresses: allowedDestinationAddresses, allowedSenderAddresses: allowedSenderAddresses, destinationAddress: destinationAddress, name: name)); }
+
+/// Build the `service` variant.
+factory WorkersBindingItem.service({String? entrypoint, String? environment, required WorkersBindingName name, required String service, }) { return WorkersBindingItemService(WorkersBindingKindService(type: 'service', entrypoint: entrypoint, environment: environment, name: name, service: service)); }
+
+/// Build the `text_blob` variant.
+factory WorkersBindingItem.textBlob({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob(type: 'text_blob', name: name, $part: $part)); }
+
+/// Build the `vectorize` variant.
+factory WorkersBindingItem.vectorize({required String indexName, required WorkersBindingName name, }) { return WorkersBindingItemVectorize(WorkersBindingKindVectorize(type: 'vectorize', indexName: indexName, name: name)); }
+
+/// Build the `version_metadata` variant.
+factory WorkersBindingItem.versionMetadata({required WorkersBindingName name}) { return WorkersBindingItemVersionMetadata(WorkersBindingKindVersionMetadata(type: 'version_metadata', name: name)); }
+
+/// Build the `vpc_service` variant.
+factory WorkersBindingItem.vpcService({required WorkersBindingName name, required String serviceId, }) { return WorkersBindingItemVpcService(WorkersBindingKindVpcService(type: 'vpc_service', name: name, serviceId: serviceId)); }
+
+/// Build the `wasm_module` variant.
+factory WorkersBindingItem.wasmModule({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemWasmModule(WorkersBindingKindWasmModule(type: 'wasm_module', name: name, $part: $part)); }
+
+/// Build the `workflow` variant.
+factory WorkersBindingItem.workflow({String? className, required WorkersBindingName name, String? scriptName, required String workflowName, }) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow(type: 'workflow', className: className, name: name, scriptName: scriptName, workflowName: workflowName)); }
 
 /// The discriminator value identifying this variant.
 String get type;

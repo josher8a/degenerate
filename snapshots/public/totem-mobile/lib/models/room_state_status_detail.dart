@@ -2,6 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'active_detail.dart';
+import 'end_reason.dart';
 import 'ended_detail.dart';
 import 'waiting_room_detail.dart';
 
@@ -16,6 +17,13 @@ sealed class RoomStateStatusDetail {
       'waiting_room' => RoomStateStatusDetailWaitingRoom.fromJson(json),
       _ => RoomStateStatusDetail$Unknown(json),
     };
+  }
+
+  /// Build the `ended` variant.
+  factory RoomStateStatusDetail.ended({required EndReason reason}) {
+    return RoomStateStatusDetailEnded(
+      EndedDetail(type: 'ended', reason: reason),
+    );
   }
 
   /// The discriminator value identifying this variant.

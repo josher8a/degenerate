@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_annotation.dart';import 'url_annotation.dart';/// Annotation object describing a cited source.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_annotation.dart';import 'file_annotation_source.dart';import 'url_annotation.dart';import 'url_annotation_source.dart';/// Annotation object describing a cited source.
 sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,12 @@ factory ResponseOutputTextAnnotations.fromJson(Map<String, dynamic> json) { retu
   'url' => ResponseOutputTextAnnotationsUrl.fromJson(json),
   _ => ResponseOutputTextAnnotations$Unknown(json),
 }; }
+
+/// Build the `file` variant.
+factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(type: 'file', source: source)); }
+
+/// Build the `url` variant.
+factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(type: 'url', source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

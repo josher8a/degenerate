@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_action_find.dart';import 'web_search_action_open_page.dart';import 'web_search_action_search.dart';/// An object describing the specific action taken in this web search call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_action_find.dart';import 'web_search_action_open_page.dart';import 'web_search_action_search.dart';import 'web_search_action_search_sources.dart';/// An object describing the specific action taken in this web search call.
 /// Includes details on how the model used the web (search, open_page, find_in_page).
 /// 
 sealed class WebSearchToolCallAction {const WebSearchToolCallAction();
@@ -12,6 +12,15 @@ factory WebSearchToolCallAction.fromJson(Map<String, dynamic> json) { return swi
   'find_in_page' => WebSearchToolCallActionFindInPage.fromJson(json),
   _ => WebSearchToolCallAction$Unknown(json),
 }; }
+
+/// Build the `search` variant.
+factory WebSearchToolCallAction.search({required String query, List<String>? queries, List<WebSearchActionSearchSources>? sources, }) { return WebSearchToolCallActionSearch(WebSearchActionSearch(type: 'search', query: query, queries: queries, sources: sources)); }
+
+/// Build the `open_page` variant.
+factory WebSearchToolCallAction.openPage({Uri? url}) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage(type: 'open_page', url: url)); }
+
+/// Build the `find_in_page` variant.
+factory WebSearchToolCallAction.findInPage({required Uri url, required String pattern, }) { return WebSearchToolCallActionFindInPage(WebSearchActionFind(type: 'find_in_page', url: url, pattern: pattern)); }
 
 /// The discriminator value identifying this variant.
 String get type;

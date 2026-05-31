@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateRequestVariant1 {const ChecksCreateRequestVariant1({required this.status, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksCreateRequestCompleted {const ChecksCreateRequestCompleted({required this.status, this.additionalProperties = const {}, });
 
-factory ChecksCreateRequestVariant1.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestVariant1(
+factory ChecksCreateRequestCompleted.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestCompleted(
   status: json['status'],
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'status'}.contains(e.key))),
 ); }
@@ -16,14 +16,14 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-ChecksCreateRequestVariant1 copyWith({dynamic Function()? status, Map<String, dynamic>? additionalProperties, }) { return ChecksCreateRequestVariant1(
+ChecksCreateRequestCompleted copyWith({dynamic Function()? status, Map<String, dynamic>? additionalProperties, }) { return ChecksCreateRequestCompleted(
   status: status != null ? status() : this.status,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is ChecksCreateRequestVariant1 &&
+      other is ChecksCreateRequestCompleted &&
           status == other.status &&
           mapEquals(additionalProperties, other.additionalProperties); } 
 @override int get hashCode { return Object.hash(status, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'ChecksCreateRequestVariant1(status: $status, additionalProperties: $additionalProperties)'; } 
+@override String toString() { return 'ChecksCreateRequestCompleted(status: $status, additionalProperties: $additionalProperties)'; } 
  }

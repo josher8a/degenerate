@@ -1,39 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Int32Type {const Int32Type._(this.value);
-
-factory Int32Type.fromJson(String json) { return switch (json) {
-  'int32' => int32,
-  _ => Int32Type._(json),
-}; }
-
-static const Int32Type int32 = Int32Type._('int32');
-
-static const List<Int32Type> values = [int32];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Int32Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Int32Type($value)'; } 
- }
-@immutable final class Int32 {const Int32({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Int32 {const Int32({required this.type});
 
 factory Int32.fromJson(Map<String, dynamic> json) { return Int32(
-  type: Int32Type.fromJson(json['type'] as String),
+  type: json['type'] as String,
 ); }
 
-final Int32Type type;
+final String type;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Int32 copyWith({Int32Type? type}) { return Int32(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+Int32 copyWith({String? type}) { return Int32(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

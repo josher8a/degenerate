@@ -1,39 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BinaryType {const BinaryType._(this.value);
-
-factory BinaryType.fromJson(String json) { return switch (json) {
-  'binary' => binary,
-  _ => BinaryType._(json),
-}; }
-
-static const BinaryType binary = BinaryType._('binary');
-
-static const List<BinaryType> values = [binary];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BinaryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BinaryType($value)'; } 
- }
-@immutable final class Binary {const Binary({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Binary {const Binary({required this.type});
 
 factory Binary.fromJson(Map<String, dynamic> json) { return Binary(
-  type: BinaryType.fromJson(json['type'] as String),
+  type: json['type'] as String,
 ); }
 
-final BinaryType type;
+final String type;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Binary copyWith({BinaryType? type}) { return Binary(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+Binary copyWith({String? type}) { return Binary(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

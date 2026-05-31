@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'binary.dart';import 'bool.dart';import 'float32.dart';import 'float64.dart';import 'int32.dart';import 'int64.dart';import 'json.dart';import 'list_model.dart';import 'string_model.dart';import 'struct.dart';import 'timestamp.dart';sealed class CloudflarePipelinesFieldType {const CloudflarePipelinesFieldType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'binary.dart';import 'bool.dart';import 'cloudflare_pipelines_list_field.dart';import 'cloudflare_pipelines_source_field.dart';import 'cloudflare_pipelines_struct_field.dart';import 'cloudflare_pipelines_timestamp_field.dart';import 'float32.dart';import 'float64.dart';import 'int32.dart';import 'int64.dart';import 'json.dart';import 'string_model.dart';sealed class CloudflarePipelinesFieldType {const CloudflarePipelinesFieldType();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,9 +14,18 @@ factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { retur
   'Timestamp' => CloudflarePipelinesFieldTypeTimestamp.fromJson(json),
   'json' => CloudflarePipelinesFieldTypeJson.fromJson(json),
   'Struct' => CloudflarePipelinesFieldTypeStruct.fromJson(json),
-  'ListModel' => CloudflarePipelinesFieldTypeListModel.fromJson(json),
+  'List' => CloudflarePipelinesFieldTypeList.fromJson(json),
   _ => CloudflarePipelinesFieldType$Unknown(json),
 }; }
+
+/// Build the `Timestamp` variant.
+factory CloudflarePipelinesFieldType.timestamp({CloudflarePipelinesTimestampUnit? unit}) { return CloudflarePipelinesFieldTypeTimestamp(CloudflarePipelinesTimestampField(type: 'Timestamp', unit: unit)); }
+
+/// Build the `Struct` variant.
+factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, String? name, }) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField(type: 'Struct', fields: fields, name: name)); }
+
+/// Build the `List` variant.
+factory CloudflarePipelinesFieldType.list({required CloudflarePipelinesSourceField items}) { return CloudflarePipelinesFieldTypeList(CloudflarePipelinesListField(type: 'List', items: items)); }
 
 /// The discriminator value identifying this variant.
 String get type;
@@ -115,18 +124,18 @@ final Binary binary;
 @override int get hashCode { return binary.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesFieldTypeBinary(binary: $binary)'; } 
  }
-@immutable final class CloudflarePipelinesFieldTypeTimestamp extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeTimestamp(this.timestamp);
+@immutable final class CloudflarePipelinesFieldTypeTimestamp extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeTimestamp(this.cloudflarePipelinesTimestampField);
 
-factory CloudflarePipelinesFieldTypeTimestamp.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeTimestamp(Timestamp.fromJson(json)); }
+factory CloudflarePipelinesFieldTypeTimestamp.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeTimestamp(CloudflarePipelinesTimestampField.fromJson(json)); }
 
-final Timestamp timestamp;
+final CloudflarePipelinesTimestampField cloudflarePipelinesTimestampField;
 
 @override String get type { return 'Timestamp'; } 
-@override Map<String, dynamic> toJson() { return {...timestamp.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesTimestampField.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFieldTypeTimestamp && timestamp == other.timestamp; } 
-@override int get hashCode { return timestamp.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeTimestamp(timestamp: $timestamp)'; } 
+    other is CloudflarePipelinesFieldTypeTimestamp && cloudflarePipelinesTimestampField == other.cloudflarePipelinesTimestampField; } 
+@override int get hashCode { return cloudflarePipelinesTimestampField.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField: $cloudflarePipelinesTimestampField)'; } 
  }
 @immutable final class CloudflarePipelinesFieldTypeJson extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeJson(this.json);
 
@@ -141,31 +150,31 @@ final Json json;
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesFieldTypeJson(json: $json)'; } 
  }
-@immutable final class CloudflarePipelinesFieldTypeStruct extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeStruct(this.struct);
+@immutable final class CloudflarePipelinesFieldTypeStruct extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeStruct(this.cloudflarePipelinesStructField);
 
-factory CloudflarePipelinesFieldTypeStruct.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeStruct(Struct.fromJson(json)); }
+factory CloudflarePipelinesFieldTypeStruct.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField.fromJson(json)); }
 
-final Struct struct;
+final CloudflarePipelinesStructField cloudflarePipelinesStructField;
 
 @override String get type { return 'Struct'; } 
-@override Map<String, dynamic> toJson() { return {...struct.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesStructField.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFieldTypeStruct && struct == other.struct; } 
-@override int get hashCode { return struct.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeStruct(struct: $struct)'; } 
+    other is CloudflarePipelinesFieldTypeStruct && cloudflarePipelinesStructField == other.cloudflarePipelinesStructField; } 
+@override int get hashCode { return cloudflarePipelinesStructField.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField: $cloudflarePipelinesStructField)'; } 
  }
-@immutable final class CloudflarePipelinesFieldTypeListModel extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeListModel(this.listModel);
+@immutable final class CloudflarePipelinesFieldTypeList extends CloudflarePipelinesFieldType {const CloudflarePipelinesFieldTypeList(this.cloudflarePipelinesListField);
 
-factory CloudflarePipelinesFieldTypeListModel.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeListModel(ListModel.fromJson(json)); }
+factory CloudflarePipelinesFieldTypeList.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFieldTypeList(CloudflarePipelinesListField.fromJson(json)); }
 
-final ListModel listModel;
+final CloudflarePipelinesListField cloudflarePipelinesListField;
 
-@override String get type { return 'ListModel'; } 
-@override Map<String, dynamic> toJson() { return {...listModel.toJson(), 'type': type}; } 
+@override String get type { return 'List'; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesListField.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFieldTypeListModel && listModel == other.listModel; } 
-@override int get hashCode { return listModel.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFieldTypeListModel(listModel: $listModel)'; } 
+    other is CloudflarePipelinesFieldTypeList && cloudflarePipelinesListField == other.cloudflarePipelinesListField; } 
+@override int get hashCode { return cloudflarePipelinesListField.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFieldTypeList(cloudflarePipelinesListField: $cloudflarePipelinesListField)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

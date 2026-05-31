@@ -9,6 +9,9 @@ factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { retur
   _ => FunctionShellCallEnvironment$Unknown(json),
 }; }
 
+/// Build the `container_reference` variant.
+factory FunctionShellCallEnvironment.containerReference({required String containerId}) { return FunctionShellCallEnvironmentContainerReference(ContainerReferenceResource(type: 'container_reference', containerId: containerId)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

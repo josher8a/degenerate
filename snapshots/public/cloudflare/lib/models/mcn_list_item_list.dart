@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';sealed class McnListItemList {const McnListItemList();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_preview.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';sealed class McnListItemList {const McnListItemList();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnListItemList.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -8,6 +8,12 @@ factory McnListItemList.fromJson(Map<String, dynamic> json) { return switch (jso
   'mcn_resource_preview_item' => McnListItemListMcnResourcePreviewItem.fromJson(json),
   _ => McnListItemList$Unknown(json),
 }; }
+
+/// Build the `mcn_string_item` variant.
+factory McnListItemList.mcnStringItem({required String string}) { return McnListItemListMcnStringItem(McnStringItem(itemType: 'mcn_string_item', string: string)); }
+
+/// Build the `mcn_resource_preview_item` variant.
+factory McnListItemList.mcnResourcePreviewItem({required McnResourcePreview resourcePreview}) { return McnListItemListMcnResourcePreviewItem(McnResourcePreviewItem(itemType: 'mcn_resource_preview_item', resourcePreview: resourcePreview)); }
 
 /// The discriminator value identifying this variant.
 String get itemType;

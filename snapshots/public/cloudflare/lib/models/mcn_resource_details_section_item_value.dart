@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_list_item.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';import 'mcn_yaml_diff_item.dart';import 'mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_list_item.dart';import 'mcn_list_item_list.dart';import 'mcn_resource_preview.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';import 'mcn_yaml_diff.dart';import 'mcn_yaml_diff_item.dart';import 'mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -11,6 +11,21 @@ factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) {
   'mcn_list_item' => McnResourceDetailsSectionItemValueMcnListItem.fromJson(json),
   _ => McnResourceDetailsSectionItemValue$Unknown(json),
 }; }
+
+/// Build the `mcn_string_item` variant.
+factory McnResourceDetailsSectionItemValue.mcnStringItem({required String string}) { return McnResourceDetailsSectionItemValueMcnStringItem(McnStringItem(itemType: 'mcn_string_item', string: string)); }
+
+/// Build the `mcn_yaml_item` variant.
+factory McnResourceDetailsSectionItemValue.mcnYamlItem({required String yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(McnYamlItem(itemType: 'mcn_yaml_item', yaml: yaml)); }
+
+/// Build the `mcn_yaml_diff_item` variant.
+factory McnResourceDetailsSectionItemValue.mcnYamlDiffItem({required McnYamlDiff yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(McnYamlDiffItem(itemType: 'mcn_yaml_diff_item', yamlDiff: yamlDiff)); }
+
+/// Build the `mcn_resource_preview_item` variant.
+factory McnResourceDetailsSectionItemValue.mcnResourcePreviewItem({required McnResourcePreview resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(McnResourcePreviewItem(itemType: 'mcn_resource_preview_item', resourcePreview: resourcePreview)); }
+
+/// Build the `mcn_list_item` variant.
+factory McnResourceDetailsSectionItemValue.mcnListItem({required List<McnListItemList> list}) { return McnResourceDetailsSectionItemValueMcnListItem(McnListItem(itemType: 'mcn_list_item', list: list)); }
 
 /// The discriminator value identifying this variant.
 String get itemType;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_zone_level_base.dart';/// Request body schema for deleting tags from zone-level resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_zone_level_base.dart';import 'resource_tagging_resource_id.dart';/// Request body schema for deleting tags from zone-level resources.
 sealed class ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
@@ -15,11 +15,34 @@ factory ResourceTaggingDeleteTagsRequestZoneLevel.fromJson(Map<String, dynamic> 
   _ => ResourceTaggingDeleteTagsRequestZoneLevel$Unknown(json),
 }; }
 
+/// Build the `access_application_policy` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.accessApplicationPolicy({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'access_application_policy', resourceId: resourceId)); }
+
+/// Build the `api_gateway_operation` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.apiGatewayOperation({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'api_gateway_operation', resourceId: resourceId)); }
+
+/// Build the `custom_certificate` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.customCertificate({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'custom_certificate', resourceId: resourceId)); }
+
+/// Build the `custom_hostname` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.customHostname({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'custom_hostname', resourceId: resourceId)); }
+
+/// Build the `dns_record` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.dnsRecord({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'dns_record', resourceId: resourceId)); }
+
+/// Build the `managed_client_certificate` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.managedClientCertificate({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'managed_client_certificate', resourceId: resourceId)); }
+
+/// Build the `zone` variant.
+factory ResourceTaggingDeleteTagsRequestZoneLevel.zone({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelZone(ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceType: 'zone', resourceId: resourceId)); }
+
 /// The discriminator value identifying this variant.
 String get resourceType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown; } 
+/// Shared by all variants of this union.
+ResourceTaggingResourceId get resourceId;
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -33,6 +56,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -46,6 +70,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -59,6 +84,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -72,6 +98,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -85,6 +112,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -98,6 +126,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelZone extends ResourceTaggingDeleteTagsRequestZoneLevel {const ResourceTaggingDeleteTagsRequestZoneLevelZone(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
@@ -111,6 +140,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
     other is ResourceTaggingDeleteTagsRequestZoneLevelZone && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelZone(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override ResourceTaggingResourceId get resourceId { return resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -124,4 +154,5 @@ final Map<String, dynamic> json;
     other is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.unknown($json)'; } 
+@override ResourceTaggingResourceId get resourceId { return ResourceTaggingResourceId.fromJson(json['resource_id'] as String); } 
  }

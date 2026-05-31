@@ -11,6 +11,15 @@ factory FunctionCallOutputItemParamOutputVariant2.fromJson(Map<String, dynamic> 
   _ => FunctionCallOutputItemParamOutputVariant2$Unknown(json),
 }; }
 
+/// Build the `input_text` variant.
+factory FunctionCallOutputItemParamOutputVariant2.inputText({required String text}) { return FunctionCallOutputItemParamOutputVariant2InputText(InputTextContentParam(type: 'input_text', text: text)); }
+
+/// Build the `input_image` variant.
+factory FunctionCallOutputItemParamOutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return FunctionCallOutputItemParamOutputVariant2InputImage(InputImageContentParamAutoParam(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+
+/// Build the `input_file` variant.
+factory FunctionCallOutputItemParamOutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return FunctionCallOutputItemParamOutputVariant2InputFile(InputFileContentParam(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

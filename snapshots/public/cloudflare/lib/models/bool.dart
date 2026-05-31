@@ -1,39 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BoolType {const BoolType._(this.value);
-
-factory BoolType.fromJson(String json) { return switch (json) {
-  'bool' => $bool,
-  _ => BoolType._(json),
-}; }
-
-static const BoolType $bool = BoolType._('bool');
-
-static const List<BoolType> values = [$bool];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BoolType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BoolType($value)'; } 
- }
-@immutable final class Bool {const Bool({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Bool {const Bool({required this.type});
 
 factory Bool.fromJson(Map<String, dynamic> json) { return Bool(
-  type: BoolType.fromJson(json['type'] as String),
+  type: json['type'] as String,
 ); }
 
-final BoolType type;
+final String type;
 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Bool copyWith({BoolType? type}) { return Bool(
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+Bool copyWith({String? type}) { return Bool(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

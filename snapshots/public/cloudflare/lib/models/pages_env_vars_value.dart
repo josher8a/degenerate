@@ -9,11 +9,19 @@ factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (j
   _ => PagesEnvVarsValue$Unknown(json),
 }; }
 
+/// Build the `plain_text` variant.
+factory PagesEnvVarsValue.plainText({required String value}) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: 'plain_text', value: value)); }
+
+/// Build the `secret_text` variant.
+factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: 'secret_text', value: value)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesEnvVarsValue$Unknown; } 
+/// Shared by all variants of this union.
+String get value;
  }
 @immutable final class PagesEnvVarsValuePlainText extends PagesEnvVarsValue {const PagesEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
@@ -27,6 +35,7 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
+@override String get value { return pagesPlainTextEnvVar.value; } 
  }
 @immutable final class PagesEnvVarsValueSecretText extends PagesEnvVarsValue {const PagesEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
@@ -40,6 +49,7 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValueSecretText(pagesSecretTextEnvVar: $pagesSecretTextEnvVar)'; } 
+@override String get value { return pagesSecretTextEnvVar.value; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +63,5 @@ final Map<String, dynamic> json;
     other is PagesEnvVarsValue$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'PagesEnvVarsValue.unknown($json)'; } 
+@override String get value { return json['value'] as String; } 
  }

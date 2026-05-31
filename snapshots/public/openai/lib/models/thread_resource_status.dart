@@ -11,6 +11,12 @@ factory ThreadResourceStatus.fromJson(Map<String, dynamic> json) { return switch
   _ => ThreadResourceStatus$Unknown(json),
 }; }
 
+/// Build the `locked` variant.
+factory ThreadResourceStatus.locked({required String? reason}) { return ThreadResourceStatusLocked(LockedStatus(type: 'locked', reason: reason)); }
+
+/// Build the `closed` variant.
+factory ThreadResourceStatus.closed({required String? reason}) { return ThreadResourceStatusClosed(ClosedStatus(type: 'closed', reason: reason)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

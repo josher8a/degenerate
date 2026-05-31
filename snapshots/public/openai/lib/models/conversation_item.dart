@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'reasoning_item.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';import 'apply_patch_call_status.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_operation.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'code_interpreter_tool_call_outputs2.dart';import 'computer_action.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'custom_tool_call_output_output.dart';import 'file_search_tool_call.dart';import 'file_search_tool_call_results2.dart';import 'function_shell_action.dart';import 'function_shell_call.dart';import 'function_shell_call_environment.dart';import 'function_shell_call_output.dart';import 'function_shell_call_output_content.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'function_tool_call_output_output.dart';import 'image_gen_tool_call.dart';import 'local_shell_exec_action.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_list_tools_tool.dart';import 'mcp_tool_call.dart';import 'message.dart';import 'message_content.dart';import 'reasoning_item.dart';import 'reasoning_text_content.dart';import 'summary_text_content.dart';import 'tool.dart';import 'tool_search_call.dart';import 'tool_search_execution_type.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';import 'web_search_tool_call_action.dart';/// A single item within a conversation. The set of possible types are the same as the `output` type of a [Response object](/docs/api-reference/responses/object#responses/object-output).
 sealed class ConversationItem {const ConversationItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -32,11 +32,85 @@ factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (js
   _ => ConversationItem$Unknown(json),
 }; }
 
+/// Build the `message` variant.
+factory ConversationItem.message({required String id, required MessageStatus status, required MessageRole role, required List<MessageContent> content, }) { return ConversationItemMessage(Message(type: 'message', id: id, status: status, role: role, content: content)); }
+
+/// Build the `FunctionToolCallResource` variant.
+factory ConversationItem.functionToolCallResource({String? id, required String callId, String? namespace, required String name, required String arguments, FunctionToolCallStatus? status, }) { return ConversationItemFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+
+/// Build the `FunctionToolCallOutputResource` variant.
+factory ConversationItem.functionToolCallOutputResource({String? id, required String callId, required FunctionToolCallOutputOutput output, FunctionToolCallOutputStatus? status, }) { return ConversationItemFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
+
+/// Build the `file_search_call` variant.
+factory ConversationItem.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults2>? results, }) { return ConversationItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+
+/// Build the `web_search_call` variant.
+factory ConversationItem.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ConversationItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
+
+/// Build the `image_generation_call` variant.
+factory ConversationItem.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ConversationItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
+
+/// Build the `computer_call` variant.
+factory ConversationItem.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallStatus status, }) { return ConversationItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+
+/// Build the `ComputerToolCallOutputResource` variant.
+factory ConversationItem.computerToolCallOutputResource({String? id, required String callId, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, required ComputerScreenshotImage output, ComputerToolCallOutputStatus? status, }) { return ConversationItemComputerToolCallOutputResource(ComputerToolCallOutput(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+
+/// Build the `tool_search_call` variant.
+factory ConversationItem.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ConversationItemToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
+
+/// Build the `tool_search_output` variant.
+factory ConversationItem.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ConversationItemToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
+
+/// Build the `reasoning` variant.
+factory ConversationItem.reasoning({required String id, String? encryptedContent, required List<SummaryTextContent> summary, List<ReasoningTextContent>? content, ReasoningItemStatus? status, }) { return ConversationItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+
+/// Build the `code_interpreter_call` variant.
+factory ConversationItem.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs2>? outputs, }) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
+
+/// Build the `local_shell_call` variant.
+factory ConversationItem.localShellCall({required String id, required String callId, required LocalShellExecAction action, required LocalShellToolCallStatus status, }) { return ConversationItemLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
+
+/// Build the `local_shell_call_output` variant.
+factory ConversationItem.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+
+/// Build the `shell_call` variant.
+factory ConversationItem.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) { return ConversationItemShellCall(FunctionShellCall(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy)); }
+
+/// Build the `shell_call_output` variant.
+factory ConversationItem.shellCallOutput({required String id, required String callId, required LocalShellCallOutputStatusEnum status, required List<FunctionShellCallOutputContent> output, required int? maxOutputLength, String? createdBy, }) { return ConversationItemShellCallOutput(FunctionShellCallOutput(type: 'shell_call_output', id: id, callId: callId, status: status, output: output, maxOutputLength: maxOutputLength, createdBy: createdBy)); }
+
+/// Build the `apply_patch_call` variant.
+factory ConversationItem.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) { return ConversationItemApplyPatchCall(ApplyPatchToolCall(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation, createdBy: createdBy)); }
+
+/// Build the `apply_patch_call_output` variant.
+factory ConversationItem.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, String? output, String? createdBy, }) { return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
+
+/// Build the `mcp_list_tools` variant.
+factory ConversationItem.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, String? error, }) { return ConversationItemMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+
+/// Build the `mcp_approval_request` variant.
+factory ConversationItem.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ConversationItemMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
+
+/// Build the `mcp_approval_response` variant.
+factory ConversationItem.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return ConversationItemMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+
+/// Build the `mcp_call` variant.
+factory ConversationItem.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ConversationItemMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
+
+/// Build the `custom_tool_call` variant.
+factory ConversationItem.customToolCall({String? id, required String callId, String? namespace, required String name, required String input, }) { return ConversationItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+
+/// Build the `custom_tool_call_output` variant.
+factory ConversationItem.customToolCallOutput({String? id, required String callId, required CustomToolCallOutputOutput output, }) { return ConversationItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConversationItem$Unknown; } 
+/// Shared by all variants of this union.
+String? get id;
  }
 @immutable final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
 
@@ -50,6 +124,7 @@ final Message message;
     other is ConversationItemMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ConversationItemMessage(message: $message)'; } 
+@override String? get id { return message.id; } 
  }
 @immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
 
@@ -63,6 +138,7 @@ final FunctionToolCall functionToolCall;
     other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallResource(functionToolCall: $functionToolCall)'; } 
+@override String? get id { return functionToolCall.id; } 
  }
 @immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
 
@@ -76,6 +152,7 @@ final FunctionToolCallOutput functionToolCallOutput;
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
+@override String? get id { return functionToolCallOutput.id; } 
  }
 @immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
@@ -89,6 +166,7 @@ final FileSearchToolCall fileSearchToolCall;
     other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String? get id { return fileSearchToolCall.id; } 
  }
 @immutable final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
@@ -102,6 +180,7 @@ final WebSearchToolCall webSearchToolCall;
     other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String? get id { return webSearchToolCall.id; } 
  }
 @immutable final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
@@ -115,6 +194,7 @@ final ImageGenToolCall imageGenToolCall;
     other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String? get id { return imageGenToolCall.id; } 
  }
 @immutable final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
@@ -128,6 +208,7 @@ final ComputerToolCall computerToolCall;
     other is ConversationItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemComputerCall(computerToolCall: $computerToolCall)'; } 
+@override String? get id { return computerToolCall.id; } 
  }
 @immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -141,6 +222,7 @@ final ComputerToolCallOutput computerToolCallOutput;
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
+@override String? get id { return computerToolCallOutput.id; } 
  }
 @immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 
@@ -154,6 +236,7 @@ final ToolSearchCall toolSearchCall;
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
+@override String? get id { return toolSearchCall.id; } 
  }
 @immutable final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
 
@@ -167,6 +250,7 @@ final ToolSearchOutput toolSearchOutput;
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
+@override String? get id { return toolSearchOutput.id; } 
  }
 @immutable final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
@@ -180,6 +264,7 @@ final ReasoningItem reasoningItem;
     other is ConversationItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ConversationItemReasoning(reasoningItem: $reasoningItem)'; } 
+@override String? get id { return reasoningItem.id; } 
  }
 @immutable final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -193,6 +278,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
     other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String? get id { return codeInterpreterToolCall.id; } 
  }
 @immutable final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
@@ -206,6 +292,7 @@ final LocalShellToolCall localShellToolCall;
     other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
+@override String? get id { return localShellToolCall.id; } 
  }
 @immutable final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -219,6 +306,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
     other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
+@override String? get id { return localShellToolCallOutput.id; } 
  }
 @immutable final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
@@ -232,6 +320,7 @@ final FunctionShellCall functionShellCall;
     other is ConversationItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ConversationItemShellCall(functionShellCall: $functionShellCall)'; } 
+@override String? get id { return functionShellCall.id; } 
  }
 @immutable final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
@@ -245,6 +334,7 @@ final FunctionShellCallOutput functionShellCallOutput;
     other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
+@override String? get id { return functionShellCallOutput.id; } 
  }
 @immutable final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
@@ -258,6 +348,7 @@ final ApplyPatchToolCall applyPatchToolCall;
     other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
+@override String? get id { return applyPatchToolCall.id; } 
  }
 @immutable final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -271,6 +362,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
     other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
+@override String? get id { return applyPatchToolCallOutput.id; } 
  }
 @immutable final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
@@ -284,6 +376,7 @@ final McpListTools mcpListTools;
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ConversationItemMcpListTools(mcpListTools: $mcpListTools)'; } 
+@override String? get id { return mcpListTools.id; } 
  }
 @immutable final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -297,6 +390,7 @@ final McpApprovalRequest mcpApprovalRequest;
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
+@override String? get id { return mcpApprovalRequest.id; } 
  }
 @immutable final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -310,6 +404,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
     other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
+@override String? get id { return mcpApprovalResponseResource.id; } 
  }
 @immutable final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
@@ -323,6 +418,7 @@ final McpToolCall mcpToolCall;
     other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
+@override String? get id { return mcpToolCall.id; } 
  }
 @immutable final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
@@ -336,6 +432,7 @@ final CustomToolCall customToolCall;
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCustomToolCall(customToolCall: $customToolCall)'; } 
+@override String? get id { return customToolCall.id; } 
  }
 @immutable final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -349,6 +446,7 @@ final CustomToolCallOutput customToolCallOutput;
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemCustomToolCallOutput(customToolCallOutput: $customToolCallOutput)'; } 
+@override String? get id { return customToolCallOutput.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -362,4 +460,5 @@ final Map<String, dynamic> json;
     other is ConversationItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ConversationItem.unknown($json)'; } 
+@override String? get id { return json['id'] as String?; } 
  }

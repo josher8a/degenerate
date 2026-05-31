@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_response.dart';import 'mq_worker_consumer_response.dart';/// Response body representing a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_response.dart';import 'mq_http_consumer_response_settings.dart';import 'mq_identifier.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_response.dart';import 'mq_worker_consumer_response_settings.dart';/// Response body representing a consumer
 sealed class MqConsumerResponse {const MqConsumerResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -10,11 +10,25 @@ factory MqConsumerResponse.fromJson(Map<String, dynamic> json) { return switch (
   _ => MqConsumerResponse$Unknown(json),
 }; }
 
+/// Build the `http_pull` variant.
+factory MqConsumerResponse.httpPull({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqHttpConsumerResponseSettings? settings, }) { return MqConsumerResponseHttpPull(MqHttpConsumerResponse(type: 'http_pull', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, settings: settings)); }
+
+/// Build the `worker` variant.
+factory MqConsumerResponse.worker({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqScriptName? scriptName, MqWorkerConsumerResponseSettings? settings, }) { return MqConsumerResponseWorker(MqWorkerConsumerResponse(type: 'worker', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, scriptName: scriptName, settings: settings)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MqConsumerResponse$Unknown; } 
+/// Shared by all variants of this union.
+MqIdentifier? get consumerId;
+/// Shared by all variants of this union.
+DateTime? get createdOn;
+/// Shared by all variants of this union.
+String? get deadLetterQueue;
+/// Shared by all variants of this union.
+MqQueueName? get queueName;
  }
 @immutable final class MqConsumerResponseHttpPull extends MqConsumerResponse {const MqConsumerResponseHttpPull(this.mqHttpConsumerResponse);
 
@@ -28,6 +42,10 @@ final MqHttpConsumerResponse mqHttpConsumerResponse;
     other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse; } 
 @override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
 @override String toString() { return 'MqConsumerResponseHttpPull(mqHttpConsumerResponse: $mqHttpConsumerResponse)'; } 
+@override MqIdentifier? get consumerId { return mqHttpConsumerResponse.consumerId; } 
+@override DateTime? get createdOn { return mqHttpConsumerResponse.createdOn; } 
+@override String? get deadLetterQueue { return mqHttpConsumerResponse.deadLetterQueue; } 
+@override MqQueueName? get queueName { return mqHttpConsumerResponse.queueName; } 
  }
 @immutable final class MqConsumerResponseWorker extends MqConsumerResponse {const MqConsumerResponseWorker(this.mqWorkerConsumerResponse);
 
@@ -41,6 +59,10 @@ final MqWorkerConsumerResponse mqWorkerConsumerResponse;
     other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse; } 
 @override int get hashCode { return mqWorkerConsumerResponse.hashCode; } 
 @override String toString() { return 'MqConsumerResponseWorker(mqWorkerConsumerResponse: $mqWorkerConsumerResponse)'; } 
+@override MqIdentifier? get consumerId { return mqWorkerConsumerResponse.consumerId; } 
+@override DateTime? get createdOn { return mqWorkerConsumerResponse.createdOn; } 
+@override String? get deadLetterQueue { return mqWorkerConsumerResponse.deadLetterQueue; } 
+@override MqQueueName? get queueName { return mqWorkerConsumerResponse.queueName; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -54,4 +76,8 @@ final Map<String, dynamic> json;
     other is MqConsumerResponse$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'MqConsumerResponse.unknown($json)'; } 
+@override MqIdentifier? get consumerId { return json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null; } 
+@override DateTime? get createdOn { return json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null; } 
+@override String? get deadLetterQueue { return json['dead_letter_queue'] as String?; } 
+@override MqQueueName? get queueName { return json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null; } 
  }

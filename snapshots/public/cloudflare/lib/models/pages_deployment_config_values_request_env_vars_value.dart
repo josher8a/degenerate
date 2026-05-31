@@ -9,11 +9,19 @@ factory PagesDeploymentConfigValuesRequestEnvVarsValue.fromJson(Map<String, dyna
   _ => PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(json),
 }; }
 
+/// Build the `plain_text` variant.
+factory PagesDeploymentConfigValuesRequestEnvVarsValue.plainText({required String value}) { return PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(PagesPlainTextEnvVar(type: 'plain_text', value: value)); }
+
+/// Build the `secret_text` variant.
+factory PagesDeploymentConfigValuesRequestEnvVarsValue.secretText({required String value}) { return PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(PagesSecretTextEnvVar(type: 'secret_text', value: value)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown; } 
+/// Shared by all variants of this union.
+String get value;
  }
 @immutable final class PagesDeploymentConfigValuesRequestEnvVarsValuePlainText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
 
@@ -27,6 +35,7 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
     other is PagesDeploymentConfigValuesRequestEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
+@override String get value { return pagesPlainTextEnvVar.value; } 
  }
 @immutable final class PagesDeploymentConfigValuesRequestEnvVarsValueSecretText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
 
@@ -40,6 +49,7 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
     other is PagesDeploymentConfigValuesRequestEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(pagesSecretTextEnvVar: $pagesSecretTextEnvVar)'; } 
+@override String get value { return pagesSecretTextEnvVar.value; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +63,5 @@ final Map<String, dynamic> json;
     other is PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValue.unknown($json)'; } 
+@override String get value { return json['value'] as String; } 
  }

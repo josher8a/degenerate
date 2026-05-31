@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import 'new.dart';
 import 'proto.dart';
 import 'string_model.dart';
 import 'true.dart';
@@ -16,6 +17,74 @@ sealed class Self {
       'String' => SelfString.fromJson(json),
       _ => Self$Unknown(json),
     };
+  }
+
+  /// Build the `type` variant.
+  factory Self.type({
+    required bool $false,
+    required dynamic none,
+    required TrueNull $null,
+    required True0 $0,
+    required String $empty,
+    String? constructor,
+    String? proto,
+    String? hasOwnProperty,
+    String? $ref,
+    String? $id,
+    String? xExtensionLookalike,
+  }) {
+    return SelfType(
+      True(
+        type: 'type',
+        $false: $false,
+        none: none,
+        $null: $null,
+        $0: $0,
+        $empty: $empty,
+        constructor: constructor,
+        proto: proto,
+        hasOwnProperty: hasOwnProperty,
+        $ref: $ref,
+        $id: $id,
+        xExtensionLookalike: xExtensionLookalike,
+      ),
+    );
+  }
+
+  /// Build the `__proto__` variant.
+  factory Self.proto({
+    New? constructor,
+    String? $toString,
+    int? valueOf,
+    Proto? prototype,
+  }) {
+    return SelfProto(
+      Proto(
+        type: '__proto__',
+        constructor: constructor,
+        $toString: $toString,
+        valueOf: valueOf,
+        prototype: prototype,
+      ),
+    );
+  }
+
+  /// Build the `String` variant.
+  factory Self.string({
+    int? length,
+    required String value,
+    String? charAt,
+    bool? trim,
+  }) {
+    return SelfString(
+      StringModel(
+        type: 'String',
+        length: length,
+        value: value,
+        charAt: charAt,
+        trim: trim,
+      ),
+    );
   }
 
   /// The discriminator value identifying this variant.

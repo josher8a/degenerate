@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_session_create_response_ga.dart';import 'realtime_transcription_session_create_response_ga.dart';/// The session configuration for either a realtime or transcription session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_session_create_response_ga.dart';import 'realtime_session_create_response_ga_audio.dart';import 'realtime_session_create_response_ga_client_secret.dart';import 'realtime_session_create_response_ga_max_output_tokens.dart';import 'realtime_session_create_response_ga_model.dart';import 'realtime_session_create_response_ga_tool_choice.dart';import 'realtime_session_create_response_ga_tools.dart';import 'realtime_session_create_response_ga_tracing.dart';import 'realtime_transcription_session_create_response_ga.dart';import 'realtime_transcription_session_create_response_ga_audio.dart';import 'realtime_truncation.dart';/// The session configuration for either a realtime or transcription session.
 /// 
 sealed class RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession();
 
@@ -10,6 +10,12 @@ factory RealtimeCreateClientSecretResponseSession.fromJson(Map<String, dynamic> 
   'transcription' => RealtimeCreateClientSecretResponseSessionTranscription.fromJson(json),
   _ => RealtimeCreateClientSecretResponseSession$Unknown(json),
 }; }
+
+/// Build the `realtime` variant.
+factory RealtimeCreateClientSecretResponseSession.realtime({required RealtimeSessionCreateResponseGaClientSecret clientSecret, List<RealtimeSessionCreateResponseGaOutputModalities>? outputModalities, RealtimeSessionCreateResponseGaModel? model, String? instructions, RealtimeSessionCreateResponseGaAudio? audio, List<RealtimeSessionCreateResponseGaInclude>? include, RealtimeSessionCreateResponseGaTracing? tracing, List<RealtimeSessionCreateResponseGaTools>? tools, RealtimeSessionCreateResponseGaToolChoice? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens? maxOutputTokens, RealtimeTruncation? truncation, Prompt? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(RealtimeSessionCreateResponseGa(type: 'realtime', clientSecret: clientSecret, outputModalities: outputModalities, model: model, instructions: instructions, audio: audio, include: include, tracing: tracing, tools: tools, toolChoice: toolChoice, maxOutputTokens: maxOutputTokens, truncation: truncation, prompt: prompt)); }
+
+/// Build the `transcription` variant.
+factory RealtimeCreateClientSecretResponseSession.transcription({required String id, required String object, int? expiresAt, List<RealtimeTranscriptionSessionCreateResponseGaInclude>? include, RealtimeTranscriptionSessionCreateResponseGaAudio? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(RealtimeTranscriptionSessionCreateResponseGa(type: 'transcription', id: id, object: object, expiresAt: expiresAt, include: include, audio: audio)); }
 
 /// The discriminator value identifying this variant.
 String get type;

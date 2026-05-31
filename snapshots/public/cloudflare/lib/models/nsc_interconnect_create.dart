@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -9,11 +9,19 @@ factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switc
   _ => NscInterconnectCreate$Unknown(json),
 }; }
 
+/// Build the `direct` variant.
+factory NscInterconnectCreate.direct({required String account, required String slotId, String? speed, }) { return NscInterconnectCreateDirect(NscInterconnectCreatePhysicalBody(type: 'direct', account: account, slotId: slotId, speed: speed)); }
+
+/// Build the `gcp_partner` variant.
+factory NscInterconnectCreate.gcpPartner({required String account, required Bandwidth bandwidth, required String pairingKey, }) { return NscInterconnectCreateGcpPartner(NscInterconnectCreateGcpPartnerBody(type: 'gcp_partner', account: account, bandwidth: bandwidth, pairingKey: pairingKey)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NscInterconnectCreate$Unknown; } 
+/// Shared by all variants of this union.
+String get account;
  }
 @immutable final class NscInterconnectCreateDirect extends NscInterconnectCreate {const NscInterconnectCreateDirect(this.nscInterconnectCreatePhysicalBody);
 
@@ -27,6 +35,7 @@ final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
     other is NscInterconnectCreateDirect && nscInterconnectCreatePhysicalBody == other.nscInterconnectCreatePhysicalBody; } 
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody: $nscInterconnectCreatePhysicalBody)'; } 
+@override String get account { return nscInterconnectCreatePhysicalBody.account; } 
  }
 @immutable final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
 
@@ -40,6 +49,7 @@ final NscInterconnectCreateGcpPartnerBody nscInterconnectCreateGcpPartnerBody;
     other is NscInterconnectCreateGcpPartner && nscInterconnectCreateGcpPartnerBody == other.nscInterconnectCreateGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectCreateGcpPartnerBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreateGcpPartner(nscInterconnectCreateGcpPartnerBody: $nscInterconnectCreateGcpPartnerBody)'; } 
+@override String get account { return nscInterconnectCreateGcpPartnerBody.account; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +63,5 @@ final Map<String, dynamic> json;
     other is NscInterconnectCreate$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NscInterconnectCreate.unknown($json)'; } 
+@override String get account { return json['account'] as String; } 
  }

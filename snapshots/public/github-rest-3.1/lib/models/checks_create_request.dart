@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checks_create_request_variant1.dart';import 'checks_create_request_variant2.dart';sealed class ChecksCreateRequest {const ChecksCreateRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checks_create_request_completed.dart';import 'checks_create_request_variant2.dart';sealed class ChecksCreateRequest {const ChecksCreateRequest();
 
 /// Deserialize from JSON, dispatching on the `status` discriminator.
 factory ChecksCreateRequest.fromJson(Map<String, dynamic> json) { return switch (json['status']) {
-  'completed' => ChecksCreateRequestCompleted.fromJson(json),
+  'completed' => ChecksCreateRequestCompleted$Variant.fromJson(json),
   'queued' => ChecksCreateRequestQueued.fromJson(json),
   _ => ChecksCreateRequest$Unknown(json),
 }; }
@@ -15,18 +15,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChecksCreateRequest$Unknown; } 
  }
-@immutable final class ChecksCreateRequestCompleted extends ChecksCreateRequest {const ChecksCreateRequestCompleted(this.checksCreateRequestVariant1);
+@immutable final class ChecksCreateRequestCompleted$Variant extends ChecksCreateRequest {const ChecksCreateRequestCompleted$Variant(this.checksCreateRequestCompleted);
 
-factory ChecksCreateRequestCompleted.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestCompleted(ChecksCreateRequestVariant1.fromJson(json)); }
+factory ChecksCreateRequestCompleted$Variant.fromJson(Map<String, dynamic> json) { return ChecksCreateRequestCompleted$Variant(ChecksCreateRequestCompleted.fromJson(json)); }
 
-final ChecksCreateRequestVariant1 checksCreateRequestVariant1;
+final ChecksCreateRequestCompleted checksCreateRequestCompleted;
 
 @override String get status { return 'completed'; } 
-@override Map<String, dynamic> toJson() { return {...checksCreateRequestVariant1.toJson(), 'status': status}; } 
+@override Map<String, dynamic> toJson() { return {...checksCreateRequestCompleted.toJson(), 'status': status}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChecksCreateRequestCompleted && checksCreateRequestVariant1 == other.checksCreateRequestVariant1; } 
-@override int get hashCode { return checksCreateRequestVariant1.hashCode; } 
-@override String toString() { return 'ChecksCreateRequestCompleted(checksCreateRequestVariant1: $checksCreateRequestVariant1)'; } 
+    other is ChecksCreateRequestCompleted$Variant && checksCreateRequestCompleted == other.checksCreateRequestCompleted; } 
+@override int get hashCode { return checksCreateRequestCompleted.hashCode; } 
+@override String toString() { return 'ChecksCreateRequestCompleted\$Variant(checksCreateRequestCompleted: $checksCreateRequestCompleted)'; } 
  }
 @immutable final class ChecksCreateRequestQueued extends ChecksCreateRequest {const ChecksCreateRequestQueued(this.checksCreateRequestVariant2);
 

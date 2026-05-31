@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call_item_param.dart';import 'apply_patch_tool_call_output_item_param.dart';import 'code_interpreter_tool_call.dart';import 'compaction_summary_item_param.dart';import 'computer_call_output_item_param.dart';import 'computer_tool_call.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_call_output_item_param.dart';import 'function_shell_call_item_param.dart';import 'function_shell_call_output_item_param.dart';import 'function_tool_call.dart';import 'image_gen_tool_call.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'reasoning_item.dart';import 'tool_search_call_item_param.dart';import 'tool_search_output_item_param.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';import 'apply_patch_call_status.dart';import 'apply_patch_operation_param.dart';import 'apply_patch_tool_call_item_param.dart';import 'apply_patch_tool_call_output_item_param.dart';import 'code_interpreter_tool_call.dart';import 'code_interpreter_tool_call_outputs2.dart';import 'compaction_summary_item_param.dart';import 'computer_action.dart';import 'computer_call_output_item_param.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';import 'computer_tool_call.dart';import 'custom_tool_call.dart';import 'custom_tool_call_output.dart';import 'custom_tool_call_output_output.dart';import 'empty_model_param.dart';import 'file_search_tool_call.dart';import 'file_search_tool_call_results2.dart';import 'function_call_item_status.dart';import 'function_call_output_item_param.dart';import 'function_call_output_item_param_output.dart';import 'function_shell_action_param.dart';import 'function_shell_call_item_param.dart';import 'function_shell_call_item_param_environment.dart';import 'function_shell_call_item_status.dart';import 'function_shell_call_output_content_param.dart';import 'function_shell_call_output_item_param.dart';import 'function_tool_call.dart';import 'image_gen_tool_call.dart';import 'local_shell_exec_action.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response.dart';import 'mcp_list_tools.dart';import 'mcp_list_tools_tool.dart';import 'mcp_tool_call.dart';import 'message_phase.dart';import 'output_message.dart';import 'output_message_content.dart';import 'reasoning_item.dart';import 'reasoning_text_content.dart';import 'summary_text_content.dart';import 'tool.dart';import 'tool_search_call_item_param.dart';import 'tool_search_execution_type.dart';import 'tool_search_output_item_param.dart';import 'web_search_tool_call.dart';import 'web_search_tool_call_action.dart';/// Content item used to generate a response.
 /// 
 sealed class Item {const Item();
 
@@ -34,11 +34,88 @@ factory Item.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
   _ => Item$Unknown(json),
 }; }
 
+/// Build the `message` variant.
+factory Item.message({required String id, required OutputMessageRole role, required List<OutputMessageContent> content, MessagePhase? phase, required OutputMessageStatus status, }) { return ItemMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+
+/// Build the `file_search_call` variant.
+factory Item.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults2>? results, }) { return ItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+
+/// Build the `computer_call` variant.
+factory Item.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallStatus status, }) { return ItemComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+
+/// Build the `computer_call_output` variant.
+factory Item.computerCallOutput({String? id, required String callId, required ComputerScreenshotImage output, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, FunctionCallItemStatus? status, }) { return ItemComputerCallOutput(ComputerCallOutputItemParam(type: 'computer_call_output', id: id, callId: callId, output: output, acknowledgedSafetyChecks: acknowledgedSafetyChecks, status: status)); }
+
+/// Build the `web_search_call` variant.
+factory Item.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ItemWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
+
+/// Build the `function_call` variant.
+factory Item.functionCall({String? id, required String callId, String? namespace, required String name, required String arguments, FunctionToolCallStatus? status, }) { return ItemFunctionCall(FunctionToolCall(type: 'function_call', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+
+/// Build the `function_call_output` variant.
+factory Item.functionCallOutput({String? id, required String callId, required FunctionCallOutputItemParamOutput output, FunctionCallItemStatus? status, }) { return ItemFunctionCallOutput(FunctionCallOutputItemParam(type: 'function_call_output', id: id, callId: callId, output: output, status: status)); }
+
+/// Build the `tool_search_call` variant.
+factory Item.toolSearchCall({String? id, String? callId, ToolSearchExecutionType? execution, required EmptyModelParam arguments, FunctionCallItemStatus? status, }) { return ItemToolSearchCall(ToolSearchCallItemParam(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status)); }
+
+/// Build the `tool_search_output` variant.
+factory Item.toolSearchOutput({String? id, String? callId, ToolSearchExecutionType? execution, required List<Tool> tools, FunctionCallItemStatus? status, }) { return ItemToolSearchOutput(ToolSearchOutputItemParam(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status)); }
+
+/// Build the `reasoning` variant.
+factory Item.reasoning({required String id, String? encryptedContent, required List<SummaryTextContent> summary, List<ReasoningTextContent>? content, ReasoningItemStatus? status, }) { return ItemReasoning(ReasoningItem(type: 'reasoning', id: id, encryptedContent: encryptedContent, summary: summary, content: content, status: status)); }
+
+/// Build the `compaction` variant.
+factory Item.compaction({String? id, required String encryptedContent, }) { return ItemCompaction(CompactionSummaryItemParam(type: 'compaction', id: id, encryptedContent: encryptedContent)); }
+
+/// Build the `image_generation_call` variant.
+factory Item.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ItemImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
+
+/// Build the `code_interpreter_call` variant.
+factory Item.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs2>? outputs, }) { return ItemCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
+
+/// Build the `local_shell_call` variant.
+factory Item.localShellCall({required String id, required String callId, required LocalShellExecAction action, required LocalShellToolCallStatus status, }) { return ItemLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
+
+/// Build the `local_shell_call_output` variant.
+factory Item.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ItemLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+
+/// Build the `shell_call` variant.
+factory Item.shellCall({String? id, required String callId, required FunctionShellActionParam action, FunctionShellCallItemStatus? status, FunctionShellCallItemParamEnvironment? environment, }) { return ItemShellCall(FunctionShellCallItemParam(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment)); }
+
+/// Build the `shell_call_output` variant.
+factory Item.shellCallOutput({String? id, required String callId, required List<FunctionShellCallOutputContentParam> output, FunctionShellCallItemStatus? status, int? maxOutputLength, }) { return ItemShellCallOutput(FunctionShellCallOutputItemParam(type: 'shell_call_output', id: id, callId: callId, output: output, status: status, maxOutputLength: maxOutputLength)); }
+
+/// Build the `apply_patch_call` variant.
+factory Item.applyPatchCall({String? id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchOperationParam operation, }) { return ItemApplyPatchCall(ApplyPatchToolCallItemParam(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation)); }
+
+/// Build the `apply_patch_call_output` variant.
+factory Item.applyPatchCallOutput({String? id, required String callId, required ApplyPatchCallOutputStatus status, String? output, }) { return ItemApplyPatchCallOutput(ApplyPatchToolCallOutputItemParam(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output)); }
+
+/// Build the `mcp_list_tools` variant.
+factory Item.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, String? error, }) { return ItemMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+
+/// Build the `mcp_approval_request` variant.
+factory Item.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ItemMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
+
+/// Build the `mcp_approval_response` variant.
+factory Item.mcpApprovalResponse({String? id, required String approvalRequestId, required bool approve, String? reason, }) { return ItemMcpApprovalResponse(McpApprovalResponse(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+
+/// Build the `mcp_call` variant.
+factory Item.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ItemMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
+
+/// Build the `custom_tool_call_output` variant.
+factory Item.customToolCallOutput({String? id, required String callId, required CustomToolCallOutputOutput output, }) { return ItemCustomToolCallOutput(CustomToolCallOutput(type: 'custom_tool_call_output', id: id, callId: callId, output: output)); }
+
+/// Build the `custom_tool_call` variant.
+factory Item.customToolCall({String? id, required String callId, String? namespace, required String name, required String input, }) { return ItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Item$Unknown; } 
+/// Shared by all variants of this union.
+String? get id;
  }
 @immutable final class ItemMessage extends Item {const ItemMessage(this.outputMessage);
 
@@ -52,6 +129,7 @@ final OutputMessage outputMessage;
     other is ItemMessage && outputMessage == other.outputMessage; } 
 @override int get hashCode { return outputMessage.hashCode; } 
 @override String toString() { return 'ItemMessage(outputMessage: $outputMessage)'; } 
+@override String? get id { return outputMessage.id; } 
  }
 @immutable final class ItemFileSearchCall extends Item {const ItemFileSearchCall(this.fileSearchToolCall);
 
@@ -65,6 +143,7 @@ final FileSearchToolCall fileSearchToolCall;
     other is ItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String? get id { return fileSearchToolCall.id; } 
  }
 @immutable final class ItemComputerCall extends Item {const ItemComputerCall(this.computerToolCall);
 
@@ -78,6 +157,7 @@ final ComputerToolCall computerToolCall;
     other is ItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ItemComputerCall(computerToolCall: $computerToolCall)'; } 
+@override String? get id { return computerToolCall.id; } 
  }
 @immutable final class ItemComputerCallOutput extends Item {const ItemComputerCallOutput(this.computerCallOutputItemParam);
 
@@ -91,6 +171,7 @@ final ComputerCallOutputItemParam computerCallOutputItemParam;
     other is ItemComputerCallOutput && computerCallOutputItemParam == other.computerCallOutputItemParam; } 
 @override int get hashCode { return computerCallOutputItemParam.hashCode; } 
 @override String toString() { return 'ItemComputerCallOutput(computerCallOutputItemParam: $computerCallOutputItemParam)'; } 
+@override String? get id { return computerCallOutputItemParam.id; } 
  }
 @immutable final class ItemWebSearchCall extends Item {const ItemWebSearchCall(this.webSearchToolCall);
 
@@ -104,6 +185,7 @@ final WebSearchToolCall webSearchToolCall;
     other is ItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String? get id { return webSearchToolCall.id; } 
  }
 @immutable final class ItemFunctionCall extends Item {const ItemFunctionCall(this.functionToolCall);
 
@@ -117,6 +199,7 @@ final FunctionToolCall functionToolCall;
     other is ItemFunctionCall && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ItemFunctionCall(functionToolCall: $functionToolCall)'; } 
+@override String? get id { return functionToolCall.id; } 
  }
 @immutable final class ItemFunctionCallOutput extends Item {const ItemFunctionCallOutput(this.functionCallOutputItemParam);
 
@@ -130,6 +213,7 @@ final FunctionCallOutputItemParam functionCallOutputItemParam;
     other is ItemFunctionCallOutput && functionCallOutputItemParam == other.functionCallOutputItemParam; } 
 @override int get hashCode { return functionCallOutputItemParam.hashCode; } 
 @override String toString() { return 'ItemFunctionCallOutput(functionCallOutputItemParam: $functionCallOutputItemParam)'; } 
+@override String? get id { return functionCallOutputItemParam.id; } 
  }
 @immutable final class ItemToolSearchCall extends Item {const ItemToolSearchCall(this.toolSearchCallItemParam);
 
@@ -143,6 +227,7 @@ final ToolSearchCallItemParam toolSearchCallItemParam;
     other is ItemToolSearchCall && toolSearchCallItemParam == other.toolSearchCallItemParam; } 
 @override int get hashCode { return toolSearchCallItemParam.hashCode; } 
 @override String toString() { return 'ItemToolSearchCall(toolSearchCallItemParam: $toolSearchCallItemParam)'; } 
+@override String? get id { return toolSearchCallItemParam.id; } 
  }
 @immutable final class ItemToolSearchOutput extends Item {const ItemToolSearchOutput(this.toolSearchOutputItemParam);
 
@@ -156,6 +241,7 @@ final ToolSearchOutputItemParam toolSearchOutputItemParam;
     other is ItemToolSearchOutput && toolSearchOutputItemParam == other.toolSearchOutputItemParam; } 
 @override int get hashCode { return toolSearchOutputItemParam.hashCode; } 
 @override String toString() { return 'ItemToolSearchOutput(toolSearchOutputItemParam: $toolSearchOutputItemParam)'; } 
+@override String? get id { return toolSearchOutputItemParam.id; } 
  }
 @immutable final class ItemReasoning extends Item {const ItemReasoning(this.reasoningItem);
 
@@ -169,6 +255,7 @@ final ReasoningItem reasoningItem;
     other is ItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ItemReasoning(reasoningItem: $reasoningItem)'; } 
+@override String? get id { return reasoningItem.id; } 
  }
 @immutable final class ItemCompaction extends Item {const ItemCompaction(this.compactionSummaryItemParam);
 
@@ -182,6 +269,7 @@ final CompactionSummaryItemParam compactionSummaryItemParam;
     other is ItemCompaction && compactionSummaryItemParam == other.compactionSummaryItemParam; } 
 @override int get hashCode { return compactionSummaryItemParam.hashCode; } 
 @override String toString() { return 'ItemCompaction(compactionSummaryItemParam: $compactionSummaryItemParam)'; } 
+@override String? get id { return compactionSummaryItemParam.id; } 
  }
 @immutable final class ItemImageGenerationCall extends Item {const ItemImageGenerationCall(this.imageGenToolCall);
 
@@ -195,6 +283,7 @@ final ImageGenToolCall imageGenToolCall;
     other is ItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String? get id { return imageGenToolCall.id; } 
  }
 @immutable final class ItemCodeInterpreterCall extends Item {const ItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -208,6 +297,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
     other is ItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String? get id { return codeInterpreterToolCall.id; } 
  }
 @immutable final class ItemLocalShellCall extends Item {const ItemLocalShellCall(this.localShellToolCall);
 
@@ -221,6 +311,7 @@ final LocalShellToolCall localShellToolCall;
     other is ItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
+@override String? get id { return localShellToolCall.id; } 
  }
 @immutable final class ItemLocalShellCallOutput extends Item {const ItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -234,6 +325,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
     other is ItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
+@override String? get id { return localShellToolCallOutput.id; } 
  }
 @immutable final class ItemShellCall extends Item {const ItemShellCall(this.functionShellCallItemParam);
 
@@ -247,6 +339,7 @@ final FunctionShellCallItemParam functionShellCallItemParam;
     other is ItemShellCall && functionShellCallItemParam == other.functionShellCallItemParam; } 
 @override int get hashCode { return functionShellCallItemParam.hashCode; } 
 @override String toString() { return 'ItemShellCall(functionShellCallItemParam: $functionShellCallItemParam)'; } 
+@override String? get id { return functionShellCallItemParam.id; } 
  }
 @immutable final class ItemShellCallOutput extends Item {const ItemShellCallOutput(this.functionShellCallOutputItemParam);
 
@@ -260,6 +353,7 @@ final FunctionShellCallOutputItemParam functionShellCallOutputItemParam;
     other is ItemShellCallOutput && functionShellCallOutputItemParam == other.functionShellCallOutputItemParam; } 
 @override int get hashCode { return functionShellCallOutputItemParam.hashCode; } 
 @override String toString() { return 'ItemShellCallOutput(functionShellCallOutputItemParam: $functionShellCallOutputItemParam)'; } 
+@override String? get id { return functionShellCallOutputItemParam.id; } 
  }
 @immutable final class ItemApplyPatchCall extends Item {const ItemApplyPatchCall(this.applyPatchToolCallItemParam);
 
@@ -273,6 +367,7 @@ final ApplyPatchToolCallItemParam applyPatchToolCallItemParam;
     other is ItemApplyPatchCall && applyPatchToolCallItemParam == other.applyPatchToolCallItemParam; } 
 @override int get hashCode { return applyPatchToolCallItemParam.hashCode; } 
 @override String toString() { return 'ItemApplyPatchCall(applyPatchToolCallItemParam: $applyPatchToolCallItemParam)'; } 
+@override String? get id { return applyPatchToolCallItemParam.id; } 
  }
 @immutable final class ItemApplyPatchCallOutput extends Item {const ItemApplyPatchCallOutput(this.applyPatchToolCallOutputItemParam);
 
@@ -286,6 +381,7 @@ final ApplyPatchToolCallOutputItemParam applyPatchToolCallOutputItemParam;
     other is ItemApplyPatchCallOutput && applyPatchToolCallOutputItemParam == other.applyPatchToolCallOutputItemParam; } 
 @override int get hashCode { return applyPatchToolCallOutputItemParam.hashCode; } 
 @override String toString() { return 'ItemApplyPatchCallOutput(applyPatchToolCallOutputItemParam: $applyPatchToolCallOutputItemParam)'; } 
+@override String? get id { return applyPatchToolCallOutputItemParam.id; } 
  }
 @immutable final class ItemMcpListTools extends Item {const ItemMcpListTools(this.mcpListTools);
 
@@ -299,6 +395,7 @@ final McpListTools mcpListTools;
     other is ItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ItemMcpListTools(mcpListTools: $mcpListTools)'; } 
+@override String? get id { return mcpListTools.id; } 
  }
 @immutable final class ItemMcpApprovalRequest extends Item {const ItemMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -312,6 +409,7 @@ final McpApprovalRequest mcpApprovalRequest;
     other is ItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
+@override String? get id { return mcpApprovalRequest.id; } 
  }
 @immutable final class ItemMcpApprovalResponse extends Item {const ItemMcpApprovalResponse(this.mcpApprovalResponse);
 
@@ -325,6 +423,7 @@ final McpApprovalResponse mcpApprovalResponse;
     other is ItemMcpApprovalResponse && mcpApprovalResponse == other.mcpApprovalResponse; } 
 @override int get hashCode { return mcpApprovalResponse.hashCode; } 
 @override String toString() { return 'ItemMcpApprovalResponse(mcpApprovalResponse: $mcpApprovalResponse)'; } 
+@override String? get id { return mcpApprovalResponse.id; } 
  }
 @immutable final class ItemMcpCall extends Item {const ItemMcpCall(this.mcpToolCall);
 
@@ -338,6 +437,7 @@ final McpToolCall mcpToolCall;
     other is ItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
+@override String? get id { return mcpToolCall.id; } 
  }
 @immutable final class ItemCustomToolCallOutput extends Item {const ItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -351,6 +451,7 @@ final CustomToolCallOutput customToolCallOutput;
     other is ItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemCustomToolCallOutput(customToolCallOutput: $customToolCallOutput)'; } 
+@override String? get id { return customToolCallOutput.id; } 
  }
 @immutable final class ItemCustomToolCall extends Item {const ItemCustomToolCall(this.customToolCall);
 
@@ -364,6 +465,7 @@ final CustomToolCall customToolCall;
     other is ItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ItemCustomToolCall(customToolCall: $customToolCall)'; } 
+@override String? get id { return customToolCall.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -377,4 +479,5 @@ final Map<String, dynamic> json;
     other is Item$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'Item.unknown($json)'; } 
+@override String? get id { return json['id'] as String?; } 
  }

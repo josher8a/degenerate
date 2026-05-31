@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_assistant_message.dart';import 'chat_completion_request_developer_message.dart';import 'chat_completion_request_function_message.dart';import 'chat_completion_request_system_message.dart';import 'chat_completion_request_tool_message.dart';import 'chat_completion_request_user_message.dart';sealed class ChatCompletionRequestMessage {const ChatCompletionRequestMessage();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_assistant_message.dart';import 'chat_completion_request_assistant_message_audio.dart';import 'chat_completion_request_assistant_message_content.dart';import 'chat_completion_request_assistant_message_function_call.dart';import 'chat_completion_request_developer_message.dart';import 'chat_completion_request_developer_message_content.dart';import 'chat_completion_request_function_message.dart';import 'chat_completion_request_system_message.dart';import 'chat_completion_request_system_message_content.dart';import 'chat_completion_request_tool_message.dart';import 'chat_completion_request_tool_message_content.dart';import 'chat_completion_request_user_message.dart';import 'chat_completion_request_user_message_content.dart';sealed class ChatCompletionRequestMessage {const ChatCompletionRequestMessage();
 
 /// Deserialize from JSON, dispatching on the `role` discriminator.
 factory ChatCompletionRequestMessage.fromJson(Map<String, dynamic> json) { return switch (json['role']) {
@@ -12,6 +12,24 @@ factory ChatCompletionRequestMessage.fromJson(Map<String, dynamic> json) { retur
   'function' => ChatCompletionRequestMessageFunction.fromJson(json),
   _ => ChatCompletionRequestMessage$Unknown(json),
 }; }
+
+/// Build the `developer` variant.
+factory ChatCompletionRequestMessage.developer({required ChatCompletionRequestDeveloperMessageContent content, String? name, }) { return ChatCompletionRequestMessageDeveloper(ChatCompletionRequestDeveloperMessage(role: 'developer', content: content, name: name)); }
+
+/// Build the `system` variant.
+factory ChatCompletionRequestMessage.system({required ChatCompletionRequestSystemMessageContent content, String? name, }) { return ChatCompletionRequestMessageSystem(ChatCompletionRequestSystemMessage(role: 'system', content: content, name: name)); }
+
+/// Build the `user` variant.
+factory ChatCompletionRequestMessage.user({required ChatCompletionRequestUserMessageContent content, String? name, }) { return ChatCompletionRequestMessageUser(ChatCompletionRequestUserMessage(role: 'user', content: content, name: name)); }
+
+/// Build the `assistant` variant.
+factory ChatCompletionRequestMessage.assistant({ChatCompletionRequestAssistantMessageContent? content, String? refusal, String? name, ChatCompletionRequestAssistantMessageAudio? audio, List<ChatCompletionMessageToolCalls2>? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? functionCall, }) { return ChatCompletionRequestMessageAssistant(ChatCompletionRequestAssistantMessage(role: 'assistant', content: content, refusal: refusal, name: name, audio: audio, toolCalls: toolCalls, functionCall: functionCall)); }
+
+/// Build the `tool` variant.
+factory ChatCompletionRequestMessage.tool({required ChatCompletionRequestToolMessageContent content, required String toolCallId, }) { return ChatCompletionRequestMessageTool(ChatCompletionRequestToolMessage(role: 'tool', content: content, toolCallId: toolCallId)); }
+
+/// Build the `function` variant.
+factory ChatCompletionRequestMessage.function({required String? content, required String name, }) { return ChatCompletionRequestMessageFunction(ChatCompletionRequestFunctionMessage(role: 'function', content: content, name: name)); }
 
 /// The discriminator value identifying this variant.
 String get role;
