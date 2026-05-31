@@ -124,7 +124,11 @@ class IrMapper {
   /// For refs that point to non-emittable types (lists, maps, primitives),
   /// the actual resolved type is returned instead of [IrTypeRef] so that
   /// downstream emitters don't reference a type name that has no class.
-  IrType lowerInlineSchema(Map<String, dynamic> schema, {String? nameHint}) {
+  IrType lowerInlineSchema(
+    Map<String, dynamic> schema, {
+    String? nameHint,
+    String? discriminatorProperty,
+  }) {
     // Check if the schema will produce a named type (needs a unique name).
     final needsName = _looksLikeObject(schema) || _looksLikeNamedType(schema);
     // Prefer: explicit nameHint > schema title > 'InlineObject' fallback.
@@ -135,7 +139,12 @@ class IrMapper {
     // use the correct final name from the start.
     final effectiveName = needsName ? _uniqueTypeName(hint) : nameHint;
 
-    final result = _lowerSchemaImpl(effectiveName, schema, isInline: true);
+    final result = _lowerSchemaImpl(
+      effectiveName,
+      schema,
+      isInline: true,
+      discriminatorProperty: discriminatorProperty,
+    );
     var resolved = _resolver.resolveRef(result);
     // Recursively resolve type refs within nested types (e.g. list items, map
     // values).
@@ -353,21 +362,12 @@ class IrMapper {
       return _lowerDiscriminatedUnion(name, flattened);
     }
 
-    // anyOf with discriminator → IrDiscriminatedUnion, but only when every
-    // variant is a `$ref` to a named schema. Inline-object variants would
-    // produce poorly-named wrapper types (e.g. FooVariant1/2), so those fall
-    // through to the untagged-union handling below and stay as OneOfN.
+    // anyOf with discriminator → IrDiscriminatedUnion, same as oneOf. Inline
+    // object variants are named from their discriminator value (see
+    // _lowerDiscriminatedUnion), so they no longer fall back to FooVariant1/2.
     if (flattened.containsKey('anyOf') &&
         flattened.containsKey('discriminator')) {
-      final variants = flattened['anyOf'] as List;
-      final allRefs =
-          variants.isNotEmpty &&
-          variants.every(
-            (v) => v is Map<String, dynamic> && v.containsKey(r'$ref'),
-          );
-      if (allRefs) {
-        return _lowerDiscriminatedUnion(name, flattened);
-      }
+      return _lowerDiscriminatedUnion(name, flattened);
     }
 
     // oneOf without discriminator → IrUntaggedUnion.
@@ -807,8 +807,16 @@ class IrMapper {
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
           final hint =
-              (variant['title'] as String?) ?? '${unionName}Variant${i + 1}';
-          final lowered = lowerInlineSchema(variant, nameHint: hint);
+              (variant['title'] as String?) ??
+              _singleEnumHint(unionName, variant) ??
+              '${unionName}Variant${i + 1}';
+          final lowered = lowerInlineSchema(
+            variant,
+            nameHint: hint,
+            // Emit the discriminator field as a plain String, matching the
+            // sealed base's `String get <disc>` and ref-variant payloads.
+            discriminatorProperty: propertyName,
+          );
           // Derive the mapping key from the discriminator enum value if
           // available, otherwise use the type name.
           final props = variant['properties'] as Map<String, dynamic>?;
