@@ -10,6 +10,9 @@ factory CustomToolParamFormat.fromJson(Map<String, dynamic> json) { return switc
   _ => CustomToolParamFormat$Unknown(json),
 }; }
 
+/// Build the `grammar` variant.
+factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(type: 'grammar', syntax: syntax, definition: definition)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

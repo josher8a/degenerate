@@ -28,6 +28,66 @@ factory ResourceTaggingDeleteTagsRequestAccountLevel.fromJson(Map<String, dynami
   _ => ResourceTaggingDeleteTagsRequestAccountLevel$Unknown(json),
 }; }
 
+/// Build the `access_application` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'access_application', resourceId: resourceId)); }
+
+/// Build the `access_group` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'access_group', resourceId: resourceId)); }
+
+/// Build the `account` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'account', resourceId: resourceId)); }
+
+/// Build the `ai_gateway` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'ai_gateway', resourceId: resourceId)); }
+
+/// Build the `alerting_policy` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'alerting_policy', resourceId: resourceId)); }
+
+/// Build the `alerting_webhook` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'alerting_webhook', resourceId: resourceId)); }
+
+/// Build the `cloudflared_tunnel` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'cloudflared_tunnel', resourceId: resourceId)); }
+
+/// Build the `d1_database` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'd1_database', resourceId: resourceId)); }
+
+/// Build the `durable_object_namespace` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'durable_object_namespace', resourceId: resourceId)); }
+
+/// Build the `gateway_list` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'gateway_list', resourceId: resourceId)); }
+
+/// Build the `gateway_rule` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'gateway_rule', resourceId: resourceId)); }
+
+/// Build the `image` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'image', resourceId: resourceId)); }
+
+/// Build the `kv_namespace` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'kv_namespace', resourceId: resourceId)); }
+
+/// Build the `queue` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'queue', resourceId: resourceId)); }
+
+/// Build the `r2_bucket` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'r2_bucket', resourceId: resourceId)); }
+
+/// Build the `resource_share` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'resource_share', resourceId: resourceId)); }
+
+/// Build the `stream_live_input` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'stream_live_input', resourceId: resourceId)); }
+
+/// Build the `stream_video` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'stream_video', resourceId: resourceId)); }
+
+/// Build the `worker` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'worker', resourceId: resourceId)); }
+
+/// Build the `worker_version` variant.
+factory ResourceTaggingDeleteTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'worker_version', resourceId: resourceId)); }
+
 /// The discriminator value identifying this variant.
 String get resourceType;
 Map<String, dynamic> toJson();

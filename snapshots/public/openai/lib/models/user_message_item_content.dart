@@ -10,6 +10,12 @@ factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return swit
   _ => UserMessageItemContent$Unknown(json),
 }; }
 
+/// Build the `input_text` variant.
+factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: 'input_text', text: text)); }
+
+/// Build the `quoted_text` variant.
+factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: 'quoted_text', text: text)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

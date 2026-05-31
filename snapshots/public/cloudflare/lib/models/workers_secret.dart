@@ -10,6 +10,12 @@ factory WorkersSecret.fromJson(Map<String, dynamic> json) { return switch (json[
   _ => WorkersSecret$Unknown(json),
 }; }
 
+/// Build the `secret_key` variant.
+factory WorkersSecret.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, String? keyBase64, Map<String,dynamic>? keyJwk, required WorkersBindingName name, required List<WorkersBindingKindSecretKeyUsages> usages, }) { return WorkersSecretSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
+
+/// Build the `secret_text` variant.
+factory WorkersSecret.secretText({required WorkersBindingName name, required String text, }) { return WorkersSecretSecretText(WorkersBindingKindSecretText(type: 'secret_text', name: name, text: text)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

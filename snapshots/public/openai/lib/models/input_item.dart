@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_message.dart';import 'item.dart';import 'item_reference_param.dart';sealed class InputItem {const InputItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_message.dart';import 'easy_input_message_content.dart';import 'item.dart';import 'item_reference_param.dart';import 'message_phase.dart';sealed class InputItem {const InputItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -9,6 +9,12 @@ factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['typ
   'ItemReferenceParam' => InputItemItemReferenceParam.fromJson(json),
   _ => InputItem$Unknown(json),
 }; }
+
+/// Build the `message` variant.
+factory InputItem.message({required EasyInputMessageRole role, required EasyInputMessageContent content, MessagePhase? phase, }) { return InputItemMessage(EasyInputMessage(type: 'message', role: role, content: content, phase: phase)); }
+
+/// Build the `ItemReferenceParam` variant.
+factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: 'ItemReferenceParam', id: id)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_param.dart';import 'skill_reference_param.dart';sealed class ContainerAutoParamSkills {const ContainerAutoParamSkills();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_param.dart';import 'inline_skill_source_param.dart';import 'skill_reference_param.dart';sealed class ContainerAutoParamSkills {const ContainerAutoParamSkills();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ContainerAutoParamSkills.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory ContainerAutoParamSkills.fromJson(Map<String, dynamic> json) { return sw
   'inline' => ContainerAutoParamSkillsInline.fromJson(json),
   _ => ContainerAutoParamSkills$Unknown(json),
 }; }
+
+/// Build the `skill_reference` variant.
+factory ContainerAutoParamSkills.skillReference({required String skillId, String? version, }) { return ContainerAutoParamSkillsSkillReference(SkillReferenceParam(type: 'skill_reference', skillId: skillId, version: version)); }
+
+/// Build the `inline` variant.
+factory ContainerAutoParamSkills.inline({required String name, required String description, required InlineSkillSourceParam source, }) { return ContainerAutoParamSkillsInline(InlineSkillParam(type: 'inline', name: name, description: description, source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

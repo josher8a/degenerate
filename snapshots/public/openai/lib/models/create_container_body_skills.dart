@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_param.dart';import 'skill_reference_param.dart';sealed class CreateContainerBodySkills {const CreateContainerBodySkills();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_param.dart';import 'inline_skill_source_param.dart';import 'skill_reference_param.dart';sealed class CreateContainerBodySkills {const CreateContainerBodySkills();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateContainerBodySkills.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory CreateContainerBodySkills.fromJson(Map<String, dynamic> json) { return s
   'inline' => CreateContainerBodySkillsInline.fromJson(json),
   _ => CreateContainerBodySkills$Unknown(json),
 }; }
+
+/// Build the `skill_reference` variant.
+factory CreateContainerBodySkills.skillReference({required String skillId, String? version, }) { return CreateContainerBodySkillsSkillReference(SkillReferenceParam(type: 'skill_reference', skillId: skillId, version: version)); }
+
+/// Build the `inline` variant.
+factory CreateContainerBodySkills.inline({required String name, required String description, required InlineSkillSourceParam source, }) { return CreateContainerBodySkillsInline(InlineSkillParam(type: 'inline', name: name, description: description, source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

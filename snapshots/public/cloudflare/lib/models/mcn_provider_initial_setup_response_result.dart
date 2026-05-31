@@ -10,6 +10,15 @@ factory McnProviderInitialSetupResponseResult.fromJson(Map<String, dynamic> json
   _ => McnProviderInitialSetupResponseResult$Unknown(json),
 }; }
 
+/// Build the `mcn_aws_trust_policy` variant.
+factory McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy({required String awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(McnAwsTrustPolicy(itemType: 'mcn_aws_trust_policy', awsTrustPolicy: awsTrustPolicy)); }
+
+/// Build the `mcn_azure_setup` variant.
+factory McnProviderInitialSetupResponseResult.mcnAzureSetup({required String azureConsentUrl, required String integrationIdentityTag, required String tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(McnAzureSetup(itemType: 'mcn_azure_setup', azureConsentUrl: azureConsentUrl, integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand)); }
+
+/// Build the `mcn_gcp_setup` variant.
+factory McnProviderInitialSetupResponseResult.mcnGcpSetup({required String integrationIdentityTag, required String tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(McnGcpSetup(itemType: 'mcn_gcp_setup', integrationIdentityTag: integrationIdentityTag, tagCliCommand: tagCliCommand)); }
+
 /// The discriminator value identifying this variant.
 String get itemType;
 Map<String, dynamic> toJson();

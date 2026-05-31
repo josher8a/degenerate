@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_base_report_fields.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_base_report_fields.dart';import 'abuse_reports_submission_report_type.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
 
 /// Deserialize from JSON, dispatching on the `act` discriminator.
 factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { return switch (json['act']) {
@@ -14,6 +14,30 @@ factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { re
   'abuse_trademark' => AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(json),
   _ => AbuseReportsSubmitReportRequest$Unknown(json),
 }; }
+
+/// Build the `abuse_children` variant.
+factory AbuseReportsSubmitReportRequest.abuseChildren({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(AbuseReportsBaseReportFields(act: 'abuse_children', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_dmca` variant.
+factory AbuseReportsSubmitReportRequest.abuseDmca({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(AbuseReportsBaseReportFields(act: 'abuse_dmca', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_general` variant.
+factory AbuseReportsSubmitReportRequest.abuseGeneral({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(AbuseReportsBaseReportFields(act: 'abuse_general', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_ncsei` variant.
+factory AbuseReportsSubmitReportRequest.abuseNcsei({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(AbuseReportsBaseReportFields(act: 'abuse_ncsei', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_phishing` variant.
+factory AbuseReportsSubmitReportRequest.abusePhishing({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(AbuseReportsBaseReportFields(act: 'abuse_phishing', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_registrar_whois` variant.
+factory AbuseReportsSubmitReportRequest.abuseRegistrarWhois({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(AbuseReportsBaseReportFields(act: 'abuse_registrar_whois', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_threat` variant.
+factory AbuseReportsSubmitReportRequest.abuseThreat({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(AbuseReportsBaseReportFields(act: 'abuse_threat', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
+
+/// Build the `abuse_trademark` variant.
+factory AbuseReportsSubmitReportRequest.abuseTrademark({String? comments, String? company, required String email, required String email2, required String name, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, required String urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsBaseReportFields(act: 'abuse_trademark', comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// The discriminator value identifying this variant.
 String get act;

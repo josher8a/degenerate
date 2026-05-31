@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switc
   'gcp_partner' => NscInterconnectCreateGcpPartner.fromJson(json),
   _ => NscInterconnectCreate$Unknown(json),
 }; }
+
+/// Build the `direct` variant.
+factory NscInterconnectCreate.direct({required String account, required String slotId, String? speed, }) { return NscInterconnectCreateDirect(NscInterconnectCreatePhysicalBody(type: 'direct', account: account, slotId: slotId, speed: speed)); }
+
+/// Build the `gcp_partner` variant.
+factory NscInterconnectCreate.gcpPartner({required String account, required Bandwidth bandwidth, required String pairingKey, }) { return NscInterconnectCreateGcpPartner(NscInterconnectCreateGcpPartnerBody(type: 'gcp_partner', account: account, bandwidth: bandwidth, pairingKey: pairingKey)); }
 
 /// The discriminator value identifying this variant.
 String get type;

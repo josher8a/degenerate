@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source_cors.dart';sealed class CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesWorkersPipelinesPipelineSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory CloudflarePipelinesWorkersPipelinesPipelineSource.fromJson(Map<String, d
   'http' => CloudflarePipelinesWorkersPipelinesPipelineSourceHttp.fromJson(json),
   _ => CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown(json),
 }; }
+
+/// Build the `binding` variant.
+factory CloudflarePipelinesWorkersPipelinesPipelineSource.binding({required CloudflarePipelinesWorkersPipelinesBindingSourceFormat format}) { return CloudflarePipelinesWorkersPipelinesPipelineSourceBinding(CloudflarePipelinesWorkersPipelinesBindingSource(type: 'binding', format: format)); }
+
+/// Build the `http` variant.
+factory CloudflarePipelinesWorkersPipelinesPipelineSource.http({bool? authentication, CloudflarePipelinesWorkersPipelinesHttpSourceCors? cors, required CloudflarePipelinesWorkersPipelinesHttpSourceFormat format, }) { return CloudflarePipelinesWorkersPipelinesPipelineSourceHttp(CloudflarePipelinesWorkersPipelinesHttpSource(type: 'http', authentication: authentication, cors: cors, format: format)); }
 
 /// The discriminator value identifying this variant.
 String get type;

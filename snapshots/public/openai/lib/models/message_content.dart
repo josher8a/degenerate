@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_screenshot_content.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';import 'summary_text_content.dart';import 'text_content.dart';/// A content part that makes up an input or output item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'annotation.dart';import 'computer_screenshot_content.dart';import 'image_detail.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';import 'log_prob.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';import 'summary_text_content.dart';import 'text_content.dart';/// A content part that makes up an input or output item.
 sealed class MessageContent {const MessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,6 +16,33 @@ factory MessageContent.fromJson(Map<String, dynamic> json) { return switch (json
   'input_file' => MessageContentInputFile.fromJson(json),
   _ => MessageContent$Unknown(json),
 }; }
+
+/// Build the `input_text` variant.
+factory MessageContent.inputText({required String text}) { return MessageContentInputText(InputTextContent(type: 'input_text', text: text)); }
+
+/// Build the `output_text` variant.
+factory MessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return MessageContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
+
+/// Build the `text` variant.
+factory MessageContent.text({required String text}) { return MessageContentText(TextContent(type: 'text', text: text)); }
+
+/// Build the `summary_text` variant.
+factory MessageContent.summaryText({required String text}) { return MessageContentSummaryText(SummaryTextContent(type: 'summary_text', text: text)); }
+
+/// Build the `reasoning_text` variant.
+factory MessageContent.reasoningText({required String text}) { return MessageContentReasoningText(ReasoningTextContent(type: 'reasoning_text', text: text)); }
+
+/// Build the `refusal` variant.
+factory MessageContent.refusal({required String refusal}) { return MessageContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
+
+/// Build the `input_image` variant.
+factory MessageContent.inputImage({String? imageUrl, String? fileId, required ImageDetail detail, }) { return MessageContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+
+/// Build the `computer_screenshot` variant.
+factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(type: 'computer_screenshot', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+
+/// Build the `input_file` variant.
+factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

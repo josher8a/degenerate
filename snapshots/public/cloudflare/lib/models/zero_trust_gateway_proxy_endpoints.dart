@@ -9,6 +9,12 @@ factory ZeroTrustGatewayProxyEndpoints.fromJson(Map<String, dynamic> json) { ret
   _ => ZeroTrustGatewayProxyEndpoints$Unknown(json),
 }; }
 
+/// Build the `identity` variant.
+factory ZeroTrustGatewayProxyEndpoints.identity({ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(ZeroTrustGatewayProxyEndpointIdentity(kind: 'identity', createdAt: createdAt, id: id, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
+
+/// Build the `ip` variant.
+factory ZeroTrustGatewayProxyEndpoints.ip({ZeroTrustGatewayReadOnlyTimestamp? createdAt, ZeroTrustGatewayComponentsSchemasUuid? id, required List<String> ips, required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name, ZeroTrustGatewaySchemasSubdomain? subdomain, ZeroTrustGatewayReadOnlyTimestamp? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(ZeroTrustGatewayProxyEndpointIp(kind: 'ip', createdAt: createdAt, id: id, ips: ips, name: name, subdomain: subdomain, updatedAt: updatedAt)); }
+
 /// The discriminator value identifying this variant.
 String get kind;
 Map<String, dynamic> toJson();

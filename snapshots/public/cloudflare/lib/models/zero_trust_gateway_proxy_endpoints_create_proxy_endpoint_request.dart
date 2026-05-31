@@ -9,6 +9,12 @@ factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.fromJson(Map<St
   _ => ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown(json),
 }; }
 
+/// Build the `identity` variant.
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(ZeroTrustGatewayProxyEndpointIdentityCreate(kind: 'identity', name: name)); }
+
+/// Build the `ip` variant.
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(ZeroTrustGatewayProxyEndpointIpCreate(kind: 'ip', name: name)); }
+
 /// The discriminator value identifying this variant.
 String get kind;
 Map<String, dynamic> toJson();

@@ -9,6 +9,12 @@ factory CodeInterpreterToolCallOutputs2.fromJson(Map<String, dynamic> json) { re
   _ => CodeInterpreterToolCallOutputs2$Unknown(json),
 }; }
 
+/// Build the `logs` variant.
+factory CodeInterpreterToolCallOutputs2.logs({required String logs}) { return CodeInterpreterToolCallOutputs2Logs(CodeInterpreterOutputLogs(type: 'logs', logs: logs)); }
+
+/// Build the `image` variant.
+factory CodeInterpreterToolCallOutputs2.image({required String url}) { return CodeInterpreterToolCallOutputs2Image(CodeInterpreterOutputImage(type: 'image', url: url)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

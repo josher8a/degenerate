@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';/// An object specifying the format that the model must output.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_json_schema_json_schema.dart';import 'response_format_text.dart';/// An object specifying the format that the model must output.
 /// 
 /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables
 /// Structured Outputs which ensures the model will match your supplied JSON
@@ -20,6 +20,9 @@ factory CreateChatCompletionRequestResponseFormat.fromJson(Map<String, dynamic> 
   'json_object' => CreateChatCompletionRequestResponseFormatJsonObject.fromJson(json),
   _ => CreateChatCompletionRequestResponseFormat$Unknown(json),
 }; }
+
+/// Build the `json_schema` variant.
+factory CreateChatCompletionRequestResponseFormat.jsonSchema({required ResponseFormatJsonSchemaJsonSchema jsonSchema}) { return CreateChatCompletionRequestResponseFormatJsonSchema(ResponseFormatJsonSchema(type: 'json_schema', jsonSchema: jsonSchema)); }
 
 /// The discriminator value identifying this variant.
 String get type;

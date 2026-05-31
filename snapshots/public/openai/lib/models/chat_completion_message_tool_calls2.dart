@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_custom_tool_call.dart';import 'chat_completion_message_tool_call.dart';sealed class ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_custom_tool_call.dart';import 'chat_completion_message_custom_tool_call_custom.dart';import 'chat_completion_message_tool_call.dart';import 'chat_completion_message_tool_call_function.dart';sealed class ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ChatCompletionMessageToolCalls2.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory ChatCompletionMessageToolCalls2.fromJson(Map<String, dynamic> json) { re
   'custom' => ChatCompletionMessageToolCalls2Custom.fromJson(json),
   _ => ChatCompletionMessageToolCalls2$Unknown(json),
 }; }
+
+/// Build the `function` variant.
+factory ChatCompletionMessageToolCalls2.function({required String id, required ChatCompletionMessageToolCallFunction function, }) { return ChatCompletionMessageToolCalls2Function(ChatCompletionMessageToolCall(type: 'function', id: id, function: function)); }
+
+/// Build the `custom` variant.
+factory ChatCompletionMessageToolCalls2.custom({required String id, required ChatCompletionMessageCustomToolCallCustom custom, }) { return ChatCompletionMessageToolCalls2Custom(ChatCompletionMessageCustomToolCall(type: 'custom', id: id, custom: custom)); }
 
 /// The discriminator value identifying this variant.
 String get type;

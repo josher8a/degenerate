@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'file_search_tool_call.dart';import 'function_shell_call.dart';import 'function_shell_call_output.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'image_gen_tool_call.dart';import 'input_message.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_tool_call.dart';import 'output_message.dart';import 'tool_search_call.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';/// Content item used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';import 'apply_patch_call_status.dart';import 'apply_patch_tool_call.dart';import 'apply_patch_tool_call_operation.dart';import 'apply_patch_tool_call_output.dart';import 'code_interpreter_tool_call.dart';import 'code_interpreter_tool_call_outputs2.dart';import 'computer_action.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';import 'computer_tool_call.dart';import 'computer_tool_call_output.dart';import 'file_search_tool_call.dart';import 'file_search_tool_call_results2.dart';import 'function_shell_action.dart';import 'function_shell_call.dart';import 'function_shell_call_environment.dart';import 'function_shell_call_output.dart';import 'function_shell_call_output_content.dart';import 'function_tool_call.dart';import 'function_tool_call_output.dart';import 'function_tool_call_output_output.dart';import 'image_gen_tool_call.dart';import 'input_content.dart';import 'input_message.dart';import 'local_shell_exec_action.dart';import 'local_shell_tool_call.dart';import 'local_shell_tool_call_output.dart';import 'mcp_approval_request.dart';import 'mcp_approval_response_resource.dart';import 'mcp_list_tools.dart';import 'mcp_list_tools_tool.dart';import 'mcp_tool_call.dart';import 'message_phase.dart';import 'output_message.dart';import 'output_message_content.dart';import 'tool.dart';import 'tool_search_call.dart';import 'tool_search_execution_type.dart';import 'tool_search_output.dart';import 'web_search_tool_call.dart';import 'web_search_tool_call_action.dart';/// Content item used to generate a response.
 /// 
 sealed class ItemResource {const ItemResource();
 
@@ -30,6 +30,72 @@ factory ItemResource.fromJson(Map<String, dynamic> json) { return switch (json['
   'mcp_call' => ItemResourceMcpCall.fromJson(json),
   _ => ItemResource$Unknown(json),
 }; }
+
+/// Build the `InputMessageResource` variant.
+factory ItemResource.inputMessageResource({required InputMessageRole role, InputMessageStatus? status, required List<InputContent> content, }) { return ItemResourceInputMessageResource(InputMessage(type: 'InputMessageResource', role: role, status: status, content: content)); }
+
+/// Build the `message` variant.
+factory ItemResource.message({required String id, required OutputMessageRole role, required List<OutputMessageContent> content, MessagePhase? phase, required OutputMessageStatus status, }) { return ItemResourceMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+
+/// Build the `file_search_call` variant.
+factory ItemResource.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults2>? results, }) { return ItemResourceFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
+
+/// Build the `computer_call` variant.
+factory ItemResource.computerCall({required String id, required String callId, ComputerAction? action, List<ComputerAction>? actions, required List<ComputerCallSafetyCheckParam> pendingSafetyChecks, required ComputerToolCallStatus status, }) { return ItemResourceComputerCall(ComputerToolCall(type: 'computer_call', id: id, callId: callId, action: action, actions: actions, pendingSafetyChecks: pendingSafetyChecks, status: status)); }
+
+/// Build the `ComputerToolCallOutputResource` variant.
+factory ItemResource.computerToolCallOutputResource({String? id, required String callId, List<ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks, required ComputerScreenshotImage output, ComputerToolCallOutputStatus? status, }) { return ItemResourceComputerToolCallOutputResource(ComputerToolCallOutput(type: 'ComputerToolCallOutputResource', id: id, callId: callId, acknowledgedSafetyChecks: acknowledgedSafetyChecks, output: output, status: status)); }
+
+/// Build the `web_search_call` variant.
+factory ItemResource.webSearchCall({required String id, required WebSearchToolCallStatus status, required WebSearchToolCallAction action, }) { return ItemResourceWebSearchCall(WebSearchToolCall(type: 'web_search_call', id: id, status: status, action: action)); }
+
+/// Build the `FunctionToolCallResource` variant.
+factory ItemResource.functionToolCallResource({String? id, required String callId, String? namespace, required String name, required String arguments, FunctionToolCallStatus? status, }) { return ItemResourceFunctionToolCallResource(FunctionToolCall(type: 'FunctionToolCallResource', id: id, callId: callId, namespace: namespace, name: name, arguments: arguments, status: status)); }
+
+/// Build the `FunctionToolCallOutputResource` variant.
+factory ItemResource.functionToolCallOutputResource({String? id, required String callId, required FunctionToolCallOutputOutput output, FunctionToolCallOutputStatus? status, }) { return ItemResourceFunctionToolCallOutputResource(FunctionToolCallOutput(type: 'FunctionToolCallOutputResource', id: id, callId: callId, output: output, status: status)); }
+
+/// Build the `tool_search_call` variant.
+factory ItemResource.toolSearchCall({required String id, required String? callId, required ToolSearchExecutionType execution, required dynamic arguments, required FunctionCallStatus status, String? createdBy, }) { return ItemResourceToolSearchCall(ToolSearchCall(type: 'tool_search_call', id: id, callId: callId, execution: execution, arguments: arguments, status: status, createdBy: createdBy)); }
+
+/// Build the `tool_search_output` variant.
+factory ItemResource.toolSearchOutput({required String id, required String? callId, required ToolSearchExecutionType execution, required List<Tool> tools, required FunctionCallOutputStatusEnum status, String? createdBy, }) { return ItemResourceToolSearchOutput(ToolSearchOutput(type: 'tool_search_output', id: id, callId: callId, execution: execution, tools: tools, status: status, createdBy: createdBy)); }
+
+/// Build the `image_generation_call` variant.
+factory ItemResource.imageGenerationCall({required String id, required ImageGenToolCallStatus status, required String? result, }) { return ItemResourceImageGenerationCall(ImageGenToolCall(type: 'image_generation_call', id: id, status: status, result: result)); }
+
+/// Build the `code_interpreter_call` variant.
+factory ItemResource.codeInterpreterCall({required String id, required CodeInterpreterToolCallStatus status, required String containerId, required String? code, required List<CodeInterpreterToolCallOutputs2>? outputs, }) { return ItemResourceCodeInterpreterCall(CodeInterpreterToolCall(type: 'code_interpreter_call', id: id, status: status, containerId: containerId, code: code, outputs: outputs)); }
+
+/// Build the `local_shell_call` variant.
+factory ItemResource.localShellCall({required String id, required String callId, required LocalShellExecAction action, required LocalShellToolCallStatus status, }) { return ItemResourceLocalShellCall(LocalShellToolCall(type: 'local_shell_call', id: id, callId: callId, action: action, status: status)); }
+
+/// Build the `local_shell_call_output` variant.
+factory ItemResource.localShellCallOutput({required String id, required String output, LocalShellToolCallOutputStatus? status, }) { return ItemResourceLocalShellCallOutput(LocalShellToolCallOutput(type: 'local_shell_call_output', id: id, output: output, status: status)); }
+
+/// Build the `shell_call` variant.
+factory ItemResource.shellCall({required String id, required String callId, required FunctionShellAction action, required LocalShellCallStatus status, required FunctionShellCallEnvironment? environment, String? createdBy, }) { return ItemResourceShellCall(FunctionShellCall(type: 'shell_call', id: id, callId: callId, action: action, status: status, environment: environment, createdBy: createdBy)); }
+
+/// Build the `shell_call_output` variant.
+factory ItemResource.shellCallOutput({required String id, required String callId, required LocalShellCallOutputStatusEnum status, required List<FunctionShellCallOutputContent> output, required int? maxOutputLength, String? createdBy, }) { return ItemResourceShellCallOutput(FunctionShellCallOutput(type: 'shell_call_output', id: id, callId: callId, status: status, output: output, maxOutputLength: maxOutputLength, createdBy: createdBy)); }
+
+/// Build the `apply_patch_call` variant.
+factory ItemResource.applyPatchCall({required String id, required String callId, required ApplyPatchCallStatus status, required ApplyPatchToolCallOperation operation, String? createdBy, }) { return ItemResourceApplyPatchCall(ApplyPatchToolCall(type: 'apply_patch_call', id: id, callId: callId, status: status, operation: operation, createdBy: createdBy)); }
+
+/// Build the `apply_patch_call_output` variant.
+factory ItemResource.applyPatchCallOutput({required String id, required String callId, required ApplyPatchCallOutputStatus status, String? output, String? createdBy, }) { return ItemResourceApplyPatchCallOutput(ApplyPatchToolCallOutput(type: 'apply_patch_call_output', id: id, callId: callId, status: status, output: output, createdBy: createdBy)); }
+
+/// Build the `mcp_list_tools` variant.
+factory ItemResource.mcpListTools({required String id, required String serverLabel, required List<McpListToolsTool> tools, String? error, }) { return ItemResourceMcpListTools(McpListTools(type: 'mcp_list_tools', id: id, serverLabel: serverLabel, tools: tools, error: error)); }
+
+/// Build the `mcp_approval_request` variant.
+factory ItemResource.mcpApprovalRequest({required String id, required String serverLabel, required String name, required String arguments, }) { return ItemResourceMcpApprovalRequest(McpApprovalRequest(type: 'mcp_approval_request', id: id, serverLabel: serverLabel, name: name, arguments: arguments)); }
+
+/// Build the `mcp_approval_response` variant.
+factory ItemResource.mcpApprovalResponse({required String id, required String approvalRequestId, required bool approve, String? reason, }) { return ItemResourceMcpApprovalResponse(McpApprovalResponseResource(type: 'mcp_approval_response', id: id, approvalRequestId: approvalRequestId, approve: approve, reason: reason)); }
+
+/// Build the `mcp_call` variant.
+factory ItemResource.mcpCall({required String id, required String serverLabel, required String name, required String arguments, String? output, String? error, McpToolCallStatus? status, String? approvalRequestId, }) { return ItemResourceMcpCall(McpToolCall(type: 'mcp_call', id: id, serverLabel: serverLabel, name: name, arguments: arguments, output: output, error: error, status: status, approvalRequestId: approvalRequestId)); }
 
 /// The discriminator value identifying this variant.
 String get type;

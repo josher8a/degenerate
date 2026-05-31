@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// Token or duration usage statistics for the request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';import 'transcript_text_usage_tokens_input_token_details.dart';/// Token or duration usage statistics for the request.
 sealed class CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,12 @@ factory CreateTranscriptionResponseDiarizedJsonUsage.fromJson(Map<String, dynami
   'duration' => CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(json),
   _ => CreateTranscriptionResponseDiarizedJsonUsage$Unknown(json),
 }; }
+
+/// Build the `tokens` variant.
+factory CreateTranscriptionResponseDiarizedJsonUsage.tokens({required int inputTokens, TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails, required int outputTokens, required int totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens(type: 'tokens', inputTokens: inputTokens, inputTokenDetails: inputTokenDetails, outputTokens: outputTokens, totalTokens: totalTokens)); }
+
+/// Build the `duration` variant.
+factory CreateTranscriptionResponseDiarizedJsonUsage.duration({required double seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration(type: 'duration', seconds: seconds)); }
 
 /// The discriminator value identifying this variant.
 String get type;

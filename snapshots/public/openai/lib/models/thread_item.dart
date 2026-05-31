@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_message_item.dart';import 'client_tool_call_item.dart';import 'task_group_item.dart';import 'task_item.dart';import 'user_message_item.dart';import 'widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_message_item.dart';import 'attachment.dart';import 'client_tool_call_item.dart';import 'inference_options.dart';import 'response_output_text.dart';import 'task_group_item.dart';import 'task_group_task.dart';import 'task_item.dart';import 'task_type.dart';import 'user_message_item.dart';import 'user_message_item_content.dart';import 'widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ThreadItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -12,6 +12,24 @@ factory ThreadItem.fromJson(Map<String, dynamic> json) { return switch (json['ty
   'chatkit.task_group' => ThreadItemChatkitTaskGroup.fromJson(json),
   _ => ThreadItem$Unknown(json),
 }; }
+
+/// Build the `chatkit.user_message` variant.
+factory ThreadItem.chatkitUserMessage({required String id, required UserMessageItemObject object, required int createdAt, required String threadId, required List<UserMessageItemContent> content, required List<Attachment> attachments, required InferenceOptions? inferenceOptions, }) { return ThreadItemChatkitUserMessage(UserMessageItem(type: 'chatkit.user_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content, attachments: attachments, inferenceOptions: inferenceOptions)); }
+
+/// Build the `chatkit.assistant_message` variant.
+factory ThreadItem.chatkitAssistantMessage({required String id, required AssistantMessageItemObject object, required int createdAt, required String threadId, required List<ResponseOutputText> content, }) { return ThreadItemChatkitAssistantMessage(AssistantMessageItem(type: 'chatkit.assistant_message', id: id, object: object, createdAt: createdAt, threadId: threadId, content: content)); }
+
+/// Build the `chatkit.widget` variant.
+factory ThreadItem.chatkitWidget({required String id, required WidgetMessageItemObject object, required int createdAt, required String threadId, required String widget, }) { return ThreadItemChatkitWidget(WidgetMessageItem(type: 'chatkit.widget', id: id, object: object, createdAt: createdAt, threadId: threadId, widget: widget)); }
+
+/// Build the `chatkit.client_tool_call` variant.
+factory ThreadItem.chatkitClientToolCall({required String id, required ClientToolCallItemObject object, required int createdAt, required String threadId, required ClientToolCallStatus status, required String callId, required String name, required String arguments, required String? output, }) { return ThreadItemChatkitClientToolCall(ClientToolCallItem(type: 'chatkit.client_tool_call', id: id, object: object, createdAt: createdAt, threadId: threadId, status: status, callId: callId, name: name, arguments: arguments, output: output)); }
+
+/// Build the `chatkit.task` variant.
+factory ThreadItem.chatkitTask({required String id, required TaskItemObject object, required int createdAt, required String threadId, required TaskType taskType, required String? heading, required String? summary, }) { return ThreadItemChatkitTask(TaskItem(type: 'chatkit.task', id: id, object: object, createdAt: createdAt, threadId: threadId, taskType: taskType, heading: heading, summary: summary)); }
+
+/// Build the `chatkit.task_group` variant.
+factory ThreadItem.chatkitTaskGroup({required String id, required TaskGroupItemObject object, required int createdAt, required String threadId, required List<TaskGroupTask> tasks, }) { return ThreadItemChatkitTaskGroup(TaskGroupItem(type: 'chatkit.task_group', id: id, object: object, createdAt: createdAt, threadId: threadId, tasks: tasks)); }
 
 /// The discriminator value identifying this variant.
 String get type;

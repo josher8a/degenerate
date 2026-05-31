@@ -1,12 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_common.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_common.dart';import 'infra_service_host.dart';import 'infra_service_type.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
   'http' => InfraServiceConfigHttp.fromJson(json),
   _ => InfraServiceConfig$Unknown(json),
 }; }
+
+/// Build the `http` variant.
+factory InfraServiceConfig.http({DateTime? createdAt, required InfraServiceHost host, required String name, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: 'http', createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
 
 /// The discriminator value identifying this variant.
 String get type;

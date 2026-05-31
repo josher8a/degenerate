@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'binary.dart';import 'bool.dart';import 'float32.dart';import 'float64.dart';import 'int32.dart';import 'int64.dart';import 'json.dart';import 'list_model.dart';import 'string_model.dart';import 'struct.dart';import 'timestamp.dart';sealed class CloudflarePipelinesFieldType {const CloudflarePipelinesFieldType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'binary.dart';import 'bool.dart';import 'cloudflare_pipelines_source_field.dart';import 'cloudflare_pipelines_timestamp_unit.dart';import 'float32.dart';import 'float64.dart';import 'int32.dart';import 'int64.dart';import 'json.dart';import 'list_model.dart';import 'string_model.dart';import 'struct.dart';import 'timestamp.dart';sealed class CloudflarePipelinesFieldType {const CloudflarePipelinesFieldType();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,6 +17,15 @@ factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { retur
   'ListModel' => CloudflarePipelinesFieldTypeListModel.fromJson(json),
   _ => CloudflarePipelinesFieldType$Unknown(json),
 }; }
+
+/// Build the `Timestamp` variant.
+factory CloudflarePipelinesFieldType.timestamp({CloudflarePipelinesTimestampUnit? unit}) { return CloudflarePipelinesFieldTypeTimestamp(Timestamp(type: 'Timestamp', unit: unit)); }
+
+/// Build the `Struct` variant.
+factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, String? name, }) { return CloudflarePipelinesFieldTypeStruct(Struct(type: 'Struct', fields: fields, name: name)); }
+
+/// Build the `ListModel` variant.
+factory CloudflarePipelinesFieldType.listModel({required CloudflarePipelinesSourceField items}) { return CloudflarePipelinesFieldTypeListModel(ListModel(type: 'ListModel', items: items)); }
 
 /// The discriminator value identifying this variant.
 String get type;

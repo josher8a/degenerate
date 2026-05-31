@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_chunking_strategy_request_param.dart';import 'static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_chunking_strategy_request_param.dart';import 'static_chunking_strategy.dart';import 'static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
 sealed class ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,9 @@ factory ChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { retur
   'static' => ChunkingStrategyRequestParamStatic.fromJson(json),
   _ => ChunkingStrategyRequestParam$Unknown(json),
 }; }
+
+/// Build the `static` variant.
+factory ChunkingStrategyRequestParam.$static({required StaticChunkingStrategy $static}) { return ChunkingStrategyRequestParamStatic(StaticChunkingStrategyRequestParam(type: 'static', $static: $static)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -11,6 +11,12 @@ factory NscStatusInfo.fromJson(Map<String, dynamic> json) { return switch (json[
   _ => NscStatusInfo$Unknown(json),
 }; }
 
+/// Build the `Down` variant.
+factory NscStatusInfo.down({String? reason}) { return NscStatusInfoDown(NscStatusInfoVariant2(state: 'Down', reason: reason)); }
+
+/// Build the `Unhealthy` variant.
+factory NscStatusInfo.unhealthy({String? reason}) { return NscStatusInfoUnhealthy(NscStatusInfoVariant3(state: 'Unhealthy', reason: reason)); }
+
 /// The discriminator value identifying this variant.
 String get state;
 Map<String, dynamic> toJson();

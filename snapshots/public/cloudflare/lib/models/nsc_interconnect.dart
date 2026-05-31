@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_interconnect_gcp_partner_body.dart';import 'nsc_interconnect_physical_body.dart';sealed class NscInterconnect {const NscInterconnect();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';import 'nsc_facility_info.dart';import 'nsc_interconnect_gcp_partner_body.dart';import 'nsc_interconnect_physical_body.dart';sealed class NscInterconnect {const NscInterconnect();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnect.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory NscInterconnect.fromJson(Map<String, dynamic> json) { return switch (jso
   'gcp_partner' => NscInterconnectGcpPartner.fromJson(json),
   _ => NscInterconnect$Unknown(json),
 }; }
+
+/// Build the `direct` variant.
+factory NscInterconnect.direct({required String account, required String name, String? owner, required NscFacilityInfo facility, required NscCloudflareSite site, required String slotId, required String speed, }) { return NscInterconnectDirect(NscInterconnectPhysicalBody(type: 'direct', account: account, name: name, owner: owner, facility: facility, site: site, slotId: slotId, speed: speed)); }
+
+/// Build the `gcp_partner` variant.
+factory NscInterconnect.gcpPartner({required String account, required String name, String? owner, required String region, Bandwidth? speed, }) { return NscInterconnectGcpPartner(NscInterconnectGcpPartnerBody(type: 'gcp_partner', account: account, name: name, owner: owner, region: region, speed: speed)); }
 
 /// The discriminator value identifying this variant.
 String get type;

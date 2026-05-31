@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';import 'container_network_policy_domain_secret_param.dart';/// Network access policy for the container.
 sealed class AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicy();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,9 @@ factory AutoCodeInterpreterToolParamNetworkPolicy.fromJson(Map<String, dynamic> 
   'allowlist' => AutoCodeInterpreterToolParamNetworkPolicyAllowlist.fromJson(json),
   _ => AutoCodeInterpreterToolParamNetworkPolicy$Unknown(json),
 }; }
+
+/// Build the `allowlist` variant.
+factory AutoCodeInterpreterToolParamNetworkPolicy.allowlist({required List<String> allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam(type: 'allowlist', allowedDomains: allowedDomains, domainSecrets: domainSecrets)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_param.dart';import 'function_tool_param.dart';/// A function or custom tool that belongs to a namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_param.dart';import 'custom_tool_param_format.dart';import 'empty_model_param.dart';import 'function_tool_param.dart';/// A function or custom tool that belongs to a namespace.
 sealed class NamespaceToolParamTools {const NamespaceToolParamTools();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,12 @@ factory NamespaceToolParamTools.fromJson(Map<String, dynamic> json) { return swi
   'custom' => NamespaceToolParamToolsCustom.fromJson(json),
   _ => NamespaceToolParamTools$Unknown(json),
 }; }
+
+/// Build the `function` variant.
+factory NamespaceToolParamTools.function({required String name, String? description, EmptyModelParam? parameters, bool? strict, }) { return NamespaceToolParamToolsFunction(FunctionToolParam(type: 'function', name: name, description: description, parameters: parameters, strict: strict)); }
+
+/// Build the `custom` variant.
+factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading)); }
 
 /// The discriminator value identifying this variant.
 String get type;

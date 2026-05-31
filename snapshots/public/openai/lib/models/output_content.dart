@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'annotation.dart';import 'log_prob.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -9,6 +9,15 @@ factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json[
   'reasoning_text' => OutputContentReasoningText.fromJson(json),
   _ => OutputContent$Unknown(json),
 }; }
+
+/// Build the `output_text` variant.
+factory OutputContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return OutputContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
+
+/// Build the `refusal` variant.
+factory OutputContent.refusal({required String refusal}) { return OutputContentRefusal(RefusalContent(type: 'refusal', refusal: refusal)); }
+
+/// Build the `reasoning_text` variant.
+factory OutputContent.reasoningText({required String text}) { return OutputContentReasoningText(ReasoningTextContent(type: 'reasoning_text', text: text)); }
 
 /// The discriminator value identifying this variant.
 String get type;

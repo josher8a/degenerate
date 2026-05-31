@@ -10,6 +10,9 @@ factory FunctionShellCallOutputOutcomeParam.fromJson(Map<String, dynamic> json) 
   _ => FunctionShellCallOutputOutcomeParam$Unknown(json),
 }; }
 
+/// Build the `exit` variant.
+factory FunctionShellCallOutputOutcomeParam.exit({required int exitCode}) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam(type: 'exit', exitCode: exitCode)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

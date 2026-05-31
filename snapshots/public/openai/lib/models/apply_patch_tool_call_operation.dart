@@ -11,6 +11,15 @@ factory ApplyPatchToolCallOperation.fromJson(Map<String, dynamic> json) { return
   _ => ApplyPatchToolCallOperation$Unknown(json),
 }; }
 
+/// Build the `create_file` variant.
+factory ApplyPatchToolCallOperation.createFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationCreateFile(ApplyPatchCreateFileOperation(type: 'create_file', path: path, diff: diff)); }
+
+/// Build the `delete_file` variant.
+factory ApplyPatchToolCallOperation.deleteFile({required String path}) { return ApplyPatchToolCallOperationDeleteFile(ApplyPatchDeleteFileOperation(type: 'delete_file', path: path)); }
+
+/// Build the `update_file` variant.
+factory ApplyPatchToolCallOperation.updateFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationUpdateFile(ApplyPatchUpdateFileOperation(type: 'update_file', path: path, diff: diff)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

@@ -1,12 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';sealed class CompoundFilterFilters {const CompoundFilterFilters();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'comparison_filter_value.dart';sealed class CompoundFilterFilters {const CompoundFilterFilters();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CompoundFilterFilters.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
   'eq' => CompoundFilterFiltersEq.fromJson(json),
   _ => CompoundFilterFilters$Unknown(json),
 }; }
+
+/// Build the `eq` variant.
+factory CompoundFilterFilters.eq({required String key, required ComparisonFilterValue value, }) { return CompoundFilterFiltersEq(ComparisonFilter(type: 'eq', key: key, value: value)); }
 
 /// The discriminator value identifying this variant.
 String get type;

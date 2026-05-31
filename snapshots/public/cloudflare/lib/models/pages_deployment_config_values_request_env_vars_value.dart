@@ -9,6 +9,12 @@ factory PagesDeploymentConfigValuesRequestEnvVarsValue.fromJson(Map<String, dyna
   _ => PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(json),
 }; }
 
+/// Build the `plain_text` variant.
+factory PagesDeploymentConfigValuesRequestEnvVarsValue.plainText({required String value}) { return PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(PagesPlainTextEnvVar(type: 'plain_text', value: value)); }
+
+/// Build the `secret_text` variant.
+factory PagesDeploymentConfigValuesRequestEnvVarsValue.secretText({required String value}) { return PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(PagesSecretTextEnvVar(type: 'secret_text', value: value)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

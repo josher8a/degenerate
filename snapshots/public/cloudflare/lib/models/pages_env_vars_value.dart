@@ -9,6 +9,12 @@ factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (j
   _ => PagesEnvVarsValue$Unknown(json),
 }; }
 
+/// Build the `plain_text` variant.
+factory PagesEnvVarsValue.plainText({required String value}) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: 'plain_text', value: value)); }
+
+/// Build the `secret_text` variant.
+factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: 'secret_text', value: value)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

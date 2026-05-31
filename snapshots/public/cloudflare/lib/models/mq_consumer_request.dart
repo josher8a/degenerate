@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_request.dart';import 'mq_queue_name.dart';import 'mq_worker_consumer_request.dart';/// Request body for creating or updating a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_request.dart';import 'mq_http_consumer_request_settings.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_request.dart';import 'mq_worker_consumer_request_settings.dart';/// Request body for creating or updating a consumer
 sealed class MqConsumerRequest {const MqConsumerRequest();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -9,6 +9,12 @@ factory MqConsumerRequest.fromJson(Map<String, dynamic> json) { return switch (j
   'worker' => MqConsumerRequestWorker.fromJson(json),
   _ => MqConsumerRequest$Unknown(json),
 }; }
+
+/// Build the `http_pull` variant.
+factory MqConsumerRequest.httpPull({MqQueueName? deadLetterQueue, MqHttpConsumerRequestSettings? settings, }) { return MqConsumerRequestHttpPull(MqHttpConsumerRequest(type: 'http_pull', deadLetterQueue: deadLetterQueue, settings: settings)); }
+
+/// Build the `worker` variant.
+factory MqConsumerRequest.worker({MqQueueName? deadLetterQueue, required MqScriptName scriptName, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings)); }
 
 /// The discriminator value identifying this variant.
 String get type;

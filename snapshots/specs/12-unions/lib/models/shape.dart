@@ -10,6 +10,15 @@ factory Shape.fromJson(Map<String, dynamic> json) { return switch (json['type'])
   _ => Shape$Unknown(json),
 }; }
 
+/// Build the `circle` variant.
+factory Shape.circle({required double radius, String? color, }) { return ShapeCircle(Circle(type: 'circle', radius: radius, color: color)); }
+
+/// Build the `rectangle` variant.
+factory Shape.rectangle({required double width, required double height, String? color, }) { return ShapeRectangle(Rectangle(type: 'rectangle', width: width, height: height, color: color)); }
+
+/// Build the `triangle` variant.
+factory Shape.triangle({required double base, required double height, List<double>? angles, }) { return ShapeTriangle(Triangle(type: 'triangle', base: base, height: height, angles: angles)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

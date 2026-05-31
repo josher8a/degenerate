@@ -15,6 +15,12 @@ factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) { return switc
   _ => RealtimeTurnDetection$Unknown(json),
 }; }
 
+/// Build the `ServerVad` variant.
+factory RealtimeTurnDetection.serverVad({double? threshold, int? prefixPaddingMs, int? silenceDurationMs, bool? createResponse, bool? interruptResponse, int? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(ServerVad(type: 'ServerVad', threshold: threshold, prefixPaddingMs: prefixPaddingMs, silenceDurationMs: silenceDurationMs, createResponse: createResponse, interruptResponse: interruptResponse, idleTimeoutMs: idleTimeoutMs)); }
+
+/// Build the `SemanticVad` variant.
+factory RealtimeTurnDetection.semanticVad({SemanticVadEagerness? eagerness, bool? createResponse, bool? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
+
 /// The discriminator value identifying this variant.
 String get type;
 Map<String, dynamic> toJson();

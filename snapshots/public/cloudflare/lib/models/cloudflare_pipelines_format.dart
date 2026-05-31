@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'json2.dart';import 'parquet.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_decimal_encoding.dart';import 'cloudflare_pipelines_parquet_compression.dart';import 'cloudflare_pipelines_timestamp_format.dart';import 'json2.dart';import 'parquet.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -8,6 +8,12 @@ factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return s
   'Parquet' => CloudflarePipelinesFormatParquet.fromJson(json),
   _ => CloudflarePipelinesFormat$Unknown(json),
 }; }
+
+/// Build the `Json2` variant.
+factory CloudflarePipelinesFormat.json2({CloudflarePipelinesDecimalEncoding? decimalEncoding, CloudflarePipelinesTimestampFormat? timestampFormat, bool? unstructured, }) { return CloudflarePipelinesFormatJson2(Json2(type: 'Json2', decimalEncoding: decimalEncoding, timestampFormat: timestampFormat, unstructured: unstructured)); }
+
+/// Build the `Parquet` variant.
+factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, int? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(Parquet(type: 'Parquet', compression: compression, rowGroupBytes: rowGroupBytes)); }
 
 /// The discriminator value identifying this variant.
 String get type;
