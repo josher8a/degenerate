@@ -333,12 +333,7 @@ class ApiEmitter {
     final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
       final p = pathParamsByName[m[1]];
       if (p == null) return m[0]!;
-      final type = p.type;
-      final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
-      final encodeExpr = isString
-          ? 'Uri.encodeComponent(${p.dartName})'
-          : 'Uri.encodeComponent(${p.dartName}.toString())';
-      return '\${$encodeExpr}';
+      return '\${${_pathSegmentEncodeExpr(p)}}';
     });
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
@@ -762,6 +757,22 @@ class ApiEmitter {
     }
   }
 
+  /// Build the URL-encoded path-segment expression for a path parameter.
+  ///
+  /// Open enums render via their JSON wire value: their `toString()` is a
+  /// debug label (e.g. `ChainId(42161)`), not the value. The result is wrapped
+  /// in a string interpolation so a non-String `toJson()` still produces a
+  /// String for `Uri.encodeComponent`. Strings interpolate directly; all other
+  /// types (primitives, extension types) stringify correctly via `toString()`.
+  String _pathSegmentEncodeExpr(IrParameter p) {
+    final valueExpr = switch (p.type) {
+      IrPrimitive(kind: PrimitiveKind.string) => p.dartName,
+      IrEnum() => "'\${${p.dartName}.toJson()}'",
+      _ => '${p.dartName}.toString()',
+    };
+    return 'Uri.encodeComponent($valueExpr)';
+  }
+
   String _queryScalarExpr(IrType type, String accessor) {
     return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
@@ -1004,12 +1015,7 @@ class ApiEmitter {
     final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
       final p = pathParamsByName[m[1]];
       if (p == null) return m[0]!;
-      final type = p.type;
-      final isString = type is IrPrimitive && type.kind == PrimitiveKind.string;
-      final encodeExpr = isString
-          ? 'Uri.encodeComponent(${p.dartName})'
-          : 'Uri.encodeComponent(${p.dartName}.toString())';
-      return '\${$encodeExpr}';
+      return '\${${_pathSegmentEncodeExpr(p)}}';
     });
 
     // Pre-compute multipart/form/unsupported body before emitting variables,
