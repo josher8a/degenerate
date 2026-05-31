@@ -16,6 +16,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ApplyPatchToolCallOperation$Unknown; } 
+/// Shared by all variants of this union.
+String get path;
  }
 @immutable final class ApplyPatchToolCallOperationCreateFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationCreateFile(this.applyPatchCreateFileOperation);
 
@@ -29,6 +31,7 @@ final ApplyPatchCreateFileOperation applyPatchCreateFileOperation;
     other is ApplyPatchToolCallOperationCreateFile && applyPatchCreateFileOperation == other.applyPatchCreateFileOperation; } 
 @override int get hashCode { return applyPatchCreateFileOperation.hashCode; } 
 @override String toString() { return 'ApplyPatchToolCallOperationCreateFile(applyPatchCreateFileOperation: $applyPatchCreateFileOperation)'; } 
+@override String get path { return applyPatchCreateFileOperation.path; } 
  }
 @immutable final class ApplyPatchToolCallOperationDeleteFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationDeleteFile(this.applyPatchDeleteFileOperation);
 
@@ -42,6 +45,7 @@ final ApplyPatchDeleteFileOperation applyPatchDeleteFileOperation;
     other is ApplyPatchToolCallOperationDeleteFile && applyPatchDeleteFileOperation == other.applyPatchDeleteFileOperation; } 
 @override int get hashCode { return applyPatchDeleteFileOperation.hashCode; } 
 @override String toString() { return 'ApplyPatchToolCallOperationDeleteFile(applyPatchDeleteFileOperation: $applyPatchDeleteFileOperation)'; } 
+@override String get path { return applyPatchDeleteFileOperation.path; } 
  }
 @immutable final class ApplyPatchToolCallOperationUpdateFile extends ApplyPatchToolCallOperation {const ApplyPatchToolCallOperationUpdateFile(this.applyPatchUpdateFileOperation);
 
@@ -55,6 +59,7 @@ final ApplyPatchUpdateFileOperation applyPatchUpdateFileOperation;
     other is ApplyPatchToolCallOperationUpdateFile && applyPatchUpdateFileOperation == other.applyPatchUpdateFileOperation; } 
 @override int get hashCode { return applyPatchUpdateFileOperation.hashCode; } 
 @override String toString() { return 'ApplyPatchToolCallOperationUpdateFile(applyPatchUpdateFileOperation: $applyPatchUpdateFileOperation)'; } 
+@override String get path { return applyPatchUpdateFileOperation.path; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -68,4 +73,5 @@ final Map<String, dynamic> json;
     other is ApplyPatchToolCallOperation$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ApplyPatchToolCallOperation.unknown($json)'; } 
+@override String get path { return json['path'] as String; } 
  }

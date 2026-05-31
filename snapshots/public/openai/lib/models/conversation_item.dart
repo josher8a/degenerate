@@ -37,6 +37,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ConversationItem$Unknown; } 
+/// Shared by all variants of this union.
+String? get id;
  }
 @immutable final class ConversationItemMessage extends ConversationItem {const ConversationItemMessage(this.message);
 
@@ -50,6 +52,7 @@ final Message message;
     other is ConversationItemMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ConversationItemMessage(message: $message)'; } 
+@override String? get id { return message.id; } 
  }
 @immutable final class ConversationItemFunctionToolCallResource extends ConversationItem {const ConversationItemFunctionToolCallResource(this.functionToolCall);
 
@@ -63,6 +66,7 @@ final FunctionToolCall functionToolCall;
     other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallResource(functionToolCall: $functionToolCall)'; } 
+@override String? get id { return functionToolCall.id; } 
  }
 @immutable final class ConversationItemFunctionToolCallOutputResource extends ConversationItem {const ConversationItemFunctionToolCallOutputResource(this.functionToolCallOutput);
 
@@ -76,6 +80,7 @@ final FunctionToolCallOutput functionToolCallOutput;
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
+@override String? get id { return functionToolCallOutput.id; } 
  }
 @immutable final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
@@ -89,6 +94,7 @@ final FileSearchToolCall fileSearchToolCall;
     other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String? get id { return fileSearchToolCall.id; } 
  }
 @immutable final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
@@ -102,6 +108,7 @@ final WebSearchToolCall webSearchToolCall;
     other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String? get id { return webSearchToolCall.id; } 
  }
 @immutable final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
@@ -115,6 +122,7 @@ final ImageGenToolCall imageGenToolCall;
     other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String? get id { return imageGenToolCall.id; } 
  }
 @immutable final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
@@ -128,6 +136,7 @@ final ComputerToolCall computerToolCall;
     other is ConversationItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemComputerCall(computerToolCall: $computerToolCall)'; } 
+@override String? get id { return computerToolCall.id; } 
  }
 @immutable final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -141,6 +150,7 @@ final ComputerToolCallOutput computerToolCallOutput;
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
+@override String? get id { return computerToolCallOutput.id; } 
  }
 @immutable final class ConversationItemToolSearchCall extends ConversationItem {const ConversationItemToolSearchCall(this.toolSearchCall);
 
@@ -154,6 +164,7 @@ final ToolSearchCall toolSearchCall;
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
+@override String? get id { return toolSearchCall.id; } 
  }
 @immutable final class ConversationItemToolSearchOutput extends ConversationItem {const ConversationItemToolSearchOutput(this.toolSearchOutput);
 
@@ -167,6 +178,7 @@ final ToolSearchOutput toolSearchOutput;
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
+@override String? get id { return toolSearchOutput.id; } 
  }
 @immutable final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
@@ -180,6 +192,7 @@ final ReasoningItem reasoningItem;
     other is ConversationItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ConversationItemReasoning(reasoningItem: $reasoningItem)'; } 
+@override String? get id { return reasoningItem.id; } 
  }
 @immutable final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -193,6 +206,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
     other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String? get id { return codeInterpreterToolCall.id; } 
  }
 @immutable final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
@@ -206,6 +220,7 @@ final LocalShellToolCall localShellToolCall;
     other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
+@override String? get id { return localShellToolCall.id; } 
  }
 @immutable final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -219,6 +234,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
     other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
+@override String? get id { return localShellToolCallOutput.id; } 
  }
 @immutable final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
@@ -232,6 +248,7 @@ final FunctionShellCall functionShellCall;
     other is ConversationItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ConversationItemShellCall(functionShellCall: $functionShellCall)'; } 
+@override String? get id { return functionShellCall.id; } 
  }
 @immutable final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
@@ -245,6 +262,7 @@ final FunctionShellCallOutput functionShellCallOutput;
     other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
+@override String? get id { return functionShellCallOutput.id; } 
  }
 @immutable final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
@@ -258,6 +276,7 @@ final ApplyPatchToolCall applyPatchToolCall;
     other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
+@override String? get id { return applyPatchToolCall.id; } 
  }
 @immutable final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -271,6 +290,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
     other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
+@override String? get id { return applyPatchToolCallOutput.id; } 
  }
 @immutable final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
@@ -284,6 +304,7 @@ final McpListTools mcpListTools;
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ConversationItemMcpListTools(mcpListTools: $mcpListTools)'; } 
+@override String? get id { return mcpListTools.id; } 
  }
 @immutable final class ConversationItemMcpApprovalRequest extends ConversationItem {const ConversationItemMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -297,6 +318,7 @@ final McpApprovalRequest mcpApprovalRequest;
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
+@override String? get id { return mcpApprovalRequest.id; } 
  }
 @immutable final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -310,6 +332,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
     other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
+@override String? get id { return mcpApprovalResponseResource.id; } 
  }
 @immutable final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
@@ -323,6 +346,7 @@ final McpToolCall mcpToolCall;
     other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
+@override String? get id { return mcpToolCall.id; } 
  }
 @immutable final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
@@ -336,6 +360,7 @@ final CustomToolCall customToolCall;
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ConversationItemCustomToolCall(customToolCall: $customToolCall)'; } 
+@override String? get id { return customToolCall.id; } 
  }
 @immutable final class ConversationItemCustomToolCallOutput extends ConversationItem {const ConversationItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -349,6 +374,7 @@ final CustomToolCallOutput customToolCallOutput;
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemCustomToolCallOutput(customToolCallOutput: $customToolCallOutput)'; } 
+@override String? get id { return customToolCallOutput.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -362,4 +388,5 @@ final Map<String, dynamic> json;
     other is ConversationItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ConversationItem.unknown($json)'; } 
+@override String? get id { return json['id'] as String?; } 
  }

@@ -15,6 +15,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserMessageItemContent$Unknown; } 
+/// Shared by all variants of this union.
+String get text;
  }
 @immutable final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
 
@@ -28,6 +30,7 @@ final UserMessageInputText userMessageInputText;
     other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
 @override String toString() { return 'UserMessageItemContentInputText(userMessageInputText: $userMessageInputText)'; } 
+@override String get text { return userMessageInputText.text; } 
  }
 @immutable final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
 
@@ -41,6 +44,7 @@ final UserMessageQuotedText userMessageQuotedText;
     other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 
 @override String toString() { return 'UserMessageItemContentQuotedText(userMessageQuotedText: $userMessageQuotedText)'; } 
+@override String get text { return userMessageQuotedText.text; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -54,4 +58,5 @@ final Map<String, dynamic> json;
     other is UserMessageItemContent$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'UserMessageItemContent.unknown($json)'; } 
+@override String get text { return json['text'] as String; } 
  }

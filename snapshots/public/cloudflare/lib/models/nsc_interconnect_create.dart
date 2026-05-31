@@ -14,6 +14,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NscInterconnectCreate$Unknown; } 
+/// Shared by all variants of this union.
+String get account;
  }
 @immutable final class NscInterconnectCreateDirect extends NscInterconnectCreate {const NscInterconnectCreateDirect(this.nscInterconnectCreatePhysicalBody);
 
@@ -27,6 +29,7 @@ final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
     other is NscInterconnectCreateDirect && nscInterconnectCreatePhysicalBody == other.nscInterconnectCreatePhysicalBody; } 
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody: $nscInterconnectCreatePhysicalBody)'; } 
+@override String get account { return nscInterconnectCreatePhysicalBody.account; } 
  }
 @immutable final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
 
@@ -40,6 +43,7 @@ final NscInterconnectCreateGcpPartnerBody nscInterconnectCreateGcpPartnerBody;
     other is NscInterconnectCreateGcpPartner && nscInterconnectCreateGcpPartnerBody == other.nscInterconnectCreateGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectCreateGcpPartnerBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreateGcpPartner(nscInterconnectCreateGcpPartnerBody: $nscInterconnectCreateGcpPartnerBody)'; } 
+@override String get account { return nscInterconnectCreateGcpPartnerBody.account; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +57,5 @@ final Map<String, dynamic> json;
     other is NscInterconnectCreate$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NscInterconnectCreate.unknown($json)'; } 
+@override String get account { return json['account'] as String; } 
  }

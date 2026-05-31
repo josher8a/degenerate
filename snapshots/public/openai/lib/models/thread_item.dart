@@ -18,6 +18,12 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ThreadItem$Unknown; } 
+/// Shared by all variants of this union.
+String get id;
+/// Shared by all variants of this union.
+int get createdAt;
+/// Shared by all variants of this union.
+String get threadId;
  }
 @immutable final class ThreadItemChatkitUserMessage extends ThreadItem {const ThreadItemChatkitUserMessage(this.userMessageItem);
 
@@ -31,6 +37,9 @@ final UserMessageItem userMessageItem;
     other is ThreadItemChatkitUserMessage && userMessageItem == other.userMessageItem; } 
 @override int get hashCode { return userMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitUserMessage(userMessageItem: $userMessageItem)'; } 
+@override String get id { return userMessageItem.id; } 
+@override int get createdAt { return userMessageItem.createdAt; } 
+@override String get threadId { return userMessageItem.threadId; } 
  }
 @immutable final class ThreadItemChatkitAssistantMessage extends ThreadItem {const ThreadItemChatkitAssistantMessage(this.assistantMessageItem);
 
@@ -44,6 +53,9 @@ final AssistantMessageItem assistantMessageItem;
     other is ThreadItemChatkitAssistantMessage && assistantMessageItem == other.assistantMessageItem; } 
 @override int get hashCode { return assistantMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitAssistantMessage(assistantMessageItem: $assistantMessageItem)'; } 
+@override String get id { return assistantMessageItem.id; } 
+@override int get createdAt { return assistantMessageItem.createdAt; } 
+@override String get threadId { return assistantMessageItem.threadId; } 
  }
 @immutable final class ThreadItemChatkitWidget extends ThreadItem {const ThreadItemChatkitWidget(this.widgetMessageItem);
 
@@ -57,6 +69,9 @@ final WidgetMessageItem widgetMessageItem;
     other is ThreadItemChatkitWidget && widgetMessageItem == other.widgetMessageItem; } 
 @override int get hashCode { return widgetMessageItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitWidget(widgetMessageItem: $widgetMessageItem)'; } 
+@override String get id { return widgetMessageItem.id; } 
+@override int get createdAt { return widgetMessageItem.createdAt; } 
+@override String get threadId { return widgetMessageItem.threadId; } 
  }
 @immutable final class ThreadItemChatkitClientToolCall extends ThreadItem {const ThreadItemChatkitClientToolCall(this.clientToolCallItem);
 
@@ -70,6 +85,9 @@ final ClientToolCallItem clientToolCallItem;
     other is ThreadItemChatkitClientToolCall && clientToolCallItem == other.clientToolCallItem; } 
 @override int get hashCode { return clientToolCallItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitClientToolCall(clientToolCallItem: $clientToolCallItem)'; } 
+@override String get id { return clientToolCallItem.id; } 
+@override int get createdAt { return clientToolCallItem.createdAt; } 
+@override String get threadId { return clientToolCallItem.threadId; } 
  }
 @immutable final class ThreadItemChatkitTask extends ThreadItem {const ThreadItemChatkitTask(this.taskItem);
 
@@ -83,6 +101,9 @@ final TaskItem taskItem;
     other is ThreadItemChatkitTask && taskItem == other.taskItem; } 
 @override int get hashCode { return taskItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitTask(taskItem: $taskItem)'; } 
+@override String get id { return taskItem.id; } 
+@override int get createdAt { return taskItem.createdAt; } 
+@override String get threadId { return taskItem.threadId; } 
  }
 @immutable final class ThreadItemChatkitTaskGroup extends ThreadItem {const ThreadItemChatkitTaskGroup(this.taskGroupItem);
 
@@ -96,6 +117,9 @@ final TaskGroupItem taskGroupItem;
     other is ThreadItemChatkitTaskGroup && taskGroupItem == other.taskGroupItem; } 
 @override int get hashCode { return taskGroupItem.hashCode; } 
 @override String toString() { return 'ThreadItemChatkitTaskGroup(taskGroupItem: $taskGroupItem)'; } 
+@override String get id { return taskGroupItem.id; } 
+@override int get createdAt { return taskGroupItem.createdAt; } 
+@override String get threadId { return taskGroupItem.threadId; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -109,4 +133,7 @@ final Map<String, dynamic> json;
     other is ThreadItem$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ThreadItem.unknown($json)'; } 
+@override String get id { return json['id'] as String; } 
+@override int get createdAt { return (json['created_at'] as num).toInt(); } 
+@override String get threadId { return json['thread_id'] as String; } 
  }

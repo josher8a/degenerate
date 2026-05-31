@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoint_identity_create.dart';import 'zero_trust_gateway_proxy_endpoint_ip_create.dart';sealed class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoint_identity_create.dart';import 'zero_trust_gateway_proxy_endpoint_ip_create.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';sealed class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
 factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
@@ -14,6 +14,8 @@ String get kind;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown; } 
+/// Shared by all variants of this union.
+ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name;
  }
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(this.zeroTrustGatewayProxyEndpointIdentityCreate);
 
@@ -27,6 +29,7 @@ final ZeroTrustGatewayProxyEndpointIdentityCreate zeroTrustGatewayProxyEndpointI
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate: $zeroTrustGatewayProxyEndpointIdentityCreate)'; } 
+@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIdentityCreate.name; } 
  }
 @immutable final class ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp extends ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest {const ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(this.zeroTrustGatewayProxyEndpointIpCreate);
 
@@ -40,6 +43,7 @@ final ZeroTrustGatewayProxyEndpointIpCreate zeroTrustGatewayProxyEndpointIpCreat
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate: $zeroTrustGatewayProxyEndpointIpCreate)'; } 
+@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return zeroTrustGatewayProxyEndpointIpCreate.name; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +57,5 @@ final Map<String, dynamic> json;
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)'; } 
+@override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name { return ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String); } 
  }

@@ -20,6 +20,10 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeTurnDetection$Unknown; } 
+/// Shared by all variants of this union.
+bool? get createResponse;
+/// Shared by all variants of this union.
+bool? get interruptResponse;
  }
 @immutable final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
 
@@ -33,6 +37,8 @@ final ServerVad serverVad;
     other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
 @override int get hashCode { return serverVad.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)'; } 
+@override bool? get createResponse { return serverVad.createResponse; } 
+@override bool? get interruptResponse { return serverVad.interruptResponse; } 
  }
 @immutable final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
 
@@ -46,6 +52,8 @@ final SemanticVad semanticVad;
     other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
 @override int get hashCode { return semanticVad.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetectionSemanticVad(semanticVad: $semanticVad)'; } 
+@override bool? get createResponse { return semanticVad.createResponse; } 
+@override bool? get interruptResponse { return semanticVad.interruptResponse; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -59,4 +67,6 @@ final Map<String, dynamic> json;
     other is RealtimeTurnDetection$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetection.unknown($json)'; } 
+@override bool? get createResponse { return json['create_response'] as bool?; } 
+@override bool? get interruptResponse { return json['interrupt_response'] as bool?; } 
  }

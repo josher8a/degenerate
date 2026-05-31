@@ -38,6 +38,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ItemField$Unknown; } 
+/// Shared by all variants of this union.
+String? get id;
  }
 @immutable final class ItemFieldMessage extends ItemField {const ItemFieldMessage(this.message);
 
@@ -51,6 +53,7 @@ final Message message;
     other is ItemFieldMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
 @override String toString() { return 'ItemFieldMessage(message: $message)'; } 
+@override String? get id { return message.id; } 
  }
 @immutable final class ItemFieldFunctionCall extends ItemField {const ItemFieldFunctionCall(this.functionToolCall);
 
@@ -64,6 +67,7 @@ final FunctionToolCall functionToolCall;
     other is ItemFieldFunctionCall && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldFunctionCall(functionToolCall: $functionToolCall)'; } 
+@override String? get id { return functionToolCall.id; } 
  }
 @immutable final class ItemFieldToolSearchCall extends ItemField {const ItemFieldToolSearchCall(this.toolSearchCall);
 
@@ -77,6 +81,7 @@ final ToolSearchCall toolSearchCall;
     other is ItemFieldToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
 @override String toString() { return 'ItemFieldToolSearchCall(toolSearchCall: $toolSearchCall)'; } 
+@override String? get id { return toolSearchCall.id; } 
  }
 @immutable final class ItemFieldToolSearchOutput extends ItemField {const ItemFieldToolSearchOutput(this.toolSearchOutput);
 
@@ -90,6 +95,7 @@ final ToolSearchOutput toolSearchOutput;
     other is ItemFieldToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ItemFieldToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
+@override String? get id { return toolSearchOutput.id; } 
  }
 @immutable final class ItemFieldFunctionCallOutput extends ItemField {const ItemFieldFunctionCallOutput(this.functionToolCallOutput);
 
@@ -103,6 +109,7 @@ final FunctionToolCallOutput functionToolCallOutput;
     other is ItemFieldFunctionCallOutput && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldFunctionCallOutput(functionToolCallOutput: $functionToolCallOutput)'; } 
+@override String? get id { return functionToolCallOutput.id; } 
  }
 @immutable final class ItemFieldFileSearchCall extends ItemField {const ItemFieldFileSearchCall(this.fileSearchToolCall);
 
@@ -116,6 +123,7 @@ final FileSearchToolCall fileSearchToolCall;
     other is ItemFieldFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String? get id { return fileSearchToolCall.id; } 
  }
 @immutable final class ItemFieldWebSearchCall extends ItemField {const ItemFieldWebSearchCall(this.webSearchToolCall);
 
@@ -129,6 +137,7 @@ final WebSearchToolCall webSearchToolCall;
     other is ItemFieldWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String? get id { return webSearchToolCall.id; } 
  }
 @immutable final class ItemFieldImageGenerationCall extends ItemField {const ItemFieldImageGenerationCall(this.imageGenToolCall);
 
@@ -142,6 +151,7 @@ final ImageGenToolCall imageGenToolCall;
     other is ItemFieldImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String? get id { return imageGenToolCall.id; } 
  }
 @immutable final class ItemFieldComputerCall extends ItemField {const ItemFieldComputerCall(this.computerToolCall);
 
@@ -155,6 +165,7 @@ final ComputerToolCall computerToolCall;
     other is ItemFieldComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldComputerCall(computerToolCall: $computerToolCall)'; } 
+@override String? get id { return computerToolCall.id; } 
  }
 @immutable final class ItemFieldComputerToolCallOutputResource extends ItemField {const ItemFieldComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -168,6 +179,7 @@ final ComputerToolCallOutput computerToolCallOutput;
     other is ItemFieldComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldComputerToolCallOutputResource(computerToolCallOutput: $computerToolCallOutput)'; } 
+@override String? get id { return computerToolCallOutput.id; } 
  }
 @immutable final class ItemFieldReasoning extends ItemField {const ItemFieldReasoning(this.reasoningItem);
 
@@ -181,6 +193,7 @@ final ReasoningItem reasoningItem;
     other is ItemFieldReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
 @override String toString() { return 'ItemFieldReasoning(reasoningItem: $reasoningItem)'; } 
+@override String? get id { return reasoningItem.id; } 
  }
 @immutable final class ItemFieldCompaction extends ItemField {const ItemFieldCompaction(this.compactionBody);
 
@@ -194,6 +207,7 @@ final CompactionBody compactionBody;
     other is ItemFieldCompaction && compactionBody == other.compactionBody; } 
 @override int get hashCode { return compactionBody.hashCode; } 
 @override String toString() { return 'ItemFieldCompaction(compactionBody: $compactionBody)'; } 
+@override String? get id { return compactionBody.id; } 
  }
 @immutable final class ItemFieldCodeInterpreterCall extends ItemField {const ItemFieldCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -207,6 +221,7 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
     other is ItemFieldCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String? get id { return codeInterpreterToolCall.id; } 
  }
 @immutable final class ItemFieldLocalShellCall extends ItemField {const ItemFieldLocalShellCall(this.localShellToolCall);
 
@@ -220,6 +235,7 @@ final LocalShellToolCall localShellToolCall;
     other is ItemFieldLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
+@override String? get id { return localShellToolCall.id; } 
  }
 @immutable final class ItemFieldLocalShellCallOutput extends ItemField {const ItemFieldLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -233,6 +249,7 @@ final LocalShellToolCallOutput localShellToolCallOutput;
     other is ItemFieldLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
+@override String? get id { return localShellToolCallOutput.id; } 
  }
 @immutable final class ItemFieldShellCall extends ItemField {const ItemFieldShellCall(this.functionShellCall);
 
@@ -246,6 +263,7 @@ final FunctionShellCall functionShellCall;
     other is ItemFieldShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
 @override String toString() { return 'ItemFieldShellCall(functionShellCall: $functionShellCall)'; } 
+@override String? get id { return functionShellCall.id; } 
  }
 @immutable final class ItemFieldShellCallOutput extends ItemField {const ItemFieldShellCallOutput(this.functionShellCallOutput);
 
@@ -259,6 +277,7 @@ final FunctionShellCallOutput functionShellCallOutput;
     other is ItemFieldShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
+@override String? get id { return functionShellCallOutput.id; } 
  }
 @immutable final class ItemFieldApplyPatchCall extends ItemField {const ItemFieldApplyPatchCall(this.applyPatchToolCall);
 
@@ -272,6 +291,7 @@ final ApplyPatchToolCall applyPatchToolCall;
     other is ItemFieldApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
+@override String? get id { return applyPatchToolCall.id; } 
  }
 @immutable final class ItemFieldApplyPatchCallOutput extends ItemField {const ItemFieldApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -285,6 +305,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
     other is ItemFieldApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
+@override String? get id { return applyPatchToolCallOutput.id; } 
  }
 @immutable final class ItemFieldMcpListTools extends ItemField {const ItemFieldMcpListTools(this.mcpListTools);
 
@@ -298,6 +319,7 @@ final McpListTools mcpListTools;
     other is ItemFieldMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
 @override String toString() { return 'ItemFieldMcpListTools(mcpListTools: $mcpListTools)'; } 
+@override String? get id { return mcpListTools.id; } 
  }
 @immutable final class ItemFieldMcpApprovalRequest extends ItemField {const ItemFieldMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -311,6 +333,7 @@ final McpApprovalRequest mcpApprovalRequest;
     other is ItemFieldMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ItemFieldMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
+@override String? get id { return mcpApprovalRequest.id; } 
  }
 @immutable final class ItemFieldMcpApprovalResponse extends ItemField {const ItemFieldMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -324,6 +347,7 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
     other is ItemFieldMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
 @override String toString() { return 'ItemFieldMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
+@override String? get id { return mcpApprovalResponseResource.id; } 
  }
 @immutable final class ItemFieldMcpCall extends ItemField {const ItemFieldMcpCall(this.mcpToolCall);
 
@@ -337,6 +361,7 @@ final McpToolCall mcpToolCall;
     other is ItemFieldMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldMcpCall(mcpToolCall: $mcpToolCall)'; } 
+@override String? get id { return mcpToolCall.id; } 
  }
 @immutable final class ItemFieldCustomToolCall extends ItemField {const ItemFieldCustomToolCall(this.customToolCall);
 
@@ -350,6 +375,7 @@ final CustomToolCall customToolCall;
     other is ItemFieldCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
 @override String toString() { return 'ItemFieldCustomToolCall(customToolCall: $customToolCall)'; } 
+@override String? get id { return customToolCall.id; } 
  }
 @immutable final class ItemFieldCustomToolCallOutput extends ItemField {const ItemFieldCustomToolCallOutput(this.customToolCallOutput);
 
@@ -363,6 +389,7 @@ final CustomToolCallOutput customToolCallOutput;
     other is ItemFieldCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 
 @override String toString() { return 'ItemFieldCustomToolCallOutput(customToolCallOutput: $customToolCallOutput)'; } 
+@override String? get id { return customToolCallOutput.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -376,4 +403,5 @@ final Map<String, dynamic> json;
     other is ItemField$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ItemField.unknown($json)'; } 
+@override String? get id { return json['id'] as String?; } 
  }

@@ -14,6 +14,12 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NscInterconnect$Unknown; } 
+/// Shared by all variants of this union.
+String get account;
+/// Shared by all variants of this union.
+String get name;
+/// Shared by all variants of this union.
+String? get owner;
  }
 @immutable final class NscInterconnectDirect extends NscInterconnect {const NscInterconnectDirect(this.nscInterconnectPhysicalBody);
 
@@ -27,6 +33,9 @@ final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
     other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody; } 
 @override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectDirect(nscInterconnectPhysicalBody: $nscInterconnectPhysicalBody)'; } 
+@override String get account { return nscInterconnectPhysicalBody.account; } 
+@override String get name { return nscInterconnectPhysicalBody.name; } 
+@override String? get owner { return nscInterconnectPhysicalBody.owner; } 
  }
 @immutable final class NscInterconnectGcpPartner extends NscInterconnect {const NscInterconnectGcpPartner(this.nscInterconnectGcpPartnerBody);
 
@@ -40,6 +49,9 @@ final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
     other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectGcpPartnerBody.hashCode; } 
 @override String toString() { return 'NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody: $nscInterconnectGcpPartnerBody)'; } 
+@override String get account { return nscInterconnectGcpPartnerBody.account; } 
+@override String get name { return nscInterconnectGcpPartnerBody.name; } 
+@override String? get owner { return nscInterconnectGcpPartnerBody.owner; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +65,7 @@ final Map<String, dynamic> json;
     other is NscInterconnect$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NscInterconnect.unknown($json)'; } 
+@override String get account { return json['account'] as String; } 
+@override String get name { return json['name'] as String; } 
+@override String? get owner { return json['owner'] as String?; } 
  }

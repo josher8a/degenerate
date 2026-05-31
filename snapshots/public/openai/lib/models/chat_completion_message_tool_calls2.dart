@@ -14,6 +14,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionMessageToolCalls2$Unknown; } 
+/// Shared by all variants of this union.
+String get id;
  }
 @immutable final class ChatCompletionMessageToolCalls2Function extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Function(this.chatCompletionMessageToolCall);
 
@@ -27,6 +29,7 @@ final ChatCompletionMessageToolCall chatCompletionMessageToolCall;
     other is ChatCompletionMessageToolCalls2Function && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall; } 
 @override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2Function(chatCompletionMessageToolCall: $chatCompletionMessageToolCall)'; } 
+@override String get id { return chatCompletionMessageToolCall.id; } 
  }
 @immutable final class ChatCompletionMessageToolCalls2Custom extends ChatCompletionMessageToolCalls2 {const ChatCompletionMessageToolCalls2Custom(this.chatCompletionMessageCustomToolCall);
 
@@ -40,6 +43,7 @@ final ChatCompletionMessageCustomToolCall chatCompletionMessageCustomToolCall;
     other is ChatCompletionMessageToolCalls2Custom && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall; } 
 @override int get hashCode { return chatCompletionMessageCustomToolCall.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2Custom(chatCompletionMessageCustomToolCall: $chatCompletionMessageCustomToolCall)'; } 
+@override String get id { return chatCompletionMessageCustomToolCall.id; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,4 +57,5 @@ final Map<String, dynamic> json;
     other is ChatCompletionMessageToolCalls2$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ChatCompletionMessageToolCalls2.unknown($json)'; } 
+@override String get id { return json['id'] as String; } 
  }

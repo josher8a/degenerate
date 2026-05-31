@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule.dart';sealed class RulesetsRequestRule {const RulesetsRequestRule();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';sealed class RulesetsRequestRule {const RulesetsRequestRule();
 
 /// Deserialize from JSON, dispatching on the `action` discriminator.
 factory RulesetsRequestRule.fromJson(Map<String, dynamic> json) { return switch (json['action']) {
@@ -32,6 +32,30 @@ String get action;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsRequestRule$Unknown; } 
+/// Shared by all variants of this union.
+Map<String,dynamic>? get actionParameters;
+/// Shared by all variants of this union.
+List<RulesetsRuleCategory>? get categories;
+/// Shared by all variants of this union.
+String? get description;
+/// Shared by all variants of this union.
+RulesetsRuleEnabled? get enabled;
+/// Shared by all variants of this union.
+RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck;
+/// Shared by all variants of this union.
+String? get expression;
+/// Shared by all variants of this union.
+RulesetsRuleId? get id;
+/// Shared by all variants of this union.
+DateTime get lastUpdated;
+/// Shared by all variants of this union.
+RulesetsRuleLogging? get logging;
+/// Shared by all variants of this union.
+RulesetsRuleRatelimit? get ratelimit;
+/// Shared by all variants of this union.
+String? get ref;
+/// Shared by all variants of this union.
+String get version;
  }
 @immutable final class RulesetsRequestRuleBlock extends RulesetsRequestRule {const RulesetsRequestRuleBlock(this.rulesetsRule);
 
@@ -45,6 +69,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleBlock(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleChallenge extends RulesetsRequestRule {const RulesetsRequestRuleChallenge(this.rulesetsRule);
 
@@ -58,6 +94,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleCompressResponse extends RulesetsRequestRule {const RulesetsRequestRuleCompressResponse(this.rulesetsRule);
 
@@ -71,6 +119,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleCompressResponse(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleDdosDynamic extends RulesetsRequestRule {const RulesetsRequestRuleDdosDynamic(this.rulesetsRule);
 
@@ -84,6 +144,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleDdosDynamic(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleExecute extends RulesetsRequestRule {const RulesetsRequestRuleExecute(this.rulesetsRule);
 
@@ -97,6 +169,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleExecute(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleForceConnectionClose extends RulesetsRequestRule {const RulesetsRequestRuleForceConnectionClose(this.rulesetsRule);
 
@@ -110,6 +194,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleForceConnectionClose(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleJsChallenge extends RulesetsRequestRule {const RulesetsRequestRuleJsChallenge(this.rulesetsRule);
 
@@ -123,6 +219,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleJsChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleLog extends RulesetsRequestRule {const RulesetsRequestRuleLog(this.rulesetsRule);
 
@@ -136,6 +244,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleLog(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleLogCustomField extends RulesetsRequestRule {const RulesetsRequestRuleLogCustomField(this.rulesetsRule);
 
@@ -149,6 +269,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleLogCustomField(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleManagedChallenge extends RulesetsRequestRule {const RulesetsRequestRuleManagedChallenge(this.rulesetsRule);
 
@@ -162,6 +294,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleManagedChallenge(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleRedirect extends RulesetsRequestRule {const RulesetsRequestRuleRedirect(this.rulesetsRule);
 
@@ -175,6 +319,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRedirect(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleRewrite extends RulesetsRequestRule {const RulesetsRequestRuleRewrite(this.rulesetsRule);
 
@@ -188,6 +344,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRewrite(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleRoute extends RulesetsRequestRule {const RulesetsRequestRuleRoute(this.rulesetsRule);
 
@@ -201,6 +369,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRoute(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleScore extends RulesetsRequestRule {const RulesetsRequestRuleScore(this.rulesetsRule);
 
@@ -214,6 +394,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleScore(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleServeError extends RulesetsRequestRule {const RulesetsRequestRuleServeError(this.rulesetsRule);
 
@@ -227,6 +419,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleServeError(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleSetCacheControl extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheControl(this.rulesetsRule);
 
@@ -240,6 +444,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheControl(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleSetCacheSettings extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheSettings(this.rulesetsRule);
 
@@ -253,6 +469,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheSettings(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleSetCacheTags extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheTags(this.rulesetsRule);
 
@@ -266,6 +494,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheTags(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleSetConfig extends RulesetsRequestRule {const RulesetsRequestRuleSetConfig(this.rulesetsRule);
 
@@ -279,6 +519,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetConfig(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 @immutable final class RulesetsRequestRuleSkip extends RulesetsRequestRule {const RulesetsRequestRuleSkip(this.rulesetsRule);
 
@@ -292,6 +544,18 @@ final RulesetsRule rulesetsRule;
     other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSkip(rulesetsRule: $rulesetsRule)'; } 
+@override Map<String,dynamic>? get actionParameters { return rulesetsRule.actionParameters; } 
+@override List<RulesetsRuleCategory>? get categories { return rulesetsRule.categories; } 
+@override String? get description { return rulesetsRule.description; } 
+@override RulesetsRuleEnabled? get enabled { return rulesetsRule.enabled; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return rulesetsRule.exposedCredentialCheck; } 
+@override String? get expression { return rulesetsRule.expression; } 
+@override RulesetsRuleId? get id { return rulesetsRule.id; } 
+@override DateTime get lastUpdated { return rulesetsRule.lastUpdated; } 
+@override RulesetsRuleLogging? get logging { return rulesetsRule.logging; } 
+@override RulesetsRuleRatelimit? get ratelimit { return rulesetsRule.ratelimit; } 
+@override String? get ref { return rulesetsRule.ref; } 
+@override String get version { return rulesetsRule.version; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -305,4 +569,16 @@ final Map<String, dynamic> json;
     other is RulesetsRequestRule$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'RulesetsRequestRule.unknown($json)'; } 
+@override Map<String,dynamic>? get actionParameters { return json['action_parameters'] as Map<String, dynamic>?; } 
+@override List<RulesetsRuleCategory>? get categories { return (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(); } 
+@override String? get description { return json['description'] as String?; } 
+@override RulesetsRuleEnabled? get enabled { return json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null; } 
+@override RulesetsRuleExposedCredentialCheck? get exposedCredentialCheck { return json['exposed_credential_check'] != null ? RulesetsRuleExposedCredentialCheck.fromJson(json['exposed_credential_check'] as Map<String, dynamic>) : null; } 
+@override String? get expression { return json['expression'] as String?; } 
+@override RulesetsRuleId? get id { return json['id'] != null ? RulesetsRuleId.fromJson(json['id'] as String) : null; } 
+@override DateTime get lastUpdated { return DateTime.parse(json['last_updated'] as String); } 
+@override RulesetsRuleLogging? get logging { return json['logging'] != null ? RulesetsRuleLogging.fromJson(json['logging'] as Map<String, dynamic>) : null; } 
+@override RulesetsRuleRatelimit? get ratelimit { return json['ratelimit'] != null ? RulesetsRuleRatelimit.fromJson(json['ratelimit'] as Map<String, dynamic>) : null; } 
+@override String? get ref { return json['ref'] as String?; } 
+@override String get version { return json['version'] as String; } 
  }

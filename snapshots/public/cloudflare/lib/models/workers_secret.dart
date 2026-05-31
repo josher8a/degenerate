@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';/// A secret value accessible through a binding.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_name.dart';/// A secret value accessible through a binding.
 sealed class WorkersSecret {const WorkersSecret();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -15,6 +15,8 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersSecret$Unknown; } 
+/// Shared by all variants of this union.
+WorkersBindingName get name;
  }
 @immutable final class WorkersSecretSecretKey extends WorkersSecret {const WorkersSecretSecretKey(this.workersBindingKindSecretKey);
 
@@ -28,6 +30,7 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
     other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
 @override String toString() { return 'WorkersSecretSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
+@override WorkersBindingName get name { return workersBindingKindSecretKey.name; } 
  }
 @immutable final class WorkersSecretSecretText extends WorkersSecret {const WorkersSecretSecretText(this.workersBindingKindSecretText);
 
@@ -41,6 +44,7 @@ final WorkersBindingKindSecretText workersBindingKindSecretText;
     other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 
 @override String toString() { return 'WorkersSecretSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)'; } 
+@override WorkersBindingName get name { return workersBindingKindSecretText.name; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -54,4 +58,5 @@ final Map<String, dynamic> json;
     other is WorkersSecret$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'WorkersSecret.unknown($json)'; } 
+@override WorkersBindingName get name { return WorkersBindingName.fromJson(json['name'] as String); } 
  }

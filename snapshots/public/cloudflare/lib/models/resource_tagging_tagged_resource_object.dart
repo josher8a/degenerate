@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'resource_tagging_tagged_resource_object_account_level_base.dart';import 'resource_tagging_tagged_resource_object_worker_version_base.dart';import 'resource_tagging_tagged_resource_object_zone_level_base.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';import 'resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'resource_tagging_tagged_resource_object_account_level_base.dart';import 'resource_tagging_tagged_resource_object_worker_version_base.dart';import 'resource_tagging_tagged_resource_object_zone_level_base.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -39,6 +39,14 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingTaggedResourceObject$Unknown; } 
+/// Shared by all variants of this union.
+ResourceTaggingEtag get etag;
+/// Shared by all variants of this union.
+ResourceTaggingResourceId get id;
+/// Shared by all variants of this union.
+ResourceTaggingResourceName get name;
+/// Shared by all variants of this union.
+Map<String,String> get tags;
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplication extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplication(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -52,6 +60,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAccessApplication && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplication(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(this.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase);
 
@@ -65,6 +77,10 @@ final ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase resourceTag
     other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicy && resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase == other.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase: $resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAccessGroup extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccessGroup(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -78,6 +94,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAccessGroup && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessGroup(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAccount extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAccount(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -91,6 +111,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAccount && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAccount(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAiGateway extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAiGateway(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -104,6 +128,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAiGateway && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAiGateway(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAlertingPolicy extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingPolicy(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -117,6 +145,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAlertingPolicy && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingPolicy(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectAlertingWebhook extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectAlertingWebhook(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -130,6 +162,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectAlertingWebhook && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectAlertingWebhook(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayOperation extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayOperation(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -143,6 +179,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectGatewayOperation && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayOperation(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectCloudflaredTunnel extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCloudflaredTunnel(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -156,6 +196,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectCloudflaredTunnel && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCloudflaredTunnel(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectCustomCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -169,6 +213,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectCustomCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectCustomHostname extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectCustomHostname(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -182,6 +230,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectCustomHostname && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectCustomHostname(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectD1Database extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectD1Database(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -195,6 +247,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectD1Database && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectD1Database(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectDnsRecord extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDnsRecord(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -208,6 +264,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectDnsRecord && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectDnsRecord(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectDurableObjectNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectDurableObjectNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -221,6 +281,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectDurableObjectNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectDurableObjectNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayList extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayList(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -234,6 +298,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectGatewayList && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayList(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectGatewayRule extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectGatewayRule(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -247,6 +315,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectGatewayRule && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectGatewayRule(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectImage extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectImage(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -260,6 +332,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectImage && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectImage(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectKvNamespace extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectKvNamespace(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -273,6 +349,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectKvNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectKvNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectManagedClientCertificate extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectManagedClientCertificate(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -286,6 +366,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectManagedClientCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectManagedClientCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectQueue extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectQueue(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -299,6 +383,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectQueue && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectQueue(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectR2Bucket extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectR2Bucket(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -312,6 +400,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectR2Bucket && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectR2Bucket(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectResourceShare extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectResourceShare(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -325,6 +417,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectResourceShare && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectResourceShare(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectStreamLiveInput extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamLiveInput(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -338,6 +434,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectStreamLiveInput && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamLiveInput(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectStreamVideo extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectStreamVideo(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -351,6 +451,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectStreamVideo && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectStreamVideo(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectWorker extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorker(this.resourceTaggingTaggedResourceObjectAccountLevelBase);
 
@@ -364,6 +468,10 @@ final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedR
     other is ResourceTaggingTaggedResourceObjectWorker && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectWorker(resourceTaggingTaggedResourceObjectAccountLevelBase: $resourceTaggingTaggedResourceObjectAccountLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectAccountLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectAccountLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectAccountLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectAccountLevelBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectWorkerVersion extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectWorkerVersion(this.resourceTaggingTaggedResourceObjectWorkerVersionBase);
 
@@ -377,6 +485,10 @@ final ResourceTaggingTaggedResourceObjectWorkerVersionBase resourceTaggingTagged
     other is ResourceTaggingTaggedResourceObjectWorkerVersion && resourceTaggingTaggedResourceObjectWorkerVersionBase == other.resourceTaggingTaggedResourceObjectWorkerVersionBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectWorkerVersionBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectWorkerVersion(resourceTaggingTaggedResourceObjectWorkerVersionBase: $resourceTaggingTaggedResourceObjectWorkerVersionBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectWorkerVersionBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectWorkerVersionBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectWorkerVersionBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectWorkerVersionBase.tags; } 
  }
 @immutable final class ResourceTaggingTaggedResourceObjectZone extends ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObjectZone(this.resourceTaggingTaggedResourceObjectZoneLevelBase);
 
@@ -390,6 +502,10 @@ final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedReso
     other is ResourceTaggingTaggedResourceObjectZone && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObjectZone(resourceTaggingTaggedResourceObjectZoneLevelBase: $resourceTaggingTaggedResourceObjectZoneLevelBase)'; } 
+@override ResourceTaggingEtag get etag { return resourceTaggingTaggedResourceObjectZoneLevelBase.etag; } 
+@override ResourceTaggingResourceId get id { return resourceTaggingTaggedResourceObjectZoneLevelBase.id; } 
+@override ResourceTaggingResourceName get name { return resourceTaggingTaggedResourceObjectZoneLevelBase.name; } 
+@override Map<String,String> get tags { return resourceTaggingTaggedResourceObjectZoneLevelBase.tags; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -403,4 +519,8 @@ final Map<String, dynamic> json;
     other is ResourceTaggingTaggedResourceObject$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'ResourceTaggingTaggedResourceObject.unknown($json)'; } 
+@override ResourceTaggingEtag get etag { return ResourceTaggingEtag.fromJson(json['etag'] as String); } 
+@override ResourceTaggingResourceId get id { return ResourceTaggingResourceId.fromJson(json['id'] as String); } 
+@override ResourceTaggingResourceName get name { return ResourceTaggingResourceName.fromJson(json['name'] as String); } 
+@override Map<String,String> get tags { return (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)); } 
  }

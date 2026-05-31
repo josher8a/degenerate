@@ -15,6 +15,10 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NamespaceToolParamTools$Unknown; } 
+/// Shared by all variants of this union.
+String get name;
+/// Shared by all variants of this union.
+String? get description;
  }
 @immutable final class NamespaceToolParamToolsFunction extends NamespaceToolParamTools {const NamespaceToolParamToolsFunction(this.functionToolParam);
 
@@ -28,6 +32,8 @@ final FunctionToolParam functionToolParam;
     other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
 @override String toString() { return 'NamespaceToolParamToolsFunction(functionToolParam: $functionToolParam)'; } 
+@override String get name { return functionToolParam.name; } 
+@override String? get description { return functionToolParam.description; } 
  }
 @immutable final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
 
@@ -41,6 +47,8 @@ final CustomToolParam customToolParam;
     other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
 @override String toString() { return 'NamespaceToolParamToolsCustom(customToolParam: $customToolParam)'; } 
+@override String get name { return customToolParam.name; } 
+@override String? get description { return customToolParam.description; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -54,4 +62,6 @@ final Map<String, dynamic> json;
     other is NamespaceToolParamTools$Unknown && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
 @override String toString() { return 'NamespaceToolParamTools.unknown($json)'; } 
+@override String get name { return json['name'] as String; } 
+@override String? get description { return json['description'] as String?; } 
  }
