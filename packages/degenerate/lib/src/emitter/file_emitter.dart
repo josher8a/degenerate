@@ -686,11 +686,23 @@ class FileEmitter {
           }
           if (isDirectBytes(variant)) needsTypedData = true;
         }
-        // Fields hoisted onto the sealed base are exposed as getters whose
-        // return types must be imported. Resolving them needs the registry.
+        // Hoisted base getters and the per-variant factory constructors
+        // reference the variants' field types, which must be imported.
+        // Collect the direct type name (not OneOf variants — a `OneOfN`
+        // typedef field only needs the typedef's own file). Resolving the
+        // variant payloads needs the registry.
         if (typeRegistry != null) {
-          for (final f in discriminatedUnionCommonFields(type, typeRegistry)) {
-            checkField(f.type);
+          for (final variant in mapping.values) {
+            var resolved = variant;
+            if (resolved is IrTypeRef) {
+              resolved = typeRegistry[resolved.name] ?? resolved;
+            }
+            if (resolved is IrObject) {
+              for (final f in resolved.fields) {
+                _collectTopLevelTypeName(f.type, names);
+                if (isDirectBytes(f.type)) needsTypedData = true;
+              }
+            }
           }
         }
       case IrUntaggedUnion(:final name, :final variants):

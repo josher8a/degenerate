@@ -123,6 +123,11 @@ class DiscriminatedUnionEmitter {
             ),
           )
           ..constructors.add(_buildFromJson(unknownClassName))
+          ..constructors.addAll(
+            union.mapping.entries
+                .map((e) => _buildVariantFactory(e.key, e.value))
+                .whereType<Constructor>(),
+          )
           ..methods.add(
             Method(
               (m) => m
@@ -210,6 +215,65 @@ class DiscriminatedUnionEmitter {
   String _variantClassName(String discValue) {
     final name = variantClassName(union.name, discValue);
     return typeRegistry.containsKey(name) ? '$name\$Variant' : name;
+  }
+
+  /// Named-constructor name for a variant (e.g. `INDIVIDUAL` → `individual`).
+  String _variantCtorName(String discValue) {
+    final camel = toCamelCase(discValue);
+    return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
+  }
+
+  /// The data fields a variant's constructor takes (object → own fields;
+  /// `$ref` → the referenced object's fields), excluding the discriminator.
+  List<IrField> _variantPayloadFields(IrType variantType) {
+    var resolved = variantType;
+    if (resolved is IrTypeRef) {
+      resolved = typeRegistry[resolved.name] ?? resolved;
+    }
+    if (resolved is! IrObject) return const [];
+    return resolved.fields.where((f) => f.originalName != _discJsonKey).toList();
+  }
+
+  /// A named factory on the sealed base for building a variant directly,
+  /// e.g. `CreateBeneficiaryRequest.business(displayName: …, legalName: …)`.
+  /// Flattens the variant's fields and sets the discriminator, so callers
+  /// neither name the wrapper class nor restate the discriminator value.
+  /// Returns null for variants whose payload isn't an introspectable object.
+  Constructor? _buildVariantFactory(String discValue, IrType variantType) {
+    final fields = _variantPayloadFields(variantType);
+    if (fields.isEmpty && variantType is! IrObject) return null;
+
+    final variantClass = _variantClassName(discValue);
+    final args = fields.map((f) => '${f.name}: ${f.name}').join(', ');
+
+    final String body;
+    if (variantType is IrTypeRef) {
+      final payload = irTypeName(variantType);
+      final inner = ["$_discDartName: '$discValue'", if (args.isNotEmpty) args]
+          .join(', ');
+      body = 'return $variantClass($payload($inner));';
+    } else {
+      body = 'return $variantClass($args);';
+    }
+
+    return Constructor(
+      (c) => c
+        ..name = _variantCtorName(discValue)
+        ..factory = true
+        ..docs.add('/// Build the `$discValue` variant.')
+        ..optionalParameters.addAll(
+          fields.map(
+            (f) => Parameter(
+              (p) => p
+                ..name = f.name
+                ..named = true
+                ..required = f.isRequired
+                ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
+            ),
+          ),
+        )
+        ..body = Code(body),
+    );
   }
 
   Constructor _buildFromJson(String unknownClassName) {
