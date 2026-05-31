@@ -996,6 +996,9 @@ class FileEmitter {
           return 'const ApiSecurityRequirement({$entries})';
         })
         .join(', ');
+    // An untyped `[]` infers `List<dynamic>`, which trips strict-inference
+    // lints in the generated client. Annotate the element type explicitly.
+    if (pieces.isEmpty) return '<ApiSecurityRequirement>[]';
     return '[$pieces]';
   }
 
