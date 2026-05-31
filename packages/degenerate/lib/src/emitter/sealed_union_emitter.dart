@@ -202,10 +202,20 @@ class DiscriminatedUnionEmitter {
       ),
   );
 
+  /// Class name for a variant, disambiguated when it would collide with an
+  /// existing schema. Without this, a `$ref` variant whose target schema is
+  /// named `<Union><Discriminator>` (a common OpenAPI convention) yields a
+  /// wrapper of the same name that shadows the payload import — making its
+  /// fromJson self-referential and the barrel export ambiguous.
+  String _variantClassName(String discValue) {
+    final name = variantClassName(union.name, discValue);
+    return typeRegistry.containsKey(name) ? '$name\$Variant' : name;
+  }
+
   Constructor _buildFromJson(String unknownClassName) {
     final cases = union.mapping.entries
         .map((e) {
-          final className = variantClassName(union.name, e.key);
+          final className = _variantClassName(e.key);
           return "  '${e.key}' => $className.fromJson(json),";
         })
         .join('\n');
@@ -301,7 +311,7 @@ class DiscriminatedUnionEmitter {
   }
 
   List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
-    final className = variantClassName(union.name, discriminatorValue);
+    final className = _variantClassName(discriminatorValue);
 
     // If the variant is an IrObject, emit it as a subclass with all its fields
     if (variantType is IrObject) {
