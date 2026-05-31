@@ -1031,7 +1031,11 @@ class FileEmitter {
           '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultQueryParameters: {...config.defaultQueryParameters, ${_stringOrNull(scheme.parameterName)}: value});',
         'cookie' =>
           '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultCookies: {...config.defaultCookies, ${_stringOrNull(scheme.parameterName)}: value});',
-        _ => null,
+        // OpenAPI requires `in` for apiKey, but some specs omit it. Default to
+        // a request header so the always-emitted with<Name>() helper has a
+        // matching apply method instead of calling a method that's never built.
+        _ =>
+          '  static ApiConfig $methodName(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, ${_stringOrNull(scheme.parameterName ?? scheme.name)}: value});',
       },
       'http' => switch (scheme.scheme) {
         'bearer' =>
