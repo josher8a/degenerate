@@ -139,7 +139,7 @@ final CloudflarePipelinesTimestampField cloudflarePipelinesTimestampField;
 
 @override String get type { return 'Timestamp'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesTimestampField.toJson(), 'type': type}; } 
-CloudflarePipelinesFieldTypeTimestamp copyWith({CloudflarePipelinesTimestampUnit Function()? unit}) { return CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField.copyWith(
+CloudflarePipelinesFieldTypeTimestamp copyWith({CloudflarePipelinesTimestampUnit? Function()? unit}) { return CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField.copyWith(
   unit: unit,
 )); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

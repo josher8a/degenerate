@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (phone != null) 'phone': phone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key)); } 
-PostTerminalLocationsLocationRequest copyWith({CustomerShippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, ConfigurationOverrides Function()? configurationOverrides, DisplayName Function()? displayName, DisplayNameKana Function()? displayNameKana, DisplayNameKanji Function()? displayNameKanji, List<String> Function()? expand, Metadata Function()? metadata, Phone Function()? phone, }) { return PostTerminalLocationsLocationRequest(
+PostTerminalLocationsLocationRequest copyWith({CustomerShippingAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, ConfigurationOverrides? Function()? configurationOverrides, DisplayName? Function()? displayName, DisplayNameKana? Function()? displayNameKana, DisplayNameKanji? Function()? displayNameKanji, List<String>? Function()? expand, Metadata? Function()? metadata, Phone? Function()? phone, }) { return PostTerminalLocationsLocationRequest(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

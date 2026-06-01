@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fleet', 'flight', 'fuel', 'lodging', 'receipt', 'reference'}.contains(key)); } 
-PurchaseDetails copyWith({Fleet Function()? fleet, Flight Function()? flight, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel Function()? fuel, Lodging Function()? lodging, List<PurchaseDetailsReceipt> Function()? receipt, String Function()? reference, }) { return PurchaseDetails(
+PurchaseDetails copyWith({Fleet? Function()? fleet, Flight? Function()? flight, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? Function()? fuel, Lodging? Function()? lodging, List<PurchaseDetailsReceipt>? Function()? receipt, String? Function()? reference, }) { return PurchaseDetails(
   fleet: fleet != null ? fleet() : this.fleet,
   flight: flight != null ? flight() : this.flight,
   fuel: fuel != null ? fuel() : this.fuel,

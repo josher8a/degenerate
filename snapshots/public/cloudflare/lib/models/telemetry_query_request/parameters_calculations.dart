@@ -183,7 +183,7 @@ Map<String, dynamic> toJson() { return {
   'operator': $operator.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator'); } 
-ParametersCalculations copyWith({String Function()? alias, String Function()? key, KeyType Function()? keyType, CalculationsOperator? $operator, }) { return ParametersCalculations(
+ParametersCalculations copyWith({String? Function()? alias, String? Function()? key, KeyType? Function()? keyType, CalculationsOperator? $operator, }) { return ParametersCalculations(
   alias: alias != null ? alias() : this.alias,
   key: key != null ? key() : this.key,
   keyType: keyType != null ? keyType() : this.keyType,

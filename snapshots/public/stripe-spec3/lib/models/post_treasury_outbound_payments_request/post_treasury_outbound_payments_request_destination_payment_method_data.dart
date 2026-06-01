@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData copyWith({DestinationPaymentMethodDataBillingDetails Function()? billingDetails, String Function()? financialAccount, Map<String, String> Function()? metadata, OutboundPaymentsPaymentMethodDetailsType? type, PostPaymentMethodsRequestUsBankAccount Function()? usBankAccount, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
+PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData copyWith({DestinationPaymentMethodDataBillingDetails? Function()? billingDetails, String? Function()? financialAccount, Map<String, String>? Function()? metadata, OutboundPaymentsPaymentMethodDetailsType? type, PostPaymentMethodsRequestUsBankAccount? Function()? usBankAccount, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
   metadata: metadata != null ? metadata() : this.metadata,

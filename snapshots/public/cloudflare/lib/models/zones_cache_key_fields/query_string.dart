@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude', 'include'}.contains(key)); } 
-QueryString copyWith({QueryStringExclude Function()? exclude, QueryStringInclude Function()? include, }) { return QueryString(
+QueryString copyWith({QueryStringExclude? Function()? exclude, QueryStringInclude? Function()? include, }) { return QueryString(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
 ); } 

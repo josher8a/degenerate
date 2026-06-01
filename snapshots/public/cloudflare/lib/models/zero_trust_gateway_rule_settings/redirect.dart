@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'target_uri': targetUri.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
-Redirect copyWith({bool Function()? includeContext, bool Function()? preservePathAndQuery, Uri? targetUri, }) { return Redirect(
+Redirect copyWith({bool? Function()? includeContext, bool? Function()? preservePathAndQuery, Uri? targetUri, }) { return Redirect(
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   preservePathAndQuery: preservePathAndQuery != null ? preservePathAndQuery() : this.preservePathAndQuery,
   targetUri: targetUri ?? this.targetUri,

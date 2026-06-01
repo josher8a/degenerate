@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (namedHandlers != null) 'named_handlers': namedHandlers?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'etag', 'handlers', 'last_deployed_from', 'named_handlers'}.contains(key)); } 
-Script copyWith({String Function()? etag, List<String> Function()? handlers, String Function()? lastDeployedFrom, List<NamedHandlers> Function()? namedHandlers, }) { return Script(
+Script copyWith({String? Function()? etag, List<String>? Function()? handlers, String? Function()? lastDeployedFrom, List<NamedHandlers>? Function()? namedHandlers, }) { return Script(
   etag: etag != null ? etag() : this.etag,
   handlers: handlers != null ? handlers() : this.handlers,
   lastDeployedFrom: lastDeployedFrom != null ? lastDeployedFrom() : this.lastDeployedFrom,

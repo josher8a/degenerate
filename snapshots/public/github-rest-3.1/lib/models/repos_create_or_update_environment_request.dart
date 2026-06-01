@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (deploymentBranchPolicy != null) 'deployment_branch_policy': deploymentBranchPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'wait_timer', 'prevent_self_review', 'reviewers', 'deployment_branch_policy'}.contains(key)); } 
-ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer Function()? waitTimer, PreventSelfReview Function()? preventSelfReview, List<ReposCreateOrUpdateEnvironmentRequestReviewers>? Function()? reviewers, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
+ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer? Function()? waitTimer, PreventSelfReview? Function()? preventSelfReview, List<ReposCreateOrUpdateEnvironmentRequestReviewers>? Function()? reviewers, DeploymentBranchPolicySettings? Function()? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: waitTimer != null ? waitTimer() : this.waitTimer,
   preventSelfReview: preventSelfReview != null ? preventSelfReview() : this.preventSelfReview,
   reviewers: reviewers != null ? reviewers() : this.reviewers,

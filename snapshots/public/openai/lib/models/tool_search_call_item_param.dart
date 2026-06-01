@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('arguments'); } 
-ToolSearchCallItemParam copyWith({String? Function()? id, String? Function()? callId, String? type, ToolSearchExecutionType Function()? execution, EmptyModelParam? arguments, FunctionCallItemStatus? Function()? status, }) { return ToolSearchCallItemParam(
+ToolSearchCallItemParam copyWith({String? Function()? id, String? Function()? callId, String? type, ToolSearchExecutionType? Function()? execution, EmptyModelParam? arguments, FunctionCallItemStatus? Function()? status, }) { return ToolSearchCallItemParam(
   id: id != null ? id() : this.id,
   callId: callId != null ? callId() : this.callId,
   type: type ?? this.type,

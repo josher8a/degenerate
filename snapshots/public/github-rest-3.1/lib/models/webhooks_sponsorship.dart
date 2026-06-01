@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sponsor') &&
       json.containsKey('sponsorable') &&
       json.containsKey('tier'); } 
-WebhooksSponsorship copyWith({String? createdAt, Maintainer Function()? maintainer, String? nodeId, String? privacyLevel, Sponsor? Function()? sponsor, Sponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
+WebhooksSponsorship copyWith({String? createdAt, Maintainer? Function()? maintainer, String? nodeId, String? privacyLevel, Sponsor? Function()? sponsor, Sponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
   createdAt: createdAt ?? this.createdAt,
   maintainer: maintainer != null ? maintainer() : this.maintainer,
   nodeId: nodeId ?? this.nodeId,

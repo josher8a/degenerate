@@ -85,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
+WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions? Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,

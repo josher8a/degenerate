@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated') && json['updated'] is String; } 
-Tests copyWith({String? created, String? description, bool? enabled, String? host, HttpResults? Function()? httpResults, List<HttpResultsByColo> Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String Function()? method, String? name, List<TargetPolicies>? Function()? targetPolicies, bool Function()? targeted, TracerouteResults? Function()? tracerouteResults, List<TracerouteResultsByColo> Function()? tracerouteResultsByColo, String? updated, }) { return Tests(
+Tests copyWith({String? created, String? description, bool? enabled, String? host, HttpResults? Function()? httpResults, List<HttpResultsByColo>? Function()? httpResultsByColo, DigitalExperienceMonitoringUuid? id, String? interval, DigitalExperienceMonitoringDeviceDexTestSchemasDataKind? kind, String? Function()? method, String? name, List<TargetPolicies>? Function()? targetPolicies, bool? Function()? targeted, TracerouteResults? Function()? tracerouteResults, List<TracerouteResultsByColo>? Function()? tracerouteResultsByColo, String? updated, }) { return Tests(
   created: created ?? this.created,
   description: description ?? this.description,
   enabled: enabled ?? this.enabled,

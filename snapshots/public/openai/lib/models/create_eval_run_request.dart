@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'data_source': dataSource.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source'); } 
-CreateEvalRunRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, DataSource? dataSource, }) { return CreateEvalRunRequest(
+CreateEvalRunRequest copyWith({String? Function()? name, Map<String, String>? Function()? metadata, DataSource? dataSource, }) { return CreateEvalRunRequest(
   name: name != null ? name() : this.name,
   metadata: metadata != null ? metadata() : this.metadata,
   dataSource: dataSource ?? this.dataSource,

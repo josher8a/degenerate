@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('action') &&
       json.containsKey('status') &&
       json.containsKey('environment'); } 
-FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String Function()? createdBy, }) { return FunctionShellCall(
+FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return FunctionShellCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

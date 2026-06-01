@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (scheduleQuotasPerPlan != null) 'scheduleQuotasPerPlan': scheduleQuotasPerPlan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan', 'quotasPerPlan', 'remainingSchedules', 'remainingTests', 'scheduleQuotasPerPlan'}.contains(key)); } 
-Quota copyWith({String Function()? plan, QuotasPerPlan Function()? quotasPerPlan, double Function()? remainingSchedules, double Function()? remainingTests, ScheduleQuotasPerPlan Function()? scheduleQuotasPerPlan, }) { return Quota(
+Quota copyWith({String? Function()? plan, QuotasPerPlan? Function()? quotasPerPlan, double? Function()? remainingSchedules, double? Function()? remainingTests, ScheduleQuotasPerPlan? Function()? scheduleQuotasPerPlan, }) { return Quota(
   plan: plan != null ? plan() : this.plan,
   quotasPerPlan: quotasPerPlan != null ? quotasPerPlan() : this.quotasPerPlan,
   remainingSchedules: remainingSchedules != null ? remainingSchedules() : this.remainingSchedules,

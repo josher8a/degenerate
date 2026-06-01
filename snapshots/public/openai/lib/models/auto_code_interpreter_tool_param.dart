@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String> Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(
+AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,

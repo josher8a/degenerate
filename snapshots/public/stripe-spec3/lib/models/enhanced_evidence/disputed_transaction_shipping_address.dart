@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
-DisputedTransactionShippingAddress copyWith({City Function()? city, ShippingAddressCountry Function()? country, Line1 Function()? line1, Line2 Function()? line2, PostalCode Function()? postalCode, AddressState Function()? state, }) { return DisputedTransactionShippingAddress(
+DisputedTransactionShippingAddress copyWith({City? Function()? city, ShippingAddressCountry? Function()? country, Line1? Function()? line1, Line2? Function()? line2, PostalCode? Function()? postalCode, AddressState? Function()? state, }) { return DisputedTransactionShippingAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,

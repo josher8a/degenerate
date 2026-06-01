@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalItemType Function()? type, }) { return EvalItem(
+EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalItemType? Function()? type, }) { return EvalItem(
   role: role ?? this.role,
   content: content ?? this.content,
   type: type != null ? type() : this.type,

@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('state') &&
       json.containsKey('tool') &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser> Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, DismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, AlertDismissedReason? Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, MostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, DismissalApprovedBy? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertClosedByUserAlert(
+WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()? assignees, DateTime? createdAt, DateTime? dismissedAt, DismissedBy? Function()? dismissedBy, CodeScanningAlertDismissedComment? Function()? dismissedComment, AlertDismissedReason? Function()? dismissedReason, dynamic Function()? fixedAt, Uri? htmlUrl, MostRecentInstance? Function()? mostRecentInstance, int? number, WebhookCodeScanningAlertClosedByUserAlertRule? rule, WebhookCodeScanningAlertClosedByUserAlertState? state, WebhookCodeScanningAlertClosedByUserAlertTool? tool, Uri? url, DismissalApprovedBy? Function()? dismissalApprovedBy, }) { return WebhookCodeScanningAlertClosedByUserAlert(
   assignees: assignees != null ? assignees() : this.assignees,
   createdAt: createdAt ?? this.createdAt,
   dismissedAt: dismissedAt ?? this.dismissedAt,

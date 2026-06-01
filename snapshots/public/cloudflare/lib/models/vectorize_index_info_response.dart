@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'vectorCount': ?vectorCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'processedUpToDatetime', 'processedUpToMutation', 'vectorCount'}.contains(key)); } 
-VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid? Function()? processedUpToMutation, int Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
+VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions? Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid? Function()? processedUpToMutation, int? Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   processedUpToDatetime: processedUpToDatetime != null ? processedUpToDatetime() : this.processedUpToDatetime,
   processedUpToMutation: processedUpToMutation != null ? processedUpToMutation() : this.processedUpToMutation,

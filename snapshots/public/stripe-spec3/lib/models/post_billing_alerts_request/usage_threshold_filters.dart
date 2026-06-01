@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-UsageThresholdFilters copyWith({String Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return UsageThresholdFilters(
+UsageThresholdFilters copyWith({String? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return UsageThresholdFilters(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 

@@ -106,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount> Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, Price? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount> Function()? taxes, }) { return Item(
+Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount>? Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, Price? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount>? Function()? taxes, }) { return Item(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,

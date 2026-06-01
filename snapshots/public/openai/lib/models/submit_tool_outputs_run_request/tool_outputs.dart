@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'output': ?output,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tool_call_id', 'output'}.contains(key)); } 
-ToolOutputs copyWith({String Function()? toolCallId, String Function()? output, }) { return ToolOutputs(
+ToolOutputs copyWith({String? Function()? toolCallId, String? Function()? output, }) { return ToolOutputs(
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,
   output: output != null ? output() : this.output,
 ); } 

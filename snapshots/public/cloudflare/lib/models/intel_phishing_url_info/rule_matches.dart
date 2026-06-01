@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'banning', 'blocking', 'description', 'name'}.contains(key)); } 
-RuleMatches copyWith({bool Function()? banning, bool Function()? blocking, String Function()? description, String Function()? name, }) { return RuleMatches(
+RuleMatches copyWith({bool? Function()? banning, bool? Function()? blocking, String? Function()? description, String? Function()? name, }) { return RuleMatches(
   banning: banning != null ? banning() : this.banning,
   blocking: blocking != null ? blocking() : this.blocking,
   description: description != null ? description() : this.description,

@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('summary'); } 
-ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ComputerToolCallOutputStatus Function()? status, }) { return ReasoningItem(
+ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ReasoningItem(
   type: type ?? this.type,
   id: id ?? this.id,
   encryptedContent: encryptedContent != null ? encryptedContent() : this.encryptedContent,

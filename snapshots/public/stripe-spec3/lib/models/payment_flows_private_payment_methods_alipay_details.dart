@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'fingerprint', 'transaction_id'}.contains(key)); } 
-PaymentFlowsPrivatePaymentMethodsAlipayDetails copyWith({String Function()? buyerId, String? Function()? fingerprint, String? Function()? transactionId, }) { return PaymentFlowsPrivatePaymentMethodsAlipayDetails(
+PaymentFlowsPrivatePaymentMethodsAlipayDetails copyWith({String? Function()? buyerId, String? Function()? fingerprint, String? Function()? transactionId, }) { return PaymentFlowsPrivatePaymentMethodsAlipayDetails(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

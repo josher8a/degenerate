@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('contributions') && json['contributions'] is num; } 
-Contributor copyWith({String Function()? login, int Function()? id, String Function()? nodeId, Uri Function()? avatarUrl, String? Function()? gravatarId, Uri Function()? url, Uri Function()? htmlUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? starredUrl, Uri Function()? subscriptionsUrl, Uri Function()? organizationsUrl, Uri Function()? reposUrl, String Function()? eventsUrl, Uri Function()? receivedEventsUrl, String? type, bool Function()? siteAdmin, int? contributions, String Function()? email, String Function()? name, String Function()? userViewType, }) { return Contributor(
+Contributor copyWith({String? Function()? login, int? Function()? id, String? Function()? nodeId, Uri? Function()? avatarUrl, String? Function()? gravatarId, Uri? Function()? url, Uri? Function()? htmlUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, Uri? Function()? organizationsUrl, Uri? Function()? reposUrl, String? Function()? eventsUrl, Uri? Function()? receivedEventsUrl, String? type, bool? Function()? siteAdmin, int? contributions, String? Function()? email, String? Function()? name, String? Function()? userViewType, }) { return Contributor(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

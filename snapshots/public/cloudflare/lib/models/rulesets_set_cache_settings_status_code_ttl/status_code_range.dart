@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'to': ?to,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-StatusCodeRange copyWith({int Function()? from, int Function()? to, }) { return StatusCodeRange(
+StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { return StatusCodeRange(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 

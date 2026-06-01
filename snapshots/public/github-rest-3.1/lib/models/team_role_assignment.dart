@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('parent') &&
       json.containsKey('type'); } 
-TeamRoleAssignment copyWith({Assignment Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamRoleAssignment(
+TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

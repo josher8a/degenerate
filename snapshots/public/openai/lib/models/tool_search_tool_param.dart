@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ToolSearchToolParam copyWith({String? type, ToolSearchExecutionType Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolSearchToolParam(
+ToolSearchToolParam copyWith({String? type, ToolSearchExecutionType? Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolSearchToolParam(
   type: type ?? this.type,
   execution: execution != null ? execution() : this.execution,
   description: description != null ? description() : this.description,

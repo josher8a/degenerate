@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-De copyWith({AtStandard Function()? standard, TaxProductRegistrationsResourceCountryOptionsEuropeType? type, }) { return De(
+De copyWith({AtStandard? Function()? standard, TaxProductRegistrationsResourceCountryOptionsEuropeType? type, }) { return De(
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
 ); } 

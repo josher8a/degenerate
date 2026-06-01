@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'id', 'name'}.contains(key)); } 
-RuleSource copyWith({String Function()? type, int? Function()? id, String? Function()? name, }) { return RuleSource(
+RuleSource copyWith({String? Function()? type, int? Function()? id, String? Function()? name, }) { return RuleSource(
   type: type != null ? type() : this.type,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

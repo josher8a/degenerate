@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'value'}.contains(key)); } 
-PackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String Function()? name, NugetMetadataValue Function()? value, }) { return PackagePackageVersionNugetMetadata(
+PackagePackageVersionNugetMetadata copyWith({dynamic Function()? id, String? Function()? name, NugetMetadataValue? Function()? value, }) { return PackagePackageVersionNugetMetadata(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,

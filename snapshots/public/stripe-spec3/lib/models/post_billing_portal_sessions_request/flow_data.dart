@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-FlowData copyWith({FlowDataAfterCompletion Function()? afterCompletion, FlowDataSubscriptionCancel Function()? subscriptionCancel, FlowDataSubscriptionUpdate Function()? subscriptionUpdate, SubscriptionUpdateConfirm Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return FlowData(
+FlowData copyWith({FlowDataAfterCompletion? Function()? afterCompletion, FlowDataSubscriptionCancel? Function()? subscriptionCancel, FlowDataSubscriptionUpdate? Function()? subscriptionUpdate, SubscriptionUpdateConfirm? Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return FlowData(
   afterCompletion: afterCompletion != null ? afterCompletion() : this.afterCompletion,
   subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,

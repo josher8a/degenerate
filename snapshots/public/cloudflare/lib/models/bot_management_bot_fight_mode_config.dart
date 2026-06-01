@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (staleZoneConfiguration != null) 'stale_zone_configuration': staleZoneConfiguration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fight_mode', 'stale_zone_configuration'}.contains(key)); } 
-BotManagementBotFightModeConfig copyWith({BotManagementFightMode Function()? fightMode, BotManagementBotFightModeConfigStaleZoneConfiguration Function()? staleZoneConfiguration, }) { return BotManagementBotFightModeConfig(
+BotManagementBotFightModeConfig copyWith({BotManagementFightMode? Function()? fightMode, BotManagementBotFightModeConfigStaleZoneConfiguration? Function()? staleZoneConfiguration, }) { return BotManagementBotFightModeConfig(
   fightMode: fightMode != null ? fightMode() : this.fightMode,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
 ); } 

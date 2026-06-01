@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data'); } 
-InviteListResponse copyWith({ChatCompletionListObject? object, List<Invite>? data, String Function()? firstId, String Function()? lastId, bool Function()? hasMore, }) { return InviteListResponse(
+InviteListResponse copyWith({ChatCompletionListObject? object, List<Invite>? data, String? Function()? firstId, String? Function()? lastId, bool? Function()? hasMore, }) { return InviteListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

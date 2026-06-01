@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'omad': ?omad,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chips', 'imad', 'omad'}.contains(key)); } 
-TrackingDetailsUsDomesticWire copyWith({String Function()? chips, String Function()? imad, String Function()? omad, }) { return TrackingDetailsUsDomesticWire(
+TrackingDetailsUsDomesticWire copyWith({String? Function()? chips, String? Function()? imad, String? Function()? omad, }) { return TrackingDetailsUsDomesticWire(
   chips: chips != null ? chips() : this.chips,
   imad: imad != null ? imad() : this.imad,
   omad: omad != null ? omad() : this.omad,

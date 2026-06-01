@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id, DateTime? Function()? modifiedOn, ZonesDevelopmentModeValue? value, double Function()? timeRemaining, }) { return ZonesDevelopmentMode(
+ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id, DateTime? Function()? modifiedOn, ZonesDevelopmentModeValue? value, double? Function()? timeRemaining, }) { return ZonesDevelopmentMode(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

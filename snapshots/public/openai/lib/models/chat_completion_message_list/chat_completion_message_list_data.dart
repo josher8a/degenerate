@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('refusal') && json['refusal'] is String &&
       json.containsKey('role') &&
       json.containsKey('id') && json['id'] is String; } 
-ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2> Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations> Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall Function()? functionCall, ChatCompletionResponseMessageAudio? Function()? audio, String? id, List<ContentParts>? Function()? contentParts, }) { return ChatCompletionMessageListData(
+ChatCompletionMessageListData copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations>? Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall? Function()? functionCall, ChatCompletionResponseMessageAudio? Function()? audio, String? id, List<ContentParts>? Function()? contentParts, }) { return ChatCompletionMessageListData(
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,

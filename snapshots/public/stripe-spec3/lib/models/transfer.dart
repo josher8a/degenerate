@@ -134,7 +134,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reversals') &&
       json.containsKey('reversed') && json['reversed'] is bool; } 
-Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, ChargeTransferDataDestination? Function()? destination, DestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
+Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, ChargeTransferDataDestination? Function()? destination, DestinationPayment? Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String? Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
   amount: amount ?? this.amount,
   amountReversed: amountReversed ?? this.amountReversed,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,

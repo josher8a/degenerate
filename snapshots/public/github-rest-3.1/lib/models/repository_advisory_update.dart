@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'collaborating_teams': ?collaboratingTeams,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary', 'description', 'cve_id', 'vulnerabilities', 'cwe_ids', 'credits', 'severity', 'cvss_vector_string', 'state', 'collaborating_users', 'collaborating_teams'}.contains(key)); } 
-RepositoryAdvisoryUpdate copyWith({String Function()? summary, String Function()? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities> Function()? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, RepositoryAdvisoryUpdateState Function()? state, List<String>? Function()? collaboratingUsers, List<String>? Function()? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(
+RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function()? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? Function()? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, RepositoryAdvisoryUpdateState? Function()? state, List<String>? Function()? collaboratingUsers, List<String>? Function()? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(
   summary: summary != null ? summary() : this.summary,
   description: description != null ? description() : this.description,
   cveId: cveId != null ? cveId() : this.cveId,

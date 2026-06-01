@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-Zones0HoldPostResponse copyWith({Zones0HoldDeleteResponseResult Function()? result}) { return Zones0HoldPostResponse(
+Zones0HoldPostResponse copyWith({Zones0HoldDeleteResponseResult? Function()? result}) { return Zones0HoldPostResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

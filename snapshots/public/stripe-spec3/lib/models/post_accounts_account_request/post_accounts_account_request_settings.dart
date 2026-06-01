@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (treasury != null) 'treasury': treasury?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bacs_debit_payments', 'branding', 'card_issuing', 'card_payments', 'invoices', 'payments', 'payouts', 'treasury'}.contains(key)); } 
-PostAccountsAccountRequestSettings copyWith({SettingsBacsDebitPayments Function()? bacsDebitPayments, Branding Function()? branding, SettingsCardIssuing Function()? cardIssuing, SettingsCardPayments Function()? cardPayments, PostAccountsAccountRequestSettingsInvoices Function()? invoices, SettingsPayments Function()? payments, SettingsPayouts Function()? payouts, SettingsTreasury Function()? treasury, }) { return PostAccountsAccountRequestSettings(
+PostAccountsAccountRequestSettings copyWith({SettingsBacsDebitPayments? Function()? bacsDebitPayments, Branding? Function()? branding, SettingsCardIssuing? Function()? cardIssuing, SettingsCardPayments? Function()? cardPayments, PostAccountsAccountRequestSettingsInvoices? Function()? invoices, SettingsPayments? Function()? payments, SettingsPayouts? Function()? payouts, SettingsTreasury? Function()? treasury, }) { return PostAccountsAccountRequestSettings(
   bacsDebitPayments: bacsDebitPayments != null ? bacsDebitPayments() : this.bacsDebitPayments,
   branding: branding != null ? branding() : this.branding,
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,

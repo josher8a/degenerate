@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eu_bank_transfer', 'requested_address_types', 'type'}.contains(key)); } 
-PaymentMethodOptionsCustomerBalanceBankTransfer copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccount Function()? euBankTransfer, List<CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes> Function()? requestedAddressTypes, CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType? Function()? type, }) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
+PaymentMethodOptionsCustomerBalanceBankTransfer copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccount? Function()? euBankTransfer, List<CheckoutCustomerBalanceBankTransferPaymentMethodOptionsRequestedAddressTypes>? Function()? requestedAddressTypes, CheckoutCustomerBalanceBankTransferPaymentMethodOptionsType? Function()? type, }) { return PaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type != null ? type() : this.type,

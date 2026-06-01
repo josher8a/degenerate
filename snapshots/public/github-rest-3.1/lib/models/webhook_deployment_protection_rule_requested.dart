@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'environment', 'event', 'sha', 'ref', 'deployment_callback_url', 'deployment', 'pull_requests', 'repository', 'organization', 'installation', 'sender'}.contains(key)); } 
-WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAction Function()? action, String Function()? environment, String Function()? event, String Function()? sha, String Function()? ref, Uri Function()? deploymentCallbackUrl, Deployment? Function()? deployment, List<PullRequest> Function()? pullRequests, RepositoryWebhooks Function()? repository, OrganizationSimpleWebhooks Function()? organization, SimpleInstallation Function()? installation, SimpleUser Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
+WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAction? Function()? action, String? Function()? environment, String? Function()? event, String? Function()? sha, String? Function()? ref, Uri? Function()? deploymentCallbackUrl, Deployment? Function()? deployment, List<PullRequest>? Function()? pullRequests, RepositoryWebhooks? Function()? repository, OrganizationSimpleWebhooks? Function()? organization, SimpleInstallation? Function()? installation, SimpleUser? Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
   action: action != null ? action() : this.action,
   environment: environment != null ? environment() : this.environment,
   event: event != null ? event() : this.event,

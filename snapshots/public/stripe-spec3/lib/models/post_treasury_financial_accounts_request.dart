@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'supported_currencies': supportedCurrencies,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported_currencies'); } 
-PostTreasuryFinancialAccountsRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures Function()? features, Map<String, String> Function()? metadata, Nickname Function()? nickname, PlatformRestrictions Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
+PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? Function()? features, Map<String, String>? Function()? metadata, Nickname? Function()? nickname, PlatformRestrictions? Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   metadata: metadata != null ? metadata() : this.metadata,

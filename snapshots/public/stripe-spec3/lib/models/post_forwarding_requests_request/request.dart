@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (headers != null) 'headers': headers?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'headers'}.contains(key)); } 
-Request copyWith({String Function()? body, List<Headers> Function()? headers, }) { return Request(
+Request copyWith({String? Function()? body, List<Headers>? Function()? headers, }) { return Request(
   body: body != null ? body() : this.body,
   headers: headers != null ? headers() : this.headers,
 ); } 

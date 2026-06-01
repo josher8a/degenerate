@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (pageSize != null) 'page_size': pageSize?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_size'}.contains(key)); } 
-Pdf copyWith({PdfPageSize Function()? pageSize}) { return Pdf(
+Pdf copyWith({PdfPageSize? Function()? pageSize}) { return Pdf(
   pageSize: pageSize != null ? pageSize() : this.pageSize,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

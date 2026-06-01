@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-AccessCertificatesComponentsSchemasSingleResponse2 copyWith({AccessComponentsSchemasCertificates Function()? result}) { return AccessCertificatesComponentsSchemasSingleResponse2(
+AccessCertificatesComponentsSchemasSingleResponse2 copyWith({AccessComponentsSchemasCertificates? Function()? result}) { return AccessCertificatesComponentsSchemasSingleResponse2(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

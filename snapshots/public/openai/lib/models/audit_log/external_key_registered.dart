@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'data': ?data,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-ExternalKeyRegistered copyWith({String Function()? id, Map<String, dynamic> Function()? data, }) { return ExternalKeyRegistered(
+ExternalKeyRegistered copyWith({String? Function()? id, Map<String, dynamic>? Function()? data, }) { return ExternalKeyRegistered(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 

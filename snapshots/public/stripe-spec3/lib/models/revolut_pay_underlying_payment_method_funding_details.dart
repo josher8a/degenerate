@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card', 'type'}.contains(key)); } 
-RevolutPayUnderlyingPaymentMethodFundingDetails copyWith({PaymentMethodDetailsPassthroughCard Function()? card, AmazonPayUnderlyingPaymentMethodFundingDetailsType? Function()? type, }) { return RevolutPayUnderlyingPaymentMethodFundingDetails(
+RevolutPayUnderlyingPaymentMethodFundingDetails copyWith({PaymentMethodDetailsPassthroughCard? Function()? card, AmazonPayUnderlyingPaymentMethodFundingDetailsType? Function()? type, }) { return RevolutPayUnderlyingPaymentMethodFundingDetails(
   card: card != null ? card() : this.card,
   type: type != null ? type() : this.type,
 ); } 

@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   if (setting != null) 'setting': setting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key)); } 
-SecretScanningPatternOverride copyWith({String Function()? tokenType, String? Function()? customPatternVersion, String Function()? slug, String Function()? displayName, int Function()? alertTotal, int Function()? alertTotalPercentage, int Function()? falsePositives, int Function()? falsePositiveRate, int Function()? bypassRate, DefaultSetting Function()? defaultSetting, EnterpriseSetting? Function()? enterpriseSetting, Setting Function()? setting, }) { return SecretScanningPatternOverride(
+SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? Function()? customPatternVersion, String? Function()? slug, String? Function()? displayName, int? Function()? alertTotal, int? Function()? alertTotalPercentage, int? Function()? falsePositives, int? Function()? falsePositiveRate, int? Function()? bypassRate, DefaultSetting? Function()? defaultSetting, EnterpriseSetting? Function()? enterpriseSetting, Setting? Function()? setting, }) { return SecretScanningPatternOverride(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
   slug: slug != null ? slug() : this.slug,

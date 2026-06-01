@@ -94,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('state') &&
       json.containsKey('target_url') && json['target_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, String? name, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
+WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks? Function()? enterprise, int? id, SimpleInstallation? Function()? installation, String? name, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   branches: branches ?? this.branches,
   commit: commit ?? this.commit,

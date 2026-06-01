@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('heigh
       json.containsKey('width') && json['width'] is num &&
       json.containsKey('x') && json['x'] is num &&
       json.containsKey('y') && json['y'] is num; } 
-Clip copyWith({double? height, double Function()? scale, double? width, double? x, double? y, }) { return Clip(
+Clip copyWith({double? height, double? Function()? scale, double? width, double? x, double? y, }) { return Clip(
   height: height ?? this.height,
   scale: scale != null ? scale() : this.scale,
   width: width ?? this.width,

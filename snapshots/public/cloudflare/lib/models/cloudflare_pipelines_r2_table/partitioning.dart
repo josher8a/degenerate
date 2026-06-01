@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'time_pattern': ?timePattern,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'time_pattern'}.contains(key)); } 
-Partitioning copyWith({String Function()? timePattern}) { return Partitioning(
+Partitioning copyWith({String? Function()? timePattern}) { return Partitioning(
   timePattern: timePattern != null ? timePattern() : this.timePattern,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

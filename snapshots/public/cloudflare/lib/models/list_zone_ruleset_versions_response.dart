@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success'); } 
-ListZoneRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo Function()? resultInfo, }) { return ListZoneRulesetVersionsResponse(
+ListZoneRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo? Function()? resultInfo, }) { return ListZoneRulesetVersionsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

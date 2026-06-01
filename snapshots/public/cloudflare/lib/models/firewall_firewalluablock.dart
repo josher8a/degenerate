@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (paused != null) 'paused': paused?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'description', 'id', 'mode', 'paused'}.contains(key)); } 
-FirewallFirewalluablock copyWith({FirewallSchemasConfiguration Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription Function()? description, FirewallComponentsUaRuleId Function()? id, FirewallComponentsSchemasMode? Function()? mode, FirewallSchemasPaused Function()? paused, }) { return FirewallFirewalluablock(
+FirewallFirewalluablock copyWith({FirewallSchemasConfiguration? Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription? Function()? description, FirewallComponentsUaRuleId? Function()? id, FirewallComponentsSchemasMode? Function()? mode, FirewallSchemasPaused? Function()? paused, }) { return FirewallFirewalluablock(
   configuration: configuration != null ? configuration() : this.configuration,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

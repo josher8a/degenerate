@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (cartesBancaires != null) 'cartes_bancaires': cartesBancaires?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cartes_bancaires'}.contains(key)); } 
-NetworkOptions copyWith({NetworkOptionsCartesBancaires Function()? cartesBancaires}) { return NetworkOptions(
+NetworkOptions copyWith({NetworkOptionsCartesBancaires? Function()? cartesBancaires}) { return NetworkOptions(
   cartesBancaires: cartesBancaires != null ? cartesBancaires() : this.cartesBancaires,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

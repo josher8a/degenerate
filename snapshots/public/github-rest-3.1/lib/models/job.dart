@@ -139,7 +139,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
       json.containsKey('workflow_name') && json['workflow_name'] is String &&
       json.containsKey('head_branch') && json['head_branch'] is String; } 
-Job copyWith({int? id, int? runId, String? runUrl, int Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps> Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
+Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps>? Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
   id: id ?? this.id,
   runId: runId ?? this.runId,
   runUrl: runUrl ?? this.runUrl,

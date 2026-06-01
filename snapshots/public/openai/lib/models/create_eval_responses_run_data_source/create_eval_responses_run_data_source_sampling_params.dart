@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (text != null) 'text': text?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reasoning_effort', 'temperature', 'max_completion_tokens', 'top_p', 'seed', 'tools', 'text'}.contains(key)); } 
-CreateEvalResponsesRunDataSourceSamplingParams copyWith({ReasoningEffort? Function()? reasoningEffort, double Function()? temperature, int Function()? maxCompletionTokens, double Function()? topP, int Function()? seed, List<Tool> Function()? tools, SamplingParamsText Function()? text, }) { return CreateEvalResponsesRunDataSourceSamplingParams(
+CreateEvalResponsesRunDataSourceSamplingParams copyWith({ReasoningEffort? Function()? reasoningEffort, double Function()? temperature, int? Function()? maxCompletionTokens, double Function()? topP, int Function()? seed, List<Tool>? Function()? tools, SamplingParamsText? Function()? text, }) { return CreateEvalResponsesRunDataSourceSamplingParams(
   reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
   temperature: temperature != null ? temperature() : this.temperature,
   maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,

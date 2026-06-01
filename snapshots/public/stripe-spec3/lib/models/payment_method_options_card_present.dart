@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (routing != null) 'routing': routing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'request_extended_authorization', 'request_incremental_authorization_support', 'routing'}.contains(key)); } 
-PaymentMethodOptionsCardPresent copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod Function()? captureMethod, bool? Function()? requestExtendedAuthorization, bool? Function()? requestIncrementalAuthorizationSupport, PaymentMethodOptionsCardPresentRouting Function()? routing, }) { return PaymentMethodOptionsCardPresent(
+PaymentMethodOptionsCardPresent copyWith({PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod? Function()? captureMethod, bool? Function()? requestExtendedAuthorization, bool? Function()? requestIncrementalAuthorizationSupport, PaymentMethodOptionsCardPresentRouting? Function()? routing, }) { return PaymentMethodOptionsCardPresent(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,
   requestIncrementalAuthorizationSupport: requestIncrementalAuthorizationSupport != null ? requestIncrementalAuthorizationSupport() : this.requestIncrementalAuthorizationSupport,

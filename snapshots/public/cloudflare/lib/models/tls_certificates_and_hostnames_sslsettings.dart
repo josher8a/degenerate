@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   if (tls13 != null) 'tls_1_3': tls13?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ciphers', 'early_hints', 'http2', 'min_tls_version', 'tls_1_3'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslsettings copyWith({List<String> Function()? ciphers, EarlyHints Function()? earlyHints, Http2 Function()? http2, MinTlsVersion Function()? minTlsVersion, Tls13 Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(
+TlsCertificatesAndHostnamesSslsettings copyWith({List<String>? Function()? ciphers, EarlyHints? Function()? earlyHints, Http2? Function()? http2, MinTlsVersion? Function()? minTlsVersion, Tls13? Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   earlyHints: earlyHints != null ? earlyHints() : this.earlyHints,
   http2: http2 != null ? http2() : this.http2,

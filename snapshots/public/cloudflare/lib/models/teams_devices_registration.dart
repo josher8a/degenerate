@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? deletedAt, TeamsDevicesRegistrationDeviceDetails? device, String? id, String? key, String? Function()? keyType, String? lastSeenAt, TeamsDevicesPolicySummary Function()? policy, String? Function()? revokedAt, String? Function()? tunnelType, String? updatedAt, TeamsDevicesUser Function()? user, }) { return TeamsDevicesRegistration(
+TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? deletedAt, TeamsDevicesRegistrationDeviceDetails? device, String? id, String? key, String? Function()? keyType, String? lastSeenAt, TeamsDevicesPolicySummary? Function()? policy, String? Function()? revokedAt, String? Function()? tunnelType, String? updatedAt, TeamsDevicesUser? Function()? user, }) { return TeamsDevicesRegistration(
   createdAt: createdAt ?? this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
   device: device ?? this.device,

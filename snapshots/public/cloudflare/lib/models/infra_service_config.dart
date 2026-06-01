@@ -25,7 +25,7 @@ final InfraServiceCommon infraServiceCommon;
 
 @override String get type { return 'http'; } 
 @override Map<String, dynamic> toJson() { return {...infraServiceCommon.toJson(), 'type': type}; } 
-InfraServiceConfigHttp copyWith({DateTime Function()? createdAt, InfraServiceHost? host, String? name, String Function()? serviceId, DateTime Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
+InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
   createdAt: createdAt,
   host: host,
   name: name,

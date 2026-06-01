@@ -131,7 +131,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('author') &&
       json.containsKey('assets'); } 
-Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, String? Function()? body, bool? draft, bool? prerelease, bool Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, DateTime? Function()? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String Function()? bodyHtml, String Function()? bodyText, int Function()? mentionsCount, Uri Function()? discussionUrl, ReactionRollup Function()? reactions, }) { return Release(
+Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri? Function()? tarballUrl, Uri? Function()? zipballUrl, int? id, String? nodeId, String? tagName, String? targetCommitish, String? Function()? name, String? Function()? body, bool? draft, bool? prerelease, bool? Function()? immutable, DateTime? createdAt, DateTime? Function()? publishedAt, DateTime? Function()? updatedAt, SimpleUser? author, List<ReleaseAsset>? assets, String? Function()? bodyHtml, String? Function()? bodyText, int? Function()? mentionsCount, Uri? Function()? discussionUrl, ReactionRollup? Function()? reactions, }) { return Release(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   assetsUrl: assetsUrl ?? this.assetsUrl,

@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'return_on_failure': returnOnFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
-Retrieval copyWith({List<BoostBy> Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic> Function()? filters, FusionMethod Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
+Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, FusionMethod? Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,

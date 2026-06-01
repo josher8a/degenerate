@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'parent', 'quantity', 'type'}.contains(key)); } 
-SourceOrderItems copyWith({int Function()? amount, String Function()? currency, String Function()? description, String Function()? parent, int Function()? quantity, ItemsType Function()? type, }) { return SourceOrderItems(
+SourceOrderItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int? Function()? quantity, ItemsType? Function()? type, }) { return SourceOrderItems(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   description: description != null ? description() : this.description,

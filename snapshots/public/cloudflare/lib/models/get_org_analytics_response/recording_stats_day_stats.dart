@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'total_recordings': ?totalRecordings,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'day', 'total_recording_minutes', 'total_recordings'}.contains(key)); } 
-RecordingStatsDayStats copyWith({String Function()? day, int Function()? totalRecordingMinutes, int Function()? totalRecordings, }) { return RecordingStatsDayStats(
+RecordingStatsDayStats copyWith({String? Function()? day, int? Function()? totalRecordingMinutes, int? Function()? totalRecordings, }) { return RecordingStatsDayStats(
   day: day != null ? day() : this.day,
   totalRecordingMinutes: totalRecordingMinutes != null ? totalRecordingMinutes() : this.totalRecordingMinutes,
   totalRecordings: totalRecordings != null ? totalRecordings() : this.totalRecordings,

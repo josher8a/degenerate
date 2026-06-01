@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'require_explicit_values': ?requireExplicitValues,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value_type'); } 
-CustomPropertySetPayload copyWith({ValueType? valueType, bool Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
+CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool? Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
   valueType: valueType ?? this.valueType,
   $required: $required != null ? $required() : this.$required,
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,

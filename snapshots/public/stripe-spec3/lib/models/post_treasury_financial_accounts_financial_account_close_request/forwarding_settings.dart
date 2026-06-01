@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ForwardingSettings copyWith({String Function()? financialAccount, String Function()? paymentMethod, ForwardingSettingsType? type, }) { return ForwardingSettings(
+ForwardingSettings copyWith({String? Function()? financialAccount, String? Function()? paymentMethod, ForwardingSettingsType? type, }) { return ForwardingSettings(
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   type: type ?? this.type,

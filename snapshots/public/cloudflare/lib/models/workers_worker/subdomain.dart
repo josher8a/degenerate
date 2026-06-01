@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'previews_enabled': ?previewsEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key)); } 
-Subdomain copyWith({bool Function()? enabled, bool Function()? previewsEnabled, }) { return Subdomain(
+Subdomain copyWith({bool Function()? enabled, bool? Function()? previewsEnabled, }) { return Subdomain(
   enabled: enabled != null ? enabled() : this.enabled,
   previewsEnabled: previewsEnabled != null ? previewsEnabled() : this.previewsEnabled,
 ); } 

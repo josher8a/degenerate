@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (label != null) 'label': label?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'label'}.contains(key)); } 
-GeoRestrictions copyWith({Label Function()? label}) { return GeoRestrictions(
+GeoRestrictions copyWith({Label? Function()? label}) { return GeoRestrictions(
   label: label != null ? label() : this.label,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cpuTi
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('scriptName') && json['scriptName'] is String &&
       json.containsKey('wallTimeMs') && json['wallTimeMs'] is num; } 
-WorkersVariant2 copyWith({double? cpuTimeMs, List<DiagnosticsChannelEvents> Function()? diagnosticsChannelEvents, String Function()? dispatchNamespace, String Function()? durableObjectId, String Function()? entrypoint, Map<String, dynamic> Function()? event, Variant1EventType? eventType, ExecutionModel Function()? executionModel, String? outcome, String? requestId, String? scriptName, ScriptVersion Function()? scriptVersion, bool Function()? truncated, double? wallTimeMs, }) { return WorkersVariant2(
+WorkersVariant2 copyWith({double? cpuTimeMs, List<DiagnosticsChannelEvents>? Function()? diagnosticsChannelEvents, String? Function()? dispatchNamespace, String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, dynamic>? Function()? event, Variant1EventType? eventType, ExecutionModel? Function()? executionModel, String? outcome, String? requestId, String? scriptName, ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, double? wallTimeMs, }) { return WorkersVariant2(
   cpuTimeMs: cpuTimeMs ?? this.cpuTimeMs,
   diagnosticsChannelEvents: diagnosticsChannelEvents != null ? diagnosticsChannelEvents() : this.diagnosticsChannelEvents,
   dispatchNamespace: dispatchNamespace != null ? dispatchNamespace() : this.dispatchNamespace,

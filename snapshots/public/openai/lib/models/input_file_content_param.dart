@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InputFileContentParam copyWith({InputFileContentParamType? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum Function()? detail, }) { return InputFileContentParam(
+InputFileContentParam copyWith({InputFileContentParamType? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return InputFileContentParam(
   type: type ?? this.type,
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,

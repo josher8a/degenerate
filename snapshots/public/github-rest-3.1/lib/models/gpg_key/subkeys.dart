@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'revoked': ?revoked,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key)); } 
-Subkeys copyWith({int Function()? id, int Function()? primaryKeyId, String Function()? keyId, String Function()? publicKey, List<GpgKeyEmails> Function()? emails, List<dynamic> Function()? subkeys, bool Function()? canSign, bool Function()? canEncryptComms, bool Function()? canEncryptStorage, bool Function()? canCertify, String Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool Function()? revoked, }) { return Subkeys(
+Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Function()? keyId, String? Function()? publicKey, List<GpgKeyEmails>? Function()? emails, List<dynamic>? Function()? subkeys, bool? Function()? canSign, bool? Function()? canEncryptComms, bool? Function()? canEncryptStorage, bool? Function()? canCertify, String? Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool? Function()? revoked, }) { return Subkeys(
   id: id != null ? id() : this.id,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
   keyId: keyId != null ? keyId() : this.keyId,

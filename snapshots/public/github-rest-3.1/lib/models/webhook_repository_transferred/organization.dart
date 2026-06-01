@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avata
       json.containsKey('public_members_url') && json['public_members_url'] is String &&
       json.containsKey('repos_url') && json['repos_url'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) { return Organization(
+Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eventsUrl, Uri? hooksUrl, Uri? Function()? htmlUrl, int? id, Uri? issuesUrl, String? login, String? membersUrl, String? nodeId, String? publicMembersUrl, Uri? reposUrl, Uri? url, }) { return Organization(
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
   eventsUrl: eventsUrl ?? this.eventsUrl,

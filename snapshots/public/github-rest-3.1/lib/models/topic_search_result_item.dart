@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('featured') && json['featured'] is bool &&
       json.containsKey('curated') && json['curated'] is bool &&
       json.containsKey('score') && json['score'] is num; } 
-TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, int? Function()? repositoryCount, Uri? Function()? logoUrl, List<SearchResultTextMatches2> Function()? textMatches, List<Related>? Function()? related, List<Aliases>? Function()? aliases, }) { return TopicSearchResultItem(
+TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, int? Function()? repositoryCount, Uri? Function()? logoUrl, List<SearchResultTextMatches2>? Function()? textMatches, List<Related>? Function()? related, List<Aliases>? Function()? aliases, }) { return TopicSearchResultItem(
   name: name ?? this.name,
   displayName: displayName != null ? displayName() : this.displayName,
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,

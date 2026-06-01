@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AsnIntelligenceGetAsnSubnetsResponse4Xx copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, IntelAsn Function()? asn, IntelCount Function()? count, int Function()? ipCountTotal, IntelPage Function()? page, IntelPerPage Function()? perPage, List<String> Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse4Xx(
+AsnIntelligenceGetAsnSubnetsResponse4Xx copyWith({List<IntelMessages2>? errors, List<IntelMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

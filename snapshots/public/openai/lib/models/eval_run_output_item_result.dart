@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('passed') && json['passed'] is bool; } 
-EvalRunOutputItemResult copyWith({String? name, String Function()? type, double? score, bool? passed, Map<String, dynamic>? Function()? sample, Map<String, dynamic>? additionalProperties, }) { return EvalRunOutputItemResult(
+EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double? score, bool? passed, Map<String, dynamic>? Function()? sample, Map<String, dynamic>? additionalProperties, }) { return EvalRunOutputItemResult(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   score: score ?? this.score,

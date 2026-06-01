@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
-ShippingRateData copyWith({DeliveryEstimate Function()? deliveryEstimate, String? displayName, PostShippingRatesRequestFixedAmount Function()? fixedAmount, Map<String, String> Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, String Function()? taxCode, PostShippingRatesRequestType Function()? type, }) { return ShippingRateData(
+ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, String? displayName, PostShippingRatesRequestFixedAmount? Function()? fixedAmount, Map<String, String>? Function()? metadata, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, PostShippingRatesRequestType? Function()? type, }) { return ShippingRateData(
   deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
   displayName: displayName ?? this.displayName,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,

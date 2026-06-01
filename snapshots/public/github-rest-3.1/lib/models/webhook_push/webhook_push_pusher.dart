@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'username': ?username,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-WebhookPushPusher copyWith({DateTime Function()? date, String? Function()? email, String? name, String Function()? username, }) { return WebhookPushPusher(
+WebhookPushPusher copyWith({DateTime? Function()? date, String? Function()? email, String? name, String? Function()? username, }) { return WebhookPushPusher(
   date: date != null ? date() : this.date,
   email: email != null ? email() : this.email,
   name: name ?? this.name,

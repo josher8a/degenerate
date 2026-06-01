@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('next_billing') &&
       json.containsKey('reference') && json['reference'] is String; } 
-KlarnaSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int Function()? intervalCount, String Function()? name, NextBilling? nextBilling, String? reference, }) { return KlarnaSubscriptionsVariant1(
+KlarnaSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int? Function()? intervalCount, String? Function()? name, NextBilling? nextBilling, String? reference, }) { return KlarnaSubscriptionsVariant1(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   name: name != null ? name() : this.name,

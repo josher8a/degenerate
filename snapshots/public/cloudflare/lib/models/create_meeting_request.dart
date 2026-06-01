@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_config', 'live_stream_on_start', 'persist_chat', 'record_on_start', 'recording_config', 'session_keep_alive_time_in_secs', 'summarize_on_end', 'title'}.contains(key)); } 
-CreateMeetingRequest copyWith({RealtimekitAiConfig Function()? aiConfig, bool? Function()? liveStreamOnStart, bool Function()? persistChat, bool? Function()? recordOnStart, RealtimekitRecordingConfig Function()? recordingConfig, double Function()? sessionKeepAliveTimeInSecs, bool Function()? summarizeOnEnd, String? Function()? title, }) { return CreateMeetingRequest(
+CreateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, bool? Function()? liveStreamOnStart, bool Function()? persistChat, bool? Function()? recordOnStart, RealtimekitRecordingConfig? Function()? recordingConfig, double Function()? sessionKeepAliveTimeInSecs, bool Function()? summarizeOnEnd, String? Function()? title, }) { return CreateMeetingRequest(
   aiConfig: aiConfig != null ? aiConfig() : this.aiConfig,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,
   persistChat: persistChat != null ? persistChat() : this.persistChat,

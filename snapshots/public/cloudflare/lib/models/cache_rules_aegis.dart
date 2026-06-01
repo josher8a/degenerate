@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesAegis copyWith({CacheRulesAegisId? id, DateTime? Function()? modifiedOn, CacheRulesAegisValue Function()? value, }) { return CacheRulesAegis(
+CacheRulesAegis copyWith({CacheRulesAegisId? id, DateTime? Function()? modifiedOn, CacheRulesAegisValue? Function()? value, }) { return CacheRulesAegis(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,

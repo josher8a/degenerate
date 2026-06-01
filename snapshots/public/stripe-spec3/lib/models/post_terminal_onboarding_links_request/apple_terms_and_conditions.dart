@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'merchant_display_name': merchantDisplayName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('merchant_display_name') && json['merchant_display_name'] is String; } 
-AppleTermsAndConditions copyWith({bool Function()? allowRelinking, String? merchantDisplayName, }) { return AppleTermsAndConditions(
+AppleTermsAndConditions copyWith({bool? Function()? allowRelinking, String? merchantDisplayName, }) { return AppleTermsAndConditions(
   allowRelinking: allowRelinking != null ? allowRelinking() : this.allowRelinking,
   merchantDisplayName: merchantDisplayName ?? this.merchantDisplayName,
 ); } 

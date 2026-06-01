@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-UpdateHyperdriveResponse copyWith({HyperdriveHyperdriveConfig Function()? result}) { return UpdateHyperdriveResponse(
+UpdateHyperdriveResponse copyWith({HyperdriveHyperdriveConfig? Function()? result}) { return UpdateHyperdriveResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

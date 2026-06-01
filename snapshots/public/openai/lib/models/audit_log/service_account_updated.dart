@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (changesRequested != null) 'changes_requested': changesRequested?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'changes_requested'}.contains(key)); } 
-ServiceAccountUpdated copyWith({String Function()? id, ServiceAccountUpdatedChangesRequested Function()? changesRequested, }) { return ServiceAccountUpdated(
+ServiceAccountUpdated copyWith({String? Function()? id, ServiceAccountUpdatedChangesRequested? Function()? changesRequested, }) { return ServiceAccountUpdated(
   id: id != null ? id() : this.id,
   changesRequested: changesRequested != null ? changesRequested() : this.changesRequested,
 ); } 

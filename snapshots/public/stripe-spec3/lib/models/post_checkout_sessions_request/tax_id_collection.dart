@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if ($required != null) 'required': $required?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-TaxIdCollection copyWith({bool? enabled, Required Function()? $required, }) { return TaxIdCollection(
+TaxIdCollection copyWith({bool? enabled, Required? Function()? $required, }) { return TaxIdCollection(
   enabled: enabled ?? this.enabled,
   $required: $required != null ? $required() : this.$required,
 ); } 

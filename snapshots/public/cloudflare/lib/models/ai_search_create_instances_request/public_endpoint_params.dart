@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (searchEndpoint != null) 'search_endpoint': searchEndpoint?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorized_hosts', 'chat_completions_endpoint', 'enabled', 'mcp', 'rate_limit', 'search_endpoint'}.contains(key)); } 
-PublicEndpointParams copyWith({List<String> Function()? authorizedHosts, ChatCompletionsEndpoint Function()? chatCompletionsEndpoint, bool Function()? enabled, Mcp Function()? mcp, RateLimit Function()? rateLimit, SearchEndpoint Function()? searchEndpoint, }) { return PublicEndpointParams(
+PublicEndpointParams copyWith({List<String>? Function()? authorizedHosts, ChatCompletionsEndpoint? Function()? chatCompletionsEndpoint, bool Function()? enabled, Mcp? Function()? mcp, RateLimit? Function()? rateLimit, SearchEndpoint? Function()? searchEndpoint, }) { return PublicEndpointParams(
   authorizedHosts: authorizedHosts != null ? authorizedHosts() : this.authorizedHosts,
   chatCompletionsEndpoint: chatCompletionsEndpoint != null ? chatCompletionsEndpoint() : this.chatCompletionsEndpoint,
   enabled: enabled != null ? enabled() : this.enabled,

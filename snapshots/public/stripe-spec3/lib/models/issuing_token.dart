@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider Function()? walletProvider, }) { return IssuingToken(
+IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider? Function()? walletProvider, }) { return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,
   deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,

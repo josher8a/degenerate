@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (link != null) 'link': link?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'link'}.contains(key)); } 
-WalletOptions copyWith({WalletOptionsLink Function()? link}) { return WalletOptions(
+WalletOptions copyWith({WalletOptionsLink? Function()? link}) { return WalletOptions(
   link: link != null ? link() : this.link,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

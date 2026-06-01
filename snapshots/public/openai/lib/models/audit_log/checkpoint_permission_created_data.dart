@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'fine_tuned_model_checkpoint': ?fineTunedModelCheckpoint,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'project_id', 'fine_tuned_model_checkpoint'}.contains(key)); } 
-CheckpointPermissionCreatedData copyWith({String Function()? projectId, String Function()? fineTunedModelCheckpoint, }) { return CheckpointPermissionCreatedData(
+CheckpointPermissionCreatedData copyWith({String? Function()? projectId, String? Function()? fineTunedModelCheckpoint, }) { return CheckpointPermissionCreatedData(
   projectId: projectId != null ? projectId() : this.projectId,
   fineTunedModelCheckpoint: fineTunedModelCheckpoint != null ? fineTunedModelCheckpoint() : this.fineTunedModelCheckpoint,
 ); } 

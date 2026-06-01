@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-Team10 copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, TeamParent? Function()? parent, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team10(
+Team10 copyWith({bool? Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, TeamParent? Function()? parent, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team10(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,

@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-InputFileContent copyWith({String? type, String? Function()? fileId, String Function()? filename, String Function()? fileData, String Function()? fileUrl, FileInputDetail Function()? detail, }) { return InputFileContent(
+InputFileContent copyWith({String? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputFileContent(
   type: type ?? this.type,
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,

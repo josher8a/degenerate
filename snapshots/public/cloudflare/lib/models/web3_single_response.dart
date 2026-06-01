@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-Web3SingleResponse copyWith({Web3Web3Hostname Function()? result}) { return Web3SingleResponse(
+Web3SingleResponse copyWith({Web3Web3Hostname? Function()? result}) { return Web3SingleResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

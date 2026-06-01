@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
       json.containsKey('role_name') && json['role_name'] is String; } 
-Collaborator copyWith({String? login, int? id, String? Function()? email, String? Function()? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions Function()? permissions, String? roleName, String Function()? userViewType, }) { return Collaborator(
+Collaborator copyWith({String? login, int? id, String? Function()? email, String? Function()? name, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, CollaboratorPermissions? Function()? permissions, String? roleName, String? Function()? userViewType, }) { return Collaborator(
   login: login ?? this.login,
   id: id ?? this.id,
   email: email != null ? email() : this.email,

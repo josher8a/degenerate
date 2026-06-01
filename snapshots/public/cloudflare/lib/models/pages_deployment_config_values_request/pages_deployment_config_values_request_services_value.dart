@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'service': service,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('service') && json['service'] is String; } 
-PagesDeploymentConfigValuesRequestServicesValue copyWith({String? Function()? entrypoint, String Function()? environment, String? service, }) { return PagesDeploymentConfigValuesRequestServicesValue(
+PagesDeploymentConfigValuesRequestServicesValue copyWith({String? Function()? entrypoint, String? Function()? environment, String? service, }) { return PagesDeploymentConfigValuesRequestServicesValue(
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   service: service ?? this.service,

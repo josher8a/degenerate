@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'CallSidToCoach': ?callSidToCoach,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key)); } 
-UpdateParticipantRequest copyWith({bool Function()? muted, bool Function()? hold, Uri Function()? holdUrl, HoldMethod Function()? holdMethod, Uri Function()? announceUrl, AnnounceMethod Function()? announceMethod, Uri Function()? waitUrl, WaitMethod Function()? waitMethod, bool Function()? beepOnExit, bool Function()? endConferenceOnExit, bool Function()? coaching, String Function()? callSidToCoach, }) { return UpdateParticipantRequest(
+UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, HoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, AnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) { return UpdateParticipantRequest(
   muted: muted != null ? muted() : this.muted,
   hold: hold != null ? hold() : this.hold,
   holdUrl: holdUrl != null ? holdUrl() : this.holdUrl,

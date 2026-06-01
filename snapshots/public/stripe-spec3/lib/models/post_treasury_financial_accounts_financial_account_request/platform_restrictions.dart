@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (outboundFlows != null) 'outbound_flows': outboundFlows?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inbound_flows', 'outbound_flows'}.contains(key)); } 
-PlatformRestrictions copyWith({PlatformRestrictionsInboundFlows Function()? inboundFlows, PlatformRestrictionsOutboundFlows Function()? outboundFlows, }) { return PlatformRestrictions(
+PlatformRestrictions copyWith({PlatformRestrictionsInboundFlows? Function()? inboundFlows, PlatformRestrictionsOutboundFlows? Function()? outboundFlows, }) { return PlatformRestrictions(
   inboundFlows: inboundFlows != null ? inboundFlows() : this.inboundFlows,
   outboundFlows: outboundFlows != null ? outboundFlows() : this.outboundFlows,
 ); } 

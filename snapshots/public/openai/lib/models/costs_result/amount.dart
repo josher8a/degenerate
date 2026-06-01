@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'currency': ?currency,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'currency'}.contains(key)); } 
-Amount copyWith({double Function()? value, String Function()? currency, }) { return Amount(
+Amount copyWith({double? Function()? value, String? Function()? currency, }) { return Amount(
   value: value != null ? value() : this.value,
   currency: currency != null ? currency() : this.currency,
 ); } 

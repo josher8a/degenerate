@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_location', 'search_context_size'}.contains(key)); } 
-WebSearchOptions copyWith({UserLocation? Function()? userLocation, WebSearchContextSize Function()? searchContextSize, }) { return WebSearchOptions(
+WebSearchOptions copyWith({UserLocation? Function()? userLocation, WebSearchContextSize? Function()? searchContextSize, }) { return WebSearchOptions(
   userLocation: userLocation != null ? userLocation() : this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
 ); } 

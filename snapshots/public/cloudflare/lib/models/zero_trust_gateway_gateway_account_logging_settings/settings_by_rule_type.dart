@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (l4 != null) 'l4': l4?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dns', 'http', 'l4'}.contains(key)); } 
-SettingsByRuleType copyWith({ZeroTrustGatewayAccountLogOptions Function()? dns, ZeroTrustGatewayAccountLogOptions Function()? http, ZeroTrustGatewayAccountLogOptions Function()? l4, }) { return SettingsByRuleType(
+SettingsByRuleType copyWith({ZeroTrustGatewayAccountLogOptions? Function()? dns, ZeroTrustGatewayAccountLogOptions? Function()? http, ZeroTrustGatewayAccountLogOptions? Function()? l4, }) { return SettingsByRuleType(
   dns: dns != null ? dns() : this.dns,
   http: http != null ? http() : this.http,
   l4: l4 != null ? l4() : this.l4,

@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, DiscussionReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksAnswer(
+WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, DiscussionReactions? Function()? reactions, String? repositoryUrl, DateTime? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksAnswer(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,

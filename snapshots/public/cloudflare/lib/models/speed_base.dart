@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool Function()? editable, String Function()? id, DateTime? Function()? modifiedOn, CacheRulesSmartTieredCachePatchValue Function()? value, }) { return SpeedBase(
+SpeedBase copyWith({bool Function()? editable, String? Function()? id, DateTime? Function()? modifiedOn, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

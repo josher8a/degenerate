@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-CreateServersRequest copyWith({String Function()? authCredentials, CreateServersRequestAuthType? authType, String? Function()? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
+CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, String? Function()? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   authType: authType ?? this.authType,
   description: description != null ? description() : this.description,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'name_by_idp': ?nameByIdp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'name_by_idp'}.contains(key)); } 
-CustomClaimsSource copyWith({String Function()? name, Map<String, String> Function()? nameByIdp, }) { return CustomClaimsSource(
+CustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Function()? nameByIdp, }) { return CustomClaimsSource(
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,
 ); } 

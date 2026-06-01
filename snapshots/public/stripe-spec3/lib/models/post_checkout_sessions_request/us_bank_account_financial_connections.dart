@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permissions', 'prefetch'}.contains(key)); } 
-UsBankAccountFinancialConnections copyWith({List<FinancialConnectionsAccountPermissions> Function()? permissions, List<Prefetch> Function()? prefetch, }) { return UsBankAccountFinancialConnections(
+UsBankAccountFinancialConnections copyWith({List<FinancialConnectionsAccountPermissions>? Function()? permissions, List<Prefetch>? Function()? prefetch, }) { return UsBankAccountFinancialConnections(
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
 ); } 

@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ips', 'type'}.contains(key)); } 
-Static copyWith({List<String> Function()? ips, StaticType Function()? type, }) { return Static(
+Static copyWith({List<String>? Function()? ips, StaticType? Function()? type, }) { return Static(
   ips: ips != null ? ips() : this.ips,
   type: type != null ? type() : this.type,
 ); } 

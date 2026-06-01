@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'TimeLimit': ?timeLimit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Url', 'Method', 'Status', 'FallbackUrl', 'FallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'Twiml', 'TimeLimit'}.contains(key)); } 
-UpdateCallRequest copyWith({Uri Function()? url, Method Function()? method, CallEnumUpdateStatus Function()? status, Uri Function()? fallbackUrl, FallbackMethod Function()? fallbackMethod, Uri Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? twiml, int Function()? timeLimit, }) { return UpdateCallRequest(
+UpdateCallRequest copyWith({Uri? Function()? url, Method? Function()? method, CallEnumUpdateStatus? Function()? status, Uri? Function()? fallbackUrl, FallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? twiml, int? Function()? timeLimit, }) { return UpdateCallRequest(
   url: url != null ? url() : this.url,
   method: method != null ? method() : this.method,
   status: status != null ? status() : this.status,

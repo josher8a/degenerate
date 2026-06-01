@@ -85,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('deployment_url') && json['deployment_url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String; } 
-DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri Function()? environmentUrl, Uri Function()? logUrl, Integration? Function()? performedViaGithubApp, }) { return DeploymentStatus(
+DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusState? state, SimpleUser? Function()? creator, String? description, String Function()? environment, Uri? targetUrl, DateTime? createdAt, DateTime? updatedAt, Uri? deploymentUrl, Uri? repositoryUrl, Uri? Function()? environmentUrl, Uri? Function()? logUrl, Integration? Function()? performedViaGithubApp, }) { return DeploymentStatus(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

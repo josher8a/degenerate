@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include', 'exclude'}.contains(key)); } 
-RepositoryProperty copyWith({List<RepositoryRulesetConditionsRepositoryPropertySpec> Function()? include, List<RepositoryRulesetConditionsRepositoryPropertySpec> Function()? exclude, }) { return RepositoryProperty(
+RepositoryProperty copyWith({List<RepositoryRulesetConditionsRepositoryPropertySpec>? Function()? include, List<RepositoryRulesetConditionsRepositoryPropertySpec>? Function()? exclude, }) { return RepositoryProperty(
   include: include != null ? include() : this.include,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 

@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'identifier': ?identifier,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'identifier'}.contains(key)); } 
-RequestedAction copyWith({String Function()? identifier}) { return RequestedAction(
+RequestedAction copyWith({String? Function()? identifier}) { return RequestedAction(
   identifier: identifier != null ? identifier() : this.identifier,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('phishing') &&
       json.containsKey('radarRank') &&
       json.containsKey('wappa'); } 
-UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, ProcessorsDns? dns, DomainCategories? domainCategories, ProcessorsGeoip? geoip, Phishing? phishing, RadarRank? radarRank, RobotsTxt Function()? robotsTxt, UrlCategories Function()? urlCategories, Wappa? wappa, }) { return UrlscannerGetScanResponse2MetaProcessors(
+UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, ProcessorsDns? dns, DomainCategories? domainCategories, ProcessorsGeoip? geoip, Phishing? phishing, RadarRank? radarRank, RobotsTxt? Function()? robotsTxt, UrlCategories? Function()? urlCategories, Wappa? wappa, }) { return UrlscannerGetScanResponse2MetaProcessors(
   asn: asn ?? this.asn,
   dns: dns ?? this.dns,
   domainCategories: domainCategories ?? this.domainCategories,

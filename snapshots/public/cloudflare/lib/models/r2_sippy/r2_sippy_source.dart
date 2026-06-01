@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'region': ?region,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'bucketUrl', 'provider', 'region'}.contains(key)); } 
-R2SippySource copyWith({String? Function()? bucket, String? Function()? bucketUrl, R2SippySourceProvider Function()? provider, String? Function()? region, }) { return R2SippySource(
+R2SippySource copyWith({String? Function()? bucket, String? Function()? bucketUrl, R2SippySourceProvider? Function()? provider, String? Function()? region, }) { return R2SippySource(
   bucket: bucket != null ? bucket() : this.bucket,
   bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,
   provider: provider != null ? provider() : this.provider,

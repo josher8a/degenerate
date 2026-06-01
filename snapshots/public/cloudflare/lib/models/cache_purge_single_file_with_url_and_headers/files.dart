@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'url'}.contains(key)); } 
-Files copyWith({Map<String, String> Function()? headers, String Function()? url, }) { return Files(
+Files copyWith({Map<String, String>? Function()? headers, String? Function()? url, }) { return Files(
   headers: headers != null ? headers() : this.headers,
   url: url != null ? url() : this.url,
 ); } 

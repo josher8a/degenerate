@@ -73,7 +73,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_children'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseChildren copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -108,7 +108,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_dmca'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseDmca copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -143,7 +143,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_general'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -178,7 +178,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_ncsei'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -213,7 +213,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_phishing'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbusePhishing copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -248,7 +248,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_registrar_whois'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -283,7 +283,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_threat'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseThreat copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,
@@ -318,7 +318,7 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_trademark'; } 
 @override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
-AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsBaseReportFields.copyWith(
+AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
   email: email,

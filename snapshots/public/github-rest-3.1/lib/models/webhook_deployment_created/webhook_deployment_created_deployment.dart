@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('task') && json['task'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, DeploymentPayload? payload, DeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, bool Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentCreatedDeployment(
+WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, String? Function()? description, String? environment, int? id, String? nodeId, String? originalEnvironment, DeploymentPayload? payload, DeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, bool? Function()? productionEnvironment, String? ref, Uri? repositoryUrl, String? sha, Uri? statusesUrl, String? task, bool? Function()? transientEnvironment, String? updatedAt, Uri? url, }) { return WebhookDeploymentCreatedDeployment(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   description: description != null ? description() : this.description,

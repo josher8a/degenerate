@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': ?htmlUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reason', 'created_at', 'html_url'}.contains(key)); } 
-Block copyWith({String Function()? reason, String Function()? createdAt, String? Function()? htmlUrl, }) { return Block(
+Block copyWith({String? Function()? reason, String? Function()? createdAt, String? Function()? htmlUrl, }) { return Block(
   reason: reason != null ? reason() : this.reason,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

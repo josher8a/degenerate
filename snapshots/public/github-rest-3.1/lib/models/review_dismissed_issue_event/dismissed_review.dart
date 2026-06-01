@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String &&
       json.containsKey('review_id') && json['review_id'] is num &&
       json.containsKey('dismissal_message') && json['dismissal_message'] is String; } 
-DismissedReview copyWith({String? state, int? reviewId, String? Function()? dismissalMessage, String Function()? dismissalCommitId, }) { return DismissedReview(
+DismissedReview copyWith({String? state, int? reviewId, String? Function()? dismissalMessage, String? Function()? dismissalCommitId, }) { return DismissedReview(
   state: state ?? this.state,
   reviewId: reviewId ?? this.reviewId,
   dismissalMessage: dismissalMessage != null ? dismissalMessage() : this.dismissalMessage,

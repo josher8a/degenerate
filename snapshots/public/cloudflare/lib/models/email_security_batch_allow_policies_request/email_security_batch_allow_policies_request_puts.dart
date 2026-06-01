@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('pattern_type') &&
       json.containsKey('verify_sender') && json['verify_sender'] is bool &&
       json.containsKey('id'); } 
-EmailSecurityBatchAllowPoliciesRequestPuts copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool Function()? isRecipient, bool? isRegex, bool Function()? isSender, bool Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPuts(
+EmailSecurityBatchAllowPoliciesRequestPuts copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPuts(
   comments: comments != null ? comments() : this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,

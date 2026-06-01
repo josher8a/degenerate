@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'parent_team_id': ?parentTeamId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsUpdateLegacyRequest copyWith({String? name, String Function()? description, TeamFullPrivacy Function()? privacy, TeamFullNotificationSetting Function()? notificationSetting, TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsUpdateLegacyRequest(
+TeamsUpdateLegacyRequest copyWith({String? name, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsUpdateLegacyRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   privacy: privacy != null ? privacy() : this.privacy,

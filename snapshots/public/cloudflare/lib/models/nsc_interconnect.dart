@@ -35,7 +35,7 @@ final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
 
 @override String get type { return 'direct'; } 
 @override Map<String, dynamic> toJson() { return {...nscInterconnectPhysicalBody.toJson(), 'type': type}; } 
-NscInterconnectDirect copyWith({String? account, String? name, String Function()? owner, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectDirect(nscInterconnectPhysicalBody.copyWith(
+NscInterconnectDirect copyWith({String? account, String? name, String? Function()? owner, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectDirect(nscInterconnectPhysicalBody.copyWith(
   account: account,
   name: name,
   owner: owner,
@@ -60,7 +60,7 @@ final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
 
 @override String get type { return 'gcp_partner'; } 
 @override Map<String, dynamic> toJson() { return {...nscInterconnectGcpPartnerBody.toJson(), 'type': type}; } 
-NscInterconnectGcpPartner copyWith({String? account, String? name, String Function()? owner, String? region, Bandwidth Function()? speed, }) { return NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody.copyWith(
+NscInterconnectGcpPartner copyWith({String? account, String? name, String? Function()? owner, String? region, Bandwidth? Function()? speed, }) { return NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody.copyWith(
   account: account,
   name: name,
   owner: owner,

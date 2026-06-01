@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (configs != null) 'configs': configs?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configs'}.contains(key)); } 
-IpAllowlistConfigDeactivated copyWith({List<Configs> Function()? configs}) { return IpAllowlistConfigDeactivated(
+IpAllowlistConfigDeactivated copyWith({List<Configs>? Function()? configs}) { return IpAllowlistConfigDeactivated(
   configs: configs != null ? configs() : this.configs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

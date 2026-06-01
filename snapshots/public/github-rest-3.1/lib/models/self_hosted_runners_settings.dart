@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repositories_url': ?selectedRepositoriesUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_repositories'); } 
-SelfHostedRunnersSettings copyWith({EnabledRepositories? enabledRepositories, String Function()? selectedRepositoriesUrl, }) { return SelfHostedRunnersSettings(
+SelfHostedRunnersSettings copyWith({EnabledRepositories? enabledRepositories, String? Function()? selectedRepositoriesUrl, }) { return SelfHostedRunnersSettings(
   enabledRepositories: enabledRepositories ?? this.enabledRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
 ); } 

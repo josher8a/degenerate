@@ -89,7 +89,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object'); } 
-CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompletionStreamResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String Function()? systemFingerprint, CreateChatCompletionStreamResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateChatCompletionStreamResponse(
+CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompletionStreamResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String? Function()? systemFingerprint, CreateChatCompletionStreamResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateChatCompletionStreamResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,
   created: created ?? this.created,

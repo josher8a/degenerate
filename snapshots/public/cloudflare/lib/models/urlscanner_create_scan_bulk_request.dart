@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'visibility': visibility.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-UrlscannerCreateScanBulkRequest copyWith({Map<String, String> Function()? customHeaders, String Function()? customagent, String Function()? referer, List<ScreenshotsResolutions> Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
+UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   customagent: customagent != null ? customagent() : this.customagent,
   referer: referer != null ? referer() : this.referer,

@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (planType != null) 'plan_type': planType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String; } 
-CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimple? Function()? organization, AssigningTeam? Function()? assigningTeam, String? Function()? pendingCancellationDate, DateTime? Function()? lastActivityAt, String? Function()? lastActivityEditor, DateTime? Function()? lastAuthenticatedAt, DateTime? createdAt, DateTime Function()? updatedAt, CopilotSeatDetailsPlanType Function()? planType, }) { return CopilotSeatDetails(
+CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimple? Function()? organization, AssigningTeam? Function()? assigningTeam, String? Function()? pendingCancellationDate, DateTime? Function()? lastActivityAt, String? Function()? lastActivityEditor, DateTime? Function()? lastAuthenticatedAt, DateTime? createdAt, DateTime? Function()? updatedAt, CopilotSeatDetailsPlanType? Function()? planType, }) { return CopilotSeatDetails(
   assignee: assignee != null ? assignee() : this.assignee,
   organization: organization != null ? organization() : this.organization,
   assigningTeam: assigningTeam != null ? assigningTeam() : this.assigningTeam,

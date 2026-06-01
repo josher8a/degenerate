@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'received_at', 'return_description', 'return_status', 'returned_at'}.contains(key)); } 
-MerchandiseNotAsDescribed copyWith({CanceledAdditionalDocumentation Function()? additionalDocumentation, Explanation Function()? explanation, ReceivedAt Function()? receivedAt, ReturnDescription Function()? returnDescription, CanceledReturnStatus Function()? returnStatus, ReturnedAt Function()? returnedAt, }) { return MerchandiseNotAsDescribed(
+MerchandiseNotAsDescribed copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, Explanation? Function()? explanation, ReceivedAt? Function()? receivedAt, ReturnDescription? Function()? returnDescription, CanceledReturnStatus? Function()? returnStatus, ReturnedAt? Function()? returnedAt, }) { return MerchandiseNotAsDescribed(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
   receivedAt: receivedAt != null ? receivedAt() : this.receivedAt,

@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested_ts') && json['requested_ts'] is String &&
       json.containsKey('submission_id') && json['submission_id'] is String; } 
-EmailSecuritySubmission copyWith({CustomerStatus Function()? customerStatus, EmailSecurityDispositionLabel? Function()? originalDisposition, String? Function()? originalEdfHash, String? Function()? outcome, EmailSecurityDispositionLabel? Function()? outcomeDisposition, String? Function()? requestedBy, EmailSecurityDispositionLabel? Function()? requestedDisposition, DateTime? requestedTs, String? Function()? status, String? Function()? subject, String? submissionId, String? Function()? type, }) { return EmailSecuritySubmission(
+EmailSecuritySubmission copyWith({CustomerStatus? Function()? customerStatus, EmailSecurityDispositionLabel? Function()? originalDisposition, String? Function()? originalEdfHash, String? Function()? outcome, EmailSecurityDispositionLabel? Function()? outcomeDisposition, String? Function()? requestedBy, EmailSecurityDispositionLabel? Function()? requestedDisposition, DateTime? requestedTs, String? Function()? status, String? Function()? subject, String? submissionId, String? Function()? type, }) { return EmailSecuritySubmission(
   customerStatus: customerStatus != null ? customerStatus() : this.customerStatus,
   originalDisposition: originalDisposition != null ? originalDisposition() : this.originalDisposition,
   originalEdfHash: originalEdfHash != null ? originalEdfHash() : this.originalEdfHash,

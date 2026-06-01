@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'super_category_id': ?superCategoryId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'super_category_id'}.contains(key)); } 
-RiskTypes copyWith({double Function()? id, String Function()? name, double Function()? superCategoryId, }) { return RiskTypes(
+RiskTypes copyWith({double? Function()? id, String? Function()? name, double? Function()? superCategoryId, }) { return RiskTypes(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,

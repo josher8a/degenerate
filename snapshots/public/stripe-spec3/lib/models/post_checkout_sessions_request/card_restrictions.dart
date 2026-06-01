@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (brandsBlocked != null) 'brands_blocked': brandsBlocked?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brands_blocked'}.contains(key)); } 
-CardRestrictions copyWith({List<BrandsBlocked> Function()? brandsBlocked}) { return CardRestrictions(
+CardRestrictions copyWith({List<BrandsBlocked>? Function()? brandsBlocked}) { return CardRestrictions(
   brandsBlocked: brandsBlocked != null ? brandsBlocked() : this.brandsBlocked,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

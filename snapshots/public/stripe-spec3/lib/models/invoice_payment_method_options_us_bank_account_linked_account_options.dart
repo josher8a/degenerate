@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key)); } 
-InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters Function()? filters, List<FinancialConnectionsAccountPermissions> Function()? permissions, List<Prefetch>? Function()? prefetch, }) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
+InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters? Function()? filters, List<FinancialConnectionsAccountPermissions>? Function()? permissions, List<Prefetch>? Function()? prefetch, }) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') &&
       json.containsKey('analysis_status'); } 
-ScannedRepositories copyWith({CodeScanningVariantAnalysisRepository? repository, CodeScanningVariantAnalysisStatus? analysisStatus, int Function()? resultCount, int Function()? artifactSizeInBytes, String Function()? failureMessage, }) { return ScannedRepositories(
+ScannedRepositories copyWith({CodeScanningVariantAnalysisRepository? repository, CodeScanningVariantAnalysisStatus? analysisStatus, int? Function()? resultCount, int? Function()? artifactSizeInBytes, String? Function()? failureMessage, }) { return ScannedRepositories(
   repository: repository ?? this.repository,
   analysisStatus: analysisStatus ?? this.analysisStatus,
   resultCount: resultCount != null ? resultCount() : this.resultCount,

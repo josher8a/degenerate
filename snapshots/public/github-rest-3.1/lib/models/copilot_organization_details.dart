@@ -217,7 +217,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('seat_breakdown') &&
       json.containsKey('public_code_suggestions') &&
       json.containsKey('seat_management_setting'); } 
-CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, PublicCodeSuggestions? publicCodeSuggestions, IdeChat Function()? ideChat, PlatformChat Function()? platformChat, Cli Function()? cli, SeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
+CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, PublicCodeSuggestions? publicCodeSuggestions, IdeChat? Function()? ideChat, PlatformChat? Function()? platformChat, Cli? Function()? cli, SeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType? Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
   seatBreakdown: seatBreakdown ?? this.seatBreakdown,
   publicCodeSuggestions: publicCodeSuggestions ?? this.publicCodeSuggestions,
   ideChat: ideChat != null ? ideChat() : this.ideChat,

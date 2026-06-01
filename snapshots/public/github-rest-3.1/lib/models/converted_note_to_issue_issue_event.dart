@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && json['commit_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app'); } 
-ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, AddedToProjectIssueEventProjectCard Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
+ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? performedViaGithubApp, AddedToProjectIssueEventProjectCard? Function()? projectCard, }) { return ConvertedNoteToIssueIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
+PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 

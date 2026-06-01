@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'verification_method'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount copyWith({PaymentIntentPaymentMethodOptionsParamFinancialConnections Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParamNetworks Function()? networks, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount(
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount copyWith({PaymentIntentPaymentMethodOptionsParamFinancialConnections? Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParamNetworks? Function()? networks, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   networks: networks != null ? networks() : this.networks,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-FinancialAccountTransactions copyWith({bool? enabled, FinancialAccountTransactionsFeatures Function()? features, }) { return FinancialAccountTransactions(
+FinancialAccountTransactions copyWith({bool? enabled, FinancialAccountTransactionsFeatures? Function()? features, }) { return FinancialAccountTransactions(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 

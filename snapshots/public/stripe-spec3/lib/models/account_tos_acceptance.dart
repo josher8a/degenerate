@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'service_agreement', 'user_agent'}.contains(key)); } 
-AccountTosAcceptance copyWith({int? Function()? date, String? Function()? ip, String Function()? serviceAgreement, String? Function()? userAgent, }) { return AccountTosAcceptance(
+AccountTosAcceptance copyWith({int? Function()? date, String? Function()? ip, String? Function()? serviceAgreement, String? Function()? userAgent, }) { return AccountTosAcceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   serviceAgreement: serviceAgreement != null ? serviceAgreement() : this.serviceAgreement,

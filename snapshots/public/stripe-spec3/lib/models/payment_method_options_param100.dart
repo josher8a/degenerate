@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentMethodOptionsParam100 copyWith({PaymentIntentParamCaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam100(
+PaymentMethodOptionsParam100 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod}) { return PaymentMethodOptionsParam100(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

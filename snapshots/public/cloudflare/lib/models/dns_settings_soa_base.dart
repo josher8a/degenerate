@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'ttl': ?ttl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expire', 'min_ttl', 'mname', 'refresh', 'retry', 'rname', 'ttl'}.contains(key)); } 
-DnsSettingsSoaBase copyWith({double Function()? expire, double Function()? minTtl, String? Function()? mname, double Function()? refresh, double Function()? retry, String Function()? rname, double Function()? ttl, }) { return DnsSettingsSoaBase(
+DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, String? Function()? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) { return DnsSettingsSoaBase(
   expire: expire != null ? expire() : this.expire,
   minTtl: minTtl != null ? minTtl() : this.minTtl,
   mname: mname != null ? mname() : this.mname,

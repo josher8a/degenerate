@@ -112,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('app_slug') && json['app_slug'] is String &&
       json.containsKey('suspended_by') &&
       json.containsKey('suspended_at') && json['suspended_at'] is String; } 
-Installation copyWith({int? id, InstallationAccount? Function()? account, AuthenticationTokenRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, String? Function()? contactEmail, }) { return Installation(
+Installation copyWith({int? id, InstallationAccount? Function()? account, AuthenticationTokenRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String? Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, String? Function()? contactEmail, }) { return Installation(
   id: id ?? this.id,
   account: account != null ? account() : this.account,
   repositorySelection: repositorySelection ?? this.repositorySelection,

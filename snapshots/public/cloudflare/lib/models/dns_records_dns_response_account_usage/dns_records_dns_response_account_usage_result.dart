@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'record_usage': ?recordUsage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'internal_record_quota', 'internal_record_usage', 'record_quota', 'record_usage'}.contains(key)); } 
-DnsRecordsDnsResponseAccountUsageResult copyWith({int? Function()? internalRecordQuota, int? Function()? internalRecordUsage, int? Function()? recordQuota, int Function()? recordUsage, }) { return DnsRecordsDnsResponseAccountUsageResult(
+DnsRecordsDnsResponseAccountUsageResult copyWith({int? Function()? internalRecordQuota, int? Function()? internalRecordUsage, int? Function()? recordQuota, int? Function()? recordUsage, }) { return DnsRecordsDnsResponseAccountUsageResult(
   internalRecordQuota: internalRecordQuota != null ? internalRecordQuota() : this.internalRecordQuota,
   internalRecordUsage: internalRecordUsage != null ? internalRecordUsage() : this.internalRecordUsage,
   recordQuota: recordQuota != null ? recordQuota() : this.recordQuota,

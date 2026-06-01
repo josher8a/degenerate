@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': ?htmlUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'completed_at', 'branch', 'sha', 'id', 'export_url', 'html_url'}.contains(key)); } 
-CodespaceExportDetails copyWith({String? Function()? state, DateTime? Function()? completedAt, String? Function()? branch, String? Function()? sha, String Function()? id, String Function()? exportUrl, String? Function()? htmlUrl, }) { return CodespaceExportDetails(
+CodespaceExportDetails copyWith({String? Function()? state, DateTime? Function()? completedAt, String? Function()? branch, String? Function()? sha, String? Function()? id, String? Function()? exportUrl, String? Function()? htmlUrl, }) { return CodespaceExportDetails(
   state: state != null ? state() : this.state,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   branch: branch != null ? branch() : this.branch,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'to': ?to,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-ChangesPublic copyWith({bool Function()? from, bool Function()? to, }) { return ChangesPublic(
+ChangesPublic copyWith({bool? Function()? from, bool? Function()? to, }) { return ChangesPublic(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 

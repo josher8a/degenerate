@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('response') && json['response'] is String; } 
-TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls> Function()? toolCalls, Usage Function()? usage, }) { return TextGenerationVariant1(
+TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls>? Function()? toolCalls, Usage? Function()? usage, }) { return TextGenerationVariant1(
   response: response ?? this.response,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   usage: usage != null ? usage() : this.usage,

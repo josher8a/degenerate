@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('duration') &&
       json.containsKey('name'); } 
-MagicNetworkMonitoringRulesUpdateRulesRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmRuleIdentifier Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix> Function()? prefixes, }) { return MagicNetworkMonitoringRulesUpdateRulesRequest(
+MagicNetworkMonitoringRulesUpdateRulesRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmRuleIdentifier? Function()? id, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix>? Function()? prefixes, }) { return MagicNetworkMonitoringRulesUpdateRulesRequest(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   duration: duration ?? this.duration,

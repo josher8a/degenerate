@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
-WebhookDeploymentReviewRequestedReviewers copyWith({WebhookDeploymentReviewRequestedReviewersReviewer? Function()? reviewer, ReviewersType Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
+WebhookDeploymentReviewRequestedReviewers copyWith({WebhookDeploymentReviewRequestedReviewersReviewer? Function()? reviewer, ReviewersType? Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
   reviewer: reviewer != null ? reviewer() : this.reviewer,
   type: type != null ? type() : this.type,
 ); } 

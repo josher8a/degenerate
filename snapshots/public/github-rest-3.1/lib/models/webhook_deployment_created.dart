@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
+WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
   action: action ?? this.action,
   deployment: deployment ?? this.deployment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

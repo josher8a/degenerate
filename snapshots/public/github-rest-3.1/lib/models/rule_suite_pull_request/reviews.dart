@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'user', 'state'}.contains(key)); } 
-Reviews copyWith({int Function()? id, PullRequestUser Function()? user, String Function()? state, }) { return Reviews(
+Reviews copyWith({int? Function()? id, PullRequestUser? Function()? user, String? Function()? state, }) { return Reviews(
   id: id != null ? id() : this.id,
   user: user != null ? user() : this.user,
   state: state != null ? state() : this.state,

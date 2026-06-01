@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
       json.containsKey('expires_at') && json['expires_at'] is String; } 
-AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic> Function()? permissions, List<Repository> Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection Function()? repositorySelection, }) { return AuthenticationToken(
+AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic>? Function()? permissions, List<Repository>? Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection? Function()? repositorySelection, }) { return AuthenticationToken(
   token: token ?? this.token,
   expiresAt: expiresAt ?? this.expiresAt,
   permissions: permissions != null ? permissions() : this.permissions,

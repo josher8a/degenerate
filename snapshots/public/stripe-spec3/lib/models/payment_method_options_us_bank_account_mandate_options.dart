@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collection_method'}.contains(key)); } 
-PaymentMethodOptionsUsBankAccountMandateOptions copyWith({MandateUsBankAccountCollectionMethod Function()? collectionMethod}) { return PaymentMethodOptionsUsBankAccountMandateOptions(
+PaymentMethodOptionsUsBankAccountMandateOptions copyWith({MandateUsBankAccountCollectionMethod? Function()? collectionMethod}) { return PaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

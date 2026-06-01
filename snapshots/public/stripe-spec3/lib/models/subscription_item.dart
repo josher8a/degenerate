@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('price') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
+SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int? Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   created: created ?? this.created,
   currentPeriodEnd: currentPeriodEnd ?? this.currentPeriodEnd,

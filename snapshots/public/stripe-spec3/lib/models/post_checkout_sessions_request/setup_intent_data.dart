@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'on_behalf_of': ?onBehalfOf,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'metadata', 'on_behalf_of'}.contains(key)); } 
-SetupIntentData copyWith({String Function()? description, Map<String, String> Function()? metadata, String Function()? onBehalfOf, }) { return SetupIntentData(
+SetupIntentData copyWith({String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, }) { return SetupIntentData(
   description: description != null ? description() : this.description,
   metadata: metadata != null ? metadata() : this.metadata,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'source_location': ?sourceLocation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'source_location'}.contains(key)); } 
-File copyWith({String Function()? sourceLocation}) { return File(
+File copyWith({String? Function()? sourceLocation}) { return File(
   sourceLocation: sourceLocation != null ? sourceLocation() : this.sourceLocation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

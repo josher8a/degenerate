@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (uri != null) 'uri': uri?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'notifications', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
-ListCallNotificationResponse copyWith({List<AccountCallCallNotification> Function()? notifications, int Function()? end, Uri Function()? firstPageUri, Uri? Function()? nextPageUri, int Function()? page, int Function()? pageSize, Uri? Function()? previousPageUri, int Function()? start, Uri Function()? uri, }) { return ListCallNotificationResponse(
+ListCallNotificationResponse copyWith({List<AccountCallCallNotification>? Function()? notifications, int? Function()? end, Uri? Function()? firstPageUri, Uri? Function()? nextPageUri, int? Function()? page, int? Function()? pageSize, Uri? Function()? previousPageUri, int? Function()? start, Uri? Function()? uri, }) { return ListCallNotificationResponse(
   notifications: notifications != null ? notifications() : this.notifications,
   end: end != null ? end() : this.end,
   firstPageUri: firstPageUri != null ? firstPageUri() : this.firstPageUri,

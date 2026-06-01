@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'services': ?services,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'trust_domain', 'services'}.contains(key)); } 
-ArtifactAttestations copyWith({String Function()? trustDomain, List<String> Function()? services, }) { return ArtifactAttestations(
+ArtifactAttestations copyWith({String? Function()? trustDomain, List<String>? Function()? services, }) { return ArtifactAttestations(
   trustDomain: trustDomain != null ? trustDomain() : this.trustDomain,
   services: services != null ? services() : this.services,
 ); } 

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomText? Function()? customText, TerminalReaderReaderResourceEmail Function()? email, TerminalReaderReaderResourceNumeric Function()? numeric, TerminalReaderReaderResourcePhone Function()? phone, bool? Function()? $required, TerminalReaderReaderResourceSelection Function()? selection, TerminalReaderReaderResourceSignature Function()? signature, bool Function()? skipped, TerminalReaderReaderResourceText Function()? text, List<TerminalReaderReaderResourceToggle>? Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return TerminalReaderReaderResourceInput(
+TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomText? Function()? customText, TerminalReaderReaderResourceEmail? Function()? email, TerminalReaderReaderResourceNumeric? Function()? numeric, TerminalReaderReaderResourcePhone? Function()? phone, bool? Function()? $required, TerminalReaderReaderResourceSelection? Function()? selection, TerminalReaderReaderResourceSignature? Function()? signature, bool? Function()? skipped, TerminalReaderReaderResourceText? Function()? text, List<TerminalReaderReaderResourceToggle>? Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return TerminalReaderReaderResourceInput(
   customText: customText != null ? customText() : this.customText,
   email: email != null ? email() : this.email,
   numeric: numeric != null ? numeric() : this.numeric,

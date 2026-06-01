@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_ms': ?idleTimeoutMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ServerVad copyWith({String? type, double Function()? threshold, int Function()? prefixPaddingMs, int Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return ServerVad(
+ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,

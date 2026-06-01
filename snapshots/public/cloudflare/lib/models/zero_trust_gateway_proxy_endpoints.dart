@@ -39,7 +39,7 @@ final ZeroTrustGatewayProxyEndpointIdentity zeroTrustGatewayProxyEndpointIdentit
 
 @override String get kind { return 'identity'; } 
 @override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentity.toJson(), 'kind': kind}; } 
-ZeroTrustGatewayProxyEndpointsIdentity copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid Function()? id, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(zeroTrustGatewayProxyEndpointIdentity.copyWith(
+ZeroTrustGatewayProxyEndpointsIdentity copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(zeroTrustGatewayProxyEndpointIdentity.copyWith(
   createdAt: createdAt,
   id: id,
   name: name,
@@ -64,7 +64,7 @@ final ZeroTrustGatewayProxyEndpointIp zeroTrustGatewayProxyEndpointIp;
 
 @override String get kind { return 'ip'; } 
 @override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIp.toJson(), 'kind': kind}; } 
-ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid Function()? id, List<String>? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(zeroTrustGatewayProxyEndpointIp.copyWith(
+ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, List<String>? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(zeroTrustGatewayProxyEndpointIp.copyWith(
   createdAt: createdAt,
   id: id,
   ips: ips,

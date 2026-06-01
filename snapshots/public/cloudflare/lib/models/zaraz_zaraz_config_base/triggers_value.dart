@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('excludeRules') &&
       json.containsKey('loadRules') &&
       json.containsKey('name') && json['name'] is String; } 
-TriggersValue copyWith({String Function()? description, List<ExcludeRules>? excludeRules, List<LoadRules>? loadRules, String? name, ValueSystem Function()? system, }) { return TriggersValue(
+TriggersValue copyWith({String? Function()? description, List<ExcludeRules>? excludeRules, List<LoadRules>? loadRules, String? name, ValueSystem? Function()? system, }) { return TriggersValue(
   description: description != null ? description() : this.description,
   excludeRules: excludeRules ?? this.excludeRules,
   loadRules: loadRules ?? this.loadRules,

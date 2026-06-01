@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
-KeyNeedle copyWith({bool Function()? isRegex, bool Function()? matchCase, dynamic value, }) { return KeyNeedle(
+KeyNeedle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dynamic value, }) { return KeyNeedle(
   isRegex: isRegex != null ? isRegex() : this.isRegex,
   matchCase: matchCase != null ? matchCase() : this.matchCase,
   value: value ?? this.value,

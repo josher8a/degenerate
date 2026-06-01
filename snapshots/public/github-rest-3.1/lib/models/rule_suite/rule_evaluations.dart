@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'details': ?details,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule_source', 'enforcement', 'result', 'rule_type', 'details'}.contains(key)); } 
-RuleEvaluations copyWith({RuleSource Function()? ruleSource, RuleEvaluationsEnforcement Function()? enforcement, RuleEvaluationsResult Function()? result, String Function()? ruleType, String? Function()? details, }) { return RuleEvaluations(
+RuleEvaluations copyWith({RuleSource? Function()? ruleSource, RuleEvaluationsEnforcement? Function()? enforcement, RuleEvaluationsResult? Function()? result, String? Function()? ruleType, String? Function()? details, }) { return RuleEvaluations(
   ruleSource: ruleSource != null ? ruleSource() : this.ruleSource,
   enforcement: enforcement != null ? enforcement() : this.enforcement,
   result: result != null ? result() : this.result,

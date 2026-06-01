@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-StatusUpdate copyWith({double? id, String? nodeId, String Function()? projectNodeId, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, StatusUpdateStatus? Function()? status, String Function()? startDate, String Function()? targetDate, String? Function()? body, }) { return StatusUpdate(
+StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, StatusUpdateStatus? Function()? status, String? Function()? startDate, String? Function()? targetDate, String? Function()? body, }) { return StatusUpdate(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   projectNodeId: projectNodeId != null ? projectNodeId() : this.projectNodeId,

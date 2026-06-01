@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentRecordsReportPaymentRequestProcessorDetails copyWith({PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PostPaymentRecordsReportPaymentRequestProcessorDetails(
+PostPaymentRecordsReportPaymentRequestProcessorDetails copyWith({PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom? Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PostPaymentRecordsReportPaymentRequestProcessorDetails(
   custom: custom != null ? custom() : this.custom,
   type: type ?? this.type,
 ); } 

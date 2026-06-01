@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (exclude != null) 'exclude': exclude?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition_type', 'target', 'include', 'exclude'}.contains(key)); } 
-ConditionsUpdatedChanges copyWith({ConditionType Function()? conditionType, ChangesTarget Function()? target, Include Function()? include, ChangesExclude Function()? exclude, }) { return ConditionsUpdatedChanges(
+ConditionsUpdatedChanges copyWith({ConditionType? Function()? conditionType, ChangesTarget? Function()? target, Include? Function()? include, ChangesExclude? Function()? exclude, }) { return ConditionsUpdatedChanges(
   conditionType: conditionType != null ? conditionType() : this.conditionType,
   target: target != null ? target() : this.target,
   include: include != null ? include() : this.include,

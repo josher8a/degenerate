@@ -84,7 +84,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('permissions'); } 
-FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, Accounts? accounts, String? Function()? clientSecret, BankConnectionsResourceLinkAccountSessionFilters Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch>? Function()? prefetch, String Function()? returnUrl, }) { return FinancialConnectionsSession(
+FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, Accounts? accounts, String? Function()? clientSecret, BankConnectionsResourceLinkAccountSessionFilters? Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return FinancialConnectionsSession(
   accountHolder: accountHolder != null ? accountHolder() : this.accountHolder,
   accounts: accounts ?? this.accounts,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,

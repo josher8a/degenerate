@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
+GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,

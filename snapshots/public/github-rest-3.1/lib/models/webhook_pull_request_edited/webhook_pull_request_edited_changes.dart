@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (title != null) 'title': title?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'base', 'body', 'title'}.contains(key)); } 
-WebhookPullRequestEditedChanges copyWith({ChangesBase Function()? base, WebhooksChangesBody Function()? body, WebhookDiscussionEditedChangesTitle Function()? title, }) { return WebhookPullRequestEditedChanges(
+WebhookPullRequestEditedChanges copyWith({ChangesBase? Function()? base, WebhooksChangesBody? Function()? body, WebhookDiscussionEditedChangesTitle? Function()? title, }) { return WebhookPullRequestEditedChanges(
   base: base != null ? base() : this.base,
   body: body != null ? body() : this.body,
   title: title != null ? title() : this.title,

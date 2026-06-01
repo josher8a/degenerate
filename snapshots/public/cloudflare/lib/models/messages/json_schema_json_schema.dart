@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-JsonSchemaJsonSchema copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? schema, bool? Function()? strict, }) { return JsonSchemaJsonSchema(
+JsonSchemaJsonSchema copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? schema, bool? Function()? strict, }) { return JsonSchemaJsonSchema(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   schema: schema != null ? schema() : this.schema,

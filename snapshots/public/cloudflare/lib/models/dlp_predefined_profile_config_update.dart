@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'ocr_enabled': ocrEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_context_enabled', 'allowed_match_count', 'confidence_threshold', 'enabled_entries', 'entries', 'ocr_enabled'}.contains(key)); } 
-DlpPredefinedProfileConfigUpdate copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? Function()? enabledEntries, List<DlpPredefinedProfileEntryUpdate> Function()? entries, bool Function()? ocrEnabled, }) { return DlpPredefinedProfileConfigUpdate(
+DlpPredefinedProfileConfigUpdate copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? Function()? enabledEntries, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool Function()? ocrEnabled, }) { return DlpPredefinedProfileConfigUpdate(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

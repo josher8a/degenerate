@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('reviewer_id') && json['reviewer_id'] is num &&
       json.containsKey('reviewer_type'); } 
-CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers copyWith({int? reviewerId, ReviewerType? reviewerType, int Function()? securityConfigurationId, }) { return CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers(
+CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers copyWith({int? reviewerId, ReviewerType? reviewerType, int? Function()? securityConfigurationId, }) { return CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers(
   reviewerId: reviewerId ?? this.reviewerId,
   reviewerType: reviewerType ?? this.reviewerType,
   securityConfigurationId: securityConfigurationId != null ? securityConfigurationId() : this.securityConfigurationId,

@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String? state, bool? lockRepositories, bool? excludeMetadata, bool? excludeGitData, bool? excludeAttachments, bool? excludeReleases, bool? excludeOwnerProjects, bool? orgMetadataOnly, List<Repository>? repositories, Uri? url, DateTime? createdAt, DateTime? updatedAt, String? nodeId, Uri Function()? archiveUrl, List<String> Function()? exclude, }) { return Migration(
+Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String? state, bool? lockRepositories, bool? excludeMetadata, bool? excludeGitData, bool? excludeAttachments, bool? excludeReleases, bool? excludeOwnerProjects, bool? orgMetadataOnly, List<Repository>? repositories, Uri? url, DateTime? createdAt, DateTime? updatedAt, String? nodeId, Uri? Function()? archiveUrl, List<String>? Function()? exclude, }) { return Migration(
   id: id ?? this.id,
   owner: owner != null ? owner() : this.owner,
   guid: guid ?? this.guid,

@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
-RealtimeBetaResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, StatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, VoiceIdsShared Function()? voice, List<Modalities> Function()? modalities, OutputAudioFormat Function()? outputAudioFormat, double Function()? temperature, MaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
+RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<Modalities>? Function()? modalities, OutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,

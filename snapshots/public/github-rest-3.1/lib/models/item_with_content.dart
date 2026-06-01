@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('archived_at') && json['archived_at'] is String; } 
-ItemWithContent copyWith({double? id, String Function()? nodeId, Uri Function()? projectUrl, ItemContentType? contentType, Map<String, dynamic>? Function()? content, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? itemUrl, List<Map<String, dynamic>> Function()? fields, }) { return ItemWithContent(
+ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function()? projectUrl, ItemContentType? contentType, Map<String, dynamic>? Function()? content, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? itemUrl, List<Map<String, dynamic>>? Function()? fields, }) { return ItemWithContent(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,

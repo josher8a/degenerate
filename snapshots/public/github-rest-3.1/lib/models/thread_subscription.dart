@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('subsc
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri Function()? threadUrl, Uri Function()? repositoryUrl, }) { return ThreadSubscription(
+ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()? reason, DateTime? Function()? createdAt, Uri? url, Uri? Function()? threadUrl, Uri? Function()? repositoryUrl, }) { return ThreadSubscription(
   subscribed: subscribed ?? this.subscribed,
   ignored: ignored ?? this.ignored,
   reason: reason != null ? reason() : this.reason,

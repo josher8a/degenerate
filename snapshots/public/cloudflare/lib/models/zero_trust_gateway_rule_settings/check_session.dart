@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'enforce': ?enforce,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'duration', 'enforce'}.contains(key)); } 
-CheckSession copyWith({String Function()? duration, bool Function()? enforce, }) { return CheckSession(
+CheckSession copyWith({String? Function()? duration, bool? Function()? enforce, }) { return CheckSession(
   duration: duration != null ? duration() : this.duration,
   enforce: enforce != null ? enforce() : this.enforce,
 ); } 

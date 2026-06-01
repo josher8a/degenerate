@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('project') && json['project'] is String; } 
-Wandb copyWith({String? project, String? Function()? name, String? Function()? entity, List<String> Function()? tags, }) { return Wandb(
+Wandb copyWith({String? project, String? Function()? name, String? Function()? entity, List<String>? Function()? tags, }) { return Wandb(
   project: project ?? this.project,
   name: name != null ? name() : this.name,
   entity: entity != null ? entity() : this.entity,

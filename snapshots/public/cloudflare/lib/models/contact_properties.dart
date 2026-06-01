@@ -163,7 +163,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('phone') &&
       json.containsKey('state') &&
       json.containsKey('zip'); } 
-ContactProperties copyWith({Address? address, Address2 Function()? address2, City? city, Country? Function()? country, Email Function()? email, Fax Function()? fax, FirstName? Function()? firstName, ContactIdentifier Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
+ContactProperties copyWith({Address? address, Address2? Function()? address2, City? city, Country? Function()? country, Email? Function()? email, Fax? Function()? fax, FirstName? Function()? firstName, ContactIdentifier? Function()? id, LastName? Function()? lastName, Organization2? organization, Telephone? Function()? phone, State2? state, Zipcode? Function()? zip, }) { return ContactProperties(
   address: address ?? this.address,
   address2: address2 != null ? address2() : this.address2,
   city: city ?? this.city,

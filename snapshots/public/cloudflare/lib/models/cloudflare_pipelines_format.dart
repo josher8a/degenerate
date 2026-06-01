@@ -29,7 +29,7 @@ final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
 
 @override String get type { return 'Json'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesJsonFormat.toJson(), 'type': type}; } 
-CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding Function()? decimalEncoding, CloudflarePipelinesTimestampFormat Function()? timestampFormat, bool Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
+CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
   decimalEncoding: decimalEncoding,
   timestampFormat: timestampFormat,
   unstructured: unstructured,
@@ -47,7 +47,7 @@ final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
 @override String get type { return 'Parquet'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesParquetFormat.toJson(), 'type': type}; } 
-CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
+CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
   compression: compression,
   rowGroupBytes: rowGroupBytes,
 )); } 

@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('check_suite') &&
       json.containsKey('app') &&
       json.containsKey('pull_requests'); } 
-CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, Output? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple Function()? deployment, }) { return CheckRun(
+CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, Output? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple? Function()? deployment, }) { return CheckRun(
   id: id ?? this.id,
   headSha: headSha ?? this.headSha,
   nodeId: nodeId ?? this.nodeId,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'default_for', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
-AcssDebitMandateOptions copyWith({CustomMandateUrl Function()? customMandateUrl, List<DefaultFor> Function()? defaultFor, String Function()? intervalDescription, MandateAcssDebitPaymentSchedule Function()? paymentSchedule, MandateAcssDebitTransactionType Function()? transactionType, }) { return AcssDebitMandateOptions(
+AcssDebitMandateOptions copyWith({CustomMandateUrl? Function()? customMandateUrl, List<DefaultFor>? Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? Function()? paymentSchedule, MandateAcssDebitTransactionType? Function()? transactionType, }) { return AcssDebitMandateOptions(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,

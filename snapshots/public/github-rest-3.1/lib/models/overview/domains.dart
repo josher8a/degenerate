@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (artifactAttestations != null) 'artifact_attestations': artifactAttestations?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'website', 'codespaces', 'copilot', 'packages', 'actions', 'actions_inbound', 'artifact_attestations'}.contains(key)); } 
-Domains copyWith({List<String> Function()? website, List<String> Function()? codespaces, List<String> Function()? copilot, List<String> Function()? packages, List<String> Function()? actions, ActionsInbound Function()? actionsInbound, ArtifactAttestations Function()? artifactAttestations, }) { return Domains(
+Domains copyWith({List<String>? Function()? website, List<String>? Function()? codespaces, List<String>? Function()? copilot, List<String>? Function()? packages, List<String>? Function()? actions, ActionsInbound? Function()? actionsInbound, ArtifactAttestations? Function()? artifactAttestations, }) { return Domains(
   website: website != null ? website() : this.website,
   codespaces: codespaces != null ? codespaces() : this.codespaces,
   copilot: copilot != null ? copilot() : this.copilot,

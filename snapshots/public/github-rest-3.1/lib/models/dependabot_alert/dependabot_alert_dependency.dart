@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   if (relationship != null) 'relationship': relationship?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'package', 'manifest_path', 'scope', 'relationship'}.contains(key)); } 
-DependabotAlertDependency copyWith({DependabotAlertPackage Function()? package, String Function()? manifestPath, DependabotAlertDependencyScope? Function()? scope, DependabotAlertDependencyRelationship? Function()? relationship, }) { return DependabotAlertDependency(
+DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, DependabotAlertDependencyScope? Function()? scope, DependabotAlertDependencyRelationship? Function()? relationship, }) { return DependabotAlertDependency(
   package: package != null ? package() : this.package,
   manifestPath: manifestPath != null ? manifestPath() : this.manifestPath,
   scope: scope != null ? scope() : this.scope,

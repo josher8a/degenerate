@@ -177,7 +177,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('images') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel Function()? model, List<ImageRefParam>? images, ImageRefParam Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String Function()? user, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
+EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model, List<ImageRefParam>? images, ImageRefParam? Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String? Function()? user, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
   model: model != null ? model() : this.model,
   images: images ?? this.images,
   mask: mask != null ? mask() : this.mask,

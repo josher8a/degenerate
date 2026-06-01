@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (placeOfSupplyScheme != null) 'place_of_supply_scheme': placeOfSupplyScheme?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'place_of_supply_scheme'}.contains(key)); } 
-AeStandard copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme Function()? placeOfSupplyScheme}) { return AeStandard(
+AeStandard copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme? Function()? placeOfSupplyScheme}) { return AeStandard(
   placeOfSupplyScheme: placeOfSupplyScheme != null ? placeOfSupplyScheme() : this.placeOfSupplyScheme,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -87,7 +87,7 @@ final class BlogPostSchema {
     String? Function()? contentHtml,
     String? title,
     String? Function()? subtitle,
-    DateTime Function()? datePublished,
+    DateTime? Function()? datePublished,
     String? Function()? slug,
     bool Function()? publish,
     int Function()? readTime,

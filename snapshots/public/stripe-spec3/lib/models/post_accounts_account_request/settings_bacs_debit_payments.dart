@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name'}.contains(key)); } 
-SettingsBacsDebitPayments copyWith({String Function()? displayName}) { return SettingsBacsDebitPayments(
+SettingsBacsDebitPayments copyWith({String? Function()? displayName}) { return SettingsBacsDebitPayments(
   displayName: displayName != null ? displayName() : this.displayName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'avg': ?avg,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'5_or_greater_event_fraction', '10_or_greater_event_fraction', '25_or_greater_event_fraction', '50_or_greater_event_fraction', 'avg'}.contains(key)); } 
-PacketLoss copyWith({int Function()? $5OrGreaterEventFraction, int Function()? $10OrGreaterEventFraction, int Function()? $25OrGreaterEventFraction, int Function()? $50OrGreaterEventFraction, int Function()? avg, }) { return PacketLoss(
+PacketLoss copyWith({int? Function()? $5OrGreaterEventFraction, int? Function()? $10OrGreaterEventFraction, int? Function()? $25OrGreaterEventFraction, int? Function()? $50OrGreaterEventFraction, int? Function()? avg, }) { return PacketLoss(
   $5OrGreaterEventFraction: $5OrGreaterEventFraction != null ? $5OrGreaterEventFraction() : this.$5OrGreaterEventFraction,
   $10OrGreaterEventFraction: $10OrGreaterEventFraction != null ? $10OrGreaterEventFraction() : this.$10OrGreaterEventFraction,
   $25OrGreaterEventFraction: $25OrGreaterEventFraction != null ? $25OrGreaterEventFraction() : this.$25OrGreaterEventFraction,

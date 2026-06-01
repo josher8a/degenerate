@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   if (restriction != null) 'restriction': restriction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Resolution? Function()? resolution, Restriction Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Resolution? Function()? resolution, Restriction? Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: code ?? this.code,
   resolution: resolution != null ? resolution() : this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,

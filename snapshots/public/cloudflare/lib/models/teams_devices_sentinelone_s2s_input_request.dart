@@ -114,7 +114,7 @@ Map<String, dynamic> toJson() { return {
   if ($operator != null) 'operator': $operator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesSentineloneS2sInputRequest copyWith({double Function()? activeThreats, String? connectionId, bool Function()? infected, bool Function()? isActive, NetworkStatus Function()? networkStatus, OperationalState Function()? operationalState, TeamsDevicesCrowdstrikeInputRequestOperator Function()? $operator, }) { return TeamsDevicesSentineloneS2sInputRequest(
+TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThreats, String? connectionId, bool? Function()? infected, bool? Function()? isActive, NetworkStatus? Function()? networkStatus, OperationalState? Function()? operationalState, TeamsDevicesCrowdstrikeInputRequestOperator? Function()? $operator, }) { return TeamsDevicesSentineloneS2sInputRequest(
   activeThreats: activeThreats != null ? activeThreats() : this.activeThreats,
   connectionId: connectionId ?? this.connectionId,
   infected: infected != null ? infected() : this.infected,

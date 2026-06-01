@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'parent_org_name': ?parentOrgName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parent_org_id', 'parent_org_name'}.contains(key)); } 
-ManagedBy copyWith({String Function()? parentOrgId, String Function()? parentOrgName, }) { return ManagedBy(
+ManagedBy copyWith({String? Function()? parentOrgId, String? Function()? parentOrgName, }) { return ManagedBy(
   parentOrgId: parentOrgId != null ? parentOrgId() : this.parentOrgId,
   parentOrgName: parentOrgName != null ? parentOrgName() : this.parentOrgName,
 ); } 

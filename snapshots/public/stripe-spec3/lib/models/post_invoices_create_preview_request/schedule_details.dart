@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'end_behavior', 'phases', 'proration_behavior'}.contains(key)); } 
-ScheduleDetails copyWith({PostSubscriptionSchedulesRequestBillingMode Function()? billingMode, ScheduleDetailsEndBehavior Function()? endBehavior, List<PostSubscriptionSchedulesScheduleRequestPhases> Function()? phases, DeleteSubscriptionItemsItemRequestProrationBehavior Function()? prorationBehavior, }) { return ScheduleDetails(
+ScheduleDetails copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, ScheduleDetailsEndBehavior? Function()? endBehavior, List<PostSubscriptionSchedulesScheduleRequestPhases>? Function()? phases, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, }) { return ScheduleDetails(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   endBehavior: endBehavior != null ? endBehavior() : this.endBehavior,
   phases: phases != null ? phases() : this.phases,

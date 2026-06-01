@@ -30,7 +30,7 @@ final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
 @override String get type { return 'tokens'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextUsageTokens.toJson(), 'type': type}; } 
-CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, TranscriptTextUsageTokensInputTokenDetails Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens.copyWith(
+CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens.copyWith(
   inputTokens: inputTokens,
   inputTokenDetails: inputTokenDetails,
   outputTokens: outputTokens,

@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('analy
       json.containsKey('environment') && json['environment'] is String &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('state'); } 
-MostRecentInstance copyWith({String? analysisKey, String Function()? category, List<String> Function()? classifications, String Function()? commitSha, String? environment, MostRecentInstanceLocation Function()? location, Message Function()? message, String? ref, MostRecentInstanceState? state, }) { return MostRecentInstance(
+MostRecentInstance copyWith({String? analysisKey, String? Function()? category, List<String>? Function()? classifications, String? Function()? commitSha, String? environment, MostRecentInstanceLocation? Function()? location, Message? Function()? message, String? ref, MostRecentInstanceState? state, }) { return MostRecentInstance(
   analysisKey: analysisKey ?? this.analysisKey,
   category: category != null ? category() : this.category,
   classifications: classifications != null ? classifications() : this.classifications,

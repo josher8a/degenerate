@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('performance') &&
       json.containsKey('task') &&
       json.containsKey('verdicts'); } 
-UrlscannerGetScanResponseResultScan copyWith({ScanAsns Function()? asns, List<ListsCertificates>? certificates, ScanDomains Function()? domains, ScanGeo? geo, ScanIps Function()? ips, ScanLinks Function()? links, ScanMeta? meta, ScanPage? page, List<ScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, ScanVerdicts? verdicts, }) { return UrlscannerGetScanResponseResultScan(
+UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<ListsCertificates>? certificates, ScanDomains? Function()? domains, ScanGeo? geo, ScanIps? Function()? ips, ScanLinks? Function()? links, ScanMeta? meta, ScanPage? page, List<ScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, ScanVerdicts? verdicts, }) { return UrlscannerGetScanResponseResultScan(
   asns: asns != null ? asns() : this.asns,
   certificates: certificates ?? this.certificates,
   domains: domains != null ? domains() : this.domains,

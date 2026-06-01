@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key)); } 
-Txt copyWith({String Function()? name, TxtType Function()? type, String Function()? value, }) { return Txt(
+Txt copyWith({String? Function()? name, TxtType? Function()? type, String? Function()? value, }) { return Txt(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,

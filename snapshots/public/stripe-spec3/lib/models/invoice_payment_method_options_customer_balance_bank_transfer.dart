@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eu_bank_transfer', 'type'}.contains(key)); } 
-InvoicePaymentMethodOptionsCustomerBalanceBankTransfer copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer Function()? euBankTransfer, String? Function()? type, }) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(
+InvoicePaymentMethodOptionsCustomerBalanceBankTransfer copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer? Function()? euBankTransfer, String? Function()? type, }) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   type: type != null ? type() : this.type,
 ); } 

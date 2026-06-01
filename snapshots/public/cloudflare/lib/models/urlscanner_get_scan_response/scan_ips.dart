@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (ip != null) 'ip': ip?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip'}.contains(key)); } 
-ScanIps copyWith({IpsIp Function()? ip}) { return ScanIps(
+ScanIps copyWith({IpsIp? Function()? ip}) { return ScanIps(
   ip: ip != null ? ip() : this.ip,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

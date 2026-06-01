@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (autoTriggerChecks != null) 'auto_trigger_checks': autoTriggerChecks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_trigger_checks'}.contains(key)); } 
-Preferences copyWith({List<AutoTriggerChecks> Function()? autoTriggerChecks}) { return Preferences(
+Preferences copyWith({List<AutoTriggerChecks>? Function()? autoTriggerChecks}) { return Preferences(
   autoTriggerChecks: autoTriggerChecks != null ? autoTriggerChecks() : this.autoTriggerChecks,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

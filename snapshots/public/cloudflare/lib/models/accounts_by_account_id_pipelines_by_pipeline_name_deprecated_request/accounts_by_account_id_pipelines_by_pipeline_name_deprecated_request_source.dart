@@ -48,7 +48,7 @@ final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPi
 
 @override String get type { return 'http'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool Function()? authentication, Cors Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool? Function()? authentication, Cors? Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
   authentication: authentication,
   cors: cors,
   format: format,

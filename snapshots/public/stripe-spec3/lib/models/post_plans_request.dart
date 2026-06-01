@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('interval'); } 
-PostPlansRequest copyWith({bool Function()? active, int Function()? amount, String Function()? amountDecimal, BillingScheme Function()? billingScheme, String? currency, List<String> Function()? expand, String Function()? id, GetPricesRecurringInterval? interval, int Function()? intervalCount, Metadata Function()? metadata, String Function()? meter, String Function()? nickname, PostPlansRequestProduct Function()? product, List<Tiers> Function()? tiers, PostPlansRequestTiersMode Function()? tiersMode, PostPlansRequestTransformUsage Function()? transformUsage, int Function()? trialPeriodDays, UsageType Function()? usageType, }) { return PostPlansRequest(
+PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? Function()? billingScheme, String? currency, List<String>? Function()? expand, String? Function()? id, GetPricesRecurringInterval? interval, int? Function()? intervalCount, Metadata? Function()? metadata, String? Function()? meter, String? Function()? nickname, PostPlansRequestProduct? Function()? product, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, PostPlansRequestTransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? Function()? usageType, }) { return PostPlansRequest(
   active: active != null ? active() : this.active,
   amount: amount != null ? amount() : this.amount,
   amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,

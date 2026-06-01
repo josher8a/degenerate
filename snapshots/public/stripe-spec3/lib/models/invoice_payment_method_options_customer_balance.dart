@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (fundingType != null) 'funding_type': fundingType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsCustomerBalance copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransfer Function()? bankTransfer, CheckoutCustomerBalancePaymentMethodOptionsFundingType? Function()? fundingType, }) { return InvoicePaymentMethodOptionsCustomerBalance(
+InvoicePaymentMethodOptionsCustomerBalance copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransfer? Function()? bankTransfer, CheckoutCustomerBalancePaymentMethodOptionsFundingType? Function()? fundingType, }) { return InvoicePaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
 ); } 

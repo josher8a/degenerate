@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'push': ?push,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin', 'pull', 'push'}.contains(key)); } 
-PermissionsFrom copyWith({bool Function()? admin, bool Function()? pull, bool Function()? push, }) { return PermissionsFrom(
+PermissionsFrom copyWith({bool? Function()? admin, bool? Function()? pull, bool? Function()? push, }) { return PermissionsFrom(
   admin: admin != null ? admin() : this.admin,
   pull: pull != null ? pull() : this.pull,
   push: push != null ? push() : this.push,

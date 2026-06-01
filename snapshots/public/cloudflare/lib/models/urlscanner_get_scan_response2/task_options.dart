@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'screenshotsResolutions': ?screenshotsResolutions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customHeaders', 'screenshotsResolutions'}.contains(key)); } 
-TaskOptions copyWith({Map<String, dynamic> Function()? customHeaders, List<String> Function()? screenshotsResolutions, }) { return TaskOptions(
+TaskOptions copyWith({Map<String, dynamic>? Function()? customHeaders, List<String>? Function()? screenshotsResolutions, }) { return TaskOptions(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
 ); } 

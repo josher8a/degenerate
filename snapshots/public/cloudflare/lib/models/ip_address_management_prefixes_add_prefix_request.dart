@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
       json.containsKey('cidr'); } 
-IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, AddressingCidr? cidr, AddressingDelegateLoaCreation Function()? delegateLoaCreation, AddressingDescription Function()? description, AddressingLoaDocumentIdentifier? Function()? loaDocumentId, }) { return IpAddressManagementPrefixesAddPrefixRequest(
+IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, AddressingCidr? cidr, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, AddressingLoaDocumentIdentifier? Function()? loaDocumentId, }) { return IpAddressManagementPrefixesAddPrefixRequest(
   asn: asn ?? this.asn,
   cidr: cidr ?? this.cidr,
   delegateLoaCreation: delegateLoaCreation != null ? delegateLoaCreation() : this.delegateLoaCreation,

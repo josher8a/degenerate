@@ -280,7 +280,7 @@ final RealtimeServerEventConversationItemInputAudioTranscriptionDelta realtimeSe
 
 @override String get type { return 'conversation.item.input_audio_transcription.delta'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeServerEventConversationItemInputAudioTranscriptionDelta.toJson(), 'type': type}; } 
-RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant copyWith({String? eventId, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(realtimeServerEventConversationItemInputAudioTranscriptionDelta.copyWith(
+RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant copyWith({String? eventId, String? itemId, int? Function()? contentIndex, String? Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta$Variant(realtimeServerEventConversationItemInputAudioTranscriptionDelta.copyWith(
   eventId: eventId,
   itemId: itemId,
   contentIndex: contentIndex,

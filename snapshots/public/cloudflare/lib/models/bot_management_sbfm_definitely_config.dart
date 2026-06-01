@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (staleZoneConfiguration != null) 'stale_zone_configuration': staleZoneConfiguration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'optimize_wordpress', 'sbfm_definitely_automated', 'sbfm_static_resource_protection', 'sbfm_verified_bots', 'stale_zone_configuration'}.contains(key)); } 
-BotManagementSbfmDefinitelyConfig copyWith({BotManagementOptimizeWordpress Function()? optimizeWordpress, BotManagementSbfmDefinitelyAutomated Function()? sbfmDefinitelyAutomated, BotManagementSbfmStaticResourceProtection Function()? sbfmStaticResourceProtection, BotManagementSbfmVerifiedBots Function()? sbfmVerifiedBots, BotManagementSbfmDefinitelyConfigStaleZoneConfiguration Function()? staleZoneConfiguration, }) { return BotManagementSbfmDefinitelyConfig(
+BotManagementSbfmDefinitelyConfig copyWith({BotManagementOptimizeWordpress? Function()? optimizeWordpress, BotManagementSbfmDefinitelyAutomated? Function()? sbfmDefinitelyAutomated, BotManagementSbfmStaticResourceProtection? Function()? sbfmStaticResourceProtection, BotManagementSbfmVerifiedBots? Function()? sbfmVerifiedBots, BotManagementSbfmDefinitelyConfigStaleZoneConfiguration? Function()? staleZoneConfiguration, }) { return BotManagementSbfmDefinitelyConfig(
   optimizeWordpress: optimizeWordpress != null ? optimizeWordpress() : this.optimizeWordpress,
   sbfmDefinitelyAutomated: sbfmDefinitelyAutomated != null ? sbfmDefinitelyAutomated() : this.sbfmDefinitelyAutomated,
   sbfmStaticResourceProtection: sbfmStaticResourceProtection != null ? sbfmStaticResourceProtection() : this.sbfmStaticResourceProtection,

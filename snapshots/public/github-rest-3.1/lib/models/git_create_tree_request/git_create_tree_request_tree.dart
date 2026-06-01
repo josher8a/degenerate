@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key)); } 
-GitCreateTreeRequestTree copyWith({String Function()? path, TreeMode Function()? mode, GitCreateTagRequestType Function()? type, String? Function()? sha, String Function()? content, }) { return GitCreateTreeRequestTree(
+GitCreateTreeRequestTree copyWith({String? Function()? path, TreeMode? Function()? mode, GitCreateTagRequestType? Function()? type, String? Function()? sha, String? Function()? content, }) { return GitCreateTreeRequestTree(
   path: path != null ? path() : this.path,
   mode: mode != null ? mode() : this.mode,
   type: type != null ? type() : this.type,

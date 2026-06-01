@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-AsnsDetails copyWith({String? asn, AsnsDetailsLocations Function()? locations, String? name, }) { return AsnsDetails(
+AsnsDetails copyWith({String? asn, AsnsDetailsLocations? Function()? locations, String? name, }) { return AsnsDetails(
   asn: asn ?? this.asn,
   locations: locations != null ? locations() : this.locations,
   name: name ?? this.name,

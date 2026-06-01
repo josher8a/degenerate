@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('since') && json['since'] is String &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover Function()? approver, String Function()? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2> Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns> Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewApproved(
+WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction? action, WebhooksApprover? Function()? approver, String? Function()? comment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, List<WebhooksReviewers2>? Function()? reviewers, SimpleUser? sender, String? since, WebhooksWorkflowJobRun? Function()? workflowJobRun, List<WebhookDeploymentReviewApprovedWorkflowJobRuns>? Function()? workflowJobRuns, WebhookDeploymentReviewApprovedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewApproved(
   action: action ?? this.action,
   approver: approver != null ? approver() : this.approver,
   comment: comment != null ? comment() : this.comment,

@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('author_association'); } 
-TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime Function()? submittedAt, DateTime? Function()? updatedAt, String? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
+TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, DateTime? Function()? updatedAt, String? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
   event: event ?? this.event,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

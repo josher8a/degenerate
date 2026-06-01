@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'search_query': searchQuery,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('search_query') && json['search_query'] is String; } 
-AutoragConfigSearchResponseResult copyWith({List<ResultData> Function()? data, bool Function()? hasMore, String? Function()? nextPage, String Function()? object, String? searchQuery, }) { return AutoragConfigSearchResponseResult(
+AutoragConfigSearchResponseResult copyWith({List<ResultData>? Function()? data, bool Function()? hasMore, String? Function()? nextPage, String? Function()? object, String? searchQuery, }) { return AutoragConfigSearchResponseResult(
   data: data != null ? data() : this.data,
   hasMore: hasMore != null ? hasMore() : this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,

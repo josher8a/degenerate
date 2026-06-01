@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-NotificationBanner copyWith({bool? enabled, AccountManagementFeatures Function()? features, }) { return NotificationBanner(
+NotificationBanner copyWith({bool? enabled, AccountManagementFeatures? Function()? features, }) { return NotificationBanner(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 

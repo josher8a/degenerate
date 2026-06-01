@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties') &&
       json.containsKey('type') && json['type'] is String; } 
-Variant1Parameters copyWith({Map<String,PropertiesValue>? properties, List<String> Function()? $required, String? type, }) { return Variant1Parameters(
+Variant1Parameters copyWith({Map<String,PropertiesValue>? properties, List<String>? Function()? $required, String? type, }) { return Variant1Parameters(
   properties: properties ?? this.properties,
   $required: $required != null ? $required() : this.$required,
   type: type ?? this.type,

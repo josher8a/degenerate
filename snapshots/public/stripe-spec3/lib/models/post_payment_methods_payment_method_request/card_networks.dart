@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (preferred != null) 'preferred': preferred?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
-CardNetworks copyWith({CardNetworksPreferred Function()? preferred}) { return CardNetworks(
+CardNetworks copyWith({CardNetworksPreferred? Function()? preferred}) { return CardNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

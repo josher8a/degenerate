@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-Acceptance copyWith({int Function()? date, String Function()? ip, AcceptanceOffline Function()? offline, AcceptanceOnline Function()? online, AcceptanceStatus? status, CustomerAcceptanceType Function()? type, String Function()? userAgent, }) { return Acceptance(
+Acceptance copyWith({int? Function()? date, String? Function()? ip, AcceptanceOffline? Function()? offline, AcceptanceOnline? Function()? online, AcceptanceStatus? status, CustomerAcceptanceType? Function()? type, String? Function()? userAgent, }) { return Acceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   offline: offline != null ? offline() : this.offline,

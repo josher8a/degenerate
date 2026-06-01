@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (risks != null) 'risks': risks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('inherited'); } 
-ExampleComCategories copyWith({List<CategoriesContent> Function()? content, CategoriesInherited? inherited, List<ExampleComCategoriesRisks> Function()? risks, }) { return ExampleComCategories(
+ExampleComCategories copyWith({List<CategoriesContent>? Function()? content, CategoriesInherited? inherited, List<ExampleComCategoriesRisks>? Function()? risks, }) { return ExampleComCategories(
   content: content != null ? content() : this.content,
   inherited: inherited ?? this.inherited,
   risks: risks != null ? risks() : this.risks,

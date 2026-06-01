@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge Function()? charge, ChargePaymentIntent Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge? Function()? charge, ChargePaymentIntent? Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
   charge: charge != null ? charge() : this.charge,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,

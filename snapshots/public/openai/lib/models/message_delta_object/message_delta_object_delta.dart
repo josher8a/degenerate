@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role', 'content'}.contains(key)); } 
-MessageDeltaObjectDelta copyWith({CreateMessageRequestRole Function()? role, List<DeltaContent> Function()? content, }) { return MessageDeltaObjectDelta(
+MessageDeltaObjectDelta copyWith({CreateMessageRequestRole? Function()? role, List<DeltaContent>? Function()? content, }) { return MessageDeltaObjectDelta(
   role: role != null ? role() : this.role,
   content: content != null ? content() : this.content,
 ); } 

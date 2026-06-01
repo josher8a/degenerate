@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String? id, String? name, String? Function()? profileId, DlpPredefinedEntryVariant Function()? variant, PredefinedEntryType? type, }) { return PredefinedEntry(
+PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String? id, String? name, String? Function()? profileId, DlpPredefinedEntryVariant? Function()? variant, PredefinedEntryType? type, }) { return PredefinedEntry(
   confidence: confidence ?? this.confidence,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,

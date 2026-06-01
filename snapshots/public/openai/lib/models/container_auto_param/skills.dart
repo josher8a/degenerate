@@ -29,7 +29,7 @@ final SkillReferenceParam skillReferenceParam;
 
 @override String get type { return 'skill_reference'; } 
 @override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
-SkillsSkillReference copyWith({String? skillId, String Function()? version, }) { return SkillsSkillReference(skillReferenceParam.copyWith(
+SkillsSkillReference copyWith({String? skillId, String? Function()? version, }) { return SkillsSkillReference(skillReferenceParam.copyWith(
   skillId: skillId,
   version: version,
 )); } 

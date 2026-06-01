@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-WebhooksPullRequest5RequestedTeams copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, TeamParent? Function()? parent, String Function()? permission, TeamPrivacy Function()? privacy, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, }) { return WebhooksPullRequest5RequestedTeams(
+WebhooksPullRequest5RequestedTeams copyWith({bool? Function()? deleted, String? Function()? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, TeamParent? Function()? parent, String? Function()? permission, TeamPrivacy? Function()? privacy, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, }) { return WebhooksPullRequest5RequestedTeams(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

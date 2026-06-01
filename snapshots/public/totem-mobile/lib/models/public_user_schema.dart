@@ -76,7 +76,7 @@ final class PublicUserSchema {
     String? Function()? name,
     String? Function()? slug,
     bool Function()? isStaff,
-    String Function()? profileAvatarSeed,
+    String? Function()? profileAvatarSeed,
     String? Function()? profileImage,
     DateTime? dateCreated,
   }) {

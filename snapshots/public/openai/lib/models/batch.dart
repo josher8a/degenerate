@@ -193,7 +193,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('completion_window') && json['completion_window'] is String &&
       json.containsKey('status') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-Batch copyWith({String? id, BatchObject? object, String? endpoint, String Function()? model, BatchErrors Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String Function()? outputFileId, String Function()? errorFileId, int? createdAt, int Function()? inProgressAt, int Function()? expiresAt, int Function()? finalizingAt, int Function()? completedAt, int Function()? failedAt, int Function()? expiredAt, int Function()? cancellingAt, int Function()? cancelledAt, RequestCounts Function()? requestCounts, BatchUsage Function()? usage, Map<String, String>? Function()? metadata, }) { return Batch(
+Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Function()? model, BatchErrors? Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String? Function()? outputFileId, String? Function()? errorFileId, int? createdAt, int? Function()? inProgressAt, int? Function()? expiresAt, int? Function()? finalizingAt, int? Function()? completedAt, int? Function()? failedAt, int? Function()? expiredAt, int? Function()? cancellingAt, int? Function()? cancelledAt, RequestCounts? Function()? requestCounts, BatchUsage? Function()? usage, Map<String, String>? Function()? metadata, }) { return Batch(
   id: id ?? this.id,
   object: object ?? this.object,
   endpoint: endpoint ?? this.endpoint,

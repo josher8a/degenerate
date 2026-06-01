@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source_config') &&
       json.containsKey('testing_criteria'); } 
-CreateEvalRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, CreateEvalRequestDataSourceConfig? dataSourceConfig, List<CreateEvalRequestTestingCriteria>? testingCriteria, }) { return CreateEvalRequest(
+CreateEvalRequest copyWith({String? Function()? name, Map<String, String>? Function()? metadata, CreateEvalRequestDataSourceConfig? dataSourceConfig, List<CreateEvalRequestTestingCriteria>? testingCriteria, }) { return CreateEvalRequest(
   name: name != null ? name() : this.name,
   metadata: metadata != null ? metadata() : this.metadata,
   dataSourceConfig: dataSourceConfig ?? this.dataSourceConfig,

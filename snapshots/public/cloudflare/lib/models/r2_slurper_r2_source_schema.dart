@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('secret') &&
       json.containsKey('vendor'); } 
-R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction Function()? jurisdiction, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(
+R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Function()? jurisdiction, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(
   bucket: bucket ?? this.bucket,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   keys: keys != null ? keys() : this.keys,

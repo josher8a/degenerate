@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (phone != null) 'phone': phone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
-DestinationPaymentMethodDataBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress Function()? address, Email Function()? email, PostBillingPortalConfigurationsConfigurationRequestName Function()? name, Phone Function()? phone, }) { return DestinationPaymentMethodDataBillingDetails(
+DestinationPaymentMethodDataBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? Function()? address, Email? Function()? email, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, Phone? Function()? phone, }) { return DestinationPaymentMethodDataBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

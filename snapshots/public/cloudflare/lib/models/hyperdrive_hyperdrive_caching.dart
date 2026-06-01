@@ -26,7 +26,7 @@ final HyperdriveHyperdriveCachingEnabled hyperdriveHyperdriveCachingEnabled;
 
 @override String get disabled { return 'false'; } 
 @override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled}; } 
-HyperdriveHyperdriveCachingFalse copyWith({int Function()? maxAge, int Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled.copyWith(
+HyperdriveHyperdriveCachingFalse copyWith({int? Function()? maxAge, int? Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled.copyWith(
   maxAge: maxAge,
   staleWhileRevalidate: staleWhileRevalidate,
 )); } 

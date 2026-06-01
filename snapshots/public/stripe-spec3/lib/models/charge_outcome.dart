@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? networkStatus, String? Function()? reason, String Function()? riskLevel, int Function()? riskScore, ChargeOutcomeRule Function()? rule, String? Function()? sellerMessage, String? type, }) { return ChargeOutcome(
+ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? networkStatus, String? Function()? reason, String? Function()? riskLevel, int? Function()? riskScore, ChargeOutcomeRule? Function()? rule, String? Function()? sellerMessage, String? type, }) { return ChargeOutcome(
   adviceCode: adviceCode != null ? adviceCode() : this.adviceCode,
   networkAdviceCode: networkAdviceCode != null ? networkAdviceCode() : this.networkAdviceCode,
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,

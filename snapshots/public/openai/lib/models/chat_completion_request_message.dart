@@ -45,7 +45,7 @@ final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessag
 
 @override String get role { return 'developer'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role}; } 
-ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage.copyWith(
+ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage.copyWith(
   content: content,
   name: name,
 )); } 
@@ -62,7 +62,7 @@ final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
 @override String get role { return 'system'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestSystemMessage.toJson(), 'role': role}; } 
-ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage.copyWith(
+ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage.copyWith(
   content: content,
   name: name,
 )); } 
@@ -79,7 +79,7 @@ final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
 @override String get role { return 'user'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestUserMessage.toJson(), 'role': role}; } 
-ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage.copyWith(
+ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage.copyWith(
   content: content,
   name: name,
 )); } 
@@ -96,7 +96,7 @@ final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessag
 
 @override String get role { return 'assistant'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestAssistantMessage.toJson(), 'role': role}; } 
-ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2> Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
+ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String? Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
   content: content,
   refusal: refusal,
   name: name,

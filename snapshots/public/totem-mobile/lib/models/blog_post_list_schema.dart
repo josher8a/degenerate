@@ -81,7 +81,7 @@ final class BlogPostListSchema {
     String? Function()? headerImageUrl,
     String? title,
     String? Function()? subtitle,
-    DateTime Function()? datePublished,
+    DateTime? Function()? datePublished,
     String? Function()? slug,
     bool Function()? publish,
     int Function()? readTime,

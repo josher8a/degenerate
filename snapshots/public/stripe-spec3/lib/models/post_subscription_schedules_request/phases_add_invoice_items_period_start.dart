@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PhasesAddInvoiceItemsPeriodStart copyWith({int Function()? timestamp, SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType? type, }) { return PhasesAddInvoiceItemsPeriodStart(
+PhasesAddInvoiceItemsPeriodStart copyWith({int? Function()? timestamp, SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodStartType? type, }) { return PhasesAddInvoiceItemsPeriodStart(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
 ); } 

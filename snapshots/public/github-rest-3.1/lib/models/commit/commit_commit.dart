@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('comment_count') && json['comment_count'] is num &&
       json.containsKey('tree'); } 
-CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function()? committer, String? message, int? commentCount, GitCommitTree? tree, Verification Function()? verification, }) { return CommitCommit(
+CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function()? committer, String? message, int? commentCount, GitCommitTree? tree, Verification? Function()? verification, }) { return CommitCommit(
   url: url ?? this.url,
   author: author != null ? author() : this.author,
   committer: committer != null ? committer() : this.committer,

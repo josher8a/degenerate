@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
       json.containsKey('name'); } 
-ListsCreateAListRequest copyWith({ListsDescription Function()? description, ListsKind? Function()? kind, ListsName? name, }) { return ListsCreateAListRequest(
+ListsCreateAListRequest copyWith({ListsDescription? Function()? description, ListsKind? Function()? kind, ListsName? name, }) { return ListsCreateAListRequest(
   description: description != null ? description() : this.description,
   kind: kind != null ? kind() : this.kind,
   name: name ?? this.name,

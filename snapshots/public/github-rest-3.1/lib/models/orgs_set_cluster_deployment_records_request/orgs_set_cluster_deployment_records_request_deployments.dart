@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
       json.containsKey('deployment_name') && json['deployment_name'] is String; } 
-OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus Function()? status, String? deploymentName, String Function()? githubRepository, Map<String, String> Function()? tags, List<RuntimeRisks> Function()? runtimeRisks, }) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
+OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? Function()? status, String? deploymentName, String? Function()? githubRepository, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, }) { return OrgsSetClusterDeploymentRecordsRequestDeployments(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,

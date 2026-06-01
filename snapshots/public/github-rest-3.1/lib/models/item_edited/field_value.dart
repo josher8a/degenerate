@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (to != null) 'to': to?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field_node_id', 'field_type', 'field_name', 'project_number', 'from', 'to'}.contains(key)); } 
-FieldValue copyWith({String Function()? fieldNodeId, String Function()? fieldType, String Function()? fieldName, int Function()? projectNumber, FieldValueFrom? Function()? from, FieldValueTo? Function()? to, }) { return FieldValue(
+FieldValue copyWith({String? Function()? fieldNodeId, String? Function()? fieldType, String? Function()? fieldName, int? Function()? projectNumber, FieldValueFrom? Function()? from, FieldValueTo? Function()? to, }) { return FieldValue(
   fieldNodeId: fieldNodeId != null ? fieldNodeId() : this.fieldNodeId,
   fieldType: fieldType != null ? fieldType() : this.fieldType,
   fieldName: fieldName != null ? fieldName() : this.fieldName,

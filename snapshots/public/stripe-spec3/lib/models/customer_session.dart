@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
+CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
   clientSecret: clientSecret ?? this.clientSecret,
   components: components != null ? components() : this.components,
   created: created ?? this.created,

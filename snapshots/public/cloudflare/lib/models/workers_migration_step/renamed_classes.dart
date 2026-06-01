@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'to': ?to,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
-RenamedClasses copyWith({String Function()? from, String Function()? to, }) { return RenamedClasses(
+RenamedClasses copyWith({String? Function()? from, String? Function()? to, }) { return RenamedClasses(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 

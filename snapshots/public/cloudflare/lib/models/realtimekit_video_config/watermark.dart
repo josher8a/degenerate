@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
-Watermark copyWith({WatermarkPosition Function()? position, WatermarkSize Function()? size, Uri Function()? url, }) { return Watermark(
+Watermark copyWith({WatermarkPosition Function()? position, WatermarkSize? Function()? size, Uri? Function()? url, }) { return Watermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,

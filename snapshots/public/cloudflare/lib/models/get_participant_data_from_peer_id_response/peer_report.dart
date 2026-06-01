@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'quality'}.contains(key)); } 
-PeerReport copyWith({PeerReportMetadata Function()? metadata, PeerReportQuality Function()? quality, }) { return PeerReport(
+PeerReport copyWith({PeerReportMetadata? Function()? metadata, PeerReportQuality? Function()? quality, }) { return PeerReport(
   metadata: metadata != null ? metadata() : this.metadata,
   quality: quality != null ? quality() : this.quality,
 ); } 

@@ -103,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteRerequestedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool Function()? rerequestable, bool Function()? runsRerequestable, WebhookCheckSuiteRequestedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteRerequestedCheckSuite(
+WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteRerequestedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, CheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<CheckSuitePullRequests>? pullRequests, bool? Function()? rerequestable, bool? Function()? runsRerequestable, WebhookCheckSuiteRequestedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteRerequestedCheckSuite(
   after: after != null ? after() : this.after,
   app: app ?? this.app,
   before: before != null ? before() : this.before,

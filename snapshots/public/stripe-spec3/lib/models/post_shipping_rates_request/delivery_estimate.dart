@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (minimum != null) 'minimum': minimum?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'maximum', 'minimum'}.contains(key)); } 
-DeliveryEstimate copyWith({Maximum Function()? maximum, Minimum Function()? minimum, }) { return DeliveryEstimate(
+DeliveryEstimate copyWith({Maximum? Function()? maximum, Minimum? Function()? minimum, }) { return DeliveryEstimate(
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 

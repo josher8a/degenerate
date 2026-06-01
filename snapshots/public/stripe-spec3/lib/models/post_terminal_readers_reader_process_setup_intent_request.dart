@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_redisplay') &&
       json.containsKey('setup_intent') && json['setup_intent'] is String; } 
-PostTerminalReadersReaderProcessSetupIntentRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? allowRedisplay, List<String> Function()? expand, PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig Function()? processConfig, String? setupIntent, }) { return PostTerminalReadersReaderProcessSetupIntentRequest(
+PostTerminalReadersReaderProcessSetupIntentRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? allowRedisplay, List<String>? Function()? expand, PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig? Function()? processConfig, String? setupIntent, }) { return PostTerminalReadersReaderProcessSetupIntentRequest(
   allowRedisplay: allowRedisplay ?? this.allowRedisplay,
   expand: expand != null ? expand() : this.expand,
   processConfig: processConfig != null ? processConfig() : this.processConfig,

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'fee_acknowledged': ?feeAcknowledged,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fee_acknowledged'}.contains(key)); } 
-VisaCompliance copyWith({bool Function()? feeAcknowledged}) { return VisaCompliance(
+VisaCompliance copyWith({bool? Function()? feeAcknowledged}) { return VisaCompliance(
   feeAcknowledged: feeAcknowledged != null ? feeAcknowledged() : this.feeAcknowledged,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

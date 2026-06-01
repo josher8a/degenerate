@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   if (notificationMethod != null) 'notification_method': notificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acceptance', 'amount', 'currency', 'interval', 'notification_method'}.contains(key)); } 
-PostSourcesRequestMandate copyWith({Acceptance Function()? acceptance, AmountDetailsShippingParamAmount Function()? amount, String Function()? currency, MandateInterval Function()? interval, NotificationMethod Function()? notificationMethod, }) { return PostSourcesRequestMandate(
+PostSourcesRequestMandate copyWith({Acceptance? Function()? acceptance, AmountDetailsShippingParamAmount? Function()? amount, String? Function()? currency, MandateInterval? Function()? interval, NotificationMethod? Function()? notificationMethod, }) { return PostSourcesRequestMandate(
   acceptance: acceptance != null ? acceptance() : this.acceptance,
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

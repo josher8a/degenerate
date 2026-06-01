@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('input_tokens') && json['input_tokens'] is num &&
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('num_model_requests') && json['num_model_requests'] is num; } 
-UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int Function()? inputCachedTokens, int? outputTokens, int Function()? inputAudioTokens, int Function()? outputAudioTokens, int? numModelRequests, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, bool? Function()? batch, String? Function()? serviceTier, }) { return UsageCompletionsResult(
+UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inputTokens, int? Function()? inputCachedTokens, int? outputTokens, int? Function()? inputAudioTokens, int? Function()? outputAudioTokens, int? numModelRequests, String? Function()? projectId, String? Function()? userId, String? Function()? apiKeyId, String? Function()? model, bool? Function()? batch, String? Function()? serviceTier, }) { return UsageCompletionsResult(
   object: object ?? this.object,
   inputTokens: inputTokens ?? this.inputTokens,
   inputCachedTokens: inputCachedTokens != null ? inputCachedTokens() : this.inputCachedTokens,

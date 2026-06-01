@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('features'); } 
-PostBillingPortalConfigurationsRequest copyWith({PostBillingPortalConfigurationsRequestBusinessProfile Function()? businessProfile, DefaultReturnUrl Function()? defaultReturnUrl, List<String> Function()? expand, PostBillingPortalConfigurationsRequestFeatures? features, LoginPage Function()? loginPage, Map<String, String> Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName Function()? name, }) { return PostBillingPortalConfigurationsRequest(
+PostBillingPortalConfigurationsRequest copyWith({PostBillingPortalConfigurationsRequestBusinessProfile? Function()? businessProfile, DefaultReturnUrl? Function()? defaultReturnUrl, List<String>? Function()? expand, PostBillingPortalConfigurationsRequestFeatures? features, LoginPage? Function()? loginPage, Map<String, String>? Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, }) { return PostBillingPortalConfigurationsRequest(
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   defaultReturnUrl: defaultReturnUrl != null ? defaultReturnUrl() : this.defaultReturnUrl,
   expand: expand != null ? expand() : this.expand,

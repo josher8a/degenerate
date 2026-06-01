@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataL
       json.containsKey('triggers') &&
       json.containsKey('variables') &&
       json.containsKey('zarazVersion') && json['zarazVersion'] is num; } 
-ZarazZarazConfigBase copyWith({Analytics Function()? analytics, Consent Function()? consent, bool? dataLayer, String? debugKey, bool Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
+ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Function()? consent, bool? dataLayer, String? debugKey, bool? Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
   analytics: analytics != null ? analytics() : this.analytics,
   consent: consent != null ? consent() : this.consent,
   dataLayer: dataLayer ?? this.dataLayer,

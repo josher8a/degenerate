@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (nameservers != null) 'nameservers': nameservers?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'nameservers'}.contains(key)); } 
-DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsDnsSettingsAccountPatchNameservers Function()? nameservers}) { return DnsSettingsDnsSettingsAccountPatch(
+DnsSettingsDnsSettingsAccountPatch copyWith({DnsSettingsDnsSettingsAccountPatchNameservers? Function()? nameservers}) { return DnsSettingsDnsSettingsAccountPatch(
   nameservers: nameservers != null ? nameservers() : this.nameservers,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

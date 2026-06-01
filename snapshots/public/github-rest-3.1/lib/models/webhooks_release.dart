@@ -121,7 +121,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asset
       json.containsKey('upload_url') && json['upload_url'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('zipball_url') && json['zipball_url'] is String; } 
-WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksRelease1Author? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, DiscussionReactions Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
+WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksRelease1Author? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri? Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, DiscussionReactions? Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
   assets: assets ?? this.assets,
   assetsUrl: assetsUrl ?? this.assetsUrl,
   author: author != null ? author() : this.author,

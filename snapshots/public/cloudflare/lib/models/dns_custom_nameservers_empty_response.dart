@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-DnsCustomNameserversEmptyResponse copyWith({List<String> Function()? result}) { return DnsCustomNameserversEmptyResponse(
+DnsCustomNameserversEmptyResponse copyWith({List<String>? Function()? result}) { return DnsCustomNameserversEmptyResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

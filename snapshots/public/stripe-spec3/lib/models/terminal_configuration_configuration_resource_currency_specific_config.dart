@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'smart_tip_threshold': ?smartTipThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key)); } 
-TerminalConfigurationConfigurationResourceCurrencySpecificConfig copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int Function()? smartTipThreshold, }) { return TerminalConfigurationConfigurationResourceCurrencySpecificConfig(
+TerminalConfigurationConfigurationResourceCurrencySpecificConfig copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percentages, int? Function()? smartTipThreshold, }) { return TerminalConfigurationConfigurationResourceCurrencySpecificConfig(
   fixedAmounts: fixedAmounts != null ? fixedAmounts() : this.fixedAmounts,
   percentages: percentages != null ? percentages() : this.percentages,
   smartTipThreshold: smartTipThreshold != null ? smartTipThreshold() : this.smartTipThreshold,

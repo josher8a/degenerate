@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('line'
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('path') && json['path'] is String; } 
-CodeownersErrorsErrors copyWith({int? line, int? column, String Function()? source, String? kind, String? Function()? suggestion, String? message, String? path, }) { return CodeownersErrorsErrors(
+CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? source, String? kind, String? Function()? suggestion, String? message, String? path, }) { return CodeownersErrorsErrors(
   line: line ?? this.line,
   column: column ?? this.column,
   source: source != null ? source() : this.source,

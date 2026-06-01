@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (link != null) 'link': link?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'link'}.contains(key)); } 
-ScanLinks copyWith({Link Function()? link}) { return ScanLinks(
+ScanLinks copyWith({Link? Function()? link}) { return ScanLinks(
   link: link != null ? link() : this.link,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

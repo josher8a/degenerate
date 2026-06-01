@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard Function()? card, List<String> Function()? expand, Metadata Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount Function()? usBankAccount, }) { return PostPaymentMethodsPaymentMethodRequest(
+PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails? Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard? Function()? card, List<String>? Function()? expand, Metadata? Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto? Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount? Function()? usBankAccount, }) { return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   card: card != null ? card() : this.card,

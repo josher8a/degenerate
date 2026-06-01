@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name'); } 
-HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails Function()? consecutiveFails, HealthchecksConsecutiveSuccesses Function()? consecutiveSuccesses, HealthchecksDescription Function()? description, HealthchecksHttpConfig Function()? httpConfig, HealthchecksInterval Function()? interval, HealthchecksName? name, HealthchecksRetries Function()? retries, HealthchecksSuspended Function()? suspended, HealthchecksTcpConfig Function()? tcpConfig, HealthchecksTimeout Function()? timeout, HealthchecksType Function()? type, }) { return HealthchecksQueryHealthcheck(
+HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, HealthchecksHttpConfig? Function()? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, HealthchecksTcpConfig? Function()? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) { return HealthchecksQueryHealthcheck(
   address: address ?? this.address,
   checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,

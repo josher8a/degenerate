@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
-PriorUndisputedTransactions copyWith({String? charge, CustomerAccountId Function()? customerAccountId, CustomerDeviceFingerprint Function()? customerDeviceFingerprint, CustomerDeviceId Function()? customerDeviceId, CustomerEmailAddress Function()? customerEmailAddress, CustomerPurchaseIp Function()? customerPurchaseIp, ProductDescription Function()? productDescription, DisputedTransactionShippingAddress Function()? shippingAddress, }) { return PriorUndisputedTransactions(
+PriorUndisputedTransactions copyWith({String? charge, CustomerAccountId? Function()? customerAccountId, CustomerDeviceFingerprint? Function()? customerDeviceFingerprint, CustomerDeviceId? Function()? customerDeviceId, CustomerEmailAddress? Function()? customerEmailAddress, CustomerPurchaseIp? Function()? customerPurchaseIp, ProductDescription? Function()? productDescription, DisputedTransactionShippingAddress? Function()? shippingAddress, }) { return PriorUndisputedTransactions(
   charge: charge ?? this.charge,
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,

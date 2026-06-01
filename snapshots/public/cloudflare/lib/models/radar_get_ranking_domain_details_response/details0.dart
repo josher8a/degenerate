@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (topLocations != null) 'top_locations': topLocations?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('categories'); } 
-Details0 copyWith({String Function()? bucket, List<Details0Categories>? categories, int Function()? rank, List<TopLocations> Function()? topLocations, }) { return Details0(
+Details0 copyWith({String? Function()? bucket, List<Details0Categories>? categories, int? Function()? rank, List<TopLocations>? Function()? topLocations, }) { return Details0(
   bucket: bucket != null ? bucket() : this.bucket,
   categories: categories ?? this.categories,
   rank: rank != null ? rank() : this.rank,

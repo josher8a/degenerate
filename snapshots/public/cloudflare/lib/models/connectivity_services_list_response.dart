@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-ConnectivityServicesListResponse copyWith({List<InfraServiceConfig> Function()? result}) { return ConnectivityServicesListResponse(
+ConnectivityServicesListResponse copyWith({List<InfraServiceConfig>? Function()? result}) { return ConnectivityServicesListResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

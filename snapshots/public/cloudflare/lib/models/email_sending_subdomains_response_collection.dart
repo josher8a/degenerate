@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-EmailSendingSubdomainsResponseCollection copyWith({List<EmailSendingSubdomainProperties> Function()? result}) { return EmailSendingSubdomainsResponseCollection(
+EmailSendingSubdomainsResponseCollection copyWith({List<EmailSendingSubdomainProperties>? Function()? result}) { return EmailSendingSubdomainsResponseCollection(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

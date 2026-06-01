@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connectivity', 'type'}.contains(key)); } 
-Dynamic copyWith({DynamicConnectivity Function()? connectivity, DynamicType Function()? type, }) { return Dynamic(
+Dynamic copyWith({DynamicConnectivity? Function()? connectivity, DynamicType? Function()? type, }) { return Dynamic(
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   type: type != null ? type() : this.type,
 ); } 

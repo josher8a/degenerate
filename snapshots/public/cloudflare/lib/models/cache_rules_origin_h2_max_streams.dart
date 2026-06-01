@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesOriginH2MaxStreams copyWith({CacheRulesOriginH2MaxStreamsId? id, DateTime? Function()? modifiedOn, CacheRulesOriginH2MaxStreamsValue Function()? value, }) { return CacheRulesOriginH2MaxStreams(
+CacheRulesOriginH2MaxStreams copyWith({CacheRulesOriginH2MaxStreamsId? id, DateTime? Function()? modifiedOn, CacheRulesOriginH2MaxStreamsValue? Function()? value, }) { return CacheRulesOriginH2MaxStreams(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,

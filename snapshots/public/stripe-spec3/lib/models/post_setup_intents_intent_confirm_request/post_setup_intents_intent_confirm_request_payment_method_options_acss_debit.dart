@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'verification_method'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit copyWith({CheckoutAcssDebitPaymentMethodOptionsCurrency Function()? currency, AcssDebitMandateOptions Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit copyWith({CheckoutAcssDebitPaymentMethodOptionsCurrency? Function()? currency, AcssDebitMandateOptions? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(
   currency: currency != null ? currency() : this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,

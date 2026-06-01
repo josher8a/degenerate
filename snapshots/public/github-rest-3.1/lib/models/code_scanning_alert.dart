@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('rule') &&
       json.containsKey('tool') &&
       json.containsKey('most_recent_instance'); } 
-CodeScanningAlert copyWith({AlertNumber? number, AlertCreatedAt? createdAt, AlertUpdatedAt Function()? updatedAt, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertInstancesUrl? instancesUrl, CodeScanningAlertState? Function()? state, AlertFixedAt? Function()? fixedAt, SimpleUser? Function()? dismissedBy, AlertDismissedAt? Function()? dismissedAt, CodeScanningAlertDismissedReason? Function()? dismissedReason, CodeScanningAlertDismissedComment? Function()? dismissedComment, CodeScanningAlertRule? rule, CodeScanningAnalysisTool? tool, CodeScanningAlertInstance? mostRecentInstance, SimpleUser? Function()? dismissalApprovedBy, List<SimpleUser> Function()? assignees, }) { return CodeScanningAlert(
+CodeScanningAlert copyWith({AlertNumber? number, AlertCreatedAt? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertInstancesUrl? instancesUrl, CodeScanningAlertState? Function()? state, AlertFixedAt? Function()? fixedAt, SimpleUser? Function()? dismissedBy, AlertDismissedAt? Function()? dismissedAt, CodeScanningAlertDismissedReason? Function()? dismissedReason, CodeScanningAlertDismissedComment? Function()? dismissedComment, CodeScanningAlertRule? rule, CodeScanningAnalysisTool? tool, CodeScanningAlertInstance? mostRecentInstance, SimpleUser? Function()? dismissalApprovedBy, List<SimpleUser>? Function()? assignees, }) { return CodeScanningAlert(
   number: number ?? this.number,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

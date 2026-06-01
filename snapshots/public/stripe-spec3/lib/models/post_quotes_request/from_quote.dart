@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'quote': quote,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('quote') && json['quote'] is String; } 
-FromQuote copyWith({bool Function()? isRevision, String? quote, }) { return FromQuote(
+FromQuote copyWith({bool? Function()? isRevision, String? quote, }) { return FromQuote(
   isRevision: isRevision != null ? isRevision() : this.isRevision,
   quote: quote ?? this.quote,
 ); } 

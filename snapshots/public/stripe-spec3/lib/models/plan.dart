@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('usage_type'); } 
-Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? billingScheme, int? created, String? currency, String? id, GetPricesRecurringInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, DeletedPlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? usageType, }) { return Plan(
+Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? billingScheme, int? created, String? currency, String? id, GetPricesRecurringInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, DeletedPlanObject? object, PlanProduct? Function()? product, List<PlanTier>? Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? usageType, }) { return Plan(
   active: active ?? this.active,
   amount: amount != null ? amount() : this.amount,
   amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,

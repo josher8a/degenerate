@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostBillingCreditGrantsRequestAmount copyWith({Monetary Function()? monetary, BillingCreditGrantsResourceAmountType? type, }) { return PostBillingCreditGrantsRequestAmount(
+PostBillingCreditGrantsRequestAmount copyWith({Monetary? Function()? monetary, BillingCreditGrantsResourceAmountType? type, }) { return PostBillingCreditGrantsRequestAmount(
   monetary: monetary != null ? monetary() : this.monetary,
   type: type ?? this.type,
 ); } 

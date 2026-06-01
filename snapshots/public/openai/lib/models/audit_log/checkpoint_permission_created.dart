@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-CheckpointPermissionCreated copyWith({String Function()? id, CheckpointPermissionCreatedData Function()? data, }) { return CheckpointPermissionCreated(
+CheckpointPermissionCreated copyWith({String? Function()? id, CheckpointPermissionCreatedData? Function()? data, }) { return CheckpointPermissionCreated(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 

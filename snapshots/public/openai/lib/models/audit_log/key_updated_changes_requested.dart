@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'scopes': ?scopes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'scopes'}.contains(key)); } 
-KeyUpdatedChangesRequested copyWith({List<String> Function()? scopes}) { return KeyUpdatedChangesRequested(
+KeyUpdatedChangesRequested copyWith({List<String>? Function()? scopes}) { return KeyUpdatedChangesRequested(
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

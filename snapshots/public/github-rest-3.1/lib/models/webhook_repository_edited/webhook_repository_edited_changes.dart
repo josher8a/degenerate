@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (topics != null) 'topics': topics?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_branch', 'description', 'homepage', 'topics'}.contains(key)); } 
-WebhookRepositoryEditedChanges copyWith({DefaultBranch Function()? defaultBranch, WebhookRepositoryEditedChangesDescription Function()? description, Homepage Function()? homepage, Topics Function()? topics, }) { return WebhookRepositoryEditedChanges(
+WebhookRepositoryEditedChanges copyWith({DefaultBranch? Function()? defaultBranch, WebhookRepositoryEditedChangesDescription? Function()? description, Homepage? Function()? homepage, Topics? Function()? topics, }) { return WebhookRepositoryEditedChanges(
   defaultBranch: defaultBranch != null ? defaultBranch() : this.defaultBranch,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,

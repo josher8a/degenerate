@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'mandate': ?mandate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'expected_debit_date', 'fingerprint', 'last4', 'mandate'}.contains(key)); } 
-PaymentMethodDetailsAuBecsDebit copyWith({String? Function()? bsbNumber, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, String Function()? mandate, }) { return PaymentMethodDetailsAuBecsDebit(
+PaymentMethodDetailsAuBecsDebit copyWith({String? Function()? bsbNumber, String? Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, String? Function()? mandate, }) { return PaymentMethodDetailsAuBecsDebit(
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

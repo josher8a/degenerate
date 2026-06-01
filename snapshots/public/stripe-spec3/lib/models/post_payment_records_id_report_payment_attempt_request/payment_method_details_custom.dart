@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'type'}.contains(key)); } 
-PaymentMethodDetailsCustom copyWith({String Function()? displayName, String Function()? type, }) { return PaymentMethodDetailsCustom(
+PaymentMethodDetailsCustom copyWith({String? Function()? displayName, String? Function()? type, }) { return PaymentMethodDetailsCustom(
   displayName: displayName != null ? displayName() : this.displayName,
   type: type != null ? type() : this.type,
 ); } 

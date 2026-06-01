@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('duration') &&
       json.containsKey('name'); } 
-MagicNetworkMonitoringRulesCreateRulesRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix> Function()? prefixes, }) { return MagicNetworkMonitoringRulesCreateRulesRequest(
+MagicNetworkMonitoringRulesCreateRulesRequest copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement, MagicVisibilityMnmMnmRuleBandwidthThreshold? Function()? bandwidth, MagicVisibilityMnmMnmRuleDuration? duration, MagicVisibilityMnmMnmRuleName? name, MagicVisibilityMnmMnmRulePacketThreshold? Function()? packetThreshold, List<MagicVisibilityMnmMnmRuleIpPrefix>? Function()? prefixes, }) { return MagicNetworkMonitoringRulesCreateRulesRequest(
   automaticAdvertisement: automaticAdvertisement != null ? automaticAdvertisement() : this.automaticAdvertisement,
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   duration: duration ?? this.duration,

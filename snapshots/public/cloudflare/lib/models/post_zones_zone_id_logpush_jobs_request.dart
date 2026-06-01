@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (ownershipChallenge != null) 'ownership_challenge': ownershipChallenge?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
-PostZonesZoneIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset, LogpushDestinationConf? destinationConf, LogpushEnabled Function()? enabled, LogpushFilter? Function()? filter, LogpushFrequency? Function()? frequency, LogpushKind Function()? kind, LogpushLogpullOptions? Function()? logpullOptions, LogpushMaxUploadBytes Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords Function()? maxUploadRecords, LogpushName? Function()? name, LogpushOutputOptions Function()? outputOptions, LogpushOwnershipChallenge Function()? ownershipChallenge, }) { return PostZonesZoneIdLogpushJobsRequest(
+PostZonesZoneIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset, LogpushDestinationConf? destinationConf, LogpushEnabled? Function()? enabled, LogpushFilter? Function()? filter, LogpushFrequency? Function()? frequency, LogpushKind? Function()? kind, LogpushLogpullOptions? Function()? logpullOptions, LogpushMaxUploadBytes? Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds? Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords? Function()? maxUploadRecords, LogpushName? Function()? name, LogpushOutputOptions? Function()? outputOptions, LogpushOwnershipChallenge? Function()? ownershipChallenge, }) { return PostZonesZoneIdLogpushJobsRequest(
   dataset: dataset != null ? dataset() : this.dataset,
   destinationConf: destinationConf ?? this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,

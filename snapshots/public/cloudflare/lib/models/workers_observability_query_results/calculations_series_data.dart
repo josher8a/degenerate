@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('lastSeen') && json['lastSeen'] is String &&
       json.containsKey('sampleInterval') && json['sampleInterval'] is num &&
       json.containsKey('value') && json['value'] is num; } 
-CalculationsSeriesData copyWith({double? count, String? firstSeen, List<Groups> Function()? groups, double? interval, String? lastSeen, double? sampleInterval, double? value, }) { return CalculationsSeriesData(
+CalculationsSeriesData copyWith({double? count, String? firstSeen, List<Groups>? Function()? groups, double? interval, String? lastSeen, double? sampleInterval, double? value, }) { return CalculationsSeriesData(
   count: count ?? this.count,
   firstSeen: firstSeen ?? this.firstSeen,
   groups: groups != null ? groups() : this.groups,

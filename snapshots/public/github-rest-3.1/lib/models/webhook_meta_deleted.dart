@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('hook') &&
       json.containsKey('hook_id') && json['hook_id'] is num; } 
-WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookMetaDeleted(
+WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser? Function()? sender, }) { return WebhookMetaDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   hook: hook ?? this.hook,

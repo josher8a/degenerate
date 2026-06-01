@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'contentType': ?contentType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'contentType'}.contains(key)); } 
-AudioVariant2 copyWith({Map<String, dynamic> Function()? body, String Function()? contentType, }) { return AudioVariant2(
+AudioVariant2 copyWith({Map<String, dynamic>? Function()? body, String? Function()? contentType, }) { return AudioVariant2(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
       json.containsKey('type'); } 
-PostCheckoutSessionsRequestCustomFields copyWith({Dropdown Function()? dropdown, String? key, CustomFieldsLabel? label, Numeric Function()? numeric, bool Function()? optional, CustomFieldsText Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PostCheckoutSessionsRequestCustomFields(
+PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown, String? key, CustomFieldsLabel? label, Numeric? Function()? numeric, bool? Function()? optional, CustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PostCheckoutSessionsRequestCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,

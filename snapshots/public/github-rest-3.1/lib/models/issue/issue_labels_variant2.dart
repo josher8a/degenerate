@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'default': ?$default,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'url', 'name', 'description', 'color', 'default'}.contains(key)); } 
-IssueLabelsVariant2 copyWith({int Function()? id, String Function()? nodeId, Uri Function()? url, String Function()? name, String? Function()? description, String? Function()? color, bool Function()? $default, }) { return IssueLabelsVariant2(
+IssueLabelsVariant2 copyWith({int? Function()? id, String? Function()? nodeId, Uri? Function()? url, String? Function()? name, String? Function()? description, String? Function()? color, bool? Function()? $default, }) { return IssueLabelsVariant2(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   url: url != null ? url() : this.url,

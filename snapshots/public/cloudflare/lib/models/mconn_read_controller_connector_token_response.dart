@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnReadControllerConnectorTokenResponse copyWith({String Function()? result}) { return MconnReadControllerConnectorTokenResponse(
+MconnReadControllerConnectorTokenResponse copyWith({String? Function()? result}) { return MconnReadControllerConnectorTokenResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

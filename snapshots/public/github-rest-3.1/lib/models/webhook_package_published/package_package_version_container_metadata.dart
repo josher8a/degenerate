@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (tag != null) 'tag': tag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels', 'manifest', 'tag'}.contains(key)); } 
-PackagePackageVersionContainerMetadata copyWith({Map<String, dynamic>? Function()? labels, Map<String, dynamic>? Function()? manifest, ContainerMetadataTag Function()? tag, }) { return PackagePackageVersionContainerMetadata(
+PackagePackageVersionContainerMetadata copyWith({Map<String, dynamic>? Function()? labels, Map<String, dynamic>? Function()? manifest, ContainerMetadataTag? Function()? tag, }) { return PackagePackageVersionContainerMetadata(
   labels: labels != null ? labels() : this.labels,
   manifest: manifest != null ? manifest() : this.manifest,
   tag: tag != null ? tag() : this.tag,

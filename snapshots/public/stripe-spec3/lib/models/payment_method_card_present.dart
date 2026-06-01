@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()? brandProduct, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, PaymentMethodDetailsCardPresentOffline? Function()? offline, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet Function()? wallet, }) { return PaymentMethodCardPresent(
+PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()? brandProduct, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, PaymentMethodDetailsCardPresentOffline? Function()? offline, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet? Function()? wallet, }) { return PaymentMethodCardPresent(
   brand: brand != null ? brand() : this.brand,
   brandProduct: brandProduct != null ? brandProduct() : this.brandProduct,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,

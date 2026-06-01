@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (unit != null) 'unit': unit?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-IamCreateAccount copyWith({String? name, IamAccountType? Function()? type, Unit Function()? unit, }) { return IamCreateAccount(
+IamCreateAccount copyWith({String? name, IamAccountType? Function()? type, Unit? Function()? unit, }) { return IamCreateAccount(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,

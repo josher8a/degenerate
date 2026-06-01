@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('parameters') &&
       json.containsKey('strict') && json['strict'] is bool; } 
-FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return FunctionTool(
+FunctionTool copyWith({String? type, String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) { return FunctionTool(
   type: type ?? this.type,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

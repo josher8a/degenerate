@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('used') && json['used'] is bool; } 
-Token copyWith({BankAccount Function()? bankAccount, Card Function()? card, String? Function()? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) { return Token(
+Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, String? Function()? clientIp, int? created, String? id, bool? livemode, TokenObject? object, String? type, bool? used, }) { return Token(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
   clientIp: clientIp != null ? clientIp() : this.clientIp,

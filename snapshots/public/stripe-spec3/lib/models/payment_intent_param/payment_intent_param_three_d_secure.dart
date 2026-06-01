@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cryptogram') && json['cryptogram'] is String &&
       json.containsKey('transaction_id') && json['transaction_id'] is String &&
       json.containsKey('version'); } 
-PaymentIntentParamThreeDSecure copyWith({AresTransStatus Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator Function()? exemptionIndicator, NetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return PaymentIntentParamThreeDSecure(
+PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator? Function()? exemptionIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return PaymentIntentParamThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram ?? this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('organ
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksMembership(
+WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksMembership(
   organizationUrl: organizationUrl ?? this.organizationUrl,
   role: role ?? this.role,
   directMembership: directMembership != null ? directMembership() : this.directMembership,

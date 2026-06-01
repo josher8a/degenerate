@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('type') &&
       json.containsKey('parent'); } 
-Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
+Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String? Function()? privacy, String? Function()? notificationSetting, String? permission, TeamPermissions? Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

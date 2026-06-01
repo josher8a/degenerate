@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arguments', 'name'}.contains(key)); } 
-Variant1ToolCalls copyWith({Map<String, dynamic> Function()? arguments, String Function()? name, }) { return Variant1ToolCalls(
+Variant1ToolCalls copyWith({Map<String, dynamic>? Function()? arguments, String? Function()? name, }) { return Variant1ToolCalls(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,
 ); } 

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'model': ?model,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model'}.contains(key)); } 
-InputAudioTranscription copyWith({String Function()? model}) { return InputAudioTranscription(
+InputAudioTranscription copyWith({String? Function()? model}) { return InputAudioTranscription(
   model: model != null ? model() : this.model,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

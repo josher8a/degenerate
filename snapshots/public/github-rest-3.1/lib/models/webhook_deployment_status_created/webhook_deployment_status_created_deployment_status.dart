@@ -84,7 +84,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('target_url') && json['target_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, Uri? deploymentUrl, String? description, String? environment, Uri Function()? environmentUrl, int? id, Uri Function()? logUrl, String? nodeId, DeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, Uri? repositoryUrl, String? state, String? targetUrl, String? updatedAt, Uri? url, }) { return WebhookDeploymentStatusCreatedDeploymentStatus(
+WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, WebhooksMilestone3Creator? Function()? creator, Uri? deploymentUrl, String? description, String? environment, Uri? Function()? environmentUrl, int? id, Uri? Function()? logUrl, String? nodeId, DeploymentPerformedViaGithubApp? Function()? performedViaGithubApp, Uri? repositoryUrl, String? state, String? targetUrl, String? updatedAt, Uri? url, }) { return WebhookDeploymentStatusCreatedDeploymentStatus(
   createdAt: createdAt ?? this.createdAt,
   creator: creator != null ? creator() : this.creator,
   deploymentUrl: deploymentUrl ?? this.deploymentUrl,

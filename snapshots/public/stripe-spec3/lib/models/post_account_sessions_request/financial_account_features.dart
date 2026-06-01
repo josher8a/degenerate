@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_balance': ?transferBalance,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_stripe_user_authentication', 'external_account_collection', 'send_money', 'transfer_balance'}.contains(key)); } 
-FinancialAccountFeatures copyWith({bool Function()? disableStripeUserAuthentication, bool Function()? externalAccountCollection, bool Function()? sendMoney, bool Function()? transferBalance, }) { return FinancialAccountFeatures(
+FinancialAccountFeatures copyWith({bool? Function()? disableStripeUserAuthentication, bool? Function()? externalAccountCollection, bool? Function()? sendMoney, bool? Function()? transferBalance, }) { return FinancialAccountFeatures(
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection != null ? externalAccountCollection() : this.externalAccountCollection,
   sendMoney: sendMoney != null ? sendMoney() : this.sendMoney,

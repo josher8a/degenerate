@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing') &&
       json.containsKey('name') && json['name'] is String; } 
-PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholdersCardholderRequestCompany Function()? company, String Function()? email, List<String> Function()? expand, PostIssuingCardholdersCardholderRequestIndividual Function()? individual, Map<String, String> Function()? metadata, String? name, String Function()? phoneNumber, List<PreferredLocales> Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls Function()? spendingControls, BillingMeterStatus Function()? status, IssuingCardholderType Function()? type, }) { return PostIssuingCardholdersRequest(
+PostIssuingCardholdersRequest copyWith({Billing? billing, PostIssuingCardholdersCardholderRequestCompany? Function()? company, String? Function()? email, List<String>? Function()? expand, PostIssuingCardholdersCardholderRequestIndividual? Function()? individual, Map<String, String>? Function()? metadata, String? name, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardholderType? Function()? type, }) { return PostIssuingCardholdersRequest(
   billing: billing ?? this.billing,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,

@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('prompt'); } 
-CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Map<String, int>? Function()? logitBias, int? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, int? Function()? seed, StopConfiguration Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions Function()? streamOptions, String? Function()? suffix, double? Function()? temperature, double? Function()? topP, String Function()? user, }) { return CreateCompletionRequest(
+CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Map<String, int>? Function()? logitBias, int? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, int? Function()? seed, StopConfiguration? Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions? Function()? streamOptions, String? Function()? suffix, double? Function()? temperature, double? Function()? topP, String? Function()? user, }) { return CreateCompletionRequest(
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
   bestOf: bestOf != null ? bestOf() : this.bestOf,

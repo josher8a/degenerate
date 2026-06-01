@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
       json.containsKey('marketplace_purchase'); } 
-MarketplacePurchase copyWith({String? url, String? type, int? id, String? login, String Function()? organizationBillingEmail, String? Function()? email, MarketplacePendingChange? Function()? marketplacePendingChange, MarketplacePurchaseMarketplacePurchase? marketplacePurchase, }) { return MarketplacePurchase(
+MarketplacePurchase copyWith({String? url, String? type, int? id, String? login, String? Function()? organizationBillingEmail, String? Function()? email, MarketplacePendingChange? Function()? marketplacePendingChange, MarketplacePurchaseMarketplacePurchase? marketplacePurchase, }) { return MarketplacePurchase(
   url: url ?? this.url,
   type: type ?? this.type,
   id: id ?? this.id,

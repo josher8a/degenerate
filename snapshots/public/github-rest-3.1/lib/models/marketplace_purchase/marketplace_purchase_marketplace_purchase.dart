@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle', 'next_billing_date', 'is_installed', 'unit_count', 'on_free_trial', 'free_trial_ends_on', 'updated_at', 'plan'}.contains(key)); } 
-MarketplacePurchaseMarketplacePurchase copyWith({String Function()? billingCycle, String? Function()? nextBillingDate, bool Function()? isInstalled, int? Function()? unitCount, bool Function()? onFreeTrial, String? Function()? freeTrialEndsOn, String Function()? updatedAt, MarketplaceListingPlan Function()? plan, }) { return MarketplacePurchaseMarketplacePurchase(
+MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycle, String? Function()? nextBillingDate, bool? Function()? isInstalled, int? Function()? unitCount, bool? Function()? onFreeTrial, String? Function()? freeTrialEndsOn, String? Function()? updatedAt, MarketplaceListingPlan? Function()? plan, }) { return MarketplacePurchaseMarketplacePurchase(
   billingCycle: billingCycle != null ? billingCycle() : this.billingCycle,
   nextBillingDate: nextBillingDate != null ? nextBillingDate() : this.nextBillingDate,
   isInstalled: isInstalled != null ? isInstalled() : this.isInstalled,

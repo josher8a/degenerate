@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'race_other': ?raceOther,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
-RaceDetails copyWith({List<Race> Function()? race, String Function()? raceOther, }) { return RaceDetails(
+RaceDetails copyWith({List<Race>? Function()? race, String? Function()? raceOther, }) { return RaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
 ); } 

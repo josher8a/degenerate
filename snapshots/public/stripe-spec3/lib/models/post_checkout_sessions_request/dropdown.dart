@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'options': options.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
-Dropdown copyWith({String Function()? defaultValue, List<DropdownOptions>? options, }) { return Dropdown(
+Dropdown copyWith({String? Function()? defaultValue, List<DropdownOptions>? options, }) { return Dropdown(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   options: options ?? this.options,
 ); } 

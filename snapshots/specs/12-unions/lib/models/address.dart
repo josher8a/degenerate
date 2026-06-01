@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('street') && json['street'] is String &&
       json.containsKey('city') && json['city'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-Address copyWith({String? street, String? city, String? Function()? state, String Function()? postalCode, String? country, }) { return Address(
+Address copyWith({String? street, String? city, String? Function()? state, String? Function()? postalCode, String? country, }) { return Address(
   street: street ?? this.street,
   city: city ?? this.city,
   state: state != null ? state() : this.state,

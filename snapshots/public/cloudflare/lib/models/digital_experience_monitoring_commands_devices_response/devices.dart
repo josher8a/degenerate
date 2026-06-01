@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deviceId', 'deviceName', 'eligible', 'ineligibleReason', 'personEmail', 'platform', 'registrationId', 'status', 'timestamp', 'version'}.contains(key)); } 
-Devices copyWith({String Function()? deviceId, String Function()? deviceName, bool Function()? eligible, String Function()? ineligibleReason, String Function()? personEmail, DigitalExperienceMonitoringPlatform Function()? platform, String Function()? registrationId, DigitalExperienceMonitoringStatus Function()? status, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringVersion Function()? version, }) { return Devices(
+Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, bool? Function()? eligible, String? Function()? ineligibleReason, String? Function()? personEmail, DigitalExperienceMonitoringPlatform? Function()? platform, String? Function()? registrationId, DigitalExperienceMonitoringStatus? Function()? status, DigitalExperienceMonitoringTimestamp? Function()? timestamp, DigitalExperienceMonitoringVersion? Function()? version, }) { return Devices(
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   eligible: eligible != null ? eligible() : this.eligible,

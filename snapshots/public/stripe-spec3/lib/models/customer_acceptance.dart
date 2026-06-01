@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CustomerAcceptance copyWith({int? Function()? acceptedAt, OfflineAcceptance Function()? offline, OnlineAcceptance Function()? online, CustomerAcceptanceType? type, }) { return CustomerAcceptance(
+CustomerAcceptance copyWith({int? Function()? acceptedAt, OfflineAcceptance? Function()? offline, OnlineAcceptance? Function()? online, CustomerAcceptanceType? type, }) { return CustomerAcceptance(
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   offline: offline != null ? offline() : this.offline,
   online: online != null ? online() : this.online,

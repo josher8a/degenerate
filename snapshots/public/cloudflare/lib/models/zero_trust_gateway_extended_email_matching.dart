@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'read_only', 'source_account', 'version'}.contains(key)); } 
-ZeroTrustGatewayExtendedEmailMatching copyWith({bool? Function()? enabled, bool Function()? readOnly, String Function()? sourceAccount, int Function()? version, }) { return ZeroTrustGatewayExtendedEmailMatching(
+ZeroTrustGatewayExtendedEmailMatching copyWith({bool? Function()? enabled, bool? Function()? readOnly, String? Function()? sourceAccount, int? Function()? version, }) { return ZeroTrustGatewayExtendedEmailMatching(
   enabled: enabled != null ? enabled() : this.enabled,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,

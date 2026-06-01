@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String Function()? deviceName, DigitalExperienceMonitoringUuid? id, String Function()? interval, dynamic Function()? kind, String Function()? name, NetworkPath? Function()? networkPath, String Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? Function()? deviceName, DigitalExperienceMonitoringUuid? id, String? Function()? interval, dynamic Function()? kind, String? Function()? name, NetworkPath? Function()? networkPath, String? Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   id: id ?? this.id,
   interval: interval != null ? interval() : this.interval,

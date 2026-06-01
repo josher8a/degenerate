@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (rtt != null) 'rtt': rtt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'packet_loss', 'quality_mos', 'rtt'}.contains(key)); } 
-AudioProducerCumulative copyWith({PacketLoss Function()? packetLoss, QualityMos Function()? qualityMos, Rtt Function()? rtt, }) { return AudioProducerCumulative(
+AudioProducerCumulative copyWith({PacketLoss? Function()? packetLoss, QualityMos? Function()? qualityMos, Rtt? Function()? rtt, }) { return AudioProducerCumulative(
   packetLoss: packetLoss != null ? packetLoss() : this.packetLoss,
   qualityMos: qualityMos != null ? qualityMos() : this.qualityMos,
   rtt: rtt != null ? rtt() : this.rtt,

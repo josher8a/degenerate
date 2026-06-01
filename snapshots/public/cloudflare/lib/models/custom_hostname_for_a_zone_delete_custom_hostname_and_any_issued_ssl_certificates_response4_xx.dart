@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, TlsCertificatesAndHostnamesIdentifier Function()? id, }) { return CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx(
+CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx copyWith({List<TlsCertificatesAndHostnamesMessages2>? errors, List<TlsCertificatesAndHostnamesMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, TlsCertificatesAndHostnamesIdentifier? Function()? id, }) { return CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'timestamp'}.contains(key)); } 
-MetadataEvents copyWith({String Function()? name, String Function()? timestamp, }) { return MetadataEvents(
+MetadataEvents copyWith({String? Function()? name, String? Function()? timestamp, }) { return MetadataEvents(
   name: name != null ? name() : this.name,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 

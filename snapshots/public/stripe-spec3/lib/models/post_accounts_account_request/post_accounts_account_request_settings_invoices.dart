@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (hostedPaymentMethodSave != null) 'hosted_payment_method_save': hostedPaymentMethodSave?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_account_tax_ids', 'hosted_payment_method_save'}.contains(key)); } 
-PostAccountsAccountRequestSettingsInvoices copyWith({InvoicesDefaultAccountTaxIds Function()? defaultAccountTaxIds, InvoicesHostedPaymentMethodSave Function()? hostedPaymentMethodSave, }) { return PostAccountsAccountRequestSettingsInvoices(
+PostAccountsAccountRequestSettingsInvoices copyWith({InvoicesDefaultAccountTaxIds? Function()? defaultAccountTaxIds, InvoicesHostedPaymentMethodSave? Function()? hostedPaymentMethodSave, }) { return PostAccountsAccountRequestSettingsInvoices(
   defaultAccountTaxIds: defaultAccountTaxIds != null ? defaultAccountTaxIds() : this.defaultAccountTaxIds,
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
 ); } 

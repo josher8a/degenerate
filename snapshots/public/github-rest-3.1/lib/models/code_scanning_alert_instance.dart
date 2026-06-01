@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstance copyWith({CodeScanningRef Function()? ref, CodeScanningAnalysisAnalysisKey Function()? analysisKey, CodeScanningAlertEnvironment Function()? environment, CodeScanningAnalysisCategory Function()? category, CodeScanningAlertState? Function()? state, String Function()? commitSha, Message Function()? message, CodeScanningAlertLocation Function()? location, String Function()? htmlUrl, List<CodeScanningAlertClassification> Function()? classifications, }) { return CodeScanningAlertInstance(
+CodeScanningAlertInstance copyWith({CodeScanningRef? Function()? ref, CodeScanningAnalysisAnalysisKey? Function()? analysisKey, CodeScanningAlertEnvironment? Function()? environment, CodeScanningAnalysisCategory? Function()? category, CodeScanningAlertState? Function()? state, String? Function()? commitSha, Message? Function()? message, CodeScanningAlertLocation? Function()? location, String? Function()? htmlUrl, List<CodeScanningAlertClassification>? Function()? classifications, }) { return CodeScanningAlertInstance(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,

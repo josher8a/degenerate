@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'parallel_tool_calls': ?parallelToolCalls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'input', 'previous_response_id', 'tools', 'text', 'reasoning', 'truncation', 'instructions', 'conversation', 'tool_choice', 'parallel_tool_calls'}.contains(key)); } 
-TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublicBodyInput? Function()? input, String? Function()? previousResponseId, List<Tool>? Function()? tools, ResponseTextParam? Function()? text, Reasoning? Function()? reasoning, TruncationEnum Function()? truncation, String? Function()? instructions, ConversationParam? Function()? conversation, ToolChoiceParam? Function()? toolChoice, bool? Function()? parallelToolCalls, }) { return TokenCountsBody(
+TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublicBodyInput? Function()? input, String? Function()? previousResponseId, List<Tool>? Function()? tools, ResponseTextParam? Function()? text, Reasoning? Function()? reasoning, TruncationEnum? Function()? truncation, String? Function()? instructions, ConversationParam? Function()? conversation, ToolChoiceParam? Function()? toolChoice, bool? Function()? parallelToolCalls, }) { return TokenCountsBody(
   model: model != null ? model() : this.model,
   input: input != null ? input() : this.input,
   previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,

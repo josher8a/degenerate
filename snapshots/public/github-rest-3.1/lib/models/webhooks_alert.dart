@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('affec
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('severity') && json['severity'] is String &&
       json.containsKey('state'); } 
-WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String Function()? dismissReason, String Function()? dismissedAt, WebhooksAlertDismisser? Function()? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String Function()? fixReason, DateTime Function()? fixedAt, String Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) { return WebhooksAlert(
+WebhooksAlert copyWith({String? affectedPackageName, String? affectedRange, String? createdAt, String? Function()? dismissReason, String? Function()? dismissedAt, WebhooksAlertDismisser? Function()? dismisser, String? externalIdentifier, Uri? Function()? externalReference, String? Function()? fixReason, DateTime? Function()? fixedAt, String? Function()? fixedIn, String? ghsaId, int? id, String? nodeId, int? number, String? severity, WebhooksAlertState? state, }) { return WebhooksAlert(
   affectedPackageName: affectedPackageName ?? this.affectedPackageName,
   affectedRange: affectedRange ?? this.affectedRange,
   createdAt: createdAt ?? this.createdAt,

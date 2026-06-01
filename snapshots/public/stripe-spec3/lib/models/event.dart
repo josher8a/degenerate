@@ -108,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
       json.containsKey('type') && json['type'] is String; } 
-Event copyWith({String Function()? account, String? Function()? apiVersion, String Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, NotificationEventRequest? Function()? request, String? type, }) { return Event(
+Event copyWith({String? Function()? account, String? Function()? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, NotificationEventRequest? Function()? request, String? type, }) { return Event(
   account: account != null ? account() : this.account,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   context: context != null ? context() : this.context,

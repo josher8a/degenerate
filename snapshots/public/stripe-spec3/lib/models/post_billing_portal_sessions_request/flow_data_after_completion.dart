@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-FlowDataAfterCompletion copyWith({HostedConfirmation Function()? hostedConfirmation, PostSourcesRequestRedirect Function()? redirect, PortalFlowsFlowAfterCompletionType? type, }) { return FlowDataAfterCompletion(
+FlowDataAfterCompletion copyWith({HostedConfirmation? Function()? hostedConfirmation, PostSourcesRequestRedirect? Function()? redirect, PortalFlowsFlowAfterCompletionType? type, }) { return FlowDataAfterCompletion(
   hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,

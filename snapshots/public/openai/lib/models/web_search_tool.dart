@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'search_context_size': searchContextSize.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-WebSearchTool copyWith({String? type, WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return WebSearchTool(
+WebSearchTool copyWith({String? type, WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return WebSearchTool(
   type: type ?? this.type,
   filters: filters != null ? filters() : this.filters,
   userLocation: userLocation != null ? userLocation() : this.userLocation,

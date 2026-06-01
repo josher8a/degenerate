@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('permi
       json.containsKey('single_file_name') && json['single_file_name'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('account'); } 
-ScopedInstallation copyWith({AppPermissions? permissions, AuthenticationTokenRepositorySelection? repositorySelection, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
+ScopedInstallation copyWith({AppPermissions? permissions, AuthenticationTokenRepositorySelection? repositorySelection, String? Function()? singleFileName, bool? Function()? hasMultipleSingleFiles, List<String>? Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
   permissions: permissions ?? this.permissions,
   repositorySelection: repositorySelection ?? this.repositorySelection,
   singleFileName: singleFileName != null ? singleFileName() : this.singleFileName,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('rules') &&
       json.containsKey('sitemaps'); } 
-RobotsTxtData copyWith({String Function()? hash, DataRules? rules, List<String>? sitemaps, }) { return RobotsTxtData(
+RobotsTxtData copyWith({String? Function()? hash, DataRules? rules, List<String>? sitemaps, }) { return RobotsTxtData(
   hash: hash != null ? hash() : this.hash,
   rules: rules ?? this.rules,
   sitemaps: sitemaps ?? this.sitemaps,

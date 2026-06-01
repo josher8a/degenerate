@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'authentication_exemption', 'cvc_check', 'expiry_check', 'three_d_secure'}.contains(key)); } 
-VerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check Function()? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck Function()? addressPostalCodeCheck, AuthenticationExemption Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck Function()? cvcCheck, ExpiryCheck Function()? expiryCheck, VerificationDataThreeDSecure Function()? threeDSecure, }) { return VerificationData(
+VerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? Function()? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? Function()? addressPostalCodeCheck, AuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? Function()? cvcCheck, ExpiryCheck? Function()? expiryCheck, VerificationDataThreeDSecure? Function()? threeDSecure, }) { return VerificationData(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,
   authenticationExemption: authenticationExemption != null ? authenticationExemption() : this.authenticationExemption,

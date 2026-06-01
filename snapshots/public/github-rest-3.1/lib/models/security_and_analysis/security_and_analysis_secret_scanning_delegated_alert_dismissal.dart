@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisSecretScanningDelegatedAlertDismissal copyWith({AdvancedSecurityStatus Function()? status}) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+SecurityAndAnalysisSecretScanningDelegatedAlertDismissal copyWith({AdvancedSecurityStatus? Function()? status}) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

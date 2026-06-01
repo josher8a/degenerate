@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('refusal') && json['refusal'] is String &&
       json.containsKey('role'); } 
-ChatCompletionResponseMessage copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2> Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations> Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall Function()? functionCall, ChatCompletionResponseMessageAudio? Function()? audio, }) { return ChatCompletionResponseMessage(
+ChatCompletionResponseMessage copyWith({String? Function()? content, String? Function()? refusal, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, List<ChatCompletionResponseMessageAnnotations>? Function()? annotations, ChatCompletionResponseMessageRole? role, ChatCompletionResponseMessageFunctionCall? Function()? functionCall, ChatCompletionResponseMessageAudio? Function()? audio, }) { return ChatCompletionResponseMessage(
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,

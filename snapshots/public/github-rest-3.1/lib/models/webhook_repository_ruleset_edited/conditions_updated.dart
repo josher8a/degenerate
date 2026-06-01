@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (changes != null) 'changes': changes?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'changes'}.contains(key)); } 
-ConditionsUpdated copyWith({RepositoryRulesetConditions Function()? condition, ConditionsUpdatedChanges Function()? changes, }) { return ConditionsUpdated(
+ConditionsUpdated copyWith({RepositoryRulesetConditions? Function()? condition, ConditionsUpdatedChanges? Function()? changes, }) { return ConditionsUpdated(
   condition: condition != null ? condition() : this.condition,
   changes: changes != null ? changes() : this.changes,
 ); } 

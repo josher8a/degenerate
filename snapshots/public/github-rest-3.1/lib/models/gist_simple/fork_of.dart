@@ -108,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('user') &&
       json.containsKey('comments_url') && json['comments_url'] is String; } 
-ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,ForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser? Function()? owner, bool Function()? truncated, List<dynamic> Function()? forks, List<dynamic> Function()? history, }) { return ForkOf(
+ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? nodeId, Uri? gitPullUrl, Uri? gitPushUrl, Uri? htmlUrl, Map<String,ForkOfFilesValue>? files, bool? public, DateTime? createdAt, DateTime? updatedAt, String? Function()? description, int? comments, bool? Function()? commentsEnabled, SimpleUser? Function()? user, Uri? commentsUrl, SimpleUser? Function()? owner, bool? Function()? truncated, List<dynamic>? Function()? forks, List<dynamic>? Function()? history, }) { return ForkOf(
   url: url ?? this.url,
   forksUrl: forksUrl ?? this.forksUrl,
   commitsUrl: commitsUrl ?? this.commitsUrl,

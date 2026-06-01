@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfiguration copyWith({String? name, RegistryType? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
+OrgPrivateRegistryConfiguration copyWith({String? name, RegistryType? registryType, Uri? Function()? url, String? Function()? username, bool Function()? replacesBase, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,

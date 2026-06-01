@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_file_id') && json['input_file_id'] is String &&
       json.containsKey('endpoint') &&
       json.containsKey('completion_window'); } 
-CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Map<String, String>? Function()? metadata, BatchFileExpirationAfter Function()? outputExpiresAfter, }) { return CreateBatchRequest(
+CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, CompletionWindow? completionWindow, Map<String, String>? Function()? metadata, BatchFileExpirationAfter? Function()? outputExpiresAfter, }) { return CreateBatchRequest(
   inputFileId: inputFileId ?? this.inputFileId,
   endpoint: endpoint ?? this.endpoint,
   completionWindow: completionWindow ?? this.completionWindow,

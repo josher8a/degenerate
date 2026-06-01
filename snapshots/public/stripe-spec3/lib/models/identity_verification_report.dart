@@ -109,7 +109,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int? created, GelatoDocumentReport Function()? document, GelatoEmailReport Function()? email, String? id, GelatoIdNumberReport Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions Function()? options, GelatoPhoneReport Function()? phone, GelatoSelfieReport Function()? selfie, IdentityVerificationReportType? type, String Function()? verificationFlow, String? Function()? verificationSession, }) { return IdentityVerificationReport(
+IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, String? Function()? verificationSession, }) { return IdentityVerificationReport(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   created: created ?? this.created,
   document: document != null ? document() : this.document,

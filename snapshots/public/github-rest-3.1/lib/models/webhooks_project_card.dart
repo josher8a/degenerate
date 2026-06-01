@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectCard copyWith({int? Function()? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
+WebhooksProjectCard copyWith({int? Function()? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri? Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
   afterId: afterId != null ? afterId() : this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,

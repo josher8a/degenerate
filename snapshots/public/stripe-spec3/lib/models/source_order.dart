@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-SourceOrder copyWith({int? amount, String? currency, String Function()? email, List<SourceOrderItem>? Function()? items, Shipping Function()? shipping, }) { return SourceOrder(
+SourceOrder copyWith({int? amount, String? currency, String? Function()? email, List<SourceOrderItem>? Function()? items, Shipping? Function()? shipping, }) { return SourceOrder(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   email: email != null ? email() : this.email,

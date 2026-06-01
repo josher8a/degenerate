@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'result_info'}.contains(key)); } 
-EmailRulesResponseCollection copyWith({List<EmailRuleProperties> Function()? result, AccessUsersComponentsSchemasResponseCollectionResultInfo Function()? resultInfo, }) { return EmailRulesResponseCollection(
+EmailRulesResponseCollection copyWith({List<EmailRuleProperties>? Function()? result, AccessUsersComponentsSchemasResponseCollectionResultInfo? Function()? resultInfo, }) { return EmailRulesResponseCollection(
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 

@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (sharedEntries != null) 'shared_entries': sharedEntries?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DlpNewCustomProfile copyWith({bool Function()? aiContextEnabled, int Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<String> Function()? dataClasses, List<String> Function()? dataTags, String? Function()? description, List<DlpEntryOfNewProfile> Function()? entries, String? name, bool Function()? ocrEnabled, List<List<String>> Function()? sensitivityLevels, List<DlpNewSharedEntry> Function()? sharedEntries, }) { return DlpNewCustomProfile(
+DlpNewCustomProfile copyWith({bool Function()? aiContextEnabled, int Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, String? Function()? description, List<DlpEntryOfNewProfile>? Function()? entries, String? name, bool Function()? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpNewSharedEntry>? Function()? sharedEntries, }) { return DlpNewCustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (networks != null) 'networks': networks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest copyWith({ZeroTrustGatewayClientDefault Function()? clientDefault, ZeroTrustGatewayDnsDestinationIpsIdWrite Function()? dnsDestinationIpsId, ZeroTrustGatewayEcsSupport Function()? ecsSupport, ZeroTrustGatewayEndpoints Function()? endpoints, ZeroTrustGatewaySchemasName? name, List<ZeroTrustGatewayIpv4Network>? Function()? networks, }) { return ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest(
+ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayDnsDestinationIpsIdWrite? Function()? dnsDestinationIpsId, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, ZeroTrustGatewayEndpoints? Function()? endpoints, ZeroTrustGatewaySchemasName? name, List<ZeroTrustGatewayIpv4Network>? Function()? networks, }) { return ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest(
   clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
   dnsDestinationIpsId: dnsDestinationIpsId != null ? dnsDestinationIpsId() : this.dnsDestinationIpsId,
   ecsSupport: ecsSupport != null ? ecsSupport() : this.ecsSupport,

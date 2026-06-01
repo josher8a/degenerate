@@ -41,7 +41,7 @@ final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
 @override String get type { return 'allowlist'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
-AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam> Function()? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam.copyWith(
+AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? Function()? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam.copyWith(
   allowedDomains: allowedDomains,
   domainSecrets: domainSecrets,
 )); } 

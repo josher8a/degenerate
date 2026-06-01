@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, String? masterBranch, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
+WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, String? masterBranch, OrganizationSimpleWebhooks? Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
   description: description != null ? description() : this.description,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

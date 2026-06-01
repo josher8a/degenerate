@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommonFailure52 copyWith({List<PageShieldMessages2>? errors, List<PageShieldMessages2> Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure52(
+ResponseCommonFailure52 copyWith({List<PageShieldMessages2>? errors, List<PageShieldMessages2>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure52(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,

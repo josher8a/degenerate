@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_text') &&
       json.containsKey('type'); } 
-PostTerminalReadersReaderCollectInputsRequestInputs copyWith({InputsCustomText? customText, bool Function()? $required, Selection Function()? selection, List<Toggles> Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return PostTerminalReadersReaderCollectInputsRequestInputs(
+PostTerminalReadersReaderCollectInputsRequestInputs copyWith({InputsCustomText? customText, bool? Function()? $required, Selection? Function()? selection, List<Toggles>? Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return PostTerminalReadersReaderCollectInputsRequestInputs(
   customText: customText ?? this.customText,
   $required: $required != null ? $required() : this.$required,
   selection: selection != null ? selection() : this.selection,

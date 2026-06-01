@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String &&
       json.containsKey('type'); } 
-Us copyWith({LocalAmusementTax Function()? localAmusementTax, LocalLeaseTax Function()? localLeaseTax, String? state, StateSalesTax Function()? stateSalesTax, TaxProductRegistrationsResourceCountryOptionsUnitedStatesType? type, }) { return Us(
+Us copyWith({LocalAmusementTax? Function()? localAmusementTax, LocalLeaseTax? Function()? localLeaseTax, String? state, StateSalesTax? Function()? stateSalesTax, TaxProductRegistrationsResourceCountryOptionsUnitedStatesType? type, }) { return Us(
   localAmusementTax: localAmusementTax != null ? localAmusementTax() : this.localAmusementTax,
   localLeaseTax: localLeaseTax != null ? localLeaseTax() : this.localLeaseTax,
   state: state ?? this.state,

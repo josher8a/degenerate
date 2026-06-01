@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_discount') && json['amount_discount'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num; } 
-PaymentPagesCheckoutSessionTotalDetails copyWith({int? amountDiscount, int? Function()? amountShipping, int? amountTax, PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown Function()? breakdown, }) { return PaymentPagesCheckoutSessionTotalDetails(
+PaymentPagesCheckoutSessionTotalDetails copyWith({int? amountDiscount, int? Function()? amountShipping, int? amountTax, PaymentPagesCheckoutSessionTotalDetailsResourceBreakdown? Function()? breakdown, }) { return PaymentPagesCheckoutSessionTotalDetails(
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountShipping: amountShipping != null ? amountShipping() : this.amountShipping,
   amountTax: amountTax ?? this.amountTax,

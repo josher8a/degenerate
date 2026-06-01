@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'amount_eligible': ?amountEligible,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_eligible'}.contains(key)); } 
-CollectConfigTipping copyWith({int Function()? amountEligible}) { return CollectConfigTipping(
+CollectConfigTipping copyWith({int? Function()? amountEligible}) { return CollectConfigTipping(
   amountEligible: amountEligible != null ? amountEligible() : this.amountEligible,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

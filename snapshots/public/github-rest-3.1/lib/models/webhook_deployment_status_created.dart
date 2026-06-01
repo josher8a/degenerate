@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('deployment_status') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, WebhookDeploymentStatusCreatedCheckRun? Function()? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow Function()? workflow, WebhookDeploymentStatusCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentStatusCreated(
+WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, WebhookDeploymentStatusCreatedCheckRun? Function()? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookDeploymentStatusCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentStatusCreated(
   action: action ?? this.action,
   checkRun: checkRun != null ? checkRun() : this.checkRun,
   deployment: deployment ?? this.deployment,

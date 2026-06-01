@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'urls': ?urls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'credential', 'username', 'url', 'urls'}.contains(key)); } 
-IceServers copyWith({String Function()? credential, String Function()? username, String Function()? url, String Function()? urls, }) { return IceServers(
+IceServers copyWith({String? Function()? credential, String? Function()? username, String? Function()? url, String? Function()? urls, }) { return IceServers(
   credential: credential != null ? credential() : this.credential,
   username: username != null ? username() : this.username,
   url: url != null ? url() : this.url,

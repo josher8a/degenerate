@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-MessageDeltaContentImageUrlObject copyWith({int? index, ChatCompletionRequestMessageContentPartImageType? type, MessageDeltaContentImageUrlObjectImageUrl Function()? imageUrl, }) { return MessageDeltaContentImageUrlObject(
+MessageDeltaContentImageUrlObject copyWith({int? index, ChatCompletionRequestMessageContentPartImageType? type, MessageDeltaContentImageUrlObjectImageUrl? Function()? imageUrl, }) { return MessageDeltaContentImageUrlObject(
   index: index ?? this.index,
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,

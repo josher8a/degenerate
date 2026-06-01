@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Promotion copyWith({String Function()? coupon, DiscountSourceType? type, }) { return Promotion(
+Promotion copyWith({String? Function()? coupon, DiscountSourceType? type, }) { return Promotion(
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,
 ); } 

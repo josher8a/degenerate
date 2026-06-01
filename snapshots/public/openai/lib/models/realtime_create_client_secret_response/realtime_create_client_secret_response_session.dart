@@ -33,7 +33,7 @@ final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
 @override String get type { return 'realtime'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeSessionCreateResponseGa.toJson(), 'type': type}; } 
-RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities> Function()? outputModalities, RealtimeSessionCreateRequestGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<Include> Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
+RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
   clientSecret: clientSecret,
   outputModalities: outputModalities,
   model: model,
@@ -61,7 +61,7 @@ final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionC
 
 @override String get type { return 'transcription'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type}; } 
-RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int Function()? expiresAt, List<Include> Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
+RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int? Function()? expiresAt, List<Include>? Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio? Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
   id: id,
   object: object,
   expiresAt: expiresAt,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
       json.containsKey('link_type'); } 
-PostTerminalOnboardingLinksRequest copyWith({List<String> Function()? expand, LinkOptions? linkOptions, LinkType? linkType, String Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
+PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, LinkOptions? linkOptions, LinkType? linkType, String? Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
   expand: expand != null ? expand() : this.expand,
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject copyWith({int? index, CodeInterpreterOutputLogsType? type, String Function()? logs, }) { return RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
+RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject copyWith({int? index, CodeInterpreterOutputLogsType? type, String? Function()? logs, }) { return RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
   index: index ?? this.index,
   type: type ?? this.type,
   logs: logs != null ? logs() : this.logs,

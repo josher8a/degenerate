@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (uniqueDevicesTotal != null) 'uniqueDevicesTotal': uniqueDevicesTotal?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'byColo', 'byMode', 'byPlatform', 'byStatus', 'byVersion', 'uniqueDevicesTotal'}.contains(key)); } 
-DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats copyWith({List<DigitalExperienceMonitoringLiveStat>? Function()? byColo, List<DigitalExperienceMonitoringLiveStat>? Function()? byMode, List<DigitalExperienceMonitoringLiveStat>? Function()? byPlatform, List<DigitalExperienceMonitoringLiveStat>? Function()? byStatus, List<DigitalExperienceMonitoringLiveStat>? Function()? byVersion, DigitalExperienceMonitoringUniqueDevicesTotal Function()? uniqueDevicesTotal, }) { return DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats(
+DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats copyWith({List<DigitalExperienceMonitoringLiveStat>? Function()? byColo, List<DigitalExperienceMonitoringLiveStat>? Function()? byMode, List<DigitalExperienceMonitoringLiveStat>? Function()? byPlatform, List<DigitalExperienceMonitoringLiveStat>? Function()? byStatus, List<DigitalExperienceMonitoringLiveStat>? Function()? byVersion, DigitalExperienceMonitoringUniqueDevicesTotal? Function()? uniqueDevicesTotal, }) { return DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats(
   byColo: byColo != null ? byColo() : this.byColo,
   byMode: byMode != null ? byMode() : this.byMode,
   byPlatform: byPlatform != null ? byPlatform() : this.byPlatform,

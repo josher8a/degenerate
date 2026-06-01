@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('methods') &&
       json.containsKey('origins'); } 
-Allowed copyWith({List<String> Function()? headers, List<Methods>? methods, List<String>? origins, }) { return Allowed(
+Allowed copyWith({List<String>? Function()? headers, List<Methods>? methods, List<String>? origins, }) { return Allowed(
   headers: headers != null ? headers() : this.headers,
   methods: methods ?? this.methods,
   origins: origins ?? this.origins,

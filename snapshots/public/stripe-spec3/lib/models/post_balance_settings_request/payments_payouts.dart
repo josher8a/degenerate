@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minimum_balance_by_currency', 'schedule', 'statement_descriptor'}.contains(key)); } 
-PaymentsPayouts copyWith({MinimumBalanceByCurrency Function()? minimumBalanceByCurrency, PaymentsPayoutsSchedule Function()? schedule, String Function()? statementDescriptor, }) { return PaymentsPayouts(
+PaymentsPayouts copyWith({MinimumBalanceByCurrency? Function()? minimumBalanceByCurrency, PaymentsPayoutsSchedule? Function()? schedule, String? Function()? statementDescriptor, }) { return PaymentsPayouts(
   minimumBalanceByCurrency: minimumBalanceByCurrency != null ? minimumBalanceByCurrency() : this.minimumBalanceByCurrency,
   schedule: schedule != null ? schedule() : this.schedule,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,

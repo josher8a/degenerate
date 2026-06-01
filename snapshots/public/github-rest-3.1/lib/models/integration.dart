@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('events'); } 
-Integration copyWith({int? id, String Function()? slug, String? nodeId, String Function()? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int Function()? installationsCount, }) { return Integration(
+Integration copyWith({int? id, String? Function()? slug, String? nodeId, String? Function()? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int? Function()? installationsCount, }) { return Integration(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,

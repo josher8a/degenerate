@@ -99,7 +99,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
       json.containsKey('pusher') &&
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository'); } 
-WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser Function()? sender, }) { return WebhookPush(
+WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef, String? before, List<WebhookPushCommits>? commits, String? compare, bool? created, bool? deleted, EnterpriseWebhooks? Function()? enterprise, bool? forced, WebhookPushHeadCommit? Function()? headCommit, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPushPusher? pusher, String? ref, WebhookPushRepository? repository, SimpleUser? Function()? sender, }) { return WebhookPush(
   after: after ?? this.after,
   baseRef: baseRef != null ? baseRef() : this.baseRef,
   before: before ?? this.before,

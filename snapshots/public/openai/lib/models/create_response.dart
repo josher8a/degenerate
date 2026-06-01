@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (contextManagement != null) 'context_management': contextManagement?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
-CreateResponse copyWith({InputParam Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
+CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
   input: input != null ? input() : this.input,
   include: include != null ? include() : this.include,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'runner_label': ?runnerLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key)); } 
-CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType Function()? runnerType, String? Function()? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
+CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, String? Function()? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
 ); } 

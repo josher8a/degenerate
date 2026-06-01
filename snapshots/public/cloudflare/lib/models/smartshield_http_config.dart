@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'port': port,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'method', 'path', 'port'}.contains(key)); } 
-SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String Function()? expectedBody, List<String>? Function()? expectedCodes, bool Function()? followRedirects, Map<String, List<String>>? Function()? header, HealthchecksHttpConfigMethod Function()? method, String Function()? path, int Function()? port, }) { return SmartshieldHttpConfig(
+SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String? Function()? expectedBody, List<String>? Function()? expectedCodes, bool Function()? followRedirects, Map<String, List<String>>? Function()? header, HealthchecksHttpConfigMethod Function()? method, String Function()? path, int Function()? port, }) { return SmartshieldHttpConfig(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   expectedBody: expectedBody != null ? expectedBody() : this.expectedBody,
   expectedCodes: expectedCodes != null ? expectedCodes() : this.expectedCodes,

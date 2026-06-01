@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'line': ?line,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'param', 'line'}.contains(key)); } 
-ErrorsData copyWith({String Function()? code, String Function()? message, String? Function()? param, int? Function()? line, }) { return ErrorsData(
+ErrorsData copyWith({String? Function()? code, String? Function()? message, String? Function()? param, int? Function()? line, }) { return ErrorsData(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   param: param != null ? param() : this.param,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'result_info'}.contains(key)); } 
-TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection copyWith({List<TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionResult> Function()? result, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo Function()? resultInfo, }) { return TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection(
+TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection copyWith({List<TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionResult>? Function()? result, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollectionResultInfo? Function()? resultInfo, }) { return TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection(
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 

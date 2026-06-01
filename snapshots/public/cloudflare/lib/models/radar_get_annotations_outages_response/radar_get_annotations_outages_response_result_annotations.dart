@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'
       json.containsKey('originsDetails') &&
       json.containsKey('outage') &&
       json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, List<AsnsDetails>? asnsDetails, String? dataSource, String Function()? description, DateTime Function()? endDate, String? eventType, String? id, String Function()? linkedUrl, List<String>? locations, List<LocationsDetails>? locationsDetails, List<String>? origins, List<OriginsDetails>? originsDetails, Outage? outage, String Function()? scope, DateTime? startDate, }) { return RadarGetAnnotationsOutagesResponseResultAnnotations(
+RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, List<AsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, DateTime? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<LocationsDetails>? locationsDetails, List<String>? origins, List<OriginsDetails>? originsDetails, Outage? outage, String? Function()? scope, DateTime? startDate, }) { return RadarGetAnnotationsOutagesResponseResultAnnotations(
   asns: asns ?? this.asns,
   asnsDetails: asnsDetails ?? this.asnsDetails,
   dataSource: dataSource ?? this.dataSource,

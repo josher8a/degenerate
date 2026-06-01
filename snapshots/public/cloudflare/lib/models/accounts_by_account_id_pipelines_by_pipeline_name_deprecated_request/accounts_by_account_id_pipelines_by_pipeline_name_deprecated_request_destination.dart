@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch
       json.containsKey('format') &&
       json.containsKey('path') &&
       json.containsKey('type'); } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression? compression, DestinationCredentials Function()? credentials, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, DestinationPath? path, MqEventSourceR2Type? type, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression? compression, DestinationCredentials? Function()? credentials, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, DestinationPath? path, MqEventSourceR2Type? type, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
   batch: batch ?? this.batch,
   compression: compression ?? this.compression,
   credentials: credentials != null ? credentials() : this.credentials,

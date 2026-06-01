@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'preload': ?preload,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'include_subdomains', 'max_age', 'nosniff', 'preload'}.contains(key)); } 
-StrictTransportSecurity copyWith({bool Function()? enabled, bool Function()? includeSubdomains, double Function()? maxAge, bool Function()? nosniff, bool Function()? preload, }) { return StrictTransportSecurity(
+StrictTransportSecurity copyWith({bool? Function()? enabled, bool? Function()? includeSubdomains, double? Function()? maxAge, bool? Function()? nosniff, bool? Function()? preload, }) { return StrictTransportSecurity(
   enabled: enabled != null ? enabled() : this.enabled,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   maxAge: maxAge != null ? maxAge() : this.maxAge,

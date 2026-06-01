@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-Recovery copyWith({bool Function()? allowPromotionCodes, bool? enabled, }) { return Recovery(
+Recovery copyWith({bool? Function()? allowPromotionCodes, bool? enabled, }) { return Recovery(
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
   enabled: enabled ?? this.enabled,
 ); } 

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'is_installed', 'effective_date', 'unit_count', 'id', 'plan'}.contains(key)); } 
-MarketplacePendingChange copyWith({bool Function()? isInstalled, String Function()? effectiveDate, int? Function()? unitCount, int Function()? id, MarketplaceListingPlan Function()? plan, }) { return MarketplacePendingChange(
+MarketplacePendingChange copyWith({bool? Function()? isInstalled, String? Function()? effectiveDate, int? Function()? unitCount, int? Function()? id, MarketplaceListingPlan? Function()? plan, }) { return MarketplacePendingChange(
   isInstalled: isInstalled != null ? isInstalled() : this.isInstalled,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
   unitCount: unitCount != null ? unitCount() : this.unitCount,

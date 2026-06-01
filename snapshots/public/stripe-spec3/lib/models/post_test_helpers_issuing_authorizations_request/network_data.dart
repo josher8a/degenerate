@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'acquiring_institution_id': ?acquiringInstitutionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acquiring_institution_id'}.contains(key)); } 
-NetworkData copyWith({String Function()? acquiringInstitutionId}) { return NetworkData(
+NetworkData copyWith({String? Function()? acquiringInstitutionId}) { return NetworkData(
   acquiringInstitutionId: acquiringInstitutionId != null ? acquiringInstitutionId() : this.acquiringInstitutionId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

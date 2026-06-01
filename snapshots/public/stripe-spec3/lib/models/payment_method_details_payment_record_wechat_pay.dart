@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'location', 'reader', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordWechatPay copyWith({String? Function()? fingerprint, String Function()? location, String Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsPaymentRecordWechatPay(
+PaymentMethodDetailsPaymentRecordWechatPay copyWith({String? Function()? fingerprint, String? Function()? location, String? Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsPaymentRecordWechatPay(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,

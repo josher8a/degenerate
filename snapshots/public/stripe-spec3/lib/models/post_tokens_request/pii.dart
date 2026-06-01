@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'id_number': ?idNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id_number'}.contains(key)); } 
-Pii copyWith({String Function()? idNumber}) { return Pii(
+Pii copyWith({String? Function()? idNumber}) { return Pii(
   idNumber: idNumber != null ? idNumber() : this.idNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

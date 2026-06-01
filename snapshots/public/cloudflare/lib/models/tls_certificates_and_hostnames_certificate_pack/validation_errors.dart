@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
-ValidationErrors copyWith({String Function()? message}) { return ValidationErrors(
+ValidationErrors copyWith({String? Function()? message}) { return ValidationErrors(
   message: message != null ? message() : this.message,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

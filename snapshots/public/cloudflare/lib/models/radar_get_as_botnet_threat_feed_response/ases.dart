@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('rank') && json['rank'] is num; } 
-Ases copyWith({int? asn, String? country, String? name, int? rank, int Function()? rankChange, }) { return Ases(
+Ases copyWith({int? asn, String? country, String? name, int? rank, int? Function()? rankChange, }) { return Ases(
   asn: asn ?? this.asn,
   country: country ?? this.country,
   name: name ?? this.name,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (recovery != null) 'recovery': recovery?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recovery'}.contains(key)); } 
-AfterExpiration copyWith({Recovery Function()? recovery}) { return AfterExpiration(
+AfterExpiration copyWith({Recovery? Function()? recovery}) { return AfterExpiration(
   recovery: recovery != null ? recovery() : this.recovery,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

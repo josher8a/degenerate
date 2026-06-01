@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('path') && json['path'] is String; } 
-PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int Function()? position, Side Function()? side, int Function()? line, int Function()? startLine, PullsCreateReviewCommentRequestStartSide Function()? startSide, int Function()? inReplyTo, SubjectType Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
+PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String? path, int? Function()? position, Side? Function()? side, int? Function()? line, int? Function()? startLine, PullsCreateReviewCommentRequestStartSide? Function()? startSide, int? Function()? inReplyTo, SubjectType? Function()? subjectType, }) { return PullsCreateReviewCommentRequest(
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,
   path: path ?? this.path,

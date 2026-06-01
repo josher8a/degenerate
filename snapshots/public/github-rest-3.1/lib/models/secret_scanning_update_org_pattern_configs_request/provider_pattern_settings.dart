@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (pushProtectionSetting != null) 'push_protection_setting': pushProtectionSetting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'push_protection_setting'}.contains(key)); } 
-ProviderPatternSettings copyWith({String Function()? tokenType, ProviderPatternSettingsPushProtectionSetting Function()? pushProtectionSetting, }) { return ProviderPatternSettings(
+ProviderPatternSettings copyWith({String? Function()? tokenType, ProviderPatternSettingsPushProtectionSetting? Function()? pushProtectionSetting, }) { return ProviderPatternSettings(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
 ); } 

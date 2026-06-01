@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (trigger != null) 'trigger': trigger?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key)); } 
-BuildsBuildResponse copyWith({BuildsBuildOutcome Function()? buildOutcome, BuildsBuildTriggerMetadataResponse Function()? buildTriggerMetadata, BuildsBuildUuid Function()? buildUuid, BuildsCreatedOn Function()? createdOn, DateTime? Function()? initializingOn, BuildsModifiedOn Function()? modifiedOn, PullRequest? Function()? pullRequest, DateTime? Function()? runningOn, BuildsBuildStatus Function()? status, BuildsStoppedOn? Function()? stoppedOn, BuildsBuildResponseTrigger Function()? trigger, }) { return BuildsBuildResponse(
+BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, BuildsBuildTriggerMetadataResponse? Function()? buildTriggerMetadata, BuildsBuildUuid? Function()? buildUuid, BuildsCreatedOn? Function()? createdOn, DateTime? Function()? initializingOn, BuildsModifiedOn? Function()? modifiedOn, PullRequest? Function()? pullRequest, DateTime? Function()? runningOn, BuildsBuildStatus? Function()? status, BuildsStoppedOn? Function()? stoppedOn, BuildsBuildResponseTrigger? Function()? trigger, }) { return BuildsBuildResponse(
   buildOutcome: buildOutcome != null ? buildOutcome() : this.buildOutcome,
   buildTriggerMetadata: buildTriggerMetadata != null ? buildTriggerMetadata() : this.buildTriggerMetadata,
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,

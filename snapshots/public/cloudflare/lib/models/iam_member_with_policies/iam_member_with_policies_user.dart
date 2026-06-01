@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (twoFactorAuthenticationEnabled != null) 'two_factor_authentication_enabled': twoFactorAuthenticationEnabled?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email'); } 
-IamMemberWithPoliciesUser copyWith({IamEmail? email, IamFirstName? Function()? firstName, IamCommonComponentsSchemasIdentifier Function()? id, IamLastName? Function()? lastName, IamTwoFactorAuthenticationEnabled Function()? twoFactorAuthenticationEnabled, }) { return IamMemberWithPoliciesUser(
+IamMemberWithPoliciesUser copyWith({IamEmail? email, IamFirstName? Function()? firstName, IamCommonComponentsSchemasIdentifier? Function()? id, IamLastName? Function()? lastName, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, }) { return IamMemberWithPoliciesUser(
   email: email ?? this.email,
   firstName: firstName != null ? firstName() : this.firstName,
   id: id != null ? id() : this.id,

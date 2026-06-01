@@ -129,7 +129,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('organization') &&
       json.containsKey('type'); } 
-TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy Function()? privacy, TeamFullNotificationSetting Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn Function()? ldapDn, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamFull(
+TeamFull copyWith({int? id, String? nodeId, Uri? url, Uri? htmlUrl, String? name, String? slug, String? Function()? description, TeamFullPrivacy? Function()? privacy, TeamFullNotificationSetting? Function()? notificationSetting, String? permission, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, int? membersCount, int? reposCount, DateTime? createdAt, DateTime? updatedAt, TeamOrganization? organization, LdapDn? Function()? ldapDn, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return TeamFull(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

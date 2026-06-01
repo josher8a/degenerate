@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'jurisdiction', 'name', 'uuid', 'version'}.contains(key)); } 
-D1DatabaseResponse copyWith({D1CreatedAt Function()? createdAt, D1JurisdictionNullable? Function()? jurisdiction, D1DatabaseName Function()? name, D1DatabaseIdentifier Function()? uuid, D1DatabaseVersion Function()? version, }) { return D1DatabaseResponse(
+D1DatabaseResponse copyWith({D1CreatedAt? Function()? createdAt, D1JurisdictionNullable? Function()? jurisdiction, D1DatabaseName? Function()? name, D1DatabaseIdentifier? Function()? uuid, D1DatabaseVersion? Function()? version, }) { return D1DatabaseResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   name: name != null ? name() : this.name,

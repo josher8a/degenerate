@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggIn
       json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
       json.containsKey('normalization') &&
       json.containsKey('units'); } 
-RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval? aggInterval, RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo? confidenceInfo, List<MetaDateRange>? dateRange, Delay Function()? delay, DateTime? lastUpdated, Normalization? normalization, List<MetaUnits>? units, }) { return RadarGetBgpIpsTimeseriesResponseResultMeta(
+RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaAggInterval? aggInterval, RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo? confidenceInfo, List<MetaDateRange>? dateRange, Delay? Function()? delay, DateTime? lastUpdated, Normalization? normalization, List<MetaUnits>? units, }) { return RadarGetBgpIpsTimeseriesResponseResultMeta(
   aggInterval: aggInterval ?? this.aggInterval,
   confidenceInfo: confidenceInfo ?? this.confidenceInfo,
   dateRange: dateRange ?? this.dateRange,

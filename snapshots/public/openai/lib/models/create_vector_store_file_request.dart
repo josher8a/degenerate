@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'attributes': ?attributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
-CreateVectorStoreFileRequest copyWith({String? fileId, ChunkingStrategyRequestParam Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return CreateVectorStoreFileRequest(
+CreateVectorStoreFileRequest copyWith({String? fileId, ChunkingStrategyRequestParam? Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return CreateVectorStoreFileRequest(
   fileId: fileId ?? this.fileId,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   attributes: attributes != null ? attributes() : this.attributes,

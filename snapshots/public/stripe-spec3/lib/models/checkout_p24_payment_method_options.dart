@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-CheckoutP24PaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage}) { return CheckoutP24PaymentMethodOptions(
+CheckoutP24PaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) { return CheckoutP24PaymentMethodOptions(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

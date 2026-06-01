@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'output': ?output,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'arguments', 'output'}.contains(key)); } 
-RunStepDeltaStepDetailsToolCallsFunctionObjectFunction copyWith({String Function()? name, String Function()? arguments, String? Function()? output, }) { return RunStepDeltaStepDetailsToolCallsFunctionObjectFunction(
+RunStepDeltaStepDetailsToolCallsFunctionObjectFunction copyWith({String? Function()? name, String? Function()? arguments, String? Function()? output, }) { return RunStepDeltaStepDetailsToolCallsFunctionObjectFunction(
   name: name != null ? name() : this.name,
   arguments: arguments != null ? arguments() : this.arguments,
   output: output != null ? output() : this.output,

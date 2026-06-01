@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-Assistant copyWith({AssistantAudioVariant1 Function()? audio, AssistantContent Function()? content, AssistantFunctionCallVariant1 Function()? functionCall, String Function()? name, String? Function()? refusal, AssistantRole? role, List<AssistantToolCalls> Function()? toolCalls, }) { return Assistant(
+Assistant copyWith({AssistantAudioVariant1? Function()? audio, AssistantContent? Function()? content, AssistantFunctionCallVariant1? Function()? functionCall, String? Function()? name, String? Function()? refusal, AssistantRole? role, List<AssistantToolCalls>? Function()? toolCalls, }) { return Assistant(
   audio: audio != null ? audio() : this.audio,
   content: content != null ? content() : this.content,
   functionCall: functionCall != null ? functionCall() : this.functionCall,

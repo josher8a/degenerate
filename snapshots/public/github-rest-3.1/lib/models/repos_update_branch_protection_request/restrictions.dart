@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('users') &&
       json.containsKey('teams'); } 
-Restrictions copyWith({List<String>? users, List<String>? teams, List<String> Function()? apps, }) { return Restrictions(
+Restrictions copyWith({List<String>? users, List<String>? teams, List<String>? Function()? apps, }) { return Restrictions(
   users: users ?? this.users,
   teams: teams ?? this.teams,
   apps: apps != null ? apps() : this.apps,

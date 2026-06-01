@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redirects', 'enabled'}.contains(key)); } 
-PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({AllowRedirects Function()? allowRedirects, bool? Function()? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
+PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({AllowRedirects? Function()? allowRedirects, bool? Function()? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 

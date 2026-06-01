@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'description', 'title'}.contains(key)); } 
-Toggles copyWith({TogglesDefaultValue Function()? defaultValue, String Function()? description, String Function()? title, }) { return Toggles(
+Toggles copyWith({TogglesDefaultValue? Function()? defaultValue, String? Function()? description, String? Function()? title, }) { return Toggles(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   description: description != null ? description() : this.description,
   title: title != null ? title() : this.title,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'record_usage': ?recordUsage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'record_quota', 'record_usage'}.contains(key)); } 
-DnsRecordsDnsResponseZoneUsageResult copyWith({int? Function()? recordQuota, int Function()? recordUsage, }) { return DnsRecordsDnsResponseZoneUsageResult(
+DnsRecordsDnsResponseZoneUsageResult copyWith({int? Function()? recordQuota, int? Function()? recordUsage, }) { return DnsRecordsDnsResponseZoneUsageResult(
   recordQuota: recordQuota != null ? recordQuota() : this.recordQuota,
   recordUsage: recordUsage != null ? recordUsage() : this.recordUsage,
 ); } 

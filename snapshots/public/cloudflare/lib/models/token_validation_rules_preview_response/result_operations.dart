@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'endpoint', 'host', 'last_updated', 'method', 'operation_id', 'state'}.contains(key)); } 
-ResultOperations copyWith({ShieldEndpoint Function()? endpoint, ShieldHost Function()? host, ShieldTimestamp Function()? lastUpdated, ShieldMethod Function()? method, ShieldUuid Function()? operationId, ShieldSelectorOperationState Function()? state, }) { return ResultOperations(
+ResultOperations copyWith({ShieldEndpoint? Function()? endpoint, ShieldHost? Function()? host, ShieldTimestamp? Function()? lastUpdated, ShieldMethod? Function()? method, ShieldUuid? Function()? operationId, ShieldSelectorOperationState? Function()? state, }) { return ResultOperations(
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   host: host != null ? host() : this.host,
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'session_duration': ?sessionDuration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'session_duration'}.contains(key)); } 
-Grant copyWith({String Function()? accessTokenLifetime, String Function()? sessionDuration, }) { return Grant(
+Grant copyWith({String? Function()? accessTokenLifetime, String? Function()? sessionDuration, }) { return Grant(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 

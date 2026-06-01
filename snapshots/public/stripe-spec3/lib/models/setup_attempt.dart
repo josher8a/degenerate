@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool Function()? attachToSelf, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, CheckoutSessionSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool? Function()? attachToSelf, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, CheckoutSessionSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,

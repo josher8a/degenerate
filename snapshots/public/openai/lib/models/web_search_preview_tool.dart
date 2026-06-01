@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (searchContentTypes != null) 'search_content_types': searchContentTypes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-WebSearchPreviewTool copyWith({String? type, ApproximateLocation? Function()? userLocation, SearchContextSize Function()? searchContextSize, List<SearchContentType> Function()? searchContentTypes, }) { return WebSearchPreviewTool(
+WebSearchPreviewTool copyWith({String? type, ApproximateLocation? Function()? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return WebSearchPreviewTool(
   type: type ?? this.type,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,

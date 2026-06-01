@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantContentVariant2 copyWith({String Function()? refusal, String Function()? text, AssistantContentVariant2Type? type, }) { return AssistantContentVariant2(
+AssistantContentVariant2 copyWith({String? Function()? refusal, String? Function()? text, AssistantContentVariant2Type? type, }) { return AssistantContentVariant2(
   refusal: refusal != null ? refusal() : this.refusal,
   text: text != null ? text() : this.text,
   type: type ?? this.type,

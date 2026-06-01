@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_credentials', 'description', 'name'}.contains(key)); } 
-UpdateServersRequest copyWith({String Function()? authCredentials, String? Function()? description, String Function()? name, }) { return UpdateServersRequest(
+UpdateServersRequest copyWith({String? Function()? authCredentials, String? Function()? description, String? Function()? name, }) { return UpdateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,

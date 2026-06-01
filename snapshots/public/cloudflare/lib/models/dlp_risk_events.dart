@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('events') &&
       json.containsKey('name') && json['name'] is String; } 
-DlpRiskEvents copyWith({String? email, List<DlpRiskEvent>? events, DateTime? Function()? lastResetTime, String? name, DlpRiskLevel Function()? riskLevel, }) { return DlpRiskEvents(
+DlpRiskEvents copyWith({String? email, List<DlpRiskEvent>? events, DateTime? Function()? lastResetTime, String? name, DlpRiskLevel? Function()? riskLevel, }) { return DlpRiskEvents(
   email: email ?? this.email,
   events: events ?? this.events,
   lastResetTime: lastResetTime != null ? lastResetTime() : this.lastResetTime,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-SchemaValidationCreateSchemaResponse copyWith({List<ShieldSchemaIssueNotification> Function()? errors, List<ShieldSchemaIssueNotification>? messages, }) { return SchemaValidationCreateSchemaResponse(
+SchemaValidationCreateSchemaResponse copyWith({List<ShieldSchemaIssueNotification>? Function()? errors, List<ShieldSchemaIssueNotification>? messages, }) { return SchemaValidationCreateSchemaResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
 ); } 

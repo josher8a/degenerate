@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('depre
       json.containsKey('dns_firewall_ips') &&
       json.containsKey('id') &&
       json.containsKey('modified_on'); } 
-DnsFirewallDnsFirewallClusterResponse copyWith({DnsFirewallAttackMitigation Function()? attackMitigation, DnsFirewallDeprecateAnyRequests? deprecateAnyRequests, DnsFirewallEcsFallback? ecsFallback, DnsFirewallMaximumCacheTtl? maximumCacheTtl, DnsFirewallMinimumCacheTtl? minimumCacheTtl, DnsFirewallName? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries? retries, List<dynamic>? upstreamIps, List<dynamic>? dnsFirewallIps, DnsFirewallIdentifier? id, DnsFirewallModifiedOn? modifiedOn, }) { return DnsFirewallDnsFirewallClusterResponse(
+DnsFirewallDnsFirewallClusterResponse copyWith({DnsFirewallAttackMitigation? Function()? attackMitigation, DnsFirewallDeprecateAnyRequests? deprecateAnyRequests, DnsFirewallEcsFallback? ecsFallback, DnsFirewallMaximumCacheTtl? maximumCacheTtl, DnsFirewallMinimumCacheTtl? minimumCacheTtl, DnsFirewallName? name, DnsFirewallNegativeCacheTtl? Function()? negativeCacheTtl, DnsFirewallRatelimit? Function()? ratelimit, DnsFirewallRetries? retries, List<dynamic>? upstreamIps, List<dynamic>? dnsFirewallIps, DnsFirewallIdentifier? id, DnsFirewallModifiedOn? modifiedOn, }) { return DnsFirewallDnsFirewallClusterResponse(
   attackMitigation: attackMitigation != null ? attackMitigation() : this.attackMitigation,
   deprecateAnyRequests: deprecateAnyRequests ?? this.deprecateAnyRequests,
   ecsFallback: ecsFallback ?? this.ecsFallback,

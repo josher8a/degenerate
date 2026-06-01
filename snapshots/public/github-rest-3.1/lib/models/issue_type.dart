@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String; } 
-IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, IssueTypeColor? Function()? color, DateTime Function()? createdAt, DateTime Function()? updatedAt, bool Function()? isEnabled, }) { return IssueType(
+IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? description, IssueTypeColor? Function()? color, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? isEnabled, }) { return IssueType(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

@@ -205,7 +205,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()? model, int? Function()? n, CreateImageRequestQuality? Function()? quality, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageRequestSize? Function()? size, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, Style? Function()? style, String Function()? user, }) { return CreateImageRequest(
+CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()? model, int? Function()? n, CreateImageRequestQuality? Function()? quality, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageRequestSize? Function()? size, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, Style? Function()? style, String? Function()? user, }) { return CreateImageRequest(
   prompt: prompt ?? this.prompt,
   model: model != null ? model() : this.model,
   n: n != null ? n() : this.n,

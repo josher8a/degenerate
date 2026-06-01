@@ -170,7 +170,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
       json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType Function()? bankAccountType, double Function()? chargeAmount, String Function()? currency, String Function()? description, String Function()? input, int Function()? minPostalCodeLength, dynamic Function()? parameter, String Function()? paymentConnector, PaymentsEnumPaymentMethod Function()? paymentMethod, bool Function()? postalCode, bool Function()? securityCode, int Function()? timeout, PaymentsEnumTokenType Function()? tokenType, String Function()? validCardTypes, }) { return CreatePaymentsRequest(
+CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumBankAccountType? Function()? bankAccountType, double? Function()? chargeAmount, String? Function()? currency, String? Function()? description, String? Function()? input, int? Function()? minPostalCodeLength, dynamic Function()? parameter, String? Function()? paymentConnector, PaymentsEnumPaymentMethod? Function()? paymentMethod, bool? Function()? postalCode, bool? Function()? securityCode, int? Function()? timeout, PaymentsEnumTokenType? Function()? tokenType, String? Function()? validCardTypes, }) { return CreatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   bankAccountType: bankAccountType != null ? bankAccountType() : this.bankAccountType,

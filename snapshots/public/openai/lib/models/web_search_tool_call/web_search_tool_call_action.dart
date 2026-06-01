@@ -36,7 +36,7 @@ final WebSearchActionSearch webSearchActionSearch;
 
 @override String get type { return 'search'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
-WebSearchToolCallActionSearch copyWith({String? query, List<String> Function()? queries, List<Sources> Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
+WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
   query: query,
   queries: queries,
   sources: sources,

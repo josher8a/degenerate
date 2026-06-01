@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'features'}.contains(key)); } 
-ShieldOperation copyWith({ShieldOperationFeatures Function()? features}) { return ShieldOperation(
+ShieldOperation copyWith({ShieldOperationFeatures? Function()? features}) { return ShieldOperation(
   features: features != null ? features() : this.features,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

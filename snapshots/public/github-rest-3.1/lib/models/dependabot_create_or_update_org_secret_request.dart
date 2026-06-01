@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
-DependabotCreateOrUpdateOrgSecretRequest copyWith({String Function()? encryptedValue, String Function()? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic> Function()? selectedRepositoryIds, }) { return DependabotCreateOrUpdateOrgSecretRequest(
+DependabotCreateOrUpdateOrgSecretRequest copyWith({String? Function()? encryptedValue, String? Function()? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<dynamic>? Function()? selectedRepositoryIds, }) { return DependabotCreateOrUpdateOrgSecretRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
   visibility: visibility ?? this.visibility,

@@ -216,7 +216,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('status'); } 
-ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary Function()? beneficiary, int? Function()? canceledAt, ClimateOrderCancellationReason? Function()? cancellationReason, String? Function()? certificate, int? Function()? confirmedAt, int? created, String? currency, int? Function()? delayedAt, int? Function()? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, int? Function()? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
+ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, int? Function()? canceledAt, ClimateOrderCancellationReason? Function()? cancellationReason, String? Function()? certificate, int? Function()? confirmedAt, int? created, String? currency, int? Function()? delayedAt, int? Function()? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, int? Function()? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
   amountFees: amountFees ?? this.amountFees,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,

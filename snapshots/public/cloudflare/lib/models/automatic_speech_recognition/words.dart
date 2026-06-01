@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'word': ?word,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key)); } 
-Words copyWith({double Function()? end, double Function()? start, String Function()? word, }) { return Words(
+Words copyWith({double? Function()? end, double? Function()? start, String? Function()? word, }) { return Words(
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,
   word: word != null ? word() : this.word,

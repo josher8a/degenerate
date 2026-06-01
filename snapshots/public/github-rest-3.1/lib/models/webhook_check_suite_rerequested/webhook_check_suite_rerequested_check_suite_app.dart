@@ -237,7 +237,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? Function()? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteRequestedCheckSuiteAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
+WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? Function()? clientId, String? name, String? nodeId, PackageOwner? Function()? owner, WebhookCheckSuiteRequestedCheckSuiteAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,

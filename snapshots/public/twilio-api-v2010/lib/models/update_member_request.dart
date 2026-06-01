@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (method != null) 'Method': method?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('Url') && json['Url'] is String; } 
-UpdateMemberRequest copyWith({Uri? url, Method Function()? method, }) { return UpdateMemberRequest(
+UpdateMemberRequest copyWith({Uri? url, Method? Function()? method, }) { return UpdateMemberRequest(
   url: url ?? this.url,
   method: method != null ? method() : this.method,
 ); } 

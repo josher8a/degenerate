@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-ProtectionRulesVariant1 copyWith({int? id, String? nodeId, String? type, WaitTimer Function()? waitTimer, }) { return ProtectionRulesVariant1(
+ProtectionRulesVariant1 copyWith({int? id, String? nodeId, String? type, WaitTimer? Function()? waitTimer, }) { return ProtectionRulesVariant1(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   type: type ?? this.type,

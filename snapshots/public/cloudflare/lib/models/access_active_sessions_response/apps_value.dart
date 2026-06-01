@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'uid': ?uid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hostname', 'name', 'type', 'uid'}.contains(key)); } 
-AppsValue copyWith({String Function()? hostname, String Function()? name, String Function()? type, String Function()? uid, }) { return AppsValue(
+AppsValue copyWith({String? Function()? hostname, String? Function()? name, String? Function()? type, String? Function()? uid, }) { return AppsValue(
   hostname: hostname != null ? hostname() : this.hostname,
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,

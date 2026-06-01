@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('title'); } 
-IssuesCreateRequest copyWith({dynamic title, String Function()? body, String? Function()? assignee, dynamic Function()? milestone, List<IssuesCreateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesCreateRequest(
+IssuesCreateRequest copyWith({dynamic title, String? Function()? body, String? Function()? assignee, dynamic Function()? milestone, List<IssuesCreateRequestLabels>? Function()? labels, List<String>? Function()? assignees, String? Function()? type, }) { return IssuesCreateRequest(
   title: title ?? this.title,
   body: body != null ? body() : this.body,
   assignee: assignee != null ? assignee() : this.assignee,

@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('start_ts') &&
       json.containsKey('state'); } 
-CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearEndTs Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
+CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveClearEndTs? Function()? endTs, CacheRulesCacheReserveClearStartTs? startTs, CacheRulesCacheReserveClearState? state, }) { return CacheRulesCacheReserveClearResponseValueResult(
   endTs: endTs != null ? endTs() : this.endTs,
   startTs: startTs ?? this.startTs,
   state: state ?? this.state,

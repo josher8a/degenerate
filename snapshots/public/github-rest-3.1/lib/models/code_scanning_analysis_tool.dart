@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (guid != null) 'guid': guid?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'version', 'guid'}.contains(key)); } 
-CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName Function()? name, CodeScanningAnalysisToolVersion? Function()? version, CodeScanningAnalysisToolGuid? Function()? guid, }) { return CodeScanningAnalysisTool(
+CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? name, CodeScanningAnalysisToolVersion? Function()? version, CodeScanningAnalysisToolGuid? Function()? guid, }) { return CodeScanningAnalysisTool(
   name: name != null ? name() : this.name,
   version: version != null ? version() : this.version,
   guid: guid != null ? guid() : this.guid,

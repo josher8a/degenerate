@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookIssuesDemilestonedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhooksIssue2PerformedViaGithubAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, PackageOwner? Function()? owner, WebhooksIssuePerformedViaGithubAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesDemilestonedIssuePerformedViaGithubApp(
+WebhookIssuesDemilestonedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhooksIssue2PerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, PackageOwner? Function()? owner, WebhooksIssuePerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesDemilestonedIssuePerformedViaGithubApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,

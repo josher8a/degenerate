@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteRegistrationsResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, dynamic>? Function()? result, TeamsDevicesCursorResultInfo Function()? resultInfo, bool? success, }) { return DeleteRegistrationsResponse(
+DeleteRegistrationsResponse copyWith({List<ResponseMessage>? errors, List<ResponseMessage>? messages, Map<String, dynamic>? Function()? result, TeamsDevicesCursorResultInfo? Function()? resultInfo, bool? success, }) { return DeleteRegistrationsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

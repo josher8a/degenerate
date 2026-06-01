@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'user'}.contains(key)); } 
-OwnerFrom copyWith({Organization Function()? organization, DiscussionUser? Function()? user, }) { return OwnerFrom(
+OwnerFrom copyWith({Organization? Function()? organization, DiscussionUser? Function()? user, }) { return OwnerFrom(
   organization: organization != null ? organization() : this.organization,
   user: user != null ? user() : this.user,
 ); } 

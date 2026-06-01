@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'sha': ?sha,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'sha'}.contains(key)); } 
-CommitTree copyWith({String Function()? url, String Function()? sha, }) { return CommitTree(
+CommitTree copyWith({String? Function()? url, String? Function()? sha, }) { return CommitTree(
   url: url != null ? url() : this.url,
   sha: sha != null ? sha() : this.sha,
 ); } 

@@ -114,7 +114,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool; } 
-SimpleUser copyWith({String? Function()? name, String? Function()? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String Function()? starredAt, String Function()? userViewType, }) { return SimpleUser(
+SimpleUser copyWith({String? Function()? name, String? Function()? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? starredAt, String? Function()? userViewType, }) { return SimpleUser(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   login: login ?? this.login,

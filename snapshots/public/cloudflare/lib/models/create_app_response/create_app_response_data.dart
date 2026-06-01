@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (app != null) 'app': app?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app'}.contains(key)); } 
-CreateAppResponseData copyWith({DataApp Function()? app}) { return CreateAppResponseData(
+CreateAppResponseData copyWith({DataApp? Function()? app}) { return CreateAppResponseData(
   app: app != null ? app() : this.app,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

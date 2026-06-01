@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'event': event.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event'); } 
-PullsSubmitReviewRequest copyWith({String Function()? body, PullsCreateReviewRequestEvent? event, }) { return PullsSubmitReviewRequest(
+PullsSubmitReviewRequest copyWith({String? Function()? body, PullsCreateReviewRequestEvent? event, }) { return PullsSubmitReviewRequest(
   body: body != null ? body() : this.body,
   event: event ?? this.event,
 ); } 

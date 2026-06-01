@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (app != null) 'app': app?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'context', 'state', 'type', 'app'}.contains(key)); } 
-RuleSuiteRequiredStatusChecksChecks copyWith({int Function()? id, String Function()? context, String Function()? state, String Function()? type, ChecksApp? Function()? app, }) { return RuleSuiteRequiredStatusChecksChecks(
+RuleSuiteRequiredStatusChecksChecks copyWith({int? Function()? id, String? Function()? context, String? Function()? state, String? Function()? type, ChecksApp? Function()? app, }) { return RuleSuiteRequiredStatusChecksChecks(
   id: id != null ? id() : this.id,
   context: context != null ? context() : this.context,
   state: state != null ? state() : this.state,

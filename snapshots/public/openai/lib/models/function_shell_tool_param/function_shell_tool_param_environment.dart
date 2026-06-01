@@ -33,7 +33,7 @@ final ContainerAutoParam containerAutoParam;
 
 @override String get type { return 'container_auto'; } 
 @override Map<String, dynamic> toJson() { return {...containerAutoParam.toJson(), 'type': type}; } 
-FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String> Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy Function()? networkPolicy, List<Skills> Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
+FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
   fileIds: fileIds,
   memoryLimit: memoryLimit,
   networkPolicy: networkPolicy,
@@ -52,7 +52,7 @@ final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type { return 'local'; } 
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
-FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam> Function()? skills}) { return FunctionShellToolParamEnvironmentLocal(localEnvironmentParam.copyWith(
+FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellToolParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
 )); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

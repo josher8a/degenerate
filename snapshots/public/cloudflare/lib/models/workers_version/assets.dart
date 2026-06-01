@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'jwt': ?jwt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'jwt'}.contains(key)); } 
-Assets copyWith({AssetsConfig Function()? config, String Function()? jwt, }) { return Assets(
+Assets copyWith({AssetsConfig? Function()? config, String? Function()? jwt, }) { return Assets(
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 

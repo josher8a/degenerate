@@ -89,7 +89,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('type'); } 
-WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, TeamFullNotificationSetting? notificationSetting, Uri? repositoriesUrl, String? slug, Uri? url, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return WebhooksTeam1Parent(
+WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, String? permission, TeamPrivacy? privacy, TeamFullNotificationSetting? notificationSetting, Uri? repositoriesUrl, String? slug, Uri? url, TeamFullType? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return WebhooksTeam1Parent(
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   id: id ?? this.id,

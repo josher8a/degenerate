@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'user_email': ?userEmail,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'completed_date', 'created_date', 'device_id', 'filename', 'id', 'registration_id', 'status', 'type', 'user_email'}.contains(key)); } 
-DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({DateTime? Function()? completedDate, DateTime Function()? createdDate, String Function()? deviceId, String? Function()? filename, String Function()? id, String Function()? registrationId, String Function()? status, String Function()? type, String Function()? userEmail, }) { return DigitalExperienceMonitoringGetCommandsResponseCommands(
+DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({DateTime? Function()? completedDate, DateTime? Function()? createdDate, String? Function()? deviceId, String? Function()? filename, String? Function()? id, String? Function()? registrationId, String? Function()? status, String? Function()? type, String? Function()? userEmail, }) { return DigitalExperienceMonitoringGetCommandsResponseCommands(
   completedDate: completedDate != null ? completedDate() : this.completedDate,
   createdDate: createdDate != null ? createdDate() : this.createdDate,
   deviceId: deviceId != null ? deviceId() : this.deviceId,

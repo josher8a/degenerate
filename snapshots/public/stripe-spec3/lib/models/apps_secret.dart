@@ -88,7 +88,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('scope'); } 
-AppsSecret copyWith({int? created, bool Function()? deleted, int? Function()? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, String? Function()? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(
+AppsSecret copyWith({int? created, bool? Function()? deleted, int? Function()? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, String? Function()? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(
   created: created ?? this.created,
   deleted: deleted != null ? deleted() : this.deleted,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

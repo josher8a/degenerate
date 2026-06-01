@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'managers', 'team_managers', 'ends_at', 'contact_link', 'state'}.contains(key)); } 
-CampaignsUpdateCampaignRequest copyWith({String Function()? name, String Function()? description, List<String> Function()? managers, List<String> Function()? teamManagers, DateTime Function()? endsAt, Uri? Function()? contactLink, CampaignState Function()? state, }) { return CampaignsUpdateCampaignRequest(
+CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Uri? Function()? contactLink, CampaignState? Function()? state, }) { return CampaignsUpdateCampaignRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   managers: managers != null ? managers() : this.managers,

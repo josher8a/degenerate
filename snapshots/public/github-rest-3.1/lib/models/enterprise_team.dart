@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-EnterpriseTeam copyWith({int? id, String? name, String Function()? description, String? slug, Uri? url, String Function()? syncToOrganizations, String Function()? organizationSelectionType, String? Function()? groupId, String? Function()? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) { return EnterpriseTeam(
+EnterpriseTeam copyWith({int? id, String? name, String? Function()? description, String? slug, Uri? url, String? Function()? syncToOrganizations, String? Function()? organizationSelectionType, String? Function()? groupId, String? Function()? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) { return EnterpriseTeam(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

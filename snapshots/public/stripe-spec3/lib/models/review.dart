@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
       json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
+Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent? Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
   billingZip: billingZip != null ? billingZip() : this.billingZip,
   charge: charge != null ? charge() : this.charge,
   closedReason: closedReason != null ? closedReason() : this.closedReason,

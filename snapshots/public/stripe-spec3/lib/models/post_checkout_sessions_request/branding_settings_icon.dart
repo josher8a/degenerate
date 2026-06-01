@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BrandingSettingsIcon copyWith({String Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String Function()? url, }) { return BrandingSettingsIcon(
+BrandingSettingsIcon copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String? Function()? url, }) { return BrandingSettingsIcon(
   file: file != null ? file() : this.file,
   type: type ?? this.type,
   url: url != null ? url() : this.url,

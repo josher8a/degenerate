@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('website') && json['website'] is String; } 
-Tech copyWith({List<TechCategories>? categories, int? confidence, String Function()? description, Evidence? evidence, String? icon, String? name, String? slug, String? website, }) { return Tech(
+Tech copyWith({List<TechCategories>? categories, int? confidence, String? Function()? description, Evidence? evidence, String? icon, String? name, String? slug, String? website, }) { return Tech(
   categories: categories ?? this.categories,
   confidence: confidence ?? this.confidence,
   description: description != null ? description() : this.description,

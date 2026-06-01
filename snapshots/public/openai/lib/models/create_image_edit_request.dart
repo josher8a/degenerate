@@ -179,7 +179,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List Function()? mask, CreateImageEditRequestBackground? Function()? background, CreateImageEditRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String Function()? user, InputFidelity? Function()? inputFidelity, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
+CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, CreateImageEditRequestBackground? Function()? background, CreateImageEditRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String? Function()? user, InputFidelity? Function()? inputFidelity, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
   image: image ?? this.image,
   prompt: prompt ?? this.prompt,
   mask: mask != null ? mask() : this.mask,

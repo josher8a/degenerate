@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key)); } 
-InputImageMask copyWith({String Function()? imageUrl, String Function()? fileId, }) { return InputImageMask(
+InputImageMask copyWith({String? Function()? imageUrl, String? Function()? fileId, }) { return InputImageMask(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
 ); } 

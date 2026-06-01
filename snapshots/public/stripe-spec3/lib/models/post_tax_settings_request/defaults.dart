@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_behavior', 'tax_code'}.contains(key)); } 
-Defaults copyWith({DefaultsTaxBehavior Function()? taxBehavior, String Function()? taxCode, }) { return Defaults(
+Defaults copyWith({DefaultsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return Defaults(
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
 ); } 

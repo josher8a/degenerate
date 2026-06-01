@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('training_file') && json['training_file'] is String; } 
-CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<Integrations>? Function()? integrations, int? Function()? seed, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
+CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<Integrations>? Function()? integrations, int? Function()? seed, FineTuneMethod? Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
   model: model ?? this.model,
   trainingFile: trainingFile ?? this.trainingFile,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,

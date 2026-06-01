@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'sender_name': ?senderName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network', 'sender_name'}.contains(key)); } 
-CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork Function()? network, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(
+CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransferNetwork? Function()? network, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer(
   network: network != null ? network() : this.network,
   senderName: senderName != null ? senderName() : this.senderName,
 ); } 

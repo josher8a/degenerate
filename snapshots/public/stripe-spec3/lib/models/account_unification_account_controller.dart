@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AccountUnificationAccountController copyWith({AccountUnificationAccountControllerFees Function()? fees, bool Function()? isController, AccountUnificationAccountControllerLosses Function()? losses, RequirementCollection Function()? requirementCollection, AccountUnificationAccountControllerStripeDashboard Function()? stripeDashboard, AccountUnificationAccountControllerType? type, }) { return AccountUnificationAccountController(
+AccountUnificationAccountController copyWith({AccountUnificationAccountControllerFees? Function()? fees, bool? Function()? isController, AccountUnificationAccountControllerLosses? Function()? losses, RequirementCollection? Function()? requirementCollection, AccountUnificationAccountControllerStripeDashboard? Function()? stripeDashboard, AccountUnificationAccountControllerType? type, }) { return AccountUnificationAccountController(
   fees: fees != null ? fees() : this.fees,
   isController: isController != null ? isController() : this.isController,
   losses: losses != null ? losses() : this.losses,

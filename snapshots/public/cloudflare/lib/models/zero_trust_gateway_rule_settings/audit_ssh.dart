@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'command_logging': ?commandLogging,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command_logging'}.contains(key)); } 
-AuditSsh copyWith({bool Function()? commandLogging}) { return AuditSsh(
+AuditSsh copyWith({bool? Function()? commandLogging}) { return AuditSsh(
   commandLogging: commandLogging != null ? commandLogging() : this.commandLogging,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

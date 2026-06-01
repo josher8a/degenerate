@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
       json.containsKey('visibility'); } 
-UrlscannerCreateScanResponse2 copyWith({String? api, String? message, UrlscannerCreateScanBulkResponseOptions Function()? options, String? result, String? url, String? uuid, UrlscannerCreateScanBulkResponseVisibility? visibility, }) { return UrlscannerCreateScanResponse2(
+UrlscannerCreateScanResponse2 copyWith({String? api, String? message, UrlscannerCreateScanBulkResponseOptions? Function()? options, String? result, String? url, String? uuid, UrlscannerCreateScanBulkResponseVisibility? visibility, }) { return UrlscannerCreateScanResponse2(
   api: api ?? this.api,
   message: message ?? this.message,
   options: options != null ? options() : this.options,

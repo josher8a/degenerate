@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('response') && json['response'] is String &&
       json.containsKey('search_query') && json['search_query'] is String; } 
-AutoragConfigAiSearchResponseResult copyWith({List<ResultData> Function()? data, bool Function()? hasMore, String? Function()? nextPage, String Function()? object, String? response, String? searchQuery, }) { return AutoragConfigAiSearchResponseResult(
+AutoragConfigAiSearchResponseResult copyWith({List<ResultData>? Function()? data, bool Function()? hasMore, String? Function()? nextPage, String? Function()? object, String? response, String? searchQuery, }) { return AutoragConfigAiSearchResponseResult(
   data: data != null ? data() : this.data,
   hasMore: hasMore != null ? hasMore() : this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,

@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesSecurityLevel copyWith({ZonesSecurityLevelId Function()? id, ZonesSecurityLevelValue Function()? value, }) { return ZonesSecurityLevel(
+ZonesSecurityLevel copyWith({ZonesSecurityLevelId? Function()? id, ZonesSecurityLevelValue? Function()? value, }) { return ZonesSecurityLevel(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

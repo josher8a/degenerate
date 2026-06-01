@@ -137,7 +137,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestTarget Function()? target, RepositoryRulesetSourceType Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, CurrentUserCanBypass Function()? currentUserCanBypass, String Function()? nodeId, RepositoryRulesetLinks Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule> Function()? rules, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return RepositoryRuleset(
+RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestTarget? Function()? target, RepositoryRulesetSourceType? Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, CurrentUserCanBypass? Function()? currentUserCanBypass, String? Function()? nodeId, RepositoryRulesetLinks? Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule>? Function()? rules, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,

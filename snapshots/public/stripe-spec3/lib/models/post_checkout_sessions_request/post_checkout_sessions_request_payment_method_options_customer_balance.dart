@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance copyWith({PaymentIntentPaymentMethodOptionsParamBankTransfer Function()? bankTransfer, FundingInstructionsFundingType Function()? fundingType, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
+PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance copyWith({PaymentIntentPaymentMethodOptionsParamBankTransfer? Function()? bankTransfer, FundingInstructionsFundingType? Function()? fundingType, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

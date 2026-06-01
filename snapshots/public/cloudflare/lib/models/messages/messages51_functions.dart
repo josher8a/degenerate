@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'strict': ?strict,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Messages51Functions copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? parameters, bool? Function()? strict, }) { return Messages51Functions(
+Messages51Functions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, }) { return Messages51Functions(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

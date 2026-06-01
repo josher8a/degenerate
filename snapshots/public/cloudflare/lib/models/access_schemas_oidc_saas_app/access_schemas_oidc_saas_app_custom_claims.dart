@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'required', 'scope', 'source'}.contains(key)); } 
-AccessSchemasOidcSaasAppCustomClaims copyWith({String Function()? name, bool Function()? $required, CustomClaimsScope Function()? scope, CustomAttributesSource Function()? source, }) { return AccessSchemasOidcSaasAppCustomClaims(
+AccessSchemasOidcSaasAppCustomClaims copyWith({String? Function()? name, bool? Function()? $required, CustomClaimsScope? Function()? scope, CustomAttributesSource? Function()? source, }) { return AccessSchemasOidcSaasAppCustomClaims(
   name: name != null ? name() : this.name,
   $required: $required != null ? $required() : this.$required,
   scope: scope != null ? scope() : this.scope,

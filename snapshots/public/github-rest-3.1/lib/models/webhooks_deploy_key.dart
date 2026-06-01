@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('verified') && json['verified'] is bool; } 
-WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int? id, String? key, String? Function()? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool Function()? enabled, }) { return WebhooksDeployKey(
+WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int? id, String? key, String? Function()? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool? Function()? enabled, }) { return WebhooksDeployKey(
   addedBy: addedBy != null ? addedBy() : this.addedBy,
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,

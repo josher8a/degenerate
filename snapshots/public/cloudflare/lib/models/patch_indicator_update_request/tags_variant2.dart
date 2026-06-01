@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-TagsVariant2 copyWith({String Function()? categoryName, String? value, }) { return TagsVariant2(
+TagsVariant2 copyWith({String? Function()? categoryName, String? value, }) { return TagsVariant2(
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   value: value ?? this.value,
 ); } 

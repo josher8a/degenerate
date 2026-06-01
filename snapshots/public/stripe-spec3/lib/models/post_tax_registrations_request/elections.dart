@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Elections copyWith({String Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return Elections(
+Elections copyWith({String? Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return Elections(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,
 ); } 

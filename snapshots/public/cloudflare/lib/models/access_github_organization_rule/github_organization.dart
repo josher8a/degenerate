@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('identity_provider_id') && json['identity_provider_id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-GithubOrganization copyWith({String? identityProviderId, String? name, String Function()? team, }) { return GithubOrganization(
+GithubOrganization copyWith({String? identityProviderId, String? name, String? Function()? team, }) { return GithubOrganization(
   identityProviderId: identityProviderId ?? this.identityProviderId,
   name: name ?? this.name,
   team: team != null ? team() : this.team,

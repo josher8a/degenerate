@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'query', 'result'}.contains(key)); } 
-DashboardResponse copyWith({QueryResponse Function()? query, Dashboard Function()? result, }) { return DashboardResponse(
+DashboardResponse copyWith({QueryResponse? Function()? query, Dashboard? Function()? result, }) { return DashboardResponse(
   query: query != null ? query() : this.query,
   result: result != null ? result() : this.result,
 ); } 

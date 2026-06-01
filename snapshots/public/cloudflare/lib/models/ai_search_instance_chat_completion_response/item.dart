@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-Item copyWith({String? key, Map<String, dynamic> Function()? metadata, double Function()? timestamp, }) { return Item(
+Item copyWith({String? key, Map<String, dynamic>? Function()? metadata, double? Function()? timestamp, }) { return Item(
   key: key ?? this.key,
   metadata: metadata != null ? metadata() : this.metadata,
   timestamp: timestamp != null ? timestamp() : this.timestamp,

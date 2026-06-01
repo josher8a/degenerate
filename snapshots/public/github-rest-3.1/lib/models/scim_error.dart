@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'schemas': ?schemas,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'documentation_url', 'detail', 'status', 'scimType', 'schemas'}.contains(key)); } 
-ScimError copyWith({String? Function()? message, String? Function()? documentationUrl, String? Function()? detail, int Function()? status, String? Function()? scimType, List<String> Function()? schemas, }) { return ScimError(
+ScimError copyWith({String? Function()? message, String? Function()? documentationUrl, String? Function()? detail, int? Function()? status, String? Function()? scimType, List<String>? Function()? schemas, }) { return ScimError(
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   detail: detail != null ? detail() : this.detail,

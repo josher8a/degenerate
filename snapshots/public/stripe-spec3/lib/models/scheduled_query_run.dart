@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('title') && json['title'] is String; } 
-ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError Function()? error, File? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
+ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, File? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
   created: created ?? this.created,
   dataLoadTime: dataLoadTime ?? this.dataLoadTime,
   error: error != null ? error() : this.error,

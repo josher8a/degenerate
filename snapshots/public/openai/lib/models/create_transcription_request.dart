@@ -173,7 +173,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('model'); } 
-CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String Function()? language, String Function()? prompt, AudioResponseFormat Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude> Function()? include, List<TimestampGranularities> Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String> Function()? knownSpeakerNames, List<String> Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,

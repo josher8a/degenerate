@@ -32,7 +32,7 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
 @override String get type { return 'secret_key'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
-WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, dynamic> Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretSecretKey(workersBindingKindSecretKey.copyWith(
+WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
   format: format,
   keyBase64: keyBase64,

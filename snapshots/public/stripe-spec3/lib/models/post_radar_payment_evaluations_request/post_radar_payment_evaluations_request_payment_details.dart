@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('payment_method_details'); } 
-PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? currency, String Function()? description, MoneyMovementDetails Function()? moneyMovementDetails, PaymentDetailsPaymentMethodDetails? paymentMethodDetails, ShippingDetails Function()? shippingDetails, String Function()? statementDescriptor, }) { return PostRadarPaymentEvaluationsRequestPaymentDetails(
+PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, MoneyMovementDetails? Function()? moneyMovementDetails, PaymentDetailsPaymentMethodDetails? paymentMethodDetails, ShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, }) { return PostRadarPaymentEvaluationsRequestPaymentDetails(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

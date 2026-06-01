@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   if (error != null) 'error': error?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reason', 'error'}.contains(key)); } 
-StatusDetails copyWith({StatusDetailsType Function()? type, StatusDetailsReason Function()? reason, StatusDetailsError Function()? error, }) { return StatusDetails(
+StatusDetails copyWith({StatusDetailsType? Function()? type, StatusDetailsReason? Function()? reason, StatusDetailsError? Function()? error, }) { return StatusDetails(
   type: type != null ? type() : this.type,
   reason: reason != null ? reason() : this.reason,
   error: error != null ? error() : this.error,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('preferred_language'); } 
-PaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsBancontact(
+PaymentMethodOptionsBancontact copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? preferredLanguage, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsBancontact(
   preferredLanguage: preferredLanguage ?? this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

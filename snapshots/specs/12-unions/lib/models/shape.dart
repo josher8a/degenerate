@@ -33,7 +33,7 @@ final Circle circle;
 
 @override String get type { return 'circle'; } 
 @override Map<String, dynamic> toJson() { return {...circle.toJson(), 'type': type}; } 
-ShapeCircle copyWith({double? radius, String Function()? color, }) { return ShapeCircle(circle.copyWith(
+ShapeCircle copyWith({double? radius, String? Function()? color, }) { return ShapeCircle(circle.copyWith(
   radius: radius,
   color: color,
 )); } 
@@ -50,7 +50,7 @@ final Rectangle rectangle;
 
 @override String get type { return 'rectangle'; } 
 @override Map<String, dynamic> toJson() { return {...rectangle.toJson(), 'type': type}; } 
-ShapeRectangle copyWith({double? width, double? height, String Function()? color, }) { return ShapeRectangle(rectangle.copyWith(
+ShapeRectangle copyWith({double? width, double? height, String? Function()? color, }) { return ShapeRectangle(rectangle.copyWith(
   width: width,
   height: height,
   color: color,
@@ -68,7 +68,7 @@ final Triangle triangle;
 
 @override String get type { return 'triangle'; } 
 @override Map<String, dynamic> toJson() { return {...triangle.toJson(), 'type': type}; } 
-ShapeTriangle copyWith({double? base, double? height, List<double> Function()? angles, }) { return ShapeTriangle(triangle.copyWith(
+ShapeTriangle copyWith({double? base, double? height, List<double>? Function()? angles, }) { return ShapeTriangle(triangle.copyWith(
   base: base,
   height: height,
   angles: angles,

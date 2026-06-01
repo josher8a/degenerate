@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('server_label') && json['server_label'] is String; } 
-McpTool copyWith({String? type, String? serverLabel, String Function()? serverUrl, ConnectorId Function()? connectorId, String Function()? authorization, String Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool Function()? deferLoading, }) { return McpTool(
+McpTool copyWith({String? type, String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return McpTool(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
   serverUrl: serverUrl != null ? serverUrl() : this.serverUrl,

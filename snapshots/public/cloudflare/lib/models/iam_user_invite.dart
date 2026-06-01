@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
       json.containsKey('organization_id') && json['organization_id'] is String; } 
-IamUserInvite copyWith({IamSchemasExpiresOn Function()? expiresOn, IamInviteComponentsSchemasIdentifier Function()? id, IamInvitedBy Function()? invitedBy, IamInvitedMemberEmail Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn Function()? invitedOn, String? organizationId, bool Function()? organizationIsEnforcingTwofactor, String Function()? organizationName, List<String> Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
+IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteComponentsSchemasIdentifier? Function()? id, IamInvitedBy? Function()? invitedBy, IamInvitedMemberEmail? Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn? Function()? invitedOn, String? organizationId, bool? Function()? organizationIsEnforcingTwofactor, String? Function()? organizationName, List<String>? Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,
   invitedBy: invitedBy != null ? invitedBy() : this.invitedBy,

@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository'); } 
-WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertUnassigned(
+WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? Function()? sender, }) { return WebhookSecretScanningAlertUnassigned(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   assignee: assignee != null ? assignee() : this.assignee,

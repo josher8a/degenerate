@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'search': ?search,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai-input', 'ai-train', 'search'}.contains(key)); } 
-ContentSignal copyWith({String Function()? aiInput, String Function()? aiTrain, String Function()? search, }) { return ContentSignal(
+ContentSignal copyWith({String? Function()? aiInput, String? Function()? aiTrain, String? Function()? search, }) { return ContentSignal(
   aiInput: aiInput != null ? aiInput() : this.aiInput,
   aiTrain: aiTrain != null ? aiTrain() : this.aiTrain,
   search: search != null ? search() : this.search,

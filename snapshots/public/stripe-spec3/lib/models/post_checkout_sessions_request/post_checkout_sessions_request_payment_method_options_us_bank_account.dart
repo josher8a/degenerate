@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount copyWith({UsBankAccountFinancialConnections Function()? financialConnections, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
+PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount copyWith({UsBankAccountFinancialConnections? Function()? financialConnections, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

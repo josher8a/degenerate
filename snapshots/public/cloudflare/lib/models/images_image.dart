@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (variants != null) 'variants': variants?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'filename', 'id', 'meta', 'requireSignedURLs', 'uploaded', 'variants'}.contains(key)); } 
-ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, dynamic> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageThumbnailUrl> Function()? variants, }) { return ImagesImage(
+ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename? Function()? filename, ImagesImageIdentifier? Function()? id, Map<String, dynamic>? Function()? meta, ImagesImageRequireSignedUrLs? Function()? requireSignedUrLs, ImagesImageUploaded? Function()? uploaded, List<ImagesImageThumbnailUrl>? Function()? variants, }) { return ImagesImage(
   creator: creator != null ? creator() : this.creator,
   filename: filename != null ? filename() : this.filename,
   id: id != null ? id() : this.id,

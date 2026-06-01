@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, QuotesResourceSubscriptionDataBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
+SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, QuotesResourceSubscriptionDataBillingModeType? type, int? Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

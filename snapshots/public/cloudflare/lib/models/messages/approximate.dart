@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'region', 'timezone'}.contains(key)); } 
-Approximate copyWith({String Function()? city, String Function()? country, String Function()? region, String Function()? timezone, }) { return Approximate(
+Approximate copyWith({String? Function()? city, String? Function()? country, String? Function()? region, String? Function()? timezone, }) { return Approximate(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   region: region != null ? region() : this.region,

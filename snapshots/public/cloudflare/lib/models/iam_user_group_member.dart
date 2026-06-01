@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-IamUserGroupMember copyWith({IamEmail Function()? email, String? id, dynamic Function()? status, }) { return IamUserGroupMember(
+IamUserGroupMember copyWith({IamEmail? Function()? email, String? id, dynamic Function()? status, }) { return IamUserGroupMember(
   email: email != null ? email() : this.email,
   id: id ?? this.id,
   status: status != null ? status() : this.status,

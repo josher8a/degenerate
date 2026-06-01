@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-Devcontainers copyWith({String? path, String Function()? name, String Function()? displayName, }) { return Devcontainers(
+Devcontainers copyWith({String? path, String? Function()? name, String? Function()? displayName, }) { return Devcontainers(
   path: path ?? this.path,
   name: name != null ? name() : this.name,
   displayName: displayName != null ? displayName() : this.displayName,

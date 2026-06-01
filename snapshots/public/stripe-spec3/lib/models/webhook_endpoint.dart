@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
+WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   application: application != null ? application() : this.application,
   created: created ?? this.created,

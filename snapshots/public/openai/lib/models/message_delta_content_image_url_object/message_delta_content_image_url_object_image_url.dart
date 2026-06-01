@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'detail': detail.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'detail'}.contains(key)); } 
-MessageDeltaContentImageUrlObjectImageUrl copyWith({String Function()? url, Detail Function()? detail, }) { return MessageDeltaContentImageUrlObjectImageUrl(
+MessageDeltaContentImageUrlObjectImageUrl copyWith({String? Function()? url, Detail Function()? detail, }) { return MessageDeltaContentImageUrlObjectImageUrl(
   url: url != null ? url() : this.url,
   detail: detail != null ? detail() : this.detail,
 ); } 

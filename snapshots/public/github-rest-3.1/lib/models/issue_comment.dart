@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('issue_url') && json['issue_url'] is String; } 
-IssueComment copyWith({int? id, String? nodeId, Uri? url, String Function()? body, String Function()? bodyText, String Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation Function()? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup Function()? reactions, PinnedIssueComment? Function()? pin, }) { return IssueComment(
+IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup? Function()? reactions, PinnedIssueComment? Function()? pin, }) { return IssueComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

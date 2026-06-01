@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'audio', 'usage', 'conversation_id', 'output_modalities', 'max_output_tokens'}.contains(key)); } 
-RealtimeResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, StatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeResponseAudio Function()? audio, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, List<OutputModalities> Function()? outputModalities, MaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeResponse(
+RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, StatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Map<String, String>? Function()? metadata, RealtimeResponseAudio? Function()? audio, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, List<OutputModalities>? Function()? outputModalities, MaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,

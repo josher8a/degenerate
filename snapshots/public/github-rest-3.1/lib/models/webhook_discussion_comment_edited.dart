@@ -49,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDiscussionCommentEdited copyWith({ItemEditedAction? action, WebhookDiscussionCommentEditedChanges? changes, WebhooksComment? comment, Discussion? discussion, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionCommentEdited(
+WebhookDiscussionCommentEdited copyWith({ItemEditedAction? action, WebhookDiscussionCommentEditedChanges? changes, WebhooksComment? comment, Discussion? discussion, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionCommentEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   comment: comment ?? this.comment,

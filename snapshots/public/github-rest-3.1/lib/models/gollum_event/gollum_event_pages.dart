@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'html_url': ?htmlUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'page_name', 'title', 'summary', 'action', 'sha', 'html_url'}.contains(key)); } 
-GollumEventPages copyWith({String? Function()? pageName, String? Function()? title, String? Function()? summary, String Function()? action, String Function()? sha, String Function()? htmlUrl, }) { return GollumEventPages(
+GollumEventPages copyWith({String? Function()? pageName, String? Function()? title, String? Function()? summary, String? Function()? action, String? Function()? sha, String? Function()? htmlUrl, }) { return GollumEventPages(
   pageName: pageName != null ? pageName() : this.pageName,
   title: title != null ? title() : this.title,
   summary: summary != null ? summary() : this.summary,

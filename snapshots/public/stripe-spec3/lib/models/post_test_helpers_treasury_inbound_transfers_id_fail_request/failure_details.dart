@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code'}.contains(key)); } 
-FailureDetails copyWith({TreasuryInboundTransfersResourceFailureDetailsCode Function()? code}) { return FailureDetails(
+FailureDetails copyWith({TreasuryInboundTransfersResourceFailureDetailsCode? Function()? code}) { return FailureDetails(
   code: code != null ? code() : this.code,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

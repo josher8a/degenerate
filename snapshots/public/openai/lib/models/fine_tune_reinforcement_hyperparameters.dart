@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (evalSamples != null) 'eval_samples': evalSamples?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key)); } 
-FineTuneReinforcementHyperparameters copyWith({BatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, ComputeMultiplier Function()? computeMultiplier, EvalInterval Function()? evalInterval, EvalSamples Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
+FineTuneReinforcementHyperparameters copyWith({BatchSize? Function()? batchSize, LearningRateMultiplier? Function()? learningRateMultiplier, NEpochs? Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, ComputeMultiplier? Function()? computeMultiplier, EvalInterval? Function()? evalInterval, EvalSamples? Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'role': ?role,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'role'}.contains(key)); } 
-InviteSentData copyWith({String Function()? email, String Function()? role, }) { return InviteSentData(
+InviteSentData copyWith({String? Function()? email, String? Function()? role, }) { return InviteSentData(
   email: email != null ? email() : this.email,
   role: role != null ? role() : this.role,
 ); } 

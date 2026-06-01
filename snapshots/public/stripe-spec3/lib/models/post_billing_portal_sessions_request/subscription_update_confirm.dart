@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-SubscriptionUpdateConfirm copyWith({List<PostCheckoutSessionsRequestDiscounts> Function()? discounts, List<SubscriptionUpdateConfirmItems>? items, String? subscription, }) { return SubscriptionUpdateConfirm(
+SubscriptionUpdateConfirm copyWith({List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<SubscriptionUpdateConfirmItems>? items, String? subscription, }) { return SubscriptionUpdateConfirm(
   discounts: discounts != null ? discounts() : this.discounts,
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,

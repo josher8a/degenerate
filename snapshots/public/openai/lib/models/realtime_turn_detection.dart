@@ -39,7 +39,7 @@ final ServerVad serverVad;
 
 @override String get type { return 'ServerVad'; } 
 @override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
-RealtimeTurnDetectionServerVad copyWith({double Function()? threshold, int Function()? prefixPaddingMs, int Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
+RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
   threshold: threshold,
   prefixPaddingMs: prefixPaddingMs,
   silenceDurationMs: silenceDurationMs,

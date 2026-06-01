@@ -101,7 +101,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('times_redeemed') && json['times_redeemed'] is num &&
       json.containsKey('valid') && json['valid'] is bool; } 
-Coupon copyWith({int? Function()? amountOff, CouponAppliesTo Function()? appliesTo, int? created, String? Function()? currency, Map<String, CouponCurrencyOption> Function()? currencyOptions, CouponDuration? duration, int? Function()? durationInMonths, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, String? Function()? name, CouponObject? object, double? Function()? percentOff, int? Function()? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
+Coupon copyWith({int? Function()? amountOff, CouponAppliesTo? Function()? appliesTo, int? created, String? Function()? currency, Map<String, CouponCurrencyOption>? Function()? currencyOptions, CouponDuration? duration, int? Function()? durationInMonths, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, String? Function()? name, CouponObject? object, double? Function()? percentOff, int? Function()? redeemBy, int? timesRedeemed, bool? valid, }) { return Coupon(
   amountOff: amountOff != null ? amountOff() : this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   created: created ?? this.created,

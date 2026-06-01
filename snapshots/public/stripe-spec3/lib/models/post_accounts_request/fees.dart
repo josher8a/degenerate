@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (payer != null) 'payer': payer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payer'}.contains(key)); } 
-Fees copyWith({FeesPayer Function()? payer}) { return Fees(
+Fees copyWith({FeesPayer? Function()? payer}) { return Fees(
   payer: payer != null ? payer() : this.payer,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage'}.contains(key)); } 
-CheckoutPaytoPaymentMethodOptions copyWith({MandateOptionsPayto Function()? mandateOptions, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutPaytoPaymentMethodOptions(
+CheckoutPaytoPaymentMethodOptions copyWith({MandateOptionsPayto? Function()? mandateOptions, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutPaytoPaymentMethodOptions(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

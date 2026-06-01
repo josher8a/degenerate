@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-MessageDeltaContentTextObject copyWith({int? index, CustomTextFormatParamType? type, MessageDeltaContentTextObjectText Function()? text, }) { return MessageDeltaContentTextObject(
+MessageDeltaContentTextObject copyWith({int? index, CustomTextFormatParamType? type, MessageDeltaContentTextObjectText? Function()? text, }) { return MessageDeltaContentTextObject(
   index: index ?? this.index,
   type: type ?? this.type,
   text: text != null ? text() : this.text,

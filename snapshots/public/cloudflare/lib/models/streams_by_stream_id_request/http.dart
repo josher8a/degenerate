@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authentication') && json['authentication'] is bool &&
       json.containsKey('enabled') && json['enabled'] is bool; } 
-Http copyWith({bool? authentication, Cors Function()? cors, bool? enabled, }) { return Http(
+Http copyWith({bool? authentication, Cors? Function()? cors, bool? enabled, }) { return Http(
   authentication: authentication ?? this.authentication,
   cors: cors != null ? cors() : this.cors,
   enabled: enabled ?? this.enabled,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requiredNonNullable') && json['requiredNonNullable'] is String &&
       json.containsKey('requiredNullable') && json['requiredNullable'] is String; } 
-NullabilityCombos copyWith({String? requiredNonNullable, String? Function()? requiredNullable, String Function()? optionalNonNullable, String? Function()? optionalNullable, }) { return NullabilityCombos(
+NullabilityCombos copyWith({String? requiredNonNullable, String? Function()? requiredNullable, String? Function()? optionalNonNullable, String? Function()? optionalNullable, }) { return NullabilityCombos(
   requiredNonNullable: requiredNonNullable ?? this.requiredNonNullable,
   requiredNullable: requiredNullable != null ? requiredNullable() : this.requiredNullable,
   optionalNonNullable: optionalNonNullable != null ? optionalNonNullable() : this.optionalNonNullable,

@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('review_requester'); } 
-ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? reviewRequester, Team Function()? requestedTeam, SimpleUser Function()? requestedReviewer, }) { return ReviewRequestRemovedIssueEvent(
+ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, SimpleUser? reviewRequester, Team? Function()? requestedTeam, SimpleUser? Function()? requestedReviewer, }) { return ReviewRequestRemovedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

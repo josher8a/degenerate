@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'login', 'type'}.contains(key)); } 
-PullRequestUser copyWith({int Function()? id, String Function()? login, String Function()? type, }) { return PullRequestUser(
+PullRequestUser copyWith({int? Function()? id, String? Function()? login, String? Function()? type, }) { return PullRequestUser(
   id: id != null ? id() : this.id,
   login: login != null ? login() : this.login,
   type: type != null ? type() : this.type,

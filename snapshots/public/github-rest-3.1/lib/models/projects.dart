@@ -103,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('short_description') && json['short_description'] is String &&
       json.containsKey('deleted_at') && json['deleted_at'] is String &&
       json.containsKey('deleted_by'); } 
-Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, IssuesCreateMilestoneRequestState Function()? state, StatusUpdate? Function()? latestStatusUpdate, bool Function()? isTemplate, }) { return Projects(
+Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? creator, String? title, String? Function()? description, bool? public, DateTime? Function()? closedAt, DateTime? createdAt, DateTime? updatedAt, int? number, String? Function()? shortDescription, DateTime? Function()? deletedAt, SimpleUser? Function()? deletedBy, IssuesCreateMilestoneRequestState? Function()? state, StatusUpdate? Function()? latestStatusUpdate, bool? Function()? isTemplate, }) { return Projects(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   owner: owner ?? this.owner,

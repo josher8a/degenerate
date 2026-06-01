@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'version', 'committed_at', 'change_status', 'url'}.contains(key)); } 
-GistHistory copyWith({SimpleUser? Function()? user, String Function()? version, DateTime Function()? committedAt, ChangeStatus Function()? changeStatus, Uri Function()? url, }) { return GistHistory(
+GistHistory copyWith({SimpleUser? Function()? user, String? Function()? version, DateTime? Function()? committedAt, ChangeStatus? Function()? changeStatus, Uri? Function()? url, }) { return GistHistory(
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
   committedAt: committedAt != null ? committedAt() : this.committedAt,

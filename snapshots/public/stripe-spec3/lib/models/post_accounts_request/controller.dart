@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (stripeDashboard != null) 'stripe_dashboard': stripeDashboard?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fees', 'losses', 'requirement_collection', 'stripe_dashboard'}.contains(key)); } 
-Controller copyWith({Fees Function()? fees, Losses Function()? losses, RequirementCollection Function()? requirementCollection, StripeDashboard Function()? stripeDashboard, }) { return Controller(
+Controller copyWith({Fees? Function()? fees, Losses? Function()? losses, RequirementCollection? Function()? requirementCollection, StripeDashboard? Function()? stripeDashboard, }) { return Controller(
   fees: fees != null ? fees() : this.fees,
   losses: losses != null ? losses() : this.losses,
   requirementCollection: requirementCollection != null ? requirementCollection() : this.requirementCollection,

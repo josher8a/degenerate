@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
-Routing copyWith({RoutingRequestedPriority Function()? requestedPriority}) { return Routing(
+Routing copyWith({RoutingRequestedPriority? Function()? requestedPriority}) { return Routing(
   requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

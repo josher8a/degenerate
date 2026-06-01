@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('author') &&
       json.containsKey('committer') &&
       json.containsKey('parents'); } 
-Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, Stats Function()? stats, List<DiffEntry> Function()? files, }) { return Commit(
+Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, Stats? Function()? stats, List<DiffEntry>? Function()? files, }) { return Commit(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'title'}.contains(key)); } 
-ProjectCreatedData copyWith({String Function()? name, String Function()? title, }) { return ProjectCreatedData(
+ProjectCreatedData copyWith({String? Function()? name, String? Function()? title, }) { return ProjectCreatedData(
   name: name != null ? name() : this.name,
   title: title != null ? title() : this.title,
 ); } 

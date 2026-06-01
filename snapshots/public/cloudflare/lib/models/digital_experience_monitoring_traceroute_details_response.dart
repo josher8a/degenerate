@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'
       json.containsKey('interval') && json['interval'] is String &&
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String; } 
-DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, dynamic Function()? kind, String? name, List<TargetPolicies>? Function()? targetPolicies, bool Function()? targeted, TracerouteStats? Function()? tracerouteStats, List<TracerouteStatsByColo> Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
+DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, dynamic Function()? kind, String? name, List<TargetPolicies>? Function()? targetPolicies, bool? Function()? targeted, TracerouteStats? Function()? tracerouteStats, List<TracerouteStatsByColo>? Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: host ?? this.host,
   interval: interval ?? this.interval,
   kind: kind != null ? kind() : this.kind,

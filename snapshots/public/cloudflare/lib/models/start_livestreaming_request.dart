@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'video_config'}.contains(key)); } 
-StartLivestreamingRequest copyWith({String? Function()? name, VideoConfig Function()? videoConfig, }) { return StartLivestreamingRequest(
+StartLivestreamingRequest copyWith({String? Function()? name, VideoConfig? Function()? videoConfig, }) { return StartLivestreamingRequest(
   name: name != null ? name() : this.name,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 

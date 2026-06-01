@@ -161,7 +161,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('cname') && json['cname'] is String &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
       json.containsKey('public') && json['public'] is bool; } 
-Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, ProtectedDomainState? Function()? protectedDomainState, DateTime? Function()? pendingDomainUnverifiedAt, bool? custom404, Uri Function()? htmlUrl, BuildType? Function()? buildType, PagesSourceHash Function()? source, bool? public, PagesHttpsCertificate Function()? httpsCertificate, bool Function()? httpsEnforced, }) { return Page(
+Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, ProtectedDomainState? Function()? protectedDomainState, DateTime? Function()? pendingDomainUnverifiedAt, bool? custom404, Uri? Function()? htmlUrl, BuildType? Function()? buildType, PagesSourceHash? Function()? source, bool? public, PagesHttpsCertificate? Function()? httpsCertificate, bool? Function()? httpsEnforced, }) { return Page(
   url: url ?? this.url,
   status: status != null ? status() : this.status,
   cname: cname != null ? cname() : this.cname,

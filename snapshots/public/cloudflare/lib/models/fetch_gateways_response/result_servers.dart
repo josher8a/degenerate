@@ -92,7 +92,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('tools') &&
       json.containsKey('updated_prompts') &&
       json.containsKey('updated_tools'); } 
-ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return ResultServers(
+ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, bool Function()? defaultDisabled, String? Function()? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool Function()? onBehalf, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, List<Map<String,dynamic>>? updatedPrompts, List<Map<String,dynamic>>? updatedTools, }) { return ResultServers(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

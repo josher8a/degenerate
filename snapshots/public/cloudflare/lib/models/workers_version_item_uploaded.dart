@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'startup_time_ms': ?startupTimeMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'startup_time_ms'}.contains(key)); } 
-WorkersVersionItemUploaded copyWith({int Function()? startupTimeMs}) { return WorkersVersionItemUploaded(
+WorkersVersionItemUploaded copyWith({int? Function()? startupTimeMs}) { return WorkersVersionItemUploaded(
   startupTimeMs: startupTimeMs != null ? startupTimeMs() : this.startupTimeMs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

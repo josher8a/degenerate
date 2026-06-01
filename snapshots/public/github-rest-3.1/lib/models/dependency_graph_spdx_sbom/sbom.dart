@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('SPDXI
       json.containsKey('dataLicense') && json['dataLicense'] is String &&
       json.containsKey('documentNamespace') && json['documentNamespace'] is String &&
       json.containsKey('packages'); } 
-Sbom copyWith({String? spdxid, String? spdxVersion, String Function()? comment, CreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<SbomPackages>? packages, List<Relationships> Function()? relationships, }) { return Sbom(
+Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, CreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<SbomPackages>? packages, List<Relationships>? Function()? relationships, }) { return Sbom(
   spdxid: spdxid ?? this.spdxid,
   spdxVersion: spdxVersion ?? this.spdxVersion,
   comment: comment != null ? comment() : this.comment,

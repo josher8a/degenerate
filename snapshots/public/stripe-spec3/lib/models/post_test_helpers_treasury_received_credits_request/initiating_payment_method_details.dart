@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InitiatingPaymentMethodDetails copyWith({InboundTransfersType? type, InitiatingPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return InitiatingPaymentMethodDetails(
+InitiatingPaymentMethodDetails copyWith({InboundTransfersType? type, InitiatingPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return InitiatingPaymentMethodDetails(
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 

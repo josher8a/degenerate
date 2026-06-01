@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categorizations', 'model_results', 'rule_matches', 'scan_status', 'screenshot_download_signature', 'screenshot_path', 'url'}.contains(key)); } 
-IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations> Function()? categorizations, List<ModelResults> Function()? modelResults, List<RuleMatches> Function()? ruleMatches, ScanStatus Function()? scanStatus, String Function()? screenshotDownloadSignature, String Function()? screenshotPath, String Function()? url, }) { return IntelPhishingUrlInfo(
+IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Function()? categorizations, List<ModelResults>? Function()? modelResults, List<RuleMatches>? Function()? ruleMatches, ScanStatus? Function()? scanStatus, String? Function()? screenshotDownloadSignature, String? Function()? screenshotPath, String? Function()? url, }) { return IntelPhishingUrlInfo(
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   modelResults: modelResults != null ? modelResults() : this.modelResults,
   ruleMatches: ruleMatches != null ? ruleMatches() : this.ruleMatches,

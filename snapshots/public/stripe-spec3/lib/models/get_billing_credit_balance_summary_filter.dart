@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetBillingCreditBalanceSummaryFilter copyWith({ApplicabilityScope Function()? applicabilityScope, String Function()? creditGrant, GetBillingCreditBalanceSummaryFilterType? type, }) { return GetBillingCreditBalanceSummaryFilter(
+GetBillingCreditBalanceSummaryFilter copyWith({ApplicabilityScope? Function()? applicabilityScope, String? Function()? creditGrant, GetBillingCreditBalanceSummaryFilterType? type, }) { return GetBillingCreditBalanceSummaryFilter(
   applicabilityScope: applicabilityScope != null ? applicabilityScope() : this.applicabilityScope,
   creditGrant: creditGrant != null ? creditGrant() : this.creditGrant,
   type: type ?? this.type,

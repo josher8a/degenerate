@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'money_movement_type': moneyMovementType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
-MoneyMovementDetails copyWith({MoneyMovementDetailsCard Function()? card, MoneyMovementType? moneyMovementType, }) { return MoneyMovementDetails(
+MoneyMovementDetails copyWith({MoneyMovementDetailsCard? Function()? card, MoneyMovementType? moneyMovementType, }) { return MoneyMovementDetails(
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 

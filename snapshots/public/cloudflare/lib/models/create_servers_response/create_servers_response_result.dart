@@ -74,7 +74,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
       json.containsKey('tools'); } 
-CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime Function()? createdAt, String Function()? createdBy, String? Function()? description, String Function()? error, Uri? hostname, String? id, DateTime Function()? lastSuccessfulSync, DateTime Function()? lastSynced, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
+CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

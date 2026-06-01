@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('read_only') && json['read_only'] is bool; } 
-DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, String? Function()? addedBy, DateTime? Function()? lastUsed, bool Function()? enabled, }) { return DeployKey(
+DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, String? Function()? addedBy, DateTime? Function()? lastUsed, bool? Function()? enabled, }) { return DeployKey(
   id: id ?? this.id,
   key: key ?? this.key,
   url: url ?? this.url,

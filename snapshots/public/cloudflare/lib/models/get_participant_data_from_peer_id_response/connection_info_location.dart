@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (coords != null) 'coords': coords?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coords'}.contains(key)); } 
-ConnectionInfoLocation copyWith({Coords Function()? coords}) { return ConnectionInfoLocation(
+ConnectionInfoLocation copyWith({Coords? Function()? coords}) { return ConnectionInfoLocation(
   coords: coords != null ? coords() : this.coords,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

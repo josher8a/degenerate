@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-DlpNewDataset copyWith({bool Function()? caseSensitive, String? Function()? description, int Function()? encodingVersion, String? name, bool Function()? secret, }) { return DlpNewDataset(
+DlpNewDataset copyWith({bool? Function()? caseSensitive, String? Function()? description, int? Function()? encodingVersion, String? name, bool? Function()? secret, }) { return DlpNewDataset(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   description: description != null ? description() : this.description,
   encodingVersion: encodingVersion != null ? encodingVersion() : this.encodingVersion,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader'); } 
-FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyperparameters Function()? hyperparameters, }) { return FineTuneReinforcementMethod(
+FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyperparameters? Function()? hyperparameters, }) { return FineTuneReinforcementMethod(
   grader: grader ?? this.grader,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
 ); } 

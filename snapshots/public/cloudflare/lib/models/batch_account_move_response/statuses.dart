@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('moved') && json['moved'] is bool &&
       json.containsKey('tag') && json['tag'] is String; } 
-Statuses copyWith({String Function()? message, bool? moved, String? tag, }) { return Statuses(
+Statuses copyWith({String? Function()? message, bool? moved, String? tag, }) { return Statuses(
   message: message != null ? message() : this.message,
   moved: moved ?? this.moved,
   tag: tag ?? this.tag,

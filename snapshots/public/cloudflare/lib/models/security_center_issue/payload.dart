@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'zone_tag': ?zoneTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detection_method', 'zone_tag'}.contains(key)); } 
-Payload copyWith({String Function()? detectionMethod, String Function()? zoneTag, }) { return Payload(
+Payload copyWith({String? Function()? detectionMethod, String? Function()? zoneTag, }) { return Payload(
   detectionMethod: detectionMethod != null ? detectionMethod() : this.detectionMethod,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 

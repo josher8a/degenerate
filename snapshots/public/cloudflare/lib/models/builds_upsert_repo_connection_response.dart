@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (repoName != null) 'repo_name': repoName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'deleted_on', 'modified_on', 'provider_account_id', 'provider_account_name', 'provider_type', 'repo_connection_uuid', 'repo_id', 'repo_name'}.contains(key)); } 
-BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn Function()? createdOn, BuildsDeletedOn? Function()? deletedOn, BuildsModifiedOn Function()? modifiedOn, BuildsProviderAccountId Function()? providerAccountId, BuildsProviderAccountName Function()? providerAccountName, BuildsScmProviderType Function()? providerType, BuildsRepoConnectionUuid Function()? repoConnectionUuid, BuildsRepoId Function()? repoId, BuildsRepoName Function()? repoName, }) { return BuildsUpsertRepoConnectionResponse(
+BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? createdOn, BuildsDeletedOn? Function()? deletedOn, BuildsModifiedOn? Function()? modifiedOn, BuildsProviderAccountId? Function()? providerAccountId, BuildsProviderAccountName? Function()? providerAccountName, BuildsScmProviderType? Function()? providerType, BuildsRepoConnectionUuid? Function()? repoConnectionUuid, BuildsRepoId? Function()? repoId, BuildsRepoName? Function()? repoName, }) { return BuildsUpsertRepoConnectionResponse(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   deletedOn: deletedOn != null ? deletedOn() : this.deletedOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

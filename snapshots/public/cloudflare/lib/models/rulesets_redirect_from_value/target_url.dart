@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expression', 'value'}.contains(key)); } 
-TargetUrl copyWith({String Function()? expression, String Function()? value, }) { return TargetUrl(
+TargetUrl copyWith({String? Function()? expression, String? Function()? value, }) { return TargetUrl(
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,
 ); } 

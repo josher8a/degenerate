@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('insights') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, InsightsResourcesPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails Function()? paymentDetails, }) { return RadarPaymentEvaluation(
+RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata? Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails? Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, InsightsResourcesPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails? Function()? paymentDetails, }) { return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   createdAt: createdAt ?? this.createdAt,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,

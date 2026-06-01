@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'transit_number': ?transitNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'expected_debit_date', 'fingerprint', 'institution_number', 'last4', 'mandate', 'transit_number'}.contains(key)); } 
-PaymentMethodDetailsAcssDebit copyWith({String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String Function()? mandate, String? Function()? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
+PaymentMethodDetailsAcssDebit copyWith({String? Function()? bankName, String? Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String? Function()? mandate, String? Function()? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
   bankName: bankName != null ? bankName() : this.bankName,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

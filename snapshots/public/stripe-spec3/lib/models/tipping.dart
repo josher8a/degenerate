@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   if (usd != null) 'usd': usd?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aed', 'aud', 'cad', 'chf', 'czk', 'dkk', 'eur', 'gbp', 'gip', 'hkd', 'huf', 'jpy', 'mxn', 'myr', 'nok', 'nzd', 'pln', 'ron', 'sek', 'sgd', 'usd'}.contains(key)); } 
-Tipping copyWith({Aed Function()? aed, Aud Function()? aud, Cad Function()? cad, Chf Function()? chf, Czk Function()? czk, Dkk Function()? dkk, Eur Function()? eur, Gbp Function()? gbp, Gip Function()? gip, Hkd Function()? hkd, Huf Function()? huf, Jpy Function()? jpy, Mxn Function()? mxn, Myr Function()? myr, Nok Function()? nok, Nzd Function()? nzd, Pln Function()? pln, Ron Function()? ron, Sek Function()? sek, Sgd Function()? sgd, Usd Function()? usd, }) { return Tipping(
+Tipping copyWith({Aed? Function()? aed, Aud? Function()? aud, Cad? Function()? cad, Chf? Function()? chf, Czk? Function()? czk, Dkk? Function()? dkk, Eur? Function()? eur, Gbp? Function()? gbp, Gip? Function()? gip, Hkd? Function()? hkd, Huf? Function()? huf, Jpy? Function()? jpy, Mxn? Function()? mxn, Myr? Function()? myr, Nok? Function()? nok, Nzd? Function()? nzd, Pln? Function()? pln, Ron? Function()? ron, Sek? Function()? sek, Sgd? Function()? sgd, Usd? Function()? usd, }) { return Tipping(
   aed: aed != null ? aed() : this.aed,
   aud: aud != null ? aud() : this.aud,
   cad: cad != null ? cad() : this.cad,

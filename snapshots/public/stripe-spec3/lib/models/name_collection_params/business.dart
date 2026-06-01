@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-Business copyWith({bool? enabled, bool Function()? optional, }) { return Business(
+Business copyWith({bool? enabled, bool? Function()? optional, }) { return Business(
   enabled: enabled ?? this.enabled,
   optional: optional != null ? optional() : this.optional,
 ); } 

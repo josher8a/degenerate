@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (exampleCom != null) 'example.com': exampleCom?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'example.com'}.contains(key)); } 
-ScanDomains copyWith({ExampleCom Function()? exampleCom}) { return ScanDomains(
+ScanDomains copyWith({ExampleCom? Function()? exampleCom}) { return ScanDomains(
   exampleCom: exampleCom != null ? exampleCom() : this.exampleCom,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

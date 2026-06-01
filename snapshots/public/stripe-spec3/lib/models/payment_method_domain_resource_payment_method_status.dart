@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PaymentMethodDomainResourcePaymentMethodStatus copyWith({BillingMeterStatus? status, PaymentMethodDomainResourcePaymentMethodStatusDetails Function()? statusDetails, }) { return PaymentMethodDomainResourcePaymentMethodStatus(
+PaymentMethodDomainResourcePaymentMethodStatus copyWith({BillingMeterStatus? status, PaymentMethodDomainResourcePaymentMethodStatusDetails? Function()? statusDetails, }) { return PaymentMethodDomainResourcePaymentMethodStatus(
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
 ); } 

@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('key') && json['key'] is String; } 
-KeySimple copyWith({int? id, String? key, DateTime Function()? createdAt, DateTime? Function()? lastUsed, }) { return KeySimple(
+KeySimple copyWith({int? id, String? key, DateTime? Function()? createdAt, DateTime? Function()? lastUsed, }) { return KeySimple(
   id: id ?? this.id,
   key: key ?? this.key,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

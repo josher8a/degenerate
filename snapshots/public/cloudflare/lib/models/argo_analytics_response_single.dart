@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-ArgoAnalyticsResponseSingle copyWith({Map<String, dynamic> Function()? result}) { return ArgoAnalyticsResponseSingle(
+ArgoAnalyticsResponseSingle copyWith({Map<String, dynamic>? Function()? result}) { return ArgoAnalyticsResponseSingle(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

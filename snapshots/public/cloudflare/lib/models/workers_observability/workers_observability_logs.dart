@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('invocation_logs') && json['invocation_logs'] is bool; } 
-WorkersObservabilityLogs copyWith({List<String> Function()? destinations, bool? enabled, double? Function()? headSamplingRate, bool? invocationLogs, bool Function()? persist, }) { return WorkersObservabilityLogs(
+WorkersObservabilityLogs copyWith({List<String>? Function()? destinations, bool? enabled, double? Function()? headSamplingRate, bool? invocationLogs, bool Function()? persist, }) { return WorkersObservabilityLogs(
   destinations: destinations != null ? destinations() : this.destinations,
   enabled: enabled ?? this.enabled,
   headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,

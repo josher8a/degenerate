@@ -38,7 +38,7 @@ final MqHttpConsumerResponse mqHttpConsumerResponse;
 
 @override String get type { return 'http_pull'; } 
 @override Map<String, dynamic> toJson() { return {...mqHttpConsumerResponse.toJson(), 'type': type}; } 
-MqConsumerResponseHttpPull copyWith({MqIdentifier Function()? consumerId, DateTime Function()? createdOn, String Function()? deadLetterQueue, MqQueueName Function()? queueName, MqHttpConsumerRequestSettings Function()? settings, }) { return MqConsumerResponseHttpPull(mqHttpConsumerResponse.copyWith(
+MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseHttpPull(mqHttpConsumerResponse.copyWith(
   consumerId: consumerId,
   createdOn: createdOn,
   deadLetterQueue: deadLetterQueue,
@@ -62,7 +62,7 @@ final MqWorkerConsumerResponse mqWorkerConsumerResponse;
 
 @override String get type { return 'worker'; } 
 @override Map<String, dynamic> toJson() { return {...mqWorkerConsumerResponse.toJson(), 'type': type}; } 
-MqConsumerResponseWorker copyWith({MqIdentifier Function()? consumerId, DateTime Function()? createdOn, String Function()? deadLetterQueue, MqQueueName Function()? queueName, MqScriptName Function()? scriptName, MqWorkerConsumerRequestSettings Function()? settings, }) { return MqConsumerResponseWorker(mqWorkerConsumerResponse.copyWith(
+MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseWorker(mqWorkerConsumerResponse.copyWith(
   consumerId: consumerId,
   createdOn: createdOn,
   deadLetterQueue: deadLetterQueue,

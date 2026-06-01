@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_adds', 'content_removes', 'indicator_type', 'ip', 'security_adds', 'security_removes', 'url'}.contains(key)); } 
-IntelMiscategorization copyWith({List<int> Function()? contentAdds, List<int> Function()? contentRemoves, IndicatorType Function()? indicatorType, String? Function()? ip, List<int> Function()? securityAdds, List<int> Function()? securityRemoves, String Function()? url, }) { return IntelMiscategorization(
+IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? Function()? contentRemoves, IndicatorType? Function()? indicatorType, String? Function()? ip, List<int>? Function()? securityAdds, List<int>? Function()? securityRemoves, String? Function()? url, }) { return IntelMiscategorization(
   contentAdds: contentAdds != null ? contentAdds() : this.contentAdds,
   contentRemoves: contentRemoves != null ? contentRemoves() : this.contentRemoves,
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,

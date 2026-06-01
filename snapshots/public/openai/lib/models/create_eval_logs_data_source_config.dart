@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CreateEvalLogsDataSourceConfig copyWith({CodeInterpreterOutputLogsType? type, Map<String, dynamic> Function()? metadata, }) { return CreateEvalLogsDataSourceConfig(
+CreateEvalLogsDataSourceConfig copyWith({CodeInterpreterOutputLogsType? type, Map<String, dynamic>? Function()? metadata, }) { return CreateEvalLogsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

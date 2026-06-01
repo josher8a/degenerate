@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (visaCheckout != null) 'visa_checkout': visaCheckout?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletAmexExpressCheckout Function()? amexExpressCheckout, PaymentMethodDetailsCardWalletApplePay Function()? applePay, String? Function()? dynamicLast4, PaymentMethodDetailsCardWalletGooglePay Function()? googlePay, PaymentMethodDetailsCardWalletLink Function()? link, PaymentMethodDetailsCardWalletMasterpass Function()? masterpass, PaymentMethodDetailsCardWalletSamsungPay Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodDetailsCardWalletVisaCheckout Function()? visaCheckout, }) { return PaymentMethodDetailsCardWallet(
+PaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodDetailsCardWalletApplePay? Function()? applePay, String? Function()? dynamicLast4, PaymentMethodDetailsCardWalletGooglePay? Function()? googlePay, PaymentMethodDetailsCardWalletLink? Function()? link, PaymentMethodDetailsCardWalletMasterpass? Function()? masterpass, PaymentMethodDetailsCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodDetailsCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodDetailsCardWallet(
   amexExpressCheckout: amexExpressCheckout != null ? amexExpressCheckout() : this.amexExpressCheckout,
   applePay: applePay != null ? applePay() : this.applePay,
   dynamicLast4: dynamicLast4 != null ? dynamicLast4() : this.dynamicLast4,

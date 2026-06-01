@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
       json.containsKey('type') && json['type'] is String; } 
-AccessSchemasBookmarkProps copyWith({dynamic Function()? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
+AccessSchemasBookmarkProps copyWith({dynamic Function()? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
   domain: domain != null ? domain() : this.domain,
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,

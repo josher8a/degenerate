@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') &&
       json.containsKey('type'); } 
-RealtimeSessionCreateResponseGa copyWith({ClientSecret? clientSecret, RealtimeSessionCreateRequestGaType? type, List<OutputModalities> Function()? outputModalities, RealtimeSessionCreateRequestGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<Include> Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
+RealtimeSessionCreateResponseGa copyWith({ClientSecret? clientSecret, RealtimeSessionCreateRequestGaType? type, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
   clientSecret: clientSecret ?? this.clientSecret,
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,

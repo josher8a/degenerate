@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel Function()? maskingLevel, String? Function()? publicKey, DateTime? updatedAt, }) { return DlpPayloadLogSetting(
+DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, String? Function()? publicKey, DateTime? updatedAt, }) { return DlpPayloadLogSetting(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
   updatedAt: updatedAt ?? this.updatedAt,

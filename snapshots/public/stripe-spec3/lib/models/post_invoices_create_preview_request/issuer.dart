@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Issuer copyWith({String Function()? account, ConnectAccountReferenceType? type, }) { return Issuer(
+Issuer copyWith({String? Function()? account, ConnectAccountReferenceType? type, }) { return Issuer(
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 

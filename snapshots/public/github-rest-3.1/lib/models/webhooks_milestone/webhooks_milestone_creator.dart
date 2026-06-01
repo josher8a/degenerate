@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String; } 
-WebhooksMilestoneCreator copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int? id, String? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, User12Type Function()? type, Uri Function()? url, String Function()? userViewType, }) { return WebhooksMilestoneCreator(
+WebhooksMilestoneCreator copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, String? Function()? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, User12Type? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) { return WebhooksMilestoneCreator(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email != null ? email() : this.email,

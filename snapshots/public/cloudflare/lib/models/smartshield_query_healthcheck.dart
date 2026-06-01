@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name'); } 
-SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails Function()? consecutiveFails, SmartshieldConsecutiveSuccesses Function()? consecutiveSuccesses, SmartshieldDescription Function()? description, SmartshieldHttpConfig Function()? httpConfig, SmartshieldInterval Function()? interval, SmartshieldName? name, SmartshieldRetries Function()? retries, SmartshieldSuspended Function()? suspended, SmartshieldTcpConfig Function()? tcpConfig, SmartshieldTimeout Function()? timeout, SmartshieldType Function()? type, }) { return SmartshieldQueryHealthcheck(
+SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, List<SmartshieldCheckRegions2>? Function()? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
   address: address ?? this.address,
   checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,

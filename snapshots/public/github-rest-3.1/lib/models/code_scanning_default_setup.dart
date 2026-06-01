@@ -153,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   if (schedule != null) 'schedule': schedule?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'languages', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'updated_at', 'schedule'}.contains(key)); } 
-CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState Function()? state, List<CodeScanningDefaultSetupLanguages> Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, QuerySuite Function()? querySuite, ThreatModel Function()? threatModel, DateTime? Function()? updatedAt, Schedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
+CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState? Function()? state, List<CodeScanningDefaultSetupLanguages>? Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, QuerySuite? Function()? querySuite, ThreatModel? Function()? threatModel, DateTime? Function()? updatedAt, Schedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
   state: state != null ? state() : this.state,
   languages: languages != null ? languages() : this.languages,
   runnerType: runnerType != null ? runnerType() : this.runnerType,

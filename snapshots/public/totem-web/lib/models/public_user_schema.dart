@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_avatar_type') &&
       json.containsKey('date_created') && json['date_created'] is String; } 
-PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Function()? circleCount, String? Function()? name, String? Function()? slug, bool Function()? isStaff, String Function()? profileAvatarSeed, String? Function()? profileImage, DateTime? dateCreated, }) { return PublicUserSchema(
+PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Function()? circleCount, String? Function()? name, String? Function()? slug, bool Function()? isStaff, String? Function()? profileAvatarSeed, String? Function()? profileImage, DateTime? dateCreated, }) { return PublicUserSchema(
   profileAvatarType: profileAvatarType ?? this.profileAvatarType,
   circleCount: circleCount != null ? circleCount() : this.circleCount,
   name: name != null ? name() : this.name,

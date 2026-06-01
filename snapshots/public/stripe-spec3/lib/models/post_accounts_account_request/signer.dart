@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'person': ?person,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'person'}.contains(key)); } 
-Signer copyWith({String Function()? person}) { return Signer(
+Signer copyWith({String? Function()? person}) { return Signer(
   person: person != null ? person() : this.person,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

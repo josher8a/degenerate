@@ -197,7 +197,7 @@ Map<String, dynamic> toJson() { return {
   if (unlockDomain != null) 'unlock_domain': unlockDomain?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accept_foa', 'approve_transfer', 'can_cancel_transfer', 'disable_privacy', 'enter_auth_code', 'unlock_domain'}.contains(key)); } 
-TransferIn copyWith({AcceptFoa Function()? acceptFoa, ApproveTransfer Function()? approveTransfer, bool Function()? canCancelTransfer, DisablePrivacy Function()? disablePrivacy, EnterAuthCode Function()? enterAuthCode, UnlockDomain Function()? unlockDomain, }) { return TransferIn(
+TransferIn copyWith({AcceptFoa? Function()? acceptFoa, ApproveTransfer? Function()? approveTransfer, bool? Function()? canCancelTransfer, DisablePrivacy? Function()? disablePrivacy, EnterAuthCode? Function()? enterAuthCode, UnlockDomain? Function()? unlockDomain, }) { return TransferIn(
   acceptFoa: acceptFoa != null ? acceptFoa() : this.acceptFoa,
   approveTransfer: approveTransfer != null ? approveTransfer() : this.approveTransfer,
   canCancelTransfer: canCancelTransfer != null ? canCancelTransfer() : this.canCancelTransfer,

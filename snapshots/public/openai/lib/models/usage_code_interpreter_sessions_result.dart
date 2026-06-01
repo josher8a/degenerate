@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'project_id': ?projectId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
-UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultObject? object, int Function()? numSessions, String? Function()? projectId, }) { return UsageCodeInterpreterSessionsResult(
+UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultObject? object, int? Function()? numSessions, String? Function()? projectId, }) { return UsageCodeInterpreterSessionsResult(
   object: object ?? this.object,
   numSessions: numSessions != null ? numSessions() : this.numSessions,
   projectId: projectId != null ? projectId() : this.projectId,

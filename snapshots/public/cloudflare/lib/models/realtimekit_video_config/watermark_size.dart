@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'height', 'width'}.contains(key)); } 
-WatermarkSize copyWith({int Function()? height, int Function()? width, }) { return WatermarkSize(
+WatermarkSize copyWith({int? Function()? height, int? Function()? width, }) { return WatermarkSize(
   height: height != null ? height() : this.height,
   width: width != null ? width() : this.width,
 ); } 

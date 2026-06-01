@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'api_access_enabled', 'id', 'permissions', 'roles', 'status'}.contains(key)); } 
-IamMembership copyWith({IamAccount Function()? account, AccessEnabled? Function()? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier Function()? id, IamPermissions Function()? permissions, List<String> Function()? roles, IamSchemasStatus Function()? status, }) { return IamMembership(
+IamMembership copyWith({IamAccount? Function()? account, AccessEnabled? Function()? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier? Function()? id, IamPermissions? Function()? permissions, List<String>? Function()? roles, IamSchemasStatus? Function()? status, }) { return IamMembership(
   account: account != null ? account() : this.account,
   apiAccessEnabled: apiAccessEnabled != null ? apiAccessEnabled() : this.apiAccessEnabled,
   id: id != null ? id() : this.id,

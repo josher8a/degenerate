@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('organization') &&
       json.containsKey('user'); } 
-OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions Function()? permissions, }) { return OrgMembership(
+OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions? Function()? permissions, }) { return OrgMembership(
   url: url ?? this.url,
   state: state ?? this.state,
   role: role ?? this.role,

@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('property_name') && json['property_name'] is String &&
       json.containsKey('value_type'); } 
-CustomProperty copyWith({String? propertyName, Uri Function()? url, CustomPropertySourceType Function()? sourceType, ValueType? valueType, bool Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomProperty(
+CustomProperty copyWith({String? propertyName, Uri? Function()? url, CustomPropertySourceType? Function()? sourceType, ValueType? valueType, bool? Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool? Function()? requireExplicitValues, }) { return CustomProperty(
   propertyName: propertyName ?? this.propertyName,
   url: url != null ? url() : this.url,
   sourceType: sourceType != null ? sourceType() : this.sourceType,

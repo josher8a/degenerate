@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'result_info'}.contains(key)); } 
-DurableObjectsNamespaceListObjectsResponse copyWith({List<WorkersObject> Function()? result, DurableObjectsNamespaceListObjectsResponseResultInfo Function()? resultInfo, }) { return DurableObjectsNamespaceListObjectsResponse(
+DurableObjectsNamespaceListObjectsResponse copyWith({List<WorkersObject>? Function()? result, DurableObjectsNamespaceListObjectsResponseResultInfo? Function()? resultInfo, }) { return DurableObjectsNamespaceListObjectsResponse(
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 

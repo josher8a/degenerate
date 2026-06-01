@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
-AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
+AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
   mcc: mcc != null ? mcc() : this.mcc,

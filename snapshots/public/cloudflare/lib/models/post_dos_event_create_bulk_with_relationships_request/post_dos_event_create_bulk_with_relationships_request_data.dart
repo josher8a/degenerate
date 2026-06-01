@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('event') && json['event'] is String &&
       json.containsKey('raw') &&
       json.containsKey('tlp') && json['tlp'] is String; } 
-PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double Function()? accountId, String? Function()? attacker, String Function()? attackerCountry, String? category, String Function()? datasetId, DateTime? date, String? event, String Function()? indicator, String Function()? indicatorType, List<PostEventCreateRequestIndicators> Function()? indicators, String Function()? insight, PostEventCreateRequestRaw? raw, List<String> Function()? tags, String Function()? targetCountry, String Function()? targetIndustry, String? tlp, }) { return PostDosEventCreateBulkWithRelationshipsRequestData(
+PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double? Function()? accountId, String? Function()? attacker, String? Function()? attackerCountry, String? category, String? Function()? datasetId, DateTime? date, String? event, String? Function()? indicator, String? Function()? indicatorType, List<PostEventCreateRequestIndicators>? Function()? indicators, String? Function()? insight, PostEventCreateRequestRaw? raw, List<String>? Function()? tags, String? Function()? targetCountry, String? Function()? targetIndustry, String? tlp, }) { return PostDosEventCreateBulkWithRelationshipsRequestData(
   accountId: accountId != null ? accountId() : this.accountId,
   attacker: attacker != null ? attacker() : this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'submission_id': ?submissionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_processed', 'scan_complete', 'status_code', 'submission_id'}.contains(key)); } 
-ScanStatus copyWith({String Function()? lastProcessed, bool Function()? scanComplete, int Function()? statusCode, int Function()? submissionId, }) { return ScanStatus(
+ScanStatus copyWith({String? Function()? lastProcessed, bool? Function()? scanComplete, int? Function()? statusCode, int? Function()? submissionId, }) { return ScanStatus(
   lastProcessed: lastProcessed != null ? lastProcessed() : this.lastProcessed,
   scanComplete: scanComplete != null ? scanComplete() : this.scanComplete,
   statusCode: statusCode != null ? statusCode() : this.statusCode,

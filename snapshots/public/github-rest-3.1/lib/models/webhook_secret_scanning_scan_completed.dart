@@ -164,7 +164,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('source') &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('completed_at') && json['completed_at'] is String; } 
-WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? action, WebhookSecretScanningScanCompletedType? type, WebhookSecretScanningScanCompletedSource? source, DateTime? startedAt, DateTime? completedAt, List<String>? Function()? secretTypes, String? Function()? customPatternName, CustomPatternScope? Function()? customPatternScope, RepositoryWebhooks Function()? repository, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookSecretScanningScanCompleted(
+WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? action, WebhookSecretScanningScanCompletedType? type, WebhookSecretScanningScanCompletedSource? source, DateTime? startedAt, DateTime? completedAt, List<String>? Function()? secretTypes, String? Function()? customPatternName, CustomPatternScope? Function()? customPatternScope, RepositoryWebhooks? Function()? repository, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, SimpleUser? Function()? sender, }) { return WebhookSecretScanningScanCompleted(
   action: action ?? this.action,
   type: type ?? this.type,
   source: source ?? this.source,

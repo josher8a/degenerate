@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
-CurrencyOption copyWith({CustomUnitAmount? Function()? customUnitAmount, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CurrencyOption(
+CurrencyOption copyWith({CustomUnitAmount? Function()? customUnitAmount, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier>? Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CurrencyOption(
   customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   tiers: tiers != null ? tiers() : this.tiers,

@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCustomersCustomerFundingInstructionsRequestBankTransfer copyWith({EuBankTransfer Function()? euBankTransfer, List<BankTransferRequestedAddressTypes> Function()? requestedAddressTypes, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
+PostCustomersCustomerFundingInstructionsRequestBankTransfer copyWith({EuBankTransfer? Function()? euBankTransfer, List<BankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type ?? this.type,

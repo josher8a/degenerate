@@ -48,7 +48,7 @@ final ContentFile contentFile;
 
 @override String get type { return 'file'; } 
 @override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
-ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String Function()? target, String Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
+ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
   encoding: encoding,
   size: size,
   name: name,

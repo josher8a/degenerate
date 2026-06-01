@@ -105,7 +105,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('_links') &&
       json.containsKey('original_commit_id') && json['original_commit_id'] is String &&
       json.containsKey('reactions'); } 
-PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url, int? Function()? pullRequestReviewId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, String? Function()? subjectType, String? commitId, CommentUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, WebhooksReviewCommentLinks? links, String? originalCommitId, CommentReactions? reactions, int Function()? inReplyToId, }) { return PullRequestReviewCommentEventComment(
+PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url, int? Function()? pullRequestReviewId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, String? Function()? subjectType, String? commitId, CommentUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, WebhooksReviewCommentLinks? links, String? originalCommitId, CommentReactions? reactions, int? Function()? inReplyToId, }) { return PullRequestReviewCommentEventComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

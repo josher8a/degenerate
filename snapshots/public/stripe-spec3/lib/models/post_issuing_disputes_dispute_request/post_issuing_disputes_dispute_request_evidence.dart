@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceNotAsDescribed != null) 'service_not_as_described': serviceNotAsDescribed?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'canceled', 'duplicate', 'fraudulent', 'merchandise_not_as_described', 'no_valid_authorization', 'not_received', 'other', 'reason', 'service_not_as_described'}.contains(key)); } 
-PostIssuingDisputesDisputeRequestEvidence copyWith({EvidenceCanceled Function()? canceled, EvidenceDuplicate Function()? duplicate, EvidenceFraudulent Function()? fraudulent, EvidenceMerchandiseNotAsDescribed Function()? merchandiseNotAsDescribed, EvidenceNoValidAuthorization Function()? noValidAuthorization, EvidenceNotReceived Function()? notReceived, EvidenceOther Function()? other, IssuingDisputeEvidenceReason Function()? reason, EvidenceServiceNotAsDescribed Function()? serviceNotAsDescribed, }) { return PostIssuingDisputesDisputeRequestEvidence(
+PostIssuingDisputesDisputeRequestEvidence copyWith({EvidenceCanceled? Function()? canceled, EvidenceDuplicate? Function()? duplicate, EvidenceFraudulent? Function()? fraudulent, EvidenceMerchandiseNotAsDescribed? Function()? merchandiseNotAsDescribed, EvidenceNoValidAuthorization? Function()? noValidAuthorization, EvidenceNotReceived? Function()? notReceived, EvidenceOther? Function()? other, IssuingDisputeEvidenceReason? Function()? reason, EvidenceServiceNotAsDescribed? Function()? serviceNotAsDescribed, }) { return PostIssuingDisputesDisputeRequestEvidence(
   canceled: canceled != null ? canceled() : this.canceled,
   duplicate: duplicate != null ? duplicate() : this.duplicate,
   fraudulent: fraudulent != null ? fraudulent() : this.fraudulent,

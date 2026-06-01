@@ -55,7 +55,7 @@ final CustomToolParam customToolParam;
 
 @override String get type { return 'custom'; } 
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
-NamespaceToolParamToolsCustom copyWith({String? name, String Function()? description, CustomToolParamFormat Function()? format, bool Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
+NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
   name: name,
   description: description,
   format: format,

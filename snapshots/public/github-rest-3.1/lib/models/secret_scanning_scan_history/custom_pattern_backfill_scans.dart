@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'pattern_scope': ?patternScope,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'status', 'completed_at', 'started_at', 'pattern_name', 'pattern_scope'}.contains(key)); } 
-CustomPatternBackfillScans copyWith({String Function()? type, String Function()? status, DateTime? Function()? completedAt, DateTime? Function()? startedAt, String Function()? patternName, String Function()? patternScope, }) { return CustomPatternBackfillScans(
+CustomPatternBackfillScans copyWith({String? Function()? type, String? Function()? status, DateTime? Function()? completedAt, DateTime? Function()? startedAt, String? Function()? patternName, String? Function()? patternScope, }) { return CustomPatternBackfillScans(
   type: type != null ? type() : this.type,
   status: status != null ? status() : this.status,
   completedAt: completedAt != null ? completedAt() : this.completedAt,

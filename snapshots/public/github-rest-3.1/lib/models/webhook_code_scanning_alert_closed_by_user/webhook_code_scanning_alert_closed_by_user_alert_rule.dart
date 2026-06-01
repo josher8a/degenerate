@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('severity'); } 
-WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, String Function()? fullDescription, String? Function()? help, String? Function()? helpUri, String? id, String Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, List<String>? Function()? tags, }) { return WebhookCodeScanningAlertClosedByUserAlertRule(
+WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, String? Function()? fullDescription, String? Function()? help, String? Function()? helpUri, String? id, String? Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, List<String>? Function()? tags, }) { return WebhookCodeScanningAlertClosedByUserAlertRule(
   description: description ?? this.description,
   fullDescription: fullDescription != null ? fullDescription() : this.fullDescription,
   help: help != null ? help() : this.help,

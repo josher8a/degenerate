@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsWechatPay copyWith({String? Function()? appId, PaymentMethodOptionsWechatPayClient? Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsWechatPay(
+PaymentMethodOptionsWechatPay copyWith({String? Function()? appId, PaymentMethodOptionsWechatPayClient? Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsWechatPay(
   appId: appId != null ? appId() : this.appId,
   client: client != null ? client() : this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

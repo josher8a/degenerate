@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<Entries> Function()? entries, String Function()? encoding, ContentDirectoryLinks? links, }) { return ContentTree(
+ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String? Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<Entries>? Function()? entries, String? Function()? encoding, ContentDirectoryLinks? links, }) { return ContentTree(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,

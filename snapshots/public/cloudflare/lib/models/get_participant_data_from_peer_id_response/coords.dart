@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'longitude': ?longitude,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'latitude', 'longitude'}.contains(key)); } 
-Coords copyWith({double Function()? latitude, double Function()? longitude, }) { return Coords(
+Coords copyWith({double? Function()? latitude, double? Function()? longitude, }) { return Coords(
   latitude: latitude != null ? latitude() : this.latitude,
   longitude: longitude != null ? longitude() : this.longitude,
 ); } 

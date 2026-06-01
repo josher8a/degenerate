@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (usageType != null) 'usage_type': usageType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostPricesRequestRecurring copyWith({GetPricesRecurringInterval? interval, int Function()? intervalCount, String Function()? meter, UsageType Function()? usageType, }) { return PostPricesRequestRecurring(
+PostPricesRequestRecurring copyWith({GetPricesRecurringInterval? interval, int? Function()? intervalCount, String? Function()? meter, UsageType? Function()? usageType, }) { return PostPricesRequestRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   meter: meter != null ? meter() : this.meter,

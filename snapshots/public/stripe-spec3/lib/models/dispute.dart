@@ -198,7 +198,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('status'); } 
-Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, ChargePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, ChargePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   charge: charge ?? this.charge,

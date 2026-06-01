@@ -107,7 +107,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('platform') && json['platform'] is String &&
       json.containsKey('public_ip_enabled') && json['public_ip_enabled'] is bool; } 
-ActionsHostedRunner copyWith({int? id, String? name, int Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp> Function()? publicIps, DateTime? Function()? lastActiveOn, bool Function()? imageGen, }) { return ActionsHostedRunner(
+ActionsHostedRunner copyWith({int? id, String? name, int? Function()? runnerGroupId, ActionsHostedRunnerPoolImage? Function()? imageDetails, ActionsHostedRunnerMachineSpec? machineSizeDetails, ActionsHostedRunnerStatus? status, String? platform, int Function()? maximumRunners, bool? publicIpEnabled, List<PublicIp>? Function()? publicIps, DateTime? Function()? lastActiveOn, bool? Function()? imageGen, }) { return ActionsHostedRunner(
   id: id ?? this.id,
   name: name ?? this.name,
   runnerGroupId: runnerGroupId != null ? runnerGroupId() : this.runnerGroupId,

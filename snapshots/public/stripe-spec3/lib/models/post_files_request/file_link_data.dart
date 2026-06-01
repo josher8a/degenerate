@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('create') && json['create'] is bool; } 
-FileLinkData copyWith({bool? create, int Function()? expiresAt, Metadata Function()? metadata, }) { return FileLinkData(
+FileLinkData copyWith({bool? create, int? Function()? expiresAt, Metadata? Function()? metadata, }) { return FileLinkData(
   create: create ?? this.create,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   metadata: metadata != null ? metadata() : this.metadata,

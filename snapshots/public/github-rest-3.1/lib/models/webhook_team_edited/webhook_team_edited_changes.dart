@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (repository != null) 'repository': repository?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'privacy', 'notification_setting', 'repository'}.contains(key)); } 
-WebhookTeamEditedChanges copyWith({WebhookLabelEditedChangesDescription Function()? description, WebhookLabelEditedChangesName Function()? name, ChangesPrivacy Function()? privacy, ChangesNotificationSetting Function()? notificationSetting, WebhookTeamEditedChangesRepository Function()? repository, }) { return WebhookTeamEditedChanges(
+WebhookTeamEditedChanges copyWith({WebhookLabelEditedChangesDescription? Function()? description, WebhookLabelEditedChangesName? Function()? name, ChangesPrivacy? Function()? privacy, ChangesNotificationSetting? Function()? notificationSetting, WebhookTeamEditedChangesRepository? Function()? repository, }) { return WebhookTeamEditedChanges(
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
   privacy: privacy != null ? privacy() : this.privacy,

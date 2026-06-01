@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, ScimConfig Function()? scimConfig, AccessIdentityProviderType? type, }) { return AccessIdentityProvider(
+AccessIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, ScimConfig? Function()? scimConfig, AccessIdentityProviderType? type, }) { return AccessIdentityProvider(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'methods', 'schemes', 'url'}.contains(key)); } 
-Variant1Request copyWith({List<FirewallMethods2> Function()? methods, List<String> Function()? schemes, FirewallUrl Function()? url, }) { return Variant1Request(
+Variant1Request copyWith({List<FirewallMethods2>? Function()? methods, List<String>? Function()? schemes, FirewallUrl? Function()? url, }) { return Variant1Request(
   methods: methods != null ? methods() : this.methods,
   schemes: schemes != null ? schemes() : this.schemes,
   url: url != null ? url() : this.url,

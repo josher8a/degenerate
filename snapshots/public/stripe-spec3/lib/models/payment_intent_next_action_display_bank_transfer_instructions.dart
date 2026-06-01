@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress> Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
+PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress>? Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
   amountRemaining: amountRemaining != null ? amountRemaining() : this.amountRemaining,
   currency: currency != null ? currency() : this.currency,
   financialAddresses: financialAddresses != null ? financialAddresses() : this.financialAddresses,

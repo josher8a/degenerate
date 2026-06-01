@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'status': status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
-LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationDocument? Function()? additionalDocument, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocument Function()? document, String? status, }) { return LegalEntityPersonVerification(
+LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationDocument? Function()? additionalDocument, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocument? Function()? document, String? status, }) { return LegalEntityPersonVerification(
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   details: details != null ? details() : this.details,
   detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,

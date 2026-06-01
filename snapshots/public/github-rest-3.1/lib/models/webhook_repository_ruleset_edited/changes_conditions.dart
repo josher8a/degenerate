@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (updated != null) 'updated': updated?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'added', 'deleted', 'updated'}.contains(key)); } 
-ChangesConditions copyWith({List<RepositoryRulesetConditions> Function()? added, List<RepositoryRulesetConditions> Function()? deleted, List<ConditionsUpdated> Function()? updated, }) { return ChangesConditions(
+ChangesConditions copyWith({List<RepositoryRulesetConditions>? Function()? added, List<RepositoryRulesetConditions>? Function()? deleted, List<ConditionsUpdated>? Function()? updated, }) { return ChangesConditions(
   added: added != null ? added() : this.added,
   deleted: deleted != null ? deleted() : this.deleted,
   updated: updated != null ? updated() : this.updated,

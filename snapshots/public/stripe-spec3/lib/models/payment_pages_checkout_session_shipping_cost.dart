@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num; } 
-PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, InvoicesResourceShippingCostShippingRate? Function()? shippingRate, List<LineItemsTaxAmount> Function()? taxes, }) { return PaymentPagesCheckoutSessionShippingCost(
+PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, InvoicesResourceShippingCostShippingRate? Function()? shippingRate, List<LineItemsTaxAmount>? Function()? taxes, }) { return PaymentPagesCheckoutSessionShippingCost(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTax: amountTax ?? this.amountTax,
   amountTotal: amountTotal ?? this.amountTotal,

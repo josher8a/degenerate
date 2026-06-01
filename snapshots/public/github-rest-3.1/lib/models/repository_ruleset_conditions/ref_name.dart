@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'exclude': ?exclude,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include', 'exclude'}.contains(key)); } 
-RefName copyWith({List<String> Function()? include, List<String> Function()? exclude, }) { return RefName(
+RefName copyWith({List<String>? Function()? include, List<String>? Function()? exclude, }) { return RefName(
   include: include != null ? include() : this.include,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 

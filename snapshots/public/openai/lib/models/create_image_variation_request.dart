@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String Function()? user, }) { return CreateImageVariationRequest(
+CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
   image: image ?? this.image,
   model: model != null ? model() : this.model,
   n: n != null ? n() : this.n,

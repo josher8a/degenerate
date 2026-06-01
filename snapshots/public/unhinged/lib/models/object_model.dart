@@ -152,8 +152,8 @@ final class ObjectModel {
 
   ObjectModel copyWith({
     bool? $return,
-    NaN Function()? naN,
-    Infinity Function()? infinity,
+    NaN? Function()? naN,
+    Infinity? Function()? infinity,
   }) {
     return ObjectModel(
       $return: $return ?? this.$return,

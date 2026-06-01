@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'values': ?values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'values'}.contains(key)); } 
-VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier Function()? id, Map<String, dynamic> Function()? metadata, String? Function()? namespace, List<double> Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
+VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Function()? id, Map<String, dynamic>? Function()? metadata, String? Function()? namespace, List<double>? Function()? values, }) { return VectorizeIndexGetVectorsByIdResponse2(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   namespace: namespace != null ? namespace() : this.namespace,

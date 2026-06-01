@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (topicRelation != null) 'topic_relation': topicRelation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'topic_relation'}.contains(key)); } 
-Aliases copyWith({TopicRelation Function()? topicRelation}) { return Aliases(
+Aliases copyWith({TopicRelation? Function()? topicRelation}) { return Aliases(
   topicRelation: topicRelation != null ? topicRelation() : this.topicRelation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

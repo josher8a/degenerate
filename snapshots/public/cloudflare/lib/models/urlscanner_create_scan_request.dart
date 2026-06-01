@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'visibility': visibility.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-UrlscannerCreateScanRequest copyWith({UrlscannerCreateScanRequest2Country Function()? country, Map<String, String> Function()? customHeaders, List<ScreenshotsResolutions> Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanRequest(
+UrlscannerCreateScanRequest copyWith({UrlscannerCreateScanRequest2Country? Function()? country, Map<String, String>? Function()? customHeaders, List<ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanRequest(
   country: country != null ? country() : this.country,
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,

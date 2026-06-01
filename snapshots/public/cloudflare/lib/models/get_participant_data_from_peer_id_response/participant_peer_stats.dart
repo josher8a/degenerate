@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (precallNetworkInformation != null) 'precall_network_information': precallNetworkInformation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_info', 'events', 'ip_information', 'precall_network_information'}.contains(key)); } 
-ParticipantPeerStats copyWith({ParticipantPeerStatsDeviceInfo Function()? deviceInfo, List<ParticipantPeerStatsEvents> Function()? events, ParticipantPeerStatsIpInformation Function()? ipInformation, ParticipantPeerStatsPrecallNetworkInformation Function()? precallNetworkInformation, }) { return ParticipantPeerStats(
+ParticipantPeerStats copyWith({ParticipantPeerStatsDeviceInfo? Function()? deviceInfo, List<ParticipantPeerStatsEvents>? Function()? events, ParticipantPeerStatsIpInformation? Function()? ipInformation, ParticipantPeerStatsPrecallNetworkInformation? Function()? precallNetworkInformation, }) { return ParticipantPeerStats(
   deviceInfo: deviceInfo != null ? deviceInfo() : this.deviceInfo,
   events: events != null ? events() : this.events,
   ipInformation: ipInformation != null ? ipInformation() : this.ipInformation,

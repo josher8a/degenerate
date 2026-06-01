@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'sql_name': ?sqlName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CloudflarePipelinesSourceField copyWith({String? Function()? metadataKey, String? name, bool Function()? $required, String Function()? sqlName, }) { return CloudflarePipelinesSourceField(
+CloudflarePipelinesSourceField copyWith({String? Function()? metadataKey, String? name, bool? Function()? $required, String? Function()? sqlName, }) { return CloudflarePipelinesSourceField(
   metadataKey: metadataKey != null ? metadataKey() : this.metadataKey,
   name: name ?? this.name,
   $required: $required != null ? $required() : this.$required,

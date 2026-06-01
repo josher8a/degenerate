@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ares_trans_status', 'cryptogram', 'electronic_commerce_indicator', 'network_options', 'requestor_challenge_indicator', 'transaction_id', 'version'}.contains(key)); } 
-CardThreeDSecure copyWith({AresTransStatus Function()? aresTransStatus, String Function()? cryptogram, ThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, NetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String Function()? transactionId, ThreeDSecureVersion Function()? version, }) { return CardThreeDSecure(
+CardThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? Function()? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? Function()? transactionId, ThreeDSecureVersion? Function()? version, }) { return CardThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram != null ? cryptogram() : this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

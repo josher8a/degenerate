@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'tlp': ?tlp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
-PostEventCreateRequestRaw copyWith({Map<String, dynamic>? Function()? data, String Function()? source, String Function()? tlp, }) { return PostEventCreateRequestRaw(
+PostEventCreateRequestRaw copyWith({Map<String, dynamic>? Function()? data, String? Function()? source, String? Function()? tlp, }) { return PostEventCreateRequestRaw(
   data: data != null ? data() : this.data,
   source: source != null ? source() : this.source,
   tlp: tlp != null ? tlp() : this.tlp,

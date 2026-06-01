@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'conditions': ?conditions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions'}.contains(key)); } 
-ConditionalProperties copyWith({Map<String, dynamic> Function()? conditions}) { return ConditionalProperties(
+ConditionalProperties copyWith({Map<String, dynamic>? Function()? conditions}) { return ConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

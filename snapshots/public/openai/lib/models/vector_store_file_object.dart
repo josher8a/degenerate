@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy? Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,

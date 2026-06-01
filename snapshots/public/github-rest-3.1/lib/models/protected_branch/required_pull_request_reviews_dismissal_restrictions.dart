@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('users') &&
       json.containsKey('teams'); } 
-RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration> Function()? apps, }) { return RequiredPullRequestReviewsDismissalRestrictions(
+RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration>? Function()? apps, }) { return RequiredPullRequestReviewsDismissalRestrictions(
   url: url ?? this.url,
   usersUrl: usersUrl ?? this.usersUrl,
   teamsUrl: teamsUrl ?? this.teamsUrl,

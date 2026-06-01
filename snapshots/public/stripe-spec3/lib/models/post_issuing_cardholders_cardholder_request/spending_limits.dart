@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('interval'); } 
-SpendingLimits copyWith({int? amount, List<Categories> Function()? categories, IssuingCardSpendingLimitInterval? interval, }) { return SpendingLimits(
+SpendingLimits copyWith({int? amount, List<Categories>? Function()? categories, IssuingCardSpendingLimitInterval? interval, }) { return SpendingLimits(
   amount: amount ?? this.amount,
   categories: categories != null ? categories() : this.categories,
   interval: interval ?? this.interval,

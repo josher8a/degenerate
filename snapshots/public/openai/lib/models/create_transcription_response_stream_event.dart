@@ -53,7 +53,7 @@ final TranscriptTextDeltaEvent transcriptTextDeltaEvent;
 
 @override String get type { return 'transcript.text.delta'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextDeltaEvent.toJson(), 'type': type}; } 
-CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, String Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
+CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
   delta: delta,
   logprobs: logprobs,
   segmentId: segmentId,
@@ -71,7 +71,7 @@ final TranscriptTextDoneEvent transcriptTextDoneEvent;
 
 @override String get type { return 'transcript.text.done'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextDoneEvent.toJson(), 'type': type}; } 
-CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, TranscriptTextUsageTokens Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
+CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
   text: text,
   logprobs: logprobs,
   usage: usage,

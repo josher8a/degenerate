@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (connectionInfo != null) 'connection_info': connectionInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connection_info'}.contains(key)); } 
-EventsMetadata copyWith({ConnectionInfo Function()? connectionInfo}) { return EventsMetadata(
+EventsMetadata copyWith({ConnectionInfo? Function()? connectionInfo}) { return EventsMetadata(
   connectionInfo: connectionInfo != null ? connectionInfo() : this.connectionInfo,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

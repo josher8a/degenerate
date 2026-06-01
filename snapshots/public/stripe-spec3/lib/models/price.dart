@@ -153,7 +153,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('type'); } 
-Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PlanProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
+Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PlanProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier>? Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,

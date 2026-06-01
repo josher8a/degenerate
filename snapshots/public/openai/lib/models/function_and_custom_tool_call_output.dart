@@ -67,7 +67,7 @@ final InputFileContent inputFileContent;
 
 @override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
-FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, String Function()? filename, String Function()? fileData, String Function()? fileUrl, FileInputDetail Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
+FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
   fileId: fileId,
   filename: filename,
   fileData: fileData,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('line1') && json['line1'] is String; } 
-ShippingDetailsAddress copyWith({String Function()? city, String? country, String? line1, String Function()? line2, String Function()? postalCode, String Function()? state, }) { return ShippingDetailsAddress(
+ShippingDetailsAddress copyWith({String? Function()? city, String? country, String? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return ShippingDetailsAddress(
   city: city != null ? city() : this.city,
   country: country ?? this.country,
   line1: line1 ?? this.line1,

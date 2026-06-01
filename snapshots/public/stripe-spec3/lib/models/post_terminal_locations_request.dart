@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key)); } 
-PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, String Function()? configurationOverrides, String Function()? displayName, String Function()? displayNameKana, String Function()? displayNameKanji, List<String> Function()? expand, Metadata Function()? metadata, String Function()? phone, }) { return PostTerminalLocationsRequest(
+PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, String? Function()? configurationOverrides, String? Function()? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? phone, }) { return PostTerminalLocationsRequest(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

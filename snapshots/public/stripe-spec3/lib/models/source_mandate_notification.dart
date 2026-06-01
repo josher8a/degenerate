@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData Function()? acssDebit, int? Function()? amount, SourceMandateNotificationBacsDebitData Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
+SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, int? Function()? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amount: amount != null ? amount() : this.amount,
   bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,

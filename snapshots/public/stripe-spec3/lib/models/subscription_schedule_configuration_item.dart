@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('discounts') &&
       json.containsKey('price'); } 
-SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleAddInvoiceItemPrice? price, int Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
+SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleAddInvoiceItemPrice? price, int? Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts ?? this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,

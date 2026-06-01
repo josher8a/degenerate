@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (suppressSessionScore != null) 'suppress_session_score': suppressSessionScore?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_update_model', 'bm_cookie_enabled', 'stale_zone_configuration', 'suppress_session_score'}.contains(key)); } 
-BotManagementBmSubscriptionConfig copyWith({BotManagementAutoUpdateModel Function()? autoUpdateModel, BotManagementBmCookieEnabled Function()? bmCookieEnabled, BotManagementBmSubscriptionConfigStaleZoneConfiguration Function()? staleZoneConfiguration, BotManagementSuppressSessionScore Function()? suppressSessionScore, }) { return BotManagementBmSubscriptionConfig(
+BotManagementBmSubscriptionConfig copyWith({BotManagementAutoUpdateModel? Function()? autoUpdateModel, BotManagementBmCookieEnabled? Function()? bmCookieEnabled, BotManagementBmSubscriptionConfigStaleZoneConfiguration? Function()? staleZoneConfiguration, BotManagementSuppressSessionScore? Function()? suppressSessionScore, }) { return BotManagementBmSubscriptionConfig(
   autoUpdateModel: autoUpdateModel != null ? autoUpdateModel() : this.autoUpdateModel,
   bmCookieEnabled: bmCookieEnabled != null ? bmCookieEnabled() : this.bmCookieEnabled,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,

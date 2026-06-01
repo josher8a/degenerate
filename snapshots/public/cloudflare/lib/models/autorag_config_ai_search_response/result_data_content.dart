@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text', 'type'}.contains(key)); } 
-ResultDataContent copyWith({String Function()? text, String Function()? type, }) { return ResultDataContent(
+ResultDataContent copyWith({String? Function()? text, String? Function()? type, }) { return ResultDataContent(
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,
 ); } 

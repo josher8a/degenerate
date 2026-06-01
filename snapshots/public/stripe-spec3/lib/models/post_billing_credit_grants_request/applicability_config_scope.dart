@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (prices != null) 'prices': prices?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price_type', 'prices'}.contains(key)); } 
-ApplicabilityConfigScope copyWith({PriceType Function()? priceType, List<Prices> Function()? prices, }) { return ApplicabilityConfigScope(
+ApplicabilityConfigScope copyWith({PriceType? Function()? priceType, List<Prices>? Function()? prices, }) { return ApplicabilityConfigScope(
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,
 ); } 

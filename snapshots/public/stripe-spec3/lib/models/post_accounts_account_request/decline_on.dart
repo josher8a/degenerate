@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'cvc_failure': ?cvcFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avs_failure', 'cvc_failure'}.contains(key)); } 
-DeclineOn copyWith({bool Function()? avsFailure, bool Function()? cvcFailure, }) { return DeclineOn(
+DeclineOn copyWith({bool? Function()? avsFailure, bool? Function()? cvcFailure, }) { return DeclineOn(
   avsFailure: avsFailure != null ? avsFailure() : this.avsFailure,
   cvcFailure: cvcFailure != null ? cvcFailure() : this.cvcFailure,
 ); } 

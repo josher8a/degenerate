@@ -52,7 +52,7 @@ final RealtimeConversationItemMessageAssistant realtimeConversationItemMessageAs
 
 @override String get type { return 'message'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemMessageAssistant.toJson(), 'type': type}; } 
-RealtimeConversationItemMessage copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, ComputerToolCallOutputStatus Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
+RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
   id: id,
   object: object,
   status: status,
@@ -73,7 +73,7 @@ final RealtimeConversationItemFunctionCall realtimeConversationItemFunctionCall;
 
 @override String get type { return 'function_call'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCall.toJson(), 'type': type}; } 
-RealtimeConversationItemFunctionCall$Variant copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, ComputerToolCallOutputStatus Function()? status, String Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall$Variant(realtimeConversationItemFunctionCall.copyWith(
+RealtimeConversationItemFunctionCall$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall$Variant(realtimeConversationItemFunctionCall.copyWith(
   id: id,
   object: object,
   status: status,
@@ -95,7 +95,7 @@ final RealtimeConversationItemFunctionCallOutput realtimeConversationItemFunctio
 
 @override String get type { return 'function_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeConversationItemFunctionCallOutput.toJson(), 'type': type}; } 
-RealtimeConversationItemFunctionCallOutput$Variant copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, ComputerToolCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(realtimeConversationItemFunctionCallOutput.copyWith(
+RealtimeConversationItemFunctionCallOutput$Variant copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput$Variant(realtimeConversationItemFunctionCallOutput.copyWith(
   id: id,
   object: object,
   status: status,
@@ -136,7 +136,7 @@ final RealtimeMcpListTools realtimeMcpListTools;
 
 @override String get type { return 'mcp_list_tools'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeMcpListTools.toJson(), 'type': type}; } 
-RealtimeConversationItemMcpListTools copyWith({String Function()? id, String? serverLabel, List<McpListToolsTool>? tools, }) { return RealtimeConversationItemMcpListTools(realtimeMcpListTools.copyWith(
+RealtimeConversationItemMcpListTools copyWith({String? Function()? id, String? serverLabel, List<McpListToolsTool>? tools, }) { return RealtimeConversationItemMcpListTools(realtimeMcpListTools.copyWith(
   id: id,
   serverLabel: serverLabel,
   tools: tools,

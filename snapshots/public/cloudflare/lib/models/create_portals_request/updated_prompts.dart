@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-UpdatedPrompts copyWith({String Function()? description, bool Function()? enabled, String? name, }) { return UpdatedPrompts(
+UpdatedPrompts copyWith({String? Function()? description, bool? Function()? enabled, String? name, }) { return UpdatedPrompts(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,

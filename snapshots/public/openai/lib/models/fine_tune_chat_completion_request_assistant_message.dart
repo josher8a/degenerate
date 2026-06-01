@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (weight != null) 'weight': weight?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-FineTuneChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, ChatCompletionResponseMessageRole? role, String Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2> Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, Weight Function()? weight, }) { return FineTuneChatCompletionRequestAssistantMessage(
+FineTuneChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, ChatCompletionResponseMessageRole? role, String? Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, Weight? Function()? weight, }) { return FineTuneChatCompletionRequestAssistantMessage(
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
   role: role ?? this.role,

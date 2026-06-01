@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_criteria'); } 
-AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessType Function()? type, }) { return AccessRdpProps(
+AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria, AccessType? Function()? type, }) { return AccessRdpProps(
   targetCriteria: targetCriteria ?? this.targetCriteria,
   type: type != null ? type() : this.type,
 ); } 

@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'refusal': ?refusal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'function_call', 'tool_calls', 'role', 'refusal'}.contains(key)); } 
-ChatCompletionStreamResponseDelta copyWith({String? Function()? content, ChatCompletionStreamResponseDeltaFunctionCall Function()? functionCall, List<ChatCompletionMessageToolCallChunk> Function()? toolCalls, ChatCompletionStreamResponseDeltaRole Function()? role, String? Function()? refusal, }) { return ChatCompletionStreamResponseDelta(
+ChatCompletionStreamResponseDelta copyWith({String? Function()? content, ChatCompletionStreamResponseDeltaFunctionCall? Function()? functionCall, List<ChatCompletionMessageToolCallChunk>? Function()? toolCalls, ChatCompletionStreamResponseDeltaRole? Function()? role, String? Function()? refusal, }) { return ChatCompletionStreamResponseDelta(
   content: content != null ? content() : this.content,
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,

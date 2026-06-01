@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('repository') &&
       json.containsKey('score') && json['score'] is num; } 
-CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int Function()? fileSize, String? Function()? language, DateTime Function()? lastModifiedAt, List<String> Function()? lineNumbers, List<SearchResultTextMatches2> Function()? textMatches, }) { return CodeSearchResultItem(
+CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int? Function()? fileSize, String? Function()? language, DateTime? Function()? lastModifiedAt, List<String>? Function()? lineNumbers, List<SearchResultTextMatches2>? Function()? textMatches, }) { return CodeSearchResultItem(
   name: name ?? this.name,
   path: path ?? this.path,
   sha: sha ?? this.sha,

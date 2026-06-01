@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('request') &&
       json.containsKey('response'); } 
-DataRequests copyWith({DataRequestsRequest? request, List<RequestsRequests> Function()? requests, RequestsResponse? response, }) { return DataRequests(
+DataRequests copyWith({DataRequestsRequest? request, List<RequestsRequests>? Function()? requests, RequestsResponse? response, }) { return DataRequests(
   request: request ?? this.request,
   requests: requests != null ? requests() : this.requests,
   response: response ?? this.response,

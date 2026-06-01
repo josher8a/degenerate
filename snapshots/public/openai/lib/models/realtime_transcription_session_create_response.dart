@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
-RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret, dynamic Function()? modalities, String Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, RealtimeSessionCreateRequestTurnDetection Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponse(
+RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret, dynamic Function()? modalities, String? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateResponse(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities != null ? modalities() : this.modalities,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,

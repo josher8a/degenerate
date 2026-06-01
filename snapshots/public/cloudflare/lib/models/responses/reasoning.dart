@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (summary != null) 'summary': summary?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary'}.contains(key)); } 
-Reasoning copyWith({Effort Function()? effort, ReasoningSummary Function()? summary, }) { return Reasoning(
+Reasoning copyWith({Effort? Function()? effort, ReasoningSummary? Function()? summary, }) { return Reasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,
 ); } 

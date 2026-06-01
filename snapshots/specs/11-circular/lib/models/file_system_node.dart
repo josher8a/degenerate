@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('kind'); } 
-FileSystemNode copyWith({String? name, Kind? kind, int? Function()? sizeBytes, List<FileSystemNode> Function()? children, FileSystemNode Function()? symlinkTarget, Map<String, String> Function()? metadata, }) { return FileSystemNode(
+FileSystemNode copyWith({String? name, Kind? kind, int? Function()? sizeBytes, List<FileSystemNode>? Function()? children, FileSystemNode? Function()? symlinkTarget, Map<String, String>? Function()? metadata, }) { return FileSystemNode(
   name: name ?? this.name,
   kind: kind ?? this.kind,
   sizeBytes: sizeBytes != null ? sizeBytes() : this.sizeBytes,

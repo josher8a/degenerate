@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (user != null) 'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cookie', 'header', 'host', 'query_string', 'user'}.contains(key)); } 
-ZonesCacheKeyFieldsValue copyWith({Cookie Function()? cookie, Header Function()? header, Host Function()? host, QueryString Function()? queryString, ValueUser Function()? user, }) { return ZonesCacheKeyFieldsValue(
+ZonesCacheKeyFieldsValue copyWith({Cookie? Function()? cookie, Header? Function()? header, Host? Function()? host, QueryString? Function()? queryString, ValueUser? Function()? user, }) { return ZonesCacheKeyFieldsValue(
   cookie: cookie != null ? cookie() : this.cookie,
   header: header != null ? header() : this.header,
   host: host != null ? host() : this.host,

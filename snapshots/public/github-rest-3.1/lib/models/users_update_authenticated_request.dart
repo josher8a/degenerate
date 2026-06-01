@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'bio': ?bio,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'blog', 'twitter_username', 'company', 'location', 'hireable', 'bio'}.contains(key)); } 
-UsersUpdateAuthenticatedRequest copyWith({String Function()? name, String Function()? email, String Function()? blog, String? Function()? twitterUsername, String Function()? company, String Function()? location, bool Function()? hireable, String Function()? bio, }) { return UsersUpdateAuthenticatedRequest(
+UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Function()? email, String? Function()? blog, String? Function()? twitterUsername, String? Function()? company, String? Function()? location, bool? Function()? hireable, String? Function()? bio, }) { return UsersUpdateAuthenticatedRequest(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   blog: blog != null ? blog() : this.blog,

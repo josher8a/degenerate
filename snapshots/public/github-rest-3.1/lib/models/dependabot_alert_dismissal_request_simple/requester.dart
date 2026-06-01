@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'login': ?login,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'login'}.contains(key)); } 
-Requester copyWith({int Function()? id, String Function()? login, }) { return Requester(
+Requester copyWith({int? Function()? id, String? Function()? login, }) { return Requester(
   id: id != null ? id() : this.id,
   login: login != null ? login() : this.login,
 ); } 

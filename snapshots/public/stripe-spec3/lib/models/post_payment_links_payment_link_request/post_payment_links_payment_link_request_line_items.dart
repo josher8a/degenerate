@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-PostPaymentLinksPaymentLinkRequestLineItems copyWith({AdjustableQuantity Function()? adjustableQuantity, String? id, int Function()? quantity, }) { return PostPaymentLinksPaymentLinkRequestLineItems(
+PostPaymentLinksPaymentLinkRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, String? id, int? Function()? quantity, }) { return PostPaymentLinksPaymentLinkRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   id: id ?? this.id,
   quantity: quantity != null ? quantity() : this.quantity,

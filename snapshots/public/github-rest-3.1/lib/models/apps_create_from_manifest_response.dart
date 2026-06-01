@@ -100,7 +100,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('webhook_secret') && json['webhook_secret'] is String &&
       json.containsKey('pem') && json['pem'] is String; } 
-AppsCreateFromManifestResponse copyWith({int? id, String Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) { return AppsCreateFromManifestResponse(
+AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int? Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) { return AppsCreateFromManifestResponse(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,

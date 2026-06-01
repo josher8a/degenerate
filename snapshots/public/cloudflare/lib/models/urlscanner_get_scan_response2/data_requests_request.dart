@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('docum
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('wallTime') && json['wallTime'] is num; } 
-DataRequestsRequest copyWith({String? documentUrl, String Function()? frameId, bool? hasUserGesture, RequestInitiator? initiator, String Function()? loaderId, bool Function()? primaryRequest, bool? redirectHasExtraInfo, RedirectResponse Function()? redirectResponse, RequestRequest? request, String? requestId, String? type, double? wallTime, }) { return DataRequestsRequest(
+DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, RequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, RedirectResponse? Function()? redirectResponse, RequestRequest? request, String? requestId, String? type, double? wallTime, }) { return DataRequestsRequest(
   documentUrl: documentUrl ?? this.documentUrl,
   frameId: frameId != null ? frameId() : this.frameId,
   hasUserGesture: hasUserGesture ?? this.hasUserGesture,

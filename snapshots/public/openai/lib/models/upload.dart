@@ -114,7 +114,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('purpose') && json['purpose'] is String &&
       json.containsKey('status') &&
       json.containsKey('expires_at') && json['expires_at'] is num; } 
-Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject Function()? object, OpenAiFile? Function()? file, }) { return Upload(
+Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, String? purpose, UploadStatus? status, int? expiresAt, UploadObject? Function()? object, OpenAiFile? Function()? file, }) { return Upload(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   filename: filename ?? this.filename,

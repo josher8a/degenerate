@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (vendor != null) 'vendor': vendor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'endpoint', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
-S3SourceResponseSchema copyWith({String Function()? bucket, String? Function()? endpoint, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3SourceSchemaVendor Function()? vendor, }) { return S3SourceResponseSchema(
+S3SourceResponseSchema copyWith({String? Function()? bucket, String? Function()? endpoint, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3SourceSchemaVendor? Function()? vendor, }) { return S3SourceResponseSchema(
   bucket: bucket != null ? bucket() : this.bucket,
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   keys: keys != null ? keys() : this.keys,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'day': ?day,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('year') && json['year'] is num; } 
-TimePeriod copyWith({int? year, int Function()? month, int Function()? day, }) { return TimePeriod(
+TimePeriod copyWith({int? year, int? Function()? month, int? Function()? day, }) { return TimePeriod(
   year: year ?? this.year,
   month: month != null ? month() : this.month,
   day: day != null ? day() : this.day,

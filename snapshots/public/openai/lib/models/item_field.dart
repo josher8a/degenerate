@@ -144,7 +144,7 @@ final FunctionToolCall functionToolCall;
 
 @override String get type { return 'function_call'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
-ItemFieldFunctionCall copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus Function()? status, }) { return ItemFieldFunctionCall(functionToolCall.copyWith(
+ItemFieldFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCall(functionToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
@@ -166,7 +166,7 @@ final ToolSearchCall toolSearchCall;
 
 @override String get type { return 'tool_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
-ItemFieldToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String Function()? createdBy, }) { return ItemFieldToolSearchCall(toolSearchCall.copyWith(
+ItemFieldToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ItemFieldToolSearchCall(toolSearchCall.copyWith(
   id: id,
   callId: callId,
   execution: execution,
@@ -188,7 +188,7 @@ final ToolSearchOutput toolSearchOutput;
 
 @override String get type { return 'tool_search_output'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
-ItemFieldToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String Function()? createdBy, }) { return ItemFieldToolSearchOutput(toolSearchOutput.copyWith(
+ItemFieldToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ItemFieldToolSearchOutput(toolSearchOutput.copyWith(
   id: id,
   callId: callId,
   execution: execution,
@@ -210,7 +210,7 @@ final FunctionToolCallOutput functionToolCallOutput;
 
 @override String get type { return 'function_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
-ItemFieldFunctionCallOutput copyWith({String Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus Function()? status, }) { return ItemFieldFunctionCallOutput(functionToolCallOutput.copyWith(
+ItemFieldFunctionCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldFunctionCallOutput(functionToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,
@@ -288,7 +288,7 @@ final ComputerToolCall computerToolCall;
 
 @override String get type { return 'computer_call'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
-ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction Function()? action, List<ComputerAction> Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerCall(computerToolCall.copyWith(
+ItemFieldComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemFieldComputerCall(computerToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
@@ -310,7 +310,7 @@ final ComputerToolCallOutput computerToolCallOutput;
 
 @override String get type { return 'ComputerToolCallOutputResource'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
-ItemFieldComputerToolCallOutputResource copyWith({String Function()? id, String? callId, List<ComputerCallSafetyCheckParam> Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus Function()? status, }) { return ItemFieldComputerToolCallOutputResource(computerToolCallOutput.copyWith(
+ItemFieldComputerToolCallOutputResource copyWith({String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldComputerToolCallOutputResource(computerToolCallOutput.copyWith(
   id: id,
   callId: callId,
   acknowledgedSafetyChecks: acknowledgedSafetyChecks,
@@ -331,7 +331,7 @@ final ReasoningItem reasoningItem;
 
 @override String get type { return 'reasoning'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
-ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ComputerToolCallOutputStatus Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
+ItemFieldReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFieldReasoning(reasoningItem.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   summary: summary,
@@ -352,7 +352,7 @@ final CompactionBody compactionBody;
 
 @override String get type { return 'compaction'; } 
 @override Map<String, dynamic> toJson() { return {...compactionBody.toJson(), 'type': type}; } 
-ItemFieldCompaction copyWith({String? id, String? encryptedContent, String Function()? createdBy, }) { return ItemFieldCompaction(compactionBody.copyWith(
+ItemFieldCompaction copyWith({String? id, String? encryptedContent, String? Function()? createdBy, }) { return ItemFieldCompaction(compactionBody.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   createdBy: createdBy,
@@ -431,7 +431,7 @@ final FunctionShellCall functionShellCall;
 
 @override String get type { return 'shell_call'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
-ItemFieldShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String Function()? createdBy, }) { return ItemFieldShellCall(functionShellCall.copyWith(
+ItemFieldShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return ItemFieldShellCall(functionShellCall.copyWith(
   id: id,
   callId: callId,
   action: action,
@@ -453,7 +453,7 @@ final FunctionShellCallOutput functionShellCallOutput;
 
 @override String get type { return 'shell_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
-ItemFieldShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String Function()? createdBy, }) { return ItemFieldShellCallOutput(functionShellCallOutput.copyWith(
+ItemFieldShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return ItemFieldShellCallOutput(functionShellCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
@@ -475,7 +475,7 @@ final ApplyPatchToolCall applyPatchToolCall;
 
 @override String get type { return 'apply_patch_call'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
-ItemFieldApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String Function()? createdBy, }) { return ItemFieldApplyPatchCall(applyPatchToolCall.copyWith(
+ItemFieldApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ItemFieldApplyPatchCall(applyPatchToolCall.copyWith(
   id: id,
   callId: callId,
   status: status,
@@ -496,7 +496,7 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override String get type { return 'apply_patch_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
-ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String Function()? createdBy, }) { return ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
+ItemFieldApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ItemFieldApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
   callId: callId,
   status: status,
@@ -577,7 +577,7 @@ final McpToolCall mcpToolCall;
 
 @override String get type { return 'mcp_call'; } 
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
-ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus Function()? status, String? Function()? approvalRequestId, }) { return ItemFieldMcpCall(mcpToolCall.copyWith(
+ItemFieldMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemFieldMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,
@@ -601,7 +601,7 @@ final CustomToolCall customToolCall;
 
 @override String get type { return 'custom_tool_call'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
-ItemFieldCustomToolCall copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? input, }) { return ItemFieldCustomToolCall(customToolCall.copyWith(
+ItemFieldCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ItemFieldCustomToolCall(customToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
@@ -622,7 +622,7 @@ final CustomToolCallOutput customToolCallOutput;
 
 @override String get type { return 'custom_tool_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
-ItemFieldCustomToolCallOutput copyWith({String Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemFieldCustomToolCallOutput(customToolCallOutput.copyWith(
+ItemFieldCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemFieldCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,

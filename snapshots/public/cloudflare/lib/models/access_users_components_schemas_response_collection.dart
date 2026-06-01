@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result_info', 'result'}.contains(key)); } 
-AccessUsersComponentsSchemasResponseCollection copyWith({AccessUsersComponentsSchemasResponseCollectionResultInfo Function()? resultInfo, List<AccessSchemasUsers> Function()? result, }) { return AccessUsersComponentsSchemasResponseCollection(
+AccessUsersComponentsSchemasResponseCollection copyWith({AccessUsersComponentsSchemasResponseCollectionResultInfo? Function()? resultInfo, List<AccessSchemasUsers>? Function()? result, }) { return AccessUsersComponentsSchemasResponseCollection(
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 

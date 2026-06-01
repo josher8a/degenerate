@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('execution') &&
       json.containsKey('tools') &&
       json.containsKey('status'); } 
-ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String Function()? createdBy, }) { return ToolSearchOutput(
+ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ToolSearchOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,

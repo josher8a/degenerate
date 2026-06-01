@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (appleTermsAndConditions != null) 'apple_terms_and_conditions': appleTermsAndConditions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apple_terms_and_conditions'}.contains(key)); } 
-LinkOptions copyWith({AppleTermsAndConditions Function()? appleTermsAndConditions}) { return LinkOptions(
+LinkOptions copyWith({AppleTermsAndConditions? Function()? appleTermsAndConditions}) { return LinkOptions(
   appleTermsAndConditions: appleTermsAndConditions != null ? appleTermsAndConditions() : this.appleTermsAndConditions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

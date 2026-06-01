@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (memberships != null) 'memberships': memberships?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_delete', 'can_modify_ips', 'created_at', 'default_sni', 'description', 'enabled', 'id', 'modified_at', 'ips', 'memberships'}.contains(key)); } 
-AddressingFullResponseResult copyWith({AddressingCanDelete Function()? canDelete, AddressingCanModifyIps Function()? canModifyIps, AddressingTimestamp Function()? createdAt, AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, AddressingAddressMapIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, List<AddressingAddressMapsIp> Function()? ips, List<AddressingAddressMapsMembership> Function()? memberships, }) { return AddressingFullResponseResult(
+AddressingFullResponseResult copyWith({AddressingCanDelete? Function()? canDelete, AddressingCanModifyIps? Function()? canModifyIps, AddressingTimestamp? Function()? createdAt, AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, AddressingAddressMapIdentifier? Function()? id, AddressingTimestamp? Function()? modifiedAt, List<AddressingAddressMapsIp>? Function()? ips, List<AddressingAddressMapsMembership>? Function()? memberships, }) { return AddressingFullResponseResult(
   canDelete: canDelete != null ? canDelete() : this.canDelete,
   canModifyIps: canModifyIps != null ? canModifyIps() : this.canModifyIps,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool Function()? isRecipient, bool? isRegex, bool Function()? isSender, bool Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityCreateAllowPolicyResponseResult(
+EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityCreateAllowPolicyResponseResult(
   comments: comments != null ? comments() : this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,

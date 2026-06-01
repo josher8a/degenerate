@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status'); } 
-ApplyPatchToolCallOutput copyWith({String? type, String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String Function()? createdBy, }) { return ApplyPatchToolCallOutput(
+ApplyPatchToolCallOutput copyWith({String? type, String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ApplyPatchToolCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ocr_enabled') && json['ocr_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpCustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, DateTime? createdAt, List<String> Function()? dataClasses, List<String> Function()? dataTags, String? Function()? description, List<DlpEntry> Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>> Function()? sensitivityLevels, List<DlpEntry> Function()? sharedEntries, DateTime? updatedAt, }) { return DlpCustomProfile(
+DlpCustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, String? Function()? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, }) { return DlpCustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

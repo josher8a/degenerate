@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, ApplicationFeeCharge Function()? charge, Map<String, String> Function()? metadata, ChargePaymentIntent Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, CreditNoteRefundRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
+TerminalReaderReaderResourceRefundPaymentAction copyWith({int? Function()? amount, ApplicationFeeCharge? Function()? charge, Map<String, String>? Function()? metadata, ChargePaymentIntent? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, CreditNoteRefundRefund? Function()? refund, bool? Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig? Function()? refundPaymentConfig, bool? Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   metadata: metadata != null ? metadata() : this.metadata,

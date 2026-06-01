@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'tools'}.contains(key)); } 
-Attachments copyWith({String Function()? fileId, List<AttachmentsTools> Function()? tools, }) { return Attachments(
+Attachments copyWith({String? Function()? fileId, List<AttachmentsTools>? Function()? tools, }) { return Attachments(
   fileId: fileId != null ? fileId() : this.fileId,
   tools: tools != null ? tools() : this.tools,
 ); } 

@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('rate_limiting_interval') && json['rate_limiting_interval'] is num &&
       json.containsKey('rate_limiting_limit') && json['rate_limiting_limit'] is num &&
       json.containsKey('rate_limiting_technique'); } 
-AigConfigCreateGatewayRequest copyWith({bool Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, int? Function()? logManagement, LogManagementStrategy? Function()? logManagementStrategy, bool Function()? logpush, String? Function()? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, WorkersAiBillingMode Function()? workersAiBillingMode, bool Function()? zdr, }) { return AigConfigCreateGatewayRequest(
+AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, int? Function()? logManagement, LogManagementStrategy? Function()? logManagementStrategy, bool? Function()? logpush, String? Function()? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, WorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,
   cacheTtl: cacheTtl != null ? cacheTtl() : this.cacheTtl,

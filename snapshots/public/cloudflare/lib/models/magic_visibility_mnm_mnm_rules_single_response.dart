@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MagicVisibilityMnmMnmRulesSingleResponse copyWith({MagicVisibilityMnmMnmRule Function()? result}) { return MagicVisibilityMnmMnmRulesSingleResponse(
+MagicVisibilityMnmMnmRulesSingleResponse copyWith({MagicVisibilityMnmMnmRule? Function()? result}) { return MagicVisibilityMnmMnmRulesSingleResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

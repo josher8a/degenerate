@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPricing != null) 'payments_pricing': paymentsPricing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payments_pricing'}.contains(key)); } 
-Groups copyWith({PaymentsPricing Function()? paymentsPricing}) { return Groups(
+Groups copyWith({PaymentsPricing? Function()? paymentsPricing}) { return Groups(
   paymentsPricing: paymentsPricing != null ? paymentsPricing() : this.paymentsPricing,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

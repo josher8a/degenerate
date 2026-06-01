@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beta', 'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-FineTuneDpoHyperparameters copyWith({Beta Function()? beta, BatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuneDpoHyperparameters(
+FineTuneDpoHyperparameters copyWith({Beta? Function()? beta, BatchSize? Function()? batchSize, LearningRateMultiplier? Function()? learningRateMultiplier, NEpochs? Function()? nEpochs, }) { return FineTuneDpoHyperparameters(
   beta: beta != null ? beta() : this.beta,
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,

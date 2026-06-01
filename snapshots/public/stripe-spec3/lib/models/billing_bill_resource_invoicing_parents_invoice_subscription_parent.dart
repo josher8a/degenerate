@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'subscription_proration_date': ?subscriptionProrationDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription'); } 
-BillingBillResourceInvoicingParentsInvoiceSubscriptionParent copyWith({Map<String, String>? Function()? metadata, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? subscription, int Function()? subscriptionProrationDate, }) { return BillingBillResourceInvoicingParentsInvoiceSubscriptionParent(
+BillingBillResourceInvoicingParentsInvoiceSubscriptionParent copyWith({Map<String, String>? Function()? metadata, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? subscription, int? Function()? subscriptionProrationDate, }) { return BillingBillResourceInvoicingParentsInvoiceSubscriptionParent(
   metadata: metadata != null ? metadata() : this.metadata,
   subscription: subscription ?? this.subscription,
   subscriptionProrationDate: subscriptionProrationDate != null ? subscriptionProrationDate() : this.subscriptionProrationDate,

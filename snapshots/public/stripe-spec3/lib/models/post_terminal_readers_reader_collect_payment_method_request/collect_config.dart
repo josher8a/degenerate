@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'skip_tipping', 'tipping'}.contains(key)); } 
-CollectConfig copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay Function()? allowRedisplay, bool Function()? enableCustomerCancellation, bool Function()? skipTipping, CollectConfigTipping Function()? tipping, }) { return CollectConfig(
+CollectConfig copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, bool? Function()? skipTipping, CollectConfigTipping? Function()? tipping, }) { return CollectConfig(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,

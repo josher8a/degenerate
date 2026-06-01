@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type') &&
       json.containsKey('verify_sender') && json['verify_sender'] is bool; } 
-EmailSecurityCreateAllowPolicy copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool Function()? isRecipient, bool? isRegex, bool Function()? isSender, bool Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, }) { return EmailSecurityCreateAllowPolicy(
+EmailSecurityCreateAllowPolicy copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, }) { return EmailSecurityCreateAllowPolicy(
   comments: comments != null ? comments() : this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,

@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('team_count') && json['team_count'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('invitation_teams_url') && json['invitation_teams_url'] is String; } 
-OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, String? Function()? failedAt, String? Function()? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String Function()? invitationSource, }) { return OrganizationInvitation(
+OrganizationInvitation copyWith({int? id, String? Function()? login, String? Function()? email, String? role, String? createdAt, String? Function()? failedAt, String? Function()? failedReason, SimpleUser? inviter, int? teamCount, String? nodeId, String? invitationTeamsUrl, String? Function()? invitationSource, }) { return OrganizationInvitation(
   id: id ?? this.id,
   login: login != null ? login() : this.login,
   email: email != null ? email() : this.email,

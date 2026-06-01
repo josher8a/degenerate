@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, String Function()? type, }) { return EasyInputMessage(
+EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, String? Function()? type, }) { return EasyInputMessage(
   role: role ?? this.role,
   content: content ?? this.content,
   phase: phase != null ? phase() : this.phase,

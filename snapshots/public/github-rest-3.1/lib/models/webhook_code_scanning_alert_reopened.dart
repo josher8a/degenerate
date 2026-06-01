@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
+WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid != null ? commitOid() : this.commitOid,

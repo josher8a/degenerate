@@ -94,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,

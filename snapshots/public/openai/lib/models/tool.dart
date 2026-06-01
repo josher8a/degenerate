@@ -74,7 +74,7 @@ final FunctionTool functionTool;
 
 @override String get type { return 'function'; } 
 @override Map<String, dynamic> toJson() { return {...functionTool.toJson(), 'type': type}; } 
-ToolFunction copyWith({String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool Function()? deferLoading, }) { return ToolFunction(functionTool.copyWith(
+ToolFunction copyWith({String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) { return ToolFunction(functionTool.copyWith(
   name: name,
   description: description,
   parameters: parameters,
@@ -94,7 +94,7 @@ final FileSearchTool fileSearchTool;
 
 @override String get type { return 'file_search'; } 
 @override Map<String, dynamic> toJson() { return {...fileSearchTool.toJson(), 'type': type}; } 
-ToolFileSearch copyWith({List<String>? vectorStoreIds, int Function()? maxNumResults, RankingOptions Function()? rankingOptions, Filters? Function()? filters, }) { return ToolFileSearch(fileSearchTool.copyWith(
+ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return ToolFileSearch(fileSearchTool.copyWith(
   vectorStoreIds: vectorStoreIds,
   maxNumResults: maxNumResults,
   rankingOptions: rankingOptions,
@@ -145,7 +145,7 @@ final WebSearchTool webSearchTool;
 
 @override String get type { return 'web_search'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchTool.toJson(), 'type': type}; } 
-ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
+ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
   filters: filters,
   userLocation: userLocation,
   searchContextSize: searchContextSize,
@@ -163,7 +163,7 @@ final McpTool mcpTool;
 
 @override String get type { return 'mcp'; } 
 @override Map<String, dynamic> toJson() { return {...mcpTool.toJson(), 'type': type}; } 
-ToolMcp copyWith({String? serverLabel, String Function()? serverUrl, ConnectorId Function()? connectorId, String Function()? authorization, String Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool Function()? deferLoading, }) { return ToolMcp(mcpTool.copyWith(
+ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return ToolMcp(mcpTool.copyWith(
   serverLabel: serverLabel,
   serverUrl: serverUrl,
   connectorId: connectorId,
@@ -203,7 +203,7 @@ final ImageGenTool imageGenTool;
 
 @override String get type { return 'image_generation'; } 
 @override Map<String, dynamic> toJson() { return {...imageGenTool.toJson(), 'type': type}; } 
-ToolImageGeneration copyWith({ImageGenToolModel Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
+ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
   model: model,
   quality: quality,
   size: size,
@@ -259,7 +259,7 @@ final CustomToolParam customToolParam;
 
 @override String get type { return 'custom'; } 
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
-ToolCustom copyWith({String? name, String Function()? description, CustomToolParamFormat Function()? format, bool Function()? deferLoading, }) { return ToolCustom(customToolParam.copyWith(
+ToolCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return ToolCustom(customToolParam.copyWith(
   name: name,
   description: description,
   format: format,
@@ -296,7 +296,7 @@ final ToolSearchToolParam toolSearchToolParam;
 
 @override String get type { return 'tool_search'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchToolParam.toJson(), 'type': type}; } 
-ToolToolSearch copyWith({ToolSearchExecutionType Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolToolSearch(toolSearchToolParam.copyWith(
+ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolToolSearch(toolSearchToolParam.copyWith(
   execution: execution,
   description: description,
   parameters: parameters,
@@ -314,7 +314,7 @@ final WebSearchPreviewTool webSearchPreviewTool;
 
 @override String get type { return 'web_search_preview'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchPreviewTool.toJson(), 'type': type}; } 
-ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, SearchContextSize Function()? searchContextSize, List<SearchContentType> Function()? searchContentTypes, }) { return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
+ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
   userLocation: userLocation,
   searchContextSize: searchContextSize,
   searchContentTypes: searchContentTypes,

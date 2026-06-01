@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-MconnControllerFetchCloudflaredTokenResponse copyWith({MconnControllerFetchCloudflaredTokenResult Function()? result}) { return MconnControllerFetchCloudflaredTokenResponse(
+MconnControllerFetchCloudflaredTokenResponse copyWith({MconnControllerFetchCloudflaredTokenResult? Function()? result}) { return MconnControllerFetchCloudflaredTokenResponse(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern'); } 
-DlpNewEntry copyWith({String? Function()? description, bool? enabled, String? name, DlpPattern? pattern, String Function()? profileId, }) { return DlpNewEntry(
+DlpNewEntry copyWith({String? Function()? description, bool? enabled, String? name, DlpPattern? pattern, String? Function()? profileId, }) { return DlpNewEntry(
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,

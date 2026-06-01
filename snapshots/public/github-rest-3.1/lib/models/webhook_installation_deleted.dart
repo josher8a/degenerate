@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('installation') &&
       json.containsKey('sender'); } 
-WebhookInstallationDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, dynamic Function()? requester, SimpleUser? sender, }) { return WebhookInstallationDeleted(
+WebhookInstallationDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositories2>? Function()? repositories, RepositoryWebhooks? Function()? repository, dynamic Function()? requester, SimpleUser? sender, }) { return WebhookInstallationDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,

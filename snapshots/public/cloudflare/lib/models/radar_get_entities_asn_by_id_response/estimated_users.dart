@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'locations': locations.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('locations'); } 
-EstimatedUsers copyWith({int Function()? estimatedUsers, List<EstimatedUsersLocations>? locations, }) { return EstimatedUsers(
+EstimatedUsers copyWith({int? Function()? estimatedUsers, List<EstimatedUsersLocations>? locations, }) { return EstimatedUsers(
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   locations: locations ?? this.locations,
 ); } 

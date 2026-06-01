@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'group_name': ?groupName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'group_name'}.contains(key)); } 
-GroupCreatedData copyWith({String Function()? groupName}) { return GroupCreatedData(
+GroupCreatedData copyWith({String? Function()? groupName}) { return GroupCreatedData(
   groupName: groupName != null ? groupName() : this.groupName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

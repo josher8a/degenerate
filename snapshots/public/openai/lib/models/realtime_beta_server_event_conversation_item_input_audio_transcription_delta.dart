@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int? Function()? contentIndex, String? Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

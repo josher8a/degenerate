@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'description', 'id', 'type', 'value'}.contains(key)); } 
-BelongsToRef copyWith({String Function()? country, String Function()? description, String Function()? id, BelongsToRefType Function()? type, String Function()? value, }) { return BelongsToRef(
+BelongsToRef copyWith({String? Function()? country, String? Function()? description, String? Function()? id, BelongsToRefType? Function()? type, String? Function()? value, }) { return BelongsToRef(
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

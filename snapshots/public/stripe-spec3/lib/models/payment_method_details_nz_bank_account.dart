@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_
       json.containsKey('bank_name') && json['bank_name'] is String &&
       json.containsKey('branch_code') && json['branch_code'] is String &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentMethodDetailsNzBankAccount copyWith({String? Function()? accountHolderName, String? bankCode, String? bankName, String? branchCode, String Function()? expectedDebitDate, String? last4, String? Function()? suffix, }) { return PaymentMethodDetailsNzBankAccount(
+PaymentMethodDetailsNzBankAccount copyWith({String? Function()? accountHolderName, String? bankCode, String? bankName, String? branchCode, String? Function()? expectedDebitDate, String? last4, String? Function()? suffix, }) { return PaymentMethodDetailsNzBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   bankCode: bankCode ?? this.bankCode,
   bankName: bankName ?? this.bankName,

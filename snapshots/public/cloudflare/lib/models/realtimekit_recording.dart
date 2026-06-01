@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio
       json.containsKey('started_time') && json['started_time'] is String &&
       json.containsKey('status') &&
       json.containsKey('stopped_time') && json['stopped_time'] is String; } 
-RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) { return RealtimekitRecording(
+RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, RealtimekitRecordingStatus? status, DateTime? Function()? stoppedTime, }) { return RealtimekitRecording(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,

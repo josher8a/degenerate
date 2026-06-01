@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'propertyName': ?propertyName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indexType', 'propertyName'}.contains(key)); } 
-MetadataIndexes copyWith({IndexType Function()? indexType, String Function()? propertyName, }) { return MetadataIndexes(
+MetadataIndexes copyWith({IndexType? Function()? indexType, String? Function()? propertyName, }) { return MetadataIndexes(
   indexType: indexType != null ? indexType() : this.indexType,
   propertyName: propertyName != null ? propertyName() : this.propertyName,
 ); } 

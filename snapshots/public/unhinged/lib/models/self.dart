@@ -118,12 +118,12 @@ final class SelfType extends Self {
     NewNull? $null,
     New0? $0,
     String? $empty,
-    String Function()? constructor,
-    String Function()? proto,
-    String Function()? hasOwnProperty,
-    String Function()? $ref,
-    String Function()? $id,
-    String Function()? xExtensionLookalike,
+    String? Function()? constructor,
+    String? Function()? proto,
+    String? Function()? hasOwnProperty,
+    String? Function()? $ref,
+    String? Function()? $id,
+    String? Function()? xExtensionLookalike,
   }) {
     return SelfType(
       $true.copyWith(
@@ -179,10 +179,10 @@ final class SelfProto extends Self {
   }
 
   SelfProto copyWith({
-    New Function()? constructor,
+    New? Function()? constructor,
     String Function()? $toString,
-    int Function()? valueOf,
-    Proto Function()? prototype,
+    int? Function()? valueOf,
+    Proto? Function()? prototype,
   }) {
     return SelfProto(
       proto.copyWith(
@@ -231,10 +231,10 @@ final class SelfString extends Self {
   }
 
   SelfString copyWith({
-    int Function()? length,
+    int? Function()? length,
     String? value,
-    String Function()? charAt,
-    bool Function()? trim,
+    String? Function()? charAt,
+    bool? Function()? trim,
   }) {
     return SelfString(
       stringModel.copyWith(

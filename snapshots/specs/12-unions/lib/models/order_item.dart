@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('productId') && json['productId'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-OrderItem copyWith({String? productId, int? quantity, double Function()? unitPrice, String? Function()? notes, }) { return OrderItem(
+OrderItem copyWith({String? productId, int? quantity, double? Function()? unitPrice, String? Function()? notes, }) { return OrderItem(
   productId: productId ?? this.productId,
   quantity: quantity ?? this.quantity,
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,

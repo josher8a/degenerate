@@ -253,7 +253,7 @@ Map<String, dynamic> toJson() { return {
   'version': version.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
-BisoAdminControls copyWith({Copy Function()? copy, bool Function()? dcp, bool Function()? dd, bool Function()? dk, Download Function()? download, bool Function()? dp, bool Function()? du, Keyboard Function()? keyboard, Paste Function()? paste, Printing Function()? printing, Upload Function()? upload, BisoAdminControlsVersion Function()? version, }) { return BisoAdminControls(
+BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, Download? Function()? download, bool? Function()? dp, bool? Function()? du, Keyboard? Function()? keyboard, Paste? Function()? paste, Printing? Function()? printing, Upload? Function()? upload, BisoAdminControlsVersion Function()? version, }) { return BisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,
   dd: dd != null ? dd() : this.dd,

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'turn_connectivity': ?turnConnectivity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_r_t_t', 'connectivity', 'effective_network_type', 'fractional_loss', 'ip_details', 'jitter', 'location', 'r_t_t', 'throughput', 'turn_connectivity'}.contains(key)); } 
-ConnectionInfo copyWith({double Function()? backendRTT, ConnectionInfoConnectivity Function()? connectivity, String Function()? effectiveNetworkType, int Function()? fractionalLoss, IpDetails Function()? ipDetails, int Function()? jitter, ConnectionInfoLocation Function()? location, double Function()? rTT, int Function()? throughput, bool Function()? turnConnectivity, }) { return ConnectionInfo(
+ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectivity? Function()? connectivity, String? Function()? effectiveNetworkType, int? Function()? fractionalLoss, IpDetails? Function()? ipDetails, int? Function()? jitter, ConnectionInfoLocation? Function()? location, double? Function()? rTT, int? Function()? throughput, bool? Function()? turnConnectivity, }) { return ConnectionInfo(
   backendRTT: backendRTT != null ? backendRTT() : this.backendRTT,
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   effectiveNetworkType: effectiveNetworkType != null ? effectiveNetworkType() : this.effectiveNetworkType,

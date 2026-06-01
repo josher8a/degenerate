@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('vector_store_ids'); } 
-FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int Function()? maxNumResults, RankingOptions Function()? rankingOptions, Filters? Function()? filters, }) { return FileSearchTool(
+FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return FileSearchTool(
   type: type ?? this.type,
   vectorStoreIds: vectorStoreIds ?? this.vectorStoreIds,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,

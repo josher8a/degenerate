@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (technique != null) 'technique': technique?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
-RateLimit copyWith({int Function()? periodMs, int Function()? requests, Technique Function()? technique, }) { return RateLimit(
+RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Technique? Function()? technique, }) { return RateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,

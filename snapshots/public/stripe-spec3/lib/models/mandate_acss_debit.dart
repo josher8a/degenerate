@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_schedule') &&
       json.containsKey('transaction_type'); } 
-MandateAcssDebit copyWith({List<DefaultFor> Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
+MandateAcssDebit copyWith({List<DefaultFor>? Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,

@@ -166,7 +166,7 @@ final ComputerToolCall computerToolCall;
 
 @override String get type { return 'computer_call'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
-ItemComputerCall copyWith({String? id, String? callId, ComputerAction Function()? action, List<ComputerAction> Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemComputerCall(computerToolCall.copyWith(
+ItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemComputerCall(computerToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
@@ -228,7 +228,7 @@ final FunctionToolCall functionToolCall;
 
 @override String get type { return 'function_call'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
-ItemFunctionCall copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus Function()? status, }) { return ItemFunctionCall(functionToolCall.copyWith(
+ItemFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFunctionCall(functionToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,
@@ -270,7 +270,7 @@ final ToolSearchCallItemParam toolSearchCallItemParam;
 
 @override String get type { return 'tool_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchCallItemParam.toJson(), 'type': type}; } 
-ItemToolSearchCall copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType Function()? execution, EmptyModelParam? arguments, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchCall(toolSearchCallItemParam.copyWith(
+ItemToolSearchCall copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType? Function()? execution, EmptyModelParam? arguments, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchCall(toolSearchCallItemParam.copyWith(
   id: id,
   callId: callId,
   execution: execution,
@@ -291,7 +291,7 @@ final ToolSearchOutputItemParam toolSearchOutputItemParam;
 
 @override String get type { return 'tool_search_output'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchOutputItemParam.toJson(), 'type': type}; } 
-ItemToolSearchOutput copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType Function()? execution, List<Tool>? tools, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchOutput(toolSearchOutputItemParam.copyWith(
+ItemToolSearchOutput copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchOutput(toolSearchOutputItemParam.copyWith(
   id: id,
   callId: callId,
   execution: execution,
@@ -312,7 +312,7 @@ final ReasoningItem reasoningItem;
 
 @override String get type { return 'reasoning'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
-ItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ComputerToolCallOutputStatus Function()? status, }) { return ItemReasoning(reasoningItem.copyWith(
+ItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ItemReasoning(reasoningItem.copyWith(
   id: id,
   encryptedContent: encryptedContent,
   summary: summary,
@@ -572,7 +572,7 @@ final McpToolCall mcpToolCall;
 
 @override String get type { return 'mcp_call'; } 
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
-ItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus Function()? status, String? Function()? approvalRequestId, }) { return ItemMcpCall(mcpToolCall.copyWith(
+ItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,
@@ -596,7 +596,7 @@ final CustomToolCallOutput customToolCallOutput;
 
 @override String get type { return 'custom_tool_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
-ItemCustomToolCallOutput copyWith({String Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemCustomToolCallOutput(customToolCallOutput.copyWith(
+ItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,
@@ -615,7 +615,7 @@ final CustomToolCall customToolCall;
 
 @override String get type { return 'custom_tool_call'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
-ItemCustomToolCall copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? input, }) { return ItemCustomToolCall(customToolCall.copyWith(
+ItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ItemCustomToolCall(customToolCall.copyWith(
   id: id,
   callId: callId,
   namespace: namespace,

@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'help_uri': ?helpUri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'severity', 'security_severity_level', 'description', 'full_description', 'tags', 'help', 'help_uri'}.contains(key)); } 
-CodeScanningAlertRuleSummary copyWith({String? Function()? id, String Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, SecuritySeverityLevel? Function()? securitySeverityLevel, String Function()? description, String Function()? fullDescription, List<String>? Function()? tags, String? Function()? help, String? Function()? helpUri, }) { return CodeScanningAlertRuleSummary(
+CodeScanningAlertRuleSummary copyWith({String? Function()? id, String? Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, SecuritySeverityLevel? Function()? securitySeverityLevel, String? Function()? description, String? Function()? fullDescription, List<String>? Function()? tags, String? Function()? help, String? Function()? helpUri, }) { return CodeScanningAlertRuleSummary(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   severity: severity != null ? severity() : this.severity,

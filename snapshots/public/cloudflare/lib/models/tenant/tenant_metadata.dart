@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (dns != null) 'dns': dns?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dns'}.contains(key)); } 
-TenantMetadata copyWith({TenantMetadataDns Function()? dns}) { return TenantMetadata(
+TenantMetadata copyWith({TenantMetadataDns? Function()? dns}) { return TenantMetadata(
   dns: dns != null ? dns() : this.dns,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

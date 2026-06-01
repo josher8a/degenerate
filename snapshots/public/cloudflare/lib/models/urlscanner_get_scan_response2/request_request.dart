@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('initi
       json.containsKey('mixedContentType') && json['mixedContentType'] is String &&
       json.containsKey('referrerPolicy') && json['referrerPolicy'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-RequestRequest copyWith({Map<String, dynamic> Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return RequestRequest(
+RequestRequest copyWith({Map<String, dynamic>? Function()? headers, String? initialPriority, bool? isSameSite, String? method, String? mixedContentType, String? referrerPolicy, String? url, }) { return RequestRequest(
   headers: headers != null ? headers() : this.headers,
   initialPriority: initialPriority ?? this.initialPriority,
   isSameSite: isSameSite ?? this.isSameSite,

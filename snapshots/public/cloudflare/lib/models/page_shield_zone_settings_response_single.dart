@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-PageShieldZoneSettingsResponseSingle copyWith({Map<String, dynamic> Function()? result}) { return PageShieldZoneSettingsResponseSingle(
+PageShieldZoneSettingsResponseSingle copyWith({Map<String, dynamic>? Function()? result}) { return PageShieldZoneSettingsResponseSingle(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

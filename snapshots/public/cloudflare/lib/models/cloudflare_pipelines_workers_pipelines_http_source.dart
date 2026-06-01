@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('format') &&
       json.containsKey('type') && json['type'] is String; } 
-CloudflarePipelinesWorkersPipelinesHttpSource copyWith({bool Function()? authentication, Cors Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, String? type, }) { return CloudflarePipelinesWorkersPipelinesHttpSource(
+CloudflarePipelinesWorkersPipelinesHttpSource copyWith({bool? Function()? authentication, Cors? Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, String? type, }) { return CloudflarePipelinesWorkersPipelinesHttpSource(
   authentication: authentication != null ? authentication() : this.authentication,
   cors: cors != null ? cors() : this.cors,
   format: format ?? this.format,

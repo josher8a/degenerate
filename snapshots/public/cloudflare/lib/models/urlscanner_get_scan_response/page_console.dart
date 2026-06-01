@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-PageConsole copyWith({String? category, String? text, String? type, String Function()? url, }) { return PageConsole(
+PageConsole copyWith({String? category, String? text, String? type, String? Function()? url, }) { return PageConsole(
   category: category ?? this.category,
   text: text ?? this.text,
   type: type ?? this.type,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (text != null) 'text': text?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'documents', 'instruction', 'queries', 'text'}.contains(key)); } 
-WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents Function()? documents, String Function()? instruction, Queries Function()? queries, InputEmbeddingText Function()? text, }) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
+WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents? Function()? documents, String Function()? instruction, Queries? Function()? queries, InputEmbeddingText? Function()? text, }) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
   documents: documents != null ? documents() : this.documents,
   instruction: instruction != null ? instruction() : this.instruction,
   queries: queries != null ? queries() : this.queries,

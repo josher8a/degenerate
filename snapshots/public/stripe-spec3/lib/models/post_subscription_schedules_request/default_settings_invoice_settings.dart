@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'days_until_due', 'issuer'}.contains(key)); } 
-DefaultSettingsInvoiceSettings copyWith({PostInvoicesInvoiceRequestAccountTaxIds Function()? accountTaxIds, int Function()? daysUntilDue, Issuer Function()? issuer, }) { return DefaultSettingsInvoiceSettings(
+DefaultSettingsInvoiceSettings copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? daysUntilDue, Issuer? Function()? issuer, }) { return DefaultSettingsInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer != null ? issuer() : this.issuer,

@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
       json.containsKey('applicability_config'); } 
-PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, ApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory Function()? category, String Function()? customer, String Function()? customerAccount, int Function()? effectiveAt, List<String> Function()? expand, int Function()? expiresAt, Map<String, String> Function()? metadata, String Function()? name, int Function()? priority, }) { return PostBillingCreditGrantsRequest(
+PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, ApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? Function()? category, String? Function()? customer, String? Function()? customerAccount, int? Function()? effectiveAt, List<String>? Function()? expand, int? Function()? expiresAt, Map<String, String>? Function()? metadata, String? Function()? name, int? Function()? priority, }) { return PostBillingCreditGrantsRequest(
   amount: amount ?? this.amount,
   applicabilityConfig: applicabilityConfig ?? this.applicabilityConfig,
   category: category != null ? category() : this.category,

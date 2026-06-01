@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('requested_reviewer') &&
       json.containsKey('sender'); } 
-WebhookPullRequestReviewRequestedReviewRequested copyWith({ReviewRequestedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, int? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewRequestedReviewRequestedPullRequest? pullRequest, RepositoryWebhooks? repository, ReviewRequestedRequestedReviewer? Function()? requestedReviewer, SimpleUser? sender, }) { return WebhookPullRequestReviewRequestedReviewRequested(
+WebhookPullRequestReviewRequestedReviewRequested copyWith({ReviewRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewRequestedReviewRequestedPullRequest? pullRequest, RepositoryWebhooks? repository, ReviewRequestedRequestedReviewer? Function()? requestedReviewer, SimpleUser? sender, }) { return WebhookPullRequestReviewRequestedReviewRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

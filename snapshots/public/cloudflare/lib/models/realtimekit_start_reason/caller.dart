@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'user_Id': ?userId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'user_Id'}.contains(key)); } 
-Caller copyWith({String Function()? name, CallerType Function()? type, String Function()? userId, }) { return Caller(
+Caller copyWith({String? Function()? name, CallerType? Function()? type, String? Function()? userId, }) { return Caller(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
   userId: userId != null ? userId() : this.userId,

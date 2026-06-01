@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'mean': ?mean,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confidence_intervals', 'mean'}.contains(key)); } 
-SuggestedThreshold copyWith({SuggestedThresholdConfidenceIntervals Function()? confidenceIntervals, double Function()? mean, }) { return SuggestedThreshold(
+SuggestedThreshold copyWith({SuggestedThresholdConfidenceIntervals? Function()? confidenceIntervals, double? Function()? mean, }) { return SuggestedThreshold(
   confidenceIntervals: confidenceIntervals != null ? confidenceIntervals() : this.confidenceIntervals,
   mean: mean != null ? mean() : this.mean,
 ); } 

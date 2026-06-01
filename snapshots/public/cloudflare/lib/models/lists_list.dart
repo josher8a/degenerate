@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') &&
       json.containsKey('num_items') &&
       json.containsKey('num_referencing_filters'); } 
-ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription Function()? description, ListsListId? id, ListsKind? Function()? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) { return ListsList(
+ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? description, ListsListId? id, ListsKind? Function()? kind, ListsModifiedOn? modifiedOn, ListsName? name, ListsNumItems? numItems, ListsNumReferencingFilters? numReferencingFilters, }) { return ListsList(
   createdOn: createdOn ?? this.createdOn,
   description: description != null ? description() : this.description,
   id: id ?? this.id,

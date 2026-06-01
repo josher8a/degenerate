@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (asn != null) 'asn': asn?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn'}.contains(key)); } 
-ScanAsns copyWith({AsnsAsn Function()? asn}) { return ScanAsns(
+ScanAsns copyWith({AsnsAsn? Function()? asn}) { return ScanAsns(
   asn: asn != null ? asn() : this.asn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (headerTitle != null) 'header_title': headerTitle?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'footer_body', 'footer_title', 'header_body', 'header_title'}.contains(key)); } 
-CarrierTextParam copyWith({FooterBody Function()? footerBody, FooterTitle Function()? footerTitle, HeaderBody Function()? headerBody, HeaderTitle Function()? headerTitle, }) { return CarrierTextParam(
+CarrierTextParam copyWith({FooterBody? Function()? footerBody, FooterTitle? Function()? footerTitle, HeaderBody? Function()? headerBody, HeaderTitle? Function()? headerTitle, }) { return CarrierTextParam(
   footerBody: footerBody != null ? footerBody() : this.footerBody,
   footerTitle: footerTitle != null ? footerTitle() : this.footerTitle,
   headerBody: headerBody != null ? headerBody() : this.headerBody,

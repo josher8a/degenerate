@@ -74,7 +74,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('author_association'); } 
-PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime Function()? submittedAt, String? Function()? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
+PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime? Function()? submittedAt, String? Function()? commitId, String? Function()? bodyHtml, String? Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   user: user != null ? user() : this.user,

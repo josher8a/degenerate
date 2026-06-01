@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'reasoning_effort', 'name', 'description', 'instructions', 'tools', 'tool_resources', 'metadata', 'temperature', 'top_p', 'response_format'}.contains(key)); } 
-ModifyAssistantRequest copyWith({CreateAssistantRequestModel Function()? model, ReasoningEffort? Function()? reasoningEffort, String? Function()? name, String? Function()? description, String? Function()? instructions, List<AssistantObjectTools> Function()? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return ModifyAssistantRequest(
+ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model, ReasoningEffort? Function()? reasoningEffort, String? Function()? name, String? Function()? description, String? Function()? instructions, List<AssistantObjectTools> Function()? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return ModifyAssistantRequest(
   model: model != null ? model() : this.model,
   reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
   name: name != null ? name() : this.name,

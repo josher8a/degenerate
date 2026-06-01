@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'reference'}.contains(key)); } 
-PaymentMethodDetailsPaynow copyWith({String Function()? location, String Function()? reader, String? Function()? reference, }) { return PaymentMethodDetailsPaynow(
+PaymentMethodDetailsPaynow copyWith({String? Function()? location, String? Function()? reader, String? Function()? reference, }) { return PaymentMethodDetailsPaynow(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,
   reference: reference != null ? reference() : this.reference,

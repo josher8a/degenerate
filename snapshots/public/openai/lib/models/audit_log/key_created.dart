@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'data'}.contains(key)); } 
-KeyCreated copyWith({String Function()? id, KeyCreatedData Function()? data, }) { return KeyCreated(
+KeyCreated copyWith({String? Function()? id, KeyCreatedData? Function()? data, }) { return KeyCreated(
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 

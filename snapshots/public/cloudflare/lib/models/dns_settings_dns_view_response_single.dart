@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-DnsSettingsDnsViewResponseSingle copyWith({DnsSettingsDnsViewResponse Function()? result}) { return DnsSettingsDnsViewResponseSingle(
+DnsSettingsDnsViewResponseSingle copyWith({DnsSettingsDnsViewResponse? Function()? result}) { return DnsSettingsDnsViewResponseSingle(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

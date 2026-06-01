@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'subscription': subscription,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
-FlowDataSubscriptionCancel copyWith({Retention Function()? retention, String? subscription, }) { return FlowDataSubscriptionCancel(
+FlowDataSubscriptionCancel copyWith({Retention? Function()? retention, String? subscription, }) { return FlowDataSubscriptionCancel(
   retention: retention != null ? retention() : this.retention,
   subscription: subscription ?? this.subscription,
 ); } 

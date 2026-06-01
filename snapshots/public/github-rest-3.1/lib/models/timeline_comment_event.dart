@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('issue_url') && json['issue_url'] is String &&
       json.containsKey('author_association'); } 
-TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String Function()? body, String Function()? bodyText, String Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup Function()? reactions, PinnedIssueComment? Function()? pin, }) { return TimelineCommentEvent(
+TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup? Function()? reactions, PinnedIssueComment? Function()? pin, }) { return TimelineCommentEvent(
   event: event ?? this.event,
   actor: actor ?? this.actor,
   id: id ?? this.id,

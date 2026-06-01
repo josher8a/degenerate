@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss'
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-WebhooksSecurityAdvisory copyWith({DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, List<Cwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<References>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? Function()? withdrawnAt, }) { return WebhooksSecurityAdvisory(
+WebhooksSecurityAdvisory copyWith({DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, List<Cwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<References>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? Function()? withdrawnAt, }) { return WebhooksSecurityAdvisory(
   cvss: cvss ?? this.cvss,
   cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
   cwes: cwes ?? this.cwes,

@@ -150,7 +150,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, Output? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
+CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, Output? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
   app: app ?? this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,

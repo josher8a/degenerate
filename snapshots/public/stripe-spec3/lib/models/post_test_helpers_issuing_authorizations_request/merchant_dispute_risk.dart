@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'risk_level': riskLevel.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('risk_level'); } 
-MerchantDisputeRisk copyWith({int Function()? disputeRate, RiskLevel? riskLevel, }) { return MerchantDisputeRisk(
+MerchantDisputeRisk copyWith({int? Function()? disputeRate, RiskLevel? riskLevel, }) { return MerchantDisputeRisk(
   disputeRate: disputeRate != null ? disputeRate() : this.disputeRate,
   riskLevel: riskLevel ?? this.riskLevel,
 ); } 

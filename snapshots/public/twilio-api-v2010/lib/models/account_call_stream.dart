@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'call_sid', 'name', 'status', 'date_updated', 'uri'}.contains(key)); } 
-AccountCallStream copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? callSid, String? Function()? name, StreamEnumStatus Function()? status, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallStream(
+AccountCallStream copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? callSid, String? Function()? name, StreamEnumStatus? Function()? status, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallStream(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   callSid: callSid != null ? callSid() : this.callSid,

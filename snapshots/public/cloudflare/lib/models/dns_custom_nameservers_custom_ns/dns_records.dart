@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'value'}.contains(key)); } 
-DnsRecords copyWith({DnsCustomNameserversCustomNsDnsRecordsType Function()? type, String Function()? value, }) { return DnsRecords(
+DnsRecords copyWith({DnsCustomNameserversCustomNsDnsRecordsType? Function()? type, String? Function()? value, }) { return DnsRecords(
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
 ); } 

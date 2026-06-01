@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
       json.containsKey('role'); } 
-Developer copyWith({DeveloperContent? content, String Function()? name, DeveloperRole? role, }) { return Developer(
+Developer copyWith({DeveloperContent? content, String? Function()? name, DeveloperRole? role, }) { return Developer(
   content: content ?? this.content,
   name: name != null ? name() : this.name,
   role: role ?? this.role,

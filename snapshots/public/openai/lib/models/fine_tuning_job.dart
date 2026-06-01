@@ -176,7 +176,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('training_file') && json['training_file'] is String &&
       json.containsKey('validation_file') && json['validation_file'] is String &&
       json.containsKey('seed') && json['seed'] is num; } 
-FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningIntegration>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(
+FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningIntegration>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod? Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   error: error != null ? error() : this.error,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (advertisedModifiedAt != null) 'advertised_modified_at': advertisedModifiedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at'}.contains(key)); } 
-AddressingAdvertisedResponseResult copyWith({AddressingComponentsSchemasAdvertised Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, }) { return AddressingAdvertisedResponseResult(
+AddressingAdvertisedResponseResult copyWith({AddressingComponentsSchemasAdvertised? Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, }) { return AddressingAdvertisedResponseResult(
   advertised: advertised != null ? advertised() : this.advertised,
   advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
 ); } 

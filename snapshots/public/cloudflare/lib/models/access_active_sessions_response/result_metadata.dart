@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'ttl': ?ttl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apps', 'expires', 'iat', 'nonce', 'ttl'}.contains(key)); } 
-ResultMetadata copyWith({Map<String, AppsValue> Function()? apps, int Function()? expires, int Function()? iat, String Function()? nonce, int Function()? ttl, }) { return ResultMetadata(
+ResultMetadata copyWith({Map<String, AppsValue>? Function()? apps, int? Function()? expires, int? Function()? iat, String? Function()? nonce, int? Function()? ttl, }) { return ResultMetadata(
   apps: apps != null ? apps() : this.apps,
   expires: expires != null ? expires() : this.expires,
   iat: iat != null ? iat() : this.iat,

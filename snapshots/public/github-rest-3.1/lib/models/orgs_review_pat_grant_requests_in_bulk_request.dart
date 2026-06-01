@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int> Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
+OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: patRequestIds != null ? patRequestIds() : this.patRequestIds,
   action: action ?? this.action,
   reason: reason != null ? reason() : this.reason,

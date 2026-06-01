@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('eventType') &&
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('scriptName') && json['scriptName'] is String; } 
-WorkersVariant1 copyWith({String Function()? durableObjectId, String Function()? entrypoint, Map<String, EventValue> Function()? event, Variant1EventType? eventType, ExecutionModel Function()? executionModel, String Function()? outcome, String? requestId, String? scriptName, ScriptVersion Function()? scriptVersion, bool Function()? truncated, }) { return WorkersVariant1(
+WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function()? entrypoint, Map<String, EventValue>? Function()? event, Variant1EventType? eventType, ExecutionModel? Function()? executionModel, String? Function()? outcome, String? requestId, String? scriptName, ScriptVersion? Function()? scriptVersion, bool? Function()? truncated, }) { return WorkersVariant1(
   durableObjectId: durableObjectId != null ? durableObjectId() : this.durableObjectId,
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   event: event != null ? event() : this.event,

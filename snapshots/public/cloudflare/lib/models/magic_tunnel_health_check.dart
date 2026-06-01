@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'direction': direction.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type', 'direction'}.contains(key)); } 
-MagicTunnelHealthCheck copyWith({bool Function()? enabled, MagicHealthCheckBaseRate Function()? rate, MagicHealthCheckBaseTarget Function()? target, MagicHealthCheckBaseType Function()? type, MagicTunnelHealthCheckDirection Function()? direction, }) { return MagicTunnelHealthCheck(
+MagicTunnelHealthCheck copyWith({bool Function()? enabled, MagicHealthCheckBaseRate Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseType Function()? type, MagicTunnelHealthCheckDirection Function()? direction, }) { return MagicTunnelHealthCheck(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,

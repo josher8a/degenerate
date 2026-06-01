@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('title') && json['title'] is String; } 
-IterationSetting copyWith({String? id, String? title, String Function()? titleHtml, double? Function()? duration, String? Function()? startDate, bool Function()? completed, }) { return IterationSetting(
+IterationSetting copyWith({String? id, String? title, String? Function()? titleHtml, double? Function()? duration, String? Function()? startDate, bool? Function()? completed, }) { return IterationSetting(
   id: id ?? this.id,
   title: title ?? this.title,
   titleHtml: titleHtml != null ? titleHtml() : this.titleHtml,

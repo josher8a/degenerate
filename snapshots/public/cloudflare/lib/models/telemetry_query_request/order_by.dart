@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-OrderBy copyWith({Order Function()? order, String? value, }) { return OrderBy(
+OrderBy copyWith({Order? Function()? order, String? value, }) { return OrderBy(
   order: order != null ? order() : this.order,
   value: value ?? this.value,
 ); } 

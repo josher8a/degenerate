@@ -241,7 +241,7 @@ final WorkersBindingKindDispatchNamespace workersBindingKindDispatchNamespace;
 
 @override String get type { return 'dispatch_namespace'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindDispatchNamespace.toJson(), 'type': type}; } 
-WorkersBindingItemDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound Function()? outbound, }) { return WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace.copyWith(
+WorkersBindingItemDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound? Function()? outbound, }) { return WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace.copyWith(
   name: name,
   namespace: namespace,
   outbound: outbound,
@@ -259,7 +259,7 @@ final WorkersBindingKindDurableObjectNamespace workersBindingKindDurableObjectNa
 
 @override String get type { return 'durable_object_namespace'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindDurableObjectNamespace.toJson(), 'type': type}; } 
-WorkersBindingItemDurableObjectNamespace copyWith({String Function()? className, String Function()? dispatchNamespace, String Function()? environment, WorkersBindingName? name, WorkersNamespaceIdentifier Function()? namespaceId, String Function()? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace.copyWith(
+WorkersBindingItemDurableObjectNamespace copyWith({String? Function()? className, String? Function()? dispatchNamespace, String? Function()? environment, WorkersBindingName? name, WorkersNamespaceIdentifier? Function()? namespaceId, String? Function()? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace.copyWith(
   className: className,
   dispatchNamespace: dispatchNamespace,
   environment: environment,
@@ -313,7 +313,7 @@ final WorkersBindingKindInherit workersBindingKindInherit;
 
 @override String get type { return 'inherit'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindInherit.toJson(), 'type': type}; } 
-WorkersBindingItemInherit copyWith({String? name, String Function()? oldName, String Function()? versionId, }) { return WorkersBindingItemInherit(workersBindingKindInherit.copyWith(
+WorkersBindingItemInherit copyWith({String? name, String? Function()? oldName, String Function()? versionId, }) { return WorkersBindingItemInherit(workersBindingKindInherit.copyWith(
   name: name,
   oldName: oldName,
   versionId: versionId,
@@ -433,7 +433,7 @@ final WorkersBindingKindR2Bucket workersBindingKindR2Bucket;
 
 @override String get type { return 'r2_bucket'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindR2Bucket.toJson(), 'type': type}; } 
-WorkersBindingItemR2Bucket copyWith({String? bucketName, Jurisdiction Function()? jurisdiction, WorkersBindingName? name, }) { return WorkersBindingItemR2Bucket(workersBindingKindR2Bucket.copyWith(
+WorkersBindingItemR2Bucket copyWith({String? bucketName, Jurisdiction? Function()? jurisdiction, WorkersBindingName? name, }) { return WorkersBindingItemR2Bucket(workersBindingKindR2Bucket.copyWith(
   bucketName: bucketName,
   jurisdiction: jurisdiction,
   name: name,
@@ -469,7 +469,7 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
 @override String get type { return 'secret_key'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
-WorkersBindingItemSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, dynamic> Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersBindingItemSecretKey(workersBindingKindSecretKey.copyWith(
+WorkersBindingItemSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersBindingItemSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
   format: format,
   keyBase64: keyBase64,
@@ -525,7 +525,7 @@ final WorkersBindingKindSendEmail workersBindingKindSendEmail;
 
 @override String get type { return 'send_email'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindSendEmail.toJson(), 'type': type}; } 
-WorkersBindingItemSendEmail copyWith({List<String> Function()? allowedDestinationAddresses, List<String> Function()? allowedSenderAddresses, String Function()? destinationAddress, WorkersBindingName? name, }) { return WorkersBindingItemSendEmail(workersBindingKindSendEmail.copyWith(
+WorkersBindingItemSendEmail copyWith({List<String>? Function()? allowedDestinationAddresses, List<String>? Function()? allowedSenderAddresses, String? Function()? destinationAddress, WorkersBindingName? name, }) { return WorkersBindingItemSendEmail(workersBindingKindSendEmail.copyWith(
   allowedDestinationAddresses: allowedDestinationAddresses,
   allowedSenderAddresses: allowedSenderAddresses,
   destinationAddress: destinationAddress,
@@ -544,7 +544,7 @@ final WorkersBindingKindService workersBindingKindService;
 
 @override String get type { return 'service'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindService.toJson(), 'type': type}; } 
-WorkersBindingItemService copyWith({String Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, }) { return WorkersBindingItemService(workersBindingKindService.copyWith(
+WorkersBindingItemService copyWith({String? Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, }) { return WorkersBindingItemService(workersBindingKindService.copyWith(
   entrypoint: entrypoint,
   environment: environment,
   name: name,
@@ -647,7 +647,7 @@ final WorkersBindingKindWorkflow workersBindingKindWorkflow;
 
 @override String get type { return 'workflow'; } 
 @override Map<String, dynamic> toJson() { return {...workersBindingKindWorkflow.toJson(), 'type': type}; } 
-WorkersBindingItemWorkflow copyWith({String Function()? className, WorkersBindingName? name, String Function()? scriptName, String? workflowName, }) { return WorkersBindingItemWorkflow(workersBindingKindWorkflow.copyWith(
+WorkersBindingItemWorkflow copyWith({String? Function()? className, WorkersBindingName? name, String? Function()? scriptName, String? workflowName, }) { return WorkersBindingItemWorkflow(workersBindingKindWorkflow.copyWith(
   className: className,
   name: name,
   scriptName: scriptName,

@@ -152,7 +152,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
       json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int Function()? actionsWorkflowRunId, FailureReason Function()? failureReason, List<ScannedRepositories> Function()? scannedRepositories, SkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int? Function()? actionsWorkflowRunId, FailureReason? Function()? failureReason, List<ScannedRepositories>? Function()? scannedRepositories, SkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,

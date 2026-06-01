@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'target_uri': targetUri.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
-BlockPage copyWith({bool Function()? includeContext, Uri? targetUri, }) { return BlockPage(
+BlockPage copyWith({bool? Function()? includeContext, Uri? targetUri, }) { return BlockPage(
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   targetUri: targetUri ?? this.targetUri,
 ); } 
