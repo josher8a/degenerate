@@ -50,9 +50,17 @@ class IrMapper {
     String hint,
   ) {
     if (hint.length > unionName.length && hint.startsWith(unionName)) {
-      return [...unionPath, hint.substring(unionName.length)];
+      return [...unionPath, toPascalCase(hint.substring(unionName.length))];
     }
-    return [hint];
+    // The hint is a raw schema `title` (e.g. `Async_Batch` / `amount_details_param`).
+    // namePath segments are contracted to be PascalCase — the suffix resolver's
+    // `_typeCase` only capitalizes the first char, so a raw underscore title that
+    // happens to be a valid Dart identifier would survive verbatim as the emitted
+    // type name (`Async_Batch`), tripping `camel_case_types`. (Titles with spaces
+    // dodge this only because the identifier-validity gate rejects them and falls
+    // back to the Pascal'd flat name.) PascalCase here so every variant segment
+    // honors the contract.
+    return [toPascalCase(hint)];
   }
 
   final AllOfFlattener _flattener = AllOfFlattener();
