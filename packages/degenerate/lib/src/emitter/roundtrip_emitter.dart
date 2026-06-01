@@ -38,14 +38,17 @@ class RoundtripEmitter {
     for (final type in types) {
       final name = type.emittableName;
       if (name == null) continue;
-      // Only types with a uniform `Name.fromJson(json)` + `value.toJson()`
-      // codec get a standalone fixture. Union typedefs (OneOfN) and anyOf
-      // classes don't fit that shape uniformly — skip for now.
+      // Types with a uniform codec get a standalone fixture: classes with
+      // `Name.fromJson(json)`/`value.toJson()`, plus OneOf-eligible union
+      // typedefs (decode inlines `OneOfN.parse`, encode is `value.toJson()`).
+      // Self-referencing OneOf typedefs (whose runtime parser is `parseName`,
+      // not inline) and anyOf/sealed-union classes are skipped for now.
       final supported =
           type is IrObject ||
           type is IrEnum ||
           type is IrExtensionType ||
-          type is IrDiscriminatedUnion;
+          type is IrDiscriminatedUnion ||
+          _isOneOfTypedef(type);
       if (!supported) {
         if (type is IrUntaggedUnion || type is IrAnyOf) {
           skippedUnion++;
@@ -63,8 +66,10 @@ class RoundtripEmitter {
 
       // The synthesized sample is always non-null, so the closures null-assert
       // their `Object?` parameter before casting — avoiding a
-      // cast_nullable_to_non_nullable lint in the generated file.
-      final decode = buildFromJsonCode(type, 'json!', typeRegistry: _registry);
+      // cast_nullable_to_non_nullable lint. Union decode is `OneOfN.parse`,
+      // which takes a nullable `Object?`, so the bang would be redundant there.
+      final accessor = _isOneOfTypedef(type) ? 'json' : 'json!';
+      final decode = buildFromJsonCode(type, accessor, typeRegistry: _registry);
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
       fixtures.add(
         '  RoundtripFixture(\n'
@@ -145,10 +150,76 @@ class RoundtripEmitter {
         return _sampleLiteral(target, {...visited, name});
       case IrDiscriminatedUnion():
         return _discriminatedLiteral(type, visited);
-      case IrUntaggedUnion():
-      case IrAnyOf():
-        return null; // unions not synthesized in this cut
+      case IrUntaggedUnion(:final variants):
+        return _unionLiteral(variants, visited);
+      case IrAnyOf(:final variants):
+        return _unionLiteral(variants, visited);
     }
+  }
+
+  /// A sample for a OneOf-eligible union: the first variant whose held value
+  /// `OneOf.toJson` can re-serialize (objects/enums/nested unions, or a
+  /// JSON-passthrough scalar) and that we can synthesize. Other variants
+  /// (extension types, raw maps/lists, parsed scalars like DateTime) have no
+  /// `toJson` on their runtime representation, so `OneOf.toJson` would throw —
+  /// skip them. Returns `null` if no variant qualifies.
+  String? _unionLiteral(List<IrType> variants, Set<String> visited) {
+    if (!isOneOfEligible(variants)) return null;
+    for (final v in variants) {
+      if (!_isToJsonSafeUnionVariant(v)) continue;
+      final lit = _sampleLiteral(v, visited);
+      if (lit != null) return lit;
+    }
+    return null;
+  }
+
+  /// Whether a value of [type], when wrapped in a `OneOfN`, survives
+  /// `OneOf.toJson` (which passes `String`/`num`/`bool`/`null` through and
+  /// calls `.toJson()` on anything else). Extension types and the
+  /// conversion primitives store a raw representation with no `toJson`, and raw
+  /// maps/lists likewise — all unsafe.
+  bool _isToJsonSafeUnionVariant(IrType type) {
+    var t = type;
+    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    return switch (t) {
+      IrObject() ||
+      IrDiscriminatedUnion() ||
+      IrUntaggedUnion() ||
+      IrAnyOf() ||
+      IrEnum() => true,
+      IrPrimitive(:final kind) => const {
+        PrimitiveKind.string,
+        PrimitiveKind.int,
+        PrimitiveKind.double,
+        PrimitiveKind.num,
+        PrimitiveKind.bool,
+      }.contains(kind),
+      _ => false,
+    };
+  }
+
+  /// Whether [type] is a OneOf-eligible union typedef with an inline parser
+  /// (i.e. not self-referencing — those use a `parseName` helper instead).
+  bool _isOneOfTypedef(IrType type) {
+    final variants = switch (type) {
+      IrUntaggedUnion(:final variants) => variants,
+      IrAnyOf(:final variants) => variants,
+      _ => null,
+    };
+    if (variants == null || !isOneOfEligible(variants)) return false;
+    return !_isSelfReferencing(type.emittableName!, variants);
+  }
+
+  /// Whether any variant (through list/map) references [typeName] — a
+  /// self-referencing union, whose typedef can't carry an inline parser.
+  bool _isSelfReferencing(String typeName, List<IrType> variants) {
+    bool check(IrType t) => switch (t) {
+      IrTypeRef(:final name) => name == typeName,
+      IrList(:final items) => check(items),
+      IrMap(:final values) => check(values),
+      _ => false,
+    };
+    return variants.any(check);
   }
 
   /// A literal for each primitive kind, chosen so `fromJson`→`toJson` is the
@@ -172,9 +243,12 @@ class RoundtripEmitter {
   /// matches the re-encoded output exactly. Returns `null` if any such field
   /// can't be synthesized.
   String? _objectLiteral(IrObject obj, Set<String> visited) {
-    if (obj.name.isNotEmpty && visited.contains(obj.name)) return null;
-    final next = obj.name.isEmpty ? visited : {...visited, obj.name};
-    final entries = _fieldEntries(obj.fields, next, skipKey: null);
+    // Cycle detection lives at the [IrTypeRef] boundary (which adds the name to
+    // [visited] before recursing here), so this must NOT re-check `obj.name` —
+    // doing so would false-positive on the very ref that reached it, nulling
+    // every ref-to-object. A self-referential field re-enters through the ref
+    // boundary and is caught there.
+    final entries = _fieldEntries(obj.fields, visited, skipKey: null);
     if (entries == null) return null;
     if (entries.isEmpty) return '<String, dynamic>{}';
     return '{${entries.join(', ')}}';
