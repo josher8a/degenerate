@@ -73,7 +73,9 @@ Map<String, String> resolveSuffixNames({
         }
       }
       if (matches != 1) continue;
-      final cand = candSegs.join();
+      // Force UpperCamel: a leaf segment derived from an enum value or field
+      // (e.g. `auto`) would otherwise emit an invalid lowercase class name.
+      final cand = _typeCase(candSegs.join());
       // The shortened suffix must be a legal Dart type identifier; a segment
       // like `0` (from a property literally named "0") is only valid once a
       // preceding segment makes the join start with a letter/underscore.
@@ -84,11 +86,12 @@ Map<String, String> resolveSuffixNames({
       }
     }
     // Fallback: the original (already-unique) flat name.
-    var finalName = chosen ?? name;
+    final base = _typeCase(chosen ?? name);
+    var finalName = base;
     // Paranoia: guarantee global uniqueness even if a join collided.
     var n = 1;
     while (taken.contains(finalName)) {
-      finalName = '${chosen ?? name}\$$n';
+      finalName = '$base\$$n';
       n++;
     }
     result[name] = finalName;
@@ -101,3 +104,13 @@ Map<String, String> resolveSuffixNames({
 final _validTypeName = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*$');
 
 bool _isValidTypeName(String s) => _validTypeName.hasMatch(s);
+
+/// Force a name to UpperCamel by capitalizing a leading lowercase letter.
+/// Leaves names that start with `_`, `$`, a digit, or an uppercase letter
+/// unchanged (subsequent segments are already PascalCase).
+String _typeCase(String s) {
+  if (s.isEmpty) return s;
+  final first = s[0];
+  final upper = first.toUpperCase();
+  return upper == first ? s : '$upper${s.substring(1)}';
+}
