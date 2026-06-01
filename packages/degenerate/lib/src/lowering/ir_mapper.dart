@@ -23,6 +23,38 @@ class IrMapper {
 
   /// Maps Dart type names to their IR types.
   final Map<String, IrType> typeRegistry = {};
+
+  /// Maps each generated type name → the ordered PascalCase path segments it
+  /// was built from (parent type + field/variant segment per nesting level).
+  /// `segments.join()` reproduces the current flat name, so this is purely
+  /// additive metadata used by the shortest-unique-suffix name resolver.
+  /// Types lowered without path context (e.g. operation-inline) fall back to a
+  /// single segment equal to their flat name.
+  final Map<String, List<String>> namePaths = {};
+
+  /// Record the segment path for [name] (first writer wins; shared `$ref`
+  /// targets and re-registered inline types keep their first-seen path).
+  void _recordPath(String? name, List<String>? path) {
+    if (name == null || name.isEmpty) return;
+    namePaths.putIfAbsent(name, () => path ?? [name]);
+  }
+
+  /// Path for a union variant whose hint is [hint]. When the hint is the
+  /// conventional `<Union><Suffix>` (e.g. `FooVariant1`), the variant nests
+  /// under the union with `<Suffix>` as its segment. When the hint is a
+  /// standalone title that doesn't extend the union name, it is treated as its
+  /// own root so its segments still join back to the flat name.
+  List<String> _variantPath(
+    String unionName,
+    List<String> unionPath,
+    String hint,
+  ) {
+    if (hint.length > unionName.length && hint.startsWith(unionName)) {
+      return [...unionPath, hint.substring(unionName.length)];
+    }
+    return [hint];
+  }
+
   final AllOfFlattener _flattener = AllOfFlattener();
 
   /// Maps original OpenAPI schema name → Dart type name (after renaming).
@@ -86,14 +118,24 @@ class IrMapper {
   /// Used by the generator for a final resolution pass.
   IrType resolveTypeRefs(IrType type) => _resolver.resolve(type);
 
+  /// Dart names of the top-level `components/schemas` types. These are the
+  /// intentional public API and are never shortened by the suffix resolver.
+  Set<String> get topLevelNames => _nameMapping.values.toSet();
+
   /// Lower a single named schema to an IR type and register it.
   IrType? _lowerNamedSchema(String name, dynamic schema) {
     if (schema is! Map<String, dynamic> && schema is! bool) return null;
     final dartName = _nameMapping[name] ?? _uniqueTypeName(name);
     _nameMapping[name] = dartName;
+    _recordPath(dartName, [dartName]);
     final discProp = _discriminatorProperties[name];
     var irType = schema is Map<String, dynamic>
-        ? _lowerSchemaImpl(dartName, schema, discriminatorProperty: discProp)
+        ? _lowerSchemaImpl(
+            dartName,
+            schema,
+            discriminatorProperty: discProp,
+            namePath: [dartName],
+          )
         : _lowerBooleanSchema(schema as bool, nameHint: dartName);
     if (irType is IrPrimitive) {
       final preserveNullableInner = irType.kind == PrimitiveKind.dynamic_;
@@ -127,6 +169,7 @@ class IrMapper {
   IrType lowerInlineSchema(
     Map<String, dynamic> schema, {
     String? nameHint,
+    List<String>? namePath,
     String? discriminatorProperty,
   }) {
     // Check if the schema will produce a named type (needs a unique name).
@@ -138,12 +181,17 @@ class IrMapper {
     // Pre-compute a unique name so that _lowerObject (and its inline enums)
     // use the correct final name from the start.
     final effectiveName = needsName ? _uniqueTypeName(hint) : nameHint;
+    // The path for this inline type: explicit namePath from the caller, else
+    // a single-segment fallback equal to its flat name.
+    final effectivePath =
+        namePath ?? (effectiveName != null ? [effectiveName] : null);
 
     final result = _lowerSchemaImpl(
       effectiveName,
       schema,
       isInline: true,
       discriminatorProperty: discriminatorProperty,
+      namePath: effectivePath,
     );
     var resolved = _resolver.resolveRef(result);
     // Recursively resolve type refs within nested types (e.g. list items, map
@@ -256,6 +304,7 @@ class IrMapper {
     Map<String, dynamic> schema, {
     String? discriminatorProperty,
     bool isInline = false,
+    List<String>? namePath,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
@@ -359,7 +408,7 @@ class IrMapper {
     // oneOf with discriminator → IrDiscriminatedUnion (existing behavior).
     if (flattened.containsKey('oneOf') &&
         flattened.containsKey('discriminator')) {
-      return _lowerDiscriminatedUnion(name, flattened);
+      return _lowerDiscriminatedUnion(name, flattened, namePath: namePath);
     }
 
     // anyOf with discriminator → IrDiscriminatedUnion, same as oneOf. Inline
@@ -367,12 +416,17 @@ class IrMapper {
     // _lowerDiscriminatedUnion), so they no longer fall back to FooVariant1/2.
     if (flattened.containsKey('anyOf') &&
         flattened.containsKey('discriminator')) {
-      return _lowerDiscriminatedUnion(name, flattened);
+      return _lowerDiscriminatedUnion(name, flattened, namePath: namePath);
     }
 
     // oneOf without discriminator → IrUntaggedUnion.
     if (flattened.containsKey('oneOf')) {
-      return _lowerUntaggedUnion(name, flattened, isInline: isInline);
+      return _lowerUntaggedUnion(
+        name,
+        flattened,
+        isInline: isInline,
+        namePath: namePath,
+      );
     }
 
     // anyOf → check for OpenAPI 3.1 nullable pattern first.
@@ -388,10 +442,15 @@ class IrMapper {
       if (hasNullVariant && nonNullVariants.length == 1) {
         // This is just a nullable wrapper - lower the single real type.
         final inner = nonNullVariants[0] as Map<String, dynamic>;
-        final result = _lowerSchemaImpl(name, inner, isInline: isInline);
+        final result = _lowerSchemaImpl(
+          name,
+          inner,
+          isInline: isInline,
+          namePath: namePath,
+        );
         return result.copyAsNullable();
       }
-      return _lowerAnyOf(name, flattened, isInline: isInline);
+      return _lowerAnyOf(name, flattened, isInline: isInline, namePath: namePath);
     }
 
     final type = _extractType(flattened);
@@ -412,12 +471,12 @@ class IrMapper {
           return IrTypeRef(existing.name, isNullable: nullable);
         }
       }
-      return _lowerEnum(name, flattened);
+      return _lowerEnum(name, flattened, namePath: namePath);
     }
 
     // Array.
     if (type == 'array') {
-      return _lowerList(flattened, itemNameHint: name);
+      return _lowerList(flattened, itemNameHint: name, namePath: namePath);
     }
 
     // Object with properties → IrObject.
@@ -425,7 +484,7 @@ class IrMapper {
       // Object with only additionalProperties → IrMap.
       if (!flattened.containsKey('properties') &&
           flattened.containsKey('additionalProperties')) {
-        return _lowerMap(flattened, nameHint: name);
+        return _lowerMap(flattened, nameHint: name, namePath: namePath);
       }
       // Object with no properties and no additionalProperties → Map<String,
       // dynamic>.
@@ -433,18 +492,19 @@ class IrMapper {
       // schema.
       if (!flattened.containsKey('properties') &&
           !flattened.containsKey('additionalProperties')) {
-        return _lowerMap(flattened, nameHint: name);
+        return _lowerMap(flattened, nameHint: name, namePath: namePath);
       }
       return _lowerObject(
         name,
         flattened,
         discriminatorProperty: discriminatorProperty,
+        namePath: namePath,
       );
     }
 
     // Object-like map (additionalProperties only, no explicit type).
     if (flattened.containsKey('additionalProperties')) {
-      return _lowerMap(flattened, nameHint: name);
+      return _lowerMap(flattened, nameHint: name, namePath: namePath);
     }
 
     // JSON Schema `type: "null"` — the only valid value is null.
@@ -521,13 +581,18 @@ class IrMapper {
 
   // ─── Enum ─────────────────────────────────────────────────────
 
-  IrType _lowerEnum(String? name, Map<String, dynamic> schema) {
+  IrType _lowerEnum(
+    String? name,
+    Map<String, dynamic> schema, {
+    List<String>? namePath,
+  }) {
     final values = (schema['enum'] as List).map((e) => e.toString()).toList();
     final rawDefault = schema['default'];
     final defaultValue = rawDefault?.toString();
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final enumName = name ?? _uniqueTypeName('InlineEnum');
+    _recordPath(enumName, namePath);
     final type = _extractType(schema);
     final PrimitiveKind valueKind;
     if (type == 'integer') {
@@ -549,14 +614,24 @@ class IrMapper {
 
   // ─── List ─────────────────────────────────────────────────────
 
-  IrType _lowerList(Map<String, dynamic> schema, {String? itemNameHint}) {
+  IrType _lowerList(
+    Map<String, dynamic> schema, {
+    String? itemNameHint,
+    List<String>? namePath,
+  }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final rawItems = schema['items'];
     final itemsSchema = rawItems is Map<String, dynamic> ? rawItems : null;
     IrType itemsType;
     if (itemsSchema != null) {
-      itemsType = lowerInlineSchema(itemsSchema, nameHint: itemNameHint);
+      // List items reuse the list's own name context (no extra segment), so the
+      // item type's path equals the list's path.
+      itemsType = lowerInlineSchema(
+        itemsSchema,
+        nameHint: itemNameHint,
+        namePath: namePath,
+      );
     } else {
       itemsType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     }
@@ -565,7 +640,11 @@ class IrMapper {
 
   // ─── Map ──────────────────────────────────────────────────────
 
-  IrType _lowerMap(Map<String, dynamic> schema, {String? nameHint}) {
+  IrType _lowerMap(
+    Map<String, dynamic> schema, {
+    String? nameHint,
+    List<String>? namePath,
+  }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final addProps = schema['additionalProperties'];
@@ -573,7 +652,11 @@ class IrMapper {
     if (addProps is Map<String, dynamic>) {
       // Derive a value name hint from the parent context.
       final valueHint = nameHint != null ? '${nameHint}Value' : null;
-      valueType = lowerInlineSchema(addProps, nameHint: valueHint);
+      valueType = lowerInlineSchema(
+        addProps,
+        nameHint: valueHint,
+        namePath: namePath != null ? [...namePath, 'Value'] : null,
+      );
     } else {
       // additionalProperties: true or absent → Map<String, dynamic>
       valueType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
@@ -587,10 +670,13 @@ class IrMapper {
     String? name,
     Map<String, dynamic> schema, {
     String? discriminatorProperty,
+    List<String>? namePath,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final objectName = name ?? _uniqueTypeName('InlineObject');
+    final objectPath = namePath ?? [objectName];
+    _recordPath(objectName, objectPath);
 
     final requiredList = <String>[];
     final rawRequired = schema['required'];
@@ -652,6 +738,9 @@ class IrMapper {
         }
       }
 
+      // The path for any named type this field produces: parent + field name.
+      final fieldPath = [...objectPath, toPascalCase(fieldOriginalName)];
+
       IrType fieldType;
       if (discriminatorProperty != null &&
           fieldOriginalName == discriminatorProperty &&
@@ -663,14 +752,22 @@ class IrMapper {
         );
       } else if (inlineEnumName != null) {
         // Inline enum: lower with the generated name and register it.
-        fieldType = _lowerEnum(inlineEnumName, fieldSchema);
+        fieldType = _lowerEnum(
+          inlineEnumName,
+          fieldSchema,
+          namePath: fieldPath,
+        );
         typeRegistry[inlineEnumName] = fieldType;
       } else {
         // Generate a name hint based on the parent object and field name.
         final fieldNameHint = '$objectName${toPascalCase(fieldOriginalName)}';
         // Use lowerInlineSchema to properly register any named types
         // (objects, enums, unions) that need separate files.
-        fieldType = lowerInlineSchema(fieldSchema, nameHint: fieldNameHint);
+        fieldType = lowerInlineSchema(
+          fieldSchema,
+          nameHint: fieldNameHint,
+          namePath: fieldPath,
+        );
       }
 
       // Apply nullability: if nullable is explicitly set on the field schema,
@@ -708,7 +805,11 @@ class IrMapper {
     if (addProps != null && addProps != false) {
       if (addProps is Map<String, dynamic>) {
         final valueHint = '${objectName}Value';
-        additionalPropsType = lowerInlineSchema(addProps, nameHint: valueHint);
+        additionalPropsType = lowerInlineSchema(
+          addProps,
+          nameHint: valueHint,
+          namePath: [...objectPath, 'Value'],
+        );
       } else {
         // additionalProperties: true → Map<String, dynamic>
         additionalPropsType = const IrPrimitive(
@@ -730,10 +831,16 @@ class IrMapper {
 
   // ─── Discriminated Union ──────────────────────────────────────
 
-  IrType _lowerDiscriminatedUnion(String? name, Map<String, dynamic> schema) {
+  IrType _lowerDiscriminatedUnion(
+    String? name,
+    Map<String, dynamic> schema, {
+    List<String>? namePath,
+  }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final unionName = name ?? _uniqueTypeName('InlineUnion');
+    final unionPath = namePath ?? [unionName];
+    _recordPath(unionName, unionPath);
 
     final discriminator = schema['discriminator'] as Map<String, dynamic>;
     final propertyName = discriminator['propertyName'] as String;
@@ -778,7 +885,11 @@ class IrMapper {
           final hint =
               (refOrSchema['title'] as String?) ??
               '$unionName${toPascalCase(value)}';
-          mapping[value] = lowerInlineSchema(refOrSchema, nameHint: hint);
+          mapping[value] = lowerInlineSchema(
+            refOrSchema,
+            nameHint: hint,
+            namePath: [...unionPath, toPascalCase(value)],
+          );
         }
       }
     } else {
@@ -813,6 +924,7 @@ class IrMapper {
           final lowered = lowerInlineSchema(
             variant,
             nameHint: hint,
+            namePath: _variantPath(unionName, unionPath, hint),
             // Emit the discriminator field as a plain String, matching the
             // sealed base's `String get <disc>` and ref-variant payloads.
             discriminatorProperty: propertyName,
@@ -847,10 +959,13 @@ class IrMapper {
     String? name,
     Map<String, dynamic> schema, {
     bool isInline = false,
+    List<String>? namePath,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final unionName = name ?? _uniqueTypeName('InlineUnion');
+    final unionPath = namePath ?? [unionName];
+    _recordPath(unionName, unionPath);
 
     final oneOf = schema['oneOf'] as List;
 
@@ -876,7 +991,13 @@ class IrMapper {
             (variant['title'] as String?) ??
             _singleEnumHint(unionName, variant) ??
             '${unionName}Variant${i + 1}';
-        variants.add(lowerInlineSchema(variant, nameHint: hint));
+        variants.add(
+          lowerInlineSchema(
+            variant,
+            nameHint: hint,
+            namePath: _variantPath(unionName, unionPath, hint),
+          ),
+        );
       }
     }
 
@@ -918,10 +1039,13 @@ class IrMapper {
     String? name,
     Map<String, dynamic> schema, {
     bool isInline = false,
+    List<String>? namePath,
   }) {
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
+    final anyOfPath = namePath ?? [anyOfName];
+    _recordPath(anyOfName, anyOfPath);
 
     final anyOf = schema['anyOf'] as List;
 
@@ -946,7 +1070,13 @@ class IrMapper {
             (variant['title'] as String?) ??
             _singleEnumHint(anyOfName, variant) ??
             '${anyOfName}Variant${i + 1}';
-        variants.add(lowerInlineSchema(variant, nameHint: hint));
+        variants.add(
+          lowerInlineSchema(
+            variant,
+            nameHint: hint,
+            namePath: _variantPath(anyOfName, anyOfPath, hint),
+          ),
+        );
       }
     }
 

@@ -11,6 +11,8 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/naming/ir_rewriter.dart';
+import 'package:degenerate/src/naming/name_resolution.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
@@ -46,6 +48,7 @@ class GeneratorConfig {
     this.workspace = false,
     this.stdinContent,
     this.unwrapFields = const [],
+    this.dedupeInlineTypes = true,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -100,6 +103,11 @@ class GeneratorConfig {
   /// full envelope. For example, `['result']` unwraps
   /// `{errors, messages, success, result: T}` to just `T`.
   final List<String> unwrapFields;
+
+  /// Merge structurally-identical inline types into one shared type and
+  /// shorten generated names to the shortest unique suffix, grouping the
+  /// emitted files into per-root-schema folders.
+  final bool dedupeInlineTypes;
 }
 
 /// The main code generator pipeline.
@@ -171,7 +179,7 @@ class Generator {
     // 4. Lower schemas to IR types
     _log('Lowering schemas to IR...');
     final irMapper = IrMapper(normContext);
-    final irTypes = irMapper.lowerSchemas(inlinedDoc.schemas);
+    var irTypes = irMapper.lowerSchemas(inlinedDoc.schemas);
 
     if (config.verbose) {
       _log('  ${irTypes.length} types lowered');
@@ -229,6 +237,16 @@ class Generator {
     // responses) so that refs to non-emittable types (e.g., IrList aliases)
     // are replaced with the actual types.
     irApis = _resolveApiTypeRefs(refResolver, irApis);
+
+    // De-duplicate structurally-identical inline types and shorten names to
+    // the shortest unique suffix. Produces a folder path per emitted type.
+    final typePaths = <String, List<String>>{};
+    if (config.dedupeInlineTypes) {
+      final resolution = _applyNameResolution(irMapper, irTypes, irApis);
+      irTypes = resolution.types;
+      irApis = resolution.apis;
+      typePaths.addAll(resolution.paths);
+    }
 
     // Filter deprecated operations if not included
     if (!config.includeDeprecated) {
@@ -322,6 +340,7 @@ class Generator {
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
       unwrapFields: config.unwrapFields,
+      typePaths: typePaths,
     );
 
     // In workspace mode, Dart source files live under lib/.
@@ -464,6 +483,129 @@ class Generator {
   /// Resolve type refs in all API operations.
   ///
   /// Uses `identical` checks to avoid rebuilding objects when nothing changed.
+  /// Apply structural de-duplication + suffix-shortening to the lowered
+  /// program. Returns rewritten types (duplicates merged away), rewritten
+  /// APIs, and a final-type-name → folder-path map for emission.
+  static ({
+    List<IrType> types,
+    List<IrApi> apis,
+    Map<String, List<String>> paths,
+  })
+  _applyNameResolution(
+    IrMapper irMapper,
+    List<IrType> irTypes,
+    List<IrApi> irApis,
+  ) {
+    final registry = <String, IrType>{};
+    for (final t in irTypes) {
+      final n = t.emittableName;
+      if (n != null) registry.putIfAbsent(n, () => t);
+    }
+
+    final allNames = {...registry.keys, ...irMapper.namePaths.keys};
+    final reserved = irMapper.topLevelNames.intersection(allNames);
+    final resolution = resolveNames(
+      allNames: allNames,
+      reserved: reserved,
+      paths: irMapper.namePaths,
+      registry: registry,
+    );
+    String rename(String s) => resolution.finalNames[s] ?? s;
+
+    final dumpTo = Platform.environment['DUMP_RENAME_MAP'];
+    if (dumpTo != null) {
+      final lines = [
+        for (final e in resolution.finalNames.entries)
+          if (e.key != e.value) '${e.key} ${e.value}',
+      ]..sort();
+      File(dumpTo).writeAsStringSync(lines.join('\n'));
+    }
+
+    // Rewrite type declarations + references, dropping merged-away duplicates
+    // (which now collide on their survivor's final name).
+    final seen = <String>{};
+    final newTypes = <IrType>[];
+    for (final t in irTypes) {
+      final rewritten = rewriteTypeNames(t, rename);
+      final n = rewritten.emittableName;
+      if (n != null && !seen.add(n)) continue;
+      newTypes.add(rewritten);
+    }
+
+    final newApis = [for (final api in irApis) _rewriteApiNames(api, rename)];
+
+    // Folder path per emitted type: survivors carry their representative path;
+    // everything else (top-level schemas) stays flat at its own name.
+    final paths = <String, List<String>>{};
+    for (final t in newTypes) {
+      final n = t.emittableName;
+      if (n == null) continue;
+      paths[n] = resolution.survivorPaths[n] ?? [n];
+    }
+
+    return (types: newTypes, apis: newApis, paths: paths);
+  }
+
+  /// Rewrite all type names within an API's operations through [rename].
+  static IrApi _rewriteApiNames(IrApi api, String Function(String) rename) {
+    IrMediaType mt(IrMediaType m) => IrMediaType(
+      rewriteTypeNames(m.schema, rename),
+      itemSchema: m.itemSchema == null
+          ? null
+          : rewriteTypeNames(m.itemSchema!, rename),
+      encoding: m.encoding,
+    );
+    IrResponse resp(IrResponse r) => IrResponse(
+      description: r.description,
+      content: {for (final e in r.content.entries) e.key: mt(e.value)},
+      headers: r.headers,
+    );
+    final ops = [
+      for (final op in api.operations)
+        IrOperation(
+          op.operationId,
+          op.dartMethodName,
+          op.method,
+          op.path,
+          customMethod: op.customMethod,
+          summary: op.summary,
+          description: op.description,
+          parameters: [
+            for (final p in op.parameters)
+              IrParameter(
+                p.name,
+                p.dartName,
+                p.location,
+                rewriteTypeNames(p.type, rename),
+                isRequired: p.isRequired,
+                style: p.style,
+                explode: p.explode,
+                allowReserved: p.allowReserved,
+                defaultValue: p.defaultValue,
+              ),
+          ],
+          requestBody: op.requestBody == null
+              ? null
+              : IrRequestBody(
+                  {
+                    for (final e in op.requestBody!.content.entries)
+                      e.key: mt(e.value),
+                  },
+                  isRequired: op.requestBody!.isRequired,
+                ),
+          responses: {
+            for (final e in op.responses.entries) e.key: resp(e.value),
+          },
+          defaultResponse: op.defaultResponse == null
+              ? null
+              : resp(op.defaultResponse!),
+          isDeprecated: op.isDeprecated,
+          securityRequirements: op.securityRequirements,
+        ),
+    ];
+    return IrApi(api.name, ops);
+  }
+
   static List<IrApi> _resolveApiTypeRefs(
     TypeRefResolver resolver,
     List<IrApi> apis,
@@ -483,6 +625,9 @@ class Generator {
             p.location,
             resolved,
             isRequired: p.isRequired,
+            style: p.style,
+            explode: p.explode,
+            allowReserved: p.allowReserved,
             defaultValue: p.defaultValue,
           );
         }).toList();
@@ -685,6 +830,7 @@ class Generator {
       IrTypeRef(:final name) => 'Ref($name)',
     };
   }
+
 }
 
 /// Exception thrown by the generator pipeline.

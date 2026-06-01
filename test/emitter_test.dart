@@ -2277,9 +2277,9 @@ void main() {
     test('parent model imports typedef file, not variant file', () {
       final containerFile = files['models/container.dart']!;
       // Should import the typedef file (which contains the inlined variant)
-      expect(containerFile, contains("'container_value.dart'"));
+      expect(containerFile, contains('models/container_value.dart'));
       // Should NOT import a separate variant file
-      expect(containerFile, isNot(contains("'container_value_variant2.dart'")));
+      expect(containerFile, isNot(contains('container_value_variant2.dart')));
     });
   });
 
@@ -2322,13 +2322,13 @@ void main() {
     test('parent model does not import inlined OneOf typedef', () {
       final parentFile = files['models/parent.dart']!;
       // OuterOneOf is used as the field type, so it should be imported
-      expect(parentFile, contains("'outer_one_of.dart'"));
+      expect(parentFile, contains('models/outer_one_of.dart'));
       // InnerOneOf is an inlined OneOf typedef - its parse code is inlined
       // as OneOf2.parse(...), so the import should NOT be present
-      expect(parentFile, isNot(contains("'inner_one_of.dart'")));
+      expect(parentFile, isNot(contains('inner_one_of.dart')));
       // But A and B should be imported (they appear in inlined .fromJson calls)
-      expect(parentFile, contains("'a.dart'"));
-      expect(parentFile, contains("'b.dart'"));
+      expect(parentFile, contains('models/a.dart'));
+      expect(parentFile, contains('models/b.dart'));
     });
   });
 

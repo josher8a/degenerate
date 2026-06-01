@@ -27,16 +27,25 @@ class FileEmitter {
     String? defaultServerUrl,
     List<String>? warnings,
     List<String> unwrapFields = const [],
+    Map<String, List<String>> typePaths = const {},
   }) {
     final files = <String, String>{};
 
-    // Build a lookup from type name to file name for imports
+    // Build a lookup from type name to its models-relative path stem (without
+    // extension). Inline types are grouped into a folder named after their
+    // root schema; top-level types stay flat directly under models/.
+    String fileStemFor(String name) {
+      final segs = typePaths[name];
+      if (segs == null || segs.length <= 1) return toSnakeCase(name);
+      return '${toSnakeCase(segs.first)}/${toSnakeCase(name)}';
+    }
+
     final typeToFile = <String, String>{};
     final typeRegistry = <String, IrType>{};
     for (final type in types) {
       final name = _typeName(type);
       if (name == null) continue;
-      typeToFile[name] = toSnakeCase(name);
+      typeToFile[name] = fileStemFor(name);
       typeRegistry[name] = type;
     }
 
@@ -89,7 +98,7 @@ class FileEmitter {
       if (name == null) continue;
       if (inlinedInto.containsKey(name)) continue; // emitted with parent
 
-      final fileName = toSnakeCase(name);
+      final fileName = typeToFile[name]!;
       const header = _header;
 
       // Prepend inlined children before the parent type
@@ -120,8 +129,10 @@ class FileEmitter {
               .toSet()
               .toList()
             ..sort();
+      // Package-absolute imports so depth in the folder hierarchy doesn't
+      // require relative-path arithmetic between model files.
       final modelImports = sortedFiles
-          .map((f) => Directive.import('$f.dart'))
+          .map((f) => Directive.import('package:$packageName/models/$f.dart'))
           .toList();
 
       final needsCollection = modelAnalysis.needsCollection;
@@ -181,7 +192,7 @@ class FileEmitter {
               .toList()
             ..sort();
       final modelImports = sortedApiFiles
-          .map((f) => Directive.import('../models/$f.dart'))
+          .map((f) => Directive.import('package:$packageName/models/$f.dart'))
           .toList();
 
       final needsConvert = analysis.needsConvert;
@@ -235,6 +246,7 @@ class FileEmitter {
       types: types,
       apis: apis,
       packageName: packageName,
+      typeToFile: typeToFile,
       inlinedTypes: inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
     );
@@ -775,6 +787,7 @@ class FileEmitter {
     required List<IrType> types,
     required List<IrApi> apis,
     required String packageName,
+    Map<String, String> typeToFile = const {},
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
   }) {
@@ -790,7 +803,7 @@ class FileEmitter {
               .toSet()
               .toList()
             ..sort())
-        'models/${toSnakeCase(name)}.dart',
+        'models/${typeToFile[name] ?? toSnakeCase(name)}.dart',
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
         'apis/${toSnakeCase(name)}.dart',
     ]..sort();
