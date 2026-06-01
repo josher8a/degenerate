@@ -502,6 +502,42 @@ void main() {
 
       expect(() => _formatOrFail(source), returnsNormally);
     });
+
+    test('object variant uses list-aware == / hashCode and has copyWith', () {
+      // An inline-object variant with a list field must compare lists by value
+      // (listEquals / Object.hashAll), matching the model emitter — not by
+      // identity. Guards the shared value-member helpers in emit_utils.
+      const union = IrDiscriminatedUnion('Shape', 'type', {
+        'polygon': IrObject(
+          'Polygon',
+          [
+            IrField(
+              'type',
+              'type',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+            IrField(
+              'angles',
+              'angles',
+              IrList(IrPrimitive(PrimitiveKind.double)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['type', 'angles'],
+        ),
+      });
+
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('listEquals(angles, other.angles)'));
+      expect(source, contains('Object.hashAll(angles)'));
+      expect(source, contains('ShapePolygon copyWith('));
+      // The discriminator is fixed, so it isn't a copyWith parameter.
+      expect(source, isNot(contains('copyWith({String? type')));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
   });
 
   // ─── Untagged union emission ─────────────────────────────────

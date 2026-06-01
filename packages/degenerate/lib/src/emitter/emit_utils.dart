@@ -639,6 +639,82 @@ Method buildToStringOverride(String body) => Method(
     ..body = Code(body),
 );
 
+// ─── Shared value-member field helpers ──────────────────
+// Per-field expression builders for copyWith / == / hashCode / toString,
+// shared by the model emitter and the sealed-union variant emitter so an
+// object union variant (which is just a model with a fixed discriminator)
+// generates the same value semantics — including list-aware equality.
+
+/// The Dart type name for [type], with a trailing `?` when nullable
+/// (`dynamic` is already nullable, so it's never suffixed).
+String dartTypeName(IrType type) {
+  final base = irTypeName(type);
+  if (base == 'dynamic') return base;
+  return type.isNullable ? '$base?' : base;
+}
+
+/// A `copyWith` named parameter for [f]: a thunk `T Function()?` for
+/// nullable/optional fields (so callers can distinguish "set null" from
+/// "leave unchanged") and `T?` for required non-nullable ones.
+Parameter copyWithParam(IrField f) {
+  final isNullable = !f.isRequired || f.type.isNullable;
+  if (isNullable) {
+    return Parameter(
+      (p) => p
+        ..name = f.name
+        ..named = true
+        ..type = refer('${dartTypeName(f.type)} Function()?'),
+    );
+  }
+  return Parameter(
+    (p) => p
+      ..name = f.name
+      ..named = true
+      ..type = irTypeToReference(f.type, forceNullable: true),
+  );
+}
+
+/// The constructor-call assignment line for [f] in a `copyWith` body
+/// (e.g. `  name: name != null ? name() : this.name,`).
+String copyWithAssignment(IrField f) {
+  final isNullable = !f.isRequired || f.type.isNullable;
+  if (isNullable) {
+    return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
+  }
+  return '  ${f.name}: ${f.name} ?? this.${f.name},';
+}
+
+/// The `operator ==` comparison expression for [f], using `listEquals` for
+/// list-typed fields. [self] overrides the receiver expression for the field
+/// (used when the field name shadows the `other` parameter).
+String equalsComparison(IrField f, {String? self}) {
+  final lhs = self ?? f.name;
+  if (isListType(f.type)) {
+    return 'listEquals($lhs, other.${f.name})';
+  }
+  return '$lhs == other.${f.name}';
+}
+
+/// The `hashCode` expression for [f], using `Object.hashAll` for list-typed
+/// fields (with `?? const []` when [isNullable]).
+String hashCodeExpr(IrField f, {required bool isNullable}) {
+  if (isListType(f.type)) {
+    if (isNullable) return 'Object.hashAll(${f.name} ?? const [])';
+    return 'Object.hashAll(${f.name})';
+  }
+  return f.name;
+}
+
+/// The `toString` fragment for [f] (e.g. `name: $name`), escaping a leading
+/// `$` in the field name so it isn't read as interpolation.
+String toStringField(IrField f) {
+  if (f.name.startsWith(r'$')) {
+    final escaped = f.name.replaceAll(r'$', r'\$');
+    return '$escaped: \${${f.name}}';
+  }
+  return '${f.name}: \$${f.name}';
+}
+
 // ─── PrimitiveKind codec helpers ─────────────────────────
 
 /// Core fromJson expression for a [PrimitiveKind] value.

@@ -352,37 +352,9 @@ class ModelEmitter {
   }
 
   Method _buildCopyWith() {
-    final params = model.fields.map((f) {
-      final isOptional = !f.isRequired;
-      final isNullable = isOptional || f.type.isNullable;
-      if (isNullable) {
-        // Thunk pattern for nullable fields
-        final typeStr = _dartTypeName(f.type);
-        return Parameter(
-          (p) => p
-            ..name = f.name
-            ..named = true
-            ..type = refer('$typeStr Function()?'),
-        );
-      }
-      return Parameter(
-        (p) => p
-          ..name = f.name
-          ..named = true
-          ..type = irTypeToReference(f.type, forceNullable: true),
-      );
-    });
+    final params = model.fields.map(copyWithParam);
 
-    final assignments = model.fields
-        .map((f) {
-          final isOptional = !f.isRequired;
-          final isNullable = isOptional || f.type.isNullable;
-          if (isNullable) {
-            return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
-          }
-          return '  ${f.name}: ${f.name} ?? this.${f.name},';
-        })
-        .join('\n');
+    final assignments = model.fields.map(copyWithAssignment).join('\n');
 
     final allParams = [...params];
     var allAssignments = assignments;
@@ -410,23 +382,15 @@ class ModelEmitter {
     );
   }
 
-  String _dartTypeName(IrType type) {
-    final base = irTypeName(type);
-    // dynamic is already nullable — never append '?'.
-    if (base == 'dynamic') return base;
-    return type.isNullable ? '$base?' : base;
-  }
-
   Method _buildEquals() {
     final comparisons = model.fields
-        .map((f) {
+        .map(
           // Use 'this.' prefix when field name shadows the 'other' parameter.
-          final self = f.name == 'other' ? 'this.${f.name}' : f.name;
-          if (isListType(f.type)) {
-            return 'listEquals($self, other.${f.name})';
-          }
-          return '$self == other.${f.name}';
-        })
+          (f) => equalsComparison(
+            f,
+            self: f.name == 'other' ? 'this.${f.name}' : null,
+          ),
+        )
         .join(' &&\n          ');
 
     var allComparisons = comparisons;
@@ -446,17 +410,14 @@ class ModelEmitter {
   }
 
   Method _buildHashCode() {
-    final fieldExprs = model.fields.map((f) {
-      if (isListType(f.type)) {
-        final isNullable =
-            (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
-        if (isNullable) {
-          return 'Object.hashAll(${f.name} ?? const [])';
-        }
-        return 'Object.hashAll(${f.name})';
-      }
-      return f.name;
-    }).toList();
+    final fieldExprs = model.fields
+        .map(
+          (f) => hashCodeExpr(
+            f,
+            isNullable: (!f.isRequired && !_hasDefault(f)) || f.type.isNullable,
+          ),
+        )
+        .toList();
     if (model.additionalProperties != null) {
       fieldExprs.add('Object.hashAll($_overflowFieldName.entries)');
     }
@@ -476,15 +437,7 @@ class ModelEmitter {
   }
 
   Method _buildToString() {
-    var fieldStr = model.fields
-        .map((f) {
-          if (f.name.startsWith(r'$')) {
-            final escaped = f.name.replaceAll(r'$', r'\$');
-            return '$escaped: \${${f.name}}';
-          }
-          return '${f.name}: \$${f.name}';
-        })
-        .join(', ');
+    var fieldStr = model.fields.map(toStringField).join(', ');
     if (model.additionalProperties != null) {
       if (fieldStr.isNotEmpty) fieldStr += ', ';
       fieldStr += '$_overflowFieldName: \$$_overflowFieldName';

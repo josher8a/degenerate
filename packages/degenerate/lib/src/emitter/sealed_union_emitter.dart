@@ -271,59 +271,17 @@ class DiscriminatedUnionEmitter {
     };
   }
 
-  /// The Dart type name for [type], with a trailing `?` when nullable.
-  /// Mirrors the model emitter's `copyWith` thunk types so a variant's
-  /// flattened `copyWith` params line up with the payload model's own.
-  String _dartTypeName(IrType type) {
-    final base = irTypeName(type);
-    // dynamic is already nullable — never append '?'.
-    if (base == 'dynamic') return base;
-    return type.isNullable ? '$base?' : base;
-  }
-
-  /// A `copyWith` named parameter for payload field [f], matching the param
-  /// style of the model emitter's `copyWith`: a thunk `T Function()?` for
-  /// nullable/optional fields (so callers can distinguish "set null" from
-  /// "leave unchanged") and `T?` for required non-nullable ones. Built
-  /// identically to the model emitter's so the args forward cleanly to the
-  /// payload model's own `copyWith`.
-  Parameter _copyWithParam(IrField f) {
-    final isNullable = !f.isRequired || f.type.isNullable;
-    if (isNullable) {
-      return Parameter(
-        (p) => p
-          ..name = f.name
-          ..named = true
-          ..type = refer('${_dartTypeName(f.type)} Function()?'),
-      );
-    }
-    return Parameter(
-      (p) => p
-        ..name = f.name
-        ..named = true
-        ..type = irTypeToReference(f.type, forceNullable: true),
-    );
-  }
-
   /// `copyWith` for an object variant: reconstructs this variant from its own
-  /// fields (the model emitter's `copyWith` pattern), returning the variant
-  /// type. [fields] excludes the discriminator (fixed for the variant).
+  /// fields (the shared model `copyWith` pattern), returning the variant type.
+  /// [fields] excludes the discriminator (fixed for the variant).
   Method _buildObjectVariantCopyWith(String className, List<IrField> fields) {
-    final assignments = fields
-        .map((f) {
-          final isNullable = !f.isRequired || f.type.isNullable;
-          if (isNullable) {
-            return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
-          }
-          return '  ${f.name}: ${f.name} ?? this.${f.name},';
-        })
-        .join('\n');
+    final assignments = fields.map(copyWithAssignment).join('\n');
     final constPrefix = fields.isEmpty ? 'const ' : '';
     return Method(
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(className)
-        ..optionalParameters.addAll(fields.map(_copyWithParam))
+        ..optionalParameters.addAll(fields.map(copyWithParam))
         ..body = Code('return $constPrefix$className(\n$assignments\n);'),
     );
   }
@@ -369,7 +327,7 @@ class DiscriminatedUnionEmitter {
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(className)
-        ..optionalParameters.addAll(payloadFields.map(_copyWithParam))
+        ..optionalParameters.addAll(payloadFields.map(copyWithParam))
         ..body = Code(
           'return $className($receiver.copyWith(\n$forwards\n));',
         ),
@@ -599,26 +557,28 @@ class DiscriminatedUnionEmitter {
     }
 
     final eqComparisons = fields
-        .map((f) => '${f.name} == other.${f.name}')
+        .map(
+          (f) => equalsComparison(
+            f,
+            self: f.name == 'other' ? 'this.${f.name}' : null,
+          ),
+        )
         .join(' && ');
     final eqBody = eqComparisons.isEmpty
         ? 'return identical(this, other) || other is $className;'
         : 'return identical(this, other) ||\n      other is $className && $eqComparisons;';
 
-    final hashFields = fields.map((f) => f.name).join(', ');
+    final hashFields = fields
+        .map(
+          (f) =>
+              hashCodeExpr(f, isNullable: !f.isRequired || f.type.isNullable),
+        )
+        .join(', ');
     final hashBody = hashFields.isEmpty
         ? 'return runtimeType.hashCode;'
         : 'return Object.hash(runtimeType, $hashFields);';
 
-    final toStrFields = fields
-        .map((f) {
-          if (f.name.startsWith(r'$')) {
-            final escaped = f.name.replaceAll(r'$', r'\$');
-            return '$escaped: \${${f.name}}';
-          }
-          return '${f.name}: \$${f.name}';
-        })
-        .join(', ');
+    final toStrFields = fields.map(toStringField).join(', ');
 
     return Class(
       (b) => b
