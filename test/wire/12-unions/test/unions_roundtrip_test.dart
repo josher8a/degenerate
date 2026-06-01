@@ -73,17 +73,16 @@ void main() {
       expect(updated.toJson(), equals({'type': 'circle', 'radius': 9.0}));
     });
 
-    test('thunk param sets or leaves an optional field', () {
-      // `color` is optional but its schema type is non-nullable, so the thunk
-      // is `String Function()?` — it can set or be omitted (leave unchanged),
-      // but cannot clear to null (see the NullabilityCombos group for the
-      // genuinely-nullable case, whose thunk is `String? Function()?`).
+    test('thunk param sets, leaves, or clears an optional field', () {
+      // `color` is optional → its copyWith thunk is `String? Function()?`, so
+      // it can be set, omitted (left unchanged), or cleared to null.
       final withColor = Shape.circle(radius: 1.0, color: 'red') as ShapeCircle;
-      expect(withColor.copyWith(radius: 2.0).circle.color, equals('red'));
+      expect(withColor.copyWith(radius: 2.0).circle.color, equals('red')); // leave
       expect(
         withColor.copyWith(color: () => 'green').circle.color,
-        equals('green'),
+        equals('green'), // set
       );
+      expect(withColor.copyWith(color: () => null).circle.color, isNull); // clear
     });
 
     test('copyWith on a variant with a list field round-trips by value', () {
@@ -143,20 +142,22 @@ void main() {
       expect(model.toJson(), equals({'requiredNonNullable': 'a'}));
     });
 
-    test('copyWith clears a nullable-typed field via a null-returning thunk',
+    test('copyWith clears any Dart-nullable field via a null-returning thunk',
         () {
       const model = NullabilityCombos(
         requiredNonNullable: 'a',
         requiredNullable: 'b',
         optionalNonNullable: 'c',
       );
-      // `requiredNullable`'s type is nullable → thunk is `String? Function()?`,
-      // so a null-returning thunk clears it.
-      final cleared = model.copyWith(requiredNullable: () => null);
-      expect(cleared.requiredNullable, isNull);
+      // Both a nullable-typed field (`requiredNullable`) and an optional one
+      // (`optionalNonNullable`) are `T?` in Dart, so both get `T? Function()?`
+      // thunks and clear to null.
+      expect(model.copyWith(requiredNullable: () => null).requiredNullable, isNull);
+      final cleared = model.copyWith(optionalNonNullable: () => null);
+      expect(cleared.optionalNonNullable, isNull);
       // Untouched fields are preserved.
       expect(cleared.requiredNonNullable, equals('a'));
-      expect(cleared.optionalNonNullable, equals('c'));
+      expect(cleared.requiredNullable, equals('b'));
     });
   });
 

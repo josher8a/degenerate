@@ -645,25 +645,31 @@ Method buildToStringOverride(String body) => Method(
 // object union variant (which is just a model with a fixed discriminator)
 // generates the same value semantics — including list-aware equality.
 
-/// The Dart type name for [type], with a trailing `?` when nullable
-/// (`dynamic` is already nullable, so it's never suffixed).
-String dartTypeName(IrType type) {
-  final base = irTypeName(type);
-  if (base == 'dynamic') return base;
-  return type.isNullable ? '$base?' : base;
-}
-
-/// A `copyWith` named parameter for [f]: a thunk `T Function()?` for
-/// nullable/optional fields (so callers can distinguish "set null" from
-/// "leave unchanged") and `T?` for required non-nullable ones.
+/// A `copyWith` named parameter for [f]: a thunk `T Function()?` / `T? Function()?`
+/// for fields that are optional or nullable-typed (so the caller can leave it
+/// unchanged), and `T?` for required non-nullable ones.
+///
+/// The thunk's return type matches the field's *declared* Dart type — nullable
+/// iff the field is nullable in Dart (optional-without-default, or nullable-
+/// typed). A `() => null` thunk therefore *clears* such a field, not just
+/// set-or-leave it (`toJson` emits `?field`, omitting a null → reads back as
+/// absent). A defaulted-optional field is declared non-nullable `T`, so its
+/// thunk returns `T` and can't be cleared — matching the field type.
 Parameter copyWithParam(IrField f) {
-  final isNullable = !f.isRequired || f.type.isNullable;
-  if (isNullable) {
+  final usesThunk = !f.isRequired || f.type.isNullable;
+  if (usesThunk) {
+    final fieldIsNullable =
+        (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
+    final base = irTypeName(f.type);
+    // `dynamic` is already nullable — never suffix it.
+    final thunkReturn = base == 'dynamic'
+        ? 'dynamic'
+        : (fieldIsNullable ? '$base?' : base);
     return Parameter(
       (p) => p
         ..name = f.name
         ..named = true
-        ..type = refer('${dartTypeName(f.type)} Function()?'),
+        ..type = refer('$thunkReturn Function()?'),
     );
   }
   return Parameter(
