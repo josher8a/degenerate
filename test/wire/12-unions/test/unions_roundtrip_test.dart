@@ -1,0 +1,176 @@
+import 'package:spec_12_unions/spec_12_unions.dart';
+import 'package:test/test.dart';
+
+/// Behavior (not text) coverage for the generated union / enum / value-type
+/// code: JSON round-trips, discriminator dispatch, the `$Unknown` forward-
+/// compatibility fallback, variant factories, and variant `copyWith`.
+///
+/// The snapshot tests only diff the emitted *source*; the corpus analyze gate
+/// only checks it *compiles*. These tests check it *behaves* — exercising the
+/// riskiest emitter output (sealed_union_emitter, enum_emitter, the shared
+/// value-member helpers) against a real generated package.
+void main() {
+  group('discriminated union (Shape)', () {
+    test('fromJson dispatches to the variant named by the discriminator', () {
+      expect(
+        Shape.fromJson({'type': 'circle', 'radius': 2.0}),
+        isA<ShapeCircle>(),
+      );
+      expect(
+        Shape.fromJson({'type': 'rectangle', 'width': 1.0, 'height': 2.0}),
+        isA<ShapeRectangle>(),
+      );
+      expect(
+        Shape.fromJson({'type': 'triangle', 'base': 3.0, 'height': 4.0}),
+        isA<ShapeTriangle>(),
+      );
+    });
+
+    test('round-trips through JSON, re-adding the discriminator', () {
+      final json = {'type': 'circle', 'radius': 2.5, 'color': 'red'};
+      final shape = Shape.fromJson(json);
+      expect(shape.type, equals('circle'));
+      expect(shape.isUnknown, isFalse);
+      expect(shape.toJson(), equals(json));
+    });
+
+    test('omits absent optional fields on round-trip', () {
+      final shape = Shape.fromJson({'type': 'circle', 'radius': 2.5});
+      // `color` was absent → must not reappear as null.
+      expect(shape.toJson(), equals({'type': 'circle', 'radius': 2.5}));
+    });
+
+    test('unknown discriminator falls back to \$Unknown, preserving raw JSON',
+        () {
+      final json = {'type': 'hexagon', 'sides': 6};
+      final shape = Shape.fromJson(json);
+      expect(shape, isA<Shape$Unknown>());
+      expect(shape.isUnknown, isTrue);
+      expect(shape.type, equals('hexagon'));
+      // The raw payload survives a round-trip even though the variant is
+      // unknown to this client.
+      expect(shape.toJson(), equals(json));
+    });
+
+    test('variant factory builds the right variant with the discriminator set',
+        () {
+      final shape = Shape.circle(radius: 1.5, color: 'blue');
+      expect(shape, isA<ShapeCircle>());
+      expect(
+        shape.toJson(),
+        equals({'type': 'circle', 'radius': 1.5, 'color': 'blue'}),
+      );
+    });
+  });
+
+  group('variant copyWith', () {
+    test('replaces a field and preserves the discriminator', () {
+      final original = Shape.fromJson({'type': 'circle', 'radius': 2.0}) //
+          as ShapeCircle;
+      final updated = original.copyWith(radius: 9.0);
+      expect(updated.circle.radius, equals(9.0));
+      expect(updated.type, equals('circle'));
+      expect(updated.toJson(), equals({'type': 'circle', 'radius': 9.0}));
+    });
+
+    test('thunk param sets or leaves an optional field', () {
+      // `color` is optional but its schema type is non-nullable, so the thunk
+      // is `String Function()?` — it can set or be omitted (leave unchanged),
+      // but cannot clear to null (see the NullabilityCombos group for the
+      // genuinely-nullable case, whose thunk is `String? Function()?`).
+      final withColor = Shape.circle(radius: 1.0, color: 'red') as ShapeCircle;
+      expect(withColor.copyWith(radius: 2.0).circle.color, equals('red'));
+      expect(
+        withColor.copyWith(color: () => 'green').circle.color,
+        equals('green'),
+      );
+    });
+
+    test('copyWith on a variant with a list field round-trips by value', () {
+      final tri = Shape.triangle(base: 1.0, height: 2.0, angles: [30, 60, 90])
+          as ShapeTriangle;
+      final updated = tri.copyWith(angles: () => [45, 45, 90]);
+      expect(updated.triangle.angles, equals([45, 45, 90]));
+      // Value equality (listEquals), not identity: equal lists ⇒ equal models.
+      final a = Shape.triangle(base: 1, height: 2, angles: [1, 2]);
+      final b = Shape.triangle(base: 1, height: 2, angles: [1, 2]);
+      expect(a, equals(b));
+      expect(a.hashCode, equals(b.hashCode));
+    });
+  });
+
+  group('enum (PetStatus) forward compatibility', () {
+    test('known values parse to the canonical constant', () {
+      expect(PetStatus.fromJson('active'), equals(PetStatus.active));
+      expect(PetStatus.fromJson('active').isUnknown, isFalse);
+      expect(PetStatus.active.toJson(), equals('active'));
+    });
+
+    test('unknown value is preserved, flagged, and round-trips', () {
+      final retired = PetStatus.fromJson('retired');
+      expect(retired.isUnknown, isTrue);
+      expect(retired.value, equals('retired'));
+      expect(retired.toJson(), equals('retired'));
+      // Equal raw values compare equal.
+      expect(retired, equals(PetStatus.fromJson('retired')));
+    });
+
+    test('values lists only the spec-defined members', () {
+      expect(
+        PetStatus.values,
+        equals([PetStatus.active, PetStatus.inactive, PetStatus.suspended]),
+      );
+    });
+  });
+
+  group('nullability combinations', () {
+    test('round-trips with all fields present', () {
+      final json = {
+        'requiredNonNullable': 'a',
+        'requiredNullable': 'b',
+        'optionalNonNullable': 'c',
+        'optionalNullable': 'd',
+      };
+      expect(NullabilityCombos.fromJson(json).toJson(), equals(json));
+    });
+
+    test('omits absent optionals but keeps a present null-valued required', () {
+      final json = {'requiredNonNullable': 'a', 'requiredNullable': null};
+      final model = NullabilityCombos.fromJson(json);
+      expect(model.requiredNullable, isNull);
+      expect(model.optionalNonNullable, isNull);
+      // Optionals that were absent must not reappear in toJson.
+      expect(model.toJson(), equals({'requiredNonNullable': 'a'}));
+    });
+
+    test('copyWith clears a nullable-typed field via a null-returning thunk',
+        () {
+      const model = NullabilityCombos(
+        requiredNonNullable: 'a',
+        requiredNullable: 'b',
+        optionalNonNullable: 'c',
+      );
+      // `requiredNullable`'s type is nullable → thunk is `String? Function()?`,
+      // so a null-returning thunk clears it.
+      final cleared = model.copyWith(requiredNullable: () => null);
+      expect(cleared.requiredNullable, isNull);
+      // Untouched fields are preserved.
+      expect(cleared.requiredNonNullable, equals('a'));
+      expect(cleared.optionalNonNullable, equals('c'));
+    });
+  });
+
+  group('untagged union (StringOrInt = OneOf2<String, int>)', () {
+    test('wraps and reads either variant', () {
+      const StringOrInt s = OneOf2.a('hello');
+      const StringOrInt i = OneOf2.b(42);
+      expect(s.value, equals('hello'));
+      expect(i.value, equals(42));
+    });
+
+    test('serializes the wrapped primitive', () {
+      expect(const OneOf2<String, int>.a('hi').toJson(), equals('hi'));
+      expect(const OneOf2<String, int>.b(7).toJson(), equals(7));
+    });
+  });
+}
