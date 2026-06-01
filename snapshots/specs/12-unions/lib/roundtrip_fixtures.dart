@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Round-trip fixtures: 26 synthesized, 0 skipped (0 union, 0 other).
+// Round-trip fixtures: 29 synthesized, 0 skipped (0 union, 0 other).
 import 'package:spec_12_unions/spec_12_unions.dart';
 
 /// A synthesized round-trip fixture. A correct codec makes
@@ -60,14 +60,26 @@ final List<RoundtripFixture> roundtripFixtures = [
     (value) => (value! as Triangle).toJson(),
   ),
   RoundtripFixture(
-    'StringOrInt',
+    'StringOrInt [0]',
     'string',
     (json) => OneOf2.parse(json, fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),),
     (value) => (value! as StringOrInt).toJson(),
   ),
   RoundtripFixture(
-    'PaymentMethod',
+    'StringOrInt [1]',
+    1,
+    (json) => OneOf2.parse(json, fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),),
+    (value) => (value! as StringOrInt).toJson(),
+  ),
+  RoundtripFixture(
+    'PaymentMethod [0]',
     {'cardNumber': 'string', 'expiryMonth': 1, 'expiryYear': 1},
+    (json) => OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),),
+    (value) => (value! as PaymentMethod).toJson(),
+  ),
+  RoundtripFixture(
+    'PaymentMethod [1]',
+    {'routingNumber': 'string', 'accountNumber': 'string'},
     (json) => OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),),
     (value) => (value! as PaymentMethod).toJson(),
   ),
@@ -96,8 +108,14 @@ final List<RoundtripFixture> roundtripFixtures = [
     (value) => (value! as ErrorModel).toJson(),
   ),
   RoundtripFixture(
-    'Notification',
+    'Notification [0]',
     {'emailAddress': 'string', 'subject': 'string'},
+    (json) => OneOf2.parse(json, fromA: (v) => EmailDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => SmsDetails.fromJson(v as Map<String, dynamic>),),
+    (value) => (value! as Notification).toJson(),
+  ),
+  RoundtripFixture(
+    'Notification [1]',
+    {'phoneNumber': 'string'},
     (json) => OneOf2.parse(json, fromA: (v) => EmailDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => SmsDetails.fromJson(v as Map<String, dynamic>),),
     (value) => (value! as Notification).toJson(),
   ),
