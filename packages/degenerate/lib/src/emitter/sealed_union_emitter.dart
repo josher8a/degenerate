@@ -271,6 +271,111 @@ class DiscriminatedUnionEmitter {
     };
   }
 
+  /// The Dart type name for [type], with a trailing `?` when nullable.
+  /// Mirrors the model emitter's `copyWith` thunk types so a variant's
+  /// flattened `copyWith` params line up with the payload model's own.
+  String _dartTypeName(IrType type) {
+    final base = irTypeName(type);
+    // dynamic is already nullable — never append '?'.
+    if (base == 'dynamic') return base;
+    return type.isNullable ? '$base?' : base;
+  }
+
+  /// A `copyWith` named parameter for payload field [f], matching the param
+  /// style of the model emitter's `copyWith`: a thunk `T Function()?` for
+  /// nullable/optional fields (so callers can distinguish "set null" from
+  /// "leave unchanged") and `T?` for required non-nullable ones. Built
+  /// identically to the model emitter's so the args forward cleanly to the
+  /// payload model's own `copyWith`.
+  Parameter _copyWithParam(IrField f) {
+    final isNullable = !f.isRequired || f.type.isNullable;
+    if (isNullable) {
+      return Parameter(
+        (p) => p
+          ..name = f.name
+          ..named = true
+          ..type = refer('${_dartTypeName(f.type)} Function()?'),
+      );
+    }
+    return Parameter(
+      (p) => p
+        ..name = f.name
+        ..named = true
+        ..type = irTypeToReference(f.type, forceNullable: true),
+    );
+  }
+
+  /// `copyWith` for an object variant: reconstructs this variant from its own
+  /// fields (the model emitter's `copyWith` pattern), returning the variant
+  /// type. [fields] excludes the discriminator (fixed for the variant).
+  Method _buildObjectVariantCopyWith(String className, List<IrField> fields) {
+    final assignments = fields
+        .map((f) {
+          final isNullable = !f.isRequired || f.type.isNullable;
+          if (isNullable) {
+            return '  ${f.name}: ${f.name} != null ? ${f.name}() : this.${f.name},';
+          }
+          return '  ${f.name}: ${f.name} ?? this.${f.name},';
+        })
+        .join('\n');
+    final constPrefix = fields.isEmpty ? 'const ' : '';
+    return Method(
+      (m) => m
+        ..name = 'copyWith'
+        ..returns = refer(className)
+        ..optionalParameters.addAll(fields.map(_copyWithParam))
+        ..body = Code('return $constPrefix$className(\n$assignments\n);'),
+    );
+  }
+
+  /// `copyWith` for a `$ref` variant. When the payload is an object, mirror
+  /// the variant factory: flatten the payload's fields and delegate to the
+  /// payload model's own `copyWith`, returning a rewrapped variant
+  /// (e.g. `v.copyWith(requiredOrgRoles: …)`). Otherwise (list/primitive
+  /// payload) fall back to replacing the wrapped value wholesale.
+  Method _buildRefVariantCopyWith(
+    String className,
+    String fieldName,
+    IrType type,
+  ) {
+    final payloadFields = _variantPayloadFields(type);
+    if (payloadFields.isEmpty) {
+      return Method(
+        (m) => m
+          ..name = 'copyWith'
+          ..returns = refer(className)
+          ..optionalParameters.add(
+            Parameter(
+              (p) => p
+                ..name = fieldName
+                ..named = true
+                ..type = irTypeToReference(type, forceNullable: true),
+            ),
+          )
+          ..body = Code('return $className($fieldName ?? this.$fieldName);'),
+      );
+    }
+    // Forward each flattened param by name to the payload's copyWith.
+    final forwards = payloadFields
+        .map((f) => '  ${f.name}: ${f.name},')
+        .join('\n');
+    // Qualify the wrapped field with `this.` only when a payload param shares
+    // its name and would otherwise shadow it (rare); bare otherwise to avoid
+    // an `unnecessary_this` lint.
+    final receiver = payloadFields.any((f) => f.name == fieldName)
+        ? 'this.$fieldName'
+        : fieldName;
+    return Method(
+      (m) => m
+        ..name = 'copyWith'
+        ..returns = refer(className)
+        ..optionalParameters.addAll(payloadFields.map(_copyWithParam))
+        ..body = Code(
+          'return $className($receiver.copyWith(\n$forwards\n));',
+        ),
+    );
+  }
+
   /// A named factory on the sealed base for building a variant directly,
   /// e.g. `CreateBeneficiaryRequest.business(displayName: …, legalName: …)`.
   /// Flattens the variant's fields and sets the discriminator, so callers
@@ -563,6 +668,7 @@ class DiscriminatedUnionEmitter {
               ..body = Code('return {\n${toJsonEntries.join('\n')}\n};'),
           ),
         )
+        ..methods.add(_buildObjectVariantCopyWith(className, fields))
         ..methods.add(buildEqualsOverride(eqBody))
         ..methods.add(buildHashCodeOverride(hashBody))
         ..methods.add(
@@ -657,6 +763,7 @@ class DiscriminatedUnionEmitter {
               ..body = Code(_refVariantToJsonBody(type, fieldName)),
           ),
         )
+        ..methods.add(_buildRefVariantCopyWith(className, fieldName, type))
         ..methods.add(
           buildEqualsOverride(
             'return identical(this, other) ||\n'
