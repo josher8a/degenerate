@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Round-trip fixtures: 24 synthesized, 0 skipped (0 union, 0 other).
+// Round-trip fixtures: 26 synthesized, 0 skipped (0 union, 0 other).
 import 'package:spec_12_unions/spec_12_unions.dart';
 
 /// A synthesized round-trip fixture. A correct codec makes
@@ -24,8 +24,20 @@ class RoundtripFixture {
 /// Every synthesized round-trip fixture for this package.
 final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
-    'Shape',
+    'Shape [circle]',
     {'type': 'circle', 'radius': 1.5},
+    (json) => Shape.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as Shape).toJson(),
+  ),
+  RoundtripFixture(
+    'Shape [rectangle]',
+    {'type': 'rectangle', 'width': 1.5, 'height': 1.5},
+    (json) => Shape.fromJson(json! as Map<String, dynamic>),
+    (value) => (value! as Shape).toJson(),
+  ),
+  RoundtripFixture(
+    'Shape [triangle]',
+    {'type': 'triangle', 'base': 1.5, 'height': 1.5},
     (json) => Shape.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as Shape).toJson(),
   ),
