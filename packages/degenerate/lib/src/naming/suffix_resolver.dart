@@ -106,11 +106,32 @@ final _validTypeName = RegExp(r'^[A-Za-z_$][A-Za-z0-9_$]*$');
 bool _isValidTypeName(String s) => _validTypeName.hasMatch(s);
 
 /// Force a name to UpperCamel by capitalizing a leading lowercase letter.
-/// Leaves names that start with `_`, `$`, a digit, or an uppercase letter
+/// Leaves names that start with `_`, a digit, or an uppercase letter
 /// unchanged (subsequent segments are already PascalCase).
+///
+/// A leading `$` *before a lowercase letter* is dropped first: it comes from a
+/// `$`-prefixed schema or property name (e.g. a field literally named
+/// `$metadata`). PascalCasing can't uppercase `$`, so the inline type derived
+/// from that field would keep the byte-identical name `$metadata` — and the
+/// instance field then shadows the imported type throughout the class body
+/// (`instance_member_access_from_factory` on the factory's `$metadata.fromJson`,
+/// `undefined_class` on the field declaration and `copyWith` type positions).
+/// Dropping the `$` lets the type Pascal to `Metadata`, distinct from its
+/// `$metadata` field. Deliberately left untouched: `$`+digit (sanitizeDartName's
+/// digit marker, e.g. `$5Img2imgRequest`, which stripping would turn into an
+/// invalid identifier) and `$`+uppercase (the `$Variant` disambiguator) —
+/// neither can collide with a (camelCase) field name.
 String _typeCase(String s) {
   if (s.isEmpty) return s;
+  if (s.length >= 2 && s.codeUnitAt(0) == 0x24 /* $ */ && _isLowerAlpha(s[1])) {
+    s = s.substring(1);
+  }
   final first = s[0];
   final upper = first.toUpperCase();
   return upper == first ? s : '$upper${s.substring(1)}';
+}
+
+bool _isLowerAlpha(String c) {
+  final u = c.codeUnitAt(0);
+  return u >= 0x61 && u <= 0x7a; // a–z
 }
