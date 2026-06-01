@@ -321,18 +321,14 @@ class IrMapper {
     if (schema.containsKey(r'$ref')) {
       final refPath = schema[r'$ref'] as String;
       final rawRefName = _extractRefName(refPath);
-      final refName =
-          _nameMapping[rawRefName] ??
-          sanitizeDartName(toPascalCase(rawRefName));
+      final refName = _dartRefName(rawRefName);
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
     // Handle cycle markers left by RefResolver.
     if (schema.containsKey('_cycleRef')) {
       final rawRefName = schema['_cycleRef'] as String;
-      final refName =
-          _nameMapping[rawRefName] ??
-          sanitizeDartName(toPascalCase(rawRefName));
+      final refName = _dartRefName(rawRefName);
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
@@ -342,9 +338,7 @@ class IrMapper {
     // means inline).
     if (schema.containsKey('_resolvedRef') && name == null) {
       final rawRefName = schema['_resolvedRef'] as String;
-      final refName =
-          _nameMapping[rawRefName] ??
-          sanitizeDartName(toPascalCase(rawRefName));
+      final refName = _dartRefName(rawRefName);
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
@@ -356,9 +350,7 @@ class IrMapper {
     if (flattened.containsKey(r'$ref')) {
       final refPath = flattened[r'$ref'] as String;
       final rawRefName = _extractRefName(refPath);
-      final refName =
-          _nameMapping[rawRefName] ??
-          sanitizeDartName(toPascalCase(rawRefName));
+      final refName = _dartRefName(rawRefName);
 
       // Check if the allOf added properties beyond what the $ref target has.
       // If so, merge the ref's properties and treat as a full object.
@@ -407,9 +399,7 @@ class IrMapper {
     // one).
     if (flattened.containsKey('_resolvedRef') && name == null) {
       final rawRefName = flattened['_resolvedRef'] as String;
-      final refName =
-          _nameMapping[rawRefName] ??
-          sanitizeDartName(toPascalCase(rawRefName));
+      final refName = _dartRefName(rawRefName);
       return IrTypeRef(refName, description: description, isNullable: nullable);
     }
 
@@ -906,29 +896,24 @@ class IrMapper {
         final variant = oneOf[i];
         if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
           final rawRefName = _extractRefName(variant[r'$ref'] as String);
-          final dartRefName =
-              _nameMapping[rawRefName] ??
-              sanitizeDartName(toPascalCase(rawRefName));
+          final dartRefName = _dartRefName(rawRefName);
           // Try to extract the actual discriminator enum value from the
           // referenced schema (e.g. role: enum: ['system'] → 'system').
           var key = rawRefName;
           final refSchema = _rawSchemas[rawRefName];
           if (refSchema is Map<String, dynamic>) {
             final flatRef = _flattener.flatten(refSchema);
-            final refProps = flatRef['properties'] as Map<String, dynamic>?;
-            final discProp = refProps?[propertyName] as Map<String, dynamic>?;
-            final enumVals = discProp?['enum'] as List?;
-            if (enumVals != null && enumVals.isNotEmpty) {
-              key = enumVals.first.toString();
-            }
+            key =
+                _discriminatorEnumValue(
+                  flatRef['properties'] as Map<String, dynamic>?,
+                  propertyName,
+                ) ??
+                key;
           }
           mapping[key] = IrTypeRef(dartRefName);
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
-          final hint =
-              (variant['title'] as String?) ??
-              _singleEnumHint(unionName, variant) ??
-              '${unionName}Variant${i + 1}';
+          final hint = _variantHint(unionName, variant, i);
           final lowered = lowerInlineSchema(
             variant,
             nameHint: hint,
@@ -939,12 +924,12 @@ class IrMapper {
           );
           // Derive the mapping key from the discriminator enum value if
           // available, otherwise use the type name.
-          final props = variant['properties'] as Map<String, dynamic>?;
-          final discProp = props?[propertyName] as Map<String, dynamic>?;
-          final enumVals = discProp?['enum'] as List?;
-          final key = (enumVals != null && enumVals.isNotEmpty)
-              ? enumVals.first.toString()
-              : (lowered is IrObject ? lowered.name : hint);
+          final key =
+              _discriminatorEnumValue(
+                variant['properties'] as Map<String, dynamic>?,
+                propertyName,
+              ) ??
+              (lowered is IrObject ? lowered.name : hint);
           mapping[key] = lowered is IrObject
               ? IrTypeRef(lowered.name)
               : lowered;
@@ -995,10 +980,7 @@ class IrMapper {
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
-        final hint =
-            (variant['title'] as String?) ??
-            _singleEnumHint(unionName, variant) ??
-            '${unionName}Variant${i + 1}';
+        final hint = _variantHint(unionName, variant, i);
         variants.add(
           lowerInlineSchema(
             variant,
@@ -1074,10 +1056,7 @@ class IrMapper {
       if (variant is Map<String, dynamic>) {
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
-        final hint =
-            (variant['title'] as String?) ??
-            _singleEnumHint(anyOfName, variant) ??
-            '${anyOfName}Variant${i + 1}';
+        final hint = _variantHint(anyOfName, variant, i);
         variants.add(
           lowerInlineSchema(
             variant,
@@ -1183,6 +1162,35 @@ class IrMapper {
       PrimitiveKind.duration => 'Duration',
       PrimitiveKind.bytes => 'Uint8List',
     };
+  }
+
+  /// The Dart type name for a raw `$ref` name: the resolved rename if known,
+  /// else a sanitized PascalCase of the raw name. (Used at every `$ref`/
+  /// cycle-ref/resolved-ref lowering site.)
+  String _dartRefName(String rawRefName) =>
+      _nameMapping[rawRefName] ?? sanitizeDartName(toPascalCase(rawRefName));
+
+  /// The name hint for the [i]-th inline variant of a union named [parentName]:
+  /// the variant's `title`, else a single-enum-value hint, else a positional
+  /// `<Parent>VariantN` fallback. Shared by the oneOf/anyOf/discriminated
+  /// lowerers so their variant names are derived identically.
+  String _variantHint(String parentName, Map<String, dynamic> variant, int i) =>
+      (variant['title'] as String?) ??
+      _singleEnumHint(parentName, variant) ??
+      '${parentName}Variant${i + 1}';
+
+  /// The discriminator value from [props] for [propertyName] (e.g. a variant
+  /// with `role: {enum: ['system']}` → `'system'`), or null when absent. The
+  /// caller supplies the property source (a variant's own properties, or a
+  /// `$ref` target's flattened properties) and its own fallback.
+  String? _discriminatorEnumValue(
+    Map<String, dynamic>? props,
+    String propertyName,
+  ) {
+    final discProp = props?[propertyName] as Map<String, dynamic>?;
+    final enumVals = discProp?['enum'] as List?;
+    if (enumVals != null && enumVals.isNotEmpty) return enumVals.first.toString();
+    return null;
   }
 
   /// Derives a name hint from an inline object's single-value enum property.
