@@ -135,7 +135,38 @@ class Generator {
   ///
   /// Returns the map of relative file paths to their generated contents.
   Future<Map<String, String>> generate() async {
-    // 1. Read and parse spec
+    final (doc, isStdin) = await _parseSpec();
+    final inlinedDoc = _inlineRefs(doc, isStdin);
+    var (irTypes, irApis, irMapper) = _lowerToIr(inlinedDoc);
+
+    final typePaths = <String, List<String>>{};
+    if (config.dedupeInlineTypes) {
+      final resolution = _applyNameResolution(irMapper, irTypes, irApis);
+      irTypes = resolution.types;
+      irApis = resolution.apis;
+      typePaths.addAll(resolution.paths);
+    }
+
+    irApis = _filterOperations(irApis, irTypes);
+
+    if (config.verbose) {
+      _log('  ${irApis.length} API groups');
+      for (final api in irApis) {
+        _log('    - ${api.name}: ${api.operations.length} operations');
+      }
+    }
+
+    final (files, outputDir) = _emitFiles(
+      inlinedDoc,
+      irTypes,
+      irApis,
+      typePaths,
+    );
+
+    return _writeFiles(files, outputDir);
+  }
+
+  Future<(OpenApiDocument, bool)> _parseSpec() async {
     final isStdin = config.stdinContent != null;
     final String content;
     if (isStdin) {
@@ -153,7 +184,6 @@ class Generator {
     final OpenApiDocument doc;
     try {
       if (isStdin) {
-        // YAML is a superset of JSON, so always use the YAML parser for stdin.
         doc = OpenApiDocument.parseYaml(content);
       } else {
         final ext = p.extension(config.inputPath).toLowerCase();
@@ -174,28 +204,28 @@ class Generator {
     }
 
     _log('Spec: ${doc.title} (OpenAPI ${doc.version})');
+    return (doc, isStdin);
+  }
 
-    // 2. Inline external $ref values by loading referenced files.
-    // When reading from stdin, use current directory as base for external refs.
+  OpenApiDocument _inlineRefs(OpenApiDocument doc, bool isStdin) {
     final baseDir = isStdin
         ? Directory.current.path
         : p.dirname(p.absolute(config.inputPath));
     final inliner = RefInliner(baseDir);
-    final inlinedRoot = inliner.inline(doc.root);
-    final inlinedDoc = OpenApiDocument(inlinedRoot);
+    return OpenApiDocument(inliner.inline(doc.root));
+  }
 
-    // 3. Normalize schemas (name allocation, discriminator detection)
+  (List<IrType>, List<IrApi>, IrMapper) _lowerToIr(OpenApiDocument doc) {
     _log('Normalizing schemas...');
     final normalizer = SchemaNormalizer();
-    final normContext = normalizer.normalize(inlinedDoc.schemas);
+    final normContext = normalizer.normalize(doc.schemas);
 
-    // 4. Lower schemas to IR types
     _log('Lowering schemas to IR...');
     final irMapper = IrMapper(
       normContext,
       emitTypedFormats: config.emitTypedFormats,
     );
-    var irTypes = irMapper.lowerSchemas(inlinedDoc.schemas);
+    final irTypes = irMapper.lowerSchemas(doc.schemas);
 
     if (config.verbose) {
       _log('  ${irTypes.length} types lowered');
@@ -210,21 +240,32 @@ class Generator {
       }
     }
 
-    // 5. Lower operations to IR operations
     _log('Lowering operations to IR...');
-    final opLowerer = OperationLowerer(irMapper, doc: inlinedDoc);
-    var irApis = opLowerer.lowerPaths(inlinedDoc.paths);
+    final opLowerer = OperationLowerer(irMapper, doc: doc);
+    var irApis = opLowerer.lowerPaths(doc.paths);
 
-    // Build a set of names already in irTypes for deduplication.
+    _mergeInlineAndRegistryTypes(irTypes, irMapper);
+
+    final refResolver = TypeRefResolver(irMapper.typeRegistry);
+    for (var i = 0; i < irTypes.length; i++) {
+      irTypes[i] = refResolver.resolve(irTypes[i]);
+    }
+    irApis = _resolveApiTypeRefs(refResolver, irApis);
+
+    return (irTypes, irApis, irMapper);
+  }
+
+  void _mergeInlineAndRegistryTypes(
+    List<IrType> irTypes,
+    IrMapper irMapper,
+  ) {
     final existingNames = irTypes
         .map((t) => t.emittableName)
         .whereType<String>()
         .toSet();
 
-    // Add inline types generated during operation lowering (deduplicated).
-    final inlineTypes = irMapper.inlineTypes;
     var inlineAdded = 0;
-    for (final t in inlineTypes) {
+    for (final t in irMapper.inlineTypes) {
       final name = t.emittableName;
       if (name != null && !existingNames.add(name)) continue;
       irTypes.add(t);
@@ -234,37 +275,14 @@ class Generator {
       _log('  $inlineAdded inline types added');
     }
 
-    // Add any registered types (e.g., inline enums from inline objects)
-    // that aren't already in the results list.
     for (final entry in irMapper.typeRegistry.entries) {
       final regName = entry.value.emittableName;
       if (regName != null && !existingNames.add(regName)) continue;
       irTypes.add(entry.value);
     }
+  }
 
-    // Final pass: resolve all type refs across all types (including inline
-    // and registry types that may not have been resolved by lowerSchemas).
-    final refResolver = TypeRefResolver(irMapper.typeRegistry);
-    for (var i = 0; i < irTypes.length; i++) {
-      irTypes[i] = refResolver.resolve(irTypes[i]);
-    }
-
-    // Also resolve type refs in API operations (parameters, request bodies,
-    // responses) so that refs to non-emittable types (e.g., IrList aliases)
-    // are replaced with the actual types.
-    irApis = _resolveApiTypeRefs(refResolver, irApis);
-
-    // De-duplicate structurally-identical inline types and shorten names to
-    // the shortest unique suffix. Produces a folder path per emitted type.
-    final typePaths = <String, List<String>>{};
-    if (config.dedupeInlineTypes) {
-      final resolution = _applyNameResolution(irMapper, irTypes, irApis);
-      irTypes = resolution.types;
-      irApis = resolution.apis;
-      typePaths.addAll(resolution.paths);
-    }
-
-    // Filter deprecated operations if not included
+  List<IrApi> _filterOperations(List<IrApi> irApis, List<IrType> irTypes) {
     if (!config.includeDeprecated) {
       final filtered = <IrApi>[];
       for (final api in irApis) {
@@ -276,7 +294,6 @@ class Generator {
       irApis = filtered;
     }
 
-    // Filter by tags (case-insensitive, ignores spaces/punctuation)
     if (config.tags.isNotEmpty) {
       String normalize(String s) =>
           s.toLowerCase().replaceAll(RegExp(r'[\s_\-]+'), '');
@@ -291,7 +308,6 @@ class Generator {
       );
     }
 
-    // Filter by path prefixes
     if (config.paths.isNotEmpty) {
       final filtered = <IrApi>[];
       for (final api in irApis) {
@@ -309,7 +325,6 @@ class Generator {
       );
     }
 
-    // Tree-shake types: only emit types reachable from the remaining APIs
     if (config.tags.isNotEmpty || config.paths.isNotEmpty) {
       final reachable = _collectReachableTypes(irApis, irTypes);
       final before = irTypes.length;
@@ -320,14 +335,15 @@ class Generator {
       _log('  Tree-shook types: $before → ${irTypes.length}');
     }
 
-    if (config.verbose) {
-      _log('  ${irApis.length} API groups');
-      for (final api in irApis) {
-        _log('    - ${api.name}: ${api.operations.length} operations');
-      }
-    }
+    return irApis;
+  }
 
-    // 6. Resolve package name and output directory
+  (Map<String, String>, String) _emitFiles(
+    OpenApiDocument inlinedDoc,
+    List<IrType> irTypes,
+    List<IrApi> irApis,
+    Map<String, List<String>> typePaths,
+  ) {
     final outputBase =
         config.outputDir ??
         (config.workspace ? defaultWorkspaceOutputDir : defaultOutputDir);
@@ -360,7 +376,6 @@ class Generator {
       emitRoundtripFixtures: config.emitRoundtripFixtures,
     );
 
-    // In workspace mode, Dart source files live under lib/.
     if (config.workspace) {
       files = {
         for (final entry in files.entries)
@@ -376,8 +391,13 @@ class Generator {
     }
 
     _log('Generated ${files.length} files');
+    return (files, outputDir);
+  }
 
-    // 7. Clean output directory if requested
+  Future<Map<String, String>> _writeFiles(
+    Map<String, String> files,
+    String outputDir,
+  ) async {
     if (config.clean) {
       final dir = Directory(outputDir);
       if (dir.existsSync()) {
@@ -386,7 +406,6 @@ class Generator {
       }
     }
 
-    // 8. Write to disk (unless dry run)
     if (config.dryRun) {
       _log('Dry run - skipping file writes.');
       for (final filePath in files.keys.toList()..sort()) {
@@ -402,7 +421,6 @@ class Generator {
       final filePath = p.join(outputDir, entry.key);
       final file = File(filePath);
 
-      // Skip write if existing file already has identical content.
       if (file.existsSync()) {
         final existing = await file.readAsString();
         if (existing == entry.value) {

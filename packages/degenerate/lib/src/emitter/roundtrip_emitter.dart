@@ -34,6 +34,12 @@ class RoundtripEmitter {
 
   /// Build the `roundtrip_fixtures.dart` file content.
   String emit() {
+    final r = _synthesizeFixtures();
+    return _emitFile(r.fixtures, r.skippedUnion, r.skippedOther);
+  }
+
+  ({List<String> fixtures, int skippedUnion, int skippedOther})
+      _synthesizeFixtures() {
     final fixtures = <String>[];
     var skippedUnion = 0;
     var skippedOther = 0;
@@ -42,9 +48,6 @@ class RoundtripEmitter {
       final name = type.emittableName;
       if (name == null) continue;
 
-      // A discriminated union dispatches on a distinct discriminator per
-      // variant, so each variant is reclaimed deterministically — emit one
-      // fixture per variant for full per-variant coverage.
       if (type is IrDiscriminatedUnion) {
         final decode = buildFromJsonCode(
           type,
@@ -68,20 +71,12 @@ class RoundtripEmitter {
         continue;
       }
 
-      // OneOf-eligible union typedef (decode inlines `OneOfN.parse`, encode is
-      // `value.toJson()`). Emit a fixture per variant that `parse` provably
-      // reclaims (see [_parseReclaims]) — `OneOf.parse` is first-match, so a
-      // later variant only round-trips when every earlier one rejects its
-      // sample. variant[0] is always reclaimable (nothing precedes it).
       final unionVariants = switch (type) {
         IrUntaggedUnion(:final variants) => variants,
         IrAnyOf(:final variants) => variants,
         _ => null,
       };
       if (unionVariants != null && _isOneOfTypedef(type)) {
-        // Variants keep spec order (the typedef's type-arg order); `OneOf.parse`
-        // resolves overlaps by best-match at runtime, ties going to the earliest
-        // (spec-order) variant — so reason about reclaim in that same order.
         final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
         final encode = buildToJsonCode(type, '(value! as $name)');
         var any = false;
@@ -97,10 +92,6 @@ class RoundtripEmitter {
         continue;
       }
 
-      // Non-OneOf sealed class union (>9 or <2 variants, or self-referencing).
-      // Dispatch is first-match via `canParse` on each object/ref variant.
-      // Emit a fixture per variant whose sample is provably not stolen by an
-      // earlier variant's canParse.
       if (unionVariants != null && !_isOneOfTypedef(type)) {
         final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
         if (!allPrimitive) {
@@ -111,11 +102,12 @@ class RoundtripEmitter {
             if (!_canParseReclaims(unionVariants, k)) break;
             final sample = _sampleLiteral(unionVariants[k], {});
             if (sample == null) continue;
-            final variantLabel = _overlap.resolve(unionVariants[k]).emittableName ??
-                'variant $k';
+            final variantLabel =
+                _overlap.resolve(unionVariants[k]).emittableName ?? 'variant $k';
             any = true;
-            fixtures.add(_fixture('$name [$variantLabel]', sample, decode,
-                encode));
+            fixtures.add(
+              _fixture('$name [$variantLabel]', sample, decode, encode),
+            );
           }
           if (!any) skippedUnion++;
           continue;
@@ -124,8 +116,6 @@ class RoundtripEmitter {
         continue;
       }
 
-      // Other types with a uniform codec get one standalone fixture: classes
-      // with `Name.fromJson(json)`/`value.toJson()`.
       final supported =
           type is IrObject || type is IrEnum || type is IrExtensionType;
       if (!supported) {
@@ -139,20 +129,16 @@ class RoundtripEmitter {
         continue;
       }
 
-      // The synthesized sample is always non-null, so the closures null-assert
-      // their `Object?` parameter before casting — avoiding a
-      // cast_nullable_to_non_nullable lint.
       final decode = buildFromJsonCode(type, 'json!', typeRegistry: _registry);
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
       fixtures.add(_fixture(name, sample, decode, encode));
     }
 
-    // A decode/encode closure for a `bytes` variant calls
-    // base64Decode/base64Encode, which need dart:convert — even when the
-    // synthesized sample uses a different (safe) variant, the closure spans all
-    // of them. Detect it from the emitted code rather than re-walking the IR.
-    final needsConvert = fixtures.any((f) => f.contains('base64'));
+    return (fixtures: fixtures, skippedUnion: skippedUnion, skippedOther: skippedOther);
+  }
 
+  String _emitFile(List<String> fixtures, int skippedUnion, int skippedOther) {
+    final needsConvert = fixtures.any((f) => f.contains('base64'));
     final buf = StringBuffer()
       ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
       ..writeln(
