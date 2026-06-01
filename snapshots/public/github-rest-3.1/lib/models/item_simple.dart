@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory ItemSimple.fromJson(Map<String, dynamic> json) { return ItemSimple(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
-  content: json['content'] != null ? OneOf3.parse(json['content'], fromA: (v) => PullRequestSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => Issue.fromJson(v as Map<String, dynamic>), fromC: (v) => DraftIssue.fromJson(v as Map<String, dynamic>),) : null,
+  content: json['content'] != null ? OneOf3.parse(json['content'], fromA: (v) => Issue.fromJson(v as Map<String, dynamic>), fromB: (v) => PullRequestSimple.fromJson(v as Map<String, dynamic>), fromC: (v) => DraftIssue.fromJson(v as Map<String, dynamic>),) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),

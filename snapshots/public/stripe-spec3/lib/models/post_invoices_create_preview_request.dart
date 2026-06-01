@@ -33,7 +33,7 @@ factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { r
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   customerDetails: json['customer_details'] != null ? PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceItems: (json['invoice_items'] as List<dynamic>?)?.map((e) => InvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
   issuer: json['issuer'] != null ? Issuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RadarGetCtTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResult(
   meta: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
-  serie0: OneOf8.parse(json['serie_0'], fromA: (v) => Serie0Variant3.fromJson(v as Map<String, dynamic>), fromB: (v) => Serie0Variant8.fromJson(v as Map<String, dynamic>), fromC: (v) => Serie0Variant7.fromJson(v as Map<String, dynamic>), fromD: (v) => Serie0Variant2.fromJson(v as Map<String, dynamic>), fromE: (v) => Serie0Variant4.fromJson(v as Map<String, dynamic>), fromF: (v) => Serie0Variant5.fromJson(v as Map<String, dynamic>), fromG: (v) => Serie0Variant6.fromJson(v as Map<String, dynamic>), fromH: (v) => Serie0Variant1.fromJson(v as Map<String, dynamic>),),
+  serie0: OneOf8.parse(json['serie_0'], fromA: (v) => Serie0Variant1.fromJson(v as Map<String, dynamic>), fromB: (v) => Serie0Variant2.fromJson(v as Map<String, dynamic>), fromC: (v) => Serie0Variant3.fromJson(v as Map<String, dynamic>), fromD: (v) => Serie0Variant4.fromJson(v as Map<String, dynamic>), fromE: (v) => Serie0Variant5.fromJson(v as Map<String, dynamic>), fromF: (v) => Serie0Variant6.fromJson(v as Map<String, dynamic>), fromG: (v) => Serie0Variant7.fromJson(v as Map<String, dynamic>), fromH: (v) => Serie0Variant8.fromJson(v as Map<String, dynamic>),),
 ); }
 
 /// Metadata for the results.

@@ -88,7 +88,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   incompleteDetails: json['incomplete_details'] != null ? RunObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
   model: json['model'] as String,
   instructions: json['instructions'] as String,
-  tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>),)).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: RunCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
@@ -98,7 +98,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   truncationStrategy: json['truncation_strategy'] != null ? TruncationObject.fromJson(json['truncation_strategy'] as Map<String, dynamic>) : null,
   toolChoice: json['tool_choice'] != null ? OneOf2.parse(json['tool_choice'], fromA: (v) => ToolChoiceOptionVariant1.fromJson(v as String), fromB: (v) => AssistantsNamedToolChoice.fromJson(v as Map<String, dynamic>),) : null,
   parallelToolCalls: ParallelToolCalls.fromJson(json['parallel_tool_calls'] as bool),
-  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 /// The identifier, which can be referenced in API endpoints.

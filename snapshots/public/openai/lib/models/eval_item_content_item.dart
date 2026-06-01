@@ -8,4 +8,4 @@ factory EvalItemContentText.fromJson(String json) => EvalItemContentText(json);
 String toJson() => value;
 
 }
-typedef EvalItemContentItem = OneOf5<EvalItemContentText,EvalItemContentOutputText,EvalItemInputImage,InputAudio,InputTextContent>;
+typedef EvalItemContentItem = OneOf5<EvalItemContentText,InputTextContent,EvalItemContentOutputText,EvalItemInputImage,InputAudio>;

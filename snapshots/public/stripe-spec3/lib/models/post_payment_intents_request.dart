@@ -20,7 +20,7 @@ factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return P
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   mandate: json['mandate'] as String?,
-  mandateData: json['mandate_data'] != null ? OneOf2.parse(json['mandate_data'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => SecretKeyParam.fromJson(v as Map<String, dynamic>),) : null,
+  mandateData: json['mandate_data'] != null ? OneOf2.parse(json['mandate_data'], fromA: (v) => SecretKeyParam.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   offSession: json['off_session'] != null ? OneOf2.parse(json['off_session'], fromA: (v) => v as bool, fromB: (v) => OffSessionVariant2.fromJson(v as String),) : null,
   onBehalfOf: json['on_behalf_of'] as String?,

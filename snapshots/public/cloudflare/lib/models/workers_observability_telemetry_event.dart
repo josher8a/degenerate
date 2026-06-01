@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
   $containers: json[r'$containers'] as Map<String, dynamic>?,
   $metadata: Metadata.fromJson(json[r'$metadata'] as Map<String, dynamic>),
-  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => WorkersVariant2.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersVariant1.fromJson(v as Map<String, dynamic>),) : null,
+  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => WorkersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersVariant2.fromJson(v as Map<String, dynamic>),) : null,
   dataset: json['dataset'] as String,
   source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,),
   timestamp: (json['timestamp'] as num).toInt(),

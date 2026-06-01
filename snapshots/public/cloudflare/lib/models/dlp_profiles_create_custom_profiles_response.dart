@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_profile.dart';import 'package:pub_cloudflare/models/dlp_profile.dart';import 'package:pub_cloudflare/models/integration_profile.dart';import 'package:pub_cloudflare/models/predefined_profile.dart';@immutable final class DlpProfilesCreateCustomProfilesResponse {const DlpProfilesCreateCustomProfilesResponse({this.result});
 
 factory DlpProfilesCreateCustomProfilesResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesCreateCustomProfilesResponse(
-  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null,
+  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final DlpProfile? result;

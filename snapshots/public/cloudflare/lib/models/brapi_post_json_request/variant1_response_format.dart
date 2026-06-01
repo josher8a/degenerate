@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_json_request/json_schema_value.dart';@immutable final class Variant1ResponseFormat {const Variant1ResponseFormat({required this.type, this.jsonSchema, });
 
 factory Variant1ResponseFormat.fromJson(Map<String, dynamic> json) { return Variant1ResponseFormat(
-  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromE: (v) => v as Map<String, dynamic>,))),
+  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => v as Map<String, dynamic>, fromE: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
   type: json['type'] as String,
 ); }
 

@@ -6,7 +6,7 @@ factory HyperdriveHyperdriveConfigPatch.fromJson(Map<String, dynamic> json) { re
   caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
   mtls: json['mtls'] != null ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>) : null,
   name: json['name'] != null ? HyperdriveHyperdriveName.fromJson(json['name'] as String) : null,
-  origin: json['origin'] != null ? OneOf2.parse(json['origin'], fromA: (v) => OneOf2.parse(v, fromA: (v) => HyperdriveOverAccessOrigin.fromJson(v as Map<String, dynamic>), fromB: (v) => HyperdriveInternetOrigin.fromJson(v as Map<String, dynamic>),), fromB: (v) => HyperdriveHyperdriveDatabase.fromJson(v as Map<String, dynamic>),) : null,
+  origin: json['origin'] != null ? OneOf2.parse(json['origin'], fromA: (v) => HyperdriveHyperdriveDatabase.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf2.parse(v, fromA: (v) => HyperdriveInternetOrigin.fromJson(v as Map<String, dynamic>), fromB: (v) => HyperdriveOverAccessOrigin.fromJson(v as Map<String, dynamic>),),) : null,
   originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,
 ); }
 

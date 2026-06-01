@@ -6,7 +6,7 @@ factory CreateEvalRequest.fromJson(Map<String, dynamic> json) { return CreateEva
   name: json['name'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => CreateEvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
-  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>),)).toList(),
+  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 /// The name of the evaluation.

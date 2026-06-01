@@ -7,7 +7,7 @@ factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return Predefine
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json.containsKey('confidence_threshold') ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : DlpConfidence.low,
   contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
-  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => WordListEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>),)).toList(),
+  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
   ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,

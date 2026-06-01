@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/minimum_balance_by_currency.dart';import 'package:pub_stripe_spec3/models/post_balance_settings_request/payments_payouts_schedule.dart';@immutable final class PaymentsPayouts {const PaymentsPayouts({this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, });
 
 factory PaymentsPayouts.fromJson(Map<String, dynamic> json) { return PaymentsPayouts(
-  minimumBalanceByCurrency: json['minimum_balance_by_currency'] != null ? OneOf2.parse(json['minimum_balance_by_currency'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),))),) : null,
+  minimumBalanceByCurrency: json['minimum_balance_by_currency'] != null ? OneOf2.parse(json['minimum_balance_by_currency'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),))), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   schedule: json['schedule'] != null ? PaymentsPayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
 ); }

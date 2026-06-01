@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/routing.dart';import 'package:pub_cloudflare/models/shield_operation_feature_confidence_intervals.dart';import 'package:pub_cloudflare/models/shield_operation_feature_parameter_schemas.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info.dart';import 'package:pub_cloudflare/models/shield_operation_feature_thresholds.dart';import 'package:pub_cloudflare/models/shield_operation_features.dart';@immutable final class ShieldOperation {const ShieldOperation({this.features});
 
 factory ShieldOperation.fromJson(Map<String, dynamic> json) { return ShieldOperation(
-  features: json['features'] != null ? OneOf5.parse(json['features'], fromA: (v) => ShieldOperationFeatureParameterSchemas.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldOperationFeatureThresholds.fromJson(v as Map<String, dynamic>), fromC: (v) => Routing.fromJson(v as Map<String, dynamic>), fromD: (v) => ShieldOperationFeatureConfidenceIntervals.fromJson(v as Map<String, dynamic>), fromE: (v) => ShieldOperationFeatureSchemaInfo.fromJson(v as Map<String, dynamic>),) : null,
+  features: json['features'] != null ? OneOf5.parse(json['features'], fromA: (v) => ShieldOperationFeatureThresholds.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldOperationFeatureParameterSchemas.fromJson(v as Map<String, dynamic>), fromC: (v) => Routing.fromJson(v as Map<String, dynamic>), fromD: (v) => ShieldOperationFeatureConfidenceIntervals.fromJson(v as Map<String, dynamic>), fromE: (v) => ShieldOperationFeatureSchemaInfo.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final ShieldOperationFeatures? features;

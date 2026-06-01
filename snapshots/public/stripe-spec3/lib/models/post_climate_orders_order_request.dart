@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/beneficiary_params.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_order_request/post_climate_orders_order_request_beneficiary.dart';@immutable final class PostClimateOrdersOrderRequest {const PostClimateOrdersOrderRequest({this.beneficiary, this.expand, this.metadata, });
 
 factory PostClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersOrderRequest(
-  beneficiary: json['beneficiary'] != null ? OneOf2.parse(json['beneficiary'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => BeneficiaryParams.fromJson(v as Map<String, dynamic>),) : null,
+  beneficiary: json['beneficiary'] != null ? OneOf2.parse(json['beneficiary'], fromA: (v) => BeneficiaryParams.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory InvoicePaymentMethodOptionsParamInstallments.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParamInstallments(
   enabled: json['enabled'] as bool?,
-  plan: json['plan'] != null ? OneOf2.parse(json['plan'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => InstallmentPlan.fromJson(v as Map<String, dynamic>),) : null,
+  plan: json['plan'] != null ? OneOf2.parse(json['plan'], fromA: (v) => InstallmentPlan.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 final bool? enabled;

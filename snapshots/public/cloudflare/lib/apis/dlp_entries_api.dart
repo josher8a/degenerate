@@ -96,7 +96,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf6.parse(json['result'], fromA: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => WordListEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf6.parse(json['result'], fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 

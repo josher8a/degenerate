@@ -66,7 +66,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>), fromB: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -386,7 +386,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>), fromB: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

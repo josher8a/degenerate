@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class SamplingParamsText {const SamplingParamsText({this.format});
 
 factory SamplingParamsText.fromJson(Map<String, dynamic> json) { return SamplingParamsText(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final TextResponseFormatConfiguration? format;

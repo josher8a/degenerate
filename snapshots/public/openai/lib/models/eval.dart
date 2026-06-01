@@ -36,7 +36,7 @@ factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
   id: json['id'] as String,
   name: json['name'] as String,
   dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => EvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => EvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
-  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>),)).toList(),
+  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
   createdAt: (json['created_at'] as num).toInt(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

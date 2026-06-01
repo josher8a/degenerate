@@ -7,7 +7,7 @@ factory CreateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return Cr
   name: json['name'] as String?,
   description: json['description'] as String?,
   expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyRequestParam.fromJson(v as Map<String, dynamic>), fromB: (v) => AutoChunkingStrategyRequestParam.fromJson(v as Map<String, dynamic>),) : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => AutoChunkingStrategyRequestParam.fromJson(v as Map<String, dynamic>), fromB: (v) => StaticChunkingStrategyRequestParam.fromJson(v as Map<String, dynamic>),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

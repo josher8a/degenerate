@@ -11,7 +11,7 @@ factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> jso
   failed: json['failed'] != null ? Failed.fromJson(json['failed'] as Map<String, dynamic>) : null,
   guaranteed: json['guaranteed'] != null ? Guaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
   initiatedAt: (json['initiated_at'] as num).toInt(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   outcome: json['outcome'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(json['outcome'] as String) : null,
   paymentMethodDetails: PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
   processorDetails: json['processor_details'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>) : null,

@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return IntegrationProfile(
   createdAt: DateTime.parse(json['created_at'] as String),
   description: json['description'] as String?,
-  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => WordListEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>),)).toList(),
+  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
-  sharedEntries: (json['shared_entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => WordListEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>),)).toList(),
+  sharedEntries: (json['shared_entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   type: IntegrationEntryType.fromJson(json['type'] as String),
 ); }

@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>), fromC: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
+  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   defaultReturnUrl: json['default_return_url'] as String?,

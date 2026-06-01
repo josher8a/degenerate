@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_init_req/access_policy_init_req_policies.dart';import 'package:pub_cloudflare/models/access_policy_req.dart';@immutable final class AccessPolicyInitReq {const AccessPolicyInitReq({this.policies});
 
 factory AccessPolicyInitReq.fromJson(Map<String, dynamic> json) { return AccessPolicyInitReq(
-  policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => AccessPolicyReq.fromJson(v as Map<String, dynamic>),)).toList(),
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => AccessPolicyReq.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,)).toList(),
 ); }
 
 final List<AccessPolicyInitReqPolicies>? policies;
