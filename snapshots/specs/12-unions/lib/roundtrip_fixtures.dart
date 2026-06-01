@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// Round-trip fixtures: 21 synthesized, 3 skipped (3 union, 0 other).
+// Round-trip fixtures: 24 synthesized, 0 skipped (0 union, 0 other).
 import 'package:spec_12_unions/spec_12_unions.dart';
 
 /// A synthesized round-trip fixture. A correct codec makes
@@ -48,6 +48,18 @@ final List<RoundtripFixture> roundtripFixtures = [
     (value) => (value! as Triangle).toJson(),
   ),
   RoundtripFixture(
+    'StringOrInt',
+    'string',
+    (json) => OneOf2.parse(json, fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),),
+    (value) => (value! as StringOrInt).toJson(),
+  ),
+  RoundtripFixture(
+    'PaymentMethod',
+    {'cardNumber': 'string', 'expiryMonth': 1, 'expiryYear': 1},
+    (json) => OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),),
+    (value) => (value! as PaymentMethod).toJson(),
+  ),
+  RoundtripFixture(
     'CreditCard',
     {'cardNumber': 'string', 'expiryMonth': 1, 'expiryYear': 1},
     (json) => CreditCard.fromJson(json! as Map<String, dynamic>),
@@ -70,6 +82,12 @@ final List<RoundtripFixture> roundtripFixtures = [
     {'code': 1, 'message': 'string'},
     (json) => ErrorModel.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as ErrorModel).toJson(),
+  ),
+  RoundtripFixture(
+    'Notification',
+    {'emailAddress': 'string', 'subject': 'string'},
+    (json) => OneOf2.parse(json, fromA: (v) => EmailDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => SmsDetails.fromJson(v as Map<String, dynamic>),),
+    (value) => (value! as Notification).toJson(),
   ),
   RoundtripFixture(
     'EmailDetails',
@@ -115,7 +133,7 @@ final List<RoundtripFixture> roundtripFixtures = [
   ),
   RoundtripFixture(
     'Order',
-    {'id': 'string', 'items': <dynamic>[]},
+    {'id': 'string', 'items': [{'productId': 'string', 'quantity': 1}]},
     (json) => Order.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as Order).toJson(),
   ),
