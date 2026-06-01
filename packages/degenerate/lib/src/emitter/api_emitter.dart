@@ -521,33 +521,40 @@ class ApiEmitter {
     return buf.toString();
   }
 
+  /// JSON-body deserialize for collection and primitive [type]s — the cases
+  /// where the success and error paths agree. Returns null for types needing
+  /// path-specific handling (named types, enums), which each caller's switch
+  /// covers.
+  String? _sharedJsonDeserialize(IrType type) {
+    return switch (type) {
+      IrList(:final items) =>
+        'final json = jsonDecode(response.body) as List<dynamic>;\n'
+            '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
+      IrMap(:final values) => () {
+        final valueExpr = _fromJson(values, 'v');
+        if (valueExpr == 'v') {
+          return 'return jsonDecode(response.body) as Map<String, dynamic>;';
+        }
+        return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
+      }(),
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.string => 'return response.body;',
+        PrimitiveKind.int => 'return int.parse(response.body);',
+        PrimitiveKind.double => 'return double.parse(response.body);',
+        PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
+        PrimitiveKind.bytes =>
+          'return ${_fromJson(type, 'jsonDecode(response.body)')};',
+        _ => 'return jsonDecode(response.body);',
+      },
+      _ => null,
+    };
+  }
+
   String _buildDeserializeExpr(String mediaType, IrType returnType) {
     if (isJsonLikeMediaType(mediaType)) {
-      return switch (returnType) {
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrExtensionType() =>
-          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-      };
+      // Named types and extension types all go through .fromJson(Map).
+      return _sharedJsonDeserialize(returnType) ??
+          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};';
     }
 
     final unsupportedMessage =
@@ -1005,31 +1012,13 @@ class ApiEmitter {
 
   String _buildErrorDeserializeExpr(String mediaType, IrType errorType) {
     if (isJsonLikeMediaType(mediaType)) {
-      return switch (errorType) {
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrEnum(:final name) =>
-          'return $name.fromJson(jsonDecode(response.body) as String);',
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v');
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-      };
+      return _sharedJsonDeserialize(errorType) ??
+          switch (errorType) {
+            IrEnum(:final name) =>
+              'return $name.fromJson(jsonDecode(response.body) as String);',
+            // All named types with .fromJson(Map).
+            _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
+          };
     }
 
     final unsupportedMessage =
