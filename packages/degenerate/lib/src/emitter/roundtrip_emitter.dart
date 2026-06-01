@@ -76,13 +76,15 @@ class RoundtripEmitter {
         _ => null,
       };
       if (unionVariants != null && _isOneOfTypedef(type)) {
+        // Reason in the same most-specific-first order `OneOf.parse` dispatches.
+        final ordered = orderUnionVariants(unionVariants, _registry);
         final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
         final encode = buildToJsonCode(type, '(value! as $name)');
         var any = false;
-        for (var k = 0; k < unionVariants.length; k++) {
-          if (!_isToJsonSafeUnionVariant(unionVariants[k])) continue;
-          if (!_parseReclaims(unionVariants, k)) continue;
-          final sample = _sampleLiteral(unionVariants[k], {});
+        for (var k = 0; k < ordered.length; k++) {
+          if (!_isToJsonSafeUnionVariant(ordered[k])) continue;
+          if (!_parseReclaims(ordered, k)) continue;
+          final sample = _sampleLiteral(ordered[k], {});
           if (sample == null) continue;
           any = true;
           fixtures.add(_fixture('$name [$k]', sample, decode, encode));
@@ -239,7 +241,13 @@ class RoundtripEmitter {
     if (!isOneOfEligible(variants) || _isSelfReferencing(name, variants)) {
       return null;
     }
-    final first = variants.first;
+    // `OneOf.parse` reclaims the most-specific variant first; sample that one so
+    // the value round-trips back to the same variant.
+    final ordered = orderUnionVariants(variants, _registry);
+    final first = ordered.firstWhere(
+      _isToJsonSafeUnionVariant,
+      orElse: () => ordered.first,
+    );
     if (!_isToJsonSafeUnionVariant(first)) return null;
     return _sampleLiteral(first, visited);
   }
@@ -306,7 +314,7 @@ class RoundtripEmitter {
     final r = _resolve(t);
     switch (r) {
       case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
-        for (final v in variants) {
+        for (final v in orderUnionVariants(variants, _registry)) {
           if (_isToJsonSafeUnionVariant(v)) return _effectiveSampleType(v);
         }
         return r;

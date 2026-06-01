@@ -320,7 +320,7 @@ class FileEmitter {
     String? description,
     Map<String, IrType> typeRegistry,
   ) {
-    final oneOfRef = oneOfTypeReference(variants);
+    final oneOfRef = oneOfTypeReference(variants, typeRegistry: typeRegistry);
     final specs = <Spec>[
       Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};'),
     ];
