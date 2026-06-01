@@ -11,13 +11,13 @@ factory VariablesValue.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `secret` variant.
-factory VariablesValue.secret({required String name, required String value, }) { return VariablesValueSecret(ZarazSecretVariable(type: 'secret', name: name, value: value)); }
+factory VariablesValue.secret({required String name, required String value, }) { return VariablesValueSecret(ZarazSecretVariable(type: ZarazSecretVariableType.fromJson('secret'), name: name, value: value)); }
 
 /// Build the `string` variant.
-factory VariablesValue.string({required String name, required String value, }) { return VariablesValueString(ZarazStringVariable(type: 'string', name: name, value: value)); }
+factory VariablesValue.string({required String name, required String value, }) { return VariablesValueString(ZarazStringVariable(type: ZarazStringVariableType.fromJson('string'), name: name, value: value)); }
 
 /// Build the `worker` variant.
-factory VariablesValue.worker({required String name, required ZarazWorkerVariableValue value, }) { return VariablesValueWorker(ZarazWorkerVariable(type: 'worker', name: name, value: value)); }
+factory VariablesValue.worker({required String name, required ZarazWorkerVariableValue value, }) { return VariablesValueWorker(ZarazWorkerVariable(type: MqWorkerProducerType.fromJson('worker'), name: name, value: value)); }
 
 /// The discriminator value identifying this variant.
 String get type;

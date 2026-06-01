@@ -11,10 +11,10 @@ factory ResponseOutputTextAnnotations.fromJson(Map<String, dynamic> json) { retu
 }; }
 
 /// Build the `file` variant.
-factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(type: 'file', source: source)); }
+factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source}) { return ResponseOutputTextAnnotationsFile(FileAnnotation(type: ChatCompletionRequestMessageContentPartFileType.fromJson('file'), source: source)); }
 
 /// Build the `url` variant.
-factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(type: 'url', source: source)); }
+factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(type: UrlAnnotationSourceType.fromJson('url'), source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

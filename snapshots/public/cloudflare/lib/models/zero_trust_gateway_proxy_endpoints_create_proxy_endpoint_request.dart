@@ -10,10 +10,10 @@ factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.fromJson(Map<St
 }; }
 
 /// Build the `identity` variant.
-factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(ZeroTrustGatewayProxyEndpointIdentityCreate(kind: 'identity', name: name)); }
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(ZeroTrustGatewayProxyEndpointIdentityCreate(kind: ZeroTrustGatewayProxyEndpointIdentityCreateKind.fromJson('identity'), name: name)); }
 
 /// Build the `ip` variant.
-factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(ZeroTrustGatewayProxyEndpointIpCreate(kind: 'ip', name: name)); }
+factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip({required ZeroTrustGatewayProxyEndpointsComponentsSchemasName name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(ZeroTrustGatewayProxyEndpointIpCreate(kind: ZeroTrustGatewayProxyEndpointIpCreateKind.fromJson('ip'), name: name)); }
 
 /// The discriminator value identifying this variant.
 String get kind;

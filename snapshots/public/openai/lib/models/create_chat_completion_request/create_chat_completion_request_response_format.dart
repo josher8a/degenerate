@@ -22,7 +22,7 @@ factory CreateChatCompletionRequestResponseFormat.fromJson(Map<String, dynamic> 
 }; }
 
 /// Build the `json_schema` variant.
-factory CreateChatCompletionRequestResponseFormat.jsonSchema({required JsonSchema jsonSchema}) { return CreateChatCompletionRequestResponseFormatJsonSchema(ResponseFormatJsonSchema(type: 'json_schema', jsonSchema: jsonSchema)); }
+factory CreateChatCompletionRequestResponseFormat.jsonSchema({required JsonSchema jsonSchema}) { return CreateChatCompletionRequestResponseFormatJsonSchema(ResponseFormatJsonSchema(type: ResponseFormatJsonSchemaType.fromJson('json_schema'), jsonSchema: jsonSchema)); }
 
 /// The discriminator value identifying this variant.
 String get type;

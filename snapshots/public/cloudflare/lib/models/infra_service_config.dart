@@ -9,7 +9,7 @@ factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (
 }; }
 
 /// Build the `http` variant.
-factory InfraServiceConfig.http({DateTime? createdAt, required InfraServiceHost host, required String name, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: 'http', createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
+factory InfraServiceConfig.http({DateTime? createdAt, required InfraServiceHost host, required String name, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
 
 /// The discriminator value identifying this variant.
 String get type;

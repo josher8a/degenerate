@@ -24,10 +24,10 @@ factory MessageContent.inputText({required String text}) { return MessageContent
 factory MessageContent.outputText({required String text, required List<Annotation> annotations, required List<LogProb> logprobs, }) { return MessageContentOutputText(OutputTextContent(type: 'output_text', text: text, annotations: annotations, logprobs: logprobs)); }
 
 /// Build the `text` variant.
-factory MessageContent.text({required String text}) { return MessageContentText(TextContent(type: 'text', text: text)); }
+factory MessageContent.text({required String text}) { return MessageContentText(TextContent(type: CustomTextFormatParamType.fromJson('text'), text: text)); }
 
 /// Build the `summary_text` variant.
-factory MessageContent.summaryText({required String text}) { return MessageContentSummaryText(SummaryTextContent(type: 'summary_text', text: text)); }
+factory MessageContent.summaryText({required String text}) { return MessageContentSummaryText(SummaryTextContent(type: SummaryTextContentType.fromJson('summary_text'), text: text)); }
 
 /// Build the `reasoning_text` variant.
 factory MessageContent.reasoningText({required String text}) { return MessageContentReasoningText(ReasoningTextContent(type: 'reasoning_text', text: text)); }
@@ -39,7 +39,7 @@ factory MessageContent.refusal({required String refusal}) { return MessageConten
 factory MessageContent.inputImage({String? imageUrl, String? fileId, required ImageDetail detail, }) { return MessageContentInputImage(InputImageContent(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `computer_screenshot` variant.
-factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(type: 'computer_screenshot', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory MessageContent.computerScreenshot({required String? imageUrl, required String? fileId, required ImageDetail detail, }) { return MessageContentComputerScreenshot(ComputerScreenshotContent(type: ComputerScreenshotContentType.fromJson('computer_screenshot'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
 factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }

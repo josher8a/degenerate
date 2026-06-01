@@ -42,91 +42,91 @@ factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json[
 }; }
 
 /// Build the `automatic_https_rewrites` variant.
-factory ZonesActions2.automaticHttpsRewrites({ZonesAutomaticHttpsRewritesValue? value}) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: 'automatic_https_rewrites', value: value)); }
+factory ZonesActions2.automaticHttpsRewrites({ZonesAutomaticHttpsRewritesValue? value}) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: ZonesAutomaticHttpsRewritesId.fromJson('automatic_https_rewrites'), value: value)); }
 
 /// Build the `browser_cache_ttl` variant.
-factory ZonesActions2.browserCacheTtl({int? value}) { return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl(id: 'browser_cache_ttl', value: value)); }
+factory ZonesActions2.browserCacheTtl({int? value}) { return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl(id: ZonesBrowserCacheTtlId.fromJson('browser_cache_ttl'), value: value)); }
 
 /// Build the `browser_check` variant.
-factory ZonesActions2.browserCheck({ZonesBrowserCheckValue? value}) { return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: 'browser_check', value: value)); }
+factory ZonesActions2.browserCheck({ZonesBrowserCheckValue? value}) { return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: ZonesBrowserCheckId.fromJson('browser_check'), value: value)); }
 
 /// Build the `bypass_cache_on_cookie` variant.
-factory ZonesActions2.bypassCacheOnCookie({String? value}) { return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie(id: 'bypass_cache_on_cookie', value: value)); }
+factory ZonesActions2.bypassCacheOnCookie({String? value}) { return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie(id: ZonesBypassCacheOnCookieId.fromJson('bypass_cache_on_cookie'), value: value)); }
 
 /// Build the `cache_by_device_type` variant.
-factory ZonesActions2.cacheByDeviceType({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType(id: 'cache_by_device_type', value: value)); }
+factory ZonesActions2.cacheByDeviceType({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheByDeviceType(ZonesCacheByDeviceType(id: ZonesCacheByDeviceTypeId.fromJson('cache_by_device_type'), value: value)); }
 
 /// Build the `cache_deception_armor` variant.
-factory ZonesActions2.cacheDeceptionArmor({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor(id: 'cache_deception_armor', value: value)); }
+factory ZonesActions2.cacheDeceptionArmor({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2CacheDeceptionArmor(ZonesCacheDeceptionArmor(id: ZonesCacheDeceptionArmorId.fromJson('cache_deception_armor'), value: value)); }
 
 /// Build the `cache_key_fields` variant.
-factory ZonesActions2.cacheKeyFields({ZonesCacheKeyFieldsValue? value}) { return ZonesActions2CacheKeyFields(ZonesCacheKeyFields(id: 'cache_key_fields', value: value)); }
+factory ZonesActions2.cacheKeyFields({ZonesCacheKeyFieldsValue? value}) { return ZonesActions2CacheKeyFields(ZonesCacheKeyFields(id: ZonesCacheKeyFieldsId.fromJson('cache_key_fields'), value: value)); }
 
 /// Build the `cache_level` variant.
-factory ZonesActions2.cacheLevel({ZonesCacheLevelValue? value}) { return ZonesActions2CacheLevel(ZonesCacheLevel(id: 'cache_level', value: value)); }
+factory ZonesActions2.cacheLevel({ZonesCacheLevelValue? value}) { return ZonesActions2CacheLevel(ZonesCacheLevel(id: ZonesCacheLevelId.fromJson('cache_level'), value: value)); }
 
 /// Build the `cache_on_cookie` variant.
-factory ZonesActions2.cacheOnCookie({String? value}) { return ZonesActions2CacheOnCookie(ZonesCacheOnCookie(id: 'cache_on_cookie', value: value)); }
+factory ZonesActions2.cacheOnCookie({String? value}) { return ZonesActions2CacheOnCookie(ZonesCacheOnCookie(id: ZonesCacheOnCookieId.fromJson('cache_on_cookie'), value: value)); }
 
 /// Build the `cache_ttl_by_status` variant.
-factory ZonesActions2.cacheTtlByStatus({Map<String,ValueValue>? value}) { return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus(id: 'cache_ttl_by_status', value: value)); }
+factory ZonesActions2.cacheTtlByStatus({Map<String,ValueValue>? value}) { return ZonesActions2CacheTtlByStatus(ZonesCacheTtlByStatus(id: ZonesCacheTtlByStatusId.fromJson('cache_ttl_by_status'), value: value)); }
 
 /// Build the `edge_cache_ttl` variant.
-factory ZonesActions2.edgeCacheTtl({int? value}) { return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl(id: 'edge_cache_ttl', value: value)); }
+factory ZonesActions2.edgeCacheTtl({int? value}) { return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl(id: ZonesEdgeCacheTtlId.fromJson('edge_cache_ttl'), value: value)); }
 
 /// Build the `email_obfuscation` variant.
-factory ZonesActions2.emailObfuscation({ZonesEmailObfuscationValue? value}) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: 'email_obfuscation', value: value)); }
+factory ZonesActions2.emailObfuscation({ZonesEmailObfuscationValue? value}) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: ZonesEmailObfuscationId.fromJson('email_obfuscation'), value: value)); }
 
 /// Build the `explicit_cache_control` variant.
-factory ZonesActions2.explicitCacheControl({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl(id: 'explicit_cache_control', value: value)); }
+factory ZonesActions2.explicitCacheControl({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl(id: ZonesExplicitCacheControlId.fromJson('explicit_cache_control'), value: value)); }
 
 /// Build the `forwarding_url` variant.
-factory ZonesActions2.forwardingUrl({ZonesForwardingUrlValue? value}) { return ZonesActions2ForwardingUrl(ZonesForwardingUrl(id: 'forwarding_url', value: value)); }
+factory ZonesActions2.forwardingUrl({ZonesForwardingUrlValue? value}) { return ZonesActions2ForwardingUrl(ZonesForwardingUrl(id: ZonesForwardingUrlId.fromJson('forwarding_url'), value: value)); }
 
 /// Build the `host_header_override` variant.
-factory ZonesActions2.hostHeaderOverride({String? value}) { return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride(id: 'host_header_override', value: value)); }
+factory ZonesActions2.hostHeaderOverride({String? value}) { return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride(id: ZonesHostHeaderOverrideId.fromJson('host_header_override'), value: value)); }
 
 /// Build the `ip_geolocation` variant.
-factory ZonesActions2.ipGeolocation({ZonesIpGeolocationValue? value}) { return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: 'ip_geolocation', value: value)); }
+factory ZonesActions2.ipGeolocation({ZonesIpGeolocationValue? value}) { return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: ZonesIpGeolocationId.fromJson('ip_geolocation'), value: value)); }
 
 /// Build the `mirage` variant.
-factory ZonesActions2.mirage({ZonesMirageValue? value}) { return ZonesActions2Mirage(ZonesMirage(id: 'mirage', value: value)); }
+factory ZonesActions2.mirage({ZonesMirageValue? value}) { return ZonesActions2Mirage(ZonesMirage(id: ZonesMirageId.fromJson('mirage'), value: value)); }
 
 /// Build the `opportunistic_encryption` variant.
-factory ZonesActions2.opportunisticEncryption({ZonesOpportunisticEncryptionValue? value}) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: 'opportunistic_encryption', value: value)); }
+factory ZonesActions2.opportunisticEncryption({ZonesOpportunisticEncryptionValue? value}) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: ZonesOpportunisticEncryptionId.fromJson('opportunistic_encryption'), value: value)); }
 
 /// Build the `origin_error_page_pass_thru` variant.
-factory ZonesActions2.originErrorPagePassThru({ZonesOriginErrorPagePassThruValue? value}) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: 'origin_error_page_pass_thru', value: value)); }
+factory ZonesActions2.originErrorPagePassThru({ZonesOriginErrorPagePassThruValue? value}) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: ZonesOriginErrorPagePassThruId.fromJson('origin_error_page_pass_thru'), value: value)); }
 
 /// Build the `polish` variant.
-factory ZonesActions2.polish({ZonesPolishValue? value}) { return ZonesActions2Polish(ZonesPolish(id: 'polish', value: value)); }
+factory ZonesActions2.polish({ZonesPolishValue? value}) { return ZonesActions2Polish(ZonesPolish(id: ZonesPolishId.fromJson('polish'), value: value)); }
 
 /// Build the `resolve_override` variant.
-factory ZonesActions2.resolveOverride({String? value}) { return ZonesActions2ResolveOverride(ZonesResolveOverride(id: 'resolve_override', value: value)); }
+factory ZonesActions2.resolveOverride({String? value}) { return ZonesActions2ResolveOverride(ZonesResolveOverride(id: ZonesResolveOverrideId.fromJson('resolve_override'), value: value)); }
 
 /// Build the `respect_strong_etag` variant.
-factory ZonesActions2.respectStrongEtag({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag(id: 'respect_strong_etag', value: value)); }
+factory ZonesActions2.respectStrongEtag({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag(id: ZonesRespectStrongEtagId.fromJson('respect_strong_etag'), value: value)); }
 
 /// Build the `response_buffering` variant.
-factory ZonesActions2.responseBuffering({ZonesResponseBufferingValue? value}) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: 'response_buffering', value: value)); }
+factory ZonesActions2.responseBuffering({ZonesResponseBufferingValue? value}) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: ZonesResponseBufferingId.fromJson('response_buffering'), value: value)); }
 
 /// Build the `rocket_loader` variant.
-factory ZonesActions2.rocketLoader({ZonesRocketLoaderValue? value}) { return ZonesActions2RocketLoader(ZonesRocketLoader(id: 'rocket_loader', value: value)); }
+factory ZonesActions2.rocketLoader({ZonesRocketLoaderValue? value}) { return ZonesActions2RocketLoader(ZonesRocketLoader(id: ZonesRocketLoaderId.fromJson('rocket_loader'), value: value)); }
 
 /// Build the `security_level` variant.
-factory ZonesActions2.securityLevel({ZonesSecurityLevelValue? value}) { return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: 'security_level', value: value)); }
+factory ZonesActions2.securityLevel({ZonesSecurityLevelValue? value}) { return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: ZonesSecurityLevelId.fromJson('security_level'), value: value)); }
 
 /// Build the `sort_query_string_for_cache` variant.
-factory ZonesActions2.sortQueryStringForCache({ZonesSortQueryStringForCacheValue? value}) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: 'sort_query_string_for_cache', value: value)); }
+factory ZonesActions2.sortQueryStringForCache({ZonesSortQueryStringForCacheValue? value}) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: ZonesSortQueryStringForCacheId.fromJson('sort_query_string_for_cache'), value: value)); }
 
 /// Build the `ssl` variant.
-factory ZonesActions2.ssl({ZonesSslValue? value}) { return ZonesActions2Ssl(ZonesSsl(id: 'ssl', value: value)); }
+factory ZonesActions2.ssl({ZonesSslValue? value}) { return ZonesActions2Ssl(ZonesSsl(id: ZonesSslId.fromJson('ssl'), value: value)); }
 
 /// Build the `true_client_ip_header` variant.
-factory ZonesActions2.trueClientIpHeader({ZonesTrueClientIpHeaderValue? value}) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: 'true_client_ip_header', value: value)); }
+factory ZonesActions2.trueClientIpHeader({ZonesTrueClientIpHeaderValue? value}) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: ZonesTrueClientIpHeaderId.fromJson('true_client_ip_header'), value: value)); }
 
 /// Build the `waf` variant.
-factory ZonesActions2.waf({ZonesWafValue? value}) { return ZonesActions2Waf(ZonesWaf(id: 'waf', value: value)); }
+factory ZonesActions2.waf({ZonesWafValue? value}) { return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value)); }
 
 /// The discriminator value identifying this variant.
 String get id;

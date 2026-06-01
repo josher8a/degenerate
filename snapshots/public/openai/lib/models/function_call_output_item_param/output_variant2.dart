@@ -12,13 +12,13 @@ factory OutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json
 }; }
 
 /// Build the `input_text` variant.
-factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(type: 'input_text', text: text)); }
+factory OutputVariant2.inputText({required String text}) { return OutputVariant2InputText(InputTextContentParam(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
 
 /// Build the `input_image` variant.
-factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(type: 'input_image', imageUrl: imageUrl, fileId: fileId, detail: detail)); }
+factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum? detail, }) { return OutputVariant2InputImage(InputImageContentParamAutoParam(type: EvalItemInputImageType.fromJson('input_image'), imageUrl: imageUrl, fileId: fileId, detail: detail)); }
 
 /// Build the `input_file` variant.
-factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(type: 'input_file', fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
+factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(type: InputFileContentParamType.fromJson('input_file'), fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
 String get type;

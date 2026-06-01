@@ -11,10 +11,10 @@ factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return swit
 }; }
 
 /// Build the `input_text` variant.
-factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: 'input_text', text: text)); }
+factory UserMessageItemContent.inputText({required String text}) { return UserMessageItemContentInputText(UserMessageInputText(type: InputTextContentParamType.fromJson('input_text'), text: text)); }
 
 /// Build the `quoted_text` variant.
-factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: 'quoted_text', text: text)); }
+factory UserMessageItemContent.quotedText({required String text}) { return UserMessageItemContentQuotedText(UserMessageQuotedText(type: UserMessageQuotedTextType.fromJson('quoted_text'), text: text)); }
 
 /// The discriminator value identifying this variant.
 String get type;

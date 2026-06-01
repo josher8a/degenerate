@@ -29,64 +29,64 @@ factory ResourceTaggingSetTagsRequestAccountLevel.fromJson(Map<String, dynamic> 
 }; }
 
 /// Build the `access_application` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'access_application', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.accessApplication({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application'), resourceId: resourceId)); }
 
 /// Build the `access_group` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'access_group', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.accessGroup({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group'), resourceId: resourceId)); }
 
 /// Build the `account` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'account', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.account({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccount(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account'), resourceId: resourceId)); }
 
 /// Build the `ai_gateway` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'ai_gateway', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.aiGateway({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway'), resourceId: resourceId)); }
 
 /// Build the `alerting_policy` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'alerting_policy', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.alertingPolicy({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy'), resourceId: resourceId)); }
 
 /// Build the `alerting_webhook` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'alerting_webhook', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.alertingWebhook({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook'), resourceId: resourceId)); }
 
 /// Build the `cloudflared_tunnel` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'cloudflared_tunnel', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.cloudflaredTunnel({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel'), resourceId: resourceId)); }
 
 /// Build the `d1_database` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'd1_database', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.d1Database({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database'), resourceId: resourceId)); }
 
 /// Build the `durable_object_namespace` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'durable_object_namespace', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.durableObjectNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace'), resourceId: resourceId)); }
 
 /// Build the `gateway_list` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'gateway_list', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.gatewayList({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list'), resourceId: resourceId)); }
 
 /// Build the `gateway_rule` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'gateway_rule', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.gatewayRule({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule'), resourceId: resourceId)); }
 
 /// Build the `image` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'image', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.image({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelImage(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image'), resourceId: resourceId)); }
 
 /// Build the `kv_namespace` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'kv_namespace', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.kvNamespace({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace'), resourceId: resourceId)); }
 
 /// Build the `queue` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'queue', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.queue({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelQueue(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue'), resourceId: resourceId)); }
 
 /// Build the `r2_bucket` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'r2_bucket', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.r2Bucket({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket'), resourceId: resourceId)); }
 
 /// Build the `resource_share` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'resource_share', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.resourceShare({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share'), resourceId: resourceId)); }
 
 /// Build the `stream_live_input` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'stream_live_input', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.streamLiveInput({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input'), resourceId: resourceId)); }
 
 /// Build the `stream_video` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'stream_video', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.streamVideo({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video'), resourceId: resourceId)); }
 
 /// Build the `worker` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'worker', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorker(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker'), resourceId: resourceId)); }
 
 /// Build the `worker_version` variant.
-factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: 'worker_version', resourceId: resourceId)); }
+factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker_version'), resourceId: resourceId)); }
 
 /// The discriminator value identifying this variant.
 String get resourceType;

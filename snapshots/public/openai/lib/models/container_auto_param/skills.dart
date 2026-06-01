@@ -10,10 +10,10 @@ factory Skills.fromJson(Map<String, dynamic> json) { return switch (json['type']
 }; }
 
 /// Build the `skill_reference` variant.
-factory Skills.skillReference({required String skillId, String? version, }) { return SkillsSkillReference(SkillReferenceParam(type: 'skill_reference', skillId: skillId, version: version)); }
+factory Skills.skillReference({required String skillId, String? version, }) { return SkillsSkillReference(SkillReferenceParam(type: SkillReferenceParamType.fromJson('skill_reference'), skillId: skillId, version: version)); }
 
 /// Build the `inline` variant.
-factory Skills.inline({required String name, required String description, required InlineSkillSourceParam source, }) { return SkillsInline(InlineSkillParam(type: 'inline', name: name, description: description, source: source)); }
+factory Skills.inline({required String name, required String description, required InlineSkillSourceParam source, }) { return SkillsInline(InlineSkillParam(type: InlineSkillParamType.fromJson('inline'), name: name, description: description, source: source)); }
 
 /// The discriminator value identifying this variant.
 String get type;

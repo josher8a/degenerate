@@ -11,7 +11,7 @@ factory NamespaceToolParamTools.fromJson(Map<String, dynamic> json) { return swi
 }; }
 
 /// Build the `function` variant.
-factory NamespaceToolParamTools.function({required String name, String? description, EmptyModelParam? parameters, bool? strict, }) { return NamespaceToolParamToolsFunction(FunctionToolParam(type: 'function', name: name, description: description, parameters: parameters, strict: strict)); }
+factory NamespaceToolParamTools.function({required String name, String? description, EmptyModelParam? parameters, bool? strict, }) { return NamespaceToolParamToolsFunction(FunctionToolParam(type: AssistantToolsFunctionType.fromJson('function'), name: name, description: description, parameters: parameters, strict: strict)); }
 
 /// Build the `custom` variant.
 factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(type: 'custom', name: name, description: description, format: format, deferLoading: deferLoading)); }

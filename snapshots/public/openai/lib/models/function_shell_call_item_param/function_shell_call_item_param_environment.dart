@@ -11,10 +11,10 @@ factory FunctionShellCallItemParamEnvironment.fromJson(Map<String, dynamic> json
 }; }
 
 /// Build the `local` variant.
-factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(type: 'local', skills: skills)); }
+factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam(type: LocalEnvironmentParamType.fromJson('local'), skills: skills)); }
 
 /// Build the `container_reference` variant.
-factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(type: 'container_reference', containerId: containerId)); }
+factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(type: ContainerReferenceParamType.fromJson('container_reference'), containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 String get type;

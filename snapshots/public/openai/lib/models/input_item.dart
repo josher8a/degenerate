@@ -14,7 +14,7 @@ factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['typ
 factory InputItem.message({required EasyInputMessageRole role, required EasyInputMessageContent content, MessagePhase? phase, }) { return InputItemMessage(EasyInputMessage(type: 'message', role: role, content: content, phase: phase)); }
 
 /// Build the `ItemReferenceParam` variant.
-factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: 'ItemReferenceParam', id: id)); }
+factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: ItemReferenceParamType.fromJson('ItemReferenceParam'), id: id)); }
 
 /// The discriminator value identifying this variant.
 String get type;

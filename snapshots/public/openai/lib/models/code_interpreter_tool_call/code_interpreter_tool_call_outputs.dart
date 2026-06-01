@@ -10,10 +10,10 @@ factory CodeInterpreterToolCallOutputs.fromJson(Map<String, dynamic> json) { ret
 }; }
 
 /// Build the `logs` variant.
-factory CodeInterpreterToolCallOutputs.logs({required String logs}) { return CodeInterpreterToolCallOutputsLogs(CodeInterpreterOutputLogs(type: 'logs', logs: logs)); }
+factory CodeInterpreterToolCallOutputs.logs({required String logs}) { return CodeInterpreterToolCallOutputsLogs(CodeInterpreterOutputLogs(type: CodeInterpreterOutputLogsType.fromJson('logs'), logs: logs)); }
 
 /// Build the `image` variant.
-factory CodeInterpreterToolCallOutputs.image({required String url}) { return CodeInterpreterToolCallOutputsImage(CodeInterpreterOutputImage(type: 'image', url: url)); }
+factory CodeInterpreterToolCallOutputs.image({required String url}) { return CodeInterpreterToolCallOutputsImage(CodeInterpreterOutputImage(type: CodeInterpreterOutputImageType.fromJson('image'), url: url)); }
 
 /// The discriminator value identifying this variant.
 String get type;

@@ -11,13 +11,13 @@ factory FunctionShellToolParamEnvironment.fromJson(Map<String, dynamic> json) { 
 }; }
 
 /// Build the `container_auto` variant.
-factory FunctionShellToolParamEnvironment.containerAuto({List<String>? fileIds, ContainerMemoryLimit? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy, List<Skills>? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam(type: 'container_auto', fileIds: fileIds, memoryLimit: memoryLimit, networkPolicy: networkPolicy, skills: skills)); }
+factory FunctionShellToolParamEnvironment.containerAuto({List<String>? fileIds, ContainerMemoryLimit? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy, List<Skills>? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(ContainerAutoParam(type: ContainerAutoParamType.fromJson('container_auto'), fileIds: fileIds, memoryLimit: memoryLimit, networkPolicy: networkPolicy, skills: skills)); }
 
 /// Build the `local` variant.
-factory FunctionShellToolParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellToolParamEnvironmentLocal(LocalEnvironmentParam(type: 'local', skills: skills)); }
+factory FunctionShellToolParamEnvironment.local({List<LocalSkillParam>? skills}) { return FunctionShellToolParamEnvironmentLocal(LocalEnvironmentParam(type: LocalEnvironmentParamType.fromJson('local'), skills: skills)); }
 
 /// Build the `container_reference` variant.
-factory FunctionShellToolParamEnvironment.containerReference({required String containerId}) { return FunctionShellToolParamEnvironmentContainerReference(ContainerReferenceParam(type: 'container_reference', containerId: containerId)); }
+factory FunctionShellToolParamEnvironment.containerReference({required String containerId}) { return FunctionShellToolParamEnvironmentContainerReference(ContainerReferenceParam(type: ContainerReferenceParamType.fromJson('container_reference'), containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
 String get type;

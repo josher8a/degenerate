@@ -10,10 +10,10 @@ factory PagesEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (j
 }; }
 
 /// Build the `plain_text` variant.
-factory PagesEnvVarsValue.plainText({required String value}) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: 'plain_text', value: value)); }
+factory PagesEnvVarsValue.plainText({required String value}) { return PagesEnvVarsValuePlainText(PagesPlainTextEnvVar(type: PagesPlainTextEnvVarType.fromJson('plain_text'), value: value)); }
 
 /// Build the `secret_text` variant.
-factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: 'secret_text', value: value)); }
+factory PagesEnvVarsValue.secretText({required String value}) { return PagesEnvVarsValueSecretText(PagesSecretTextEnvVar(type: PagesSecretTextEnvVarType.fromJson('secret_text'), value: value)); }
 
 /// The discriminator value identifying this variant.
 String get type;

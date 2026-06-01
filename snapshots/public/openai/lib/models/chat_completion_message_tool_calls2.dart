@@ -10,10 +10,10 @@ factory ChatCompletionMessageToolCalls2.fromJson(Map<String, dynamic> json) { re
 }; }
 
 /// Build the `function` variant.
-factory ChatCompletionMessageToolCalls2.function({required String id, required ChatCompletionMessageToolCallFunction function, }) { return ChatCompletionMessageToolCalls2Function(ChatCompletionMessageToolCall(type: 'function', id: id, function: function)); }
+factory ChatCompletionMessageToolCalls2.function({required String id, required ChatCompletionMessageToolCallFunction function, }) { return ChatCompletionMessageToolCalls2Function(ChatCompletionMessageToolCall(type: AssistantToolsFunctionType.fromJson('function'), id: id, function: function)); }
 
 /// Build the `custom` variant.
-factory ChatCompletionMessageToolCalls2.custom({required String id, required ChatCompletionMessageCustomToolCallCustom custom, }) { return ChatCompletionMessageToolCalls2Custom(ChatCompletionMessageCustomToolCall(type: 'custom', id: id, custom: custom)); }
+factory ChatCompletionMessageToolCalls2.custom({required String id, required ChatCompletionMessageCustomToolCallCustom custom, }) { return ChatCompletionMessageToolCalls2Custom(ChatCompletionMessageCustomToolCall(type: ChatCompletionMessageCustomToolCallType.fromJson('custom'), id: id, custom: custom)); }
 
 /// The discriminator value identifying this variant.
 String get type;
