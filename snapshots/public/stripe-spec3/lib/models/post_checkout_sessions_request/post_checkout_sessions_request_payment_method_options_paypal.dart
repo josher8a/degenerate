@@ -3,14 +3,14 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param102_preferred_locale.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypal {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypal({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
-  captureMethod: json['capture_method'] != null ? payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? Payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam102PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   reference: json['reference'] as String?,
   riskCorrelationId: json['risk_correlation_id'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final payment_intent_paramCaptureMethod? captureMethod;
+final Payment_intent_paramCaptureMethod? captureMethod;
 
 final PaymentMethodOptionsParam102PreferredLocale? preferredLocale;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsPaypal copyWith({payment_intent_paramCaptureMethod Function()? captureMethod, PaymentMethodOptionsParam102PreferredLocale Function()? preferredLocale, String Function()? reference, String Function()? riskCorrelationId, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
+PostCheckoutSessionsRequestPaymentMethodOptionsPaypal copyWith({Payment_intent_paramCaptureMethod Function()? captureMethod, PaymentMethodOptionsParam102PreferredLocale Function()? preferredLocale, String Function()? reference, String Function()? riskCorrelationId, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   reference: reference != null ? reference() : this.reference,

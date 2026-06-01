@@ -22,9 +22,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InitK($value)'; } 
  }
-@immutable final class Init {const Init({required this.k});
+@immutable final class MconnEventInit {const MconnEventInit({required this.k});
 
-factory Init.fromJson(Map<String, dynamic> json) { return Init(
+factory MconnEventInit.fromJson(Map<String, dynamic> json) { return MconnEventInit(
   k: InitK.fromJson(json['k'] as String),
 ); }
 
@@ -35,12 +35,12 @@ Map<String, dynamic> toJson() { return {
   'k': k.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
-Init copyWith({InitK? k}) { return Init(
+MconnEventInit copyWith({InitK? k}) { return MconnEventInit(
   k: k ?? this.k,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Init &&
+      other is MconnEventInit &&
           k == other.k; } 
 @override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'Init(k: $k)'; } 
+@override String toString() { return 'MconnEventInit(k: $k)'; } 
  }

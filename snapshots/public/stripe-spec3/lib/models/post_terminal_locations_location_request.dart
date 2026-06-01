@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/configuration_overrides.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/display_name.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/display_name_kana.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/display_name_kanji.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/phone.dart';@immutable final class PostTerminalLocationsLocationRequest {const PostTerminalLocationsLocationRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
 
 factory PostTerminalLocationsLocationRequest.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsLocationRequest(
-  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   configurationOverrides: json['configuration_overrides'] != null ? OneOf2.parse(json['configuration_overrides'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -16,7 +16,7 @@ factory PostTerminalLocationsLocationRequest.fromJson(Map<String, dynamic> json)
 ); }
 
 /// The full address of the location. You can't change the location's `country`. If you need to modify the `country` field, create a new `Location` object and re-register any existing readers to that location.
-final customer_shippingAddress? address;
+final Customer_shippingAddress? address;
 
 /// The Kana variation of the full address of the location (Japan only).
 final AddressKana? addressKana;
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (phone != null) 'phone': phone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key)); } 
-PostTerminalLocationsLocationRequest copyWith({customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, ConfigurationOverrides Function()? configurationOverrides, DisplayName Function()? displayName, DisplayNameKana Function()? displayNameKana, DisplayNameKanji Function()? displayNameKanji, List<String> Function()? expand, Metadata Function()? metadata, Phone Function()? phone, }) { return PostTerminalLocationsLocationRequest(
+PostTerminalLocationsLocationRequest copyWith({Customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, ConfigurationOverrides Function()? configurationOverrides, DisplayName Function()? displayName, DisplayNameKana Function()? displayNameKana, DisplayNameKanji Function()? displayNameKanji, List<String> Function()? expand, Metadata Function()? metadata, Phone Function()? phone, }) { return PostTerminalLocationsLocationRequest(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

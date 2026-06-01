@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_package_dimensions.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_marketing_features.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
   active: json['active'] as bool?,
@@ -12,7 +12,7 @@ factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostPro
   marketingFeatures: (json['marketing_features'] as List<dynamic>?)?.map((e) => PostProductsRequestMarketingFeatures.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
-  packageDimensions: json['package_dimensions'] != null ? PostProductsRequestPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
+  packageDimensions: json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
   taxCode: json['tax_code'] as String?,
@@ -48,7 +48,7 @@ final Map<String,String>? metadata;
 final String name;
 
 /// The dimensions of this product for shipping purposes.
-final PostProductsRequestPackageDimensions? packageDimensions;
+final PackageDimensions? packageDimensions;
 
 /// Whether this product is shipped (i.e., physical goods).
 final bool? shippable;
@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostProductsRequest copyWith({bool Function()? active, DefaultPriceData Function()? defaultPriceData, String Function()? description, List<String> Function()? expand, String Function()? id, List<String> Function()? images, List<PostProductsRequestMarketingFeatures> Function()? marketingFeatures, Map<String, String> Function()? metadata, String? name, PostProductsRequestPackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, String Function()? url, }) { return PostProductsRequest(
+PostProductsRequest copyWith({bool Function()? active, DefaultPriceData Function()? defaultPriceData, String Function()? description, List<String> Function()? expand, String Function()? id, List<String> Function()? images, List<PostProductsRequestMarketingFeatures> Function()? marketingFeatures, Map<String, String> Function()? metadata, String? name, PackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, String Function()? url, }) { return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,
   description: description != null ? description() : this.description,

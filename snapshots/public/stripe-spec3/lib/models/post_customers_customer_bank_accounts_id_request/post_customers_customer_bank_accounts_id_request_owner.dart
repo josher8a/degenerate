@@ -3,13 +3,13 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';@immutable final class PostCustomersCustomerBankAccountsIdRequestOwner {const PostCustomersCustomerBankAccountsIdRequestOwner({this.address, this.email, this.name, this.phone, });
 
 factory PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsIdRequestOwner(
-  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
 ); }
 
-final customer_shippingAddress? address;
+final Customer_shippingAddress? address;
 
 final String? email;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
-PostCustomersCustomerBankAccountsIdRequestOwner copyWith({customer_shippingAddress Function()? address, String Function()? email, String Function()? name, String Function()? phone, }) { return PostCustomersCustomerBankAccountsIdRequestOwner(
+PostCustomersCustomerBankAccountsIdRequestOwner copyWith({Customer_shippingAddress Function()? address, String Function()? email, String Function()? name, String Function()? phone, }) { return PostCustomersCustomerBankAccountsIdRequestOwner(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

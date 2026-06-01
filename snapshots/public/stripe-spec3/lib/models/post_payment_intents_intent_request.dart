@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => amount_details_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => Amount_details_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? OneOf2.parse(json['application_fee_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   captureMethod: json['capture_method'] != null ? PaymentIntentCaptureMethod.fromJson(json['capture_method'] as String) : null,
   currency: json['currency'] as String?,
@@ -15,7 +15,7 @@ factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { re
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => payment_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => Payment_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
@@ -23,7 +23,7 @@ factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { re
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   receiptEmail: json['receipt_email'] != null ? OneOf2.parse(json['receipt_email'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => optional_fields_shipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => Optional_fields_shipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,

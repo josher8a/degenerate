@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class offline {const offline({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Offline {const Offline({required this.enabled});
 
-factory offline.fromJson(Map<String, dynamic> json) { return offline(
+factory Offline.fromJson(Map<String, dynamic> json) { return Offline(
   enabled: json['enabled'] as bool,
 ); }
 
@@ -12,12 +12,12 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-offline copyWith({bool? enabled}) { return offline(
+Offline copyWith({bool? enabled}) { return Offline(
   enabled: enabled ?? this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is offline &&
+      other is Offline &&
           enabled == other.enabled; } 
 @override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'offline(enabled: $enabled)'; } 
+@override String toString() { return 'Offline(enabled: $enabled)'; } 
  }

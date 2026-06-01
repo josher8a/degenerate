@@ -26,8 +26,8 @@ factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return 
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentSettings: json['payment_settings'] != null ? PostInvoicesInvoiceRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
   rendering: json['rendering'] != null ? Rendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? OneOf2.parse(json['shipping_cost'], fromA: (v) => shipping_cost.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => recipient_shipping_with_optional_fields_address.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingCost: json['shipping_cost'] != null ? OneOf2.parse(json['shipping_cost'], fromA: (v) => Shipping_cost.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => Recipient_shipping_with_optional_fields_address.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs2.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }

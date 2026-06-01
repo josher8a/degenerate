@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_installments.dart';@immutable final class InvoicePaymentMethodOptionsParam17 {const InvoicePaymentMethodOptionsParam17({this.installments, this.requestThreeDSecure, });
 
 factory InvoicePaymentMethodOptionsParam17.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam17(
-  installments: json['installments'] != null ? invoice_payment_method_options_paramInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  installments: json['installments'] != null ? Invoice_payment_method_options_paramInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }
 
-final invoice_payment_method_options_paramInstallments? installments;
+final Invoice_payment_method_options_paramInstallments? installments;
 
 final CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure;
 
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments', 'request_three_d_secure'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam17 copyWith({invoice_payment_method_options_paramInstallments Function()? installments, CheckoutCardPaymentMethodOptionsRequestThreeDSecure Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsParam17(
+InvoicePaymentMethodOptionsParam17 copyWith({Invoice_payment_method_options_paramInstallments Function()? installments, CheckoutCardPaymentMethodOptionsRequestThreeDSecure Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsParam17(
   installments: installments != null ? installments() : this.installments,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 

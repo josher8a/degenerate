@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/financial_connections_filters.dart';@immutable final class invoice_payment_method_options_paramFinancialConnections {const invoice_payment_method_options_paramFinancialConnections({this.filters, this.permissions, this.prefetch, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/financial_connections_filters.dart';@immutable final class Invoice_payment_method_options_paramFinancialConnections {const Invoice_payment_method_options_paramFinancialConnections({this.filters, this.permissions, this.prefetch, });
 
-factory invoice_payment_method_options_paramFinancialConnections.fromJson(Map<String, dynamic> json) { return invoice_payment_method_options_paramFinancialConnections(
+factory Invoice_payment_method_options_paramFinancialConnections.fromJson(Map<String, dynamic> json) { return Invoice_payment_method_options_paramFinancialConnections(
   filters: json['filters'] != null ? FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
   prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => Prefetch.fromJson(e as String)).toList(),
@@ -20,16 +20,16 @@ Map<String, dynamic> toJson() { return {
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key)); } 
-invoice_payment_method_options_paramFinancialConnections copyWith({FinancialConnectionsFilters Function()? filters, List<FinancialConnectionsAccountPermissions> Function()? permissions, List<Prefetch> Function()? prefetch, }) { return invoice_payment_method_options_paramFinancialConnections(
+Invoice_payment_method_options_paramFinancialConnections copyWith({FinancialConnectionsFilters Function()? filters, List<FinancialConnectionsAccountPermissions> Function()? permissions, List<Prefetch> Function()? prefetch, }) { return Invoice_payment_method_options_paramFinancialConnections(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is invoice_payment_method_options_paramFinancialConnections &&
+      other is Invoice_payment_method_options_paramFinancialConnections &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch); } 
 @override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const [])); } 
-@override String toString() { return 'invoice_payment_method_options_paramFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)'; } 
+@override String toString() { return 'Invoice_payment_method_options_paramFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)'; } 
  }

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostAccountsAccountRequestCompany {const PostAccountsAccountRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
 factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCompany(
-  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   directorsProvided: json['directors_provided'] as bool?,
@@ -19,7 +19,7 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   ownershipDeclaration: json['ownership_declaration'] != null ? OwnershipDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? CompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => registration_date_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => Registration_date_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   registrationNumber: json['registration_number'] as String?,
   representativeDeclaration: json['representative_declaration'] != null ? RepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? CompanyStructure.fromJson(json['structure'] as String) : null,
@@ -29,7 +29,7 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   verification: json['verification'] != null ? CompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
-final customer_shippingAddress? address;
+final Customer_shippingAddress? address;
 
 final AddressKana? addressKana;
 
@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key)); } 
-PostAccountsAccountRequestCompany copyWith({customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, bool Function()? directorsProvided, DirectorshipDeclaration Function()? directorshipDeclaration, bool Function()? executivesProvided, String Function()? exportLicenseId, String Function()? exportPurposeCode, String Function()? name, String Function()? nameKana, String Function()? nameKanji, bool Function()? ownersProvided, OwnershipDeclaration Function()? ownershipDeclaration, CompanyOwnershipExemptionReason Function()? ownershipExemptionReason, String Function()? phone, RegistrationDate Function()? registrationDate, String Function()? registrationNumber, RepresentativeDeclaration Function()? representativeDeclaration, CompanyStructure Function()? structure, String Function()? taxId, String Function()? taxIdRegistrar, String Function()? vatId, CompanyVerification Function()? verification, }) { return PostAccountsAccountRequestCompany(
+PostAccountsAccountRequestCompany copyWith({Customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, bool Function()? directorsProvided, DirectorshipDeclaration Function()? directorshipDeclaration, bool Function()? executivesProvided, String Function()? exportLicenseId, String Function()? exportPurposeCode, String Function()? name, String Function()? nameKana, String Function()? nameKanji, bool Function()? ownersProvided, OwnershipDeclaration Function()? ownershipDeclaration, CompanyOwnershipExemptionReason Function()? ownershipExemptionReason, String Function()? phone, RegistrationDate Function()? registrationDate, String Function()? registrationNumber, RepresentativeDeclaration Function()? representativeDeclaration, CompanyStructure Function()? structure, String Function()? taxId, String Function()? taxIdRegistrar, String Function()? vatId, CompanyVerification Function()? verification, }) { return PostAccountsAccountRequestCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

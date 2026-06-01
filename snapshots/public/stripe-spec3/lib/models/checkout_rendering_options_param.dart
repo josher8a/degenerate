@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_rendering_options_param/amount_tax_display.dart';@immutable final class checkout_rendering_options_param {const checkout_rendering_options_param({this.amountTaxDisplay, this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_rendering_options_param/amount_tax_display.dart';@immutable final class Checkout_rendering_options_param {const Checkout_rendering_options_param({this.amountTaxDisplay, this.template, });
 
-factory checkout_rendering_options_param.fromJson(Map<String, dynamic> json) { return checkout_rendering_options_param(
+factory Checkout_rendering_options_param.fromJson(Map<String, dynamic> json) { return Checkout_rendering_options_param(
   amountTaxDisplay: json['amount_tax_display'] != null ? AmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   template: json['template'] as String?,
 ); }
@@ -16,14 +16,14 @@ Map<String, dynamic> toJson() { return {
   'template': ?template,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key)); } 
-checkout_rendering_options_param copyWith({AmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return checkout_rendering_options_param(
+Checkout_rendering_options_param copyWith({AmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return Checkout_rendering_options_param(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is checkout_rendering_options_param &&
+      other is Checkout_rendering_options_param &&
           amountTaxDisplay == other.amountTaxDisplay &&
           template == other.template; } 
 @override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'checkout_rendering_options_param(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+@override String toString() { return 'Checkout_rendering_options_param(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
  }

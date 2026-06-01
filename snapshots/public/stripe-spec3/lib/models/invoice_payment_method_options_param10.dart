@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam10 {const InvoicePaymentMethodOptionsParam10({this.bankTransfer, this.fundingType, });
 
 factory InvoicePaymentMethodOptionsParam10.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam10(
-  bankTransfer: json['bank_transfer'] != null ? invoice_payment_method_options_paramBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
+  bankTransfer: json['bank_transfer'] != null ? Invoice_payment_method_options_paramBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
   fundingType: json['funding_type'] as String?,
 ); }
 
-final invoice_payment_method_options_paramBankTransfer? bankTransfer;
+final Invoice_payment_method_options_paramBankTransfer? bankTransfer;
 
 final String? fundingType;
 
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'funding_type': ?fundingType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam10 copyWith({invoice_payment_method_options_paramBankTransfer Function()? bankTransfer, String Function()? fundingType, }) { return InvoicePaymentMethodOptionsParam10(
+InvoicePaymentMethodOptionsParam10 copyWith({Invoice_payment_method_options_paramBankTransfer Function()? bankTransfer, String Function()? fundingType, }) { return InvoicePaymentMethodOptionsParam10(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
 ); } 

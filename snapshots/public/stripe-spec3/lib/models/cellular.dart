@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class cellular {const cellular({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Cellular {const Cellular({required this.enabled});
 
-factory cellular.fromJson(Map<String, dynamic> json) { return cellular(
+factory Cellular.fromJson(Map<String, dynamic> json) { return Cellular(
   enabled: json['enabled'] as bool,
 ); }
 
@@ -12,12 +12,12 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-cellular copyWith({bool? enabled}) { return cellular(
+Cellular copyWith({bool? enabled}) { return Cellular(
   enabled: enabled ?? this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is cellular &&
+      other is Cellular &&
           enabled == other.enabled; } 
 @override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'cellular(enabled: $enabled)'; } 
+@override String toString() { return 'Cellular(enabled: $enabled)'; } 
  }

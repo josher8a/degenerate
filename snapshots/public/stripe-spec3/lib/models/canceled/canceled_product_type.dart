@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class canceledProductType {const canceledProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CanceledProductType {const CanceledProductType._(this.value);
 
-factory canceledProductType.fromJson(String json) { return switch (json) {
+factory CanceledProductType.fromJson(String json) { return switch (json) {
   '' => $empty,
   'merchandise' => merchandise,
   'service' => service,
-  _ => canceledProductType._(json),
+  _ => CanceledProductType._(json),
 }; }
 
-static const canceledProductType $empty = canceledProductType._('');
+static const CanceledProductType $empty = CanceledProductType._('');
 
-static const canceledProductType merchandise = canceledProductType._('merchandise');
+static const CanceledProductType merchandise = CanceledProductType._('merchandise');
 
-static const canceledProductType service = canceledProductType._('service');
+static const CanceledProductType service = CanceledProductType._('service');
 
-static const List<canceledProductType> values = [$empty, merchandise, service];
+static const List<CanceledProductType> values = [$empty, merchandise, service];
 
 final String value;
 
@@ -23,7 +23,7 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is canceledProductType && other.value == value; } 
+    other is CanceledProductType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'canceledProductType($value)'; } 
+@override String toString() { return 'CanceledProductType($value)'; } 
  }

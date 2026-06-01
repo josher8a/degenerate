@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner/get_tax_ids_owner_type.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction/customer_cash_balance_transaction_customer.dart';import 'package:pub_stripe_spec3/models/get_tax_ids_owner/get_tax_ids_owner_type.dart';/// 
 @immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount, });
 
 factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
@@ -18,7 +18,7 @@ final ApplicationFeeAccount? account;
 final ApplicationFeeApplication? application;
 
 /// The customer being referenced when `type` is `customer`.
-final BankConnectionsResourceAccountholderCustomer? customer;
+final CustomerCashBalanceTransactionCustomer? customer;
 
 /// The Account representing the customer being referenced when `type` is `customer`.
 final String? customerAccount;
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TaxIDsOwner copyWith({ApplicationFeeAccount Function()? account, ApplicationFeeApplication Function()? application, BankConnectionsResourceAccountholderCustomer Function()? customer, String? Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return TaxIDsOwner(
+TaxIDsOwner copyWith({ApplicationFeeAccount Function()? account, ApplicationFeeApplication Function()? application, CustomerCashBalanceTransactionCustomer Function()? customer, String? Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return TaxIDsOwner(
   account: account != null ? account() : this.account,
   application: application != null ? application() : this.application,
   customer: customer != null ? customer() : this.customer,

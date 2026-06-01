@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class registration_date_specs {const registration_date_specs({required this.day, required this.month, required this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Registration_date_specs {const Registration_date_specs({required this.day, required this.month, required this.year, });
 
-factory registration_date_specs.fromJson(Map<String, dynamic> json) { return registration_date_specs(
+factory Registration_date_specs.fromJson(Map<String, dynamic> json) { return Registration_date_specs(
   day: (json['day'] as num).toInt(),
   month: (json['month'] as num).toInt(),
   year: (json['year'] as num).toInt(),
@@ -22,16 +22,16 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('day') && json['day'] is num &&
       json.containsKey('month') && json['month'] is num &&
       json.containsKey('year') && json['year'] is num; } 
-registration_date_specs copyWith({int? day, int? month, int? year, }) { return registration_date_specs(
+Registration_date_specs copyWith({int? day, int? month, int? year, }) { return Registration_date_specs(
   day: day ?? this.day,
   month: month ?? this.month,
   year: year ?? this.year,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is registration_date_specs &&
+      other is Registration_date_specs &&
           day == other.day &&
           month == other.month &&
           year == other.year; } 
 @override int get hashCode { return Object.hash(day, month, year); } 
-@override String toString() { return 'registration_date_specs(day: $day, month: $month, year: $year)'; } 
+@override String toString() { return 'Registration_date_specs(day: $day, month: $month, year: $year)'; } 
  }

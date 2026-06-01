@@ -5,10 +5,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostTokensRequestPerson.fromJson(Map<String, dynamic> json) { return PostTokensRequestPerson(
   additionalTosAcceptances: json['additional_tos_acceptances'] != null ? AdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
-  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => date_of_birth_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => Date_of_birth_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   documents: json['documents'] != null ? PostAccountsAccountPeoplePersonRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
@@ -35,7 +35,7 @@ factory PostTokensRequestPerson.fromJson(Map<String, dynamic> json) { return Pos
 
 final AdditionalTosAcceptances? additionalTosAcceptances;
 
-final customer_shippingAddress? address;
+final Customer_shippingAddress? address;
 
 final AddressKana? addressKana;
 
@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_tos_acceptances', 'address', 'address_kana', 'address_kanji', 'dob', 'documents', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'nationality', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'us_cfpb_data', 'verification'}.contains(key)); } 
-PostTokensRequestPerson copyWith({AdditionalTosAcceptances Function()? additionalTosAcceptances, customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob Function()? dob, PostAccountsAccountPeoplePersonRequestDocuments Function()? documents, String Function()? email, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, FullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, Metadata Function()? metadata, String Function()? nationality, String Function()? phone, PoliticalExposure Function()? politicalExposure, RegisteredAddress Function()? registeredAddress, PostAccountsAccountPeoplePersonRequestRelationship Function()? relationship, String Function()? ssnLast4, UsCfpbData Function()? usCfpbData, PostAccountsAccountPeoplePersonRequestVerification Function()? verification, }) { return PostTokensRequestPerson(
+PostTokensRequestPerson copyWith({AdditionalTosAcceptances Function()? additionalTosAcceptances, Customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob Function()? dob, PostAccountsAccountPeoplePersonRequestDocuments Function()? documents, String Function()? email, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, FullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, Metadata Function()? metadata, String Function()? nationality, String Function()? phone, PoliticalExposure Function()? politicalExposure, RegisteredAddress Function()? registeredAddress, PostAccountsAccountPeoplePersonRequestRelationship Function()? relationship, String Function()? ssnLast4, UsCfpbData Function()? usCfpbData, PostAccountsAccountPeoplePersonRequestVerification Function()? verification, }) { return PostTokensRequestPerson(
   additionalTosAcceptances: additionalTosAcceptances != null ? additionalTosAcceptances() : this.additionalTosAcceptances,
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,

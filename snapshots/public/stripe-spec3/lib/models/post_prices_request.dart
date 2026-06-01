@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_product_data.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_recurring.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_transform_quantity.dart';@immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_product_data.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';@immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPricesRequest(
   active: json['active'] as bool?,
@@ -19,7 +19,7 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => Tiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
-  transformQuantity: json['transform_quantity'] != null ? PostPricesRequestTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
+  transformQuantity: json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }
@@ -73,7 +73,7 @@ final PostPlansRequestTiersMode? tiersMode;
 final bool? transferLookupKey;
 
 /// Apply a transformation to the reported usage or set quantity before computing the billed price. Cannot be combined with `tiers`.
-final PostPricesRequestTransformQuantity? transformQuantity;
+final TransformQuantity? transformQuantity;
 
 /// A positive integer in cents (or local equivalent) (or 0 for a free price) representing how much to charge. One of `unit_amount`, `unit_amount_decimal`, or `custom_unit_amount` is required, unless `billing_scheme=tiered`.
 final int? unitAmount;
@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
-PostPricesRequest copyWith({bool Function()? active, BillingScheme Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue> Function()? currencyOptions, PostPricesRequestCustomUnitAmount Function()? customUnitAmount, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? nickname, String Function()? product, PostPricesRequestProductData Function()? productData, PostPricesRequestRecurring Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, List<Tiers> Function()? tiers, PostPlansRequestTiersMode Function()? tiersMode, bool Function()? transferLookupKey, PostPricesRequestTransformQuantity Function()? transformQuantity, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostPricesRequest(
+PostPricesRequest copyWith({bool Function()? active, BillingScheme Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue> Function()? currencyOptions, PostPricesRequestCustomUnitAmount Function()? customUnitAmount, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? nickname, String Function()? product, PostPricesRequestProductData Function()? productData, PostPricesRequestRecurring Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, List<Tiers> Function()? tiers, PostPlansRequestTiersMode Function()? tiersMode, bool Function()? transferLookupKey, TransformQuantity Function()? transformQuantity, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostPricesRequest(
   active: active != null ? active() : this.active,
   billingScheme: billingScheme != null ? billingScheme() : this.billingScheme,
   currency: currency ?? this.currency,

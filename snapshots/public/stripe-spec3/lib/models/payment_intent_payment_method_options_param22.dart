@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam22 {const PaymentIntentPaymentMethodOptionsParam22({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam22.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam22(
-  captureMethod: json['capture_method'] != null ? payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? Payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final payment_intent_paramCaptureMethod? captureMethod;
+final Payment_intent_paramCaptureMethod? captureMethod;
 
 final PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? setupFutureUsage;
 
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam22 copyWith({payment_intent_paramCaptureMethod Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam22(
+PaymentIntentPaymentMethodOptionsParam22 copyWith({Payment_intent_paramCaptureMethod Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam22(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

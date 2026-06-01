@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostCheckoutSessionsRequestCustomText {const PostCheckoutSessionsRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PostCheckoutSessionsRequestCustomText.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomText(
-  afterSubmit: json['after_submit'] != null ? OneOf2.parse(json['after_submit'], fromA: (v) => custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shippingAddress: json['shipping_address'] != null ? OneOf2.parse(json['shipping_address'], fromA: (v) => custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  submit: json['submit'] != null ? OneOf2.parse(json['submit'], fromA: (v) => custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? OneOf2.parse(json['terms_of_service_acceptance'], fromA: (v) => custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  afterSubmit: json['after_submit'] != null ? OneOf2.parse(json['after_submit'], fromA: (v) => Custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingAddress: json['shipping_address'] != null ? OneOf2.parse(json['shipping_address'], fromA: (v) => Custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  submit: json['submit'] != null ? OneOf2.parse(json['submit'], fromA: (v) => Custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? OneOf2.parse(json['terms_of_service_acceptance'], fromA: (v) => Custom_text_position_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 final AfterSubmit? afterSubmit;

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
 @immutable final class WebhookCommitCommentCreatedComment {const WebhookCommitCommentCreatedComment({required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.path, required this.position, required this.updatedAt, required this.url, required this.user, this.reactions, });
 
 factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreatedComment(
-  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   commitId: json['commit_id'] as String,
   createdAt: json['created_at'] as String,
@@ -21,7 +21,7 @@ factory WebhookCommitCommentCreatedComment.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// How the author is associated with the repository.
-final DiscussionAuthorAssociation authorAssociation;
+final AuthorAssociation authorAssociation;
 
 /// The text of the comment.
 final String body;
@@ -85,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookCommitCommentCreatedComment copyWith({DiscussionAuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
+WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociation, String? body, String? commitId, String? createdAt, Uri? htmlUrl, int? id, int? Function()? line, String? nodeId, String? Function()? path, int? Function()? position, DiscussionReactions Function()? reactions, String? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookCommitCommentCreatedComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   commitId: commitId ?? this.commitId,

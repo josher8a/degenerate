@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   bankAccount: json['bank_account'] != null ? PostTokensRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => credit_card_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => Credit_card_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   customer: json['customer'] as String?,
   cvcUpdate: json['cvc_update'] != null ? CvcUpdate.fromJson(json['cvc_update'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -5,9 +5,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestBankAccount(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? Customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
-  accountType: json['account_type'] != null ? external_account_payout_bank_accountAccountType.fromJson(json['account_type'] as String) : null,
+  accountType: json['account_type'] != null ? External_account_payout_bank_accountAccountType.fromJson(json['account_type'] as String) : null,
   country: json['country'] as String,
   currency: json['currency'] as String?,
   paymentMethod: json['payment_method'] as String?,
@@ -16,11 +16,11 @@ factory PostTokensRequestBankAccount.fromJson(Map<String, dynamic> json) { retur
 
 final String? accountHolderName;
 
-final customer_payment_source_bank_accountAccountHolderType? accountHolderType;
+final Customer_payment_source_bank_accountAccountHolderType? accountHolderType;
 
 final String accountNumber;
 
-final external_account_payout_bank_accountAccountType? accountType;
+final External_account_payout_bank_accountAccountType? accountType;
 
 final String country;
 
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-PostTokensRequestBankAccount copyWith({String Function()? accountHolderName, customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String? accountNumber, external_account_payout_bank_accountAccountType Function()? accountType, String? country, String Function()? currency, String Function()? paymentMethod, String Function()? routingNumber, }) { return PostTokensRequestBankAccount(
+PostTokensRequestBankAccount copyWith({String Function()? accountHolderName, Customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String? accountNumber, External_account_payout_bank_accountAccountType Function()? accountType, String? country, String Function()? currency, String Function()? paymentMethod, String Function()? routingNumber, }) { return PostTokensRequestBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,

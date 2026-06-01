@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam16 {const PaymentIntentPaymentMethodOptionsParam16({this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsParam16.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam16(
-  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? Payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
-final payment_intent_paramSetupFutureUsage? setupFutureUsage;
+final Payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam16 copyWith({payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam16(
+PaymentIntentPaymentMethodOptionsParam16 copyWith({Payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam16(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 

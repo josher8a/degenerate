@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? CardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  network: json['network'] != null ? payment_intent_paramNetwork.fromJson(json['network'] as String) : null,
+  network: json['network'] != null ? Payment_intent_paramNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
   threeDSecure: json['three_d_secure'] != null ? CardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 final CardMandateOptions? mandateOptions;
 
-final payment_intent_paramNetwork? network;
+final Payment_intent_paramNetwork? network;
 
 final CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure', 'three_d_secure'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard copyWith({CardMandateOptions Function()? mandateOptions, payment_intent_paramNetwork Function()? network, CheckoutCardPaymentMethodOptionsRequestThreeDSecure Function()? requestThreeDSecure, CardThreeDSecure Function()? threeDSecure, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard(
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard copyWith({CardMandateOptions Function()? mandateOptions, Payment_intent_paramNetwork Function()? network, CheckoutCardPaymentMethodOptionsRequestThreeDSecure Function()? requestThreeDSecure, CardThreeDSecure Function()? threeDSecure, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,

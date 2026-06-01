@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/card/card_account.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_account.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
 /// later. You can also store multiple debit cards on a recipient in order to
 /// transfer to those cards later.
 /// 
@@ -42,7 +42,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   tokenizationMethod: json['tokenization_method'] as String?,
 ); }
 
-final CardAccount? account;
+final BankAccountAccount? account;
 
 /// City/District/Suburb/Town/Village.
 final String? addressCity;
@@ -179,7 +179,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object'); } 
-Card copyWith({CardAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, CardCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
+Card copyWith({BankAccountAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, CardCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
   account: account != null ? account() : this.account,
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/invoice_setting_checkout_rendering_options.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_settings/payment_links_resource_invoice_settings_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/invoice_setting_checkout_rendering_options.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionInvoiceSettings {const PaymentPagesCheckoutSessionInvoiceSettings({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionInvoiceSettings(
@@ -14,7 +14,7 @@ factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic>
 ); }
 
 /// The account tax IDs associated with the invoice.
-final List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>? accountTaxIds;
+final List<InvoiceAccountTaxIds>? accountTaxIds;
 
 /// Custom fields displayed on the invoice.
 final List<InvoiceSettingCustomField>? customFields;
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
-PaymentPagesCheckoutSessionInvoiceSettings copyWith({List<PaymentLinksResourceInvoiceSettingsAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, ConnectAccountReference? Function()? issuer, Map<String, String>? Function()? metadata, InvoiceSettingCheckoutRenderingOptions? Function()? renderingOptions, }) { return PaymentPagesCheckoutSessionInvoiceSettings(
+PaymentPagesCheckoutSessionInvoiceSettings copyWith({List<InvoiceAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, ConnectAccountReference? Function()? issuer, Map<String, String>? Function()? metadata, InvoiceSettingCheckoutRenderingOptions? Function()? renderingOptions, }) { return PaymentPagesCheckoutSessionInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,
   description: description != null ? description() : this.description,

@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory PaymentMethodDetailsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   interval: json['interval'] != null ? PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null,
-  type: installment_planType.fromJson(json['type'] as String),
+  type: Installment_planType.fromJson(json['type'] as String),
 ); }
 
 /// For `fixed_count` installment plans, this is the number of installment payments your customer will make to their credit card.
@@ -17,7 +17,7 @@ final int? count;
 final PaymentMethodDetailsCardInstallmentsPlanInterval? interval;
 
 /// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
-final installment_planType type;
+final Installment_planType type;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, installment_planType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
+PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, Installment_planType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,

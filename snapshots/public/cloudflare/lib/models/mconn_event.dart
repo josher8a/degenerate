@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event/configure_cloudflared_tunnel.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_success.dart';import 'package:pub_cloudflare/models/mconn_event/init.dart';import 'package:pub_cloudflare/models/mconn_event/leave.dart';import 'package:pub_cloudflare/models/mconn_event/reconcile.dart';import 'package:pub_cloudflare/models/mconn_event/start_attestation.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_crypt_key.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_pki.dart';import 'package:pub_cloudflare/models/mconn_event/start_upgrade.dart';/// A value that is one of: `Init`, `Leave`, `StartAttestation`, `FinishAttestationSuccess`, `FinishAttestationFailure`, `StartRotateCryptKey`, `FinishRotateCryptKeySuccess`, `FinishRotateCryptKeyFailure`, `StartRotatePki`, `FinishRotatePkiSuccess`, `FinishRotatePkiFailure`, `StartUpgrade`, `FinishUpgradeSuccess`, `FinishUpgradeFailure`, `Reconcile`, `ConfigureCloudflaredTunnel`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event/configure_cloudflared_tunnel.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_success.dart';import 'package:pub_cloudflare/models/mconn_event/leave.dart';import 'package:pub_cloudflare/models/mconn_event/mconn_event_init.dart';import 'package:pub_cloudflare/models/mconn_event/reconcile.dart';import 'package:pub_cloudflare/models/mconn_event/start_attestation.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_crypt_key.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_pki.dart';import 'package:pub_cloudflare/models/mconn_event/start_upgrade.dart';/// A value that is one of: `MconnEventInit`, `Leave`, `StartAttestation`, `FinishAttestationSuccess`, `FinishAttestationFailure`, `StartRotateCryptKey`, `FinishRotateCryptKeySuccess`, `FinishRotateCryptKeyFailure`, `StartRotatePki`, `FinishRotatePkiSuccess`, `FinishRotatePkiFailure`, `StartUpgrade`, `FinishUpgradeSuccess`, `FinishUpgradeFailure`, `Reconcile`, `ConfigureCloudflaredTunnel`.
 sealed class MconnEvent {const MconnEvent();
 
-factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (Init.canParse(json)) {
-    return MconnEventInit(Init.fromJson(json));
+factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.canParse(json)) {
+    return MconnEventMconnEventInit(MconnEventInit.fromJson(json));
   }
   if (Leave.canParse(json)) {
     return MconnEventLeave(Leave.fromJson(json));
@@ -57,15 +57,15 @@ factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (Init.canParse(jso
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class MconnEventInit extends MconnEvent {const MconnEventInit(this._value);
+@immutable final class MconnEventMconnEventInit extends MconnEvent {const MconnEventMconnEventInit(this._value);
 
-final Init _value;
+final MconnEventInit _value;
 
-@override Init get value { return _value; } 
+@override MconnEventInit get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventInit && _value == other._value; } 
+    other is MconnEventMconnEventInit && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.init($_value)'; } 
+@override String toString() { return 'MconnEvent.mconnEventInit($_value)'; } 
  }
 @immutable final class MconnEventLeave extends MconnEvent {const MconnEventLeave(this._value);
 

@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsRequest(
   accountToken: json['account_token'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => external_account_payout_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => External_account_payout_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   businessProfile: json['business_profile'] != null ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? PostAccountsAccountRequestBusinessType.fromJson(json['business_type'] as String) : null,
   capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,

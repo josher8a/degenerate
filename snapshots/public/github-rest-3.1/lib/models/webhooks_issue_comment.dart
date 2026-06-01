@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pinned_issue_comment.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';/// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pinned_issue_comment.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';/// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
 @immutable final class WebhooksIssueComment {const WebhooksIssueComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, required this.user, this.pin, });
 
 factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return WebhooksIssueComment(
-  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -20,7 +20,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
 ); }
 
 /// How the author is associated with the repository.
-final DiscussionAuthorAssociation authorAssociation;
+final AuthorAssociation authorAssociation;
 
 /// Contents of the issue comment
 final String body;
@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksIssueComment copyWith({DiscussionAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, DiscussionReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, PinnedIssueComment? Function()? pin, }) { return WebhooksIssueComment(
+WebhooksIssueComment copyWith({AuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, DiscussionReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, PinnedIssueComment? Function()? pin, }) { return WebhooksIssueComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   createdAt: createdAt ?? this.createdAt,

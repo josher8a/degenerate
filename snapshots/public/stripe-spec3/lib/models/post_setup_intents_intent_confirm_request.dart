@@ -6,7 +6,7 @@ factory PostSetupIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json)
   clientSecret: json['client_secret'] as String?,
   confirmationToken: json['confirmation_token'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  mandateData: json['mandate_data'] != null ? OneOf3.parse(json['mandate_data'], fromA: (v) => secret_key_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromC: (v) => client_key_param.fromJson(v as Map<String, dynamic>),) : null,
+  mandateData: json['mandate_data'] != null ? OneOf3.parse(json['mandate_data'], fromA: (v) => Secret_key_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromC: (v) => Client_key_param.fromJson(v as Map<String, dynamic>),) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,

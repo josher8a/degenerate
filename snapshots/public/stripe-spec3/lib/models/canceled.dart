@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_return_status.dart';import 'package:pub_stripe_spec3/models/canceled/cancellation_policy_provided.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/canceled/returned_at.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class canceled {const canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_return_status.dart';import 'package:pub_stripe_spec3/models/canceled/cancellation_policy_provided.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/canceled/returned_at.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
-factory canceled.fromJson(Map<String, dynamic> json) { return canceled(
+factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   canceledAt: json['canceled_at'] != null ? OneOf2.parse(json['canceled_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? OneOf2.parse(json['cancellation_policy_provided'], fromA: (v) => v as bool, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -10,18 +10,18 @@ factory canceled.fromJson(Map<String, dynamic> json) { return canceled(
   expectedAt: json['expected_at'] != null ? OneOf2.parse(json['expected_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  productType: json['product_type'] != null ? canceledProductType.fromJson(json['product_type'] as String) : null,
-  returnStatus: json['return_status'] != null ? canceledReturnStatus.fromJson(json['return_status'] as String) : null,
+  productType: json['product_type'] != null ? CanceledProductType.fromJson(json['product_type'] as String) : null,
+  returnStatus: json['return_status'] != null ? CanceledReturnStatus.fromJson(json['return_status'] as String) : null,
   returnedAt: json['returned_at'] != null ? OneOf2.parse(json['returned_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final canceledAdditionalDocumentation? additionalDocumentation;
+final CanceledAdditionalDocumentation? additionalDocumentation;
 
 final CanceledAt? canceledAt;
 
 final CancellationPolicyProvided? cancellationPolicyProvided;
 
-final canceledCancellationReason? cancellationReason;
+final CanceledCancellationReason? cancellationReason;
 
 final ExpectedAt? expectedAt;
 
@@ -29,9 +29,9 @@ final Explanation? explanation;
 
 final ProductDescription? productDescription;
 
-final canceledProductType? productType;
+final CanceledProductType? productType;
 
-final canceledReturnStatus? returnStatus;
+final CanceledReturnStatus? returnStatus;
 
 final ReturnedAt? returnedAt;
 
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key)); } 
-canceled copyWith({canceledAdditionalDocumentation Function()? additionalDocumentation, CanceledAt Function()? canceledAt, CancellationPolicyProvided Function()? cancellationPolicyProvided, canceledCancellationReason Function()? cancellationReason, ExpectedAt Function()? expectedAt, Explanation Function()? explanation, ProductDescription Function()? productDescription, canceledProductType Function()? productType, canceledReturnStatus Function()? returnStatus, ReturnedAt Function()? returnedAt, }) { return canceled(
+Canceled copyWith({CanceledAdditionalDocumentation Function()? additionalDocumentation, CanceledAt Function()? canceledAt, CancellationPolicyProvided Function()? cancellationPolicyProvided, CanceledCancellationReason Function()? cancellationReason, ExpectedAt Function()? expectedAt, Explanation Function()? explanation, ProductDescription Function()? productDescription, CanceledProductType Function()? productType, CanceledReturnStatus Function()? returnStatus, ReturnedAt Function()? returnedAt, }) { return Canceled(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationPolicyProvided: cancellationPolicyProvided != null ? cancellationPolicyProvided() : this.cancellationPolicyProvided,
@@ -61,7 +61,7 @@ canceled copyWith({canceledAdditionalDocumentation Function()? additionalDocumen
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is canceled &&
+      other is Canceled &&
           additionalDocumentation == other.additionalDocumentation &&
           canceledAt == other.canceledAt &&
           cancellationPolicyProvided == other.cancellationPolicyProvided &&
@@ -73,5 +73,5 @@ canceled copyWith({canceledAdditionalDocumentation Function()? additionalDocumen
           returnStatus == other.returnStatus &&
           returnedAt == other.returnedAt; } 
 @override int get hashCode { return Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt); } 
-@override String toString() { return 'canceled(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
+@override String toString() { return 'Canceled(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id/deleted_tax_id_object.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id/invoices_resource_invoice_tax_id_type.dart';import 'package:pub_stripe_spec3/models/tax_i_ds_owner.dart';import 'package:pub_stripe_spec3/models/tax_id_verification.dart';/// You can add one or multiple tax IDs to a [customer](https://docs.stripe.com/api/customers) or account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id/deleted_tax_id_object.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id/invoices_resource_invoice_tax_id_type.dart';import 'package:pub_stripe_spec3/models/payment_method/payment_method_customer.dart';import 'package:pub_stripe_spec3/models/tax_i_ds_owner.dart';import 'package:pub_stripe_spec3/models/tax_id_verification.dart';/// You can add one or multiple tax IDs to a [customer](https://docs.stripe.com/api/customers) or account.
 /// Customer and account tax IDs get displayed on related invoices and credit notes.
 /// 
 /// Related guides: [Customer tax identification numbers](https://docs.stripe.com/billing/taxes/tax-ids), [Account tax IDs](https://docs.stripe.com/invoicing/connect#account-tax-ids)
@@ -27,7 +27,7 @@ final String? country;
 final int created;
 
 /// ID of the customer.
-final ConfirmationTokensResourcePaymentMethodPreviewCustomer? customer;
+final PaymentMethodCustomer? customer;
 
 /// ID of the Account representing the customer.
 final String? customerAccount;
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
-TaxId copyWith({String? Function()? country, int? created, ConfirmationTokensResourcePaymentMethodPreviewCustomer? Function()? customer, String? Function()? customerAccount, String? id, bool? livemode, DeletedTaxIdObject? object, TaxIDsOwner? Function()? owner, InvoicesResourceInvoiceTaxIdType? type, String? value, TaxIdVerification? Function()? verification, }) { return TaxId(
+TaxId copyWith({String? Function()? country, int? created, PaymentMethodCustomer? Function()? customer, String? Function()? customerAccount, String? id, bool? livemode, DeletedTaxIdObject? object, TaxIDsOwner? Function()? owner, InvoicesResourceInvoiceTaxIdType? type, String? value, TaxIdVerification? Function()? verification, }) { return TaxId(
   country: country != null ? country() : this.country,
   created: created ?? this.created,
   customer: customer != null ? customer() : this.customer,

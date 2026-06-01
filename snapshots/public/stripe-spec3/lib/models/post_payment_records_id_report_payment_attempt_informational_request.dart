@@ -7,7 +7,7 @@ factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Ma
   description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => shipping_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => Shipping_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Customer information for this payment.

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostAccountsAccountRequestIndividual {const PostAccountsAccountRequestIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
 
 factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividual(
-  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => date_of_birth_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => Date_of_birth_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
@@ -29,7 +29,7 @@ factory PostAccountsAccountRequestIndividual.fromJson(Map<String, dynamic> json)
   verification: json['verification'] != null ? PostAccountsAccountPeoplePersonRequestVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
-final customer_shippingAddress? address;
+final Customer_shippingAddress? address;
 
 final AddressKana? addressKana;
 
@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'dob', 'email', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'verification'}.contains(key)); } 
-PostAccountsAccountRequestIndividual copyWith({customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob Function()? dob, String Function()? email, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, FullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, Metadata Function()? metadata, String Function()? phone, PoliticalExposure Function()? politicalExposure, RegisteredAddress Function()? registeredAddress, IndividualRelationship Function()? relationship, String Function()? ssnLast4, PostAccountsAccountPeoplePersonRequestVerification Function()? verification, }) { return PostAccountsAccountRequestIndividual(
+PostAccountsAccountRequestIndividual copyWith({Customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob Function()? dob, String Function()? email, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, FullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, Metadata Function()? metadata, String Function()? phone, PoliticalExposure Function()? politicalExposure, RegisteredAddress Function()? registeredAddress, IndividualRelationship Function()? relationship, String Function()? ssnLast4, PostAccountsAccountPeoplePersonRequestVerification Function()? verification, }) { return PostAccountsAccountRequestIndividual(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

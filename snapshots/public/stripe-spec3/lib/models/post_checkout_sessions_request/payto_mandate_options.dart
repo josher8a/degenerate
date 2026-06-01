@@ -8,11 +8,11 @@ factory PaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PaytoMa
   endDate: json['end_date'] != null ? OneOf2.parse(json['end_date'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentSchedule: json['payment_schedule'] != null ? MandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
   paymentsPerPeriod: json['payments_per_period'] != null ? OneOf2.parse(json['payments_per_period'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  purpose: json['purpose'] != null ? payment_intent_payment_method_options_paramMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
+  purpose: json['purpose'] != null ? Payment_intent_payment_method_options_paramMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
   startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final amount_details_shipping_paramAmount? amount;
+final Amount_details_shipping_paramAmount? amount;
 
 final MandateOptionsAmountType? amountType;
 
@@ -22,7 +22,7 @@ final MandateOptionsPaymentSchedule? paymentSchedule;
 
 final PaymentsPerPeriod? paymentsPerPeriod;
 
-final payment_intent_payment_method_options_paramMandateOptionsPurpose? purpose;
+final Payment_intent_payment_method_options_paramMandateOptionsPurpose? purpose;
 
 final MandateOptionsStartDate? startDate;
 
@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (startDate != null) 'start_date': startDate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose', 'start_date'}.contains(key)); } 
-PaytoMandateOptions copyWith({amount_details_shipping_paramAmount Function()? amount, MandateOptionsAmountType Function()? amountType, MandateOptionsEndDate Function()? endDate, MandateOptionsPaymentSchedule Function()? paymentSchedule, PaymentsPerPeriod Function()? paymentsPerPeriod, payment_intent_payment_method_options_paramMandateOptionsPurpose Function()? purpose, MandateOptionsStartDate Function()? startDate, }) { return PaytoMandateOptions(
+PaytoMandateOptions copyWith({Amount_details_shipping_paramAmount Function()? amount, MandateOptionsAmountType Function()? amountType, MandateOptionsEndDate Function()? endDate, MandateOptionsPaymentSchedule Function()? paymentSchedule, PaymentsPerPeriod Function()? paymentsPerPeriod, Payment_intent_payment_method_options_paramMandateOptionsPurpose Function()? purpose, MandateOptionsStartDate Function()? startDate, }) { return PaytoMandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,
   endDate: endDate != null ? endDate() : this.endDate,

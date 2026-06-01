@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostPaymentMethodsPaymentMethodRequestUsBankAccount {const PostPaymentMethodsPaymentMethodRequestUsBankAccount({this.accountHolderType, this.accountType, });
 
 factory PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? Customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountType: json['account_type'] != null ? UsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
 ); }
 
-final customer_payment_source_bank_accountAccountHolderType? accountHolderType;
+final Customer_payment_source_bank_accountAccountHolderType? accountHolderType;
 
 final UsBankAccountAccountType? accountType;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (accountType != null) 'account_type': accountType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, UsBankAccountAccountType Function()? accountType, }) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
+PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({Customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, UsBankAccountAccountType Function()? accountType, }) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';@immutable final class ReviewState {const ReviewState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';@immutable final class ReviewState {const ReviewState._(this.value);
 
 factory ReviewState.fromJson(String json) { return switch (json) {
   'dismissed' => dismissed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
-  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
   commitId: json['commit_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -48,7 +48,7 @@ factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> js
 final WebhooksReviewLinks links;
 
 /// How the author is associated with the repository.
-final DiscussionAuthorAssociation authorAssociation;
+final AuthorAssociation authorAssociation;
 
 /// The text of the review.
 final String? body;
@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('state') &&
       json.containsKey('submitted_at') && json['submitted_at'] is String &&
       json.containsKey('user'); } 
-WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, DiscussionAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, DateTime? Function()? updatedAt, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
+WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, ReviewState? state, DateTime? submittedAt, DateTime? Function()? updatedAt, WebhooksIssueCommentUser? Function()? user, }) { return WebhookPullRequestReviewDismissedReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,

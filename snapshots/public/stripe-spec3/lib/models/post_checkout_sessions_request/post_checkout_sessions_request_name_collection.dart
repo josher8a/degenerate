@@ -11,19 +11,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostCheckoutSessionsRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestNameCollection(
   business: json['business'] != null ? Business.fromJson(json['business'] as Map<String, dynamic>) : null,
-  individual: json['individual'] != null ? name_collection_paramsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? Name_collection_paramsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final Business? business;
 
-final name_collection_paramsIndividual? individual;
+final Name_collection_paramsIndividual? individual;
 
 Map<String, dynamic> toJson() { return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-PostCheckoutSessionsRequestNameCollection copyWith({Business Function()? business, name_collection_paramsIndividual Function()? individual, }) { return PostCheckoutSessionsRequestNameCollection(
+PostCheckoutSessionsRequestNameCollection copyWith({Business Function()? business, Name_collection_paramsIndividual Function()? individual, }) { return PostCheckoutSessionsRequestNameCollection(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
 ); } 

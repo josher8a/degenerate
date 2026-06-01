@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options/allowed_types.dart';@immutable final class document_options {const document_options({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options/allowed_types.dart';@immutable final class Document_options {const Document_options({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
-factory document_options.fromJson(Map<String, dynamic> json) { return document_options(
+factory Document_options.fromJson(Map<String, dynamic> json) { return Document_options(
   allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => AllowedTypes.fromJson(e as String)).toList(),
   requireIdNumber: json['require_id_number'] as bool?,
   requireLiveCapture: json['require_live_capture'] as bool?,
@@ -24,18 +24,18 @@ Map<String, dynamic> toJson() { return {
   'require_matching_selfie': ?requireMatchingSelfie,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key)); } 
-document_options copyWith({List<AllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return document_options(
+Document_options copyWith({List<AllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return Document_options(
   allowedTypes: allowedTypes != null ? allowedTypes() : this.allowedTypes,
   requireIdNumber: requireIdNumber != null ? requireIdNumber() : this.requireIdNumber,
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,
   requireMatchingSelfie: requireMatchingSelfie != null ? requireMatchingSelfie() : this.requireMatchingSelfie,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is document_options &&
+      other is Document_options &&
           listEquals(allowedTypes, other.allowedTypes) &&
           requireIdNumber == other.requireIdNumber &&
           requireLiveCapture == other.requireLiveCapture &&
           requireMatchingSelfie == other.requireMatchingSelfie; } 
 @override int get hashCode { return Object.hash(Object.hashAll(allowedTypes ?? const []), requireIdNumber, requireLiveCapture, requireMatchingSelfie); } 
-@override String toString() { return 'document_options(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)'; } 
+@override String toString() { return 'Document_options(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)'; } 
  }

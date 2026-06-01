@@ -7,7 +7,7 @@ factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> jso
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => billing_thresholds_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => Billing_thresholds_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   collectionMethod: json['collection_method'] != null ? InvoiceCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
   defaultPaymentMethod: json['default_payment_method'] as String?,

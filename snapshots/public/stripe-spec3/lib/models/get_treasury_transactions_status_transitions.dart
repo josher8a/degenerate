@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_treasury_transactions_status_transitions/posted_at.dart';import 'package:pub_stripe_spec3/models/range_query_specs.dart';@immutable final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
 
 factory GetTreasuryTransactionsStatusTransitions.fromJson(Map<String, dynamic> json) { return GetTreasuryTransactionsStatusTransitions(
-  postedAt: json['posted_at'] != null ? OneOf2.parse(json['posted_at'], fromA: (v) => range_query_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => (v as num).toInt(),) : null,
+  postedAt: json['posted_at'] != null ? OneOf2.parse(json['posted_at'], fromA: (v) => Range_query_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => (v as num).toInt(),) : null,
 ); }
 
 final PostedAt? postedAt;

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/merchandise_not_as_described/received_at.dart';@immutable final class service_not_as_described {const service_not_as_described({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/merchandise_not_as_described/received_at.dart';@immutable final class Service_not_as_described {const Service_not_as_described({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
-factory service_not_as_described.fromJson(Map<String, dynamic> json) { return service_not_as_described(
+factory Service_not_as_described.fromJson(Map<String, dynamic> json) { return Service_not_as_described(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   canceledAt: json['canceled_at'] != null ? OneOf2.parse(json['canceled_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   cancellationReason: json['cancellation_reason'] != null ? OneOf2.parse(json['cancellation_reason'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -10,11 +10,11 @@ factory service_not_as_described.fromJson(Map<String, dynamic> json) { return se
   receivedAt: json['received_at'] != null ? OneOf2.parse(json['received_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final canceledAdditionalDocumentation? additionalDocumentation;
+final CanceledAdditionalDocumentation? additionalDocumentation;
 
 final CanceledAt? canceledAt;
 
-final canceledCancellationReason? cancellationReason;
+final CanceledCancellationReason? cancellationReason;
 
 final Explanation? explanation;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (receivedAt != null) 'received_at': receivedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
-service_not_as_described copyWith({canceledAdditionalDocumentation Function()? additionalDocumentation, CanceledAt Function()? canceledAt, canceledCancellationReason Function()? cancellationReason, Explanation Function()? explanation, ReceivedAt Function()? receivedAt, }) { return service_not_as_described(
+Service_not_as_described copyWith({CanceledAdditionalDocumentation Function()? additionalDocumentation, CanceledAt Function()? canceledAt, CanceledCancellationReason Function()? cancellationReason, Explanation Function()? explanation, ReceivedAt Function()? receivedAt, }) { return Service_not_as_described(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
@@ -36,12 +36,12 @@ service_not_as_described copyWith({canceledAdditionalDocumentation Function()? a
   receivedAt: receivedAt != null ? receivedAt() : this.receivedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is service_not_as_described &&
+      other is Service_not_as_described &&
           additionalDocumentation == other.additionalDocumentation &&
           canceledAt == other.canceledAt &&
           cancellationReason == other.cancellationReason &&
           explanation == other.explanation &&
           receivedAt == other.receivedAt; } 
 @override int get hashCode { return Object.hash(additionalDocumentation, canceledAt, cancellationReason, explanation, receivedAt); } 
-@override String toString() { return 'service_not_as_described(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationReason: $cancellationReason, explanation: $explanation, receivedAt: $receivedAt)'; } 
+@override String toString() { return 'Service_not_as_described(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationReason: $cancellationReason, explanation: $explanation, receivedAt: $receivedAt)'; } 
  }

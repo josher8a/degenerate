@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_verification.dart';/// Low-level Git commit operations within a repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Low-level Git commit operations within a repository
 @immutable final class GitCommit {const GitCommit({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, });
 
 factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(
@@ -12,7 +12,7 @@ factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(
   message: json['message'] as String,
   tree: GitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
   parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
-  verification: GitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>),
+  verification: Verification.fromJson(json['verification'] as Map<String, dynamic>),
   htmlUrl: Uri.parse(json['html_url'] as String),
 ); }
 
@@ -36,7 +36,7 @@ final GitCommitTree tree;
 
 final List<GitCommitParents> parents;
 
-final GitCommitVerification verification;
+final Verification verification;
 
 final Uri htmlUrl;
 
@@ -62,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('parents') &&
       json.containsKey('verification') &&
       json.containsKey('html_url') && json['html_url'] is String; } 
-GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, GitCommitVerification? verification, Uri? htmlUrl, }) { return GitCommit(
+GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, Verification? verification, Uri? htmlUrl, }) { return GitCommit(
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/answer_chosen_by.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_category.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/label.dart';/// The current state of the discussion.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/answer_chosen_by.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_category.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/label.dart';/// The current state of the discussion.
 /// `converting` means that the discussion is being converted from an issue.
 /// `transferring` means that the discussion is being transferred from another repository.
 @immutable final class DiscussionState {const DiscussionState._(this.value);
@@ -78,7 +78,7 @@ factory Discussion.fromJson(Map<String, dynamic> json) { return Discussion(
   answerChosenAt: json['answer_chosen_at'] as String?,
   answerChosenBy: json['answer_chosen_by'] != null ? AnswerChosenBy.fromJson(json['answer_chosen_by'] as Map<String, dynamic>) : null,
   answerHtmlUrl: json['answer_html_url'] as String?,
-  authorAssociation: json['author_association'] != null ? DiscussionAuthorAssociation.fromJson(json['author_association'] as String) : null,
+  authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
   body: json['body'] as String,
   category: DiscussionCategory.fromJson(json['category'] as Map<String, dynamic>),
   comments: (json['comments'] as num).toInt(),
@@ -108,7 +108,7 @@ final AnswerChosenBy? answerChosenBy;
 final String? answerHtmlUrl;
 
 /// How the author is associated with the repository.
-final DiscussionAuthorAssociation? authorAssociation;
+final AuthorAssociation? authorAssociation;
 
 final String body;
 
@@ -194,7 +194,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, AnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, DiscussionAuthorAssociation Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label> Function()? labels, }) { return Discussion(
+Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, AnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, AuthorAssociation Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label> Function()? labels, }) { return Discussion(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   answerChosenAt: answerChosenAt != null ? answerChosenAt() : this.answerChosenAt,
   answerChosenBy: answerChosenBy != null ? answerChosenBy() : this.answerChosenBy,

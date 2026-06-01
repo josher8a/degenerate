@@ -4,19 +4,19 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PaymentMethodOptionsParam45.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam45(
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? Payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 final int? expiresAfterDays;
 
-final payment_intent_paramSetupFutureUsage? setupFutureUsage;
+final Payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   'expires_after_days': ?expiresAfterDays,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after_days', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam45 copyWith({int Function()? expiresAfterDays, payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam45(
+PaymentMethodOptionsParam45 copyWith({int Function()? expiresAfterDays, Payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam45(
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

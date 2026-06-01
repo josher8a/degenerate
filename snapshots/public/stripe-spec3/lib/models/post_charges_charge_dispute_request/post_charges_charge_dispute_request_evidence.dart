@@ -17,7 +17,7 @@ factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> js
   duplicateChargeDocumentation: json['duplicate_charge_documentation'] as String?,
   duplicateChargeExplanation: json['duplicate_charge_explanation'] as String?,
   duplicateChargeId: json['duplicate_charge_id'] as String?,
-  enhancedEvidence: json['enhanced_evidence'] != null ? OneOf2.parse(json['enhanced_evidence'], fromA: (v) => enhanced_evidence.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  enhancedEvidence: json['enhanced_evidence'] != null ? OneOf2.parse(json['enhanced_evidence'], fromA: (v) => Enhanced_evidence.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   productDescription: json['product_description'] as String?,
   receipt: json['receipt'] as String?,
   refundPolicy: json['refund_policy'] as String?,

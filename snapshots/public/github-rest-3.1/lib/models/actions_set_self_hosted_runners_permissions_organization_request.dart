@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_set_self_hosted_runners_permissions_organization_request/actions_set_self_hosted_runners_permissions_organization_request_enabled_repositories.dart';@immutable final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequest {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequest({required this.enabledRepositories});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enabled_repositories.dart';@immutable final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequest {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequest({required this.enabledRepositories});
 
 factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(
-  enabledRepositories: ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories.fromJson(json['enabled_repositories'] as String),
+  enabledRepositories: EnabledRepositories.fromJson(json['enabled_repositories'] as String),
 ); }
 
 /// The policy that controls whether self-hosted runners can be used in the organization
-final ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories enabledRepositories;
+final EnabledRepositories enabledRepositories;
 
 Map<String, dynamic> toJson() { return {
   'enabled_repositories': enabledRepositories.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_repositories'); } 
-ActionsSetSelfHostedRunnersPermissionsOrganizationRequest copyWith({ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories? enabledRepositories}) { return ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(
+ActionsSetSelfHostedRunnersPermissionsOrganizationRequest copyWith({EnabledRepositories? enabledRepositories}) { return ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(
   enabledRepositories: enabledRepositories ?? this.enabledRepositories,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

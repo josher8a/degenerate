@@ -7,7 +7,7 @@ factory PostPaymentLinksPaymentLinkRequestSubscriptionData.fromJson(Map<String, 
   invoiceSettings: json['invoice_settings'] != null ? SubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   trialPeriodDays: json['trial_period_days'] != null ? OneOf2.parse(json['trial_period_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  trialSettings: json['trial_settings'] != null ? OneOf2.parse(json['trial_settings'], fromA: (v) => trial_settings_config.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  trialSettings: json['trial_settings'] != null ? OneOf2.parse(json['trial_settings'], fromA: (v) => Trial_settings_config.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 final SubscriptionDataInvoiceSettings? invoiceSettings;

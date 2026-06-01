@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';@immutable final class WebhooksComment {const WebhooksComment({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.reactions, required this.repositoryUrl, required this.updatedAt, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';@immutable final class WebhooksComment {const WebhooksComment({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.reactions, required this.repositoryUrl, required this.updatedAt, required this.user, });
 
 factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksComment(
-  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   childCommentCount: (json['child_comment_count'] as num).toInt(),
   createdAt: json['created_at'] as String,
@@ -19,7 +19,7 @@ factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksCom
 ); }
 
 /// How the author is associated with the repository.
-final DiscussionAuthorAssociation authorAssociation;
+final AuthorAssociation authorAssociation;
 
 final String body;
 
@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-WebhooksComment copyWith({DiscussionAuthorAssociation? authorAssociation, String? body, int? childCommentCount, String? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, int? Function()? parentId, DiscussionReactions? reactions, String? repositoryUrl, String? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksComment(
+WebhooksComment copyWith({AuthorAssociation? authorAssociation, String? body, int? childCommentCount, String? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, int? Function()? parentId, DiscussionReactions? reactions, String? repositoryUrl, String? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,
