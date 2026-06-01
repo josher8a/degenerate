@@ -7,6 +7,7 @@ import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
     show sanitizeDartName, sanitizeFieldName, toPascalCase;
@@ -230,6 +231,8 @@ class FileEmitter {
 
       files['apis/$fileName.dart'] = emitRaw(library);
     }
+
+    warnings?.addAll(collectAmbiguityWarnings(types, typeRegistry));
 
     // Emit root SDK facade
     if (apis.isNotEmpty) {

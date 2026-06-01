@@ -1,4 +1,5 @@
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a `roundtrip_fixtures.dart` registry: for every named type that
@@ -19,7 +20,11 @@ class RoundtripEmitter {
     : _registry = {
         for (final t in types)
           if (t.emittableName != null) t.emittableName!: t,
-      };
+      },
+      _overlap = VariantOverlapAnalyzer({
+        for (final t in types)
+          if (t.emittableName != null) t.emittableName!: t,
+      });
 
   /// All top-level lowered types.
   final List<IrType> types;
@@ -28,6 +33,8 @@ class RoundtripEmitter {
   final String packageName;
 
   final Map<String, IrType> _registry;
+
+  final VariantOverlapAnalyzer _overlap;
 
   /// Build the `roundtrip_fixtures.dart` file content.
   String emit() {
@@ -291,7 +298,7 @@ class RoundtripEmitter {
   /// `parse` is best-match: it tries every variant and keeps the one whose
   /// serialized form covers the most input keys (ties → earliest). So [k] is
   /// reclaimed iff every earlier variant `j` either throws on [k]'s sample or
-  /// provably covers fewer of its keys ([_jRejectsK]). [k]'s own sample has full
+  /// provably covers fewer of its keys (`jRejectsK`). [k]'s own sample has full
   /// coverage, so no later variant can outrank it; variant[0] is trivial.
   bool _parseReclaims(List<IrType> variants, int k) {
     // Compare against the *effective* sampled type — drill through nested
@@ -302,7 +309,7 @@ class RoundtripEmitter {
     // throws — so it correctly blocks the proof.
     final vk = _effectiveSampleType(variants[k]);
     for (var j = 0; j < k; j++) {
-      if (!_jRejectsK(_resolve(variants[j]), vk)) return false;
+      if (!_overlap.jRejectsK(_resolve(variants[j]), vk)) return false;
     }
     return true;
   }
@@ -329,97 +336,7 @@ class RoundtripEmitter {
     }
   }
 
-  /// Provably true when best-match won't pick `Vj` over `Vk` for `Vk`'s sample:
-  /// either `fromVj` throws (not a candidate), or `Vj` provably covers fewer of
-  /// the sample's keys than `Vk` does (so `Vk`'s full coverage wins).
-  bool _jRejectsK(IrType vj, IrType vk) =>
-      _fromThrows(vj, vk) || _provablyMissesAKey(vj, vk);
-
-  /// Whether `Vj` provably reproduces fewer of `Vk`'s sample keys than `Vk`
-  /// itself — i.e. `Vj` is an object (no `additionalProperties`) whose declared
-  /// fields don't include some key `Vk`'s sample carries. Then `Vj`'s coverage
-  /// is strictly lower, so best-match keeps `Vk`.
-  bool _provablyMissesAKey(IrType vj, IrType vk) {
-    final j = _resolve(vj);
-    if (j is! IrObject || j.additionalProperties != null) return false;
-    final present = _presentKeys(vk);
-    if (present == null) return false;
-    final declared = {for (final f in j.fields) f.originalName};
-    return present.any((k) => !declared.contains(k));
-  }
-
-  /// Provably true when `fromVj(sample_k)` throws — via an incompatible
-  /// container cast, or (object/list-of-object) a mandatory key of `Vj` absent
-  /// from `Vk`'s sample.
-  bool _fromThrows(IrType vj, IrType vk) {
-    final jc = _container(vj);
-    final kc = _container(vk);
-    // Incompatible containers: `fromVj` casts to its own shape and throws
-    // (e.g. `map as String`, `list as Map`).
-    if (jc != kc) {
-      return jc == _Container.object ||
-          jc == _Container.list ||
-          jc == _Container.scalar;
-    }
-    return switch (jc) {
-      _Container.object => _missingMandatoryKey(vj, vk),
-      _Container.list => _fromThrows(_elem(vj), _elem(vk)),
-      _Container.scalar => !_scalarFamiliesOverlap(vj, vk),
-      _Container.other => false, // enums/ext-types/unions/maps: can't prove
-    };
-  }
-
-  /// Whether `Vj` (an object) has a mandatory JSON key — a required,
-  /// non-nullable, non-defaulted field whose `fromJson` is a bare cast that
-  /// throws when absent — that `Vk`'s sample omits.
-  bool _missingMandatoryKey(IrType vj, IrType vk) {
-    if (vj is! IrObject) return false;
-    final present = _presentKeys(vk);
-    if (present == null) return false;
-    for (final f in vj.fields) {
-      final mandatory =
-          f.isRequired && !f.type.isNullable && !fieldHasDefault(f);
-      if (mandatory && !present.contains(f.originalName)) return true;
-    }
-    return false;
-  }
-
-  /// The JSON keys present in `Vk`'s synthesized sample (its always-emitted
-  /// field keys), or `null` if `Vk` isn't object-shaped.
-  Set<String>? _presentKeys(IrType type) {
-    final t = _resolve(type);
-    if (t is! IrObject) return null;
-    return {
-      for (final f in t.fields)
-        if (f.isRequired || fieldHasDefault(f)) f.originalName,
-    };
-  }
-
   IrType _resolve(IrType t) => t is IrTypeRef ? (_registry[t.name] ?? t) : t;
-
-  IrType _elem(IrType t) => switch (t) {
-    IrList(:final items) => _resolve(items),
-    _ => t,
-  };
-
-  _Container _container(IrType t) => switch (_resolve(t)) {
-    IrObject() => _Container.object,
-    IrList() => _Container.list,
-    IrPrimitive(:final kind) when kind != PrimitiveKind.dynamic_ =>
-      _Container.scalar,
-    _ => _Container.other, // dynamic, map, enum, ext-type, union
-  };
-
-  bool _scalarFamiliesOverlap(IrType a, IrType b) {
-    String fam(IrType t) => switch (_resolve(t)) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num => 'num',
-        _ => kind.name,
-      },
-      _ => 'other',
-    };
-    return fam(a) == fam(b);
-  }
 
   /// Whether [type] is a OneOf-eligible union typedef with an inline parser
   /// (i.e. not self-referencing — those use a `parseName` helper instead).
@@ -557,6 +474,3 @@ class RoundtripEmitter {
   /// Escape a type name for use inside a single-quoted Dart string literal.
   String _escapeName(String name) => name.replaceAll(r'$', r'\$');
 }
-
-/// Runtime container shape of a union variant, for parse-disambiguation proofs.
-enum _Container { object, list, scalar, other }
