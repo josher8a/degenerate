@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_option/payment_links_resource_shipping_option_shipping_rate.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionShippingOption {const PaymentPagesCheckoutSessionShippingOption({required this.shippingAmount, required this.shippingRate, });
 
 factory PaymentPagesCheckoutSessionShippingOption.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingOption(
@@ -12,7 +12,7 @@ factory PaymentPagesCheckoutSessionShippingOption.fromJson(Map<String, dynamic> 
 final int shippingAmount;
 
 /// The shipping rate.
-final PaymentLinksResourceShippingOptionShippingRate shippingRate;
+final InvoicesResourceShippingCostShippingRate shippingRate;
 
 Map<String, dynamic> toJson() { return {
   'shipping_amount': shippingAmount,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('shipping_amount') && json['shipping_amount'] is num &&
       json.containsKey('shipping_rate'); } 
-PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, PaymentLinksResourceShippingOptionShippingRate? shippingRate, }) { return PaymentPagesCheckoutSessionShippingOption(
+PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, InvoicesResourceShippingCostShippingRate? shippingRate, }) { return PaymentPagesCheckoutSessionShippingOption(
   shippingAmount: shippingAmount ?? this.shippingAmount,
   shippingRate: shippingRate ?? this.shippingRate,
 ); } 

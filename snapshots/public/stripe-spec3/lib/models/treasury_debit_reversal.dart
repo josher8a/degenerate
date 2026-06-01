@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal/treasury_debit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_debits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
 @immutable final class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork._(this.value);
 
 factory TreasuryDebitReversalNetwork.fromJson(String json) { return switch (json) {
@@ -138,7 +138,7 @@ final TreasuryDebitReversalStatus status;
 final TreasuryReceivedDebitsResourceStatusTransitions statusTransitions;
 
 /// The Transaction associated with this object.
-final TreasuryDebitReversalTransaction? transaction;
+final TreasuryCreditReversalTransaction? transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -168,7 +168,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('received_debit') && json['received_debit'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
+TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

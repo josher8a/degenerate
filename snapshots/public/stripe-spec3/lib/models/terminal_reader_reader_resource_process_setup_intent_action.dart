@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_attempt/setup_attempt_setup_intent.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_setup_config.dart';/// Represents a reader action to process a setup intent
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_setup_config.dart';/// Represents a reader action to process a setup intent
 @immutable final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({required this.setupIntent, this.generatedCard, this.processConfig, });
 
 factory TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupIntentAction(
@@ -15,7 +15,7 @@ final String? generatedCard;
 final TerminalReaderReaderResourceProcessSetupConfig? processConfig;
 
 /// Most recent SetupIntent processed by the reader.
-final SetupAttemptSetupIntent setupIntent;
+final CheckoutSessionSetupIntent setupIntent;
 
 Map<String, dynamic> toJson() { return {
   'generated_card': ?generatedCard,
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'setup_intent': setupIntent.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('setup_intent'); } 
-TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig Function()? processConfig, SetupAttemptSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(
+TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig Function()? processConfig, CheckoutSessionSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(
   generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
   processConfig: processConfig != null ? processConfig() : this.processConfig,
   setupIntent: setupIntent ?? this.setupIntent,

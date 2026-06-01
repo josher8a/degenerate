@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferReversalObject {const TransferReversalObject._(this.value);
 
 factory TransferReversalObject.fromJson(String json) { return switch (json) {
@@ -54,7 +54,7 @@ factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferRe
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('transfer'); } 
-TransferReversal copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, DestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, SourceRefund? Function()? sourceRefund, ChargeTransfer? transfer, }) { return TransferReversal(
+TransferReversal copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, DestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, SourceRefund? Function()? sourceRefund, ChargeTransfer? transfer, }) { return TransferReversal(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   created: created ?? this.created,

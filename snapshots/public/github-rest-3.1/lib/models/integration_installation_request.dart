@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/integration_installation_request/integration_installation_request_account.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Request to install an integration on a target
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/installation/installation_account.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Request to install an integration on a target
 @immutable final class IntegrationInstallationRequest {const IntegrationInstallationRequest({required this.id, required this.account, required this.requester, required this.createdAt, this.nodeId, });
 
 factory IntegrationInstallationRequest.fromJson(Map<String, dynamic> json) { return IntegrationInstallationRequest(
@@ -16,7 +16,7 @@ final int id;
 
 final String? nodeId;
 
-final IntegrationInstallationRequestAccount account;
+final InstallationAccount account;
 
 final SimpleUser requester;
 
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('account') &&
       json.containsKey('requester') &&
       json.containsKey('created_at') && json['created_at'] is String; } 
-IntegrationInstallationRequest copyWith({int? id, String Function()? nodeId, IntegrationInstallationRequestAccount? account, SimpleUser? requester, DateTime? createdAt, }) { return IntegrationInstallationRequest(
+IntegrationInstallationRequest copyWith({int? id, String Function()? nodeId, InstallationAccount? account, SimpleUser? requester, DateTime? createdAt, }) { return IntegrationInstallationRequest(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   account: account ?? this.account,

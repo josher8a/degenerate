@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// A discount represents the actual application of a [coupon](https://api.stripe.com#coupons) or [promotion code](https://api.stripe.com#promotion_codes).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// A discount represents the actual application of a [coupon](https://api.stripe.com#coupons) or [promotion code](https://api.stripe.com#promotion_codes).
 /// It contains information about when the discount began, when it will end, and what it is applied to.
 /// 
 /// Related guide: [Applying discounts to subscriptions](https://docs.stripe.com/billing/subscriptions/discounts)
@@ -26,7 +26,7 @@ factory Discount.fromJson(Map<String, dynamic> json) { return Discount(
 final String? checkoutSession;
 
 /// The ID of the customer associated with this discount.
-final CardCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The ID of the account representing the customer associated with this discount.
 final String? customerAccount;
@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
-Discount copyWith({String? Function()? checkoutSession, CardCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? end, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return Discount(
+Discount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? end, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return Discount(
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

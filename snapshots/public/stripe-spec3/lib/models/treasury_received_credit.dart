@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal/treasury_debit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit/treasury_received_credit_status.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_reversal_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit/treasury_received_credit_status.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_reversal_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
 @immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
@@ -150,7 +150,7 @@ final TreasuryReceivedCreditsResourceReversalDetails? reversalDetails;
 final TreasuryReceivedCreditStatus status;
 
 /// The Transaction associated with this object.
-final TreasuryDebitReversalTransaction? transaction;
+final TreasuryCreditReversalTransaction? transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
+TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

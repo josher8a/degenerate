@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicability_config.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicability_config.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditGrantObject {const BillingCreditGrantObject._(this.value);
 
 factory BillingCreditGrantObject.fromJson(String json) { return switch (json) {
@@ -58,7 +58,7 @@ final BillingCreditGrantCategory category;
 final int created;
 
 /// ID of the customer receiving the billing credits.
-final BillingCreditGrantCustomer customer;
+final BankAccountCustomer customer;
 
 /// ID of the account representing the customer receiving the billing credits
 final String? customerAccount;
@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num; } 
-BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? category, int? created, BillingCreditGrantCustomer? customer, String? Function()? customerAccount, int? Function()? effectiveAt, int? Function()? expiresAt, String? id, bool? livemode, Map<String,String>? metadata, String? Function()? name, BillingCreditGrantObject? object, int? Function()? priority, TestClock? Function()? testClock, int? updated, int? Function()? voidedAt, }) { return BillingCreditGrant(
+BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? category, int? created, BankAccountCustomer? customer, String? Function()? customerAccount, int? Function()? effectiveAt, int? Function()? expiresAt, String? id, bool? livemode, Map<String,String>? metadata, String? Function()? name, BillingCreditGrantObject? object, int? Function()? priority, TestClock? Function()? testClock, int? updated, int? Function()? voidedAt, }) { return BillingCreditGrant(
   amount: amount ?? this.amount,
   applicabilityConfig: applicabilityConfig ?? this.applicabilityConfig,
   category: category ?? this.category,

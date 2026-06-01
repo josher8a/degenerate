@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -134,7 +134,7 @@ final int endingBalance;
 final String id;
 
 /// The ID of the invoice (if any) related to the transaction.
-final CheckoutSessionInvoice? invoice;
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, CheckoutSessionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
   amount: amount ?? this.amount,
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   created: created ?? this.created,

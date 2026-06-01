@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary/billing_credit_balance_summary_customer.dart';import 'package:pub_stripe_spec3/models/credit_balance.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/credit_balance.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
 
 factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {
@@ -37,7 +37,7 @@ factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return
 final List<CreditBalance> balances;
 
 /// The customer the balance is for.
-final BillingCreditBalanceSummaryCustomer customer;
+final BankAccountCustomer customer;
 
 /// The account the balance is for.
 final String? customerAccount;
@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('customer') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BillingCreditBalanceSummaryCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
+BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccountCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
   balances: balances ?? this.balances,
   customer: customer ?? this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_discount.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_type.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_discount.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_type.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
 @immutable final class CreditNotesPretaxCreditAmount {const CreditNotesPretaxCreditAmount({required this.amount, required this.type, this.creditBalanceTransaction, this.discount, });
 
 factory CreditNotesPretaxCreditAmount.fromJson(Map<String, dynamic> json) { return CreditNotesPretaxCreditAmount(
@@ -14,7 +14,7 @@ factory CreditNotesPretaxCreditAmount.fromJson(Map<String, dynamic> json) { retu
 final int amount;
 
 /// The credit balance transaction that was applied to get this pretax credit amount.
-final CreditNotesPretaxCreditAmountCreditBalanceTransaction? creditBalanceTransaction;
+final CreditBalanceTransaction? creditBalanceTransaction;
 
 /// The discount that was applied to get this pretax credit amount.
 final CreditNotesPretaxCreditAmountDiscount? discount;
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('type'); } 
-CreditNotesPretaxCreditAmount copyWith({int? amount, CreditNotesPretaxCreditAmountCreditBalanceTransaction Function()? creditBalanceTransaction, CreditNotesPretaxCreditAmountDiscount Function()? discount, CreditNotesPretaxCreditAmountType? type, }) { return CreditNotesPretaxCreditAmount(
+CreditNotesPretaxCreditAmount copyWith({int? amount, CreditBalanceTransaction Function()? creditBalanceTransaction, CreditNotesPretaxCreditAmountDiscount Function()? discount, CreditNotesPretaxCreditAmountType? type, }) { return CreditNotesPretaxCreditAmount(
   amount: amount ?? this.amount,
   creditBalanceTransaction: creditBalanceTransaction != null ? creditBalanceTransaction() : this.creditBalanceTransaction,
   discount: discount != null ? discount() : this.discount,

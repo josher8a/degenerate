@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_customer.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/line_item/line_item_subscription.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_current_phase.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_current_phase.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
 
 factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
@@ -102,7 +102,7 @@ final int created;
 final SubscriptionScheduleCurrentPhase? currentPhase;
 
 /// ID of the customer who owns the subscription schedule.
-final BillingCreditGrantCustomer customer;
+final BankAccountCustomer customer;
 
 /// ID of the account who owns the subscription schedule.
 final String? customerAccount;
@@ -137,7 +137,7 @@ final String? releasedSubscription;
 final SubscriptionScheduleStatus status;
 
 /// ID of the subscription managed by the subscription schedule.
-final LineItemSubscription? subscription;
+final BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? subscription;
 
 /// ID of the test clock this subscription schedule belongs to.
 final TestClock? testClock;
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('phases') &&
       json.containsKey('status'); } 
-SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, BillingCreditGrantCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, LineItemSubscription? Function()? subscription, TestClock? Function()? testClock, }) { return SubscriptionSchedule(
+SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, BankAccountCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? Function()? subscription, TestClock? Function()? testClock, }) { return SubscriptionSchedule(
   application: application != null ? application() : this.application,
   billingMode: billingMode ?? this.billingMode,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

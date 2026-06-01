@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card/payment_method_card_generated_card_setup_attempt.dart';import 'package:pub_stripe_spec3/models/sepa_debit_generated_from/sepa_debit_generated_from_charge.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card/payment_method_card_generated_card_setup_attempt.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';/// 
 @immutable final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge, this.setupAttempt, });
 
 factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return SepaDebitGeneratedFrom(
@@ -9,7 +9,7 @@ factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return Sepa
 ); }
 
 /// The ID of the Charge that generated this PaymentMethod, if any.
-final SepaDebitGeneratedFromCharge? charge;
+final ApplicationFeeCharge? charge;
 
 /// The ID of the SetupAttempt that generated this PaymentMethod, if any.
 final PaymentMethodCardGeneratedCardSetupAttempt? setupAttempt;
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (setupAttempt != null) 'setup_attempt': setupAttempt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'setup_attempt'}.contains(key)); } 
-SepaDebitGeneratedFrom copyWith({SepaDebitGeneratedFromCharge? Function()? charge, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return SepaDebitGeneratedFrom(
+SepaDebitGeneratedFrom copyWith({ApplicationFeeCharge? Function()? charge, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return SepaDebitGeneratedFrom(
   charge: charge != null ? charge() : this.charge,
   setupAttempt: setupAttempt != null ? setupAttempt() : this.setupAttempt,
 ); } 

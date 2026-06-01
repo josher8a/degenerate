@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
 @immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession, this.customer, this.customerAccount, this.invoice, this.invoiceItem, this.promotionCode, this.subscription, this.subscriptionItem, });
 
 factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
@@ -23,7 +23,7 @@ factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDisc
 final String? checkoutSession;
 
 /// The ID of the customer associated with this discount.
-final CardCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The ID of the account representing the customer associated with this discount.
 final String? customerAccount;
@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
-DeletedDiscount copyWith({String? Function()? checkoutSession, CardCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
+DeletedDiscount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

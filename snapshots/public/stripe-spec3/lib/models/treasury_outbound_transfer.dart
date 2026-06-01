@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/outbound_transfers_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_returned_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_transfers_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_returned_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject._(this.value);
 
 factory TreasuryOutboundTransferObject.fromJson(String json) { return switch (json) {
@@ -108,7 +108,7 @@ final TreasuryOutboundTransfersResourceStatusTransitions statusTransitions;
 final TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? trackingDetails;
 
 /// The Transaction associated with this object.
-final IssuingDisputeTransaction transaction;
+final TreasuryCreditReversalTransaction transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -147,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, TreasuryOutboundTransfersResourceReturnedDetails? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? Function()? trackingDetails, IssuingDisputeTransaction? transaction, }) { return TreasuryOutboundTransfer(
+TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, TreasuryOutboundTransfersResourceReturnedDetails? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? Function()? trackingDetails, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

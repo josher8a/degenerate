@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary/billing_credit_balance_summary_customer.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CreditNoteObject {const CreditNoteObject._(this.value);
 
 factory CreditNoteObject.fromJson(String json) { return switch (json) {
@@ -161,7 +161,7 @@ final int created;
 final String currency;
 
 /// ID of the customer.
-final BillingCreditBalanceSummaryCustomer customer;
+final BankAccountCustomer customer;
 
 /// ID of the account representing the customer.
 final String? customerAccount;
@@ -182,7 +182,7 @@ final int? effectiveAt;
 final String id;
 
 /// ID of the invoice.
-final CreditNoteInvoice invoice;
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice invoice;
 
 /// Line items that make up the credit note
 final CreditNoteLines lines;
@@ -308,7 +308,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num &&
       json.containsKey('type'); } 
-CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, BillingCreditBalanceSummaryCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, InvoicesResourceShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
+CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, BankAccountCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, InvoicesResourceShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
   amount: amount ?? this.amount,
   amountShipping: amountShipping ?? this.amountShipping,
   created: created ?? this.created,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PromotionCodeObject {const PromotionCodeObject._(this.value);
 
 factory PromotionCodeObject.fromJson(String json) { return switch (json) {
@@ -56,7 +56,7 @@ final String code;
 final int created;
 
 /// The customer who can use this promotion code.
-final CardCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The account representing the customer who can use this promotion code.
 final String? customerAccount;
@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('promotion') &&
       json.containsKey('restrictions') &&
       json.containsKey('times_redeemed') && json['times_redeemed'] is num; } 
-PromotionCode copyWith({bool? active, String? code, int? created, CardCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? expiresAt, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PromotionCodeObject? object, PromotionCodesResourcePromotion? promotion, PromotionCodesResourceRestrictions? restrictions, int? timesRedeemed, }) { return PromotionCode(
+PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? expiresAt, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PromotionCodeObject? object, PromotionCodesResourcePromotion? promotion, PromotionCodesResourceRestrictions? restrictions, int? timesRedeemed, }) { return PromotionCode(
   active: active ?? this.active,
   code: code ?? this.code,
   created: created ?? this.created,

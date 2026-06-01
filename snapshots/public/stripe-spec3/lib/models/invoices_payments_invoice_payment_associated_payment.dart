@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';/// Type of payment object associated with this invoice payment.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';/// Type of payment object associated with this invoice payment.
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {
@@ -39,10 +39,10 @@ factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dyn
 ); }
 
 /// ID of the successful charge for this payment when `type` is `charge`.Note: charge is only surfaced if the charge object is not associated with a payment intent. If the charge object does have a payment intent, the Invoice Payment surfaces the payment intent instead.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge? charge;
+final ApplicationFeeCharge? charge;
 
 /// ID of the PaymentIntent associated with this payment when `type` is `payment_intent`. Note: This property is only populated for invoices finalized on or after March 15th, 2019.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent;
+final ChargePaymentIntent? paymentIntent;
 
 /// ID of the PaymentRecord associated with this payment when `type` is `payment_record`.
 final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? paymentRecord;
@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge Function()? charge, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge Function()? charge, ChargePaymentIntent Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
   charge: charge != null ? charge() : this.charge,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,

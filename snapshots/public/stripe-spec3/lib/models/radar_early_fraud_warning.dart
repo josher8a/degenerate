@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
 
 factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
@@ -43,7 +43,7 @@ factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return Rada
 final bool actionable;
 
 /// ID of the charge this early fraud warning is for, optionally expanded.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge charge;
+final ApplicationFeeCharge charge;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -61,7 +61,7 @@ final bool livemode;
 final RadarEarlyFraudWarningObject object;
 
 /// ID of the Payment Intent this early fraud warning is for, optionally expanded.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent;
+final ChargePaymentIntent? paymentIntent;
 
 Map<String, dynamic> toJson() { return {
   'actionable': actionable,
@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-RadarEarlyFraudWarning copyWith({bool? actionable, InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
+RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, ChargePaymentIntent Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
   actionable: actionable ?? this.actionable,
   charge: charge ?? this.charge,
   created: created ?? this.created,

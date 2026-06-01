@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
@@ -117,7 +117,7 @@ final TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions s
 final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? trackingDetails;
 
 /// The Transaction associated with this object.
-final IssuingDisputeTransaction transaction;
+final TreasuryCreditReversalTransaction transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -157,7 +157,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundPaymentsPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentsResourceReturnedStatus? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? Function()? trackingDetails, IssuingDisputeTransaction? transaction, }) { return TreasuryOutboundPayment(
+TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundPaymentsPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentsResourceReturnedStatus? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? Function()? trackingDetails, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundPayment(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/beta.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/fine_tune_dpo_hyperparameters_batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the DPO fine-tuning job.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/beta.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the DPO fine-tuning job.
 @immutable final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuneDpoHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneDpoHyperparameters(
@@ -16,7 +16,7 @@ final Beta? beta;
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 /// 
-final FineTuneDpoHyperparametersBatchSize? batchSize;
+final BatchSize? batchSize;
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.
 /// 
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beta', 'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-FineTuneDpoHyperparameters copyWith({Beta Function()? beta, FineTuneDpoHyperparametersBatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuneDpoHyperparameters(
+FineTuneDpoHyperparameters copyWith({Beta Function()? beta, BatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuneDpoHyperparameters(
   beta: beta != null ? beta() : this.beta,
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,

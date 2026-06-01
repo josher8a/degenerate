@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry/flow_type.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_balance_impact.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_flow_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry/flow_type.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_balance_impact.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_flow_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryTransactionEntryObject {const TreasuryTransactionEntryObject._(this.value);
 
 factory TreasuryTransactionEntryObject.fromJson(String json) { return switch (json) {
@@ -153,7 +153,7 @@ final bool livemode;
 final TreasuryTransactionEntryObject object;
 
 /// The Transaction associated with this object.
-final IssuingDisputeTransaction transaction;
+final TreasuryCreditReversalTransaction transaction;
 
 /// The specific money movement that generated the TransactionEntry.
 final TreasuryTransactionEntryType type;
@@ -184,7 +184,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('object') &&
       json.containsKey('transaction') &&
       json.containsKey('type'); } 
-TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, IssuingDisputeTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
+TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,
   currency: currency ?? this.currency,

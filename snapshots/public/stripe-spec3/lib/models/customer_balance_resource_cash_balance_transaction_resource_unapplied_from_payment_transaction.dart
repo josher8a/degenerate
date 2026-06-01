@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction({required this.paymentIntent});
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
@@ -8,13 +8,13 @@ factory CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymen
 ); }
 
 /// The [Payment Intent](https://docs.stripe.com/api/payment_intents/object) that funds were unapplied from.
-final CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent paymentIntent;
+final ChargePaymentIntent paymentIntent;
 
 Map<String, dynamic> toJson() { return {
   'payment_intent': paymentIntent.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent? paymentIntent}) { return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
+CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction copyWith({ChargePaymentIntent? paymentIntent}) { return CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction(
   paymentIntent: paymentIntent ?? this.paymentIntent,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

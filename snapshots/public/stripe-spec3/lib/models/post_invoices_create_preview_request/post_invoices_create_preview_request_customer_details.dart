@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';/// Details about the customer you want to invoice or overrides for an existing customer. If `automatic_tax` is enabled then one of `customer`, `customer_details`, `subscription`, or `schedule` must be set.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_customer_details_address.dart';/// Details about the customer you want to invoice or overrides for an existing customer. If `automatic_tax` is enabled then one of `customer`, `customer_details`, `subscription`, or `schedule` must be set.
 @immutable final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
 
 factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetails(
@@ -11,7 +11,7 @@ factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dyn
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => CustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final PostCustomersCustomerRequestAddress? address;
+final PostInvoicesCreatePreviewRequestCustomerDetailsAddress? address;
 
 final PostCustomersCustomerRequestShipping? shipping;
 
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'shipping', 'tax', 'tax_exempt', 'tax_ids'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostCustomersCustomerRequestAddress Function()? address, PostCustomersCustomerRequestShipping Function()? shipping, CustomerDetailsTax Function()? tax, PostCustomersCustomerRequestTaxExempt Function()? taxExempt, List<CustomerDetailsTaxIds> Function()? taxIds, }) { return PostInvoicesCreatePreviewRequestCustomerDetails(
+PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsAddress Function()? address, PostCustomersCustomerRequestShipping Function()? shipping, CustomerDetailsTax Function()? tax, PostCustomersCustomerRequestTaxExempt Function()? taxExempt, List<CustomerDetailsTaxIds> Function()? taxIds, }) { return PostInvoicesCreatePreviewRequestCustomerDetails(
   address: address != null ? address() : this.address,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/customer/sources_data.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The customer's payment sources, if any.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_customers_customer_sources_response/get_customers_customer_sources_response_data.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The customer's payment sources, if any.
 @immutable final class Sources {const Sources({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory Sources.fromJson(Map<String, dynamic> json) { return Sources(
@@ -11,7 +11,7 @@ factory Sources.fromJson(Map<String, dynamic> json) { return Sources(
 ); }
 
 /// Details about each object.
-final List<SourcesData> data;
+final List<GetCustomersCustomerSourcesResponseData> data;
 
 /// True if this list has another page of items after this one that can be fetched.
 final bool hasMore;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-Sources copyWith({List<SourcesData>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return Sources(
+Sources copyWith({List<GetCustomersCustomerSourcesResponseData>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return Sources(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

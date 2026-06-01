@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_config.dart';/// Represents a reader action to refund a payment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_config.dart';/// Represents a reader action to refund a payment
 @immutable final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
 factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
@@ -19,13 +19,13 @@ factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dyn
 final int? amount;
 
 /// Charge that is being refunded.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge? charge;
+final ApplicationFeeCharge? charge;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String>? metadata;
 
 /// Payment intent that is being refunded.
-final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent;
+final ChargePaymentIntent? paymentIntent;
 
 /// The reason for the refund.
 final PostChargesChargeRefundRequestReason? reason;
@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge Function()? charge, Map<String, String> Function()? metadata, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, CreditNoteRefundRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
+TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, ApplicationFeeCharge Function()? charge, Map<String, String> Function()? metadata, ChargePaymentIntent Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, CreditNoteRefundRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';@immutable final class CustomerDetailsAddressSource {const CustomerDetailsAddressSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';@immutable final class CustomerDetailsAddressSource {const CustomerDetailsAddressSource._(this.value);
 
 factory CustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
   'billing' => billing,
@@ -28,14 +28,14 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostTaxCalculationsRequestCustomerDetails {const PostTaxCalculationsRequestCustomerDetails({this.address, this.addressSource, this.ipAddress, this.taxIds, this.taxabilityOverride, });
 
 factory PostTaxCalculationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetails(
-  address: json['address'] != null ? CustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressSource: json['address_source'] != null ? CustomerDetailsAddressSource.fromJson(json['address_source'] as String) : null,
   ipAddress: json['ip_address'] as String?,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => CustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),
   taxabilityOverride: json['taxability_override'] != null ? TaxabilityOverride.fromJson(json['taxability_override'] as String) : null,
 ); }
 
-final CustomerDetailsAddress? address;
+final PostTaxCalculationsRequestCustomerDetailsAddress? address;
 
 final CustomerDetailsAddressSource? addressSource;
 
@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (taxabilityOverride != null) 'taxability_override': taxabilityOverride?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_source', 'ip_address', 'tax_ids', 'taxability_override'}.contains(key)); } 
-PostTaxCalculationsRequestCustomerDetails copyWith({CustomerDetailsAddress Function()? address, CustomerDetailsAddressSource Function()? addressSource, String Function()? ipAddress, List<CustomerDetailsTaxIds> Function()? taxIds, TaxabilityOverride Function()? taxabilityOverride, }) { return PostTaxCalculationsRequestCustomerDetails(
+PostTaxCalculationsRequestCustomerDetails copyWith({PostTaxCalculationsRequestCustomerDetailsAddress Function()? address, CustomerDetailsAddressSource Function()? addressSource, String Function()? ipAddress, List<CustomerDetailsTaxIds> Function()? taxIds, TaxabilityOverride Function()? taxabilityOverride, }) { return PostTaxCalculationsRequestCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,

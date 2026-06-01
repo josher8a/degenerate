@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/transfer/destination_payment.dart';import 'package:pub_stripe_spec3/models/transfer/reversals.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_destination.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';import 'package:pub_stripe_spec3/models/transfer/destination_payment.dart';import 'package:pub_stripe_spec3/models/transfer/reversals.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferObject {const TransferObject._(this.value);
 
 factory TransferObject.fromJson(String json) { return switch (json) {
@@ -61,7 +61,7 @@ final int amount;
 final int amountReversed;
 
 /// Balance transaction that describes the impact of this transfer on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// Time that this record of the transfer was first created.
 final int created;
@@ -73,7 +73,7 @@ final String currency;
 final String? description;
 
 /// ID of the Stripe account the transfer was sent to.
-final TransferDestination? destination;
+final ChargeTransferDataDestination? destination;
 
 /// If the destination is a Stripe account, this will be the ID of the payment that the destination account received for the transfer.
 final DestinationPayment? destinationPayment;
@@ -134,7 +134,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reversals') &&
       json.containsKey('reversed') && json['reversed'] is bool; } 
-Transfer copyWith({int? amount, int? amountReversed, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, TransferDestination? Function()? destination, DestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
+Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, ChargeTransferDataDestination? Function()? destination, DestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
   amount: amount ?? this.amount,
   amountReversed: amountReversed ?? this.amountReversed,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,

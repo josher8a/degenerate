@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// 
 @immutable final class TreasuryOutboundPaymentsResourceReturnedStatus {const TreasuryOutboundPaymentsResourceReturnedStatus({required this.code, required this.transaction, });
 
 factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceReturnedStatus(
@@ -12,7 +12,7 @@ factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dyna
 final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
 
 /// The Transaction associated with this object.
-final IssuingDisputeTransaction transaction;
+final TreasuryCreditReversalTransaction transaction;
 
 Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, IssuingDisputeTransaction? transaction, }) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundPaymentsResourceReturnedStatus(
   code: code ?? this.code,
   transaction: transaction ?? this.transaction,
 ); } 

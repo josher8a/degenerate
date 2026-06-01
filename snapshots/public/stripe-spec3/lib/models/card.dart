@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_account.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
 /// later. You can also store multiple debit cards on a recipient in order to
 /// transfer to those cards later.
 /// 
@@ -42,7 +42,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   tokenizationMethod: json['tokenization_method'] as String?,
 ); }
 
-final BankAccountAccount? account;
+final ApplicationFeeAccount? account;
 
 /// City/District/Suburb/Town/Village.
 final String? addressCity;
@@ -84,7 +84,7 @@ final String? country;
 final String? currency;
 
 /// The customer that this card belongs to. This attribute will not be in the card object if the card belongs to an account or recipient instead.
-final CardCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// If a CVC was provided, results of the check: `pass`, `fail`, `unavailable`, or `unchecked`. A result of unchecked indicates that CVC was provided but hasn't been checked yet. Checks are typically performed when attaching a card to a Customer object, or when creating a charge. For more details, see [Check if a card is valid without a charge](https://support.stripe.com/questions/check-if-a-card-is-valid-without-a-charge).
 final String? cvcCheck;
@@ -179,7 +179,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object'); } 
-Card copyWith({BankAccountAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, CardCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
+Card copyWith({ApplicationFeeAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, BankAccountCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
   account: account != null ? account() : this.account,
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,

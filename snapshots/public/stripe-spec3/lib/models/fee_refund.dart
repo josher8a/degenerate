@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FeeRefundObject {const FeeRefundObject._(this.value);
 
 factory FeeRefundObject.fromJson(String json) { return switch (json) {
@@ -44,7 +44,7 @@ factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('fee') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-FeeRefund copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Map<String, String>? Function()? metadata, FeeRefundObject? object, }) { return FeeRefund(
+FeeRefund copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, FeeRefundFee? fee, String? id, Map<String, String>? Function()? metadata, FeeRefundObject? object, }) { return FeeRefund(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   created: created ?? this.created,

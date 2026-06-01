@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter/thresholds_resource_usage_alert_filter_type.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter/thresholds_resource_usage_alert_filter_type.dart';/// 
 @immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer, });
 
 factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
@@ -9,7 +9,7 @@ factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Limit the scope of the alert to this customer ID
-final ConfirmationTokensResourcePaymentMethodPreviewCustomer? customer;
+final BankConnectionsResourceAccountholderCustomer? customer;
 
 final ThresholdsResourceUsageAlertFilterType type;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ThresholdsResourceUsageAlertFilter copyWith({ConfirmationTokensResourcePaymentMethodPreviewCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
+ThresholdsResourceUsageAlertFilter copyWith({BankConnectionsResourceAccountholderCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 

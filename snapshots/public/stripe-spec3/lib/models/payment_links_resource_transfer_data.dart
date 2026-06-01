@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data/payment_links_resource_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
 @immutable final class PaymentLinksResourceTransferData {const PaymentLinksResourceTransferData({required this.destination, this.amount, });
 
 factory PaymentLinksResourceTransferData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTransferData(
@@ -12,14 +12,14 @@ factory PaymentLinksResourceTransferData.fromJson(Map<String, dynamic> json) { r
 final int? amount;
 
 /// The connected account receiving the transfer.
-final PaymentLinksResourceTransferDataDestination destination;
+final ChargeTransferDataDestination destination;
 
 Map<String, dynamic> toJson() { return {
   'amount': ?amount,
   'destination': destination.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-PaymentLinksResourceTransferData copyWith({int? Function()? amount, PaymentLinksResourceTransferDataDestination? destination, }) { return PaymentLinksResourceTransferData(
+PaymentLinksResourceTransferData copyWith({int? Function()? amount, ChargeTransferDataDestination? destination, }) { return PaymentLinksResourceTransferData(
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,
 ); } 

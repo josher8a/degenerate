@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/fine_tuning_job/hyperparameters_batch_size.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
 @immutable final class FineTuningJobHyperparameters {const FineTuningJobHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuningJobHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuningJobHyperparameters(
@@ -12,7 +12,7 @@ factory FineTuningJobHyperparameters.fromJson(Map<String, dynamic> json) { retur
 /// Number of examples in each batch. A larger batch size means that model parameters
 /// are updated less frequently, but with lower variance.
 /// 
-final HyperparametersBatchSize? batchSize;
+final BatchSize? batchSize;
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid
 /// overfitting.
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-FineTuningJobHyperparameters copyWith({HyperparametersBatchSize? Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuningJobHyperparameters(
+FineTuningJobHyperparameters copyWith({BatchSize? Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuningJobHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,

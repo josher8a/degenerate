@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/source.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/source.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TopupObject {const TopupObject._(this.value);
 
 factory TopupObject.fromJson(String json) { return switch (json) {
@@ -86,7 +86,7 @@ factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
 final int amount;
 
 /// ID of the balance transaction that describes the impact of this top-up on your account balance. May not be specified depending on status of top-up.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -156,7 +156,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-Topup copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, int? Function()? expectedAvailabilityDate, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Source? Function()? source, String? Function()? statementDescriptor, TopupStatus? status, String? Function()? transferGroup, }) { return Topup(
+Topup copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, int? Function()? expectedAvailabilityDate, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Source? Function()? source, String? Function()? statementDescriptor, TopupStatus? status, String? Function()? transferGroup, }) { return Topup(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   created: created ?? this.created,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price/price_product.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
 @immutable final class PriceType$1 {const PriceType$1._(this.value);
 
 factory PriceType$1.fromJson(String json) { return switch (json) {
@@ -94,7 +94,7 @@ final String? nickname;
 final DeletedPriceObject object;
 
 /// The ID of the product this price is associated with.
-final PriceProduct product;
+final PlanProduct product;
 
 /// The recurring components of a price such as `interval` and `usage_type`.
 final Recurring? recurring;
@@ -153,7 +153,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('type'); } 
-Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PriceProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
+Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PlanProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,

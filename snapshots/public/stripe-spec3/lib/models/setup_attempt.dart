@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/mandate/mandate_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_attempt/setup_attempt_setup_intent.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupAttemptObject {const SetupAttemptObject._(this.value);
 
 factory SetupAttemptObject.fromJson(String json) { return switch (json) {
@@ -48,7 +48,7 @@ factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
 ); }
 
 /// The value of [application](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-application) on the SetupIntent at the time of this confirmation.
-final ChargeApplication? application;
+final ApplicationFeeApplication? application;
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -59,7 +59,7 @@ final bool? attachToSelf;
 final int created;
 
 /// The value of [customer](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer) on the SetupIntent at the time of this confirmation.
-final CardCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The value of [customer_account](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer_account) on the SetupIntent at the time of this confirmation.
 final String? customerAccount;
@@ -82,7 +82,7 @@ final SetupAttemptObject object;
 final ChargeOnBehalfOf? onBehalfOf;
 
 /// ID of the payment method used with this SetupAttempt.
-final MandatePaymentMethod paymentMethod;
+final InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod paymentMethod;
 
 final SetupAttemptPaymentMethodDetails paymentMethodDetails;
 
@@ -90,7 +90,7 @@ final SetupAttemptPaymentMethodDetails paymentMethodDetails;
 final Errors? setupError;
 
 /// ID of the SetupIntent that this attempt belongs to.
-final SetupAttemptSetupIntent setupIntent;
+final CheckoutSessionSetupIntent setupIntent;
 
 /// Status of this SetupAttempt, one of `requires_confirmation`, `requires_action`, `processing`, `succeeded`, `failed`, or `abandoned`.
 final String status;
@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({ChargeApplication? Function()? application, bool Function()? attachToSelf, int? created, CardCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, MandatePaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool Function()? attachToSelf, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, CheckoutSessionSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,

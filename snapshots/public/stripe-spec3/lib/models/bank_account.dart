@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_account.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/external_account_requirements.dart';/// These bank accounts are payment methods on `Customer` objects.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/external_account_requirements.dart';/// These bank accounts are payment methods on `Customer` objects.
 /// 
 /// On the other hand [External Accounts](/api#external_accounts) are transfer
 /// destinations on `Account` objects for connected accounts.
@@ -32,7 +32,7 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
 ); }
 
 /// The account this bank account belongs to. Only applicable on Accounts (not customers or recipients) This property is only available when returned as an [External Account](/api/external_account_bank_accounts/object) where [controller.is_controller](/api/accounts/object#account_object-controller-is_controller) is `true`.
-final BankAccountAccount? account;
+final ApplicationFeeAccount? account;
 
 /// The name of the person or business that owns the bank account.
 final String? accountHolderName;
@@ -117,7 +117,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String; } 
-BankAccount copyWith({BankAccountAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
+BankAccount copyWith({ApplicationFeeAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
   account: account != null ? account() : this.account,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

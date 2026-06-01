@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';import 'package:pub_stripe_spec3/models/refund/refund_charge.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 @immutable final class ClosedReason {const ClosedReason._(this.value);
 
 factory ClosedReason.fromJson(String json) { return switch (json) {
@@ -117,7 +117,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
 final String? billingZip;
 
 /// The charge associated with this review.
-final RefundCharge? charge;
+final ApplicationFeeCharge? charge;
 
 /// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 final ClosedReason? closedReason;
@@ -147,7 +147,7 @@ final bool open;
 final OpenedReason openedReason;
 
 /// The PaymentIntent ID associated with this review, if one exists.
-final CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent? paymentIntent;
+final ChargePaymentIntent? paymentIntent;
 
 /// The reason the review is currently open or closed. One of `rule`, `manual`, `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 final String reason;
@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
       json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({String? Function()? billingZip, RefundCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
+Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
   billingZip: billingZip != null ? billingZip() : this.billingZip,
   charge: charge != null ? charge() : this.charge,
   closedReason: closedReason != null ? closedReason() : this.closedReason,

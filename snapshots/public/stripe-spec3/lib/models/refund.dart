@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/refund/refund_charge.dart';import 'package:pub_stripe_spec3/models/refund/refund_failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RefundObject {const RefundObject._(this.value);
 
 factory RefundObject.fromJson(String json) { return switch (json) {
@@ -117,10 +117,10 @@ factory Refund.fromJson(Map<String, dynamic> json) { return Refund(
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// ID of the charge that's refunded.
-final RefundCharge? charge;
+final ApplicationFeeCharge? charge;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -134,7 +134,7 @@ final String? description;
 final RefundDestinationDetails? destinationDetails;
 
 /// After the refund fails, this balance transaction describes the adjustment made on your account balance that reverses the initial balance transaction.
-final RefundFailureBalanceTransaction? failureBalanceTransaction;
+final FailureBalanceTransaction? failureBalanceTransaction;
 
 /// Provides the reason for the refund failure. Possible values are: `lost_or_stolen_card`, `expired_or_canceled_card`, `charge_for_pending_refund_disputed`, `insufficient_funds`, `declined`, `merchant_request`, or `unknown`.
 final String? failureReason;
@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Refund copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, RefundCharge? Function()? charge, int? created, String? currency, String Function()? description, RefundDestinationDetails Function()? destinationDetails, RefundFailureBalanceTransaction Function()? failureBalanceTransaction, String Function()? failureReason, String? id, String Function()? instructionsEmail, Map<String, String>? Function()? metadata, RefundNextAction Function()? nextAction, RefundObject? object, ChargePaymentIntent? Function()? paymentIntent, PendingReason Function()? pendingReason, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RefundReason? Function()? reason, String? Function()? receiptNumber, SourceTransferReversal? Function()? sourceTransferReversal, String? Function()? status, RefundTransferReversal? Function()? transferReversal, }) { return Refund(
+Refund copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? Function()? charge, int? created, String? currency, String Function()? description, RefundDestinationDetails Function()? destinationDetails, FailureBalanceTransaction Function()? failureBalanceTransaction, String Function()? failureReason, String? id, String Function()? instructionsEmail, Map<String, String>? Function()? metadata, RefundNextAction Function()? nextAction, RefundObject? object, ChargePaymentIntent? Function()? paymentIntent, PendingReason Function()? pendingReason, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RefundReason? Function()? reason, String? Function()? receiptNumber, SourceTransferReversal? Function()? sourceTransferReversal, String? Function()? status, RefundTransferReversal? Function()? transferReversal, }) { return Refund(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   charge: charge != null ? charge() : this.charge,

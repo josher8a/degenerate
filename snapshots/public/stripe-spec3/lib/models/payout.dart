@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payout/original_payout.dart';import 'package:pub_stripe_spec3/models/payout/payout_application_fee.dart';import 'package:pub_stripe_spec3/models/payout/payout_destination.dart';import 'package:pub_stripe_spec3/models/payout/payout_failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payout/reversed_by.dart';import 'package:pub_stripe_spec3/models/payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/payout/original_payout.dart';import 'package:pub_stripe_spec3/models/payout/payout_destination.dart';import 'package:pub_stripe_spec3/models/payout/reversed_by.dart';import 'package:pub_stripe_spec3/models/payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PayoutObject {const PayoutObject._(this.value);
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
@@ -119,7 +119,7 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
 final int amount;
 
 /// The application fee (if any) for the payout. [See the Connect documentation](https://docs.stripe.com/connect/instant-payouts#monetization-and-fees) for details.
-final PayoutApplicationFee? applicationFee;
+final ChargeApplicationFee? applicationFee;
 
 /// The amount of the application fee (if any) requested for the payout. [See the Connect documentation](https://docs.stripe.com/connect/instant-payouts#monetization-and-fees) for details.
 final int? applicationFeeAmount;
@@ -131,7 +131,7 @@ final int arrivalDate;
 final bool automatic;
 
 /// ID of the balance transaction that describes the impact of this payout on your account balance.
-final FeeRefundBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -146,7 +146,7 @@ final String? description;
 final PayoutDestination? destination;
 
 /// If the payout fails or cancels, this is the ID of the balance transaction that reverses the initial balance transaction and returns the funds from the failed payout back in your balance.
-final PayoutFailureBalanceTransaction? failureBalanceTransaction;
+final FailureBalanceTransaction? failureBalanceTransaction;
 
 /// Error code that provides a reason for a payout failure, if available. View our [list of failure codes](https://docs.stripe.com/api#payout_failures).
 final String? failureCode;
@@ -238,7 +238,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('source_type') && json['source_type'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Payout copyWith({int? amount, PayoutApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, PayoutFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, OriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, ReconciliationStatus? reconciliationStatus, ReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
+Payout copyWith({int? amount, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, OriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, ReconciliationStatus? reconciliationStatus, ReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
   amount: amount ?? this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
