@@ -129,30 +129,52 @@ class ApiEmitter {
     ];
   }
 
-  Method _buildOperation(IrOperation op) {
-    final params = <Parameter>[];
-
-    // Pre-partition parameters by location (avoids repeated linear scans)
-    final pathParams = <IrParameter>[];
-    final queryParams = <IrParameter>[];
-    final headerParams = <IrParameter>[];
-    final cookieParams = <IrParameter>[];
+  /// Operation parameters partitioned by their OpenAPI location.
+  ({
+    List<IrParameter> path,
+    List<IrParameter> query,
+    List<IrParameter> header,
+    List<IrParameter> cookie,
+  })
+  _partitionParameters(IrOperation op) {
+    final path = <IrParameter>[];
+    final query = <IrParameter>[];
+    final header = <IrParameter>[];
+    final cookie = <IrParameter>[];
     for (final p in op.parameters) {
       switch (p.location) {
         case ParameterLocation.path:
-          pathParams.add(p);
+          path.add(p);
         case ParameterLocation.query:
-          queryParams.add(p);
+          query.add(p);
         case ParameterLocation.header:
-          headerParams.add(p);
+          header.add(p);
         case ParameterLocation.cookie:
-          cookieParams.add(p);
+          cookie.add(p);
       }
     }
+    return (path: path, query: query, header: header, cookie: cookie);
+  }
 
-    // Path parameters (always required, never nullable - they're part of the
-    // URL)
-    for (final p in pathParams) {
+  /// The named parameters of an operation method, shared by the sync and
+  /// streaming builders so their signatures stay in lockstep: path params
+  /// (required, non-null), then query/header/cookie (nullable when optional),
+  /// then the request body, sorted required-first, with a trailing optional
+  /// `options`.
+  List<Parameter> _signatureParameters(
+    IrOperation op,
+    ({
+      List<IrParameter> path,
+      List<IrParameter> query,
+      List<IrParameter> header,
+      List<IrParameter> cookie,
+    })
+    parts,
+    IrType? bodyType,
+  ) {
+    final params = <Parameter>[];
+    // Path parameters are always required and never nullable (part of the URL).
+    for (final p in parts.path) {
       params.add(
         Parameter(
           (pb) => pb
@@ -163,9 +185,7 @@ class ApiEmitter {
         ),
       );
     }
-
-    // Query parameters
-    for (final p in queryParams) {
+    for (final p in [...parts.query, ...parts.header, ...parts.cookie]) {
       params.add(
         Parameter(
           (pb) => pb
@@ -176,38 +196,6 @@ class ApiEmitter {
         ),
       );
     }
-
-    // Header parameters
-    for (final p in headerParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = p.isRequired
-            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
-        ),
-      );
-    }
-
-    for (final p in cookieParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = p.isRequired
-            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
-        ),
-      );
-    }
-
-    // Request body (skip for GET/HEAD - bodies are not standard for these
-    // methods)
-    final requestBodyContent = op.requestBody != null
-        ? _preferredRequestBodyContent(op.requestBody!)
-        : null;
-    final bodyType = requestBodyContent?.$2.schema;
     if (bodyType != null) {
       params.add(
         Parameter(
@@ -222,15 +210,13 @@ class ApiEmitter {
         ),
       );
     }
-
     // Sort required named parameters before optional ones.
     params.sort((a, b) {
       final aReq = a.required ? 0 : 1;
       final bReq = b.required ? 0 : 1;
       return aReq.compareTo(bReq);
     });
-
-    // Per-request options (always last, always optional)
+    // Per-request options (always last, always optional).
     params.add(
       Parameter(
         (pb) => pb
@@ -239,96 +225,27 @@ class ApiEmitter {
           ..type = refer('RequestOptions?'),
       ),
     );
-
-    // Determine return type from success response
-    final successResponseContent = _successResponseContent(op);
-    var returnType = successResponseContent?.$2.schema;
-    // Unwrap response envelope if configured.
-    final unwrapResult = _maybeUnwrapResponseType(returnType);
-    returnType = unwrapResult.type;
-    final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
-    final errorResponseContent = _errorResponseContent(op);
-    final errorType = errorResponseContent?.$2.schema;
-    final needsNullableSuffix =
-        unwrapResult.unwrappedField != null &&
-        returnType != null &&
-        returnType.isNullable &&
-        !(returnType is IrPrimitive &&
-            returnType.kind == PrimitiveKind.dynamic_);
-    final returnTypeStr = returnType != null
-        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
-        : 'void';
-    final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
-    final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
-
-    // Build method body
-    final bodyCode = _buildOperationBody(
-      op,
-      returnType,
-      successResponseContent: successResponseContent,
-      errorResponseContent: errorResponseContent,
-      requestBodyContent: requestBodyContent,
-      bodyType: bodyType,
-      pathParams: pathParams,
-      queryParams: queryParams,
-      headerParams: headerParams,
-      cookieParams: cookieParams,
-      unwrappedField: unwrapResult.unwrappedField,
-      unwrappedFieldIsOptional: unwrappedFieldIsOptional,
-    );
-
-    final docs = <String>[];
-    if (op.summary != null) {
-      docs.addAll(formatDocComment(op.summary!));
-    }
-    if (op.description != null && op.description != op.summary) {
-      docs
-        ..add('///')
-        ..addAll(formatDocComment(op.description!));
-    }
-    final httpMethod = _httpMethodString(op);
-    docs
-      ..add('///')
-      ..add('/// `$httpMethod ${op.path}`');
-
-    return Method(
-      (m) => m
-        ..name = op.dartMethodName
-        ..modifier = MethodModifier.async
-        ..returns = refer(futureType)
-        ..optionalParameters.addAll(params)
-        ..docs.addAll(docs)
-        ..annotations.addAll(
-          op.isDeprecated
-              ? [
-                  refer('Deprecated').call([literalString('')]),
-                ]
-              : [],
-        )
-        ..body = Code(bodyCode),
-    );
+    return params;
   }
 
-  static final _pathParamPattern = RegExp(r'\{([^}]+)\}');
-
-  String _buildOperationBody(
-    IrOperation op,
-    IrType? returnType, {
+  /// Writes the shared request-building prelude into [buf]: path interpolation,
+  /// query/cookie/header serialization, and the `final request = ApiRequest(…)`
+  /// construction. Returns `false` when an unsupported body forced an early
+  /// `throw` (the caller should return the buffer as-is). Shared by the sync
+  /// and streaming operation-body builders.
+  bool _writeRequestPrelude(
+    StringBuffer buf,
+    IrOperation op, {
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
-    (String, IrMediaType)? successResponseContent,
-    (String, IrMediaType)? errorResponseContent,
     (String, IrMediaType)? requestBodyContent,
     IrType? bodyType,
-    String? unwrappedField,
-    bool unwrappedFieldIsOptional = false,
   }) {
-    final buf = StringBuffer();
     final httpMethod = _httpMethodString(op);
 
-    // Build path with parameter interpolation (URL-encoded)
+    // Build path with parameter interpolation (URL-encoded).
     final pathParamsByName = {for (final p in pathParams) p.name: p};
     final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
       final p = pathParamsByName[m[1]];
@@ -342,7 +259,6 @@ class ApiEmitter {
         bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
         : null;
-
     final formUrlencodedFields =
         bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
         ? _resolveObjectFields(requestBodyContent.$2.schema)
@@ -360,7 +276,7 @@ class ApiEmitter {
       );
       if (bodyExpr.startsWith('throw ')) {
         buf.writeln('$bodyExpr;');
-        return buf.toString();
+        return false;
       }
     }
 
@@ -424,7 +340,6 @@ class ApiEmitter {
     buf.writeln("  method: '$httpMethod',");
     buf.writeln("  path: '$path',");
     buf.writeln('  headers: headers,');
-
     if (queryParams.isNotEmpty) {
       buf.writeln('  queryParameters: queryParameters,');
       buf.writeln('  queryParametersList: queryParametersList,');
@@ -432,7 +347,6 @@ class ApiEmitter {
     if (cookieParams.isNotEmpty) {
       buf.writeln('  cookies: cookies,');
     }
-
     if (multipartFields != null) {
       _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
       buf.writeln("  contentType: 'multipart/form-data',");
@@ -451,10 +365,120 @@ class ApiEmitter {
       );
       buf.writeln('  body: $bodyExpr,');
     }
-
     buf.writeln('  options: options,');
     buf.writeln(');');
     buf.writeln();
+    return true;
+  }
+
+  Method _buildOperation(IrOperation op) {
+    final parts = _partitionParameters(op);
+    // Request body (skip for GET/HEAD - bodies are not standard for these
+    // methods)
+    final requestBodyContent = op.requestBody != null
+        ? _preferredRequestBodyContent(op.requestBody!)
+        : null;
+    final bodyType = requestBodyContent?.$2.schema;
+    final params = _signatureParameters(op, parts, bodyType);
+
+    // Determine return type from success response
+    final successResponseContent = _successResponseContent(op);
+    var returnType = successResponseContent?.$2.schema;
+    // Unwrap response envelope if configured.
+    final unwrapResult = _maybeUnwrapResponseType(returnType);
+    returnType = unwrapResult.type;
+    final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
+    final errorResponseContent = _errorResponseContent(op);
+    final errorType = errorResponseContent?.$2.schema;
+    final needsNullableSuffix =
+        unwrapResult.unwrappedField != null &&
+        returnType != null &&
+        returnType.isNullable &&
+        !(returnType is IrPrimitive &&
+            returnType.kind == PrimitiveKind.dynamic_);
+    final returnTypeStr = returnType != null
+        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
+        : 'void';
+    final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
+    final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
+
+    // Build method body
+    final bodyCode = _buildOperationBody(
+      op,
+      returnType,
+      successResponseContent: successResponseContent,
+      errorResponseContent: errorResponseContent,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+      pathParams: parts.path,
+      queryParams: parts.query,
+      headerParams: parts.header,
+      cookieParams: parts.cookie,
+      unwrappedField: unwrapResult.unwrappedField,
+      unwrappedFieldIsOptional: unwrappedFieldIsOptional,
+    );
+
+    final docs = <String>[];
+    if (op.summary != null) {
+      docs.addAll(formatDocComment(op.summary!));
+    }
+    if (op.description != null && op.description != op.summary) {
+      docs
+        ..add('///')
+        ..addAll(formatDocComment(op.description!));
+    }
+    final httpMethod = _httpMethodString(op);
+    docs
+      ..add('///')
+      ..add('/// `$httpMethod ${op.path}`');
+
+    return Method(
+      (m) => m
+        ..name = op.dartMethodName
+        ..modifier = MethodModifier.async
+        ..returns = refer(futureType)
+        ..optionalParameters.addAll(params)
+        ..docs.addAll(docs)
+        ..annotations.addAll(
+          op.isDeprecated
+              ? [
+                  refer('Deprecated').call([literalString('')]),
+                ]
+              : [],
+        )
+        ..body = Code(bodyCode),
+    );
+  }
+
+  static final _pathParamPattern = RegExp(r'\{([^}]+)\}');
+
+  String _buildOperationBody(
+    IrOperation op,
+    IrType? returnType, {
+    required List<IrParameter> pathParams,
+    required List<IrParameter> queryParams,
+    required List<IrParameter> headerParams,
+    required List<IrParameter> cookieParams,
+    (String, IrMediaType)? successResponseContent,
+    (String, IrMediaType)? errorResponseContent,
+    (String, IrMediaType)? requestBodyContent,
+    IrType? bodyType,
+    String? unwrappedField,
+    bool unwrappedFieldIsOptional = false,
+  }) {
+    final buf = StringBuffer();
+    if (!_writeRequestPrelude(
+      buf,
+      op,
+      pathParams: pathParams,
+      queryParams: queryParams,
+      headerParams: headerParams,
+      cookieParams: cookieParams,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+    )) {
+      return buf.toString();
+    }
 
     // Build onSuccess callback
     if (returnType != null) {
@@ -858,105 +882,12 @@ class ApiEmitter {
   }
 
   Method _buildStreamingOperation(IrOperation op) {
-    final params = <Parameter>[];
-
-    // Reuse the same parameter logic as _buildOperation
-    final pathParams = <IrParameter>[];
-    final queryParams = <IrParameter>[];
-    final headerParams = <IrParameter>[];
-    final cookieParams = <IrParameter>[];
-    for (final p in op.parameters) {
-      switch (p.location) {
-        case ParameterLocation.path:
-          pathParams.add(p);
-        case ParameterLocation.query:
-          queryParams.add(p);
-        case ParameterLocation.header:
-          headerParams.add(p);
-        case ParameterLocation.cookie:
-          cookieParams.add(p);
-      }
-    }
-
-    for (final p in pathParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = true
-            ..type = irTypeToReference(p.type, forceNonNullable: true),
-        ),
-      );
-    }
-    for (final p in queryParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = p.isRequired
-            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
-        ),
-      );
-    }
-    for (final p in headerParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = p.isRequired
-            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
-        ),
-      );
-    }
-    for (final p in cookieParams) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = p.dartName
-            ..named = true
-            ..required = p.isRequired
-            ..type = irTypeToReference(p.type, forceNullable: !p.isRequired),
-        ),
-      );
-    }
-
+    final parts = _partitionParameters(op);
     final requestBodyContent = op.requestBody != null
         ? _preferredRequestBodyContent(op.requestBody!)
         : null;
     final bodyType = requestBodyContent?.$2.schema;
-    if (bodyType != null) {
-      params.add(
-        Parameter(
-          (pb) => pb
-            ..name = 'body'
-            ..named = true
-            ..required = op.requestBody!.isRequired
-            ..type = irTypeToReference(
-              bodyType,
-              forceNullable: !op.requestBody!.isRequired,
-            ),
-        ),
-      );
-    }
-
-    // Sort required named parameters before optional ones.
-    params.sort((a, b) {
-      final aReq = a.required ? 0 : 1;
-      final bReq = b.required ? 0 : 1;
-      return aReq.compareTo(bReq);
-    });
-
-    params.add(
-      Parameter(
-        (pb) => pb
-          ..name = 'options'
-          ..named = true
-          ..type = refer('RequestOptions?'),
-      ),
-    );
+    final params = _signatureParameters(op, parts, bodyType);
 
     final streaming = streamingContent(op)!;
     final streamKind = streaming.$3;
@@ -970,10 +901,10 @@ class ApiEmitter {
       streamKind: streamKind,
       requestBodyContent: requestBodyContent,
       bodyType: bodyType,
-      pathParams: pathParams,
-      queryParams: queryParams,
-      headerParams: headerParams,
-      cookieParams: cookieParams,
+      pathParams: parts.path,
+      queryParams: parts.query,
+      headerParams: parts.header,
+      cookieParams: parts.cookie,
     );
 
     final docs = <String>[];
@@ -1008,127 +939,18 @@ class ApiEmitter {
     IrType? bodyType,
   }) {
     final buf = StringBuffer();
-    final httpMethod = _httpMethodString(op);
-
-    // Reuse path interpolation logic
-    final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
-      final p = pathParamsByName[m[1]];
-      if (p == null) return m[0]!;
-      return '\${${_pathSegmentEncodeExpr(p)}}';
-    });
-
-    // Pre-compute multipart/form/unsupported body before emitting variables,
-    // so we can return early for unsupported bodies without unused locals.
-    final multipartFields =
-        bodyType != null && isMultipartMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
-    final formUrlencodedFields =
-        bodyType != null && isFormUrlencodedMediaType(requestBodyContent!.$1)
-        ? _resolveObjectFields(requestBodyContent.$2.schema)
-        : null;
-
-    // Check for unsupported body before building any variables to avoid dead
-    // code.
-    if (bodyType != null &&
-        multipartFields == null &&
-        formUrlencodedFields == null) {
-      final bodyExpr = _buildRequestBodyExpr(
-        requestBodyContent!.$1,
-        requestBodyContent.$2.schema,
-        op.requestBody!.isRequired,
-      );
-      if (bodyExpr.startsWith('throw ')) {
-        buf.writeln('$bodyExpr;');
-        return buf.toString();
-      }
+    if (!_writeRequestPrelude(
+      buf,
+      op,
+      pathParams: pathParams,
+      queryParams: queryParams,
+      headerParams: headerParams,
+      cookieParams: cookieParams,
+      requestBodyContent: requestBodyContent,
+      bodyType: bodyType,
+    )) {
+      return buf.toString();
     }
-
-    if (queryParams.isNotEmpty) {
-      buf.writeln(
-        'final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};',
-      );
-      buf.writeln('final queryParametersList = <ApiQueryParameter>[];');
-      for (final p in queryParams) {
-        _writeQueryParameterSerialization(buf, p);
-      }
-      buf.writeln();
-    }
-
-    if (cookieParams.isNotEmpty) {
-      buf.writeln(
-        'final cookies = <String, String>{...apiConfig.defaultCookies};',
-      );
-      for (final p in cookieParams) {
-        final sanitizedName = _paramNameLiteral(p.name);
-        final cookieValue = _toStringExpr(p);
-        if (p.isRequired) {
-          buf.writeln('cookies[$sanitizedName] = $cookieValue;');
-        } else {
-          buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln('  cookies[$sanitizedName] = $cookieValue;');
-          buf.writeln('}');
-        }
-      }
-      buf.writeln();
-    }
-
-    buf.writeln(
-      'final headers = <String, String>{...apiConfig.defaultHeaders};',
-    );
-    if (requestBodyContent case (
-      final mediaType,
-      _,
-    ) when !isMultipartMediaType(mediaType)) {
-      final contentType = normalizeMediaType(mediaType) == '*/*'
-          ? 'application/json'
-          : mediaType;
-      buf.writeln("headers['Content-Type'] = '$contentType';");
-    }
-    for (final p in headerParams) {
-      final sanitizedName = _paramNameLiteral(p.name);
-      final headerValue = _toStringExpr(p);
-      if (p.isRequired) {
-        buf.writeln('headers[$sanitizedName] = $headerValue;');
-      } else {
-        buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln('  headers[$sanitizedName] = $headerValue;');
-        buf.writeln('}');
-      }
-    }
-    buf.writeln();
-
-    buf.writeln('final request = ApiRequest(');
-    buf.writeln("  method: '$httpMethod',");
-    buf.writeln("  path: '$path',");
-    buf.writeln('  headers: headers,');
-    if (queryParams.isNotEmpty) {
-      buf.writeln('  queryParameters: queryParameters,');
-      buf.writeln('  queryParametersList: queryParametersList,');
-    }
-    if (cookieParams.isNotEmpty) {
-      buf.writeln('  cookies: cookies,');
-    }
-
-    if (multipartFields != null) {
-      _writeMultipartBody(buf, multipartFields, op.requestBody!.isRequired);
-      buf.writeln("  contentType: 'multipart/form-data',");
-    } else if (formUrlencodedFields != null) {
-      _writeFormUrlencodedBody(
-        buf,
-        formUrlencodedFields,
-        op.requestBody!.isRequired,
-      );
-    } else if (bodyType != null) {
-      final requestBody = requestBodyContent!;
-      buf.writeln(
-        '  body: ${_buildRequestBodyExpr(requestBody.$1, requestBody.$2.schema, op.requestBody!.isRequired)},',
-      );
-    }
-    buf.writeln('  options: options,');
-    buf.writeln(');');
-    buf.writeln();
 
     // Build the deserialize expression for each streamed event
     final deserializeExpr = _buildSseDeserializeExpr(eventType);
