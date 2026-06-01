@@ -288,10 +288,11 @@ class RoundtripEmitter {
   /// [k] (not an earlier variant). Sound — returns true only when proven, so a
   /// false here just drops a fixture, never produces a failing one.
   ///
-  /// `parse` runs `if (json is V0) … if (json is V{k-1})` then
-  /// `try fromV0 … try fromV{k-1}` before reaching `fromVk`. So [k] is reclaimed
-  /// iff, for every earlier variant `j`, the sample is NOT `is Vj` AND
-  /// `fromVj(sample)` throws ([_jRejectsK]). variant[0] is trivially reclaimed.
+  /// `parse` is best-match: it tries every variant and keeps the one whose
+  /// serialized form covers the most input keys (ties → earliest). So [k] is
+  /// reclaimed iff every earlier variant `j` either throws on [k]'s sample or
+  /// provably covers fewer of its keys ([_jRejectsK]). [k]'s own sample has full
+  /// coverage, so no later variant can outrank it; variant[0] is trivial.
   bool _parseReclaims(List<IrType> variants, int k) {
     // Compare against the *effective* sampled type — drill through nested
     // unions/discriminated unions to the concrete type whose shape the sample
@@ -328,24 +329,23 @@ class RoundtripEmitter {
     }
   }
 
-  /// Provably true when `Vj`'s parse branch neither type-matches nor
-  /// successfully deserializes `Vk`'s synthesized sample.
+  /// Provably true when best-match won't pick `Vj` over `Vk` for `Vk`'s sample:
+  /// either `fromVj` throws (not a candidate), or `Vj` provably covers fewer of
+  /// the sample's keys than `Vk` does (so `Vk`'s full coverage wins).
   bool _jRejectsK(IrType vj, IrType vk) =>
-      !_isCheckMayMatch(vj, vk) && _fromThrows(vj, vk);
+      _fromThrows(vj, vk) || _provablyMissesAKey(vj, vk);
 
-  /// Could `sample_k is Vj` hold? Conservative (true ⇒ "maybe", blocks the
-  /// proof): dynamic and same-container/same-scalar-family overlaps may match.
-  bool _isCheckMayMatch(IrType vj, IrType vk) {
-    if (vj is IrPrimitive && vj.kind == PrimitiveKind.dynamic_) return true;
-    final jc = _container(vj);
-    final kc = _container(vk);
-    if (jc != kc) return false; // Map isn't List isn't a scalar, etc.
-    return switch (jc) {
-      _Container.object => vj is IrMap, // a Map sample `is Map`; a class, no
-      _Container.list => vj is IrList && _isCheckMayMatch(_elem(vj), _elem(vk)),
-      _Container.scalar => _scalarFamiliesOverlap(vj, vk),
-      _Container.other => true, // unions/maps/dynamic — assume it might
-    };
+  /// Whether `Vj` provably reproduces fewer of `Vk`'s sample keys than `Vk`
+  /// itself — i.e. `Vj` is an object (no `additionalProperties`) whose declared
+  /// fields don't include some key `Vk`'s sample carries. Then `Vj`'s coverage
+  /// is strictly lower, so best-match keeps `Vk`.
+  bool _provablyMissesAKey(IrType vj, IrType vk) {
+    final j = _resolve(vj);
+    if (j is! IrObject || j.additionalProperties != null) return false;
+    final present = _presentKeys(vk);
+    if (present == null) return false;
+    final declared = {for (final f in j.fields) f.originalName};
+    return present.any((k) => !declared.contains(k));
   }
 
   /// Provably true when `fromVj(sample_k)` throws — via an incompatible
