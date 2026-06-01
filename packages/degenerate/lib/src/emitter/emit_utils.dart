@@ -673,3 +673,57 @@ String primitiveToJsonExpr(
   PrimitiveKind.bytes => 'base64Encode($accessor)',
   _ => accessor,
 };
+
+/// Whether [type] is an object-like type (object, ref, or union) for which an
+/// empty `{}` literal is not a valid Dart default.
+bool isObjectLikeType(IrType type) => switch (type) {
+  IrObject() ||
+  IrTypeRef() ||
+  IrDiscriminatedUnion() ||
+  IrUntaggedUnion() ||
+  IrAnyOf() => true,
+  _ => false,
+};
+
+/// The Dart default-value expression for [f]'s constructor parameter, or null
+/// when the field has no representable default. Shared by the model emitter
+/// and the sealed-union variant factories so their parameters stay in sync.
+Code? fieldDefaultCode(IrField f) {
+  if (f.defaultValue == null) return null;
+  final v = f.defaultValue;
+  // Empty map/object defaults don't make sense for object-typed fields
+  // (`const {}` is a Map, not the object type).
+  if (v is Map && v.isEmpty && isObjectLikeType(f.type)) return null;
+  // Enum-typed fields: emit the enum constant, not a raw string.
+  if (v is String && f.type is IrEnum) {
+    return Code('${(f.type as IrEnum).name}.${enumValueName(v)}');
+  }
+  if (v is String) {
+    if (f.type is IrPrimitive) {
+      final kind = (f.type as IrPrimitive).kind;
+      if (kind == PrimitiveKind.string) return Code(dartStringLiteral(v));
+      return null; // non-string primitive (incl. dynamic) with string default
+    }
+    return null; // non-primitive (ref/enum/list) with string default
+  }
+  if (v is bool) {
+    if (f.type is! IrPrimitive ||
+        (f.type as IrPrimitive).kind != PrimitiveKind.bool) {
+      return null;
+    }
+    return Code('$v');
+  }
+  if (v is num) {
+    if (f.type is! IrPrimitive) return null;
+    final kind = (f.type as IrPrimitive).kind;
+    if (kind == PrimitiveKind.int) return Code('${v.toInt()}');
+    if (kind == PrimitiveKind.double) return Code('${v.toDouble()}');
+    return Code('$v');
+  }
+  if (v is List && v.isEmpty) return const Code('const []');
+  if (v is Map && v.isEmpty) return const Code('const {}');
+  return null;
+}
+
+/// Whether [f] has a representable Dart constructor default.
+bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;

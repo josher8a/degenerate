@@ -254,13 +254,26 @@ class DiscriminatedUnionEmitter {
   /// constrains it with an `enum` keeps that enum type — so a bare `'value'`
   /// String literal would not type-check. Emit `EnumType.fromJson('value')`
   /// in that case.
-  String _discValueExpr(IrType variantType, String discValue) {
-    var t = _payloadDiscFieldType(variantType);
+  /// The Dart expression for the discriminator value, given the payload's
+  /// discriminator field [discFieldType]. A `String` literal type-checks only
+  /// when the field is a plain `String`; closed string types (generated as a
+  /// Dart `enum`/closed class via [IrEnum] or an `extension type` over `String`
+  /// via [IrExtensionType]) need `Type.fromJson('value')` instead.
+  String _discValueExpr(IrType discFieldType, String discValue) {
+    var t = discFieldType;
     if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
-    if (t is IrEnum && t.valueKind == PrimitiveKind.string) {
-      return "${t.name}.fromJson('$discValue')";
-    }
-    return "'$discValue'";
+    final typeName = switch (t) {
+      IrEnum(:final name, :final valueKind)
+          when valueKind == PrimitiveKind.string =>
+        name,
+      IrExtensionType(:final name, :final inner)
+          when inner.kind == PrimitiveKind.string =>
+        name,
+      _ => null,
+    };
+    return typeName != null
+        ? "$typeName.fromJson('$discValue')"
+        : "'$discValue'";
   }
 
   /// A named factory on the sealed base for building a variant directly,
@@ -273,17 +286,22 @@ class DiscriminatedUnionEmitter {
     if (fields.isEmpty && variantType is! IrObject) return null;
 
     final variantClass = _variantClassName(discValue);
-    final args = fields.map((f) => '${f.name}: ${f.name}').join(', ');
+    final args = fields.map((f) => '${f.name}: ${f.name}');
 
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
-      final discExpr = _discValueExpr(variantType, discValue);
-      final inner = ["$_discDartName: $discExpr", if (args.isNotEmpty) args]
-          .join(', ');
-      body = 'return $variantClass($payload($inner));';
+      // Set the discriminator only when the payload actually has that field
+      // (some `$ref` payloads omit it — it lives only in the union envelope).
+      final discField = _payloadDiscFieldType(variantType);
+      final parts = [
+        if (discField != null)
+          "$_discDartName: ${_discValueExpr(discField, discValue)}",
+        ...args,
+      ];
+      body = 'return $variantClass($payload(${parts.join(', ')}));';
     } else {
-      body = 'return $variantClass($args);';
+      body = 'return $variantClass(${args.join(', ')});';
     }
 
     return Constructor(
@@ -292,13 +310,19 @@ class DiscriminatedUnionEmitter {
         ..factory = true
         ..docs.add('/// Build the `$discValue` variant.')
         ..optionalParameters.addAll(
+          // Mirror the payload constructor's parameters (nullability + default)
+          // so the flattened arguments type-check against it.
           fields.map(
             (f) => Parameter(
               (p) => p
                 ..name = f.name
                 ..named = true
-                ..required = f.isRequired
-                ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
+                ..required = f.isRequired && !fieldHasDefault(f)
+                ..type = irTypeToReference(
+                  f.type,
+                  forceNullable: !f.isRequired && !fieldHasDefault(f),
+                )
+                ..defaultTo = fieldDefaultCode(f),
             ),
           ),
         )

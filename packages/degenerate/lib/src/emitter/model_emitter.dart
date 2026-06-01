@@ -495,63 +495,9 @@ class ModelEmitter {
     );
   }
 
-  bool _hasDefault(IrField f) => _defaultCode(f) != null;
+  // Constructor-parameter defaults are shared with the sealed-union variant
+  // factories so their parameter lists stay in sync. See emit_utils.dart.
+  bool _hasDefault(IrField f) => fieldHasDefault(f);
 
-  Code? _defaultCode(IrField f) {
-    if (f.defaultValue == null) return null;
-    final v = f.defaultValue;
-    // Don't use empty map/object defaults for object-typed fields -
-    // they don't make sense as Dart defaults (const {} is Map, not the object).
-    if (v is Map && v.isEmpty && _isObjectLikeType(f.type)) return null;
-    // For enum-typed fields, emit the enum constant instead of a raw string.
-    if (v is String && f.type is IrEnum) {
-      final enumType = f.type as IrEnum;
-      final enumName = enumType.name;
-      final dartValue = enumValueName(v);
-      return Code('$enumName.$dartValue');
-    }
-    if (v is String) {
-      // Only emit string default if the field type is actually a String
-      if (f.type is IrPrimitive) {
-        final kind = (f.type as IrPrimitive).kind;
-        if (kind == PrimitiveKind.string) {
-          return Code(dartStringLiteral(v));
-        }
-        if (kind == PrimitiveKind.dynamic_) {
-          return null;
-        }
-        // Non-string primitive with string default → skip
-        return null;
-      }
-      // Non-primitive type with string default (e.g., IrTypeRef to enum,
-      // IrList) → skip
-      return null;
-    }
-    if (v is bool) {
-      if (f.type is! IrPrimitive ||
-          (f.type as IrPrimitive).kind != PrimitiveKind.bool) {
-        return null; // Type mismatch
-      }
-      return Code('$v');
-    }
-    if (v is num) {
-      if (f.type is! IrPrimitive) return null; // Type mismatch
-      final kind = (f.type as IrPrimitive).kind;
-      if (kind == PrimitiveKind.int) return Code('${v.toInt()}');
-      if (kind == PrimitiveKind.double) return Code('${v.toDouble()}');
-      return Code('$v');
-    }
-    if (v is List && v.isEmpty) return const Code('const []');
-    if (v is Map && v.isEmpty) return const Code('const {}');
-    return null;
-  }
-
-  bool _isObjectLikeType(IrType type) => switch (type) {
-    IrObject() ||
-    IrTypeRef() ||
-    IrDiscriminatedUnion() ||
-    IrUntaggedUnion() ||
-    IrAnyOf() => true,
-    _ => false,
-  };
+  Code? _defaultCode(IrField f) => fieldDefaultCode(f);
 }
