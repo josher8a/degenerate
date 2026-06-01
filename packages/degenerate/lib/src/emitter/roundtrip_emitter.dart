@@ -243,7 +243,11 @@ class RoundtripEmitter {
       IrEnum() => true,
       IrList(:final items) => _isToJsonSafeUnionVariant(items),
       IrMap(:final values) => _isToJsonSafeUnionVariant(values),
+      // `dynamic_` is free-form JSON: parse holds the raw value and
+      // `_oneOfValueToJson` passes primitives through / recurses collections,
+      // so it round-trips like any passthrough scalar.
       IrPrimitive(:final kind) => const {
+        PrimitiveKind.dynamic_,
         PrimitiveKind.string,
         PrimitiveKind.int,
         PrimitiveKind.double,
