@@ -10,7 +10,7 @@ factory HyperdriveHyperdriveCaching.fromJson(Map<String, dynamic> json) { return
 }; }
 
 /// Build the `false` variant.
-factory HyperdriveHyperdriveCaching.$false({int? maxAge, int? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(HyperdriveHyperdriveCachingEnabled(disabled: 'false', maxAge: maxAge, staleWhileRevalidate: staleWhileRevalidate)); }
+factory HyperdriveHyperdriveCaching.$false({int? maxAge, int? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(HyperdriveHyperdriveCachingEnabled(disabled: false, maxAge: maxAge, staleWhileRevalidate: staleWhileRevalidate)); }
 
 /// The discriminator value identifying this variant.
 String get disabled;
