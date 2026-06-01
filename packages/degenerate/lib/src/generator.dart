@@ -50,6 +50,7 @@ class GeneratorConfig {
     this.unwrapFields = const [],
     this.dedupeInlineTypes = true,
     this.emitRoundtripFixtures = false,
+    this.emitTypedFormats = false,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -115,6 +116,11 @@ class GeneratorConfig {
   /// `fromJson(sample).toJson() == sample` behavior harness. Off by default —
   /// it's test scaffolding, not part of the shipped client.
   final bool emitRoundtripFixtures;
+
+  /// Emit zero-cost `extension type` wrappers for JSON Schema string formats
+  /// like `uuid`, `email`, `date`, etc. Off by default — changes many field
+  /// types from `String` to the wrapper type, which is opinionated.
+  final bool emitTypedFormats;
 }
 
 /// The main code generator pipeline.
@@ -185,7 +191,10 @@ class Generator {
 
     // 4. Lower schemas to IR types
     _log('Lowering schemas to IR...');
-    final irMapper = IrMapper(normContext);
+    final irMapper = IrMapper(
+      normContext,
+      emitTypedFormats: config.emitTypedFormats,
+    );
     var irTypes = irMapper.lowerSchemas(inlinedDoc.schemas);
 
     if (config.verbose) {

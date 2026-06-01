@@ -14,11 +14,13 @@ import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 /// flattened inline via [AllOfFlattener].
 class IrMapper {
   /// Create an IrMapper from a [NormalizationContext].
-  IrMapper(NormalizationContext context)
+  IrMapper(NormalizationContext context, {this.emitTypedFormats = false})
     : _usedNames = context.usedNames,
       _nameMapping = context.nameMapping,
       _discriminatorProperties = context.discriminatorProperties,
       warnings = context.warnings;
+
+  final bool emitTypedFormats;
   final Set<String> _usedNames;
 
   /// Maps Dart type names to their IR types.
@@ -205,6 +207,7 @@ class IrMapper {
     // Recursively resolve type refs within nested types (e.g. list items, map
     // values).
     resolved = _resolver.resolveDeep(resolved);
+    if (resolved is IrPrimitive) return _wrapFormatType(resolved);
     // Register inline named types so they get emitted as separate files.
     if (resolved is IrObject) {
       final objName = resolved.name;
@@ -590,6 +593,34 @@ class IrMapper {
       default:
         return PrimitiveKind.string;
     }
+  }
+
+  static const _formatTypeNames = {
+    'uuid': 'Uuid',
+    'email': 'Email',
+    'date': 'Date',
+    'time': 'Time',
+    'ipv4': 'Ipv4',
+    'ipv6': 'Ipv6',
+  };
+
+  IrType _wrapFormatType(IrPrimitive prim) {
+    if (!emitTypedFormats) return prim;
+    if (prim.kind != PrimitiveKind.string) return prim;
+    final typeName = _formatTypeNames[prim.format];
+    if (typeName == null) return prim;
+    if (!typeRegistry.containsKey(typeName)) {
+      const inner = IrPrimitive(PrimitiveKind.string);
+      final ext = IrExtensionType(typeName, inner);
+      typeRegistry[typeName] = ext;
+      _inlineTypes.add(ext);
+      _recordPath(typeName, [typeName]);
+    }
+    return IrTypeRef(
+      typeName,
+      isNullable: prim.isNullable,
+      description: prim.description,
+    );
   }
 
   IrType _lowerBooleanSchema(bool schema, {String? nameHint}) {

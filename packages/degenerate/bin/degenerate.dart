@@ -87,6 +87,14 @@ ArgParser buildParser() {
           'harness. Test scaffolding; off by default.',
       negatable: false,
     )
+    ..addFlag(
+      'emit-typed-formats',
+      help:
+          'Emit zero-cost extension type wrappers for JSON Schema string\n'
+          'formats (uuid, email, date, ipv4, ipv6). Changes field types\n'
+          'from String to the wrapper; off by default.',
+      negatable: false,
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
@@ -156,6 +164,7 @@ Future<void> main(List<String> arguments) async {
       stdinContent: stdinContent,
       unwrapFields: results.multiOption('unwrap-fields'),
       emitRoundtripFixtures: results.flag('emit-roundtrip-fixtures'),
+      emitTypedFormats: results.flag('emit-typed-formats'),
     );
 
     final generator = Generator(config);
