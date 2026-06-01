@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LifecycleDateConditionType {const R2LifecycleDateConditionType._(this.value);
-
-factory R2LifecycleDateConditionType.fromJson(String json) { return switch (json) {
-  'Date' => date,
-  _ => R2LifecycleDateConditionType._(json),
-}; }
-
-static const R2LifecycleDateConditionType date = R2LifecycleDateConditionType._('Date');
-
-static const List<R2LifecycleDateConditionType> values = [date];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2LifecycleDateConditionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2LifecycleDateConditionType($value)'; } 
- }
-/// Condition for lifecycle transitions to apply on a specific date.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition/r2_lifecycle_date_condition_type.dart';/// Condition for lifecycle transitions to apply on a specific date.
 @immutable final class R2LifecycleDateCondition {const R2LifecycleDateCondition({required this.date, required this.type, });
 
 factory R2LifecycleDateCondition.fromJson(Map<String, dynamic> json) { return R2LifecycleDateCondition(

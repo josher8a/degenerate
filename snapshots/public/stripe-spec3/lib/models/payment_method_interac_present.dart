@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_card_present_networks.dart';/// How card details were read in this transaction.
-@immutable final class PaymentMethodInteracPresentReadMethod {const PaymentMethodInteracPresentReadMethod._(this.value);
-
-factory PaymentMethodInteracPresentReadMethod.fromJson(String json) { return switch (json) {
-  'contact_emv' => contactEmv,
-  'contactless_emv' => contactlessEmv,
-  'contactless_magstripe_mode' => contactlessMagstripeMode,
-  'magnetic_stripe_fallback' => magneticStripeFallback,
-  'magnetic_stripe_track2' => magneticStripeTrack2,
-  _ => PaymentMethodInteracPresentReadMethod._(json),
-}; }
-
-static const PaymentMethodInteracPresentReadMethod contactEmv = PaymentMethodInteracPresentReadMethod._('contact_emv');
-
-static const PaymentMethodInteracPresentReadMethod contactlessEmv = PaymentMethodInteracPresentReadMethod._('contactless_emv');
-
-static const PaymentMethodInteracPresentReadMethod contactlessMagstripeMode = PaymentMethodInteracPresentReadMethod._('contactless_magstripe_mode');
-
-static const PaymentMethodInteracPresentReadMethod magneticStripeFallback = PaymentMethodInteracPresentReadMethod._('magnetic_stripe_fallback');
-
-static const PaymentMethodInteracPresentReadMethod magneticStripeTrack2 = PaymentMethodInteracPresentReadMethod._('magnetic_stripe_track2');
-
-static const List<PaymentMethodInteracPresentReadMethod> values = [contactEmv, contactlessEmv, contactlessMagstripeMode, magneticStripeFallback, magneticStripeTrack2];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodInteracPresentReadMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodInteracPresentReadMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present_networks.dart';/// 
 @immutable final class PaymentMethodInteracPresent {const PaymentMethodInteracPresent({required this.expMonth, required this.expYear, this.brand, this.cardholderName, this.country, this.description, this.fingerprint, this.funding, this.issuer, this.last4, this.networks, this.preferredLocales, this.readMethod, });
 
 factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodInteracPresent(
@@ -50,7 +16,7 @@ factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return
   last4: json['last4'] as String?,
   networks: json['networks'] != null ? PaymentMethodCardPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  readMethod: json['read_method'] != null ? PaymentMethodInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
+  readMethod: json['read_method'] != null ? ReadMethod.fromJson(json['read_method'] as String) : null,
 ); }
 
 /// Card brand. Can be `interac`, `mastercard` or `visa`.
@@ -92,7 +58,7 @@ final PaymentMethodCardPresentNetworks? networks;
 final List<String>? preferredLocales;
 
 /// How card details were read in this transaction.
-final PaymentMethodInteracPresentReadMethod? readMethod;
+final ReadMethod? readMethod;
 
 Map<String, dynamic> toJson() { return {
   'brand': ?brand,
@@ -111,7 +77,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, List<String>? Function()? preferredLocales, PaymentMethodInteracPresentReadMethod? Function()? readMethod, }) { return PaymentMethodInteracPresent(
+PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, }) { return PaymentMethodInteracPresent(
   brand: brand != null ? brand() : this.brand,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
   country: country != null ? country() : this.country,

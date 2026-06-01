@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_classification.dart';import 'code_scanning_alert_environment.dart';import 'code_scanning_alert_instance_list_message.dart';import 'code_scanning_alert_location.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_ref.dart';/// State of a code scanning alert instance.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_classification.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_environment.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_location.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';/// State of a code scanning alert instance.
 @immutable final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);
 
 factory CodeScanningAlertInstanceState.fromJson(String json) { return switch (json) {
@@ -37,7 +37,7 @@ factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { retu
   category: json['category'] != null ? CodeScanningAnalysisCategory.fromJson(json['category'] as String) : null,
   state: json['state'] != null ? CodeScanningAlertInstanceState.fromJson(json['state'] as String) : null,
   commitSha: json['commit_sha'] as String?,
-  message: json['message'] != null ? CodeScanningAlertInstanceListMessage.fromJson(json['message'] as Map<String, dynamic>) : null,
+  message: json['message'] != null ? Message.fromJson(json['message'] as Map<String, dynamic>) : null,
   location: json['location'] != null ? CodeScanningAlertLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   htmlUrl: json['html_url'] as String?,
   classifications: (json['classifications'] as List<dynamic>?)?.map((e) => CodeScanningAlertClassification.fromJson(e as String)).toList(),
@@ -61,7 +61,7 @@ final CodeScanningAlertInstanceState? state;
 
 final String? commitSha;
 
-final CodeScanningAlertInstanceListMessage? message;
+final Message? message;
 
 final CodeScanningAlertLocation? location;
 
@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   if (classifications != null) 'classifications': classifications?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'analysis_key', 'environment', 'category', 'state', 'commit_sha', 'message', 'location', 'html_url', 'classifications'}.contains(key)); } 
-CodeScanningAlertInstanceList copyWith({CodeScanningRef Function()? ref, CodeScanningAnalysisAnalysisKey Function()? analysisKey, CodeScanningAlertEnvironment Function()? environment, CodeScanningAnalysisCategory Function()? category, CodeScanningAlertInstanceState? Function()? state, String Function()? commitSha, CodeScanningAlertInstanceListMessage Function()? message, CodeScanningAlertLocation Function()? location, String Function()? htmlUrl, List<CodeScanningAlertClassification> Function()? classifications, }) { return CodeScanningAlertInstanceList(
+CodeScanningAlertInstanceList copyWith({CodeScanningRef Function()? ref, CodeScanningAnalysisAnalysisKey Function()? analysisKey, CodeScanningAlertEnvironment Function()? environment, CodeScanningAnalysisCategory Function()? category, CodeScanningAlertInstanceState? Function()? state, String Function()? commitSha, Message Function()? message, CodeScanningAlertLocation Function()? location, String Function()? htmlUrl, List<CodeScanningAlertClassification> Function()? classifications, }) { return CodeScanningAlertInstanceList(
   ref: ref != null ? ref() : this.ref,
   analysisKey: analysisKey != null ? analysisKey() : this.analysisKey,
   environment: environment != null ? environment() : this.environment,

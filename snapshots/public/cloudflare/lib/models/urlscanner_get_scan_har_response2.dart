@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log.dart';@immutable final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response2/log.dart';@immutable final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
 
 factory UrlscannerGetScanHarResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2(
-  log: UrlscannerGetScanHarResponse2Log.fromJson(json['log'] as Map<String, dynamic>),
+  log: Log.fromJson(json['log'] as Map<String, dynamic>),
 ); }
 
-final UrlscannerGetScanHarResponse2Log log;
+final Log log;
 
 Map<String, dynamic> toJson() { return {
   'log': log.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('log'); } 
-UrlscannerGetScanHarResponse2 copyWith({UrlscannerGetScanHarResponse2Log? log}) { return UrlscannerGetScanHarResponse2(
+UrlscannerGetScanHarResponse2 copyWith({Log? log}) { return UrlscannerGetScanHarResponse2(
   log: log ?? this.log,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

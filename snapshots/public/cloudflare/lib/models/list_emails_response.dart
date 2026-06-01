@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_message.dart';import 'list_emails_response_result.dart';import 'list_emails_response_result_info.dart';@immutable final class ListEmailsResponse {const ListEmailsResponse({required this.success, this.errors, this.messages, this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_message.dart';import 'package:pub_cloudflare/models/abuse_reports_mitigation_appeal_result/abuse_reports_mitigation_appeal_result_result_info.dart';import 'package:pub_cloudflare/models/list_emails_response/list_emails_response_result.dart';@immutable final class ListEmailsResponse {const ListEmailsResponse({required this.success, this.errors, this.messages, this.result, this.resultInfo, });
 
 factory ListEmailsResponse.fromJson(Map<String, dynamic> json) { return ListEmailsResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
-  resultInfo: json['result_info'] != null ? ListEmailsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? AbuseReportsMitigationAppealResultResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
@@ -16,7 +16,7 @@ final List<AbuseReportsMessage>? messages;
 
 final ListEmailsResponseResult? result;
 
-final ListEmailsResponseResultInfo? resultInfo;
+final AbuseReportsMitigationAppealResultResultInfo? resultInfo;
 
 final bool success;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-ListEmailsResponse copyWith({List<AbuseReportsMessage> Function()? errors, List<AbuseReportsMessage> Function()? messages, ListEmailsResponseResult Function()? result, ListEmailsResponseResultInfo Function()? resultInfo, bool? success, }) { return ListEmailsResponse(
+ListEmailsResponse copyWith({List<AbuseReportsMessage> Function()? errors, List<AbuseReportsMessage> Function()? messages, ListEmailsResponseResult Function()? result, AbuseReportsMitigationAppealResultResultInfo Function()? resultInfo, bool? success, }) { return ListEmailsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,

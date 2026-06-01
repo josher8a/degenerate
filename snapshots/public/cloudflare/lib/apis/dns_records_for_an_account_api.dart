@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_dns_response_account_usage_result.dart';import '../models/dns_records_identifier.dart';/// DnsRecordsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_account_usage/dns_records_dns_response_account_usage_result.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';/// DnsRecordsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

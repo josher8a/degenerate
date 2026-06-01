@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
 @immutable final class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId._(this.value);
 
 factory ZonesAutomaticHttpsRewritesId.fromJson(String json) { return switch (json) {

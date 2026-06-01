@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_request_parameters.dart';import 'telemetry_query_request_timeframe.dart';/// Type of pattern to search for when using pattern-based views
-@immutable final class TelemetryQueryRequestPatternType {const TelemetryQueryRequestPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/telemetry_query_request_parameters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';/// Type of pattern to search for when using pattern-based views
+@immutable final class PatternType {const PatternType._(this.value);
 
-factory TelemetryQueryRequestPatternType.fromJson(String json) { return switch (json) {
+factory PatternType.fromJson(String json) { return switch (json) {
   'message' => message,
   'error' => error,
-  _ => TelemetryQueryRequestPatternType._(json),
+  _ => PatternType._(json),
 }; }
 
-static const TelemetryQueryRequestPatternType message = TelemetryQueryRequestPatternType._('message');
+static const PatternType message = PatternType._('message');
 
-static const TelemetryQueryRequestPatternType error = TelemetryQueryRequestPatternType._('error');
+static const PatternType error = PatternType._('error');
 
-static const List<TelemetryQueryRequestPatternType> values = [message, error];
+static const List<PatternType> values = [message, error];
 
 final String value;
 
@@ -21,36 +21,36 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestPatternType && other.value == value; } 
+    other is PatternType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestPatternType($value)'; } 
+@override String toString() { return 'PatternType($value)'; } 
  }
 /// View type for presenting the query results.
-@immutable final class TelemetryQueryRequestView {const TelemetryQueryRequestView._(this.value);
+@immutable final class View {const View._(this.value);
 
-factory TelemetryQueryRequestView.fromJson(String json) { return switch (json) {
+factory View.fromJson(String json) { return switch (json) {
   'traces' => traces,
   'events' => events,
   'calculations' => calculations,
   'invocations' => invocations,
   'requests' => requests,
   'patterns' => patterns,
-  _ => TelemetryQueryRequestView._(json),
+  _ => View._(json),
 }; }
 
-static const TelemetryQueryRequestView traces = TelemetryQueryRequestView._('traces');
+static const View traces = View._('traces');
 
-static const TelemetryQueryRequestView events = TelemetryQueryRequestView._('events');
+static const View events = View._('events');
 
-static const TelemetryQueryRequestView calculations = TelemetryQueryRequestView._('calculations');
+static const View calculations = View._('calculations');
 
-static const TelemetryQueryRequestView invocations = TelemetryQueryRequestView._('invocations');
+static const View invocations = View._('invocations');
 
-static const TelemetryQueryRequestView requests = TelemetryQueryRequestView._('requests');
+static const View requests = View._('requests');
 
-static const TelemetryQueryRequestView patterns = TelemetryQueryRequestView._('patterns');
+static const View patterns = View._('patterns');
 
-static const List<TelemetryQueryRequestView> values = [traces, events, calculations, invocations, requests, patterns];
+static const List<View> values = [traces, events, calculations, invocations, requests, patterns];
 
 final String value;
 
@@ -58,11 +58,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryQueryRequestView && other.value == value; } 
+    other is View && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryQueryRequestView($value)'; } 
+@override String toString() { return 'View($value)'; } 
  }
-@immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = TelemetryQueryRequestView.calculations, });
+@immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = View.calculations, });
 
 factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequest(
   chart: json['chart'] as bool?,
@@ -75,10 +75,10 @@ factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return Telem
   offsetBy: json['offsetBy'] != null ? (json['offsetBy'] as num).toDouble() : null,
   offsetDirection: json['offsetDirection'] as String?,
   parameters: json['parameters'] != null ? TelemetryQueryRequestParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
-  patternType: json['patternType'] != null ? TelemetryQueryRequestPatternType.fromJson(json['patternType'] as String) : null,
+  patternType: json['patternType'] != null ? PatternType.fromJson(json['patternType'] as String) : null,
   queryId: json['queryId'] as String,
-  timeframe: TelemetryQueryRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
-  view: json.containsKey('view') ? TelemetryQueryRequestView.fromJson(json['view'] as String) : TelemetryQueryRequestView.calculations,
+  timeframe: Timeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
+  view: json.containsKey('view') ? View.fromJson(json['view'] as String) : View.calculations,
 ); }
 
 /// Whether to include timeseties data in the response
@@ -112,16 +112,16 @@ final String? offsetDirection;
 final TelemetryQueryRequestParameters? parameters;
 
 /// Type of pattern to search for when using pattern-based views
-final TelemetryQueryRequestPatternType? patternType;
+final PatternType? patternType;
 
 /// Unique identifier for the query to execute
 final String queryId;
 
 /// Time range for the query execution
-final TelemetryQueryRequestTimeframe timeframe;
+final Timeframe timeframe;
 
 /// View type for presenting the query results.
-final TelemetryQueryRequestView view;
+final View view;
 
 Map<String, dynamic> toJson() { return {
   'chart': ?chart,
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('queryId') && json['queryId'] is String &&
       json.containsKey('timeframe'); } 
-TelemetryQueryRequest copyWith({bool Function()? chart, bool Function()? compare, bool Function()? dry, double Function()? granularity, bool Function()? ignoreSeries, double Function()? limit, String Function()? offset, double Function()? offsetBy, String Function()? offsetDirection, TelemetryQueryRequestParameters Function()? parameters, TelemetryQueryRequestPatternType Function()? patternType, String? queryId, TelemetryQueryRequestTimeframe? timeframe, TelemetryQueryRequestView Function()? view, }) { return TelemetryQueryRequest(
+TelemetryQueryRequest copyWith({bool Function()? chart, bool Function()? compare, bool Function()? dry, double Function()? granularity, bool Function()? ignoreSeries, double Function()? limit, String Function()? offset, double Function()? offsetBy, String Function()? offsetDirection, TelemetryQueryRequestParameters Function()? parameters, PatternType Function()? patternType, String? queryId, Timeframe? timeframe, View Function()? view, }) { return TelemetryQueryRequest(
   chart: chart != null ? chart() : this.chart,
   compare: compare != null ? compare() : this.compare,
   dry: dry != null ? dry() : this.dry,

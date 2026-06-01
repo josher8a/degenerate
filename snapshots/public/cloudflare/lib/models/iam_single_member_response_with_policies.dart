@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_member_with_policies.dart';@immutable final class IamSingleMemberResponseWithPolicies {const IamSingleMemberResponseWithPolicies({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_member_with_policies.dart';@immutable final class IamSingleMemberResponseWithPolicies {const IamSingleMemberResponseWithPolicies({this.result});
 
 factory IamSingleMemberResponseWithPolicies.fromJson(Map<String, dynamic> json) { return IamSingleMemberResponseWithPolicies(
   result: json['result'] != null ? IamMemberWithPolicies.fromJson(json['result'] as Map<String, dynamic>) : null,

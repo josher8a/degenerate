@@ -1,74 +1,43 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping2.dart';import 'optional_fields_customer_address.dart';import 'post_customers_request_address.dart';import 'post_customers_request_business_name.dart';import 'post_customers_request_cash_balance.dart';import 'post_customers_request_individual_name.dart';import 'post_customers_request_invoice_settings.dart';import 'post_customers_request_metadata.dart';import 'post_customers_request_shipping.dart';import 'post_customers_request_tax.dart';import 'post_customers_request_tax_id_data.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
-@immutable final class PostCustomersRequestTaxExempt {const PostCustomersRequestTaxExempt._(this.value);
-
-factory PostCustomersRequestTaxExempt.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'exempt' => exempt,
-  'none' => none,
-  'reverse' => reverse,
-  _ => PostCustomersRequestTaxExempt._(json),
-}; }
-
-static const PostCustomersRequestTaxExempt $empty = PostCustomersRequestTaxExempt._('');
-
-static const PostCustomersRequestTaxExempt exempt = PostCustomersRequestTaxExempt._('exempt');
-
-static const PostCustomersRequestTaxExempt none = PostCustomersRequestTaxExempt._('none');
-
-static const PostCustomersRequestTaxExempt reverse = PostCustomersRequestTaxExempt._('reverse');
-
-static const List<PostCustomersRequestTaxExempt> values = [$empty, exempt, none, reverse];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersRequestTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersRequestTaxExempt($value)'; } 
- }
-@immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_customer_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/business_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/individual_name.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_address.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_cash_balance.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/post_customers_customer_request_tax_exempt.dart';import 'package:pub_stripe_spec3/models/post_customers_request/post_customers_request_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_request/tax_id_data.dart';@immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
 
 factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCustomersRequest(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersRequestAddressVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => optional_fields_customer_address.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersRequestBusinessNameVariant2.fromJson(v as String),) : null,
-  cashBalance: json['cash_balance'] != null ? PostCustomersRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
+  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  cashBalance: json['cash_balance'] != null ? PostCustomersCustomerRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersRequestIndividualNameVariant2.fromJson(v as String),) : null,
+  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
-  invoiceSettings: json['invoice_settings'] != null ? PostCustomersRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCustomersRequestMetadataVariant2.fromJson(v as String),) : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   paymentMethod: json['payment_method'] as String?,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersRequestShippingVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => customer_shipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
-  taxExempt: json['tax_exempt'] != null ? PostCustomersRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
-  taxIdData: (json['tax_id_data'] as List<dynamic>?)?.map((e) => PostCustomersRequestTaxIdData.fromJson(e as Map<String, dynamic>)).toList(),
+  taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
+  taxIdData: (json['tax_id_data'] as List<dynamic>?)?.map((e) => TaxIdData.fromJson(e as Map<String, dynamic>)).toList(),
   testClock: json['test_clock'] as String?,
 ); }
 
 /// The customer's address. Learn about [country-specific requirements for calculating tax](https://docs.stripe.com/invoicing/taxes?dashboard-or-api=dashboard#set-up-customer).
-final PostCustomersRequestAddress? address;
+final PostCustomersCustomerRequestAddress? address;
 
 /// An integer amount in cents (or local equivalent) that represents the customer's current balance, which affect the customer's future invoices. A negative amount represents a credit that decreases the amount due on an invoice; a positive amount increases the amount due on an invoice.
 final int? balance;
 
 /// The customer's business name. This may be up to *150 characters*.
-final PostCustomersRequestBusinessName? businessName;
+final BusinessName? businessName;
 
 /// Balance information and default balance settings for this customer.
-final PostCustomersRequestCashBalance? cashBalance;
+final PostCustomersCustomerRequestCashBalance? cashBalance;
 
 /// An arbitrary string that you can attach to a customer object. It is displayed alongside the customer in the dashboard.
 final String? description;
@@ -80,16 +49,16 @@ final String? email;
 final List<String>? expand;
 
 /// The customer's full name. This may be up to *150 characters*.
-final PostCustomersRequestIndividualName? individualName;
+final IndividualName? individualName;
 
 /// The prefix for the customer used to generate unique invoice numbers. Must be 3–12 uppercase letters or numbers.
 final String? invoicePrefix;
 
 /// Default invoice settings for this customer.
-final PostCustomersRequestInvoiceSettings? invoiceSettings;
+final PostCustomersCustomerRequestInvoiceSettings? invoiceSettings;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostCustomersRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The customer's full name or business name.
 final String? name;
@@ -106,7 +75,7 @@ final String? phone;
 final List<String>? preferredLocales;
 
 /// The customer's shipping information. Appears on invoices emailed to this customer.
-final PostCustomersRequestShipping? shipping;
+final PostCustomersCustomerRequestShipping? shipping;
 
 final String? source;
 
@@ -114,10 +83,10 @@ final String? source;
 final PostCustomersRequestTax? tax;
 
 /// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
-final PostCustomersRequestTaxExempt? taxExempt;
+final PostCustomersCustomerRequestTaxExempt? taxExempt;
 
 /// The customer's tax IDs.
-final List<PostCustomersRequestTaxIdData>? taxIdData;
+final List<TaxIdData>? taxIdData;
 
 /// ID of the test clock to attach to the customer.
 final String? testClock;
@@ -147,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   'test_clock': ?testClock,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key)); } 
-PostCustomersRequest copyWith({PostCustomersRequestAddress Function()? address, int Function()? balance, PostCustomersRequestBusinessName Function()? businessName, PostCustomersRequestCashBalance Function()? cashBalance, String Function()? description, String Function()? email, List<String> Function()? expand, PostCustomersRequestIndividualName Function()? individualName, String Function()? invoicePrefix, PostCustomersRequestInvoiceSettings Function()? invoiceSettings, PostCustomersRequestMetadata Function()? metadata, String Function()? name, int Function()? nextInvoiceSequence, String Function()? paymentMethod, String Function()? phone, List<String> Function()? preferredLocales, PostCustomersRequestShipping Function()? shipping, String Function()? source, PostCustomersRequestTax Function()? tax, PostCustomersRequestTaxExempt Function()? taxExempt, List<PostCustomersRequestTaxIdData> Function()? taxIdData, String Function()? testClock, }) { return PostCustomersRequest(
+PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress Function()? address, int Function()? balance, BusinessName Function()? businessName, PostCustomersCustomerRequestCashBalance Function()? cashBalance, String Function()? description, String Function()? email, List<String> Function()? expand, IndividualName Function()? individualName, String Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings Function()? invoiceSettings, Metadata Function()? metadata, String Function()? name, int Function()? nextInvoiceSequence, String Function()? paymentMethod, String Function()? phone, List<String> Function()? preferredLocales, PostCustomersCustomerRequestShipping Function()? shipping, String Function()? source, PostCustomersRequestTax Function()? tax, PostCustomersCustomerRequestTaxExempt Function()? taxExempt, List<TaxIdData> Function()? taxIdData, String Function()? testClock, }) { return PostCustomersRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_base.dart';@immutable final class SmartTieredCacheDeleteSmartTieredCacheSettingResponse {const SmartTieredCacheDeleteSmartTieredCacheSettingResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_base.dart';@immutable final class SmartTieredCacheDeleteSmartTieredCacheSettingResponse {const SmartTieredCacheDeleteSmartTieredCacheSettingResponse({this.result});
 
 factory SmartTieredCacheDeleteSmartTieredCacheSettingResponse.fromJson(Map<String, dynamic> json) { return SmartTieredCacheDeleteSmartTieredCacheSettingResponse(
   result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,

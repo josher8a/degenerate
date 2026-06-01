@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_milestone_edited_changes.dart';import 'webhooks_milestone.dart';@immutable final class WebhookMilestoneEditedAction {const WebhookMilestoneEditedAction._(this.value);
-
-factory WebhookMilestoneEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookMilestoneEditedAction._(json),
-}; }
-
-static const WebhookMilestoneEditedAction edited = WebhookMilestoneEditedAction._('edited');
-
-static const List<WebhookMilestoneEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMilestoneEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMilestoneEditedAction($value)'; } 
- }
-@immutable final class WebhookMilestoneEdited {const WebhookMilestoneEdited({required this.action, required this.changes, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_milestone_edited/webhook_milestone_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone.dart';@immutable final class WebhookMilestoneEdited {const WebhookMilestoneEdited({required this.action, required this.changes, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMilestoneEdited.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEdited(
-  action: WebhookMilestoneEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookMilestoneEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookMilestoneEdited.fromJson(Map<String, dynamic> json) { return Webh
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookMilestoneEditedAction action;
+final ItemEditedAction action;
 
 /// The changes to the milestone if the action was `edited`.
 final WebhookMilestoneEditedChanges changes;
@@ -66,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('milestone') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookMilestoneEdited copyWith({WebhookMilestoneEditedAction? action, WebhookMilestoneEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksMilestone? milestone, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneEdited(
+WebhookMilestoneEdited copyWith({ItemEditedAction? action, WebhookMilestoneEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksMilestone? milestone, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_dataset_response_result.dart';@immutable final class AigConfigDeleteDatasetResponse {const AigConfigDeleteDatasetResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_dataset_response/aig_config_create_dataset_response_result.dart';@immutable final class AigConfigDeleteDatasetResponse {const AigConfigDeleteDatasetResponse({required this.result, required this.success, });
 
 factory AigConfigDeleteDatasetResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteDatasetResponse(
-  result: AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AigConfigDeleteDatasetResponseResult result;
+final AigConfigCreateDatasetResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigDeleteDatasetResponse copyWith({AigConfigDeleteDatasetResponseResult? result, bool? success, }) { return AigConfigDeleteDatasetResponse(
+AigConfigDeleteDatasetResponse copyWith({AigConfigCreateDatasetResponseResult? result, bool? success, }) { return AigConfigDeleteDatasetResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

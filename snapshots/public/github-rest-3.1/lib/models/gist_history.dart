@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_history_change_status.dart';import 'simple_user.dart';/// Gist History
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_commit/change_status.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist History
 @immutable final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });
 
 factory GistHistory.fromJson(Map<String, dynamic> json) { return GistHistory(
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   version: json['version'] as String?,
   committedAt: json['committed_at'] != null ? DateTime.parse(json['committed_at'] as String) : null,
-  changeStatus: json['change_status'] != null ? GistHistoryChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null,
+  changeStatus: json['change_status'] != null ? ChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
@@ -17,7 +17,7 @@ final String? version;
 
 final DateTime? committedAt;
 
-final GistHistoryChangeStatus? changeStatus;
+final ChangeStatus? changeStatus;
 
 final Uri? url;
 
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'version', 'committed_at', 'change_status', 'url'}.contains(key)); } 
-GistHistory copyWith({SimpleUser? Function()? user, String Function()? version, DateTime Function()? committedAt, GistHistoryChangeStatus Function()? changeStatus, Uri Function()? url, }) { return GistHistory(
+GistHistory copyWith({SimpleUser? Function()? user, String Function()? version, DateTime Function()? committedAt, ChangeStatus Function()? changeStatus, Uri Function()? url, }) { return GistHistory(
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
   committedAt: committedAt != null ? committedAt() : this.committedAt,

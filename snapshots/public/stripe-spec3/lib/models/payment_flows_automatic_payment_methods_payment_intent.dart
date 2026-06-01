@@ -1,44 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether this PaymentIntent will accept redirect-based payment methods.
-/// 
-/// Redirect-based payment methods may require your customer to be redirected to a payment method's app or site for authentication or additional steps. To [confirm](https://docs.stripe.com/api/payment_intents/confirm) this PaymentIntent, you may be required to provide a `return_url` to redirect customers back to your site after they authenticate or complete the payment.
-@immutable final class PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects {const PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects._(this.value);
-
-factory PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'never' => never,
-  _ => PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects._(json),
-}; }
-
-static const PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects always = PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects._('always');
-
-static const PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects never = PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects._('never');
-
-static const List<PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects> values = [always, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_payment_intent/allow_redirects.dart';/// 
 @immutable final class PaymentFlowsAutomaticPaymentMethodsPaymentIntent {const PaymentFlowsAutomaticPaymentMethodsPaymentIntent({required this.enabled, this.allowRedirects, });
 
 factory PaymentFlowsAutomaticPaymentMethodsPaymentIntent.fromJson(Map<String, dynamic> json) { return PaymentFlowsAutomaticPaymentMethodsPaymentIntent(
-  allowRedirects: json['allow_redirects'] != null ? PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects.fromJson(json['allow_redirects'] as String) : null,
+  allowRedirects: json['allow_redirects'] != null ? AllowRedirects.fromJson(json['allow_redirects'] as String) : null,
   enabled: json['enabled'] as bool,
 ); }
 
 /// Controls whether this PaymentIntent will accept redirect-based payment methods.
 /// 
 /// Redirect-based payment methods may require your customer to be redirected to a payment method's app or site for authentication or additional steps. To [confirm](https://docs.stripe.com/api/payment_intents/confirm) this PaymentIntent, you may be required to provide a `return_url` to redirect customers back to your site after they authenticate or complete the payment.
-final PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects? allowRedirects;
+final AllowRedirects? allowRedirects;
 
 /// Automatically calculates compatible payment methods
 final bool enabled;
@@ -48,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentFlowsAutomaticPaymentMethodsPaymentIntent copyWith({PaymentFlowsAutomaticPaymentMethodsPaymentIntentAllowRedirects Function()? allowRedirects, bool? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsPaymentIntent(
+PaymentFlowsAutomaticPaymentMethodsPaymentIntent copyWith({AllowRedirects Function()? allowRedirects, bool? enabled, }) { return PaymentFlowsAutomaticPaymentMethodsPaymentIntent(
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled ?? this.enabled,
 ); } 

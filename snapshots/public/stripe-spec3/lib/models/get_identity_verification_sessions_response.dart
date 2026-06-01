@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identity_verification_session.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetIdentityVerificationSessionsResponseObject {const GetIdentityVerificationSessionsResponseObject._(this.value);
-
-factory GetIdentityVerificationSessionsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetIdentityVerificationSessionsResponseObject._(json),
-}; }
-
-static const GetIdentityVerificationSessionsResponseObject list = GetIdentityVerificationSessionsResponseObject._('list');
-
-static const List<GetIdentityVerificationSessionsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIdentityVerificationSessionsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIdentityVerificationSessionsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/identity_verification_session.dart';/// 
 @immutable final class GetIdentityVerificationSessionsResponse {const GetIdentityVerificationSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetIdentityVerificationSessionsResponse.fromJson(Map<String, dynamic> json) { return GetIdentityVerificationSessionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IdentityVerificationSession.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetIdentityVerificationSessionsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<IdentityVerificationSession> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetIdentityVerificationSessionsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetIdentityVerificationSessionsResponse copyWith({List<IdentityVerificationSession>? data, bool? hasMore, GetIdentityVerificationSessionsResponseObject? object, String? url, }) { return GetIdentityVerificationSessionsResponse(
+GetIdentityVerificationSessionsResponse copyWith({List<IdentityVerificationSession>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetIdentityVerificationSessionsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

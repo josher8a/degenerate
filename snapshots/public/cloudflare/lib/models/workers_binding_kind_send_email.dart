@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindSendEmail {const WorkersBindingKindSendEmail({required this.name, required this.type, this.allowedDestinationAddresses, this.allowedSenderAddresses, this.destinationAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSendEmail {const WorkersBindingKindSendEmail({required this.name, required this.type, this.allowedDestinationAddresses, this.allowedSenderAddresses, this.destinationAddress, });
 
 factory WorkersBindingKindSendEmail.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSendEmail(
   allowedDestinationAddresses: (json['allowed_destination_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),

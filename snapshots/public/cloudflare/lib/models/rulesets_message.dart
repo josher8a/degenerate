@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_message_source.dart';/// A message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_message/rulesets_message_source.dart';/// A message.
 @immutable final class RulesetsMessage {const RulesetsMessage({required this.message, this.code, this.source, });
 
 factory RulesetsMessage.fromJson(Map<String, dynamic> json) { return RulesetsMessage(

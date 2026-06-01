@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_membership_user.dart';/// The membership between the user and the organization. Not present when the action is `member_invited`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';/// The membership between the user and the organization. Not present when the action is `member_invited`.
 @immutable final class WebhooksMembership {const WebhooksMembership({required this.organizationUrl, required this.role, required this.state, required this.url, required this.user, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, });
 
 factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return WebhooksMembership(
@@ -10,7 +10,7 @@ factory WebhooksMembership.fromJson(Map<String, dynamic> json) { return Webhooks
   enterpriseTeamsProvidingIndirectMembership: (json['enterprise_teams_providing_indirect_membership'] as List<dynamic>?)?.map((e) => e as String).toList(),
   state: json['state'] as String,
   url: Uri.parse(json['url'] as String),
-  user: json['user'] != null ? WebhooksMembershipUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final Uri organizationUrl;
@@ -28,7 +28,7 @@ final String state;
 
 final Uri url;
 
-final WebhooksMembershipUser? user;
+final DiscussionUser? user;
 
 Map<String, dynamic> toJson() { return {
   'organization_url': organizationUrl.toString(),
@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('organ
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, WebhooksMembershipUser? Function()? user, }) { return WebhooksMembership(
+WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksMembership(
   organizationUrl: organizationUrl ?? this.organizationUrl,
   role: role ?? this.role,
   directMembership: directMembership != null ? directMembership() : this.directMembership,

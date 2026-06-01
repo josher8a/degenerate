@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_response_errors.dart';import 'telemetry_query_response_messages.dart';import 'workers_observability_query_results.dart';@immutable final class TelemetryQueryResponse {const TelemetryQueryResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_messages.dart';import 'package:pub_cloudflare/models/workers_observability_query_results.dart';@immutable final class TelemetryQueryResponse {const TelemetryQueryResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TelemetryQueryResponse.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => TelemetryQueryResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => TelemetryQueryResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationListResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorkersObservabilityQueryResults.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<TelemetryQueryResponseErrors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
-final List<TelemetryQueryResponseMessages> messages;
+final List<DestinationListResponseMessages> messages;
 
 final WorkersObservabilityQueryResults result;
 
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-TelemetryQueryResponse copyWith({List<TelemetryQueryResponseErrors>? errors, List<TelemetryQueryResponseMessages>? messages, WorkersObservabilityQueryResults? result, bool? success, }) { return TelemetryQueryResponse(
+TelemetryQueryResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationListResponseMessages>? messages, WorkersObservabilityQueryResults? result, bool? success, }) { return TelemetryQueryResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

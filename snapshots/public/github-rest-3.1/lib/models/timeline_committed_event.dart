@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeline_committed_event_author.dart';import 'timeline_committed_event_committer.dart';import 'timeline_committed_event_parents.dart';import 'timeline_committed_event_tree.dart';import 'timeline_committed_event_verification.dart';/// Timeline Committed Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_verification.dart';/// Timeline Committed Event
 @immutable final class TimelineCommittedEvent {const TimelineCommittedEvent({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, this.event, });
 
 factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) { return TimelineCommittedEvent(
@@ -8,12 +8,12 @@ factory TimelineCommittedEvent.fromJson(Map<String, dynamic> json) { return Time
   sha: json['sha'] as String,
   nodeId: json['node_id'] as String,
   url: Uri.parse(json['url'] as String),
-  author: TimelineCommittedEventAuthor.fromJson(json['author'] as Map<String, dynamic>),
-  committer: TimelineCommittedEventCommitter.fromJson(json['committer'] as Map<String, dynamic>),
+  author: GitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),
+  committer: GitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>),
   message: json['message'] as String,
-  tree: TimelineCommittedEventTree.fromJson(json['tree'] as Map<String, dynamic>),
-  parents: (json['parents'] as List<dynamic>).map((e) => TimelineCommittedEventParents.fromJson(e as Map<String, dynamic>)).toList(),
-  verification: TimelineCommittedEventVerification.fromJson(json['verification'] as Map<String, dynamic>),
+  tree: GitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
+  parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
+  verification: GitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>),
   htmlUrl: Uri.parse(json['html_url'] as String),
 ); }
 
@@ -27,19 +27,19 @@ final String nodeId;
 final Uri url;
 
 /// Identifying information for the git-user
-final TimelineCommittedEventAuthor author;
+final GitCommitAuthor author;
 
 /// Identifying information for the git-user
-final TimelineCommittedEventCommitter committer;
+final GitCommitCommitter committer;
 
 /// Message describing the purpose of the commit
 final String message;
 
-final TimelineCommittedEventTree tree;
+final GitCommitTree tree;
 
-final List<TimelineCommittedEventParents> parents;
+final List<GitCommitParents> parents;
 
-final TimelineCommittedEventVerification verification;
+final GitCommitVerification verification;
 
 final Uri htmlUrl;
 
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('parents') &&
       json.containsKey('verification') &&
       json.containsKey('html_url') && json['html_url'] is String; } 
-TimelineCommittedEvent copyWith({String Function()? event, String? sha, String? nodeId, Uri? url, TimelineCommittedEventAuthor? author, TimelineCommittedEventCommitter? committer, String? message, TimelineCommittedEventTree? tree, List<TimelineCommittedEventParents>? parents, TimelineCommittedEventVerification? verification, Uri? htmlUrl, }) { return TimelineCommittedEvent(
+TimelineCommittedEvent copyWith({String Function()? event, String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, GitCommitVerification? verification, Uri? htmlUrl, }) { return TimelineCommittedEvent(
   event: event != null ? event() : this.event,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,

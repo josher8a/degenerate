@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_single_response_with_list_items_result.dart';@immutable final class ZeroTrustGatewaySingleResponseWithListItems {const ZeroTrustGatewaySingleResponseWithListItems({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_single_response_with_list_items/zero_trust_gateway_single_response_with_list_items_result.dart';@immutable final class ZeroTrustGatewaySingleResponseWithListItems {const ZeroTrustGatewaySingleResponseWithListItems({this.result});
 
 factory ZeroTrustGatewaySingleResponseWithListItems.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySingleResponseWithListItems(
   result: json['result'] != null ? ZeroTrustGatewaySingleResponseWithListItemsResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_optimize_wordpress.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_definitely_automated.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_likely_config/bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_static_resource_protection.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_verified_bots.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
 @immutable final class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated._(this.value);
 
 factory BotManagementSbfmLikelyAutomated.fromJson(String json) { return switch (json) {

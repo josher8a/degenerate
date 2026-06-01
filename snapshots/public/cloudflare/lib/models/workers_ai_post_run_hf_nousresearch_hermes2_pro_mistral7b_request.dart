@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages55.dart';import 'prompt47.dart';typedef WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest = OneOf2<Prompt47,Messages55>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages10.dart';import 'package:pub_cloudflare/models/prompt.dart';typedef WorkersAiPostRunHfNousresearchHermes2ProMistral7bRequest = OneOf2<Prompt,Messages10>;

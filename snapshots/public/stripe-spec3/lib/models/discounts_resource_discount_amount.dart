@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_discount.dart';import 'discount.dart';import 'discounts_resource_discount_amount_discount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_discount.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
 @immutable final class DiscountsResourceDiscountAmount {const DiscountsResourceDiscountAmount({required this.amount, required this.discount, });
 
 factory DiscountsResourceDiscountAmount.fromJson(Map<String, dynamic> json) { return DiscountsResourceDiscountAmount(
@@ -12,7 +12,7 @@ factory DiscountsResourceDiscountAmount.fromJson(Map<String, dynamic> json) { re
 final int amount;
 
 /// The discount that was applied to get this discount amount.
-final DiscountsResourceDiscountAmountDiscount discount;
+final CreditNotesPretaxCreditAmountDiscount discount;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('discount'); } 
-DiscountsResourceDiscountAmount copyWith({int? amount, DiscountsResourceDiscountAmountDiscount? discount, }) { return DiscountsResourceDiscountAmount(
+DiscountsResourceDiscountAmount copyWith({int? amount, CreditNotesPretaxCreditAmountDiscount? discount, }) { return DiscountsResourceDiscountAmount(
   amount: amount ?? this.amount,
   discount: discount ?? this.discount,
 ); } 

@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate_additional_documentation.dart';import 'duplicate_card_statement.dart';import 'duplicate_cash_receipt.dart';import 'duplicate_check_image.dart';import 'duplicate_explanation.dart';@immutable final class Duplicate {const Duplicate({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/duplicate/duplicate_card_statement.dart';import 'package:pub_stripe_spec3/models/duplicate/duplicate_cash_receipt.dart';import 'package:pub_stripe_spec3/models/duplicate/duplicate_check_image.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class duplicate {const duplicate({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
-factory Duplicate.fromJson(Map<String, dynamic> json) { return Duplicate(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => DuplicateAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  cardStatement: json['card_statement'] != null ? OneOf2.parse(json['card_statement'], fromA: (v) => v as String, fromB: (v) => DuplicateCardStatementVariant2.fromJson(v as String),) : null,
-  cashReceipt: json['cash_receipt'] != null ? OneOf2.parse(json['cash_receipt'], fromA: (v) => v as String, fromB: (v) => DuplicateCashReceiptVariant2.fromJson(v as String),) : null,
-  checkImage: json['check_image'] != null ? OneOf2.parse(json['check_image'], fromA: (v) => v as String, fromB: (v) => DuplicateCheckImageVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => DuplicateExplanationVariant2.fromJson(v as String),) : null,
+factory duplicate.fromJson(Map<String, dynamic> json) { return duplicate(
+  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  cardStatement: json['card_statement'] != null ? OneOf2.parse(json['card_statement'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  cashReceipt: json['cash_receipt'] != null ? OneOf2.parse(json['cash_receipt'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  checkImage: json['check_image'] != null ? OneOf2.parse(json['check_image'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   originalTransaction: json['original_transaction'] as String?,
 ); }
 
-final DuplicateAdditionalDocumentation? additionalDocumentation;
+final canceledAdditionalDocumentation? additionalDocumentation;
 
-final DuplicateCardStatement? cardStatement;
+final duplicateCardStatement? cardStatement;
 
-final DuplicateCashReceipt? cashReceipt;
+final duplicateCashReceipt? cashReceipt;
 
-final DuplicateCheckImage? checkImage;
+final duplicateCheckImage? checkImage;
 
-final DuplicateExplanation? explanation;
+final Explanation? explanation;
 
 final String? originalTransaction;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'original_transaction': ?originalTransaction,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key)); } 
-Duplicate copyWith({DuplicateAdditionalDocumentation Function()? additionalDocumentation, DuplicateCardStatement Function()? cardStatement, DuplicateCashReceipt Function()? cashReceipt, DuplicateCheckImage Function()? checkImage, DuplicateExplanation Function()? explanation, String Function()? originalTransaction, }) { return Duplicate(
+duplicate copyWith({canceledAdditionalDocumentation Function()? additionalDocumentation, duplicateCardStatement Function()? cardStatement, duplicateCashReceipt Function()? cashReceipt, duplicateCheckImage Function()? checkImage, Explanation Function()? explanation, String Function()? originalTransaction, }) { return duplicate(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   cardStatement: cardStatement != null ? cardStatement() : this.cardStatement,
   cashReceipt: cashReceipt != null ? cashReceipt() : this.cashReceipt,
@@ -41,7 +41,7 @@ Duplicate copyWith({DuplicateAdditionalDocumentation Function()? additionalDocum
   originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Duplicate &&
+      other is duplicate &&
           additionalDocumentation == other.additionalDocumentation &&
           cardStatement == other.cardStatement &&
           cashReceipt == other.cashReceipt &&
@@ -49,5 +49,5 @@ Duplicate copyWith({DuplicateAdditionalDocumentation Function()? additionalDocum
           explanation == other.explanation &&
           originalTransaction == other.originalTransaction; } 
 @override int get hashCode { return Object.hash(additionalDocumentation, cardStatement, cashReceipt, checkImage, explanation, originalTransaction); } 
-@override String toString() { return 'Duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)'; } 
+@override String toString() { return 'duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)'; } 
  }

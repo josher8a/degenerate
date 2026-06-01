@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_integration_token.dart';import '../models/aaa_pagerduty.dart';import '../models/aaa_sensitive_id_response_result.dart';import '../models/response_common2.dart';/// NotificationDestinationsWithPagerDutyApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_account_id.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/aaa_integration_token.dart';import 'package:pub_cloudflare/models/aaa_pagerduty.dart';import 'package:pub_cloudflare/models/response_common2.dart';/// NotificationDestinationsWithPagerDutyApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -56,7 +56,7 @@ return execute(
 /// Creates a new token for integrating with PagerDuty.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/pagerduty/connect`
-Future<ApiResult<AaaSensitiveIdResponseResult?, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> notificationDestinationsWithPagerDutyConnectPagerDuty({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -69,7 +69,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AaaSensitiveIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

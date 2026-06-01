@@ -1,32 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation2.dart';import 'input_item.dart';import 'output_item.dart';import 'response_error.dart';import 'response_incomplete_details.dart';import 'response_instructions.dart';import 'response_usage.dart';import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
-/// 
-@immutable final class ResponsePromptCacheRetention {const ResponsePromptCacheRetention._(this.value);
-
-factory ResponsePromptCacheRetention.fromJson(String json) { return switch (json) {
-  'in-memory' => inMemory,
-  '24h' => $24h,
-  _ => ResponsePromptCacheRetention._(json),
-}; }
-
-static const ResponsePromptCacheRetention inMemory = ResponsePromptCacheRetention._('in-memory');
-
-static const ResponsePromptCacheRetention $24h = ResponsePromptCacheRetention._('24h');
-
-static const List<ResponsePromptCacheRetention> values = [inMemory, $24h];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsePromptCacheRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsePromptCacheRetention($value)'; } 
- }
-/// The object type of this resource - always set to `response`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type of this resource - always set to `response`.
 /// 
 @immutable final class ResponseObject {const ResponseObject._(this.value);
 
@@ -99,7 +73,7 @@ factory Response.fromJson(Map<String, dynamic> json) { return Response(
   safetyIdentifier: json['safety_identifier'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,
   serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
-  promptCacheRetention: json['prompt_cache_retention'] != null ? ResponsePromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+  promptCacheRetention: json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
   id: json['id'] as String,
   object: ResponseObject.fromJson(json['object'] as String),
   status: json['status'] != null ? ResponseStatus.fromJson(json['status'] as String) : null,
@@ -162,7 +136,7 @@ final ServiceTier? serviceTier;
 
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final ResponsePromptCacheRetention? promptCacheRetention;
+final PromptCacheRetention? promptCacheRetention;
 
 /// Unique identifier for this Response.
 /// 
@@ -209,7 +183,7 @@ final List<OutputItem> output;
 /// response will not be carried over to the next response. This makes it simple
 /// to swap out system (or developer) messages in new responses.
 /// 
-final ResponseInstructions? instructions;
+final Instructions? instructions;
 
 /// SDK-only convenience property that contains the aggregated text output
 /// from all `output_text` items in the `output` array, if any are present.
@@ -260,7 +234,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
       json.containsKey('output') &&
       json.containsKey('instructions') &&
       json.containsKey('parallel_tool_calls') && json['parallel_tool_calls'] is bool; } 
-Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, ResponsePromptCacheRetention? Function()? promptCacheRetention, String? id, ResponseObject? object, ResponseStatus Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, ResponseInstructions? Function()? instructions, String? Function()? outputText, ResponseUsage Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(
+Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? id, ResponseObject? object, ResponseStatus Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,

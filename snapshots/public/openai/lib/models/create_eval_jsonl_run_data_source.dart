@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_jsonl_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';/// The type of data source. Always `jsonl`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source/create_eval_jsonl_run_data_source_source.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';/// The type of data source. Always `jsonl`.
 @immutable final class CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType._(this.value);
 
 factory CreateEvalJsonlRunDataSourceType.fromJson(String json) { return switch (json) {

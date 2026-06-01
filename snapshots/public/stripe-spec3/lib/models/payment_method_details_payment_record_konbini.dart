@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_konbini_details_resource_store.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_konbini_details_resource_store.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordKonbini {const PaymentMethodDetailsPaymentRecordKonbini({this.store});
 
 factory PaymentMethodDetailsPaymentRecordKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordKonbini(

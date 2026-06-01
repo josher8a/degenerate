@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_detail.dart';/// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';/// An image input to the model. Learn about [image inputs](/docs/guides/vision).
 @immutable final class InputImageContent {const InputImageContent({required this.detail, this.type = 'input_image', this.imageUrl, this.fileId, });
 
 factory InputImageContent.fromJson(Map<String, dynamic> json) { return InputImageContent(

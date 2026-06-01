@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth.dart';import 'package:pub_cloudflare/models/nsc_interconnect_create_gcp_partner_body.dart';import 'package:pub_cloudflare/models/nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

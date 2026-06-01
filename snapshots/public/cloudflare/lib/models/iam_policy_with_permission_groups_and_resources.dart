@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group.dart';import 'iam_policy_identifier.dart';import 'iam_resources.dart';/// Allow or deny operations against the resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';import 'package:pub_cloudflare/models/iam_resources.dart';/// Allow or deny operations against the resources.
 @immutable final class IamEffect {const IamEffect._(this.value);
 
 factory IamEffect.fromJson(String json) { return switch (json) {

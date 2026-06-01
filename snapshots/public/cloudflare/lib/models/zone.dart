@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identifier.dart';/// The domain name
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/identifier.dart';/// The domain name
 extension type const Name(String value) {
 factory Name.fromJson(String json) => Name(json);
 

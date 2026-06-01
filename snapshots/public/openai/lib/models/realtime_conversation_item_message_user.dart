@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_message_user_content.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-@immutable final class RealtimeConversationItemMessageUserObject {const RealtimeConversationItemMessageUserObject._(this.value);
-
-factory RealtimeConversationItemMessageUserObject.fromJson(String json) { return switch (json) {
-  'realtime.item' => realtimeItem,
-  _ => RealtimeConversationItemMessageUserObject._(json),
-}; }
-
-static const RealtimeConversationItemMessageUserObject realtimeItem = RealtimeConversationItemMessageUserObject._('realtime.item');
-
-static const List<RealtimeConversationItemMessageUserObject> values = [realtimeItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserObject($value)'; } 
- }
-/// The status of the item. Has no effect on the conversation.
-@immutable final class RealtimeConversationItemMessageUserStatus {const RealtimeConversationItemMessageUserStatus._(this.value);
-
-factory RealtimeConversationItemMessageUserStatus.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'incomplete' => incomplete,
-  'in_progress' => inProgress,
-  _ => RealtimeConversationItemMessageUserStatus._(json),
-}; }
-
-static const RealtimeConversationItemMessageUserStatus completed = RealtimeConversationItemMessageUserStatus._('completed');
-
-static const RealtimeConversationItemMessageUserStatus incomplete = RealtimeConversationItemMessageUserStatus._('incomplete');
-
-static const RealtimeConversationItemMessageUserStatus inProgress = RealtimeConversationItemMessageUserStatus._('in_progress');
-
-static const List<RealtimeConversationItemMessageUserStatus> values = [completed, incomplete, inProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserStatus($value)'; } 
- }
-/// The role of the message sender. Always `user`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_user/realtime_conversation_item_message_user_content.dart';/// The role of the message sender. Always `user`.
 @immutable final class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole._(this.value);
 
 factory RealtimeConversationItemMessageUserRole.fromJson(String json) { return switch (json) {
@@ -77,9 +27,9 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUser(
   id: json['id'] as String?,
-  object: json['object'] != null ? RealtimeConversationItemMessageUserObject.fromJson(json['object'] as String) : null,
+  object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? RealtimeConversationItemMessageUserStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
   role: RealtimeConversationItemMessageUserRole.fromJson(json['role'] as String),
   content: (json['content'] as List<dynamic>).map((e) => RealtimeConversationItemMessageUserContent.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -88,13 +38,13 @@ factory RealtimeConversationItemMessageUser.fromJson(Map<String, dynamic> json) 
 final String? id;
 
 /// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final RealtimeConversationItemMessageUserObject? object;
+final RealtimeConversationItemFunctionCallObject? object;
 
 /// The type of the item. Always `message`.
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final RealtimeConversationItemMessageUserStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 /// The role of the message sender. Always `user`.
 final RealtimeConversationItemMessageUserRole role;
@@ -113,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('role') &&
       json.containsKey('content'); } 
-RealtimeConversationItemMessageUser copyWith({String Function()? id, RealtimeConversationItemMessageUserObject Function()? object, String? type, RealtimeConversationItemMessageUserStatus Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
+RealtimeConversationItemMessageUser copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, String? type, ComputerToolCallOutputStatus Function()? status, RealtimeConversationItemMessageUserRole? role, List<RealtimeConversationItemMessageUserContent>? content, }) { return RealtimeConversationItemMessageUser(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

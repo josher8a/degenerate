@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the InboundTransfer.
-@immutable final class InboundTransfersType {const InboundTransfersType._(this.value);
-
-factory InboundTransfersType.fromJson(String json) { return switch (json) {
-  'us_bank_account' => usBankAccount,
-  _ => InboundTransfersType._(json),
-}; }
-
-static const InboundTransfersType usBankAccount = InboundTransfersType._('us_bank_account');
-
-static const List<InboundTransfersType> values = [usBankAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InboundTransfersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InboundTransfersType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers/inbound_transfers_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_billing_details.dart';/// 
 @immutable final class InboundTransfers {const InboundTransfers({required this.billingDetails, required this.type, this.usBankAccount, });
 
 factory InboundTransfers.fromJson(Map<String, dynamic> json) { return InboundTransfers(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_header.dart';import 'load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_address.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_header.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
 extension type LoadBalancingDisabledAt(DateTime value) {
 factory LoadBalancingDisabledAt.fromJson(String json) => LoadBalancingDisabledAt(DateTime.parse(json));
 

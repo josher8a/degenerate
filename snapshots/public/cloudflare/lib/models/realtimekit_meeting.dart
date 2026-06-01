@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
-@immutable final class RealtimekitMeetingStatus {const RealtimekitMeetingStatus._(this.value);
-
-factory RealtimekitMeetingStatus.fromJson(String json) { return switch (json) {
-  'ACTIVE' => active,
-  'INACTIVE' => inactive,
-  _ => RealtimekitMeetingStatus._(json),
-}; }
-
-static const RealtimekitMeetingStatus active = RealtimekitMeetingStatus._('ACTIVE');
-
-static const RealtimekitMeetingStatus inactive = RealtimekitMeetingStatus._('INACTIVE');
-
-static const List<RealtimekitMeetingStatus> values = [active, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitMeetingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitMeetingStatus($value)'; } 
- }
-@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_meeting/realtimekit_meeting_status.dart';@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd, this.title, });
 
 factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return RealtimekitMeeting(
   createdAt: DateTime.parse(json['created_at'] as String),

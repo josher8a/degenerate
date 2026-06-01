@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject._(this.value);
 
 factory FinancialConnectionsTransactionObject.fromJson(String json) { return switch (json) {

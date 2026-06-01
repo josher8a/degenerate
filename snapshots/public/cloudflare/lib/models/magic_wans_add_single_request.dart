@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_port.dart';import 'magic_vlan_tag.dart';import 'magic_wan_static_addressing.dart';@immutable final class MagicWansAddSingleRequest {const MagicWansAddSingleRequest({required this.physport, this.name, this.priority, this.staticAddressing, this.vlanTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';import 'package:pub_cloudflare/models/magic_wan_static_addressing.dart';@immutable final class MagicWansAddSingleRequest {const MagicWansAddSingleRequest({required this.physport, this.name, this.priority, this.staticAddressing, this.vlanTag, });
 
 factory MagicWansAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicWansAddSingleRequest(
   name: json['name'] as String?,

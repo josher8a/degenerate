@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchDelete {const DnsRecordsDnsRecordBatchDelete({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchDelete {const DnsRecordsDnsRecordBatchDelete({required this.id});
 
 factory DnsRecordsDnsRecordBatchDelete.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchDelete(
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),

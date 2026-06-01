@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate.dart';import 'package:pub_stripe_spec3/models/shipping_rate_fixed_amount.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ShippingRateObject {const ShippingRateObject._(this.value);
 
 factory ShippingRateObject.fromJson(String json) { return switch (json) {
@@ -22,56 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingRateObject($value)'; } 
  }
-/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-@immutable final class ShippingRateTaxBehavior {const ShippingRateTaxBehavior._(this.value);
-
-factory ShippingRateTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => ShippingRateTaxBehavior._(json),
-}; }
-
-static const ShippingRateTaxBehavior exclusive = ShippingRateTaxBehavior._('exclusive');
-
-static const ShippingRateTaxBehavior inclusive = ShippingRateTaxBehavior._('inclusive');
-
-static const ShippingRateTaxBehavior unspecified = ShippingRateTaxBehavior._('unspecified');
-
-static const List<ShippingRateTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateTaxBehavior($value)'; } 
- }
-/// The type of calculation to use on the shipping rate.
-@immutable final class ShippingRateType {const ShippingRateType._(this.value);
-
-factory ShippingRateType.fromJson(String json) { return switch (json) {
-  'fixed_amount' => fixedAmount,
-  _ => ShippingRateType._(json),
-}; }
-
-static const ShippingRateType fixedAmount = ShippingRateType._('fixed_amount');
-
-static const List<ShippingRateType> values = [fixedAmount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateType($value)'; } 
- }
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
 @immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate, this.displayName, this.fixedAmount, this.taxBehavior, this.taxCode, });
@@ -86,9 +36,9 @@ factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ShippingRateObject.fromJson(json['object'] as String),
-  taxBehavior: json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null,
-  type: ShippingRateType.fromJson(json['type'] as String),
+  type: PostShippingRatesRequestType.fromJson(json['type'] as String),
 ); }
 
 /// Whether the shipping rate can be used for new purchases. Defaults to `true`.
@@ -118,13 +68,13 @@ final Map<String,String> metadata;
 final ShippingRateObject object;
 
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final ShippingRateTaxBehavior? taxBehavior;
+final CurrencyOptionTaxBehavior? taxBehavior;
 
 /// A [tax code](https://docs.stripe.com/tax/tax-categories) ID. The Shipping tax code is `txcd_92010001`.
-final ShippingRateTaxCode? taxCode;
+final ProductTaxCode? taxCode;
 
 /// The type of calculation to use on the shipping rate.
-final ShippingRateType type;
+final PostShippingRatesRequestType type;
 
 Map<String, dynamic> toJson() { return {
   'active': active,
@@ -147,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, ShippingRateTaxBehavior? Function()? taxBehavior, ShippingRateTaxCode? Function()? taxCode, ShippingRateType? type, }) { return ShippingRate(
+ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, CurrencyOptionTaxBehavior? Function()? taxBehavior, ProductTaxCode? Function()? taxCode, PostShippingRatesRequestType? type, }) { return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
   deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,

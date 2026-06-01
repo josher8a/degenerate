@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/snippets_page.dart';import '../models/snippets_per_page.dart';import '../models/snippets_snippet.dart';import '../models/snippets_snippet_name.dart';import '../models/snippets_zone_id.dart';import '../models/update_zone_snippet_request.dart';import '../models/update_zone_snippet_rules_request.dart';/// ZoneSnippetsApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_page.dart';import 'package:pub_cloudflare/models/snippets_per_page.dart';import 'package:pub_cloudflare/models/snippets_snippet.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';import 'package:pub_cloudflare/models/snippets_zone_id.dart';import 'package:pub_cloudflare/models/update_zone_snippet_request.dart';import 'package:pub_cloudflare/models/update_zone_snippet_rules_request.dart';/// ZoneSnippetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

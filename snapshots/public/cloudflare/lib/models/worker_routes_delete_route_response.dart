@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'worker_routes_delete_route_response_result.dart';import 'workers_messages2.dart';@immutable final class WorkerRoutesDeleteRouteResponse {const WorkerRoutesDeleteRouteResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/workers_messages2.dart';@immutable final class WorkerRoutesDeleteRouteResponse {const WorkerRoutesDeleteRouteResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory WorkerRoutesDeleteRouteResponse.fromJson(Map<String, dynamic> json) { return WorkerRoutesDeleteRouteResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: WorkerRoutesDeleteRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
 final List<WorkersMessages2> errors;
@@ -16,7 +16,7 @@ final List<WorkersMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final WorkerRoutesDeleteRouteResponseResult result;
+final AaaIdResponseResult result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-WorkerRoutesDeleteRouteResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, WorkerRoutesDeleteRouteResponseResult? result, }) { return WorkerRoutesDeleteRouteResponse(
+WorkerRoutesDeleteRouteResponse copyWith({List<WorkersMessages2>? errors, List<WorkersMessages2>? messages, bool? success, AaaIdResponseResult? result, }) { return WorkerRoutesDeleteRouteResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_edited_changes.dart';import 'webhook_pull_request_review_edited_pull_request.dart';import 'webhooks_review.dart';@immutable final class WebhookPullRequestReviewEditedAction {const WebhookPullRequestReviewEditedAction._(this.value);
-
-factory WebhookPullRequestReviewEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookPullRequestReviewEditedAction._(json),
-}; }
-
-static const WebhookPullRequestReviewEditedAction edited = WebhookPullRequestReviewEditedAction._('edited');
-
-static const List<WebhookPullRequestReviewEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewEditedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_edited/webhook_pull_request_review_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_edited/webhook_pull_request_review_edited_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_review.dart';@immutable final class WebhookPullRequestReviewEdited {const WebhookPullRequestReviewEdited({required this.action, required this.changes, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEdited(
-  action: WebhookPullRequestReviewEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookPullRequestReviewEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookPullRequestReviewEdited.fromJson(Map<String, dynamic> json) { ret
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPullRequestReviewEditedAction action;
+final ItemEditedAction action;
 
 final WebhookPullRequestReviewEditedChanges changes;
 
@@ -70,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('review') &&
       json.containsKey('sender'); } 
-WebhookPullRequestReviewEdited copyWith({WebhookPullRequestReviewEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) { return WebhookPullRequestReviewEdited(
+WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRequestReviewEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewEditedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhooksReview? review, SimpleUser? sender, }) { return WebhookPullRequestReviewEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

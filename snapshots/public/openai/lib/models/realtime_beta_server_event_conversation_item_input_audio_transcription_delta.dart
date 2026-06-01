@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(String json) { return switch (json) {

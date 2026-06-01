@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_created_deployment.dart';import 'webhook_deployment_created_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookDeploymentCreatedAction {const WebhookDeploymentCreatedAction._(this.value);
-
-factory WebhookDeploymentCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookDeploymentCreatedAction._(json),
-}; }
-
-static const WebhookDeploymentCreatedAction created = WebhookDeploymentCreatedAction._('created');
-
-static const List<WebhookDeploymentCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentCreatedAction($value)'; } 
- }
-@immutable final class WebhookDeploymentCreated {const WebhookDeploymentCreated({required this.action, required this.deployment, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_deployment.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookDeploymentCreated {const WebhookDeploymentCreated({required this.action, required this.deployment, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreated(
-  action: WebhookDeploymentCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   deployment: WebhookDeploymentCreatedDeployment.fromJson(json['deployment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return We
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookDeploymentCreatedAction action;
+final ItemCreatedAction action;
 
 /// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
 final WebhookDeploymentCreatedDeployment deployment;
@@ -71,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
+WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
   action: action ?? this.action,
   deployment: deployment ?? this.deployment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'service.dart';/// ServiceList holds a list of services.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service.dart';/// ServiceList holds a list of services.
 @immutable final class ServiceList {const ServiceList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ServiceList.fromJson(Map<String, dynamic> json) { return ServiceList(

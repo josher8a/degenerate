@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action_mode.dart';import 'firewall_identifier.dart';import 'firewall_sensitivity.dart';import 'firewall_status.dart';/// A summary of the purpose/function of the WAF package.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action_mode.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_sensitivity.dart';import 'package:pub_cloudflare/models/firewall_status.dart';/// A summary of the purpose/function of the WAF package.
 extension type const FirewallAnomalyDescription(String value) {
 factory FirewallAnomalyDescription.fromJson(String json) => FirewallAnomalyDescription(json);
 

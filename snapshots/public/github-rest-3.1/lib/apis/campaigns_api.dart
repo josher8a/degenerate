@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/campaign_state.dart';import '../models/campaign_summary.dart';import '../models/campaigns_list_org_campaigns_direction.dart';import '../models/campaigns_list_org_campaigns_sort.dart';import '../models/campaigns_update_campaign_request.dart';/// CampaignsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';import 'package:pub_github_rest_3_1/models/campaign_summary.dart';import 'package:pub_github_rest_3_1/models/campaigns_list_org_campaigns_direction.dart';import 'package:pub_github_rest_3_1/models/campaigns_list_org_campaigns_sort.dart';import 'package:pub_github_rest_3_1/models/campaigns_update_campaign_request.dart';/// CampaignsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

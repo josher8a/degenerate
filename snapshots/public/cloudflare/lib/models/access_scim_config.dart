@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_scim_config_authentication.dart';import 'access_scim_config_authentication_access_service_token.dart';import 'access_scim_config_authentication_http_basic.dart';import 'access_scim_config_authentication_oauth2.dart';import 'access_scim_config_authentication_oauth_bearer_token.dart';import 'access_scim_config_mapping.dart';/// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_scim_config/authentication.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_access_service_token.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_http_basic.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth2.dart';import 'package:pub_cloudflare/models/access_scim_config_authentication_oauth_bearer_token.dart';import 'package:pub_cloudflare/models/access_scim_config_mapping.dart';/// Configuration for provisioning to this application via SCIM. This is currently in closed beta.
 @immutable final class AccessScimConfig {const AccessScimConfig({required this.idpUid, required this.remoteUri, this.authentication, this.deactivateOnDelete, this.enabled, this.mappings, });
 
 factory AccessScimConfig.fromJson(Map<String, dynamic> json) { return AccessScimConfig(
@@ -12,7 +12,7 @@ factory AccessScimConfig.fromJson(Map<String, dynamic> json) { return AccessScim
   remoteUri: json['remote_uri'] as String,
 ); }
 
-final AccessScimConfigAuthentication? authentication;
+final Authentication? authentication;
 
 /// If false, propagates DELETE requests to the target application for SCIM resources. If true, sets 'active' to false on the SCIM resource. Note: Some targets do not support DELETE operations.
 final bool? deactivateOnDelete;
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('idp_uid') && json['idp_uid'] is String &&
       json.containsKey('remote_uri') && json['remote_uri'] is String; } 
-AccessScimConfig copyWith({AccessScimConfigAuthentication Function()? authentication, bool Function()? deactivateOnDelete, bool Function()? enabled, String? idpUid, List<AccessScimConfigMapping> Function()? mappings, String? remoteUri, }) { return AccessScimConfig(
+AccessScimConfig copyWith({Authentication Function()? authentication, bool Function()? deactivateOnDelete, bool Function()? enabled, String? idpUid, List<AccessScimConfigMapping> Function()? mappings, String? remoteUri, }) { return AccessScimConfig(
   authentication: authentication != null ? authentication() : this.authentication,
   deactivateOnDelete: deactivateOnDelete != null ? deactivateOnDelete() : this.deactivateOnDelete,
   enabled: enabled != null ? enabled() : this.enabled,

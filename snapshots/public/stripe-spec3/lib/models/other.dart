@@ -1,48 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_additional_documentation.dart';import 'other_explanation.dart';import 'other_product_description.dart';@immutable final class OtherProductType {const OtherProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class other {const other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
 
-factory OtherProductType.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'merchandise' => merchandise,
-  'service' => service,
-  _ => OtherProductType._(json),
-}; }
-
-static const OtherProductType $empty = OtherProductType._('');
-
-static const OtherProductType merchandise = OtherProductType._('merchandise');
-
-static const OtherProductType service = OtherProductType._('service');
-
-static const List<OtherProductType> values = [$empty, merchandise, service];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OtherProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OtherProductType($value)'; } 
- }
-@immutable final class Other {const Other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
-
-factory Other.fromJson(Map<String, dynamic> json) { return Other(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => OtherAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => OtherExplanationVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => OtherProductDescriptionVariant2.fromJson(v as String),) : null,
-  productType: json['product_type'] != null ? OtherProductType.fromJson(json['product_type'] as String) : null,
+factory other.fromJson(Map<String, dynamic> json) { return other(
+  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  productType: json['product_type'] != null ? canceledProductType.fromJson(json['product_type'] as String) : null,
 ); }
 
-final OtherAdditionalDocumentation? additionalDocumentation;
+final canceledAdditionalDocumentation? additionalDocumentation;
 
-final OtherExplanation? explanation;
+final Explanation? explanation;
 
-final OtherProductDescription? productDescription;
+final ProductDescription? productDescription;
 
-final OtherProductType? productType;
+final canceledProductType? productType;
 
 Map<String, dynamic> toJson() { return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
@@ -51,18 +24,18 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-Other copyWith({OtherAdditionalDocumentation Function()? additionalDocumentation, OtherExplanation Function()? explanation, OtherProductDescription Function()? productDescription, OtherProductType Function()? productType, }) { return Other(
+other copyWith({canceledAdditionalDocumentation Function()? additionalDocumentation, Explanation Function()? explanation, ProductDescription Function()? productDescription, canceledProductType Function()? productType, }) { return other(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Other &&
+      other is other &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
           productType == other.productType; } 
 @override int get hashCode { return Object.hash(additionalDocumentation, explanation, productDescription, productType); } 
-@override String toString() { return 'Other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+@override String toString() { return 'other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
  }

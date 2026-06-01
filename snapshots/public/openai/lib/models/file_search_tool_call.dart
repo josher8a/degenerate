@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_tool_call_results2.dart';/// The status of the file search tool call. One of `in_progress`,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';/// The status of the file search tool call. One of `in_progress`,
 /// `searching`, `incomplete` or `failed`,
 /// 
 @immutable final class FileSearchToolCallStatus {const FileSearchToolCallStatus._(this.value);
@@ -46,7 +46,7 @@ factory FileSearchToolCall.fromJson(Map<String, dynamic> json) { return FileSear
   type: json['type'] as String,
   status: FileSearchToolCallStatus.fromJson(json['status'] as String),
   queries: (json['queries'] as List<dynamic>).map((e) => e as String).toList(),
-  results: (json['results'] as List<dynamic>?)?.map((e) => FileSearchToolCallResults2.fromJson(e as Map<String, dynamic>)).toList(),
+  results: (json['results'] as List<dynamic>?)?.map((e) => FileSearchToolCallResults.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The unique ID of the file search tool call.
@@ -68,7 +68,7 @@ final List<String> queries;
 
 /// The results of the file search tool call.
 /// 
-final List<FileSearchToolCallResults2>? results;
+final List<FileSearchToolCallResults>? results;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('status') &&
       json.containsKey('queries'); } 
-FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults2>? Function()? results, }) { return FileSearchToolCall(
+FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return FileSearchToolCall(
   id: id ?? this.id,
   type: type ?? this.type,
   status: status ?? this.status,

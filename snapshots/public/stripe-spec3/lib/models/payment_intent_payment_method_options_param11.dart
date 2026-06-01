@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param11_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  _ => PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage._('');
-
-static const PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage._('off_session');
-
-static const List<PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage> values = [$empty, none, offSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam11 {const PaymentIntentPaymentMethodOptionsParam11({this.mandateOptions, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam11 {const PaymentIntentPaymentMethodOptionsParam11({this.mandateOptions, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam11.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam11(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam11MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

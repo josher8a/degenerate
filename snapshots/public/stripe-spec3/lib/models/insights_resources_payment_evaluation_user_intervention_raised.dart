@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaisedType.fromJson(String json) { return switch (json) {

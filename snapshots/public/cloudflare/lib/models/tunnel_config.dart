@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config_warp_routing.dart';import 'tunnel_ingress_rule.dart';import 'tunnel_origin_request.dart';/// The tunnel configuration and ingress rules.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config/warp_routing.dart';import 'package:pub_cloudflare/models/tunnel_ingress_rule.dart';import 'package:pub_cloudflare/models/tunnel_origin_request.dart';/// The tunnel configuration and ingress rules.
 @immutable final class TunnelConfig {const TunnelConfig({this.ingress, this.originRequest, this.warpRouting, });
 
 factory TunnelConfig.fromJson(Map<String, dynamic> json) { return TunnelConfig(
   ingress: (json['ingress'] as List<dynamic>?)?.map((e) => TunnelIngressRule.fromJson(e as Map<String, dynamic>)).toList(),
   originRequest: json['originRequest'] != null ? TunnelOriginRequest.fromJson(json['originRequest'] as Map<String, dynamic>) : null,
-  warpRouting: json['warp-routing'] != null ? TunnelConfigWarpRouting.fromJson(json['warp-routing'] as Map<String, dynamic>) : null,
+  warpRouting: json['warp-routing'] != null ? WarpRouting.fromJson(json['warp-routing'] as Map<String, dynamic>) : null,
 ); }
 
 /// List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.
@@ -15,7 +15,7 @@ final List<TunnelIngressRule>? ingress;
 final TunnelOriginRequest? originRequest;
 
 /// Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
-final TunnelConfigWarpRouting? warpRouting;
+final WarpRouting? warpRouting;
 
 Map<String, dynamic> toJson() { return {
   if (ingress != null) 'ingress': ingress?.map((e) => e.toJson()).toList(),
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (warpRouting != null) 'warp-routing': warpRouting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ingress', 'originRequest', 'warp-routing'}.contains(key)); } 
-TunnelConfig copyWith({List<TunnelIngressRule> Function()? ingress, TunnelOriginRequest Function()? originRequest, TunnelConfigWarpRouting Function()? warpRouting, }) { return TunnelConfig(
+TunnelConfig copyWith({List<TunnelIngressRule> Function()? ingress, TunnelOriginRequest Function()? originRequest, WarpRouting Function()? warpRouting, }) { return TunnelConfig(
   ingress: ingress != null ? ingress() : this.ingress,
   originRequest: originRequest != null ? originRequest() : this.originRequest,
   warpRouting: warpRouting != null ? warpRouting() : this.warpRouting,

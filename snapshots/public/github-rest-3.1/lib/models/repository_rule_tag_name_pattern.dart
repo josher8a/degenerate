@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_tag_name_pattern_parameters.dart';@immutable final class RepositoryRuleTagNamePatternType {const RepositoryRuleTagNamePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleTagNamePatternType {const RepositoryRuleTagNamePatternType._(this.value);
 
 factory RepositoryRuleTagNamePatternType.fromJson(String json) { return switch (json) {
   'tag_name_pattern' => tagNamePattern,
@@ -26,19 +26,19 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RepositoryRuleTagNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleTagNamePattern(
   type: RepositoryRuleTagNamePatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null ? RepositoryRuleTagNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  parameters: json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleTagNamePatternType type;
 
-final RepositoryRuleTagNamePatternParameters? parameters;
+final RepositoryRuleBranchNamePatternParameters? parameters;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleTagNamePattern copyWith({RepositoryRuleTagNamePatternType? type, RepositoryRuleTagNamePatternParameters Function()? parameters, }) { return RepositoryRuleTagNamePattern(
+RepositoryRuleTagNamePattern copyWith({RepositoryRuleTagNamePatternType? type, RepositoryRuleBranchNamePatternParameters Function()? parameters, }) { return RepositoryRuleTagNamePattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

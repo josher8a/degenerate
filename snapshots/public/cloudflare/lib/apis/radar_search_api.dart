@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_search_global_exclude.dart';import '../models/radar_get_search_global_format.dart';import '../models/radar_get_search_global_include.dart';import '../models/radar_get_search_global_response400.dart';import '../models/radar_get_search_global_response_result.dart';/// RadarSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_search_global_exclude.dart';import 'package:pub_cloudflare/models/radar_get_search_global_format.dart';import 'package:pub_cloudflare/models/radar_get_search_global_include.dart';import 'package:pub_cloudflare/models/radar_get_search_global_response/radar_get_search_global_response_result.dart';import 'package:pub_cloudflare/models/radar_get_search_global_response400.dart';/// RadarSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

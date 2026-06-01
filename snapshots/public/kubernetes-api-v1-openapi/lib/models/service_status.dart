@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'condition.dart';import 'load_balancer_status.dart';/// ServiceStatus represents the current status of a service.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/condition.dart';import 'package:pub_kubernetes_api_v1_openapi/models/load_balancer_status.dart';/// ServiceStatus represents the current status of a service.
 @immutable final class ServiceStatus {const ServiceStatus({this.conditions, this.loadBalancer, });
 
 factory ServiceStatus.fromJson(Map<String, dynamic> json) { return ServiceStatus(

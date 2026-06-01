@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_response_budget.dart';@immutable final class BillingUpdateBudgetOrgResponse {const BillingUpdateBudgetOrgResponse({this.message, this.budget, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_response/billing_update_budget_org_response_budget.dart';@immutable final class BillingUpdateBudgetOrgResponse {const BillingUpdateBudgetOrgResponse({this.message, this.budget, });
 
 factory BillingUpdateBudgetOrgResponse.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponse(
   message: json['message'] as String?,

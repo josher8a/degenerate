@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperS3SourceSchemaVendor {const R2SlurperS3SourceSchemaVendor._(this.value);
-
-factory R2SlurperS3SourceSchemaVendor.fromJson(String json) { return switch (json) {
-  's3' => s3,
-  _ => R2SlurperS3SourceSchemaVendor._(json),
-}; }
-
-static const R2SlurperS3SourceSchemaVendor s3 = R2SlurperS3SourceSchemaVendor._('s3');
-
-static const List<R2SlurperS3SourceSchemaVendor> values = [s3];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperS3SourceSchemaVendor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperS3SourceSchemaVendor($value)'; } 
- }
-@immutable final class R2SlurperS3SourceSchema {const R2SlurperS3SourceSchema({required this.bucket, required this.secret, required this.vendor, this.endpoint, this.keys, this.pathPrefix, this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_like_creds_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema/r2_slurper_s3_source_schema_vendor.dart';@immutable final class R2SlurperS3SourceSchema {const R2SlurperS3SourceSchema({required this.bucket, required this.secret, required this.vendor, this.endpoint, this.keys, this.pathPrefix, this.region, });
 
 factory R2SlurperS3SourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperS3SourceSchema(
   bucket: json['bucket'] as String,

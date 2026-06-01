@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_key_fields_value.dart';/// Control specifically what variables to include when deciding which
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';/// Control specifically what variables to include when deciding which
 /// resources to cache. This allows customers to determine what to cache
 /// based on something other than just the URL.
 /// 

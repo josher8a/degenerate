@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_description.dart';import 'magic_identifier.dart';import 'magic_nexthop.dart';import 'magic_prefix.dart';import 'magic_priority.dart';import 'magic_scope.dart';import 'magic_weight.dart';/// When the route was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_description.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_nexthop.dart';import 'package:pub_cloudflare/models/magic_prefix.dart';import 'package:pub_cloudflare/models/magic_priority.dart';import 'package:pub_cloudflare/models/magic_scope.dart';import 'package:pub_cloudflare/models/magic_weight.dart';/// When the route was created.
 extension type MagicCreatedOn(DateTime value) {
 factory MagicCreatedOn.fromJson(String json) => MagicCreatedOn(DateTime.parse(json));
 

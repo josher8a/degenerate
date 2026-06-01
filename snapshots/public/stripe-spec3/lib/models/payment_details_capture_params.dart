@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_capture_params_customer_reference.dart';import 'payment_details_capture_params_order_reference.dart';@immutable final class PaymentDetailsCaptureParams {const PaymentDetailsCaptureParams({this.customerReference, this.orderReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details/customer_reference.dart';import 'package:pub_stripe_spec3/models/payment_details/order_reference.dart';@immutable final class payment_details_capture_params {const payment_details_capture_params({this.customerReference, this.orderReference, });
 
-factory PaymentDetailsCaptureParams.fromJson(Map<String, dynamic> json) { return PaymentDetailsCaptureParams(
-  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PaymentDetailsCaptureParamsCustomerReferenceVariant2.fromJson(v as String),) : null,
-  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => PaymentDetailsCaptureParamsOrderReferenceVariant2.fromJson(v as String),) : null,
+factory payment_details_capture_params.fromJson(Map<String, dynamic> json) { return payment_details_capture_params(
+  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final PaymentDetailsCaptureParamsCustomerReference? customerReference;
+final CustomerReference? customerReference;
 
-final PaymentDetailsCaptureParamsOrderReference? orderReference;
+final OrderReference? orderReference;
 
 Map<String, dynamic> toJson() { return {
   if (customerReference != null) 'customer_reference': customerReference?.toJson(),
   if (orderReference != null) 'order_reference': orderReference?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_reference', 'order_reference'}.contains(key)); } 
-PaymentDetailsCaptureParams copyWith({PaymentDetailsCaptureParamsCustomerReference Function()? customerReference, PaymentDetailsCaptureParamsOrderReference Function()? orderReference, }) { return PaymentDetailsCaptureParams(
+payment_details_capture_params copyWith({CustomerReference Function()? customerReference, OrderReference Function()? orderReference, }) { return payment_details_capture_params(
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is PaymentDetailsCaptureParams &&
+      other is payment_details_capture_params &&
           customerReference == other.customerReference &&
           orderReference == other.orderReference; } 
 @override int get hashCode { return Object.hash(customerReference, orderReference); } 
-@override String toString() { return 'PaymentDetailsCaptureParams(customerReference: $customerReference, orderReference: $orderReference)'; } 
+@override String toString() { return 'payment_details_capture_params(customerReference: $customerReference, orderReference: $orderReference)'; } 
  }

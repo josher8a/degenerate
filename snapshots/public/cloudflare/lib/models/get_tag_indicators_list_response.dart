@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_indicators_list_response_indicators.dart';import 'get_tag_indicators_list_response_pagination.dart';@immutable final class GetTagIndicatorsListResponse {const GetTagIndicatorsListResponse({required this.indicators, required this.pagination, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_indicators.dart';import 'package:pub_cloudflare/models/get_indicator_list_legacy_response/get_indicator_list_legacy_response_pagination.dart';@immutable final class GetTagIndicatorsListResponse {const GetTagIndicatorsListResponse({required this.indicators, required this.pagination, });
 
 factory GetTagIndicatorsListResponse.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponse(
-  indicators: (json['indicators'] as List<dynamic>).map((e) => GetTagIndicatorsListResponseIndicators.fromJson(e as Map<String, dynamic>)).toList(),
-  pagination: GetTagIndicatorsListResponsePagination.fromJson(json['pagination'] as Map<String, dynamic>),
+  indicators: (json['indicators'] as List<dynamic>).map((e) => GetIndicatorListLegacyResponseIndicators.fromJson(e as Map<String, dynamic>)).toList(),
+  pagination: GetIndicatorListLegacyResponsePagination.fromJson(json['pagination'] as Map<String, dynamic>),
 ); }
 
-final List<GetTagIndicatorsListResponseIndicators> indicators;
+final List<GetIndicatorListLegacyResponseIndicators> indicators;
 
-final GetTagIndicatorsListResponsePagination pagination;
+final GetIndicatorListLegacyResponsePagination pagination;
 
 Map<String, dynamic> toJson() { return {
   'indicators': indicators.map((e) => e.toJson()).toList(),
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicators') &&
       json.containsKey('pagination'); } 
-GetTagIndicatorsListResponse copyWith({List<GetTagIndicatorsListResponseIndicators>? indicators, GetTagIndicatorsListResponsePagination? pagination, }) { return GetTagIndicatorsListResponse(
+GetTagIndicatorsListResponse copyWith({List<GetIndicatorListLegacyResponseIndicators>? indicators, GetIndicatorListLegacyResponsePagination? pagination, }) { return GetTagIndicatorsListResponse(
   indicators: indicators ?? this.indicators,
   pagination: pagination ?? this.pagination,
 ); } 

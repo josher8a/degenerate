@@ -1,47 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'promotion_codes_resource_promotion_coupon.dart';/// The type of promotion.
-@immutable final class PromotionCodesResourcePromotionType {const PromotionCodesResourcePromotionType._(this.value);
-
-factory PromotionCodesResourcePromotionType.fromJson(String json) { return switch (json) {
-  'coupon' => coupon,
-  _ => PromotionCodesResourcePromotionType._(json),
-}; }
-
-static const PromotionCodesResourcePromotionType coupon = PromotionCodesResourcePromotionType._('coupon');
-
-static const List<PromotionCodesResourcePromotionType> values = [coupon];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PromotionCodesResourcePromotionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PromotionCodesResourcePromotionType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_type.dart';/// 
 @immutable final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({required this.type, this.coupon, });
 
 factory PromotionCodesResourcePromotion.fromJson(Map<String, dynamic> json) { return PromotionCodesResourcePromotion(
   coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,
-  type: PromotionCodesResourcePromotionType.fromJson(json['type'] as String),
+  type: DiscountSourceType.fromJson(json['type'] as String),
 ); }
 
 /// If promotion `type` is `coupon`, the coupon for this promotion.
-final PromotionCodesResourcePromotionCoupon? coupon;
+final DiscountSourceCoupon? coupon;
 
 /// The type of promotion.
-final PromotionCodesResourcePromotionType type;
+final DiscountSourceType type;
 
 Map<String, dynamic> toJson() { return {
   if (coupon != null) 'coupon': coupon?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PromotionCodesResourcePromotion copyWith({PromotionCodesResourcePromotionCoupon? Function()? coupon, PromotionCodesResourcePromotionType? type, }) { return PromotionCodesResourcePromotion(
+PromotionCodesResourcePromotion copyWith({DiscountSourceCoupon? Function()? coupon, DiscountSourceType? type, }) { return PromotionCodesResourcePromotion(
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,
 ); } 

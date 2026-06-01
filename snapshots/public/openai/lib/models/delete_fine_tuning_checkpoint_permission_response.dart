@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "checkpoint.permission".
-@immutable final class DeleteFineTuningCheckpointPermissionResponseObject {const DeleteFineTuningCheckpointPermissionResponseObject._(this.value);
-
-factory DeleteFineTuningCheckpointPermissionResponseObject.fromJson(String json) { return switch (json) {
-  'checkpoint.permission' => checkpointPermission,
-  _ => DeleteFineTuningCheckpointPermissionResponseObject._(json),
-}; }
-
-static const DeleteFineTuningCheckpointPermissionResponseObject checkpointPermission = DeleteFineTuningCheckpointPermissionResponseObject._('checkpoint.permission');
-
-static const List<DeleteFineTuningCheckpointPermissionResponseObject> values = [checkpointPermission];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteFineTuningCheckpointPermissionResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteFineTuningCheckpointPermissionResponseObject($value)'; } 
- }
-@immutable final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_fine_tuning_checkpoint_permission_response/delete_fine_tuning_checkpoint_permission_response_object.dart';@immutable final class DeleteFineTuningCheckpointPermissionResponse {const DeleteFineTuningCheckpointPermissionResponse({required this.id, required this.object, required this.deleted, });
 
 factory DeleteFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) { return DeleteFineTuningCheckpointPermissionResponse(
   id: json['id'] as String,

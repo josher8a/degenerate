@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discount.dart';import 'price.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_item_discounts.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SubscriptionItemObject {const SubscriptionItemObject._(this.value);
-
-factory SubscriptionItemObject.fromJson(String json) { return switch (json) {
-  'subscription_item' => subscriptionItem,
-  _ => SubscriptionItemObject._(json),
-}; }
-
-static const SubscriptionItemObject subscriptionItem = SubscriptionItemObject._('subscription_item');
-
-static const List<SubscriptionItemObject> values = [subscriptionItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionItemObject($value)'; } 
- }
-/// Subscription items allow you to create customer subscriptions with more than
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_subscription_item/deleted_subscription_item_object.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Subscription items allow you to create customer subscriptions with more than
 /// one plan, making it easy to represent complex billing relationships.
 @immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds, this.quantity, this.taxRates, });
 
@@ -34,7 +12,7 @@ factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return Subscripti
   discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  object: SubscriptionItemObject.fromJson(json['object'] as String),
+  object: DeletedSubscriptionItemObject.fromJson(json['object'] as String),
   price: Price.fromJson(json['price'] as Map<String, dynamic>),
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
@@ -54,7 +32,7 @@ final int currentPeriodEnd;
 final int currentPeriodStart;
 
 /// The discounts applied to the subscription item. Subscription item discounts are applied before subscription discounts. Use `expand[]=discounts` to expand each discount.
-final List<SubscriptionItemDiscounts> discounts;
+final List<InvoiceitemDiscounts> discounts;
 
 /// Unique identifier for the object.
 final String id;
@@ -63,7 +41,7 @@ final String id;
 final Map<String,String> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final SubscriptionItemObject object;
+final DeletedSubscriptionItemObject object;
 
 final Price price;
 
@@ -99,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('price') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<SubscriptionItemDiscounts>? discounts, String? id, Map<String,String>? metadata, SubscriptionItemObject? object, Price? price, int Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
+SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   created: created ?? this.created,
   currentPeriodEnd: currentPeriodEnd ?? this.currentPeriodEnd,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_ssl_for_a_zone_create_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_edit_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_list_ssl_configurations_match.dart';import '../models/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request.dart';import '../models/tls_certificates_and_hostnames_certificate_response_id_only_result.dart';import '../models/tls_certificates_and_hostnames_custom_certificate.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomSslForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/custom_ssl_for_a_zone_create_ssl_configuration_request.dart';import 'package:pub_cloudflare/models/custom_ssl_for_a_zone_edit_ssl_configuration_request.dart';import 'package:pub_cloudflare/models/custom_ssl_for_a_zone_list_ssl_configurations_match.dart';import 'package:pub_cloudflare/models/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// CustomSslForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -122,7 +122,7 @@ return execute(
 /// Remove a SSL certificate from a zone.
 ///
 /// `DELETE /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseIdOnlyResult?, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -135,7 +135,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesCertificateResponseIdOnlyResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

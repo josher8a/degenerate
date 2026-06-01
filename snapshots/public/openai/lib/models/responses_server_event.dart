@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_stream_event.dart';/// Server events emitted by the Responses WebSocket server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_stream_event.dart';/// Server events emitted by the Responses WebSocket server.
 /// 
 sealed class ResponsesServerEvent {const ResponsesServerEvent();
 

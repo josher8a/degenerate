@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_permission_delete_response404_errors.dart';@immutable final class DeletePermissionDeleteResponse404 {const DeletePermissionDeleteResponse404({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class DeletePermissionDeleteResponse404 {const DeletePermissionDeleteResponse404({required this.errors, required this.result, required this.success, });
 
 factory DeletePermissionDeleteResponse404.fromJson(Map<String, dynamic> json) { return DeletePermissionDeleteResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => DeletePermissionDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<DeletePermissionDeleteResponse404Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeletePermissionDeleteResponse404 copyWith({List<DeletePermissionDeleteResponse404Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return DeletePermissionDeleteResponse404(
+DeletePermissionDeleteResponse404 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return DeletePermissionDeleteResponse404(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

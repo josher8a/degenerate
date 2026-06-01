@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn on or off byte-for-byte equivalency checks between the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off byte-for-byte equivalency checks between the
 /// Cloudflare cache and the origin server.
 /// 
 @immutable final class ZonesRespectStrongEtagId {const ZonesRespectStrongEtagId._(this.value);
@@ -24,37 +24,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesRespectStrongEtagId($value)'; } 
  }
-/// The status of Respect Strong ETags
-/// 
-@immutable final class ZonesRespectStrongEtagValue {const ZonesRespectStrongEtagValue._(this.value);
-
-factory ZonesRespectStrongEtagValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => ZonesRespectStrongEtagValue._(json),
-}; }
-
-static const ZonesRespectStrongEtagValue $on = ZonesRespectStrongEtagValue._('on');
-
-static const ZonesRespectStrongEtagValue off = ZonesRespectStrongEtagValue._('off');
-
-static const List<ZonesRespectStrongEtagValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesRespectStrongEtagValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesRespectStrongEtagValue($value)'; } 
- }
 @immutable final class ZonesRespectStrongEtag {const ZonesRespectStrongEtag({this.id, this.value, });
 
 factory ZonesRespectStrongEtag.fromJson(Map<String, dynamic> json) { return ZonesRespectStrongEtag(
   id: json['id'] != null ? ZonesRespectStrongEtagId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesRespectStrongEtagValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off byte-for-byte equivalency checks between the
@@ -64,14 +38,14 @@ final ZonesRespectStrongEtagId? id;
 
 /// The status of Respect Strong ETags
 /// 
-final ZonesRespectStrongEtagValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesRespectStrongEtag copyWith({ZonesRespectStrongEtagId Function()? id, ZonesRespectStrongEtagValue Function()? value, }) { return ZonesRespectStrongEtag(
+ZonesRespectStrongEtag copyWith({ZonesRespectStrongEtagId Function()? id, CacheRulesSmartTieredCachePatchValue Function()? value, }) { return ZonesRespectStrongEtag(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

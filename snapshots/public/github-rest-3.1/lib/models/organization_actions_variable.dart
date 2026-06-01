@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a variable
-@immutable final class OrganizationActionsVariableVisibility {const OrganizationActionsVariableVisibility._(this.value);
-
-factory OrganizationActionsVariableVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => OrganizationActionsVariableVisibility._(json),
-}; }
-
-static const OrganizationActionsVariableVisibility all = OrganizationActionsVariableVisibility._('all');
-
-static const OrganizationActionsVariableVisibility private = OrganizationActionsVariableVisibility._('private');
-
-static const OrganizationActionsVariableVisibility selected = OrganizationActionsVariableVisibility._('selected');
-
-static const List<OrganizationActionsVariableVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationActionsVariableVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationActionsVariableVisibility($value)'; } 
- }
-/// Organization variable for GitHub Actions.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Organization variable for GitHub Actions.
 @immutable final class OrganizationActionsVariable {const OrganizationActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
 factory OrganizationActionsVariable.fromJson(Map<String, dynamic> json) { return OrganizationActionsVariable(
@@ -36,7 +8,7 @@ factory OrganizationActionsVariable.fromJson(Map<String, dynamic> json) { return
   value: json['value'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  visibility: OrganizationActionsVariableVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoriesUrl: json['selected_repositories_url'] != null ? Uri.parse(json['selected_repositories_url'] as String) : null,
 ); }
 
@@ -53,7 +25,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// Visibility of a variable
-final OrganizationActionsVariableVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 final Uri? selectedRepositoriesUrl;
 
@@ -70,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('visibility'); } 
-OrganizationActionsVariable copyWith({String? name, String? value, DateTime? createdAt, DateTime? updatedAt, OrganizationActionsVariableVisibility? visibility, Uri Function()? selectedRepositoriesUrl, }) { return OrganizationActionsVariable(
+OrganizationActionsVariable copyWith({String? name, String? value, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri Function()? selectedRepositoriesUrl, }) { return OrganizationActionsVariable(
   name: name ?? this.name,
   value: value ?? this.value,
   createdAt: createdAt ?? this.createdAt,

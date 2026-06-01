@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
-@immutable final class ReposUpdateInvitationRequestPermissions {const ReposUpdateInvitationRequestPermissions._(this.value);
-
-factory ReposUpdateInvitationRequestPermissions.fromJson(String json) { return switch (json) {
-  'read' => read,
-  'write' => write,
-  'maintain' => maintain,
-  'triage' => triage,
-  'admin' => admin,
-  _ => ReposUpdateInvitationRequestPermissions._(json),
-}; }
-
-static const ReposUpdateInvitationRequestPermissions read = ReposUpdateInvitationRequestPermissions._('read');
-
-static const ReposUpdateInvitationRequestPermissions write = ReposUpdateInvitationRequestPermissions._('write');
-
-static const ReposUpdateInvitationRequestPermissions maintain = ReposUpdateInvitationRequestPermissions._('maintain');
-
-static const ReposUpdateInvitationRequestPermissions triage = ReposUpdateInvitationRequestPermissions._('triage');
-
-static const ReposUpdateInvitationRequestPermissions admin = ReposUpdateInvitationRequestPermissions._('admin');
-
-static const List<ReposUpdateInvitationRequestPermissions> values = [read, write, maintain, triage, admin];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateInvitationRequestPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateInvitationRequestPermissions($value)'; } 
- }
-@immutable final class ReposUpdateInvitationRequest {const ReposUpdateInvitationRequest({this.permissions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_invitation_request/repos_update_invitation_request_permissions.dart';@immutable final class ReposUpdateInvitationRequest {const ReposUpdateInvitationRequest({this.permissions});
 
 factory ReposUpdateInvitationRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateInvitationRequest(
   permissions: json['permissions'] != null ? ReposUpdateInvitationRequestPermissions.fromJson(json['permissions'] as String) : null,

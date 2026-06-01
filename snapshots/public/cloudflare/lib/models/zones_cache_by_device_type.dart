@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Separate cached content based on the visitor's device type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Separate cached content based on the visitor's device type.
 /// 
 @immutable final class ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId._(this.value);
 
@@ -23,37 +23,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheByDeviceTypeId($value)'; } 
  }
-/// The status of Cache By Device Type.
-/// 
-@immutable final class ZonesCacheByDeviceTypeValue {const ZonesCacheByDeviceTypeValue._(this.value);
-
-factory ZonesCacheByDeviceTypeValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => ZonesCacheByDeviceTypeValue._(json),
-}; }
-
-static const ZonesCacheByDeviceTypeValue $on = ZonesCacheByDeviceTypeValue._('on');
-
-static const ZonesCacheByDeviceTypeValue off = ZonesCacheByDeviceTypeValue._('off');
-
-static const List<ZonesCacheByDeviceTypeValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheByDeviceTypeValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheByDeviceTypeValue($value)'; } 
- }
 @immutable final class ZonesCacheByDeviceType {const ZonesCacheByDeviceType({this.id, this.value, });
 
 factory ZonesCacheByDeviceType.fromJson(Map<String, dynamic> json) { return ZonesCacheByDeviceType(
   id: json['id'] != null ? ZonesCacheByDeviceTypeId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesCacheByDeviceTypeValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Separate cached content based on the visitor's device type.
@@ -62,14 +36,14 @@ final ZonesCacheByDeviceTypeId? id;
 
 /// The status of Cache By Device Type.
 /// 
-final ZonesCacheByDeviceTypeValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheByDeviceType copyWith({ZonesCacheByDeviceTypeId Function()? id, ZonesCacheByDeviceTypeValue Function()? value, }) { return ZonesCacheByDeviceType(
+ZonesCacheByDeviceType copyWith({ZonesCacheByDeviceTypeId Function()? id, CacheRulesSmartTieredCachePatchValue Function()? value, }) { return ZonesCacheByDeviceType(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_batch_create_workflow_instance_request_instance_retention.dart';@immutable final class WorBatchCreateWorkflowInstanceRequest {const WorBatchCreateWorkflowInstanceRequest({this.instanceId, this.instanceRetention, this.params, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_request/instance_retention.dart';@immutable final class WorBatchCreateWorkflowInstanceRequest {const WorBatchCreateWorkflowInstanceRequest({this.instanceId, this.instanceRetention, this.params, });
 
 factory WorBatchCreateWorkflowInstanceRequest.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceRequest(
   instanceId: json['instance_id'] as String?,
-  instanceRetention: json['instance_retention'] != null ? WorBatchCreateWorkflowInstanceRequestInstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>) : null,
+  instanceRetention: json['instance_retention'] != null ? InstanceRetention.fromJson(json['instance_retention'] as Map<String, dynamic>) : null,
   params: json['params'] as Map<String, dynamic>?,
 ); }
 
 final String? instanceId;
 
-final WorBatchCreateWorkflowInstanceRequestInstanceRetention? instanceRetention;
+final InstanceRetention? instanceRetention;
 
 final Map<String,dynamic>? params;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'params': ?params,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'instance_id', 'instance_retention', 'params'}.contains(key)); } 
-WorBatchCreateWorkflowInstanceRequest copyWith({String Function()? instanceId, WorBatchCreateWorkflowInstanceRequestInstanceRetention Function()? instanceRetention, Map<String, dynamic> Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
+WorBatchCreateWorkflowInstanceRequest copyWith({String Function()? instanceId, InstanceRetention Function()? instanceRetention, Map<String, dynamic> Function()? params, }) { return WorBatchCreateWorkflowInstanceRequest(
   instanceId: instanceId != null ? instanceId() : this.instanceId,
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,
   params: params != null ? params() : this.params,

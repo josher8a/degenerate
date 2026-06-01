@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_spdx_sbom_sbom.dart';/// A schema for the SPDX JSON format returned by the Dependency Graph.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom/sbom.dart';/// A schema for the SPDX JSON format returned by the Dependency Graph.
 @immutable final class DependencyGraphSpdxSbom {const DependencyGraphSpdxSbom({required this.sbom});
 
 factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbom(
-  sbom: DependencyGraphSpdxSbomSbom.fromJson(json['sbom'] as Map<String, dynamic>),
+  sbom: Sbom.fromJson(json['sbom'] as Map<String, dynamic>),
 ); }
 
-final DependencyGraphSpdxSbomSbom sbom;
+final Sbom sbom;
 
 Map<String, dynamic> toJson() { return {
   'sbom': sbom.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sbom'); } 
-DependencyGraphSpdxSbom copyWith({DependencyGraphSpdxSbomSbom? sbom}) { return DependencyGraphSpdxSbom(
+DependencyGraphSpdxSbom copyWith({Sbom? sbom}) { return DependencyGraphSpdxSbom(
   sbom: sbom ?? this.sbom,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetIssuingAuthorizationsResponseObject {const GetIssuingAuthorizationsResponseObject._(this.value);
-
-factory GetIssuingAuthorizationsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetIssuingAuthorizationsResponseObject._(json),
-}; }
-
-static const GetIssuingAuthorizationsResponseObject list = GetIssuingAuthorizationsResponseObject._('list');
-
-static const List<GetIssuingAuthorizationsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetIssuingAuthorizationsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetIssuingAuthorizationsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';/// 
 @immutable final class GetIssuingAuthorizationsResponse {const GetIssuingAuthorizationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetIssuingAuthorizationsResponse.fromJson(Map<String, dynamic> json) { return GetIssuingAuthorizationsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IssuingAuthorization.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetIssuingAuthorizationsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<IssuingAuthorization> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetIssuingAuthorizationsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetIssuingAuthorizationsResponse copyWith({List<IssuingAuthorization>? data, bool? hasMore, GetIssuingAuthorizationsResponseObject? object, String? url, }) { return GetIssuingAuthorizationsResponse(
+GetIssuingAuthorizationsResponse copyWith({List<IssuingAuthorization>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetIssuingAuthorizationsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

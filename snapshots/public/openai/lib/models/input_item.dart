@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'easy_input_message.dart';import 'easy_input_message_content.dart';import 'item.dart';import 'item_reference_param.dart';import 'message_phase.dart';sealed class InputItem {const InputItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_content.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/item.dart';import 'package:pub_openai/models/item_reference_param.dart';import 'package:pub_openai/models/message_phase.dart';sealed class InputItem {const InputItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

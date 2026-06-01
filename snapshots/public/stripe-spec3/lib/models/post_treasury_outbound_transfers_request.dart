@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_data.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options.dart';@immutable final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, this.metadata, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_payments_request/destination_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_treasury_outbound_transfers_request/post_treasury_outbound_transfers_request_destination_payment_method_data.dart';@immutable final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, this.metadata, this.statementDescriptor, });
 
 factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequest(
   amount: (json['amount'] as num).toInt(),
@@ -8,7 +8,7 @@ factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json)
   description: json['description'] as String?,
   destinationPaymentMethod: json['destination_payment_method'] as String?,
   destinationPaymentMethodData: json['destination_payment_method_data'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData.fromJson(json['destination_payment_method_data'] as Map<String, dynamic>) : null,
-  destinationPaymentMethodOptions: json['destination_payment_method_options'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(json['destination_payment_method_options'] as Map<String, dynamic>) : null,
+  destinationPaymentMethodOptions: json['destination_payment_method_options'] != null ? DestinationPaymentMethodOptions.fromJson(json['destination_payment_method_options'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   financialAccount: json['financial_account'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -31,7 +31,7 @@ final String? destinationPaymentMethod;
 final PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData? destinationPaymentMethodData;
 
 /// Hash describing payment method configuration details.
-final PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions? destinationPaymentMethodOptions;
+final DestinationPaymentMethodOptions? destinationPaymentMethodOptions;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String; } 
-PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String Function()? description, String Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions Function()? destinationPaymentMethodOptions, List<String> Function()? expand, String? financialAccount, Map<String, String> Function()? metadata, String Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
+PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String Function()? description, String Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData Function()? destinationPaymentMethodData, DestinationPaymentMethodOptions Function()? destinationPaymentMethodOptions, List<String> Function()? expand, String? financialAccount, Map<String, String> Function()? metadata, String Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

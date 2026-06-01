@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_locked_issue.dart';@immutable final class WebhookIssuesLockedAction {const WebhookIssuesLockedAction._(this.value);
-
-factory WebhookIssuesLockedAction.fromJson(String json) { return switch (json) {
-  'locked' => locked,
-  _ => WebhookIssuesLockedAction._(json),
-}; }
-
-static const WebhookIssuesLockedAction locked = WebhookIssuesLockedAction._('locked');
-
-static const List<WebhookIssuesLockedAction> values = [locked];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesLockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesLockedAction($value)'; } 
- }
-@immutable final class WebhookIssuesLocked {const WebhookIssuesLocked({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_locked/webhook_discussion_locked_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_locked/webhook_issues_locked_issue.dart';@immutable final class WebhookIssuesLocked {const WebhookIssuesLocked({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesLocked.fromJson(Map<String, dynamic> json) { return WebhookIssuesLocked(
-  action: WebhookIssuesLockedAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionLockedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhookIssuesLockedIssue.fromJson(json['issue'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookIssuesLocked.fromJson(Map<String, dynamic> json) { return Webhook
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssuesLockedAction action;
+final WebhookDiscussionLockedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesLocked copyWith({WebhookIssuesLockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesLockedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesLocked(
+WebhookIssuesLocked copyWith({WebhookDiscussionLockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesLockedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesLocked(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

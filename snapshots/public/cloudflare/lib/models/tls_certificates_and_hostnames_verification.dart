@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cert_pack_uuid.dart';import 'tls_certificates_and_hostnames_verification_info.dart';/// Certificate Authority is manually reviewing the order.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cert_pack_uuid.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_verification_info.dart';/// Certificate Authority is manually reviewing the order.
 extension type const TlsCertificatesAndHostnamesBrandCheck(bool value) {
 factory TlsCertificatesAndHostnamesBrandCheck.fromJson(bool json) => TlsCertificatesAndHostnamesBrandCheck(json);
 

@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
-@immutable final class PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType {const PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
-
-factory PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) { return switch (json) {
-  'amounts' => amounts,
-  'descriptor_code' => descriptorCode,
-  _ => PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType._(json),
-}; }
-
-static const PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType amounts = PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType._('amounts');
-
-static const PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType descriptorCode = PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType._('descriptor_code');
-
-static const List<PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType> values = [amounts, descriptorCode];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_verify_with_microdeposits/microdeposit_type.dart';/// 
 @immutable final class PaymentIntentNextActionVerifyWithMicrodeposits {const PaymentIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });
 
 factory PaymentIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: (json['arrival_date'] as num).toInt(),
   hostedVerificationUrl: json['hosted_verification_url'] as String,
-  microdepositType: json['microdeposit_type'] != null ? PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(json['microdeposit_type'] as String) : null,
+  microdepositType: json['microdeposit_type'] != null ? MicrodepositType.fromJson(json['microdeposit_type'] as String) : null,
 ); }
 
 /// The timestamp when the microdeposits are expected to land.
@@ -41,7 +16,7 @@ final int arrivalDate;
 final String hostedVerificationUrl;
 
 /// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
-final PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType? microdepositType;
+final MicrodepositType? microdepositType;
 
 Map<String, dynamic> toJson() { return {
   'arrival_date': arrivalDate,
@@ -50,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('arrival_date') && json['arrival_date'] is num &&
       json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
-PaymentIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, PaymentIntentNextActionVerifyWithMicrodepositsMicrodepositType? Function()? microdepositType, }) { return PaymentIntentNextActionVerifyWithMicrodeposits(
+PaymentIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, MicrodepositType? Function()? microdepositType, }) { return PaymentIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: arrivalDate ?? this.arrivalDate,
   hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,
   microdepositType: microdepositType != null ? microdepositType() : this.microdepositType,

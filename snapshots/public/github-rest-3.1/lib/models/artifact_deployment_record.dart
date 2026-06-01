@@ -1,36 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactDeploymentRecordRuntimeRisks {const ArtifactDeploymentRecordRuntimeRisks._(this.value);
-
-factory ArtifactDeploymentRecordRuntimeRisks.fromJson(String json) { return switch (json) {
-  'critical-resource' => criticalResource,
-  'internet-exposed' => internetExposed,
-  'lateral-movement' => lateralMovement,
-  'sensitive-data' => sensitiveData,
-  _ => ArtifactDeploymentRecordRuntimeRisks._(json),
-}; }
-
-static const ArtifactDeploymentRecordRuntimeRisks criticalResource = ArtifactDeploymentRecordRuntimeRisks._('critical-resource');
-
-static const ArtifactDeploymentRecordRuntimeRisks internetExposed = ArtifactDeploymentRecordRuntimeRisks._('internet-exposed');
-
-static const ArtifactDeploymentRecordRuntimeRisks lateralMovement = ArtifactDeploymentRecordRuntimeRisks._('lateral-movement');
-
-static const ArtifactDeploymentRecordRuntimeRisks sensitiveData = ArtifactDeploymentRecordRuntimeRisks._('sensitive-data');
-
-static const List<ArtifactDeploymentRecordRuntimeRisks> values = [criticalResource, internetExposed, lateralMovement, sensitiveData];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ArtifactDeploymentRecordRuntimeRisks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ArtifactDeploymentRecordRuntimeRisks($value)'; } 
- }
-/// Artifact Metadata Deployment Record
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';/// Artifact Metadata Deployment Record
 @immutable final class ArtifactDeploymentRecord {const ArtifactDeploymentRecord({this.id, this.digest, this.logicalEnvironment, this.physicalEnvironment, this.cluster, this.deploymentName, this.tags, this.runtimeRisks, this.createdAt, this.updatedAt, this.attestationId, });
 
 factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return ArtifactDeploymentRecord(
@@ -41,7 +11,7 @@ factory ArtifactDeploymentRecord.fromJson(Map<String, dynamic> json) { return Ar
   cluster: json['cluster'] as String?,
   deploymentName: json['deployment_name'] as String?,
   tags: (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => ArtifactDeploymentRecordRuntimeRisks.fromJson(e as String)).toList(),
+  runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => RuntimeRisks.fromJson(e as String)).toList(),
   createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
   attestationId: json['attestation_id'] != null ? (json['attestation_id'] as num).toInt() : null,
@@ -62,7 +32,7 @@ final String? deploymentName;
 final Map<String,String>? tags;
 
 /// A list of runtime risks associated with the deployment.
-final List<ArtifactDeploymentRecordRuntimeRisks>? runtimeRisks;
+final List<RuntimeRisks>? runtimeRisks;
 
 final String? createdAt;
 
@@ -85,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'attestation_id': ?attestationId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'digest', 'logical_environment', 'physical_environment', 'cluster', 'deployment_name', 'tags', 'runtime_risks', 'created_at', 'updated_at', 'attestation_id'}.contains(key)); } 
-ArtifactDeploymentRecord copyWith({int Function()? id, String Function()? digest, String Function()? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String Function()? deploymentName, Map<String, String> Function()? tags, List<ArtifactDeploymentRecordRuntimeRisks> Function()? runtimeRisks, String Function()? createdAt, String Function()? updatedAt, int? Function()? attestationId, }) { return ArtifactDeploymentRecord(
+ArtifactDeploymentRecord copyWith({int Function()? id, String Function()? digest, String Function()? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String Function()? deploymentName, Map<String, String> Function()? tags, List<RuntimeRisks> Function()? runtimeRisks, String Function()? createdAt, String Function()? updatedAt, int? Function()? attestationId, }) { return ArtifactDeploymentRecord(
   id: id != null ? id() : this.id,
   digest: digest != null ? digest() : this.digest,
   logicalEnvironment: logicalEnvironment != null ? logicalEnvironment() : this.logicalEnvironment,

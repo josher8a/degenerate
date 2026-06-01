@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookWorkflowDispatch {const WebhookWorkflowDispatch({required this.inputs, required this.ref, required this.repository, required this.sender, required this.workflow, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookWorkflowDispatch {const WebhookWorkflowDispatch({required this.inputs, required this.ref, required this.repository, required this.sender, required this.workflow, this.enterprise, this.installation, this.organization, });
 
 factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return WebhookWorkflowDispatch(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

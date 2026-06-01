@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_ip.dart';@immutable final class TeamsDevicesFallbackDomain {const TeamsDevicesFallbackDomain({required this.suffix, this.description, this.dnsServer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_ip.dart';@immutable final class TeamsDevicesFallbackDomain {const TeamsDevicesFallbackDomain({required this.suffix, this.description, this.dnsServer, });
 
 factory TeamsDevicesFallbackDomain.fromJson(Map<String, dynamic> json) { return TeamsDevicesFallbackDomain(
   description: json['description'] as String?,

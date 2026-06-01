@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_scorer.dart';/// Collection of scores and insights for this payment evaluation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_scorer.dart';/// Collection of scores and insights for this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationInsights {const InsightsResourcesPaymentEvaluationInsights({required this.evaluatedAt, required this.fraudulentDispute, });
 
 factory InsightsResourcesPaymentEvaluationInsights.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationInsights(

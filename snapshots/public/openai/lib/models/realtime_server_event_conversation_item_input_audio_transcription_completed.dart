@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';import 'realtime_server_event_conversation_item_input_audio_transcription_completed_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// This event is the output of audio transcription for user audio written to the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_json/create_transcription_response_json_usage.dart';import 'package:pub_openai/models/log_prob_properties.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// This event is the output of audio transcription for user audio written to the
 /// user audio buffer. Transcription begins when the input audio buffer is
 /// committed by the client or server (when VAD is enabled). Transcription runs
 /// asynchronously with Response creation, so this event may come before or after
@@ -44,7 +44,7 @@ final String transcript;
 final List<LogProbProperties>? logprobs;
 
 /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
-final RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage usage;
+final CreateTranscriptionResponseJsonUsage usage;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String &&
       json.containsKey('usage'); } 
-RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, RealtimeServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
+RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, String? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? usage, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_line_item_tax_breakdown.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxCalculationLineItemObject {const TaxCalculationLineItemObject._(this.value);
 
 factory TaxCalculationLineItemObject.fromJson(String json) { return switch (json) {
@@ -22,31 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TaxCalculationLineItemObject($value)'; } 
  }
-/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-@immutable final class TaxCalculationLineItemTaxBehavior {const TaxCalculationLineItemTaxBehavior._(this.value);
-
-factory TaxCalculationLineItemTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  _ => TaxCalculationLineItemTaxBehavior._(json),
-}; }
-
-static const TaxCalculationLineItemTaxBehavior exclusive = TaxCalculationLineItemTaxBehavior._('exclusive');
-
-static const TaxCalculationLineItemTaxBehavior inclusive = TaxCalculationLineItemTaxBehavior._('inclusive');
-
-static const List<TaxCalculationLineItemTaxBehavior> values = [exclusive, inclusive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxCalculationLineItemTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxCalculationLineItemTaxBehavior($value)'; } 
- }
 /// 
 @immutable final class TaxCalculationLineItem {const TaxCalculationLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, this.metadata, this.product, this.taxBreakdown, });
 
@@ -60,7 +35,7 @@ factory TaxCalculationLineItem.fromJson(Map<String, dynamic> json) { return TaxC
   product: json['product'] as String?,
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
-  taxBehavior: TaxCalculationLineItemTaxBehavior.fromJson(json['tax_behavior'] as String),
+  taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>?)?.map((e) => TaxProductResourceLineItemTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),
   taxCode: json['tax_code'] as String,
 ); }
@@ -93,7 +68,7 @@ final int quantity;
 final String reference;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final TaxCalculationLineItemTaxBehavior taxBehavior;
+final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// Detailed account of taxes relevant to this line item.
 final List<TaxProductResourceLineItemTaxBreakdown>? taxBreakdown;
@@ -124,7 +99,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String; } 
-TaxCalculationLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxCalculationLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxCalculationLineItemTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown>? Function()? taxBreakdown, String? taxCode, }) { return TaxCalculationLineItem(
+TaxCalculationLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxCalculationLineItemObject? object, String? Function()? product, int? quantity, String? reference, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown>? Function()? taxBreakdown, String? taxCode, }) { return TaxCalculationLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,

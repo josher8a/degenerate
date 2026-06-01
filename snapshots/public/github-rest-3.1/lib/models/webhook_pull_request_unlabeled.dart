@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unlabeled_pull_request.dart';import 'webhooks_label.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestUnlabeledAction {const WebhookPullRequestUnlabeledAction._(this.value);
-
-factory WebhookPullRequestUnlabeledAction.fromJson(String json) { return switch (json) {
-  'unlabeled' => unlabeled,
-  _ => WebhookPullRequestUnlabeledAction._(json),
-}; }
-
-static const WebhookPullRequestUnlabeledAction unlabeled = WebhookPullRequestUnlabeledAction._('unlabeled');
-
-static const List<WebhookPullRequestUnlabeledAction> values = [unlabeled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestUnlabeledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestUnlabeledAction($value)'; } 
- }
-@immutable final class WebhookPullRequestUnlabeled {const WebhookPullRequestUnlabeled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unlabeled/webhook_discussion_unlabeled_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_unlabeled/webhook_pull_request_unlabeled_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestUnlabeled {const WebhookPullRequestUnlabeled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
 
 factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeled(
-  action: WebhookPullRequestUnlabeledAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionUnlabeledAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   label: json['label'] != null ? WebhooksLabel.fromJson(json['label'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookPullRequestUnlabeled.fromJson(Map<String, dynamic> json) { return
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPullRequestUnlabeledAction action;
+final WebhookDiscussionUnlabeledAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -70,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestUnlabeled copyWith({WebhookPullRequestUnlabeledAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel Function()? label, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestUnlabeledPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestUnlabeled(
+WebhookPullRequestUnlabeled copyWith({WebhookDiscussionUnlabeledAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel Function()? label, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestUnlabeledPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestUnlabeled(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

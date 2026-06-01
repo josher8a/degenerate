@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_eu_standard.dart';/// Type of registration in an EU country.
-@immutable final class TaxProductRegistrationsResourceCountryOptionsEuropeType {const TaxProductRegistrationsResourceCountryOptionsEuropeType._(this.value);
-
-factory TaxProductRegistrationsResourceCountryOptionsEuropeType.fromJson(String json) { return switch (json) {
-  'ioss' => ioss,
-  'oss_non_union' => ossNonUnion,
-  'oss_union' => ossUnion,
-  'standard' => standard,
-  _ => TaxProductRegistrationsResourceCountryOptionsEuropeType._(json),
-}; }
-
-static const TaxProductRegistrationsResourceCountryOptionsEuropeType ioss = TaxProductRegistrationsResourceCountryOptionsEuropeType._('ioss');
-
-static const TaxProductRegistrationsResourceCountryOptionsEuropeType ossNonUnion = TaxProductRegistrationsResourceCountryOptionsEuropeType._('oss_non_union');
-
-static const TaxProductRegistrationsResourceCountryOptionsEuropeType ossUnion = TaxProductRegistrationsResourceCountryOptionsEuropeType._('oss_union');
-
-static const TaxProductRegistrationsResourceCountryOptionsEuropeType standard = TaxProductRegistrationsResourceCountryOptionsEuropeType._('standard');
-
-static const List<TaxProductRegistrationsResourceCountryOptionsEuropeType> values = [ioss, ossNonUnion, ossUnion, standard];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductRegistrationsResourceCountryOptionsEuropeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsEuropeType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_eu_standard.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_europe/tax_product_registrations_resource_country_options_europe_type.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsEurope {const TaxProductRegistrationsResourceCountryOptionsEurope({required this.type, this.standard, });
 
 factory TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsEurope(

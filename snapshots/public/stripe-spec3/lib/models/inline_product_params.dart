@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The product whose pricing the created plan will represent. This can either be the ID of an existing product, or a dictionary containing fields used to create a [service product](https://docs.stripe.com/api#product_object-type).
-@immutable final class InlineProductParams {const InlineProductParams({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });
+@immutable final class inline_product_params {const inline_product_params({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });
 
-factory InlineProductParams.fromJson(Map<String, dynamic> json) { return InlineProductParams(
+factory inline_product_params.fromJson(Map<String, dynamic> json) { return inline_product_params(
   active: json['active'] as bool?,
   id: json['id'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'unit_label': ?unitLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-InlineProductParams copyWith({bool Function()? active, String Function()? id, Map<String, String> Function()? metadata, String? name, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, }) { return InlineProductParams(
+inline_product_params copyWith({bool Function()? active, String Function()? id, Map<String, String> Function()? metadata, String? name, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, }) { return inline_product_params(
   active: active != null ? active() : this.active,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
@@ -47,7 +47,7 @@ InlineProductParams copyWith({bool Function()? active, String Function()? id, Ma
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is InlineProductParams &&
+      other is inline_product_params &&
           active == other.active &&
           id == other.id &&
           metadata == other.metadata &&
@@ -56,5 +56,5 @@ InlineProductParams copyWith({bool Function()? active, String Function()? id, Ma
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel; } 
 @override int get hashCode { return Object.hash(active, id, metadata, name, statementDescriptor, taxCode, unitLabel); } 
-@override String toString() { return 'InlineProductParams(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
+@override String toString() { return 'inline_product_params(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
  }

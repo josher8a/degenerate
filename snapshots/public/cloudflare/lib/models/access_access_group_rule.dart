@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_access_group_rule_group.dart';/// Matches an Access group.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_group_rule/access_access_group_rule_group.dart';/// Matches an Access group.
 @immutable final class AccessAccessGroupRule {const AccessAccessGroupRule({required this.group});
 
 factory AccessAccessGroupRule.fromJson(Map<String, dynamic> json) { return AccessAccessGroupRule(

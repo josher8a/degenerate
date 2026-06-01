@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';/// List of custom property values for a repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property_value.dart';/// List of custom property values for a repository
 @immutable final class OrgRepoCustomPropertyValues {const OrgRepoCustomPropertyValues({required this.repositoryId, required this.repositoryName, required this.repositoryFullName, required this.properties, });
 
 factory OrgRepoCustomPropertyValues.fromJson(Map<String, dynamic> json) { return OrgRepoCustomPropertyValues(

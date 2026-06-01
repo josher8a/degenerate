@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class PaymentMethodDetailsCardWalletMasterpass {const PaymentMethodDetailsCardWalletMasterpass({this.billingAddress, this.email, this.name, this.shippingAddress, });
 
 factory PaymentMethodDetailsCardWalletMasterpass.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWalletMasterpass(

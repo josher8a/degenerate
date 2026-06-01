@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_detail.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';sealed class InputContent {const InputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';sealed class InputContent {const InputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

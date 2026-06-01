@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_settings.dart';@immutable final class ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse {const ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_settings.dart';@immutable final class ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse {const ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse({this.result});
 
 factory ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAuditSshSettingsComponentsSchemasSingleResponse(
   result: json['result'] != null ? ZeroTrustGatewaySettings.fromJson(json['result'] as Map<String, dynamic>) : null,

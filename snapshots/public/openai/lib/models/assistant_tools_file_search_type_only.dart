@@ -1,41 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `file_search`
-@immutable final class AssistantToolsFileSearchTypeOnlyType {const AssistantToolsFileSearchTypeOnlyType._(this.value);
-
-factory AssistantToolsFileSearchTypeOnlyType.fromJson(String json) { return switch (json) {
-  'file_search' => fileSearch,
-  _ => AssistantToolsFileSearchTypeOnlyType._(json),
-}; }
-
-static const AssistantToolsFileSearchTypeOnlyType fileSearch = AssistantToolsFileSearchTypeOnlyType._('file_search');
-
-static const List<AssistantToolsFileSearchTypeOnlyType> values = [fileSearch];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantToolsFileSearchTypeOnlyType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantToolsFileSearchTypeOnlyType($value)'; } 
- }
-@immutable final class AssistantToolsFileSearchTypeOnly {const AssistantToolsFileSearchTypeOnly({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_type.dart';@immutable final class AssistantToolsFileSearchTypeOnly {const AssistantToolsFileSearchTypeOnly({required this.type});
 
 factory AssistantToolsFileSearchTypeOnly.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearchTypeOnly(
-  type: AssistantToolsFileSearchTypeOnlyType.fromJson(json['type'] as String),
+  type: AssistantToolsFileSearchType.fromJson(json['type'] as String),
 ); }
 
 /// The type of tool being defined: `file_search`
-final AssistantToolsFileSearchTypeOnlyType type;
+final AssistantToolsFileSearchType type;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantToolsFileSearchTypeOnly copyWith({AssistantToolsFileSearchTypeOnlyType? type}) { return AssistantToolsFileSearchTypeOnly(
+AssistantToolsFileSearchTypeOnly copyWith({AssistantToolsFileSearchType? type}) { return AssistantToolsFileSearchTypeOnly(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

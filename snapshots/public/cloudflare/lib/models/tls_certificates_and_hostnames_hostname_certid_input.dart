@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'tls_certificates_and_hostnames_schemas_hostname.dart';/// Certificate identifier tag.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_hostname.dart';/// Certificate identifier tag.
 extension type const TlsCertificatesAndHostnamesCertId(String value) {
 factory TlsCertificatesAndHostnamesCertId.fromJson(String json) => TlsCertificatesAndHostnamesCertId(json);
 

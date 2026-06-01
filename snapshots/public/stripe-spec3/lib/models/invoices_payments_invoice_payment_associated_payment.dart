@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'invoices_payments_invoice_payment_associated_payment_charge.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'payment_intent.dart';import 'payment_record.dart';/// Type of payment object associated with this invoice payment.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';/// Type of payment object associated with this invoice payment.
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {

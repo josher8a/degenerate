@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_list_tools_tool.dart';/// A list of tools available on an MCP server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';/// A list of tools available on an MCP server.
 /// 
 @immutable final class McpListTools {const McpListTools({required this.type, required this.id, required this.serverLabel, required this.tools, this.error, });
 

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_links_response_errors.dart';@immutable final class BrapiPostLinksResponse {const BrapiPostLinksResponse({required this.result, required this.success, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class BrapiPostLinksResponse {const BrapiPostLinksResponse({required this.result, required this.success, this.errors, });
 
 factory BrapiPostLinksResponse.fromJson(Map<String, dynamic> json) { return BrapiPostLinksResponse(
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostLinksResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => e as String).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<BrapiPostLinksResponseErrors>? errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors;
 
 final List<String> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-BrapiPostLinksResponse copyWith({List<BrapiPostLinksResponseErrors> Function()? errors, List<String>? result, bool? success, }) { return BrapiPostLinksResponse(
+BrapiPostLinksResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> Function()? errors, List<String>? result, bool? success, }) { return BrapiPostLinksResponse(
   errors: errors != null ? errors() : this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

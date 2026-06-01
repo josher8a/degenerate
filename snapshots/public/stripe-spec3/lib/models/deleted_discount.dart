@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'deleted_discount_customer.dart';import 'deleted_discount_promotion_code.dart';import 'discount_source.dart';import 'promotion_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedDiscountObject {const DeletedDiscountObject._(this.value);
-
-factory DeletedDiscountObject.fromJson(String json) { return switch (json) {
-  'discount' => discount,
-  _ => DeletedDiscountObject._(json),
-}; }
-
-static const DeletedDiscountObject discount = DeletedDiscountObject._('discount');
-
-static const List<DeletedDiscountObject> values = [discount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedDiscountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedDiscountObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
 @immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession, this.customer, this.customerAccount, this.invoice, this.invoiceItem, this.promotionCode, this.subscription, this.subscriptionItem, });
 
 factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
@@ -45,7 +23,7 @@ factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDisc
 final String? checkoutSession;
 
 /// The ID of the customer associated with this discount.
-final DeletedDiscountCustomer? customer;
+final CardCustomer? customer;
 
 /// The ID of the account representing the customer associated with this discount.
 final String? customerAccount;
@@ -99,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
-DeletedDiscount copyWith({String? Function()? checkoutSession, DeletedDiscountCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
+DeletedDiscount copyWith({String? Function()? checkoutSession, CardCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

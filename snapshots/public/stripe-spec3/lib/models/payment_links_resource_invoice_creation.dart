@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_invoice_settings.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_settings.dart';/// 
 @immutable final class PaymentLinksResourceInvoiceCreation {const PaymentLinksResourceInvoiceCreation({required this.enabled, this.invoiceData, });
 
 factory PaymentLinksResourceInvoiceCreation.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceCreation(

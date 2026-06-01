@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_custom_data_source_config.dart';import 'eval_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'eval_logs_data_source_config.dart';import 'eval_stored_completions_data_source_config.dart';import 'eval_testing_criteria.dart';import 'grader_label_model.dart';import 'grader_string_check.dart';/// The object type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval/eval_data_source_config.dart';import 'package:pub_openai/models/eval/eval_testing_criteria.dart';import 'package:pub_openai/models/eval_custom_data_source_config.dart';import 'package:pub_openai/models/eval_grader_python.dart';import 'package:pub_openai/models/eval_grader_score_model.dart';import 'package:pub_openai/models/eval_grader_text_similarity.dart';import 'package:pub_openai/models/eval_logs_data_source_config.dart';import 'package:pub_openai/models/eval_stored_completions_data_source_config.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_string_check.dart';/// The object type.
 @immutable final class EvalObject {const EvalObject._(this.value);
 
 factory EvalObject.fromJson(String json) { return switch (json) {

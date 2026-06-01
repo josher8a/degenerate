@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
 
 factory LocalShellCallOutputStatusEnum.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

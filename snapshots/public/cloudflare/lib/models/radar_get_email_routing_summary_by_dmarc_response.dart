@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_dmarc_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryByDmarcResponse {const RadarGetEmailRoutingSummaryByDmarcResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_by_arc_response/radar_get_email_routing_summary_by_arc_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryByDmarcResponse {const RadarGetEmailRoutingSummaryByDmarcResponse({required this.result, required this.success, });
 
 factory RadarGetEmailRoutingSummaryByDmarcResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByDmarcResponse(
-  result: RadarGetEmailRoutingSummaryByDmarcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetEmailRoutingSummaryByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetEmailRoutingSummaryByDmarcResponseResult result;
+final RadarGetEmailRoutingSummaryByArcResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailRoutingSummaryByDmarcResponse copyWith({RadarGetEmailRoutingSummaryByDmarcResponseResult? result, bool? success, }) { return RadarGetEmailRoutingSummaryByDmarcResponse(
+RadarGetEmailRoutingSummaryByDmarcResponse copyWith({RadarGetEmailRoutingSummaryByArcResponseResult? result, bool? success, }) { return RadarGetEmailRoutingSummaryByDmarcResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

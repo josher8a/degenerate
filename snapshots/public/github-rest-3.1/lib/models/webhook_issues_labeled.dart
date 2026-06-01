@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_labeled_issue.dart';import 'webhooks_label.dart';@immutable final class WebhookIssuesLabeledAction {const WebhookIssuesLabeledAction._(this.value);
-
-factory WebhookIssuesLabeledAction.fromJson(String json) { return switch (json) {
-  'labeled' => labeled,
-  _ => WebhookIssuesLabeledAction._(json),
-}; }
-
-static const WebhookIssuesLabeledAction labeled = WebhookIssuesLabeledAction._('labeled');
-
-static const List<WebhookIssuesLabeledAction> values = [labeled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesLabeledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesLabeledAction($value)'; } 
- }
-@immutable final class WebhookIssuesLabeled {const WebhookIssuesLabeled({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_labeled/webhook_discussion_labeled_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_labeled/webhook_issues_labeled_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookIssuesLabeled {const WebhookIssuesLabeled({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.label, this.organization, });
 
 factory WebhookIssuesLabeled.fromJson(Map<String, dynamic> json) { return WebhookIssuesLabeled(
-  action: WebhookIssuesLabeledAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionLabeledAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhookIssuesLabeledIssue.fromJson(json['issue'] as Map<String, dynamic>),
@@ -34,7 +13,7 @@ factory WebhookIssuesLabeled.fromJson(Map<String, dynamic> json) { return Webhoo
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssuesLabeledAction action;
+final WebhookDiscussionLabeledAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -65,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesLabeled copyWith({WebhookIssuesLabeledAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesLabeledIssue? issue, WebhooksLabel Function()? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesLabeled(
+WebhookIssuesLabeled copyWith({WebhookDiscussionLabeledAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesLabeledIssue? issue, WebhooksLabel Function()? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesLabeled(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

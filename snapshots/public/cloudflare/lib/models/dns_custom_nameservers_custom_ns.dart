@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_custom_ns_dns_records.dart';import 'dns_custom_nameservers_ns_name.dart';import 'dns_custom_nameservers_ns_set.dart';/// Identifier.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_custom_ns/dns_records.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_ns_name.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_ns_set.dart';/// Identifier.
 extension type const DnsCustomNameserversSchemasIdentifier(String value) {
 factory DnsCustomNameserversSchemasIdentifier.fromJson(String json) => DnsCustomNameserversSchemasIdentifier(json);
 
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class DnsCustomNameserversCustomNs {const DnsCustomNameserversCustomNs({required this.dnsRecords, required this.nsName, required this.status, required this.zoneTag, this.nsSet, });
 
 factory DnsCustomNameserversCustomNs.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversCustomNs(
-  dnsRecords: (json['dns_records'] as List<dynamic>).map((e) => DnsCustomNameserversCustomNsDnsRecords.fromJson(e as Map<String, dynamic>)).toList(),
+  dnsRecords: (json['dns_records'] as List<dynamic>).map((e) => DnsRecords.fromJson(e as Map<String, dynamic>)).toList(),
   nsName: DnsCustomNameserversNsName.fromJson(json['ns_name'] as String),
   nsSet: json['ns_set'] != null ? DnsCustomNameserversNsSet.fromJson(json['ns_set'] as num) : null,
   status: DnsCustomNameserversCustomNsStatus.fromJson(json['status'] as String),
@@ -47,7 +47,7 @@ factory DnsCustomNameserversCustomNs.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// A and AAAA records associated with the nameserver.
-final List<DnsCustomNameserversCustomNsDnsRecords> dnsRecords;
+final List<DnsRecords> dnsRecords;
 
 final DnsCustomNameserversNsName nsName;
 
@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dns_r
       json.containsKey('ns_name') &&
       json.containsKey('status') &&
       json.containsKey('zone_tag'); } 
-DnsCustomNameserversCustomNs copyWith({List<DnsCustomNameserversCustomNsDnsRecords>? dnsRecords, DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet Function()? nsSet, DnsCustomNameserversCustomNsStatus? status, DnsCustomNameserversSchemasIdentifier? zoneTag, }) { return DnsCustomNameserversCustomNs(
+DnsCustomNameserversCustomNs copyWith({List<DnsRecords>? dnsRecords, DnsCustomNameserversNsName? nsName, DnsCustomNameserversNsSet Function()? nsSet, DnsCustomNameserversCustomNsStatus? status, DnsCustomNameserversSchemasIdentifier? zoneTag, }) { return DnsCustomNameserversCustomNs(
   dnsRecords: dnsRecords ?? this.dnsRecords,
   nsName: nsName ?? this.nsName,
   nsSet: nsSet != null ? nsSet() : this.nsSet,

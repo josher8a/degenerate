@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_zones_zone_id_logpush_jobs_job_id_response_result.dart';import '../models/logpush_dataset.dart';import '../models/logpush_destination_exists_response_result.dart';import '../models/logpush_get_ownership_response_result.dart';import '../models/logpush_id.dart';import '../models/logpush_identifier.dart';import '../models/logpush_logpush_job.dart';import '../models/logpush_validate_ownership_response_result.dart';import '../models/logpush_validate_response_result.dart';import '../models/post_zones_zone_id_logpush_jobs_request.dart';import '../models/post_zones_zone_id_logpush_ownership_request.dart';import '../models/post_zones_zone_id_logpush_ownership_validate_request.dart';import '../models/post_zones_zone_id_logpush_validate_destination_exists_request.dart';import '../models/post_zones_zone_id_logpush_validate_destination_request.dart';import '../models/post_zones_zone_id_logpush_validate_origin_request.dart';import '../models/put_zones_zone_id_logpush_jobs_job_id_request.dart';/// LogpushJobsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_accounts_account_id_logpush_jobs_job_id_response/delete_accounts_account_id_logpush_jobs_job_id_response_result.dart';import 'package:pub_cloudflare/models/logpush_dataset.dart';import 'package:pub_cloudflare/models/logpush_destination_exists_response/logpush_destination_exists_response_result.dart';import 'package:pub_cloudflare/models/logpush_get_ownership_response/logpush_get_ownership_response_result.dart';import 'package:pub_cloudflare/models/logpush_id.dart';import 'package:pub_cloudflare/models/logpush_identifier.dart';import 'package:pub_cloudflare/models/logpush_logpush_job.dart';import 'package:pub_cloudflare/models/logpush_validate_ownership_response/logpush_validate_ownership_response_result.dart';import 'package:pub_cloudflare/models/logpush_validate_response/logpush_validate_response_result.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_jobs_request.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_ownership_request.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_ownership_validate_request.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_validate_destination_exists_request.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_validate_destination_request.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_validate_origin_request.dart';import 'package:pub_cloudflare/models/put_zones_zone_id_logpush_jobs_job_id_request.dart';/// LogpushJobsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -149,7 +149,7 @@ return execute(
 /// Deletes a Logpush job.
 ///
 /// `DELETE /zones/{zone_id}/logpush/jobs/{job_id}`
-Future<ApiResult<DeleteZonesZoneIdLogpushJobsJobIdResponseResult?, Never>> deleteZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteAccountsAccountIdLogpushJobsJobIdResponseResult?, Never>> deleteZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -162,7 +162,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? DeleteZonesZoneIdLogpushJobsJobIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? DeleteAccountsAccountIdLogpushJobsJobIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

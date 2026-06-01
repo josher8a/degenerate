@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_identifier.dart';import '../models/firewall_ip_range_search.dart';import '../models/firewall_ip_search.dart';import '../models/firewall_lockdowns_components_schemas_id.dart';import '../models/firewall_modified_on.dart';import '../models/firewall_schemas_description_search.dart';import '../models/firewall_schemas_priority.dart';import '../models/firewall_uri_search.dart';import '../models/firewall_zonelockdown.dart';import '../models/zone_lockdown_create_a_zone_lockdown_rule_request.dart';import '../models/zone_lockdown_delete_a_zone_lockdown_rule_response_result.dart';import '../models/zone_lockdown_update_a_zone_lockdown_rule_request.dart';/// ZoneLockdownApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_ip_range_search.dart';import 'package:pub_cloudflare/models/firewall_ip_search.dart';import 'package:pub_cloudflare/models/firewall_lockdowns_components_schemas_id.dart';import 'package:pub_cloudflare/models/firewall_modified_on.dart';import 'package:pub_cloudflare/models/firewall_schemas_description_search.dart';import 'package:pub_cloudflare/models/firewall_schemas_priority.dart';import 'package:pub_cloudflare/models/firewall_uri_search.dart';import 'package:pub_cloudflare/models/firewall_zonelockdown.dart';import 'package:pub_cloudflare/models/zone_lockdown_create_a_zone_lockdown_rule_request.dart';import 'package:pub_cloudflare/models/zone_lockdown_update_a_zone_lockdown_rule_request.dart';/// ZoneLockdownApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -143,7 +143,7 @@ return execute(
 /// Deletes an existing Zone Lockdown rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/lockdowns/{lock_downs_id}`
-Future<ApiResult<ZoneLockdownDeleteAZoneLockdownRuleResponseResult?, Never>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> zoneLockdownDeleteAZoneLockdownRule({required FirewallLockdownsComponentsSchemasId lockDownsId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -156,7 +156,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -1,53 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_dob.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_person_verification.dart';import 'person_additional_tos_acceptances.dart';import 'person_future_requirements.dart';import 'person_relationship.dart';import 'person_requirements.dart';import 'person_us_cfpb_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PersonObject {const PersonObject._(this.value);
-
-factory PersonObject.fromJson(String json) { return switch (json) {
-  'person' => person,
-  _ => PersonObject._(json),
-}; }
-
-static const PersonObject person = PersonObject._('person');
-
-static const List<PersonObject> values = [person];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonObject($value)'; } 
- }
-/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-@immutable final class PersonPoliticalExposure {const PersonPoliticalExposure._(this.value);
-
-factory PersonPoliticalExposure.fromJson(String json) { return switch (json) {
-  'existing' => existing,
-  'none' => none,
-  _ => PersonPoliticalExposure._(json),
-}; }
-
-static const PersonPoliticalExposure existing = PersonPoliticalExposure._('existing');
-
-static const PersonPoliticalExposure none = PersonPoliticalExposure._('none');
-
-static const List<PersonPoliticalExposure> values = [existing, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonPoliticalExposure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonPoliticalExposure($value)'; } 
- }
-/// This is an object representing a person associated with a Stripe account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/deleted_person/deleted_person_object.dart';import 'package:pub_stripe_spec3/models/legal_entity_dob.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';import 'package:pub_stripe_spec3/models/legal_entity_person_verification.dart';import 'package:pub_stripe_spec3/models/person/political_exposure.dart';import 'package:pub_stripe_spec3/models/person_additional_tos_acceptances.dart';import 'package:pub_stripe_spec3/models/person_future_requirements.dart';import 'package:pub_stripe_spec3/models/person_relationship.dart';import 'package:pub_stripe_spec3/models/person_requirements.dart';import 'package:pub_stripe_spec3/models/person_us_cfpb_data.dart';/// This is an object representing a person associated with a Stripe account.
 /// 
 /// A platform can only access a subset of data in a person for an account where [account.controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`, which includes Standard and Express accounts, after creating an Account Link or Account Session to start Connect onboarding.
 /// 
@@ -78,9 +31,9 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   maidenName: json['maiden_name'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nationality: json['nationality'] as String?,
-  object: PersonObject.fromJson(json['object'] as String),
+  object: DeletedPersonObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
-  politicalExposure: json['political_exposure'] != null ? PersonPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
+  politicalExposure: json['political_exposure'] != null ? PoliticalExposure.fromJson(json['political_exposure'] as String) : null,
   registeredAddress: json['registered_address'] != null ? Address.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
   relationship: json['relationship'] != null ? PersonRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   requirements: json['requirements'] != null ? PersonRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
@@ -153,13 +106,13 @@ final Map<String,String>? metadata;
 final String? nationality;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final PersonObject object;
+final DeletedPersonObject object;
 
 /// The person's phone number.
 final String? phone;
 
 /// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-final PersonPoliticalExposure? politicalExposure;
+final PoliticalExposure? politicalExposure;
 
 final Address? registeredAddress;
 
@@ -213,7 +166,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Person copyWith({String? account, PersonAdditionalTosAcceptances Function()? additionalTosAcceptances, Address Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, int? created, LegalEntityDob Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, List<String> Function()? fullNameAliases, PersonFutureRequirements? Function()? futureRequirements, String? Function()? gender, String? id, bool Function()? idNumberProvided, bool Function()? idNumberSecondaryProvided, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Map<String, String> Function()? metadata, String? Function()? nationality, PersonObject? object, String? Function()? phone, PersonPoliticalExposure Function()? politicalExposure, Address Function()? registeredAddress, PersonRelationship Function()? relationship, PersonRequirements? Function()? requirements, bool Function()? ssnLast4Provided, PersonUsCfpbData? Function()? usCfpbData, LegalEntityPersonVerification Function()? verification, }) { return Person(
+Person copyWith({String? account, PersonAdditionalTosAcceptances Function()? additionalTosAcceptances, Address Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, int? created, LegalEntityDob Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, List<String> Function()? fullNameAliases, PersonFutureRequirements? Function()? futureRequirements, String? Function()? gender, String? id, bool Function()? idNumberProvided, bool Function()? idNumberSecondaryProvided, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Map<String, String> Function()? metadata, String? Function()? nationality, DeletedPersonObject? object, String? Function()? phone, PoliticalExposure Function()? politicalExposure, Address Function()? registeredAddress, PersonRelationship Function()? relationship, PersonRequirements? Function()? requirements, bool Function()? ssnLast4Provided, PersonUsCfpbData? Function()? usCfpbData, LegalEntityPersonVerification Function()? verification, }) { return Person(
   account: account ?? this.account,
   additionalTosAcceptances: additionalTosAcceptances != null ? additionalTosAcceptances() : this.additionalTosAcceptances,
   address: address != null ? address() : this.address,

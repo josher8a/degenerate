@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/email_security_account_id.dart';import '../models/email_security_allow_policy.dart';import '../models/email_security_allow_policy_id.dart';import '../models/email_security_batch_allow_policies_request.dart';import '../models/email_security_batch_allow_policies_response_result.dart';import '../models/email_security_batch_blocked_senders_request.dart';import '../models/email_security_batch_blocked_senders_response_result.dart';import '../models/email_security_batch_sending_domain_restrictions_request.dart';import '../models/email_security_batch_sending_domain_restrictions_response_result.dart';import '../models/email_security_batch_trusted_domains_request.dart';import '../models/email_security_batch_trusted_domains_response_result.dart';import '../models/email_security_blocked_sender.dart';import '../models/email_security_blocked_sender_id.dart';import '../models/email_security_create_allow_policy.dart';import '../models/email_security_create_allow_policy_response_result.dart';import '../models/email_security_create_blocked_sender.dart';import '../models/email_security_create_blocked_sender_response_result.dart';import '../models/email_security_create_display_name.dart';import '../models/email_security_create_display_name_response_result.dart';import '../models/email_security_create_trusted_domain_request.dart';import '../models/email_security_create_trusted_domain_response_result.dart';import '../models/email_security_delete_allow_policy_response_result.dart';import '../models/email_security_delete_blocked_sender_response_result.dart';import '../models/email_security_delete_display_name_response_result.dart';import '../models/email_security_delete_domain_response_result.dart';import '../models/email_security_delete_domains_request.dart';import '../models/email_security_delete_domains_response_result.dart';import '../models/email_security_delete_trusted_domain_response_result.dart';import '../models/email_security_delivery_mode.dart';import '../models/email_security_display_name.dart';import '../models/email_security_domain.dart';import '../models/email_security_get_allow_policy_response_result.dart';import '../models/email_security_get_blocked_sender_response_result.dart';import '../models/email_security_get_display_name_response_result.dart';import '../models/email_security_get_domain_response_result.dart';import '../models/email_security_get_trusted_domain_response_result.dart';import '../models/email_security_list_allow_policies_order.dart';import '../models/email_security_list_blocked_senders_order.dart';import '../models/email_security_list_display_names_order.dart';import '../models/email_security_list_display_names_provenance.dart';import '../models/email_security_list_domains_order.dart';import '../models/email_security_list_trusted_domains_order.dart';import '../models/email_security_pattern_type.dart';import '../models/email_security_sorting_direction.dart';import '../models/email_security_trusted_domain.dart';import '../models/email_security_trusted_domain_id.dart';import '../models/email_security_update_allow_policy.dart';import '../models/email_security_update_allow_policy_response_result.dart';import '../models/email_security_update_blocked_sender.dart';import '../models/email_security_update_blocked_sender_response_result.dart';import '../models/email_security_update_display_name_request.dart';import '../models/email_security_update_display_name_response_result.dart';import '../models/email_security_update_domain_request.dart';import '../models/email_security_update_domain_response_result.dart';import '../models/email_security_update_trusted_domain_request.dart';import '../models/email_security_update_trusted_domain_response_result.dart';/// EmailSecuritySettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_account_id.dart';import 'package:pub_cloudflare/models/email_security_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_allow_policy_id.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_response/email_security_batch_allow_policies_response_result.dart';import 'package:pub_cloudflare/models/email_security_batch_blocked_senders_request.dart';import 'package:pub_cloudflare/models/email_security_batch_blocked_senders_response/email_security_batch_blocked_senders_response_result.dart';import 'package:pub_cloudflare/models/email_security_batch_sending_domain_restrictions_request.dart';import 'package:pub_cloudflare/models/email_security_batch_sending_domain_restrictions_response/email_security_batch_sending_domain_restrictions_response_result.dart';import 'package:pub_cloudflare/models/email_security_batch_trusted_domains_request.dart';import 'package:pub_cloudflare/models/email_security_batch_trusted_domains_response/email_security_batch_trusted_domains_response_result.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender.dart';import 'package:pub_cloudflare/models/email_security_blocked_sender_id.dart';import 'package:pub_cloudflare/models/email_security_create_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_create_allow_policy_response/email_security_create_allow_policy_response_result.dart';import 'package:pub_cloudflare/models/email_security_create_blocked_sender.dart';import 'package:pub_cloudflare/models/email_security_create_blocked_sender_response/email_security_create_blocked_sender_response_result.dart';import 'package:pub_cloudflare/models/email_security_create_display_name.dart';import 'package:pub_cloudflare/models/email_security_create_display_name_response/email_security_create_display_name_response_result.dart';import 'package:pub_cloudflare/models/email_security_create_trusted_domain_request.dart';import 'package:pub_cloudflare/models/email_security_create_trusted_domain_response/email_security_create_trusted_domain_response_result.dart';import 'package:pub_cloudflare/models/email_security_delete_allow_policy_response/email_security_delete_allow_policy_response_result.dart';import 'package:pub_cloudflare/models/email_security_delete_domains_request.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_display_name.dart';import 'package:pub_cloudflare/models/email_security_domain.dart';import 'package:pub_cloudflare/models/email_security_get_domain_response/email_security_get_domain_response_result.dart';import 'package:pub_cloudflare/models/email_security_get_trusted_domain_response/email_security_get_trusted_domain_response_result.dart';import 'package:pub_cloudflare/models/email_security_list_allow_policies_order.dart';import 'package:pub_cloudflare/models/email_security_list_blocked_senders_order.dart';import 'package:pub_cloudflare/models/email_security_list_display_names_order.dart';import 'package:pub_cloudflare/models/email_security_list_display_names_provenance.dart';import 'package:pub_cloudflare/models/email_security_list_domains_order.dart';import 'package:pub_cloudflare/models/email_security_list_trusted_domains_order.dart';import 'package:pub_cloudflare/models/email_security_pattern_type.dart';import 'package:pub_cloudflare/models/email_security_sorting_direction.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain.dart';import 'package:pub_cloudflare/models/email_security_trusted_domain_id.dart';import 'package:pub_cloudflare/models/email_security_update_allow_policy.dart';import 'package:pub_cloudflare/models/email_security_update_blocked_sender.dart';import 'package:pub_cloudflare/models/email_security_update_display_name_request.dart';import 'package:pub_cloudflare/models/email_security_update_domain_request.dart';import 'package:pub_cloudflare/models/email_security_update_trusted_domain_request.dart';/// EmailSecuritySettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -108,7 +108,7 @@ return execute(
 /// and scope.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<EmailSecurityGetAllowPolicyResponseResult, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateAllowPolicyResponseResult, Never>> emailSecurityGetAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,7 +121,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityGetAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -130,7 +130,7 @@ return execute(
 /// Updates an existing email allow policy, modifying its matching criteria or scope.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/allow_policies/{policy_id}`
-Future<ApiResult<EmailSecurityUpdateAllowPolicyResponseResult, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateAllowPolicyResponseResult, Never>> emailSecurityUpdateAllowPolicy({required EmailSecurityAccountId accountId, required EmailSecurityAllowPolicyId policyId, required EmailSecurityUpdateAllowPolicy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,7 +145,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityUpdateAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -275,7 +275,7 @@ return execute(
 /// block reason.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<EmailSecurityGetBlockedSenderResponseResult, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateBlockedSenderResponseResult, Never>> emailSecurityGetBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -288,7 +288,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityGetBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -297,7 +297,7 @@ return execute(
 /// Modifies a blocked sender entry, updating its pattern or block reason.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<EmailSecurityUpdateBlockedSenderResponseResult, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateBlockedSenderResponseResult, Never>> emailSecurityUpdateBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, required EmailSecurityUpdateBlockedSender body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -312,7 +312,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityUpdateBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -322,7 +322,7 @@ return execute(
 /// normally.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/block_senders/{pattern_id}`
-Future<ApiResult<EmailSecurityDeleteBlockedSenderResponseResult, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecurityDeleteBlockedSender({required EmailSecurityAccountId accountId, required EmailSecurityBlockedSenderId patternId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -335,7 +335,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityDeleteBlockedSenderResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -424,7 +424,7 @@ return execute(
 /// Bulk removes multiple domains from email security configuration in a single request.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains`
-Future<ApiResult<List<EmailSecurityDeleteDomainsResponseResult>, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<EmailSecurityDeleteAllowPolicyResponseResult>, Never>> emailSecurityDeleteDomains({required EmailSecurityAccountId accountId, required List<EmailSecurityDeleteDomainsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -439,7 +439,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => EmailSecurityDeleteDomainsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => EmailSecurityDeleteAllowPolicyResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -470,7 +470,7 @@ return execute(
 /// Updates configuration for a domain in email security.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<EmailSecurityUpdateDomainResponseResult, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetDomainResponseResult, Never>> emailSecurityUpdateDomain({required EmailSecurityAccountId accountId, required int domainId, required EmailSecurityUpdateDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -485,14 +485,14 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityUpdateDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityGetDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
 /// Unprotect an email domain
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/domains/{domain_id}`
-Future<ApiResult<EmailSecurityDeleteDomainResponseResult, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecurityDeleteDomain({required EmailSecurityAccountId accountId, required int domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -505,7 +505,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityDeleteDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -583,7 +583,7 @@ return execute(
 /// Retrieves a display name entry used for impersonation protection.
 ///
 /// `GET /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<EmailSecurityGetDisplayNameResponseResult, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateDisplayNameResponseResult, Never>> emailSecurityGetDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -596,7 +596,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityGetDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -605,7 +605,7 @@ return execute(
 /// Updates a display name entry used for impersonation protection.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<EmailSecurityUpdateDisplayNameResponseResult, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityCreateDisplayNameResponseResult, Never>> emailSecurityUpdateDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, required EmailSecurityUpdateDisplayNameRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -620,7 +620,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityUpdateDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityCreateDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -629,7 +629,7 @@ return execute(
 /// Removes a display name from impersonation protection monitoring.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/impersonation_registry/{display_name_id}`
-Future<ApiResult<EmailSecurityDeleteDisplayNameResponseResult, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecurityDeleteDisplayName({required EmailSecurityAccountId accountId, required int displayNameId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -642,7 +642,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityDeleteDisplayNameResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -773,7 +773,7 @@ return execute(
 /// Modifies a trusted domain entry's configuration.
 ///
 /// `PATCH /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<EmailSecurityUpdateTrustedDomainResponseResult, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityGetTrustedDomainResponseResult, Never>> emailSecurityUpdateTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, required EmailSecurityUpdateTrustedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -788,7 +788,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityUpdateTrustedDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityGetTrustedDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -798,7 +798,7 @@ return execute(
 /// scanning.
 ///
 /// `DELETE /accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}`
-Future<ApiResult<EmailSecurityDeleteTrustedDomainResponseResult, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailSecurityDeleteAllowPolicyResponseResult, Never>> emailSecurityDeleteTrustedDomain({required EmailSecurityAccountId accountId, required EmailSecurityTrustedDomainId trustedDomainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -811,7 +811,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return EmailSecurityDeleteTrustedDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

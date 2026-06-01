@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge_outcome_rule.dart';import 'rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
-@immutable final class ChargeOutcomeAdviceCode {const ChargeOutcomeAdviceCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge_outcome/charge_outcome_rule.dart';import 'package:pub_stripe_spec3/models/rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
+@immutable final class AdviceCode {const AdviceCode._(this.value);
 
-factory ChargeOutcomeAdviceCode.fromJson(String json) { return switch (json) {
+factory AdviceCode.fromJson(String json) { return switch (json) {
   'confirm_card_data' => confirmCardData,
   'do_not_try_again' => doNotTryAgain,
   'try_again_later' => tryAgainLater,
-  _ => ChargeOutcomeAdviceCode._(json),
+  _ => AdviceCode._(json),
 }; }
 
-static const ChargeOutcomeAdviceCode confirmCardData = ChargeOutcomeAdviceCode._('confirm_card_data');
+static const AdviceCode confirmCardData = AdviceCode._('confirm_card_data');
 
-static const ChargeOutcomeAdviceCode doNotTryAgain = ChargeOutcomeAdviceCode._('do_not_try_again');
+static const AdviceCode doNotTryAgain = AdviceCode._('do_not_try_again');
 
-static const ChargeOutcomeAdviceCode tryAgainLater = ChargeOutcomeAdviceCode._('try_again_later');
+static const AdviceCode tryAgainLater = AdviceCode._('try_again_later');
 
-static const List<ChargeOutcomeAdviceCode> values = [confirmCardData, doNotTryAgain, tryAgainLater];
+static const List<AdviceCode> values = [confirmCardData, doNotTryAgain, tryAgainLater];
 
 final String value;
 
@@ -24,15 +24,15 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChargeOutcomeAdviceCode && other.value == value; } 
+    other is AdviceCode && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChargeOutcomeAdviceCode($value)'; } 
+@override String toString() { return 'AdviceCode($value)'; } 
  }
 /// 
 @immutable final class ChargeOutcome {const ChargeOutcome({required this.type, this.adviceCode, this.networkAdviceCode, this.networkDeclineCode, this.networkStatus, this.reason, this.riskLevel, this.riskScore, this.rule, this.sellerMessage, });
 
 factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome(
-  adviceCode: json['advice_code'] != null ? ChargeOutcomeAdviceCode.fromJson(json['advice_code'] as String) : null,
+  adviceCode: json['advice_code'] != null ? AdviceCode.fromJson(json['advice_code'] as String) : null,
   networkAdviceCode: json['network_advice_code'] as String?,
   networkDeclineCode: json['network_decline_code'] as String?,
   networkStatus: json['network_status'] as String?,
@@ -45,7 +45,7 @@ factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome
 ); }
 
 /// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
-final ChargeOutcomeAdviceCode? adviceCode;
+final AdviceCode? adviceCode;
 
 /// For charges declined by the network, a 2 digit code which indicates the advice returned by the network on how to proceed with an error.
 final String? networkAdviceCode;
@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ChargeOutcome copyWith({ChargeOutcomeAdviceCode? Function()? adviceCode, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? networkStatus, String? Function()? reason, String Function()? riskLevel, int Function()? riskScore, ChargeOutcomeRule Function()? rule, String? Function()? sellerMessage, String? type, }) { return ChargeOutcome(
+ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? networkStatus, String? Function()? reason, String Function()? riskLevel, int Function()? riskScore, ChargeOutcomeRule Function()? rule, String? Function()? sellerMessage, String? type, }) { return ChargeOutcome(
   adviceCode: adviceCode != null ? adviceCode() : this.adviceCode,
   networkAdviceCode: networkAdviceCode != null ? networkAdviceCode() : this.networkAdviceCode,
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,

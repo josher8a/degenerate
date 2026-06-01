@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'parallel_tool_calls.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'run_completion_usage.dart';import 'run_object_incomplete_details.dart';import 'run_object_last_error.dart';import 'run_object_required_action.dart';import 'run_object_tools.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';/// The object type, which is always `thread.run`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/run_completion_usage.dart';import 'package:pub_openai/models/run_object/required_action.dart';import 'package:pub_openai/models/run_object/run_object_incomplete_details.dart';import 'package:pub_openai/models/run_object/run_object_last_error.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';/// The object type, which is always `thread.run`.
 @immutable final class RunObjectObject {const RunObjectObject._(this.value);
 
 factory RunObjectObject.fromJson(String json) { return switch (json) {
@@ -78,7 +78,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   threadId: json['thread_id'] as String,
   assistantId: json['assistant_id'] as String,
   status: RunObjectStatus.fromJson(json['status'] as String),
-  requiredAction: json['required_action'] != null ? RunObjectRequiredAction.fromJson(json['required_action'] as Map<String, dynamic>) : null,
+  requiredAction: json['required_action'] != null ? RequiredAction.fromJson(json['required_action'] as Map<String, dynamic>) : null,
   lastError: json['last_error'] != null ? RunObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   startedAt: json['started_at'] != null ? (json['started_at'] as num).toInt() : null,
@@ -120,7 +120,7 @@ final String assistantId;
 final RunObjectStatus status;
 
 /// Details on the action required to continue the run. Will be `null` if no action is required.
-final RunObjectRequiredAction? requiredAction;
+final RequiredAction? requiredAction;
 
 /// The last error associated with this run. Will be `null` if there are no errors.
 final RunObjectLastError? lastError;
@@ -150,7 +150,7 @@ final String model;
 final String instructions;
 
 /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.
-final List<RunObjectTools> tools;
+final List<AssistantObjectTools> tools;
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -240,7 +240,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('tool_choice') &&
       json.containsKey('parallel_tool_calls') &&
       json.containsKey('response_format'); } 
-RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, double? Function()? temperature, double? Function()? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
+RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<AssistantObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, double? Function()? temperature, double? Function()? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

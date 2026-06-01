@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/teams_devices_global_warp_override.dart';import '../models/teams_devices_global_warp_override_request.dart';import '../models/teams_devices_identifier.dart';/// DevicesResilienceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_global_warp_override.dart';import 'package:pub_cloudflare/models/teams_devices_global_warp_override_request.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';/// DevicesResilienceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

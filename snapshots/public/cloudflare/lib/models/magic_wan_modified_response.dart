@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_wan.dart';@immutable final class MagicWanModifiedResponse {const MagicWanModifiedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_wan.dart';@immutable final class MagicWanModifiedResponse {const MagicWanModifiedResponse({this.result});
 
 factory MagicWanModifiedResponse.fromJson(Map<String, dynamic> json) { return MagicWanModifiedResponse(
   result: json['result'] != null ? MagicWan.fromJson(json['result'] as Map<String, dynamic>) : null,

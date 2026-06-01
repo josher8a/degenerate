@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse {const ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';@immutable final class ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse {const ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse({required this.totalCount, required this.repositories, });
 
 factory ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse(
   totalCount: (json['total_count'] as num).toDouble(),

@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_installation_target_renamed_account.dart';import 'webhook_installation_target_renamed_changes.dart';@immutable final class WebhookInstallationTargetRenamedAction {const WebhookInstallationTargetRenamedAction._(this.value);
-
-factory WebhookInstallationTargetRenamedAction.fromJson(String json) { return switch (json) {
-  'renamed' => renamed,
-  _ => WebhookInstallationTargetRenamedAction._(json),
-}; }
-
-static const WebhookInstallationTargetRenamedAction renamed = WebhookInstallationTargetRenamedAction._('renamed');
-
-static const List<WebhookInstallationTargetRenamedAction> values = [renamed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationTargetRenamedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationTargetRenamedAction($value)'; } 
- }
-@immutable final class WebhookInstallationTargetRenamed {const WebhookInstallationTargetRenamed({required this.account, required this.action, required this.changes, required this.installation, required this.targetType, this.enterprise, this.organization, this.repository, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_account.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_changes.dart';@immutable final class WebhookInstallationTargetRenamed {const WebhookInstallationTargetRenamed({required this.account, required this.action, required this.changes, required this.installation, required this.targetType, this.enterprise, this.organization, this.repository, this.sender, });
 
 factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamed(
   account: WebhookInstallationTargetRenamedAccount.fromJson(json['account'] as Map<String, dynamic>),

@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
+@immutable final class ReposCreateCommitStatusRequestState {const ReposCreateCommitStatusRequestState._(this.value);
+
+factory ReposCreateCommitStatusRequestState.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'success' => success,
+  'failure' => failure,
+  'error' => error,
+  _ => ReposCreateCommitStatusRequestState._(json),
+}; }
+
+static const ReposCreateCommitStatusRequestState pending = ReposCreateCommitStatusRequestState._('pending');
+
+static const ReposCreateCommitStatusRequestState success = ReposCreateCommitStatusRequestState._('success');
+
+static const ReposCreateCommitStatusRequestState failure = ReposCreateCommitStatusRequestState._('failure');
+
+static const ReposCreateCommitStatusRequestState error = ReposCreateCommitStatusRequestState._('error');
+
+static const List<ReposCreateCommitStatusRequestState> values = [pending, success, failure, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposCreateCommitStatusRequestState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReposCreateCommitStatusRequestState($value)'; } 
+ }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_virtual_network.dart';import '../models/tunnel_virtual_network_create_a_virtual_network_request.dart';import '../models/tunnel_virtual_network_get_request.dart';import '../models/tunnel_virtual_network_id.dart';import '../models/tunnel_virtual_network_name.dart';import '../models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_create_a_virtual_network_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_get_request.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_name.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -55,7 +55,7 @@ return execute(
 /// Adds a new virtual network to an account.
 ///
 /// `POST /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelVirtualNetworkCreateAVirtualNetwork({required TunnelAccountId accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelVirtualNetworkCreateAVirtualNetwork({required TunnelAccountId accountId, required TunnelVirtualNetworkCreateAVirtualNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -79,7 +79,7 @@ return execute(
 /// Get a virtual network.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelVirtualNetworkGet({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkGetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelVirtualNetworkGet({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkGetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,7 +103,7 @@ return execute(
 /// Updates an existing virtual network.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelVirtualNetworkUpdate({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelVirtualNetworkUpdate({required TunnelAccountId accountId, required TunnelVirtualNetworkId virtualNetworkId, required TunnelVirtualNetworkUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -127,7 +127,7 @@ return execute(
 /// Deletes an existing virtual network.
 ///
 /// `DELETE /accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelVirtualNetworkDelete({required TunnelVirtualNetworkId virtualNetworkId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelVirtualNetworkDelete({required TunnelVirtualNetworkId virtualNetworkId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',

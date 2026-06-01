@@ -1,35 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'budget_budget_alerting.dart';/// The type of pricing for the budget
-@immutable final class BudgetBudgetType {const BudgetBudgetType._(this.value);
-
-factory BudgetBudgetType.fromJson(String json) { return switch (json) {
-  'SkuPricing' => skuPricing,
-  'ProductPricing' => productPricing,
-  _ => BudgetBudgetType._(json),
-}; }
-
-static const BudgetBudgetType skuPricing = BudgetBudgetType._('SkuPricing');
-
-static const BudgetBudgetType productPricing = BudgetBudgetType._('ProductPricing');
-
-static const List<BudgetBudgetType> values = [skuPricing, productPricing];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BudgetBudgetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BudgetBudgetType($value)'; } 
- }
-@immutable final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, required this.budgetProductSku, required this.budgetAlerting, this.budgetEntityName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_type.dart';import 'package:pub_github_rest_3_1/models/budget/budget_budget_alerting.dart';@immutable final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, required this.budgetProductSku, required this.budgetAlerting, this.budgetEntityName, });
 
 factory Budget.fromJson(Map<String, dynamic> json) { return Budget(
   id: json['id'] as String,
-  budgetType: BudgetBudgetType.fromJson(json['budget_type'] as String),
+  budgetType: BudgetType.fromJson(json['budget_type'] as String),
   budgetAmount: (json['budget_amount'] as num).toInt(),
   preventFurtherUsage: json['prevent_further_usage'] as bool,
   budgetScope: json['budget_scope'] as String,
@@ -42,7 +17,7 @@ factory Budget.fromJson(Map<String, dynamic> json) { return Budget(
 final String id;
 
 /// The type of pricing for the budget
-final BudgetBudgetType budgetType;
+final BudgetType budgetType;
 
 /// The budget amount limit in whole dollars. For license-based products, this represents the number of licenses.
 final int budgetAmount;
@@ -78,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('budget_scope') && json['budget_scope'] is String &&
       json.containsKey('budget_product_sku') && json['budget_product_sku'] is String &&
       json.containsKey('budget_alerting'); } 
-Budget copyWith({String? id, BudgetBudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) { return Budget(
+Budget copyWith({String? id, BudgetType? budgetType, int? budgetAmount, bool? preventFurtherUsage, String? budgetScope, String Function()? budgetEntityName, String? budgetProductSku, BudgetBudgetAlerting? budgetAlerting, }) { return Budget(
   id: id ?? this.id,
   budgetType: budgetType ?? this.budgetType,
   budgetAmount: budgetAmount ?? this.budgetAmount,

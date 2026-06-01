@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invite_projects.dart';/// The object type, which is always `organization.invite`
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite/invite_projects.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';/// The object type, which is always `organization.invite`
 @immutable final class InviteObject {const InviteObject._(this.value);
 
 factory InviteObject.fromJson(String json) { return switch (json) {
@@ -21,31 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is InviteObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InviteObject($value)'; } 
- }
-/// `owner` or `reader`
-@immutable final class InviteRole {const InviteRole._(this.value);
-
-factory InviteRole.fromJson(String json) { return switch (json) {
-  'owner' => owner,
-  'reader' => reader,
-  _ => InviteRole._(json),
-}; }
-
-static const InviteRole owner = InviteRole._('owner');
-
-static const InviteRole reader = InviteRole._('reader');
-
-static const List<InviteRole> values = [owner, reader];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteRole($value)'; } 
  }
 /// `accepted`,`expired`, or `pending`
 @immutable final class InviteStatus {const InviteStatus._(this.value);
@@ -82,7 +57,7 @@ factory Invite.fromJson(Map<String, dynamic> json) { return Invite(
   object: InviteObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   email: json['email'] as String,
-  role: InviteRole.fromJson(json['role'] as String),
+  role: InviteRequestRole.fromJson(json['role'] as String),
   status: InviteStatus.fromJson(json['status'] as String),
   invitedAt: (json['invited_at'] as num).toInt(),
   expiresAt: (json['expires_at'] as num).toInt(),
@@ -100,7 +75,7 @@ final String id;
 final String email;
 
 /// `owner` or `reader`
-final InviteRole role;
+final InviteRequestRole role;
 
 /// `accepted`,`expired`, or `pending`
 final InviteStatus status;
@@ -135,7 +110,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('status') &&
       json.containsKey('invited_at') && json['invited_at'] is num &&
       json.containsKey('expires_at') && json['expires_at'] is num; } 
-Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int Function()? acceptedAt, List<InviteProjects> Function()? projects, }) { return Invite(
+Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int Function()? acceptedAt, List<InviteProjects> Function()? projects, }) { return Invite(
   object: object ?? this.object,
   id: id ?? this.id,
   email: email ?? this.email,

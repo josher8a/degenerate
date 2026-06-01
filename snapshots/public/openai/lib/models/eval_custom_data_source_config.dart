@@ -1,41 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `custom`.
-@immutable final class EvalCustomDataSourceConfigType {const EvalCustomDataSourceConfigType._(this.value);
-
-factory EvalCustomDataSourceConfigType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => EvalCustomDataSourceConfigType._(json),
-}; }
-
-static const EvalCustomDataSourceConfigType custom = EvalCustomDataSourceConfigType._('custom');
-
-static const List<EvalCustomDataSourceConfigType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalCustomDataSourceConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalCustomDataSourceConfigType($value)'; } 
- }
-/// A CustomDataSourceConfig which specifies the schema of your `item` and optionally `sample` namespaces.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';/// A CustomDataSourceConfig which specifies the schema of your `item` and optionally `sample` namespaces.
 /// The response schema defines the shape of the data that will be:
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.schema, this.type = EvalCustomDataSourceConfigType.custom, });
+@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.schema, this.type = ChatCompletionMessageCustomToolCallType.custom, });
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
-  type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),
+  type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   schema: json['schema'] as Map<String, dynamic>,
 ); }
 
 /// The type of data source. Always `custom`.
-final EvalCustomDataSourceConfigType type;
+final ChatCompletionMessageCustomToolCallType type;
 
 /// The json schema for the run data source items.
 /// Learn how to build JSON schemas [here](https://json-schema.org/).
@@ -48,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('schema'); } 
-EvalCustomDataSourceConfig copyWith({EvalCustomDataSourceConfigType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
+EvalCustomDataSourceConfig copyWith({ChatCompletionMessageCustomToolCallType? type, Map<String,dynamic>? schema, }) { return EvalCustomDataSourceConfig(
   type: type ?? this.type,
   schema: schema ?? this.schema,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Commit Comment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Commit Comment
 @immutable final class CommitComment {const CommitComment({required this.htmlUrl, required this.url, required this.id, required this.nodeId, required this.body, required this.path, required this.position, required this.line, required this.commitId, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, this.reactions, });
 
 factory CommitComment.fromJson(Map<String, dynamic> json) { return CommitComment(

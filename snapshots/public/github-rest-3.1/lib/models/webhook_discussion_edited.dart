@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_edited_changes.dart';@immutable final class WebhookDiscussionEditedAction {const WebhookDiscussionEditedAction._(this.value);
-
-factory WebhookDiscussionEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookDiscussionEditedAction._(json),
-}; }
-
-static const WebhookDiscussionEditedAction edited = WebhookDiscussionEditedAction._('edited');
-
-static const List<WebhookDiscussionEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionEditedAction($value)'; } 
- }
-@immutable final class WebhookDiscussionEdited {const WebhookDiscussionEdited({required this.action, required this.discussion, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_edited/webhook_discussion_edited_changes.dart';@immutable final class WebhookDiscussionEdited {const WebhookDiscussionEdited({required this.action, required this.discussion, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionEdited.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEdited(
-  action: WebhookDiscussionEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookDiscussionEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookDiscussionEdited.fromJson(Map<String, dynamic> json) { return Web
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookDiscussionEditedAction action;
+final ItemEditedAction action;
 
 final WebhookDiscussionEditedChanges? changes;
 
@@ -64,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('discussion') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDiscussionEdited copyWith({WebhookDiscussionEditedAction? action, WebhookDiscussionEditedChanges Function()? changes, Discussion? discussion, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionEdited(
+WebhookDiscussionEdited copyWith({ItemEditedAction? action, WebhookDiscussionEditedChanges Function()? changes, Discussion? discussion, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDiscussionEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   discussion: discussion ?? this.discussion,

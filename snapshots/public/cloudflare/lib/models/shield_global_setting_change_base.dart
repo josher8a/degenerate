@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used
-/// Mitigation actions are as follows:
-/// 
-///   - `"log"` - log request when request does not conform to schema
-///   - `"block"` - deny access to the site when request does not conform to schema
-///   - `"none"` - skip running schema validation
-/// 
-@immutable final class ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction {const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._(this.value);
-
-factory ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'log' => log,
-  'block' => block,
-  _ => ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._(json),
-}; }
-
-static const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction none = ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._('none');
-
-static const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction log = ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._('log');
-
-static const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction block = ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._('block');
-
-static const List<ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction> values = [none, log, block];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction($value)'; } 
- }
-/// When set, this overrides both zone level and operation level mitigation actions.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_global_setting_change_base/validation_default_mitigation_action.dart';/// When set, this overrides both zone level and operation level mitigation actions.
 /// 
 ///   - `"none"` - skip running schema validation entirely for the request
 ///   - `null` - clears any existing override
@@ -66,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class ShieldGlobalSettingChangeBase {const ShieldGlobalSettingChangeBase({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
 factory ShieldGlobalSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldGlobalSettingChangeBase(
-  validationDefaultMitigationAction: json['validation_default_mitigation_action'] != null ? ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String) : null,
+  validationDefaultMitigationAction: json['validation_default_mitigation_action'] != null ? ValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String) : null,
   validationOverrideMitigationAction: json['validation_override_mitigation_action'] != null ? ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction.fromJson(json['validation_override_mitigation_action'] as String) : null,
 ); }
 
@@ -77,7 +43,7 @@ factory ShieldGlobalSettingChangeBase.fromJson(Map<String, dynamic> json) { retu
 ///   - `"block"` - deny access to the site when request does not conform to schema
 ///   - `"none"` - skip running schema validation
 /// 
-final ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction? validationDefaultMitigationAction;
+final ValidationDefaultMitigationAction? validationDefaultMitigationAction;
 
 /// When set, this overrides both zone level and operation level mitigation actions.
 /// 
@@ -91,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (validationOverrideMitigationAction != null) 'validation_override_mitigation_action': validationOverrideMitigationAction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'validation_default_mitigation_action', 'validation_override_mitigation_action'}.contains(key)); } 
-ShieldGlobalSettingChangeBase copyWith({ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction Function()? validationDefaultMitigationAction, ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction? Function()? validationOverrideMitigationAction, }) { return ShieldGlobalSettingChangeBase(
+ShieldGlobalSettingChangeBase copyWith({ValidationDefaultMitigationAction Function()? validationDefaultMitigationAction, ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction? Function()? validationOverrideMitigationAction, }) { return ShieldGlobalSettingChangeBase(
   validationDefaultMitigationAction: validationDefaultMitigationAction != null ? validationDefaultMitigationAction() : this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
 ); } 

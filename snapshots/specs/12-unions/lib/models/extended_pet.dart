@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'owner.dart';import 'pet_status.dart';@immutable final class ExtendedPet {const ExtendedPet({required this.id, required this.name, this.status, this.breed, this.vaccinated, this.weight, this.owner, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/owner.dart';import 'package:spec_12_unions/models/pet_status.dart';@immutable final class ExtendedPet {const ExtendedPet({required this.id, required this.name, this.status, this.breed, this.vaccinated, this.weight, this.owner, });
 
 factory ExtendedPet.fromJson(Map<String, dynamic> json) { return ExtendedPet(
   id: (json['id'] as num).toInt(),

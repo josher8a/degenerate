@@ -1,72 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card. One of `month`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval._(this.value);
-
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval.fromJson(String json) { return switch (json) {
-  'month' => month,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval._(json),
-}; }
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval month = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval._('month');
-
-static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval> values = [month];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval($value)'; } 
- }
-/// Type of installment plan, one of `fixed_count`, `revolving`, or `bonus`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType._(this.value);
-
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType.fromJson(String json) { return switch (json) {
-  'bonus' => bonus,
-  'fixed_count' => fixedCount,
-  'revolving' => revolving,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType._(json),
-}; }
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType bonus = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType._('bonus');
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType fixedCount = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType._('fixed_count');
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType revolving = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType._('revolving');
-
-static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType> values = [bonus, fixedCount, revolving];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_type.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_installments_plan/payment_method_details_card_installments_plan_interval.dart';/// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan({required this.type, this.count, this.interval, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
-  interval: json['interval'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval.fromJson(json['interval'] as String) : null,
-  type: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType.fromJson(json['type'] as String),
+  interval: json['interval'] != null ? PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null,
+  type: installment_planType.fromJson(json['type'] as String),
 ); }
 
 /// For `fixed_count` installment plans, this is the number of installment payments your customer will make to their credit card.
 final int? count;
 
 /// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card. One of `month`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval? interval;
+final PaymentMethodDetailsCardInstallmentsPlanInterval? interval;
 
 /// Type of installment plan, one of `fixed_count`, `revolving`, or `bonus`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType type;
+final installment_planType type;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -74,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan copyWith({int? Function()? count, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanInterval? Function()? interval, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlanType? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, installment_planType? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,

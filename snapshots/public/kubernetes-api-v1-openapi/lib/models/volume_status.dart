@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_volume_status.dart';/// VolumeStatus represents the status of a mounted volume. At most one of its members must be specified.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/image_volume_status.dart';/// VolumeStatus represents the status of a mounted volume. At most one of its members must be specified.
 @immutable final class VolumeStatus {const VolumeStatus({this.image});
 
 factory VolumeStatus.fromJson(Map<String, dynamic> json) { return VolumeStatus(

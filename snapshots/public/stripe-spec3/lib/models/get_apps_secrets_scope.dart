@@ -1,37 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAppsSecretsScopeType {const GetAppsSecretsScopeType._(this.value);
-
-factory GetAppsSecretsScopeType.fromJson(String json) { return switch (json) {
-  'account' => account,
-  'user' => user,
-  _ => GetAppsSecretsScopeType._(json),
-}; }
-
-static const GetAppsSecretsScopeType account = GetAppsSecretsScopeType._('account');
-
-static const GetAppsSecretsScopeType user = GetAppsSecretsScopeType._('user');
-
-static const List<GetAppsSecretsScopeType> values = [account, user];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAppsSecretsScopeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAppsSecretsScopeType($value)'; } 
- }
-@immutable final class GetAppsSecretsScope {const GetAppsSecretsScope({required this.type, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_apps_secrets_find_scope/get_apps_secrets_find_scope_type.dart';@immutable final class GetAppsSecretsScope {const GetAppsSecretsScope({required this.type, this.user, });
 
 factory GetAppsSecretsScope.fromJson(Map<String, dynamic> json) { return GetAppsSecretsScope(
-  type: GetAppsSecretsScopeType.fromJson(json['type'] as String),
+  type: GetAppsSecretsFindScopeType.fromJson(json['type'] as String),
   user: json['user'] as String?,
 ); }
 
-final GetAppsSecretsScopeType type;
+final GetAppsSecretsFindScopeType type;
 
 final String? user;
 
@@ -40,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetAppsSecretsScope copyWith({GetAppsSecretsScopeType? type, String Function()? user, }) { return GetAppsSecretsScope(
+GetAppsSecretsScope copyWith({GetAppsSecretsFindScopeType? type, String Function()? user, }) { return GetAppsSecretsScope(
   type: type ?? this.type,
   user: user != null ? user() : this.user,
 ); } 

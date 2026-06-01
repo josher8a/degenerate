@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_balance_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_linked_transaction.dart';import 'customer_cash_balance_transaction.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft_balance_transaction.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft/linked_transaction.dart';import 'package:pub_stripe_spec3/models/customer_cash_balance_transaction.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft {const CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft({required this.balanceTransaction, required this.linkedTransaction, });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
@@ -12,7 +12,7 @@ factory CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraf
 final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction balanceTransaction;
 
 /// The [Cash Balance Transaction](https://docs.stripe.com/api/cash_balance_transactions/object) that brought the customer balance negative, triggering the clawback of funds.
-final CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction linkedTransaction;
+final LinkedTransaction linkedTransaction;
 
 Map<String, dynamic> toJson() { return {
   'balance_transaction': balanceTransaction.toJson(),
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('balance_transaction') &&
       json.containsKey('linked_transaction'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction? balanceTransaction, CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftLinkedTransaction? linkedTransaction, }) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
+CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraftBalanceTransaction? balanceTransaction, LinkedTransaction? linkedTransaction, }) { return CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   linkedTransaction: linkedTransaction ?? this.linkedTransaction,
 ); } 

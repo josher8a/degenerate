@@ -1,107 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
-@immutable final class OrgPrivateRegistryConfigurationRegistryType {const OrgPrivateRegistryConfigurationRegistryType._(this.value);
-
-factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String json) { return switch (json) {
-  'maven_repository' => mavenRepository,
-  'nuget_feed' => nugetFeed,
-  'goproxy_server' => goproxyServer,
-  'npm_registry' => npmRegistry,
-  'rubygems_server' => rubygemsServer,
-  'cargo_registry' => cargoRegistry,
-  'composer_repository' => composerRepository,
-  'docker_registry' => dockerRegistry,
-  'git_source' => gitSource,
-  'helm_registry' => helmRegistry,
-  'hex_organization' => hexOrganization,
-  'hex_repository' => hexRepository,
-  'pub_repository' => pubRepository,
-  'python_index' => pythonIndex,
-  'terraform_registry' => terraformRegistry,
-  _ => OrgPrivateRegistryConfigurationRegistryType._(json),
-}; }
-
-static const OrgPrivateRegistryConfigurationRegistryType mavenRepository = OrgPrivateRegistryConfigurationRegistryType._('maven_repository');
-
-static const OrgPrivateRegistryConfigurationRegistryType nugetFeed = OrgPrivateRegistryConfigurationRegistryType._('nuget_feed');
-
-static const OrgPrivateRegistryConfigurationRegistryType goproxyServer = OrgPrivateRegistryConfigurationRegistryType._('goproxy_server');
-
-static const OrgPrivateRegistryConfigurationRegistryType npmRegistry = OrgPrivateRegistryConfigurationRegistryType._('npm_registry');
-
-static const OrgPrivateRegistryConfigurationRegistryType rubygemsServer = OrgPrivateRegistryConfigurationRegistryType._('rubygems_server');
-
-static const OrgPrivateRegistryConfigurationRegistryType cargoRegistry = OrgPrivateRegistryConfigurationRegistryType._('cargo_registry');
-
-static const OrgPrivateRegistryConfigurationRegistryType composerRepository = OrgPrivateRegistryConfigurationRegistryType._('composer_repository');
-
-static const OrgPrivateRegistryConfigurationRegistryType dockerRegistry = OrgPrivateRegistryConfigurationRegistryType._('docker_registry');
-
-static const OrgPrivateRegistryConfigurationRegistryType gitSource = OrgPrivateRegistryConfigurationRegistryType._('git_source');
-
-static const OrgPrivateRegistryConfigurationRegistryType helmRegistry = OrgPrivateRegistryConfigurationRegistryType._('helm_registry');
-
-static const OrgPrivateRegistryConfigurationRegistryType hexOrganization = OrgPrivateRegistryConfigurationRegistryType._('hex_organization');
-
-static const OrgPrivateRegistryConfigurationRegistryType hexRepository = OrgPrivateRegistryConfigurationRegistryType._('hex_repository');
-
-static const OrgPrivateRegistryConfigurationRegistryType pubRepository = OrgPrivateRegistryConfigurationRegistryType._('pub_repository');
-
-static const OrgPrivateRegistryConfigurationRegistryType pythonIndex = OrgPrivateRegistryConfigurationRegistryType._('python_index');
-
-static const OrgPrivateRegistryConfigurationRegistryType terraformRegistry = OrgPrivateRegistryConfigurationRegistryType._('terraform_registry');
-
-static const List<OrgPrivateRegistryConfigurationRegistryType> values = [mavenRepository, nugetFeed, goproxyServer, npmRegistry, rubygemsServer, cargoRegistry, composerRepository, dockerRegistry, gitSource, helmRegistry, hexOrganization, hexRepository, pubRepository, pythonIndex, terraformRegistry];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationRegistryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationRegistryType($value)'; } 
- }
-/// Which type of organization repositories have access to the private registry.
-@immutable final class OrgPrivateRegistryConfigurationVisibility {const OrgPrivateRegistryConfigurationVisibility._(this.value);
-
-factory OrgPrivateRegistryConfigurationVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => OrgPrivateRegistryConfigurationVisibility._(json),
-}; }
-
-static const OrgPrivateRegistryConfigurationVisibility all = OrgPrivateRegistryConfigurationVisibility._('all');
-
-static const OrgPrivateRegistryConfigurationVisibility private = OrgPrivateRegistryConfigurationVisibility._('private');
-
-static const OrgPrivateRegistryConfigurationVisibility selected = OrgPrivateRegistryConfigurationVisibility._('selected');
-
-static const List<OrgPrivateRegistryConfigurationVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgPrivateRegistryConfigurationVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgPrivateRegistryConfigurationVisibility($value)'; } 
- }
-/// Private registry configuration for an organization
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';import 'package:pub_github_rest_3_1/models/org_private_registry_configuration/registry_type.dart';/// Private registry configuration for an organization
 @immutable final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username, this.replacesBase = false, });
 
 factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfiguration(
   name: json['name'] as String,
-  registryType: OrgPrivateRegistryConfigurationRegistryType.fromJson(json['registry_type'] as String),
+  registryType: RegistryType.fromJson(json['registry_type'] as String),
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   username: json['username'] as String?,
   replacesBase: json.containsKey('replaces_base') ? json['replaces_base'] as bool : false,
-  visibility: OrgPrivateRegistryConfigurationVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }
@@ -110,7 +18,7 @@ factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { re
 final String name;
 
 /// The registry type.
-final OrgPrivateRegistryConfigurationRegistryType registryType;
+final RegistryType registryType;
 
 /// The URL of the private registry.
 final Uri? url;
@@ -122,7 +30,7 @@ final String? username;
 final bool replacesBase;
 
 /// Which type of organization repositories have access to the private registry.
-final OrgPrivateRegistryConfigurationVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 final DateTime createdAt;
 
@@ -143,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfiguration copyWith({String? name, OrgPrivateRegistryConfigurationRegistryType? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, OrgPrivateRegistryConfigurationVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
+OrgPrivateRegistryConfiguration copyWith({String? name, RegistryType? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfiguration(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,

@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentSignal {const ContentSignal({this.aiInput, this.aiTrain, this.search, });
+
+factory ContentSignal.fromJson(Map<String, dynamic> json) { return ContentSignal(
+  aiInput: json['ai-input'] as String?,
+  aiTrain: json['ai-train'] as String?,
+  search: json['search'] as String?,
+); }
+
+final String? aiInput;
+
+final String? aiTrain;
+
+final String? search;
+
+Map<String, dynamic> toJson() { return {
+  'ai-input': ?aiInput,
+  'ai-train': ?aiTrain,
+  'search': ?search,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai-input', 'ai-train', 'search'}.contains(key)); } 
+ContentSignal copyWith({String Function()? aiInput, String Function()? aiTrain, String Function()? search, }) { return ContentSignal(
+  aiInput: aiInput != null ? aiInput() : this.aiInput,
+  aiTrain: aiTrain != null ? aiTrain() : this.aiTrain,
+  search: search != null ? search() : this.search,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ContentSignal &&
+          aiInput == other.aiInput &&
+          aiTrain == other.aiTrain &&
+          search == other.search; } 
+@override int get hashCode { return Object.hash(aiInput, aiTrain, search); } 
+@override String toString() { return 'ContentSignal(aiInput: $aiInput, aiTrain: $aiTrain, search: $search)'; } 
+ }

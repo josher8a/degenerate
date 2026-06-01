@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// Emitted when an output item is marked done.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_item.dart';/// Emitted when an output item is marked done.
 @immutable final class ResponseOutputItemDoneEvent {const ResponseOutputItemDoneEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemDoneEvent(

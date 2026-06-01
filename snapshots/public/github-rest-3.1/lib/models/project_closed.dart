@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectClosedAction {const ProjectClosedAction._(this.value);
-
-factory ProjectClosedAction.fromJson(String json) { return switch (json) {
-  'closed' => closed,
-  _ => ProjectClosedAction._(json),
-}; }
-
-static const ProjectClosedAction closed = ProjectClosedAction._('closed');
-
-static const List<ProjectClosedAction> values = [closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectClosedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectClosedAction($value)'; } 
- }
-@immutable final class ProjectClosed {const ProjectClosed({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_closed/project_closed_action.dart';import 'package:pub_github_rest_3_1/models/projects.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ProjectClosed {const ProjectClosed({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectClosed.fromJson(Map<String, dynamic> json) { return ProjectClosed(
   action: ProjectClosedAction.fromJson(json['action'] as String),

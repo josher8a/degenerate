@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_commit_status.dart';/// Combined Commit Status
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/simple_commit_status.dart';/// Combined Commit Status
 @immutable final class CombinedCommitStatus {const CombinedCommitStatus({required this.state, required this.statuses, required this.sha, required this.totalCount, required this.repository, required this.commitUrl, required this.url, });
 
 factory CombinedCommitStatus.fromJson(Map<String, dynamic> json) { return CombinedCommitStatus(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_capture_params.dart';import 'post_payment_intents_intent_capture_request_amount_details.dart';import 'post_payment_intents_intent_capture_request_hooks.dart';import 'post_payment_intents_intent_capture_request_metadata.dart';import 'post_payment_intents_intent_capture_request_payment_details.dart';import 'post_payment_intents_intent_capture_request_transfer_data.dart';@immutable final class PostPaymentIntentsIntentCaptureRequest {const PostPaymentIntentsIntentCaptureRequest({this.amountDetails, this.amountToCapture, this.applicationFeeAmount, this.expand, this.finalCapture, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details_capture_params.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_payment_details.dart';@immutable final class PostPaymentIntentsIntentCaptureRequest {const PostPaymentIntentsIntentCaptureRequest({this.amountDetails, this.amountToCapture, this.applicationFeeAmount, this.expand, this.finalCapture, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, });
 
 factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
@@ -8,12 +8,12 @@ factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> jso
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   finalCapture: json['final_capture'] as bool?,
-  hooks: json['hooks'] != null ? PostPaymentIntentsIntentCaptureRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentIntentsIntentCaptureRequestMetadataVariant2.fromJson(v as String),) : null,
-  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => PaymentDetailsCaptureParams.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentCaptureRequestPaymentDetailsVariant2.fromJson(v as String),) : null,
+  hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => payment_details_capture_params.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
 
 /// Provides industry-specific information about the amount.
@@ -32,10 +32,10 @@ final List<String>? expand;
 final bool? finalCapture;
 
 /// Automations to be run during the PaymentIntent lifecycle
-final PostPaymentIntentsIntentCaptureRequestHooks? hooks;
+final Hooks? hooks;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPaymentIntentsIntentCaptureRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Provides industry-specific information about the charge.
 final PostPaymentIntentsIntentCaptureRequestPaymentDetails? paymentDetails;
@@ -50,7 +50,7 @@ final String? statementDescriptorSuffix;
 
 /// The parameters that you can use to automatically create a transfer after the payment
 /// is captured. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final PostPaymentIntentsIntentCaptureRequestTransferData? transferData;
+final PostChargesChargeCaptureRequestTransferData? transferData;
 
 Map<String, dynamic> toJson() { return {
   if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_details', 'amount_to_capture', 'application_fee_amount', 'expand', 'final_capture', 'hooks', 'metadata', 'payment_details', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data'}.contains(key)); } 
-PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails Function()? amountDetails, int Function()? amountToCapture, int Function()? applicationFeeAmount, List<String> Function()? expand, bool Function()? finalCapture, PostPaymentIntentsIntentCaptureRequestHooks Function()? hooks, PostPaymentIntentsIntentCaptureRequestMetadata Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails Function()? paymentDetails, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostPaymentIntentsIntentCaptureRequestTransferData Function()? transferData, }) { return PostPaymentIntentsIntentCaptureRequest(
+PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails Function()? amountDetails, int Function()? amountToCapture, int Function()? applicationFeeAmount, List<String> Function()? expand, bool Function()? finalCapture, Hooks Function()? hooks, Metadata Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails Function()? paymentDetails, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData Function()? transferData, }) { return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   amountToCapture: amountToCapture != null ? amountToCapture() : this.amountToCapture,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// An event that is emitted when a response finishes as incomplete.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response.dart';/// An event that is emitted when a response finishes as incomplete.
 /// 
 @immutable final class ResponseIncompleteEvent {const ResponseIncompleteEvent({required this.type, required this.response, required this.sequenceNumber, });
 

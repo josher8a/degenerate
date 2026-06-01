@@ -1,87 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_organization.dart';import 'team_simple.dart';/// The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_organization.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team.
 extension type const LdapDn(String value) {
 factory LdapDn.fromJson(String json) => LdapDn(json);
 
 String toJson() => value;
 
 }
-/// The level of privacy this team should have
-@immutable final class TeamFullPrivacy {const TeamFullPrivacy._(this.value);
-
-factory TeamFullPrivacy.fromJson(String json) { return switch (json) {
-  'closed' => closed,
-  'secret' => secret,
-  _ => TeamFullPrivacy._(json),
-}; }
-
-static const TeamFullPrivacy closed = TeamFullPrivacy._('closed');
-
-static const TeamFullPrivacy secret = TeamFullPrivacy._('secret');
-
-static const List<TeamFullPrivacy> values = [closed, secret];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullPrivacy($value)'; } 
- }
-/// The notification setting the team has set
-@immutable final class TeamFullNotificationSetting {const TeamFullNotificationSetting._(this.value);
-
-factory TeamFullNotificationSetting.fromJson(String json) { return switch (json) {
-  'notifications_enabled' => notificationsEnabled,
-  'notifications_disabled' => notificationsDisabled,
-  _ => TeamFullNotificationSetting._(json),
-}; }
-
-static const TeamFullNotificationSetting notificationsEnabled = TeamFullNotificationSetting._('notifications_enabled');
-
-static const TeamFullNotificationSetting notificationsDisabled = TeamFullNotificationSetting._('notifications_disabled');
-
-static const List<TeamFullNotificationSetting> values = [notificationsEnabled, notificationsDisabled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullNotificationSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullNotificationSetting($value)'; } 
- }
-/// The ownership type of the team
-@immutable final class TeamFullType {const TeamFullType._(this.value);
-
-factory TeamFullType.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  _ => TeamFullType._(json),
-}; }
-
-static const TeamFullType enterprise = TeamFullType._('enterprise');
-
-static const TeamFullType organization = TeamFullType._('organization');
-
-static const List<TeamFullType> values = [enterprise, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamFullType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamFullType($value)'; } 
- }
 /// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, required this.permission, required this.membersUrl, required this.repositoriesUrl, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, required this.type, this.privacy, this.notificationSetting, this.parent, this.ldapDn, this.organizationId, this.enterpriseId, });
 

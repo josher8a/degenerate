@@ -1,130 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Required when using `squash_merge_commit_message`.
-/// 
-/// The default value for a squash merge commit title:
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-@immutable final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._(this.value);
-
-factory ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
-  _ => ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._(json),
-}; }
-
-static const ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle prTitle = ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._('PR_TITLE');
-
-static const ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle commitOrPrTitle = ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
-
-static const List<ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle> values = [prTitle, commitOrPrTitle];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle($value)'; } 
- }
-/// The default value for a squash merge commit message:
-/// 
-/// - `PR_BODY` - default to the pull request's body.
-/// - `COMMIT_MESSAGES` - default to the branch's commit messages.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._(this.value);
-
-factory ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'COMMIT_MESSAGES' => commitMessages,
-  'BLANK' => blank,
-  _ => ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._(json),
-}; }
-
-static const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage prBody = ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._('PR_BODY');
-
-static const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage commitMessages = ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._('COMMIT_MESSAGES');
-
-static const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage blank = ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._('BLANK');
-
-static const List<ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage> values = [prBody, commitMessages, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage($value)'; } 
- }
-/// Required when using `merge_commit_message`.
-/// 
-/// The default value for a merge commit title.
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-@immutable final class ReposCreateForAuthenticatedUserRequestMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestMergeCommitTitle._(this.value);
-
-factory ReposCreateForAuthenticatedUserRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'MERGE_MESSAGE' => mergeMessage,
-  _ => ReposCreateForAuthenticatedUserRequestMergeCommitTitle._(json),
-}; }
-
-static const ReposCreateForAuthenticatedUserRequestMergeCommitTitle prTitle = ReposCreateForAuthenticatedUserRequestMergeCommitTitle._('PR_TITLE');
-
-static const ReposCreateForAuthenticatedUserRequestMergeCommitTitle mergeMessage = ReposCreateForAuthenticatedUserRequestMergeCommitTitle._('MERGE_MESSAGE');
-
-static const List<ReposCreateForAuthenticatedUserRequestMergeCommitTitle> values = [prTitle, mergeMessage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateForAuthenticatedUserRequestMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateForAuthenticatedUserRequestMergeCommitTitle($value)'; } 
- }
-/// The default value for a merge commit message.
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `PR_BODY` - default to the pull request's body.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class ReposCreateForAuthenticatedUserRequestMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestMergeCommitMessage._(this.value);
-
-factory ReposCreateForAuthenticatedUserRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'PR_TITLE' => prTitle,
-  'BLANK' => blank,
-  _ => ReposCreateForAuthenticatedUserRequestMergeCommitMessage._(json),
-}; }
-
-static const ReposCreateForAuthenticatedUserRequestMergeCommitMessage prBody = ReposCreateForAuthenticatedUserRequestMergeCommitMessage._('PR_BODY');
-
-static const ReposCreateForAuthenticatedUserRequestMergeCommitMessage prTitle = ReposCreateForAuthenticatedUserRequestMergeCommitMessage._('PR_TITLE');
-
-static const ReposCreateForAuthenticatedUserRequestMergeCommitMessage blank = ReposCreateForAuthenticatedUserRequestMergeCommitMessage._('BLANK');
-
-static const List<ReposCreateForAuthenticatedUserRequestMergeCommitMessage> values = [prBody, prTitle, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateForAuthenticatedUserRequestMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateForAuthenticatedUserRequestMergeCommitMessage($value)'; } 
- }
-@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private = false, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads = true, this.isTemplate = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private = false, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads = true, this.isTemplate = false, });
 
 factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return ReposCreateForAuthenticatedUserRequest(
   name: json['name'] as String,
@@ -144,10 +20,10 @@ factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> jso
   allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
   deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
-  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
-  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
-  mergeCommitTitle: json['merge_commit_title'] != null ? ReposCreateForAuthenticatedUserRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
-  mergeCommitMessage: json['merge_commit_message'] != null ? ReposCreateForAuthenticatedUserRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
+  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
+  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
+  mergeCommitTitle: json['merge_commit_title'] != null ? MergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
+  mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   hasDownloads: json.containsKey('has_downloads') ? json['has_downloads'] as bool : true,
   isTemplate: json.containsKey('is_template') ? json['is_template'] as bool : false,
 ); }
@@ -209,14 +85,14 @@ final bool deleteBranchOnMerge;
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle? squashMergeCommitTitle;
+final SquashMergeCommitTitle? squashMergeCommitTitle;
 
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage? squashMergeCommitMessage;
+final SquashMergeCommitMessage? squashMergeCommitMessage;
 
 /// Required when using `merge_commit_message`.
 /// 
@@ -224,14 +100,14 @@ final ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage? squashMerg
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final ReposCreateForAuthenticatedUserRequestMergeCommitTitle? mergeCommitTitle;
+final MergeCommitTitle? mergeCommitTitle;
 
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final ReposCreateForAuthenticatedUserRequestMergeCommitMessage? mergeCommitMessage;
+final MergeCommitMessage? mergeCommitMessage;
 
 /// Whether downloads are enabled.
 final bool hasDownloads;
@@ -265,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   'is_template': isTemplate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateForAuthenticatedUserRequest copyWith({String? name, String Function()? description, String Function()? homepage, bool Function()? private, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasDiscussions, int Function()? teamId, bool Function()? autoInit, String Function()? gitignoreTemplate, String Function()? licenseTemplate, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle Function()? squashMergeCommitTitle, ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage Function()? squashMergeCommitMessage, ReposCreateForAuthenticatedUserRequestMergeCommitTitle Function()? mergeCommitTitle, ReposCreateForAuthenticatedUserRequestMergeCommitMessage Function()? mergeCommitMessage, bool Function()? hasDownloads, bool Function()? isTemplate, }) { return ReposCreateForAuthenticatedUserRequest(
+ReposCreateForAuthenticatedUserRequest copyWith({String? name, String Function()? description, String Function()? homepage, bool Function()? private, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasDiscussions, int Function()? teamId, bool Function()? autoInit, String Function()? gitignoreTemplate, String Function()? licenseTemplate, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, SquashMergeCommitTitle Function()? squashMergeCommitTitle, SquashMergeCommitMessage Function()? squashMergeCommitMessage, MergeCommitTitle Function()? mergeCommitTitle, MergeCommitMessage Function()? mergeCommitMessage, bool Function()? hasDownloads, bool Function()? isTemplate, }) { return ReposCreateForAuthenticatedUserRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,

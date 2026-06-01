@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_received_debits_request_initiating_payment_method_details.dart';/// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
-@immutable final class PostTestHelpersTreasuryReceivedDebitsRequestNetwork {const PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(this.value);
-
-factory PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(String json) { return switch (json) {
-  'ach' => ach,
-  _ => PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(json),
-}; }
-
-static const PostTestHelpersTreasuryReceivedDebitsRequestNetwork ach = PostTestHelpersTreasuryReceivedDebitsRequestNetwork._('ach');
-
-static const List<PostTestHelpersTreasuryReceivedDebitsRequestNetwork> values = [ach];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTreasuryReceivedDebitsRequestNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTreasuryReceivedDebitsRequestNetwork($value)'; } 
- }
-@immutable final class PostTestHelpersTreasuryReceivedDebitsRequest {const PostTestHelpersTreasuryReceivedDebitsRequest({required this.amount, required this.currency, required this.financialAccount, required this.network, this.description, this.expand, this.initiatingPaymentMethodDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_network.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_treasury_received_credits_request/initiating_payment_method_details.dart';@immutable final class PostTestHelpersTreasuryReceivedDebitsRequest {const PostTestHelpersTreasuryReceivedDebitsRequest({required this.amount, required this.currency, required this.financialAccount, required this.network, this.description, this.expand, this.initiatingPaymentMethodDetails, });
 
 factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: (json['amount'] as num).toInt(),
@@ -30,8 +8,8 @@ factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynami
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   financialAccount: json['financial_account'] as String,
-  initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>) : null,
-  network: PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(json['network'] as String),
+  initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null ? InitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>) : null,
+  network: InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
 ); }
 
 /// Amount (in cents) to be transferred.
@@ -50,10 +28,10 @@ final List<String>? expand;
 final String financialAccount;
 
 /// Initiating payment method details for the object.
-final PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails;
+final InitiatingPaymentMethodDetails? initiatingPaymentMethodDetails;
 
 /// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
-final PostTestHelpersTreasuryReceivedDebitsRequestNetwork network;
+final InboundTransfersPaymentMethodDetailsUsBankAccountNetwork network;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -68,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
       json.containsKey('network'); } 
-PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String Function()? description, List<String> Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String Function()? description, List<String> Function()? expand, String? financialAccount, InitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

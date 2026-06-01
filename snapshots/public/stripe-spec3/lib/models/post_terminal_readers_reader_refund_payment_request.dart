@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_refund_payment_request_refund_payment_config.dart';@immutable final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_refund_payment_request/refund_payment_config.dart';@immutable final class PostTerminalReadersReaderRefundPaymentRequest {const PostTerminalReadersReaderRefundPaymentRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
 factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
@@ -9,7 +9,7 @@ factory PostTerminalReadersReaderRefundPaymentRequest.fromJson(Map<String, dynam
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentIntent: json['payment_intent'] as String?,
   refundApplicationFee: json['refund_application_fee'] as bool?,
-  refundPaymentConfig: json['refund_payment_config'] != null ? PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
+  refundPaymentConfig: json['refund_payment_config'] != null ? RefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,
 ); }
 
@@ -32,7 +32,7 @@ final String? paymentIntent;
 final bool? refundApplicationFee;
 
 /// Configuration overrides for this refund, such as customer cancellation settings.
-final PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig? refundPaymentConfig;
+final RefundPaymentConfig? refundPaymentConfig;
 
 /// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount). A transfer can be reversed only by the application that created the charge.
 final bool? reverseTransfer;
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-PostTerminalReadersReaderRefundPaymentRequest copyWith({int Function()? amount, String Function()? charge, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? paymentIntent, bool Function()? refundApplicationFee, PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return PostTerminalReadersReaderRefundPaymentRequest(
+PostTerminalReadersReaderRefundPaymentRequest copyWith({int Function()? amount, String Function()? charge, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? paymentIntent, bool Function()? refundApplicationFee, RefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return PostTerminalReadersReaderRefundPaymentRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   expand: expand != null ? expand() : this.expand,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/certificate_packs_order_advanced_certificate_manager_certificate_pack_request.dart';import '../models/certificate_packs_restart_validation_for_advanced_certificate_manager_certificate_pack_request.dart';import '../models/tls_certificates_and_hostnames_certificate_pack.dart';import '../models/tls_certificates_and_hostnames_certificate_pack_quota_response_result.dart';import '../models/tls_certificates_and_hostnames_delete_advanced_certificate_pack_response_single_result.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CertificatePacksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/certificate_packs_order_advanced_certificate_manager_certificate_pack_request.dart';import 'package:pub_cloudflare/models/certificate_packs_restart_validation_for_advanced_certificate_manager_certificate_pack_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_quota_response/tls_certificates_and_hostnames_certificate_pack_quota_response_result.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// CertificatePacksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -98,7 +98,7 @@ return execute(
 /// For a given zone, delete an advanced certificate pack.
 ///
 /// `DELETE /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingleResult?, Never>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -111,7 +111,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

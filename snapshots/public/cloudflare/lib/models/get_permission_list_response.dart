@@ -1,75 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPermissionListResponseResourceType {const GetPermissionListResponseResourceType._(this.value);
-
-factory GetPermissionListResponseResourceType.fromJson(String json) { return switch (json) {
-  'dataset' => dataset,
-  _ => GetPermissionListResponseResourceType._(json),
-}; }
-
-static const GetPermissionListResponseResourceType dataset = GetPermissionListResponseResourceType._('dataset');
-
-static const List<GetPermissionListResponseResourceType> values = [dataset];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseResourceType($value)'; } 
- }
-@immutable final class GetPermissionListResponseRole {const GetPermissionListResponseRole._(this.value);
-
-factory GetPermissionListResponseRole.fromJson(String json) { return switch (json) {
-  'read' => read,
-  'write' => write,
-  _ => GetPermissionListResponseRole._(json),
-}; }
-
-static const GetPermissionListResponseRole read = GetPermissionListResponseRole._('read');
-
-static const GetPermissionListResponseRole write = GetPermissionListResponseRole._('write');
-
-static const List<GetPermissionListResponseRole> values = [read, write];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseRole($value)'; } 
- }
-@immutable final class GetPermissionListResponseSubjectType {const GetPermissionListResponseSubjectType._(this.value);
-
-factory GetPermissionListResponseSubjectType.fromJson(String json) { return switch (json) {
-  'account' => account,
-  'group' => group,
-  _ => GetPermissionListResponseSubjectType._(json),
-}; }
-
-static const GetPermissionListResponseSubjectType account = GetPermissionListResponseSubjectType._('account');
-
-static const GetPermissionListResponseSubjectType group = GetPermissionListResponseSubjectType._('group');
-
-static const List<GetPermissionListResponseSubjectType> values = [account, group];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPermissionListResponseSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPermissionListResponseSubjectType($value)'; } 
- }
-@immutable final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_resource_type.dart';import 'package:pub_cloudflare/models/get_permission_list_response/get_permission_list_response_role.dart';import 'package:pub_cloudflare/models/get_permission_list_response/subject_type.dart';@immutable final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 
 factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return GetPermissionListResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
@@ -77,7 +8,7 @@ factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return G
   resourceType: GetPermissionListResponseResourceType.fromJson(json['resourceType'] as String),
   role: GetPermissionListResponseRole.fromJson(json['role'] as String),
   subjectId: json['subjectId'] as String,
-  subjectType: GetPermissionListResponseSubjectType.fromJson(json['subjectType'] as String),
+  subjectType: SubjectType.fromJson(json['subjectType'] as String),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
 ); }
@@ -93,7 +24,7 @@ final GetPermissionListResponseRole role;
 
 final String subjectId;
 
-final GetPermissionListResponseSubjectType subjectType;
+final SubjectType subjectType;
 
 final DateTime updatedAt;
 
@@ -116,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('subjectType') &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetPermissionListResponse copyWith({DateTime? createdAt, String Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, GetPermissionListResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return GetPermissionListResponse(
+GetPermissionListResponse copyWith({DateTime? createdAt, String Function()? resourceId, GetPermissionListResponseResourceType? resourceType, GetPermissionListResponseRole? role, String? subjectId, SubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return GetPermissionListResponse(
   createdAt: createdAt ?? this.createdAt,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType ?? this.resourceType,

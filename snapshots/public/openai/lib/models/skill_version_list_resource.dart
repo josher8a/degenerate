@@ -1,31 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'skill_version_resource.dart';/// The type of object returned, must be `list`.
-@immutable final class SkillVersionListResourceObject {const SkillVersionListResourceObject._(this.value);
-
-factory SkillVersionListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => SkillVersionListResourceObject._(json),
-}; }
-
-static const SkillVersionListResourceObject list = SkillVersionListResourceObject._('list');
-
-static const List<SkillVersionListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillVersionListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SkillVersionListResourceObject($value)'; } 
- }
-@immutable final class SkillVersionListResource {const SkillVersionListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = SkillVersionListResourceObject.list, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/skill_version_resource.dart';@immutable final class SkillVersionListResource {const SkillVersionListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
 
 factory SkillVersionListResource.fromJson(Map<String, dynamic> json) { return SkillVersionListResource(
-  object: SkillVersionListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => SkillVersionResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
@@ -33,7 +11,7 @@ factory SkillVersionListResource.fromJson(Map<String, dynamic> json) { return Sk
 ); }
 
 /// The type of object returned, must be `list`.
-final SkillVersionListResourceObject object;
+final ChatCompletionListObject object;
 
 /// A list of items
 final List<SkillVersionResource> data;
@@ -59,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-SkillVersionListResource copyWith({SkillVersionListResourceObject? object, List<SkillVersionResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return SkillVersionListResource(
+SkillVersionListResource copyWith({ChatCompletionListObject? object, List<SkillVersionResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return SkillVersionListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

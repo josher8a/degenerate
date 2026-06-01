@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';import 'realtime_beta_server_event_conversation_item_input_audio_transcription_completed_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// The event type, must be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_json/create_transcription_response_json_usage.dart';import 'package:pub_openai/models/log_prob_properties.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.completed`.
 /// 
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
@@ -68,7 +68,7 @@ final String transcript;
 final List<LogProbProperties>? logprobs;
 
 /// Usage statistics for the transcription.
-final RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsage usage;
+final CreateTranscriptionResponseJsonUsage usage;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -85,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('transcript') && json['transcript'] is String &&
       json.containsKey('usage'); } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedUsage? usage, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType? type, String? itemId, int? contentIndex, String? transcript, List<LogProbProperties>? Function()? logprobs, CreateTranscriptionResponseJsonUsage? usage, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompleted(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,

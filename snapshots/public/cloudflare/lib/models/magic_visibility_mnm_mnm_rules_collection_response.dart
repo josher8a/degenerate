@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule.dart';@immutable final class MagicVisibilityMnmMnmRulesCollectionResponse {const MagicVisibilityMnmMnmRulesCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule.dart';@immutable final class MagicVisibilityMnmMnmRulesCollectionResponse {const MagicVisibilityMnmMnmRulesCollectionResponse({this.result});
 
 factory MagicVisibilityMnmMnmRulesCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRulesCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmRule.fromJson(e as Map<String, dynamic>)).toList(),

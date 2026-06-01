@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_deleted_issue.dart';import 'webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentDeletedAction {const WebhookIssueCommentDeletedAction._(this.value);
-
-factory WebhookIssueCommentDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookIssueCommentDeletedAction._(json),
-}; }
-
-static const WebhookIssueCommentDeletedAction deleted = WebhookIssueCommentDeletedAction._('deleted');
-
-static const List<WebhookIssueCommentDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueCommentDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueCommentDeletedAction($value)'; } 
- }
-@immutable final class WebhookIssueCommentDeleted {const WebhookIssueCommentDeleted({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_deleted/webhook_issue_comment_deleted_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentDeleted {const WebhookIssueCommentDeleted({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentDeleted(
-  action: WebhookIssueCommentDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   comment: WebhooksIssueComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookIssueCommentDeleted.fromJson(Map<String, dynamic> json) { return 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssueCommentDeletedAction action;
+final ItemDeletedAction action;
 
 final WebhooksIssueComment comment;
 
@@ -68,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssueCommentDeleted copyWith({WebhookIssueCommentDeletedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentDeletedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentDeleted(
+WebhookIssueCommentDeleted copyWith({ItemDeletedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentDeletedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentDeleted(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

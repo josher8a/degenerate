@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_redirect_from_value_target_url.dart';/// The status code to use for the redirect.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_redirect_from_value/target_url.dart';/// The status code to use for the redirect.
 @immutable final class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode._(this.value);
 
 factory RulesetsRedirectFromValueStatusCode.fromJson(int json) { return switch (json) {
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RulesetsRedirectFromValue.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromValue(
   preserveQueryString: json.containsKey('preserve_query_string') ? json['preserve_query_string'] as bool : false,
   statusCode: json['status_code'] != null ? RulesetsRedirectFromValueStatusCode.fromJson((json['status_code'] as num).toInt()) : null,
-  targetUrl: RulesetsRedirectFromValueTargetUrl.fromJson(json['target_url'] as Map<String, dynamic>),
+  targetUrl: TargetUrl.fromJson(json['target_url'] as Map<String, dynamic>),
 ); }
 
 /// Whether to keep the query string of the original request.
@@ -50,7 +50,7 @@ final bool preserveQueryString;
 final RulesetsRedirectFromValueStatusCode? statusCode;
 
 /// A URL to redirect the request to.
-final RulesetsRedirectFromValueTargetUrl targetUrl;
+final TargetUrl targetUrl;
 
 Map<String, dynamic> toJson() { return {
   'preserve_query_string': preserveQueryString,
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'target_url': targetUrl.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_url'); } 
-RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, RulesetsRedirectFromValueStatusCode Function()? statusCode, RulesetsRedirectFromValueTargetUrl? targetUrl, }) { return RulesetsRedirectFromValue(
+RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, RulesetsRedirectFromValueStatusCode Function()? statusCode, TargetUrl? targetUrl, }) { return RulesetsRedirectFromValue(
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   targetUrl: targetUrl ?? this.targetUrl,

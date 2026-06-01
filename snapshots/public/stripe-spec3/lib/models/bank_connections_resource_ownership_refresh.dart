@@ -1,40 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the last refresh attempt.
-@immutable final class BankConnectionsResourceOwnershipRefreshStatus {const BankConnectionsResourceOwnershipRefreshStatus._(this.value);
-
-factory BankConnectionsResourceOwnershipRefreshStatus.fromJson(String json) { return switch (json) {
-  'failed' => failed,
-  'pending' => pending,
-  'succeeded' => succeeded,
-  _ => BankConnectionsResourceOwnershipRefreshStatus._(json),
-}; }
-
-static const BankConnectionsResourceOwnershipRefreshStatus failed = BankConnectionsResourceOwnershipRefreshStatus._('failed');
-
-static const BankConnectionsResourceOwnershipRefreshStatus pending = BankConnectionsResourceOwnershipRefreshStatus._('pending');
-
-static const BankConnectionsResourceOwnershipRefreshStatus succeeded = BankConnectionsResourceOwnershipRefreshStatus._('succeeded');
-
-static const List<BankConnectionsResourceOwnershipRefreshStatus> values = [failed, pending, succeeded];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceOwnershipRefreshStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceOwnershipRefreshStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';/// 
 @immutable final class BankConnectionsResourceOwnershipRefresh {const BankConnectionsResourceOwnershipRefresh({required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt, });
 
 factory BankConnectionsResourceOwnershipRefresh.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceOwnershipRefresh(
   lastAttemptedAt: (json['last_attempted_at'] as num).toInt(),
   nextRefreshAvailableAt: json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null,
-  status: BankConnectionsResourceOwnershipRefreshStatus.fromJson(json['status'] as String),
+  status: BankConnectionsResourceBalanceRefreshStatus.fromJson(json['status'] as String),
 ); }
 
 /// The time at which the last refresh attempt was initiated. Measured in seconds since the Unix epoch.
@@ -44,7 +16,7 @@ final int lastAttemptedAt;
 final int? nextRefreshAvailableAt;
 
 /// The status of the last refresh attempt.
-final BankConnectionsResourceOwnershipRefreshStatus status;
+final BankConnectionsResourceBalanceRefreshStatus status;
 
 Map<String, dynamic> toJson() { return {
   'last_attempted_at': lastAttemptedAt,
@@ -53,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_attempted_at') && json['last_attempted_at'] is num &&
       json.containsKey('status'); } 
-BankConnectionsResourceOwnershipRefresh copyWith({int? lastAttemptedAt, int? Function()? nextRefreshAvailableAt, BankConnectionsResourceOwnershipRefreshStatus? status, }) { return BankConnectionsResourceOwnershipRefresh(
+BankConnectionsResourceOwnershipRefresh copyWith({int? lastAttemptedAt, int? Function()? nextRefreshAvailableAt, BankConnectionsResourceBalanceRefreshStatus? status, }) { return BankConnectionsResourceOwnershipRefresh(
   lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
   nextRefreshAvailableAt: nextRefreshAvailableAt != null ? nextRefreshAvailableAt() : this.nextRefreshAvailableAt,
   status: status ?? this.status,

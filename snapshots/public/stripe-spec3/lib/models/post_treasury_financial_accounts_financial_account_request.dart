@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_request_features.dart';import 'post_treasury_financial_accounts_financial_account_request_forwarding_settings.dart';import 'post_treasury_financial_accounts_financial_account_request_nickname.dart';import 'post_treasury_financial_accounts_financial_account_request_platform_restrictions.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequest {const PostTreasuryFinancialAccountsFinancialAccountRequest({this.expand, this.features, this.forwardingSettings, this.metadata, this.nickname, this.platformRestrictions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_close_request/forwarding_settings.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/nickname.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/platform_restrictions.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/post_treasury_financial_accounts_financial_account_request_features.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequest {const PostTreasuryFinancialAccountsFinancialAccountRequest({this.expand, this.features, this.forwardingSettings, this.metadata, this.nickname, this.platformRestrictions, });
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-  forwardingSettings: json['forwarding_settings'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
+  forwardingSettings: json['forwarding_settings'] != null ? ForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] != null ? OneOf2.parse(json['nickname'], fromA: (v) => v as String, fromB: (v) => PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2.fromJson(v as String),) : null,
-  platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
+  nickname: json['nickname'] != null ? OneOf2.parse(json['nickname'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  platformRestrictions: json['platform_restrictions'] != null ? PlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.
@@ -18,16 +18,16 @@ final List<String>? expand;
 final PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? features;
 
 /// A different bank account where funds can be deposited/debited in order to get the closing FA's balance to $0
-final PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings? forwardingSettings;
+final ForwardingSettings? forwardingSettings;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
 /// The nickname for the FinancialAccount.
-final PostTreasuryFinancialAccountsFinancialAccountRequestNickname? nickname;
+final Nickname? nickname;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions? platformRestrictions;
+final PlatformRestrictions? platformRestrictions;
 
 Map<String, dynamic> toJson() { return {
   'expand': ?expand,
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'features', 'forwarding_settings', 'metadata', 'nickname', 'platform_restrictions'}.contains(key)); } 
-PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures Function()? features, PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings Function()? forwardingSettings, Map<String, String> Function()? metadata, PostTreasuryFinancialAccountsFinancialAccountRequestNickname Function()? nickname, PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions Function()? platformRestrictions, }) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
+PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures Function()? features, ForwardingSettings Function()? forwardingSettings, Map<String, String> Function()? metadata, Nickname Function()? nickname, PlatformRestrictions Function()? platformRestrictions, }) { return PostTreasuryFinancialAccountsFinancialAccountRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   forwardingSettings: forwardingSettings != null ? forwardingSettings() : this.forwardingSettings,

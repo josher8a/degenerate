@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map_key_selector.dart';import 'file_key_selector.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';import 'secret_key_selector.dart';/// EnvVarSource represents a source for the value of an EnvVar.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/config_map_key_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/file_key_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_field_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_field_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret_key_selector.dart';/// EnvVarSource represents a source for the value of an EnvVar.
 @immutable final class EnvVarSource {const EnvVarSource({this.configMapKeyRef, this.fieldRef, this.fileKeyRef, this.resourceFieldRef, this.secretKeyRef, });
 
 factory EnvVarSource.fromJson(Map<String, dynamic> json) { return EnvVarSource(

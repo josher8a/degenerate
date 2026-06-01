@@ -1,75 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_financial_connections_sessions_request_account_holder.dart';import 'post_financial_connections_sessions_request_filters.dart';@immutable final class PostFinancialConnectionsSessionsRequestPermissions {const PostFinancialConnectionsSessionsRequestPermissions._(this.value);
-
-factory PostFinancialConnectionsSessionsRequestPermissions.fromJson(String json) { return switch (json) {
-  'balances' => balances,
-  'ownership' => ownership,
-  'payment_method' => paymentMethod,
-  'transactions' => transactions,
-  _ => PostFinancialConnectionsSessionsRequestPermissions._(json),
-}; }
-
-static const PostFinancialConnectionsSessionsRequestPermissions balances = PostFinancialConnectionsSessionsRequestPermissions._('balances');
-
-static const PostFinancialConnectionsSessionsRequestPermissions ownership = PostFinancialConnectionsSessionsRequestPermissions._('ownership');
-
-static const PostFinancialConnectionsSessionsRequestPermissions paymentMethod = PostFinancialConnectionsSessionsRequestPermissions._('payment_method');
-
-static const PostFinancialConnectionsSessionsRequestPermissions transactions = PostFinancialConnectionsSessionsRequestPermissions._('transactions');
-
-static const List<PostFinancialConnectionsSessionsRequestPermissions> values = [balances, ownership, paymentMethod, transactions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsSessionsRequestPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestPermissions($value)'; } 
- }
-@immutable final class PostFinancialConnectionsSessionsRequestPrefetch {const PostFinancialConnectionsSessionsRequestPrefetch._(this.value);
-
-factory PostFinancialConnectionsSessionsRequestPrefetch.fromJson(String json) { return switch (json) {
-  'balances' => balances,
-  'ownership' => ownership,
-  'transactions' => transactions,
-  _ => PostFinancialConnectionsSessionsRequestPrefetch._(json),
-}; }
-
-static const PostFinancialConnectionsSessionsRequestPrefetch balances = PostFinancialConnectionsSessionsRequestPrefetch._('balances');
-
-static const PostFinancialConnectionsSessionsRequestPrefetch ownership = PostFinancialConnectionsSessionsRequestPrefetch._('ownership');
-
-static const PostFinancialConnectionsSessionsRequestPrefetch transactions = PostFinancialConnectionsSessionsRequestPrefetch._('transactions');
-
-static const List<PostFinancialConnectionsSessionsRequestPrefetch> values = [balances, ownership, transactions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsSessionsRequestPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestPrefetch($value)'; } 
- }
-@immutable final class PostFinancialConnectionsSessionsRequest {const PostFinancialConnectionsSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request/account_holder.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_sessions_request/post_financial_connections_sessions_request_filters.dart';@immutable final class PostFinancialConnectionsSessionsRequest {const PostFinancialConnectionsSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
 
 factory PostFinancialConnectionsSessionsRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequest(
-  accountHolder: PostFinancialConnectionsSessionsRequestAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),
+  accountHolder: AccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   filters: json['filters'] != null ? PostFinancialConnectionsSessionsRequestFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
-  permissions: (json['permissions'] as List<dynamic>).map((e) => PostFinancialConnectionsSessionsRequestPermissions.fromJson(e as String)).toList(),
-  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PostFinancialConnectionsSessionsRequestPrefetch.fromJson(e as String)).toList(),
+  permissions: (json['permissions'] as List<dynamic>).map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
+  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => Prefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,
 ); }
 
 /// The account holder to link accounts for.
-final PostFinancialConnectionsSessionsRequestAccountHolder accountHolder;
+final AccountHolder accountHolder;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -80,10 +23,10 @@ final PostFinancialConnectionsSessionsRequestFilters? filters;
 /// List of data features that you would like to request access to.
 /// 
 /// Possible values are `balances`, `transactions`, `ownership`, and `payment_method`.
-final List<PostFinancialConnectionsSessionsRequestPermissions> permissions;
+final List<FinancialConnectionsAccountPermissions> permissions;
 
 /// List of data features that you would like to retrieve upon account creation.
-final List<PostFinancialConnectionsSessionsRequestPrefetch>? prefetch;
+final List<Prefetch>? prefetch;
 
 /// For webview integrations only. Upon completing OAuth login in the native browser, the user will be redirected to this URL to return to your app.
 final String? returnUrl;
@@ -98,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder') &&
       json.containsKey('permissions'); } 
-PostFinancialConnectionsSessionsRequest copyWith({PostFinancialConnectionsSessionsRequestAccountHolder? accountHolder, List<String> Function()? expand, PostFinancialConnectionsSessionsRequestFilters Function()? filters, List<PostFinancialConnectionsSessionsRequestPermissions>? permissions, List<PostFinancialConnectionsSessionsRequestPrefetch> Function()? prefetch, String Function()? returnUrl, }) { return PostFinancialConnectionsSessionsRequest(
+PostFinancialConnectionsSessionsRequest copyWith({AccountHolder? accountHolder, List<String> Function()? expand, PostFinancialConnectionsSessionsRequestFilters Function()? filters, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch> Function()? prefetch, String Function()? returnUrl, }) { return PostFinancialConnectionsSessionsRequest(
   accountHolder: accountHolder ?? this.accountHolder,
   expand: expand != null ? expand() : this.expand,
   filters: filters != null ? filters() : this.filters,

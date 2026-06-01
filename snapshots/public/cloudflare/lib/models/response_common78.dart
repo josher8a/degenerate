@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common78_result.dart';import 'web3_messages2.dart';@immutable final class ResponseCommon78 {const ResponseCommon78({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/web3_messages2.dart';@immutable final class ResponseCommon78 {const ResponseCommon78({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon78.fromJson(Map<String, dynamic> json) { return ResponseCommon78(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -14,7 +14,7 @@ final List<Web3Messages2> errors;
 final List<Web3Messages2> messages;
 
 /// Provides the API response.
-final ResponseCommon78Result result;
+final ResponseCommon33Result result;
 
 /// Specifies whether the API call was successful.
 final bool success;
@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseCommon78Result? result, bool? success, }) { return ResponseCommon78(
+ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseCommon33Result? result, bool? success, }) { return ResponseCommon78(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

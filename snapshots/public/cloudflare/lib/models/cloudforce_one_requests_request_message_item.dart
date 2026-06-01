@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_message_content.dart';import 'cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestMessageItem {const CloudforceOneRequestsRequestMessageItem({required this.author, required this.content, required this.id, required this.isFollowOnRequest, required this.updated, this.created, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_message_content.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestMessageItem {const CloudforceOneRequestsRequestMessageItem({required this.author, required this.content, required this.id, required this.isFollowOnRequest, required this.updated, this.created, });
 
 factory CloudforceOneRequestsRequestMessageItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestMessageItem(
   author: json['author'] as String,

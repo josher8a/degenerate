@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_short_metadata.dart';@immutable final class WorkersVersionItemShort {const WorkersVersionItemShort({this.id, this.metadata, this.number, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_version_item_full/workers_version_item_full_metadata.dart';@immutable final class WorkersVersionItemShort {const WorkersVersionItemShort({this.id, this.metadata, this.number, });
 
 factory WorkersVersionItemShort.fromJson(Map<String, dynamic> json) { return WorkersVersionItemShort(
   id: json['id'] as String?,
-  metadata: json['metadata'] != null ? WorkersVersionItemShortMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? WorkersVersionItemFullMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,
 ); }
 
 /// Unique identifier for the version.
 final String? id;
 
-final WorkersVersionItemShortMetadata? metadata;
+final WorkersVersionItemFullMetadata? metadata;
 
 /// Sequential version number.
 final double? number;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'number': ?number,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'number'}.contains(key)); } 
-WorkersVersionItemShort copyWith({String Function()? id, WorkersVersionItemShortMetadata Function()? metadata, double Function()? number, }) { return WorkersVersionItemShort(
+WorkersVersionItemShort copyWith({String Function()? id, WorkersVersionItemFullMetadata Function()? metadata, double Function()? number, }) { return WorkersVersionItemShort(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,

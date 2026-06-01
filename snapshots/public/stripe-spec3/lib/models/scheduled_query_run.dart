@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
 
 factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {

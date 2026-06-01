@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_eligibility_visa_compelling_evidence3.dart';import 'dispute_enhanced_eligibility_visa_compliance.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_eligibility_visa_compelling_evidence3.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_eligibility_visa_compliance.dart';/// 
 @immutable final class DisputeEnhancedEligibility {const DisputeEnhancedEligibility({this.visaCompellingEvidence3, this.visaCompliance, });
 
 factory DisputeEnhancedEligibility.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibility(

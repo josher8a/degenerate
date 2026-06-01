@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_reopened_alert.dart';@immutable final class WebhookCodeScanningAlertReopenedAction {const WebhookCodeScanningAlertReopenedAction._(this.value);
-
-factory WebhookCodeScanningAlertReopenedAction.fromJson(String json) { return switch (json) {
-  'reopened' => reopened,
-  _ => WebhookCodeScanningAlertReopenedAction._(json),
-}; }
-
-static const WebhookCodeScanningAlertReopenedAction reopened = WebhookCodeScanningAlertReopenedAction._('reopened');
-
-static const List<WebhookCodeScanningAlertReopenedAction> values = [reopened];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertReopenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertReopenedAction($value)'; } 
- }
-@immutable final class WebhookCodeScanningAlertReopened {const WebhookCodeScanningAlertReopened({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_reopened/webhook_code_scanning_alert_reopened_alert.dart';@immutable final class WebhookCodeScanningAlertReopened {const WebhookCodeScanningAlertReopened({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertReopened.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopened(
-  action: WebhookCodeScanningAlertReopenedAction.fromJson(json['action'] as String),
+  action: ProjectReopenedAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertReopenedAlert.fromJson(json['alert'] as Map<String, dynamic>),
   commitOid: json['commit_oid'] as String?,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookCodeScanningAlertReopened.fromJson(Map<String, dynamic> json) { r
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookCodeScanningAlertReopenedAction action;
+final ProjectReopenedAction action;
 
 /// The code scanning alert involved in the event.
 final WebhookCodeScanningAlertReopenedAlert alert;
@@ -73,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCodeScanningAlertReopened copyWith({WebhookCodeScanningAlertReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
+WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, WebhookCodeScanningAlertReopenedAlert? alert, String? Function()? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, String? Function()? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid != null ? commitOid() : this.commitOid,

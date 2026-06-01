@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_moved_changes.dart';import 'webhook_project_card_moved_project_card.dart';@immutable final class WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction._(this.value);
-
-factory WebhookProjectCardMovedAction.fromJson(String json) { return switch (json) {
-  'moved' => moved,
-  _ => WebhookProjectCardMovedAction._(json),
-}; }
-
-static const WebhookProjectCardMovedAction moved = WebhookProjectCardMovedAction._('moved');
-
-static const List<WebhookProjectCardMovedAction> values = [moved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectCardMovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectCardMovedAction($value)'; } 
- }
-@immutable final class WebhookProjectCardMoved {const WebhookProjectCardMoved({required this.action, required this.projectCard, required this.sender, this.changes, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_project_card.dart';@immutable final class WebhookProjectCardMoved {const WebhookProjectCardMoved({required this.action, required this.projectCard, required this.sender, this.changes, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectCardMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMoved(
   action: WebhookProjectCardMovedAction.fromJson(json['action'] as String),

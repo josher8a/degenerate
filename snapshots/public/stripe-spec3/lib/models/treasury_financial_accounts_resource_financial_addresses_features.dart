@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_aba_toggle_settings.dart';/// Settings related to Financial Addresses features on a Financial Account
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings.dart';/// Settings related to Financial Addresses features on a Financial Account
 @immutable final class TreasuryFinancialAccountsResourceFinancialAddressesFeatures {const TreasuryFinancialAccountsResourceFinancialAddressesFeatures({this.aba});
 
 factory TreasuryFinancialAccountsResourceFinancialAddressesFeatures.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceFinancialAddressesFeatures(

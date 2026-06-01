@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'pod.dart';/// PodList is a list of Pods.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod.dart';/// PodList is a list of Pods.
 @immutable final class PodList {const PodList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory PodList.fromJson(Map<String, dynamic> json) { return PodList(

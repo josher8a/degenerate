@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_sorting_direction.dart';import '../models/infra_target.dart';import '../models/infra_target_id.dart';import '../models/infra_targets_delete_batch_post_request.dart';import '../models/infra_targets_list_order.dart';import '../models/infra_targets_post_request.dart';import '../models/infra_targets_put_batch_request.dart';import '../models/infra_targets_put_request.dart';/// InfrastructureAccessTargetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_account_tag.dart';import 'package:pub_cloudflare/models/infra_sorting_direction.dart';import 'package:pub_cloudflare/models/infra_target.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';import 'package:pub_cloudflare/models/infra_targets_delete_batch_post_request.dart';import 'package:pub_cloudflare/models/infra_targets_list_order.dart';import 'package:pub_cloudflare/models/infra_targets_post_request.dart';import 'package:pub_cloudflare/models/infra_targets_put_batch_request.dart';import 'package:pub_cloudflare/models/infra_targets_put_request.dart';/// InfrastructureAccessTargetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

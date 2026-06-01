@@ -1,147 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_webhook_base.dart';import 'pull_request_webhook_head.dart';import 'pull_request_webhook_labels.dart';import 'pull_request_webhook_links.dart';import 'simple_user.dart';import 'team_simple.dart';/// State of this Pull Request. Either `open` or `closed`.
-@immutable final class PullRequestWebhookState {const PullRequestWebhookState._(this.value);
-
-factory PullRequestWebhookState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => PullRequestWebhookState._(json),
-}; }
-
-static const PullRequestWebhookState open = PullRequestWebhookState._('open');
-
-static const PullRequestWebhookState closed = PullRequestWebhookState._('closed');
-
-static const List<PullRequestWebhookState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookState($value)'; } 
- }
-/// The default value for a merge commit message.
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `PR_BODY` - default to the pull request's body.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class PullRequestWebhookMergeCommitMessage {const PullRequestWebhookMergeCommitMessage._(this.value);
-
-factory PullRequestWebhookMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'PR_TITLE' => prTitle,
-  'BLANK' => blank,
-  _ => PullRequestWebhookMergeCommitMessage._(json),
-}; }
-
-static const PullRequestWebhookMergeCommitMessage prBody = PullRequestWebhookMergeCommitMessage._('PR_BODY');
-
-static const PullRequestWebhookMergeCommitMessage prTitle = PullRequestWebhookMergeCommitMessage._('PR_TITLE');
-
-static const PullRequestWebhookMergeCommitMessage blank = PullRequestWebhookMergeCommitMessage._('BLANK');
-
-static const List<PullRequestWebhookMergeCommitMessage> values = [prBody, prTitle, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookMergeCommitMessage($value)'; } 
- }
-/// The default value for a merge commit title.
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
-@immutable final class PullRequestWebhookMergeCommitTitle {const PullRequestWebhookMergeCommitTitle._(this.value);
-
-factory PullRequestWebhookMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'MERGE_MESSAGE' => mergeMessage,
-  _ => PullRequestWebhookMergeCommitTitle._(json),
-}; }
-
-static const PullRequestWebhookMergeCommitTitle prTitle = PullRequestWebhookMergeCommitTitle._('PR_TITLE');
-
-static const PullRequestWebhookMergeCommitTitle mergeMessage = PullRequestWebhookMergeCommitTitle._('MERGE_MESSAGE');
-
-static const List<PullRequestWebhookMergeCommitTitle> values = [prTitle, mergeMessage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookMergeCommitTitle($value)'; } 
- }
-/// The default value for a squash merge commit message:
-/// - `PR_BODY` - default to the pull request's body.
-/// - `COMMIT_MESSAGES` - default to the branch's commit messages.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class PullRequestWebhookSquashMergeCommitMessage {const PullRequestWebhookSquashMergeCommitMessage._(this.value);
-
-factory PullRequestWebhookSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'COMMIT_MESSAGES' => commitMessages,
-  'BLANK' => blank,
-  _ => PullRequestWebhookSquashMergeCommitMessage._(json),
-}; }
-
-static const PullRequestWebhookSquashMergeCommitMessage prBody = PullRequestWebhookSquashMergeCommitMessage._('PR_BODY');
-
-static const PullRequestWebhookSquashMergeCommitMessage commitMessages = PullRequestWebhookSquashMergeCommitMessage._('COMMIT_MESSAGES');
-
-static const PullRequestWebhookSquashMergeCommitMessage blank = PullRequestWebhookSquashMergeCommitMessage._('BLANK');
-
-static const List<PullRequestWebhookSquashMergeCommitMessage> values = [prBody, commitMessages, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookSquashMergeCommitMessage($value)'; } 
- }
-/// The default value for a squash merge commit title:
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-@immutable final class PullRequestWebhookSquashMergeCommitTitle {const PullRequestWebhookSquashMergeCommitTitle._(this.value);
-
-factory PullRequestWebhookSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
-  _ => PullRequestWebhookSquashMergeCommitTitle._(json),
-}; }
-
-static const PullRequestWebhookSquashMergeCommitTitle prTitle = PullRequestWebhookSquashMergeCommitTitle._('PR_TITLE');
-
-static const PullRequestWebhookSquashMergeCommitTitle commitOrPrTitle = PullRequestWebhookSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
-
-static const List<PullRequestWebhookSquashMergeCommitTitle> values = [prTitle, commitOrPrTitle];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestWebhookSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestWebhookSquashMergeCommitTitle($value)'; } 
- }
-@immutable final class PullRequestWebhook {const PullRequestWebhook({required this.labels, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.url, required this.milestone, required this.changedFiles, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.merged, required this.additions, required this.commits, required this.head, required this.base, required this.links, required this.authorAssociation, required this.autoMerge, required this.maintainerCanModify, required this.reviewComments, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.deletions, this.useSquashPrTitleAsDefault = false, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason, this.allowAutoMerge = false, this.allowUpdateBranch, this.deleteBranchOnMerge = false, this.mergeCommitMessage, this.mergeCommitTitle, this.squashMergeCommitMessage, this.squashMergeCommitTitle, this.rebaseable, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/auto_merge.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_base.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_head.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_labels.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';@immutable final class PullRequestWebhook {const PullRequestWebhook({required this.labels, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.url, required this.milestone, required this.changedFiles, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.merged, required this.additions, required this.commits, required this.head, required this.base, required this.links, required this.authorAssociation, required this.autoMerge, required this.maintainerCanModify, required this.reviewComments, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.deletions, this.useSquashPrTitleAsDefault = false, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason, this.allowAutoMerge = false, this.allowUpdateBranch, this.deleteBranchOnMerge = false, this.mergeCommitMessage, this.mergeCommitTitle, this.squashMergeCommitMessage, this.squashMergeCommitTitle, this.rebaseable, });
 
 factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequestWebhook(
   url: Uri.parse(json['url'] as String),
@@ -157,12 +16,12 @@ factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequ
   commentsUrl: Uri.parse(json['comments_url'] as String),
   statusesUrl: Uri.parse(json['statuses_url'] as String),
   number: (json['number'] as num).toInt(),
-  state: PullRequestWebhookState.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   locked: json['locked'] as bool,
   title: json['title'] as String,
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
   body: json['body'] as String?,
-  labels: (json['labels'] as List<dynamic>).map((e) => PullRequestWebhookLabels.fromJson(e as Map<String, dynamic>)).toList(),
+  labels: (json['labels'] as List<dynamic>).map((e) => PullRequestLabels.fromJson(e as Map<String, dynamic>)).toList(),
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   activeLockReason: json['active_lock_reason'] as String?,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -174,9 +33,9 @@ factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequ
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   requestedReviewers: (json['requested_reviewers'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   requestedTeams: (json['requested_teams'] as List<dynamic>?)?.map((e) => TeamSimple.fromJson(e as Map<String, dynamic>)).toList(),
-  head: PullRequestWebhookHead.fromJson(json['head'] as Map<String, dynamic>),
-  base: PullRequestWebhookBase.fromJson(json['base'] as Map<String, dynamic>),
-  links: PullRequestWebhookLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  head: PullRequestHead.fromJson(json['head'] as Map<String, dynamic>),
+  base: PullRequestBase.fromJson(json['base'] as Map<String, dynamic>),
+  links: PullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>),
   draft: json['draft'] as bool?,
@@ -195,10 +54,10 @@ factory PullRequestWebhook.fromJson(Map<String, dynamic> json) { return PullRequ
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
   allowUpdateBranch: json['allow_update_branch'] as bool?,
   deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
-  mergeCommitMessage: json['merge_commit_message'] != null ? PullRequestWebhookMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
-  mergeCommitTitle: json['merge_commit_title'] != null ? PullRequestWebhookMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
-  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? PullRequestWebhookSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
-  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? PullRequestWebhookSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
+  mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
+  mergeCommitTitle: json['merge_commit_title'] != null ? MergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
+  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
+  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
   useSquashPrTitleAsDefault: json.containsKey('use_squash_pr_title_as_default') ? json['use_squash_pr_title_as_default'] as bool : false,
 ); }
 
@@ -230,7 +89,7 @@ final Uri statusesUrl;
 final int number;
 
 /// State of this Pull Request. Either `open` or `closed`.
-final PullRequestWebhookState state;
+final IssuesCreateMilestoneRequestState state;
 
 final bool locked;
 
@@ -241,7 +100,7 @@ final SimpleUser user;
 
 final String? body;
 
-final List<PullRequestWebhookLabels> labels;
+final List<PullRequestLabels> labels;
 
 final Milestone? milestone;
 
@@ -265,11 +124,11 @@ final List<SimpleUser>? requestedReviewers;
 
 final List<TeamSimple>? requestedTeams;
 
-final PullRequestWebhookHead head;
+final PullRequestHead head;
 
-final PullRequestWebhookBase base;
+final PullRequestBase base;
 
-final PullRequestWebhookLinks links;
+final PullRequestLinks links;
 
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
@@ -317,23 +176,23 @@ final bool deleteBranchOnMerge;
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final PullRequestWebhookMergeCommitMessage? mergeCommitMessage;
+final MergeCommitMessage? mergeCommitMessage;
 
 /// The default value for a merge commit title.
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., "Merge pull request #123 from branch-name").
-final PullRequestWebhookMergeCommitTitle? mergeCommitTitle;
+final MergeCommitTitle? mergeCommitTitle;
 
 /// The default value for a squash merge commit message:
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final PullRequestWebhookSquashMergeCommitMessage? squashMergeCommitMessage;
+final SquashMergeCommitMessage? squashMergeCommitMessage;
 
 /// The default value for a squash merge commit title:
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final PullRequestWebhookSquashMergeCommitTitle? squashMergeCommitTitle;
+final SquashMergeCommitTitle? squashMergeCommitTitle;
 
 /// Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**
 final bool useSquashPrTitleAsDefault;
@@ -438,7 +297,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
       json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestWebhookState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestWebhookLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<TeamSimple> Function()? requestedTeams, PullRequestWebhookHead? head, PullRequestWebhookBase? base, PullRequestWebhookLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, bool? merged, bool? Function()? mergeable, bool? Function()? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, bool Function()? allowAutoMerge, bool Function()? allowUpdateBranch, bool Function()? deleteBranchOnMerge, PullRequestWebhookMergeCommitMessage Function()? mergeCommitMessage, PullRequestWebhookMergeCommitTitle Function()? mergeCommitTitle, PullRequestWebhookSquashMergeCommitMessage Function()? squashMergeCommitMessage, PullRequestWebhookSquashMergeCommitTitle Function()? squashMergeCommitTitle, bool Function()? useSquashPrTitleAsDefault, }) { return PullRequestWebhook(
+PullRequestWebhook copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, IssuesCreateMilestoneRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<TeamSimple> Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, bool? merged, bool? Function()? mergeable, bool? Function()? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, bool Function()? allowAutoMerge, bool Function()? allowUpdateBranch, bool Function()? deleteBranchOnMerge, MergeCommitMessage Function()? mergeCommitMessage, MergeCommitTitle Function()? mergeCommitTitle, SquashMergeCommitMessage Function()? squashMergeCommitMessage, SquashMergeCommitTitle Function()? squashMergeCommitTitle, bool Function()? useSquashPrTitleAsDefault, }) { return PullRequestWebhook(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

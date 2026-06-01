@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';/// Request model for the legacy payload log settings endpoint.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_masking_level.dart';/// Request model for the legacy payload log settings endpoint.
 @immutable final class DlpPayloadLogSettingUpdateLegacy {const DlpPayloadLogSettingUpdateLegacy({this.maskingLevel, this.publicKey, });
 
 factory DlpPayloadLogSettingUpdateLegacy.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSettingUpdateLegacy(

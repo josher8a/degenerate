@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArtifactAttestations {const ArtifactAttestations({this.trustDomain, this.services, });
+
+factory ArtifactAttestations.fromJson(Map<String, dynamic> json) { return ArtifactAttestations(
+  trustDomain: json['trust_domain'] as String?,
+  services: (json['services'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+final String? trustDomain;
+
+final List<String>? services;
+
+Map<String, dynamic> toJson() { return {
+  'trust_domain': ?trustDomain,
+  'services': ?services,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'trust_domain', 'services'}.contains(key)); } 
+ArtifactAttestations copyWith({String Function()? trustDomain, List<String> Function()? services, }) { return ArtifactAttestations(
+  trustDomain: trustDomain != null ? trustDomain() : this.trustDomain,
+  services: services != null ? services() : this.services,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ArtifactAttestations &&
+          trustDomain == other.trustDomain &&
+          listEquals(services, other.services); } 
+@override int get hashCode { return Object.hash(trustDomain, Object.hashAll(services ?? const [])); } 
+@override String toString() { return 'ArtifactAttestations(trustDomain: $trustDomain, services: $services)'; } 
+ }

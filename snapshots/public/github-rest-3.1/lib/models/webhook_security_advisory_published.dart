@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryPublishedAction {const WebhookSecurityAdvisoryPublishedAction._(this.value);
-
-factory WebhookSecurityAdvisoryPublishedAction.fromJson(String json) { return switch (json) {
-  'published' => published,
-  _ => WebhookSecurityAdvisoryPublishedAction._(json),
-}; }
-
-static const WebhookSecurityAdvisoryPublishedAction published = WebhookSecurityAdvisoryPublishedAction._('published');
-
-static const List<WebhookSecurityAdvisoryPublishedAction> values = [published];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecurityAdvisoryPublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecurityAdvisoryPublishedAction($value)'; } 
- }
-@immutable final class WebhookSecurityAdvisoryPublished {const WebhookSecurityAdvisoryPublished({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/webhook_package_published_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryPublished {const WebhookSecurityAdvisoryPublished({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookSecurityAdvisoryPublished.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryPublished(
-  action: WebhookSecurityAdvisoryPublishedAction.fromJson(json['action'] as String),
+  action: WebhookPackagePublishedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookSecurityAdvisoryPublished.fromJson(Map<String, dynamic> json) { r
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookSecurityAdvisoryPublishedAction action;
+final WebhookPackagePublishedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -58,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('security_advisory'); } 
-WebhookSecurityAdvisoryPublished copyWith({WebhookSecurityAdvisoryPublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, WebhooksSecurityAdvisory? securityAdvisory, SimpleUser Function()? sender, }) { return WebhookSecurityAdvisoryPublished(
+WebhookSecurityAdvisoryPublished copyWith({WebhookPackagePublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, WebhooksSecurityAdvisory? securityAdvisory, SimpleUser Function()? sender, }) { return WebhookSecurityAdvisoryPublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

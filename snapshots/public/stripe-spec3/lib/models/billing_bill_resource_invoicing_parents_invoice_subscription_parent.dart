@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'subscription.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// 
 @immutable final class BillingBillResourceInvoicingParentsInvoiceSubscriptionParent {const BillingBillResourceInvoicingParentsInvoiceSubscriptionParent({required this.subscription, this.metadata, this.subscriptionProrationDate, });
 
 factory BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceSubscriptionParent(

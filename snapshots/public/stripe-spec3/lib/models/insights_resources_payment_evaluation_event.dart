@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_dispute_opened.dart';import 'insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'insights_resources_payment_evaluation_refunded.dart';import 'insights_resources_payment_evaluation_user_intervention_raised.dart';import 'insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_dispute_opened.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_refunded.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_raised.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) { return switch (json) {

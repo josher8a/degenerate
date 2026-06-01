@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_action_search_sources.dart';/// The action type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';/// The action type.
 /// 
 @immutable final class WebSearchActionSearchType {const WebSearchActionSearchType._(this.value);
 
@@ -31,7 +31,7 @@ factory WebSearchActionSearch.fromJson(Map<String, dynamic> json) { return WebSe
   type: WebSearchActionSearchType.fromJson(json['type'] as String),
   query: json['query'] as String,
   queries: (json['queries'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  sources: (json['sources'] as List<dynamic>?)?.map((e) => WebSearchActionSearchSources.fromJson(e as Map<String, dynamic>)).toList(),
+  sources: (json['sources'] as List<dynamic>?)?.map((e) => Sources.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The action type.
@@ -48,7 +48,7 @@ final List<String>? queries;
 
 /// The sources used in the search.
 /// 
-final List<WebSearchActionSearchSources>? sources;
+final List<Sources>? sources;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('query') && json['query'] is String; } 
-WebSearchActionSearch copyWith({WebSearchActionSearchType? type, String? query, List<String> Function()? queries, List<WebSearchActionSearchSources> Function()? sources, }) { return WebSearchActionSearch(
+WebSearchActionSearch copyWith({WebSearchActionSearchType? type, String? query, List<String> Function()? queries, List<Sources> Function()? sources, }) { return WebSearchActionSearch(
   type: type ?? this.type,
   query: query ?? this.query,
   queries: queries != null ? queries() : this.queries,

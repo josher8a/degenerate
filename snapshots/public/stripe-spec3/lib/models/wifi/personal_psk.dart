@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonalPsk {const PersonalPsk({required this.password, required this.ssid, });
+
+factory PersonalPsk.fromJson(Map<String, dynamic> json) { return PersonalPsk(
+  password: json['password'] as String,
+  ssid: json['ssid'] as String,
+); }
+
+final String password;
+
+final String ssid;
+
+Map<String, dynamic> toJson() { return {
+  'password': password,
+  'ssid': ssid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
+      json.containsKey('ssid') && json['ssid'] is String; } 
+PersonalPsk copyWith({String? password, String? ssid, }) { return PersonalPsk(
+  password: password ?? this.password,
+  ssid: ssid ?? this.ssid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PersonalPsk &&
+          password == other.password &&
+          ssid == other.ssid; } 
+@override int get hashCode { return Object.hash(password, ssid); } 
+@override String toString() { return 'PersonalPsk(password: $password, ssid: $ssid)'; } 
+ }

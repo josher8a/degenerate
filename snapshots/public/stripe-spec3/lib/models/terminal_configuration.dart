@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_cellular_config.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'terminal_configuration_configuration_resource_offline_config.dart';import 'terminal_configuration_configuration_resource_reboot_window.dart';import 'terminal_configuration_configuration_resource_tipping.dart';import 'terminal_configuration_configuration_resource_wifi_config.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TerminalConfigurationObject {const TerminalConfigurationObject._(this.value);
-
-factory TerminalConfigurationObject.fromJson(String json) { return switch (json) {
-  'terminal.configuration' => terminalConfiguration,
-  _ => TerminalConfigurationObject._(json),
-}; }
-
-static const TerminalConfigurationObject terminalConfiguration = TerminalConfigurationObject._('terminal.configuration');
-
-static const List<TerminalConfigurationObject> values = [terminalConfiguration];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalConfigurationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalConfigurationObject($value)'; } 
- }
-/// A Configurations object represents how features should be configured for terminal readers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_configuration/deleted_terminal_configuration_object.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_cellular_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_device_type_specific_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_offline_config.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_reboot_window.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_tipping.dart';import 'package:pub_stripe_spec3/models/terminal_configuration_configuration_resource_wifi_config.dart';/// A Configurations object represents how features should be configured for terminal readers.
 /// For information about how to use it, see the [Terminal configurations documentation](https://docs.stripe.com/terminal/fleet/configurations-overview).
 @immutable final class TerminalConfiguration {const TerminalConfiguration({required this.id, required this.livemode, required this.object, this.bbposWisepad3, this.bbposWiseposE, this.cellular, this.isAccountDefault, this.name, this.offline, this.rebootWindow, this.stripeS700, this.stripeS710, this.tipping, this.verifoneP400, this.wifi, });
 
@@ -34,7 +12,7 @@ factory TerminalConfiguration.fromJson(Map<String, dynamic> json) { return Termi
   isAccountDefault: json['is_account_default'] as bool?,
   livemode: json['livemode'] as bool,
   name: json['name'] as String?,
-  object: TerminalConfigurationObject.fromJson(json['object'] as String),
+  object: DeletedTerminalConfigurationObject.fromJson(json['object'] as String),
   offline: json['offline'] != null ? TerminalConfigurationConfigurationResourceOfflineConfig.fromJson(json['offline'] as Map<String, dynamic>) : null,
   rebootWindow: json['reboot_window'] != null ? TerminalConfigurationConfigurationResourceRebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>) : null,
   stripeS700: json['stripe_s700'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(json['stripe_s700'] as Map<String, dynamic>) : null,
@@ -63,7 +41,7 @@ final bool livemode;
 final String? name;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final TerminalConfigurationObject object;
+final DeletedTerminalConfigurationObject object;
 
 final TerminalConfigurationConfigurationResourceOfflineConfig? offline;
 
@@ -99,7 +77,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig Function()? cellular, String? id, bool? Function()? isAccountDefault, bool? livemode, String? Function()? name, TerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig Function()? wifi, }) { return TerminalConfiguration(
+TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig Function()? cellular, String? id, bool? Function()? isAccountDefault, bool? livemode, String? Function()? name, DeletedTerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig Function()? wifi, }) { return TerminalConfiguration(
   bbposWisepad3: bbposWisepad3 != null ? bbposWisepad3() : this.bbposWisepad3,
   bbposWiseposE: bbposWiseposE != null ? bbposWiseposE() : this.bbposWiseposE,
   cellular: cellular != null ? cellular() : this.cellular,

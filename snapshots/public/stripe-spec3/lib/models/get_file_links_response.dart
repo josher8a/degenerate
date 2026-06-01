@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_link.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetFileLinksResponseObject {const GetFileLinksResponseObject._(this.value);
-
-factory GetFileLinksResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetFileLinksResponseObject._(json),
-}; }
-
-static const GetFileLinksResponseObject list = GetFileLinksResponseObject._('list');
-
-static const List<GetFileLinksResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetFileLinksResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetFileLinksResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file_link.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetFileLinksResponse {const GetFileLinksResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetFileLinksResponse.fromJson(Map<String, dynamic> json) { return GetFileLinksResponse(
   data: (json['data'] as List<dynamic>).map((e) => FileLink.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetFileLinksResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -39,7 +17,7 @@ final List<FileLink> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetFileLinksResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetFileLinksResponse copyWith({List<FileLink>? data, bool? hasMore, GetFileLinksResponseObject? object, String? url, }) { return GetFileLinksResponse(
+GetFileLinksResponse copyWith({List<FileLink>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetFileLinksResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

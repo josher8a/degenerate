@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_automatic_tax.dart';import 'post_invoices_create_preview_request_customer_details.dart';import 'post_invoices_create_preview_request_discounts.dart';import 'post_invoices_create_preview_request_discounts_variant1.dart';import 'post_invoices_create_preview_request_invoice_items.dart';import 'post_invoices_create_preview_request_issuer.dart';import 'post_invoices_create_preview_request_on_behalf_of.dart';import 'post_invoices_create_preview_request_schedule_details.dart';import 'post_invoices_create_preview_request_subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
-@immutable final class PostInvoicesCreatePreviewRequestPreviewMode {const PostInvoicesCreatePreviewRequestPreviewMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/invoice_items.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/schedule_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
+@immutable final class PreviewMode {const PreviewMode._(this.value);
 
-factory PostInvoicesCreatePreviewRequestPreviewMode.fromJson(String json) { return switch (json) {
+factory PreviewMode.fromJson(String json) { return switch (json) {
   'next' => next,
   'recurring' => recurring,
-  _ => PostInvoicesCreatePreviewRequestPreviewMode._(json),
+  _ => PreviewMode._(json),
 }; }
 
-static const PostInvoicesCreatePreviewRequestPreviewMode next = PostInvoicesCreatePreviewRequestPreviewMode._('next');
+static const PreviewMode next = PreviewMode._('next');
 
-static const PostInvoicesCreatePreviewRequestPreviewMode recurring = PostInvoicesCreatePreviewRequestPreviewMode._('recurring');
+static const PreviewMode recurring = PreviewMode._('recurring');
 
-static const List<PostInvoicesCreatePreviewRequestPreviewMode> values = [next, recurring];
+static const List<PreviewMode> values = [next, recurring];
 
 final String value;
 
@@ -21,32 +21,32 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoicesCreatePreviewRequestPreviewMode && other.value == value; } 
+    other is PreviewMode && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestPreviewMode($value)'; } 
+@override String toString() { return 'PreviewMode($value)'; } 
  }
 @immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
 factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequest(
-  automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
+  automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   customerDetails: json['customer_details'] != null ? PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesCreatePreviewRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceItems: (json['invoice_items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
-  issuer: json['issuer'] != null ? PostInvoicesCreatePreviewRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => PostInvoicesCreatePreviewRequestOnBehalfOfVariant2.fromJson(v as String),) : null,
-  previewMode: json['preview_mode'] != null ? PostInvoicesCreatePreviewRequestPreviewMode.fromJson(json['preview_mode'] as String) : null,
+  invoiceItems: (json['invoice_items'] as List<dynamic>?)?.map((e) => InvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
+  issuer: json['issuer'] != null ? Issuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  previewMode: json['preview_mode'] != null ? PreviewMode.fromJson(json['preview_mode'] as String) : null,
   schedule: json['schedule'] as String?,
-  scheduleDetails: json['schedule_details'] != null ? PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>) : null,
+  scheduleDetails: json['schedule_details'] != null ? ScheduleDetails.fromJson(json['schedule_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
-  subscriptionDetails: json['subscription_details'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
+  subscriptionDetails: json['subscription_details'] != null ? SubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for automatic tax lookup for this invoice preview.
-final PostInvoicesCreatePreviewRequestAutomaticTax? automaticTax;
+final PostCheckoutSessionsRequestAutomaticTax? automaticTax;
 
 /// The currency to preview this invoice in. Defaults to that of `customer` if not specified.
 final String? currency;
@@ -61,34 +61,34 @@ final String? customerAccount;
 final PostInvoicesCreatePreviewRequestCustomerDetails? customerDetails;
 
 /// The coupons to redeem into discounts for the invoice preview. If not specified, inherits the discount from the subscription or customer. This works for both coupons directly applied to an invoice and coupons applied to a subscription. Pass an empty string to avoid inheriting any discounts.
-final PostInvoicesCreatePreviewRequestDiscounts? discounts;
+final PostCustomersCustomerSubscriptionsRequestDiscounts? discounts;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
 /// List of invoice items to add or update in the upcoming invoice preview (up to 250).
-final List<PostInvoicesCreatePreviewRequestInvoiceItems>? invoiceItems;
+final List<InvoiceItems>? invoiceItems;
 
 /// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
-final PostInvoicesCreatePreviewRequestIssuer? issuer;
+final Issuer? issuer;
 
 /// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
 final PostInvoicesCreatePreviewRequestOnBehalfOf? onBehalfOf;
 
 /// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
-final PostInvoicesCreatePreviewRequestPreviewMode? previewMode;
+final PreviewMode? previewMode;
 
 /// The identifier of the schedule whose upcoming invoice you'd like to retrieve. Cannot be used with subscription or subscription fields.
 final String? schedule;
 
 /// The schedule creation or modification params to apply as a preview. Cannot be used with `subscription` or `subscription_` prefixed fields.
-final PostInvoicesCreatePreviewRequestScheduleDetails? scheduleDetails;
+final ScheduleDetails? scheduleDetails;
 
 /// The identifier of the subscription for which you'd like to retrieve the upcoming invoice. If not provided, but a `subscription_details.items` is provided, you will preview creating a subscription with those items. If neither `subscription` nor `subscription_details.items` is provided, you will retrieve the next upcoming invoice from among the customer's subscriptions.
 final String? subscription;
 
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
-final PostInvoicesCreatePreviewRequestSubscriptionDetails? subscriptionDetails;
+final SubscriptionDetails? subscriptionDetails;
 
 Map<String, dynamic> toJson() { return {
   if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key)); } 
-PostInvoicesCreatePreviewRequest copyWith({PostInvoicesCreatePreviewRequestAutomaticTax Function()? automaticTax, String Function()? currency, String Function()? customer, String Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails Function()? customerDetails, PostInvoicesCreatePreviewRequestDiscounts Function()? discounts, List<String> Function()? expand, List<PostInvoicesCreatePreviewRequestInvoiceItems> Function()? invoiceItems, PostInvoicesCreatePreviewRequestIssuer Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf Function()? onBehalfOf, PostInvoicesCreatePreviewRequestPreviewMode Function()? previewMode, String Function()? schedule, PostInvoicesCreatePreviewRequestScheduleDetails Function()? scheduleDetails, String Function()? subscription, PostInvoicesCreatePreviewRequestSubscriptionDetails Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
+PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticTax Function()? automaticTax, String Function()? currency, String Function()? customer, String Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails Function()? customerDetails, PostCustomersCustomerSubscriptionsRequestDiscounts Function()? discounts, List<String> Function()? expand, List<InvoiceItems> Function()? invoiceItems, Issuer Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf Function()? onBehalfOf, PreviewMode Function()? previewMode, String Function()? schedule, ScheduleDetails Function()? scheduleDetails, String Function()? subscription, SubscriptionDetails Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,

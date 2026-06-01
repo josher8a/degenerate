@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_chunking_strategy_request_param.dart';import 'static_chunking_strategy.dart';import 'static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_chunking_strategy_request_param.dart';import 'package:pub_openai/models/static_chunking_strategy.dart';import 'package:pub_openai/models/static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
 sealed class ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.

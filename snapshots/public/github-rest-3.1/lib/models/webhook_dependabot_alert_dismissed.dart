@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertDismissedAction {const WebhookDependabotAlertDismissedAction._(this.value);
-
-factory WebhookDependabotAlertDismissedAction.fromJson(String json) { return switch (json) {
-  'dismissed' => dismissed,
-  _ => WebhookDependabotAlertDismissedAction._(json),
-}; }
-
-static const WebhookDependabotAlertDismissedAction dismissed = WebhookDependabotAlertDismissedAction._('dismissed');
-
-static const List<WebhookDependabotAlertDismissedAction> values = [dismissed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertDismissedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertDismissedAction($value)'; } 
- }
-@immutable final class WebhookDependabotAlertDismissed {const WebhookDependabotAlertDismissed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_dependabot_alert_dismissed/webhook_dependabot_alert_dismissed_action.dart';@immutable final class WebhookDependabotAlertDismissed {const WebhookDependabotAlertDismissed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
 factory WebhookDependabotAlertDismissed.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertDismissed(
   action: WebhookDependabotAlertDismissedAction.fromJson(json['action'] as String),

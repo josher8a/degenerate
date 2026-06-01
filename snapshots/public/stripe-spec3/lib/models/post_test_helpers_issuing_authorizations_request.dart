@@ -1,59 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'post_test_helpers_issuing_authorizations_request_fleet.dart';import 'post_test_helpers_issuing_authorizations_request_fuel.dart';import 'post_test_helpers_issuing_authorizations_request_merchant_data.dart';import 'post_test_helpers_issuing_authorizations_request_network_data.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data.dart';/// How the card details were provided. Defaults to online.
-@immutable final class PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod {const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/fleet.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fuel.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/network_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/risk_assessment.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/verification_data.dart';/// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
+@immutable final class FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood._(this.value);
 
-factory PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(String json) { return switch (json) {
-  'chip' => chip,
-  'contactless' => contactless,
-  'keyed_in' => keyedIn,
-  'online' => online,
-  'swipe' => swipe,
-  _ => PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(json),
-}; }
-
-static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod chip = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('chip');
-
-static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod contactless = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('contactless');
-
-static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod keyedIn = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('keyed_in');
-
-static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod online = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('online');
-
-static const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod swipe = PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._('swipe');
-
-static const List<PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod> values = [chip, contactless, keyedIn, online, swipe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod($value)'; } 
- }
-/// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
-@immutable final class PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood {const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(this.value);
-
-factory PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
+factory FraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
   'neutral' => neutral,
   'unknown' => unknown,
   'very_likely' => veryLikely,
   'very_unlikely' => veryUnlikely,
-  _ => PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(json),
+  _ => FraudDisputabilityLikelihood._(json),
 }; }
 
-static const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood neutral = PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._('neutral');
+static const FraudDisputabilityLikelihood neutral = FraudDisputabilityLikelihood._('neutral');
 
-static const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood unknown = PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._('unknown');
+static const FraudDisputabilityLikelihood unknown = FraudDisputabilityLikelihood._('unknown');
 
-static const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood veryLikely = PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._('very_likely');
+static const FraudDisputabilityLikelihood veryLikely = FraudDisputabilityLikelihood._('very_likely');
 
-static const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood veryUnlikely = PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._('very_unlikely');
+static const FraudDisputabilityLikelihood veryUnlikely = FraudDisputabilityLikelihood._('very_unlikely');
 
-static const List<PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood> values = [neutral, unknown, veryLikely, veryUnlikely];
+static const List<FraudDisputabilityLikelihood> values = [neutral, unknown, veryLikely, veryUnlikely];
 
 final String value;
 
@@ -61,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood && other.value == value; } 
+    other is FraudDisputabilityLikelihood && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood($value)'; } 
+@override String toString() { return 'FraudDisputabilityLikelihood($value)'; } 
  }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
@@ -98,20 +64,20 @@ bool get isUnknown { return !values.contains(this); }
 factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDetails: json['amount_details'] != null ? PostTestHelpersIssuingAuthorizationsRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
-  authorizationMethod: json['authorization_method'] != null ? PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(json['authorization_method'] as String) : null,
+  authorizationMethod: json['authorization_method'] != null ? AuthorizationMethod.fromJson(json['authorization_method'] as String) : null,
   card: json['card'] as String,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fleet: json['fleet'] != null ? PostTestHelpersIssuingAuthorizationsRequestFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
-  fraudDisputabilityLikelihood: json['fraud_disputability_likelihood'] != null ? PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(json['fraud_disputability_likelihood'] as String) : null,
-  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  fleet: json['fleet'] != null ? Fleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  fraudDisputabilityLikelihood: json['fraud_disputability_likelihood'] != null ? FraudDisputabilityLikelihood.fromJson(json['fraud_disputability_likelihood'] as String) : null,
+  fuel: json['fuel'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
   isAmountControllable: json['is_amount_controllable'] as bool?,
   merchantAmount: json['merchant_amount'] != null ? (json['merchant_amount'] as num).toInt() : null,
   merchantCurrency: json['merchant_currency'] as String?,
-  merchantData: json['merchant_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
-  networkData: json['network_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
-  riskAssessment: json['risk_assessment'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>) : null,
-  verificationData: json['verification_data'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>) : null,
+  merchantData: json['merchant_data'] != null ? MerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
+  networkData: json['network_data'] != null ? NetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
+  riskAssessment: json['risk_assessment'] != null ? RiskAssessment.fromJson(json['risk_assessment'] as Map<String, dynamic>) : null,
+  verificationData: json['verification_data'] != null ? VerificationData.fromJson(json['verification_data'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(json['wallet'] as String) : null,
 ); }
 
@@ -122,7 +88,7 @@ final int? amount;
 final PostTestHelpersIssuingAuthorizationsRequestAmountDetails? amountDetails;
 
 /// How the card details were provided. Defaults to online.
-final PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod? authorizationMethod;
+final AuthorizationMethod? authorizationMethod;
 
 /// Card associated with this authorization.
 final String card;
@@ -134,13 +100,13 @@ final String? currency;
 final List<String>? expand;
 
 /// Fleet-specific information for authorizations using Fleet cards.
-final PostTestHelpersIssuingAuthorizationsRequestFleet? fleet;
+final Fleet? fleet;
 
 /// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
-final PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood? fraudDisputabilityLikelihood;
+final FraudDisputabilityLikelihood? fraudDisputabilityLikelihood;
 
 /// Information about fuel that was purchased with this transaction.
-final PostTestHelpersIssuingAuthorizationsRequestFuel? fuel;
+final PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? fuel;
 
 /// If set `true`, you may provide [amount](https://docs.stripe.com/api/issuing/authorizations/approve#approve_issuing_authorization-amount) to control how much to hold for the authorization.
 final bool? isAmountControllable;
@@ -152,16 +118,16 @@ final int? merchantAmount;
 final String? merchantCurrency;
 
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
-final PostTestHelpersIssuingAuthorizationsRequestMerchantData? merchantData;
+final MerchantData? merchantData;
 
 /// Details about the authorization, such as identifiers, set by the card network.
-final PostTestHelpersIssuingAuthorizationsRequestNetworkData? networkData;
+final NetworkData? networkData;
 
 /// Stripe’s assessment of the fraud risk for this authorization.
-final PostTestHelpersIssuingAuthorizationsRequestRiskAssessment? riskAssessment;
+final RiskAssessment? riskAssessment;
 
 /// Verifications that Stripe performed on information that the cardholder provided to the merchant.
-final PostTestHelpersIssuingAuthorizationsRequestVerificationData? verificationData;
+final VerificationData? verificationData;
 
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 final PostTestHelpersIssuingAuthorizationsRequestWallet? wallet;
@@ -186,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   if (wallet != null) 'wallet': wallet?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') && json['card'] is String; } 
-PostTestHelpersIssuingAuthorizationsRequest copyWith({int Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails Function()? amountDetails, PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod Function()? authorizationMethod, String? card, String Function()? currency, List<String> Function()? expand, PostTestHelpersIssuingAuthorizationsRequestFleet Function()? fleet, PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsRequestFuel Function()? fuel, bool Function()? isAmountControllable, int Function()? merchantAmount, String Function()? merchantCurrency, PostTestHelpersIssuingAuthorizationsRequestMerchantData Function()? merchantData, PostTestHelpersIssuingAuthorizationsRequestNetworkData Function()? networkData, PostTestHelpersIssuingAuthorizationsRequestRiskAssessment Function()? riskAssessment, PostTestHelpersIssuingAuthorizationsRequestVerificationData Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet Function()? wallet, }) { return PostTestHelpersIssuingAuthorizationsRequest(
+PostTestHelpersIssuingAuthorizationsRequest copyWith({int Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails Function()? amountDetails, AuthorizationMethod Function()? authorizationMethod, String? card, String Function()? currency, List<String> Function()? expand, Fleet Function()? fleet, FraudDisputabilityLikelihood Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel Function()? fuel, bool Function()? isAmountControllable, int Function()? merchantAmount, String Function()? merchantCurrency, MerchantData Function()? merchantData, NetworkData Function()? networkData, RiskAssessment Function()? riskAssessment, VerificationData Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet Function()? wallet, }) { return PostTestHelpersIssuingAuthorizationsRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   authorizationMethod: authorizationMethod != null ? authorizationMethod() : this.authorizationMethod,

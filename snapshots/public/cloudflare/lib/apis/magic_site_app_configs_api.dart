@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_app_config_add_single_request.dart';import '../models/magic_app_config_update_request.dart';import '../models/magic_identifier.dart';/// MagicSiteAppConfigsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_app_config_add_single_request.dart';import 'package:pub_cloudflare/models/magic_app_config_update_request.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';/// MagicSiteAppConfigsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

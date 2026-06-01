@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';import 'queues_purge_get_response_result.dart';@immutable final class QueuesPurgeGetResponse {const QueuesPurgeGetResponse({this.errors, this.messages, this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model22.dart';import 'package:pub_cloudflare/models/queues_purge_get_response/queues_purge_get_response_result.dart';@immutable final class QueuesPurgeGetResponse {const QueuesPurgeGetResponse({this.errors, this.messages, this.success, this.result, });
 
 factory QueuesPurgeGetResponse.fromJson(Map<String, dynamic> json) { return QueuesPurgeGetResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),

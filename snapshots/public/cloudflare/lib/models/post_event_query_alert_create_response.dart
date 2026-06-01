@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
-@immutable final class PostEventQueryAlertCreateResponseFrequency {const PostEventQueryAlertCreateResponseFrequency._(this.value);
-
-factory PostEventQueryAlertCreateResponseFrequency.fromJson(String json) { return switch (json) {
-  'immediate' => immediate,
-  'daily' => daily,
-  _ => PostEventQueryAlertCreateResponseFrequency._(json),
-}; }
-
-static const PostEventQueryAlertCreateResponseFrequency immediate = PostEventQueryAlertCreateResponseFrequency._('immediate');
-
-static const PostEventQueryAlertCreateResponseFrequency daily = PostEventQueryAlertCreateResponseFrequency._('daily');
-
-static const List<PostEventQueryAlertCreateResponseFrequency> values = [immediate, daily];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostEventQueryAlertCreateResponseFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostEventQueryAlertCreateResponseFrequency($value)'; } 
- }
-@immutable final class PostEventQueryAlertCreateResponse {const PostEventQueryAlertCreateResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class PostEventQueryAlertCreateResponse {const PostEventQueryAlertCreateResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
 factory PostEventQueryAlertCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertCreateResponse(
   accountId: (json['account_id'] as num).toInt(),
   createdAt: json['created_at'] as String,
   enabled: json['enabled'] as bool,
-  frequency: PostEventQueryAlertCreateResponseFrequency.fromJson(json['frequency'] as String),
+  frequency: GetEventQueryAlertListResponseFrequency.fromJson(json['frequency'] as String),
   id: (json['id'] as num).toInt(),
   lastSentAt: json['last_sent_at'] as String?,
   notificationType: json['notification_type'] as String,
@@ -50,7 +25,7 @@ final String createdAt;
 final bool enabled;
 
 /// Alert frequency (immediate or daily)
-final PostEventQueryAlertCreateResponseFrequency frequency;
+final GetEventQueryAlertListResponseFrequency frequency;
 
 /// Unique identifier for the event query alert
 final int id;
@@ -91,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-PostEventQueryAlertCreateResponse copyWith({int? accountId, String? createdAt, bool? enabled, PostEventQueryAlertCreateResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return PostEventQueryAlertCreateResponse(
+PostEventQueryAlertCreateResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return PostEventQueryAlertCreateResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,

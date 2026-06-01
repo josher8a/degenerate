@@ -1,48 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies how events are aggregated.
-@immutable final class BillingMeterResourceAggregationSettingsFormula {const BillingMeterResourceAggregationSettingsFormula._(this.value);
-
-factory BillingMeterResourceAggregationSettingsFormula.fromJson(String json) { return switch (json) {
-  'count' => count,
-  'last' => last,
-  'sum' => sum,
-  _ => BillingMeterResourceAggregationSettingsFormula._(json),
-}; }
-
-static const BillingMeterResourceAggregationSettingsFormula count = BillingMeterResourceAggregationSettingsFormula._('count');
-
-static const BillingMeterResourceAggregationSettingsFormula last = BillingMeterResourceAggregationSettingsFormula._('last');
-
-static const BillingMeterResourceAggregationSettingsFormula sum = BillingMeterResourceAggregationSettingsFormula._('sum');
-
-static const List<BillingMeterResourceAggregationSettingsFormula> values = [count, last, sum];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterResourceAggregationSettingsFormula && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterResourceAggregationSettingsFormula($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings/formula.dart';/// 
 @immutable final class BillingMeterResourceAggregationSettings {const BillingMeterResourceAggregationSettings({required this.formula});
 
 factory BillingMeterResourceAggregationSettings.fromJson(Map<String, dynamic> json) { return BillingMeterResourceAggregationSettings(
-  formula: BillingMeterResourceAggregationSettingsFormula.fromJson(json['formula'] as String),
+  formula: Formula.fromJson(json['formula'] as String),
 ); }
 
 /// Specifies how events are aggregated.
-final BillingMeterResourceAggregationSettingsFormula formula;
+final Formula formula;
 
 Map<String, dynamic> toJson() { return {
   'formula': formula.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula'); } 
-BillingMeterResourceAggregationSettings copyWith({BillingMeterResourceAggregationSettingsFormula? formula}) { return BillingMeterResourceAggregationSettings(
+BillingMeterResourceAggregationSettings copyWith({Formula? formula}) { return BillingMeterResourceAggregationSettings(
   formula: formula ?? this.formula,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

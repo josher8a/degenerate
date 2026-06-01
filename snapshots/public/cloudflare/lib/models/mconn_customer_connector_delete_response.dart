@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorDeleteResponse {const MconnCustomerConnectorDeleteResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorDeleteResponse {const MconnCustomerConnectorDeleteResponse({this.result});
 
 factory MconnCustomerConnectorDeleteResponse.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorDeleteResponse(
   result: json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

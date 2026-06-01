@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health_ip.dart';@immutable final class LoadBalancingOriginHealth {const LoadBalancingOriginHealth({this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_origin_health/load_balancing_origin_health_ip.dart';@immutable final class LoadBalancingOriginHealth {const LoadBalancingOriginHealth({this.ip});
 
 factory LoadBalancingOriginHealth.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginHealth(
   ip: json['ip'] != null ? LoadBalancingOriginHealthIp.fromJson(json['ip'] as Map<String, dynamic>) : null,

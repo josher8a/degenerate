@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_created.dart';import 'secrets_store_modified.dart';import 'secrets_store_store_identifier.dart';import 'secrets_store_store_name.dart';@immutable final class SecretsStoreStoreObject {const SecretsStoreStoreObject({required this.created, required this.id, required this.modified, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_name.dart';@immutable final class SecretsStoreStoreObject {const SecretsStoreStoreObject({required this.created, required this.id, required this.modified, required this.name, });
 
 factory SecretsStoreStoreObject.fromJson(Map<String, dynamic> json) { return SecretsStoreStoreObject(
   created: SecretsStoreCreated.fromJson(json['created'] as String),

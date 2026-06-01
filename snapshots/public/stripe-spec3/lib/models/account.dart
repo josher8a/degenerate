@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_business_profile.dart';import 'account_capabilities.dart';import 'account_external_accounts.dart';import 'account_future_requirements.dart';import 'account_group_membership.dart';import 'account_requirements.dart';import 'account_settings.dart';import 'account_tos_acceptance.dart';import 'account_unification_account_controller.dart';import 'legal_entity_company.dart';import 'person.dart';/// The business type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account/account_object.dart';import 'package:pub_stripe_spec3/models/account/external_accounts.dart';import 'package:pub_stripe_spec3/models/account_business_profile.dart';import 'package:pub_stripe_spec3/models/account_capabilities.dart';import 'package:pub_stripe_spec3/models/account_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_group_membership.dart';import 'package:pub_stripe_spec3/models/account_requirements.dart';import 'package:pub_stripe_spec3/models/account_settings.dart';import 'package:pub_stripe_spec3/models/account_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller.dart';import 'package:pub_stripe_spec3/models/legal_entity_company.dart';import 'package:pub_stripe_spec3/models/person.dart';/// The business type.
 @immutable final class AccountBusinessType {const AccountBusinessType._(this.value);
 
 factory AccountBusinessType.fromJson(String json) { return switch (json) {
@@ -30,28 +30,6 @@ bool get isUnknown { return !values.contains(this); }
     other is AccountBusinessType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountBusinessType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class AccountObject {const AccountObject._(this.value);
-
-factory AccountObject.fromJson(String json) { return switch (json) {
-  'account' => account,
-  _ => AccountObject._(json),
-}; }
-
-static const AccountObject account = AccountObject._('account');
-
-static const List<AccountObject> values = [account];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountObject($value)'; } 
  }
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 @immutable final class AccountType {const AccountType._(this.value);
@@ -110,7 +88,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   defaultCurrency: json['default_currency'] as String?,
   detailsSubmitted: json['details_submitted'] as bool?,
   email: json['email'] as String?,
-  externalAccounts: json['external_accounts'] != null ? AccountExternalAccounts.fromJson(json['external_accounts'] as Map<String, dynamic>) : null,
+  externalAccounts: json['external_accounts'] != null ? ExternalAccounts.fromJson(json['external_accounts'] as Map<String, dynamic>) : null,
   futureRequirements: json['future_requirements'] != null ? AccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   groups: json['groups'] != null ? AccountGroupMembership.fromJson(json['groups'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
@@ -155,7 +133,7 @@ final bool? detailsSubmitted;
 final String? email;
 
 /// External accounts (bank accounts and debit cards) currently attached to this account. External accounts are only returned for requests where `controller[is_controller]` is true.
-final AccountExternalAccounts? externalAccounts;
+final ExternalAccounts? externalAccounts;
 
 final AccountFutureRequirements? futureRequirements;
 
@@ -213,7 +191,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBusinessType? Function()? businessType, AccountCapabilities Function()? capabilities, bool Function()? chargesEnabled, LegalEntityCompany Function()? company, AccountUnificationAccountController Function()? controller, String Function()? country, int Function()? created, String Function()? defaultCurrency, bool Function()? detailsSubmitted, String? Function()? email, AccountExternalAccounts Function()? externalAccounts, AccountFutureRequirements Function()? futureRequirements, AccountGroupMembership? Function()? groups, String? id, Person Function()? individual, Map<String, String> Function()? metadata, AccountObject? object, bool Function()? payoutsEnabled, AccountRequirements Function()? requirements, AccountSettings? Function()? settings, AccountTosAcceptance Function()? tosAcceptance, AccountType Function()? type, }) { return Account(
+Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBusinessType? Function()? businessType, AccountCapabilities Function()? capabilities, bool Function()? chargesEnabled, LegalEntityCompany Function()? company, AccountUnificationAccountController Function()? controller, String Function()? country, int Function()? created, String Function()? defaultCurrency, bool Function()? detailsSubmitted, String? Function()? email, ExternalAccounts Function()? externalAccounts, AccountFutureRequirements Function()? futureRequirements, AccountGroupMembership? Function()? groups, String? id, Person Function()? individual, Map<String, String> Function()? metadata, AccountObject? object, bool Function()? payoutsEnabled, AccountRequirements Function()? requirements, AccountSettings? Function()? settings, AccountTosAcceptance Function()? tosAcceptance, AccountType Function()? type, }) { return Account(
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   businessType: businessType != null ? businessType() : this.businessType,
   capabilities: capabilities != null ? capabilities() : this.capabilities,

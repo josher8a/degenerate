@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_content.dart';/// The role of the message input. One of `user`, `system`, or `developer`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/input_content.dart';/// The role of the message input. One of `user`, `system`, or `developer`.
 /// 
 @immutable final class InputMessageRole {const InputMessageRole._(this.value);
 
@@ -29,36 +29,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InputMessageRole($value)'; } 
  }
-/// The status of item. One of `in_progress`, `completed`, or
-/// `incomplete`. Populated when items are returned via API.
-/// 
-@immutable final class InputMessageStatus {const InputMessageStatus._(this.value);
-
-factory InputMessageStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'incomplete' => incomplete,
-  _ => InputMessageStatus._(json),
-}; }
-
-static const InputMessageStatus inProgress = InputMessageStatus._('in_progress');
-
-static const InputMessageStatus completed = InputMessageStatus._('completed');
-
-static const InputMessageStatus incomplete = InputMessageStatus._('incomplete');
-
-static const List<InputMessageStatus> values = [inProgress, completed, incomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputMessageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputMessageStatus($value)'; } 
- }
 /// A message input to the model with a role indicating instruction following
 /// hierarchy. Instructions given with the `developer` or `system` role take
 /// precedence over instructions given with the `user` role.
@@ -68,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 factory InputMessage.fromJson(Map<String, dynamic> json) { return InputMessage(
   type: json['type'] as String?,
   role: InputMessageRole.fromJson(json['role'] as String),
-  status: json['status'] != null ? InputMessageStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
   content: (json['content'] as List<dynamic>).map((e) => InputContent.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -83,7 +53,7 @@ final InputMessageRole role;
 /// The status of item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final InputMessageStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 final List<InputContent> content;
 
@@ -95,7 +65,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-InputMessage copyWith({String Function()? type, InputMessageRole? role, InputMessageStatus Function()? status, List<InputContent>? content, }) { return InputMessage(
+InputMessage copyWith({String Function()? type, InputMessageRole? role, ComputerToolCallOutputStatus Function()? status, List<InputContent>? content, }) { return InputMessage(
   type: type != null ? type() : this.type,
   role: role ?? this.role,
   status: status != null ? status() : this.status,

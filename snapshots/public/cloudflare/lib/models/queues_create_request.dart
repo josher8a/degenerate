@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_name.dart';@immutable final class QueuesCreateRequest {const QueuesCreateRequest({required this.queueName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';@immutable final class QueuesCreateRequest {const QueuesCreateRequest({required this.queueName});
 
 factory QueuesCreateRequest.fromJson(Map<String, dynamic> json) { return QueuesCreateRequest(
   queueName: MqQueueName.fromJson(json['queue_name'] as String),

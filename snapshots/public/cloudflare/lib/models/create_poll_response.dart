@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_poll_response_data.dart';@immutable final class CreatePollResponse {const CreatePollResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_poll_response/create_poll_response_data.dart';@immutable final class CreatePollResponse {const CreatePollResponse({this.data, this.success, });
 
 factory CreatePollResponse.fromJson(Map<String, dynamic> json) { return CreatePollResponse(
   data: json['data'] != null ? CreatePollResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

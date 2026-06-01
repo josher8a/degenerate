@@ -1,151 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'repository_webhooks_permissions.dart';import 'repository_webhooks_template_repository.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-@immutable final class RepositoryWebhooksPullRequestCreationPolicy {const RepositoryWebhooksPullRequestCreationPolicy._(this.value);
-
-factory RepositoryWebhooksPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'collaborators_only' => collaboratorsOnly,
-  _ => RepositoryWebhooksPullRequestCreationPolicy._(json),
-}; }
-
-static const RepositoryWebhooksPullRequestCreationPolicy all = RepositoryWebhooksPullRequestCreationPolicy._('all');
-
-static const RepositoryWebhooksPullRequestCreationPolicy collaboratorsOnly = RepositoryWebhooksPullRequestCreationPolicy._('collaborators_only');
-
-static const List<RepositoryWebhooksPullRequestCreationPolicy> values = [all, collaboratorsOnly];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryWebhooksPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryWebhooksPullRequestCreationPolicy($value)'; } 
- }
-/// The default value for a squash merge commit title:
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-@immutable final class RepositoryWebhooksSquashMergeCommitTitle {const RepositoryWebhooksSquashMergeCommitTitle._(this.value);
-
-factory RepositoryWebhooksSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
-  _ => RepositoryWebhooksSquashMergeCommitTitle._(json),
-}; }
-
-static const RepositoryWebhooksSquashMergeCommitTitle prTitle = RepositoryWebhooksSquashMergeCommitTitle._('PR_TITLE');
-
-static const RepositoryWebhooksSquashMergeCommitTitle commitOrPrTitle = RepositoryWebhooksSquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
-
-static const List<RepositoryWebhooksSquashMergeCommitTitle> values = [prTitle, commitOrPrTitle];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryWebhooksSquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryWebhooksSquashMergeCommitTitle($value)'; } 
- }
-/// The default value for a squash merge commit message:
-/// 
-/// - `PR_BODY` - default to the pull request's body.
-/// - `COMMIT_MESSAGES` - default to the branch's commit messages.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class RepositoryWebhooksSquashMergeCommitMessage {const RepositoryWebhooksSquashMergeCommitMessage._(this.value);
-
-factory RepositoryWebhooksSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'COMMIT_MESSAGES' => commitMessages,
-  'BLANK' => blank,
-  _ => RepositoryWebhooksSquashMergeCommitMessage._(json),
-}; }
-
-static const RepositoryWebhooksSquashMergeCommitMessage prBody = RepositoryWebhooksSquashMergeCommitMessage._('PR_BODY');
-
-static const RepositoryWebhooksSquashMergeCommitMessage commitMessages = RepositoryWebhooksSquashMergeCommitMessage._('COMMIT_MESSAGES');
-
-static const RepositoryWebhooksSquashMergeCommitMessage blank = RepositoryWebhooksSquashMergeCommitMessage._('BLANK');
-
-static const List<RepositoryWebhooksSquashMergeCommitMessage> values = [prBody, commitMessages, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryWebhooksSquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryWebhooksSquashMergeCommitMessage($value)'; } 
- }
-/// The default value for a merge commit title.
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-@immutable final class RepositoryWebhooksMergeCommitTitle {const RepositoryWebhooksMergeCommitTitle._(this.value);
-
-factory RepositoryWebhooksMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'MERGE_MESSAGE' => mergeMessage,
-  _ => RepositoryWebhooksMergeCommitTitle._(json),
-}; }
-
-static const RepositoryWebhooksMergeCommitTitle prTitle = RepositoryWebhooksMergeCommitTitle._('PR_TITLE');
-
-static const RepositoryWebhooksMergeCommitTitle mergeMessage = RepositoryWebhooksMergeCommitTitle._('MERGE_MESSAGE');
-
-static const List<RepositoryWebhooksMergeCommitTitle> values = [prTitle, mergeMessage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryWebhooksMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryWebhooksMergeCommitTitle($value)'; } 
- }
-/// The default value for a merge commit message.
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `PR_BODY` - default to the pull request's body.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class RepositoryWebhooksMergeCommitMessage {const RepositoryWebhooksMergeCommitMessage._(this.value);
-
-factory RepositoryWebhooksMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'PR_TITLE' => prTitle,
-  'BLANK' => blank,
-  _ => RepositoryWebhooksMergeCommitMessage._(json),
-}; }
-
-static const RepositoryWebhooksMergeCommitMessage prBody = RepositoryWebhooksMergeCommitMessage._('PR_BODY');
-
-static const RepositoryWebhooksMergeCommitMessage prTitle = RepositoryWebhooksMergeCommitMessage._('PR_TITLE');
-
-static const RepositoryWebhooksMergeCommitMessage blank = RepositoryWebhooksMergeCommitMessage._('BLANK');
-
-static const List<RepositoryWebhooksMergeCommitMessage> values = [prBody, prTitle, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryWebhooksMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryWebhooksMergeCommitMessage($value)'; } 
- }
-/// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks/template_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
 /// when the event occurs from activity in a repository.
 @immutable final class RepositoryWebhooks {const RepositoryWebhooks({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.owner, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.updatedAt, required this.openIssues, required this.watchers, required this.createdAt, required this.pushedAt, required this.disabled, required this.hasPages, this.anonymousAccessEnabled, this.hasWiki = true, this.hasIssues = true, this.hasDownloads = true, this.hasDiscussions = false, this.hasPullRequests = true, this.pullRequestCreationPolicy, this.archived = false, this.customProperties, this.visibility = 'public', this.topics, this.isTemplate = false, this.private = false, this.allowRebaseMerge = true, this.templateRepository, this.tempCloneToken, this.allowSquashMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit = true, this.allowForking, this.webCommitSignoffRequired = false, this.subscribersCount, this.networkCount, this.permissions, this.organization, this.masterBranch, this.starredAt, this.hasProjects = true, });
 
@@ -157,7 +12,7 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
   forks: (json['forks'] as num).toInt(),
-  permissions: json['permissions'] != null ? RepositoryWebhooksPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
   private: json['private'] as bool,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -223,7 +78,7 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   hasDownloads: json['has_downloads'] as bool,
   hasDiscussions: json.containsKey('has_discussions') ? json['has_discussions'] as bool : false,
   hasPullRequests: json.containsKey('has_pull_requests') ? json['has_pull_requests'] as bool : true,
-  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? RepositoryWebhooksPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
+  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? PullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
   archived: json['archived'] as bool,
   disabled: json['disabled'] as bool,
   visibility: json.containsKey('visibility') ? json['visibility'] as String : 'public',
@@ -231,17 +86,17 @@ factory RepositoryWebhooks.fromJson(Map<String, dynamic> json) { return Reposito
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  templateRepository: json['template_repository'] != null ? RepositoryWebhooksTemplateRepository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
+  templateRepository: json['template_repository'] != null ? TemplateRepository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
   tempCloneToken: json['temp_clone_token'] as String?,
   allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
   deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
   allowUpdateBranch: json.containsKey('allow_update_branch') ? json['allow_update_branch'] as bool : false,
   useSquashPrTitleAsDefault: json.containsKey('use_squash_pr_title_as_default') ? json['use_squash_pr_title_as_default'] as bool : false,
-  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? RepositoryWebhooksSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
-  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? RepositoryWebhooksSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
-  mergeCommitTitle: json['merge_commit_title'] != null ? RepositoryWebhooksMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
-  mergeCommitMessage: json['merge_commit_message'] != null ? RepositoryWebhooksMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
+  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
+  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
+  mergeCommitTitle: json['merge_commit_title'] != null ? MergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
+  mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json.containsKey('web_commit_signoff_required') ? json['web_commit_signoff_required'] as bool : false,
@@ -270,7 +125,7 @@ final SimpleUser? organization;
 
 final int forks;
 
-final RepositoryWebhooksPermissions? permissions;
+final CollaboratorPermissions? permissions;
 
 final SimpleUser owner;
 
@@ -414,7 +269,7 @@ final bool hasDiscussions;
 final bool hasPullRequests;
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
-final RepositoryWebhooksPullRequestCreationPolicy? pullRequestCreationPolicy;
+final PullRequestCreationPolicy? pullRequestCreationPolicy;
 
 /// Whether the repository is archived.
 final bool archived;
@@ -434,7 +289,7 @@ final DateTime? updatedAt;
 /// Whether to allow rebase merges for pull requests.
 final bool allowRebaseMerge;
 
-final RepositoryWebhooksTemplateRepository? templateRepository;
+final TemplateRepository? templateRepository;
 
 final String? tempCloneToken;
 
@@ -457,27 +312,27 @@ final bool useSquashPrTitleAsDefault;
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final RepositoryWebhooksSquashMergeCommitTitle? squashMergeCommitTitle;
+final SquashMergeCommitTitle? squashMergeCommitTitle;
 
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final RepositoryWebhooksSquashMergeCommitMessage? squashMergeCommitMessage;
+final SquashMergeCommitMessage? squashMergeCommitMessage;
 
 /// The default value for a merge commit title.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final RepositoryWebhooksMergeCommitTitle? mergeCommitTitle;
+final MergeCommitTitle? mergeCommitTitle;
 
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final RepositoryWebhooksMergeCommitMessage? mergeCommitMessage;
+final MergeCommitMessage? mergeCommitMessage;
 
 /// Whether to allow merge commits for pull requests.
 final bool allowMergeCommit;
@@ -680,7 +535,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('watchers') && json['watchers'] is num; } 
-RepositoryWebhooks copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, SimpleUser? Function()? organization, int? forks, RepositoryWebhooksPermissions Function()? permissions, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, Map<String, dynamic> Function()? customProperties, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, RepositoryWebhooksPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool Function()? allowRebaseMerge, RepositoryWebhooksTemplateRepository? Function()? templateRepository, String Function()? tempCloneToken, bool Function()? allowSquashMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, RepositoryWebhooksSquashMergeCommitTitle Function()? squashMergeCommitTitle, RepositoryWebhooksSquashMergeCommitMessage Function()? squashMergeCommitMessage, RepositoryWebhooksMergeCommitTitle Function()? mergeCommitTitle, RepositoryWebhooksMergeCommitMessage Function()? mergeCommitMessage, bool Function()? allowMergeCommit, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, int Function()? subscribersCount, int Function()? networkCount, int? openIssues, int? watchers, String Function()? masterBranch, String Function()? starredAt, bool Function()? anonymousAccessEnabled, }) { return RepositoryWebhooks(
+RepositoryWebhooks copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, SimpleUser? Function()? organization, int? forks, CollaboratorPermissions Function()? permissions, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, Map<String, dynamic> Function()? customProperties, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool Function()? allowRebaseMerge, TemplateRepository? Function()? templateRepository, String Function()? tempCloneToken, bool Function()? allowSquashMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle Function()? squashMergeCommitTitle, SquashMergeCommitMessage Function()? squashMergeCommitMessage, MergeCommitTitle Function()? mergeCommitTitle, MergeCommitMessage Function()? mergeCommitMessage, bool Function()? allowMergeCommit, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, int Function()? subscribersCount, int Function()? networkCount, int? openIssues, int? watchers, String Function()? masterBranch, String Function()? starredAt, bool Function()? anonymousAccessEnabled, }) { return RepositoryWebhooks(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

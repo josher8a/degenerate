@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_state_running.dart';import 'container_state_terminated.dart';import 'container_state_waiting.dart';/// ContainerState holds a possible state of container. Only one of its members may be specified. If none of them is specified, the default one is ContainerStateWaiting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_state_running.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_state_terminated.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_state_waiting.dart';/// ContainerState holds a possible state of container. Only one of its members may be specified. If none of them is specified, the default one is ContainerStateWaiting.
 @immutable final class ContainerState {const ContainerState({this.running, this.terminated, this.waiting, });
 
 factory ContainerState.fromJson(Map<String, dynamic> json) { return ContainerState(

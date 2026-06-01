@@ -1,43 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, this applies a mitigation action to this operation
-/// 
-///   - `"log"` - log request when request does not conform to schema for this operation
-///   - `"block"` - deny access to the site when request does not conform to schema for this operation
-///   - `"none"` - will skip mitigation for this operation
-///   - `null` - clears any mitigation action
-/// 
-@immutable final class ShieldPerOperationSettingChangeBaseMitigationAction {const ShieldPerOperationSettingChangeBaseMitigationAction._(this.value);
-
-factory ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(String json) { return switch (json) {
-  'log' => log,
-  'block' => block,
-  'none' => none,
-  'null' => $null,
-  _ => ShieldPerOperationSettingChangeBaseMitigationAction._(json),
-}; }
-
-static const ShieldPerOperationSettingChangeBaseMitigationAction log = ShieldPerOperationSettingChangeBaseMitigationAction._('log');
-
-static const ShieldPerOperationSettingChangeBaseMitigationAction block = ShieldPerOperationSettingChangeBaseMitigationAction._('block');
-
-static const ShieldPerOperationSettingChangeBaseMitigationAction none = ShieldPerOperationSettingChangeBaseMitigationAction._('none');
-
-static const ShieldPerOperationSettingChangeBaseMitigationAction $null = ShieldPerOperationSettingChangeBaseMitigationAction._('null');
-
-static const List<ShieldPerOperationSettingChangeBaseMitigationAction> values = [log, block, none, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldPerOperationSettingChangeBaseMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldPerOperationSettingChangeBaseMitigationAction($value)'; } 
- }
-@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_per_operation_setting_change_base/shield_per_operation_setting_change_base_mitigation_action.dart';@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
 
 factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSettingChangeBase(
   mitigationAction: json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null,

@@ -1,40 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-@immutable final class UpdateUsageTriggerRequestCallbackMethod {const UpdateUsageTriggerRequestCallbackMethod._(this.value);
-
-factory UpdateUsageTriggerRequestCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateUsageTriggerRequestCallbackMethod._(json),
-}; }
-
-static const UpdateUsageTriggerRequestCallbackMethod $get = UpdateUsageTriggerRequestCallbackMethod._('GET');
-
-static const UpdateUsageTriggerRequestCallbackMethod post = UpdateUsageTriggerRequestCallbackMethod._('POST');
-
-static const List<UpdateUsageTriggerRequestCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateUsageTriggerRequestCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateUsageTriggerRequestCallbackMethod($value)'; } 
- }
-@immutable final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_usage_trigger_request/create_usage_trigger_request_callback_method.dart';@immutable final class UpdateUsageTriggerRequest {const UpdateUsageTriggerRequest({this.callbackMethod, this.callbackUrl, this.friendlyName, });
 
 factory UpdateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return UpdateUsageTriggerRequest(
-  callbackMethod: json['CallbackMethod'] != null ? UpdateUsageTriggerRequestCallbackMethod.fromJson(json['CallbackMethod'] as String) : null,
+  callbackMethod: json['CallbackMethod'] != null ? CreateUsageTriggerRequestCallbackMethod.fromJson(json['CallbackMethod'] as String) : null,
   callbackUrl: json['CallbackUrl'] != null ? Uri.parse(json['CallbackUrl'] as String) : null,
   friendlyName: json['FriendlyName'] as String?,
 ); }
 
 /// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-final UpdateUsageTriggerRequestCallbackMethod? callbackMethod;
+final CreateUsageTriggerRequestCallbackMethod? callbackMethod;
 
 /// The URL we should call using `callback_method` when the trigger fires.
 final Uri? callbackUrl;
@@ -48,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CallbackMethod', 'CallbackUrl', 'FriendlyName'}.contains(key)); } 
-UpdateUsageTriggerRequest copyWith({UpdateUsageTriggerRequestCallbackMethod Function()? callbackMethod, Uri Function()? callbackUrl, String Function()? friendlyName, }) { return UpdateUsageTriggerRequest(
+UpdateUsageTriggerRequest copyWith({CreateUsageTriggerRequestCallbackMethod Function()? callbackMethod, Uri Function()? callbackUrl, String Function()? friendlyName, }) { return UpdateUsageTriggerRequest(
   callbackMethod: callbackMethod != null ? callbackMethod() : this.callbackMethod,
   callbackUrl: callbackUrl != null ? callbackUrl() : this.callbackUrl,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

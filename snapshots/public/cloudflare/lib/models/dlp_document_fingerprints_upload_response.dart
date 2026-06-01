@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_document_fingerprint_upload.dart';@immutable final class DlpDocumentFingerprintsUploadResponse {const DlpDocumentFingerprintsUploadResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';@immutable final class DlpDocumentFingerprintsUploadResponse {const DlpDocumentFingerprintsUploadResponse({this.result});
 
 factory DlpDocumentFingerprintsUploadResponse.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsUploadResponse(
   result: json['result'] != null ? DlpDocumentFingerprintUpload.fromJson(json['result'] as Map<String, dynamic>) : null,

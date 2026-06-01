@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_short_commit.dart';/// Branch Short
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/branch_short/branch_short_commit.dart';/// Branch Short
 @immutable final class BranchShort {const BranchShort({required this.name, required this.commit, required this.protected, });
 
 factory BranchShort.fromJson(Map<String, dynamic> json) { return BranchShort(

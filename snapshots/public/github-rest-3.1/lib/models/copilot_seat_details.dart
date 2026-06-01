@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_seat_details_assigning_team.dart';import 'enterprise_team.dart';import 'organization_simple.dart';import 'simple_user.dart';import 'team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_seat_details/assigning_team.dart';import 'package:pub_github_rest_3_1/models/enterprise_team.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
 @immutable final class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType._(this.value);
 
 factory CopilotSeatDetailsPlanType.fromJson(String json) { return switch (json) {
@@ -49,7 +49,7 @@ final SimpleUser? assignee;
 final OrganizationSimple? organization;
 
 /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
-final CopilotSeatDetailsAssigningTeam? assigningTeam;
+final AssigningTeam? assigningTeam;
 
 /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
 final String? pendingCancellationDate;
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (planType != null) 'plan_type': planType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String; } 
-CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimple? Function()? organization, CopilotSeatDetailsAssigningTeam? Function()? assigningTeam, String? Function()? pendingCancellationDate, DateTime? Function()? lastActivityAt, String? Function()? lastActivityEditor, DateTime? Function()? lastAuthenticatedAt, DateTime? createdAt, DateTime Function()? updatedAt, CopilotSeatDetailsPlanType Function()? planType, }) { return CopilotSeatDetails(
+CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimple? Function()? organization, AssigningTeam? Function()? assigningTeam, String? Function()? pendingCancellationDate, DateTime? Function()? lastActivityAt, String? Function()? lastActivityEditor, DateTime? Function()? lastAuthenticatedAt, DateTime? createdAt, DateTime Function()? updatedAt, CopilotSeatDetailsPlanType Function()? planType, }) { return CopilotSeatDetails(
   assignee: assignee != null ? assignee() : this.assignee,
   organization: organization != null ? organization() : this.organization,
   assigningTeam: assigningTeam != null ? assigningTeam() : this.assigningTeam,

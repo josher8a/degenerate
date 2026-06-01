@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_app_policies_components_schemas_id_response_result.dart';import '../models/access_app_policy_request.dart';import '../models/access_app_policy_response.dart';import '../models/access_identifier.dart';import '../models/access_uuid.dart';/// AccessApplicationScopedPoliciesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_policy_request.dart';import 'package:pub_cloudflare/models/access_app_policy_response.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// AccessApplicationScopedPoliciesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -116,7 +116,7 @@ return execute(
 /// Deletes an Access policy specific to an application. To delete a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}`
-Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> accessPoliciesDeleteAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> accessPoliciesDeleteAnAccessPolicy({required AccessUuid appId, required AccessUuid policyId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,7 +129,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessAppPoliciesComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

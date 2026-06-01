@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model32.dart';import 'slurper_create_job_response_result.dart';@immutable final class SlurperCreateJobResponse {const SlurperCreateJobResponse({this.errors, this.messages, this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_ip_profile_response/delete_ip_profile_response_result.dart';import 'package:pub_cloudflare/models/error_model32.dart';@immutable final class SlurperCreateJobResponse {const SlurperCreateJobResponse({this.errors, this.messages, this.success, this.result, });
 
 factory SlurperCreateJobResponse.fromJson(Map<String, dynamic> json) { return SlurperCreateJobResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel32.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => e as String).toList(),
   success: json['success'] as bool?,
-  result: json['result'] != null ? SlurperCreateJobResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? DeleteIpProfileResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<ErrorModel32>? errors;
@@ -16,7 +16,7 @@ final List<String>? messages;
 /// Indicates if the API call was successful or not.
 final bool? success;
 
-final SlurperCreateJobResponseResult? result;
+final DeleteIpProfileResponseResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
-SlurperCreateJobResponse copyWith({List<ErrorModel32> Function()? errors, List<String> Function()? messages, bool Function()? success, SlurperCreateJobResponseResult Function()? result, }) { return SlurperCreateJobResponse(
+SlurperCreateJobResponse copyWith({List<ErrorModel32> Function()? errors, List<String> Function()? messages, bool Function()? success, DeleteIpProfileResponseResult Function()? result, }) { return SlurperCreateJobResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

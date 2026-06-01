@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_allow_policies_request_deletes.dart';import 'email_security_batch_allow_policies_request_patches.dart';import 'email_security_batch_allow_policies_request_puts.dart';import 'email_security_create_allow_policy.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequest {const EmailSecurityBatchAllowPoliciesRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/deletes.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/email_security_batch_allow_policies_request_patches.dart';import 'package:pub_cloudflare/models/email_security_batch_allow_policies_request/email_security_batch_allow_policies_request_puts.dart';import 'package:pub_cloudflare/models/email_security_create_allow_policy.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequest {const EmailSecurityBatchAllowPoliciesRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
 factory EmailSecurityBatchAllowPoliciesRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequest(
-  deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchAllowPoliciesRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),
+  deletes: (json['deletes'] as List<dynamic>).map((e) => Deletes.fromJson(e as Map<String, dynamic>)).toList(),
   patches: (json['patches'] as List<dynamic>).map((e) => EmailSecurityBatchAllowPoliciesRequestPatches.fromJson(e as Map<String, dynamic>)).toList(),
   posts: (json['posts'] as List<dynamic>).map((e) => EmailSecurityCreateAllowPolicy.fromJson(e as Map<String, dynamic>)).toList(),
   puts: (json['puts'] as List<dynamic>).map((e) => EmailSecurityBatchAllowPoliciesRequestPuts.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final List<EmailSecurityBatchAllowPoliciesRequestDeletes> deletes;
+final List<Deletes> deletes;
 
 final List<EmailSecurityBatchAllowPoliciesRequestPatches> patches;
 
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('patches') &&
       json.containsKey('posts') &&
       json.containsKey('puts'); } 
-EmailSecurityBatchAllowPoliciesRequest copyWith({List<EmailSecurityBatchAllowPoliciesRequestDeletes>? deletes, List<EmailSecurityBatchAllowPoliciesRequestPatches>? patches, List<EmailSecurityCreateAllowPolicy>? posts, List<EmailSecurityBatchAllowPoliciesRequestPuts>? puts, }) { return EmailSecurityBatchAllowPoliciesRequest(
+EmailSecurityBatchAllowPoliciesRequest copyWith({List<Deletes>? deletes, List<EmailSecurityBatchAllowPoliciesRequestPatches>? patches, List<EmailSecurityCreateAllowPolicy>? posts, List<EmailSecurityBatchAllowPoliciesRequestPuts>? puts, }) { return EmailSecurityBatchAllowPoliciesRequest(
   deletes: deletes ?? this.deletes,
   patches: patches ?? this.patches,
   posts: posts ?? this.posts,

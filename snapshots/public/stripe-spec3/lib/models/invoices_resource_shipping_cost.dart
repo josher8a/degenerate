@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_shipping_cost_shipping_rate.dart';import 'line_items_tax_amount.dart';import 'shipping_rate.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
 @immutable final class InvoicesResourceShippingCost {const InvoicesResourceShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate, this.taxes, });
 
 factory InvoicesResourceShippingCost.fromJson(Map<String, dynamic> json) { return InvoicesResourceShippingCost(

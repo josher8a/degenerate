@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/error_model.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/list_input_items_order.dart';import 'package:pub_openai/models/response.dart';import 'package:pub_openai/models/response_item_list.dart';import 'package:pub_openai/models/response_stream_event.dart';/// ResponsesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

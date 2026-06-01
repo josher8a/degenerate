@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule_settings.dart';@immutable final class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule/zaraz_click_listener_rule_settings.dart';@immutable final class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction._(this.value);
 
 factory ZarazClickListenerRuleAction.fromJson(String json) { return switch (json) {
   'clickListener' => clickListener,

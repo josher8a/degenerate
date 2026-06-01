@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_notes.dart';import 'firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest {const IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_notes.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest {const IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
 
 factory IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest(
   mode: json['mode'] != null ? FirewallSchemasMode.fromJson(json['mode'] as String) : null,

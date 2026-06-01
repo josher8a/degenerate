@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_created_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertCreatedAction {const WebhookCodeScanningAlertCreatedAction._(this.value);
-
-factory WebhookCodeScanningAlertCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookCodeScanningAlertCreatedAction._(json),
-}; }
-
-static const WebhookCodeScanningAlertCreatedAction created = WebhookCodeScanningAlertCreatedAction._('created');
-
-static const List<WebhookCodeScanningAlertCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertCreatedAction($value)'; } 
- }
-@immutable final class WebhookCodeScanningAlertCreated {const WebhookCodeScanningAlertCreated({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_created/webhook_code_scanning_alert_created_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertCreated {const WebhookCodeScanningAlertCreated({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreated(
-  action: WebhookCodeScanningAlertCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   alert: WebhookCodeScanningAlertCreatedAlert.fromJson(json['alert'] as Map<String, dynamic>),
   commitOid: WebhooksCodeScanningCommitOid.fromJson(json['commit_oid'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookCodeScanningAlertCreated.fromJson(Map<String, dynamic> json) { re
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookCodeScanningAlertCreatedAction action;
+final ItemCreatedAction action;
 
 /// The code scanning alert involved in the event.
 final WebhookCodeScanningAlertCreatedAlert alert;
@@ -73,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('ref') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCodeScanningAlertCreated copyWith({WebhookCodeScanningAlertCreatedAction? action, WebhookCodeScanningAlertCreatedAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertCreated(
+WebhookCodeScanningAlertCreated copyWith({ItemCreatedAction? action, WebhookCodeScanningAlertCreatedAlert? alert, WebhooksCodeScanningCommitOid? commitOid, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksCodeScanningRef? ref, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertCreated(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   commitOid: commitOid ?? this.commitOid,

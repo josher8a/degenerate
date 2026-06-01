@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_created_comment.dart';import 'webhook_issue_comment_created_issue.dart';@immutable final class WebhookIssueCommentCreatedAction {const WebhookIssueCommentCreatedAction._(this.value);
-
-factory WebhookIssueCommentCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookIssueCommentCreatedAction._(json),
-}; }
-
-static const WebhookIssueCommentCreatedAction created = WebhookIssueCommentCreatedAction._('created');
-
-static const List<WebhookIssueCommentCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueCommentCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueCommentCreatedAction($value)'; } 
- }
-@immutable final class WebhookIssueCommentCreated {const WebhookIssueCommentCreated({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/webhook_issue_comment_created_comment.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/webhook_issue_comment_created_issue.dart';@immutable final class WebhookIssueCommentCreated {const WebhookIssueCommentCreated({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssueCommentCreated.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreated(
-  action: WebhookIssueCommentCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   comment: WebhookIssueCommentCreatedComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookIssueCommentCreated.fromJson(Map<String, dynamic> json) { return 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssueCommentCreatedAction action;
+final ItemCreatedAction action;
 
 /// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
 final WebhookIssueCommentCreatedComment comment;
@@ -69,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssueCommentCreated copyWith({WebhookIssueCommentCreatedAction? action, WebhookIssueCommentCreatedComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentCreatedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentCreated(
+WebhookIssueCommentCreated copyWith({ItemCreatedAction? action, WebhookIssueCommentCreatedComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentCreatedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentCreated(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

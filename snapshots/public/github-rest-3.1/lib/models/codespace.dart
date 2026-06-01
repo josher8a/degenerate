@@ -1,107 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace_git_status.dart';import 'codespace_machine.dart';import 'codespace_runtime_constraints.dart';import 'minimal_repository.dart';import 'simple_user.dart';/// State of this codespace.
-@immutable final class CodespaceState {const CodespaceState._(this.value);
-
-factory CodespaceState.fromJson(String json) { return switch (json) {
-  'Unknown' => unknown,
-  'Created' => created,
-  'Queued' => queued,
-  'Provisioning' => provisioning,
-  'Available' => available,
-  'Awaiting' => awaiting,
-  'Unavailable' => unavailable,
-  'Deleted' => deleted,
-  'Moved' => moved,
-  'Shutdown' => shutdown,
-  'Archived' => archived,
-  'Starting' => starting,
-  'ShuttingDown' => shuttingDown,
-  'Failed' => failed,
-  'Exporting' => exporting,
-  'Updating' => updating,
-  'Rebuilding' => rebuilding,
-  _ => CodespaceState._(json),
-}; }
-
-static const CodespaceState unknown = CodespaceState._('Unknown');
-
-static const CodespaceState created = CodespaceState._('Created');
-
-static const CodespaceState queued = CodespaceState._('Queued');
-
-static const CodespaceState provisioning = CodespaceState._('Provisioning');
-
-static const CodespaceState available = CodespaceState._('Available');
-
-static const CodespaceState awaiting = CodespaceState._('Awaiting');
-
-static const CodespaceState unavailable = CodespaceState._('Unavailable');
-
-static const CodespaceState deleted = CodespaceState._('Deleted');
-
-static const CodespaceState moved = CodespaceState._('Moved');
-
-static const CodespaceState shutdown = CodespaceState._('Shutdown');
-
-static const CodespaceState archived = CodespaceState._('Archived');
-
-static const CodespaceState starting = CodespaceState._('Starting');
-
-static const CodespaceState shuttingDown = CodespaceState._('ShuttingDown');
-
-static const CodespaceState failed = CodespaceState._('Failed');
-
-static const CodespaceState exporting = CodespaceState._('Exporting');
-
-static const CodespaceState updating = CodespaceState._('Updating');
-
-static const CodespaceState rebuilding = CodespaceState._('Rebuilding');
-
-static const List<CodespaceState> values = [unknown, created, queued, provisioning, available, awaiting, unavailable, deleted, moved, shutdown, archived, starting, shuttingDown, failed, exporting, updating, rebuilding];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespaceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespaceState($value)'; } 
- }
-/// The initally assigned location of a new codespace.
-@immutable final class CodespaceLocation {const CodespaceLocation._(this.value);
-
-factory CodespaceLocation.fromJson(String json) { return switch (json) {
-  'EastUs' => eastUs,
-  'SouthEastAsia' => southEastAsia,
-  'WestEurope' => westEurope,
-  'WestUs2' => westUs2,
-  _ => CodespaceLocation._(json),
-}; }
-
-static const CodespaceLocation eastUs = CodespaceLocation._('EastUs');
-
-static const CodespaceLocation southEastAsia = CodespaceLocation._('SouthEastAsia');
-
-static const CodespaceLocation westEurope = CodespaceLocation._('WestEurope');
-
-static const CodespaceLocation westUs2 = CodespaceLocation._('WestUs2');
-
-static const List<CodespaceLocation> values = [eastUs, southEastAsia, westEurope, westUs2];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespaceLocation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespaceLocation($value)'; } 
- }
-/// A codespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespace/codespace_location.dart';import 'package:pub_github_rest_3_1/models/codespace/codespace_state.dart';import 'package:pub_github_rest_3_1/models/codespace/git_status.dart';import 'package:pub_github_rest_3_1/models/codespace/runtime_constraints.dart';import 'package:pub_github_rest_3_1/models/codespace_machine.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A codespace.
 @immutable final class Codespace {const Codespace({required this.id, required this.name, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, required this.pullsUrl, required this.recentFolders, this.displayName, this.devcontainerPath, this.publishUrl, this.runtimeConstraints, this.pendingOperation, this.pendingOperationDisabledReason, this.idleTimeoutNotice, this.retentionPeriodMinutes, this.retentionExpiresAt, this.lastKnownStopNotice, });
 
 factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
@@ -120,7 +19,7 @@ factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
   lastUsedAt: DateTime.parse(json['last_used_at'] as String),
   state: CodespaceState.fromJson(json['state'] as String),
   url: Uri.parse(json['url'] as String),
-  gitStatus: CodespaceGitStatus.fromJson(json['git_status'] as Map<String, dynamic>),
+  gitStatus: GitStatus.fromJson(json['git_status'] as Map<String, dynamic>),
   location: CodespaceLocation.fromJson(json['location'] as String),
   idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
   webUrl: Uri.parse(json['web_url'] as String),
@@ -130,7 +29,7 @@ factory Codespace.fromJson(Map<String, dynamic> json) { return Codespace(
   publishUrl: json['publish_url'] != null ? Uri.parse(json['publish_url'] as String) : null,
   pullsUrl: json['pulls_url'] != null ? Uri.parse(json['pulls_url'] as String) : null,
   recentFolders: (json['recent_folders'] as List<dynamic>).map((e) => e as String).toList(),
-  runtimeConstraints: json['runtime_constraints'] != null ? CodespaceRuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>) : null,
+  runtimeConstraints: json['runtime_constraints'] != null ? RuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>) : null,
   pendingOperation: json['pending_operation'] as bool?,
   pendingOperationDisabledReason: json['pending_operation_disabled_reason'] as String?,
   idleTimeoutNotice: json['idle_timeout_notice'] as String?,
@@ -178,7 +77,7 @@ final CodespaceState state;
 final Uri url;
 
 /// Details about the codespace's git repository.
-final CodespaceGitStatus gitStatus;
+final GitStatus gitStatus;
 
 /// The initally assigned location of a new codespace.
 final CodespaceLocation location;
@@ -206,7 +105,7 @@ final Uri? pullsUrl;
 
 final List<String> recentFolders;
 
-final CodespaceRuntimeConstraints? runtimeConstraints;
+final RuntimeConstraints? runtimeConstraints;
 
 /// Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
 final bool? pendingOperation;
@@ -282,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('stop_url') && json['stop_url'] is String &&
       json.containsKey('pulls_url') && json['pulls_url'] is String &&
       json.containsKey('recent_folders'); } 
-Codespace copyWith({int? id, String? name, String? Function()? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, String? Function()? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, CodespaceGitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Uri? Function()? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, CodespaceRuntimeConstraints Function()? runtimeConstraints, bool? Function()? pendingOperation, String? Function()? pendingOperationDisabledReason, String? Function()? idleTimeoutNotice, int? Function()? retentionPeriodMinutes, DateTime? Function()? retentionExpiresAt, String? Function()? lastKnownStopNotice, }) { return Codespace(
+Codespace copyWith({int? id, String? name, String? Function()? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, MinimalRepository? repository, CodespaceMachine? Function()? machine, String? Function()? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceState? state, Uri? url, GitStatus? gitStatus, CodespaceLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Uri? Function()? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, RuntimeConstraints Function()? runtimeConstraints, bool? Function()? pendingOperation, String? Function()? pendingOperationDisabledReason, String? Function()? idleTimeoutNotice, int? Function()? retentionPeriodMinutes, DateTime? Function()? retentionExpiresAt, String? Function()? lastKnownStopNotice, }) { return Codespace(
   id: id ?? this.id,
   name: name ?? this.name,
   displayName: displayName != null ? displayName() : this.displayName,

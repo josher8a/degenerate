@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_proxy_endpoint_identity.dart';import 'zero_trust_gateway_proxy_endpoint_ip.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_subdomain.dart';sealed class ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoint_identity.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoint_ip.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_subdomain.dart';sealed class ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
 factory ZeroTrustGatewayProxyEndpoints.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {

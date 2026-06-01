@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_submodule_links.dart';@immutable final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
 
 factory ContentSubmoduleType.fromJson(String json) { return switch (json) {
   'submodule' => submodule,
@@ -35,7 +35,7 @@ factory ContentSubmodule.fromJson(Map<String, dynamic> json) { return ContentSub
   gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
-  links: ContentSubmoduleLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
 ); }
 
 final ContentSubmoduleType type;
@@ -58,7 +58,7 @@ final Uri? htmlUrl;
 
 final Uri? downloadUrl;
 
-final ContentSubmoduleLinks links;
+final ContentDirectoryLinks links;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -84,7 +84,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentSubmoduleLinks? links, }) { return ContentSubmodule(
+ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ContentSubmodule(
   type: type ?? this.type,
   submoduleGitUrl: submoduleGitUrl ?? this.submoduleGitUrl,
   size: size ?? this.size,

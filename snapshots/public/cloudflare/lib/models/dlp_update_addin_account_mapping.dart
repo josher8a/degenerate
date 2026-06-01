@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_auth.dart';import 'dlp_addin_auth_no_auth.dart';import 'dlp_addin_auth_org.dart';@immutable final class DlpUpdateAddinAccountMapping {const DlpUpdateAddinAccountMapping({required this.authRequirements});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_addin_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/no_auth.dart';import 'package:pub_cloudflare/models/dlp_addin_auth/org.dart';@immutable final class DlpUpdateAddinAccountMapping {const DlpUpdateAddinAccountMapping({required this.authRequirements});
 
 factory DlpUpdateAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpUpdateAddinAccountMapping(
-  authRequirements: OneOf2.parse(json['auth_requirements'], fromA: (v) => DlpAddinAuthOrg.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpAddinAuthNoAuth.fromJson(v as Map<String, dynamic>),),
+  authRequirements: OneOf2.parse(json['auth_requirements'], fromA: (v) => Org.fromJson(v as Map<String, dynamic>), fromB: (v) => NoAuth.fromJson(v as Map<String, dynamic>),),
 ); }
 
 final DlpAddinAuth authRequirements;

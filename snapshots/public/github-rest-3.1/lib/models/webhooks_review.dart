@@ -1,54 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_review_links.dart';import 'webhooks_review_user.dart';/// How the author is associated with the repository.
-@immutable final class WebhooksReviewAuthorAssociation {const WebhooksReviewAuthorAssociation._(this.value);
-
-factory WebhooksReviewAuthorAssociation.fromJson(String json) { return switch (json) {
-  'COLLABORATOR' => collaborator,
-  'CONTRIBUTOR' => contributor,
-  'FIRST_TIMER' => firstTimer,
-  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
-  'MANNEQUIN' => mannequin,
-  'MEMBER' => member,
-  'NONE' => none,
-  'OWNER' => owner,
-  _ => WebhooksReviewAuthorAssociation._(json),
-}; }
-
-static const WebhooksReviewAuthorAssociation collaborator = WebhooksReviewAuthorAssociation._('COLLABORATOR');
-
-static const WebhooksReviewAuthorAssociation contributor = WebhooksReviewAuthorAssociation._('CONTRIBUTOR');
-
-static const WebhooksReviewAuthorAssociation firstTimer = WebhooksReviewAuthorAssociation._('FIRST_TIMER');
-
-static const WebhooksReviewAuthorAssociation firstTimeContributor = WebhooksReviewAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-
-static const WebhooksReviewAuthorAssociation mannequin = WebhooksReviewAuthorAssociation._('MANNEQUIN');
-
-static const WebhooksReviewAuthorAssociation member = WebhooksReviewAuthorAssociation._('MEMBER');
-
-static const WebhooksReviewAuthorAssociation none = WebhooksReviewAuthorAssociation._('NONE');
-
-static const WebhooksReviewAuthorAssociation owner = WebhooksReviewAuthorAssociation._('OWNER');
-
-static const List<WebhooksReviewAuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksReviewAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksReviewAuthorAssociation($value)'; } 
- }
-/// The review that was affected.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';/// The review that was affected.
 @immutable final class WebhooksReview {const WebhooksReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
 
 factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
-  authorAssociation: WebhooksReviewAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
   commitId: json['commit_id'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -58,13 +15,13 @@ factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksRevi
   state: json['state'] as String,
   submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  user: json['user'] != null ? WebhooksReviewUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhooksReviewLinks links;
 
 /// How the author is associated with the repository.
-final WebhooksReviewAuthorAssociation authorAssociation;
+final DiscussionAuthorAssociation authorAssociation;
 
 /// The text of the review.
 final String? body;
@@ -87,7 +44,7 @@ final DateTime? submittedAt;
 
 final DateTime? updatedAt;
 
-final WebhooksReviewUser? user;
+final DiscussionUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
@@ -114,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('submitted_at') && json['submitted_at'] is String &&
       json.containsKey('user'); } 
-WebhooksReview copyWith({WebhooksReviewLinks? links, WebhooksReviewAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, String? state, DateTime? Function()? submittedAt, DateTime? Function()? updatedAt, WebhooksReviewUser? Function()? user, }) { return WebhooksReview(
+WebhooksReview copyWith({WebhooksReviewLinks? links, DiscussionAuthorAssociation? authorAssociation, String? Function()? body, String? commitId, Uri? htmlUrl, int? id, String? nodeId, Uri? pullRequestUrl, String? state, DateTime? Function()? submittedAt, DateTime? Function()? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksReview(
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body != null ? body() : this.body,

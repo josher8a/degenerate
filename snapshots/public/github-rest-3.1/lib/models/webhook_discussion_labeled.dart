@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';@immutable final class WebhookDiscussionLabeledAction {const WebhookDiscussionLabeledAction._(this.value);
-
-factory WebhookDiscussionLabeledAction.fromJson(String json) { return switch (json) {
-  'labeled' => labeled,
-  _ => WebhookDiscussionLabeledAction._(json),
-}; }
-
-static const WebhookDiscussionLabeledAction labeled = WebhookDiscussionLabeledAction._('labeled');
-
-static const List<WebhookDiscussionLabeledAction> values = [labeled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionLabeledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionLabeledAction($value)'; } 
- }
-@immutable final class WebhookDiscussionLabeled {const WebhookDiscussionLabeled({required this.action, required this.discussion, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_labeled/webhook_discussion_labeled_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookDiscussionLabeled {const WebhookDiscussionLabeled({required this.action, required this.discussion, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionLabeled.fromJson(Map<String, dynamic> json) { return WebhookDiscussionLabeled(
   action: WebhookDiscussionLabeledAction.fromJson(json['action'] as String),

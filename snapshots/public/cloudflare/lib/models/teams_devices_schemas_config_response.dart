@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_tls_config_response.dart';/// A value that is one of: `TeamsDevicesTlsConfigResponse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_tls_config_response.dart';/// A value that is one of: `TeamsDevicesTlsConfigResponse`.
 sealed class TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponse();
 
 factory TeamsDevicesSchemasConfigResponse.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesTlsConfigResponse.canParse(json)) {

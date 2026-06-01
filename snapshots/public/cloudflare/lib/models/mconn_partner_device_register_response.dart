@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_partner_device.dart';@immutable final class MconnPartnerDeviceRegisterResponse {const MconnPartnerDeviceRegisterResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_partner_device.dart';@immutable final class MconnPartnerDeviceRegisterResponse {const MconnPartnerDeviceRegisterResponse({this.result});
 
 factory MconnPartnerDeviceRegisterResponse.fromJson(Map<String, dynamic> json) { return MconnPartnerDeviceRegisterResponse(
   result: json['result'] != null ? MconnPartnerDevice.fromJson(json['result'] as Map<String, dynamic>) : null,

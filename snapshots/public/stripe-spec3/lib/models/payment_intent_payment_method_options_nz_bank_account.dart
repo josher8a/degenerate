@@ -1,44 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage {const PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage none = PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage> values = [none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsNzBankAccount {const PaymentIntentPaymentMethodOptionsNzBankAccount({this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsNzBankAccount.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsNzBankAccount(
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
@@ -49,7 +15,7 @@ factory PaymentIntentPaymentMethodOptionsNzBankAccount.fromJson(Map<String, dyna
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage? setupFutureUsage;
+final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
@@ -59,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsNzBankAccount copyWith({PaymentIntentPaymentMethodOptionsNzBankAccountSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsNzBankAccount(
+PaymentIntentPaymentMethodOptionsNzBankAccount copyWith({CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsNzBankAccount(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 

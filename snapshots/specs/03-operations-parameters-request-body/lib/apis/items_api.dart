@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_token_request.dart';import '../models/get_item_filter.dart';import '../models/upload_file_request.dart';/// ItemsApi operations.
+import 'dart:async';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_03_operations_parameters_request_body/models/create_token_request.dart';import 'package:spec_03_operations_parameters_request_body/models/get_item_filter.dart';import 'package:spec_03_operations_parameters_request_body/models/upload_file_request.dart';/// ItemsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

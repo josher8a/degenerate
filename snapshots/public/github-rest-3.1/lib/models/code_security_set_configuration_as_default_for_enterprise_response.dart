@@ -1,45 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_configuration.dart';/// Specifies which types of repository this security configuration is applied to by default.
-@immutable final class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._(this.value);
-
-factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'none' => none,
-  'private_and_internal' => privateAndInternal,
-  'public' => public,
-  _ => CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._(json),
-}; }
-
-static const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos all = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('all');
-
-static const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos none = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('none');
-
-static const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos privateAndInternal = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('private_and_internal');
-
-static const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos public = CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos._('public');
-
-static const List<CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos> values = [all, none, privateAndInternal, public];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos($value)'; } 
- }
-@immutable final class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse {const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse({this.defaultForNewRepos, this.configuration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration.dart';import 'package:pub_github_rest_3_1/models/code_security_set_configuration_as_default_for_enterprise_request/default_for_new_repos.dart';@immutable final class CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse {const CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse({this.defaultForNewRepos, this.configuration, });
 
 factory CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
-  defaultForNewRepos: json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,
+  defaultForNewRepos: json['default_for_new_repos'] != null ? DefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,
   configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
 ); }
 
 /// Specifies which types of repository this security configuration is applied to by default.
-final CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos? defaultForNewRepos;
+final DefaultForNewRepos? defaultForNewRepos;
 
 final CodeSecurityConfiguration? configuration;
 
@@ -48,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos', 'configuration'}.contains(key)); } 
-CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse copyWith({CodeSecuritySetConfigurationAsDefaultForEnterpriseResponseDefaultForNewRepos Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
+CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse copyWith({DefaultForNewRepos Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
 ); } 

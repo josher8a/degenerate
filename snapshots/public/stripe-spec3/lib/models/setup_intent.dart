@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'mandate.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_attempt.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_setup_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';import 'package:pub_stripe_spec3/models/setup_intent/latest_attempt.dart';import 'package:pub_stripe_spec3/models/setup_intent/setup_intent_mandate.dart';import 'package:pub_stripe_spec3/models/setup_intent/single_use_mandate.dart';import 'package:pub_stripe_spec3/models/setup_intent_next_action.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 @immutable final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
 
 factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
@@ -27,195 +27,6 @@ bool get isUnknown { return !values.contains(this); }
     other is SetupIntentCancellationReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SetupIntentCancellationReason($value)'; } 
- }
-@immutable final class SetupIntentExcludedPaymentMethodTypes {const SetupIntentExcludedPaymentMethodTypes._(this.value);
-
-factory SetupIntentExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
-  'acss_debit' => acssDebit,
-  'affirm' => affirm,
-  'afterpay_clearpay' => afterpayClearpay,
-  'alipay' => alipay,
-  'alma' => alma,
-  'amazon_pay' => amazonPay,
-  'au_becs_debit' => auBecsDebit,
-  'bacs_debit' => bacsDebit,
-  'bancontact' => bancontact,
-  'billie' => billie,
-  'blik' => blik,
-  'boleto' => boleto,
-  'card' => card,
-  'cashapp' => cashapp,
-  'crypto' => crypto,
-  'customer_balance' => customerBalance,
-  'eps' => eps,
-  'fpx' => fpx,
-  'giropay' => giropay,
-  'grabpay' => grabpay,
-  'ideal' => ideal,
-  'kakao_pay' => kakaoPay,
-  'klarna' => klarna,
-  'konbini' => konbini,
-  'kr_card' => krCard,
-  'mb_way' => mbWay,
-  'mobilepay' => mobilepay,
-  'multibanco' => multibanco,
-  'naver_pay' => naverPay,
-  'nz_bank_account' => nzBankAccount,
-  'oxxo' => oxxo,
-  'p24' => p24,
-  'pay_by_bank' => payByBank,
-  'payco' => payco,
-  'paynow' => paynow,
-  'paypal' => paypal,
-  'payto' => payto,
-  'pix' => pix,
-  'promptpay' => promptpay,
-  'revolut_pay' => revolutPay,
-  'samsung_pay' => samsungPay,
-  'satispay' => satispay,
-  'sepa_debit' => sepaDebit,
-  'sofort' => sofort,
-  'swish' => swish,
-  'twint' => twint,
-  'us_bank_account' => usBankAccount,
-  'wechat_pay' => wechatPay,
-  'zip' => zip,
-  _ => SetupIntentExcludedPaymentMethodTypes._(json),
-}; }
-
-static const SetupIntentExcludedPaymentMethodTypes acssDebit = SetupIntentExcludedPaymentMethodTypes._('acss_debit');
-
-static const SetupIntentExcludedPaymentMethodTypes affirm = SetupIntentExcludedPaymentMethodTypes._('affirm');
-
-static const SetupIntentExcludedPaymentMethodTypes afterpayClearpay = SetupIntentExcludedPaymentMethodTypes._('afterpay_clearpay');
-
-static const SetupIntentExcludedPaymentMethodTypes alipay = SetupIntentExcludedPaymentMethodTypes._('alipay');
-
-static const SetupIntentExcludedPaymentMethodTypes alma = SetupIntentExcludedPaymentMethodTypes._('alma');
-
-static const SetupIntentExcludedPaymentMethodTypes amazonPay = SetupIntentExcludedPaymentMethodTypes._('amazon_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes auBecsDebit = SetupIntentExcludedPaymentMethodTypes._('au_becs_debit');
-
-static const SetupIntentExcludedPaymentMethodTypes bacsDebit = SetupIntentExcludedPaymentMethodTypes._('bacs_debit');
-
-static const SetupIntentExcludedPaymentMethodTypes bancontact = SetupIntentExcludedPaymentMethodTypes._('bancontact');
-
-static const SetupIntentExcludedPaymentMethodTypes billie = SetupIntentExcludedPaymentMethodTypes._('billie');
-
-static const SetupIntentExcludedPaymentMethodTypes blik = SetupIntentExcludedPaymentMethodTypes._('blik');
-
-static const SetupIntentExcludedPaymentMethodTypes boleto = SetupIntentExcludedPaymentMethodTypes._('boleto');
-
-static const SetupIntentExcludedPaymentMethodTypes card = SetupIntentExcludedPaymentMethodTypes._('card');
-
-static const SetupIntentExcludedPaymentMethodTypes cashapp = SetupIntentExcludedPaymentMethodTypes._('cashapp');
-
-static const SetupIntentExcludedPaymentMethodTypes crypto = SetupIntentExcludedPaymentMethodTypes._('crypto');
-
-static const SetupIntentExcludedPaymentMethodTypes customerBalance = SetupIntentExcludedPaymentMethodTypes._('customer_balance');
-
-static const SetupIntentExcludedPaymentMethodTypes eps = SetupIntentExcludedPaymentMethodTypes._('eps');
-
-static const SetupIntentExcludedPaymentMethodTypes fpx = SetupIntentExcludedPaymentMethodTypes._('fpx');
-
-static const SetupIntentExcludedPaymentMethodTypes giropay = SetupIntentExcludedPaymentMethodTypes._('giropay');
-
-static const SetupIntentExcludedPaymentMethodTypes grabpay = SetupIntentExcludedPaymentMethodTypes._('grabpay');
-
-static const SetupIntentExcludedPaymentMethodTypes ideal = SetupIntentExcludedPaymentMethodTypes._('ideal');
-
-static const SetupIntentExcludedPaymentMethodTypes kakaoPay = SetupIntentExcludedPaymentMethodTypes._('kakao_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes klarna = SetupIntentExcludedPaymentMethodTypes._('klarna');
-
-static const SetupIntentExcludedPaymentMethodTypes konbini = SetupIntentExcludedPaymentMethodTypes._('konbini');
-
-static const SetupIntentExcludedPaymentMethodTypes krCard = SetupIntentExcludedPaymentMethodTypes._('kr_card');
-
-static const SetupIntentExcludedPaymentMethodTypes mbWay = SetupIntentExcludedPaymentMethodTypes._('mb_way');
-
-static const SetupIntentExcludedPaymentMethodTypes mobilepay = SetupIntentExcludedPaymentMethodTypes._('mobilepay');
-
-static const SetupIntentExcludedPaymentMethodTypes multibanco = SetupIntentExcludedPaymentMethodTypes._('multibanco');
-
-static const SetupIntentExcludedPaymentMethodTypes naverPay = SetupIntentExcludedPaymentMethodTypes._('naver_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes nzBankAccount = SetupIntentExcludedPaymentMethodTypes._('nz_bank_account');
-
-static const SetupIntentExcludedPaymentMethodTypes oxxo = SetupIntentExcludedPaymentMethodTypes._('oxxo');
-
-static const SetupIntentExcludedPaymentMethodTypes p24 = SetupIntentExcludedPaymentMethodTypes._('p24');
-
-static const SetupIntentExcludedPaymentMethodTypes payByBank = SetupIntentExcludedPaymentMethodTypes._('pay_by_bank');
-
-static const SetupIntentExcludedPaymentMethodTypes payco = SetupIntentExcludedPaymentMethodTypes._('payco');
-
-static const SetupIntentExcludedPaymentMethodTypes paynow = SetupIntentExcludedPaymentMethodTypes._('paynow');
-
-static const SetupIntentExcludedPaymentMethodTypes paypal = SetupIntentExcludedPaymentMethodTypes._('paypal');
-
-static const SetupIntentExcludedPaymentMethodTypes payto = SetupIntentExcludedPaymentMethodTypes._('payto');
-
-static const SetupIntentExcludedPaymentMethodTypes pix = SetupIntentExcludedPaymentMethodTypes._('pix');
-
-static const SetupIntentExcludedPaymentMethodTypes promptpay = SetupIntentExcludedPaymentMethodTypes._('promptpay');
-
-static const SetupIntentExcludedPaymentMethodTypes revolutPay = SetupIntentExcludedPaymentMethodTypes._('revolut_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes samsungPay = SetupIntentExcludedPaymentMethodTypes._('samsung_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes satispay = SetupIntentExcludedPaymentMethodTypes._('satispay');
-
-static const SetupIntentExcludedPaymentMethodTypes sepaDebit = SetupIntentExcludedPaymentMethodTypes._('sepa_debit');
-
-static const SetupIntentExcludedPaymentMethodTypes sofort = SetupIntentExcludedPaymentMethodTypes._('sofort');
-
-static const SetupIntentExcludedPaymentMethodTypes swish = SetupIntentExcludedPaymentMethodTypes._('swish');
-
-static const SetupIntentExcludedPaymentMethodTypes twint = SetupIntentExcludedPaymentMethodTypes._('twint');
-
-static const SetupIntentExcludedPaymentMethodTypes usBankAccount = SetupIntentExcludedPaymentMethodTypes._('us_bank_account');
-
-static const SetupIntentExcludedPaymentMethodTypes wechatPay = SetupIntentExcludedPaymentMethodTypes._('wechat_pay');
-
-static const SetupIntentExcludedPaymentMethodTypes zip = SetupIntentExcludedPaymentMethodTypes._('zip');
-
-static const List<SetupIntentExcludedPaymentMethodTypes> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentExcludedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentExcludedPaymentMethodTypes($value)'; } 
- }
-@immutable final class SetupIntentFlowDirections {const SetupIntentFlowDirections._(this.value);
-
-factory SetupIntentFlowDirections.fromJson(String json) { return switch (json) {
-  'inbound' => inbound,
-  'outbound' => outbound,
-  _ => SetupIntentFlowDirections._(json),
-}; }
-
-static const SetupIntentFlowDirections inbound = SetupIntentFlowDirections._('inbound');
-
-static const SetupIntentFlowDirections outbound = SetupIntentFlowDirections._('outbound');
-
-static const List<SetupIntentFlowDirections> values = [inbound, outbound];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentFlowDirections && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentFlowDirections($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupIntentObject {const SetupIntentObject._(this.value);
@@ -309,8 +120,8 @@ factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
-  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
-  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList(),
+  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
+  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => FlowDirections.fromJson(e as String)).toList(),
   id: json['id'] as String,
   lastSetupError: json['last_setup_error'] != null ? Errors.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null,
   latestAttempt: json['latest_attempt'] != null ? OneOf2.parse(json['latest_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null,
@@ -330,7 +141,7 @@ factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
 ); }
 
 /// ID of the Connect application that created the SetupIntent.
-final SetupIntentApplication? application;
+final ChargeApplication? application;
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -354,7 +165,7 @@ final int created;
 /// ID of the Customer this SetupIntent belongs to, if one exists.
 /// 
 /// If present, the SetupIntent's payment method will be attached to the Customer on successful setup. Payment methods attached to other Customers cannot be used with this SetupIntent.
-final SetupIntentCustomer? customer;
+final CardCustomer? customer;
 
 /// ID of the Account this SetupIntent belongs to, if one exists.
 /// 
@@ -365,12 +176,12 @@ final String? customerAccount;
 final String? description;
 
 /// Payment method types that are excluded from this SetupIntent.
-final List<SetupIntentExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
+final List<PaymentIntentExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
 
 /// Indicates the directions of money movement for which this payment method is intended to be used.
 /// 
 /// Include `inbound` if you intend to use the payment method as the origin to pull funds from. Include `outbound` if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.
-final List<SetupIntentFlowDirections>? flowDirections;
+final List<FlowDirections>? flowDirections;
 
 /// Unique identifier for the object.
 final String id;
@@ -379,7 +190,7 @@ final String id;
 final Errors? lastSetupError;
 
 /// The most recent SetupAttempt for this SetupIntent.
-final SetupIntentLatestAttempt? latestAttempt;
+final LatestAttempt? latestAttempt;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -397,10 +208,10 @@ final SetupIntentNextAction? nextAction;
 final SetupIntentObject object;
 
 /// The account (if any) for which the setup is intended.
-final SetupIntentOnBehalfOf? onBehalfOf;
+final ChargeOnBehalfOf? onBehalfOf;
 
 /// ID of the payment method used with this SetupIntent. If the payment method is `card_present` and isn't a digital wallet, then the [generated_card](https://docs.stripe.com/api/setup_attempts/object#setup_attempt_object-payment_method_details-card_present-generated_card) associated with the `latest_attempt` is attached to the Customer instead.
-final SetupIntentPaymentMethod? paymentMethod;
+final PaymentIntentPaymentMethod? paymentMethod;
 
 /// Information about the [payment method configuration](https://docs.stripe.com/api/payment_method_configurations) used for this Setup Intent.
 final PaymentMethodConfigBizPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
@@ -412,7 +223,7 @@ final SetupIntentPaymentMethodOptions? paymentMethodOptions;
 final List<String> paymentMethodTypes;
 
 /// ID of the single_use Mandate generated by the SetupIntent.
-final SetupIntentSingleUseMandate? singleUseMandate;
+final SingleUseMandate? singleUseMandate;
 
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
 final SetupIntentStatus status;
@@ -458,7 +269,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Function()? attachToSelf, PaymentFlowsAutomaticPaymentMethodsSetupIntent? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, SetupIntentCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<SetupIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<SetupIntentFlowDirections>? Function()? flowDirections, String? id, Errors? Function()? lastSetupError, SetupIntentLatestAttempt? Function()? latestAttempt, bool? livemode, SetupIntentMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction? Function()? nextAction, SetupIntentObject? object, SetupIntentOnBehalfOf? Function()? onBehalfOf, SetupIntentPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SetupIntentSingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
+SetupIntent copyWith({ChargeApplication? Function()? application, bool Function()? attachToSelf, PaymentFlowsAutomaticPaymentMethodsSetupIntent? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, CardCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<FlowDirections>? Function()? flowDirections, String? id, Errors? Function()? lastSetupError, LatestAttempt? Function()? latestAttempt, bool? livemode, SetupIntentMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction? Function()? nextAction, SetupIntentObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, PaymentIntentPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,

@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'optional_fields_shipping_address.dart';@immutable final class OptionalFieldsShipping {const OptionalFieldsShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';@immutable final class optional_fields_shipping {const optional_fields_shipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 
-factory OptionalFieldsShipping.fromJson(Map<String, dynamic> json) { return OptionalFieldsShipping(
-  address: OptionalFieldsShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+factory optional_fields_shipping.fromJson(Map<String, dynamic> json) { return optional_fields_shipping(
+  address: customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   carrier: json['carrier'] as String?,
   name: json['name'] as String,
   phone: json['phone'] as String?,
   trackingNumber: json['tracking_number'] as String?,
 ); }
 
-final OptionalFieldsShippingAddress address;
+final customer_shippingAddress address;
 
 final String? carrier;
 
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-OptionalFieldsShipping copyWith({OptionalFieldsShippingAddress? address, String Function()? carrier, String? name, String Function()? phone, String Function()? trackingNumber, }) { return OptionalFieldsShipping(
+optional_fields_shipping copyWith({customer_shippingAddress? address, String Function()? carrier, String? name, String Function()? phone, String Function()? trackingNumber, }) { return optional_fields_shipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name ?? this.name,
@@ -37,12 +37,12 @@ OptionalFieldsShipping copyWith({OptionalFieldsShippingAddress? address, String 
   trackingNumber: trackingNumber != null ? trackingNumber() : this.trackingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is OptionalFieldsShipping &&
+      other is optional_fields_shipping &&
           address == other.address &&
           carrier == other.carrier &&
           name == other.name &&
           phone == other.phone &&
           trackingNumber == other.trackingNumber; } 
 @override int get hashCode { return Object.hash(address, carrier, name, phone, trackingNumber); } 
-@override String toString() { return 'OptionalFieldsShipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)'; } 
+@override String toString() { return 'optional_fields_shipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)'; } 
  }

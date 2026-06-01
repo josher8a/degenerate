@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_edited_changes.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestEditedAction {const WebhookPullRequestEditedAction._(this.value);
-
-factory WebhookPullRequestEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookPullRequestEditedAction._(json),
-}; }
-
-static const WebhookPullRequestEditedAction edited = WebhookPullRequestEditedAction._('edited');
-
-static const List<WebhookPullRequestEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestEditedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestEdited {const WebhookPullRequestEdited({required this.action, required this.changes, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_edited/webhook_pull_request_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestEdited {const WebhookPullRequestEdited({required this.action, required this.changes, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEdited(
-  action: WebhookPullRequestEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookPullRequestEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) { return We
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookPullRequestEditedAction action;
+final ItemEditedAction action;
 
 /// The changes to the comment if the action was `edited`.
 final WebhookPullRequestEditedChanges changes;
@@ -71,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository'); } 
-WebhookPullRequestEdited copyWith({WebhookPullRequestEditedAction? action, WebhookPullRequestEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestEdited(
+WebhookPullRequestEdited copyWith({ItemEditedAction? action, WebhookPullRequestEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

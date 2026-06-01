@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp_variant1.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/dlp_variant2.dart';typedef Dlp = OneOf2<DlpVariant1,DlpVariant2>;

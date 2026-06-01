@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_repository_transferred_changes.dart';@immutable final class WebhookRepositoryTransferredAction {const WebhookRepositoryTransferredAction._(this.value);
-
-factory WebhookRepositoryTransferredAction.fromJson(String json) { return switch (json) {
-  'transferred' => transferred,
-  _ => WebhookRepositoryTransferredAction._(json),
-}; }
-
-static const WebhookRepositoryTransferredAction transferred = WebhookRepositoryTransferredAction._('transferred');
-
-static const List<WebhookRepositoryTransferredAction> values = [transferred];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryTransferredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryTransferredAction($value)'; } 
- }
-@immutable final class WebhookRepositoryTransferred {const WebhookRepositoryTransferred({required this.action, required this.changes, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_transferred/webhook_discussion_transferred_action.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_transferred/webhook_repository_transferred_changes.dart';@immutable final class WebhookRepositoryTransferred {const WebhookRepositoryTransferred({required this.action, required this.changes, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryTransferred.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferred(
-  action: WebhookRepositoryTransferredAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionTransferredAction.fromJson(json['action'] as String),
   changes: WebhookRepositoryTransferredChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookRepositoryTransferred.fromJson(Map<String, dynamic> json) { retur
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookRepositoryTransferredAction action;
+final WebhookDiscussionTransferredAction action;
 
 final WebhookRepositoryTransferredChanges changes;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookRepositoryTransferred copyWith({WebhookRepositoryTransferredAction? action, WebhookRepositoryTransferredChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryTransferred(
+WebhookRepositoryTransferred copyWith({WebhookDiscussionTransferredAction? action, WebhookRepositoryTransferredChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryTransferred(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

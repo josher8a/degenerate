@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_messages2.dart';import 'page_shield_result_info.dart';@immutable final class ListResponseCollection {const ListResponseCollection({required this.success, required this.resultInfo, this.errors, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_messages2.dart';import 'package:pub_cloudflare/models/page_shield_result_info.dart';@immutable final class ListResponseCollection {const ListResponseCollection({required this.success, required this.resultInfo, this.errors, this.messages, });
 
 factory ListResponseCollection.fromJson(Map<String, dynamic> json) { return ListResponseCollection(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PageShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

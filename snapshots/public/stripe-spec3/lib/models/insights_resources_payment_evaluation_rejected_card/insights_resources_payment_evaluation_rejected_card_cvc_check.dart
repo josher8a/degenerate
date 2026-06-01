@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the CVC check.
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardCvcCheck {const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._(this.value);
+
+factory InsightsResourcesPaymentEvaluationRejectedCardCvcCheck.fromJson(String json) { return switch (json) {
+  'fail' => fail,
+  'pass' => pass,
+  'unavailable' => unavailable,
+  'unchecked' => unchecked,
+  _ => InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._(json),
+}; }
+
+static const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck fail = InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._('fail');
+
+static const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck pass = InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._('pass');
+
+static const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck unavailable = InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._('unavailable');
+
+static const InsightsResourcesPaymentEvaluationRejectedCardCvcCheck unchecked = InsightsResourcesPaymentEvaluationRejectedCardCvcCheck._('unchecked');
+
+static const List<InsightsResourcesPaymentEvaluationRejectedCardCvcCheck> values = [fail, pass, unavailable, unchecked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardCvcCheck && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardCvcCheck($value)'; } 
+ }

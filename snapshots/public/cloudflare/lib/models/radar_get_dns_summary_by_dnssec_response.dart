@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_response_result.dart';@immutable final class RadarGetDnsSummaryByDnssecResponse {const RadarGetDnsSummaryByDnssecResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_summary_by_dnssec_response/radar_get_dns_summary_by_dnssec_response_result.dart';@immutable final class RadarGetDnsSummaryByDnssecResponse {const RadarGetDnsSummaryByDnssecResponse({required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByDnssecResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecResponse(
   result: RadarGetDnsSummaryByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),

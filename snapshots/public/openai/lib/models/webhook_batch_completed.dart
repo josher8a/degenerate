@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_completed_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookBatchCompletedObject {const WebhookBatchCompletedObject._(this.value);
-
-factory WebhookBatchCompletedObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookBatchCompletedObject._(json),
-}; }
-
-static const WebhookBatchCompletedObject event = WebhookBatchCompletedObject._('event');
-
-static const List<WebhookBatchCompletedObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBatchCompletedObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBatchCompletedObject($value)'; } 
- }
-/// The type of the event. Always `batch.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `batch.completed`.
 /// 
 @immutable final class WebhookBatchCompletedType {const WebhookBatchCompletedType._(this.value);
 
@@ -53,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookBatchCompleted.fromJson(Map<String, dynamic> json) { return WebhookBatchCompleted(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
-  data: WebhookBatchCompletedData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookBatchCompletedObject.fromJson(json['object'] as String) : null,
+  data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookBatchCompletedType.fromJson(json['type'] as String),
 ); }
 
@@ -68,11 +45,11 @@ final String id;
 
 /// Event data payload.
 /// 
-final WebhookBatchCompletedData data;
+final WebhookBatchCancelledData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookBatchCompletedObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `batch.completed`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookBatchCompleted copyWith({int? createdAt, String? id, WebhookBatchCompletedData? data, WebhookBatchCompletedObject Function()? object, WebhookBatchCompletedType? type, }) { return WebhookBatchCompleted(
+WebhookBatchCompleted copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject Function()? object, WebhookBatchCompletedType? type, }) { return WebhookBatchCompleted(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

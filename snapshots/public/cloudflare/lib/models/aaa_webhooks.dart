@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_name.dart';import 'aaa_secret.dart';import 'aaa_url.dart';import 'aaa_webhook_id.dart';/// Type of webhook endpoint.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_name.dart';import 'package:pub_cloudflare/models/aaa_secret.dart';import 'package:pub_cloudflare/models/aaa_url.dart';import 'package:pub_cloudflare/models/aaa_webhook_id.dart';/// Type of webhook endpoint.
 @immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
 
 factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {

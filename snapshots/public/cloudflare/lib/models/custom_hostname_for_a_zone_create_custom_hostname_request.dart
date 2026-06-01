@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_sslpost.dart';/// The custom hostname that will point to your hostname via CNAME.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslpost.dart';/// The custom hostname that will point to your hostname via CNAME.
 extension type const TlsCertificatesAndHostnamesHostnamePost(String value) {
 factory TlsCertificatesAndHostnamesHostnamePost.fromJson(String json) => TlsCertificatesAndHostnamesHostnamePost(json);
 

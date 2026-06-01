@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_page_test_.dart';@immutable final class ObservatoryPageTestResponseSingle {const ObservatoryPageTestResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_page_test_.dart';@immutable final class ObservatoryPageTestResponseSingle {const ObservatoryPageTestResponseSingle({this.result});
 
 factory ObservatoryPageTestResponseSingle.fromJson(Map<String, dynamic> json) { return ObservatoryPageTestResponseSingle(
   result: json['result'] != null ? ObservatoryPageTest.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_default_value.dart';/// The source type of the property
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property/default_value.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/value_type.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/values_editable_by.dart';/// The source type of the property
 @immutable final class CustomPropertySourceType {const CustomPropertySourceType._(this.value);
 
 factory CustomPropertySourceType.fromJson(String json) { return switch (json) {
@@ -25,68 +25,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomPropertySourceType($value)'; } 
  }
-/// The type of the value for the property
-@immutable final class CustomPropertyValueType {const CustomPropertyValueType._(this.value);
-
-factory CustomPropertyValueType.fromJson(String json) { return switch (json) {
-  'string' => string,
-  'single_select' => singleSelect,
-  'multi_select' => multiSelect,
-  'true_false' => trueFalse,
-  'url' => url,
-  _ => CustomPropertyValueType._(json),
-}; }
-
-static const CustomPropertyValueType string = CustomPropertyValueType._('string');
-
-static const CustomPropertyValueType singleSelect = CustomPropertyValueType._('single_select');
-
-static const CustomPropertyValueType multiSelect = CustomPropertyValueType._('multi_select');
-
-static const CustomPropertyValueType trueFalse = CustomPropertyValueType._('true_false');
-
-static const CustomPropertyValueType url = CustomPropertyValueType._('url');
-
-static const List<CustomPropertyValueType> values = [string, singleSelect, multiSelect, trueFalse, url];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertyValueType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertyValueType($value)'; } 
- }
-/// Who can edit the values of the property
-@immutable final class CustomPropertyValuesEditableBy {const CustomPropertyValuesEditableBy._(this.value);
-
-factory CustomPropertyValuesEditableBy.fromJson(String json) { return switch (json) {
-  'org_actors' => orgActors,
-  'org_and_repo_actors' => orgAndRepoActors,
-  'null' => $null,
-  _ => CustomPropertyValuesEditableBy._(json),
-}; }
-
-static const CustomPropertyValuesEditableBy orgActors = CustomPropertyValuesEditableBy._('org_actors');
-
-static const CustomPropertyValuesEditableBy orgAndRepoActors = CustomPropertyValuesEditableBy._('org_and_repo_actors');
-
-static const CustomPropertyValuesEditableBy $null = CustomPropertyValuesEditableBy._('null');
-
-static const List<CustomPropertyValuesEditableBy> values = [orgActors, orgAndRepoActors, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertyValuesEditableBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertyValuesEditableBy($value)'; } 
- }
 /// Custom property defined on an organization
 @immutable final class CustomProperty {const CustomProperty({required this.propertyName, required this.valueType, this.url, this.sourceType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
 
@@ -94,12 +32,12 @@ factory CustomProperty.fromJson(Map<String, dynamic> json) { return CustomProper
   propertyName: json['property_name'] as String,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   sourceType: json['source_type'] != null ? CustomPropertySourceType.fromJson(json['source_type'] as String) : null,
-  valueType: CustomPropertyValueType.fromJson(json['value_type'] as String),
+  valueType: ValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
   defaultValue: json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   description: json['description'] as String?,
   allowedValues: (json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  valuesEditableBy: json['values_editable_by'] != null ? CustomPropertyValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,
+  valuesEditableBy: json['values_editable_by'] != null ? ValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,
   requireExplicitValues: json['require_explicit_values'] as bool?,
 ); }
 
@@ -113,13 +51,13 @@ final Uri? url;
 final CustomPropertySourceType? sourceType;
 
 /// The type of the value for the property
-final CustomPropertyValueType valueType;
+final ValueType valueType;
 
 /// Whether the property is required.
 final bool? $required;
 
 /// Default value of the property
-final CustomPropertyDefaultValue? defaultValue;
+final DefaultValue? defaultValue;
 
 /// Short description of the property
 final String? description;
@@ -129,7 +67,7 @@ final String? description;
 final List<String>? allowedValues;
 
 /// Who can edit the values of the property
-final CustomPropertyValuesEditableBy? valuesEditableBy;
+final ValuesEditableBy? valuesEditableBy;
 
 /// Whether setting properties values is mandatory
 final bool? requireExplicitValues;
@@ -148,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('property_name') && json['property_name'] is String &&
       json.containsKey('value_type'); } 
-CustomProperty copyWith({String? propertyName, Uri Function()? url, CustomPropertySourceType Function()? sourceType, CustomPropertyValueType? valueType, bool Function()? $required, CustomPropertyDefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, CustomPropertyValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomProperty(
+CustomProperty copyWith({String? propertyName, Uri Function()? url, CustomPropertySourceType Function()? sourceType, ValueType? valueType, bool Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomProperty(
   propertyName: propertyName ?? this.propertyName,
   url: url != null ? url() : this.url,
   sourceType: sourceType != null ? sourceType() : this.sourceType,

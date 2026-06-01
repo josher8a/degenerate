@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';/// DownwardAPIVolumeFile represents information to create the file containing the pod field
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_field_selector.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_field_selector.dart';/// DownwardAPIVolumeFile represents information to create the file containing the pod field
 @immutable final class VolumeFile {const VolumeFile({this.fieldRef, this.mode, this.path = '', this.resourceFieldRef, });
 
 factory VolumeFile.fromJson(Map<String, dynamic> json) { return VolumeFile(

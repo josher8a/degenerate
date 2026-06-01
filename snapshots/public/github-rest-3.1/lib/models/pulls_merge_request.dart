@@ -1,40 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The merge method to use.
-@immutable final class PullsMergeRequestMergeMethod {const PullsMergeRequestMergeMethod._(this.value);
-
-factory PullsMergeRequestMergeMethod.fromJson(String json) { return switch (json) {
-  'merge' => merge,
-  'squash' => squash,
-  'rebase' => rebase,
-  _ => PullsMergeRequestMergeMethod._(json),
-}; }
-
-static const PullsMergeRequestMergeMethod merge = PullsMergeRequestMergeMethod._('merge');
-
-static const PullsMergeRequestMergeMethod squash = PullsMergeRequestMergeMethod._('squash');
-
-static const PullsMergeRequestMergeMethod rebase = PullsMergeRequestMergeMethod._('rebase');
-
-static const List<PullsMergeRequestMergeMethod> values = [merge, squash, rebase];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsMergeRequestMergeMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsMergeRequestMergeMethod($value)'; } 
- }
-@immutable final class PullsMergeRequest {const PullsMergeRequest({this.commitTitle, this.commitMessage, this.sha, this.mergeMethod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/auto_merge/auto_merge_merge_method.dart';@immutable final class PullsMergeRequest {const PullsMergeRequest({this.commitTitle, this.commitMessage, this.sha, this.mergeMethod, });
 
 factory PullsMergeRequest.fromJson(Map<String, dynamic> json) { return PullsMergeRequest(
   commitTitle: json['commit_title'] as String?,
   commitMessage: json['commit_message'] as String?,
   sha: json['sha'] as String?,
-  mergeMethod: json['merge_method'] != null ? PullsMergeRequestMergeMethod.fromJson(json['merge_method'] as String) : null,
+  mergeMethod: json['merge_method'] != null ? AutoMergeMergeMethod.fromJson(json['merge_method'] as String) : null,
 ); }
 
 /// Title for the automatic commit message.
@@ -47,7 +19,7 @@ final String? commitMessage;
 final String? sha;
 
 /// The merge method to use.
-final PullsMergeRequestMergeMethod? mergeMethod;
+final AutoMergeMergeMethod? mergeMethod;
 
 Map<String, dynamic> toJson() { return {
   'commit_title': ?commitTitle,
@@ -56,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (mergeMethod != null) 'merge_method': mergeMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commit_title', 'commit_message', 'sha', 'merge_method'}.contains(key)); } 
-PullsMergeRequest copyWith({String Function()? commitTitle, String Function()? commitMessage, String Function()? sha, PullsMergeRequestMergeMethod Function()? mergeMethod, }) { return PullsMergeRequest(
+PullsMergeRequest copyWith({String Function()? commitTitle, String Function()? commitMessage, String Function()? sha, AutoMergeMergeMethod Function()? mergeMethod, }) { return PullsMergeRequest(
   commitTitle: commitTitle != null ? commitTitle() : this.commitTitle,
   commitMessage: commitMessage != null ? commitMessage() : this.commitMessage,
   sha: sha != null ? sha() : this.sha,

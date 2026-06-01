@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnSupportDevice {const MconnSupportDevice({required this.id, required this.lastUpdated, required this.metadata, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.pkiRotationFinishedAt, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnSupportDevice {const MconnSupportDevice({required this.id, required this.lastUpdated, required this.metadata, this.cryptKeyRotationFinishedAt, this.cryptKeyRotationStartedAt, this.cryptKeyRotationStatusCode, this.deviceType, this.ekCert, this.imagedAt, this.pkiRotationFinishedAt, this.pkiRotationStartedAt, this.pkiRotationStatusCode, this.serialNumber, });
 
 factory MconnSupportDevice.fromJson(Map<String, dynamic> json) { return MconnSupportDevice(
   cryptKeyRotationFinishedAt: json['crypt_key_rotation_finished_at'] as String?,

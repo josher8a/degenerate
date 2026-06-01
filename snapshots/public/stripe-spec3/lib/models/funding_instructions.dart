@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer.dart';/// The `funding_type` of the returned instructions
-@immutable final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);
-
-factory FundingInstructionsFundingType.fromJson(String json) { return switch (json) {
-  'bank_transfer' => bankTransfer,
-  _ => FundingInstructionsFundingType._(json),
-}; }
-
-static const FundingInstructionsFundingType bankTransfer = FundingInstructionsFundingType._('bank_transfer');
-
-static const List<FundingInstructionsFundingType> values = [bankTransfer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsFundingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsFundingType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);
 
 factory FundingInstructionsObject.fromJson(String json) { return switch (json) {

@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The type of the activity that was performed.
-@immutable final class ActivityActivityType {const ActivityActivityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The type of the activity that was performed.
+@immutable final class ActivityType {const ActivityType._(this.value);
 
-factory ActivityActivityType.fromJson(String json) { return switch (json) {
+factory ActivityType.fromJson(String json) { return switch (json) {
   'push' => push,
   'force_push' => forcePush,
   'branch_deletion' => branchDeletion,
   'branch_creation' => branchCreation,
   'pr_merge' => prMerge,
   'merge_queue_merge' => mergeQueueMerge,
-  _ => ActivityActivityType._(json),
+  _ => ActivityType._(json),
 }; }
 
-static const ActivityActivityType push = ActivityActivityType._('push');
+static const ActivityType push = ActivityType._('push');
 
-static const ActivityActivityType forcePush = ActivityActivityType._('force_push');
+static const ActivityType forcePush = ActivityType._('force_push');
 
-static const ActivityActivityType branchDeletion = ActivityActivityType._('branch_deletion');
+static const ActivityType branchDeletion = ActivityType._('branch_deletion');
 
-static const ActivityActivityType branchCreation = ActivityActivityType._('branch_creation');
+static const ActivityType branchCreation = ActivityType._('branch_creation');
 
-static const ActivityActivityType prMerge = ActivityActivityType._('pr_merge');
+static const ActivityType prMerge = ActivityType._('pr_merge');
 
-static const ActivityActivityType mergeQueueMerge = ActivityActivityType._('merge_queue_merge');
+static const ActivityType mergeQueueMerge = ActivityType._('merge_queue_merge');
 
-static const List<ActivityActivityType> values = [push, forcePush, branchDeletion, branchCreation, prMerge, mergeQueueMerge];
+static const List<ActivityType> values = [push, forcePush, branchDeletion, branchCreation, prMerge, mergeQueueMerge];
 
 final String value;
 
@@ -33,9 +33,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActivityActivityType && other.value == value; } 
+    other is ActivityType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActivityActivityType($value)'; } 
+@override String toString() { return 'ActivityType($value)'; } 
  }
 /// Activity
 @immutable final class Activity {const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor, });
@@ -47,7 +47,7 @@ factory Activity.fromJson(Map<String, dynamic> json) { return Activity(
   after: json['after'] as String,
   ref: json['ref'] as String,
   timestamp: DateTime.parse(json['timestamp'] as String),
-  activityType: ActivityActivityType.fromJson(json['activity_type'] as String),
+  activityType: ActivityType.fromJson(json['activity_type'] as String),
   actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
 ); }
 
@@ -68,7 +68,7 @@ final String ref;
 final DateTime timestamp;
 
 /// The type of the activity that was performed.
-final ActivityActivityType activityType;
+final ActivityType activityType;
 
 final SimpleUser? actor;
 
@@ -90,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('timestamp') && json['timestamp'] is String &&
       json.containsKey('activity_type') &&
       json.containsKey('actor'); } 
-Activity copyWith({int? id, String? nodeId, String? before, String? after, String? ref, DateTime? timestamp, ActivityActivityType? activityType, SimpleUser? Function()? actor, }) { return Activity(
+Activity copyWith({int? id, String? nodeId, String? before, String? after, String? ref, DateTime? timestamp, ActivityType? activityType, SimpleUser? Function()? actor, }) { return Activity(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   before: before ?? this.before,

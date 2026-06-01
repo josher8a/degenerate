@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_internal_dns_base.dart';import 'dns_settings_soa_base.dart';/// Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_internal_dns_base.dart';import 'package:pub_cloudflare/models/dns_settings_soa_base.dart';/// Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.
 extension type const DnsSettingsFlattenAllCnames(bool value) {
 factory DnsSettingsFlattenAllCnames.fromJson(bool json) => DnsSettingsFlattenAllCnames(json);
 

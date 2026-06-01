@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';import '../models/user_subscription_delete_user_subscription_response.dart';/// UserSubscriptionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schemas_identifier.dart';import 'package:pub_cloudflare/models/subscription2.dart';import 'package:pub_cloudflare/models/user_subscription_delete_user_subscription_response.dart';/// UserSubscriptionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_applied_invoice.dart';import 'invoice.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// 
 @immutable final class BillingCreditGrantsResourceBalanceCreditsApplied {const BillingCreditGrantsResourceBalanceCreditsApplied({required this.invoice, required this.invoiceLineItem, });
 
 factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplied(
@@ -9,7 +9,7 @@ factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dy
 ); }
 
 /// The invoice to which the billing credits were applied.
-final BillingCreditGrantsResourceBalanceCreditsAppliedInvoice invoice;
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice invoice;
 
 /// The invoice line item to which the billing credits were applied.
 final String invoiceLineItem;
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') &&
       json.containsKey('invoice_line_item') && json['invoice_line_item'] is String; } 
-BillingCreditGrantsResourceBalanceCreditsApplied copyWith({BillingCreditGrantsResourceBalanceCreditsAppliedInvoice? invoice, String? invoiceLineItem, }) { return BillingCreditGrantsResourceBalanceCreditsApplied(
+BillingCreditGrantsResourceBalanceCreditsApplied copyWith({BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, String? invoiceLineItem, }) { return BillingCreditGrantsResourceBalanceCreditsApplied(
   invoice: invoice ?? this.invoice,
   invoiceLineItem: invoiceLineItem ?? this.invoiceLineItem,
 ); } 

@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';import 'shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescriptionVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => ShippingDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetailsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => shipping_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Customer information for this payment.
 final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? customerDetails;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? description;
+final Description? description;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Shipping information for this payment.
 final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails? shippingDetails;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_details', 'description', 'expand', 'metadata', 'shipping_details'}.contains(key)); } 
-PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails Function()? customerDetails, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription Function()? description, List<String> Function()? expand, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
+PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails Function()? customerDetails, Description Function()? description, List<String> Function()? expand, Metadata Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,

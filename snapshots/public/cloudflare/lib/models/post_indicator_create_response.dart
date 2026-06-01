@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_response_related_events.dart';import 'post_indicator_create_response_tags.dart';@immutable final class PostIndicatorCreateResponse {const PostIndicatorCreateResponse({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/get_indicator_read_response_tags.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';@immutable final class PostIndicatorCreateResponse {const PostIndicatorCreateResponse({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateResponse.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
   datasetId: json['datasetId'] as String?,
   indicatorType: json['indicatorType'] as String,
-  relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateResponseRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => PostIndicatorCreateResponseTags.fromJson(e as Map<String, dynamic>)).toList(),
+  relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => RelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => GetIndicatorReadResponseTags.fromJson(e as Map<String, dynamic>)).toList(),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
   value: json['value'] as String,
@@ -20,9 +20,9 @@ final String? datasetId;
 
 final String indicatorType;
 
-final List<PostIndicatorCreateResponseRelatedEvents>? relatedEvents;
+final List<RelatedEvents>? relatedEvents;
 
-final List<PostIndicatorCreateResponseTags>? tags;
+final List<GetIndicatorReadResponseTags>? tags;
 
 final DateTime updatedAt;
 
@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
       json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateResponse copyWith({DateTime? createdAt, String Function()? datasetId, String? indicatorType, List<PostIndicatorCreateResponseRelatedEvents> Function()? relatedEvents, List<PostIndicatorCreateResponseTags> Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return PostIndicatorCreateResponse(
+PostIndicatorCreateResponse copyWith({DateTime? createdAt, String Function()? datasetId, String? indicatorType, List<RelatedEvents> Function()? relatedEvents, List<GetIndicatorReadResponseTags> Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return PostIndicatorCreateResponse(
   createdAt: createdAt ?? this.createdAt,
   datasetId: datasetId != null ? datasetId() : this.datasetId,
   indicatorType: indicatorType ?? this.indicatorType,

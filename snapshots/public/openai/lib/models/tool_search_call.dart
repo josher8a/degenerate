@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool_search_execution_type.dart';@immutable final class FunctionCallStatus {const FunctionCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class FunctionCallStatus {const FunctionCallStatus._(this.value);
 
 factory FunctionCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_behaviors.dart';import '../models/dlp_risk_events.dart';import '../models/dlp_risk_summary.dart';import '../models/dlp_update_behaviors.dart';/// ZeroTrustRiskScoringApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_behaviors.dart';import 'package:pub_cloudflare/models/dlp_risk_events.dart';import 'package:pub_cloudflare/models/dlp_risk_summary.dart';import 'package:pub_cloudflare/models/dlp_update_behaviors.dart';/// ZeroTrustRiskScoringApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

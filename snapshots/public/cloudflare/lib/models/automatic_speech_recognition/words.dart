@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Words {const Words({this.end, this.start, this.word, });
+
+factory Words.fromJson(Map<String, dynamic> json) { return Words(
+  end: json['end'] != null ? (json['end'] as num).toDouble() : null,
+  start: json['start'] != null ? (json['start'] as num).toDouble() : null,
+  word: json['word'] as String?,
+); }
+
+/// The ending second when the word completes
+final double? end;
+
+/// The second this word begins in the recording
+final double? start;
+
+final String? word;
+
+Map<String, dynamic> toJson() { return {
+  'end': ?end,
+  'start': ?start,
+  'word': ?word,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key)); } 
+Words copyWith({double Function()? end, double Function()? start, String Function()? word, }) { return Words(
+  end: end != null ? end() : this.end,
+  start: start != null ? start() : this.start,
+  word: word != null ? word() : this.word,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Words &&
+          end == other.end &&
+          start == other.start &&
+          word == other.word; } 
+@override int get hashCode { return Object.hash(end, start, word); } 
+@override String toString() { return 'Words(end: $end, start: $start, word: $word)'; } 
+ }

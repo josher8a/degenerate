@@ -1,52 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_answer_reactions.dart';import 'webhooks_answer_user.dart';/// How the author is associated with the repository.
-@immutable final class WebhooksAnswerAuthorAssociation {const WebhooksAnswerAuthorAssociation._(this.value);
-
-factory WebhooksAnswerAuthorAssociation.fromJson(String json) { return switch (json) {
-  'COLLABORATOR' => collaborator,
-  'CONTRIBUTOR' => contributor,
-  'FIRST_TIMER' => firstTimer,
-  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
-  'MANNEQUIN' => mannequin,
-  'MEMBER' => member,
-  'NONE' => none,
-  'OWNER' => owner,
-  _ => WebhooksAnswerAuthorAssociation._(json),
-}; }
-
-static const WebhooksAnswerAuthorAssociation collaborator = WebhooksAnswerAuthorAssociation._('COLLABORATOR');
-
-static const WebhooksAnswerAuthorAssociation contributor = WebhooksAnswerAuthorAssociation._('CONTRIBUTOR');
-
-static const WebhooksAnswerAuthorAssociation firstTimer = WebhooksAnswerAuthorAssociation._('FIRST_TIMER');
-
-static const WebhooksAnswerAuthorAssociation firstTimeContributor = WebhooksAnswerAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-
-static const WebhooksAnswerAuthorAssociation mannequin = WebhooksAnswerAuthorAssociation._('MANNEQUIN');
-
-static const WebhooksAnswerAuthorAssociation member = WebhooksAnswerAuthorAssociation._('MEMBER');
-
-static const WebhooksAnswerAuthorAssociation none = WebhooksAnswerAuthorAssociation._('NONE');
-
-static const WebhooksAnswerAuthorAssociation owner = WebhooksAnswerAuthorAssociation._('OWNER');
-
-static const List<WebhooksAnswerAuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksAnswerAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksAnswerAuthorAssociation($value)'; } 
- }
-@immutable final class WebhooksAnswer {const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.repositoryUrl, required this.updatedAt, required this.user, this.reactions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';@immutable final class WebhooksAnswer {const WebhooksAnswer({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.repositoryUrl, required this.updatedAt, required this.user, this.reactions, });
 
 factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnswer(
-  authorAssociation: WebhooksAnswerAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   childCommentCount: (json['child_comment_count'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -55,14 +12,14 @@ factory WebhooksAnswer.fromJson(Map<String, dynamic> json) { return WebhooksAnsw
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   parentId: json['parent_id'],
-  reactions: json['reactions'] != null ? WebhooksAnswerReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
+  reactions: json['reactions'] != null ? DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   repositoryUrl: json['repository_url'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  user: json['user'] != null ? WebhooksAnswerUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? DiscussionUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 /// How the author is associated with the repository.
-final WebhooksAnswerAuthorAssociation authorAssociation;
+final DiscussionAuthorAssociation authorAssociation;
 
 final String body;
 
@@ -80,13 +37,13 @@ final String nodeId;
 
 final dynamic parentId;
 
-final WebhooksAnswerReactions? reactions;
+final DiscussionReactions? reactions;
 
 final String repositoryUrl;
 
 final DateTime updatedAt;
 
-final WebhooksAnswerUser? user;
+final DiscussionUser? user;
 
 Map<String, dynamic> toJson() { return {
   'author_association': authorAssociation.toJson(),
@@ -115,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-WebhooksAnswer copyWith({WebhooksAnswerAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, WebhooksAnswerReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, WebhooksAnswerUser? Function()? user, }) { return WebhooksAnswer(
+WebhooksAnswer copyWith({DiscussionAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, DiscussionReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, DiscussionUser? Function()? user, }) { return WebhooksAnswer(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,

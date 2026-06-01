@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
-@immutable final class TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission {const TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._(this.value);
-
-factory TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.fromJson(String json) { return switch (json) {
-  'pull' => pull,
-  'push' => push,
-  'admin' => admin,
-  _ => TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._(json),
-}; }
-
-static const TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission pull = TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._('pull');
-
-static const TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission push = TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._('push');
-
-static const TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission admin = TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission._('admin');
-
-static const List<TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission> values = [pull, push, admin];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission($value)'; } 
- }
-@immutable final class TeamsAddOrUpdateRepoPermissionsLegacyRequest {const TeamsAddOrUpdateRepoPermissionsLegacyRequest({this.permission});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/teams_add_or_update_repo_permissions_legacy_request/teams_add_or_update_repo_permissions_legacy_request_permission.dart';@immutable final class TeamsAddOrUpdateRepoPermissionsLegacyRequest {const TeamsAddOrUpdateRepoPermissionsLegacyRequest({this.permission});
 
 factory TeamsAddOrUpdateRepoPermissionsLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateRepoPermissionsLegacyRequest(
   permission: json['permission'] != null ? TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission.fromJson(json['permission'] as String) : null,

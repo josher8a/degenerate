@@ -1,39 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assigned_role_details.dart';/// Always `list`.
-@immutable final class RoleListResourceObject {const RoleListResourceObject._(this.value);
-
-factory RoleListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => RoleListResourceObject._(json),
-}; }
-
-static const RoleListResourceObject list = RoleListResourceObject._('list');
-
-static const List<RoleListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RoleListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RoleListResourceObject($value)'; } 
- }
-/// Paginated list of roles assigned to a principal.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assigned_role_details.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';/// Paginated list of roles assigned to a principal.
 @immutable final class RoleListResource {const RoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory RoleListResource.fromJson(Map<String, dynamic> json) { return RoleListResource(
-  object: RoleListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => AssignedRoleDetails.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
 ); }
 
 /// Always `list`.
-final RoleListResourceObject object;
+final ChatCompletionListObject object;
 
 /// Role assignments returned in the current page.
 final List<AssignedRoleDetails> data;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 
-RoleListResource copyWith({RoleListResourceObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) { return RoleListResource(
+RoleListResource copyWith({ChatCompletionListObject? object, List<AssignedRoleDetails>? data, bool? hasMore, String? Function()? next, }) { return RoleListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

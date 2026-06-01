@@ -1,151 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_of_conduct_simple.dart';import 'full_repository_permissions.dart';import 'license_simple.dart';import 'repository.dart';import 'security_and_analysis.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-@immutable final class FullRepositoryPullRequestCreationPolicy {const FullRepositoryPullRequestCreationPolicy._(this.value);
-
-factory FullRepositoryPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'collaborators_only' => collaboratorsOnly,
-  _ => FullRepositoryPullRequestCreationPolicy._(json),
-}; }
-
-static const FullRepositoryPullRequestCreationPolicy all = FullRepositoryPullRequestCreationPolicy._('all');
-
-static const FullRepositoryPullRequestCreationPolicy collaboratorsOnly = FullRepositoryPullRequestCreationPolicy._('collaborators_only');
-
-static const List<FullRepositoryPullRequestCreationPolicy> values = [all, collaboratorsOnly];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FullRepositoryPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FullRepositoryPullRequestCreationPolicy($value)'; } 
- }
-/// The default value for a squash merge commit title:
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-@immutable final class FullRepositorySquashMergeCommitTitle {const FullRepositorySquashMergeCommitTitle._(this.value);
-
-factory FullRepositorySquashMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
-  _ => FullRepositorySquashMergeCommitTitle._(json),
-}; }
-
-static const FullRepositorySquashMergeCommitTitle prTitle = FullRepositorySquashMergeCommitTitle._('PR_TITLE');
-
-static const FullRepositorySquashMergeCommitTitle commitOrPrTitle = FullRepositorySquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
-
-static const List<FullRepositorySquashMergeCommitTitle> values = [prTitle, commitOrPrTitle];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FullRepositorySquashMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FullRepositorySquashMergeCommitTitle($value)'; } 
- }
-/// The default value for a squash merge commit message:
-/// 
-/// - `PR_BODY` - default to the pull request's body.
-/// - `COMMIT_MESSAGES` - default to the branch's commit messages.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class FullRepositorySquashMergeCommitMessage {const FullRepositorySquashMergeCommitMessage._(this.value);
-
-factory FullRepositorySquashMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'COMMIT_MESSAGES' => commitMessages,
-  'BLANK' => blank,
-  _ => FullRepositorySquashMergeCommitMessage._(json),
-}; }
-
-static const FullRepositorySquashMergeCommitMessage prBody = FullRepositorySquashMergeCommitMessage._('PR_BODY');
-
-static const FullRepositorySquashMergeCommitMessage commitMessages = FullRepositorySquashMergeCommitMessage._('COMMIT_MESSAGES');
-
-static const FullRepositorySquashMergeCommitMessage blank = FullRepositorySquashMergeCommitMessage._('BLANK');
-
-static const List<FullRepositorySquashMergeCommitMessage> values = [prBody, commitMessages, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FullRepositorySquashMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FullRepositorySquashMergeCommitMessage($value)'; } 
- }
-/// The default value for a merge commit title.
-/// 
-///   - `PR_TITLE` - default to the pull request's title.
-///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-@immutable final class FullRepositoryMergeCommitTitle {const FullRepositoryMergeCommitTitle._(this.value);
-
-factory FullRepositoryMergeCommitTitle.fromJson(String json) { return switch (json) {
-  'PR_TITLE' => prTitle,
-  'MERGE_MESSAGE' => mergeMessage,
-  _ => FullRepositoryMergeCommitTitle._(json),
-}; }
-
-static const FullRepositoryMergeCommitTitle prTitle = FullRepositoryMergeCommitTitle._('PR_TITLE');
-
-static const FullRepositoryMergeCommitTitle mergeMessage = FullRepositoryMergeCommitTitle._('MERGE_MESSAGE');
-
-static const List<FullRepositoryMergeCommitTitle> values = [prTitle, mergeMessage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FullRepositoryMergeCommitTitle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FullRepositoryMergeCommitTitle($value)'; } 
- }
-/// The default value for a merge commit message.
-/// 
-/// - `PR_TITLE` - default to the pull request's title.
-/// - `PR_BODY` - default to the pull request's body.
-/// - `BLANK` - default to a blank commit message.
-@immutable final class FullRepositoryMergeCommitMessage {const FullRepositoryMergeCommitMessage._(this.value);
-
-factory FullRepositoryMergeCommitMessage.fromJson(String json) { return switch (json) {
-  'PR_BODY' => prBody,
-  'PR_TITLE' => prTitle,
-  'BLANK' => blank,
-  _ => FullRepositoryMergeCommitMessage._(json),
-}; }
-
-static const FullRepositoryMergeCommitMessage prBody = FullRepositoryMergeCommitMessage._('PR_BODY');
-
-static const FullRepositoryMergeCommitMessage prTitle = FullRepositoryMergeCommitMessage._('PR_TITLE');
-
-static const FullRepositoryMergeCommitMessage blank = FullRepositoryMergeCommitMessage._('BLANK');
-
-static const List<FullRepositoryMergeCommitMessage> values = [prBody, prTitle, blank];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FullRepositoryMergeCommitMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FullRepositoryMergeCommitMessage($value)'; } 
- }
-/// Full Repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_of_conduct_simple.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_message.dart';import 'package:pub_github_rest_3_1/models/full_repository/squash_merge_commit_title.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/security_and_analysis.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Full Repository
 @immutable final class FullRepository {const FullRepository({required this.milestonesUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.id, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.watchers, required this.openIssues, required this.hasIssues, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.forks, required this.hasDiscussions, required this.license, required this.networkCount, required this.subscribersCount, required this.disabled, required this.updatedAt, required this.pushedAt, required this.createdAt, required this.archived, this.permissions, this.allowRebaseMerge, this.templateRepository, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowMergeCommit, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowForking, this.webCommitSignoffRequired, this.customProperties, this.pullRequestCreationPolicy, this.hasPullRequests, this.organization, this.parent, this.source, this.hasDownloads, this.masterBranch, this.topics, this.isTemplate, this.anonymousAccessEnabled = true, this.codeOfConduct, this.securityAndAnalysis, this.visibility, });
 
 factory FullRepository.fromJson(Map<String, dynamic> json) { return FullRepository(
@@ -217,14 +72,14 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   hasDownloads: json['has_downloads'] as bool?,
   hasDiscussions: json['has_discussions'] as bool,
   hasPullRequests: json['has_pull_requests'] as bool?,
-  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? FullRepositoryPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
+  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? PullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
   archived: json['archived'] as bool,
   disabled: json['disabled'] as bool,
   visibility: json['visibility'] as String?,
   pushedAt: DateTime.parse(json['pushed_at'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  permissions: json['permissions'] != null ? FullRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   allowRebaseMerge: json['allow_rebase_merge'] as bool?,
   templateRepository: json['template_repository'] != null ? Repository.fromJson(json['template_repository'] as Map<String, dynamic>) : null,
   tempCloneToken: json['temp_clone_token'] as String?,
@@ -234,10 +89,10 @@ factory FullRepository.fromJson(Map<String, dynamic> json) { return FullReposito
   allowMergeCommit: json['allow_merge_commit'] as bool?,
   allowUpdateBranch: json['allow_update_branch'] as bool?,
   useSquashPrTitleAsDefault: json['use_squash_pr_title_as_default'] as bool?,
-  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? FullRepositorySquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
-  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? FullRepositorySquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
-  mergeCommitTitle: json['merge_commit_title'] != null ? FullRepositoryMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
-  mergeCommitMessage: json['merge_commit_message'] != null ? FullRepositoryMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
+  squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? SquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
+  squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? SquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
+  mergeCommitTitle: json['merge_commit_title'] != null ? MergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
+  mergeCommitMessage: json['merge_commit_message'] != null ? MergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
   allowForking: json['allow_forking'] as bool?,
   webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   subscribersCount: (json['subscribers_count'] as num).toInt(),
@@ -394,7 +249,7 @@ final bool hasDiscussions;
 final bool? hasPullRequests;
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
-final FullRepositoryPullRequestCreationPolicy? pullRequestCreationPolicy;
+final PullRequestCreationPolicy? pullRequestCreationPolicy;
 
 final bool archived;
 
@@ -410,7 +265,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-final FullRepositoryPermissions? permissions;
+final CollaboratorPermissions? permissions;
 
 final bool? allowRebaseMerge;
 
@@ -434,27 +289,27 @@ final bool? useSquashPrTitleAsDefault;
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final FullRepositorySquashMergeCommitTitle? squashMergeCommitTitle;
+final SquashMergeCommitTitle? squashMergeCommitTitle;
 
 /// The default value for a squash merge commit message:
 /// 
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final FullRepositorySquashMergeCommitMessage? squashMergeCommitMessage;
+final SquashMergeCommitMessage? squashMergeCommitMessage;
 
 /// The default value for a merge commit title.
 /// 
 ///   - `PR_TITLE` - default to the pull request's title.
 ///   - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final FullRepositoryMergeCommitTitle? mergeCommitTitle;
+final MergeCommitTitle? mergeCommitTitle;
 
 /// The default value for a merge commit message.
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final FullRepositoryMergeCommitMessage? mergeCommitMessage;
+final MergeCommitMessage? mergeCommitMessage;
 
 final bool? allowForking;
 
@@ -672,7 +527,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('forks') && json['forks'] is num &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('watchers') && json['watchers'] is num; } 
-FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool Function()? hasDownloads, bool? hasDiscussions, bool Function()? hasPullRequests, FullRepositoryPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, DateTime? pushedAt, DateTime? createdAt, DateTime? updatedAt, FullRepositoryPermissions Function()? permissions, bool Function()? allowRebaseMerge, Repository? Function()? templateRepository, String? Function()? tempCloneToken, bool Function()? allowSquashMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowMergeCommit, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, FullRepositorySquashMergeCommitTitle Function()? squashMergeCommitTitle, FullRepositorySquashMergeCommitMessage Function()? squashMergeCommitMessage, FullRepositoryMergeCommitTitle Function()? mergeCommitTitle, FullRepositoryMergeCommitMessage Function()? mergeCommitMessage, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, int? subscribersCount, int? networkCount, LicenseSimple? Function()? license, SimpleUser? Function()? organization, Repository Function()? parent, Repository Function()? source, int? forks, String Function()? masterBranch, int? openIssues, int? watchers, bool Function()? anonymousAccessEnabled, CodeOfConductSimple Function()? codeOfConduct, SecurityAndAnalysis Function()? securityAndAnalysis, Map<String, dynamic> Function()? customProperties, }) { return FullRepository(
+FullRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool Function()? hasDownloads, bool? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, DateTime? pushedAt, DateTime? createdAt, DateTime? updatedAt, CollaboratorPermissions Function()? permissions, bool Function()? allowRebaseMerge, Repository? Function()? templateRepository, String? Function()? tempCloneToken, bool Function()? allowSquashMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowMergeCommit, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, SquashMergeCommitTitle Function()? squashMergeCommitTitle, SquashMergeCommitMessage Function()? squashMergeCommitMessage, MergeCommitTitle Function()? mergeCommitTitle, MergeCommitMessage Function()? mergeCommitMessage, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, int? subscribersCount, int? networkCount, LicenseSimple? Function()? license, SimpleUser? Function()? organization, Repository Function()? parent, Repository Function()? source, int? forks, String Function()? masterBranch, int? openIssues, int? watchers, bool Function()? anonymousAccessEnabled, CodeOfConductSimple Function()? codeOfConduct, SecurityAndAnalysis Function()? securityAndAnalysis, Map<String, dynamic> Function()? customProperties, }) { return FullRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_dpo_method.dart';import 'fine_tune_reinforcement_method.dart';import 'fine_tune_supervised_method.dart';/// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_method.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method.dart';import 'package:pub_openai/models/fine_tune_supervised_method.dart';/// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
 @immutable final class FineTuneMethodType {const FineTuneMethodType._(this.value);
 
 factory FineTuneMethodType.fromJson(String json) { return switch (json) {

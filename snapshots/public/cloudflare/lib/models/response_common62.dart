@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common62_result.dart';import 'smartshield_messages2.dart';@immutable final class ResponseCommon62 {const ResponseCommon62({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/smartshield_messages2.dart';@immutable final class ResponseCommon62 {const ResponseCommon62({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon62.fromJson(Map<String, dynamic> json) { return ResponseCommon62(
   errors: (json['errors'] as List<dynamic>).map((e) => SmartshieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ final List<SmartshieldMessages2> errors;
 
 final List<SmartshieldMessages2> messages;
 
-final ResponseCommon62Result result;
+final ResponseCommon33Result result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon62 copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, ResponseCommon62Result? result, bool? success, }) { return ResponseCommon62(
+ResponseCommon62 copyWith({List<SmartshieldMessages2>? errors, List<SmartshieldMessages2>? messages, ResponseCommon33Result? result, bool? success, }) { return ResponseCommon62(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

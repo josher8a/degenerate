@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_labels.dart';import 'issue_labels_variant2.dart';import 'issue_pull_request.dart';import 'issue_type.dart';import 'milestone.dart';import 'reaction_rollup.dart';import 'repository.dart';import 'simple_user.dart';import 'sub_issues_summary.dart';/// The reason for the current state
-@immutable final class IssueStateReason {const IssueStateReason._(this.value);
-
-factory IssueStateReason.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'reopened' => reopened,
-  'not_planned' => notPlanned,
-  'duplicate' => duplicate,
-  'null' => $null,
-  _ => IssueStateReason._(json),
-}; }
-
-static const IssueStateReason completed = IssueStateReason._('completed');
-
-static const IssueStateReason reopened = IssueStateReason._('reopened');
-
-static const IssueStateReason notPlanned = IssueStateReason._('not_planned');
-
-static const IssueStateReason duplicate = IssueStateReason._('duplicate');
-
-static const IssueStateReason $null = IssueStateReason._('null');
-
-static const List<IssueStateReason> values = [completed, reopened, notPlanned, duplicate, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssueStateReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssueStateReason($value)'; } 
- }
-/// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels.dart';import 'package:pub_github_rest_3_1/models/issue/issue_labels_variant2.dart';import 'package:pub_github_rest_3_1/models/issue/issue_pull_request.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';/// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
 @immutable final class Issue {const Issue({required this.user, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, required this.title, required this.id, required this.labels, required this.assignee, required this.milestone, required this.locked, required this.closedAt, required this.createdAt, required this.updatedAt, required this.comments, this.activeLockReason, this.pullRequest, this.assignees, this.body, this.stateReason, this.issueFieldValues, this.closedBy, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.repository, this.performedViaGithubApp, this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl, this.pinnedComment, this.issueDependenciesSummary, this.draft, });
 
 factory Issue.fromJson(Map<String, dynamic> json) { return Issue(

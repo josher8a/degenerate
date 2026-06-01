@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'component_value.dart';import 'currency.dart';import 'schemas_frequency.dart';import 'schemas_name.dart';/// The duration of the plan subscription.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/component_value.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/schemas_frequency.dart';import 'package:pub_cloudflare/models/schemas_name.dart';/// The duration of the plan subscription.
 extension type const Duration(double value) {
 factory Duration.fromJson(num json) => Duration(json.toDouble());
 

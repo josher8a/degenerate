@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_default_creator.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';@immutable final class StreamCreateInputRequest {const StreamCreateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input_default_creator.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_settings.dart';@immutable final class StreamCreateInputRequest {const StreamCreateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
 
 factory StreamCreateInputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateInputRequest(
   defaultCreator: json['defaultCreator'] != null ? StreamLiveInputDefaultCreator.fromJson(json['defaultCreator'] as String) : null,

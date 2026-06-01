@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'issuing_card_shipping_address_validation.dart';import 'issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
-@immutable final class IssuingCardShippingCarrier {const IssuingCardShippingCarrier._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
+@immutable final class Carrier {const Carrier._(this.value);
 
-factory IssuingCardShippingCarrier.fromJson(String json) { return switch (json) {
+factory Carrier.fromJson(String json) { return switch (json) {
   'dhl' => dhl,
   'fedex' => fedex,
   'royal_mail' => royalMail,
   'usps' => usps,
-  _ => IssuingCardShippingCarrier._(json),
+  _ => Carrier._(json),
 }; }
 
-static const IssuingCardShippingCarrier dhl = IssuingCardShippingCarrier._('dhl');
+static const Carrier dhl = Carrier._('dhl');
 
-static const IssuingCardShippingCarrier fedex = IssuingCardShippingCarrier._('fedex');
+static const Carrier fedex = Carrier._('fedex');
 
-static const IssuingCardShippingCarrier royalMail = IssuingCardShippingCarrier._('royal_mail');
+static const Carrier royalMail = Carrier._('royal_mail');
 
-static const IssuingCardShippingCarrier usps = IssuingCardShippingCarrier._('usps');
+static const Carrier usps = Carrier._('usps');
 
-static const List<IssuingCardShippingCarrier> values = [dhl, fedex, royalMail, usps];
+static const List<Carrier> values = [dhl, fedex, royalMail, usps];
 
 final String value;
 
@@ -27,37 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingCarrier && other.value == value; } 
+    other is Carrier && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingCarrier($value)'; } 
- }
-/// Shipment service, such as `standard` or `express`.
-@immutable final class IssuingCardShippingService {const IssuingCardShippingService._(this.value);
-
-factory IssuingCardShippingService.fromJson(String json) { return switch (json) {
-  'express' => express,
-  'priority' => priority,
-  'standard' => standard,
-  _ => IssuingCardShippingService._(json),
-}; }
-
-static const IssuingCardShippingService express = IssuingCardShippingService._('express');
-
-static const IssuingCardShippingService priority = IssuingCardShippingService._('priority');
-
-static const IssuingCardShippingService standard = IssuingCardShippingService._('standard');
-
-static const List<IssuingCardShippingService> values = [express, priority, standard];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingService($value)'; } 
+@override String toString() { return 'Carrier($value)'; } 
  }
 /// The delivery status of the card.
 @immutable final class IssuingCardShippingStatus {const IssuingCardShippingStatus._(this.value);
@@ -99,44 +71,19 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardShippingStatus($value)'; } 
  }
-/// Packaging options.
-@immutable final class IssuingCardShippingType {const IssuingCardShippingType._(this.value);
-
-factory IssuingCardShippingType.fromJson(String json) { return switch (json) {
-  'bulk' => bulk,
-  'individual' => individual,
-  _ => IssuingCardShippingType._(json),
-}; }
-
-static const IssuingCardShippingType bulk = IssuingCardShippingType._('bulk');
-
-static const IssuingCardShippingType individual = IssuingCardShippingType._('individual');
-
-static const List<IssuingCardShippingType> values = [bulk, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingType($value)'; } 
- }
 /// 
 @immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation, this.carrier, this.customs, this.eta, this.phoneNumber, this.requireSignature, this.status, this.trackingNumber, this.trackingUrl, });
 
 factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   addressValidation: json['address_validation'] != null ? IssuingCardShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
-  carrier: json['carrier'] != null ? IssuingCardShippingCarrier.fromJson(json['carrier'] as String) : null,
+  carrier: json['carrier'] != null ? Carrier.fromJson(json['carrier'] as String) : null,
   customs: json['customs'] != null ? IssuingCardShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null,
   eta: json['eta'] != null ? (json['eta'] as num).toInt() : null,
   name: json['name'] as String,
   phoneNumber: json['phone_number'] as String?,
   requireSignature: json['require_signature'] as bool?,
-  service: IssuingCardShippingService.fromJson(json['service'] as String),
+  service: Service.fromJson(json['service'] as String),
   status: json['status'] != null ? IssuingCardShippingStatus.fromJson(json['status'] as String) : null,
   trackingNumber: json['tracking_number'] as String?,
   trackingUrl: json['tracking_url'] as String?,
@@ -149,7 +96,7 @@ final Address address;
 final IssuingCardShippingAddressValidation? addressValidation;
 
 /// The delivery company that shipped a card.
-final IssuingCardShippingCarrier? carrier;
+final Carrier? carrier;
 
 /// Additional information that may be required for clearing customs.
 final IssuingCardShippingCustoms? customs;
@@ -167,7 +114,7 @@ final String? phoneNumber;
 final bool? requireSignature;
 
 /// Shipment service, such as `standard` or `express`.
-final IssuingCardShippingService service;
+final Service service;
 
 /// The delivery status of the card.
 final IssuingCardShippingStatus? status;
@@ -200,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('service') &&
       json.containsKey('type'); } 
-IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation? Function()? addressValidation, IssuingCardShippingCarrier? Function()? carrier, IssuingCardShippingCustoms? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, IssuingCardShippingService? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
+IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation? Function()? addressValidation, Carrier? Function()? carrier, IssuingCardShippingCustoms? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, Service? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
   address: address ?? this.address,
   addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
   carrier: carrier != null ? carrier() : this.carrier,

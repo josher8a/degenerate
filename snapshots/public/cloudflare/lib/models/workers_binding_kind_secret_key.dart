@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';/// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';/// Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).
 @immutable final class WorkersBindingKindSecretKeyFormat {const WorkersBindingKindSecretKeyFormat._(this.value);
 
 factory WorkersBindingKindSecretKeyFormat.fromJson(String json) { return switch (json) {
@@ -31,9 +31,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersBindingKindSecretKeyFormat($value)'; } 
  }
-@immutable final class WorkersBindingKindSecretKeyUsages {const WorkersBindingKindSecretKeyUsages._(this.value);
+@immutable final class Usages {const Usages._(this.value);
 
-factory WorkersBindingKindSecretKeyUsages.fromJson(String json) { return switch (json) {
+factory Usages.fromJson(String json) { return switch (json) {
   'encrypt' => encrypt,
   'decrypt' => decrypt,
   'sign' => sign,
@@ -42,26 +42,26 @@ factory WorkersBindingKindSecretKeyUsages.fromJson(String json) { return switch 
   'deriveBits' => deriveBits,
   'wrapKey' => wrapKey,
   'unwrapKey' => unwrapKey,
-  _ => WorkersBindingKindSecretKeyUsages._(json),
+  _ => Usages._(json),
 }; }
 
-static const WorkersBindingKindSecretKeyUsages encrypt = WorkersBindingKindSecretKeyUsages._('encrypt');
+static const Usages encrypt = Usages._('encrypt');
 
-static const WorkersBindingKindSecretKeyUsages decrypt = WorkersBindingKindSecretKeyUsages._('decrypt');
+static const Usages decrypt = Usages._('decrypt');
 
-static const WorkersBindingKindSecretKeyUsages sign = WorkersBindingKindSecretKeyUsages._('sign');
+static const Usages sign = Usages._('sign');
 
-static const WorkersBindingKindSecretKeyUsages verify = WorkersBindingKindSecretKeyUsages._('verify');
+static const Usages verify = Usages._('verify');
 
-static const WorkersBindingKindSecretKeyUsages deriveKey = WorkersBindingKindSecretKeyUsages._('deriveKey');
+static const Usages deriveKey = Usages._('deriveKey');
 
-static const WorkersBindingKindSecretKeyUsages deriveBits = WorkersBindingKindSecretKeyUsages._('deriveBits');
+static const Usages deriveBits = Usages._('deriveBits');
 
-static const WorkersBindingKindSecretKeyUsages wrapKey = WorkersBindingKindSecretKeyUsages._('wrapKey');
+static const Usages wrapKey = Usages._('wrapKey');
 
-static const WorkersBindingKindSecretKeyUsages unwrapKey = WorkersBindingKindSecretKeyUsages._('unwrapKey');
+static const Usages unwrapKey = Usages._('unwrapKey');
 
-static const List<WorkersBindingKindSecretKeyUsages> values = [encrypt, decrypt, sign, verify, deriveKey, deriveBits, wrapKey, unwrapKey];
+static const List<Usages> values = [encrypt, decrypt, sign, verify, deriveKey, deriveBits, wrapKey, unwrapKey];
 
 final String value;
 
@@ -69,9 +69,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingKindSecretKeyUsages && other.value == value; } 
+    other is Usages && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersBindingKindSecretKeyUsages($value)'; } 
+@override String toString() { return 'Usages($value)'; } 
  }
 @immutable final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, required this.name, required this.type, required this.usages, this.keyBase64, this.keyJwk, });
 
@@ -82,7 +82,7 @@ factory WorkersBindingKindSecretKey.fromJson(Map<String, dynamic> json) { return
   keyJwk: json['key_jwk'] as Map<String, dynamic>?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   type: json['type'] as String,
-  usages: (json['usages'] as List<dynamic>).map((e) => WorkersBindingKindSecretKeyUsages.fromJson(e as String)).toList(),
+  usages: (json['usages'] as List<dynamic>).map((e) => Usages.fromJson(e as String)).toList(),
 ); }
 
 /// Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).
@@ -103,7 +103,7 @@ final WorkersBindingName name;
 final String type;
 
 /// Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).
-final List<WorkersBindingKindSecretKeyUsages> usages;
+final List<Usages> usages;
 
 Map<String, dynamic> toJson() { return {
   'algorithm': algorithm,
@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('algor
       json.containsKey('name') &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('usages'); } 
-WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, dynamic> Function()? keyJwk, WorkersBindingName? name, String? type, List<WorkersBindingKindSecretKeyUsages>? usages, }) { return WorkersBindingKindSecretKey(
+WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String Function()? keyBase64, Map<String, dynamic> Function()? keyJwk, WorkersBindingName? name, String? type, List<Usages>? usages, }) { return WorkersBindingKindSecretKey(
   algorithm: algorithm ?? this.algorithm,
   format: format ?? this.format,
   keyBase64: keyBase64 != null ? keyBase64() : this.keyBase64,

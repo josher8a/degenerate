@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_apps_secrets_delete_request_scope.dart';@immutable final class PostAppsSecretsDeleteRequest {const PostAppsSecretsDeleteRequest({required this.name, required this.scope, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_apps_secrets_delete_request/post_apps_secrets_delete_request_scope.dart';@immutable final class PostAppsSecretsDeleteRequest {const PostAppsSecretsDeleteRequest({required this.name, required this.scope, this.expand, });
 
 factory PostAppsSecretsDeleteRequest.fromJson(Map<String, dynamic> json) { return PostAppsSecretsDeleteRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

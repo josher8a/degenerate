@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_livestream_analytics_complete_response_data.dart';@immutable final class GetLivestreamAnalyticsCompleteResponse {const GetLivestreamAnalyticsCompleteResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_livestream_analytics_complete_response/get_livestream_analytics_complete_response_data.dart';@immutable final class GetLivestreamAnalyticsCompleteResponse {const GetLivestreamAnalyticsCompleteResponse({this.data, this.success, });
 
 factory GetLivestreamAnalyticsCompleteResponse.fromJson(Map<String, dynamic> json) { return GetLivestreamAnalyticsCompleteResponse(
   data: json['data'] != null ? GetLivestreamAnalyticsCompleteResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

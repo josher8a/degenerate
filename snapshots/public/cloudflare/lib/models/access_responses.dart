@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_timestamp.dart';@immutable final class AccessResponses {const AccessResponses({this.cfResourceId, this.errorDescription, this.idpId, this.idpResourceId, this.loggedAt, this.requestBody, this.requestMethod, this.resourceGroupName, this.resourceType, this.resourceUserEmail, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessResponses {const AccessResponses({this.cfResourceId, this.errorDescription, this.idpId, this.idpResourceId, this.loggedAt, this.requestBody, this.requestMethod, this.resourceGroupName, this.resourceType, this.resourceUserEmail, this.status, });
 
 factory AccessResponses.fromJson(Map<String, dynamic> json) { return AccessResponses(
   cfResourceId: json['cf_resource_id'] as String?,

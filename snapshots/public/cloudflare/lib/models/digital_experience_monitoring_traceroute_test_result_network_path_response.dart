@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_result_network_path_response_hops.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse({required this.hops, required this.resultId, this.deviceName, this.testId, this.testName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_result_network_path_response/hops.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse({required this.hops, required this.resultId, this.deviceName, this.testId, this.testName, });
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
   deviceName: json['deviceName'] as String?,
-  hops: (json['hops'] as List<dynamic>).map((e) => DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops.fromJson(e as Map<String, dynamic>)).toList(),
+  hops: (json['hops'] as List<dynamic>).map((e) => Hops.fromJson(e as Map<String, dynamic>)).toList(),
   resultId: DigitalExperienceMonitoringUuid.fromJson(json['resultId'] as String),
   testId: json['testId'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['testId'] as String) : null,
   testName: json['testName'] as String?,
@@ -14,7 +14,7 @@ factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse.fromJ
 final String? deviceName;
 
 /// an array of the hops taken by the device to reach the end destination
-final List<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops> hops;
+final List<Hops> hops;
 
 final DigitalExperienceMonitoringUuid resultId;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hops') &&
       json.containsKey('resultId'); } 
-DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse copyWith({String Function()? deviceName, List<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops>? hops, DigitalExperienceMonitoringUuid? resultId, DigitalExperienceMonitoringUuid Function()? testId, String Function()? testName, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
+DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse copyWith({String Function()? deviceName, List<Hops>? hops, DigitalExperienceMonitoringUuid? resultId, DigitalExperienceMonitoringUuid Function()? testId, String Function()? testName, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   hops: hops ?? this.hops,
   resultId: resultId ?? this.resultId,

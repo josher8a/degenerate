@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'compact_response_method_public_body_input.dart';import 'input_item.dart';import 'model_ids_compaction.dart';import 'model_ids_responses.dart';import 'model_ids_shared.dart';@immutable final class CompactResponseMethodPublicBody {const CompactResponseMethodPublicBody({required this.model, this.input, this.previousResponseId, this.instructions, this.promptCacheKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_compaction.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';@immutable final class CompactResponseMethodPublicBody {const CompactResponseMethodPublicBody({required this.model, this.input, this.previousResponseId, this.instructions, this.promptCacheKey, });
 
 factory CompactResponseMethodPublicBody.fromJson(Map<String, dynamic> json) { return CompactResponseMethodPublicBody(
   model: OneOf3.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),), fromB: (v) => v as String, fromC: (v) => v,),

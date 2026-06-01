@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_r2_table_public_file_naming.dart';import 'cloudflare_pipelines_r2_table_public_partitioning.dart';import 'cloudflare_pipelines_r2_table_public_rolling_policy.dart';/// R2 Sink public configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/file_naming.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/partitioning.dart';/// R2 Sink public configuration.
 @immutable final class CloudflarePipelinesR2TablePublic {const CloudflarePipelinesR2TablePublic({required this.accountId, required this.bucket, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 
 factory CloudflarePipelinesR2TablePublic.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePublic(
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
-  fileNaming: json['file_naming'] != null ? CloudflarePipelinesR2TablePublicFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
+  fileNaming: json['file_naming'] != null ? FileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
   jurisdiction: json['jurisdiction'] as String?,
-  partitioning: json['partitioning'] != null ? CloudflarePipelinesR2TablePublicPartitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
+  partitioning: json['partitioning'] != null ? Partitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
-  rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2TablePublicRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
+  rollingPolicy: json['rolling_policy'] != null ? RollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Cloudflare Account ID for the bucket
@@ -20,19 +20,19 @@ final String accountId;
 final String bucket;
 
 /// Controls filename prefix/suffix and strategy.
-final CloudflarePipelinesR2TablePublicFileNaming? fileNaming;
+final FileNaming? fileNaming;
 
 /// Jurisdiction this bucket is hosted in
 final String? jurisdiction;
 
 /// Data-layout partitioning for sinks.
-final CloudflarePipelinesR2TablePublicPartitioning? partitioning;
+final Partitioning? partitioning;
 
 /// Subpath within the bucket to write to
 final String? path;
 
 /// Rolling policy for file sinks (when & why to close a file and open a new one).
-final CloudflarePipelinesR2TablePublicRollingPolicy? rollingPolicy;
+final RollingPolicy? rollingPolicy;
 
 Map<String, dynamic> toJson() { return {
   'account_id': accountId,
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
       json.containsKey('bucket') && json['bucket'] is String; } 
-CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TablePublicFileNaming Function()? fileNaming, String Function()? jurisdiction, CloudflarePipelinesR2TablePublicPartitioning Function()? partitioning, String Function()? path, CloudflarePipelinesR2TablePublicRollingPolicy Function()? rollingPolicy, }) { return CloudflarePipelinesR2TablePublic(
+CloudflarePipelinesR2TablePublic copyWith({String? accountId, String? bucket, FileNaming Function()? fileNaming, String Function()? jurisdiction, Partitioning Function()? partitioning, String Function()? path, RollingPolicy Function()? rollingPolicy, }) { return CloudflarePipelinesR2TablePublic(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   fileNaming: fileNaming != null ? fileNaming() : this.fileNaming,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common78_result.dart';import '../models/web3_content_list_details.dart';import '../models/web3_content_list_entry.dart';import '../models/web3_content_list_entry_collection_response_result.dart';import '../models/web3_content_list_entry_create_request.dart';import '../models/web3_content_list_update_request.dart';import '../models/web3_create_request.dart';import '../models/web3_identifier.dart';import '../models/web3_modify_request.dart';import '../models/web3_web3_hostname.dart';/// Web3HostnameApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/web3_content_list_details.dart';import 'package:pub_cloudflare/models/web3_content_list_entry.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_collection_response/web3_content_list_entry_collection_response_result.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_create_request.dart';import 'package:pub_cloudflare/models/web3_content_list_update_request.dart';import 'package:pub_cloudflare/models/web3_create_request.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_modify_request.dart';import 'package:pub_cloudflare/models/web3_web3_hostname.dart';/// Web3HostnameApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -95,7 +95,7 @@ return execute(
 /// Delete Web3 Hostname
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78Result, Never>> web3HostnameDeleteWeb3Hostname({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> web3HostnameDeleteWeb3Hostname({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -241,7 +241,7 @@ return execute(
 /// Delete IPFS Universal Path Gateway Content List Entry
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78Result, Never>> web3HostnameDeleteIpfsUniversalPathGatewayContentListEntry({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> web3HostnameDeleteIpfsUniversalPathGatewayContentListEntry({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',

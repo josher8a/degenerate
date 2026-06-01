@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallBypass2Name {const FirewallBypass2Name._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallBypassName {const FirewallBypassName._(this.value);
 
-factory FirewallBypass2Name.fromJson(String json) { return switch (json) {
+factory FirewallBypassName.fromJson(String json) { return switch (json) {
   'url' => url,
-  _ => FirewallBypass2Name._(json),
+  _ => FirewallBypassName._(json),
 }; }
 
-static const FirewallBypass2Name url = FirewallBypass2Name._('url');
+static const FirewallBypassName url = FirewallBypassName._('url');
 
-static const List<FirewallBypass2Name> values = [url];
+static const List<FirewallBypassName> values = [url];
 
 final String value;
 
@@ -17,18 +17,18 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallBypass2Name && other.value == value; } 
+    other is FirewallBypassName && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallBypass2Name($value)'; } 
+@override String toString() { return 'FirewallBypassName($value)'; } 
  }
 @immutable final class FirewallBypass2 {const FirewallBypass2({this.name, this.value, });
 
 factory FirewallBypass2.fromJson(Map<String, dynamic> json) { return FirewallBypass2(
-  name: json['name'] != null ? FirewallBypass2Name.fromJson(json['name'] as String) : null,
+  name: json['name'] != null ? FirewallBypassName.fromJson(json['name'] as String) : null,
   value: json['value'] as String?,
 ); }
 
-final FirewallBypass2Name? name;
+final FirewallBypassName? name;
 
 /// The URL to bypass.
 final String? value;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
-FirewallBypass2 copyWith({FirewallBypass2Name Function()? name, String Function()? value, }) { return FirewallBypass2(
+FirewallBypass2 copyWith({FirewallBypassName Function()? name, String Function()? value, }) { return FirewallBypass2(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 

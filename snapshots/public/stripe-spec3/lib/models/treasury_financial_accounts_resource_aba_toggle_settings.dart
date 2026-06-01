@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-@immutable final class TreasuryFinancialAccountsResourceAbaToggleSettingsStatus {const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._(this.value);
-
-factory TreasuryFinancialAccountsResourceAbaToggleSettingsStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'pending' => pending,
-  'restricted' => restricted,
-  _ => TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._(json),
-}; }
-
-static const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus active = TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._('active');
-
-static const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus pending = TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._('pending');
-
-static const TreasuryFinancialAccountsResourceAbaToggleSettingsStatus restricted = TreasuryFinancialAccountsResourceAbaToggleSettingsStatus._('restricted');
-
-static const List<TreasuryFinancialAccountsResourceAbaToggleSettingsStatus> values = [active, pending, restricted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceAbaToggleSettingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceAbaToggleSettingsStatus($value)'; } 
- }
-/// Toggle settings for enabling/disabling the ABA address feature
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings/treasury_financial_accounts_resource_aba_toggle_settings_status.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Toggle settings for enabling/disabling the ABA address feature
 @immutable final class TreasuryFinancialAccountsResourceAbaToggleSettings {const TreasuryFinancialAccountsResourceAbaToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceAbaToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceAbaToggleSettings(

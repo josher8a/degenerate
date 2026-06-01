@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'locked.dart';/// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/locked.dart';/// Auto-renew controls whether subscription is automatically renewed upon domain expiration.
 extension type const AutoRenew(bool value) {
 factory AutoRenew.fromJson(bool json) => AutoRenew(json);
 

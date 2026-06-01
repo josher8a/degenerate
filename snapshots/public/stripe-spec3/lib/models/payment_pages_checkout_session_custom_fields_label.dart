@@ -1,47 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the label.
-@immutable final class PaymentPagesCheckoutSessionCustomFieldsLabelType {const PaymentPagesCheckoutSessionCustomFieldsLabelType._(this.value);
-
-factory PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => PaymentPagesCheckoutSessionCustomFieldsLabelType._(json),
-}; }
-
-static const PaymentPagesCheckoutSessionCustomFieldsLabelType custom = PaymentPagesCheckoutSessionCustomFieldsLabelType._('custom');
-
-static const List<PaymentPagesCheckoutSessionCustomFieldsLabelType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionCustomFieldsLabelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsLabelType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label/payment_links_resource_custom_fields_label_type.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom, });
 
 factory PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
   custom: json['custom'] as String?,
-  type: PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(json['type'] as String),
+  type: PaymentLinksResourceCustomFieldsLabelType.fromJson(json['type'] as String),
 ); }
 
 /// Custom text for the label, displayed to the customer. Up to 50 characters.
 final String? custom;
 
 /// The type of the label.
-final PaymentPagesCheckoutSessionCustomFieldsLabelType type;
+final PaymentLinksResourceCustomFieldsLabelType type;
 
 Map<String, dynamic> toJson() { return {
   'custom': ?custom,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({String? Function()? custom, PaymentPagesCheckoutSessionCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
+PaymentPagesCheckoutSessionCustomFieldsLabel copyWith({String? Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
   custom: custom != null ? custom() : this.custom,
   type: type ?? this.type,
 ); } 

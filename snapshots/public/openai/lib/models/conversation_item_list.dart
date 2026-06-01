@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation_item.dart';/// The type of object returned, must be `list`.
-@immutable final class ConversationItemListObject {const ConversationItemListObject._(this.value);
-
-factory ConversationItemListObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ConversationItemListObject._(json),
-}; }
-
-static const ConversationItemListObject list = ConversationItemListObject._('list');
-
-static const List<ConversationItemListObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConversationItemListObject($value)'; } 
- }
-/// A list of Conversation items.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/conversation_item.dart';/// A list of Conversation items.
 @immutable final class ConversationItemList {const ConversationItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
 factory ConversationItemList.fromJson(Map<String, dynamic> json) { return ConversationItemList(
-  object: ConversationItemListObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   firstId: json['first_id'] as String,
@@ -34,7 +12,7 @@ factory ConversationItemList.fromJson(Map<String, dynamic> json) { return Conver
 ); }
 
 /// The type of object returned, must be `list`.
-final ConversationItemListObject object;
+final ChatCompletionListObject object;
 
 /// A list of conversation items.
 final List<ConversationItem> data;
@@ -60,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String; } 
-ConversationItemList copyWith({ConversationItemListObject? object, List<ConversationItem>? data, bool? hasMore, String? firstId, String? lastId, }) { return ConversationItemList(
+ConversationItemList copyWith({ChatCompletionListObject? object, List<ConversationItem>? data, bool? hasMore, String? firstId, String? lastId, }) { return ConversationItemList(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

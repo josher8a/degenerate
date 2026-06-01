@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'approximate_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
 
 factory SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,

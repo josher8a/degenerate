@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'context_management_param.dart';import 'conversation_param.dart';import 'create_response.dart';import 'include_enum.dart';import 'input_param.dart';import 'response_stream_options.dart';/// Client events accepted by the Responses WebSocket server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/create_response.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/response_stream_options.dart';/// Client events accepted by the Responses WebSocket server.
 /// 
 sealed class ResponsesClientEvent {const ResponsesClientEvent();
 

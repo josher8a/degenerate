@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'remove_reason.dart';
+import 'package:pub_totem_mobile/models/remove_reason.dart';
 
 @immutable
 final class RemoveParticipantPayload {

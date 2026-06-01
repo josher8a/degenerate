@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_update_response400_errors.dart';import 'destination_update_response400_messages.dart';@immutable final class DestinationUpdateResponse400 {const DestinationUpdateResponse400({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';@immutable final class DestinationUpdateResponse400 {const DestinationUpdateResponse400({required this.errors, required this.messages, required this.success, });
 
 factory DestinationUpdateResponse400.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => DestinationUpdateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => DestinationUpdateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => DestinationCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<DestinationUpdateResponse400Errors> errors;
+final List<DestinationCreateResponse400Errors> errors;
 
-final List<DestinationUpdateResponse400Messages> messages;
+final List<DestinationCreateResponse400Messages> messages;
 
 final bool success;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DestinationUpdateResponse400 copyWith({List<DestinationUpdateResponse400Errors>? errors, List<DestinationUpdateResponse400Messages>? messages, bool? success, }) { return DestinationUpdateResponse400(
+DestinationUpdateResponse400 copyWith({List<DestinationCreateResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, bool? success, }) { return DestinationUpdateResponse400(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

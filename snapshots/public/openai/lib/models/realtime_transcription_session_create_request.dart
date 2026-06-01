@@ -1,66 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'realtime_transcription_session_create_request_input_audio_noise_reduction.dart';import 'realtime_transcription_session_create_request_turn_detection.dart';/// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-/// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
-/// single channel (mono), and little-endian byte order.
-/// 
-@immutable final class RealtimeTranscriptionSessionCreateRequestInputAudioFormat {const RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(this.value);
-
-factory RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(String json) { return switch (json) {
-  'pcm16' => pcm16,
-  'g711_ulaw' => g711Ulaw,
-  'g711_alaw' => g711Alaw,
-  _ => RealtimeTranscriptionSessionCreateRequestInputAudioFormat._(json),
-}; }
-
-static const RealtimeTranscriptionSessionCreateRequestInputAudioFormat pcm16 = RealtimeTranscriptionSessionCreateRequestInputAudioFormat._('pcm16');
-
-static const RealtimeTranscriptionSessionCreateRequestInputAudioFormat g711Ulaw = RealtimeTranscriptionSessionCreateRequestInputAudioFormat._('g711_ulaw');
-
-static const RealtimeTranscriptionSessionCreateRequestInputAudioFormat g711Alaw = RealtimeTranscriptionSessionCreateRequestInputAudioFormat._('g711_alaw');
-
-static const List<RealtimeTranscriptionSessionCreateRequestInputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionSessionCreateRequestInputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInputAudioFormat($value)'; } 
- }
-@immutable final class RealtimeTranscriptionSessionCreateRequestInclude {const RealtimeTranscriptionSessionCreateRequestInclude._(this.value);
-
-factory RealtimeTranscriptionSessionCreateRequestInclude.fromJson(String json) { return switch (json) {
-  'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
-  _ => RealtimeTranscriptionSessionCreateRequestInclude._(json),
-}; }
-
-static const RealtimeTranscriptionSessionCreateRequestInclude itemInputAudioTranscriptionLogprobs = RealtimeTranscriptionSessionCreateRequestInclude._('item.input_audio_transcription.logprobs');
-
-static const List<RealtimeTranscriptionSessionCreateRequestInclude> values = [itemInputAudioTranscriptionLogprobs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionSessionCreateRequestInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInclude($value)'; } 
- }
-/// Realtime transcription session object configuration.
-@immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request/realtime_transcription_session_create_request_turn_detection.dart';/// Realtime transcription session object configuration.
+@immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = InputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
 
 factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
-  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
-  inputAudioFormat: json.containsKey('input_audio_format') ? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(json['input_audio_format'] as String) : RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16,
+  inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? InputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
+  inputAudioFormat: json.containsKey('input_audio_format') ? InputAudioFormat.fromJson(json['input_audio_format'] as String) : InputAudioFormat.pcm16,
   inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateRequestInclude.fromJson(e as String)).toList(),
+  include: (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(),
 ); }
 
 /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
@@ -71,13 +19,13 @@ final RealtimeTranscriptionSessionCreateRequestTurnDetection? turnDetection;
 /// Noise reduction filters audio added to the input audio buffer before it is sent to VAD and the model.
 /// Filtering the audio can improve VAD and turn detection accuracy (reducing false positives) and model performance by improving perception of the input audio.
 /// 
-final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAudioNoiseReduction;
+final InputAudioNoiseReduction? inputAudioNoiseReduction;
 
 /// The format of input audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
-final RealtimeTranscriptionSessionCreateRequestInputAudioFormat inputAudioFormat;
+final InputAudioFormat inputAudioFormat;
 
 /// Configuration for input audio transcription. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
 /// 
@@ -86,7 +34,7 @@ final AudioTranscription? inputAudioTranscription;
 /// The set of items to include in the transcription. Current available items are:
 /// `item.input_audio_transcription.logprobs`
 /// 
-final List<RealtimeTranscriptionSessionCreateRequestInclude>? include;
+final List<Include>? include;
 
 Map<String, dynamic> toJson() { return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
@@ -96,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'turn_detection', 'input_audio_noise_reduction', 'input_audio_format', 'input_audio_transcription', 'include'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude> Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
+RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection Function()? turnDetection, InputAudioNoiseReduction Function()? inputAudioNoiseReduction, InputAudioFormat Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, List<Include> Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,

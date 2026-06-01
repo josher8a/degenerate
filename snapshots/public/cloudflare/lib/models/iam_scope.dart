@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_scope_object.dart';/// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
 extension type IamScopeKey(dynamic value) {
 factory IamScopeKey.fromJson(dynamic json) => IamScopeKey(json);
 

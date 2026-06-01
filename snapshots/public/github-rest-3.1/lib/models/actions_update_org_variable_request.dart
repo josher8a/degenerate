@@ -1,39 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-@immutable final class ActionsUpdateOrgVariableRequestVisibility {const ActionsUpdateOrgVariableRequestVisibility._(this.value);
-
-factory ActionsUpdateOrgVariableRequestVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => ActionsUpdateOrgVariableRequestVisibility._(json),
-}; }
-
-static const ActionsUpdateOrgVariableRequestVisibility all = ActionsUpdateOrgVariableRequestVisibility._('all');
-
-static const ActionsUpdateOrgVariableRequestVisibility private = ActionsUpdateOrgVariableRequestVisibility._('private');
-
-static const ActionsUpdateOrgVariableRequestVisibility selected = ActionsUpdateOrgVariableRequestVisibility._('selected');
-
-static const List<ActionsUpdateOrgVariableRequestVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsUpdateOrgVariableRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsUpdateOrgVariableRequestVisibility($value)'; } 
- }
-@immutable final class ActionsUpdateOrgVariableRequest {const ActionsUpdateOrgVariableRequest({this.name, this.value, this.visibility, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsUpdateOrgVariableRequest {const ActionsUpdateOrgVariableRequest({this.name, this.value, this.visibility, this.selectedRepositoryIds, });
 
 factory ActionsUpdateOrgVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateOrgVariableRequest(
   name: json['name'] as String?,
   value: json['value'] as String?,
-  visibility: json['visibility'] != null ? ActionsUpdateOrgVariableRequestVisibility.fromJson(json['visibility'] as String) : null,
+  visibility: json['visibility'] != null ? ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String) : null,
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
 
@@ -44,7 +16,7 @@ final String? name;
 final String? value;
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-final ActionsUpdateOrgVariableRequestVisibility? visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility;
 
 /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
 final List<int>? selectedRepositoryIds;
@@ -56,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value', 'visibility', 'selected_repository_ids'}.contains(key)); } 
-ActionsUpdateOrgVariableRequest copyWith({String Function()? name, String Function()? value, ActionsUpdateOrgVariableRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsUpdateOrgVariableRequest(
+ActionsUpdateOrgVariableRequest copyWith({String Function()? name, String Function()? value, ActionsCreateOrUpdateOrgSecretRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsUpdateOrgVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
   visibility: visibility != null ? visibility() : this.visibility,

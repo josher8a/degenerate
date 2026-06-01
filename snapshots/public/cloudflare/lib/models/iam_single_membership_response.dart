@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership.dart';@immutable final class IamSingleMembershipResponse {const IamSingleMembershipResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_membership.dart';@immutable final class IamSingleMembershipResponse {const IamSingleMembershipResponse({this.result});
 
 factory IamSingleMembershipResponse.fromJson(Map<String, dynamic> json) { return IamSingleMembershipResponse(
   result: json['result'] != null ? IamMembership.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_configuration.dart';import 'single_select_options.dart';/// The field's data type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field/field_configuration.dart';import 'package:pub_github_rest_3_1/models/single_select_options.dart';/// The field's data type.
 @immutable final class FieldDataType {const FieldDataType._(this.value);
 
 factory FieldDataType.fromJson(String json) { return switch (json) {

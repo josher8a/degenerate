@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs_networks.dart';@immutable final class CreditCardSpecs {const CreditCardSpecs({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, this.name, this.networks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_details_params/card_details_params_networks.dart';@immutable final class credit_card_specs {const credit_card_specs({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.currency, this.cvc, this.name, this.networks, });
 
-factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardSpecs(
+factory credit_card_specs.fromJson(Map<String, dynamic> json) { return credit_card_specs(
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -14,7 +14,7 @@ factory CreditCardSpecs.fromJson(Map<String, dynamic> json) { return CreditCardS
   expMonth: json['exp_month'] as String,
   expYear: json['exp_year'] as String,
   name: json['name'] as String?,
-  networks: json['networks'] != null ? CreditCardSpecsNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? card_details_paramsNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   number: json['number'] as String,
 ); }
 
@@ -40,7 +40,7 @@ final String expYear;
 
 final String? name;
 
-final CreditCardSpecsNetworks? networks;
+final card_details_paramsNetworks? networks;
 
 final String number;
 
@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is String &&
       json.containsKey('exp_year') && json['exp_year'] is String &&
       json.containsKey('number') && json['number'] is String; } 
-CreditCardSpecs copyWith({String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? currency, String Function()? cvc, String? expMonth, String? expYear, String Function()? name, CreditCardSpecsNetworks Function()? networks, String? number, }) { return CreditCardSpecs(
+credit_card_specs copyWith({String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? currency, String Function()? cvc, String? expMonth, String? expYear, String Function()? name, card_details_paramsNetworks Function()? networks, String? number, }) { return credit_card_specs(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
   addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
@@ -78,7 +78,7 @@ CreditCardSpecs copyWith({String Function()? addressCity, String Function()? add
   number: number ?? this.number,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is CreditCardSpecs &&
+      other is credit_card_specs &&
           addressCity == other.addressCity &&
           addressCountry == other.addressCountry &&
           addressLine1 == other.addressLine1 &&
@@ -93,5 +93,5 @@ CreditCardSpecs copyWith({String Function()? addressCity, String Function()? add
           networks == other.networks &&
           number == other.number; } 
 @override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number); } 
-@override String toString() { return 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)'; } 
+@override String toString() { return 'credit_card_specs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)'; } 
  }

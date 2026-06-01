@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origin Cache Control is enabled by default for Free, Pro, and
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Origin Cache Control is enabled by default for Free, Pro, and
 /// Business domains and disabled by default for Enterprise domains.
 /// 
 @immutable final class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId._(this.value);
@@ -24,37 +24,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesExplicitCacheControlId($value)'; } 
  }
-/// The status of Origin Cache Control.
-/// 
-@immutable final class ZonesExplicitCacheControlValue {const ZonesExplicitCacheControlValue._(this.value);
-
-factory ZonesExplicitCacheControlValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => ZonesExplicitCacheControlValue._(json),
-}; }
-
-static const ZonesExplicitCacheControlValue $on = ZonesExplicitCacheControlValue._('on');
-
-static const ZonesExplicitCacheControlValue off = ZonesExplicitCacheControlValue._('off');
-
-static const List<ZonesExplicitCacheControlValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesExplicitCacheControlValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesExplicitCacheControlValue($value)'; } 
- }
 @immutable final class ZonesExplicitCacheControl {const ZonesExplicitCacheControl({this.id, this.value, });
 
 factory ZonesExplicitCacheControl.fromJson(Map<String, dynamic> json) { return ZonesExplicitCacheControl(
   id: json['id'] != null ? ZonesExplicitCacheControlId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesExplicitCacheControlValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Origin Cache Control is enabled by default for Free, Pro, and
@@ -64,14 +38,14 @@ final ZonesExplicitCacheControlId? id;
 
 /// The status of Origin Cache Control.
 /// 
-final ZonesExplicitCacheControlValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesExplicitCacheControl copyWith({ZonesExplicitCacheControlId Function()? id, ZonesExplicitCacheControlValue Function()? value, }) { return ZonesExplicitCacheControl(
+ZonesExplicitCacheControl copyWith({ZonesExplicitCacheControlId Function()? id, CacheRulesSmartTieredCachePatchValue Function()? value, }) { return ZonesExplicitCacheControl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

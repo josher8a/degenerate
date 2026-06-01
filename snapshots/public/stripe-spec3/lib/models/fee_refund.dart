@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'fee_refund_balance_transaction.dart';import 'fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FeeRefundObject {const FeeRefundObject._(this.value);
 
 factory FeeRefundObject.fromJson(String json) { return switch (json) {

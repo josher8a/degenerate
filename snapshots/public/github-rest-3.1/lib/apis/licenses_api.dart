@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_scanning_ref.dart';import '../models/license.dart';import '../models/license_content.dart';import '../models/license_simple.dart';/// LicensesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';import 'package:pub_github_rest_3_1/models/license.dart';import 'package:pub_github_rest_3_1/models/license_content.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';/// LicensesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

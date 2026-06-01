@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningScanCompletedAction {const WebhookSecretScanningScanCompletedAction._(this.value);
-
-factory WebhookSecretScanningScanCompletedAction.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  _ => WebhookSecretScanningScanCompletedAction._(json),
-}; }
-
-static const WebhookSecretScanningScanCompletedAction completed = WebhookSecretScanningScanCompletedAction._('completed');
-
-static const List<WebhookSecretScanningScanCompletedAction> values = [completed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningScanCompletedAction($value)'; } 
- }
-/// What type of scan was completed
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_completed/webhook_check_run_completed_action.dart';/// What type of scan was completed
 @immutable final class WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType._(this.value);
 
 factory WebhookSecretScanningScanCompletedType.fromJson(String json) { return switch (json) {
@@ -84,25 +63,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookSecretScanningScanCompletedSource($value)'; } 
  }
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
-@immutable final class WebhookSecretScanningScanCompletedCustomPatternScope {const WebhookSecretScanningScanCompletedCustomPatternScope._(this.value);
+@immutable final class CustomPatternScope {const CustomPatternScope._(this.value);
 
-factory WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(String json) { return switch (json) {
+factory CustomPatternScope.fromJson(String json) { return switch (json) {
   'repository' => repository,
   'organization' => organization,
   'enterprise' => enterprise,
   'null' => $null,
-  _ => WebhookSecretScanningScanCompletedCustomPatternScope._(json),
+  _ => CustomPatternScope._(json),
 }; }
 
-static const WebhookSecretScanningScanCompletedCustomPatternScope repository = WebhookSecretScanningScanCompletedCustomPatternScope._('repository');
+static const CustomPatternScope repository = CustomPatternScope._('repository');
 
-static const WebhookSecretScanningScanCompletedCustomPatternScope organization = WebhookSecretScanningScanCompletedCustomPatternScope._('organization');
+static const CustomPatternScope organization = CustomPatternScope._('organization');
 
-static const WebhookSecretScanningScanCompletedCustomPatternScope enterprise = WebhookSecretScanningScanCompletedCustomPatternScope._('enterprise');
+static const CustomPatternScope enterprise = CustomPatternScope._('enterprise');
 
-static const WebhookSecretScanningScanCompletedCustomPatternScope $null = WebhookSecretScanningScanCompletedCustomPatternScope._('null');
+static const CustomPatternScope $null = CustomPatternScope._('null');
 
-static const List<WebhookSecretScanningScanCompletedCustomPatternScope> values = [repository, organization, enterprise, $null];
+static const List<CustomPatternScope> values = [repository, organization, enterprise, $null];
 
 final String value;
 
@@ -110,21 +89,21 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedCustomPatternScope && other.value == value; } 
+    other is CustomPatternScope && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningScanCompletedCustomPatternScope($value)'; } 
+@override String toString() { return 'CustomPatternScope($value)'; } 
  }
 @immutable final class WebhookSecretScanningScanCompleted {const WebhookSecretScanningScanCompleted({required this.action, required this.type, required this.source, required this.startedAt, required this.completedAt, this.secretTypes, this.customPatternName, this.customPatternScope, this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningScanCompleted.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningScanCompleted(
-  action: WebhookSecretScanningScanCompletedAction.fromJson(json['action'] as String),
+  action: WebhookCheckRunCompletedAction.fromJson(json['action'] as String),
   type: WebhookSecretScanningScanCompletedType.fromJson(json['type'] as String),
   source: WebhookSecretScanningScanCompletedSource.fromJson(json['source'] as String),
   startedAt: DateTime.parse(json['started_at'] as String),
   completedAt: DateTime.parse(json['completed_at'] as String),
   secretTypes: (json['secret_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   customPatternName: json['custom_pattern_name'] as String?,
-  customPatternScope: json['custom_pattern_scope'] != null ? WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(json['custom_pattern_scope'] as String) : null,
+  customPatternScope: json['custom_pattern_scope'] != null ? CustomPatternScope.fromJson(json['custom_pattern_scope'] as String) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -132,7 +111,7 @@ factory WebhookSecretScanningScanCompleted.fromJson(Map<String, dynamic> json) {
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookSecretScanningScanCompletedAction action;
+final WebhookCheckRunCompletedAction action;
 
 /// What type of scan was completed
 final WebhookSecretScanningScanCompletedType type;
@@ -153,7 +132,7 @@ final List<String>? secretTypes;
 final String? customPatternName;
 
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
-final WebhookSecretScanningScanCompletedCustomPatternScope? customPatternScope;
+final CustomPatternScope? customPatternScope;
 
 final RepositoryWebhooks? repository;
 
@@ -185,7 +164,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('source') &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('completed_at') && json['completed_at'] is String; } 
-WebhookSecretScanningScanCompleted copyWith({WebhookSecretScanningScanCompletedAction? action, WebhookSecretScanningScanCompletedType? type, WebhookSecretScanningScanCompletedSource? source, DateTime? startedAt, DateTime? completedAt, List<String>? Function()? secretTypes, String? Function()? customPatternName, WebhookSecretScanningScanCompletedCustomPatternScope? Function()? customPatternScope, RepositoryWebhooks Function()? repository, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookSecretScanningScanCompleted(
+WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? action, WebhookSecretScanningScanCompletedType? type, WebhookSecretScanningScanCompletedSource? source, DateTime? startedAt, DateTime? completedAt, List<String>? Function()? secretTypes, String? Function()? customPatternName, CustomPatternScope? Function()? customPatternScope, RepositoryWebhooks Function()? repository, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookSecretScanningScanCompleted(
   action: action ?? this.action,
   type: type ?? this.type,
   source: source ?? this.source,

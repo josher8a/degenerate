@@ -1,38 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectCreatedAction {const ProjectCreatedAction._(this.value);
-
-factory ProjectCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => ProjectCreatedAction._(json),
-}; }
-
-static const ProjectCreatedAction created = ProjectCreatedAction._('created');
-
-static const List<ProjectCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectCreatedAction($value)'; } 
- }
-/// A project was created
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/projects.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A project was created
 @immutable final class ProjectCreated {const ProjectCreated({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectCreated.fromJson(Map<String, dynamic> json) { return ProjectCreated(
-  action: ProjectCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2: Projects.fromJson(json['projects_v2'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final ProjectCreatedAction action;
+final ItemCreatedAction action;
 
 final SimpleInstallation? installation;
 
@@ -53,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('projects_v2') &&
       json.containsKey('sender'); } 
-ProjectCreated copyWith({ProjectCreatedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectCreated(
+ProjectCreated copyWith({ItemCreatedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectCreated(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,

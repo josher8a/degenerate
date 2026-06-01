@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
 @immutable final class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType._(this.value);
 
 factory BillingCreditGrantsResourceBalanceDebitType.fromJson(String json) { return switch (json) {

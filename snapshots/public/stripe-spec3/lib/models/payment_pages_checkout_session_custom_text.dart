@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_custom_text_position.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_text_position.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomText {const PaymentPagesCheckoutSessionCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentPagesCheckoutSessionCustomText.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomText(

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data.dart';import 'urlscanner_get_scan_response2_lists.dart';import 'urlscanner_get_scan_response2_meta.dart';import 'urlscanner_get_scan_response2_page.dart';import 'urlscanner_get_scan_response2_scanner.dart';import 'urlscanner_get_scan_response2_stats.dart';import 'urlscanner_get_scan_response2_task.dart';import 'urlscanner_get_scan_response2_verdicts.dart';@immutable final class UrlscannerGetScanResponse2 {const UrlscannerGetScanResponse2({required this.data, required this.lists, required this.meta, required this.page, required this.scanner, required this.stats, required this.task, required this.verdicts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/lists.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/scanner.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_data.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_meta.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_page.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_stats.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_task.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_response2/urlscanner_get_scan_response2_verdicts.dart';@immutable final class UrlscannerGetScanResponse2 {const UrlscannerGetScanResponse2({required this.data, required this.lists, required this.meta, required this.page, required this.scanner, required this.stats, required this.task, required this.verdicts, });
 
 factory UrlscannerGetScanResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2(
   data: UrlscannerGetScanResponse2Data.fromJson(json['data'] as Map<String, dynamic>),
-  lists: UrlscannerGetScanResponse2Lists.fromJson(json['lists'] as Map<String, dynamic>),
+  lists: Lists.fromJson(json['lists'] as Map<String, dynamic>),
   meta: UrlscannerGetScanResponse2Meta.fromJson(json['meta'] as Map<String, dynamic>),
   page: UrlscannerGetScanResponse2Page.fromJson(json['page'] as Map<String, dynamic>),
-  scanner: UrlscannerGetScanResponse2Scanner.fromJson(json['scanner'] as Map<String, dynamic>),
+  scanner: Scanner.fromJson(json['scanner'] as Map<String, dynamic>),
   stats: UrlscannerGetScanResponse2Stats.fromJson(json['stats'] as Map<String, dynamic>),
   task: UrlscannerGetScanResponse2Task.fromJson(json['task'] as Map<String, dynamic>),
   verdicts: UrlscannerGetScanResponse2Verdicts.fromJson(json['verdicts'] as Map<String, dynamic>),
@@ -15,13 +15,13 @@ factory UrlscannerGetScanResponse2.fromJson(Map<String, dynamic> json) { return 
 
 final UrlscannerGetScanResponse2Data data;
 
-final UrlscannerGetScanResponse2Lists lists;
+final Lists lists;
 
 final UrlscannerGetScanResponse2Meta meta;
 
 final UrlscannerGetScanResponse2Page page;
 
-final UrlscannerGetScanResponse2Scanner scanner;
+final Scanner scanner;
 
 final UrlscannerGetScanResponse2Stats stats;
 
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('stats') &&
       json.containsKey('task') &&
       json.containsKey('verdicts'); } 
-UrlscannerGetScanResponse2 copyWith({UrlscannerGetScanResponse2Data? data, UrlscannerGetScanResponse2Lists? lists, UrlscannerGetScanResponse2Meta? meta, UrlscannerGetScanResponse2Page? page, UrlscannerGetScanResponse2Scanner? scanner, UrlscannerGetScanResponse2Stats? stats, UrlscannerGetScanResponse2Task? task, UrlscannerGetScanResponse2Verdicts? verdicts, }) { return UrlscannerGetScanResponse2(
+UrlscannerGetScanResponse2 copyWith({UrlscannerGetScanResponse2Data? data, Lists? lists, UrlscannerGetScanResponse2Meta? meta, UrlscannerGetScanResponse2Page? page, Scanner? scanner, UrlscannerGetScanResponse2Stats? stats, UrlscannerGetScanResponse2Task? task, UrlscannerGetScanResponse2Verdicts? verdicts, }) { return UrlscannerGetScanResponse2(
   data: data ?? this.data,
   lists: lists ?? this.lists,
   meta: meta ?? this.meta,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_climate_orders_request_beneficiary.dart';@immutable final class PostClimateOrdersRequest {const PostClimateOrdersRequest({required this.product, this.amount, this.beneficiary, this.currency, this.expand, this.metadata, this.metricTons, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_climate_orders_request/post_climate_orders_request_beneficiary.dart';@immutable final class PostClimateOrdersRequest {const PostClimateOrdersRequest({required this.product, this.amount, this.beneficiary, this.currency, this.expand, this.metadata, this.metricTons, });
 
 factory PostClimateOrdersRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

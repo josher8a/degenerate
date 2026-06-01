@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session_customer.dart';import 'checkout_session_invoice.dart';import 'checkout_session_line_items.dart';import 'checkout_session_payment_intent.dart';import 'checkout_session_payment_link.dart';import 'checkout_session_payment_method_options.dart';import 'checkout_session_setup_intent.dart';import 'checkout_session_subscription.dart';import 'checkout_session_wallet_options.dart';import 'customer.dart';import 'deleted_customer.dart';import 'invoice.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_link.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'payment_pages_checkout_session_adaptive_pricing.dart';import 'payment_pages_checkout_session_after_expiration.dart';import 'payment_pages_checkout_session_automatic_tax.dart';import 'payment_pages_checkout_session_branding_settings.dart';import 'payment_pages_checkout_session_collected_information.dart';import 'payment_pages_checkout_session_consent.dart';import 'payment_pages_checkout_session_consent_collection.dart';import 'payment_pages_checkout_session_currency_conversion.dart';import 'payment_pages_checkout_session_custom_fields.dart';import 'payment_pages_checkout_session_custom_text.dart';import 'payment_pages_checkout_session_customer_details.dart';import 'payment_pages_checkout_session_discount.dart';import 'payment_pages_checkout_session_invoice_creation.dart';import 'payment_pages_checkout_session_name_collection.dart';import 'payment_pages_checkout_session_optional_item.dart';import 'payment_pages_checkout_session_permissions.dart';import 'payment_pages_checkout_session_phone_number_collection.dart';import 'payment_pages_checkout_session_saved_payment_method_options.dart';import 'payment_pages_checkout_session_shipping_address_collection.dart';import 'payment_pages_checkout_session_shipping_cost.dart';import 'payment_pages_checkout_session_shipping_option.dart';import 'payment_pages_checkout_session_tax_id_collection.dart';import 'payment_pages_checkout_session_total_details.dart';import 'setup_intent.dart';import 'subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_invoice.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_payment_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_payment_link.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_subscription.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/checkout_session_payment_method_options.dart';import 'package:pub_stripe_spec3/models/checkout_session_wallet_options.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_after_expiration.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_collected_information.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_currency_conversion.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_customer_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_discount.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_permissions.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_cost.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_total_details.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
 @immutable final class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection._(this.value);
 
 factory CheckoutSessionBillingAddressCollection.fromJson(String json) { return switch (json) {
@@ -192,34 +192,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckoutSessionLocale($value)'; } 
  }
-/// The mode of the Checkout Session.
-@immutable final class CheckoutSessionMode {const CheckoutSessionMode._(this.value);
-
-factory CheckoutSessionMode.fromJson(String json) { return switch (json) {
-  'payment' => payment,
-  'setup' => setup,
-  'subscription' => subscription,
-  _ => CheckoutSessionMode._(json),
-}; }
-
-static const CheckoutSessionMode payment = CheckoutSessionMode._('payment');
-
-static const CheckoutSessionMode setup = CheckoutSessionMode._('setup');
-
-static const CheckoutSessionMode subscription = CheckoutSessionMode._('subscription');
-
-static const List<CheckoutSessionMode> values = [payment, setup, subscription];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionMode($value)'; } 
- }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CheckoutSessionObject {const CheckoutSessionObject._(this.value);
 
@@ -294,22 +266,22 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
-@immutable final class CheckoutSessionPaymentStatus {const CheckoutSessionPaymentStatus._(this.value);
+@immutable final class PaymentStatus {const PaymentStatus._(this.value);
 
-factory CheckoutSessionPaymentStatus.fromJson(String json) { return switch (json) {
+factory PaymentStatus.fromJson(String json) { return switch (json) {
   'no_payment_required' => noPaymentRequired,
   'paid' => paid,
   'unpaid' => unpaid,
-  _ => CheckoutSessionPaymentStatus._(json),
+  _ => PaymentStatus._(json),
 }; }
 
-static const CheckoutSessionPaymentStatus noPaymentRequired = CheckoutSessionPaymentStatus._('no_payment_required');
+static const PaymentStatus noPaymentRequired = PaymentStatus._('no_payment_required');
 
-static const CheckoutSessionPaymentStatus paid = CheckoutSessionPaymentStatus._('paid');
+static const PaymentStatus paid = PaymentStatus._('paid');
 
-static const CheckoutSessionPaymentStatus unpaid = CheckoutSessionPaymentStatus._('unpaid');
+static const PaymentStatus unpaid = PaymentStatus._('unpaid');
 
-static const List<CheckoutSessionPaymentStatus> values = [noPaymentRequired, paid, unpaid];
+static const List<PaymentStatus> values = [noPaymentRequired, paid, unpaid];
 
 final String value;
 
@@ -317,37 +289,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionPaymentStatus && other.value == value; } 
+    other is PaymentStatus && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionPaymentStatus($value)'; } 
- }
-/// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-@immutable final class CheckoutSessionRedirectOnCompletion {const CheckoutSessionRedirectOnCompletion._(this.value);
-
-factory CheckoutSessionRedirectOnCompletion.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  'never' => never,
-  _ => CheckoutSessionRedirectOnCompletion._(json),
-}; }
-
-static const CheckoutSessionRedirectOnCompletion always = CheckoutSessionRedirectOnCompletion._('always');
-
-static const CheckoutSessionRedirectOnCompletion ifRequired = CheckoutSessionRedirectOnCompletion._('if_required');
-
-static const CheckoutSessionRedirectOnCompletion never = CheckoutSessionRedirectOnCompletion._('never');
-
-static const List<CheckoutSessionRedirectOnCompletion> values = [always, ifRequired, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionRedirectOnCompletion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionRedirectOnCompletion($value)'; } 
+@override String toString() { return 'PaymentStatus($value)'; } 
  }
 /// The status of the Checkout Session, one of `open`, `complete`, or `expired`.
 @immutable final class CheckoutSessionStatus {const CheckoutSessionStatus._(this.value);
@@ -503,12 +447,12 @@ factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSes
   paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? CheckoutSessionPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
-  paymentStatus: CheckoutSessionPaymentStatus.fromJson(json['payment_status'] as String),
+  paymentStatus: PaymentStatus.fromJson(json['payment_status'] as String),
   permissions: json['permissions'] != null ? PaymentPagesCheckoutSessionPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   phoneNumberCollection: json['phone_number_collection'] != null ? PaymentPagesCheckoutSessionPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
   recoveredFrom: json['recovered_from'] as String?,
-  redirectOnCompletion: json['redirect_on_completion'] != null ? CheckoutSessionRedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
+  redirectOnCompletion: json['redirect_on_completion'] != null ? RedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
   returnUrl: json['return_url'] as String?,
   savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? PaymentPagesCheckoutSessionSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
   setupIntent: json['setup_intent'] != null ? OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),) : null,
@@ -588,7 +532,7 @@ final PaymentPagesCheckoutSessionCustomText customText;
 /// will create a new customer object based on information provided
 /// during the payment flow unless an existing customer was provided when
 /// the Session was created.
-final CheckoutSessionCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The ID of the account for this Session.
 final String? customerAccount;
@@ -671,7 +615,7 @@ final List<String> paymentMethodTypes;
 
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
-final CheckoutSessionPaymentStatus paymentStatus;
+final PaymentStatus paymentStatus;
 
 /// This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object.
 /// 
@@ -686,7 +630,7 @@ final PaymentFlowsPaymentIntentPresentmentDetails? presentmentDetails;
 final String? recoveredFrom;
 
 /// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-final CheckoutSessionRedirectOnCompletion? redirectOnCompletion;
+final RedirectOnCompletion? redirectOnCompletion;
 
 /// Applies to Checkout Sessions with `ui_mode: embedded` or `ui_mode: custom`. The URL to redirect your customer back to after they authenticate or cancel their payment on the payment method's app or site.
 final String? returnUrl;
@@ -816,7 +760,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('payment_method_types') &&
       json.containsKey('payment_status') &&
       json.containsKey('shipping_options'); } 
-CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()? adaptivePricing, PaymentPagesCheckoutSessionAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, int? Function()? amountSubtotal, int? Function()? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, CheckoutSessionBillingAddressCollection? Function()? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, String? Function()? clientSecret, PaymentPagesCheckoutSessionCollectedInformation? Function()? collectedInformation, PaymentPagesCheckoutSessionConsent? Function()? consent, PaymentPagesCheckoutSessionConsentCollection? Function()? consentCollection, int? created, String? Function()? currency, PaymentPagesCheckoutSessionCurrencyConversion? Function()? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, CheckoutSessionCustomer? Function()? customer, String? Function()? customerAccount, CheckoutSessionCustomerCreation? Function()? customerCreation, PaymentPagesCheckoutSessionCustomerDetails? Function()? customerDetails, String? Function()? customerEmail, List<PaymentPagesCheckoutSessionDiscount>? Function()? discounts, List<String> Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, CheckoutSessionInvoice? Function()? invoice, PaymentPagesCheckoutSessionInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems Function()? lineItems, bool? livemode, CheckoutSessionLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection Function()? nameCollection, CheckoutSessionObject? object, List<PaymentPagesCheckoutSessionOptionalItem>? Function()? optionalItems, CheckoutSessionOriginContext? Function()? originContext, CheckoutSessionPaymentIntent? Function()? paymentIntent, CheckoutSessionPaymentLink? Function()? paymentLink, CheckoutSessionPaymentMethodCollection? Function()? paymentMethodCollection, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, CheckoutSessionPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, CheckoutSessionPaymentStatus? paymentStatus, PaymentPagesCheckoutSessionPermissions? Function()? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, String? Function()? recoveredFrom, CheckoutSessionRedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, PaymentPagesCheckoutSessionSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, CheckoutSessionSetupIntent? Function()? setupIntent, PaymentPagesCheckoutSessionShippingAddressCollection? Function()? shippingAddressCollection, PaymentPagesCheckoutSessionShippingCost? Function()? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, CheckoutSessionStatus? Function()? status, CheckoutSessionSubmitType? Function()? submitType, CheckoutSessionSubscription? Function()? subscription, String? Function()? successUrl, PaymentPagesCheckoutSessionTaxIdCollection Function()? taxIdCollection, PaymentPagesCheckoutSessionTotalDetails? Function()? totalDetails, CheckoutSessionUiMode? Function()? uiMode, String? Function()? url, CheckoutSessionWalletOptions? Function()? walletOptions, }) { return CheckoutSession(
+CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()? adaptivePricing, PaymentPagesCheckoutSessionAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, int? Function()? amountSubtotal, int? Function()? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, CheckoutSessionBillingAddressCollection? Function()? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, String? Function()? clientSecret, PaymentPagesCheckoutSessionCollectedInformation? Function()? collectedInformation, PaymentPagesCheckoutSessionConsent? Function()? consent, PaymentPagesCheckoutSessionConsentCollection? Function()? consentCollection, int? created, String? Function()? currency, PaymentPagesCheckoutSessionCurrencyConversion? Function()? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, CheckoutSessionCustomerCreation? Function()? customerCreation, PaymentPagesCheckoutSessionCustomerDetails? Function()? customerDetails, String? Function()? customerEmail, List<PaymentPagesCheckoutSessionDiscount>? Function()? discounts, List<String> Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, CheckoutSessionInvoice? Function()? invoice, PaymentPagesCheckoutSessionInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems Function()? lineItems, bool? livemode, CheckoutSessionLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection Function()? nameCollection, CheckoutSessionObject? object, List<PaymentPagesCheckoutSessionOptionalItem>? Function()? optionalItems, CheckoutSessionOriginContext? Function()? originContext, CheckoutSessionPaymentIntent? Function()? paymentIntent, CheckoutSessionPaymentLink? Function()? paymentLink, CheckoutSessionPaymentMethodCollection? Function()? paymentMethodCollection, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, CheckoutSessionPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, PaymentStatus? paymentStatus, PaymentPagesCheckoutSessionPermissions? Function()? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, String? Function()? recoveredFrom, RedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, PaymentPagesCheckoutSessionSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, CheckoutSessionSetupIntent? Function()? setupIntent, PaymentPagesCheckoutSessionShippingAddressCollection? Function()? shippingAddressCollection, PaymentPagesCheckoutSessionShippingCost? Function()? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, CheckoutSessionStatus? Function()? status, CheckoutSessionSubmitType? Function()? submitType, CheckoutSessionSubscription? Function()? subscription, String? Function()? successUrl, PaymentPagesCheckoutSessionTaxIdCollection Function()? taxIdCollection, PaymentPagesCheckoutSessionTotalDetails? Function()? totalDetails, CheckoutSessionUiMode? Function()? uiMode, String? Function()? url, CheckoutSessionWalletOptions? Function()? walletOptions, }) { return CheckoutSession(
   adaptivePricing: adaptivePricing != null ? adaptivePricing() : this.adaptivePricing,
   afterExpiration: afterExpiration != null ? afterExpiration() : this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,

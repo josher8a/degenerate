@@ -1,44 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role that this user should have in the team.
-@immutable final class TeamsAddOrUpdateMembershipForUserLegacyRequestRole {const TeamsAddOrUpdateMembershipForUserLegacyRequestRole._(this.value);
-
-factory TeamsAddOrUpdateMembershipForUserLegacyRequestRole.fromJson(String json) { return switch (json) {
-  'member' => member,
-  'maintainer' => maintainer,
-  _ => TeamsAddOrUpdateMembershipForUserLegacyRequestRole._(json),
-}; }
-
-static const TeamsAddOrUpdateMembershipForUserLegacyRequestRole member = TeamsAddOrUpdateMembershipForUserLegacyRequestRole._('member');
-
-static const TeamsAddOrUpdateMembershipForUserLegacyRequestRole maintainer = TeamsAddOrUpdateMembershipForUserLegacyRequestRole._('maintainer');
-
-static const List<TeamsAddOrUpdateMembershipForUserLegacyRequestRole> values = [member, maintainer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsAddOrUpdateMembershipForUserLegacyRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsAddOrUpdateMembershipForUserLegacyRequestRole($value)'; } 
- }
-@immutable final class TeamsAddOrUpdateMembershipForUserLegacyRequest {const TeamsAddOrUpdateMembershipForUserLegacyRequest({this.role = TeamsAddOrUpdateMembershipForUserLegacyRequestRole.member});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';@immutable final class TeamsAddOrUpdateMembershipForUserLegacyRequest {const TeamsAddOrUpdateMembershipForUserLegacyRequest({this.role = TeamMembershipRole.member});
 
 factory TeamsAddOrUpdateMembershipForUserLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
-  role: json.containsKey('role') ? TeamsAddOrUpdateMembershipForUserLegacyRequestRole.fromJson(json['role'] as String) : TeamsAddOrUpdateMembershipForUserLegacyRequestRole.member,
+  role: json.containsKey('role') ? TeamMembershipRole.fromJson(json['role'] as String) : TeamMembershipRole.member,
 ); }
 
 /// The role that this user should have in the team.
-final TeamsAddOrUpdateMembershipForUserLegacyRequestRole role;
+final TeamMembershipRole role;
 
 Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-TeamsAddOrUpdateMembershipForUserLegacyRequest copyWith({TeamsAddOrUpdateMembershipForUserLegacyRequestRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
+TeamsAddOrUpdateMembershipForUserLegacyRequest copyWith({TeamMembershipRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
   role: role != null ? role() : this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

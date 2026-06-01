@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_process_payment_intent_request_process_config.dart';@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequest {const PostTerminalReadersReaderProcessPaymentIntentRequest({required this.paymentIntent, this.expand, this.processConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_process_payment_intent_request/post_terminal_readers_reader_process_payment_intent_request_process_config.dart';@immutable final class PostTerminalReadersReaderProcessPaymentIntentRequest {const PostTerminalReadersReaderProcessPaymentIntentRequest({required this.paymentIntent, this.expand, this.processConfig, });
 
 factory PostTerminalReadersReaderProcessPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

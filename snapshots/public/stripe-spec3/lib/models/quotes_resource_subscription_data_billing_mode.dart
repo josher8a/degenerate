@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-@immutable final class QuotesResourceSubscriptionDataBillingModeType {const QuotesResourceSubscriptionDataBillingModeType._(this.value);
-
-factory QuotesResourceSubscriptionDataBillingModeType.fromJson(String json) { return switch (json) {
-  'classic' => classic,
-  'flexible' => flexible,
-  _ => QuotesResourceSubscriptionDataBillingModeType._(json),
-}; }
-
-static const QuotesResourceSubscriptionDataBillingModeType classic = QuotesResourceSubscriptionDataBillingModeType._('classic');
-
-static const QuotesResourceSubscriptionDataBillingModeType flexible = QuotesResourceSubscriptionDataBillingModeType._('flexible');
-
-static const List<QuotesResourceSubscriptionDataBillingModeType> values = [classic, flexible];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuotesResourceSubscriptionDataBillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuotesResourceSubscriptionDataBillingModeType($value)'; } 
- }
-/// The billing mode of the quote.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_billing_mode/quotes_resource_subscription_data_billing_mode_type.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode_flexible.dart';/// The billing mode of the quote.
 @immutable final class QuotesResourceSubscriptionDataBillingMode {const QuotesResourceSubscriptionDataBillingMode({required this.type, this.flexible, });
 
 factory QuotesResourceSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return QuotesResourceSubscriptionDataBillingMode(

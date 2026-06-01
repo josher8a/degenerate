@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_changes.dart';@immutable final class ItemArchivedAction {const ItemArchivedAction._(this.value);
-
-factory ItemArchivedAction.fromJson(String json) { return switch (json) {
-  'archived' => archived,
-  _ => ItemArchivedAction._(json),
-}; }
-
-static const ItemArchivedAction archived = ItemArchivedAction._('archived');
-
-static const List<ItemArchivedAction> values = [archived];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemArchivedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemArchivedAction($value)'; } 
- }
-@immutable final class ItemArchived {const ItemArchived({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_archived/item_archived_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_changes.dart';@immutable final class ItemArchived {const ItemArchived({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
 factory ItemArchived.fromJson(Map<String, dynamic> json) { return ItemArchived(
   action: ItemArchivedAction.fromJson(json['action'] as String),

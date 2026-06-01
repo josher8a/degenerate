@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the rule.
-@immutable final class FirewallCidrConfigurationTarget {const FirewallCidrConfigurationTarget._(this.value);
-
-factory FirewallCidrConfigurationTarget.fromJson(String json) { return switch (json) {
-  'ip_range' => ipRange,
-  _ => FirewallCidrConfigurationTarget._(json),
-}; }
-
-static const FirewallCidrConfigurationTarget ipRange = FirewallCidrConfigurationTarget._('ip_range');
-
-static const List<FirewallCidrConfigurationTarget> values = [ipRange];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallCidrConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallCidrConfigurationTarget($value)'; } 
- }
-@immutable final class FirewallCidrConfiguration {const FirewallCidrConfiguration({this.target, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_cidr_configuration/firewall_cidr_configuration_target.dart';@immutable final class FirewallCidrConfiguration {const FirewallCidrConfiguration({this.target, this.value, });
 
 factory FirewallCidrConfiguration.fromJson(Map<String, dynamic> json) { return FirewallCidrConfiguration(
   target: json['target'] != null ? FirewallCidrConfigurationTarget.fromJson(json['target'] as String) : null,

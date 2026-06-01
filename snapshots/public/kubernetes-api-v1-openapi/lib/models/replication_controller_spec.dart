@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_template_spec.dart';/// ReplicationControllerSpec is the specification of a replication controller.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_template_spec.dart';/// ReplicationControllerSpec is the specification of a replication controller.
 @immutable final class ReplicationControllerSpec {const ReplicationControllerSpec({this.minReadySeconds = 0, this.replicas = 1, this.selector, this.template, });
 
 factory ReplicationControllerSpec.fromJson(Map<String, dynamic> json) { return ReplicationControllerSpec(

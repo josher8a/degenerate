@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_issue_class.dart';import 'security_center_issue_payload.dart';import 'security_center_issue_type.dart';import 'security_center_subject.dart';@immutable final class SecurityCenterIssueSeverity {const SecurityCenterIssueSeverity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_issue/payload.dart';import 'package:pub_cloudflare/models/security_center_issue_class.dart';import 'package:pub_cloudflare/models/security_center_issue_type.dart';import 'package:pub_cloudflare/models/security_center_subject.dart';@immutable final class Severity {const Severity._(this.value);
 
-factory SecurityCenterIssueSeverity.fromJson(String json) { return switch (json) {
+factory Severity.fromJson(String json) { return switch (json) {
   'Low' => low,
   'Moderate' => moderate,
   'Critical' => critical,
-  _ => SecurityCenterIssueSeverity._(json),
+  _ => Severity._(json),
 }; }
 
-static const SecurityCenterIssueSeverity low = SecurityCenterIssueSeverity._('Low');
+static const Severity low = Severity._('Low');
 
-static const SecurityCenterIssueSeverity moderate = SecurityCenterIssueSeverity._('Moderate');
+static const Severity moderate = Severity._('Moderate');
 
-static const SecurityCenterIssueSeverity critical = SecurityCenterIssueSeverity._('Critical');
+static const Severity critical = Severity._('Critical');
 
-static const List<SecurityCenterIssueSeverity> values = [low, moderate, critical];
+static const List<Severity> values = [low, moderate, critical];
 
 final String value;
 
@@ -23,9 +23,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityCenterIssueSeverity && other.value == value; } 
+    other is Severity && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityCenterIssueSeverity($value)'; } 
+@override String toString() { return 'Severity($value)'; } 
  }
 @immutable final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });
 
@@ -34,10 +34,10 @@ factory SecurityCenterIssue.fromJson(Map<String, dynamic> json) { return Securit
   id: json['id'] as String?,
   issueClass: json['issue_class'] != null ? SecurityCenterIssueClass.fromJson(json['issue_class'] as String) : null,
   issueType: json['issue_type'] != null ? SecurityCenterIssueType.fromJson(json['issue_type'] as String) : null,
-  payload: json['payload'] != null ? SecurityCenterIssuePayload.fromJson(json['payload'] as Map<String, dynamic>) : null,
+  payload: json['payload'] != null ? Payload.fromJson(json['payload'] as Map<String, dynamic>) : null,
   resolveLink: json['resolve_link'] as String?,
   resolveText: json['resolve_text'] as String?,
-  severity: json['severity'] != null ? SecurityCenterIssueSeverity.fromJson(json['severity'] as String) : null,
+  severity: json['severity'] != null ? Severity.fromJson(json['severity'] as String) : null,
   since: json['since'] != null ? DateTime.parse(json['since'] as String) : null,
   subject: json['subject'] != null ? SecurityCenterSubject.fromJson(json['subject'] as String) : null,
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
@@ -51,13 +51,13 @@ final SecurityCenterIssueClass? issueClass;
 
 final SecurityCenterIssueType? issueType;
 
-final SecurityCenterIssuePayload? payload;
+final Payload? payload;
 
 final String? resolveLink;
 
 final String? resolveText;
 
-final SecurityCenterIssueSeverity? severity;
+final Severity? severity;
 
 final DateTime? since;
 
@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismissed', 'id', 'issue_class', 'issue_type', 'payload', 'resolve_link', 'resolve_text', 'severity', 'since', 'subject', 'timestamp'}.contains(key)); } 
-SecurityCenterIssue copyWith({bool Function()? dismissed, String Function()? id, SecurityCenterIssueClass Function()? issueClass, SecurityCenterIssueType Function()? issueType, SecurityCenterIssuePayload Function()? payload, String Function()? resolveLink, String Function()? resolveText, SecurityCenterIssueSeverity Function()? severity, DateTime Function()? since, SecurityCenterSubject Function()? subject, DateTime Function()? timestamp, }) { return SecurityCenterIssue(
+SecurityCenterIssue copyWith({bool Function()? dismissed, String Function()? id, SecurityCenterIssueClass Function()? issueClass, SecurityCenterIssueType Function()? issueType, Payload Function()? payload, String Function()? resolveLink, String Function()? resolveText, Severity Function()? severity, DateTime Function()? since, SecurityCenterSubject Function()? subject, DateTime Function()? timestamp, }) { return SecurityCenterIssue(
   dismissed: dismissed != null ? dismissed() : this.dismissed,
   id: id != null ? id() : this.id,
   issueClass: issueClass != null ? issueClass() : this.issueClass,

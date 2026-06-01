@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
 
 factory WebhookCustomPropertyPromotedToEnterpriseAction.fromJson(String json) { return switch (json) {
   'promote_to_enterprise' => promoteToEnterprise,

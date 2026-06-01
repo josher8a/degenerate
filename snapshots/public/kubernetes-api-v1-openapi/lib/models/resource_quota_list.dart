@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'resource_quota.dart';/// ResourceQuotaList is a list of ResourceQuota items.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quota.dart';/// ResourceQuotaList is a list of ResourceQuota items.
 @immutable final class ResourceQuotaList {const ResourceQuotaList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ResourceQuotaList.fromJson(Map<String, dynamic> json) { return ResourceQuotaList(

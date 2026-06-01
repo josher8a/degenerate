@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'pod_spec.dart';/// PodTemplateSpec describes the data a pod should have when created from a template
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_spec.dart';/// PodTemplateSpec describes the data a pod should have when created from a template
 @immutable final class PodTemplateSpec {const PodTemplateSpec({this.metadata, this.spec, });
 
 factory PodTemplateSpec.fromJson(Map<String, dynamic> json) { return PodTemplateSpec(

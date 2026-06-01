@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_inbound_ach_toggle_settings.dart';/// InboundTransfers contains inbound transfers features for a FinancialAccount.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_inbound_ach_toggle_settings.dart';/// InboundTransfers contains inbound transfers features for a FinancialAccount.
 @immutable final class TreasuryFinancialAccountsResourceInboundTransfers {const TreasuryFinancialAccountsResourceInboundTransfers({this.ach});
 
 factory TreasuryFinancialAccountsResourceInboundTransfers.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceInboundTransfers(

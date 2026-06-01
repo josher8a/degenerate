@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_certificate_geo_restrictions.dart';import 'tls_certificates_and_hostnames_identifier.dart';/// An individual certificate within a certificate pack.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate/geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// An individual certificate within a certificate pack.
 @immutable final class TlsCertificatesAndHostnamesCertificatePackCertificate {const TlsCertificatesAndHostnamesCertificatePackCertificate({required this.hosts, required this.id, required this.status, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.issuer, this.modifiedOn, this.priority, this.signature, this.uploadedOn, this.zoneId, });
 
 factory TlsCertificatesAndHostnamesCertificatePackCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: json['bundle_method'] as String?,
   expiresOn: json['expires_on'] != null ? DateTime.parse(json['expires_on'] as String) : null,
-  geoRestrictions: json['geo_restrictions'] != null ? TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
+  geoRestrictions: json['geo_restrictions'] != null ? GeoRestrictions.fromJson(json['geo_restrictions'] as Map<String, dynamic>) : null,
   hosts: (json['hosts'] as List<dynamic>).map((e) => e as String).toList(),
   id: json['id'] as String,
   issuer: json['issuer'] as String?,
@@ -25,7 +25,7 @@ final String? bundleMethod;
 final DateTime? expiresOn;
 
 /// Specify the region where your private key can be held locally.
-final TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions? geoRestrictions;
+final GeoRestrictions? geoRestrictions;
 
 /// Hostnames covered by this certificate.
 final List<String> hosts;
@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hosts') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') && json['status'] is String; } 
-TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String Function()? bundleMethod, DateTime Function()? expiresOn, TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions Function()? geoRestrictions, List<String>? hosts, String? id, String Function()? issuer, DateTime Function()? modifiedOn, double Function()? priority, String Function()? signature, String? status, DateTime Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier Function()? zoneId, }) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
+TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String Function()? bundleMethod, DateTime Function()? expiresOn, GeoRestrictions Function()? geoRestrictions, List<String>? hosts, String? id, String Function()? issuer, DateTime Function()? modifiedOn, double Function()? priority, String Function()? signature, String? status, DateTime Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier Function()? zoneId, }) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   geoRestrictions: geoRestrictions != null ? geoRestrictions() : this.geoRestrictions,

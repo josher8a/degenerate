@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_attestation_session.dart';@immutable final class MconnControllerBeginAttestationSessionResponse {const MconnControllerBeginAttestationSessionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_attestation_session.dart';@immutable final class MconnControllerBeginAttestationSessionResponse {const MconnControllerBeginAttestationSessionResponse({this.result});
 
 factory MconnControllerBeginAttestationSessionResponse.fromJson(Map<String, dynamic> json) { return MconnControllerBeginAttestationSessionResponse(
   result: json['result'] != null ? MconnControllerAttestationSession.fromJson(json['result'] as Map<String, dynamic>) : null,

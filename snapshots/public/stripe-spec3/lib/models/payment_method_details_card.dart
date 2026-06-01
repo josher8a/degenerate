@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_checks.dart';import 'payment_method_details_card_installments.dart';import 'payment_method_details_card_network_token.dart';import 'payment_method_details_card_wallet.dart';import 'resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'resource_enterprise_features_overcapture_overcapture.dart';import 'resource_multicapture.dart';import 'three_d_secure_details_charge.dart';/// Status of a card based on the card issuer.
-@immutable final class PaymentMethodDetailsCardRegulatedStatus {const PaymentMethodDetailsCardRegulatedStatus._(this.value);
-
-factory PaymentMethodDetailsCardRegulatedStatus.fromJson(String json) { return switch (json) {
-  'regulated' => regulated,
-  'unregulated' => unregulated,
-  _ => PaymentMethodDetailsCardRegulatedStatus._(json),
-}; }
-
-static const PaymentMethodDetailsCardRegulatedStatus regulated = PaymentMethodDetailsCardRegulatedStatus._('regulated');
-
-static const PaymentMethodDetailsCardRegulatedStatus unregulated = PaymentMethodDetailsCardRegulatedStatus._('unregulated');
-
-static const List<PaymentMethodDetailsCardRegulatedStatus> values = [regulated, unregulated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardRegulatedStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_checks.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_installments.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_network_token.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_overcapture_overcapture.dart';import 'package:pub_stripe_spec3/models/resource_multicapture.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge.dart';/// 
 @immutable final class PaymentMethodDetailsCard {const PaymentMethodDetailsCard({required this.expMonth, required this.expYear, this.amountAuthorized, this.authorizationCode, this.brand, this.captureBefore, this.checks, this.country, this.extendedAuthorization, this.fingerprint, this.funding, this.incrementalAuthorization, this.installments, this.last4, this.mandate, this.multicapture, this.network, this.networkToken, this.networkTransactionId, this.overcapture, this.regulatedStatus, this.threeDSecure, this.wallet, });
 
 factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCard(
@@ -49,7 +24,7 @@ factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return Pa
   networkToken: json['network_token'] != null ? PaymentMethodDetailsCardNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
   networkTransactionId: json['network_transaction_id'] as String?,
   overcapture: json['overcapture'] != null ? ResourceEnterpriseFeaturesOvercaptureOvercapture.fromJson(json['overcapture'] as Map<String, dynamic>) : null,
-  regulatedStatus: json['regulated_status'] != null ? PaymentMethodDetailsCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
+  regulatedStatus: json['regulated_status'] != null ? RegulatedStatus.fromJson(json['regulated_status'] as String) : null,
   threeDSecure: json['three_d_secure'] != null ? ThreeDSecureDetailsCharge.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
@@ -115,7 +90,7 @@ final String? networkTransactionId;
 final ResourceEnterpriseFeaturesOvercaptureOvercapture? overcapture;
 
 /// Status of a card based on the card issuer.
-final PaymentMethodDetailsCardRegulatedStatus? regulatedStatus;
+final RegulatedStatus? regulatedStatus;
 
 /// Populated if this transaction used 3D Secure authentication.
 final ThreeDSecureDetailsCharge? threeDSecure;
@@ -150,7 +125,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodDetailsCard copyWith({int? Function()? amountAuthorized, String? Function()? authorizationCode, String? Function()? brand, int Function()? captureBefore, PaymentMethodDetailsCardChecks? Function()? checks, String? Function()? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization Function()? extendedAuthorization, String? Function()? fingerprint, String? Function()? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization Function()? incrementalAuthorization, PaymentMethodDetailsCardInstallments? Function()? installments, String? Function()? last4, String? Function()? mandate, ResourceMulticapture Function()? multicapture, String? Function()? network, PaymentMethodDetailsCardNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture Function()? overcapture, PaymentMethodDetailsCardRegulatedStatus? Function()? regulatedStatus, ThreeDSecureDetailsCharge? Function()? threeDSecure, PaymentMethodDetailsCardWallet? Function()? wallet, }) { return PaymentMethodDetailsCard(
+PaymentMethodDetailsCard copyWith({int? Function()? amountAuthorized, String? Function()? authorizationCode, String? Function()? brand, int Function()? captureBefore, PaymentMethodDetailsCardChecks? Function()? checks, String? Function()? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization Function()? extendedAuthorization, String? Function()? fingerprint, String? Function()? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization Function()? incrementalAuthorization, PaymentMethodDetailsCardInstallments? Function()? installments, String? Function()? last4, String? Function()? mandate, ResourceMulticapture Function()? multicapture, String? Function()? network, PaymentMethodDetailsCardNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture Function()? overcapture, RegulatedStatus? Function()? regulatedStatus, ThreeDSecureDetailsCharge? Function()? threeDSecure, PaymentMethodDetailsCardWallet? Function()? wallet, }) { return PaymentMethodDetailsCard(
   amountAuthorized: amountAuthorized != null ? amountAuthorized() : this.amountAuthorized,
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   brand: brand != null ? brand() : this.brand,

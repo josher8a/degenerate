@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value_value.dart';/// Custom property name and associated value
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property_value/custom_property_value_value.dart';/// Custom property name and associated value
 @immutable final class CustomPropertyValue {const CustomPropertyValue({required this.propertyName, required this.value, });
 
 factory CustomPropertyValue.fromJson(Map<String, dynamic> json) { return CustomPropertyValue(

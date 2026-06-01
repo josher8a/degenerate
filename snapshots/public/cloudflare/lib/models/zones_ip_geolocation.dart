@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 
 @immutable final class ZonesIpGeolocationId {const ZonesIpGeolocationId._(this.value);
 

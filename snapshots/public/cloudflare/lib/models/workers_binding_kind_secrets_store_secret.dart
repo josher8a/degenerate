@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindSecretsStoreSecret {const WorkersBindingKindSecretsStoreSecret({required this.name, required this.secretName, required this.storeId, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindSecretsStoreSecret {const WorkersBindingKindSecretsStoreSecret({required this.name, required this.secretName, required this.storeId, required this.type, });
 
 factory WorkersBindingKindSecretsStoreSecret.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretsStoreSecret(
   name: WorkersBindingName.fromJson(json['name'] as String),

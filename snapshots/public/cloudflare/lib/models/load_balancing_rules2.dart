@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_rules2_fixed_response.dart';import 'load_balancing_rules2_overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_rules/fixed_response.dart';import 'package:pub_cloudflare/models/load_balancing_rules/overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
 @immutable final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled = false, this.fixedResponse, this.name, this.overrides, this.priority = 0, this.terminates, });
 
 factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2(
   condition: json['condition'] as String?,
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
-  fixedResponse: json['fixed_response'] != null ? LoadBalancingRules2FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>) : null,
+  fixedResponse: json['fixed_response'] != null ? FixedResponse.fromJson(json['fixed_response'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  overrides: json['overrides'] != null ? LoadBalancingRules2Overrides.fromJson(json['overrides'] as Map<String, dynamic>) : null,
+  overrides: json['overrides'] != null ? Overrides.fromJson(json['overrides'] as Map<String, dynamic>) : null,
   priority: json.containsKey('priority') ? (json['priority'] as num).toInt() : 0,
   terminates: json['terminates'] as bool?,
 ); }
@@ -20,13 +20,13 @@ final String? condition;
 final bool disabled;
 
 /// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
-final LoadBalancingRules2FixedResponse? fixedResponse;
+final FixedResponse? fixedResponse;
 
 /// Name of this rule. Only used for human readability.
 final String? name;
 
 /// A collection of overrides to apply to the load balancer when this rule's condition is true. All fields are optional.
-final LoadBalancingRules2Overrides? overrides;
+final Overrides? overrides;
 
 /// The order in which rules should be executed in relation to each other. Lower values are executed first. Values do not need to be sequential. If no value is provided for any rule the array order of the rules field will be used to assign a priority.
 final int priority;
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'terminates': ?terminates,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key)); } 
-LoadBalancingRules2 copyWith({String Function()? condition, bool Function()? disabled, LoadBalancingRules2FixedResponse Function()? fixedResponse, String Function()? name, LoadBalancingRules2Overrides Function()? overrides, int Function()? priority, bool Function()? terminates, }) { return LoadBalancingRules2(
+LoadBalancingRules2 copyWith({String Function()? condition, bool Function()? disabled, FixedResponse Function()? fixedResponse, String Function()? name, Overrides Function()? overrides, int Function()? priority, bool Function()? terminates, }) { return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,
   disabled: disabled != null ? disabled() : this.disabled,
   fixedResponse: fixedResponse != null ? fixedResponse() : this.fixedResponse,

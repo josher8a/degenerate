@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/dependency_graph_create_repository_snapshot_response.dart';import '../models/dependency_graph_diff2.dart';import '../models/dependency_graph_spdx_sbom.dart';import '../models/snapshot.dart';/// DependencyGraphApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_create_repository_snapshot_response.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff2.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_spdx_sbom.dart';import 'package:pub_github_rest_3_1/models/snapshot.dart';/// DependencyGraphApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

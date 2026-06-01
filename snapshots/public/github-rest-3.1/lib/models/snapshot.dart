@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'manifest.dart';import 'snapshot_detector.dart';import 'snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/manifest.dart';import 'package:pub_github_rest_3_1/models/snapshot/detector.dart';import 'package:pub_github_rest_3_1/models/snapshot/snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
 @immutable final class Snapshot {const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, required this.scanned, this.metadata, this.manifests, });
 
 factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
@@ -8,7 +8,7 @@ factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   job: SnapshotJob.fromJson(json['job'] as Map<String, dynamic>),
   sha: json['sha'] as String,
   ref: json['ref'] as String,
-  detector: SnapshotDetector.fromJson(json['detector'] as Map<String, dynamic>),
+  detector: Detector.fromJson(json['detector'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
   manifests: (json['manifests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Manifest.fromJson(v as Map<String, dynamic>))),
   scanned: DateTime.parse(json['scanned'] as String),
@@ -26,7 +26,7 @@ final String sha;
 final String ref;
 
 /// A description of the detector used.
-final SnapshotDetector detector;
+final Detector detector;
 
 /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 final Map<String,dynamic>? metadata;
@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('versi
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('detector') &&
       json.containsKey('scanned') && json['scanned'] is String; } 
-Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, SnapshotDetector? detector, Map<String, dynamic> Function()? metadata, Map<String, Manifest> Function()? manifests, DateTime? scanned, }) { return Snapshot(
+Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Detector? detector, Map<String, dynamic> Function()? metadata, Map<String, Manifest> Function()? manifests, DateTime? scanned, }) { return Snapshot(
   version: version ?? this.version,
   job: job ?? this.job,
   sha: sha ?? this.sha,

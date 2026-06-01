@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_message.dart';import 'eval_item.dart';import 'input_messages_template_template.dart';/// The type of input messages. Always `template`.
-@immutable final class InputMessagesTemplateType {const InputMessagesTemplateType._(this.value);
-
-factory InputMessagesTemplateType.fromJson(String json) { return switch (json) {
-  'template' => template,
-  _ => InputMessagesTemplateType._(json),
-}; }
-
-static const InputMessagesTemplateType template = InputMessagesTemplateType._('template');
-
-static const List<InputMessagesTemplateType> values = [template];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputMessagesTemplateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputMessagesTemplateType($value)'; } 
- }
-@immutable final class InputMessagesTemplate {const InputMessagesTemplate({required this.type, required this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_message.dart';import 'package:pub_openai/models/eval_item.dart';import 'package:pub_openai/models/input_messages_template/input_messages_template_template.dart';import 'package:pub_openai/models/input_messages_template/input_messages_template_type.dart';@immutable final class InputMessagesTemplate {const InputMessagesTemplate({required this.type, required this.template, });
 
 factory InputMessagesTemplate.fromJson(Map<String, dynamic> json) { return InputMessagesTemplate(
   type: InputMessagesTemplateType.fromJson(json['type'] as String),

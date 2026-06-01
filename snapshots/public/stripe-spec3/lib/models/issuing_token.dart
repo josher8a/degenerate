@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card.dart';import 'issuing_network_token_network_data.dart';import 'issuing_token_card.dart';/// The token service provider / card network associated with the token.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';/// The token service provider / card network associated with the token.
 @immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
 
 factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
@@ -79,22 +79,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenStatus($value)'; } 
  }
 /// The digital wallet for this token, if one was used.
-@immutable final class IssuingTokenWalletProvider {const IssuingTokenWalletProvider._(this.value);
+@immutable final class WalletProvider {const WalletProvider._(this.value);
 
-factory IssuingTokenWalletProvider.fromJson(String json) { return switch (json) {
+factory WalletProvider.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
-  _ => IssuingTokenWalletProvider._(json),
+  _ => WalletProvider._(json),
 }; }
 
-static const IssuingTokenWalletProvider applePay = IssuingTokenWalletProvider._('apple_pay');
+static const WalletProvider applePay = WalletProvider._('apple_pay');
 
-static const IssuingTokenWalletProvider googlePay = IssuingTokenWalletProvider._('google_pay');
+static const WalletProvider googlePay = WalletProvider._('google_pay');
 
-static const IssuingTokenWalletProvider samsungPay = IssuingTokenWalletProvider._('samsung_pay');
+static const WalletProvider samsungPay = WalletProvider._('samsung_pay');
 
-static const List<IssuingTokenWalletProvider> values = [applePay, googlePay, samsungPay];
+static const List<WalletProvider> values = [applePay, googlePay, samsungPay];
 
 final String value;
 
@@ -102,9 +102,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenWalletProvider && other.value == value; } 
+    other is WalletProvider && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenWalletProvider($value)'; } 
+@override String toString() { return 'WalletProvider($value)'; } 
  }
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
 @immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint, this.last4, this.networkData, this.walletProvider, });
@@ -121,7 +121,7 @@ factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   networkUpdatedAt: (json['network_updated_at'] as num).toInt(),
   object: IssuingTokenObject.fromJson(json['object'] as String),
   status: IssuingTokenStatus.fromJson(json['status'] as String),
-  walletProvider: json['wallet_provider'] != null ? IssuingTokenWalletProvider.fromJson(json['wallet_provider'] as String) : null,
+  walletProvider: json['wallet_provider'] != null ? WalletProvider.fromJson(json['wallet_provider'] as String) : null,
 ); }
 
 /// Card associated with this token.
@@ -157,7 +157,7 @@ final IssuingTokenObject object;
 final IssuingTokenStatus status;
 
 /// The digital wallet for this token, if one was used.
-final IssuingTokenWalletProvider? walletProvider;
+final WalletProvider? walletProvider;
 
 Map<String, dynamic> toJson() { return {
   'card': card.toJson(),
@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, IssuingTokenWalletProvider Function()? walletProvider, }) { return IssuingToken(
+IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider Function()? walletProvider, }) { return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,
   deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,

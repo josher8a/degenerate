@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'repo_search_result_item_permissions.dart';import 'search_result_text_matches2.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-@immutable final class RepoSearchResultItemPullRequestCreationPolicy {const RepoSearchResultItemPullRequestCreationPolicy._(this.value);
-
-factory RepoSearchResultItemPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'collaborators_only' => collaboratorsOnly,
-  _ => RepoSearchResultItemPullRequestCreationPolicy._(json),
-}; }
-
-static const RepoSearchResultItemPullRequestCreationPolicy all = RepoSearchResultItemPullRequestCreationPolicy._('all');
-
-static const RepoSearchResultItemPullRequestCreationPolicy collaboratorsOnly = RepoSearchResultItemPullRequestCreationPolicy._('collaborators_only');
-
-static const List<RepoSearchResultItemPullRequestCreationPolicy> values = [all, collaboratorsOnly];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepoSearchResultItemPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepoSearchResultItemPullRequestCreationPolicy($value)'; } 
- }
-/// Repo Search Result Item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator/collaborator_permissions.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Repo Search Result Item
 @immutable final class RepoSearchResultItem {const RepoSearchResultItem({required this.assigneesUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.createdAt, required this.updatedAt, required this.pushedAt, required this.homepage, required this.size, required this.stargazersCount, required this.watchersCount, required this.language, required this.forksCount, required this.openIssuesCount, required this.license, required this.defaultBranch, required this.score, required this.forksUrl, required this.keysUrl, required this.collaboratorsUrl, required this.teamsUrl, required this.hooksUrl, required this.issueEventsUrl, required this.eventsUrl, required this.id, required this.branchesUrl, required this.tagsUrl, required this.blobsUrl, required this.gitTagsUrl, required this.gitRefsUrl, required this.treesUrl, required this.statusesUrl, required this.languagesUrl, required this.stargazersUrl, required this.contributorsUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.commitsUrl, required this.gitCommitsUrl, required this.commentsUrl, required this.issueCommentUrl, required this.contentsUrl, required this.compareUrl, required this.mergesUrl, required this.archiveUrl, required this.downloadsUrl, required this.issuesUrl, required this.pullsUrl, required this.milestonesUrl, required this.notificationsUrl, required this.labelsUrl, required this.releasesUrl, required this.deploymentsUrl, required this.gitUrl, required this.disabled, required this.cloneUrl, required this.svnUrl, required this.forks, required this.openIssues, required this.watchers, required this.archived, required this.mirrorUrl, required this.hasIssues, required this.hasProjects, required this.hasPages, required this.hasWiki, required this.sshUrl, required this.hasDownloads, this.hasPullRequests, this.pullRequestCreationPolicy, this.topics, this.webCommitSignoffRequired, this.visibility, this.masterBranch, this.permissions, this.textMatches, this.tempCloneToken, this.allowMergeCommit, this.allowSquashMerge, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowForking, this.isTemplate, this.hasDiscussions, });
 
 factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) { return RepoSearchResultItem(
@@ -104,12 +79,12 @@ factory RepoSearchResultItem.fromJson(Map<String, dynamic> json) { return RepoSe
   hasDownloads: json['has_downloads'] as bool,
   hasDiscussions: json['has_discussions'] as bool?,
   hasPullRequests: json['has_pull_requests'] as bool?,
-  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? RepoSearchResultItemPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
+  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? PullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
   archived: json['archived'] as bool,
   disabled: json['disabled'] as bool,
   visibility: json['visibility'] as String?,
   license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
-  permissions: json['permissions'] != null ? RepoSearchResultItemPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? CollaboratorPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
   tempCloneToken: json['temp_clone_token'] as String?,
   allowMergeCommit: json['allow_merge_commit'] as bool?,
@@ -273,7 +248,7 @@ final bool? hasDiscussions;
 final bool? hasPullRequests;
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
-final RepoSearchResultItemPullRequestCreationPolicy? pullRequestCreationPolicy;
+final PullRequestCreationPolicy? pullRequestCreationPolicy;
 
 final bool archived;
 
@@ -285,7 +260,7 @@ final String? visibility;
 
 final LicenseSimple? license;
 
-final RepoSearchResultItemPermissions? permissions;
+final CollaboratorPermissions? permissions;
 
 final List<SearchResultTextMatches2>? textMatches;
 
@@ -474,7 +449,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('disabled') && json['disabled'] is bool &&
       json.containsKey('license'); } 
-RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String> Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, RepoSearchResultItemPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, LicenseSimple? Function()? license, RepoSearchResultItemPermissions Function()? permissions, List<SearchResultTextMatches2> Function()? textMatches, String Function()? tempCloneToken, bool Function()? allowMergeCommit, bool Function()? allowSquashMerge, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowForking, bool Function()? isTemplate, bool Function()? webCommitSignoffRequired, }) { return RepoSearchResultItem(
+RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String> Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, LicenseSimple? Function()? license, CollaboratorPermissions Function()? permissions, List<SearchResultTextMatches2> Function()? textMatches, String Function()? tempCloneToken, bool Function()? allowMergeCommit, bool Function()? allowSquashMerge, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowForking, bool Function()? isTemplate, bool Function()? webCommitSignoffRequired, }) { return RepoSearchResultItem(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pending_deployment_environment.dart';import 'pending_deployment_reviewers.dart';/// Details of a deployment that is waiting for protection rules to pass
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_environment.dart';import 'package:pub_github_rest_3_1/models/pending_deployment/pending_deployment_reviewers.dart';/// Details of a deployment that is waiting for protection rules to pass
 @immutable final class PendingDeployment {const PendingDeployment({required this.environment, required this.waitTimer, required this.waitTimerStartedAt, required this.currentUserCanApprove, required this.reviewers, });
 
 factory PendingDeployment.fromJson(Map<String, dynamic> json) { return PendingDeployment(

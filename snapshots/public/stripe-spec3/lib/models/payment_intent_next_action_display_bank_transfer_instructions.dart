@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_financial_address.dart';/// Type of bank transfer
-@immutable final class PaymentIntentNextActionDisplayBankTransferInstructionsType {const PaymentIntentNextActionDisplayBankTransferInstructionsType._(this.value);
-
-factory PaymentIntentNextActionDisplayBankTransferInstructionsType.fromJson(String json) { return switch (json) {
-  'eu_bank_transfer' => euBankTransfer,
-  'gb_bank_transfer' => gbBankTransfer,
-  'jp_bank_transfer' => jpBankTransfer,
-  'mx_bank_transfer' => mxBankTransfer,
-  'us_bank_transfer' => usBankTransfer,
-  _ => PaymentIntentNextActionDisplayBankTransferInstructionsType._(json),
-}; }
-
-static const PaymentIntentNextActionDisplayBankTransferInstructionsType euBankTransfer = PaymentIntentNextActionDisplayBankTransferInstructionsType._('eu_bank_transfer');
-
-static const PaymentIntentNextActionDisplayBankTransferInstructionsType gbBankTransfer = PaymentIntentNextActionDisplayBankTransferInstructionsType._('gb_bank_transfer');
-
-static const PaymentIntentNextActionDisplayBankTransferInstructionsType jpBankTransfer = PaymentIntentNextActionDisplayBankTransferInstructionsType._('jp_bank_transfer');
-
-static const PaymentIntentNextActionDisplayBankTransferInstructionsType mxBankTransfer = PaymentIntentNextActionDisplayBankTransferInstructionsType._('mx_bank_transfer');
-
-static const PaymentIntentNextActionDisplayBankTransferInstructionsType usBankTransfer = PaymentIntentNextActionDisplayBankTransferInstructionsType._('us_bank_transfer');
-
-static const List<PaymentIntentNextActionDisplayBankTransferInstructionsType> values = [euBankTransfer, gbBankTransfer, jpBankTransfer, mxBankTransfer, usBankTransfer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentNextActionDisplayBankTransferInstructionsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentNextActionDisplayBankTransferInstructionsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_type.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_financial_address.dart';/// 
 @immutable final class PaymentIntentNextActionDisplayBankTransferInstructions {const PaymentIntentNextActionDisplayBankTransferInstructions({required this.type, this.amountRemaining, this.currency, this.financialAddresses, this.hostedInstructionsUrl, this.reference, });
 
 factory PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionDisplayBankTransferInstructions(
@@ -43,7 +9,7 @@ factory PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(Map<Stri
   financialAddresses: (json['financial_addresses'] as List<dynamic>?)?.map((e) => FundingInstructionsBankTransferFinancialAddress.fromJson(e as Map<String, dynamic>)).toList(),
   hostedInstructionsUrl: json['hosted_instructions_url'] as String?,
   reference: json['reference'] as String?,
-  type: PaymentIntentNextActionDisplayBankTransferInstructionsType.fromJson(json['type'] as String),
+  type: CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType.fromJson(json['type'] as String),
 ); }
 
 /// The remaining amount that needs to be transferred to complete the payment.
@@ -62,7 +28,7 @@ final String? hostedInstructionsUrl;
 final String? reference;
 
 /// Type of bank transfer
-final PaymentIntentNextActionDisplayBankTransferInstructionsType type;
+final CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType type;
 
 Map<String, dynamic> toJson() { return {
   'amount_remaining': ?amountRemaining,
@@ -73,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress> Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, PaymentIntentNextActionDisplayBankTransferInstructionsType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
+PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress> Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(
   amountRemaining: amountRemaining != null ? amountRemaining() : this.amountRemaining,
   currency: currency != null ? currency() : this.currency,
   financialAddresses: financialAddresses != null ? financialAddresses() : this.financialAddresses,

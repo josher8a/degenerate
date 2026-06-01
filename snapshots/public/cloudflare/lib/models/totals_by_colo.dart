@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth_by_colo.dart';import 'requests_by_colo.dart';import 'since.dart';import 'threats.dart';import 'until.dart';/// Breakdown of totals by data type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth_by_colo.dart';import 'package:pub_cloudflare/models/requests_by_colo.dart';import 'package:pub_cloudflare/models/since.dart';import 'package:pub_cloudflare/models/threats.dart';import 'package:pub_cloudflare/models/until.dart';/// Breakdown of totals by data type.
 @immutable final class TotalsByColo {const TotalsByColo({this.bandwidth, this.requests, this.since, this.threats, this.until, });
 
 factory TotalsByColo.fromJson(Map<String, dynamic> json) { return TotalsByColo(

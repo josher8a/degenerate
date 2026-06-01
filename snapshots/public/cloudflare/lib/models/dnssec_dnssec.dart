@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Algorithm key code.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_multi_signer.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_presigned.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_use_nsec3.dart';/// Algorithm key code.
 extension type const DnssecAlgorithm(String value) {
 factory DnssecAlgorithm.fromJson(String json) => DnssecAlgorithm(json);
 

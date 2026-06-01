@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostReclassifyRequestExpectedDisposition {const EmailSecurityPostReclassifyRequestExpectedDisposition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExpectedDisposition {const ExpectedDisposition._(this.value);
 
-factory EmailSecurityPostReclassifyRequestExpectedDisposition.fromJson(String json) { return switch (json) {
+factory ExpectedDisposition.fromJson(String json) { return switch (json) {
   'NONE' => none,
   'BULK' => bulk,
   'MALICIOUS' => malicious,
   'SPAM' => spam,
   'SPOOF' => spoof,
   'SUSPICIOUS' => suspicious,
-  _ => EmailSecurityPostReclassifyRequestExpectedDisposition._(json),
+  _ => ExpectedDisposition._(json),
 }; }
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition none = EmailSecurityPostReclassifyRequestExpectedDisposition._('NONE');
+static const ExpectedDisposition none = ExpectedDisposition._('NONE');
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition bulk = EmailSecurityPostReclassifyRequestExpectedDisposition._('BULK');
+static const ExpectedDisposition bulk = ExpectedDisposition._('BULK');
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition malicious = EmailSecurityPostReclassifyRequestExpectedDisposition._('MALICIOUS');
+static const ExpectedDisposition malicious = ExpectedDisposition._('MALICIOUS');
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition spam = EmailSecurityPostReclassifyRequestExpectedDisposition._('SPAM');
+static const ExpectedDisposition spam = ExpectedDisposition._('SPAM');
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition spoof = EmailSecurityPostReclassifyRequestExpectedDisposition._('SPOOF');
+static const ExpectedDisposition spoof = ExpectedDisposition._('SPOOF');
 
-static const EmailSecurityPostReclassifyRequestExpectedDisposition suspicious = EmailSecurityPostReclassifyRequestExpectedDisposition._('SUSPICIOUS');
+static const ExpectedDisposition suspicious = ExpectedDisposition._('SUSPICIOUS');
 
-static const List<EmailSecurityPostReclassifyRequestExpectedDisposition> values = [none, bulk, malicious, spam, spoof, suspicious];
+static const List<ExpectedDisposition> values = [none, bulk, malicious, spam, spoof, suspicious];
 
 final String value;
 
@@ -32,16 +32,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityPostReclassifyRequestExpectedDisposition && other.value == value; } 
+    other is ExpectedDisposition && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityPostReclassifyRequestExpectedDisposition($value)'; } 
+@override String toString() { return 'ExpectedDisposition($value)'; } 
  }
 @immutable final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({required this.expectedDisposition, this.emlContent, this.escalatedSubmissionId, });
 
 factory EmailSecurityPostReclassifyRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostReclassifyRequest(
   emlContent: json['eml_content'] as String?,
   escalatedSubmissionId: json['escalated_submission_id'] as String?,
-  expectedDisposition: EmailSecurityPostReclassifyRequestExpectedDisposition.fromJson(json['expected_disposition'] as String),
+  expectedDisposition: ExpectedDisposition.fromJson(json['expected_disposition'] as String),
 ); }
 
 /// Base64 encoded content of the EML file
@@ -49,7 +49,7 @@ final String? emlContent;
 
 final String? escalatedSubmissionId;
 
-final EmailSecurityPostReclassifyRequestExpectedDisposition expectedDisposition;
+final ExpectedDisposition expectedDisposition;
 
 Map<String, dynamic> toJson() { return {
   'eml_content': ?emlContent,
@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'expected_disposition': expectedDisposition.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('expected_disposition'); } 
-EmailSecurityPostReclassifyRequest copyWith({String Function()? emlContent, String Function()? escalatedSubmissionId, EmailSecurityPostReclassifyRequestExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
+EmailSecurityPostReclassifyRequest copyWith({String Function()? emlContent, String Function()? escalatedSubmissionId, ExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
   emlContent: emlContent != null ? emlContent() : this.emlContent,
   escalatedSubmissionId: escalatedSubmissionId != null ? escalatedSubmissionId() : this.escalatedSubmissionId,
   expectedDisposition: expectedDisposition ?? this.expectedDisposition,

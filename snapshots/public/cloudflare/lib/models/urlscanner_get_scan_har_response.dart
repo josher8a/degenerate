@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response_errors.dart';import 'urlscanner_get_scan_har_response_messages.dart';import 'urlscanner_get_scan_har_response_result.dart';@immutable final class UrlscannerGetScanHarResponse {const UrlscannerGetScanHarResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_har_response/urlscanner_get_scan_har_response_result.dart';@immutable final class UrlscannerGetScanHarResponse {const UrlscannerGetScanHarResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory UrlscannerGetScanHarResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
   result: UrlscannerGetScanHarResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<UrlscannerGetScanHarResponseErrors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
-final List<UrlscannerGetScanHarResponseMessages> messages;
+final List<DestinationCreateResponse400Messages> messages;
 
 final UrlscannerGetScanHarResponseResult result;
 
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-UrlscannerGetScanHarResponse copyWith({List<UrlscannerGetScanHarResponseErrors>? errors, List<UrlscannerGetScanHarResponseMessages>? messages, UrlscannerGetScanHarResponseResult? result, bool? success, }) { return UrlscannerGetScanHarResponse(
+UrlscannerGetScanHarResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, UrlscannerGetScanHarResponseResult? result, bool? success, }) { return UrlscannerGetScanHarResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

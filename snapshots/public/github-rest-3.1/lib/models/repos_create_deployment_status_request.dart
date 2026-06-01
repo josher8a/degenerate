@@ -1,49 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
-@immutable final class ReposCreateDeploymentStatusRequestState {const ReposCreateDeploymentStatusRequestState._(this.value);
-
-factory ReposCreateDeploymentStatusRequestState.fromJson(String json) { return switch (json) {
-  'error' => error,
-  'failure' => failure,
-  'inactive' => inactive,
-  'in_progress' => inProgress,
-  'queued' => queued,
-  'pending' => pending,
-  'success' => success,
-  _ => ReposCreateDeploymentStatusRequestState._(json),
-}; }
-
-static const ReposCreateDeploymentStatusRequestState error = ReposCreateDeploymentStatusRequestState._('error');
-
-static const ReposCreateDeploymentStatusRequestState failure = ReposCreateDeploymentStatusRequestState._('failure');
-
-static const ReposCreateDeploymentStatusRequestState inactive = ReposCreateDeploymentStatusRequestState._('inactive');
-
-static const ReposCreateDeploymentStatusRequestState inProgress = ReposCreateDeploymentStatusRequestState._('in_progress');
-
-static const ReposCreateDeploymentStatusRequestState queued = ReposCreateDeploymentStatusRequestState._('queued');
-
-static const ReposCreateDeploymentStatusRequestState pending = ReposCreateDeploymentStatusRequestState._('pending');
-
-static const ReposCreateDeploymentStatusRequestState success = ReposCreateDeploymentStatusRequestState._('success');
-
-static const List<ReposCreateDeploymentStatusRequestState> values = [error, failure, inactive, inProgress, queued, pending, success];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateDeploymentStatusRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateDeploymentStatusRequestState($value)'; } 
- }
-@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_status/deployment_status_state.dart';@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
 
 factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentStatusRequest(
-  state: ReposCreateDeploymentStatusRequestState.fromJson(json['state'] as String),
+  state: DeploymentStatusState.fromJson(json['state'] as String),
   targetUrl: json.containsKey('target_url') ? json['target_url'] as String : '',
   logUrl: json.containsKey('log_url') ? json['log_url'] as String : '',
   description: json.containsKey('description') ? json['description'] as String : '',
@@ -53,7 +13,7 @@ factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
-final ReposCreateDeploymentStatusRequestState state;
+final DeploymentStatusState state;
 
 /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.
 /// 
@@ -86,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'auto_inactive': ?autoInactive,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String Function()? targetUrl, String Function()? logUrl, String Function()? description, String Function()? environment, String Function()? environmentUrl, bool Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
+ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, String Function()? targetUrl, String Function()? logUrl, String Function()? description, String Function()? environment, String Function()? environmentUrl, bool Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,

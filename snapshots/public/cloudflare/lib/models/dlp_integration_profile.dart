@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class DlpIntegrationProfile {const DlpIntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class DlpIntegrationProfile {const DlpIntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, this.description, });
 
 factory DlpIntegrationProfile.fromJson(Map<String, dynamic> json) { return DlpIntegrationProfile(
   createdAt: DateTime.parse(json['created_at'] as String),

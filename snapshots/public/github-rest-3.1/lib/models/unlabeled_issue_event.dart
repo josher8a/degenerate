@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'unlabeled_issue_event_label.dart';/// Unlabeled Issue Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/labeled_issue_event/labeled_issue_event_label.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Unlabeled Issue Event
 @immutable final class UnlabeledIssueEvent {const UnlabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
 
 factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) { return UnlabeledIssueEvent(
@@ -13,7 +13,7 @@ factory UnlabeledIssueEvent.fromJson(Map<String, dynamic> json) { return Unlabel
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
-  label: UnlabeledIssueEventLabel.fromJson(json['label'] as Map<String, dynamic>),
+  label: LabeledIssueEventLabel.fromJson(json['label'] as Map<String, dynamic>),
 ); }
 
 final int id;
@@ -34,7 +34,7 @@ final String createdAt;
 
 final Integration? performedViaGithubApp;
 
-final UnlabeledIssueEventLabel label;
+final LabeledIssueEventLabel label;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('label'); } 
-UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, UnlabeledIssueEventLabel? label, }) { return UnlabeledIssueEvent(
+UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, LabeledIssueEventLabel? label, }) { return UnlabeledIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

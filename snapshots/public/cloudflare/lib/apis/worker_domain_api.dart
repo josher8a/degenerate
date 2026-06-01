@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_domain_attach_to_domain_request.dart';import '../models/workers_account_identifier.dart';import '../models/workers_domain.dart';import '../models/workers_domain_identifier.dart';import '../models/workers_schemas_service.dart';import '../models/workers_zone_identifier.dart';import '../models/workers_zone_name.dart';/// WorkerDomainApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_domain_attach_to_domain_request.dart';import 'package:pub_cloudflare/models/workers_account_identifier.dart';import 'package:pub_cloudflare/models/workers_domain.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';/// WorkerDomainApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

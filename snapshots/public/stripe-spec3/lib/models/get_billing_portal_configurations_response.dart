@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetBillingPortalConfigurationsResponseObject {const GetBillingPortalConfigurationsResponseObject._(this.value);
-
-factory GetBillingPortalConfigurationsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetBillingPortalConfigurationsResponseObject._(json),
-}; }
-
-static const GetBillingPortalConfigurationsResponseObject list = GetBillingPortalConfigurationsResponseObject._('list');
-
-static const List<GetBillingPortalConfigurationsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetBillingPortalConfigurationsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetBillingPortalConfigurationsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetBillingPortalConfigurationsResponse {const GetBillingPortalConfigurationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetBillingPortalConfigurationsResponse.fromJson(Map<String, dynamic> json) { return GetBillingPortalConfigurationsResponse(
   data: (json['data'] as List<dynamic>).map((e) => BillingPortalConfiguration.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetBillingPortalConfigurationsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<BillingPortalConfiguration> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetBillingPortalConfigurationsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetBillingPortalConfigurationsResponse copyWith({List<BillingPortalConfiguration>? data, bool? hasMore, GetBillingPortalConfigurationsResponseObject? object, String? url, }) { return GetBillingPortalConfigurationsResponse(
+GetBillingPortalConfigurationsResponse copyWith({List<BillingPortalConfiguration>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetBillingPortalConfigurationsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

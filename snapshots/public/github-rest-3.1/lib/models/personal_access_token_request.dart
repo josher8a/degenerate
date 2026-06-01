@@ -1,43 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'personal_access_token_request_permissions_added.dart';import 'personal_access_token_request_permissions_result.dart';import 'personal_access_token_request_permissions_upgraded.dart';import 'personal_access_token_request_repositories.dart';import 'simple_user.dart';/// Type of repository selection requested.
-@immutable final class PersonalAccessTokenRequestRepositorySelection {const PersonalAccessTokenRequestRepositorySelection._(this.value);
-
-factory PersonalAccessTokenRequestRepositorySelection.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'all' => all,
-  'subset' => subset,
-  _ => PersonalAccessTokenRequestRepositorySelection._(json),
-}; }
-
-static const PersonalAccessTokenRequestRepositorySelection none = PersonalAccessTokenRequestRepositorySelection._('none');
-
-static const PersonalAccessTokenRequestRepositorySelection all = PersonalAccessTokenRequestRepositorySelection._('all');
-
-static const PersonalAccessTokenRequestRepositorySelection subset = PersonalAccessTokenRequestRepositorySelection._('subset');
-
-static const List<PersonalAccessTokenRequestRepositorySelection> values = [none, all, subset];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonalAccessTokenRequestRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonalAccessTokenRequestRepositorySelection($value)'; } 
- }
-/// Details of a Personal Access Token Request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_repository_selection.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_added.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_result.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/permissions_upgraded.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request/personal_access_token_request_repositories.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Details of a Personal Access Token Request.
 @immutable final class PersonalAccessTokenRequest {const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
 factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequest(
   id: (json['id'] as num).toInt(),
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
-  permissionsAdded: PersonalAccessTokenRequestPermissionsAdded.fromJson(json['permissions_added'] as Map<String, dynamic>),
-  permissionsUpgraded: PersonalAccessTokenRequestPermissionsUpgraded.fromJson(json['permissions_upgraded'] as Map<String, dynamic>),
-  permissionsResult: PersonalAccessTokenRequestPermissionsResult.fromJson(json['permissions_result'] as Map<String, dynamic>),
-  repositorySelection: PersonalAccessTokenRequestRepositorySelection.fromJson(json['repository_selection'] as String),
+  permissionsAdded: PermissionsAdded.fromJson(json['permissions_added'] as Map<String, dynamic>),
+  permissionsUpgraded: PermissionsUpgraded.fromJson(json['permissions_upgraded'] as Map<String, dynamic>),
+  permissionsResult: PermissionsResult.fromJson(json['permissions_result'] as Map<String, dynamic>),
+  repositorySelection: OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(json['repository_selection'] as String),
   repositoryCount: json['repository_count'] != null ? (json['repository_count'] as num).toInt() : null,
   repositories: (json['repositories'] as List<dynamic>?)?.map((e) => PersonalAccessTokenRequestRepositories.fromJson(e as Map<String, dynamic>)).toList(),
   createdAt: json['created_at'] as String,
@@ -54,16 +26,16 @@ final int id;
 final SimpleUser owner;
 
 /// New requested permissions, categorized by type of permission.
-final PersonalAccessTokenRequestPermissionsAdded permissionsAdded;
+final PermissionsAdded permissionsAdded;
 
 /// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
-final PersonalAccessTokenRequestPermissionsUpgraded permissionsUpgraded;
+final PermissionsUpgraded permissionsUpgraded;
 
 /// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
-final PersonalAccessTokenRequestPermissionsResult permissionsResult;
+final PermissionsResult permissionsResult;
 
 /// Type of repository selection requested.
-final PersonalAccessTokenRequestRepositorySelection repositorySelection;
+final OrganizationProgrammaticAccessGrantRepositorySelection repositorySelection;
 
 /// The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
 final int? repositoryCount;
@@ -119,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('token_expired') && json['token_expired'] is bool &&
       json.containsKey('token_expires_at') && json['token_expires_at'] is String &&
       json.containsKey('token_last_used_at') && json['token_last_used_at'] is String; } 
-PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PersonalAccessTokenRequestPermissionsAdded? permissionsAdded, PersonalAccessTokenRequestPermissionsUpgraded? permissionsUpgraded, PersonalAccessTokenRequestPermissionsResult? permissionsResult, PersonalAccessTokenRequestRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return PersonalAccessTokenRequest(
+PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdded? permissionsAdded, PermissionsUpgraded? permissionsUpgraded, PermissionsResult? permissionsResult, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, int? Function()? repositoryCount, List<PersonalAccessTokenRequestRepositories>? Function()? repositories, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return PersonalAccessTokenRequest(
   id: id ?? this.id,
   owner: owner ?? this.owner,
   permissionsAdded: permissionsAdded ?? this.permissionsAdded,

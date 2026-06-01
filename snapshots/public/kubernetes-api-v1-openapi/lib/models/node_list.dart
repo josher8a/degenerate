@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'node.dart';/// NodeList is the whole list of all Nodes which have been registered with master.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node.dart';/// NodeList is the whole list of all Nodes which have been registered with master.
 @immutable final class NodeList {const NodeList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory NodeList.fromJson(Map<String, dynamic> json) { return NodeList(

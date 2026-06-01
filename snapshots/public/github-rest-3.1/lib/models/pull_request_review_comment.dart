@@ -1,85 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'pull_request_review_comment_links.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
-@immutable final class PullRequestReviewCommentStartSide {const PullRequestReviewCommentStartSide._(this.value);
-
-factory PullRequestReviewCommentStartSide.fromJson(String json) { return switch (json) {
-  'LEFT' => left,
-  'RIGHT' => right,
-  'null' => $null,
-  _ => PullRequestReviewCommentStartSide._(json),
-}; }
-
-static const PullRequestReviewCommentStartSide left = PullRequestReviewCommentStartSide._('LEFT');
-
-static const PullRequestReviewCommentStartSide right = PullRequestReviewCommentStartSide._('RIGHT');
-
-static const PullRequestReviewCommentStartSide $null = PullRequestReviewCommentStartSide._('null');
-
-static const List<PullRequestReviewCommentStartSide> values = [left, right, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentStartSide($value)'; } 
- }
-/// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
-@immutable final class PullRequestReviewCommentSide {const PullRequestReviewCommentSide._(this.value);
-
-factory PullRequestReviewCommentSide.fromJson(String json) { return switch (json) {
-  'LEFT' => left,
-  'RIGHT' => right,
-  _ => PullRequestReviewCommentSide._(json),
-}; }
-
-static const PullRequestReviewCommentSide left = PullRequestReviewCommentSide._('LEFT');
-
-static const PullRequestReviewCommentSide right = PullRequestReviewCommentSide._('RIGHT');
-
-static const List<PullRequestReviewCommentSide> values = [left, right];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentSide($value)'; } 
- }
-/// The level at which the comment is targeted, can be a diff line or a file.
-@immutable final class PullRequestReviewCommentSubjectType {const PullRequestReviewCommentSubjectType._(this.value);
-
-factory PullRequestReviewCommentSubjectType.fromJson(String json) { return switch (json) {
-  'line' => line,
-  'file' => file,
-  _ => PullRequestReviewCommentSubjectType._(json),
-}; }
-
-static const PullRequestReviewCommentSubjectType line = PullRequestReviewCommentSubjectType._('line');
-
-static const PullRequestReviewCommentSubjectType file = PullRequestReviewCommentSubjectType._('file');
-
-static const List<PullRequestReviewCommentSubjectType> values = [line, file];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestReviewCommentSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestReviewCommentSubjectType($value)'; } 
- }
-/// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
-@immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine, this.originalStartLine, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = PullRequestReviewCommentSide.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_links.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Pull Request Review Comments are comments on a portion of the Pull Request's diff.
+@immutable final class PullRequestReviewComment {const PullRequestReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.position, this.originalPosition, this.inReplyToId, this.startLine, this.originalStartLine, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.side = Side.right, this.subjectType, this.reactions, this.bodyHtml, this.bodyText, });
 
 factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return PullRequestReviewComment(
   url: json['url'] as String,
@@ -106,8 +28,8 @@ factory PullRequestReviewComment.fromJson(Map<String, dynamic> json) { return Pu
   startSide: json.containsKey('start_side') ? json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null : PullRequestReviewCommentStartSide.right,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   originalLine: json['original_line'] != null ? (json['original_line'] as num).toInt() : null,
-  side: json.containsKey('side') ? PullRequestReviewCommentSide.fromJson(json['side'] as String) : PullRequestReviewCommentSide.right,
-  subjectType: json['subject_type'] != null ? PullRequestReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null,
+  side: json.containsKey('side') ? Side.fromJson(json['side'] as String) : Side.right,
+  subjectType: json['subject_type'] != null ? SubjectType.fromJson(json['subject_type'] as String) : null,
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   bodyHtml: json['body_html'] as String?,
   bodyText: json['body_text'] as String?,
@@ -182,10 +104,10 @@ final int? line;
 final int? originalLine;
 
 /// The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
-final PullRequestReviewCommentSide side;
+final Side side;
 
 /// The level at which the comment is targeted, can be a diff line or a file.
-final PullRequestReviewCommentSubjectType? subjectType;
+final SubjectType? subjectType;
 
 final ReactionRollup? reactions;
 
@@ -240,7 +162,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('author_association') &&
       json.containsKey('_links'); } 
-PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int Function()? position, int Function()? originalPosition, String? commitId, String? originalCommitId, int Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, int? Function()? startLine, int? Function()? originalStartLine, PullRequestReviewCommentStartSide? Function()? startSide, int Function()? line, int Function()? originalLine, PullRequestReviewCommentSide Function()? side, PullRequestReviewCommentSubjectType Function()? subjectType, ReactionRollup Function()? reactions, String Function()? bodyHtml, String Function()? bodyText, }) { return PullRequestReviewComment(
+PullRequestReviewComment copyWith({String? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int Function()? position, int Function()? originalPosition, String? commitId, String? originalCommitId, int Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, PullRequestReviewCommentLinks? links, int? Function()? startLine, int? Function()? originalStartLine, PullRequestReviewCommentStartSide? Function()? startSide, int Function()? line, int Function()? originalLine, Side Function()? side, SubjectType Function()? subjectType, ReactionRollup Function()? reactions, String Function()? bodyHtml, String Function()? bodyText, }) { return PullRequestReviewComment(
   url: url ?? this.url,
   pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
   id: id ?? this.id,

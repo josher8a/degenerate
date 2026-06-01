@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';import 'refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_payment_record_refund.dart';import 'package:pub_stripe_spec3/models/refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
 @immutable final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {

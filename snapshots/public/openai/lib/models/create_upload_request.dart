@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_expiration_after.dart';/// The intended purpose of the uploaded file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_expiration_after.dart';/// The intended purpose of the uploaded file.
 /// 
 /// See the [documentation on File
 /// purposes](/docs/api-reference/files/create#files-create-purpose).

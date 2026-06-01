@@ -1,36 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `recording_status_callback`. Can be: `GET` or `POST` and the default is `POST`.
-@immutable final class CreateCallRecordingRequestRecordingStatusCallbackMethod {const CreateCallRecordingRequestRecordingStatusCallbackMethod._(this.value);
-
-factory CreateCallRecordingRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateCallRecordingRequestRecordingStatusCallbackMethod._(json),
-}; }
-
-static const CreateCallRecordingRequestRecordingStatusCallbackMethod $get = CreateCallRecordingRequestRecordingStatusCallbackMethod._('GET');
-
-static const CreateCallRecordingRequestRecordingStatusCallbackMethod post = CreateCallRecordingRequestRecordingStatusCallbackMethod._('POST');
-
-static const List<CreateCallRecordingRequestRecordingStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCallRecordingRequestRecordingStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCallRecordingRequestRecordingStatusCallbackMethod($value)'; } 
- }
-@immutable final class CreateCallRecordingRequest {const CreateCallRecordingRequest({this.recordingStatusCallbackEvent, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.trim, this.recordingChannels, this.recordingTrack, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';@immutable final class CreateCallRecordingRequest {const CreateCallRecordingRequest({this.recordingStatusCallbackEvent, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.trim, this.recordingChannels, this.recordingTrack, });
 
 factory CreateCallRecordingRequest.fromJson(Map<String, dynamic> json) { return CreateCallRecordingRequest(
   recordingStatusCallbackEvent: (json['RecordingStatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),
   recordingStatusCallback: json['RecordingStatusCallback'] != null ? Uri.parse(json['RecordingStatusCallback'] as String) : null,
-  recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] != null ? CreateCallRecordingRequestRecordingStatusCallbackMethod.fromJson(json['RecordingStatusCallbackMethod'] as String) : null,
+  recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] != null ? RecordingStatusCallbackMethod.fromJson(json['RecordingStatusCallbackMethod'] as String) : null,
   trim: json['Trim'] as String?,
   recordingChannels: json['RecordingChannels'] as String?,
   recordingTrack: json['RecordingTrack'] as String?,
@@ -43,7 +18,7 @@ final List<String>? recordingStatusCallbackEvent;
 final Uri? recordingStatusCallback;
 
 /// The HTTP method we should use to call `recording_status_callback`. Can be: `GET` or `POST` and the default is `POST`.
-final CreateCallRecordingRequestRecordingStatusCallbackMethod? recordingStatusCallbackMethod;
+final RecordingStatusCallbackMethod? recordingStatusCallbackMethod;
 
 /// Whether to trim any leading and trailing silence in the recording. Can be: `trim-silence` or `do-not-trim` and the default is `do-not-trim`. `trim-silence` trims the silence from the beginning and end of the recording and `do-not-trim` does not.
 final String? trim;
@@ -63,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'RecordingTrack': ?recordingTrack,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'RecordingStatusCallbackEvent', 'RecordingStatusCallback', 'RecordingStatusCallbackMethod', 'Trim', 'RecordingChannels', 'RecordingTrack'}.contains(key)); } 
-CreateCallRecordingRequest copyWith({List<String> Function()? recordingStatusCallbackEvent, Uri Function()? recordingStatusCallback, CreateCallRecordingRequestRecordingStatusCallbackMethod Function()? recordingStatusCallbackMethod, String Function()? trim, String Function()? recordingChannels, String Function()? recordingTrack, }) { return CreateCallRecordingRequest(
+CreateCallRecordingRequest copyWith({List<String> Function()? recordingStatusCallbackEvent, Uri Function()? recordingStatusCallback, RecordingStatusCallbackMethod Function()? recordingStatusCallbackMethod, String Function()? trim, String Function()? recordingChannels, String Function()? recordingTrack, }) { return CreateCallRecordingRequest(
   recordingStatusCallbackEvent: recordingStatusCallbackEvent != null ? recordingStatusCallbackEvent() : this.recordingStatusCallbackEvent,
   recordingStatusCallback: recordingStatusCallback != null ? recordingStatusCallback() : this.recordingStatusCallback,
   recordingStatusCallbackMethod: recordingStatusCallbackMethod != null ? recordingStatusCallbackMethod() : this.recordingStatusCallbackMethod,

@@ -1,10 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'new.dart';
-import 'proto.dart';
-import 'string_model.dart';
-import 'true.dart';
+import 'package:pub_unhinged/models/new.dart';
+import 'package:pub_unhinged/models/new/new0.dart';
+import 'package:pub_unhinged/models/new/new_null.dart';
+import 'package:pub_unhinged/models/proto.dart';
+import 'package:pub_unhinged/models/string_model.dart';
+import 'package:pub_unhinged/models/true.dart';
 
 sealed class Self {
   const Self();
@@ -23,8 +25,8 @@ sealed class Self {
   factory Self.type({
     required bool $false,
     required dynamic none,
-    required TrueNull $null,
-    required True0 $0,
+    required NewNull $null,
+    required New0 $0,
     required String $empty,
     String? constructor,
     String? proto,

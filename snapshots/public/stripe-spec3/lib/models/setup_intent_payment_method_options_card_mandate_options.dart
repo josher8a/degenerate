@@ -1,106 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
-@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType {const SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
-
-factory SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(String json) { return switch (json) {
-  'fixed' => fixed,
-  'maximum' => maximum,
-  _ => SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._(json),
-}; }
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType fixed = SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._('fixed');
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType maximum = SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._('maximum');
-
-static const List<SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType> values = [fixed, maximum];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType($value)'; } 
- }
-/// Specifies payment frequency. One of `day`, `week`, `month`, `year`, or `sporadic`.
-@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsInterval {const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
-
-factory SetupIntentPaymentMethodOptionsCardMandateOptionsInterval.fromJson(String json) { return switch (json) {
-  'day' => day,
-  'month' => month,
-  'sporadic' => sporadic,
-  'week' => week,
-  'year' => year,
-  _ => SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._(json),
-}; }
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval day = SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._('day');
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval month = SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._('month');
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval sporadic = SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._('sporadic');
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval week = SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._('week');
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval year = SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._('year');
-
-static const List<SetupIntentPaymentMethodOptionsCardMandateOptionsInterval> values = [day, month, sporadic, week, year];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsCardMandateOptionsInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsInterval($value)'; } 
- }
-@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes {const SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
-
-factory SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
-  'india' => india,
-  _ => SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes._(json),
-}; }
-
-static const SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes india = SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes._('india');
-
-static const List<SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes> values = [india];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/payment_method_options_card_mandate_options_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/supported_types.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsCardMandateOptions {const SetupIntentPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
 factory SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: (json['amount'] as num).toInt(),
-  amountType: SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(json['amount_type'] as String),
+  amountType: MandatePaytoAmountType.fromJson(json['amount_type'] as String),
   currency: json['currency'] as String,
   description: json['description'] as String?,
   endDate: json['end_date'] != null ? (json['end_date'] as num).toInt() : null,
-  interval: SetupIntentPaymentMethodOptionsCardMandateOptionsInterval.fromJson(json['interval'] as String),
+  interval: PaymentMethodOptionsCardMandateOptionsInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
   reference: json['reference'] as String,
   startDate: (json['start_date'] as num).toInt(),
-  supportedTypes: (json['supported_types'] as List<dynamic>?)?.map((e) => SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(e as String)).toList(),
+  supportedTypes: (json['supported_types'] as List<dynamic>?)?.map((e) => SupportedTypes.fromJson(e as String)).toList(),
 ); }
 
 /// Amount to be charged for future payments.
 final int amount;
 
 /// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
-final SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType amountType;
+final MandatePaytoAmountType amountType;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -112,7 +32,7 @@ final String? description;
 final int? endDate;
 
 /// Specifies payment frequency. One of `day`, `week`, `month`, `year`, or `sporadic`.
-final SetupIntentPaymentMethodOptionsCardMandateOptionsInterval interval;
+final PaymentMethodOptionsCardMandateOptionsInterval interval;
 
 /// The number of intervals between payments. For example, `interval=month` and `interval_count=3` indicates one payment every three months. Maximum of one year interval allowed (1 year, 12 months, or 52 weeks). This parameter is optional when `interval=sporadic`.
 final int? intervalCount;
@@ -124,7 +44,7 @@ final String reference;
 final int startDate;
 
 /// Specifies the type of mandates supported. Possible values are `india`.
-final List<SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes>? supportedTypes;
+final List<SupportedTypes>? supportedTypes;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -144,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('start_date') && json['start_date'] is num; } 
-SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, SetupIntentPaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes>? Function()? supportedTypes, }) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
+SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<SupportedTypes>? Function()? supportedTypes, }) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   currency: currency ?? this.currency,

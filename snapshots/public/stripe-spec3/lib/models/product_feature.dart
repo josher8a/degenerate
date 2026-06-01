@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ProductFeatureObject {const ProductFeatureObject._(this.value);
-
-factory ProductFeatureObject.fromJson(String json) { return switch (json) {
-  'product_feature' => productFeature,
-  _ => ProductFeatureObject._(json),
-}; }
-
-static const ProductFeatureObject productFeature = ProductFeatureObject._('product_feature');
-
-static const List<ProductFeatureObject> values = [productFeature];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProductFeatureObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProductFeatureObject($value)'; } 
- }
-/// A product_feature represents an attachment between a feature and a product.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product_feature/deleted_product_feature_object.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';/// A product_feature represents an attachment between a feature and a product.
 /// When a product is purchased that has a feature attached, Stripe will create an entitlement to the feature for the purchasing customer.
 @immutable final class ProductFeature {const ProductFeature({required this.entitlementFeature, required this.id, required this.livemode, required this.object, });
 
@@ -30,7 +8,7 @@ factory ProductFeature.fromJson(Map<String, dynamic> json) { return ProductFeatu
   entitlementFeature: EntitlementsFeature.fromJson(json['entitlement_feature'] as Map<String, dynamic>),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  object: ProductFeatureObject.fromJson(json['object'] as String),
+  object: DeletedProductFeatureObject.fromJson(json['object'] as String),
 ); }
 
 final EntitlementsFeature entitlementFeature;
@@ -42,7 +20,7 @@ final String id;
 final bool livemode;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final ProductFeatureObject object;
+final DeletedProductFeatureObject object;
 
 Map<String, dynamic> toJson() { return {
   'entitlement_feature': entitlementFeature.toJson(),
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('entit
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-ProductFeature copyWith({EntitlementsFeature? entitlementFeature, String? id, bool? livemode, ProductFeatureObject? object, }) { return ProductFeature(
+ProductFeature copyWith({EntitlementsFeature? entitlementFeature, String? id, bool? livemode, DeletedProductFeatureObject? object, }) { return ProductFeature(
   entitlementFeature: entitlementFeature ?? this.entitlementFeature,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

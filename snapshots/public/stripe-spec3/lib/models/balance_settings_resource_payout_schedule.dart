@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';/// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
 @immutable final class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval._(this.value);
 
 factory BalanceSettingsResourcePayoutScheduleInterval.fromJson(String json) { return switch (json) {
@@ -31,46 +31,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BalanceSettingsResourcePayoutScheduleInterval($value)'; } 
  }
-@immutable final class BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays {const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(this.value);
-
-factory BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
-  'friday' => friday,
-  'monday' => monday,
-  'thursday' => thursday,
-  'tuesday' => tuesday,
-  'wednesday' => wednesday,
-  _ => BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(json),
-}; }
-
-static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays friday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('friday');
-
-static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays monday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('monday');
-
-static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays thursday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('thursday');
-
-static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays tuesday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('tuesday');
-
-static const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays wednesday = BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._('wednesday');
-
-static const List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays> values = [friday, monday, thursday, tuesday, wednesday];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays($value)'; } 
- }
 /// 
 @immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
 
 factory BalanceSettingsResourcePayoutSchedule.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayoutSchedule(
   interval: json['interval'] != null ? BalanceSettingsResourcePayoutScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-  weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(e as String)).toList(),
+  weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => WeeklyPayoutDays.fromJson(e as String)).toList(),
 ); }
 
 /// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
@@ -80,7 +47,7 @@ final BalanceSettingsResourcePayoutScheduleInterval? interval;
 final List<int>? monthlyPayoutDays;
 
 /// The days of the week when available funds are paid out, specified as an array, for example, [`monday`, `tuesday`]. Only shown if `interval` is weekly.
-final List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? weeklyPayoutDays;
+final List<WeeklyPayoutDays>? weeklyPayoutDays;
 
 Map<String, dynamic> toJson() { return {
   if (interval != null) 'interval': interval?.toJson(),
@@ -88,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interval', 'monthly_payout_days', 'weekly_payout_days'}.contains(key)); } 
-BalanceSettingsResourcePayoutSchedule copyWith({BalanceSettingsResourcePayoutScheduleInterval? Function()? interval, List<int> Function()? monthlyPayoutDays, List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return BalanceSettingsResourcePayoutSchedule(
+BalanceSettingsResourcePayoutSchedule copyWith({BalanceSettingsResourcePayoutScheduleInterval? Function()? interval, List<int> Function()? monthlyPayoutDays, List<WeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return BalanceSettingsResourcePayoutSchedule(
   interval: interval != null ? interval() : this.interval,
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,

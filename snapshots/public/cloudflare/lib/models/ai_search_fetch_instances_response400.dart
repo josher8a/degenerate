@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response400_errors.dart';@immutable final class AiSearchFetchInstancesResponse400 {const AiSearchFetchInstancesResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_response400/ai_search_create_instances_response400_errors.dart';@immutable final class AiSearchFetchInstancesResponse400 {const AiSearchFetchInstancesResponse400({required this.errors, required this.success, });
 
 factory AiSearchFetchInstancesResponse400.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchFetchInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchCreateInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<AiSearchFetchInstancesResponse400Errors> errors;
+final List<AiSearchCreateInstancesResponse400Errors> errors;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-AiSearchFetchInstancesResponse400 copyWith({List<AiSearchFetchInstancesResponse400Errors>? errors, bool? success, }) { return AiSearchFetchInstancesResponse400(
+AiSearchFetchInstancesResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors>? errors, bool? success, }) { return AiSearchFetchInstancesResponse400(
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 

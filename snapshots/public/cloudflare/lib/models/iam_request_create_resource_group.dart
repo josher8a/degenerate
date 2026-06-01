@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_create_scope.dart';@immutable final class IamRequestCreateResourceGroup {const IamRequestCreateResourceGroup({required this.name, required this.scope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_create_scope.dart';@immutable final class IamRequestCreateResourceGroup {const IamRequestCreateResourceGroup({required this.name, required this.scope, });
 
 factory IamRequestCreateResourceGroup.fromJson(Map<String, dynamic> json) { return IamRequestCreateResourceGroup(
   name: json['name'] as String,

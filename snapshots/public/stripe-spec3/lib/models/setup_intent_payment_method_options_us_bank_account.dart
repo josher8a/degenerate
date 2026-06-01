@@ -1,40 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linked_account_options_common.dart';import 'payment_method_options_us_bank_account_mandate_options.dart';/// Bank account verification method.
-@immutable final class SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod {const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
-
-factory SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  'microdeposits' => microdeposits,
-  _ => SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._(json),
-}; }
-
-static const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod automatic = SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._('automatic');
-
-static const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod instant = SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._('instant');
-
-static const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod microdeposits = SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._('microdeposits');
-
-static const List<SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod> values = [automatic, instant, microdeposits];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/linked_account_options_common.dart';import 'package:pub_stripe_spec3/models/payment_method_options_us_bank_account_mandate_options.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsUsBankAccount {const SetupIntentPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentMethodOptionsUsBankAccountMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  verificationMethod: json['verification_method'] != null ? SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
+  verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
 final LinkedAccountOptionsCommon? financialConnections;
@@ -42,7 +14,7 @@ final LinkedAccountOptionsCommon? financialConnections;
 final PaymentMethodOptionsUsBankAccountMandateOptions? mandateOptions;
 
 /// Bank account verification method.
-final SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod? verificationMethod;
+final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
@@ -50,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'verification_method'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsUsBankAccount copyWith({LinkedAccountOptionsCommon Function()? financialConnections, PaymentMethodOptionsUsBankAccountMandateOptions Function()? mandateOptions, SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsUsBankAccount(
+SetupIntentPaymentMethodOptionsUsBankAccount copyWith({LinkedAccountOptionsCommon Function()? financialConnections, PaymentMethodOptionsUsBankAccountMandateOptions Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,

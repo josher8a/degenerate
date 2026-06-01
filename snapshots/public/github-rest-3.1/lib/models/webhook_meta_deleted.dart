@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_meta_deleted_hook.dart';@immutable final class WebhookMetaDeletedAction {const WebhookMetaDeletedAction._(this.value);
-
-factory WebhookMetaDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookMetaDeletedAction._(json),
-}; }
-
-static const WebhookMetaDeletedAction deleted = WebhookMetaDeletedAction._('deleted');
-
-static const List<WebhookMetaDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMetaDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMetaDeletedAction($value)'; } 
- }
-@immutable final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, required this.hook, required this.hookId, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_meta_deleted/webhook_meta_deleted_hook.dart';@immutable final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, required this.hook, required this.hookId, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookMetaDeleted(
-  action: WebhookMetaDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   hook: WebhookMetaDeletedHook.fromJson(json['hook'] as Map<String, dynamic>),
   hookId: (json['hook_id'] as num).toInt(),
@@ -34,7 +13,7 @@ factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookM
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookMetaDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -65,7 +44,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('hook') &&
       json.containsKey('hook_id') && json['hook_id'] is num; } 
-WebhookMetaDeleted copyWith({WebhookMetaDeletedAction? action, EnterpriseWebhooks Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookMetaDeleted(
+WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, WebhookMetaDeletedHook? hook, int? hookId, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookMetaDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   hook: hook ?? this.hook,

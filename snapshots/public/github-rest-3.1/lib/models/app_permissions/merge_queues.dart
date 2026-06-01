@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage the merge queues for a repository.
+@immutable final class MergeQueues {const MergeQueues._(this.value);
+
+factory MergeQueues.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => MergeQueues._(json),
+}; }
+
+static const MergeQueues read = MergeQueues._('read');
+
+static const MergeQueues write = MergeQueues._('write');
+
+static const List<MergeQueues> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MergeQueues && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MergeQueues($value)'; } 
+ }

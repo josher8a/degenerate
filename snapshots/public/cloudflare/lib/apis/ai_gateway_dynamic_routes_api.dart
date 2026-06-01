@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_delete_gateway_dynamic_route_response400.dart';import '../models/aig_config_delete_gateway_dynamic_route_response_result.dart';import '../models/aig_config_get_gateway_dynamic_route_response400.dart';import '../models/aig_config_get_gateway_dynamic_route_response_result.dart';import '../models/aig_config_get_gateway_dynamic_route_version_response400.dart';import '../models/aig_config_get_gateway_dynamic_route_version_response_result.dart';import '../models/aig_config_list_gateway_dynamic_route_deployments_response.dart';import '../models/aig_config_list_gateway_dynamic_route_deployments_response400.dart';import '../models/aig_config_list_gateway_dynamic_route_versions_response.dart';import '../models/aig_config_list_gateway_dynamic_route_versions_response400.dart';import '../models/aig_config_list_gateway_dynamic_routes_response.dart';import '../models/aig_config_list_gateway_dynamic_routes_response400.dart';import '../models/aig_config_post_gateway_dynamic_route_deployment_request.dart';import '../models/aig_config_post_gateway_dynamic_route_deployment_response400.dart';import '../models/aig_config_post_gateway_dynamic_route_deployment_response_result.dart';import '../models/aig_config_post_gateway_dynamic_route_request.dart';import '../models/aig_config_post_gateway_dynamic_route_response400.dart';import '../models/aig_config_post_gateway_dynamic_route_response_result.dart';import '../models/aig_config_post_gateway_dynamic_route_version_request.dart';import '../models/aig_config_post_gateway_dynamic_route_version_response400.dart';import '../models/aig_config_post_gateway_dynamic_route_version_response_result.dart';import '../models/aig_config_update_gateway_dynamic_route_request.dart';import '../models/aig_config_update_gateway_dynamic_route_response.dart';import '../models/aig_config_update_gateway_dynamic_route_response400.dart';/// AiGatewayDynamicRoutesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_delete_gateway_dynamic_route_response/aig_config_delete_gateway_dynamic_route_response_result.dart';import 'package:pub_cloudflare/models/aig_config_delete_gateway_dynamic_route_response400.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_response/aig_config_get_gateway_dynamic_route_response_result.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_response400.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response/aig_config_get_gateway_dynamic_route_version_response_result.dart';import 'package:pub_cloudflare/models/aig_config_get_gateway_dynamic_route_version_response400.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_deployments_response.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_deployments_response400.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_versions_response.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_route_versions_response400.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_routes_response.dart';import 'package:pub_cloudflare/models/aig_config_list_gateway_dynamic_routes_response400.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_deployment_request.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_deployment_response400.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_response400.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_version_request.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_version_response400.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_dynamic_route_request.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_dynamic_route_response.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_dynamic_route_response400.dart';/// AiGatewayDynamicRoutesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -33,7 +33,7 @@ return execute(
 /// Create a new AI Gateway Dynamic Route.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteResponseResult, AigConfigPostGatewayDynamicRouteResponse400>> aigConfigPostGatewayDynamicRoute({required String accountId, required String gatewayId, AigConfigPostGatewayDynamicRouteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayDynamicRouteResponseResult, AigConfigPostGatewayDynamicRouteResponse400>> aigConfigPostGatewayDynamicRoute({required String accountId, required String gatewayId, AigConfigPostGatewayDynamicRouteRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigPostGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AigConfigGetGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AigConfigPostGatewayDynamicRouteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -150,7 +150,7 @@ return execute(
 /// Create a new AI Gateway Dynamic Route Deployment.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteDeploymentResponseResult, AigConfigPostGatewayDynamicRouteDeploymentResponse400>> aigConfigPostGatewayDynamicRouteDeployment({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteDeploymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigDeleteGatewayDynamicRouteResponseResult, AigConfigPostGatewayDynamicRouteDeploymentResponse400>> aigConfigPostGatewayDynamicRouteDeployment({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteDeploymentRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,7 +165,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigPostGatewayDynamicRouteDeploymentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AigConfigPostGatewayDynamicRouteDeploymentResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -197,7 +197,7 @@ return execute(
 /// Create a new AI Gateway Dynamic Route Version.
 ///
 /// `POST /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions`
-Future<ApiResult<AigConfigPostGatewayDynamicRouteVersionResponseResult, AigConfigPostGatewayDynamicRouteVersionResponse400>> aigConfigPostGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteVersionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigDeleteGatewayDynamicRouteResponseResult, AigConfigPostGatewayDynamicRouteVersionResponse400>> aigConfigPostGatewayDynamicRouteVersion({required String accountId, required String gatewayId, required String id, AigConfigPostGatewayDynamicRouteVersionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -212,7 +212,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigPostGatewayDynamicRouteVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AigConfigPostGatewayDynamicRouteVersionResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

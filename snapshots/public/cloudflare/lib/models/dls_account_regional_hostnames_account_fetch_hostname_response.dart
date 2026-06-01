@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_regional_hostname_response.dart';@immutable final class DlsAccountRegionalHostnamesAccountFetchHostnameResponse {const DlsAccountRegionalHostnamesAccountFetchHostnameResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_regional_hostname_response.dart';@immutable final class DlsAccountRegionalHostnamesAccountFetchHostnameResponse {const DlsAccountRegionalHostnamesAccountFetchHostnameResponse({this.result});
 
 factory DlsAccountRegionalHostnamesAccountFetchHostnameResponse.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountFetchHostnameResponse(
   result: json['result'] != null ? DlsRegionalHostnameResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

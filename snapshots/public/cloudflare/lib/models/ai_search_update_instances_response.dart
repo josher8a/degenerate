@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_response_result.dart';@immutable final class AiSearchUpdateInstancesResponse {const AiSearchUpdateInstancesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_response/ai_search_create_instances_response_result.dart';@immutable final class AiSearchUpdateInstancesResponse {const AiSearchUpdateInstancesResponse({required this.result, required this.success, });
 
 factory AiSearchUpdateInstancesResponse.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponse(
-  result: AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AiSearchUpdateInstancesResponseResult result;
+final AiSearchCreateInstancesResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AiSearchUpdateInstancesResponse copyWith({AiSearchUpdateInstancesResponseResult? result, bool? success, }) { return AiSearchUpdateInstancesResponse(
+AiSearchUpdateInstancesResponse copyWith({AiSearchCreateInstancesResponseResult? result, bool? success, }) { return AiSearchUpdateInstancesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

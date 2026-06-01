@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// Emitted when a response is queued and waiting to be processed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response.dart';/// Emitted when a response is queued and waiting to be processed.
 /// 
 @immutable final class ResponseQueuedEvent {const ResponseQueuedEvent({required this.type, required this.response, required this.sequenceNumber, });
 

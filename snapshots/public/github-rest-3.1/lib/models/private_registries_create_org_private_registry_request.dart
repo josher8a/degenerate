@@ -1,112 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
-@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._(this.value);
-
-factory PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType.fromJson(String json) { return switch (json) {
-  'maven_repository' => mavenRepository,
-  'nuget_feed' => nugetFeed,
-  'goproxy_server' => goproxyServer,
-  'npm_registry' => npmRegistry,
-  'rubygems_server' => rubygemsServer,
-  'cargo_registry' => cargoRegistry,
-  'composer_repository' => composerRepository,
-  'docker_registry' => dockerRegistry,
-  'git_source' => gitSource,
-  'helm_registry' => helmRegistry,
-  'hex_organization' => hexOrganization,
-  'hex_repository' => hexRepository,
-  'pub_repository' => pubRepository,
-  'python_index' => pythonIndex,
-  'terraform_registry' => terraformRegistry,
-  _ => PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._(json),
-}; }
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType mavenRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('maven_repository');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType nugetFeed = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('nuget_feed');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType goproxyServer = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('goproxy_server');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType npmRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('npm_registry');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType rubygemsServer = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('rubygems_server');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType cargoRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('cargo_registry');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType composerRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('composer_repository');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType dockerRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('docker_registry');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType gitSource = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('git_source');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType helmRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('helm_registry');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType hexOrganization = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('hex_organization');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType hexRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('hex_repository');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType pubRepository = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('pub_repository');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType pythonIndex = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('python_index');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType terraformRegistry = PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._('terraform_registry');
-
-static const List<PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType> values = [mavenRepository, nugetFeed, goproxyServer, npmRegistry, rubygemsServer, cargoRegistry, composerRepository, dockerRegistry, gitSource, helmRegistry, hexOrganization, hexRepository, pubRepository, pythonIndex, terraformRegistry];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType($value)'; } 
- }
-/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._(this.value);
-
-factory PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._(json),
-}; }
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility all = PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._('all');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility private = PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._('private');
-
-static const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility selected = PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._('selected');
-
-static const List<PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility($value)'; } 
- }
-@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, required this.encryptedValue, required this.keyId, required this.visibility, this.username, this.replacesBase = false, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';import 'package:pub_github_rest_3_1/models/org_private_registry_configuration/registry_type.dart';@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, required this.encryptedValue, required this.keyId, required this.visibility, this.username, this.replacesBase = false, this.selectedRepositoryIds, });
 
 factory PrivateRegistriesCreateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
-  registryType: PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType.fromJson(json['registry_type'] as String),
+  registryType: RegistryType.fromJson(json['registry_type'] as String),
   url: Uri.parse(json['url'] as String),
   username: json['username'] as String?,
   replacesBase: json.containsKey('replaces_base') ? json['replaces_base'] as bool : false,
   encryptedValue: json['encrypted_value'] as String,
   keyId: json['key_id'] as String,
-  visibility: PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
 
 /// The registry type.
-final PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType registryType;
+final RegistryType registryType;
 
 /// The URL of the private registry.
 final Uri url;
@@ -124,7 +32,7 @@ final String encryptedValue;
 final String keyId;
 
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-final PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 /// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. You can manage the list of selected repositories using the [Update a private registry for an organization](https://docs.github.com/rest/private-registries/organization-configurations#update-a-private-registry-for-an-organization) endpoint. This field should be omitted if `visibility` is set to `all` or `private`.
 final List<int>? selectedRepositoryIds;
@@ -144,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('regis
       json.containsKey('encrypted_value') && json['encrypted_value'] is String &&
       json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('visibility'); } 
-PrivateRegistriesCreateOrgPrivateRegistryRequest copyWith({PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType? registryType, Uri? url, String? Function()? username, bool Function()? replacesBase, String? encryptedValue, String? keyId, PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
+PrivateRegistriesCreateOrgPrivateRegistryRequest copyWith({RegistryType? registryType, Uri? url, String? Function()? username, bool Function()? replacesBase, String? encryptedValue, String? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
   registryType: registryType ?? this.registryType,
   url: url ?? this.url,
   username: username != null ? username() : this.username,

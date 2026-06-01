@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_request_pin.dart';import 'post_issuing_cards_request_second_line.dart';import 'post_issuing_cards_request_shipping.dart';import 'post_issuing_cards_request_spending_controls.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request/post_issuing_cards_request_second_line.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
 @immutable final class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason._(this.value);
 
 factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
@@ -31,56 +31,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsRequestReplacementReason($value)'; } 
  }
-/// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
-@immutable final class PostIssuingCardsRequestStatus {const PostIssuingCardsRequestStatus._(this.value);
-
-factory PostIssuingCardsRequestStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  _ => PostIssuingCardsRequestStatus._(json),
-}; }
-
-static const PostIssuingCardsRequestStatus active = PostIssuingCardsRequestStatus._('active');
-
-static const PostIssuingCardsRequestStatus inactive = PostIssuingCardsRequestStatus._('inactive');
-
-static const List<PostIssuingCardsRequestStatus> values = [active, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestStatus($value)'; } 
- }
-/// The type of card to issue. Possible values are `physical` or `virtual`.
-@immutable final class PostIssuingCardsRequestType {const PostIssuingCardsRequestType._(this.value);
-
-factory PostIssuingCardsRequestType.fromJson(String json) { return switch (json) {
-  'physical' => physical,
-  'virtual' => virtual,
-  _ => PostIssuingCardsRequestType._(json),
-}; }
-
-static const PostIssuingCardsRequestType physical = PostIssuingCardsRequestType._('physical');
-
-static const PostIssuingCardsRequestType virtual = PostIssuingCardsRequestType._('virtual');
-
-static const List<PostIssuingCardsRequestType> values = [physical, virtual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestType($value)'; } 
- }
 @immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });
 
 factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequest(
@@ -92,14 +42,14 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   financialAccount: json['financial_account'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   personalizationDesign: json['personalization_design'] as String?,
-  pin: json['pin'] != null ? PostIssuingCardsRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  pin: json['pin'] != null ? Pin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   replacementFor: json['replacement_for'] as String?,
   replacementReason: json['replacement_reason'] != null ? PostIssuingCardsRequestReplacementReason.fromJson(json['replacement_reason'] as String) : null,
-  secondLine: json['second_line'] != null ? OneOf2.parse(json['second_line'], fromA: (v) => v as String, fromB: (v) => PostIssuingCardsRequestSecondLineVariant2.fromJson(v as String),) : null,
-  shipping: json['shipping'] != null ? PostIssuingCardsRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-  spendingControls: json['spending_controls'] != null ? PostIssuingCardsRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
-  status: json['status'] != null ? PostIssuingCardsRequestStatus.fromJson(json['status'] as String) : null,
-  type: PostIssuingCardsRequestType.fromJson(json['type'] as String),
+  secondLine: json['second_line'] != null ? OneOf2.parse(json['second_line'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
+  status: json['status'] != null ? BillingMeterStatus.fromJson(json['status'] as String) : null,
+  type: IssuingCardType.fromJson(json['type'] as String),
 ); }
 
 /// The [Cardholder](https://docs.stripe.com/api#issuing_cardholder_object) object with which the card will be associated.
@@ -127,7 +77,7 @@ final Map<String,String>? metadata;
 final String? personalizationDesign;
 
 /// The desired PIN for this card.
-final PostIssuingCardsRequestPin? pin;
+final Pin? pin;
 
 /// The card this is meant to be a replacement for (if any).
 final String? replacementFor;
@@ -139,16 +89,16 @@ final PostIssuingCardsRequestReplacementReason? replacementReason;
 final PostIssuingCardsRequestSecondLine? secondLine;
 
 /// The address where the card will be shipped.
-final PostIssuingCardsRequestShipping? shipping;
+final PostIssuingCardsCardRequestShipping? shipping;
 
 /// Rules that control spending for this card. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
-final PostIssuingCardsRequestSpendingControls? spendingControls;
+final PostIssuingCardsCardRequestSpendingControls? spendingControls;
 
 /// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
-final PostIssuingCardsRequestStatus? status;
+final BillingMeterStatus? status;
 
 /// The type of card to issue. Possible values are `physical` or `virtual`.
-final PostIssuingCardsRequestType type;
+final IssuingCardType type;
 
 Map<String, dynamic> toJson() { return {
   'cardholder': ?cardholder,
@@ -170,7 +120,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('type'); } 
-PostIssuingCardsRequest copyWith({String Function()? cardholder, String? currency, int Function()? expMonth, int Function()? expYear, List<String> Function()? expand, String Function()? financialAccount, Map<String, String> Function()? metadata, String Function()? personalizationDesign, PostIssuingCardsRequestPin Function()? pin, String Function()? replacementFor, PostIssuingCardsRequestReplacementReason Function()? replacementReason, PostIssuingCardsRequestSecondLine Function()? secondLine, PostIssuingCardsRequestShipping Function()? shipping, PostIssuingCardsRequestSpendingControls Function()? spendingControls, PostIssuingCardsRequestStatus Function()? status, PostIssuingCardsRequestType? type, }) { return PostIssuingCardsRequest(
+PostIssuingCardsRequest copyWith({String Function()? cardholder, String? currency, int Function()? expMonth, int Function()? expYear, List<String> Function()? expand, String Function()? financialAccount, Map<String, String> Function()? metadata, String Function()? personalizationDesign, Pin Function()? pin, String Function()? replacementFor, PostIssuingCardsRequestReplacementReason Function()? replacementReason, PostIssuingCardsRequestSecondLine Function()? secondLine, PostIssuingCardsCardRequestShipping Function()? shipping, PostIssuingCardsCardRequestSpendingControls Function()? spendingControls, BillingMeterStatus Function()? status, IssuingCardType? type, }) { return PostIssuingCardsRequest(
   cardholder: cardholder != null ? cardholder() : this.cardholder,
   currency: currency ?? this.currency,
   expMonth: expMonth != null ? expMonth() : this.expMonth,

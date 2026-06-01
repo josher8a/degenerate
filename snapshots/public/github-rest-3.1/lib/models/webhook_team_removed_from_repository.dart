@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_removed_from_repository_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';@immutable final class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction._(this.value);
 
 factory WebhookTeamRemovedFromRepositoryAction.fromJson(String json) { return switch (json) {
   'removed_from_repository' => removedFromRepository,
@@ -28,7 +28,7 @@ factory WebhookTeamRemovedFromRepository.fromJson(Map<String, dynamic> json) { r
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  repository: json['repository'] != null ? WebhookTeamRemovedFromRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? WebhookTeamAddedToRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
 ); }
@@ -42,7 +42,7 @@ final SimpleInstallation? installation;
 final OrganizationSimpleWebhooks organization;
 
 /// A git repository
-final WebhookTeamRemovedFromRepositoryRepository? repository;
+final WebhookTeamAddedToRepositoryRepository? repository;
 
 final SimpleUser sender;
 
@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('sender') &&
       json.containsKey('team'); } 
-WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamRemovedFromRepositoryRepository Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamRemovedFromRepository(
+WebhookTeamRemovedFromRepository copyWith({WebhookTeamRemovedFromRepositoryAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamRemovedFromRepository(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/autorag_config_ai_search_request.dart';import '../models/autorag_config_ai_search_response404.dart';import '../models/autorag_config_ai_search_response_result.dart';import '../models/autorag_config_search_request.dart';import '../models/autorag_config_search_response404.dart';import '../models/autorag_config_search_response_result.dart';/// AutoRagRagSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/autorag_config_ai_search_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response404.dart';import 'package:pub_cloudflare/models/autorag_config_search_request.dart';import 'package:pub_cloudflare/models/autorag_config_search_response/autorag_config_search_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_search_response404.dart';/// AutoRagRagSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

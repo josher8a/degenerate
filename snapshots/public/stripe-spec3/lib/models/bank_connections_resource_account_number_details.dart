@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account number associated with the account.
-@immutable final class BankConnectionsResourceAccountNumberDetailsIdentifierType {const BankConnectionsResourceAccountNumberDetailsIdentifierType._(this.value);
+@immutable final class IdentifierType {const IdentifierType._(this.value);
 
-factory BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(String json) { return switch (json) {
+factory IdentifierType.fromJson(String json) { return switch (json) {
   'account_number' => accountNumber,
   'tokenized_account_number' => tokenizedAccountNumber,
-  _ => BankConnectionsResourceAccountNumberDetailsIdentifierType._(json),
+  _ => IdentifierType._(json),
 }; }
 
-static const BankConnectionsResourceAccountNumberDetailsIdentifierType accountNumber = BankConnectionsResourceAccountNumberDetailsIdentifierType._('account_number');
+static const IdentifierType accountNumber = IdentifierType._('account_number');
 
-static const BankConnectionsResourceAccountNumberDetailsIdentifierType tokenizedAccountNumber = BankConnectionsResourceAccountNumberDetailsIdentifierType._('tokenized_account_number');
+static const IdentifierType tokenizedAccountNumber = IdentifierType._('tokenized_account_number');
 
-static const List<BankConnectionsResourceAccountNumberDetailsIdentifierType> values = [accountNumber, tokenizedAccountNumber];
+static const List<IdentifierType> values = [accountNumber, tokenizedAccountNumber];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsIdentifierType && other.value == value; } 
+    other is IdentifierType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsIdentifierType($value)'; } 
+@override String toString() { return 'IdentifierType($value)'; } 
  }
 /// Whether the account number is currently active and usable for transactions.
 @immutable final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountNumberDetails(
   expectedExpiryDate: json['expected_expiry_date'] != null ? (json['expected_expiry_date'] as num).toInt() : null,
-  identifierType: BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(json['identifier_type'] as String),
+  identifierType: IdentifierType.fromJson(json['identifier_type'] as String),
   status: BankConnectionsResourceAccountNumberDetailsStatus.fromJson(json['status'] as String),
   supportedNetworks: (json['supported_networks'] as List<dynamic>).map((e) => BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(e as String)).toList(),
 ); }
@@ -85,7 +85,7 @@ factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic
 final int? expectedExpiryDate;
 
 /// The type of account number associated with the account.
-final BankConnectionsResourceAccountNumberDetailsIdentifierType identifierType;
+final IdentifierType identifierType;
 
 /// Whether the account number is currently active and usable for transactions.
 final BankConnectionsResourceAccountNumberDetailsStatus status;
@@ -102,7 +102,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('identifier_type') &&
       json.containsKey('status') &&
       json.containsKey('supported_networks'); } 
-BankConnectionsResourceAccountNumberDetails copyWith({int? Function()? expectedExpiryDate, BankConnectionsResourceAccountNumberDetailsIdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) { return BankConnectionsResourceAccountNumberDetails(
+BankConnectionsResourceAccountNumberDetails copyWith({int? Function()? expectedExpiryDate, IdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) { return BankConnectionsResourceAccountNumberDetails(
   expectedExpiryDate: expectedExpiryDate != null ? expectedExpiryDate() : this.expectedExpiryDate,
   identifierType: identifierType ?? this.identifierType,
   status: status ?? this.status,

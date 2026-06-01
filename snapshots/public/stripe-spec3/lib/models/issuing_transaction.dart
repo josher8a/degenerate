@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_dispute.dart';import 'issuing_token.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/issuing_authorization_token.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_merchant_data.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';import 'package:pub_stripe_spec3/models/issuing_transaction/authorization.dart';import 'package:pub_stripe_spec3/models/issuing_transaction/issuing_transaction_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_amount_details.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_purchase_details.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
 
 factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
@@ -114,16 +114,16 @@ final int amount;
 final IssuingTransactionAmountDetails? amountDetails;
 
 /// The `Authorization` object that led to this transaction.
-final IssuingTransactionAuthorization? authorization;
+final Authorization? authorization;
 
 /// ID of the [balance transaction](https://docs.stripe.com/api/balance_transactions) associated with this transaction.
-final IssuingTransactionBalanceTransaction? balanceTransaction;
+final FeeRefundBalanceTransaction? balanceTransaction;
 
 /// The card used to make this transaction.
-final IssuingTransactionCard card;
+final IssuingTokenCard card;
 
 /// The cardholder to whom this transaction belongs.
-final IssuingTransactionCardholder? cardholder;
+final Cardholder? cardholder;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -161,7 +161,7 @@ final IssuingTransactionObject object;
 final IssuingTransactionPurchaseDetails? purchaseDetails;
 
 /// [Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this transaction. If a network token was not used for this transaction, this field will be null.
-final IssuingTransactionToken? token;
+final IssuingAuthorizationToken? token;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this transaction if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
 final IssuingTransactionTreasury? treasury;
@@ -208,7 +208,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails? Function()? amountDetails, IssuingTransactionAuthorization? Function()? authorization, IssuingTransactionBalanceTransaction? Function()? balanceTransaction, IssuingTransactionCard? card, IssuingTransactionCardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails? Function()? purchaseDetails, IssuingTransactionToken? Function()? token, IssuingTransactionTreasury? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
+IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails? Function()? amountDetails, Authorization? Function()? authorization, FeeRefundBalanceTransaction? Function()? balanceTransaction, IssuingTokenCard? card, Cardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails? Function()? purchaseDetails, IssuingAuthorizationToken? Function()? token, IssuingTransactionTreasury? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   authorization: authorization != null ? authorization() : this.authorization,

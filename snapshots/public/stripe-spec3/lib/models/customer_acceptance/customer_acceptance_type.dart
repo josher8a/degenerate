@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The mandate includes the type of customer acceptance information, such as: `online` or `offline`.
+@immutable final class CustomerAcceptanceType {const CustomerAcceptanceType._(this.value);
+
+factory CustomerAcceptanceType.fromJson(String json) { return switch (json) {
+  'offline' => offline,
+  'online' => online,
+  _ => CustomerAcceptanceType._(json),
+}; }
+
+static const CustomerAcceptanceType offline = CustomerAcceptanceType._('offline');
+
+static const CustomerAcceptanceType online = CustomerAcceptanceType._('online');
+
+static const List<CustomerAcceptanceType> values = [offline, online];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomerAcceptanceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomerAcceptanceType($value)'; } 
+ }

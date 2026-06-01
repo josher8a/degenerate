@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_messages2.dart';import 'response_common46_result.dart';@immutable final class ResponseCommon46 {const ResponseCommon46({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_messages2.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';@immutable final class ResponseCommon46 {const ResponseCommon46({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon46.fromJson(Map<String, dynamic> json) { return ResponseCommon46(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ final List<MagicVisibilityMnmMessages2> errors;
 
 final List<MagicVisibilityMnmMessages2> messages;
 
-final ResponseCommon46Result result;
+final ResponseCommon33Result result;
 
 /// Whether the API call was successful
 final bool success;
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon46 copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, ResponseCommon46Result? result, bool? success, }) { return ResponseCommon46(
+ResponseCommon46 copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, ResponseCommon33Result? result, bool? success, }) { return ResponseCommon46(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

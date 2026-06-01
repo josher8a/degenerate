@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response.dart';/// Returned when a Response is done streaming. Always emitted, no matter the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response.dart';/// Returned when a Response is done streaming. Always emitted, no matter the
 /// final state. The Response object included in the `response.done` event will
 /// include all output Items in the Response but will omit the raw audio data.
 /// 

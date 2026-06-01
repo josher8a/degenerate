@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject._(this.value);
-
-factory DeletedRadarValueListItemObject.fromJson(String json) { return switch (json) {
-  'radar.value_list_item' => radarValueListItem,
-  _ => DeletedRadarValueListItemObject._(json),
-}; }
-
-static const DeletedRadarValueListItemObject radarValueListItem = DeletedRadarValueListItemObject._('radar.value_list_item');
-
-static const List<DeletedRadarValueListItemObject> values = [radarValueListItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedRadarValueListItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedRadarValueListItemObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item/deleted_radar_value_list_item_object.dart';/// 
 @immutable final class DeletedRadarValueListItem {const DeletedRadarValueListItem({required this.deleted, required this.id, required this.object, });
 
 factory DeletedRadarValueListItem.fromJson(Map<String, dynamic> json) { return DeletedRadarValueListItem(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class AppsSecretObject {const AppsSecretObject._(this.value);
 
 factory AppsSecretObject.fromJson(String json) { return switch (json) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'click_param.dart';import 'coord_param.dart';import 'double_click_action.dart';import 'drag_param.dart';import 'key_press_action.dart';import 'move_param.dart';import 'screenshot_param.dart';import 'scroll_param.dart';import 'type_param.dart';import 'wait_param.dart';sealed class ComputerAction {const ComputerAction();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/click_param.dart';import 'package:pub_openai/models/coord_param.dart';import 'package:pub_openai/models/double_click_action.dart';import 'package:pub_openai/models/drag_param.dart';import 'package:pub_openai/models/key_press_action.dart';import 'package:pub_openai/models/move_param.dart';import 'package:pub_openai/models/screenshot_param.dart';import 'package:pub_openai/models/scroll_param.dart';import 'package:pub_openai/models/type_param.dart';import 'package:pub_openai/models/wait_param.dart';sealed class ComputerAction {const ComputerAction();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ComputerAction.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'department.dart';@immutable final class Employee {const Employee({required this.id, required this.name, this.department, this.manager, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_11_circular/models/department.dart';@immutable final class Employee {const Employee({required this.id, required this.name, this.department, this.manager, });
 
 factory Employee.fromJson(Map<String, dynamic> json) { return Employee(
   id: (json['id'] as num).toInt(),

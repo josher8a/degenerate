@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_create_job_response_result.dart';@immutable final class AiSearchInstanceCreateJobResponse {const AiSearchInstanceCreateJobResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response/ai_search_instance_change_job_status_response_result.dart';@immutable final class AiSearchInstanceCreateJobResponse {const AiSearchInstanceCreateJobResponse({required this.result, required this.success, });
 
 factory AiSearchInstanceCreateJobResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceCreateJobResponse(
-  result: AiSearchInstanceCreateJobResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AiSearchInstanceCreateJobResponseResult result;
+final AiSearchInstanceChangeJobStatusResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AiSearchInstanceCreateJobResponse copyWith({AiSearchInstanceCreateJobResponseResult? result, bool? success, }) { return AiSearchInstanceCreateJobResponse(
+AiSearchInstanceCreateJobResponse copyWith({AiSearchInstanceChangeJobStatusResponseResult? result, bool? success, }) { return AiSearchInstanceCreateJobResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

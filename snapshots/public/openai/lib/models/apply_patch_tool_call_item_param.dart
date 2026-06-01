@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_status.dart';import 'apply_patch_operation_param.dart';/// A tool call representing a request to create, delete, or update files using diff patches.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';/// A tool call representing a request to create, delete, or update files using diff patches.
 @immutable final class ApplyPatchToolCallItemParam {const ApplyPatchToolCallItemParam({required this.callId, required this.status, required this.operation, this.type = 'apply_patch_call', this.id, });
 
 factory ApplyPatchToolCallItemParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallItemParam(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';/// The type of the computer tool call output. Always `computer_call_output`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// The type of the computer tool call output. Always `computer_call_output`.
 /// 
 @immutable final class ComputerToolCallOutputType {const ComputerToolCallOutputType._(this.value);
 
@@ -22,36 +22,6 @@ bool get isUnknown { return !values.contains(this); }
     other is ComputerToolCallOutputType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ComputerToolCallOutputType($value)'; } 
- }
-/// The status of the message input. One of `in_progress`, `completed`, or
-/// `incomplete`. Populated when input items are returned via API.
-/// 
-@immutable final class ComputerToolCallOutputStatus {const ComputerToolCallOutputStatus._(this.value);
-
-factory ComputerToolCallOutputStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'incomplete' => incomplete,
-  _ => ComputerToolCallOutputStatus._(json),
-}; }
-
-static const ComputerToolCallOutputStatus inProgress = ComputerToolCallOutputStatus._('in_progress');
-
-static const ComputerToolCallOutputStatus completed = ComputerToolCallOutputStatus._('completed');
-
-static const ComputerToolCallOutputStatus incomplete = ComputerToolCallOutputStatus._('incomplete');
-
-static const List<ComputerToolCallOutputStatus> values = [inProgress, completed, incomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerToolCallOutputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerToolCallOutputStatus($value)'; } 
  }
 /// The output of a computer tool call.
 /// 

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_key.dart';@immutable final class WebhookDeployKeyCreatedAction {const WebhookDeployKeyCreatedAction._(this.value);
-
-factory WebhookDeployKeyCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookDeployKeyCreatedAction._(json),
-}; }
-
-static const WebhookDeployKeyCreatedAction created = WebhookDeployKeyCreatedAction._('created');
-
-static const List<WebhookDeployKeyCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeployKeyCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeployKeyCreatedAction($value)'; } 
- }
-@immutable final class WebhookDeployKeyCreated {const WebhookDeployKeyCreated({required this.action, required this.key, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_deploy_key.dart';@immutable final class WebhookDeployKeyCreated {const WebhookDeployKeyCreated({required this.action, required this.key, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDeployKeyCreated.fromJson(Map<String, dynamic> json) { return WebhookDeployKeyCreated(
-  action: WebhookDeployKeyCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   key: WebhooksDeployKey.fromJson(json['key'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookDeployKeyCreated.fromJson(Map<String, dynamic> json) { return Web
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookDeployKeyCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('key') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeployKeyCreated copyWith({WebhookDeployKeyCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDeployKeyCreated(
+WebhookDeployKeyCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDeployKeyCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

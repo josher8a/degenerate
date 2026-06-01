@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'annotation.dart';import 'log_prob.dart';/// A text output from the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/log_prob.dart';/// A text output from the model.
 @immutable final class OutputTextContent {const OutputTextContent({required this.text, required this.annotations, required this.logprobs, this.type = 'output_text', });
 
 factory OutputTextContent.fromJson(Map<String, dynamic> json) { return OutputTextContent(

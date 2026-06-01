@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_commit_author_email_pattern_parameters.dart';@immutable final class RepositoryRuleCommitAuthorEmailPatternType {const RepositoryRuleCommitAuthorEmailPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleCommitAuthorEmailPatternType {const RepositoryRuleCommitAuthorEmailPatternType._(this.value);
 
 factory RepositoryRuleCommitAuthorEmailPatternType.fromJson(String json) { return switch (json) {
   'commit_author_email_pattern' => commitAuthorEmailPattern,
@@ -26,19 +26,19 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RepositoryRuleCommitAuthorEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitAuthorEmailPattern(
   type: RepositoryRuleCommitAuthorEmailPatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null ? RepositoryRuleCommitAuthorEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  parameters: json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitAuthorEmailPatternType type;
 
-final RepositoryRuleCommitAuthorEmailPatternParameters? parameters;
+final RepositoryRuleBranchNamePatternParameters? parameters;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleCommitAuthorEmailPattern copyWith({RepositoryRuleCommitAuthorEmailPatternType? type, RepositoryRuleCommitAuthorEmailPatternParameters Function()? parameters, }) { return RepositoryRuleCommitAuthorEmailPattern(
+RepositoryRuleCommitAuthorEmailPattern copyWith({RepositoryRuleCommitAuthorEmailPatternType? type, RepositoryRuleBranchNamePatternParameters Function()? parameters, }) { return RepositoryRuleCommitAuthorEmailPattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

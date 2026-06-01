@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for deployments and deployment statuses.
+@immutable final class AppPermissionsDeployments {const AppPermissionsDeployments._(this.value);
+
+factory AppPermissionsDeployments.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsDeployments._(json),
+}; }
+
+static const AppPermissionsDeployments read = AppPermissionsDeployments._('read');
+
+static const AppPermissionsDeployments write = AppPermissionsDeployments._('write');
+
+static const List<AppPermissionsDeployments> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsDeployments && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsDeployments($value)'; } 
+ }

@@ -1,38 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-@immutable final class ReposUpdateRepoRulesetRequestTarget {const ReposUpdateRepoRulesetRequestTarget._(this.value);
-
-factory ReposUpdateRepoRulesetRequestTarget.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  'push' => push,
-  _ => ReposUpdateRepoRulesetRequestTarget._(json),
-}; }
-
-static const ReposUpdateRepoRulesetRequestTarget branch = ReposUpdateRepoRulesetRequestTarget._('branch');
-
-static const ReposUpdateRepoRulesetRequestTarget tag = ReposUpdateRepoRulesetRequestTarget._('tag');
-
-static const ReposUpdateRepoRulesetRequestTarget push = ReposUpdateRepoRulesetRequestTarget._('push');
-
-static const List<ReposUpdateRepoRulesetRequestTarget> values = [branch, tag, push];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateRepoRulesetRequestTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateRepoRulesetRequestTarget($value)'; } 
- }
-@immutable final class ReposUpdateRepoRulesetRequest {const ReposUpdateRepoRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_repo_ruleset_request/repos_create_repo_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';@immutable final class ReposUpdateRepoRulesetRequest {const ReposUpdateRepoRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposUpdateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRepoRulesetRequest(
   name: json['name'] as String?,
-  target: json['target'] != null ? ReposUpdateRepoRulesetRequestTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? ReposCreateRepoRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null,
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? RepositoryRulesetConditions.fromJson(json['conditions'] as Map<String, dynamic>) : null,
@@ -43,7 +15,7 @@ factory ReposUpdateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { retu
 final String? name;
 
 /// The target of the ruleset
-final ReposUpdateRepoRulesetRequestTarget? target;
+final ReposCreateRepoRulesetRequestTarget? target;
 
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final RepositoryRuleEnforcement? enforcement;
@@ -65,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
-ReposUpdateRepoRulesetRequest copyWith({String Function()? name, ReposUpdateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetConditions Function()? conditions, List<RepositoryRule> Function()? rules, }) { return ReposUpdateRepoRulesetRequest(
+ReposUpdateRepoRulesetRequest copyWith({String Function()? name, ReposCreateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetConditions Function()? conditions, List<RepositoryRule> Function()? rules, }) { return ReposUpdateRepoRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement != null ? enforcement() : this.enforcement,

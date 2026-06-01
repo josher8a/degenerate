@@ -1,43 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessMfaConfigAllowedAuthenticators {const AccessMfaConfigAllowedAuthenticators._(this.value);
-
-factory AccessMfaConfigAllowedAuthenticators.fromJson(String json) { return switch (json) {
-  'totp' => totp,
-  'biometrics' => biometrics,
-  'security_key' => securityKey,
-  _ => AccessMfaConfigAllowedAuthenticators._(json),
-}; }
-
-static const AccessMfaConfigAllowedAuthenticators totp = AccessMfaConfigAllowedAuthenticators._('totp');
-
-static const AccessMfaConfigAllowedAuthenticators biometrics = AccessMfaConfigAllowedAuthenticators._('biometrics');
-
-static const AccessMfaConfigAllowedAuthenticators securityKey = AccessMfaConfigAllowedAuthenticators._('security_key');
-
-static const List<AccessMfaConfigAllowedAuthenticators> values = [totp, biometrics, securityKey];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessMfaConfigAllowedAuthenticators && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessMfaConfigAllowedAuthenticators($value)'; } 
- }
-/// Configures multi-factor authentication (MFA) settings.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_mfa_config/allowed_authenticators.dart';/// Configures multi-factor authentication (MFA) settings.
 @immutable final class AccessMfaConfig {const AccessMfaConfig({this.allowedAuthenticators, this.mfaDisabled, this.sessionDuration, });
 
 factory AccessMfaConfig.fromJson(Map<String, dynamic> json) { return AccessMfaConfig(
-  allowedAuthenticators: (json['allowed_authenticators'] as List<dynamic>?)?.map((e) => AccessMfaConfigAllowedAuthenticators.fromJson(e as String)).toList(),
+  allowedAuthenticators: (json['allowed_authenticators'] as List<dynamic>?)?.map((e) => AllowedAuthenticators.fromJson(e as String)).toList(),
   mfaDisabled: json['mfa_disabled'] as bool?,
   sessionDuration: json['session_duration'] as String?,
 ); }
 
 /// Lists the MFA methods that users can authenticate with.
-final List<AccessMfaConfigAllowedAuthenticators>? allowedAuthenticators;
+final List<AllowedAuthenticators>? allowedAuthenticators;
 
 /// Indicates whether to disable MFA for this resource. This option is available at the application and policy level.
 final bool? mfaDisabled;
@@ -51,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'session_duration': ?sessionDuration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_authenticators', 'mfa_disabled', 'session_duration'}.contains(key)); } 
-AccessMfaConfig copyWith({List<AccessMfaConfigAllowedAuthenticators> Function()? allowedAuthenticators, bool Function()? mfaDisabled, String Function()? sessionDuration, }) { return AccessMfaConfig(
+AccessMfaConfig copyWith({List<AllowedAuthenticators> Function()? allowedAuthenticators, bool Function()? mfaDisabled, String Function()? sessionDuration, }) { return AccessMfaConfig(
   allowedAuthenticators: allowedAuthenticators != null ? allowedAuthenticators() : this.allowedAuthenticators,
   mfaDisabled: mfaDisabled != null ? mfaDisabled() : this.mfaDisabled,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,

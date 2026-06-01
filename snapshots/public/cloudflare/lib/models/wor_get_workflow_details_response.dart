@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_get_workflow_details_response_errors.dart';import 'wor_get_workflow_details_response_messages.dart';import 'wor_get_workflow_details_response_result.dart';import 'wor_get_workflow_details_response_result_info.dart';@immutable final class WorGetWorkflowDetailsResponse {const WorGetWorkflowDetailsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_messages.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_info.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response/wor_get_workflow_details_response_result.dart';@immutable final class WorGetWorkflowDetailsResponse {const WorGetWorkflowDetailsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory WorGetWorkflowDetailsResponse.fromJson(Map<String, dynamic> json) { return WorGetWorkflowDetailsResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
-  resultInfo: json['result_info'] != null ? WorGetWorkflowDetailsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? WorBatchCreateWorkflowInstanceResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
-final List<WorGetWorkflowDetailsResponseErrors> errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
-final List<WorGetWorkflowDetailsResponseMessages> messages;
+final List<WorBatchCreateWorkflowInstanceResponseMessages> messages;
 
 final WorGetWorkflowDetailsResponseResult result;
 
-final WorGetWorkflowDetailsResponseResultInfo? resultInfo;
+final WorBatchCreateWorkflowInstanceResponseResultInfo? resultInfo;
 
 final bool success;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorGetWorkflowDetailsResponse copyWith({List<WorGetWorkflowDetailsResponseErrors>? errors, List<WorGetWorkflowDetailsResponseMessages>? messages, WorGetWorkflowDetailsResponseResult? result, WorGetWorkflowDetailsResponseResultInfo Function()? resultInfo, bool? success, }) { return WorGetWorkflowDetailsResponse(
+WorGetWorkflowDetailsResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, List<WorBatchCreateWorkflowInstanceResponseMessages>? messages, WorGetWorkflowDetailsResponseResult? result, WorBatchCreateWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorGetWorkflowDetailsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

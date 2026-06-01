@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project.dart';@immutable final class WebhookProjectClosedAction {const WebhookProjectClosedAction._(this.value);
-
-factory WebhookProjectClosedAction.fromJson(String json) { return switch (json) {
-  'closed' => closed,
-  _ => WebhookProjectClosedAction._(json),
-}; }
-
-static const WebhookProjectClosedAction closed = WebhookProjectClosedAction._('closed');
-
-static const List<WebhookProjectClosedAction> values = [closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectClosedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectClosedAction($value)'; } 
- }
-@immutable final class WebhookProjectClosed {const WebhookProjectClosed({required this.action, required this.project, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_closed/project_closed_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project.dart';@immutable final class WebhookProjectClosed {const WebhookProjectClosed({required this.action, required this.project, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectClosed.fromJson(Map<String, dynamic> json) { return WebhookProjectClosed(
-  action: WebhookProjectClosedAction.fromJson(json['action'] as String),
+  action: ProjectClosedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookProjectClosed.fromJson(Map<String, dynamic> json) { return Webhoo
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookProjectClosedAction action;
+final ProjectClosedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project') &&
       json.containsKey('sender'); } 
-WebhookProjectClosed copyWith({WebhookProjectClosedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProject? project, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectClosed(
+WebhookProjectClosed copyWith({ProjectClosedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProject? project, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectClosed(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

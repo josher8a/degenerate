@@ -31,9 +31,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderRequirementsDisabledReason($value)'; } 
  }
-@immutable final class IssuingCardholderRequirementsPastDue {const IssuingCardholderRequirementsPastDue._(this.value);
+@immutable final class PastDue {const PastDue._(this.value);
 
-factory IssuingCardholderRequirementsPastDue.fromJson(String json) { return switch (json) {
+factory PastDue.fromJson(String json) { return switch (json) {
   'company.tax_id' => companyTaxId,
   'individual.card_issuing.user_terms_acceptance.date' => individualCardIssuingUserTermsAcceptanceDate,
   'individual.card_issuing.user_terms_acceptance.ip' => individualCardIssuingUserTermsAcceptanceIp,
@@ -43,28 +43,28 @@ factory IssuingCardholderRequirementsPastDue.fromJson(String json) { return swit
   'individual.first_name' => individualFirstName,
   'individual.last_name' => individualLastName,
   'individual.verification.document' => individualVerificationDocument,
-  _ => IssuingCardholderRequirementsPastDue._(json),
+  _ => PastDue._(json),
 }; }
 
-static const IssuingCardholderRequirementsPastDue companyTaxId = IssuingCardholderRequirementsPastDue._('company.tax_id');
+static const PastDue companyTaxId = PastDue._('company.tax_id');
 
-static const IssuingCardholderRequirementsPastDue individualCardIssuingUserTermsAcceptanceDate = IssuingCardholderRequirementsPastDue._('individual.card_issuing.user_terms_acceptance.date');
+static const PastDue individualCardIssuingUserTermsAcceptanceDate = PastDue._('individual.card_issuing.user_terms_acceptance.date');
 
-static const IssuingCardholderRequirementsPastDue individualCardIssuingUserTermsAcceptanceIp = IssuingCardholderRequirementsPastDue._('individual.card_issuing.user_terms_acceptance.ip');
+static const PastDue individualCardIssuingUserTermsAcceptanceIp = PastDue._('individual.card_issuing.user_terms_acceptance.ip');
 
-static const IssuingCardholderRequirementsPastDue individualDobDay = IssuingCardholderRequirementsPastDue._('individual.dob.day');
+static const PastDue individualDobDay = PastDue._('individual.dob.day');
 
-static const IssuingCardholderRequirementsPastDue individualDobMonth = IssuingCardholderRequirementsPastDue._('individual.dob.month');
+static const PastDue individualDobMonth = PastDue._('individual.dob.month');
 
-static const IssuingCardholderRequirementsPastDue individualDobYear = IssuingCardholderRequirementsPastDue._('individual.dob.year');
+static const PastDue individualDobYear = PastDue._('individual.dob.year');
 
-static const IssuingCardholderRequirementsPastDue individualFirstName = IssuingCardholderRequirementsPastDue._('individual.first_name');
+static const PastDue individualFirstName = PastDue._('individual.first_name');
 
-static const IssuingCardholderRequirementsPastDue individualLastName = IssuingCardholderRequirementsPastDue._('individual.last_name');
+static const PastDue individualLastName = PastDue._('individual.last_name');
 
-static const IssuingCardholderRequirementsPastDue individualVerificationDocument = IssuingCardholderRequirementsPastDue._('individual.verification.document');
+static const PastDue individualVerificationDocument = PastDue._('individual.verification.document');
 
-static const List<IssuingCardholderRequirementsPastDue> values = [companyTaxId, individualCardIssuingUserTermsAcceptanceDate, individualCardIssuingUserTermsAcceptanceIp, individualDobDay, individualDobMonth, individualDobYear, individualFirstName, individualLastName, individualVerificationDocument];
+static const List<PastDue> values = [companyTaxId, individualCardIssuingUserTermsAcceptanceDate, individualCardIssuingUserTermsAcceptanceIp, individualDobDay, individualDobMonth, individualDobYear, individualFirstName, individualLastName, individualVerificationDocument];
 
 final String value;
 
@@ -72,30 +72,30 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderRequirementsPastDue && other.value == value; } 
+    other is PastDue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderRequirementsPastDue($value)'; } 
+@override String toString() { return 'PastDue($value)'; } 
  }
 /// 
 @immutable final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason, this.pastDue, });
 
 factory IssuingCardholderRequirements.fromJson(Map<String, dynamic> json) { return IssuingCardholderRequirements(
   disabledReason: json['disabled_reason'] != null ? IssuingCardholderRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,
-  pastDue: (json['past_due'] as List<dynamic>?)?.map((e) => IssuingCardholderRequirementsPastDue.fromJson(e as String)).toList(),
+  pastDue: (json['past_due'] as List<dynamic>?)?.map((e) => PastDue.fromJson(e as String)).toList(),
 ); }
 
 /// If `disabled_reason` is present, all cards will decline authorizations with `cardholder_verification_required` reason.
 final IssuingCardholderRequirementsDisabledReason? disabledReason;
 
 /// Array of fields that need to be collected in order to verify and re-enable the cardholder.
-final List<IssuingCardholderRequirementsPastDue>? pastDue;
+final List<PastDue>? pastDue;
 
 Map<String, dynamic> toJson() { return {
   if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
   if (pastDue != null) 'past_due': pastDue?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled_reason', 'past_due'}.contains(key)); } 
-IssuingCardholderRequirements copyWith({IssuingCardholderRequirementsDisabledReason? Function()? disabledReason, List<IssuingCardholderRequirementsPastDue>? Function()? pastDue, }) { return IssuingCardholderRequirements(
+IssuingCardholderRequirements copyWith({IssuingCardholderRequirementsDisabledReason? Function()? disabledReason, List<PastDue>? Function()? pastDue, }) { return IssuingCardholderRequirements(
   disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
   pastDue: pastDue != null ? pastDue() : this.pastDue,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee_account.dart';import 'application_fee_application.dart';import 'application_fee_balance_transaction.dart';import 'application_fee_charge.dart';import 'application_fee_originating_transaction.dart';import 'application_fee_refunds.dart';import 'balance_transaction.dart';import 'charge.dart';import 'platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_refunds.dart';import 'package:pub_stripe_spec3/models/application_fee/originating_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ApplicationFeeObject {const ApplicationFeeObject._(this.value);
 
 factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
@@ -80,7 +80,7 @@ final bool livemode;
 final ApplicationFeeObject object;
 
 /// ID of the corresponding charge on the platform account, if this fee was the result of a charge using the `destination` parameter.
-final ApplicationFeeOriginatingTransaction? originatingTransaction;
+final OriginatingTransaction? originatingTransaction;
 
 /// Whether the fee has been fully refunded. If the fee is only partially refunded, this attribute will still be false.
 final bool refunded;
@@ -117,7 +117,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object') &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('refunds'); } 
-ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, PlatformEarningFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, ApplicationFeeOriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
+ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, PlatformEarningFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, OriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   amountRefunded: amountRefunded ?? this.amountRefunded,

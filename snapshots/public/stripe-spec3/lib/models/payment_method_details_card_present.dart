@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'payment_method_details_card_present_offline.dart';import 'payment_method_details_card_present_receipt.dart';/// How card details were read in this transaction.
-@immutable final class PaymentMethodDetailsCardPresentReadMethod {const PaymentMethodDetailsCardPresentReadMethod._(this.value);
-
-factory PaymentMethodDetailsCardPresentReadMethod.fromJson(String json) { return switch (json) {
-  'contact_emv' => contactEmv,
-  'contactless_emv' => contactlessEmv,
-  'contactless_magstripe_mode' => contactlessMagstripeMode,
-  'magnetic_stripe_fallback' => magneticStripeFallback,
-  'magnetic_stripe_track2' => magneticStripeTrack2,
-  _ => PaymentMethodDetailsCardPresentReadMethod._(json),
-}; }
-
-static const PaymentMethodDetailsCardPresentReadMethod contactEmv = PaymentMethodDetailsCardPresentReadMethod._('contact_emv');
-
-static const PaymentMethodDetailsCardPresentReadMethod contactlessEmv = PaymentMethodDetailsCardPresentReadMethod._('contactless_emv');
-
-static const PaymentMethodDetailsCardPresentReadMethod contactlessMagstripeMode = PaymentMethodDetailsCardPresentReadMethod._('contactless_magstripe_mode');
-
-static const PaymentMethodDetailsCardPresentReadMethod magneticStripeFallback = PaymentMethodDetailsCardPresentReadMethod._('magnetic_stripe_fallback');
-
-static const PaymentMethodDetailsCardPresentReadMethod magneticStripeTrack2 = PaymentMethodDetailsCardPresentReadMethod._('magnetic_stripe_track2');
-
-static const List<PaymentMethodDetailsCardPresentReadMethod> values = [contactEmv, contactlessEmv, contactlessMagstripeMode, magneticStripeFallback, magneticStripeTrack2];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentReadMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentReadMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present/read_method.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_offline.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present_receipt.dart';/// 
 @immutable final class PaymentMethodDetailsCardPresent {const PaymentMethodDetailsCardPresent({required this.expMonth, required this.expYear, required this.incrementalAuthorizationSupported, required this.overcaptureSupported, this.amountAuthorized, this.brand, this.brandProduct, this.captureBefore, this.cardholderName, this.country, this.description, this.emvAuthData, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.offline, this.preferredLocales, this.readMethod, this.reader, this.receipt, this.wallet, });
 
 factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresent(
@@ -60,7 +26,7 @@ factory PaymentMethodDetailsCardPresent.fromJson(Map<String, dynamic> json) { re
   offline: json['offline'] != null ? PaymentMethodDetailsCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
   overcaptureSupported: json['overcapture_supported'] as bool,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  readMethod: json['read_method'] != null ? PaymentMethodDetailsCardPresentReadMethod.fromJson(json['read_method'] as String) : null,
+  readMethod: json['read_method'] != null ? ReadMethod.fromJson(json['read_method'] as String) : null,
   reader: json['reader'] as String?,
   receipt: json['receipt'] != null ? PaymentMethodDetailsCardPresentReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
@@ -135,7 +101,7 @@ final bool overcaptureSupported;
 final List<String>? preferredLocales;
 
 /// How card details were read in this transaction.
-final PaymentMethodDetailsCardPresentReadMethod? readMethod;
+final ReadMethod? readMethod;
 
 /// ID of the [reader](https://docs.stripe.com/api/terminal/readers) this transaction was made on.
 final String? reader;
@@ -177,7 +143,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_m
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('incremental_authorization_supported') && json['incremental_authorization_supported'] is bool &&
       json.containsKey('overcapture_supported') && json['overcapture_supported'] is bool; } 
-PaymentMethodDetailsCardPresent copyWith({int? Function()? amountAuthorized, String? Function()? brand, String? Function()? brandProduct, int Function()? captureBefore, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, bool? incrementalAuthorizationSupported, String? Function()? issuer, String? Function()? last4, String Function()? location, String? Function()? network, String? Function()? networkTransactionId, PaymentMethodDetailsCardPresentOffline? Function()? offline, bool? overcaptureSupported, List<String>? Function()? preferredLocales, PaymentMethodDetailsCardPresentReadMethod? Function()? readMethod, String Function()? reader, PaymentMethodDetailsCardPresentReceipt? Function()? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet Function()? wallet, }) { return PaymentMethodDetailsCardPresent(
+PaymentMethodDetailsCardPresent copyWith({int? Function()? amountAuthorized, String? Function()? brand, String? Function()? brandProduct, int Function()? captureBefore, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, bool? incrementalAuthorizationSupported, String? Function()? issuer, String? Function()? last4, String Function()? location, String? Function()? network, String? Function()? networkTransactionId, PaymentMethodDetailsCardPresentOffline? Function()? offline, bool? overcaptureSupported, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, String Function()? reader, PaymentMethodDetailsCardPresentReceipt? Function()? receipt, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet Function()? wallet, }) { return PaymentMethodDetailsCardPresent(
   amountAuthorized: amountAuthorized != null ? amountAuthorized() : this.amountAuthorized,
   brand: brand != null ? brand() : this.brand,
   brandProduct: brandProduct != null ? brandProduct() : this.brandProduct,

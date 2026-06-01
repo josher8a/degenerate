@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'terminal_reader_reader_resource_collect_config.dart';import 'terminal_reader_reader_resource_collect_payment_method_action_payment_intent.dart';/// Represents a reader action to collect a payment method
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_config.dart';/// Represents a reader action to collect a payment method
 @immutable final class TerminalReaderReaderResourceCollectPaymentMethodAction {const TerminalReaderReaderResourceCollectPaymentMethodAction({required this.paymentIntent, this.collectConfig, this.paymentMethod, });
 
 factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
@@ -12,7 +12,7 @@ factory TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(Map<Stri
 final TerminalReaderReaderResourceCollectConfig? collectConfig;
 
 /// Most recent PaymentIntent processed by the reader.
-final TerminalReaderReaderResourceCollectPaymentMethodActionPaymentIntent paymentIntent;
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent paymentIntent;
 
 final PaymentMethod? paymentMethod;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethod != null) 'payment_method': paymentMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig Function()? collectConfig, TerminalReaderReaderResourceCollectPaymentMethodActionPaymentIntent? paymentIntent, PaymentMethod Function()? paymentMethod, }) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
+TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderReaderResourceCollectConfig Function()? collectConfig, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent, PaymentMethod Function()? paymentMethod, }) { return TerminalReaderReaderResourceCollectPaymentMethodAction(
   collectConfig: collectConfig != null ? collectConfig() : this.collectConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,

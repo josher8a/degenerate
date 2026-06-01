@@ -1,99 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_rate_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
-@immutable final class TaxProductResourceTaxRateDetailsRateType {const TaxProductResourceTaxRateDetailsRateType._(this.value);
-
-factory TaxProductResourceTaxRateDetailsRateType.fromJson(String json) { return switch (json) {
-  'flat_amount' => flatAmount,
-  'percentage' => percentage,
-  _ => TaxProductResourceTaxRateDetailsRateType._(json),
-}; }
-
-static const TaxProductResourceTaxRateDetailsRateType flatAmount = TaxProductResourceTaxRateDetailsRateType._('flat_amount');
-
-static const TaxProductResourceTaxRateDetailsRateType percentage = TaxProductResourceTaxRateDetailsRateType._('percentage');
-
-static const List<TaxProductResourceTaxRateDetailsRateType> values = [flatAmount, percentage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxRateDetailsRateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxRateDetailsRateType($value)'; } 
- }
-/// The tax type, such as `vat` or `sales_tax`.
-@immutable final class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType._(this.value);
-
-factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
-  'amusement_tax' => amusementTax,
-  'communications_tax' => communicationsTax,
-  'gst' => gst,
-  'hst' => hst,
-  'igst' => igst,
-  'jct' => jct,
-  'lease_tax' => leaseTax,
-  'pst' => pst,
-  'qst' => qst,
-  'retail_delivery_fee' => retailDeliveryFee,
-  'rst' => rst,
-  'sales_tax' => salesTax,
-  'service_tax' => serviceTax,
-  'vat' => vat,
-  _ => TaxProductResourceTaxRateDetailsTaxType._(json),
-}; }
-
-static const TaxProductResourceTaxRateDetailsTaxType amusementTax = TaxProductResourceTaxRateDetailsTaxType._('amusement_tax');
-
-static const TaxProductResourceTaxRateDetailsTaxType communicationsTax = TaxProductResourceTaxRateDetailsTaxType._('communications_tax');
-
-static const TaxProductResourceTaxRateDetailsTaxType gst = TaxProductResourceTaxRateDetailsTaxType._('gst');
-
-static const TaxProductResourceTaxRateDetailsTaxType hst = TaxProductResourceTaxRateDetailsTaxType._('hst');
-
-static const TaxProductResourceTaxRateDetailsTaxType igst = TaxProductResourceTaxRateDetailsTaxType._('igst');
-
-static const TaxProductResourceTaxRateDetailsTaxType jct = TaxProductResourceTaxRateDetailsTaxType._('jct');
-
-static const TaxProductResourceTaxRateDetailsTaxType leaseTax = TaxProductResourceTaxRateDetailsTaxType._('lease_tax');
-
-static const TaxProductResourceTaxRateDetailsTaxType pst = TaxProductResourceTaxRateDetailsTaxType._('pst');
-
-static const TaxProductResourceTaxRateDetailsTaxType qst = TaxProductResourceTaxRateDetailsTaxType._('qst');
-
-static const TaxProductResourceTaxRateDetailsTaxType retailDeliveryFee = TaxProductResourceTaxRateDetailsTaxType._('retail_delivery_fee');
-
-static const TaxProductResourceTaxRateDetailsTaxType rst = TaxProductResourceTaxRateDetailsTaxType._('rst');
-
-static const TaxProductResourceTaxRateDetailsTaxType salesTax = TaxProductResourceTaxRateDetailsTaxType._('sales_tax');
-
-static const TaxProductResourceTaxRateDetailsTaxType serviceTax = TaxProductResourceTaxRateDetailsTaxType._('service_tax');
-
-static const TaxProductResourceTaxRateDetailsTaxType vat = TaxProductResourceTaxRateDetailsTaxType._('vat');
-
-static const List<TaxProductResourceTaxRateDetailsTaxType> values = [amusementTax, communicationsTax, gst, hst, igst, jct, leaseTax, pst, qst, retailDeliveryFee, rst, salesTax, serviceTax, vat];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxRateDetailsTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxRateDetailsTaxType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_rate_details/rate_type.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_rate_details/tax_product_resource_tax_rate_details_tax_type.dart';import 'package:pub_stripe_spec3/models/tax_rate_flat_amount.dart';/// 
 @immutable final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDetails({required this.percentageDecimal, this.country, this.flatAmount, this.rateType, this.state, this.taxType, });
 
 factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
   country: json['country'] as String?,
   flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
   percentageDecimal: json['percentage_decimal'] as String,
-  rateType: json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null,
+  rateType: json['rate_type'] != null ? RateType.fromJson(json['rate_type'] as String) : null,
   state: json['state'] as String?,
   taxType: json['tax_type'] != null ? TaxProductResourceTaxRateDetailsTaxType.fromJson(json['tax_type'] as String) : null,
 ); }
@@ -108,7 +22,7 @@ final TaxRateFlatAmount? flatAmount;
 final String percentageDecimal;
 
 /// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
-final TaxProductResourceTaxRateDetailsRateType? rateType;
+final RateType? rateType;
 
 /// State, county, province, or region ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).
 final String? state;
@@ -125,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (taxType != null) 'tax_type': taxType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String; } 
-TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateFlatAmount? Function()? flatAmount, String? percentageDecimal, TaxProductResourceTaxRateDetailsRateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
+TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateFlatAmount? Function()? flatAmount, String? percentageDecimal, RateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
   country: country != null ? country() : this.country,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,

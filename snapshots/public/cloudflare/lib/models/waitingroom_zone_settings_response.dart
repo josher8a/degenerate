@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_zone_settings_response_result.dart';@immutable final class WaitingroomZoneSettingsResponse {const WaitingroomZoneSettingsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings_response/waitingroom_zone_settings_response_result.dart';@immutable final class WaitingroomZoneSettingsResponse {const WaitingroomZoneSettingsResponse({required this.result});
 
 factory WaitingroomZoneSettingsResponse.fromJson(Map<String, dynamic> json) { return WaitingroomZoneSettingsResponse(
   result: WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

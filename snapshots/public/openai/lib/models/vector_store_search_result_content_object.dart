@@ -1,36 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of content.
-@immutable final class VectorStoreSearchResultContentObjectType {const VectorStoreSearchResultContentObjectType._(this.value);
-
-factory VectorStoreSearchResultContentObjectType.fromJson(String json) { return switch (json) {
-  'text' => text,
-  _ => VectorStoreSearchResultContentObjectType._(json),
-}; }
-
-static const VectorStoreSearchResultContentObjectType text = VectorStoreSearchResultContentObjectType._('text');
-
-static const List<VectorStoreSearchResultContentObjectType> values = [text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreSearchResultContentObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreSearchResultContentObjectType($value)'; } 
- }
-@immutable final class VectorStoreSearchResultContentObject {const VectorStoreSearchResultContentObject({required this.type, required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';@immutable final class VectorStoreSearchResultContentObject {const VectorStoreSearchResultContentObject({required this.type, required this.text, });
 
 factory VectorStoreSearchResultContentObject.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultContentObject(
-  type: VectorStoreSearchResultContentObjectType.fromJson(json['type'] as String),
+  type: CustomTextFormatParamType.fromJson(json['type'] as String),
   text: json['text'] as String,
 ); }
 
 /// The type of content.
-final VectorStoreSearchResultContentObjectType type;
+final CustomTextFormatParamType type;
 
 /// The text content returned from search.
 final String text;
@@ -41,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('text') && json['text'] is String; } 
-VectorStoreSearchResultContentObject copyWith({VectorStoreSearchResultContentObjectType? type, String? text, }) { return VectorStoreSearchResultContentObject(
+VectorStoreSearchResultContentObject copyWith({CustomTextFormatParamType? type, String? text, }) { return VectorStoreSearchResultContentObject(
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 

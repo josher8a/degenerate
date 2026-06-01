@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';import 'repository_ruleset_conditions2.dart';import 'repository_ruleset_links.dart';/// The target of the ruleset
-@immutable final class RepositoryRulesetTarget {const RepositoryRulesetTarget._(this.value);
-
-factory RepositoryRulesetTarget.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  'push' => push,
-  'repository' => repository,
-  _ => RepositoryRulesetTarget._(json),
-}; }
-
-static const RepositoryRulesetTarget branch = RepositoryRulesetTarget._('branch');
-
-static const RepositoryRulesetTarget tag = RepositoryRulesetTarget._('tag');
-
-static const RepositoryRulesetTarget push = RepositoryRulesetTarget._('push');
-
-static const RepositoryRulesetTarget repository = RepositoryRulesetTarget._('repository');
-
-static const List<RepositoryRulesetTarget> values = [branch, tag, push, repository];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetTarget($value)'; } 
- }
-/// The type of the source of the ruleset
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_conditions2.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';/// The type of the source of the ruleset
 @immutable final class RepositoryRulesetSourceType {const RepositoryRulesetSourceType._(this.value);
 
 factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
@@ -61,25 +30,25 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
-@immutable final class RepositoryRulesetCurrentUserCanBypass {const RepositoryRulesetCurrentUserCanBypass._(this.value);
+@immutable final class CurrentUserCanBypass {const CurrentUserCanBypass._(this.value);
 
-factory RepositoryRulesetCurrentUserCanBypass.fromJson(String json) { return switch (json) {
+factory CurrentUserCanBypass.fromJson(String json) { return switch (json) {
   'always' => always,
   'pull_requests_only' => pullRequestsOnly,
   'never' => never,
   'exempt' => exempt,
-  _ => RepositoryRulesetCurrentUserCanBypass._(json),
+  _ => CurrentUserCanBypass._(json),
 }; }
 
-static const RepositoryRulesetCurrentUserCanBypass always = RepositoryRulesetCurrentUserCanBypass._('always');
+static const CurrentUserCanBypass always = CurrentUserCanBypass._('always');
 
-static const RepositoryRulesetCurrentUserCanBypass pullRequestsOnly = RepositoryRulesetCurrentUserCanBypass._('pull_requests_only');
+static const CurrentUserCanBypass pullRequestsOnly = CurrentUserCanBypass._('pull_requests_only');
 
-static const RepositoryRulesetCurrentUserCanBypass never = RepositoryRulesetCurrentUserCanBypass._('never');
+static const CurrentUserCanBypass never = CurrentUserCanBypass._('never');
 
-static const RepositoryRulesetCurrentUserCanBypass exempt = RepositoryRulesetCurrentUserCanBypass._('exempt');
+static const CurrentUserCanBypass exempt = CurrentUserCanBypass._('exempt');
 
-static const List<RepositoryRulesetCurrentUserCanBypass> values = [always, pullRequestsOnly, never, exempt];
+static const List<CurrentUserCanBypass> values = [always, pullRequestsOnly, never, exempt];
 
 final String value;
 
@@ -87,9 +56,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetCurrentUserCanBypass && other.value == value; } 
+    other is CurrentUserCanBypass && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetCurrentUserCanBypass($value)'; } 
+@override String toString() { return 'CurrentUserCanBypass($value)'; } 
  }
 /// A set of rules to apply when specified conditions are met.
 @immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions, this.rules, this.createdAt, this.updatedAt, });
@@ -97,12 +66,12 @@ bool get isUnknown { return !values.contains(this); }
 factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
-  target: json['target'] != null ? RepositoryRulesetTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   sourceType: json['source_type'] != null ? RepositoryRulesetSourceType.fromJson(json['source_type'] as String) : null,
   source: json['source'] as String,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
-  currentUserCanBypass: json['current_user_can_bypass'] != null ? RepositoryRulesetCurrentUserCanBypass.fromJson(json['current_user_can_bypass'] as String) : null,
+  currentUserCanBypass: json['current_user_can_bypass'] != null ? CurrentUserCanBypass.fromJson(json['current_user_can_bypass'] as String) : null,
   nodeId: json['node_id'] as String?,
   links: json['_links'] != null ? RepositoryRulesetLinks.fromJson(json['_links'] as Map<String, dynamic>) : null,
   conditions: json['conditions'] != null ? OneOf2.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf3.parse(v, fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>),),) : null,
@@ -118,7 +87,7 @@ final int id;
 final String name;
 
 /// The target of the ruleset
-final RepositoryRulesetTarget? target;
+final ReposCreateOrgRulesetRequestTarget? target;
 
 /// The type of the source of the ruleset
 final RepositoryRulesetSourceType? sourceType;
@@ -134,7 +103,7 @@ final List<RepositoryRulesetBypassActor>? bypassActors;
 
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
-final RepositoryRulesetCurrentUserCanBypass? currentUserCanBypass;
+final CurrentUserCanBypass? currentUserCanBypass;
 
 final String? nodeId;
 
@@ -168,7 +137,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('enforcement'); } 
-RepositoryRuleset copyWith({int? id, String? name, RepositoryRulesetTarget Function()? target, RepositoryRulesetSourceType Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetCurrentUserCanBypass Function()? currentUserCanBypass, String Function()? nodeId, RepositoryRulesetLinks Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule> Function()? rules, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return RepositoryRuleset(
+RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestTarget Function()? target, RepositoryRulesetSourceType Function()? sourceType, String? source, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, CurrentUserCanBypass Function()? currentUserCanBypass, String Function()? nodeId, RepositoryRulesetLinks Function()? links, RepositoryRulesetConditions2? Function()? conditions, List<RepositoryRule> Function()? rules, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return RepositoryRuleset(
   id: id ?? this.id,
   name: name ?? this.name,
   target: target != null ? target() : this.target,

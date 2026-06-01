@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_header_expression.dart';import 'rulesets_rewrite_header_operation.dart';/// A header with a dynamic value to add.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_expression.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';/// A header with a dynamic value to add.
 @immutable final class AddDynamicHeader {const AddDynamicHeader({required this.expression, required this.operation, });
 
 factory AddDynamicHeader.fromJson(Map<String, dynamic> json) { return AddDynamicHeader(

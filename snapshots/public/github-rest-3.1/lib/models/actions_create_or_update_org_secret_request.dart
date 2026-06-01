@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-@immutable final class ActionsCreateOrUpdateOrgSecretRequestVisibility {const ActionsCreateOrUpdateOrgSecretRequestVisibility._(this.value);
-
-factory ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => ActionsCreateOrUpdateOrgSecretRequestVisibility._(json),
-}; }
-
-static const ActionsCreateOrUpdateOrgSecretRequestVisibility all = ActionsCreateOrUpdateOrgSecretRequestVisibility._('all');
-
-static const ActionsCreateOrUpdateOrgSecretRequestVisibility private = ActionsCreateOrUpdateOrgSecretRequestVisibility._('private');
-
-static const ActionsCreateOrUpdateOrgSecretRequestVisibility selected = ActionsCreateOrUpdateOrgSecretRequestVisibility._('selected');
-
-static const List<ActionsCreateOrUpdateOrgSecretRequestVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsCreateOrUpdateOrgSecretRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsCreateOrUpdateOrgSecretRequestVisibility($value)'; } 
- }
-@immutable final class ActionsCreateOrUpdateOrgSecretRequest {const ActionsCreateOrUpdateOrgSecretRequest({required this.encryptedValue, required this.keyId, required this.visibility, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsCreateOrUpdateOrgSecretRequest {const ActionsCreateOrUpdateOrgSecretRequest({required this.encryptedValue, required this.keyId, required this.visibility, this.selectedRepositoryIds, });
 
 factory ActionsCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateOrUpdateOrgSecretRequest(
   encryptedValue: json['encrypted_value'] as String,

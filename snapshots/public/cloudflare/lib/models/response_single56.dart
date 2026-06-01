@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single56_result.dart';@immutable final class ResponseSingle56 {const ResponseSingle56({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single56/response_single56_result.dart';@immutable final class ResponseSingle56 {const ResponseSingle56({required this.result});
 
 factory ResponseSingle56.fromJson(Map<String, dynamic> json) { return ResponseSingle56(
   result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),

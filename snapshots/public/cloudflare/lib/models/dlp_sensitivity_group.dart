@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_sensitivity_level.dart';@immutable final class DlpSensitivityGroup {const DlpSensitivityGroup({required this.createdAt, required this.description, required this.id, required this.levels, required this.name, required this.updatedAt, this.templateId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_sensitivity_level.dart';@immutable final class DlpSensitivityGroup {const DlpSensitivityGroup({required this.createdAt, required this.description, required this.id, required this.levels, required this.name, required this.updatedAt, this.templateId, });
 
 factory DlpSensitivityGroup.fromJson(Map<String, dynamic> json) { return DlpSensitivityGroup(
   createdAt: DateTime.parse(json['created_at'] as String),

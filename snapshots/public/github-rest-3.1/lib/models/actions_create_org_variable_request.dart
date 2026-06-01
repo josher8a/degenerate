@@ -1,39 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-@immutable final class ActionsCreateOrgVariableRequestVisibility {const ActionsCreateOrgVariableRequestVisibility._(this.value);
-
-factory ActionsCreateOrgVariableRequestVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => ActionsCreateOrgVariableRequestVisibility._(json),
-}; }
-
-static const ActionsCreateOrgVariableRequestVisibility all = ActionsCreateOrgVariableRequestVisibility._('all');
-
-static const ActionsCreateOrgVariableRequestVisibility private = ActionsCreateOrgVariableRequestVisibility._('private');
-
-static const ActionsCreateOrgVariableRequestVisibility selected = ActionsCreateOrgVariableRequestVisibility._('selected');
-
-static const List<ActionsCreateOrgVariableRequestVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActionsCreateOrgVariableRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActionsCreateOrgVariableRequestVisibility($value)'; } 
- }
-@immutable final class ActionsCreateOrgVariableRequest {const ActionsCreateOrgVariableRequest({required this.name, required this.value, required this.visibility, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';@immutable final class ActionsCreateOrgVariableRequest {const ActionsCreateOrgVariableRequest({required this.name, required this.value, required this.visibility, this.selectedRepositoryIds, });
 
 factory ActionsCreateOrgVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateOrgVariableRequest(
   name: json['name'] as String,
   value: json['value'] as String,
-  visibility: ActionsCreateOrgVariableRequestVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
 
@@ -44,7 +16,7 @@ final String name;
 final String value;
 
 /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
-final ActionsCreateOrgVariableRequestVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
 final List<int>? selectedRepositoryIds;
@@ -58,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('visibility'); } 
-ActionsCreateOrgVariableRequest copyWith({String? name, String? value, ActionsCreateOrgVariableRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsCreateOrgVariableRequest(
+ActionsCreateOrgVariableRequest copyWith({String? name, String? value, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsCreateOrgVariableRequest(
   name: name ?? this.name,
   value: value ?? this.value,
   visibility: visibility ?? this.visibility,

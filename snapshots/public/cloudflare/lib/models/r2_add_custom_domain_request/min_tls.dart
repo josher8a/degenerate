@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
+@immutable final class MinTls {const MinTls._(this.value);
+
+factory MinTls.fromJson(String json) { return switch (json) {
+  '1.0' => $10,
+  '1.1' => $11,
+  '1.2' => $12,
+  '1.3' => $13,
+  _ => MinTls._(json),
+}; }
+
+static const MinTls $10 = MinTls._('1.0');
+
+static const MinTls $11 = MinTls._('1.1');
+
+static const MinTls $12 = MinTls._('1.2');
+
+static const MinTls $13 = MinTls._('1.3');
+
+static const List<MinTls> values = [$10, $11, $12, $13];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MinTls && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MinTls($value)'; } 
+ }

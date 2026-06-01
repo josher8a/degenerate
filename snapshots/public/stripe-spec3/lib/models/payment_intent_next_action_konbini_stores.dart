@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_konbini_familymart.dart';import 'payment_intent_next_action_konbini_lawson.dart';import 'payment_intent_next_action_konbini_ministop.dart';import 'payment_intent_next_action_konbini_seicomart.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_konbini_familymart.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_konbini_lawson.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_konbini_ministop.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_konbini_seicomart.dart';/// 
 @immutable final class PaymentIntentNextActionKonbiniStores {const PaymentIntentNextActionKonbiniStores({this.familymart, this.lawson, this.ministop, this.seicomart, });
 
 factory PaymentIntentNextActionKonbiniStores.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniStores(

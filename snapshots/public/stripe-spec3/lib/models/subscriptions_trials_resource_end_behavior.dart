@@ -1,48 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
-@immutable final class SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod {const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(this.value);
-
-factory SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
-  'cancel' => cancel,
-  'create_invoice' => createInvoice,
-  'pause' => pause,
-  _ => SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(json),
-}; }
-
-static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod cancel = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('cancel');
-
-static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod createInvoice = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('create_invoice');
-
-static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod pause = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('pause');
-
-static const List<SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod> values = [cancel, createInvoice, pause];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod($value)'; } 
- }
-/// Defines how a subscription behaves when a free trial ends.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_end_behavior/missing_payment_method.dart';/// Defines how a subscription behaves when a free trial ends.
 @immutable final class SubscriptionsTrialsResourceEndBehavior {const SubscriptionsTrialsResourceEndBehavior({required this.missingPaymentMethod});
 
 factory SubscriptionsTrialsResourceEndBehavior.fromJson(Map<String, dynamic> json) { return SubscriptionsTrialsResourceEndBehavior(
-  missingPaymentMethod: SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),
+  missingPaymentMethod: MissingPaymentMethod.fromJson(json['missing_payment_method'] as String),
 ); }
 
 /// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
-final SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod missingPaymentMethod;
+final MissingPaymentMethod missingPaymentMethod;
 
 Map<String, dynamic> toJson() { return {
   'missing_payment_method': missingPaymentMethod.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('missing_payment_method'); } 
-SubscriptionsTrialsResourceEndBehavior copyWith({SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod? missingPaymentMethod}) { return SubscriptionsTrialsResourceEndBehavior(
+SubscriptionsTrialsResourceEndBehavior copyWith({MissingPaymentMethod? missingPaymentMethod}) { return SubscriptionsTrialsResourceEndBehavior(
   missingPaymentMethod: missingPaymentMethod ?? this.missingPaymentMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The current status.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The current status.
 @immutable final class StatusUpdateStatus {const StatusUpdateStatus._(this.value);
 
 factory StatusUpdateStatus.fromJson(String json) { return switch (json) {

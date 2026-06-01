@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_us_state_sales_tax_election.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_us_state_sales_tax_election.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax({this.elections});
 
 factory TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTax(

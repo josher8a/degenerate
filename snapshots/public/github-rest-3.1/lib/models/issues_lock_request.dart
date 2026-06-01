@@ -5,25 +5,25 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for l
 ///  * `too heated`
 ///  * `resolved`
 ///  * `spam`
-@immutable final class IssuesLockRequestLockReason {const IssuesLockRequestLockReason._(this.value);
+@immutable final class LockReason {const LockReason._(this.value);
 
-factory IssuesLockRequestLockReason.fromJson(String json) { return switch (json) {
+factory LockReason.fromJson(String json) { return switch (json) {
   'off-topic' => offTopic,
   'too heated' => tooHeated,
   'resolved' => resolved,
   'spam' => spam,
-  _ => IssuesLockRequestLockReason._(json),
+  _ => LockReason._(json),
 }; }
 
-static const IssuesLockRequestLockReason offTopic = IssuesLockRequestLockReason._('off-topic');
+static const LockReason offTopic = LockReason._('off-topic');
 
-static const IssuesLockRequestLockReason tooHeated = IssuesLockRequestLockReason._('too heated');
+static const LockReason tooHeated = LockReason._('too heated');
 
-static const IssuesLockRequestLockReason resolved = IssuesLockRequestLockReason._('resolved');
+static const LockReason resolved = LockReason._('resolved');
 
-static const IssuesLockRequestLockReason spam = IssuesLockRequestLockReason._('spam');
+static const LockReason spam = LockReason._('spam');
 
-static const List<IssuesLockRequestLockReason> values = [offTopic, tooHeated, resolved, spam];
+static const List<LockReason> values = [offTopic, tooHeated, resolved, spam];
 
 final String value;
 
@@ -31,14 +31,14 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesLockRequestLockReason && other.value == value; } 
+    other is LockReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesLockRequestLockReason($value)'; } 
+@override String toString() { return 'LockReason($value)'; } 
  }
 @immutable final class IssuesLockRequest {const IssuesLockRequest({this.lockReason});
 
 factory IssuesLockRequest.fromJson(Map<String, dynamic> json) { return IssuesLockRequest(
-  lockReason: json['lock_reason'] != null ? IssuesLockRequestLockReason.fromJson(json['lock_reason'] as String) : null,
+  lockReason: json['lock_reason'] != null ? LockReason.fromJson(json['lock_reason'] as String) : null,
 ); }
 
 /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
@@ -46,13 +46,13 @@ factory IssuesLockRequest.fromJson(Map<String, dynamic> json) { return IssuesLoc
 ///  * `too heated`
 ///  * `resolved`
 ///  * `spam`
-final IssuesLockRequestLockReason? lockReason;
+final LockReason? lockReason;
 
 Map<String, dynamic> toJson() { return {
   if (lockReason != null) 'lock_reason': lockReason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lock_reason'}.contains(key)); } 
-IssuesLockRequest copyWith({IssuesLockRequestLockReason Function()? lockReason}) { return IssuesLockRequest(
+IssuesLockRequest copyWith({LockReason Function()? lockReason}) { return IssuesLockRequest(
   lockReason: lockReason != null ? lockReason() : this.lockReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

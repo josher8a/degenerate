@@ -1,36 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-@immutable final class SubscriptionsResourceBillingModeType {const SubscriptionsResourceBillingModeType._(this.value);
-
-factory SubscriptionsResourceBillingModeType.fromJson(String json) { return switch (json) {
-  'classic' => classic,
-  'flexible' => flexible,
-  _ => SubscriptionsResourceBillingModeType._(json),
-}; }
-
-static const SubscriptionsResourceBillingModeType classic = SubscriptionsResourceBillingModeType._('classic');
-
-static const SubscriptionsResourceBillingModeType flexible = SubscriptionsResourceBillingModeType._('flexible');
-
-static const List<SubscriptionsResourceBillingModeType> values = [classic, flexible];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourceBillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourceBillingModeType($value)'; } 
- }
-/// The billing mode of the subscription.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_billing_mode/quotes_resource_subscription_data_billing_mode_type.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode_flexible.dart';/// The billing mode of the subscription.
 @immutable final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({required this.type, this.flexible, this.updatedAt, });
 
 factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
   flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
-  type: SubscriptionsResourceBillingModeType.fromJson(json['type'] as String),
+  type: QuotesResourceSubscriptionDataBillingModeType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
 ); }
 
@@ -38,7 +13,7 @@ factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { r
 final SubscriptionsResourceBillingModeFlexible? flexible;
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-final SubscriptionsResourceBillingModeType type;
+final QuotesResourceSubscriptionDataBillingModeType type;
 
 /// Details on when the current billing_mode was adopted.
 final int? updatedAt;
@@ -49,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, SubscriptionsResourceBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
+SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, QuotesResourceSubscriptionDataBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

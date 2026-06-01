@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'quotes_resource_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data/payment_links_resource_transfer_data_destination.dart';/// 
 @immutable final class QuotesResourceTransferData {const QuotesResourceTransferData({required this.destination, this.amount, this.amountPercent, });
 
 factory QuotesResourceTransferData.fromJson(Map<String, dynamic> json) { return QuotesResourceTransferData(
@@ -16,7 +16,7 @@ final int? amount;
 final double? amountPercent;
 
 /// The account where funds from the payment will be transferred to upon payment success.
-final QuotesResourceTransferDataDestination destination;
+final PaymentLinksResourceTransferDataDestination destination;
 
 Map<String, dynamic> toJson() { return {
   'amount': ?amount,
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'destination': destination.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-QuotesResourceTransferData copyWith({int? Function()? amount, double? Function()? amountPercent, QuotesResourceTransferDataDestination? destination, }) { return QuotesResourceTransferData(
+QuotesResourceTransferData copyWith({int? Function()? amount, double? Function()? amountPercent, PaymentLinksResourceTransferDataDestination? destination, }) { return QuotesResourceTransferData(
   amount: amount != null ? amount() : this.amount,
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,

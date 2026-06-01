@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'namespace.dart';/// NamespaceList is a list of Namespaces.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace.dart';/// NamespaceList is a list of Namespaces.
 @immutable final class NamespaceList {const NamespaceList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory NamespaceList.fromJson(Map<String, dynamic> json) { return NamespaceList(

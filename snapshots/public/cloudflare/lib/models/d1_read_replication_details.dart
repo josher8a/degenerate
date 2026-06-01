@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_read_replication_mode.dart';/// Configuration for D1 read replication.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_read_replication_mode.dart';/// Configuration for D1 read replication.
 @immutable final class D1ReadReplicationDetails {const D1ReadReplicationDetails({required this.mode});
 
 factory D1ReadReplicationDetails.fromJson(Map<String, dynamic> json) { return D1ReadReplicationDetails(

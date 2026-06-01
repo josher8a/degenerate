@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'top_log_prob.dart';/// The log probability of a token.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/top_log_prob.dart';/// The log probability of a token.
 @immutable final class LogProb {const LogProb({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });
 
 factory LogProb.fromJson(Map<String, dynamic> json) { return LogProb(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_content_links.dart';import 'license_simple.dart';/// License Content
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/license_simple.dart';/// License Content
 @immutable final class LicenseContent {const LicenseContent({required this.name, required this.path, required this.sha, required this.size, required this.url, required this.htmlUrl, required this.gitUrl, required this.downloadUrl, required this.type, required this.content, required this.encoding, required this.links, required this.license, });
 
 factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseContent(
@@ -15,7 +15,7 @@ factory LicenseContent.fromJson(Map<String, dynamic> json) { return LicenseConte
   type: json['type'] as String,
   content: json['content'] as String,
   encoding: json['encoding'] as String,
-  links: LicenseContentLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
   license: json['license'] != null ? LicenseSimple.fromJson(json['license'] as Map<String, dynamic>) : null,
 ); }
 
@@ -41,7 +41,7 @@ final String content;
 
 final String encoding;
 
-final LicenseContentLinks links;
+final ContentDirectoryLinks links;
 
 final LicenseSimple? license;
 
@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('encoding') && json['encoding'] is String &&
       json.containsKey('_links') &&
       json.containsKey('license'); } 
-LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri? url, Uri? Function()? htmlUrl, Uri? Function()? gitUrl, Uri? Function()? downloadUrl, String? type, String? content, String? encoding, LicenseContentLinks? links, LicenseSimple? Function()? license, }) { return LicenseContent(
+LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri? url, Uri? Function()? htmlUrl, Uri? Function()? gitUrl, Uri? Function()? downloadUrl, String? type, String? content, String? encoding, ContentDirectoryLinks? links, LicenseSimple? Function()? license, }) { return LicenseContent(
   name: name ?? this.name,
   path: path ?? this.path,
   sha: sha ?? this.sha,

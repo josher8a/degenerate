@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_preset_configuration.dart';typedef VectorizeIndexConfiguration = OneOf2<VectorizeIndexDimensionConfiguration,VectorizeIndexPresetConfiguration>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimension_configuration.dart';import 'package:pub_cloudflare/models/vectorize_index_preset_configuration.dart';typedef VectorizeIndexConfiguration = OneOf2<VectorizeIndexDimensionConfiguration,VectorizeIndexPresetConfiguration>;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_get_open_ports_response_result.dart';import '../models/post_config_create_request.dart';import '../models/post_config_update_request.dart';import '../models/scan_config.dart';/// ScansApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_get_open_ports_response/get_get_open_ports_response_result.dart';import 'package:pub_cloudflare/models/post_config_create_request.dart';import 'package:pub_cloudflare/models/post_config_update_request.dart';import 'package:pub_cloudflare/models/scan_config.dart';/// ScansApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

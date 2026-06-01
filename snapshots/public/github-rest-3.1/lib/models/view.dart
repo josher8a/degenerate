@@ -1,41 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The layout of the view.
-@immutable final class ViewLayout {const ViewLayout._(this.value);
-
-factory ViewLayout.fromJson(String json) { return switch (json) {
-  'table' => table,
-  'board' => board,
-  'roadmap' => roadmap,
-  _ => ViewLayout._(json),
-}; }
-
-static const ViewLayout table = ViewLayout._('table');
-
-static const ViewLayout board = ViewLayout._('board');
-
-static const ViewLayout roadmap = ViewLayout._('roadmap');
-
-static const List<ViewLayout> values = [table, board, roadmap];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ViewLayout && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ViewLayout($value)'; } 
- }
-/// A view inside a projects v2 project
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A view inside a projects v2 project
 @immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter, });
 
 factory View.fromJson(Map<String, dynamic> json) { return View(
   id: (json['id'] as num).toInt(),
   number: (json['number'] as num).toInt(),
   name: json['name'] as String,
-  layout: ViewLayout.fromJson(json['layout'] as String),
+  layout: Layout.fromJson(json['layout'] as String),
   nodeId: json['node_id'] as String,
   projectUrl: json['project_url'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -59,7 +31,7 @@ final int number;
 final String name;
 
 /// The layout of the view.
-final ViewLayout layout;
+final Layout layout;
 
 /// The node ID of the view.
 final String nodeId;
@@ -124,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('sort_by') &&
       json.containsKey('group_by') &&
       json.containsKey('vertical_group_by'); } 
-View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, String? Function()? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
+View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, String? Function()? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
   id: id ?? this.id,
   number: number ?? this.number,
   name: name ?? this.name,

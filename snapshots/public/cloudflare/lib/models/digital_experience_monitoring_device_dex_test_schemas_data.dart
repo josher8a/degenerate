@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of test.
-@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataKind {const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._(this.value);
-
-factory DigitalExperienceMonitoringDeviceDexTestSchemasDataKind.fromJson(String json) { return switch (json) {
-  'http' => http,
-  'traceroute' => traceroute,
-  _ => DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._(json),
-}; }
-
-static const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind http = DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._('http');
-
-static const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind traceroute = DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._('traceroute');
-
-static const List<DigitalExperienceMonitoringDeviceDexTestSchemasDataKind> values = [http, traceroute];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringDeviceDexTestSchemasDataKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringDeviceDexTestSchemasDataKind($value)'; } 
- }
-/// The HTTP request method type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';/// The HTTP request method type.
 @immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._(this.value);
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(String json) { return switch (json) {

@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
+@immutable final class OrganizationSelfHostedRunners {const OrganizationSelfHostedRunners._(this.value);
+
+factory OrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => OrganizationSelfHostedRunners._(json),
+}; }
+
+static const OrganizationSelfHostedRunners read = OrganizationSelfHostedRunners._('read');
+
+static const OrganizationSelfHostedRunners write = OrganizationSelfHostedRunners._('write');
+
+static const List<OrganizationSelfHostedRunners> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OrganizationSelfHostedRunners && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'OrganizationSelfHostedRunners($value)'; } 
+ }

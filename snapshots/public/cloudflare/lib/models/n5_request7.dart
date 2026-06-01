@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_request7_variant1.dart';import 'n5_request7_variant2.dart';typedef $5Request7 = OneOf2<$5Request7Variant1,$5Request7Variant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n5_request2/n5_request2_variant1.dart';import 'package:pub_cloudflare/models/n5_request2/n5_request2_variant2.dart';typedef $5Request7 = OneOf2<$5Request2Variant1,$5Request2Variant2>;

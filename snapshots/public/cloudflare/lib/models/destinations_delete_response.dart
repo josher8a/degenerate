@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response_errors.dart';import 'destinations_delete_response_messages.dart';import 'destinations_delete_response_result.dart';@immutable final class DestinationsDeleteResponse {const DestinationsDeleteResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response/destination_create_response_result.dart';import 'package:pub_cloudflare/models/destination_list_response/destination_list_response_messages.dart';@immutable final class DestinationsDeleteResponse {const DestinationsDeleteResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DestinationsDeleteResponse.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => DestinationsDeleteResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => DestinationsDeleteResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? DestinationsDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationListResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  result: json['result'] != null ? DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
-final List<DestinationsDeleteResponseErrors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
-final List<DestinationsDeleteResponseMessages> messages;
+final List<DestinationListResponseMessages> messages;
 
-final DestinationsDeleteResponseResult? result;
+final DestinationCreateResponseResult? result;
 
 final bool success;
 
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DestinationsDeleteResponse copyWith({List<DestinationsDeleteResponseErrors>? errors, List<DestinationsDeleteResponseMessages>? messages, DestinationsDeleteResponseResult Function()? result, bool? success, }) { return DestinationsDeleteResponse(
+DestinationsDeleteResponse copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationListResponseMessages>? messages, DestinationCreateResponseResult Function()? result, bool? success, }) { return DestinationsDeleteResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

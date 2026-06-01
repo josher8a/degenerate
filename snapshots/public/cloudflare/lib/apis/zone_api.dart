@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_purge_identifier.dart';import '../models/put_zones_zone_id_activation_check_response_result.dart';import '../models/response_single_id8_result.dart';import '../models/response_single_id_result.dart';import '../models/zone_activation_identifier.dart';import '../models/zone_purge_request.dart';import '../models/zones0_patch_request.dart';import '../models/zones_get_direction.dart';import '../models/zones_get_match.dart';import '../models/zones_get_order.dart';import '../models/zones_get_status.dart';import '../models/zones_identifier.dart';import '../models/zones_post_request.dart';import '../models/zones_zone.dart';/// ZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/cache_purge_identifier.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/zone_activation_identifier.dart';import 'package:pub_cloudflare/models/zone_purge_request.dart';import 'package:pub_cloudflare/models/zones0_patch_request.dart';import 'package:pub_cloudflare/models/zones_get_direction.dart';import 'package:pub_cloudflare/models/zones_get_match.dart';import 'package:pub_cloudflare/models/zones_get_order.dart';import 'package:pub_cloudflare/models/zones_get_status.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_post_request.dart';import 'package:pub_cloudflare/models/zones_zone.dart';/// ZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -135,7 +135,7 @@ return execute(
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseSingleId8Result?, Never>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, Never>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -148,7 +148,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId8Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -159,7 +159,7 @@ return execute(
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<PutZonesZoneIdActivationCheckResponseResult?, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -172,7 +172,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? PutZonesZoneIdActivationCheckResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -221,7 +221,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleIdResult?, Never>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, Never>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -236,7 +236,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleIdResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

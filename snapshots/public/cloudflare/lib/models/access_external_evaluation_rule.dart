@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_external_evaluation_rule_external_evaluation.dart';/// Create Allow or Block policies which evaluate the user based on custom criteria.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_external_evaluation_rule/external_evaluation.dart';/// Create Allow or Block policies which evaluate the user based on custom criteria.
 @immutable final class AccessExternalEvaluationRule {const AccessExternalEvaluationRule({required this.externalEvaluation});
 
 factory AccessExternalEvaluationRule.fromJson(Map<String, dynamic> json) { return AccessExternalEvaluationRule(
-  externalEvaluation: AccessExternalEvaluationRuleExternalEvaluation.fromJson(json['external_evaluation'] as Map<String, dynamic>),
+  externalEvaluation: ExternalEvaluation.fromJson(json['external_evaluation'] as Map<String, dynamic>),
 ); }
 
-final AccessExternalEvaluationRuleExternalEvaluation externalEvaluation;
+final ExternalEvaluation externalEvaluation;
 
 Map<String, dynamic> toJson() { return {
   'external_evaluation': externalEvaluation.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('external_evaluation'); } 
-AccessExternalEvaluationRule copyWith({AccessExternalEvaluationRuleExternalEvaluation? externalEvaluation}) { return AccessExternalEvaluationRule(
+AccessExternalEvaluationRule copyWith({ExternalEvaluation? externalEvaluation}) { return AccessExternalEvaluationRule(
   externalEvaluation: externalEvaluation ?? this.externalEvaluation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

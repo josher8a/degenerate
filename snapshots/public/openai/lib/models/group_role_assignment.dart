@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'group.dart';import 'role.dart';/// Always `group.role`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/group.dart';import 'package:pub_openai/models/role.dart';/// Always `group.role`.
 @immutable final class GroupRoleAssignmentObject {const GroupRoleAssignmentObject._(this.value);
 
 factory GroupRoleAssignmentObject.fromJson(String json) { return switch (json) {

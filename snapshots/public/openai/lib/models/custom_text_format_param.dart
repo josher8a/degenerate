@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unconstrained text format. Always `text`.
-@immutable final class CustomTextFormatParamType {const CustomTextFormatParamType._(this.value);
-
-factory CustomTextFormatParamType.fromJson(String json) { return switch (json) {
-  'text' => text,
-  _ => CustomTextFormatParamType._(json),
-}; }
-
-static const CustomTextFormatParamType text = CustomTextFormatParamType._('text');
-
-static const List<CustomTextFormatParamType> values = [text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomTextFormatParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomTextFormatParamType($value)'; } 
- }
-/// Unconstrained free-form text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// Unconstrained free-form text.
 @immutable final class CustomTextFormatParam {const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
 
 factory CustomTextFormatParam.fromJson(Map<String, dynamic> json) { return CustomTextFormatParam(

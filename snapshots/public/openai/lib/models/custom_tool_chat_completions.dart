@@ -1,38 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_chat_completions_custom.dart';/// The type of the custom tool. Always `custom`.
-@immutable final class CustomToolChatCompletionsType {const CustomToolChatCompletionsType._(this.value);
-
-factory CustomToolChatCompletionsType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => CustomToolChatCompletionsType._(json),
-}; }
-
-static const CustomToolChatCompletionsType custom = CustomToolChatCompletionsType._('custom');
-
-static const List<CustomToolChatCompletionsType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomToolChatCompletionsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomToolChatCompletionsType($value)'; } 
- }
-/// A custom tool that processes input using a specified format.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';import 'package:pub_openai/models/custom_tool_chat_completions/custom_tool_chat_completions_custom.dart';/// A custom tool that processes input using a specified format.
 /// 
 @immutable final class CustomToolChatCompletions {const CustomToolChatCompletions({required this.type, required this.custom, });
 
 factory CustomToolChatCompletions.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletions(
-  type: CustomToolChatCompletionsType.fromJson(json['type'] as String),
+  type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   custom: CustomToolChatCompletionsCustom.fromJson(json['custom'] as Map<String, dynamic>),
 ); }
 
 /// The type of the custom tool. Always `custom`.
-final CustomToolChatCompletionsType type;
+final ChatCompletionMessageCustomToolCallType type;
 
 /// Properties of the custom tool.
 /// 
@@ -44,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('custom'); } 
-CustomToolChatCompletions copyWith({CustomToolChatCompletionsType? type, CustomToolChatCompletionsCustom? custom, }) { return CustomToolChatCompletions(
+CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? type, CustomToolChatCompletionsCustom? custom, }) { return CustomToolChatCompletions(
   type: type ?? this.type,
   custom: custom ?? this.custom,
 ); } 

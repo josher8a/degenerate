@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_domain_sip_ip_access_control_list_mapping.dart';@immutable final class ListSipIpAccessControlListMappingResponse {const ListSipIpAccessControlListMappingResponse({this.ipAccessControlListMappings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_sip_sip_domain_sip_ip_access_control_list_mapping.dart';@immutable final class ListSipIpAccessControlListMappingResponse {const ListSipIpAccessControlListMappingResponse({this.ipAccessControlListMappings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListSipIpAccessControlListMappingResponse.fromJson(Map<String, dynamic> json) { return ListSipIpAccessControlListMappingResponse(
   ipAccessControlListMappings: (json['ip_access_control_list_mappings'] as List<dynamic>?)?.map((e) => AccountSipSipDomainSipIpAccessControlListMapping.fromJson(e as Map<String, dynamic>)).toList(),

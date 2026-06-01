@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_label_edited_changes.dart';import 'webhooks_label.dart';@immutable final class WebhookLabelEditedAction {const WebhookLabelEditedAction._(this.value);
-
-factory WebhookLabelEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookLabelEditedAction._(json),
-}; }
-
-static const WebhookLabelEditedAction edited = WebhookLabelEditedAction._('edited');
-
-static const List<WebhookLabelEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookLabelEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookLabelEditedAction($value)'; } 
- }
-@immutable final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, required this.label, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_label_edited/webhook_label_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookLabelEdited {const WebhookLabelEdited({required this.action, required this.label, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookLabelEdited(
-  action: WebhookLabelEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookLabelEditedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookLabelEdited.fromJson(Map<String, dynamic> json) { return WebhookL
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookLabelEditedAction action;
+final ItemEditedAction action;
 
 /// The changes to the label if the action was `edited`.
 final WebhookLabelEditedChanges? changes;
@@ -65,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('label') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookLabelEdited copyWith({WebhookLabelEditedAction? action, WebhookLabelEditedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelEdited(
+WebhookLabelEdited copyWith({ItemEditedAction? action, WebhookLabelEditedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelEdited(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

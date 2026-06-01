@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
-@immutable final class VectorStoreExpirationAfterAnchor {const VectorStoreExpirationAfterAnchor._(this.value);
-
-factory VectorStoreExpirationAfterAnchor.fromJson(String json) { return switch (json) {
-  'last_active_at' => lastActiveAt,
-  _ => VectorStoreExpirationAfterAnchor._(json),
-}; }
-
-static const VectorStoreExpirationAfterAnchor lastActiveAt = VectorStoreExpirationAfterAnchor._('last_active_at');
-
-static const List<VectorStoreExpirationAfterAnchor> values = [lastActiveAt];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreExpirationAfterAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreExpirationAfterAnchor($value)'; } 
- }
-/// The expiration policy for a vector store.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after/vector_store_expiration_after_anchor.dart';/// The expiration policy for a vector store.
 @immutable final class VectorStoreExpirationAfter {const VectorStoreExpirationAfter({required this.anchor, required this.days, });
 
 factory VectorStoreExpirationAfter.fromJson(Map<String, dynamic> json) { return VectorStoreExpirationAfter(

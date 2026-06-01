@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByIpVersionResponse {const RadarGetHttpTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_timeseries_group_by_ip_version_response/radar_get_attacks_layer3_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByIpVersionResponse {const RadarGetHttpTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByIpVersionResponse(
-  result: RadarGetHttpTimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetHttpTimeseriesGroupByIpVersionResponseResult result;
+final RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByIpVersionResponse copyWith({RadarGetHttpTimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByIpVersionResponse(
+RadarGetHttpTimeseriesGroupByIpVersionResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

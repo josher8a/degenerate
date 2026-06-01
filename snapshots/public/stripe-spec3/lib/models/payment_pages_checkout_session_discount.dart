@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'payment_pages_checkout_session_discount_coupon.dart';import 'payment_pages_checkout_session_discount_promotion_code.dart';import 'promotion_code.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon, this.promotionCode, });
 
 factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionDiscount(
@@ -9,17 +9,17 @@ factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) 
 ); }
 
 /// Coupon attached to the Checkout Session.
-final PaymentPagesCheckoutSessionDiscountCoupon? coupon;
+final DiscountSourceCoupon? coupon;
 
 /// Promotion code attached to the Checkout Session.
-final PaymentPagesCheckoutSessionDiscountPromotionCode? promotionCode;
+final DeletedDiscountPromotionCode? promotionCode;
 
 Map<String, dynamic> toJson() { return {
   if (coupon != null) 'coupon': coupon?.toJson(),
   if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
-PaymentPagesCheckoutSessionDiscount copyWith({PaymentPagesCheckoutSessionDiscountCoupon? Function()? coupon, PaymentPagesCheckoutSessionDiscountPromotionCode? Function()? promotionCode, }) { return PaymentPagesCheckoutSessionDiscount(
+PaymentPagesCheckoutSessionDiscount copyWith({DiscountSourceCoupon? Function()? coupon, DeletedDiscountPromotionCode? Function()? promotionCode, }) { return PaymentPagesCheckoutSessionDiscount(
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 

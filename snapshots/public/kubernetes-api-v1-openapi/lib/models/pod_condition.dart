@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PodCondition contains details for the current condition of this pod.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// PodCondition contains details for the current condition of this pod.
 @immutable final class PodCondition {const PodCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.observedGeneration, this.reason, this.status = '', this.type = '', });
 
 factory PodCondition.fromJson(Map<String, dynamic> json) { return PodCondition(

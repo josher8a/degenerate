@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_connector_snapshots_post_result.dart';@immutable final class MconnConnectorSnapshotsPostSuccess {const MconnConnectorSnapshotsPostSuccess({required this.success, required this.result, this.errors, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_connector_snapshots_post_result.dart';@immutable final class MconnConnectorSnapshotsPostSuccess {const MconnConnectorSnapshotsPostSuccess({required this.success, required this.result, this.errors, this.messages, });
 
 factory MconnConnectorSnapshotsPostSuccess.fromJson(Map<String, dynamic> json) { return MconnConnectorSnapshotsPostSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

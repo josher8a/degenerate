@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_auto_param_network_policy.dart';import 'container_auto_param_skills.dart';import 'container_memory_limit.dart';/// Automatically creates a container for this request
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_auto_param/skills.dart';import 'package:pub_openai/models/container_memory_limit.dart';/// Automatically creates a container for this request
 @immutable final class ContainerAutoParamType {const ContainerAutoParamType._(this.value);
 
 factory ContainerAutoParamType.fromJson(String json) { return switch (json) {
@@ -28,8 +28,8 @@ factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return Containe
   type: ContainerAutoParamType.fromJson(json['type'] as String),
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   memoryLimit: json['memory_limit'] != null ? ContainerMemoryLimit.fromJson(json['memory_limit'] as String) : null,
-  networkPolicy: json['network_policy'] != null ? ContainerAutoParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
-  skills: (json['skills'] as List<dynamic>?)?.map((e) => ContainerAutoParamSkills.fromJson(e as Map<String, dynamic>)).toList(),
+  networkPolicy: json['network_policy'] != null ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
+  skills: (json['skills'] as List<dynamic>?)?.map((e) => Skills.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// Automatically creates a container for this request
@@ -41,10 +41,10 @@ final List<String>? fileIds;
 final ContainerMemoryLimit? memoryLimit;
 
 /// Network access policy for the container.
-final ContainerAutoParamNetworkPolicy? networkPolicy;
+final AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy;
 
 /// An optional list of skills referenced by id or inline data.
-final List<ContainerAutoParamSkills>? skills;
+final List<Skills>? skills;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String> Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, ContainerAutoParamNetworkPolicy Function()? networkPolicy, List<ContainerAutoParamSkills> Function()? skills, }) { return ContainerAutoParam(
+ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String> Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy Function()? networkPolicy, List<Skills> Function()? skills, }) { return ContainerAutoParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,

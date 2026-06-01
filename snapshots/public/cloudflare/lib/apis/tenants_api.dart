@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account.dart';import '../models/innate_entitlements.dart';import '../models/tenant.dart';import '../models/tenant_membership.dart';/// TenantsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account.dart';import 'package:pub_cloudflare/models/innate_entitlements.dart';import 'package:pub_cloudflare/models/tenant.dart';import 'package:pub_cloudflare/models/tenant_membership.dart';/// TenantsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

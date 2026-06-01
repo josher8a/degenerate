@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'community_profile_files.dart';/// Community Profile
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/community_profile/files.dart';/// Community Profile
 @immutable final class CommunityProfile {const CommunityProfile({required this.healthPercentage, required this.description, required this.documentation, required this.files, required this.updatedAt, this.contentReportsEnabled, });
 
 factory CommunityProfile.fromJson(Map<String, dynamic> json) { return CommunityProfile(
   healthPercentage: (json['health_percentage'] as num).toInt(),
   description: json['description'] as String?,
   documentation: json['documentation'] as String?,
-  files: CommunityProfileFiles.fromJson(json['files'] as Map<String, dynamic>),
+  files: Files.fromJson(json['files'] as Map<String, dynamic>),
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   contentReportsEnabled: json['content_reports_enabled'] as bool?,
 ); }
@@ -18,7 +18,7 @@ final String? description;
 
 final String? documentation;
 
-final CommunityProfileFiles files;
+final Files files;
 
 final DateTime? updatedAt;
 
@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('healt
       json.containsKey('documentation') && json['documentation'] is String &&
       json.containsKey('files') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-CommunityProfile copyWith({int? healthPercentage, String? Function()? description, String? Function()? documentation, CommunityProfileFiles? files, DateTime? Function()? updatedAt, bool Function()? contentReportsEnabled, }) { return CommunityProfile(
+CommunityProfile copyWith({int? healthPercentage, String? Function()? description, String? Function()? documentation, Files? files, DateTime? Function()? updatedAt, bool Function()? contentReportsEnabled, }) { return CommunityProfile(
   healthPercentage: healthPercentage ?? this.healthPercentage,
   description: description != null ? description() : this.description,
   documentation: documentation != null ? documentation() : this.documentation,

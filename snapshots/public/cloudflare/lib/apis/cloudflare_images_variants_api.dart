@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/images_account_identifier.dart';import '../models/images_image_variant_definition.dart';import '../models/images_image_variant_identifier.dart';import '../models/images_image_variant_patch_request.dart';import '../models/images_image_variant_response.dart';import '../models/response_common36_result.dart';/// CloudflareImagesVariantsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_account_identifier.dart';import 'package:pub_cloudflare/models/images_image_variant_definition.dart';import 'package:pub_cloudflare/models/images_image_variant_identifier.dart';import 'package:pub_cloudflare/models/images_image_variant_patch_request.dart';import 'package:pub_cloudflare/models/images_image_variant_response.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';/// CloudflareImagesVariantsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareImagesVariantsApi with ApiExecutor {const CloudflareImages
 /// Lists existing variants.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',

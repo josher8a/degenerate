@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_transferred_changes.dart';@immutable final class WebhookDiscussionTransferredAction {const WebhookDiscussionTransferredAction._(this.value);
-
-factory WebhookDiscussionTransferredAction.fromJson(String json) { return switch (json) {
-  'transferred' => transferred,
-  _ => WebhookDiscussionTransferredAction._(json),
-}; }
-
-static const WebhookDiscussionTransferredAction transferred = WebhookDiscussionTransferredAction._('transferred');
-
-static const List<WebhookDiscussionTransferredAction> values = [transferred];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionTransferredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionTransferredAction($value)'; } 
- }
-@immutable final class WebhookDiscussionTransferred {const WebhookDiscussionTransferred({required this.action, required this.changes, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_transferred/webhook_discussion_transferred_action.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_transferred/webhook_discussion_transferred_changes.dart';@immutable final class WebhookDiscussionTransferred {const WebhookDiscussionTransferred({required this.action, required this.changes, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionTransferred.fromJson(Map<String, dynamic> json) { return WebhookDiscussionTransferred(
   action: WebhookDiscussionTransferredAction.fromJson(json['action'] as String),

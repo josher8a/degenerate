@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating who is liable when this account can't pay back negative balances from payments.
-@immutable final class AccountUnificationAccountControllerLossesPayments {const AccountUnificationAccountControllerLossesPayments._(this.value);
-
-factory AccountUnificationAccountControllerLossesPayments.fromJson(String json) { return switch (json) {
-  'application' => application,
-  'stripe' => stripe,
-  _ => AccountUnificationAccountControllerLossesPayments._(json),
-}; }
-
-static const AccountUnificationAccountControllerLossesPayments application = AccountUnificationAccountControllerLossesPayments._('application');
-
-static const AccountUnificationAccountControllerLossesPayments stripe = AccountUnificationAccountControllerLossesPayments._('stripe');
-
-static const List<AccountUnificationAccountControllerLossesPayments> values = [application, stripe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUnificationAccountControllerLossesPayments && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerLossesPayments($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_losses/account_unification_account_controller_losses_payments.dart';/// 
 @immutable final class AccountUnificationAccountControllerLosses {const AccountUnificationAccountControllerLosses({required this.payments});
 
 factory AccountUnificationAccountControllerLosses.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountControllerLosses(

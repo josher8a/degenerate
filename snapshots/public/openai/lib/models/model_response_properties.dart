@@ -1,32 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
-/// 
-@immutable final class ModelResponsePropertiesPromptCacheRetention {const ModelResponsePropertiesPromptCacheRetention._(this.value);
-
-factory ModelResponsePropertiesPromptCacheRetention.fromJson(String json) { return switch (json) {
-  'in-memory' => inMemory,
-  '24h' => $24h,
-  _ => ModelResponsePropertiesPromptCacheRetention._(json),
-}; }
-
-static const ModelResponsePropertiesPromptCacheRetention inMemory = ModelResponsePropertiesPromptCacheRetention._('in-memory');
-
-static const ModelResponsePropertiesPromptCacheRetention $24h = ModelResponsePropertiesPromptCacheRetention._('24h');
-
-static const List<ModelResponsePropertiesPromptCacheRetention> values = [inMemory, $24h];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ModelResponsePropertiesPromptCacheRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ModelResponsePropertiesPromptCacheRetention($value)'; } 
- }
-@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/service_tier.dart';@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
 
 factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return ModelResponseProperties(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -37,7 +11,7 @@ factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return Mod
   safetyIdentifier: json['safety_identifier'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,
   serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
-  promptCacheRetention: json['prompt_cache_retention'] != null ? ModelResponsePropertiesPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+  promptCacheRetention: json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
 ); }
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
@@ -87,7 +61,7 @@ final ServiceTier? serviceTier;
 
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final ModelResponsePropertiesPromptCacheRetention? promptCacheRetention;
+final PromptCacheRetention? promptCacheRetention;
 
 Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
@@ -101,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
-ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, ModelResponsePropertiesPromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(
+ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
   temperature: temperature != null ? temperature() : this.temperature,

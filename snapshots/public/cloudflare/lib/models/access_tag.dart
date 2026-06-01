@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';import 'access_timestamp.dart';/// A tag
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_tags_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';/// A tag
 @immutable final class AccessTag {const AccessTag({required this.name, this.appCount, this.createdAt, this.updatedAt, });
 
 factory AccessTag.fromJson(Map<String, dynamic> json) { return AccessTag(

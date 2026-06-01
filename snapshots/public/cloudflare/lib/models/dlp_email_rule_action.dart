@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action_block.dart';/// A value that is one of: `DlpEmailRuleActionBlock`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action/block.dart';/// A value that is one of: `Block`.
 sealed class DlpEmailRuleAction {const DlpEmailRuleAction();
 
-factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (DlpEmailRuleActionBlock.canParse(json)) {
-    return DlpEmailRuleActionDlpEmailRuleActionBlock(DlpEmailRuleActionBlock.fromJson(json));
+factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (Block.canParse(json)) {
+    return DlpEmailRuleActionBlock(Block.fromJson(json));
   }
   return DlpEmailRuleAction$Unknown(json); }
 
@@ -12,15 +12,15 @@ factory DlpEmailRuleAction.fromJson(Map<String, dynamic> json) {   if (DlpEmailR
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class DlpEmailRuleActionDlpEmailRuleActionBlock extends DlpEmailRuleAction {const DlpEmailRuleActionDlpEmailRuleActionBlock(this._value);
+@immutable final class DlpEmailRuleActionBlock extends DlpEmailRuleAction {const DlpEmailRuleActionBlock(this._value);
 
-final DlpEmailRuleActionBlock _value;
+final Block _value;
 
-@override DlpEmailRuleActionBlock get value { return _value; } 
+@override Block get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEmailRuleActionDlpEmailRuleActionBlock && _value == other._value; } 
+    other is DlpEmailRuleActionBlock && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DlpEmailRuleAction.dlpEmailRuleActionBlock($_value)'; } 
+@override String toString() { return 'DlpEmailRuleAction.block($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DlpEmailRuleAction$Unknown extends DlpEmailRuleAction {const DlpEmailRuleAction$Unknown(this._value);

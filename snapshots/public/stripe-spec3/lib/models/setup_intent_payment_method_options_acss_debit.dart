@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_acss_debit.dart';/// Currency supported by the bank account
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_acss_debit.dart';/// Currency supported by the bank account
 @immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency._(this.value);
 
 factory SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
@@ -25,41 +25,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)'; } 
  }
-/// Bank account verification method.
-@immutable final class SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod {const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
-
-factory SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  'microdeposits' => microdeposits,
-  _ => SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._(json),
-}; }
-
-static const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod automatic = SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._('automatic');
-
-static const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod instant = SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._('instant');
-
-static const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod microdeposits = SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._('microdeposits');
-
-static const List<SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod> values = [automatic, instant, microdeposits];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
- }
 /// 
 @immutable final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  verificationMethod: json['verification_method'] != null ? SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
+  verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
 /// Currency supported by the bank account
@@ -68,7 +40,7 @@ final SetupIntentPaymentMethodOptionsAcssDebitCurrency? currency;
 final SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit? mandateOptions;
 
 /// Bank account verification method.
-final SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod? verificationMethod;
+final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
   if (currency != null) 'currency': currency?.toJson(),
@@ -76,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'verification_method'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsAcssDebit copyWith({SetupIntentPaymentMethodOptionsAcssDebitCurrency? Function()? currency, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit Function()? mandateOptions, SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsAcssDebit(
+SetupIntentPaymentMethodOptionsAcssDebit copyWith({SetupIntentPaymentMethodOptionsAcssDebitCurrency? Function()? currency, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return SetupIntentPaymentMethodOptionsAcssDebit(
   currency: currency != null ? currency() : this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,

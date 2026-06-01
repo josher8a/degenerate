@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_ip_rule_ip.dart';/// Matches an IP address block.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_ip_rule/access_ip_rule_ip.dart';/// Matches an IP address block.
 @immutable final class AccessIpRule {const AccessIpRule({required this.ip});
 
 factory AccessIpRule.fromJson(Map<String, dynamic> json) { return AccessIpRule(

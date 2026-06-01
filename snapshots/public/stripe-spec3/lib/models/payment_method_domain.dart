@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentMethodDomainObject {const PaymentMethodDomainObject._(this.value);
 
 factory PaymentMethodDomainObject.fromJson(String json) { return switch (json) {

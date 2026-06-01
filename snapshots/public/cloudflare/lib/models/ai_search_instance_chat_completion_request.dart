@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_request_ai_search_options.dart';import 'ai_search_instance_chat_completion_request_messages.dart';import 'ai_search_instance_chat_completion_request_model.dart';@immutable final class AiSearchInstanceChatCompletionRequest {const AiSearchInstanceChatCompletionRequest({required this.messages, this.aiSearchOptions, this.model, this.stream, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_messages.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_model.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_options.dart';@immutable final class AiSearchInstanceChatCompletionRequest {const AiSearchInstanceChatCompletionRequest({required this.messages, this.aiSearchOptions, this.model, this.stream, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceChatCompletionRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequest(
-  aiSearchOptions: json['ai_search_options'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
+  aiSearchOptions: json['ai_search_options'] != null ? AiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
   messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AiSearchInstanceChatCompletionRequestModelVariant1.fromJson(v as String), fromB: (v) => AiSearchInstanceChatCompletionRequestModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   stream: json['stream'] as bool?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'ai_search_options', 'messages', 'model', 'stream'}.contains(e.key))),
 ); }
 
-final AiSearchInstanceChatCompletionRequestAiSearchOptions? aiSearchOptions;
+final AiSearchOptions? aiSearchOptions;
 
 final List<AiSearchInstanceChatCompletionRequestMessages> messages;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-AiSearchInstanceChatCompletionRequest copyWith({AiSearchInstanceChatCompletionRequestAiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel Function()? model, bool Function()? stream, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionRequest(
+AiSearchInstanceChatCompletionRequest copyWith({AiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel Function()? model, bool Function()? stream, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
   model: model != null ? model() : this.model,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_entities_ip_format.dart';import '../models/radar_get_entities_ip_response404.dart';import '../models/radar_get_entities_ip_response_result.dart';/// RadarIpApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_entities_ip_format.dart';import 'package:pub_cloudflare/models/radar_get_entities_ip_response/radar_get_entities_ip_response_result.dart';import 'package:pub_cloudflare/models/radar_get_entities_ip_response404.dart';/// RadarIpApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

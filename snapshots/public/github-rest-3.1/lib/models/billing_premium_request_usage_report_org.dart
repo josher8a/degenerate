@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_premium_request_usage_report_org_time_period.dart';import 'billing_premium_request_usage_report_org_usage_items.dart';@immutable final class BillingPremiumRequestUsageReportOrg {const BillingPremiumRequestUsageReportOrg({required this.timePeriod, required this.organization, required this.usageItems, this.user, this.product, this.model, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_org/billing_premium_request_usage_report_org_usage_items.dart';import 'package:pub_github_rest_3_1/models/billing_premium_request_usage_report_org/time_period.dart';@immutable final class BillingPremiumRequestUsageReportOrg {const BillingPremiumRequestUsageReportOrg({required this.timePeriod, required this.organization, required this.usageItems, this.user, this.product, this.model, });
 
 factory BillingPremiumRequestUsageReportOrg.fromJson(Map<String, dynamic> json) { return BillingPremiumRequestUsageReportOrg(
-  timePeriod: BillingPremiumRequestUsageReportOrgTimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>),
+  timePeriod: TimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>),
   organization: json['organization'] as String,
   user: json['user'] as String?,
   product: json['product'] as String?,
@@ -11,7 +11,7 @@ factory BillingPremiumRequestUsageReportOrg.fromJson(Map<String, dynamic> json) 
   usageItems: (json['usageItems'] as List<dynamic>).map((e) => BillingPremiumRequestUsageReportOrgUsageItems.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final BillingPremiumRequestUsageReportOrgTimePeriod timePeriod;
+final TimePeriod timePeriod;
 
 /// The unique identifier of the organization.
 final String organization;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timePeriod') &&
       json.containsKey('organization') && json['organization'] is String &&
       json.containsKey('usageItems'); } 
-BillingPremiumRequestUsageReportOrg copyWith({BillingPremiumRequestUsageReportOrgTimePeriod? timePeriod, String? organization, String Function()? user, String Function()? product, String Function()? model, List<BillingPremiumRequestUsageReportOrgUsageItems>? usageItems, }) { return BillingPremiumRequestUsageReportOrg(
+BillingPremiumRequestUsageReportOrg copyWith({TimePeriod? timePeriod, String? organization, String Function()? user, String Function()? product, String Function()? model, List<BillingPremiumRequestUsageReportOrgUsageItems>? usageItems, }) { return BillingPremiumRequestUsageReportOrg(
   timePeriod: timePeriod ?? this.timePeriod,
   organization: organization ?? this.organization,
   user: user != null ? user() : this.user,

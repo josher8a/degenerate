@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedCustomerObject {const DeletedCustomerObject._(this.value);
-
-factory DeletedCustomerObject.fromJson(String json) { return switch (json) {
-  'customer' => customer,
-  _ => DeletedCustomerObject._(json),
-}; }
-
-static const DeletedCustomerObject customer = DeletedCustomerObject._('customer');
-
-static const List<DeletedCustomerObject> values = [customer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedCustomerObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedCustomerObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer/customer_object.dart';/// 
 @immutable final class DeletedCustomer {const DeletedCustomer({required this.deleted, required this.id, required this.object, });
 
 factory DeletedCustomer.fromJson(Map<String, dynamic> json) { return DeletedCustomer(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  object: DeletedCustomerObject.fromJson(json['object'] as String),
+  object: CustomerObject.fromJson(json['object'] as String),
 ); }
 
 /// Always true for a deleted object
@@ -38,7 +16,7 @@ final bool deleted;
 final String id;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final DeletedCustomerObject object;
+final CustomerObject object;
 
 Map<String, dynamic> toJson() { return {
   'deleted': deleted,
@@ -48,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-DeletedCustomer copyWith({bool? deleted, String? id, DeletedCustomerObject? object, }) { return DeletedCustomer(
+DeletedCustomer copyWith({bool? deleted, String? id, CustomerObject? object, }) { return DeletedCustomer(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,

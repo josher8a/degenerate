@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_request_evidence.dart';import 'post_issuing_disputes_request_treasury.dart';@immutable final class PostIssuingDisputesRequest {const PostIssuingDisputesRequest({this.amount, this.evidence, this.expand, this.metadata, this.transaction, this.treasury, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_dispute_request/post_issuing_disputes_dispute_request_evidence.dart';import 'package:pub_stripe_spec3/models/post_issuing_disputes_request/post_issuing_disputes_request_treasury.dart';@immutable final class PostIssuingDisputesRequest {const PostIssuingDisputesRequest({this.amount, this.evidence, this.expand, this.metadata, this.transaction, this.treasury, });
 
 factory PostIssuingDisputesRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  evidence: json['evidence'] != null ? PostIssuingDisputesRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
+  evidence: json['evidence'] != null ? PostIssuingDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   transaction: json['transaction'] as String?,
@@ -15,7 +15,7 @@ factory PostIssuingDisputesRequest.fromJson(Map<String, dynamic> json) { return 
 final int? amount;
 
 /// Evidence provided for the dispute.
-final PostIssuingDisputesRequestEvidence? evidence;
+final PostIssuingDisputesDisputeRequestEvidence? evidence;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (treasury != null) 'treasury': treasury?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'evidence', 'expand', 'metadata', 'transaction', 'treasury'}.contains(key)); } 
-PostIssuingDisputesRequest copyWith({int Function()? amount, PostIssuingDisputesRequestEvidence Function()? evidence, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? transaction, PostIssuingDisputesRequestTreasury Function()? treasury, }) { return PostIssuingDisputesRequest(
+PostIssuingDisputesRequest copyWith({int Function()? amount, PostIssuingDisputesDisputeRequestEvidence Function()? evidence, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? transaction, PostIssuingDisputesRequestTreasury Function()? treasury, }) { return PostIssuingDisputesRequest(
   amount: amount != null ? amount() : this.amount,
   evidence: evidence != null ? evidence() : this.evidence,
   expand: expand != null ? expand() : this.expand,

@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_list_jobs_response_result.dart';import 'autorag_config_list_jobs_response_result_info.dart';@immutable final class AutoragConfigListJobsResponse {const AutoragConfigListJobsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result_info.dart';import 'package:pub_cloudflare/models/autorag_config_get_job_response/autorag_config_get_job_response_result.dart';@immutable final class AutoragConfigListJobsResponse {const AutoragConfigListJobsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory AutoragConfigListJobsResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobsResponse(
-  result: (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: AutoragConfigListJobsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
+  result: (json['result'] as List<dynamic>).map((e) => AutoragConfigGetJobResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  resultInfo: AiSearchInstanceListJobLogsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<AutoragConfigListJobsResponseResult> result;
+final List<AutoragConfigGetJobResponseResult> result;
 
-final AutoragConfigListJobsResponseResultInfo resultInfo;
+final AiSearchInstanceListJobLogsResponseResultInfo resultInfo;
 
 final bool success;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('result_info') &&
       json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigListJobsResponse copyWith({List<AutoragConfigListJobsResponseResult>? result, AutoragConfigListJobsResponseResultInfo? resultInfo, bool? success, }) { return AutoragConfigListJobsResponse(
+AutoragConfigListJobsResponse copyWith({List<AutoragConfigGetJobResponseResult>? result, AiSearchInstanceListJobLogsResponseResultInfo? resultInfo, bool? success, }) { return AutoragConfigListJobsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,

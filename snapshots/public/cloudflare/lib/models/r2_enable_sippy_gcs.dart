@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_enable_sippy_gcs_destination.dart';import 'r2_enable_sippy_gcs_source.dart';@immutable final class R2EnableSippyGcs {const R2EnableSippyGcs({this.destination, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_aws/r2_enable_sippy_aws_destination.dart';import 'package:pub_cloudflare/models/r2_enable_sippy_gcs/r2_enable_sippy_gcs_source.dart';@immutable final class R2EnableSippyGcs {const R2EnableSippyGcs({this.destination, this.source, });
 
 factory R2EnableSippyGcs.fromJson(Map<String, dynamic> json) { return R2EnableSippyGcs(
-  destination: json['destination'] != null ? R2EnableSippyGcsDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  destination: json['destination'] != null ? R2EnableSippyAwsDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? R2EnableSippyGcsSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// R2 bucket to copy objects to.
-final R2EnableSippyGcsDestination? destination;
+final R2EnableSippyAwsDestination? destination;
 
 /// GCS bucket to copy objects from.
 final R2EnableSippyGcsSource? source;
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'source'}.contains(key)); } 
-R2EnableSippyGcs copyWith({R2EnableSippyGcsDestination Function()? destination, R2EnableSippyGcsSource Function()? source, }) { return R2EnableSippyGcs(
+R2EnableSippyGcs copyWith({R2EnableSippyAwsDestination Function()? destination, R2EnableSippyGcsSource Function()? source, }) { return R2EnableSippyGcs(
   destination: destination != null ? destination() : this.destination,
   source: source != null ? source() : this.source,
 ); } 

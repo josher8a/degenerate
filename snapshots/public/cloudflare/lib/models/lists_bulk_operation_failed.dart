@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_completed.dart';import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_completed.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
 @immutable final class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus._(this.value);
 
 factory ListsBulkOperationFailedStatus.fromJson(String json) { return switch (json) {

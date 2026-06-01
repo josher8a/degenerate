@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_psk_generation_response_result.dart';@immutable final class MagicPskGenerationResponse {const MagicPskGenerationResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_psk_generation_response/magic_psk_generation_response_result.dart';@immutable final class MagicPskGenerationResponse {const MagicPskGenerationResponse({this.result});
 
 factory MagicPskGenerationResponse.fromJson(Map<String, dynamic> json) { return MagicPskGenerationResponse(
   result: json['result'] != null ? MagicPskGenerationResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_link_wallet_options.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_link_wallet_options.dart';/// 
 @immutable final class CheckoutSessionWalletOptions {const CheckoutSessionWalletOptions({this.link});
 
 factory CheckoutSessionWalletOptions.fromJson(Map<String, dynamic> json) { return CheckoutSessionWalletOptions(

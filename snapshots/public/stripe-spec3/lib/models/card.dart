@@ -1,105 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'card_account.dart';import 'card_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'token_card_networks.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-@immutable final class CardAllowRedisplay {const CardAllowRedisplay._(this.value);
-
-factory CardAllowRedisplay.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'limited' => limited,
-  'unspecified' => unspecified,
-  _ => CardAllowRedisplay._(json),
-}; }
-
-static const CardAllowRedisplay always = CardAllowRedisplay._('always');
-
-static const CardAllowRedisplay limited = CardAllowRedisplay._('limited');
-
-static const CardAllowRedisplay unspecified = CardAllowRedisplay._('unspecified');
-
-static const List<CardAllowRedisplay> values = [always, limited, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardAllowRedisplay($value)'; } 
- }
-@immutable final class CardAvailablePayoutMethods {const CardAvailablePayoutMethods._(this.value);
-
-factory CardAvailablePayoutMethods.fromJson(String json) { return switch (json) {
-  'instant' => instant,
-  'standard' => standard,
-  _ => CardAvailablePayoutMethods._(json),
-}; }
-
-static const CardAvailablePayoutMethods instant = CardAvailablePayoutMethods._('instant');
-
-static const CardAvailablePayoutMethods standard = CardAvailablePayoutMethods._('standard');
-
-static const List<CardAvailablePayoutMethods> values = [instant, standard];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardAvailablePayoutMethods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardAvailablePayoutMethods($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CardObject {const CardObject._(this.value);
-
-factory CardObject.fromJson(String json) { return switch (json) {
-  'card' => card,
-  _ => CardObject._(json),
-}; }
-
-static const CardObject card = CardObject._('card');
-
-static const List<CardObject> values = [card];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardObject($value)'; } 
- }
-/// Status of a card based on the card issuer.
-@immutable final class CardRegulatedStatus {const CardRegulatedStatus._(this.value);
-
-factory CardRegulatedStatus.fromJson(String json) { return switch (json) {
-  'regulated' => regulated,
-  'unregulated' => unregulated,
-  _ => CardRegulatedStatus._(json),
-}; }
-
-static const CardRegulatedStatus regulated = CardRegulatedStatus._('regulated');
-
-static const CardRegulatedStatus unregulated = CardRegulatedStatus._('unregulated');
-
-static const List<CardRegulatedStatus> values = [regulated, unregulated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardRegulatedStatus($value)'; } 
- }
-/// You can store multiple cards on a customer in order to charge the customer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/card/card_account.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/card/card_object.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/token_card_networks.dart';/// You can store multiple cards on a customer in order to charge the customer
 /// later. You can also store multiple debit cards on a recipient in order to
 /// transfer to those cards later.
 /// 
@@ -117,7 +18,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   addressZip: json['address_zip'] as String?,
   addressZipCheck: json['address_zip_check'] as String?,
   allowRedisplay: json['allow_redisplay'] != null ? CardAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-  availablePayoutMethods: (json['available_payout_methods'] as List<dynamic>?)?.map((e) => CardAvailablePayoutMethods.fromJson(e as String)).toList(),
+  availablePayoutMethods: (json['available_payout_methods'] as List<dynamic>?)?.map((e) => AvailablePayoutMethods.fromJson(e as String)).toList(),
   brand: json['brand'] as String,
   country: json['country'] as String?,
   currency: json['currency'] as String?,
@@ -136,7 +37,7 @@ factory Card.fromJson(Map<String, dynamic> json) { return Card(
   name: json['name'] as String?,
   networks: json['networks'] != null ? TokenCardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   object: CardObject.fromJson(json['object'] as String),
-  regulatedStatus: json['regulated_status'] != null ? CardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
+  regulatedStatus: json['regulated_status'] != null ? RegulatedStatus.fromJson(json['regulated_status'] as String) : null,
   status: json['status'] as String?,
   tokenizationMethod: json['tokenization_method'] as String?,
 ); }
@@ -171,7 +72,7 @@ final String? addressZipCheck;
 final CardAllowRedisplay? allowRedisplay;
 
 /// A set of available payout methods for this card. Only values from this set should be passed as the `method` when creating a payout.
-final List<CardAvailablePayoutMethods>? availablePayoutMethods;
+final List<AvailablePayoutMethods>? availablePayoutMethods;
 
 /// Card brand. Can be `American Express`, `Cartes Bancaires`, `Diners Club`, `Discover`, `Eftpos Australia`, `Girocard`, `JCB`, `MasterCard`, `UnionPay`, `Visa`, or `Unknown`.
 final String brand;
@@ -229,7 +130,7 @@ final TokenCardNetworks? networks;
 final CardObject object;
 
 /// Status of a card based on the card issuer.
-final CardRegulatedStatus? regulatedStatus;
+final RegulatedStatus? regulatedStatus;
 
 /// For external accounts that are cards, possible values are `new` and `errored`. If a payout fails, the status is set to `errored` and [scheduled payouts](https://stripe.com/docs/payouts#payout-schedule) are stopped until account details are updated.
 final String? status;
@@ -278,7 +179,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object'); } 
-Card copyWith({CardAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<CardAvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, CardCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, CardRegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
+Card copyWith({CardAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, CardCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
   account: account != null ? account() : this.account,
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,

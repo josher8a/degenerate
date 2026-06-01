@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'token_validation_config_delete_response_result.dart';@immutable final class TokenValidationConfigDeleteResponse {const TokenValidationConfigDeleteResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/shield_messages2.dart';@immutable final class TokenValidationConfigDeleteResponse {const TokenValidationConfigDeleteResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory TokenValidationConfigDeleteResponse.fromJson(Map<String, dynamic> json) { return TokenValidationConfigDeleteResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
 final List<ShieldMessages2> errors;
@@ -16,7 +16,7 @@ final List<ShieldMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final TokenValidationConfigDeleteResponseResult result;
+final AaaIdResponseResult result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-TokenValidationConfigDeleteResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, TokenValidationConfigDeleteResponseResult? result, }) { return TokenValidationConfigDeleteResponse(
+TokenValidationConfigDeleteResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, AaaIdResponseResult? result, }) { return TokenValidationConfigDeleteResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

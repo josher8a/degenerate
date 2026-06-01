@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'payment_pages_checkout_session_tax_id.dart';/// The customer’s tax exempt status after a completed Checkout Session.
-@immutable final class PaymentPagesCheckoutSessionCustomerDetailsTaxExempt {const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._(this.value);
-
-factory PaymentPagesCheckoutSessionCustomerDetailsTaxExempt.fromJson(String json) { return switch (json) {
-  'exempt' => exempt,
-  'none' => none,
-  'reverse' => reverse,
-  _ => PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._(json),
-}; }
-
-static const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt exempt = PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._('exempt');
-
-static const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt none = PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._('none');
-
-static const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt reverse = PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._('reverse');
-
-static const List<PaymentPagesCheckoutSessionCustomerDetailsTaxExempt> values = [exempt, none, reverse];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionCustomerDetailsTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomerDetailsTaxExempt($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/customer/customer_tax_exempt.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_tax_id.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address, this.businessName, this.email, this.individualName, this.name, this.phone, this.taxExempt, this.taxIds, });
 
 factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomerDetails(
@@ -38,7 +10,7 @@ factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic>
   individualName: json['individual_name'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
-  taxExempt: json['tax_exempt'] != null ? PaymentPagesCheckoutSessionCustomerDetailsTaxExempt.fromJson(json['tax_exempt'] as String) : null,
+  taxExempt: json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => PaymentPagesCheckoutSessionTaxId.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -62,7 +34,7 @@ final String? name;
 final String? phone;
 
 /// The customer’s tax exempt status after a completed Checkout Session.
-final PaymentPagesCheckoutSessionCustomerDetailsTaxExempt? taxExempt;
+final CustomerTaxExempt? taxExempt;
 
 /// The customer’s tax IDs after a completed Checkout Session.
 final List<PaymentPagesCheckoutSessionTaxId>? taxIds;
@@ -78,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key)); } 
-PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, PaymentPagesCheckoutSessionCustomerDetailsTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
+PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, CustomerTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
   address: address != null ? address() : this.address,
   businessName: businessName != null ? businessName() : this.businessName,
   email: email != null ? email() : this.email,

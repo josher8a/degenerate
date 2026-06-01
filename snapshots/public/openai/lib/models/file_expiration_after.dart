@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
-@immutable final class FileExpirationAfterAnchor {const FileExpirationAfterAnchor._(this.value);
-
-factory FileExpirationAfterAnchor.fromJson(String json) { return switch (json) {
-  'created_at' => createdAt,
-  _ => FileExpirationAfterAnchor._(json),
-}; }
-
-static const FileExpirationAfterAnchor createdAt = FileExpirationAfterAnchor._('created_at');
-
-static const List<FileExpirationAfterAnchor> values = [createdAt];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileExpirationAfterAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileExpirationAfterAnchor($value)'; } 
- }
-/// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch_file_expiration_after/batch_file_expiration_after_anchor.dart';/// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
 @immutable final class FileExpirationAfter {const FileExpirationAfter({required this.anchor, required this.seconds, });
 
 factory FileExpirationAfter.fromJson(Map<String, dynamic> json) { return FileExpirationAfter(
-  anchor: FileExpirationAfterAnchor.fromJson(json['anchor'] as String),
+  anchor: BatchFileExpirationAfterAnchor.fromJson(json['anchor'] as String),
   seconds: (json['seconds'] as num).toInt(),
 ); }
 
 /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
-final FileExpirationAfterAnchor anchor;
+final BatchFileExpirationAfterAnchor anchor;
 
 /// The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
 final int seconds;
@@ -42,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
       json.containsKey('seconds') && json['seconds'] is num; } 
-FileExpirationAfter copyWith({FileExpirationAfterAnchor? anchor, int? seconds, }) { return FileExpirationAfter(
+FileExpirationAfter copyWith({BatchFileExpirationAfterAnchor? anchor, int? seconds, }) { return FileExpirationAfter(
   anchor: anchor ?? this.anchor,
   seconds: seconds ?? this.seconds,
 ); } 

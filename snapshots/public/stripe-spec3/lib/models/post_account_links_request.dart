@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_links_request_collection_options.dart';/// The collect parameter is deprecated. Use `collection_options` instead.
-@immutable final class PostAccountLinksRequestCollect {const PostAccountLinksRequestCollect._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_links_request/collection_options.dart';/// The collect parameter is deprecated. Use `collection_options` instead.
+@immutable final class Collect {const Collect._(this.value);
 
-factory PostAccountLinksRequestCollect.fromJson(String json) { return switch (json) {
+factory Collect.fromJson(String json) { return switch (json) {
   'currently_due' => currentlyDue,
   'eventually_due' => eventuallyDue,
-  _ => PostAccountLinksRequestCollect._(json),
+  _ => Collect._(json),
 }; }
 
-static const PostAccountLinksRequestCollect currentlyDue = PostAccountLinksRequestCollect._('currently_due');
+static const Collect currentlyDue = Collect._('currently_due');
 
-static const PostAccountLinksRequestCollect eventuallyDue = PostAccountLinksRequestCollect._('eventually_due');
+static const Collect eventuallyDue = Collect._('eventually_due');
 
-static const List<PostAccountLinksRequestCollect> values = [currentlyDue, eventuallyDue];
+static const List<Collect> values = [currentlyDue, eventuallyDue];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountLinksRequestCollect && other.value == value; } 
+    other is Collect && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountLinksRequestCollect($value)'; } 
+@override String toString() { return 'Collect($value)'; } 
  }
 /// The type of account link the user is requesting.
 /// 
@@ -56,8 +56,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) { return PostAccountLinksRequest(
   account: json['account'] as String,
-  collect: json['collect'] != null ? PostAccountLinksRequestCollect.fromJson(json['collect'] as String) : null,
-  collectionOptions: json['collection_options'] != null ? PostAccountLinksRequestCollectionOptions.fromJson(json['collection_options'] as Map<String, dynamic>) : null,
+  collect: json['collect'] != null ? Collect.fromJson(json['collect'] as String) : null,
+  collectionOptions: json['collection_options'] != null ? CollectionOptions.fromJson(json['collection_options'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   refreshUrl: json['refresh_url'] as String?,
   returnUrl: json['return_url'] as String?,
@@ -68,10 +68,10 @@ factory PostAccountLinksRequest.fromJson(Map<String, dynamic> json) { return Pos
 final String account;
 
 /// The collect parameter is deprecated. Use `collection_options` instead.
-final PostAccountLinksRequestCollect? collect;
+final Collect? collect;
 
 /// Specifies the requirements that Stripe collects from connected accounts in the Connect Onboarding flow.
-final PostAccountLinksRequestCollectionOptions? collectionOptions;
+final CollectionOptions? collectionOptions;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('type'); } 
-PostAccountLinksRequest copyWith({String? account, PostAccountLinksRequestCollect Function()? collect, PostAccountLinksRequestCollectionOptions Function()? collectionOptions, List<String> Function()? expand, String Function()? refreshUrl, String Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
+PostAccountLinksRequest copyWith({String? account, Collect Function()? collect, CollectionOptions Function()? collectionOptions, List<String> Function()? expand, String Function()? refreshUrl, String Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
   account: account ?? this.account,
   collect: collect != null ? collect() : this.collect,
   collectionOptions: collectionOptions != null ? collectionOptions() : this.collectionOptions,

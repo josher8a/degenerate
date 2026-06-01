@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_chat_editors.dart';/// Usage metrics for Copilot Chat in the IDE.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_chat/copilot_ide_chat_editors.dart';/// Usage metrics for Copilot Chat in the IDE.
 @immutable final class CopilotIdeChat {const CopilotIdeChat({this.totalEngagedUsers, this.editors, this.additionalProperties = const {}, });
 
 factory CopilotIdeChat.fromJson(Map<String, dynamic> json) { return CopilotIdeChat(

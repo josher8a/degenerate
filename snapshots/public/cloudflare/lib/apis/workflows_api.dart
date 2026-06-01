@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/wor_batch_create_workflow_instance_request.dart';import '../models/wor_batch_create_workflow_instance_response400.dart';import '../models/wor_batch_create_workflow_instance_response_result.dart';import '../models/wor_batch_terminate_workflow_instances_response400.dart';import '../models/wor_batch_terminate_workflow_instances_response_result.dart';import '../models/wor_change_status_workflow_instance_request.dart';import '../models/wor_change_status_workflow_instance_response400.dart';import '../models/wor_change_status_workflow_instance_response_result.dart';import '../models/wor_create_new_workflow_instance_request.dart';import '../models/wor_create_new_workflow_instance_response400.dart';import '../models/wor_create_new_workflow_instance_response_result.dart';import '../models/wor_create_or_modify_workflow_request.dart';import '../models/wor_create_or_modify_workflow_response400.dart';import '../models/wor_create_or_modify_workflow_response_result.dart';import '../models/wor_delete_workflow_response400.dart';import '../models/wor_delete_workflow_response_result.dart';import '../models/wor_describe_workflow_instance_order.dart';import '../models/wor_describe_workflow_instance_response400.dart';import '../models/wor_describe_workflow_instance_response_result.dart';import '../models/wor_describe_workflow_instance_simple.dart';import '../models/wor_describe_workflow_versions_dag_response404.dart';import '../models/wor_describe_workflow_versions_dag_response_result.dart';import '../models/wor_describe_workflow_versions_graph_response404.dart';import '../models/wor_describe_workflow_versions_graph_response_result.dart';import '../models/wor_describe_workflow_versions_response400.dart';import '../models/wor_describe_workflow_versions_response_result.dart';import '../models/wor_get_workflow_details_response400.dart';import '../models/wor_get_workflow_details_response_result.dart';import '../models/wor_list_workflow_instances_direction.dart';import '../models/wor_list_workflow_instances_response400.dart';import '../models/wor_list_workflow_instances_response_result.dart';import '../models/wor_list_workflow_instances_status.dart';import '../models/wor_list_workflow_versions_response400.dart';import '../models/wor_list_workflow_versions_response_result.dart';import '../models/wor_list_workflows_response400.dart';import '../models/wor_list_workflows_response_result.dart';import '../models/wor_send_event_workflow_instance_response400.dart';import '../models/wor_status_terminate_workflow_instances_response400.dart';import '../models/wor_status_terminate_workflow_instances_response_result.dart';/// WorkflowsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_batch_terminate_workflow_instances_response/wor_batch_terminate_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_terminate_workflow_instances_response400.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_response/wor_change_status_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_change_status_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_create_new_workflow_instance_request.dart';import 'package:pub_cloudflare/models/wor_create_new_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_response/wor_create_or_modify_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_response400.dart';import 'package:pub_cloudflare/models/wor_delete_workflow_response/wor_delete_workflow_response_result.dart';import 'package:pub_cloudflare/models/wor_delete_workflow_response400.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_order.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wor_describe_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_simple.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_dag_response/wor_describe_workflow_versions_dag_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_dag_response404.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_graph_response404.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_response/wor_describe_workflow_versions_response_result.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_versions_response400.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response/wor_get_workflow_details_response_result.dart';import 'package:pub_cloudflare/models/wor_get_workflow_details_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_direction.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_response/wor_list_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflow_instances_status.dart';import 'package:pub_cloudflare/models/wor_list_workflow_versions_response400.dart';import 'package:pub_cloudflare/models/wor_list_workflows_response400.dart';import 'package:pub_cloudflare/models/wor_send_event_workflow_instance_response400.dart';import 'package:pub_cloudflare/models/wor_status_terminate_workflow_instances_response/wor_status_terminate_workflow_instances_response_result.dart';import 'package:pub_cloudflare/models/wor_status_terminate_workflow_instances_response400.dart';/// WorkflowsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkflowsApi with ApiExecutor {const WorkflowsApi(this.apiConfig);
 /// Lists all workflows configured for the account.
 ///
 /// `GET /accounts/{account_id}/workflows`
-Future<ApiResult<List<WorListWorkflowsResponseResult>, WorListWorkflowsResponse400>> worListWorkflows({required String accountId, double? perPage, double? page, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorGetWorkflowDetailsResponseResult>, WorListWorkflowsResponse400>> worListWorkflows({required String accountId, double? perPage, double? page, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -40,7 +40,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => WorListWorkflowsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => WorGetWorkflowDetailsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return WorListWorkflowsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -180,7 +180,7 @@ return execute(
 /// Creates a new instance of a workflow, starting its execution.
 ///
 /// `POST /accounts/{account_id}/workflows/{workflow_name}/instances`
-Future<ApiResult<WorCreateNewWorkflowInstanceResponseResult, WorCreateNewWorkflowInstanceResponse400>> worCreateNewWorkflowInstance({required String workflowName, required String accountId, WorCreateNewWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorBatchCreateWorkflowInstanceResponseResult, WorCreateNewWorkflowInstanceResponse400>> worCreateNewWorkflowInstance({required String workflowName, required String accountId, WorCreateNewWorkflowInstanceRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -195,7 +195,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorCreateNewWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return WorBatchCreateWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return WorCreateNewWorkflowInstanceResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -376,7 +376,7 @@ return execute(
 /// Lists all deployed versions of a workflow.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions`
-Future<ApiResult<List<WorListWorkflowVersionsResponseResult>, WorListWorkflowVersionsResponse400>> worListWorkflowVersions({required String workflowName, required String accountId, double? perPage, double? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorDescribeWorkflowVersionsResponseResult>, WorListWorkflowVersionsResponse400>> worListWorkflowVersions({required String workflowName, required String accountId, double? perPage, double? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -400,7 +400,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => WorDescribeWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return WorListWorkflowVersionsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -462,7 +462,7 @@ return execute(
 /// Retrieves the graph visualization of a workflow version.
 ///
 /// `GET /accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/graph`
-Future<ApiResult<WorDescribeWorkflowVersionsGraphResponseResult, WorDescribeWorkflowVersionsGraphResponse404>> worDescribeWorkflowVersionsGraph({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorDescribeWorkflowVersionsDagResponseResult, WorDescribeWorkflowVersionsGraphResponse404>> worDescribeWorkflowVersionsGraph({required String workflowName, required String versionId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -475,7 +475,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorDescribeWorkflowVersionsGraphResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return WorDescribeWorkflowVersionsGraphResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

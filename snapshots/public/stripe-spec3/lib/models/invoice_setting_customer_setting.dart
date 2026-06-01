@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_setting_custom_field.dart';import 'invoice_setting_customer_rendering_options.dart';import 'invoice_setting_customer_setting_default_payment_method.dart';import 'payment_method.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/invoice_setting_customer_rendering_options.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// 
 @immutable final class InvoiceSettingCustomerSetting {const InvoiceSettingCustomerSetting({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
 factory InvoiceSettingCustomerSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomerSetting(
@@ -14,7 +14,7 @@ factory InvoiceSettingCustomerSetting.fromJson(Map<String, dynamic> json) { retu
 final List<InvoiceSettingCustomField>? customFields;
 
 /// ID of a payment method that's attached to the customer, to be used as the customer's default payment method for subscriptions and invoices.
-final InvoiceSettingCustomerSettingDefaultPaymentMethod? defaultPaymentMethod;
+final DefaultPaymentMethod? defaultPaymentMethod;
 
 /// Default footer to be displayed on invoices for this customer.
 final String? footer;
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_fields', 'default_payment_method', 'footer', 'rendering_options'}.contains(key)); } 
-InvoiceSettingCustomerSetting copyWith({List<InvoiceSettingCustomField>? Function()? customFields, InvoiceSettingCustomerSettingDefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? footer, InvoiceSettingCustomerRenderingOptions? Function()? renderingOptions, }) { return InvoiceSettingCustomerSetting(
+InvoiceSettingCustomerSetting copyWith({List<InvoiceSettingCustomField>? Function()? customFields, DefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? footer, InvoiceSettingCustomerRenderingOptions? Function()? renderingOptions, }) { return InvoiceSettingCustomerSetting(
   customFields: customFields != null ? customFields() : this.customFields,
   defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
   footer: footer != null ? footer() : this.footer,

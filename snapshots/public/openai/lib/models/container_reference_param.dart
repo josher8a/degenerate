@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a container created with the /v1/containers endpoint
-@immutable final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);
-
-factory ContainerReferenceParamType.fromJson(String json) { return switch (json) {
-  'container_reference' => containerReference,
-  _ => ContainerReferenceParamType._(json),
-}; }
-
-static const ContainerReferenceParamType containerReference = ContainerReferenceParamType._('container_reference');
-
-static const List<ContainerReferenceParamType> values = [containerReference];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerReferenceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerReferenceParamType($value)'; } 
- }
-@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param/container_reference_param_type.dart';@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
 
 factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) { return ContainerReferenceParam(
   type: ContainerReferenceParamType.fromJson(json['type'] as String),

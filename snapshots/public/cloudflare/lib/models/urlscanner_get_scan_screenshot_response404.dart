@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_screenshot_response404_errors.dart';import 'urlscanner_get_scan_screenshot_response404_messages.dart';@immutable final class UrlscannerGetScanScreenshotResponse404 {const UrlscannerGetScanScreenshotResponse404({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';@immutable final class UrlscannerGetScanScreenshotResponse404 {const UrlscannerGetScanScreenshotResponse404({required this.errors, required this.messages, required this.success, });
 
 factory UrlscannerGetScanScreenshotResponse404.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanScreenshotResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => UrlscannerGetScanScreenshotResponse404Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<UrlscannerGetScanScreenshotResponse404Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
-final List<UrlscannerGetScanScreenshotResponse404Messages> messages;
+final List<DestinationCreateResponse400Messages> messages;
 
 /// Whether request was successful or not
 final bool success;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-UrlscannerGetScanScreenshotResponse404 copyWith({List<UrlscannerGetScanScreenshotResponse404Errors>? errors, List<UrlscannerGetScanScreenshotResponse404Messages>? messages, bool? success, }) { return UrlscannerGetScanScreenshotResponse404(
+UrlscannerGetScanScreenshotResponse404 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, bool? success, }) { return UrlscannerGetScanScreenshotResponse404(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

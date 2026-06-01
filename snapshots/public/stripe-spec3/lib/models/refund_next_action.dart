@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'refund_next_action_display_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/refund_next_action_display_details.dart';/// 
 @immutable final class RefundNextAction {const RefundNextAction({required this.type, this.displayDetails, });
 
 factory RefundNextAction.fromJson(Map<String, dynamic> json) { return RefundNextAction(

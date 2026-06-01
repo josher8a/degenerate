@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector.dart';/// VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_selector.dart';/// VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
 @immutable final class VolumeNodeAffinity {const VolumeNodeAffinity({this.$required});
 
 factory VolumeNodeAffinity.fromJson(Map<String, dynamic> json) { return VolumeNodeAffinity(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ipsec_tunnel.dart';@immutable final class MagicSchemasCreateIpsecTunnelResponse {const MagicSchemasCreateIpsecTunnelResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';@immutable final class MagicSchemasCreateIpsecTunnelResponse {const MagicSchemasCreateIpsecTunnelResponse({this.result});
 
 factory MagicSchemasCreateIpsecTunnelResponse.fromJson(Map<String, dynamic> json) { return MagicSchemasCreateIpsecTunnelResponse(
   result: json['result'] != null ? MagicIpsecTunnel.fromJson(json['result'] as Map<String, dynamic>) : null,

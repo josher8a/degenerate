@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Set the directive with a duration value in seconds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_cloudflare_only.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_operation.dart';/// Set the directive with a duration value in seconds.
 @immutable final class SetDirective3 {const SetDirective3({required this.operation, required this.value, this.cloudflareOnly, });
 
 factory SetDirective3.fromJson(Map<String, dynamic> json) { return SetDirective3(

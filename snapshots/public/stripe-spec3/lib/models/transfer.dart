@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'balance_transaction.dart';import 'charge.dart';import 'transfer_balance_transaction.dart';import 'transfer_destination.dart';import 'transfer_destination_payment.dart';import 'transfer_reversals.dart';import 'transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/transfer/destination_payment.dart';import 'package:pub_stripe_spec3/models/transfer/reversals.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_destination.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferObject {const TransferObject._(this.value);
 
 factory TransferObject.fromJson(String json) { return switch (json) {
@@ -47,7 +47,7 @@ factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TransferObject.fromJson(json['object'] as String),
-  reversals: TransferReversals.fromJson(json['reversals'] as Map<String, dynamic>),
+  reversals: Reversals.fromJson(json['reversals'] as Map<String, dynamic>),
   reversed: json['reversed'] as bool,
   sourceTransaction: json['source_transaction'] != null ? OneOf2.parse(json['source_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
   sourceType: json['source_type'] as String?,
@@ -61,7 +61,7 @@ final int amount;
 final int amountReversed;
 
 /// Balance transaction that describes the impact of this transfer on your account balance.
-final TransferBalanceTransaction? balanceTransaction;
+final FeeRefundBalanceTransaction? balanceTransaction;
 
 /// Time that this record of the transfer was first created.
 final int created;
@@ -76,7 +76,7 @@ final String? description;
 final TransferDestination? destination;
 
 /// If the destination is a Stripe account, this will be the ID of the payment that the destination account received for the transfer.
-final TransferDestinationPayment? destinationPayment;
+final DestinationPayment? destinationPayment;
 
 /// Unique identifier for the object.
 final String id;
@@ -91,7 +91,7 @@ final Map<String,String> metadata;
 final TransferObject object;
 
 /// A list of reversals that have been applied to the transfer.
-final TransferReversals reversals;
+final Reversals reversals;
 
 /// Whether the transfer has been fully reversed. If the transfer is only partially reversed, this attribute will still be false.
 final bool reversed;
@@ -134,7 +134,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reversals') &&
       json.containsKey('reversed') && json['reversed'] is bool; } 
-Transfer copyWith({int? amount, int? amountReversed, TransferBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, TransferDestination? Function()? destination, TransferDestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, TransferReversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
+Transfer copyWith({int? amount, int? amountReversed, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, TransferDestination? Function()? destination, DestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
   amount: amount ?? this.amount,
   amountReversed: amountReversed ?? this.amountReversed,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,

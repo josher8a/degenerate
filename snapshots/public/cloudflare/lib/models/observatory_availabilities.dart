@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities_quota.dart';import 'observatory_availabilities_regions_per_plan.dart';import 'observatory_labeled_region.dart';@immutable final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_availabilities/quota.dart';import 'package:pub_cloudflare/models/observatory_availabilities/regions_per_plan.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';@immutable final class ObservatoryAvailabilities {const ObservatoryAvailabilities({this.quota, this.regions, this.regionsPerPlan, });
 
 factory ObservatoryAvailabilities.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilities(
-  quota: json['quota'] != null ? ObservatoryAvailabilitiesQuota.fromJson(json['quota'] as Map<String, dynamic>) : null,
+  quota: json['quota'] != null ? Quota.fromJson(json['quota'] as Map<String, dynamic>) : null,
   regions: (json['regions'] as List<dynamic>?)?.map((e) => ObservatoryLabeledRegion.fromJson(e as Map<String, dynamic>)).toList(),
-  regionsPerPlan: json['regionsPerPlan'] != null ? ObservatoryAvailabilitiesRegionsPerPlan.fromJson(json['regionsPerPlan'] as Map<String, dynamic>) : null,
+  regionsPerPlan: json['regionsPerPlan'] != null ? RegionsPerPlan.fromJson(json['regionsPerPlan'] as Map<String, dynamic>) : null,
 ); }
 
-final ObservatoryAvailabilitiesQuota? quota;
+final Quota? quota;
 
 final List<ObservatoryLabeledRegion>? regions;
 
 /// Available regions.
-final ObservatoryAvailabilitiesRegionsPerPlan? regionsPerPlan;
+final RegionsPerPlan? regionsPerPlan;
 
 Map<String, dynamic> toJson() { return {
   if (quota != null) 'quota': quota?.toJson(),
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (regionsPerPlan != null) 'regionsPerPlan': regionsPerPlan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'quota', 'regions', 'regionsPerPlan'}.contains(key)); } 
-ObservatoryAvailabilities copyWith({ObservatoryAvailabilitiesQuota Function()? quota, List<ObservatoryLabeledRegion> Function()? regions, ObservatoryAvailabilitiesRegionsPerPlan Function()? regionsPerPlan, }) { return ObservatoryAvailabilities(
+ObservatoryAvailabilities copyWith({Quota Function()? quota, List<ObservatoryLabeledRegion> Function()? regions, RegionsPerPlan Function()? regionsPerPlan, }) { return ObservatoryAvailabilities(
   quota: quota != null ? quota() : this.quota,
   regions: regions != null ? regions() : this.regions,
   regionsPerPlan: regionsPerPlan != null ? regionsPerPlan() : this.regionsPerPlan,

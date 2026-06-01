@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_messages2.dart';import 'response_single37_result.dart';@immutable final class ResponseSingle37 {const ResponseSingle37({required this.success, this.errors, this.messages, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_messages2.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';@immutable final class ResponseSingle37 {const ResponseSingle37({required this.success, this.errors, this.messages, this.result, });
 
 factory ResponseSingle37.fromJson(Map<String, dynamic> json) { return ResponseSingle37(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PageShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -16,7 +16,7 @@ final List<PageShieldMessages2>? messages;
 /// Whether the API call was successful
 final bool success;
 
-final ResponseSingle37Result? result;
+final ResponseCommon33Result? result;
 
 Map<String, dynamic> toJson() { return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-ResponseSingle37 copyWith({List<PageShieldMessages2> Function()? errors, List<PageShieldMessages2> Function()? messages, bool? success, ResponseSingle37Result Function()? result, }) { return ResponseSingle37(
+ResponseSingle37 copyWith({List<PageShieldMessages2> Function()? errors, List<PageShieldMessages2> Function()? messages, bool? success, ResponseCommon33Result Function()? result, }) { return ResponseSingle37(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,

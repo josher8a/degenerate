@@ -1,44 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GelatoReportDocumentOptionsAllowedTypes {const GelatoReportDocumentOptionsAllowedTypes._(this.value);
-
-factory GelatoReportDocumentOptionsAllowedTypes.fromJson(String json) { return switch (json) {
-  'driving_license' => drivingLicense,
-  'id_card' => idCard,
-  'passport' => passport,
-  _ => GelatoReportDocumentOptionsAllowedTypes._(json),
-}; }
-
-static const GelatoReportDocumentOptionsAllowedTypes drivingLicense = GelatoReportDocumentOptionsAllowedTypes._('driving_license');
-
-static const GelatoReportDocumentOptionsAllowedTypes idCard = GelatoReportDocumentOptionsAllowedTypes._('id_card');
-
-static const GelatoReportDocumentOptionsAllowedTypes passport = GelatoReportDocumentOptionsAllowedTypes._('passport');
-
-static const List<GelatoReportDocumentOptionsAllowedTypes> values = [drivingLicense, idCard, passport];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoReportDocumentOptionsAllowedTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoReportDocumentOptionsAllowedTypes($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options/allowed_types.dart';/// 
 @immutable final class GelatoReportDocumentOptions {const GelatoReportDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
 factory GelatoReportDocumentOptions.fromJson(Map<String, dynamic> json) { return GelatoReportDocumentOptions(
-  allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => GelatoReportDocumentOptionsAllowedTypes.fromJson(e as String)).toList(),
+  allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => AllowedTypes.fromJson(e as String)).toList(),
   requireIdNumber: json['require_id_number'] as bool?,
   requireLiveCapture: json['require_live_capture'] as bool?,
   requireMatchingSelfie: json['require_matching_selfie'] as bool?,
 ); }
 
 /// Array of strings of allowed identity document types. If the provided identity document isn’t one of the allowed types, the verification check will fail with a document_type_not_allowed error code.
-final List<GelatoReportDocumentOptionsAllowedTypes>? allowedTypes;
+final List<AllowedTypes>? allowedTypes;
 
 /// Collect an ID number and perform an [ID number check](https://docs.stripe.com/identity/verification-checks?type=id-number) with the document’s extracted name and date of birth.
 final bool? requireIdNumber;
@@ -56,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'require_matching_selfie': ?requireMatchingSelfie,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key)); } 
-GelatoReportDocumentOptions copyWith({List<GelatoReportDocumentOptionsAllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return GelatoReportDocumentOptions(
+GelatoReportDocumentOptions copyWith({List<AllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return GelatoReportDocumentOptions(
   allowedTypes: allowedTypes != null ? allowedTypes() : this.allowedTypes,
   requireIdNumber: requireIdNumber != null ? requireIdNumber() : this.requireIdNumber,
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,

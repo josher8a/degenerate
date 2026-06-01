@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_policies.dart';import '../models/aaa_policy_id.dart';import '../models/notification_policies_create_a_notification_policy_request.dart';import '../models/notification_policies_update_a_notification_policy_request.dart';import '../models/response_collection.dart';/// NotificationPoliciesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_account_id.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/aaa_policies.dart';import 'package:pub_cloudflare/models/aaa_policy_id.dart';import 'package:pub_cloudflare/models/notification_policies_create_a_notification_policy_request.dart';import 'package:pub_cloudflare/models/notification_policies_update_a_notification_policy_request.dart';import 'package:pub_cloudflare/models/response_collection.dart';/// NotificationPoliciesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_branding_settings_icon.dart';import 'account_branding_settings_logo.dart';import 'file.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_branding_settings/account_branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/account_branding_settings/account_branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/file.dart';/// 
 @immutable final class AccountBrandingSettings {const AccountBrandingSettings({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
 
 factory AccountBrandingSettings.fromJson(Map<String, dynamic> json) { return AccountBrandingSettings(

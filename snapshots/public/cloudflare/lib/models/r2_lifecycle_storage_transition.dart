@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_age_condition.dart';import 'r2_lifecycle_date_condition.dart';import 'r2_lifecycle_storage_transition_condition.dart';@immutable final class R2LifecycleStorageTransitionStorageClass {const R2LifecycleStorageTransitionStorageClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_storage_transition/r2_lifecycle_storage_transition_condition.dart';@immutable final class StorageClass {const StorageClass._(this.value);
 
-factory R2LifecycleStorageTransitionStorageClass.fromJson(String json) { return switch (json) {
+factory StorageClass.fromJson(String json) { return switch (json) {
   'InfrequentAccess' => infrequentAccess,
-  _ => R2LifecycleStorageTransitionStorageClass._(json),
+  _ => StorageClass._(json),
 }; }
 
-static const R2LifecycleStorageTransitionStorageClass infrequentAccess = R2LifecycleStorageTransitionStorageClass._('InfrequentAccess');
+static const StorageClass infrequentAccess = StorageClass._('InfrequentAccess');
 
-static const List<R2LifecycleStorageTransitionStorageClass> values = [infrequentAccess];
+static const List<StorageClass> values = [infrequentAccess];
 
 final String value;
 
@@ -17,20 +17,20 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2LifecycleStorageTransitionStorageClass && other.value == value; } 
+    other is StorageClass && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2LifecycleStorageTransitionStorageClass($value)'; } 
+@override String toString() { return 'StorageClass($value)'; } 
  }
 @immutable final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });
 
 factory R2LifecycleStorageTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleStorageTransition(
   condition: OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),),
-  storageClass: R2LifecycleStorageTransitionStorageClass.fromJson(json['storageClass'] as String),
+  storageClass: StorageClass.fromJson(json['storageClass'] as String),
 ); }
 
 final R2LifecycleStorageTransitionCondition condition;
 
-final R2LifecycleStorageTransitionStorageClass storageClass;
+final StorageClass storageClass;
 
 Map<String, dynamic> toJson() { return {
   'condition': condition.toJson(),
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('condition') &&
       json.containsKey('storageClass'); } 
-R2LifecycleStorageTransition copyWith({R2LifecycleStorageTransitionCondition? condition, R2LifecycleStorageTransitionStorageClass? storageClass, }) { return R2LifecycleStorageTransition(
+R2LifecycleStorageTransition copyWith({R2LifecycleStorageTransitionCondition? condition, StorageClass? storageClass, }) { return R2LifecycleStorageTransition(
   condition: condition ?? this.condition,
   storageClass: storageClass ?? this.storageClass,
 ); } 

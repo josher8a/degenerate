@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'klarna_payer_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/klarna_payer_details.dart';/// 
 @immutable final class PaymentMethodDetailsKlarna {const PaymentMethodDetailsKlarna({this.payerDetails, this.paymentMethodCategory, this.preferredLocale, });
 
 factory PaymentMethodDetailsKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKlarna(

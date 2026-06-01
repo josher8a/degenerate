@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
-@immutable final class PrivateDestinationL4Protocol {const PrivateDestinationL4Protocol._(this.value);
+@immutable final class L4Protocol {const L4Protocol._(this.value);
 
-factory PrivateDestinationL4Protocol.fromJson(String json) { return switch (json) {
+factory L4Protocol.fromJson(String json) { return switch (json) {
   'tcp' => tcp,
   'udp' => udp,
-  _ => PrivateDestinationL4Protocol._(json),
+  _ => L4Protocol._(json),
 }; }
 
-static const PrivateDestinationL4Protocol tcp = PrivateDestinationL4Protocol._('tcp');
+static const L4Protocol tcp = L4Protocol._('tcp');
 
-static const PrivateDestinationL4Protocol udp = PrivateDestinationL4Protocol._('udp');
+static const L4Protocol udp = L4Protocol._('udp');
 
-static const List<PrivateDestinationL4Protocol> values = [tcp, udp];
+static const List<L4Protocol> values = [tcp, udp];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateDestinationL4Protocol && other.value == value; } 
+    other is L4Protocol && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateDestinationL4Protocol($value)'; } 
+@override String toString() { return 'L4Protocol($value)'; } 
  }
 @immutable final class PrivateDestinationType {const PrivateDestinationType._(this.value);
 
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 factory PrivateDestination.fromJson(Map<String, dynamic> json) { return PrivateDestination(
   cidr: json['cidr'] as String?,
   hostname: json['hostname'] as String?,
-  l4Protocol: json['l4_protocol'] != null ? PrivateDestinationL4Protocol.fromJson(json['l4_protocol'] as String) : null,
+  l4Protocol: json['l4_protocol'] != null ? L4Protocol.fromJson(json['l4_protocol'] as String) : null,
   portRange: json['port_range'] as String?,
   type: json['type'] != null ? PrivateDestinationType.fromJson(json['type'] as String) : null,
   vnetId: json['vnet_id'] as String?,
@@ -64,7 +64,7 @@ final String? cidr;
 final String? hostname;
 
 /// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
-final PrivateDestinationL4Protocol? l4Protocol;
+final L4Protocol? l4Protocol;
 
 /// The port range of the destination. Can be a single port or a range of ports. When omitted, all ports will match.
 /// 
@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   'vnet_id': ?vnetId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'hostname', 'l4_protocol', 'port_range', 'type', 'vnet_id'}.contains(key)); } 
-PrivateDestination copyWith({String Function()? cidr, String Function()? hostname, PrivateDestinationL4Protocol Function()? l4Protocol, String Function()? portRange, PrivateDestinationType Function()? type, String Function()? vnetId, }) { return PrivateDestination(
+PrivateDestination copyWith({String Function()? cidr, String Function()? hostname, L4Protocol Function()? l4Protocol, String Function()? portRange, PrivateDestinationType Function()? type, String Function()? vnetId, }) { return PrivateDestination(
   cidr: cidr != null ? cidr() : this.cidr,
   hostname: hostname != null ? hostname() : this.hostname,
   l4Protocol: l4Protocol != null ? l4Protocol() : this.l4Protocol,

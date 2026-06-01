@@ -1,43 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details.dart';/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-@immutable final class QuotesResourceRecurringInterval {const QuotesResourceRecurringInterval._(this.value);
-
-factory QuotesResourceRecurringInterval.fromJson(String json) { return switch (json) {
-  'day' => day,
-  'month' => month,
-  'week' => week,
-  'year' => year,
-  _ => QuotesResourceRecurringInterval._(json),
-}; }
-
-static const QuotesResourceRecurringInterval day = QuotesResourceRecurringInterval._('day');
-
-static const QuotesResourceRecurringInterval month = QuotesResourceRecurringInterval._('month');
-
-static const QuotesResourceRecurringInterval week = QuotesResourceRecurringInterval._('week');
-
-static const QuotesResourceRecurringInterval year = QuotesResourceRecurringInterval._('year');
-
-static const List<QuotesResourceRecurringInterval> values = [day, month, week, year];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuotesResourceRecurringInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuotesResourceRecurringInterval($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';/// 
 @immutable final class QuotesResourceRecurring {const QuotesResourceRecurring({required this.amountSubtotal, required this.amountTotal, required this.interval, required this.intervalCount, required this.totalDetails, });
 
 factory QuotesResourceRecurring.fromJson(Map<String, dynamic> json) { return QuotesResourceRecurring(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  interval: QuotesResourceRecurringInterval.fromJson(json['interval'] as String),
+  interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: (json['interval_count'] as num).toInt(),
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
 ); }
@@ -49,7 +18,7 @@ final int amountSubtotal;
 final int amountTotal;
 
 /// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-final QuotesResourceRecurringInterval interval;
+final GetPricesRecurringInterval interval;
 
 /// The number of intervals (specified in the `interval` attribute) between subscription billings. For example, `interval=month` and `interval_count=3` bills every 3 months.
 final int intervalCount;
@@ -68,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('interval') &&
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('total_details'); } 
-QuotesResourceRecurring copyWith({int? amountSubtotal, int? amountTotal, QuotesResourceRecurringInterval? interval, int? intervalCount, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceRecurring(
+QuotesResourceRecurring copyWith({int? amountSubtotal, int? amountTotal, GetPricesRecurringInterval? interval, int? intervalCount, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceRecurring(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   interval: interval ?? this.interval,

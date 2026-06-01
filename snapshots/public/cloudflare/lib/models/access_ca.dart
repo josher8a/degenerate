@@ -1,8 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_public_key.dart';import 'access_schemas_id.dart';/// The Application Audience (AUD) tag. Identifies the application associated with the CA.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_public_key.dart';/// The Application Audience (AUD) tag. Identifies the application associated with the CA.
 extension type const AccessAud(String value) {
 factory AccessAud.fromJson(String json) => AccessAud(json);
+
+String toJson() => value;
+
+}
+/// The ID of the CA.
+extension type const AccessSchemasId(String value) {
+factory AccessSchemasId.fromJson(String json) => AccessSchemasId(json);
 
 String toJson() => value;
 

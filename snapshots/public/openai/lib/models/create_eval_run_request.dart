@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'create_eval_run_request_data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source.dart';import 'package:pub_openai/models/create_eval_run_request/data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata, });
 
 factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRunRequest(
   name: json['name'] as String?,
@@ -14,7 +14,7 @@ final String? name;
 final Map<String,String>? metadata;
 
 /// Details about the run's data source.
-final CreateEvalRunRequestDataSource dataSource;
+final DataSource dataSource;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'data_source': dataSource.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source'); } 
-CreateEvalRunRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, CreateEvalRunRequestDataSource? dataSource, }) { return CreateEvalRunRequest(
+CreateEvalRunRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, DataSource? dataSource, }) { return CreateEvalRunRequest(
   name: name != null ? name() : this.name,
   metadata: metadata != null ? metadata() : this.metadata,
   dataSource: dataSource ?? this.dataSource,

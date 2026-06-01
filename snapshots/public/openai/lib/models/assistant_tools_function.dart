@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_object.dart';/// The type of tool being defined: `function`
-@immutable final class AssistantToolsFunctionType {const AssistantToolsFunctionType._(this.value);
-
-factory AssistantToolsFunctionType.fromJson(String json) { return switch (json) {
-  'function' => function,
-  _ => AssistantToolsFunctionType._(json),
-}; }
-
-static const AssistantToolsFunctionType function = AssistantToolsFunctionType._('function');
-
-static const List<AssistantToolsFunctionType> values = [function];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantToolsFunctionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantToolsFunctionType($value)'; } 
- }
-@immutable final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/function_object.dart';@immutable final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
 
 factory AssistantToolsFunction.fromJson(Map<String, dynamic> json) { return AssistantToolsFunction(
   type: AssistantToolsFunctionType.fromJson(json['type'] as String),

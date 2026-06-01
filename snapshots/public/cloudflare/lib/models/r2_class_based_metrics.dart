@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_object_size_metrics.dart';/// Metrics based on what state they are in(uploaded or published).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_object_size_metrics.dart';/// Metrics based on what state they are in(uploaded or published).
 @immutable final class R2ClassBasedMetrics {const R2ClassBasedMetrics({this.published, this.uploaded, });
 
 factory R2ClassBasedMetrics.fromJson(Map<String, dynamic> json) { return R2ClassBasedMetrics(

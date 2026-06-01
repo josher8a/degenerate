@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_account_id.dart';import 'resource_sharing_organization_id.dart';/// Account or organization ID must be provided.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_organization_id.dart';/// Account or organization ID must be provided.
 @immutable final class ResourceSharingCreateShareRecipientRequest {const ResourceSharingCreateShareRecipientRequest({this.accountId, this.organizationId, });
 
 factory ResourceSharingCreateShareRecipientRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareRecipientRequest(

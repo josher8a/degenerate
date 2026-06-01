@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_store_name.dart';/// Request body for creating a store via system API routes
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_store_name.dart';/// Request body for creating a store via system API routes
 @immutable final class SecretsStoreCreateStoreObjectSystem {const SecretsStoreCreateStoreObjectSystem({required this.accountId, required this.name, });
 
 factory SecretsStoreCreateStoreObjectSystem.fromJson(Map<String, dynamic> json) { return SecretsStoreCreateStoreObjectSystem(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a ConfigMap into a volume.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/key_to_path.dart';/// Adapts a ConfigMap into a volume.
 /// 
 /// The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. ConfigMap volumes support ownership management and SELinux relabeling.
 @immutable final class ConfigMapVolumeSource {const ConfigMapVolumeSource({this.defaultMode, this.items, this.name = '', this.optional, });

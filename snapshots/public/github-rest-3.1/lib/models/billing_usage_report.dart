@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_usage_report_usage_items.dart';@immutable final class BillingUsageReport {const BillingUsageReport({this.usageItems});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_usage_report/billing_usage_report_usage_items.dart';@immutable final class BillingUsageReport {const BillingUsageReport({this.usageItems});
 
 factory BillingUsageReport.fromJson(Map<String, dynamic> json) { return BillingUsageReport(
   usageItems: (json['usageItems'] as List<dynamic>?)?.map((e) => BillingUsageReportUsageItems.fromJson(e as Map<String, dynamic>)).toList(),

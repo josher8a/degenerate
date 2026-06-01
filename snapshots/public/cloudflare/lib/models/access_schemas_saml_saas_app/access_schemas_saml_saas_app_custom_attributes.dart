@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/custom_claims_source.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_format.dart';@immutable final class AccessSchemasSamlSaasAppCustomAttributes {const AccessSchemasSamlSaasAppCustomAttributes({this.friendlyName, this.name, this.nameFormat, this.$required, this.source, });
+
+factory AccessSchemasSamlSaasAppCustomAttributes.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlSaasAppCustomAttributes(
+  friendlyName: json['friendly_name'] as String?,
+  name: json['name'] as String?,
+  nameFormat: json['name_format'] != null ? NameFormat.fromJson(json['name_format'] as String) : null,
+  $required: json['required'] as bool?,
+  source: json['source'] != null ? CustomClaimsSource.fromJson(json['source'] as Map<String, dynamic>) : null,
+); }
+
+/// The SAML FriendlyName of the attribute.
+final String? friendlyName;
+
+/// The name of the attribute.
+final String? name;
+
+/// A globally unique name for an identity or service provider.
+final NameFormat? nameFormat;
+
+/// If the attribute is required when building a SAML assertion.
+final bool? $required;
+
+final CustomClaimsSource? source;
+
+Map<String, dynamic> toJson() { return {
+  'friendly_name': ?friendlyName,
+  'name': ?name,
+  if (nameFormat != null) 'name_format': nameFormat?.toJson(),
+  'required': ?$required,
+  if (source != null) 'source': source?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'name', 'name_format', 'required', 'source'}.contains(key)); } 
+AccessSchemasSamlSaasAppCustomAttributes copyWith({String Function()? friendlyName, String Function()? name, NameFormat Function()? nameFormat, bool Function()? $required, CustomClaimsSource Function()? source, }) { return AccessSchemasSamlSaasAppCustomAttributes(
+  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
+  name: name != null ? name() : this.name,
+  nameFormat: nameFormat != null ? nameFormat() : this.nameFormat,
+  $required: $required != null ? $required() : this.$required,
+  source: source != null ? source() : this.source,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSchemasSamlSaasAppCustomAttributes &&
+          friendlyName == other.friendlyName &&
+          name == other.name &&
+          nameFormat == other.nameFormat &&
+          $required == other.$required &&
+          source == other.source; } 
+@override int get hashCode { return Object.hash(friendlyName, name, nameFormat, $required, source); } 
+@override String toString() { return 'AccessSchemasSamlSaasAppCustomAttributes(friendlyName: $friendlyName, name: $name, nameFormat: $nameFormat, \$required: ${$required}, source: $source)'; } 
+ }

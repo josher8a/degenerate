@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'invoice_setting_subscription_schedule_setting.dart';import 'payment_method.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedules_resource_default_settings_automatic_tax.dart';import 'subscription_schedules_resource_default_settings_default_payment_method.dart';import 'subscription_schedules_resource_default_settings_on_behalf_of.dart';import 'subscription_transfer_data.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-@immutable final class SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor {const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(this.value);
-
-factory SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'phase_start' => phaseStart,
-  _ => SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._(json),
-}; }
-
-static const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor automatic = SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._('automatic');
-
-static const SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor phaseStart = SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor._('phase_start');
-
-static const List<SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor> values = [automatic, phaseStart];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor($value)'; } 
- }
-/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-@immutable final class SubscriptionSchedulesResourceDefaultSettingsCollectionMethod {const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(this.value);
-
-factory SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(String json) { return switch (json) {
-  'charge_automatically' => chargeAutomatically,
-  'send_invoice' => sendInvoice,
-  _ => SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._(json),
-}; }
-
-static const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod chargeAutomatically = SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._('charge_automatically');
-
-static const SubscriptionSchedulesResourceDefaultSettingsCollectionMethod sendInvoice = SubscriptionSchedulesResourceDefaultSettingsCollectionMethod._('send_invoice');
-
-static const List<SubscriptionSchedulesResourceDefaultSettingsCollectionMethod> values = [chargeAutomatically, sendInvoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceDefaultSettingsCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsCollectionMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_subscription_schedule_setting.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration/subscription_schedule_phase_configuration_collection_method.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings/subscription_schedules_resource_default_settings_billing_cycle_anchor.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings_automatic_tax.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';/// 
 @immutable final class SubscriptionSchedulesResourceDefaultSettings {const SubscriptionSchedulesResourceDefaultSettings({required this.billingCycleAnchor, required this.invoiceSettings, this.applicationFeePercent, this.automaticTax, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.onBehalfOf, this.transferData, });
 
 factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceDefaultSettings(
@@ -58,7 +8,7 @@ factory SubscriptionSchedulesResourceDefaultSettings.fromJson(Map<String, dynami
   automaticTax: json['automatic_tax'] != null ? SubscriptionSchedulesResourceDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String),
   billingThresholds: json['billing_thresholds'] != null ? SubscriptionBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
-  collectionMethod: json['collection_method'] != null ? SubscriptionSchedulesResourceDefaultSettingsCollectionMethod.fromJson(json['collection_method'] as String) : null,
+  collectionMethod: json['collection_method'] != null ? SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(json['collection_method'] as String) : null,
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
   description: json['description'] as String?,
   invoiceSettings: InvoiceSettingSubscriptionScheduleSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
@@ -78,10 +28,10 @@ final SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor billingCycl
 final SubscriptionBillingThresholds? billingThresholds;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-final SubscriptionSchedulesResourceDefaultSettingsCollectionMethod? collectionMethod;
+final SubscriptionSchedulePhaseConfigurationCollectionMethod? collectionMethod;
 
 /// ID of the default payment method for the subscription schedule. If not set, invoices will use the default payment method in the customer's invoice settings.
-final SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod? defaultPaymentMethod;
+final DefaultPaymentMethod? defaultPaymentMethod;
 
 /// Subscription description, meant to be displayable to the customer. Use this field to optionally store an explanation of the subscription for rendering in Stripe surfaces and certain local payment methods UIs.
 final String? description;
@@ -89,7 +39,7 @@ final String? description;
 final InvoiceSettingSubscriptionScheduleSetting invoiceSettings;
 
 /// The account (if any) the charge was made on behalf of for charges associated with the schedule's subscription. See the Connect documentation for details.
-final SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf? onBehalfOf;
+final ChargeOnBehalfOf? onBehalfOf;
 
 /// The account (if any) the associated subscription's payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the subscription's invoices.
 final SubscriptionTransferData? transferData;
@@ -108,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_cycle_anchor') &&
       json.containsKey('invoice_settings'); } 
-SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? applicationFeePercent, SubscriptionSchedulesResourceDefaultSettingsAutomaticTax Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulesResourceDefaultSettingsCollectionMethod? Function()? collectionMethod, SubscriptionSchedulesResourceDefaultSettingsDefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? description, InvoiceSettingSubscriptionScheduleSetting? invoiceSettings, SubscriptionSchedulesResourceDefaultSettingsOnBehalfOf? Function()? onBehalfOf, SubscriptionTransferData? Function()? transferData, }) { return SubscriptionSchedulesResourceDefaultSettings(
+SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? applicationFeePercent, SubscriptionSchedulesResourceDefaultSettingsAutomaticTax Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, DefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? description, InvoiceSettingSubscriptionScheduleSetting? invoiceSettings, ChargeOnBehalfOf? Function()? onBehalfOf, SubscriptionTransferData? Function()? transferData, }) { return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   billingCycleAnchor: billingCycleAnchor ?? this.billingCycleAnchor,

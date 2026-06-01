@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'requests_ssl.dart';import 'requests_ssl_protocols.dart';/// Breakdown of totals for requests.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth2/bandwidth2_ssl.dart';import 'package:pub_cloudflare/models/bandwidth2/ssl_protocols.dart';/// Breakdown of totals for requests.
 @immutable final class Requests {const Requests({this.all, this.cached, this.contentType, this.country, this.httpStatus, this.ssl, this.sslProtocols, this.uncached, });
 
 factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
@@ -9,8 +9,8 @@ factory Requests.fromJson(Map<String, dynamic> json) { return Requests(
   contentType: json['content_type'] as Map<String, dynamic>?,
   country: json['country'] as Map<String, dynamic>?,
   httpStatus: json['http_status'] as Map<String, dynamic>?,
-  ssl: json['ssl'] != null ? RequestsSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
-  sslProtocols: json['ssl_protocols'] != null ? RequestsSslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
+  ssl: json['ssl'] != null ? Bandwidth2Ssl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+  sslProtocols: json['ssl_protocols'] != null ? SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 
@@ -30,10 +30,10 @@ final Map<String,dynamic>? country;
 final Map<String,dynamic>? httpStatus;
 
 /// A break down of requests served over HTTPS.
-final RequestsSsl? ssl;
+final Bandwidth2Ssl? ssl;
 
 /// A breakdown of requests by their SSL protocol.
-final RequestsSslProtocols? sslProtocols;
+final SslProtocols? sslProtocols;
 
 /// Total number of requests served from the origin.
 final int? uncached;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'http_status', 'ssl', 'ssl_protocols', 'uncached'}.contains(key)); } 
-Requests copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Map<String, dynamic> Function()? httpStatus, RequestsSsl Function()? ssl, RequestsSslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Requests(
+Requests copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Map<String, dynamic> Function()? httpStatus, Bandwidth2Ssl Function()? ssl, SslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Requests(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   contentType: contentType != null ? contentType() : this.contentType,

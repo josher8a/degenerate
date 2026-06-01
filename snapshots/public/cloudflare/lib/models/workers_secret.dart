@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_name.dart';/// A secret value accessible through a binding.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';/// A secret value accessible through a binding.
 sealed class WorkersSecret {const WorkersSecret();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,7 +11,7 @@ factory WorkersSecret.fromJson(Map<String, dynamic> json) { return switch (json[
 }; }
 
 /// Build the `secret_key` variant.
-factory WorkersSecret.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, String? keyBase64, Map<String,dynamic>? keyJwk, required WorkersBindingName name, required List<WorkersBindingKindSecretKeyUsages> usages, }) { return WorkersSecretSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
+factory WorkersSecret.secretKey({required Map<String,dynamic> algorithm, required WorkersBindingKindSecretKeyFormat format, String? keyBase64, Map<String,dynamic>? keyJwk, required WorkersBindingName name, required List<Usages> usages, }) { return WorkersSecretSecretKey(WorkersBindingKindSecretKey(type: 'secret_key', algorithm: algorithm, format: format, keyBase64: keyBase64, keyJwk: keyJwk, name: name, usages: usages)); }
 
 /// Build the `secret_text` variant.
 factory WorkersSecret.secretText({required WorkersBindingName name, required String text, }) { return WorkersSecretSecretText(WorkersBindingKindSecretText(type: 'secret_text', name: name, text: text)); }

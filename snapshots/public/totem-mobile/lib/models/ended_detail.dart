@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'end_reason.dart';
+import 'package:pub_totem_mobile/models/end_reason.dart';
 
 @immutable
 final class EndedDetail {

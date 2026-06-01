@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepgram_nova3_request_audio.dart';/// Sets how the model will interpret intents submitted to the custom_intent param. When strict, the model will only return intents submitted using the custom_intent param. When extended, the model will return its own detected intents in addition those submitted using the custom_intents param
-@immutable final class WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode {const WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_nova3_request/workers_ai_post_run_cf_deepgram_nova3_request_audio.dart';/// Sets how the model will interpret intents submitted to the custom_intent param. When strict, the model will only return intents submitted using the custom_intent param. When extended, the model will return its own detected intents in addition those submitted using the custom_intents param
+@immutable final class CustomIntentMode {const CustomIntentMode._(this.value);
 
-factory WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode.fromJson(String json) { return switch (json) {
+factory CustomIntentMode.fromJson(String json) { return switch (json) {
   'extended' => extended,
   'strict' => strict,
-  _ => WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode._(json),
+  _ => CustomIntentMode._(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode extended = WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode._('extended');
+static const CustomIntentMode extended = CustomIntentMode._('extended');
 
-static const WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode strict = WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode._('strict');
+static const CustomIntentMode strict = CustomIntentMode._('strict');
 
-static const List<WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode> values = [extended, strict];
+static const List<CustomIntentMode> values = [extended, strict];
 
 final String value;
 
@@ -21,24 +21,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode && other.value == value; } 
+    other is CustomIntentMode && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode($value)'; } 
+@override String toString() { return 'CustomIntentMode($value)'; } 
  }
 /// Sets how the model will interpret strings submitted to the custom_topic param. When strict, the model will only return topics submitted using the custom_topic param. When extended, the model will return its own detected topics in addition to those submitted using the custom_topic param.
-@immutable final class WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode {const WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode._(this.value);
+@immutable final class CustomTopicMode {const CustomTopicMode._(this.value);
 
-factory WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode.fromJson(String json) { return switch (json) {
+factory CustomTopicMode.fromJson(String json) { return switch (json) {
   'extended' => extended,
   'strict' => strict,
-  _ => WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode._(json),
+  _ => CustomTopicMode._(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode extended = WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode._('extended');
+static const CustomTopicMode extended = CustomTopicMode._('extended');
 
-static const WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode strict = WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode._('strict');
+static const CustomTopicMode strict = CustomTopicMode._('strict');
 
-static const List<WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode> values = [extended, strict];
+static const List<CustomTopicMode> values = [extended, strict];
 
 final String value;
 
@@ -46,9 +46,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode && other.value == value; } 
+    other is CustomTopicMode && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode($value)'; } 
+@override String toString() { return 'CustomTopicMode($value)'; } 
  }
 /// Specify the expected encoding of your submitted audio
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding._(this.value);
@@ -127,9 +127,9 @@ factory WorkersAiPostRunCfDeepgramNova3Request.fromJson(Map<String, dynamic> jso
   audio: WorkersAiPostRunCfDeepgramNova3RequestAudio.fromJson(json['audio'] as Map<String, dynamic>),
   channels: json['channels'] != null ? (json['channels'] as num).toDouble() : null,
   customIntent: json['custom_intent'] as String?,
-  customIntentMode: json['custom_intent_mode'] != null ? WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode.fromJson(json['custom_intent_mode'] as String) : null,
+  customIntentMode: json['custom_intent_mode'] != null ? CustomIntentMode.fromJson(json['custom_intent_mode'] as String) : null,
   customTopic: json['custom_topic'] as String?,
-  customTopicMode: json['custom_topic_mode'] != null ? WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode.fromJson(json['custom_topic_mode'] as String) : null,
+  customTopicMode: json['custom_topic_mode'] != null ? CustomTopicMode.fromJson(json['custom_topic_mode'] as String) : null,
   detectEntities: json['detect_entities'] as bool?,
   detectLanguage: json['detect_language'] as bool?,
   diarize: json['diarize'] as bool?,
@@ -171,13 +171,13 @@ final double? channels;
 final String? customIntent;
 
 /// Sets how the model will interpret intents submitted to the custom_intent param. When strict, the model will only return intents submitted using the custom_intent param. When extended, the model will return its own detected intents in addition those submitted using the custom_intents param
-final WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode? customIntentMode;
+final CustomIntentMode? customIntentMode;
 
 /// Custom topics you want the model to detect within your input audio or text if present Submit up to 100
 final String? customTopic;
 
 /// Sets how the model will interpret strings submitted to the custom_topic param. When strict, the model will only return topics submitted using the custom_topic param. When extended, the model will return its own detected topics in addition to those submitted using the custom_topic param.
-final WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode? customTopicMode;
+final CustomTopicMode? customTopicMode;
 
 /// Identifies and extracts key entities from content in submitted audio
 final bool? detectEntities;
@@ -308,7 +308,7 @@ Map<String, dynamic> toJson() { return {
   'vad_events': ?vadEvents,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3RequestAudio? audio, double Function()? channels, String Function()? customIntent, WorkersAiPostRunCfDeepgramNova3RequestCustomIntentMode Function()? customIntentMode, String Function()? customTopic, WorkersAiPostRunCfDeepgramNova3RequestCustomTopicMode Function()? customTopicMode, bool Function()? detectEntities, bool Function()? detectLanguage, bool Function()? diarize, bool Function()? dictation, WorkersAiPostRunCfDeepgramNova3RequestEncoding Function()? encoding, String Function()? endpointing, String Function()? extra, bool Function()? fillerWords, bool Function()? interimResults, String Function()? keyterm, String Function()? keywords, String Function()? language, bool Function()? measurements, bool Function()? mipOptOut, WorkersAiPostRunCfDeepgramNova3RequestMode Function()? mode, bool Function()? multichannel, bool Function()? numerals, bool Function()? paragraphs, bool Function()? profanityFilter, bool Function()? punctuate, String Function()? redact, String Function()? replace, String Function()? search, bool Function()? sentiment, bool Function()? smartFormat, bool Function()? topics, double Function()? uttSplit, bool Function()? utteranceEndMs, bool Function()? utterances, bool Function()? vadEvents, }) { return WorkersAiPostRunCfDeepgramNova3Request(
+WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3RequestAudio? audio, double Function()? channels, String Function()? customIntent, CustomIntentMode Function()? customIntentMode, String Function()? customTopic, CustomTopicMode Function()? customTopicMode, bool Function()? detectEntities, bool Function()? detectLanguage, bool Function()? diarize, bool Function()? dictation, WorkersAiPostRunCfDeepgramNova3RequestEncoding Function()? encoding, String Function()? endpointing, String Function()? extra, bool Function()? fillerWords, bool Function()? interimResults, String Function()? keyterm, String Function()? keywords, String Function()? language, bool Function()? measurements, bool Function()? mipOptOut, WorkersAiPostRunCfDeepgramNova3RequestMode Function()? mode, bool Function()? multichannel, bool Function()? numerals, bool Function()? paragraphs, bool Function()? profanityFilter, bool Function()? punctuate, String Function()? redact, String Function()? replace, String Function()? search, bool Function()? sentiment, bool Function()? smartFormat, bool Function()? topics, double Function()? uttSplit, bool Function()? utteranceEndMs, bool Function()? utterances, bool Function()? vadEvents, }) { return WorkersAiPostRunCfDeepgramNova3Request(
   audio: audio ?? this.audio,
   channels: channels != null ? channels() : this.channels,
   customIntent: customIntent != null ? customIntent() : this.customIntent,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_text.dart';/// A value that is one of: `ChatCompletionRequestMessageContentPartText`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';/// A value that is one of: `ChatCompletionRequestMessageContentPartText`.
 sealed class ChatCompletionRequestSystemMessageContentPart {const ChatCompletionRequestSystemMessageContentPart();
 
 factory ChatCompletionRequestSystemMessageContentPart.fromJson(Map<String, dynamic> json) {   if (ChatCompletionRequestMessageContentPartText.canParse(json)) {

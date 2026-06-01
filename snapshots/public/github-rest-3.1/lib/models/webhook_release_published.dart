@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_release1.dart';@immutable final class WebhookReleasePublishedAction {const WebhookReleasePublishedAction._(this.value);
-
-factory WebhookReleasePublishedAction.fromJson(String json) { return switch (json) {
-  'published' => published,
-  _ => WebhookReleasePublishedAction._(json),
-}; }
-
-static const WebhookReleasePublishedAction published = WebhookReleasePublishedAction._('published');
-
-static const List<WebhookReleasePublishedAction> values = [published];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookReleasePublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookReleasePublishedAction($value)'; } 
- }
-@immutable final class WebhookReleasePublished {const WebhookReleasePublished({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/webhook_package_published_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1.dart';@immutable final class WebhookReleasePublished {const WebhookReleasePublished({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookReleasePublished.fromJson(Map<String, dynamic> json) { return WebhookReleasePublished(
-  action: WebhookReleasePublishedAction.fromJson(json['action'] as String),
+  action: WebhookPackagePublishedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookReleasePublished.fromJson(Map<String, dynamic> json) { return Web
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookReleasePublishedAction action;
+final WebhookPackagePublishedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('release') &&
       json.containsKey('repository'); } 
-WebhookReleasePublished copyWith({WebhookReleasePublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksRelease1? release, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookReleasePublished(
+WebhookReleasePublished copyWith({WebhookPackagePublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksRelease1? release, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookReleasePublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

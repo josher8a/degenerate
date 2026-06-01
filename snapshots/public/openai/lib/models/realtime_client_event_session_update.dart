@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_client_event_session_update_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// Send this event to update the session’s configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_client_event_session_update/realtime_client_event_session_update_session.dart';import 'package:pub_openai/models/realtime_session_create_request_ga.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga.dart';/// Send this event to update the session’s configuration.
 /// The client may send this event at any time to update any field
 /// except for `voice` and `model`. `voice` can be updated only if there have been no other audio outputs yet.
 /// 

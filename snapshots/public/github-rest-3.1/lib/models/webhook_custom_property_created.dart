@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyCreatedAction {const WebhookCustomPropertyCreatedAction._(this.value);
-
-factory WebhookCustomPropertyCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookCustomPropertyCreatedAction._(json),
-}; }
-
-static const WebhookCustomPropertyCreatedAction created = WebhookCustomPropertyCreatedAction._('created');
-
-static const List<WebhookCustomPropertyCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyCreatedAction($value)'; } 
- }
-@immutable final class WebhookCustomPropertyCreated {const WebhookCustomPropertyCreated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookCustomPropertyCreated {const WebhookCustomPropertyCreated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyCreated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyCreated(
-  action: WebhookCustomPropertyCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   definition: CustomProperty.fromJson(json['definition'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -32,7 +11,7 @@ factory WebhookCustomPropertyCreated.fromJson(Map<String, dynamic> json) { retur
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookCustomPropertyCreatedAction action;
+final ItemCreatedAction action;
 
 final CustomProperty definition;
 
@@ -54,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('definition'); } 
-WebhookCustomPropertyCreated copyWith({WebhookCustomPropertyCreatedAction? action, CustomProperty? definition, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookCustomPropertyCreated(
+WebhookCustomPropertyCreated copyWith({ItemCreatedAction? action, CustomProperty? definition, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookCustomPropertyCreated(
   action: action ?? this.action,
   definition: definition ?? this.definition,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

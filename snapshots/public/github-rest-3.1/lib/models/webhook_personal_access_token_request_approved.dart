@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestApprovedAction {const WebhookPersonalAccessTokenRequestApprovedAction._(this.value);
-
-factory WebhookPersonalAccessTokenRequestApprovedAction.fromJson(String json) { return switch (json) {
-  'approved' => approved,
-  _ => WebhookPersonalAccessTokenRequestApprovedAction._(json),
-}; }
-
-static const WebhookPersonalAccessTokenRequestApprovedAction approved = WebhookPersonalAccessTokenRequestApprovedAction._('approved');
-
-static const List<WebhookPersonalAccessTokenRequestApprovedAction> values = [approved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPersonalAccessTokenRequestApprovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestApprovedAction($value)'; } 
- }
-@immutable final class WebhookPersonalAccessTokenRequestApproved {const WebhookPersonalAccessTokenRequestApproved({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_action.dart';@immutable final class WebhookPersonalAccessTokenRequestApproved {const WebhookPersonalAccessTokenRequestApproved({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
 factory WebhookPersonalAccessTokenRequestApproved.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestApproved(
-  action: WebhookPersonalAccessTokenRequestApprovedAction.fromJson(json['action'] as String),
+  action: WebhookDeploymentReviewApprovedAction.fromJson(json['action'] as String),
   personalAccessTokenRequest: PersonalAccessTokenRequest.fromJson(json['personal_access_token_request'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
@@ -32,7 +11,7 @@ factory WebhookPersonalAccessTokenRequestApproved.fromJson(Map<String, dynamic> 
   installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
 ); }
 
-final WebhookPersonalAccessTokenRequestApprovedAction action;
+final WebhookDeploymentReviewApprovedAction action;
 
 final PersonalAccessTokenRequest personalAccessTokenRequest;
 
@@ -57,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('sender') &&
       json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestApproved copyWith({WebhookPersonalAccessTokenRequestApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestApproved(
+WebhookPersonalAccessTokenRequestApproved copyWith({WebhookDeploymentReviewApprovedAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestApproved(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

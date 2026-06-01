@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_servers_response_result.dart';@immutable final class UpdateServersResponse {const UpdateServersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_servers_response/create_servers_response_result.dart';@immutable final class UpdateServersResponse {const UpdateServersResponse({required this.result, required this.success, });
 
 factory UpdateServersResponse.fromJson(Map<String, dynamic> json) { return UpdateServersResponse(
-  result: UpdateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final UpdateServersResponseResult result;
+final CreateServersResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-UpdateServersResponse copyWith({UpdateServersResponseResult? result, bool? success, }) { return UpdateServersResponse(
+UpdateServersResponse copyWith({CreateServersResponseResult? result, bool? success, }) { return UpdateServersResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

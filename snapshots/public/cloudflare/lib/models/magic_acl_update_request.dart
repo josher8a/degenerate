@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_forward_locally.dart';import 'magic_lan_acl_configuration.dart';import 'magic_unidirectional.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
-@immutable final class MagicAclUpdateRequestProtocols {const MagicAclUpdateRequestProtocols._(this.value);
-
-factory MagicAclUpdateRequestProtocols.fromJson(String json) { return switch (json) {
-  'tcp' => tcp,
-  'udp' => udp,
-  'icmp' => icmp,
-  _ => MagicAclUpdateRequestProtocols._(json),
-}; }
-
-static const MagicAclUpdateRequestProtocols tcp = MagicAclUpdateRequestProtocols._('tcp');
-
-static const MagicAclUpdateRequestProtocols udp = MagicAclUpdateRequestProtocols._('udp');
-
-static const MagicAclUpdateRequestProtocols icmp = MagicAclUpdateRequestProtocols._('icmp');
-
-static const List<MagicAclUpdateRequestProtocols> values = [tcp, udp, icmp];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicAclUpdateRequestProtocols && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicAclUpdateRequestProtocols($value)'; } 
- }
-@immutable final class MagicAclUpdateRequest {const MagicAclUpdateRequest({this.description, this.forwardLocally, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl/magic_acl_protocols.dart';import 'package:pub_cloudflare/models/magic_forward_locally.dart';import 'package:pub_cloudflare/models/magic_lan_acl_configuration.dart';import 'package:pub_cloudflare/models/magic_unidirectional.dart';@immutable final class MagicAclUpdateRequest {const MagicAclUpdateRequest({this.description, this.forwardLocally, this.lan1, this.lan2, this.name, this.protocols, this.unidirectional, });
 
 factory MagicAclUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicAclUpdateRequest(
   description: json['description'] as String?,
@@ -36,7 +8,7 @@ factory MagicAclUpdateRequest.fromJson(Map<String, dynamic> json) { return Magic
   lan1: json['lan_1'] != null ? MagicLanAclConfiguration.fromJson(json['lan_1'] as Map<String, dynamic>) : null,
   lan2: json['lan_2'] != null ? MagicLanAclConfiguration.fromJson(json['lan_2'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclUpdateRequestProtocols.fromJson(e as String)).toList(),
+  protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclProtocols.fromJson(e as String)).toList(),
   unidirectional: json['unidirectional'] != null ? MagicUnidirectional.fromJson(json['unidirectional'] as bool) : null,
 ); }
 
@@ -52,7 +24,7 @@ final MagicLanAclConfiguration? lan2;
 /// The name of the ACL.
 final String? name;
 
-final List<MagicAclUpdateRequestProtocols>? protocols;
+final List<MagicAclProtocols>? protocols;
 
 final MagicUnidirectional? unidirectional;
 
@@ -66,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (unidirectional != null) 'unidirectional': unidirectional?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'forward_locally', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key)); } 
-MagicAclUpdateRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration Function()? lan1, MagicLanAclConfiguration Function()? lan2, String Function()? name, List<MagicAclUpdateRequestProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclUpdateRequest(
+MagicAclUpdateRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration Function()? lan1, MagicLanAclConfiguration Function()? lan2, String Function()? name, List<MagicAclProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclUpdateRequest(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   lan1: lan1 != null ? lan1() : this.lan1,

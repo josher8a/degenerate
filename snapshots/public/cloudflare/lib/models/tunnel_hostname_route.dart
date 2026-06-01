@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_components_schemas_tunnel_id.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_hostname.dart';import 'tunnel_hostname_comment.dart';import 'tunnel_hostname_route_id.dart';/// A user-friendly name for a tunnel.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_components_schemas_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_hostname.dart';import 'package:pub_cloudflare/models/tunnel_hostname_comment.dart';import 'package:pub_cloudflare/models/tunnel_hostname_route_id.dart';/// A user-friendly name for a tunnel.
 extension type const TunnelSchemasTunnelName(String value) {
 factory TunnelSchemasTunnelName.fromJson(String json) => TunnelSchemasTunnelName(json);
 

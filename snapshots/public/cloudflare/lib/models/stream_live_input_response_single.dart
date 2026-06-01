@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input.dart';@immutable final class StreamLiveInputResponseSingle {const StreamLiveInputResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_live_input.dart';@immutable final class StreamLiveInputResponseSingle {const StreamLiveInputResponseSingle({this.result});
 
 factory StreamLiveInputResponseSingle.fromJson(Map<String, dynamic> json) { return StreamLiveInputResponseSingle(
   result: json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null,

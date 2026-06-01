@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method to use for the health check.
-@immutable final class HealthchecksHttpConfigMethod {const HealthchecksHttpConfigMethod._(this.value);
-
-factory HealthchecksHttpConfigMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'HEAD' => head,
-  _ => HealthchecksHttpConfigMethod._(json),
-}; }
-
-static const HealthchecksHttpConfigMethod $get = HealthchecksHttpConfigMethod._('GET');
-
-static const HealthchecksHttpConfigMethod head = HealthchecksHttpConfigMethod._('HEAD');
-
-static const List<HealthchecksHttpConfigMethod> values = [$get, head];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HealthchecksHttpConfigMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HealthchecksHttpConfigMethod($value)'; } 
- }
-/// Parameters specific to an HTTP or HTTPS health check.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_http_config/healthchecks_http_config_method.dart';/// Parameters specific to an HTTP or HTTPS health check.
 @immutable final class HealthchecksHttpConfig {const HealthchecksHttpConfig({this.allowInsecure = false, this.expectedBody = '', this.expectedCodes, this.followRedirects = false, this.header, this.method = HealthchecksHttpConfigMethod.$get, this.path = '/', this.port = 80, });
 
 factory HealthchecksHttpConfig.fromJson(Map<String, dynamic> json) { return HealthchecksHttpConfig(

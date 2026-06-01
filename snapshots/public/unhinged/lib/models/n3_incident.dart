@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'phase.dart';
+import 'package:pub_unhinged/models/phase.dart';
 
 @immutable
 final class $3Incident {

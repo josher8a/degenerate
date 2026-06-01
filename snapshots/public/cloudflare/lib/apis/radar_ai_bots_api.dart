@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_ai_bots_summary_content_type.dart';import '../models/radar_get_ai_bots_summary_dimension.dart';import '../models/radar_get_ai_bots_summary_format.dart';import '../models/radar_get_ai_bots_summary_response400.dart';import '../models/radar_get_ai_bots_summary_response_result.dart';import '../models/radar_get_ai_bots_timeseries_agg_interval.dart';import '../models/radar_get_ai_bots_timeseries_content_type.dart';import '../models/radar_get_ai_bots_timeseries_format.dart';import '../models/radar_get_ai_bots_timeseries_group_agg_interval.dart';import '../models/radar_get_ai_bots_timeseries_group_content_type.dart';import '../models/radar_get_ai_bots_timeseries_group_dimension.dart';import '../models/radar_get_ai_bots_timeseries_group_format.dart';import '../models/radar_get_ai_bots_timeseries_group_normalization.dart';import '../models/radar_get_ai_bots_timeseries_group_response400.dart';import '../models/radar_get_ai_bots_timeseries_group_response_result.dart';import '../models/radar_get_ai_bots_timeseries_response400.dart';import '../models/radar_get_ai_bots_timeseries_response_result.dart';/// RadarAiBotsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_content_type.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_content_type.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_format.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_agg_interval.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_content_type.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_dimension.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_format.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_normalization.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_response400.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response400.dart';/// RadarAiBotsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarAiBotsApi with ApiExecutor {const RadarAiBotsApi(this.apiConfig
 /// Retrieves an aggregated summary of AI bots HTTP requests grouped by the specified dimension.
 ///
 /// `GET /radar/ai/bots/summary/{dimension}`
-Future<ApiResult<RadarGetAiBotsSummaryResponseResult, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetAiBotsSummaryResponse400>> radarGetAiBotsSummary({required RadarGetAiBotsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? vertical, List<String>? industry, List<RadarGetAiBotsSummaryContentType>? contentType, int? limitPerGroup, RadarGetAiBotsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -97,7 +97,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAiBotsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetAiBotsSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -208,7 +208,7 @@ return execute(
 /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
 ///
 /// `GET /radar/ai/bots/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetAiBotsTimeseriesGroupResponseResult, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetAiBotsTimeseriesGroupResponse400>> radarGetAiBotsTimeseriesGroup({required RadarGetAiBotsTimeseriesGroupDimension dimension, RadarGetAiBotsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<String>? crawlPurpose, List<String>? userAgent, List<String>? industry, List<String>? vertical, List<RadarGetAiBotsTimeseriesGroupContentType>? contentType, int? limitPerGroup, RadarGetAiBotsTimeseriesGroupNormalization? normalization, RadarGetAiBotsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -298,7 +298,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAiBotsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetAiBotsTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

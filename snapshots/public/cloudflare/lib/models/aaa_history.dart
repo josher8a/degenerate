@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_policy_id.dart';import 'aaa_schemas_name.dart';import 'aaa_uuid.dart';/// Message body included in the notification sent.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_policy_id.dart';import 'package:pub_cloudflare/models/aaa_schemas_name.dart';import 'package:pub_cloudflare/models/aaa_uuid.dart';/// Message body included in the notification sent.
 extension type const AaaAlertBody(String value) {
 factory AaaAlertBody.fromJson(String json) => AaaAlertBody(json);
 

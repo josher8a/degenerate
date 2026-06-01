@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_tool_param_tools.dart';/// Groups function/custom tools under a shared namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/namespace_tool_param/namespace_tool_param_tools.dart';/// Groups function/custom tools under a shared namespace.
 @immutable final class NamespaceToolParam {const NamespaceToolParam({required this.name, required this.description, required this.tools, this.type = 'namespace', });
 
 factory NamespaceToolParam.fromJson(Map<String, dynamic> json) { return NamespaceToolParam(

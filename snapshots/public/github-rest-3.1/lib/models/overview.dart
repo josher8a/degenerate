@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'overview_domains.dart';import 'overview_ssh_key_fingerprints.dart';/// Api Overview
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/overview/domains.dart';import 'package:pub_github_rest_3_1/models/overview/ssh_key_fingerprints.dart';/// Api Overview
 @immutable final class Overview {const Overview({required this.verifiablePasswordAuthentication, this.sshKeyFingerprints, this.sshKeys, this.hooks, this.githubEnterpriseImporter, this.web, this.api, this.git, this.packages, this.pages, this.importer, this.actions, this.actionsMacos, this.codespaces, this.dependabot, this.copilot, this.domains, });
 
 factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   verifiablePasswordAuthentication: json['verifiable_password_authentication'] as bool,
-  sshKeyFingerprints: json['ssh_key_fingerprints'] != null ? OverviewSshKeyFingerprints.fromJson(json['ssh_key_fingerprints'] as Map<String, dynamic>) : null,
+  sshKeyFingerprints: json['ssh_key_fingerprints'] != null ? SshKeyFingerprints.fromJson(json['ssh_key_fingerprints'] as Map<String, dynamic>) : null,
   sshKeys: (json['ssh_keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: (json['hooks'] as List<dynamic>?)?.map((e) => e as String).toList(),
   githubEnterpriseImporter: (json['github_enterprise_importer'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -20,12 +20,12 @@ factory Overview.fromJson(Map<String, dynamic> json) { return Overview(
   codespaces: (json['codespaces'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dependabot: (json['dependabot'] as List<dynamic>?)?.map((e) => e as String).toList(),
   copilot: (json['copilot'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  domains: json['domains'] != null ? OverviewDomains.fromJson(json['domains'] as Map<String, dynamic>) : null,
+  domains: json['domains'] != null ? Domains.fromJson(json['domains'] as Map<String, dynamic>) : null,
 ); }
 
 final bool verifiablePasswordAuthentication;
 
-final OverviewSshKeyFingerprints? sshKeyFingerprints;
+final SshKeyFingerprints? sshKeyFingerprints;
 
 final List<String>? sshKeys;
 
@@ -55,7 +55,7 @@ final List<String>? dependabot;
 
 final List<String>? copilot;
 
-final OverviewDomains? domains;
+final Domains? domains;
 
 Map<String, dynamic> toJson() { return {
   'verifiable_password_authentication': verifiablePasswordAuthentication,
@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (domains != null) 'domains': domains?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('verifiable_password_authentication') && json['verifiable_password_authentication'] is bool; } 
-Overview copyWith({bool? verifiablePasswordAuthentication, OverviewSshKeyFingerprints Function()? sshKeyFingerprints, List<String> Function()? sshKeys, List<String> Function()? hooks, List<String> Function()? githubEnterpriseImporter, List<String> Function()? web, List<String> Function()? api, List<String> Function()? git, List<String> Function()? packages, List<String> Function()? pages, List<String> Function()? importer, List<String> Function()? actions, List<String> Function()? actionsMacos, List<String> Function()? codespaces, List<String> Function()? dependabot, List<String> Function()? copilot, OverviewDomains Function()? domains, }) { return Overview(
+Overview copyWith({bool? verifiablePasswordAuthentication, SshKeyFingerprints Function()? sshKeyFingerprints, List<String> Function()? sshKeys, List<String> Function()? hooks, List<String> Function()? githubEnterpriseImporter, List<String> Function()? web, List<String> Function()? api, List<String> Function()? git, List<String> Function()? packages, List<String> Function()? pages, List<String> Function()? importer, List<String> Function()? actions, List<String> Function()? actionsMacos, List<String> Function()? codespaces, List<String> Function()? dependabot, List<String> Function()? copilot, Domains Function()? domains, }) { return Overview(
   verifiablePasswordAuthentication: verifiablePasswordAuthentication ?? this.verifiablePasswordAuthentication,
   sshKeyFingerprints: sshKeyFingerprints != null ? sshKeyFingerprints() : this.sshKeyFingerprints,
   sshKeys: sshKeys != null ? sshKeys() : this.sshKeys,

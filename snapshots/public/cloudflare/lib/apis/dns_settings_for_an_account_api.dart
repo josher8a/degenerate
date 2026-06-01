@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_account_settings.dart';import '../models/dns_settings_account_settings_patch.dart';import '../models/dns_settings_identifier.dart';/// DnsSettingsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_account_settings.dart';import 'package:pub_cloudflare/models/dns_settings_account_settings_patch.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';/// DnsSettingsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_response422_errors.dart';@immutable final class BrapiPostMarkdownResponse422 {const BrapiPostMarkdownResponse422({required this.success, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class BrapiPostMarkdownResponse422 {const BrapiPostMarkdownResponse422({required this.success, this.errors, });
 
 factory BrapiPostMarkdownResponse422.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownResponse422(
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostMarkdownResponse422Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<BrapiPostMarkdownResponse422Errors>? errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors;
 
 /// Response status
 final bool success;
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-BrapiPostMarkdownResponse422 copyWith({List<BrapiPostMarkdownResponse422Errors> Function()? errors, bool? success, }) { return BrapiPostMarkdownResponse422(
+BrapiPostMarkdownResponse422 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> Function()? errors, bool? success, }) { return BrapiPostMarkdownResponse422(
   errors: errors != null ? errors() : this.errors,
   success: success ?? this.success,
 ); } 

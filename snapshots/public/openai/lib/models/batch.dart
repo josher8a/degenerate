@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_errors.dart';import 'batch_request_counts.dart';import 'batch_usage.dart';/// The object type, which is always `batch`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/batch_errors.dart';import 'package:pub_openai/models/batch/batch_usage.dart';import 'package:pub_openai/models/batch/request_counts.dart';/// The object type, which is always `batch`.
 @immutable final class BatchObject {const BatchObject._(this.value);
 
 factory BatchObject.fromJson(String json) { return switch (json) {
@@ -87,7 +87,7 @@ factory Batch.fromJson(Map<String, dynamic> json) { return Batch(
   expiredAt: json['expired_at'] != null ? (json['expired_at'] as num).toInt() : null,
   cancellingAt: json['cancelling_at'] != null ? (json['cancelling_at'] as num).toInt() : null,
   cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,
-  requestCounts: json['request_counts'] != null ? BatchRequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
+  requestCounts: json['request_counts'] != null ? RequestCounts.fromJson(json['request_counts'] as Map<String, dynamic>) : null,
   usage: json['usage'] != null ? BatchUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
@@ -152,7 +152,7 @@ final int? cancellingAt;
 final int? cancelledAt;
 
 /// The request counts for different statuses within the batch.
-final BatchRequestCounts? requestCounts;
+final RequestCounts? requestCounts;
 
 /// Represents token usage details including input tokens, output tokens, a
 /// breakdown of output tokens, and the total tokens used. Only populated on
@@ -193,7 +193,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('completion_window') && json['completion_window'] is String &&
       json.containsKey('status') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-Batch copyWith({String? id, BatchObject? object, String? endpoint, String Function()? model, BatchErrors Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String Function()? outputFileId, String Function()? errorFileId, int? createdAt, int Function()? inProgressAt, int Function()? expiresAt, int Function()? finalizingAt, int Function()? completedAt, int Function()? failedAt, int Function()? expiredAt, int Function()? cancellingAt, int Function()? cancelledAt, BatchRequestCounts Function()? requestCounts, BatchUsage Function()? usage, Map<String, String>? Function()? metadata, }) { return Batch(
+Batch copyWith({String? id, BatchObject? object, String? endpoint, String Function()? model, BatchErrors Function()? errors, String? inputFileId, String? completionWindow, BatchStatus? status, String Function()? outputFileId, String Function()? errorFileId, int? createdAt, int Function()? inProgressAt, int Function()? expiresAt, int Function()? finalizingAt, int Function()? completedAt, int Function()? failedAt, int Function()? expiredAt, int Function()? cancellingAt, int Function()? cancelledAt, RequestCounts Function()? requestCounts, BatchUsage Function()? usage, Map<String, String>? Function()? metadata, }) { return Batch(
   id: id ?? this.id,
   object: object ?? this.object,
   endpoint: endpoint ?? this.endpoint,

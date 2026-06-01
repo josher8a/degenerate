@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_identifier.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_response_settings.dart';@immutable final class MqWorkerConsumerResponse {const MqWorkerConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.scriptName, this.settings, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';@immutable final class MqWorkerConsumerResponse {const MqWorkerConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.scriptName, this.settings, this.type, });
 
 factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerResponse(
   consumerId: json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null,
@@ -8,7 +8,7 @@ factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return Mq
   deadLetterQueue: json['dead_letter_queue'] as String?,
   queueName: json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null,
   scriptName: json['script_name'] != null ? MqScriptName.fromJson(json['script_name'] as String) : null,
-  settings: json['settings'] != null ? MqWorkerConsumerResponseSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  settings: json['settings'] != null ? MqWorkerConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
 ); }
 
@@ -25,7 +25,7 @@ final MqQueueName? queueName;
 /// Name of a Worker
 final MqScriptName? scriptName;
 
-final MqWorkerConsumerResponseSettings? settings;
+final MqWorkerConsumerRequestSettings? settings;
 
 final String? type;
 
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consumer_id', 'created_on', 'dead_letter_queue', 'queue_name', 'script_name', 'settings', 'type'}.contains(key)); } 
-MqWorkerConsumerResponse copyWith({MqIdentifier Function()? consumerId, DateTime Function()? createdOn, String Function()? deadLetterQueue, MqQueueName Function()? queueName, MqScriptName Function()? scriptName, MqWorkerConsumerResponseSettings Function()? settings, String Function()? type, }) { return MqWorkerConsumerResponse(
+MqWorkerConsumerResponse copyWith({MqIdentifier Function()? consumerId, DateTime Function()? createdOn, String Function()? deadLetterQueue, MqQueueName Function()? queueName, MqScriptName Function()? scriptName, MqWorkerConsumerRequestSettings Function()? settings, String Function()? type, }) { return MqWorkerConsumerResponse(
   consumerId: consumerId != null ? consumerId() : this.consumerId,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,

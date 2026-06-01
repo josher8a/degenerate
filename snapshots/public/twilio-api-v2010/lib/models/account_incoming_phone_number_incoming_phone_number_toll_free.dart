@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_toll_free_capabilities.dart';import 'incoming_phone_number_toll_free_enum_emergency_status.dart';import 'incoming_phone_number_toll_free_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_local/capabilities.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_toll_free_enum_emergency_status.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_toll_free_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 @immutable final class IncomingPhoneNumberTollFreeEnumAddressRequirement {const IncomingPhoneNumberTollFreeEnumAddressRequirement._(this.value);
 
 factory IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(String json) { return switch (json) {
@@ -68,131 +68,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus($value)'; } 
  }
-/// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod._(this.value);
-
-factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod._(json),
-}; }
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod._('GET');
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod post = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod._('POST');
-
-static const List<AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod._(this.value);
-
-factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod._(json),
-}; }
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod._('GET');
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod post = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod._('POST');
-
-static const List<AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod($value)'; } 
- }
-/// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod._(this.value);
-
-factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod._(json),
-}; }
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod._('GET');
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod post = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod._('POST');
-
-static const List<AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod._(this.value);
-
-factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod._(json),
-}; }
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod._('GET');
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod post = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod._('POST');
-
-static const List<AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod._(this.value);
-
-factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod._(json),
-}; }
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod $get = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod._('GET');
-
-static const AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod post = AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod._('POST');
-
-static const List<AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod($value)'; } 
- }
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberTollFree {const AccountIncomingPhoneNumberIncomingPhoneNumberTollFree({this.origin, this.addressSid, this.addressRequirements, this.apiVersion, this.beta, this.capabilities, this.dateCreated, this.dateUpdated, this.friendlyName, this.identitySid, this.phoneNumber, this.accountSid, this.sid, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.trunkSid, this.status, this.voiceReceiveMode, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.emergencyAddressStatus, this.bundleSid, this.uri, });
 
 factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberTollFree(
@@ -201,7 +76,7 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(Map<Strin
   addressRequirements: json['address_requirements'] != null ? IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(json['address_requirements'] as String) : null,
   apiVersion: json['api_version'] as String?,
   beta: json['beta'] as bool?,
-  capabilities: json['capabilities'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
+  capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   friendlyName: json['friendly_name'] as String?,
@@ -210,20 +85,20 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(Map<Strin
   origin: json['origin'] as String?,
   sid: json['sid'] as String?,
   smsApplicationSid: json['sms_application_sid'] as String?,
-  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
+  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountAddressDependentPhoneNumberSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
   smsFallbackUrl: json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null,
-  smsMethod: json['sms_method'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod.fromJson(json['sms_method'] as String) : null,
+  smsMethod: json['sms_method'] != null ? AccountAddressDependentPhoneNumberSmsMethod.fromJson(json['sms_method'] as String) : null,
   smsUrl: json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null,
   statusCallback: json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null,
-  statusCallbackMethod: json['status_callback_method'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null,
+  statusCallbackMethod: json['status_callback_method'] != null ? AccountAddressDependentPhoneNumberStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null,
   trunkSid: json['trunk_sid'] as String?,
   uri: json['uri'] as String?,
   voiceReceiveMode: json['voice_receive_mode'] != null ? IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(json['voice_receive_mode'] as String) : null,
   voiceApplicationSid: json['voice_application_sid'] as String?,
   voiceCallerIdLookup: json['voice_caller_id_lookup'] as bool?,
-  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
+  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountAddressDependentPhoneNumberVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
   voiceFallbackUrl: json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null,
-  voiceMethod: json['voice_method'] != null ? AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod.fromJson(json['voice_method'] as String) : null,
+  voiceMethod: json['voice_method'] != null ? AccountAddressDependentPhoneNumberVoiceMethod.fromJson(json['voice_method'] as String) : null,
   voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
   emergencyStatus: json['emergency_status'] != null ? IncomingPhoneNumberTollFreeEnumEmergencyStatus.fromJson(json['emergency_status'] as String) : null,
   emergencyAddressSid: json['emergency_address_sid'] as String?,
@@ -247,7 +122,7 @@ final String? apiVersion;
 final bool? beta;
 
 /// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are  `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities? capabilities;
+final Capabilities? capabilities;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
 final String? dateCreated;
@@ -274,13 +149,13 @@ final String? sid;
 final String? smsApplicationSid;
 
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod? smsFallbackMethod;
+final AccountAddressDependentPhoneNumberSmsFallbackMethod? smsFallbackMethod;
 
 /// The URL that we call when an error occurs while retrieving or executing the TwiML from `sms_url`.
 final Uri? smsFallbackUrl;
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod? smsMethod;
+final AccountAddressDependentPhoneNumberSmsMethod? smsMethod;
 
 /// The URL we call when the phone number receives an incoming SMS message.
 final Uri? smsUrl;
@@ -289,7 +164,7 @@ final Uri? smsUrl;
 final Uri? statusCallback;
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod? statusCallbackMethod;
+final AccountAddressDependentPhoneNumberStatusCallbackMethod? statusCallbackMethod;
 
 /// The SID of the Trunk that handles calls to the phone number. If a `trunk_sid` is present, we ignore all of the voice urls and voice applications and use those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
 final String? trunkSid;
@@ -306,13 +181,13 @@ final String? voiceApplicationSid;
 final bool? voiceCallerIdLookup;
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod? voiceFallbackMethod;
+final AccountAddressDependentPhoneNumberVoiceFallbackMethod? voiceFallbackMethod;
 
 /// The URL that we call when an error occurs retrieving or executing the TwiML requested by `url`.
 final Uri? voiceFallbackUrl;
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod? voiceMethod;
+final AccountAddressDependentPhoneNumberVoiceMethod? voiceMethod;
 
 /// The URL we call when the phone number receives a call. The `voice_url` will not be used if a `voice_application_sid` or a `trunk_sid` is set.
 final Uri? voiceUrl;
@@ -366,7 +241,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'address_sid', 'address_requirements', 'api_version', 'beta', 'capabilities', 'date_created', 'date_updated', 'friendly_name', 'identity_sid', 'phone_number', 'origin', 'sid', 'sms_application_sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'status_callback', 'status_callback_method', 'trunk_sid', 'uri', 'voice_receive_mode', 'voice_application_sid', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'emergency_status', 'emergency_address_sid', 'emergency_address_status', 'bundle_sid', 'status'}.contains(key)); } 
-AccountIncomingPhoneNumberIncomingPhoneNumberTollFree copyWith({String? Function()? accountSid, String? Function()? addressSid, IncomingPhoneNumberTollFreeEnumAddressRequirement Function()? addressRequirements, String? Function()? apiVersion, bool? Function()? beta, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities? Function()? capabilities, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? identitySid, String? Function()? phoneNumber, String? Function()? origin, String? Function()? sid, String? Function()? smsApplicationSid, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? trunkSid, String? Function()? uri, IncomingPhoneNumberTollFreeEnumVoiceReceiveMode Function()? voiceReceiveMode, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, IncomingPhoneNumberTollFreeEnumEmergencyStatus Function()? emergencyStatus, String? Function()? emergencyAddressSid, IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus Function()? emergencyAddressStatus, String? Function()? bundleSid, String? Function()? status, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberTollFree(
+AccountIncomingPhoneNumberIncomingPhoneNumberTollFree copyWith({String? Function()? accountSid, String? Function()? addressSid, IncomingPhoneNumberTollFreeEnumAddressRequirement Function()? addressRequirements, String? Function()? apiVersion, bool? Function()? beta, Capabilities? Function()? capabilities, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? identitySid, String? Function()? phoneNumber, String? Function()? origin, String? Function()? sid, String? Function()? smsApplicationSid, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? trunkSid, String? Function()? uri, IncomingPhoneNumberTollFreeEnumVoiceReceiveMode Function()? voiceReceiveMode, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, IncomingPhoneNumberTollFreeEnumEmergencyStatus Function()? emergencyStatus, String? Function()? emergencyAddressSid, IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus Function()? emergencyAddressStatus, String? Function()? bundleSid, String? Function()? status, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberTollFree(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   addressSid: addressSid != null ? addressSid() : this.addressSid,
   addressRequirements: addressRequirements != null ? addressRequirements() : this.addressRequirements,

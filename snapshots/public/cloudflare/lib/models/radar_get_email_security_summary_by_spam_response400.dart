@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_summary_by_spam_response400_errors.dart';@immutable final class RadarGetEmailSecuritySummaryBySpamResponse400 {const RadarGetEmailSecuritySummaryBySpamResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class RadarGetEmailSecuritySummaryBySpamResponse400 {const RadarGetEmailSecuritySummaryBySpamResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetEmailSecuritySummaryBySpamResponse400.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpamResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => RadarGetEmailSecuritySummaryBySpamResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<RadarGetEmailSecuritySummaryBySpamResponse400Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecuritySummaryBySpamResponse400 copyWith({List<RadarGetEmailSecuritySummaryBySpamResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return RadarGetEmailSecuritySummaryBySpamResponse400(
+RadarGetEmailSecuritySummaryBySpamResponse400 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return RadarGetEmailSecuritySummaryBySpamResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

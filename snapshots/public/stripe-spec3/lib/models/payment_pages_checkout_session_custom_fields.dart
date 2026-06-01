@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_custom_fields_dropdown.dart';import 'payment_pages_checkout_session_custom_fields_label.dart';import 'payment_pages_checkout_session_custom_fields_numeric.dart';import 'payment_pages_checkout_session_custom_fields_text.dart';/// The type of the field.
-@immutable final class PaymentPagesCheckoutSessionCustomFieldsType {const PaymentPagesCheckoutSessionCustomFieldsType._(this.value);
-
-factory PaymentPagesCheckoutSessionCustomFieldsType.fromJson(String json) { return switch (json) {
-  'dropdown' => dropdown,
-  'numeric' => numeric,
-  'text' => text,
-  _ => PaymentPagesCheckoutSessionCustomFieldsType._(json),
-}; }
-
-static const PaymentPagesCheckoutSessionCustomFieldsType dropdown = PaymentPagesCheckoutSessionCustomFieldsType._('dropdown');
-
-static const PaymentPagesCheckoutSessionCustomFieldsType numeric = PaymentPagesCheckoutSessionCustomFieldsType._('numeric');
-
-static const PaymentPagesCheckoutSessionCustomFieldsType text = PaymentPagesCheckoutSessionCustomFieldsType._('text');
-
-static const List<PaymentPagesCheckoutSessionCustomFieldsType> values = [dropdown, numeric, text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionCustomFieldsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_dropdown.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_label.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_numeric.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_text.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFields {const PaymentPagesCheckoutSessionCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
 factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFields(
@@ -38,7 +10,7 @@ factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> js
   numeric: json['numeric'] != null ? PaymentPagesCheckoutSessionCustomFieldsNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   optional: json['optional'] as bool,
   text: json['text'] != null ? PaymentPagesCheckoutSessionCustomFieldsText.fromJson(json['text'] as Map<String, dynamic>) : null,
-  type: PaymentPagesCheckoutSessionCustomFieldsType.fromJson(json['type'] as String),
+  type: PaymentLinksResourceCustomFieldsType.fromJson(json['type'] as String),
 ); }
 
 final PaymentPagesCheckoutSessionCustomFieldsDropdown? dropdown;
@@ -56,7 +28,7 @@ final bool optional;
 final PaymentPagesCheckoutSessionCustomFieldsText? text;
 
 /// The type of the field.
-final PaymentPagesCheckoutSessionCustomFieldsType type;
+final PaymentLinksResourceCustomFieldsType type;
 
 Map<String, dynamic> toJson() { return {
   if (dropdown != null) 'dropdown': dropdown?.toJson(),
@@ -71,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('label') &&
       json.containsKey('optional') && json['optional'] is bool &&
       json.containsKey('type'); } 
-PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText Function()? text, PaymentPagesCheckoutSessionCustomFieldsType? type, }) { return PaymentPagesCheckoutSessionCustomFields(
+PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentPagesCheckoutSessionCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,

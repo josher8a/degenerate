@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_metric_requests.dart';/// Type of feedback report.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';/// Type of feedback report.
 @immutable final class BotManagementFeedbackType {const BotManagementFeedbackType._(this.value);
 
 factory BotManagementFeedbackType.fromJson(String json) { return switch (json) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_ip_config.dart';/// SessionAffinityConfig represents the configurations of session affinity.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/client_ip_config.dart';/// SessionAffinityConfig represents the configurations of session affinity.
 @immutable final class SessionAffinityConfig {const SessionAffinityConfig({this.clientIp});
 
 factory SessionAffinityConfig.fromJson(Map<String, dynamic> json) { return SessionAffinityConfig(

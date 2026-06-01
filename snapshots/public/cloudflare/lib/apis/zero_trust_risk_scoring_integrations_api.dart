@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_create_integration_body.dart';import '../models/dlp_risk_score_integration.dart';import '../models/dlp_update_integration_body.dart';/// ZeroTrustRiskScoringIntegrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_create_integration_body.dart';import 'package:pub_cloudflare/models/dlp_risk_score_integration.dart';import 'package:pub_cloudflare/models/dlp_update_integration_body.dart';/// ZeroTrustRiskScoringIntegrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

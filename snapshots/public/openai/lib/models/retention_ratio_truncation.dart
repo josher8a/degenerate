@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'retention_ratio_truncation_token_limits.dart';/// Use retention ratio truncation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/retentionratiotruncation/token_limits.dart';/// Use retention ratio truncation.
 @immutable final class RetentionRatioTruncationType {const RetentionRatioTruncationType._(this.value);
 
 factory RetentionRatioTruncationType.fromJson(String json) { return switch (json) {
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 factory RetentionRatioTruncation.fromJson(Map<String, dynamic> json) { return RetentionRatioTruncation(
   type: RetentionRatioTruncationType.fromJson(json['type'] as String),
   retentionRatio: (json['retention_ratio'] as num).toDouble(),
-  tokenLimits: json['token_limits'] != null ? RetentionRatioTruncationTokenLimits.fromJson(json['token_limits'] as Map<String, dynamic>) : null,
+  tokenLimits: json['token_limits'] != null ? TokenLimits.fromJson(json['token_limits'] as Map<String, dynamic>) : null,
 ); }
 
 /// Use retention ratio truncation.
@@ -39,7 +39,7 @@ final RetentionRatioTruncationType type;
 final double retentionRatio;
 
 /// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
-final RetentionRatioTruncationTokenLimits? tokenLimits;
+final TokenLimits? tokenLimits;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('retention_ratio') && json['retention_ratio'] is num; } 
-RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? retentionRatio, RetentionRatioTruncationTokenLimits Function()? tokenLimits, }) { return RetentionRatioTruncation(
+RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? retentionRatio, TokenLimits Function()? tokenLimits, }) { return RetentionRatioTruncation(
   type: type ?? this.type,
   retentionRatio: retentionRatio ?? this.retentionRatio,
   tokenLimits: tokenLimits != null ? tokenLimits() : this.tokenLimits,

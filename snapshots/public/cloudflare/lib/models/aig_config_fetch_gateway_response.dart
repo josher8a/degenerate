@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result.dart';@immutable final class AigConfigFetchGatewayResponse {const AigConfigFetchGatewayResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_gateway_response/aig_config_create_gateway_response_result.dart';@immutable final class AigConfigFetchGatewayResponse {const AigConfigFetchGatewayResponse({required this.result, required this.success, });
 
 factory AigConfigFetchGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponse(
-  result: AigConfigFetchGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AigConfigCreateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AigConfigFetchGatewayResponseResult result;
+final AigConfigCreateGatewayResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigFetchGatewayResponse copyWith({AigConfigFetchGatewayResponseResult? result, bool? success, }) { return AigConfigFetchGatewayResponse(
+AigConfigFetchGatewayResponse copyWith({AigConfigCreateGatewayResponseResult? result, bool? success, }) { return AigConfigFetchGatewayResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

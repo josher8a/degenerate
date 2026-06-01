@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// Emitted when text content is finalized.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_log_prob.dart';/// Emitted when text content is finalized.
 @immutable final class ResponseTextDoneEvent {const ResponseTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, required this.logprobs, });
 
 factory ResponseTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseTextDoneEvent(

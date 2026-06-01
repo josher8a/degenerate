@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_claim_rule_oidc.dart';/// Matches an OIDC claim.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_claim_rule/oidc.dart';/// Matches an OIDC claim.
 /// Requires an OIDC identity provider.
 @immutable final class AccessOidcClaimRule {const AccessOidcClaimRule({required this.oidc});
 
 factory AccessOidcClaimRule.fromJson(Map<String, dynamic> json) { return AccessOidcClaimRule(
-  oidc: AccessOidcClaimRuleOidc.fromJson(json['oidc'] as Map<String, dynamic>),
+  oidc: Oidc.fromJson(json['oidc'] as Map<String, dynamic>),
 ); }
 
-final AccessOidcClaimRuleOidc oidc;
+final Oidc oidc;
 
 Map<String, dynamic> toJson() { return {
   'oidc': oidc.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('oidc'); } 
-AccessOidcClaimRule copyWith({AccessOidcClaimRuleOidc? oidc}) { return AccessOidcClaimRule(
+AccessOidcClaimRule copyWith({Oidc? oidc}) { return AccessOidcClaimRule(
   oidc: oidc ?? this.oidc,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

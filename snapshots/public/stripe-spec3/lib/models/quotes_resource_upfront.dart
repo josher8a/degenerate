@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details.dart';import 'quotes_resource_upfront_line_items.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';/// 
 @immutable final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.amountSubtotal, required this.amountTotal, required this.totalDetails, this.lineItems, });
 
 factory QuotesResourceUpfront.fromJson(Map<String, dynamic> json) { return QuotesResourceUpfront(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  lineItems: json['line_items'] != null ? QuotesResourceUpfrontLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  lineItems: json['line_items'] != null ? CheckoutSessionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
 ); }
 
@@ -17,7 +17,7 @@ final int amountSubtotal;
 final int amountTotal;
 
 /// The line items that will appear on the next invoice after this quote is accepted. This does not include pending invoice items that exist on the customer but may still be included in the next invoice.
-final QuotesResourceUpfrontLineItems? lineItems;
+final CheckoutSessionLineItems? lineItems;
 
 final QuotesResourceTotalDetails totalDetails;
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
       json.containsKey('total_details'); } 
-QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, QuotesResourceUpfrontLineItems Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceUpfront(
+QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, CheckoutSessionLineItems Function()? lineItems, QuotesResourceTotalDetails? totalDetails, }) { return QuotesResourceUpfront(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

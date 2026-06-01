@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_email_report_error.dart';/// Status of this `email` check.
-@immutable final class GelatoEmailReportStatus {const GelatoEmailReportStatus._(this.value);
-
-factory GelatoEmailReportStatus.fromJson(String json) { return switch (json) {
-  'unverified' => unverified,
-  'verified' => verified,
-  _ => GelatoEmailReportStatus._(json),
-}; }
-
-static const GelatoEmailReportStatus unverified = GelatoEmailReportStatus._('unverified');
-
-static const GelatoEmailReportStatus verified = GelatoEmailReportStatus._('verified');
-
-static const List<GelatoEmailReportStatus> values = [unverified, verified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoEmailReportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoEmailReportStatus($value)'; } 
- }
-/// Result from a email check
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_email_report_error.dart';/// Result from a email check
 @immutable final class GelatoEmailReport {const GelatoEmailReport({required this.status, this.email, this.error, });
 
 factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
   email: json['email'] as String?,
   error: json['error'] != null ? GelatoEmailReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
-  status: GelatoEmailReportStatus.fromJson(json['status'] as String),
+  status: GelatoDocumentReportStatus.fromJson(json['status'] as String),
 ); }
 
 /// Email to be verified.
@@ -41,7 +16,7 @@ final String? email;
 final GelatoEmailReportError? error;
 
 /// Status of this `email` check.
-final GelatoEmailReportStatus status;
+final GelatoDocumentReportStatus status;
 
 Map<String, dynamic> toJson() { return {
   'email': ?email,
@@ -49,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? Function()? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
+GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? Function()? error, GelatoDocumentReportStatus? status, }) { return GelatoEmailReport(
   email: email != null ? email() : this.email,
   error: error != null ? error() : this.error,
   status: status ?? this.status,

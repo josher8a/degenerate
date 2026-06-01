@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_export_database_request_dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
-@immutable final class D1ExportDatabaseRequestOutputFormat {const D1ExportDatabaseRequestOutputFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_export_database_request/dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
+@immutable final class OutputFormat {const OutputFormat._(this.value);
 
-factory D1ExportDatabaseRequestOutputFormat.fromJson(String json) { return switch (json) {
+factory OutputFormat.fromJson(String json) { return switch (json) {
   'polling' => polling,
-  _ => D1ExportDatabaseRequestOutputFormat._(json),
+  _ => OutputFormat._(json),
 }; }
 
-static const D1ExportDatabaseRequestOutputFormat polling = D1ExportDatabaseRequestOutputFormat._('polling');
+static const OutputFormat polling = OutputFormat._('polling');
 
-static const List<D1ExportDatabaseRequestOutputFormat> values = [polling];
+static const List<OutputFormat> values = [polling];
 
 final String value;
 
@@ -18,25 +18,25 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1ExportDatabaseRequestOutputFormat && other.value == value; } 
+    other is OutputFormat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1ExportDatabaseRequestOutputFormat($value)'; } 
+@override String toString() { return 'OutputFormat($value)'; } 
  }
 @immutable final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({required this.outputFormat, this.currentBookmark, this.dumpOptions, });
 
 factory D1ExportDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequest(
   currentBookmark: json['current_bookmark'] as String?,
-  dumpOptions: json['dump_options'] != null ? D1ExportDatabaseRequestDumpOptions.fromJson(json['dump_options'] as Map<String, dynamic>) : null,
-  outputFormat: D1ExportDatabaseRequestOutputFormat.fromJson(json['output_format'] as String),
+  dumpOptions: json['dump_options'] != null ? DumpOptions.fromJson(json['dump_options'] as Map<String, dynamic>) : null,
+  outputFormat: OutputFormat.fromJson(json['output_format'] as String),
 ); }
 
 /// To poll an in-progress export, provide the current bookmark (returned by your first polling response)
 final String? currentBookmark;
 
-final D1ExportDatabaseRequestDumpOptions? dumpOptions;
+final DumpOptions? dumpOptions;
 
 /// Specifies that you will poll this endpoint until the export completes
-final D1ExportDatabaseRequestOutputFormat outputFormat;
+final OutputFormat outputFormat;
 
 Map<String, dynamic> toJson() { return {
   'current_bookmark': ?currentBookmark,
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'output_format': outputFormat.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('output_format'); } 
-D1ExportDatabaseRequest copyWith({String Function()? currentBookmark, D1ExportDatabaseRequestDumpOptions Function()? dumpOptions, D1ExportDatabaseRequestOutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
+D1ExportDatabaseRequest copyWith({String Function()? currentBookmark, DumpOptions Function()? dumpOptions, OutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
   currentBookmark: currentBookmark != null ? currentBookmark() : this.currentBookmark,
   dumpOptions: dumpOptions != null ? dumpOptions() : this.dumpOptions,
   outputFormat: outputFormat ?? this.outputFormat,

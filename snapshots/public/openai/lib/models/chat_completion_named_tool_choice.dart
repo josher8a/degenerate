@@ -1,39 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_named_tool_choice_function.dart';/// For function calling, the type is always `function`.
-@immutable final class ChatCompletionNamedToolChoiceType {const ChatCompletionNamedToolChoiceType._(this.value);
-
-factory ChatCompletionNamedToolChoiceType.fromJson(String json) { return switch (json) {
-  'function' => function,
-  _ => ChatCompletionNamedToolChoiceType._(json),
-}; }
-
-static const ChatCompletionNamedToolChoiceType function = ChatCompletionNamedToolChoiceType._('function');
-
-static const List<ChatCompletionNamedToolChoiceType> values = [function];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionNamedToolChoiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionNamedToolChoiceType($value)'; } 
- }
-/// Specifies a tool the model should use. Use to force the model to call a specific function.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/assistants_named_tool_choice/assistants_named_tool_choice_function.dart';/// Specifies a tool the model should use. Use to force the model to call a specific function.
 @immutable final class ChatCompletionNamedToolChoice {const ChatCompletionNamedToolChoice({required this.type, required this.function, });
 
 factory ChatCompletionNamedToolChoice.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoice(
-  type: ChatCompletionNamedToolChoiceType.fromJson(json['type'] as String),
-  function: ChatCompletionNamedToolChoiceFunction.fromJson(json['function'] as Map<String, dynamic>),
+  type: AssistantToolsFunctionType.fromJson(json['type'] as String),
+  function: AssistantsNamedToolChoiceFunction.fromJson(json['function'] as Map<String, dynamic>),
 ); }
 
 /// For function calling, the type is always `function`.
-final ChatCompletionNamedToolChoiceType type;
+final AssistantToolsFunctionType type;
 
-final ChatCompletionNamedToolChoiceFunction function;
+final AssistantsNamedToolChoiceFunction function;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -41,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('function'); } 
-ChatCompletionNamedToolChoice copyWith({ChatCompletionNamedToolChoiceType? type, ChatCompletionNamedToolChoiceFunction? function, }) { return ChatCompletionNamedToolChoice(
+ChatCompletionNamedToolChoice copyWith({AssistantToolsFunctionType? type, AssistantsNamedToolChoiceFunction? function, }) { return ChatCompletionNamedToolChoice(
   type: type ?? this.type,
   function: function ?? this.function,
 ); } 

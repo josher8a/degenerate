@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_r2_table_credentials.dart';import 'cloudflare_pipelines_r2_table_file_naming.dart';import 'cloudflare_pipelines_r2_table_partitioning.dart';import 'cloudflare_pipelines_r2_table_rolling_policy.dart';@immutable final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table_public/rolling_policy.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/cloudflare_pipelines_r2_table_credentials.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/file_naming.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table/partitioning.dart';@immutable final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 
 factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2Table(
   accountId: json['account_id'] as String,
   bucket: json['bucket'] as String,
   credentials: CloudflarePipelinesR2TableCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
-  fileNaming: json['file_naming'] != null ? CloudflarePipelinesR2TableFileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
+  fileNaming: json['file_naming'] != null ? FileNaming.fromJson(json['file_naming'] as Map<String, dynamic>) : null,
   jurisdiction: json['jurisdiction'] as String?,
-  partitioning: json['partitioning'] != null ? CloudflarePipelinesR2TablePartitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
+  partitioning: json['partitioning'] != null ? Partitioning.fromJson(json['partitioning'] as Map<String, dynamic>) : null,
   path: json['path'] as String?,
-  rollingPolicy: json['rolling_policy'] != null ? CloudflarePipelinesR2TableRollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
+  rollingPolicy: json['rolling_policy'] != null ? RollingPolicy.fromJson(json['rolling_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Cloudflare Account ID for the bucket
@@ -22,19 +22,19 @@ final String bucket;
 final CloudflarePipelinesR2TableCredentials credentials;
 
 /// Controls filename prefix/suffix and strategy.
-final CloudflarePipelinesR2TableFileNaming? fileNaming;
+final FileNaming? fileNaming;
 
 /// Jurisdiction this bucket is hosted in
 final String? jurisdiction;
 
 /// Data-layout partitioning for sinks.
-final CloudflarePipelinesR2TablePartitioning? partitioning;
+final Partitioning? partitioning;
 
 /// Subpath within the bucket to write to
 final String? path;
 
 /// Rolling policy for file sinks (when & why to close a file and open a new one).
-final CloudflarePipelinesR2TableRollingPolicy? rollingPolicy;
+final RollingPolicy? rollingPolicy;
 
 Map<String, dynamic> toJson() { return {
   'account_id': accountId,
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') && json['account_id'] is String &&
       json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('credentials'); } 
-CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, CloudflarePipelinesR2TableFileNaming Function()? fileNaming, String Function()? jurisdiction, CloudflarePipelinesR2TablePartitioning Function()? partitioning, String Function()? path, CloudflarePipelinesR2TableRollingPolicy Function()? rollingPolicy, }) { return CloudflarePipelinesR2Table(
+CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, CloudflarePipelinesR2TableCredentials? credentials, FileNaming Function()? fileNaming, String Function()? jurisdiction, Partitioning Function()? partitioning, String Function()? path, RollingPolicy Function()? rollingPolicy, }) { return CloudflarePipelinesR2Table(
   accountId: accountId ?? this.accountId,
   bucket: bucket ?? this.bucket,
   credentials: credentials ?? this.credentials,

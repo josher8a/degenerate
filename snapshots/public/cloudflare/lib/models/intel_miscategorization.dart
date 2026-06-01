@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelMiscategorizationIndicatorType {const IntelMiscategorizationIndicatorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IndicatorType {const IndicatorType._(this.value);
 
-factory IntelMiscategorizationIndicatorType.fromJson(String json) { return switch (json) {
+factory IndicatorType.fromJson(String json) { return switch (json) {
   'domain' => domain,
   'ipv4' => ipv4,
   'ipv6' => ipv6,
   'url' => url,
-  _ => IntelMiscategorizationIndicatorType._(json),
+  _ => IndicatorType._(json),
 }; }
 
-static const IntelMiscategorizationIndicatorType domain = IntelMiscategorizationIndicatorType._('domain');
+static const IndicatorType domain = IndicatorType._('domain');
 
-static const IntelMiscategorizationIndicatorType ipv4 = IntelMiscategorizationIndicatorType._('ipv4');
+static const IndicatorType ipv4 = IndicatorType._('ipv4');
 
-static const IntelMiscategorizationIndicatorType ipv6 = IntelMiscategorizationIndicatorType._('ipv6');
+static const IndicatorType ipv6 = IndicatorType._('ipv6');
 
-static const IntelMiscategorizationIndicatorType url = IntelMiscategorizationIndicatorType._('url');
+static const IndicatorType url = IndicatorType._('url');
 
-static const List<IntelMiscategorizationIndicatorType> values = [domain, ipv4, ipv6, url];
+static const List<IndicatorType> values = [domain, ipv4, ipv6, url];
 
 final String value;
 
@@ -26,16 +26,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IntelMiscategorizationIndicatorType && other.value == value; } 
+    other is IndicatorType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IntelMiscategorizationIndicatorType($value)'; } 
+@override String toString() { return 'IndicatorType($value)'; } 
  }
 @immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
 
 factory IntelMiscategorization.fromJson(Map<String, dynamic> json) { return IntelMiscategorization(
   contentAdds: (json['content_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   contentRemoves: (json['content_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-  indicatorType: json['indicator_type'] != null ? IntelMiscategorizationIndicatorType.fromJson(json['indicator_type'] as String) : null,
+  indicatorType: json['indicator_type'] != null ? IndicatorType.fromJson(json['indicator_type'] as String) : null,
   ip: json['ip'] as String?,
   securityAdds: (json['security_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   securityRemoves: (json['security_removes'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
@@ -48,7 +48,7 @@ final List<int>? contentAdds;
 /// Content category IDs to remove.
 final List<int>? contentRemoves;
 
-final IntelMiscategorizationIndicatorType? indicatorType;
+final IndicatorType? indicatorType;
 
 /// Provide only if indicator_type is `ipv4` or `ipv6`.
 final String? ip;
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_adds', 'content_removes', 'indicator_type', 'ip', 'security_adds', 'security_removes', 'url'}.contains(key)); } 
-IntelMiscategorization copyWith({List<int> Function()? contentAdds, List<int> Function()? contentRemoves, IntelMiscategorizationIndicatorType Function()? indicatorType, String? Function()? ip, List<int> Function()? securityAdds, List<int> Function()? securityRemoves, String Function()? url, }) { return IntelMiscategorization(
+IntelMiscategorization copyWith({List<int> Function()? contentAdds, List<int> Function()? contentRemoves, IndicatorType Function()? indicatorType, String? Function()? ip, List<int> Function()? securityAdds, List<int> Function()? securityRemoves, String Function()? url, }) { return IntelMiscategorization(
   contentAdds: contentAdds != null ? contentAdds() : this.contentAdds,
   contentRemoves: contentRemoves != null ? contentRemoves() : this.contentRemoves,
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,

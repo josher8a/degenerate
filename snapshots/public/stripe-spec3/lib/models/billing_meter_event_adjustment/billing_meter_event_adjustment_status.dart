@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The meter event adjustment's status.
+@immutable final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);
+
+factory BillingMeterEventAdjustmentStatus.fromJson(String json) { return switch (json) {
+  'complete' => complete,
+  'pending' => pending,
+  _ => BillingMeterEventAdjustmentStatus._(json),
+}; }
+
+static const BillingMeterEventAdjustmentStatus complete = BillingMeterEventAdjustmentStatus._('complete');
+
+static const BillingMeterEventAdjustmentStatus pending = BillingMeterEventAdjustmentStatus._('pending');
+
+static const List<BillingMeterEventAdjustmentStatus> values = [complete, pending];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingMeterEventAdjustmentStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingMeterEventAdjustmentStatus($value)'; } 
+ }

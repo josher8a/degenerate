@@ -1,42 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the type of metadata property to index.
-@immutable final class VectorizeCreateMetadataIndexRequestIndexType {const VectorizeCreateMetadataIndexRequestIndexType._(this.value);
-
-factory VectorizeCreateMetadataIndexRequestIndexType.fromJson(String json) { return switch (json) {
-  'string' => string,
-  'number' => number,
-  'boolean' => boolean,
-  _ => VectorizeCreateMetadataIndexRequestIndexType._(json),
-}; }
-
-static const VectorizeCreateMetadataIndexRequestIndexType string = VectorizeCreateMetadataIndexRequestIndexType._('string');
-
-static const VectorizeCreateMetadataIndexRequestIndexType number = VectorizeCreateMetadataIndexRequestIndexType._('number');
-
-static const VectorizeCreateMetadataIndexRequestIndexType boolean = VectorizeCreateMetadataIndexRequestIndexType._('boolean');
-
-static const List<VectorizeCreateMetadataIndexRequestIndexType> values = [string, number, boolean];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorizeCreateMetadataIndexRequestIndexType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorizeCreateMetadataIndexRequestIndexType($value)'; } 
- }
-@immutable final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_create_metadata_index_request/index_type.dart';@immutable final class VectorizeCreateMetadataIndexRequest {const VectorizeCreateMetadataIndexRequest({required this.indexType, required this.propertyName, });
 
 factory VectorizeCreateMetadataIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeCreateMetadataIndexRequest(
-  indexType: VectorizeCreateMetadataIndexRequestIndexType.fromJson(json['indexType'] as String),
+  indexType: IndexType.fromJson(json['indexType'] as String),
   propertyName: json['propertyName'] as String,
 ); }
 
 /// Specifies the type of metadata property to index.
-final VectorizeCreateMetadataIndexRequestIndexType indexType;
+final IndexType indexType;
 
 /// Specifies the metadata property to index.
 final String propertyName;
@@ -47,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('indexType') &&
       json.containsKey('propertyName') && json['propertyName'] is String; } 
-VectorizeCreateMetadataIndexRequest copyWith({VectorizeCreateMetadataIndexRequestIndexType? indexType, String? propertyName, }) { return VectorizeCreateMetadataIndexRequest(
+VectorizeCreateMetadataIndexRequest copyWith({IndexType? indexType, String? propertyName, }) { return VectorizeCreateMetadataIndexRequest(
   indexType: indexType ?? this.indexType,
   propertyName: propertyName ?? this.propertyName,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source.dart';import 'source_mandate_notification_acss_debit_data.dart';import 'source_mandate_notification_bacs_debit_data.dart';import 'source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_acss_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_bacs_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SourceMandateNotificationObject {const SourceMandateNotificationObject._(this.value);
 
 factory SourceMandateNotificationObject.fromJson(String json) { return switch (json) {

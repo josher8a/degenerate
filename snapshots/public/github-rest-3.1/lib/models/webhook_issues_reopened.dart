@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_reopened_issue.dart';@immutable final class WebhookIssuesReopenedAction {const WebhookIssuesReopenedAction._(this.value);
-
-factory WebhookIssuesReopenedAction.fromJson(String json) { return switch (json) {
-  'reopened' => reopened,
-  _ => WebhookIssuesReopenedAction._(json),
-}; }
-
-static const WebhookIssuesReopenedAction reopened = WebhookIssuesReopenedAction._('reopened');
-
-static const List<WebhookIssuesReopenedAction> values = [reopened];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesReopenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesReopenedAction($value)'; } 
- }
-@immutable final class WebhookIssuesReopened {const WebhookIssuesReopened({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_reopened/webhook_issues_reopened_issue.dart';@immutable final class WebhookIssuesReopened {const WebhookIssuesReopened({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesReopened.fromJson(Map<String, dynamic> json) { return WebhookIssuesReopened(
-  action: WebhookIssuesReopenedAction.fromJson(json['action'] as String),
+  action: ProjectReopenedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhookIssuesReopenedIssue.fromJson(json['issue'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookIssuesReopened.fromJson(Map<String, dynamic> json) { return Webho
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssuesReopenedAction action;
+final ProjectReopenedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesReopened copyWith({WebhookIssuesReopenedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesReopenedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesReopened(
+WebhookIssuesReopened copyWith({ProjectReopenedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesReopenedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesReopened(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

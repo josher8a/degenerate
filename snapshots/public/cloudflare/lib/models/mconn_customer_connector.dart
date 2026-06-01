@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_device.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';import 'mconn_uuid.dart';@immutable final class MconnCustomerConnector {const MconnCustomerConnector({required this.activated, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, required this.lastUpdated, required this.notes, required this.timezone, this.device, this.lastHeartbeat, this.lastSeenVersion, this.licenseKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_customer_device.dart';import 'package:pub_cloudflare/models/mconn_day_of_week.dart';import 'package:pub_cloudflare/models/mconn_embargo_date.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnCustomerConnector {const MconnCustomerConnector({required this.activated, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, required this.lastUpdated, required this.notes, required this.timezone, this.device, this.lastHeartbeat, this.lastSeenVersion, this.licenseKey, });
 
 factory MconnCustomerConnector.fromJson(Map<String, dynamic> json) { return MconnCustomerConnector(
   activated: json['activated'] as bool,

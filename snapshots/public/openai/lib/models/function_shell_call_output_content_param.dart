@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_outcome_param.dart';/// Captured stdout and stderr for a portion of a shell tool call output.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_outcome_param.dart';/// Captured stdout and stderr for a portion of a shell tool call output.
 @immutable final class FunctionShellCallOutputContentParam {const FunctionShellCallOutputContentParam({required this.stdout, required this.stderr, required this.outcome, });
 
 factory FunctionShellCallOutputContentParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContentParam(

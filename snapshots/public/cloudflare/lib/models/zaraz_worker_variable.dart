@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_worker_variable_value.dart';@immutable final class ZarazWorkerVariableType {const ZarazWorkerVariableType._(this.value);
-
-factory ZarazWorkerVariableType.fromJson(String json) { return switch (json) {
-  'worker' => worker,
-  _ => ZarazWorkerVariableType._(json),
-}; }
-
-static const ZarazWorkerVariableType worker = ZarazWorkerVariableType._('worker');
-
-static const List<ZarazWorkerVariableType> values = [worker];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazWorkerVariableType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazWorkerVariableType($value)'; } 
- }
-@immutable final class ZarazWorkerVariable {const ZarazWorkerVariable({required this.name, required this.type, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_worker_producer/mq_worker_producer_type.dart';import 'package:pub_cloudflare/models/zaraz_worker_variable/zaraz_worker_variable_value.dart';@immutable final class ZarazWorkerVariable {const ZarazWorkerVariable({required this.name, required this.type, required this.value, });
 
 factory ZarazWorkerVariable.fromJson(Map<String, dynamic> json) { return ZarazWorkerVariable(
   name: json['name'] as String,
-  type: ZarazWorkerVariableType.fromJson(json['type'] as String),
+  type: MqWorkerProducerType.fromJson(json['type'] as String),
   value: ZarazWorkerVariableValue.fromJson(json['value'] as Map<String, dynamic>),
 ); }
 
 final String name;
 
-final ZarazWorkerVariableType type;
+final MqWorkerProducerType type;
 
 final ZarazWorkerVariableValue value;
 
@@ -43,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') &&
       json.containsKey('value'); } 
-ZarazWorkerVariable copyWith({String? name, ZarazWorkerVariableType? type, ZarazWorkerVariableValue? value, }) { return ZarazWorkerVariable(
+ZarazWorkerVariable copyWith({String? name, MqWorkerProducerType? type, ZarazWorkerVariableValue? value, }) { return ZarazWorkerVariable(
   name: name ?? this.name,
   type: type ?? this.type,
   value: value ?? this.value,

@@ -1,39 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-@immutable final class TreasuryFinancialAccountsResourceToggleSettingsStatus {const TreasuryFinancialAccountsResourceToggleSettingsStatus._(this.value);
-
-factory TreasuryFinancialAccountsResourceToggleSettingsStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'pending' => pending,
-  'restricted' => restricted,
-  _ => TreasuryFinancialAccountsResourceToggleSettingsStatus._(json),
-}; }
-
-static const TreasuryFinancialAccountsResourceToggleSettingsStatus active = TreasuryFinancialAccountsResourceToggleSettingsStatus._('active');
-
-static const TreasuryFinancialAccountsResourceToggleSettingsStatus pending = TreasuryFinancialAccountsResourceToggleSettingsStatus._('pending');
-
-static const TreasuryFinancialAccountsResourceToggleSettingsStatus restricted = TreasuryFinancialAccountsResourceToggleSettingsStatus._('restricted');
-
-static const List<TreasuryFinancialAccountsResourceToggleSettingsStatus> values = [active, pending, restricted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceToggleSettingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceToggleSettingsStatus($value)'; } 
- }
-/// Toggle settings for enabling/disabling a feature
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings/treasury_financial_accounts_resource_aba_toggle_settings_status.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Toggle settings for enabling/disabling a feature
 @immutable final class TreasuryFinancialAccountsResourceToggleSettings {const TreasuryFinancialAccountsResourceToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceToggleSettings(
   requested: json['requested'] as bool,
-  status: TreasuryFinancialAccountsResourceToggleSettingsStatus.fromJson(json['status'] as String),
+  status: TreasuryFinancialAccountsResourceAbaToggleSettingsStatus.fromJson(json['status'] as String),
   statusDetails: (json['status_details'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -41,7 +13,7 @@ factory TreasuryFinancialAccountsResourceToggleSettings.fromJson(Map<String, dyn
 final bool requested;
 
 /// Whether the Feature is operational.
-final TreasuryFinancialAccountsResourceToggleSettingsStatus status;
+final TreasuryFinancialAccountsResourceAbaToggleSettingsStatus status;
 
 /// Additional details; includes at least one entry when the status is not `active`.
 final List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails> statusDetails;
@@ -54,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TreasuryFinancialAccountsResourceToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceToggleSettings(
+TreasuryFinancialAccountsResourceToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceAbaToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceToggleSettings(
   requested: requested ?? this.requested,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,

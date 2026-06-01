@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// ResourceQuotaStatus defines the enforced hard limits and observed use.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// ResourceQuotaStatus defines the enforced hard limits and observed use.
 @immutable final class ResourceQuotaStatus {const ResourceQuotaStatus({this.hard, this.used, });
 
 factory ResourceQuotaStatus.fromJson(Map<String, dynamic> json) { return ResourceQuotaStatus(

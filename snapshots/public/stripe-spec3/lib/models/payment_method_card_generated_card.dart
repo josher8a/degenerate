@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_generated_from_payment_method_details.dart';import 'payment_method_card_generated_card_setup_attempt.dart';import 'setup_attempt.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_generated_from_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card/payment_method_card_generated_card_setup_attempt.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';/// 
 @immutable final class PaymentMethodCardGeneratedCard {const PaymentMethodCardGeneratedCard({this.charge, this.paymentMethodDetails, this.setupAttempt, });
 
 factory PaymentMethodCardGeneratedCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCardGeneratedCard(

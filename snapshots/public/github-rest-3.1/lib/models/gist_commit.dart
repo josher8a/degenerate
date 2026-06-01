@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_commit_change_status.dart';import 'simple_user.dart';/// Gist Commit
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_commit/change_status.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist Commit
 @immutable final class GistCommit {const GistCommit({required this.url, required this.version, required this.user, required this.changeStatus, required this.committedAt, });
 
 factory GistCommit.fromJson(Map<String, dynamic> json) { return GistCommit(
   url: Uri.parse(json['url'] as String),
   version: json['version'] as String,
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-  changeStatus: GistCommitChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>),
+  changeStatus: ChangeStatus.fromJson(json['change_status'] as Map<String, dynamic>),
   committedAt: DateTime.parse(json['committed_at'] as String),
 ); }
 
@@ -17,7 +17,7 @@ final String version;
 
 final SimpleUser? user;
 
-final GistCommitChangeStatus changeStatus;
+final ChangeStatus changeStatus;
 
 final DateTime committedAt;
 
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('user') &&
       json.containsKey('change_status') &&
       json.containsKey('committed_at') && json['committed_at'] is String; } 
-GistCommit copyWith({Uri? url, String? version, SimpleUser? Function()? user, GistCommitChangeStatus? changeStatus, DateTime? committedAt, }) { return GistCommit(
+GistCommit copyWith({Uri? url, String? version, SimpleUser? Function()? user, ChangeStatus? changeStatus, DateTime? committedAt, }) { return GistCommit(
   url: url ?? this.url,
   version: version ?? this.version,
   user: user != null ? user() : this.user,

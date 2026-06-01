@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_japan_address.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TerminalLocationObject {const TerminalLocationObject._(this.value);
-
-factory TerminalLocationObject.fromJson(String json) { return switch (json) {
-  'terminal.location' => terminalLocation,
-  _ => TerminalLocationObject._(json),
-}; }
-
-static const TerminalLocationObject terminalLocation = TerminalLocationObject._('terminal.location');
-
-static const List<TerminalLocationObject> values = [terminalLocation];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalLocationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalLocationObject($value)'; } 
- }
-/// A Location represents a grouping of readers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_location/deleted_terminal_location_object.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';/// A Location represents a grouping of readers.
 /// 
 /// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
 @immutable final class TerminalLocation {const TerminalLocation({required this.address, required this.displayName, required this.id, required this.livemode, required this.metadata, required this.object, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayNameKana, this.displayNameKanji, this.phone, });
@@ -38,7 +16,7 @@ factory TerminalLocation.fromJson(Map<String, dynamic> json) { return TerminalLo
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  object: TerminalLocationObject.fromJson(json['object'] as String),
+  object: DeletedTerminalLocationObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
 ); }
 
@@ -70,7 +48,7 @@ final bool livemode;
 final Map<String,String> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final TerminalLocationObject object;
+final DeletedTerminalLocationObject object;
 
 /// The phone number of the location.
 final String? phone;
@@ -95,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object'); } 
-TerminalLocation copyWith({Address? address, LegalEntityJapanAddress Function()? addressKana, LegalEntityJapanAddress Function()? addressKanji, String Function()? configurationOverrides, String? displayName, String Function()? displayNameKana, String Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, TerminalLocationObject? object, String Function()? phone, }) { return TerminalLocation(
+TerminalLocation copyWith({Address? address, LegalEntityJapanAddress Function()? addressKana, LegalEntityJapanAddress Function()? addressKanji, String Function()? configurationOverrides, String? displayName, String Function()? displayNameKana, String Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, DeletedTerminalLocationObject? object, String Function()? phone, }) { return TerminalLocation(
   address: address ?? this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

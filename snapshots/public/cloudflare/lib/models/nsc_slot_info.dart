@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_account_tag.dart';import 'nsc_facility_info.dart';@immutable final class NscSlotInfo {const NscSlotInfo({required this.facility, required this.id, required this.occupied, required this.site, required this.speed, this.account, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_facility_info.dart';@immutable final class NscSlotInfo {const NscSlotInfo({required this.facility, required this.id, required this.occupied, required this.site, required this.speed, this.account, });
 
 factory NscSlotInfo.fromJson(Map<String, dynamic> json) { return NscSlotInfo(
   account: json['account'] != null ? NscAccountTag.fromJson(json['account'] as String) : null,

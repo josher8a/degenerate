@@ -1,39 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';import 'get_credit_notes_preview_lines_tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesType {const GetCreditNotesPreviewLinesType._(this.value);
-
-factory GetCreditNotesPreviewLinesType.fromJson(String json) { return switch (json) {
-  'custom_line_item' => customLineItem,
-  'invoice_line_item' => invoiceLineItem,
-  _ => GetCreditNotesPreviewLinesType._(json),
-}; }
-
-static const GetCreditNotesPreviewLinesType customLineItem = GetCreditNotesPreviewLinesType._('custom_line_item');
-
-static const GetCreditNotesPreviewLinesType invoiceLineItem = GetCreditNotesPreviewLinesType._('invoice_line_item');
-
-static const List<GetCreditNotesPreviewLinesType> values = [customLineItem, invoiceLineItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesType($value)'; } 
- }
-@immutable final class GetCreditNotesPreviewLines {const GetCreditNotesPreviewLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item/credit_note_line_item_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/get_credit_notes_preview_lines_lines_tax_amounts.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/get_credit_notes_preview_lines_lines_tax_amounts_variant1.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_lines/tax_rates.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class GetCreditNotesPreviewLines {const GetCreditNotesPreviewLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
 factory GetCreditNotesPreviewLines.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => GetCreditNotesPreviewLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetCreditNotesPreviewLinesTaxAmountsVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetCreditNotesPreviewLinesTaxRatesVariant2.fromJson(v as String),) : null,
-  type: GetCreditNotesPreviewLinesType.fromJson(json['type'] as String),
+  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => GetCreditNotesPreviewLinesLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  type: CreditNoteLineItemType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }
@@ -46,11 +22,11 @@ final String? invoiceLineItem;
 
 final int? quantity;
 
-final GetCreditNotesPreviewLinesTaxAmounts? taxAmounts;
+final GetCreditNotesPreviewLinesLinesTaxAmounts? taxAmounts;
 
-final GetCreditNotesPreviewLinesTaxRates? taxRates;
+final TaxRates? taxRates;
 
-final GetCreditNotesPreviewLinesType type;
+final CreditNoteLineItemType type;
 
 final int? unitAmount;
 
@@ -68,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetCreditNotesPreviewLines copyWith({int Function()? amount, String Function()? description, String Function()? invoiceLineItem, int Function()? quantity, GetCreditNotesPreviewLinesTaxAmounts Function()? taxAmounts, GetCreditNotesPreviewLinesTaxRates Function()? taxRates, GetCreditNotesPreviewLinesType? type, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLines(
+GetCreditNotesPreviewLines copyWith({int Function()? amount, String Function()? description, String Function()? invoiceLineItem, int Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts Function()? taxAmounts, TaxRates Function()? taxRates, CreditNoteLineItemType? type, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,

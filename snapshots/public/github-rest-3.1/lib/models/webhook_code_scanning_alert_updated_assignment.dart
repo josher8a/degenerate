@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_updated_assignment_alert.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(String json) { return switch (json) {
   'updated_assignment' => updatedAssignment,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignment(
   action: WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(json['action'] as String),
-  alert: WebhookCodeScanningAlertUpdatedAssignmentAlert.fromJson(json['alert'] as Map<String, dynamic>),
+  alert: WebhookCodeScanningAlertAppearedInBranchAlert.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -36,7 +36,7 @@ factory WebhookCodeScanningAlertUpdatedAssignment.fromJson(Map<String, dynamic> 
 final WebhookCodeScanningAlertUpdatedAssignmentAction action;
 
 /// The code scanning alert involved in the event.
-final WebhookCodeScanningAlertUpdatedAssignmentAlert alert;
+final WebhookCodeScanningAlertAppearedInBranchAlert alert;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('alert') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpdatedAssignmentAction? action, WebhookCodeScanningAlertUpdatedAssignmentAlert? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertUpdatedAssignment(
+WebhookCodeScanningAlertUpdatedAssignment copyWith({WebhookCodeScanningAlertUpdatedAssignmentAction? action, WebhookCodeScanningAlertAppearedInBranchAlert? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCodeScanningAlertUpdatedAssignment(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_firewalluablock.dart';@immutable final class FirewallFirewalluablockResponseSingle {const FirewallFirewalluablockResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_firewalluablock.dart';@immutable final class FirewallFirewalluablockResponseSingle {const FirewallFirewalluablockResponseSingle({this.result});
 
 factory FirewallFirewalluablockResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablockResponseSingle(
   result: json['result'] != null ? FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>) : null,

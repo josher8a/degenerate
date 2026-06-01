@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages52.dart';import 'prompt44.dart';typedef WorkersAiPostRunHfGoogleGemma7bItRequest = OneOf2<Prompt44,Messages52>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages10.dart';import 'package:pub_cloudflare/models/prompt.dart';typedef WorkersAiPostRunHfGoogleGemma7bItRequest = OneOf2<Prompt,Messages10>;

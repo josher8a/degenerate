@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_request_promotion.dart';import 'post_promotion_codes_request_restrictions.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/post_promotion_codes_request_restrictions.dart';import 'package:pub_stripe_spec3/models/post_promotion_codes_request/promotion.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
 
 factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequest(
   active: json['active'] as bool?,
@@ -11,7 +11,7 @@ factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return P
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  promotion: PostPromotionCodesRequestPromotion.fromJson(json['promotion'] as Map<String, dynamic>),
+  promotion: Promotion.fromJson(json['promotion'] as Map<String, dynamic>),
   restrictions: json['restrictions'] != null ? PostPromotionCodesRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
 ); }
 
@@ -42,7 +42,7 @@ final int? maxRedemptions;
 final Map<String,String>? metadata;
 
 /// The promotion referenced by this promotion code.
-final PostPromotionCodesRequestPromotion promotion;
+final Promotion promotion;
 
 /// Settings that restrict the redemption of the promotion code.
 final PostPromotionCodesRequestRestrictions? restrictions;
@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('promotion'); } 
-PostPromotionCodesRequest copyWith({bool Function()? active, String Function()? code, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, int Function()? expiresAt, int Function()? maxRedemptions, Map<String, String> Function()? metadata, PostPromotionCodesRequestPromotion? promotion, PostPromotionCodesRequestRestrictions Function()? restrictions, }) { return PostPromotionCodesRequest(
+PostPromotionCodesRequest copyWith({bool Function()? active, String Function()? code, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, int Function()? expiresAt, int Function()? maxRedemptions, Map<String, String> Function()? metadata, Promotion? promotion, PostPromotionCodesRequestRestrictions Function()? restrictions, }) { return PostPromotionCodesRequest(
   active: active != null ? active() : this.active,
   code: code != null ? code() : this.code,
   customer: customer != null ? customer() : this.customer,

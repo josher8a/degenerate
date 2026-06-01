@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools.dart';/// Allowed tool configuration type. Always `allowed_tools`.
-@immutable final class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType._(this.value);
-
-factory ChatCompletionAllowedToolsChoiceType.fromJson(String json) { return switch (json) {
-  'allowed_tools' => allowedTools,
-  _ => ChatCompletionAllowedToolsChoiceType._(json),
-}; }
-
-static const ChatCompletionAllowedToolsChoiceType allowedTools = ChatCompletionAllowedToolsChoiceType._('allowed_tools');
-
-static const List<ChatCompletionAllowedToolsChoiceType> values = [allowedTools];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionAllowedToolsChoiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionAllowedToolsChoiceType($value)'; } 
- }
-/// Constrains the tools available to the model to a pre-defined set.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_allowed_tools.dart';import 'package:pub_openai/models/chat_completion_allowed_tools_choice/chat_completion_allowed_tools_choice_type.dart';/// Constrains the tools available to the model to a pre-defined set.
 /// 
 @immutable final class ChatCompletionAllowedToolsChoice {const ChatCompletionAllowedToolsChoice({required this.type, required this.allowedTools, });
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_action.dart';import 'waitingroom_rule_description.dart';import 'waitingroom_rule_enabled.dart';import 'waitingroom_rule_expression.dart';@immutable final class WaitingroomCreateRule {const WaitingroomCreateRule({required this.action, required this.expression, this.description, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_rule_action.dart';import 'package:pub_cloudflare/models/waitingroom_rule_description.dart';import 'package:pub_cloudflare/models/waitingroom_rule_enabled.dart';import 'package:pub_cloudflare/models/waitingroom_rule_expression.dart';@immutable final class WaitingroomCreateRule {const WaitingroomCreateRule({required this.action, required this.expression, this.description, this.enabled, });
 
 factory WaitingroomCreateRule.fromJson(Map<String, dynamic> json) { return WaitingroomCreateRule(
   action: WaitingroomRuleAction.fromJson(json['action'] as String),

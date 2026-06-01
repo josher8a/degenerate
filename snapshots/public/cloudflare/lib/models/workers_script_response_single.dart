@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_script_response.dart';@immutable final class WorkersScriptResponseSingle {const WorkersScriptResponseSingle({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';@immutable final class WorkersScriptResponseSingle {const WorkersScriptResponseSingle({required this.result});
 
 factory WorkersScriptResponseSingle.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseSingle(
   result: WorkersScriptResponse.fromJson(json['result'] as Map<String, dynamic>),

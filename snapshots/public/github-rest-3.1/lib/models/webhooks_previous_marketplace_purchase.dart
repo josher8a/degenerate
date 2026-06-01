@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_previous_marketplace_purchase_account.dart';import 'webhooks_previous_marketplace_purchase_plan.dart';@immutable final class WebhooksPreviousMarketplacePurchase {const WebhooksPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase/webhooks_marketplace_purchase_account.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase/webhooks_previous_marketplace_purchase_plan.dart';@immutable final class WebhooksPreviousMarketplacePurchase {const WebhooksPreviousMarketplacePurchase({required this.account, required this.billingCycle, required this.freeTrialEndsOn, required this.onFreeTrial, required this.plan, required this.unitCount, this.nextBillingDate, });
 
 factory WebhooksPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) { return WebhooksPreviousMarketplacePurchase(
-  account: WebhooksPreviousMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
+  account: WebhooksMarketplacePurchaseAccount.fromJson(json['account'] as Map<String, dynamic>),
   billingCycle: json['billing_cycle'] as String,
   freeTrialEndsOn: json['free_trial_ends_on'],
   nextBillingDate: json['next_billing_date'] as String?,
@@ -12,7 +12,7 @@ factory WebhooksPreviousMarketplacePurchase.fromJson(Map<String, dynamic> json) 
   unitCount: (json['unit_count'] as num).toInt(),
 ); }
 
-final WebhooksPreviousMarketplacePurchaseAccount account;
+final WebhooksMarketplacePurchaseAccount account;
 
 final String billingCycle;
 
@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
       json.containsKey('unit_count') && json['unit_count'] is num; } 
-WebhooksPreviousMarketplacePurchase copyWith({WebhooksPreviousMarketplacePurchaseAccount? account, String? billingCycle, dynamic Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksPreviousMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhooksPreviousMarketplacePurchase(
+WebhooksPreviousMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount? account, String? billingCycle, dynamic Function()? freeTrialEndsOn, String? Function()? nextBillingDate, bool? onFreeTrial, WebhooksPreviousMarketplacePurchasePlan? plan, int? unitCount, }) { return WebhooksPreviousMarketplacePurchase(
   account: account ?? this.account,
   billingCycle: billingCycle ?? this.billingCycle,
   freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,

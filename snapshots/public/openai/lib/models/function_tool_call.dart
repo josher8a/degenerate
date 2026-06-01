@@ -1,36 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the item. One of `in_progress`, `completed`, or
-/// `incomplete`. Populated when items are returned via API.
-/// 
-@immutable final class FunctionToolCallStatus {const FunctionToolCallStatus._(this.value);
-
-factory FunctionToolCallStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'incomplete' => incomplete,
-  _ => FunctionToolCallStatus._(json),
-}; }
-
-static const FunctionToolCallStatus inProgress = FunctionToolCallStatus._('in_progress');
-
-static const FunctionToolCallStatus completed = FunctionToolCallStatus._('completed');
-
-static const FunctionToolCallStatus incomplete = FunctionToolCallStatus._('incomplete');
-
-static const List<FunctionToolCallStatus> values = [inProgress, completed, incomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionToolCallStatus($value)'; } 
- }
-/// A tool call to run a function. See the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// A tool call to run a function. See the
 /// [function calling guide](/docs/guides/function-calling) for more information.
 /// 
 @immutable final class FunctionToolCall {const FunctionToolCall({required this.type, required this.callId, required this.name, required this.arguments, this.id, this.namespace, this.status, });
@@ -42,7 +12,7 @@ factory FunctionToolCall.fromJson(Map<String, dynamic> json) { return FunctionTo
   namespace: json['namespace'] as String?,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  status: json['status'] != null ? FunctionToolCallStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The unique ID of the function tool call.
@@ -72,7 +42,7 @@ final String arguments;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final FunctionToolCallStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -87,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-FunctionToolCall copyWith({String Function()? id, String? type, String? callId, String Function()? namespace, String? name, String? arguments, FunctionToolCallStatus Function()? status, }) { return FunctionToolCall(
+FunctionToolCall copyWith({String Function()? id, String? type, String? callId, String Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus Function()? status, }) { return FunctionToolCall(
   id: id != null ? id() : this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,

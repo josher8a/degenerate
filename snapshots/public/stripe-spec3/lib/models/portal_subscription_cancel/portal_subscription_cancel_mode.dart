@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
+@immutable final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);
+
+factory PortalSubscriptionCancelMode.fromJson(String json) { return switch (json) {
+  'at_period_end' => atPeriodEnd,
+  'immediately' => immediately,
+  _ => PortalSubscriptionCancelMode._(json),
+}; }
+
+static const PortalSubscriptionCancelMode atPeriodEnd = PortalSubscriptionCancelMode._('at_period_end');
+
+static const PortalSubscriptionCancelMode immediately = PortalSubscriptionCancelMode._('immediately');
+
+static const List<PortalSubscriptionCancelMode> values = [atPeriodEnd, immediately];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PortalSubscriptionCancelMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PortalSubscriptionCancelMode($value)'; } 
+ }

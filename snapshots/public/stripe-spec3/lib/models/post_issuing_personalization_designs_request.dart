@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_personalization_designs_request_carrier_text.dart';import 'post_issuing_personalization_designs_request_preferences.dart';@immutable final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({required this.physicalBundle, this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.preferences, this.transferLookupKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/preferences.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_request/post_issuing_personalization_designs_request_carrier_text.dart';@immutable final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({required this.physicalBundle, this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.preferences, this.transferLookupKey, });
 
 factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: json['card_logo'] as String?,
@@ -10,7 +10,7 @@ factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> j
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String?,
   physicalBundle: json['physical_bundle'] as String,
-  preferences: json['preferences'] != null ? PostIssuingPersonalizationDesignsRequestPreferences.fromJson(json['preferences'] as Map<String, dynamic>) : null,
+  preferences: json['preferences'] != null ? Preferences.fromJson(json['preferences'] as Map<String, dynamic>) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
 ); }
 
@@ -36,7 +36,7 @@ final String? name;
 final String physicalBundle;
 
 /// Information on whether this personalization design is used to create cards when one is not specified.
-final PostIssuingPersonalizationDesignsRequestPreferences? preferences;
+final Preferences? preferences;
 
 /// If set to true, will atomically remove the lookup key from the existing personalization design, and assign it to this personalization design.
 final bool? transferLookupKey;
@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_lookup_key': ?transferLookupKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('physical_bundle') && json['physical_bundle'] is String; } 
-PostIssuingPersonalizationDesignsRequest copyWith({String Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText Function()? carrierText, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? name, String? physicalBundle, PostIssuingPersonalizationDesignsRequestPreferences Function()? preferences, bool Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
+PostIssuingPersonalizationDesignsRequest copyWith({String Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText Function()? carrierText, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? name, String? physicalBundle, Preferences Function()? preferences, bool Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   expand: expand != null ? expand() : this.expand,

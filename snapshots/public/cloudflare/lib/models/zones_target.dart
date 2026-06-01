@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
 sealed class ZonesTarget {const ZonesTarget();
 
 factory ZonesTarget.fromJson(Map<String, dynamic> json) {   if (ZonesUrlTarget.canParse(json)) {

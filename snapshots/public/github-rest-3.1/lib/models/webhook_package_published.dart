@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_package_published_package.dart';@immutable final class WebhookPackagePublishedAction {const WebhookPackagePublishedAction._(this.value);
-
-factory WebhookPackagePublishedAction.fromJson(String json) { return switch (json) {
-  'published' => published,
-  _ => WebhookPackagePublishedAction._(json),
-}; }
-
-static const WebhookPackagePublishedAction published = WebhookPackagePublishedAction._('published');
-
-static const List<WebhookPackagePublishedAction> values = [published];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPackagePublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPackagePublishedAction($value)'; } 
- }
-@immutable final class WebhookPackagePublished {const WebhookPackagePublished({required this.action, required this.package, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/webhook_package_published_action.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/webhook_package_published_package.dart';@immutable final class WebhookPackagePublished {const WebhookPackagePublished({required this.action, required this.package, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookPackagePublished.fromJson(Map<String, dynamic> json) { return WebhookPackagePublished(
   action: WebhookPackagePublishedAction.fromJson(json['action'] as String),

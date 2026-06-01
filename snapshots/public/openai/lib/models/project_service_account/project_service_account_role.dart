@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Project membership role
+@immutable final class ProjectServiceAccountRole {const ProjectServiceAccountRole._(this.value);
+
+factory ProjectServiceAccountRole.fromJson(String json) { return switch (json) {
+  'member' => member,
+  'owner' => owner,
+  _ => ProjectServiceAccountRole._(json),
+}; }
+
+static const ProjectServiceAccountRole member = ProjectServiceAccountRole._('member');
+
+static const ProjectServiceAccountRole owner = ProjectServiceAccountRole._('owner');
+
+static const List<ProjectServiceAccountRole> values = [member, owner];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ProjectServiceAccountRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ProjectServiceAccountRole($value)'; } 
+ }

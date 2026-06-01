@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';import 'email_security_update_domain_response_result.dart';@immutable final class EmailSecurityUpdateDomainResponse {const EmailSecurityUpdateDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_get_domain_response/email_security_get_domain_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityUpdateDomainResponse {const EmailSecurityUpdateDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory EmailSecurityUpdateDomainResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: EmailSecurityUpdateDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: EmailSecurityGetDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
 final List<EmailSecurityMessage> errors;
@@ -15,7 +15,7 @@ final List<EmailSecurityMessage> messages;
 
 final bool success;
 
-final EmailSecurityUpdateDomainResponseResult result;
+final EmailSecurityGetDomainResponseResult result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-EmailSecurityUpdateDomainResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityUpdateDomainResponseResult? result, }) { return EmailSecurityUpdateDomainResponse(
+EmailSecurityUpdateDomainResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityGetDomainResponseResult? result, }) { return EmailSecurityUpdateDomainResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

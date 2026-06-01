@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_search_result_item/commit_search_result_item_parents.dart';import 'package:pub_github_rest_3_1/models/file_commit/commit_tree.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_author.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_committer.dart';import 'package:pub_github_rest_3_1/models/file_commit/file_commit_commit_verification.dart';@immutable final class FileCommitCommit {const FileCommitCommit({this.sha, this.nodeId, this.url, this.htmlUrl, this.author, this.committer, this.message, this.tree, this.parents, this.verification, });
+
+factory FileCommitCommit.fromJson(Map<String, dynamic> json) { return FileCommitCommit(
+  sha: json['sha'] as String?,
+  nodeId: json['node_id'] as String?,
+  url: json['url'] as String?,
+  htmlUrl: json['html_url'] as String?,
+  author: json['author'] != null ? FileCommitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? FileCommitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>) : null,
+  message: json['message'] as String?,
+  tree: json['tree'] != null ? CommitTree.fromJson(json['tree'] as Map<String, dynamic>) : null,
+  parents: (json['parents'] as List<dynamic>?)?.map((e) => CommitSearchResultItemParents.fromJson(e as Map<String, dynamic>)).toList(),
+  verification: json['verification'] != null ? FileCommitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+); }
+
+final String? sha;
+
+final String? nodeId;
+
+final String? url;
+
+final String? htmlUrl;
+
+final FileCommitCommitAuthor? author;
+
+final FileCommitCommitCommitter? committer;
+
+final String? message;
+
+final CommitTree? tree;
+
+final List<CommitSearchResultItemParents>? parents;
+
+final FileCommitCommitVerification? verification;
+
+Map<String, dynamic> toJson() { return {
+  'sha': ?sha,
+  'node_id': ?nodeId,
+  'url': ?url,
+  'html_url': ?htmlUrl,
+  if (author != null) 'author': author?.toJson(),
+  if (committer != null) 'committer': committer?.toJson(),
+  'message': ?message,
+  if (tree != null) 'tree': tree?.toJson(),
+  if (parents != null) 'parents': parents?.map((e) => e.toJson()).toList(),
+  if (verification != null) 'verification': verification?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sha', 'node_id', 'url', 'html_url', 'author', 'committer', 'message', 'tree', 'parents', 'verification'}.contains(key)); } 
+FileCommitCommit copyWith({String Function()? sha, String Function()? nodeId, String Function()? url, String Function()? htmlUrl, FileCommitCommitAuthor Function()? author, FileCommitCommitCommitter Function()? committer, String Function()? message, CommitTree Function()? tree, List<CommitSearchResultItemParents> Function()? parents, FileCommitCommitVerification Function()? verification, }) { return FileCommitCommit(
+  sha: sha != null ? sha() : this.sha,
+  nodeId: nodeId != null ? nodeId() : this.nodeId,
+  url: url != null ? url() : this.url,
+  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+  author: author != null ? author() : this.author,
+  committer: committer != null ? committer() : this.committer,
+  message: message != null ? message() : this.message,
+  tree: tree != null ? tree() : this.tree,
+  parents: parents != null ? parents() : this.parents,
+  verification: verification != null ? verification() : this.verification,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FileCommitCommit &&
+          sha == other.sha &&
+          nodeId == other.nodeId &&
+          url == other.url &&
+          htmlUrl == other.htmlUrl &&
+          author == other.author &&
+          committer == other.committer &&
+          message == other.message &&
+          tree == other.tree &&
+          listEquals(parents, other.parents) &&
+          verification == other.verification; } 
+@override int get hashCode { return Object.hash(sha, nodeId, url, htmlUrl, author, committer, message, tree, Object.hashAll(parents ?? const []), verification); } 
+@override String toString() { return 'FileCommitCommit(sha: $sha, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification)'; } 
+ }

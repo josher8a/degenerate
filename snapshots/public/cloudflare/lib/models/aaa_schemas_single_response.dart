@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_webhooks.dart';@immutable final class AaaSchemasSingleResponse {const AaaSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_webhooks.dart';@immutable final class AaaSchemasSingleResponse {const AaaSchemasSingleResponse({this.result});
 
 factory AaaSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AaaSchemasSingleResponse(
   result: json['result'] != null ? AaaWebhooks.fromJson(json['result'] as Map<String, dynamic>) : null,

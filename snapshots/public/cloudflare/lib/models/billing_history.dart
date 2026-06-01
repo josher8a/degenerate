@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'components_schemas_identifier.dart';import 'currency.dart';import 'schemas_zone.dart';/// The billing item action.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/components_schemas_identifier.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/schemas_zone.dart';/// The billing item action.
 extension type const Action(String value) {
 factory Action.fromJson(String json) => Action(json);
 

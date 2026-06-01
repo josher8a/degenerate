@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'url_annotation_source.dart';/// Type discriminator that is always `url` for this annotation.
-@immutable final class UrlAnnotationType {const UrlAnnotationType._(this.value);
-
-factory UrlAnnotationType.fromJson(String json) { return switch (json) {
-  'url' => url,
-  _ => UrlAnnotationType._(json),
-}; }
-
-static const UrlAnnotationType url = UrlAnnotationType._('url');
-
-static const List<UrlAnnotationType> values = [url];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UrlAnnotationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UrlAnnotationType($value)'; } 
- }
-/// Annotation that references a URL.
-@immutable final class UrlAnnotation {const UrlAnnotation({required this.source, this.type = UrlAnnotationType.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/url_annotation_source.dart';import 'package:pub_openai/models/url_annotation_source/url_annotation_source_type.dart';/// Annotation that references a URL.
+@immutable final class UrlAnnotation {const UrlAnnotation({required this.source, this.type = UrlAnnotationSourceType.url, });
 
 factory UrlAnnotation.fromJson(Map<String, dynamic> json) { return UrlAnnotation(
-  type: UrlAnnotationType.fromJson(json['type'] as String),
+  type: UrlAnnotationSourceType.fromJson(json['type'] as String),
   source: UrlAnnotationSource.fromJson(json['source'] as Map<String, dynamic>),
 ); }
 
 /// Type discriminator that is always `url` for this annotation.
-final UrlAnnotationType type;
+final UrlAnnotationSourceType type;
 
 /// URL referenced by the annotation.
 final UrlAnnotationSource source;
@@ -42,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('source'); } 
-UrlAnnotation copyWith({UrlAnnotationType? type, UrlAnnotationSource? source, }) { return UrlAnnotation(
+UrlAnnotation copyWith({UrlAnnotationSourceType? type, UrlAnnotationSource? source, }) { return UrlAnnotation(
   type: type ?? this.type,
   source: source ?? this.source,
 ); } 

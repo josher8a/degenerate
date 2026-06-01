@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';import 'simple_check_suite.dart';@immutable final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite/check_run_with_simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite.dart';@immutable final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
 
 factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'waiting' => waiting,
@@ -54,37 +54,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckRunWithSimpleCheckSuiteConclusion($value)'; } 
  }
-/// The phase of the lifecycle that the check is currently in.
-@immutable final class CheckRunWithSimpleCheckSuiteStatus {const CheckRunWithSimpleCheckSuiteStatus._(this.value);
-
-factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
-  'queued' => queued,
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'pending' => pending,
-  _ => CheckRunWithSimpleCheckSuiteStatus._(json),
-}; }
-
-static const CheckRunWithSimpleCheckSuiteStatus queued = CheckRunWithSimpleCheckSuiteStatus._('queued');
-
-static const CheckRunWithSimpleCheckSuiteStatus inProgress = CheckRunWithSimpleCheckSuiteStatus._('in_progress');
-
-static const CheckRunWithSimpleCheckSuiteStatus completed = CheckRunWithSimpleCheckSuiteStatus._('completed');
-
-static const CheckRunWithSimpleCheckSuiteStatus pending = CheckRunWithSimpleCheckSuiteStatus._('pending');
-
-static const List<CheckRunWithSimpleCheckSuiteStatus> values = [queued, inProgress, completed, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunWithSimpleCheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuiteStatus($value)'; } 
- }
 /// A check performed on the code of a given code change
 @immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
 
@@ -101,7 +70,7 @@ factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { retur
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  output: CheckRunWithSimpleCheckSuiteOutput.fromJson(json['output'] as Map<String, dynamic>),
+  output: Output.fromJson(json['output'] as Map<String, dynamic>),
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => PullRequestMinimal.fromJson(e as Map<String, dynamic>)).toList(),
   startedAt: DateTime.parse(json['started_at'] as String),
   status: CheckRunWithSimpleCheckSuiteStatus.fromJson(json['status'] as String),
@@ -135,7 +104,7 @@ final String name;
 
 final String nodeId;
 
-final CheckRunWithSimpleCheckSuiteOutput output;
+final Output output;
 
 final List<PullRequestMinimal> pullRequests;
 
@@ -181,7 +150,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
+CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, Output? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
   app: app ?? this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,

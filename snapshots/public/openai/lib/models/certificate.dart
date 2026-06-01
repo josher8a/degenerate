@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'certificate_certificate_details.dart';/// The object type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/certificate/certificate_details.dart';/// The object type.
 /// 
 /// - If creating, updating, or getting a specific certificate, the object type is `certificate`.
 /// - If listing, activating, or deactivating certificates for the organization, the object type is `organization.certificate`.
@@ -41,7 +41,7 @@ factory Certificate.fromJson(Map<String, dynamic> json) { return Certificate(
   id: json['id'] as String,
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
-  certificateDetails: CertificateCertificateDetails.fromJson(json['certificate_details'] as Map<String, dynamic>),
+  certificateDetails: CertificateDetails.fromJson(json['certificate_details'] as Map<String, dynamic>),
   active: json['active'] as bool?,
 ); }
 
@@ -62,7 +62,7 @@ final String name;
 /// The Unix timestamp (in seconds) of when the certificate was uploaded.
 final int createdAt;
 
-final CertificateCertificateDetails certificateDetails;
+final CertificateDetails certificateDetails;
 
 /// Whether the certificate is currently active at the specified scope. Not returned when getting details for a specific certificate.
 final bool? active;
@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('certificate_details'); } 
-Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateCertificateDetails? certificateDetails, bool Function()? active, }) { return Certificate(
+Certificate copyWith({CertificateObject? object, String? id, String? name, int? createdAt, CertificateDetails? certificateDetails, bool Function()? active, }) { return Certificate(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_key.dart';@immutable final class WebhookDeployKeyDeletedAction {const WebhookDeployKeyDeletedAction._(this.value);
-
-factory WebhookDeployKeyDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookDeployKeyDeletedAction._(json),
-}; }
-
-static const WebhookDeployKeyDeletedAction deleted = WebhookDeployKeyDeletedAction._('deleted');
-
-static const List<WebhookDeployKeyDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeployKeyDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeployKeyDeletedAction($value)'; } 
- }
-@immutable final class WebhookDeployKeyDeleted {const WebhookDeployKeyDeleted({required this.action, required this.key, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_deploy_key.dart';@immutable final class WebhookDeployKeyDeleted {const WebhookDeployKeyDeleted({required this.action, required this.key, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDeployKeyDeleted.fromJson(Map<String, dynamic> json) { return WebhookDeployKeyDeleted(
-  action: WebhookDeployKeyDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   key: WebhooksDeployKey.fromJson(json['key'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookDeployKeyDeleted.fromJson(Map<String, dynamic> json) { return Web
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookDeployKeyDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('key') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeployKeyDeleted copyWith({WebhookDeployKeyDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDeployKeyDeleted(
+WebhookDeployKeyDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksDeployKey? key, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDeployKeyDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

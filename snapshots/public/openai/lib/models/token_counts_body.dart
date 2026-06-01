@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation_param.dart';import 'conversation_param2.dart';import 'input_item.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'token_counts_body_input.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';@immutable final class TruncationEnum {const TruncationEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class TruncationEnum {const TruncationEnum._(this.value);
 
 factory TruncationEnum.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -44,7 +44,7 @@ factory TokenCountsBody.fromJson(Map<String, dynamic> json) { return TokenCounts
 final String? model;
 
 /// Text, image, or file inputs to the model, used to generate a response
-final TokenCountsBodyInput? input;
+final CompactResponseMethodPublicBodyInput? input;
 
 /// The unique ID of the previous response to the model. Use this to create multi-turn conversations. Learn more about [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
 final String? previousResponseId;
@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'parallel_tool_calls': ?parallelToolCalls,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'input', 'previous_response_id', 'tools', 'text', 'reasoning', 'truncation', 'instructions', 'conversation', 'tool_choice', 'parallel_tool_calls'}.contains(key)); } 
-TokenCountsBody copyWith({String? Function()? model, TokenCountsBodyInput? Function()? input, String? Function()? previousResponseId, List<Tool>? Function()? tools, ResponseTextParam? Function()? text, Reasoning? Function()? reasoning, TruncationEnum Function()? truncation, String? Function()? instructions, ConversationParam? Function()? conversation, ToolChoiceParam? Function()? toolChoice, bool? Function()? parallelToolCalls, }) { return TokenCountsBody(
+TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublicBodyInput? Function()? input, String? Function()? previousResponseId, List<Tool>? Function()? tools, ResponseTextParam? Function()? text, Reasoning? Function()? reasoning, TruncationEnum Function()? truncation, String? Function()? instructions, ConversationParam? Function()? conversation, ToolChoiceParam? Function()? toolChoice, bool? Function()? parallelToolCalls, }) { return TokenCountsBody(
   model: model != null ? model() : this.model,
   input: input != null ? input() : this.input,
   previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,

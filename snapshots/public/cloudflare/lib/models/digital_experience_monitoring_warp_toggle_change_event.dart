@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
-@immutable final class DigitalExperienceMonitoringWarpToggleChangeEventToggle {const DigitalExperienceMonitoringWarpToggleChangeEventToggle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
+@immutable final class Toggle {const Toggle._(this.value);
 
-factory DigitalExperienceMonitoringWarpToggleChangeEventToggle.fromJson(String json) { return switch (json) {
+factory Toggle.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => DigitalExperienceMonitoringWarpToggleChangeEventToggle._(json),
+  _ => Toggle._(json),
 }; }
 
-static const DigitalExperienceMonitoringWarpToggleChangeEventToggle $on = DigitalExperienceMonitoringWarpToggleChangeEventToggle._('on');
+static const Toggle $on = Toggle._('on');
 
-static const DigitalExperienceMonitoringWarpToggleChangeEventToggle off = DigitalExperienceMonitoringWarpToggleChangeEventToggle._('off');
+static const Toggle off = Toggle._('off');
 
-static const List<DigitalExperienceMonitoringWarpToggleChangeEventToggle> values = [$on, off];
+static const List<Toggle> values = [$on, off];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringWarpToggleChangeEventToggle && other.value == value; } 
+    other is Toggle && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringWarpToggleChangeEventToggle($value)'; } 
+@override String toString() { return 'Toggle($value)'; } 
  }
 @immutable final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });
 
@@ -35,7 +35,7 @@ factory DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(Map<String, dy
   hostname: json['hostname'] as String?,
   serialNumber: json['serial_number'] as String?,
   timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,
-  toggle: json['toggle'] != null ? DigitalExperienceMonitoringWarpToggleChangeEventToggle.fromJson(json['toggle'] as String) : null,
+  toggle: json['toggle'] != null ? Toggle.fromJson(json['toggle'] as String) : null,
   userEmail: json['user_email'] as String?,
 ); }
 
@@ -61,7 +61,7 @@ final String? serialNumber;
 final DigitalExperienceMonitoringTimestamp? timestamp;
 
 /// The state of the WARP toggle.
-final DigitalExperienceMonitoringWarpToggleChangeEventToggle? toggle;
+final Toggle? toggle;
 
 /// Email tied to the device
 final String? userEmail;
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   'user_email': ?userEmail,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_name', 'account_tag', 'device_id', 'device_registration', 'hostname', 'serial_number', 'timestamp', 'toggle', 'user_email'}.contains(key)); } 
-DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String Function()? accountName, String Function()? accountTag, DigitalExperienceMonitoringUuid Function()? deviceId, DigitalExperienceMonitoringUuid Function()? deviceRegistration, String Function()? hostname, String Function()? serialNumber, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringWarpToggleChangeEventToggle Function()? toggle, String Function()? userEmail, }) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
+DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String Function()? accountName, String Function()? accountTag, DigitalExperienceMonitoringUuid Function()? deviceId, DigitalExperienceMonitoringUuid Function()? deviceRegistration, String Function()? hostname, String Function()? serialNumber, DigitalExperienceMonitoringTimestamp Function()? timestamp, Toggle Function()? toggle, String Function()? userEmail, }) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
   accountName: accountName != null ? accountName() : this.accountName,
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   deviceId: deviceId != null ? deviceId() : this.deviceId,

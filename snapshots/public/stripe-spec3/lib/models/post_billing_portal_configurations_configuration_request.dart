@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_configuration_request_business_profile.dart';import 'post_billing_portal_configurations_configuration_request_default_return_url.dart';import 'post_billing_portal_configurations_configuration_request_features.dart';import 'post_billing_portal_configurations_configuration_request_login_page.dart';import 'post_billing_portal_configurations_configuration_request_metadata.dart';import 'post_billing_portal_configurations_configuration_request_name.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequest {const PostBillingPortalConfigurationsConfigurationRequest({this.active, this.businessProfile, this.defaultReturnUrl, this.expand, this.features, this.loginPage, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/default_return_url.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/login_page.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_business_profile.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_features.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_name.dart';@immutable final class PostBillingPortalConfigurationsConfigurationRequest {const PostBillingPortalConfigurationsConfigurationRequest({this.active, this.businessProfile, this.defaultReturnUrl, this.expand, this.features, this.loginPage, this.metadata, this.name, });
 
 factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequest(
   active: json['active'] as bool?,
   businessProfile: json['business_profile'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
-  defaultReturnUrl: json['default_return_url'] != null ? OneOf2.parse(json['default_return_url'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrlVariant2.fromJson(v as String),) : null,
+  defaultReturnUrl: json['default_return_url'] != null ? OneOf2.parse(json['default_return_url'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-  loginPage: json['login_page'] != null ? PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestMetadataVariant2.fromJson(v as String),) : null,
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestNameVariant2.fromJson(v as String),) : null,
+  loginPage: json['login_page'] != null ? LoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Whether the configuration is active and can be used to create portal sessions.
@@ -20,7 +20,7 @@ final bool? active;
 final PostBillingPortalConfigurationsConfigurationRequestBusinessProfile? businessProfile;
 
 /// The default URL to redirect customers to when they click on the portal's link to return to your website. This can be [overriden](https://docs.stripe.com/api/customer_portal/sessions/create#create_portal_session-return_url) when creating the session.
-final PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl? defaultReturnUrl;
+final DefaultReturnUrl? defaultReturnUrl;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -29,10 +29,10 @@ final List<String>? expand;
 final PostBillingPortalConfigurationsConfigurationRequestFeatures? features;
 
 /// The hosted login page for this configuration. Learn more about the portal login page in our [integration docs](https://stripe.com/docs/billing/subscriptions/integrating-customer-portal#share).
-final PostBillingPortalConfigurationsConfigurationRequestLoginPage? loginPage;
+final LoginPage? loginPage;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostBillingPortalConfigurationsConfigurationRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The name of the configuration.
 final PostBillingPortalConfigurationsConfigurationRequestName? name;
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'business_profile', 'default_return_url', 'expand', 'features', 'login_page', 'metadata', 'name'}.contains(key)); } 
-PostBillingPortalConfigurationsConfigurationRequest copyWith({bool Function()? active, PostBillingPortalConfigurationsConfigurationRequestBusinessProfile Function()? businessProfile, PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl Function()? defaultReturnUrl, List<String> Function()? expand, PostBillingPortalConfigurationsConfigurationRequestFeatures Function()? features, PostBillingPortalConfigurationsConfigurationRequestLoginPage Function()? loginPage, PostBillingPortalConfigurationsConfigurationRequestMetadata Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName Function()? name, }) { return PostBillingPortalConfigurationsConfigurationRequest(
+PostBillingPortalConfigurationsConfigurationRequest copyWith({bool Function()? active, PostBillingPortalConfigurationsConfigurationRequestBusinessProfile Function()? businessProfile, DefaultReturnUrl Function()? defaultReturnUrl, List<String> Function()? expand, PostBillingPortalConfigurationsConfigurationRequestFeatures Function()? features, LoginPage Function()? loginPage, Metadata Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName Function()? name, }) { return PostBillingPortalConfigurationsConfigurationRequest(
   active: active != null ? active() : this.active,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   defaultReturnUrl: defaultReturnUrl != null ? defaultReturnUrl() : this.defaultReturnUrl,

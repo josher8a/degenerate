@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_entry_content.dart';import 'web3_content_list_entry_description.dart';import 'web3_content_list_entry_type.dart';import 'web3_identifier.dart';import 'web3_timestamp.dart';/// Specify a content list entry to block.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_content.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_description.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_type.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specify a content list entry to block.
 @immutable final class Web3ContentListEntry {const Web3ContentListEntry({this.content, this.createdOn, this.description, this.id, this.modifiedOn, this.type, });
 
 factory Web3ContentListEntry.fromJson(Map<String, dynamic> json) { return Web3ContentListEntry(

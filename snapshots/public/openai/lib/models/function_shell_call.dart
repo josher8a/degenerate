@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_action.dart';import 'function_shell_call_environment.dart';@immutable final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';@immutable final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
 
 factory LocalShellCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

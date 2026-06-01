@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished crypt key rotation
+@immutable final class FinishRotateCryptKeySuccessK {const FinishRotateCryptKeySuccessK._(this.value);
+
+factory FinishRotateCryptKeySuccessK.fromJson(String json) { return switch (json) {
+  'FinishRotateCryptKeySuccess' => finishRotateCryptKeySuccess,
+  _ => FinishRotateCryptKeySuccessK._(json),
+}; }
+
+static const FinishRotateCryptKeySuccessK finishRotateCryptKeySuccess = FinishRotateCryptKeySuccessK._('FinishRotateCryptKeySuccess');
+
+static const List<FinishRotateCryptKeySuccessK> values = [finishRotateCryptKeySuccess];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FinishRotateCryptKeySuccessK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FinishRotateCryptKeySuccessK($value)'; } 
+ }
+@immutable final class FinishRotateCryptKeySuccess {const FinishRotateCryptKeySuccess({required this.k});
+
+factory FinishRotateCryptKeySuccess.fromJson(Map<String, dynamic> json) { return FinishRotateCryptKeySuccess(
+  k: FinishRotateCryptKeySuccessK.fromJson(json['k'] as String),
+); }
+
+/// Finished crypt key rotation
+final FinishRotateCryptKeySuccessK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+FinishRotateCryptKeySuccess copyWith({FinishRotateCryptKeySuccessK? k}) { return FinishRotateCryptKeySuccess(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FinishRotateCryptKeySuccess &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'FinishRotateCryptKeySuccess(k: $k)'; } 
+ }

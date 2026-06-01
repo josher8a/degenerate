@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_run_output_item_result.dart';import 'eval_run_output_item_sample.dart';/// The type of the object. Always "eval.run.output_item".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_run_output_item/sample.dart';import 'package:pub_openai/models/eval_run_output_item_result.dart';/// The type of the object. Always "eval.run.output_item".
 @immutable final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);
 
 factory EvalRunOutputItemObject.fromJson(String json) { return switch (json) {
@@ -36,7 +36,7 @@ factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOu
   datasourceItemId: (json['datasource_item_id'] as num).toInt(),
   datasourceItem: json['datasource_item'] as Map<String, dynamic>,
   results: (json['results'] as List<dynamic>).map((e) => EvalRunOutputItemResult.fromJson(e as Map<String, dynamic>)).toList(),
-  sample: EvalRunOutputItemSample.fromJson(json['sample'] as Map<String, dynamic>),
+  sample: Sample.fromJson(json['sample'] as Map<String, dynamic>),
 ); }
 
 /// The type of the object. Always "eval.run.output_item".
@@ -67,7 +67,7 @@ final Map<String,dynamic> datasourceItem;
 final List<EvalRunOutputItemResult> results;
 
 /// A sample containing the input and output of the evaluation run.
-final EvalRunOutputItemSample sample;
+final Sample sample;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('datasource_item') &&
       json.containsKey('results') &&
       json.containsKey('sample'); } 
-EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, EvalRunOutputItemSample? sample, }) { return EvalRunOutputItem(
+EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String? runId, String? evalId, int? createdAt, String? status, int? datasourceItemId, Map<String,dynamic>? datasourceItem, List<EvalRunOutputItemResult>? results, Sample? sample, }) { return EvalRunOutputItem(
   object: object ?? this.object,
   id: id ?? this.id,
   runId: runId ?? this.runId,

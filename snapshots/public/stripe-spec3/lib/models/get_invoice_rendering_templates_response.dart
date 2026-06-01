@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_rendering_template.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetInvoiceRenderingTemplatesResponseObject {const GetInvoiceRenderingTemplatesResponseObject._(this.value);
-
-factory GetInvoiceRenderingTemplatesResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetInvoiceRenderingTemplatesResponseObject._(json),
-}; }
-
-static const GetInvoiceRenderingTemplatesResponseObject list = GetInvoiceRenderingTemplatesResponseObject._('list');
-
-static const List<GetInvoiceRenderingTemplatesResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetInvoiceRenderingTemplatesResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetInvoiceRenderingTemplatesResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/invoice_rendering_template.dart';/// 
 @immutable final class GetInvoiceRenderingTemplatesResponse {const GetInvoiceRenderingTemplatesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetInvoiceRenderingTemplatesResponse.fromJson(Map<String, dynamic> json) { return GetInvoiceRenderingTemplatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => InvoiceRenderingTemplate.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetInvoiceRenderingTemplatesResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -39,7 +17,7 @@ final List<InvoiceRenderingTemplate> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetInvoiceRenderingTemplatesResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetInvoiceRenderingTemplatesResponse copyWith({List<InvoiceRenderingTemplate>? data, bool? hasMore, GetInvoiceRenderingTemplatesResponseObject? object, String? url, }) { return GetInvoiceRenderingTemplatesResponse(
+GetInvoiceRenderingTemplatesResponse copyWith({List<InvoiceRenderingTemplate>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetInvoiceRenderingTemplatesResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

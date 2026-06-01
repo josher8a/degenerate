@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_canceled_evidence_additional_documentation.dart';/// Whether the product was a merchandise or service.
-@immutable final class IssuingDisputeCanceledEvidenceProductType {const IssuingDisputeCanceledEvidenceProductType._(this.value);
-
-factory IssuingDisputeCanceledEvidenceProductType.fromJson(String json) { return switch (json) {
-  'merchandise' => merchandise,
-  'service' => service,
-  _ => IssuingDisputeCanceledEvidenceProductType._(json),
-}; }
-
-static const IssuingDisputeCanceledEvidenceProductType merchandise = IssuingDisputeCanceledEvidenceProductType._('merchandise');
-
-static const IssuingDisputeCanceledEvidenceProductType service = IssuingDisputeCanceledEvidenceProductType._('service');
-
-static const List<IssuingDisputeCanceledEvidenceProductType> values = [merchandise, service];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeCanceledEvidenceProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeCanceledEvidenceProductType($value)'; } 
- }
-/// Result of cardholder's attempt to return the product.
-@immutable final class IssuingDisputeCanceledEvidenceReturnStatus {const IssuingDisputeCanceledEvidenceReturnStatus._(this.value);
-
-factory IssuingDisputeCanceledEvidenceReturnStatus.fromJson(String json) { return switch (json) {
-  'merchant_rejected' => merchantRejected,
-  'successful' => successful,
-  _ => IssuingDisputeCanceledEvidenceReturnStatus._(json),
-}; }
-
-static const IssuingDisputeCanceledEvidenceReturnStatus merchantRejected = IssuingDisputeCanceledEvidenceReturnStatus._('merchant_rejected');
-
-static const IssuingDisputeCanceledEvidenceReturnStatus successful = IssuingDisputeCanceledEvidenceReturnStatus._('successful');
-
-static const List<IssuingDisputeCanceledEvidenceReturnStatus> values = [merchantRejected, successful];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeCanceledEvidenceReturnStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeCanceledEvidenceReturnStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_product_type.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_return_status.dart';/// 
 @immutable final class IssuingDisputeCanceledEvidence {const IssuingDisputeCanceledEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory IssuingDisputeCanceledEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeCanceledEvidence(

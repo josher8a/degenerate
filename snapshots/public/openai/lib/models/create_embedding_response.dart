@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_embedding_response_usage.dart';import 'embedding.dart';/// The object type, which is always "list".
-@immutable final class CreateEmbeddingResponseObject {const CreateEmbeddingResponseObject._(this.value);
-
-factory CreateEmbeddingResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => CreateEmbeddingResponseObject._(json),
-}; }
-
-static const CreateEmbeddingResponseObject list = CreateEmbeddingResponseObject._('list');
-
-static const List<CreateEmbeddingResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEmbeddingResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEmbeddingResponseObject($value)'; } 
- }
-@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/create_embedding_response/create_embedding_response_usage.dart';import 'package:pub_openai/models/embedding.dart';@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
 
 factory CreateEmbeddingResponse.fromJson(Map<String, dynamic> json) { return CreateEmbeddingResponse(
   data: (json['data'] as List<dynamic>).map((e) => Embedding.fromJson(e as Map<String, dynamic>)).toList(),
   model: json['model'] as String,
-  object: CreateEmbeddingResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   usage: CreateEmbeddingResponseUsage.fromJson(json['usage'] as Map<String, dynamic>),
 ); }
 
@@ -38,7 +16,7 @@ final List<Embedding> data;
 final String model;
 
 /// The object type, which is always "list".
-final CreateEmbeddingResponseObject object;
+final ChatCompletionListObject object;
 
 /// The usage information for the request.
 final CreateEmbeddingResponseUsage usage;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object') &&
       json.containsKey('usage'); } 
-CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, CreateEmbeddingResponseObject? object, CreateEmbeddingResponseUsage? usage, }) { return CreateEmbeddingResponse(
+CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, ChatCompletionListObject? object, CreateEmbeddingResponseUsage? usage, }) { return CreateEmbeddingResponse(
   data: data ?? this.data,
   model: model ?? this.model,
   object: object ?? this.object,

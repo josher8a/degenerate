@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'meetings_meeting_id_active_livestream_response_data.dart';@immutable final class MeetingsMeetingIdActiveLivestreamResponse {const MeetingsMeetingIdActiveLivestreamResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/meetings_meeting_id_active_livestream_response/meetings_meeting_id_active_livestream_response_data.dart';@immutable final class MeetingsMeetingIdActiveLivestreamResponse {const MeetingsMeetingIdActiveLivestreamResponse({this.data, this.success, });
 
 factory MeetingsMeetingIdActiveLivestreamResponse.fromJson(Map<String, dynamic> json) { return MeetingsMeetingIdActiveLivestreamResponse(
   data: json['data'] != null ? MeetingsMeetingIdActiveLivestreamResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

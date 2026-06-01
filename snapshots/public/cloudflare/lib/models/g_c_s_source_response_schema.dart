@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/g_c_s_source_response_schema/g_c_s_source_response_schema_vendor.dart';@immutable final class GCSSourceResponseSchema {const GCSSourceResponseSchema({this.bucket, this.keys, this.pathPrefix, this.vendor, });
+
+factory GCSSourceResponseSchema.fromJson(Map<String, dynamic> json) { return GCSSourceResponseSchema(
+  bucket: json['bucket'] as String?,
+  keys: (json['keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  pathPrefix: json['pathPrefix'] as String?,
+  vendor: json['vendor'] != null ? GCSSourceResponseSchemaVendor.fromJson(json['vendor'] as String) : null,
+); }
+
+final String? bucket;
+
+final List<String>? keys;
+
+final String? pathPrefix;
+
+final GCSSourceResponseSchemaVendor? vendor;
+
+Map<String, dynamic> toJson() { return {
+  'bucket': ?bucket,
+  'keys': ?keys,
+  'pathPrefix': ?pathPrefix,
+  if (vendor != null) 'vendor': vendor?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
+GCSSourceResponseSchema copyWith({String Function()? bucket, List<String>? Function()? keys, String? Function()? pathPrefix, GCSSourceResponseSchemaVendor Function()? vendor, }) { return GCSSourceResponseSchema(
+  bucket: bucket != null ? bucket() : this.bucket,
+  keys: keys != null ? keys() : this.keys,
+  pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
+  vendor: vendor != null ? vendor() : this.vendor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GCSSourceResponseSchema &&
+          bucket == other.bucket &&
+          listEquals(keys, other.keys) &&
+          pathPrefix == other.pathPrefix &&
+          vendor == other.vendor; } 
+@override int get hashCode { return Object.hash(bucket, Object.hashAll(keys ?? const []), pathPrefix, vendor); } 
+@override String toString() { return 'GCSSourceResponseSchema(bucket: $bucket, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)'; } 
+ }

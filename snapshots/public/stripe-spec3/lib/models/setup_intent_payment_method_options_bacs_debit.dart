@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_bacs_debit.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_bacs_debit.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsBacsDebit {const SetupIntentPaymentMethodOptionsBacsDebit({this.mandateOptions});
 
 factory SetupIntentPaymentMethodOptionsBacsDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsBacsDebit(

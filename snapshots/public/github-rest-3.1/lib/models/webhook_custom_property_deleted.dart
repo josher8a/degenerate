@@ -1,40 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_custom_property_deleted_definition.dart';@immutable final class WebhookCustomPropertyDeletedAction {const WebhookCustomPropertyDeletedAction._(this.value);
-
-factory WebhookCustomPropertyDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookCustomPropertyDeletedAction._(json),
-}; }
-
-static const WebhookCustomPropertyDeletedAction deleted = WebhookCustomPropertyDeletedAction._('deleted');
-
-static const List<WebhookCustomPropertyDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyDeletedAction($value)'; } 
- }
-@immutable final class WebhookCustomPropertyDeleted {const WebhookCustomPropertyDeleted({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_deleted/definition.dart';@immutable final class WebhookCustomPropertyDeleted {const WebhookCustomPropertyDeleted({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyDeleted.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyDeleted(
-  action: WebhookCustomPropertyDeletedAction.fromJson(json['action'] as String),
-  definition: WebhookCustomPropertyDeletedDefinition.fromJson(json['definition'] as Map<String, dynamic>),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
+  definition: Definition.fromJson(json['definition'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookCustomPropertyDeletedAction action;
+final ItemDeletedAction action;
 
-final WebhookCustomPropertyDeletedDefinition definition;
+final Definition definition;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -54,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('definition'); } 
-WebhookCustomPropertyDeleted copyWith({WebhookCustomPropertyDeletedAction? action, WebhookCustomPropertyDeletedDefinition? definition, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookCustomPropertyDeleted(
+WebhookCustomPropertyDeleted copyWith({ItemDeletedAction? action, Definition? definition, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, SimpleUser Function()? sender, }) { return WebhookCustomPropertyDeleted(
   action: action ?? this.action,
   definition: definition ?? this.definition,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

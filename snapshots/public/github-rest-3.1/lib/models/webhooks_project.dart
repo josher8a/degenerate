@@ -1,44 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_project_creator.dart';/// State of the project; either 'open' or 'closed'
-@immutable final class WebhooksProjectState {const WebhooksProjectState._(this.value);
-
-factory WebhooksProjectState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => WebhooksProjectState._(json),
-}; }
-
-static const WebhooksProjectState open = WebhooksProjectState._('open');
-
-static const WebhooksProjectState closed = WebhooksProjectState._('closed');
-
-static const List<WebhooksProjectState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksProjectState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksProjectState($value)'; } 
- }
-@immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
 
 factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksProject(
   body: json['body'] as String?,
   columnsUrl: Uri.parse(json['columns_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
-  creator: json['creator'] != null ? WebhooksProjectCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  creator: json['creator'] != null ? WebhooksMilestone3Creator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   ownerUrl: Uri.parse(json['owner_url'] as String),
-  state: WebhooksProjectState.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
 ); }
@@ -50,7 +25,7 @@ final Uri columnsUrl;
 
 final DateTime createdAt;
 
-final WebhooksProjectCreator? creator;
+final WebhooksMilestone3Creator? creator;
 
 final Uri htmlUrl;
 
@@ -66,7 +41,7 @@ final int number;
 final Uri ownerUrl;
 
 /// State of the project; either 'open' or 'closed'
-final WebhooksProjectState state;
+final IssuesCreateMilestoneRequestState state;
 
 final DateTime updatedAt;
 
@@ -100,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'
       json.containsKey('state') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksProjectCreator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, WebhooksProjectState? state, DateTime? updatedAt, Uri? url, }) { return WebhooksProject(
+WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, Uri? htmlUrl, int? id, String? name, String? nodeId, int? number, Uri? ownerUrl, IssuesCreateMilestoneRequestState? state, DateTime? updatedAt, Uri? url, }) { return WebhooksProject(
   body: body != null ? body() : this.body,
   columnsUrl: columnsUrl ?? this.columnsUrl,
   createdAt: createdAt ?? this.createdAt,

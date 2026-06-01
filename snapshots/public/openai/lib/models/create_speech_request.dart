@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_speech_request_model.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
 @immutable final class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat._(this.value);
 
 factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch (json) {
@@ -38,19 +38,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateSpeechRequestResponseFormat($value)'; } 
  }
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-@immutable final class CreateSpeechRequestStreamFormat {const CreateSpeechRequestStreamFormat._(this.value);
+@immutable final class StreamFormat {const StreamFormat._(this.value);
 
-factory CreateSpeechRequestStreamFormat.fromJson(String json) { return switch (json) {
+factory StreamFormat.fromJson(String json) { return switch (json) {
   'sse' => sse,
   'audio' => audio,
-  _ => CreateSpeechRequestStreamFormat._(json),
+  _ => StreamFormat._(json),
 }; }
 
-static const CreateSpeechRequestStreamFormat sse = CreateSpeechRequestStreamFormat._('sse');
+static const StreamFormat sse = StreamFormat._('sse');
 
-static const CreateSpeechRequestStreamFormat audio = CreateSpeechRequestStreamFormat._('audio');
+static const StreamFormat audio = StreamFormat._('audio');
 
-static const List<CreateSpeechRequestStreamFormat> values = [sse, audio];
+static const List<StreamFormat> values = [sse, audio];
 
 final String value;
 
@@ -58,11 +58,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechRequestStreamFormat && other.value == value; } 
+    other is StreamFormat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSpeechRequestStreamFormat($value)'; } 
+@override String toString() { return 'StreamFormat($value)'; } 
  }
-@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = CreateSpeechRequestStreamFormat.audio, });
+@immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = StreamFormat.audio, });
 
 factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) { return CreateSpeechRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateSpeechRequestModelVariant2.fromJson(v as String),),
@@ -71,7 +71,7 @@ factory CreateSpeechRequest.fromJson(Map<String, dynamic> json) { return CreateS
   voice: OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),),
   responseFormat: json.containsKey('response_format') ? CreateSpeechRequestResponseFormat.fromJson(json['response_format'] as String) : CreateSpeechRequestResponseFormat.mp3,
   speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
-  streamFormat: json.containsKey('stream_format') ? CreateSpeechRequestStreamFormat.fromJson(json['stream_format'] as String) : CreateSpeechRequestStreamFormat.audio,
+  streamFormat: json.containsKey('stream_format') ? StreamFormat.fromJson(json['stream_format'] as String) : StreamFormat.audio,
 ); }
 
 /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
@@ -94,7 +94,7 @@ final CreateSpeechRequestResponseFormat responseFormat;
 final double speed;
 
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-final CreateSpeechRequestStreamFormat streamFormat;
+final StreamFormat streamFormat;
 
 Map<String, dynamic> toJson() { return {
   'model': model.toJson(),
@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('voice'); } 
-CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, CreateSpeechRequestStreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
+CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, StreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
   model: model ?? this.model,
   input: input ?? this.input,
   instructions: instructions != null ? instructions() : this.instructions,

@@ -1,40 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grammar_format_grammar.dart';/// Grammar format. Always `grammar`.
-@immutable final class GrammarFormatType {const GrammarFormatType._(this.value);
-
-factory GrammarFormatType.fromJson(String json) { return switch (json) {
-  'grammar' => grammar,
-  _ => GrammarFormatType._(json),
-}; }
-
-static const GrammarFormatType grammar = GrammarFormatType._('grammar');
-
-static const List<GrammarFormatType> values = [grammar];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GrammarFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GrammarFormatType($value)'; } 
- }
-/// A grammar defined by the user.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';import 'package:pub_openai/models/grammarformat/grammar.dart';/// A grammar defined by the user.
 @immutable final class GrammarFormat {const GrammarFormat({required this.type, required this.grammar, });
 
 factory GrammarFormat.fromJson(Map<String, dynamic> json) { return GrammarFormat(
-  type: GrammarFormatType.fromJson(json['type'] as String),
-  grammar: GrammarFormatGrammar.fromJson(json['grammar'] as Map<String, dynamic>),
+  type: CustomGrammarFormatParamType.fromJson(json['type'] as String),
+  grammar: Grammar.fromJson(json['grammar'] as Map<String, dynamic>),
 ); }
 
 /// Grammar format. Always `grammar`.
-final GrammarFormatType type;
+final CustomGrammarFormatParamType type;
 
 /// Your chosen grammar.
-final GrammarFormatGrammar grammar;
+final Grammar grammar;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -42,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('grammar'); } 
-GrammarFormat copyWith({GrammarFormatType? type, GrammarFormatGrammar? grammar, }) { return GrammarFormat(
+GrammarFormat copyWith({CustomGrammarFormatParamType? type, Grammar? grammar, }) { return GrammarFormat(
   type: type ?? this.type,
   grammar: grammar ?? this.grammar,
 ); } 

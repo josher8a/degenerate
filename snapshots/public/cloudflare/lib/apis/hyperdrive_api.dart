@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/hyperdrive_hyperdrive_config.dart';import '../models/hyperdrive_hyperdrive_config_patch.dart';import '../models/hyperdrive_identifier.dart';/// HyperdriveApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_config_patch.dart';import 'package:pub_cloudflare/models/hyperdrive_identifier.dart';/// HyperdriveApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

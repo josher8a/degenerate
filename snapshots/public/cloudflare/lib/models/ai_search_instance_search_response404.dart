@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_response404_errors.dart';@immutable final class AiSearchInstanceSearchResponse404 {const AiSearchInstanceSearchResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class AiSearchInstanceSearchResponse404 {const AiSearchInstanceSearchResponse404({required this.errors, required this.success, });
 
 factory AiSearchInstanceSearchResponse404.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponse404(
-  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceSearchResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<AiSearchInstanceSearchResponse404Errors> errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-AiSearchInstanceSearchResponse404 copyWith({List<AiSearchInstanceSearchResponse404Errors>? errors, bool? success, }) { return AiSearchInstanceSearchResponse404(
+AiSearchInstanceSearchResponse404 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, bool? success, }) { return AiSearchInstanceSearchResponse404(
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 

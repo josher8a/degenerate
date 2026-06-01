@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice_consent`.
-@immutable final class VoiceConsentResourceObject {const VoiceConsentResourceObject._(this.value);
-
-factory VoiceConsentResourceObject.fromJson(String json) { return switch (json) {
-  'audio.voice_consent' => audioVoiceConsent,
-  _ => VoiceConsentResourceObject._(json),
-}; }
-
-static const VoiceConsentResourceObject audioVoiceConsent = VoiceConsentResourceObject._('audio.voice_consent');
-
-static const List<VoiceConsentResourceObject> values = [audioVoiceConsent];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceConsentResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceConsentResourceObject($value)'; } 
- }
-/// A consent recording used to authorize creation of a custom voice.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_consent_deleted_resource/voice_consent_deleted_resource_object.dart';/// A consent recording used to authorize creation of a custom voice.
 @immutable final class VoiceConsentResource {const VoiceConsentResource({required this.object, required this.id, required this.name, required this.language, required this.createdAt, });
 
 factory VoiceConsentResource.fromJson(Map<String, dynamic> json) { return VoiceConsentResource(
-  object: VoiceConsentResourceObject.fromJson(json['object'] as String),
+  object: VoiceConsentDeletedResourceObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   language: json['language'] as String,
@@ -34,7 +12,7 @@ factory VoiceConsentResource.fromJson(Map<String, dynamic> json) { return VoiceC
 ); }
 
 /// The object type, which is always `audio.voice_consent`.
-final VoiceConsentResourceObject object;
+final VoiceConsentDeletedResourceObject object;
 
 /// The consent recording identifier.
 final String id;
@@ -60,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('language') && json['language'] is String &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-VoiceConsentResource copyWith({VoiceConsentResourceObject? object, String? id, String? name, String? language, int? createdAt, }) { return VoiceConsentResource(
+VoiceConsentResource copyWith({VoiceConsentDeletedResourceObject? object, String? id, String? name, String? language, int? createdAt, }) { return VoiceConsentResource(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_evidence.dart';import 'dispute_evidence_cancellation_policy.dart';import 'dispute_evidence_customer_communication.dart';import 'dispute_evidence_customer_signature.dart';import 'dispute_evidence_duplicate_charge_documentation.dart';import 'dispute_evidence_receipt.dart';import 'dispute_evidence_refund_policy.dart';import 'dispute_evidence_service_documentation.dart';import 'dispute_evidence_shipping_documentation.dart';import 'dispute_evidence_uncategorized_file.dart';import 'file.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_enhanced_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/cancellation_policy.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/customer_communication.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/customer_signature.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/dispute_evidence_receipt.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/duplicate_charge_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/refund_policy.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/service_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/shipping_documentation.dart';import 'package:pub_stripe_spec3/models/dispute_evidence/uncategorized_file.dart';import 'package:pub_stripe_spec3/models/file.dart';/// 
 @immutable final class DisputeEvidence {const DisputeEvidence({required this.enhancedEvidence, this.accessActivityLog, this.billingAddress, this.cancellationPolicy, this.cancellationPolicyDisclosure, this.cancellationRebuttal, this.customerCommunication, this.customerEmailAddress, this.customerName, this.customerPurchaseIp, this.customerSignature, this.duplicateChargeDocumentation, this.duplicateChargeExplanation, this.duplicateChargeId, this.productDescription, this.receipt, this.refundPolicy, this.refundPolicyDisclosure, this.refundRefusalExplanation, this.serviceDate, this.serviceDocumentation, this.shippingAddress, this.shippingCarrier, this.shippingDate, this.shippingDocumentation, this.shippingTrackingNumber, this.uncategorizedFile, this.uncategorizedText, });
 
 factory DisputeEvidence.fromJson(Map<String, dynamic> json) { return DisputeEvidence(
@@ -41,7 +41,7 @@ final String? accessActivityLog;
 final String? billingAddress;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Your subscription cancellation policy, as shown to the customer.
-final DisputeEvidenceCancellationPolicy? cancellationPolicy;
+final CancellationPolicy? cancellationPolicy;
 
 /// An explanation of how and when the customer was shown your refund policy prior to purchase.
 final String? cancellationPolicyDisclosure;
@@ -50,7 +50,7 @@ final String? cancellationPolicyDisclosure;
 final String? cancellationRebuttal;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Any communication with the customer that you feel is relevant to your case. Examples include emails proving that the customer received the product or service, or demonstrating their use of or satisfaction with the product or service.
-final DisputeEvidenceCustomerCommunication? customerCommunication;
+final CustomerCommunication? customerCommunication;
 
 /// The email address of the customer.
 final String? customerEmailAddress;
@@ -62,10 +62,10 @@ final String? customerName;
 final String? customerPurchaseIp;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) A relevant document or contract showing the customer's signature.
-final DisputeEvidenceCustomerSignature? customerSignature;
+final CustomerSignature? customerSignature;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Documentation for the prior charge that can uniquely identify the charge, such as a receipt, shipping label, work order, etc. This document should be paired with a similar document from the disputed payment that proves the two payments are separate.
-final DisputeEvidenceDuplicateChargeDocumentation? duplicateChargeDocumentation;
+final DuplicateChargeDocumentation? duplicateChargeDocumentation;
 
 /// An explanation of the difference between the disputed charge versus the prior charge that appears to be a duplicate.
 final String? duplicateChargeExplanation;
@@ -82,7 +82,7 @@ final String? productDescription;
 final DisputeEvidenceReceipt? receipt;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Your refund policy, as shown to the customer.
-final DisputeEvidenceRefundPolicy? refundPolicy;
+final RefundPolicy? refundPolicy;
 
 /// Documentation demonstrating that the customer was shown your refund policy prior to purchase.
 final String? refundPolicyDisclosure;
@@ -94,7 +94,7 @@ final String? refundRefusalExplanation;
 final String? serviceDate;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Documentation showing proof that a service was provided to the customer. This could include a copy of a signed contract, work order, or other form of written agreement.
-final DisputeEvidenceServiceDocumentation? serviceDocumentation;
+final ServiceDocumentation? serviceDocumentation;
 
 /// The address to which a physical product was shipped. You should try to include as complete address information as possible.
 final String? shippingAddress;
@@ -106,13 +106,13 @@ final String? shippingCarrier;
 final String? shippingDate;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Documentation showing proof that a product was shipped to the customer at the same address the customer provided to you. This could include a copy of the shipment receipt, shipping label, etc. It should show the customer's full shipping address, if possible.
-final DisputeEvidenceShippingDocumentation? shippingDocumentation;
+final ShippingDocumentation? shippingDocumentation;
 
 /// The tracking number for a physical product, obtained from the delivery service. If multiple tracking numbers were generated for this purchase, please separate them with commas.
 final String? shippingTrackingNumber;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Any additional evidence or statements.
-final DisputeEvidenceUncategorizedFile? uncategorizedFile;
+final UncategorizedFile? uncategorizedFile;
 
 /// Any additional evidence or statements.
 final String? uncategorizedText;
@@ -148,7 +148,7 @@ Map<String, dynamic> toJson() { return {
   'uncategorized_text': ?uncategorizedText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enhanced_evidence'); } 
-DisputeEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, DisputeEvidenceCancellationPolicy? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, DisputeEvidenceCustomerCommunication? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, DisputeEvidenceCustomerSignature? Function()? customerSignature, DisputeEvidenceDuplicateChargeDocumentation? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, String? Function()? productDescription, DisputeEvidenceReceipt? Function()? receipt, DisputeEvidenceRefundPolicy? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, DisputeEvidenceServiceDocumentation? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, DisputeEvidenceShippingDocumentation? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, DisputeEvidenceUncategorizedFile? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) { return DisputeEvidence(
+DisputeEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, CancellationPolicy? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, CustomerCommunication? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, CustomerSignature? Function()? customerSignature, DuplicateChargeDocumentation? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, String? Function()? productDescription, DisputeEvidenceReceipt? Function()? receipt, RefundPolicy? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, ServiceDocumentation? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, ShippingDocumentation? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, UncategorizedFile? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) { return DisputeEvidence(
   accessActivityLog: accessActivityLog != null ? accessActivityLog() : this.accessActivityLog,
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   cancellationPolicy: cancellationPolicy != null ? cancellationPolicy() : this.cancellationPolicy,

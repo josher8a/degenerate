@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert_dismissal_request_simple_requester.dart';/// The current status of the dismissal request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple/requester.dart';/// The current status of the dismissal request.
 @immutable final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);
 
 factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String json) { return switch (json) {
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 factory DependabotAlertDismissalRequestSimple.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimple(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   status: json['status'] != null ? DependabotAlertDismissalRequestSimpleStatus.fromJson(json['status'] as String) : null,
-  requester: json['requester'] != null ? DependabotAlertDismissalRequestSimpleRequester.fromJson(json['requester'] as Map<String, dynamic>) : null,
+  requester: json['requester'] != null ? Requester.fromJson(json['requester'] as Map<String, dynamic>) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
@@ -49,7 +49,7 @@ final int? id;
 final DependabotAlertDismissalRequestSimpleStatus? status;
 
 /// The user who requested the dismissal.
-final DependabotAlertDismissalRequestSimpleRequester? requester;
+final Requester? requester;
 
 /// The date and time when the dismissal request was created.
 final DateTime? createdAt;
@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status', 'requester', 'created_at', 'url'}.contains(key)); } 
-DependabotAlertDismissalRequestSimple copyWith({int Function()? id, DependabotAlertDismissalRequestSimpleStatus Function()? status, DependabotAlertDismissalRequestSimpleRequester Function()? requester, DateTime Function()? createdAt, Uri Function()? url, }) { return DependabotAlertDismissalRequestSimple(
+DependabotAlertDismissalRequestSimple copyWith({int Function()? id, DependabotAlertDismissalRequestSimpleStatus Function()? status, Requester Function()? requester, DateTime Function()? createdAt, Uri Function()? url, }) { return DependabotAlertDismissalRequestSimple(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
   requester: requester != null ? requester() : this.requester,

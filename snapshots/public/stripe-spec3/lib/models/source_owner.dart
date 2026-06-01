@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });
 
 factory SourceOwner.fromJson(Map<String, dynamic> json) { return SourceOwner(

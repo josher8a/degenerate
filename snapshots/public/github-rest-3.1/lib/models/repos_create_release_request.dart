@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-@immutable final class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest._(this.value);
-
-factory ReposCreateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
-  'true' => $true,
-  'false' => $false,
-  'legacy' => legacy,
-  _ => ReposCreateReleaseRequestMakeLatest._(json),
-}; }
-
-static const ReposCreateReleaseRequestMakeLatest $true = ReposCreateReleaseRequestMakeLatest._('true');
-
-static const ReposCreateReleaseRequestMakeLatest $false = ReposCreateReleaseRequestMakeLatest._('false');
-
-static const ReposCreateReleaseRequestMakeLatest legacy = ReposCreateReleaseRequestMakeLatest._('legacy');
-
-static const List<ReposCreateReleaseRequestMakeLatest> values = [$true, $false, legacy];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateReleaseRequestMakeLatest && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateReleaseRequestMakeLatest($value)'; } 
- }
-@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_release_request/repos_create_release_request_make_latest.dart';@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
 
 factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposCreateReleaseRequest(
   tagName: json['tag_name'] as String,

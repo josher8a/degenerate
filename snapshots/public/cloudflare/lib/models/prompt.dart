@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt_response_format.dart';@immutable final class Prompt {const Prompt({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens = 2000, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class Prompt {const Prompt({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens = 2000, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
 
 factory Prompt.fromJson(Map<String, dynamic> json) { return Prompt(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
@@ -10,7 +10,7 @@ factory Prompt.fromJson(Map<String, dynamic> json) { return Prompt(
   prompt: json['prompt'] as String,
   raw: json.containsKey('raw') ? json['raw'] as bool : false,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null ? PromptResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
+  responseFormat: json['response_format'] != null ? MessagesResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
@@ -39,7 +39,7 @@ final bool raw;
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
 
-final PromptResponseFormat? responseFormat;
+final MessagesResponseFormat? responseFormat;
 
 /// Random seed for reproducibility of the generation.
 final int? seed;
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt copyWith({double Function()? frequencyPenalty, String Function()? lora, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, PromptResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt(
+Prompt copyWith({double Function()? frequencyPenalty, String Function()? lora, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, MessagesResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   lora: lora != null ? lora() : this.lora,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

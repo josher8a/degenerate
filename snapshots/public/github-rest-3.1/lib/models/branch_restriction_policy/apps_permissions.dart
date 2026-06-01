@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsPermissions {const AppsPermissions({this.metadata, this.contents, this.issues, this.singleFile, });
+
+factory AppsPermissions.fromJson(Map<String, dynamic> json) { return AppsPermissions(
+  metadata: json['metadata'] as String?,
+  contents: json['contents'] as String?,
+  issues: json['issues'] as String?,
+  singleFile: json['single_file'] as String?,
+); }
+
+final String? metadata;
+
+final String? contents;
+
+final String? issues;
+
+final String? singleFile;
+
+Map<String, dynamic> toJson() { return {
+  'metadata': ?metadata,
+  'contents': ?contents,
+  'issues': ?issues,
+  'single_file': ?singleFile,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'contents', 'issues', 'single_file'}.contains(key)); } 
+AppsPermissions copyWith({String Function()? metadata, String Function()? contents, String Function()? issues, String Function()? singleFile, }) { return AppsPermissions(
+  metadata: metadata != null ? metadata() : this.metadata,
+  contents: contents != null ? contents() : this.contents,
+  issues: issues != null ? issues() : this.issues,
+  singleFile: singleFile != null ? singleFile() : this.singleFile,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AppsPermissions &&
+          metadata == other.metadata &&
+          contents == other.contents &&
+          issues == other.issues &&
+          singleFile == other.singleFile; } 
+@override int get hashCode { return Object.hash(metadata, contents, issues, singleFile); } 
+@override String toString() { return 'AppsPermissions(metadata: $metadata, contents: $contents, issues: $issues, singleFile: $singleFile)'; } 
+ }

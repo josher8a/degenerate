@@ -3,11 +3,11 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/error_model.dart';
-import '../models/n3_incident.dart';
-import '../models/new.dart';
-import '../models/phase.dart';
-import '../models/true.dart';
+import 'package:pub_unhinged/models/error_model.dart';
+import 'package:pub_unhinged/models/n3_incident.dart';
+import 'package:pub_unhinged/models/new.dart';
+import 'package:pub_unhinged/models/phase.dart';
+import 'package:pub_unhinged/models/true.dart';
 
 /// IncidentsApi operations.
 ///

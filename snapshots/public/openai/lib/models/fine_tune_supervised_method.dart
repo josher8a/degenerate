@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_supervised_hyperparameters.dart';/// Configuration for the supervised fine-tuning method.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_supervised_hyperparameters.dart';/// Configuration for the supervised fine-tuning method.
 @immutable final class FineTuneSupervisedMethod {const FineTuneSupervisedMethod({this.hyperparameters});
 
 factory FineTuneSupervisedMethod.fromJson(Map<String, dynamic> json) { return FineTuneSupervisedMethod(

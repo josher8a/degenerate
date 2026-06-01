@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/keyless_ssl_for_a_zone_create_keyless_ssl_configuration_request.dart';import '../models/keyless_ssl_for_a_zone_edit_keyless_ssl_configuration_request.dart';import '../models/tls_certificates_and_hostnames_base.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_keyless_response_single_id_result.dart';/// KeylessSslForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/keyless_ssl_for_a_zone_create_keyless_ssl_configuration_request.dart';import 'package:pub_cloudflare/models/keyless_ssl_for_a_zone_edit_keyless_ssl_configuration_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_base.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// KeylessSslForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -105,7 +105,7 @@ return execute(
 /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
 ///
 /// `DELETE /zones/{zone_id}/keyless_certificates/{keyless_certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesKeylessResponseSingleIdResult?, Never>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> keylessSslForAZoneDeleteKeylessSslConfiguration({required TlsCertificatesAndHostnamesIdentifier keylessCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -118,7 +118,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesKeylessResponseSingleIdResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

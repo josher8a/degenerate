@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_access_application_id.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_identifier.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for access_application_policy resources (without type discriminator)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';/// Base schema for access_application_policy resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase {const ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase({required this.accessApplicationId, required this.etag, required this.id, required this.name, required this.tags, required this.zoneId, });
 
 factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(

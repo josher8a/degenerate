@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines.dart';import 'post_credit_notes_request_refunds.dart';import 'post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
-@immutable final class PostCreditNotesRequestEmailType {const PostCreditNotesRequestEmailType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_lines.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_refunds.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
+@immutable final class EmailType {const EmailType._(this.value);
 
-factory PostCreditNotesRequestEmailType.fromJson(String json) { return switch (json) {
+factory EmailType.fromJson(String json) { return switch (json) {
   'credit_note' => creditNote,
   'none' => none,
-  _ => PostCreditNotesRequestEmailType._(json),
+  _ => EmailType._(json),
 }; }
 
-static const PostCreditNotesRequestEmailType creditNote = PostCreditNotesRequestEmailType._('credit_note');
+static const EmailType creditNote = EmailType._('credit_note');
 
-static const PostCreditNotesRequestEmailType none = PostCreditNotesRequestEmailType._('none');
+static const EmailType none = EmailType._('none');
 
-static const List<PostCreditNotesRequestEmailType> values = [creditNote, none];
+static const List<EmailType> values = [creditNote, none];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreditNotesRequestEmailType && other.value == value; } 
+    other is EmailType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreditNotesRequestEmailType($value)'; } 
+@override String toString() { return 'EmailType($value)'; } 
  }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
 @immutable final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
@@ -62,7 +62,7 @@ factory PostCreditNotesRequest.fromJson(Map<String, dynamic> json) { return Post
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   creditAmount: json['credit_amount'] != null ? (json['credit_amount'] as num).toInt() : null,
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
-  emailType: json['email_type'] != null ? PostCreditNotesRequestEmailType.fromJson(json['email_type'] as String) : null,
+  emailType: json['email_type'] != null ? EmailType.fromJson(json['email_type'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoice: json['invoice'] as String,
   lines: (json['lines'] as List<dynamic>?)?.map((e) => PostCreditNotesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
@@ -85,7 +85,7 @@ final int? creditAmount;
 final int? effectiveAt;
 
 /// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
-final PostCreditNotesRequestEmailType? emailType;
+final EmailType? emailType;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -134,7 +134,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') && json['invoice'] is String; } 
-PostCreditNotesRequest copyWith({int Function()? amount, int Function()? creditAmount, int Function()? effectiveAt, PostCreditNotesRequestEmailType Function()? emailType, List<String> Function()? expand, String? invoice, List<PostCreditNotesRequestLines> Function()? lines, String Function()? memo, Map<String, String> Function()? metadata, int Function()? outOfBandAmount, PostCreditNotesRequestReason Function()? reason, int Function()? refundAmount, List<PostCreditNotesRequestRefunds> Function()? refunds, PostCreditNotesRequestShippingCost Function()? shippingCost, }) { return PostCreditNotesRequest(
+PostCreditNotesRequest copyWith({int Function()? amount, int Function()? creditAmount, int Function()? effectiveAt, EmailType Function()? emailType, List<String> Function()? expand, String? invoice, List<PostCreditNotesRequestLines> Function()? lines, String Function()? memo, Map<String, String> Function()? metadata, int Function()? outOfBandAmount, PostCreditNotesRequestReason Function()? reason, int Function()? refundAmount, List<PostCreditNotesRequestRefunds> Function()? refunds, PostCreditNotesRequestShippingCost Function()? shippingCost, }) { return PostCreditNotesRequest(
   amount: amount != null ? amount() : this.amount,
   creditAmount: creditAmount != null ? creditAmount() : this.creditAmount,
   effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,

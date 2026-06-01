@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_deployment_annotations.dart';import 'workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_annotations.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
 
 factory WorkersDeploymentStrategy.fromJson(String json) { return switch (json) {
   'percentage' => percentage,

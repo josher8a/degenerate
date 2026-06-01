@@ -1,57 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account`
-@immutable final class ProjectServiceAccountObject {const ProjectServiceAccountObject._(this.value);
-
-factory ProjectServiceAccountObject.fromJson(String json) { return switch (json) {
-  'organization.project.service_account' => organizationProjectServiceAccount,
-  _ => ProjectServiceAccountObject._(json),
-}; }
-
-static const ProjectServiceAccountObject organizationProjectServiceAccount = ProjectServiceAccountObject._('organization.project.service_account');
-
-static const List<ProjectServiceAccountObject> values = [organizationProjectServiceAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectServiceAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectServiceAccountObject($value)'; } 
- }
-/// `owner` or `member`
-@immutable final class ProjectServiceAccountRole {const ProjectServiceAccountRole._(this.value);
-
-factory ProjectServiceAccountRole.fromJson(String json) { return switch (json) {
-  'owner' => owner,
-  'member' => member,
-  _ => ProjectServiceAccountRole._(json),
-}; }
-
-static const ProjectServiceAccountRole owner = ProjectServiceAccountRole._('owner');
-
-static const ProjectServiceAccountRole member = ProjectServiceAccountRole._('member');
-
-static const List<ProjectServiceAccountRole> values = [owner, member];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectServiceAccountRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectServiceAccountRole($value)'; } 
- }
-/// Represents an individual service account in a project.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';import 'package:pub_openai/models/project_service_account_create_response/project_service_account_create_response_object.dart';/// Represents an individual service account in a project.
 @immutable final class ProjectServiceAccount {const ProjectServiceAccount({required this.object, required this.id, required this.name, required this.role, required this.createdAt, });
 
 factory ProjectServiceAccount.fromJson(Map<String, dynamic> json) { return ProjectServiceAccount(
-  object: ProjectServiceAccountObject.fromJson(json['object'] as String),
+  object: ProjectServiceAccountCreateResponseObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   name: json['name'] as String,
   role: ProjectServiceAccountRole.fromJson(json['role'] as String),
@@ -59,7 +12,7 @@ factory ProjectServiceAccount.fromJson(Map<String, dynamic> json) { return Proje
 ); }
 
 /// The object type, which is always `organization.project.service_account`
-final ProjectServiceAccountObject object;
+final ProjectServiceAccountCreateResponseObject object;
 
 /// The identifier, which can be referenced in API endpoints
 final String id;
@@ -85,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('role') &&
       json.containsKey('created_at') && json['created_at'] is num; } 
-ProjectServiceAccount copyWith({ProjectServiceAccountObject? object, String? id, String? name, ProjectServiceAccountRole? role, int? createdAt, }) { return ProjectServiceAccount(
+ProjectServiceAccount copyWith({ProjectServiceAccountCreateResponseObject? object, String? id, String? name, ProjectServiceAccountRole? role, int? createdAt, }) { return ProjectServiceAccount(
   object: object ?? this.object,
   id: id ?? this.id,
   name: name ?? this.name,

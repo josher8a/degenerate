@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_tracing_param.dart';/// Workflow reference and overrides applied to the chat session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/workflow_tracing_param.dart';/// Workflow reference and overrides applied to the chat session.
 @immutable final class WorkflowParam {const WorkflowParam({required this.id, this.version, this.stateVariables, this.tracing, });
 
 factory WorkflowParam.fromJson(Map<String, dynamic> json) { return WorkflowParam(

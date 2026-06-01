@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_catalog.dart';import '../models/r2_data_catalog_catalog_activation_response.dart';import '../models/r2_data_catalog_catalog_list.dart';import '../models/response_common_failure55.dart';/// R2CatalogManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_activation_response.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_list.dart';import 'package:pub_cloudflare/models/response_common_failure55.dart';/// R2CatalogManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

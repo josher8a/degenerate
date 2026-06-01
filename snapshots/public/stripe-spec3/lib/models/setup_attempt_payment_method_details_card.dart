@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_attempt_payment_method_details_card_checks.dart';import 'setup_attempt_payment_method_details_card_wallet.dart';import 'three_d_secure_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_checks.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details_card_wallet.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details.dart';/// 
 @immutable final class SetupAttemptPaymentMethodDetailsCard {const SetupAttemptPaymentMethodDetailsCard({this.brand, this.checks, this.country, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.network, this.threeDSecure, this.wallet, });
 
 factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCard(

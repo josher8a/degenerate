@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_registry_package_updated_registry_package.dart';@immutable final class WebhookRegistryPackageUpdatedAction {const WebhookRegistryPackageUpdatedAction._(this.value);
-
-factory WebhookRegistryPackageUpdatedAction.fromJson(String json) { return switch (json) {
-  'updated' => updated,
-  _ => WebhookRegistryPackageUpdatedAction._(json),
-}; }
-
-static const WebhookRegistryPackageUpdatedAction updated = WebhookRegistryPackageUpdatedAction._('updated');
-
-static const List<WebhookRegistryPackageUpdatedAction> values = [updated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRegistryPackageUpdatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedAction($value)'; } 
- }
-@immutable final class WebhookRegistryPackageUpdated {const WebhookRegistryPackageUpdated({required this.action, required this.registryPackage, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_updated/webhook_custom_property_updated_action.dart';import 'package:pub_github_rest_3_1/models/webhook_registry_package_updated/webhook_registry_package_updated_registry_package.dart';@immutable final class WebhookRegistryPackageUpdated {const WebhookRegistryPackageUpdated({required this.action, required this.registryPackage, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookRegistryPackageUpdated.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdated(
-  action: WebhookRegistryPackageUpdatedAction.fromJson(json['action'] as String),
+  action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookRegistryPackageUpdated.fromJson(Map<String, dynamic> json) { retu
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookRegistryPackageUpdatedAction action;
+final WebhookCustomPropertyUpdatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('registry_package') &&
       json.containsKey('sender'); } 
-WebhookRegistryPackageUpdated copyWith({WebhookRegistryPackageUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookRegistryPackageUpdatedRegistryPackage? registryPackage, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookRegistryPackageUpdated(
+WebhookRegistryPackageUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookRegistryPackageUpdatedRegistryPackage? registryPackage, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookRegistryPackageUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

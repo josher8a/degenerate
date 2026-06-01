@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_copilot_code_review_parameters.dart';@immutable final class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_copilot_code_review/repository_rule_copilot_code_review_parameters.dart';@immutable final class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType._(this.value);
 
 factory RepositoryRuleCopilotCodeReviewType.fromJson(String json) { return switch (json) {
   'copilot_code_review' => copilotCodeReview,

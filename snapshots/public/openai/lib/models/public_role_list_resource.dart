@@ -1,39 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'role.dart';/// Always `list`.
-@immutable final class PublicRoleListResourceObject {const PublicRoleListResourceObject._(this.value);
-
-factory PublicRoleListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => PublicRoleListResourceObject._(json),
-}; }
-
-static const PublicRoleListResourceObject list = PublicRoleListResourceObject._('list');
-
-static const List<PublicRoleListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PublicRoleListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PublicRoleListResourceObject($value)'; } 
- }
-/// Paginated list of roles available on an organization or project.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/role.dart';/// Paginated list of roles available on an organization or project.
 @immutable final class PublicRoleListResource {const PublicRoleListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory PublicRoleListResource.fromJson(Map<String, dynamic> json) { return PublicRoleListResource(
-  object: PublicRoleListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Role.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
 ); }
 
 /// Always `list`.
-final PublicRoleListResourceObject object;
+final ChatCompletionListObject object;
 
 /// Roles returned in the current page.
 final List<Role> data;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 
-PublicRoleListResource copyWith({PublicRoleListResourceObject? object, List<Role>? data, bool? hasMore, String? Function()? next, }) { return PublicRoleListResource(
+PublicRoleListResource copyWith({ChatCompletionListObject? object, List<Role>? data, bool? hasMore, String? Function()? next, }) { return PublicRoleListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/hosted_compute_create_network_configuration_for_org_request.dart';import '../models/hosted_compute_list_network_configurations_for_org_response.dart';import '../models/hosted_compute_update_network_configuration_for_org_request.dart';import '../models/network_configuration.dart';import '../models/network_settings.dart';/// HostedComputeApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hosted_compute_create_network_configuration_for_org_request.dart';import 'package:pub_github_rest_3_1/models/hosted_compute_list_network_configurations_for_org_response.dart';import 'package:pub_github_rest_3_1/models/hosted_compute_update_network_configuration_for_org_request.dart';import 'package:pub_github_rest_3_1/models/network_configuration.dart';import 'package:pub_github_rest_3_1/models/network_settings.dart';/// HostedComputeApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

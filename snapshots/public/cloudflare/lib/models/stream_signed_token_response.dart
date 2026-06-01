@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_signed_token_response_result.dart';@immutable final class StreamSignedTokenResponse {const StreamSignedTokenResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_signed_token_response/stream_signed_token_response_result.dart';@immutable final class StreamSignedTokenResponse {const StreamSignedTokenResponse({this.result});
 
 factory StreamSignedTokenResponse.fromJson(Map<String, dynamic> json) { return StreamSignedTokenResponse(
   result: json['result'] != null ? StreamSignedTokenResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

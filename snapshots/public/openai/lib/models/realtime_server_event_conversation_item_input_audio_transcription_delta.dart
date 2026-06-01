@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/log_prob_properties.dart';/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
 /// 
 @immutable final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
 

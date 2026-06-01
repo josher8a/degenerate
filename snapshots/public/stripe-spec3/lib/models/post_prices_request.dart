@@ -1,88 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_currency_options_value.dart';import 'post_prices_request_custom_unit_amount.dart';import 'post_prices_request_product_data.dart';import 'post_prices_request_recurring.dart';import 'post_prices_request_tiers.dart';import 'post_prices_request_transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-@immutable final class PostPricesRequestBillingScheme {const PostPricesRequestBillingScheme._(this.value);
-
-factory PostPricesRequestBillingScheme.fromJson(String json) { return switch (json) {
-  'per_unit' => perUnit,
-  'tiered' => tiered,
-  _ => PostPricesRequestBillingScheme._(json),
-}; }
-
-static const PostPricesRequestBillingScheme perUnit = PostPricesRequestBillingScheme._('per_unit');
-
-static const PostPricesRequestBillingScheme tiered = PostPricesRequestBillingScheme._('tiered');
-
-static const List<PostPricesRequestBillingScheme> values = [perUnit, tiered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestBillingScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestBillingScheme($value)'; } 
- }
-/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-@immutable final class PostPricesRequestTaxBehavior {const PostPricesRequestTaxBehavior._(this.value);
-
-factory PostPricesRequestTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => PostPricesRequestTaxBehavior._(json),
-}; }
-
-static const PostPricesRequestTaxBehavior exclusive = PostPricesRequestTaxBehavior._('exclusive');
-
-static const PostPricesRequestTaxBehavior inclusive = PostPricesRequestTaxBehavior._('inclusive');
-
-static const PostPricesRequestTaxBehavior unspecified = PostPricesRequestTaxBehavior._('unspecified');
-
-static const List<PostPricesRequestTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestTaxBehavior($value)'; } 
- }
-/// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price, in `graduated` tiering pricing can successively change as the quantity grows.
-@immutable final class PostPricesRequestTiersMode {const PostPricesRequestTiersMode._(this.value);
-
-factory PostPricesRequestTiersMode.fromJson(String json) { return switch (json) {
-  'graduated' => graduated,
-  'volume' => volume,
-  _ => PostPricesRequestTiersMode._(json),
-}; }
-
-static const PostPricesRequestTiersMode graduated = PostPricesRequestTiersMode._('graduated');
-
-static const PostPricesRequestTiersMode volume = PostPricesRequestTiersMode._('volume');
-
-static const List<PostPricesRequestTiersMode> values = [graduated, volume];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesRequestTiersMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesRequestTiersMode($value)'; } 
- }
-@immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_plans_request/post_plans_request_tiers_mode.dart';import 'package:pub_stripe_spec3/models/post_plans_request/tiers.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_product_data.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_recurring.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_transform_quantity.dart';@immutable final class PostPricesRequest {const PostPricesRequest({required this.currency, this.active, this.billingScheme, this.currencyOptions, this.customUnitAmount, this.expand, this.lookupKey, this.metadata, this.nickname, this.product, this.productData, this.recurring, this.taxBehavior, this.tiers, this.tiersMode, this.transferLookupKey, this.transformQuantity, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPricesRequest(
   active: json['active'] as bool?,
-  billingScheme: json['billing_scheme'] != null ? PostPricesRequestBillingScheme.fromJson(json['billing_scheme'] as String) : null,
+  billingScheme: json['billing_scheme'] != null ? BillingScheme.fromJson(json['billing_scheme'] as String) : null,
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostPricesRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
   customUnitAmount: json['custom_unit_amount'] != null ? PostPricesRequestCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
@@ -93,9 +15,9 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
   product: json['product'] as String?,
   productData: json['product_data'] != null ? PostPricesRequestProductData.fromJson(json['product_data'] as Map<String, dynamic>) : null,
   recurring: json['recurring'] != null ? PostPricesRequestRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
-  taxBehavior: json['tax_behavior'] != null ? PostPricesRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PostPricesRequestTiers.fromJson(e as Map<String, dynamic>)).toList(),
-  tiersMode: json['tiers_mode'] != null ? PostPricesRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
+  taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  tiers: (json['tiers'] as List<dynamic>?)?.map((e) => Tiers.fromJson(e as Map<String, dynamic>)).toList(),
+  tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
   transformQuantity: json['transform_quantity'] != null ? PostPricesRequestTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
@@ -106,7 +28,7 @@ factory PostPricesRequest.fromJson(Map<String, dynamic> json) { return PostPrice
 final bool? active;
 
 /// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final PostPricesRequestBillingScheme? billingScheme;
+final BillingScheme? billingScheme;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -139,13 +61,13 @@ final PostPricesRequestProductData? productData;
 final PostPricesRequestRecurring? recurring;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final PostPricesRequestTaxBehavior? taxBehavior;
+final PostInvoiceitemsInvoiceitemRequestTaxBehavior? taxBehavior;
 
 /// Each element represents a pricing tier. This parameter requires `billing_scheme` to be set to `tiered`. See also the documentation for `billing_scheme`.
-final List<PostPricesRequestTiers>? tiers;
+final List<Tiers>? tiers;
 
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price, in `graduated` tiering pricing can successively change as the quantity grows.
-final PostPricesRequestTiersMode? tiersMode;
+final PostPlansRequestTiersMode? tiersMode;
 
 /// If set to true, will atomically remove the lookup key from the existing price, and assign it to this price.
 final bool? transferLookupKey;
@@ -181,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
-PostPricesRequest copyWith({bool Function()? active, PostPricesRequestBillingScheme Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue> Function()? currencyOptions, PostPricesRequestCustomUnitAmount Function()? customUnitAmount, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? nickname, String Function()? product, PostPricesRequestProductData Function()? productData, PostPricesRequestRecurring Function()? recurring, PostPricesRequestTaxBehavior Function()? taxBehavior, List<PostPricesRequestTiers> Function()? tiers, PostPricesRequestTiersMode Function()? tiersMode, bool Function()? transferLookupKey, PostPricesRequestTransformQuantity Function()? transformQuantity, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostPricesRequest(
+PostPricesRequest copyWith({bool Function()? active, BillingScheme Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue> Function()? currencyOptions, PostPricesRequestCustomUnitAmount Function()? customUnitAmount, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? nickname, String Function()? product, PostPricesRequestProductData Function()? productData, PostPricesRequestRecurring Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, List<Tiers> Function()? tiers, PostPlansRequestTiersMode Function()? tiersMode, bool Function()? transferLookupKey, PostPricesRequestTransformQuantity Function()? transformQuantity, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostPricesRequest(
   active: active != null ? active() : this.active,
   billingScheme: billingScheme != null ? billingScheme() : this.billingScheme,
   currency: currency ?? this.currency,

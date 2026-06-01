@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';@immutable final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
 
 factory CallEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -24,91 +24,16 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CallEnumUpdateStatus($value)'; } 
  }
-/// The HTTP method we should use when calling the `url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-@immutable final class UpdateCallRequestMethod {const UpdateCallRequestMethod._(this.value);
-
-factory UpdateCallRequestMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateCallRequestMethod._(json),
-}; }
-
-static const UpdateCallRequestMethod $get = UpdateCallRequestMethod._('GET');
-
-static const UpdateCallRequestMethod post = UpdateCallRequestMethod._('POST');
-
-static const List<UpdateCallRequestMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestMethod($value)'; } 
- }
-/// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-@immutable final class UpdateCallRequestFallbackMethod {const UpdateCallRequestFallbackMethod._(this.value);
-
-factory UpdateCallRequestFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateCallRequestFallbackMethod._(json),
-}; }
-
-static const UpdateCallRequestFallbackMethod $get = UpdateCallRequestFallbackMethod._('GET');
-
-static const UpdateCallRequestFallbackMethod post = UpdateCallRequestFallbackMethod._('POST');
-
-static const List<UpdateCallRequestFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestFallbackMethod($value)'; } 
- }
-/// The HTTP method we should use when requesting the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-@immutable final class UpdateCallRequestStatusCallbackMethod {const UpdateCallRequestStatusCallbackMethod._(this.value);
-
-factory UpdateCallRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateCallRequestStatusCallbackMethod._(json),
-}; }
-
-static const UpdateCallRequestStatusCallbackMethod $get = UpdateCallRequestStatusCallbackMethod._('GET');
-
-static const UpdateCallRequestStatusCallbackMethod post = UpdateCallRequestStatusCallbackMethod._('POST');
-
-static const List<UpdateCallRequestStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateCallRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateCallRequestStatusCallbackMethod($value)'; } 
- }
 @immutable final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });
 
 factory UpdateCallRequest.fromJson(Map<String, dynamic> json) { return UpdateCallRequest(
   url: json['Url'] != null ? Uri.parse(json['Url'] as String) : null,
-  method: json['Method'] != null ? UpdateCallRequestMethod.fromJson(json['Method'] as String) : null,
+  method: json['Method'] != null ? Method.fromJson(json['Method'] as String) : null,
   status: json['Status'] != null ? CallEnumUpdateStatus.fromJson(json['Status'] as String) : null,
   fallbackUrl: json['FallbackUrl'] != null ? Uri.parse(json['FallbackUrl'] as String) : null,
-  fallbackMethod: json['FallbackMethod'] != null ? UpdateCallRequestFallbackMethod.fromJson(json['FallbackMethod'] as String) : null,
+  fallbackMethod: json['FallbackMethod'] != null ? FallbackMethod.fromJson(json['FallbackMethod'] as String) : null,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
-  statusCallbackMethod: json['StatusCallbackMethod'] != null ? UpdateCallRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
+  statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateApplicationRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
   twiml: json['Twiml'] as String?,
   timeLimit: json['TimeLimit'] != null ? (json['TimeLimit'] as num).toInt() : null,
 ); }
@@ -117,7 +42,7 @@ factory UpdateCallRequest.fromJson(Map<String, dynamic> json) { return UpdateCal
 final Uri? url;
 
 /// The HTTP method we should use when calling the `url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final UpdateCallRequestMethod? method;
+final Method? method;
 
 final CallEnumUpdateStatus? status;
 
@@ -125,13 +50,13 @@ final CallEnumUpdateStatus? status;
 final Uri? fallbackUrl;
 
 /// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final UpdateCallRequestFallbackMethod? fallbackMethod;
+final FallbackMethod? fallbackMethod;
 
 /// The URL we should call using the `status_callback_method` to send status information to your application. If no `status_callback_event` is specified, we will send the `completed` status. If an `application_sid` parameter is present, this parameter is ignored. URLs must contain a valid hostname (underscores are not permitted).
 final Uri? statusCallback;
 
 /// The HTTP method we should use when requesting the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final UpdateCallRequestStatusCallbackMethod? statusCallbackMethod;
+final CreateApplicationRequestStatusCallbackMethod? statusCallbackMethod;
 
 /// TwiML instructions for the call Twilio will use without fetching Twiml from url. Twiml and url parameters are mutually exclusive
 final String? twiml;
@@ -151,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'TimeLimit': ?timeLimit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Url', 'Method', 'Status', 'FallbackUrl', 'FallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'Twiml', 'TimeLimit'}.contains(key)); } 
-UpdateCallRequest copyWith({Uri Function()? url, UpdateCallRequestMethod Function()? method, CallEnumUpdateStatus Function()? status, Uri Function()? fallbackUrl, UpdateCallRequestFallbackMethod Function()? fallbackMethod, Uri Function()? statusCallback, UpdateCallRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? twiml, int Function()? timeLimit, }) { return UpdateCallRequest(
+UpdateCallRequest copyWith({Uri Function()? url, Method Function()? method, CallEnumUpdateStatus Function()? status, Uri Function()? fallbackUrl, FallbackMethod Function()? fallbackMethod, Uri Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? twiml, int Function()? timeLimit, }) { return UpdateCallRequest(
   url: url != null ? url() : this.url,
   method: method != null ? method() : this.method,
   status: status != null ? status() : this.status,

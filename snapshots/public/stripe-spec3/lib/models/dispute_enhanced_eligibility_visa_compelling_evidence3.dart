@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions {const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequiredActions {const RequiredActions._(this.value);
 
-factory DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(String json) { return switch (json) {
+factory RequiredActions.fromJson(String json) { return switch (json) {
   'missing_customer_identifiers' => missingCustomerIdentifiers,
   'missing_disputed_transaction_description' => missingDisputedTransactionDescription,
   'missing_merchandise_or_services' => missingMerchandiseOrServices,
   'missing_prior_undisputed_transaction_description' => missingPriorUndisputedTransactionDescription,
   'missing_prior_undisputed_transactions' => missingPriorUndisputedTransactions,
-  _ => DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(json),
+  _ => RequiredActions._(json),
 }; }
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingCustomerIdentifiers = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_customer_identifiers');
+static const RequiredActions missingCustomerIdentifiers = RequiredActions._('missing_customer_identifiers');
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingDisputedTransactionDescription = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_disputed_transaction_description');
+static const RequiredActions missingDisputedTransactionDescription = RequiredActions._('missing_disputed_transaction_description');
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingMerchandiseOrServices = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_merchandise_or_services');
+static const RequiredActions missingMerchandiseOrServices = RequiredActions._('missing_merchandise_or_services');
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingPriorUndisputedTransactionDescription = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_prior_undisputed_transaction_description');
+static const RequiredActions missingPriorUndisputedTransactionDescription = RequiredActions._('missing_prior_undisputed_transaction_description');
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions missingPriorUndisputedTransactions = DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._('missing_prior_undisputed_transactions');
+static const RequiredActions missingPriorUndisputedTransactions = RequiredActions._('missing_prior_undisputed_transactions');
 
-static const List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions> values = [missingCustomerIdentifiers, missingDisputedTransactionDescription, missingMerchandiseOrServices, missingPriorUndisputedTransactionDescription, missingPriorUndisputedTransactions];
+static const List<RequiredActions> values = [missingCustomerIdentifiers, missingDisputedTransactionDescription, missingMerchandiseOrServices, missingPriorUndisputedTransactionDescription, missingPriorUndisputedTransactions];
 
 final String value;
 
@@ -29,9 +29,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions && other.value == value; } 
+    other is RequiredActions && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions($value)'; } 
+@override String toString() { return 'RequiredActions($value)'; } 
  }
 /// Visa Compelling Evidence 3.0 eligibility status.
 @immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(this.value);
@@ -65,12 +65,12 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3 {const DisputeEnhancedEligibilityVisaCompellingEvidence3({required this.requiredActions, required this.status, });
 
 factory DisputeEnhancedEligibilityVisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
-  requiredActions: (json['required_actions'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(e as String)).toList(),
+  requiredActions: (json['required_actions'] as List<dynamic>).map((e) => RequiredActions.fromJson(e as String)).toList(),
   status: DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(json['status'] as String),
 ); }
 
 /// List of actions required to qualify dispute for Visa Compelling Evidence 3.0 evidence submission.
-final List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions> requiredActions;
+final List<RequiredActions> requiredActions;
 
 /// Visa Compelling Evidence 3.0 eligibility status.
 final DisputeEnhancedEligibilityVisaCompellingEvidence3Status status;
@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_actions') &&
       json.containsKey('status'); } 
-DisputeEnhancedEligibilityVisaCompellingEvidence3 copyWith({List<DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions>? requiredActions, DisputeEnhancedEligibilityVisaCompellingEvidence3Status? status, }) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
+DisputeEnhancedEligibilityVisaCompellingEvidence3 copyWith({List<RequiredActions>? requiredActions, DisputeEnhancedEligibilityVisaCompellingEvidence3Status? status, }) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
   requiredActions: requiredActions ?? this.requiredActions,
   status: status ?? this.status,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_committer_email_pattern_parameters.dart';@immutable final class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType._(this.value);
 
 factory RepositoryRuleCommitterEmailPatternType.fromJson(String json) { return switch (json) {
   'committer_email_pattern' => committerEmailPattern,
@@ -26,19 +26,19 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RepositoryRuleCommitterEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitterEmailPattern(
   type: RepositoryRuleCommitterEmailPatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null ? RepositoryRuleCommitterEmailPatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  parameters: json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitterEmailPatternType type;
 
-final RepositoryRuleCommitterEmailPatternParameters? parameters;
+final RepositoryRuleBranchNamePatternParameters? parameters;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleCommitterEmailPattern copyWith({RepositoryRuleCommitterEmailPatternType? type, RepositoryRuleCommitterEmailPatternParameters Function()? parameters, }) { return RepositoryRuleCommitterEmailPattern(
+RepositoryRuleCommitterEmailPattern copyWith({RepositoryRuleCommitterEmailPatternType? type, RepositoryRuleBranchNamePatternParameters Function()? parameters, }) { return RepositoryRuleCommitterEmailPattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

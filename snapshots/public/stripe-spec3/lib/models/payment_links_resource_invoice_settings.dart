@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_links_resource_invoice_settings_account_tax_ids.dart';import 'tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/invoice_setting_checkout_rendering_options.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_settings/payment_links_resource_invoice_settings_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// 
 @immutable final class PaymentLinksResourceInvoiceSettings {const PaymentLinksResourceInvoiceSettings({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PaymentLinksResourceInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceSettings(

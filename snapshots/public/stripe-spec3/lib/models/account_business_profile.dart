@@ -1,46 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_annual_revenue.dart';import 'account_monthly_estimated_revenue.dart';import 'address.dart';@immutable final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
-
-factory AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
-  'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
-  'minority_owned_business' => minorityOwnedBusiness,
-  'none_of_these_apply' => noneOfTheseApply,
-  'prefer_not_to_answer' => preferNotToAnswer,
-  'women_owned_business' => womenOwnedBusiness,
-  _ => AccountBusinessProfileMinorityOwnedBusinessDesignation._(json),
-}; }
-
-static const AccountBusinessProfileMinorityOwnedBusinessDesignation lgbtqiOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('lgbtqi_owned_business');
-
-static const AccountBusinessProfileMinorityOwnedBusinessDesignation minorityOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('minority_owned_business');
-
-static const AccountBusinessProfileMinorityOwnedBusinessDesignation noneOfTheseApply = AccountBusinessProfileMinorityOwnedBusinessDesignation._('none_of_these_apply');
-
-static const AccountBusinessProfileMinorityOwnedBusinessDesignation preferNotToAnswer = AccountBusinessProfileMinorityOwnedBusinessDesignation._('prefer_not_to_answer');
-
-static const AccountBusinessProfileMinorityOwnedBusinessDesignation womenOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('women_owned_business');
-
-static const List<AccountBusinessProfileMinorityOwnedBusinessDesignation> values = [lgbtqiOwnedBusiness, minorityOwnedBusiness, noneOfTheseApply, preferNotToAnswer, womenOwnedBusiness];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountBusinessProfileMinorityOwnedBusinessDesignation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountBusinessProfileMinorityOwnedBusinessDesignation($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_annual_revenue.dart';import 'package:pub_stripe_spec3/models/account_business_profile/minority_owned_business_designation.dart';import 'package:pub_stripe_spec3/models/account_monthly_estimated_revenue.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
   annualRevenue: json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
   estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
   mcc: json['mcc'] as String?,
-  minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
+  minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => MinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
   monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productDescription: json['product_description'] as String?,
@@ -61,7 +28,7 @@ final int? estimatedWorkerCount;
 final String? mcc;
 
 /// Whether the business is a minority-owned, women-owned, and/or LGBTQI+ -owned business.
-final List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? minorityOwnedBusinessDesignation;
+final List<MinorityOwnedBusinessDesignation>? minorityOwnedBusinessDesignation;
 
 final AccountMonthlyEstimatedRevenue? monthlyEstimatedRevenue;
 
@@ -101,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
-AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
+AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
   mcc: mcc != null ? mcc() : this.mcc,

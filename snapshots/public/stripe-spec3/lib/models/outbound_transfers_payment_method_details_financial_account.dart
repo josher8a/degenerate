@@ -1,40 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rails used to send funds.
-@immutable final class OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork {const OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork._(this.value);
-
-factory OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork.fromJson(String json) { return switch (json) {
-  'stripe' => stripe,
-  _ => OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork._(json),
-}; }
-
-static const OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork stripe = OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork._('stripe');
-
-static const List<OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork> values = [stripe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_financial_account/outbound_payments_payment_method_details_financial_account_network.dart';/// 
 @immutable final class OutboundTransfersPaymentMethodDetailsFinancialAccount {const OutboundTransfersPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
 
 factory OutboundTransfersPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) { return OutboundTransfersPaymentMethodDetailsFinancialAccount(
   id: json['id'] as String,
-  network: OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork.fromJson(json['network'] as String),
+  network: OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork.fromJson(json['network'] as String),
 ); }
 
 /// Token of the FinancialAccount.
 final String id;
 
 /// The rails used to send funds.
-final OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork network;
+final OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork network;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -42,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('network'); } 
-OutboundTransfersPaymentMethodDetailsFinancialAccount copyWith({String? id, OutboundTransfersPaymentMethodDetailsFinancialAccountNetwork? network, }) { return OutboundTransfersPaymentMethodDetailsFinancialAccount(
+OutboundTransfersPaymentMethodDetailsFinancialAccount copyWith({String? id, OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork? network, }) { return OutboundTransfersPaymentMethodDetailsFinancialAccount(
   id: id ?? this.id,
   network: network ?? this.network,
 ); } 

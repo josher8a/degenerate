@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool_choice.dart';/// Model and tool overrides applied when generating the assistant response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_choice.dart';/// Model and tool overrides applied when generating the assistant response.
 @immutable final class InferenceOptions {const InferenceOptions({required this.toolChoice, required this.model, });
 
 factory InferenceOptions.fromJson(Map<String, dynamic> json) { return InferenceOptions(

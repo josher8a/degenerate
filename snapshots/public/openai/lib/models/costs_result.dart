@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'costs_result_amount.dart';@immutable final class CostsResultObject {const CostsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result/amount.dart';@immutable final class CostsResultObject {const CostsResultObject._(this.value);
 
 factory CostsResultObject.fromJson(String json) { return switch (json) {
   'organization.costs.result' => organizationCostsResult,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
   object: CostsResultObject.fromJson(json['object'] as String),
-  amount: json['amount'] != null ? CostsResultAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
+  amount: json['amount'] != null ? Amount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   lineItem: json['line_item'] as String?,
   projectId: json['project_id'] as String?,
 ); }
@@ -34,7 +34,7 @@ factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
 final CostsResultObject object;
 
 /// The monetary value in its associated currency.
-final CostsResultAmount? amount;
+final Amount? amount;
 
 /// When `group_by=line_item`, this field provides the line item of the grouped costs result.
 final String? lineItem;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'project_id': ?projectId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object'); } 
-CostsResult copyWith({CostsResultObject? object, CostsResultAmount Function()? amount, String? Function()? lineItem, String? Function()? projectId, }) { return CostsResult(
+CostsResult copyWith({CostsResultObject? object, Amount Function()? amount, String? Function()? lineItem, String? Function()? projectId, }) { return CostsResult(
   object: object ?? this.object,
   amount: amount != null ? amount() : this.amount,
   lineItem: lineItem != null ? lineItem() : this.lineItem,

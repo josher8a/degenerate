@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleCreatedAction {const WebhookBranchProtectionRuleCreatedAction._(this.value);
-
-factory WebhookBranchProtectionRuleCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookBranchProtectionRuleCreatedAction._(json),
-}; }
-
-static const WebhookBranchProtectionRuleCreatedAction created = WebhookBranchProtectionRuleCreatedAction._('created');
-
-static const List<WebhookBranchProtectionRuleCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBranchProtectionRuleCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleCreatedAction($value)'; } 
- }
-@immutable final class WebhookBranchProtectionRuleCreated {const WebhookBranchProtectionRuleCreated({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleCreated {const WebhookBranchProtectionRuleCreated({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookBranchProtectionRuleCreated.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleCreated(
-  action: WebhookBranchProtectionRuleCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookBranchProtectionRuleCreated.fromJson(Map<String, dynamic> json) {
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookBranchProtectionRuleCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('rule') &&
       json.containsKey('sender'); } 
-WebhookBranchProtectionRuleCreated copyWith({WebhookBranchProtectionRuleCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleCreated(
+WebhookBranchProtectionRuleCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

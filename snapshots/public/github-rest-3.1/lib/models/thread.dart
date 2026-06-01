@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'thread_subject.dart';/// Thread
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/thread/subject.dart';/// Thread
 @immutable final class Thread {const Thread({required this.id, required this.repository, required this.subject, required this.reason, required this.unread, required this.updatedAt, required this.lastReadAt, required this.url, required this.subscriptionUrl, });
 
 factory Thread.fromJson(Map<String, dynamic> json) { return Thread(
   id: json['id'] as String,
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
-  subject: ThreadSubject.fromJson(json['subject'] as Map<String, dynamic>),
+  subject: Subject.fromJson(json['subject'] as Map<String, dynamic>),
   reason: json['reason'] as String,
   unread: json['unread'] as bool,
   updatedAt: json['updated_at'] as String,
@@ -19,7 +19,7 @@ final String id;
 
 final MinimalRepository repository;
 
-final ThreadSubject subject;
+final Subject subject;
 
 final String reason;
 
@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('last_read_at') && json['last_read_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('subscription_url') && json['subscription_url'] is String; } 
-Thread copyWith({String? id, MinimalRepository? repository, ThreadSubject? subject, String? reason, bool? unread, String? updatedAt, String? Function()? lastReadAt, String? url, String? subscriptionUrl, }) { return Thread(
+Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, String? reason, bool? unread, String? updatedAt, String? Function()? lastReadAt, String? url, String? subscriptionUrl, }) { return Thread(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   subject: subject ?? this.subject,

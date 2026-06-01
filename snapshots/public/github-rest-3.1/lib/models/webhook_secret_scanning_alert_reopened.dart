@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertReopenedAction {const WebhookSecretScanningAlertReopenedAction._(this.value);
-
-factory WebhookSecretScanningAlertReopenedAction.fromJson(String json) { return switch (json) {
-  'reopened' => reopened,
-  _ => WebhookSecretScanningAlertReopenedAction._(json),
-}; }
-
-static const WebhookSecretScanningAlertReopenedAction reopened = WebhookSecretScanningAlertReopenedAction._('reopened');
-
-static const List<WebhookSecretScanningAlertReopenedAction> values = [reopened];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertReopenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertReopenedAction($value)'; } 
- }
-@immutable final class WebhookSecretScanningAlertReopened {const WebhookSecretScanningAlertReopened({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_reopened/project_reopened_action.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookSecretScanningAlertReopened {const WebhookSecretScanningAlertReopened({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertReopened.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertReopened(
-  action: WebhookSecretScanningAlertReopenedAction.fromJson(json['action'] as String),
+  action: ProjectReopenedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookSecretScanningAlertReopened.fromJson(Map<String, dynamic> json) {
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookSecretScanningAlertReopenedAction action;
+final ProjectReopenedAction action;
 
 final SecretScanningAlertWebhook alert;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository'); } 
-WebhookSecretScanningAlertReopened copyWith({WebhookSecretScanningAlertReopenedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertReopened(
+WebhookSecretScanningAlertReopened copyWith({ProjectReopenedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertReopened(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

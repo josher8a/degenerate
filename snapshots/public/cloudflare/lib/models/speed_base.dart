@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current value of the zone setting.
-@immutable final class SpeedBaseValue {const SpeedBaseValue._(this.value);
-
-factory SpeedBaseValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => SpeedBaseValue._(json),
-}; }
-
-static const SpeedBaseValue $on = SpeedBaseValue._('on');
-
-static const SpeedBaseValue off = SpeedBaseValue._('off');
-
-static const List<SpeedBaseValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpeedBaseValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpeedBaseValue($value)'; } 
- }
-@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn, this.value, });
 
 factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,
   id: json['id'] as String?,
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
-  value: json['value'] != null ? SpeedBaseValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
@@ -44,7 +19,7 @@ final String? id;
 final DateTime? modifiedOn;
 
 /// Current value of the zone setting.
-final SpeedBaseValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   'editable': editable,
@@ -53,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool Function()? editable, String Function()? id, DateTime? Function()? modifiedOn, SpeedBaseValue Function()? value, }) { return SpeedBase(
+SpeedBase copyWith({bool Function()? editable, String Function()? id, DateTime? Function()? modifiedOn, CacheRulesSmartTieredCachePatchValue Function()? value, }) { return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'semantic_vad.dart';import 'server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/semantic_vad.dart';import 'package:pub_openai/models/server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
 /// 
 /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 
@@ -19,7 +19,7 @@ factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) { return switc
 factory RealtimeTurnDetection.serverVad({double? threshold, int? prefixPaddingMs, int? silenceDurationMs, bool? createResponse, bool? interruptResponse, int? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(ServerVad(type: 'ServerVad', threshold: threshold, prefixPaddingMs: prefixPaddingMs, silenceDurationMs: silenceDurationMs, createResponse: createResponse, interruptResponse: interruptResponse, idleTimeoutMs: idleTimeoutMs)); }
 
 /// Build the `SemanticVad` variant.
-factory RealtimeTurnDetection.semanticVad({SemanticVadEagerness? eagerness, bool? createResponse, bool? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
+factory RealtimeTurnDetection.semanticVad({Eagerness? eagerness, bool? createResponse, bool? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
 
 /// The discriminator value identifying this variant.
 String get type;

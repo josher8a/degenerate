@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_tests_response_overview_metrics.dart';import 'digital_experience_monitoring_tests_response_tests.dart';@immutable final class DigitalExperienceMonitoringTestsResponse {const DigitalExperienceMonitoringTestsResponse({required this.overviewMetrics, required this.tests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/overview_metrics.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_tests_response/tests.dart';@immutable final class DigitalExperienceMonitoringTestsResponse {const DigitalExperienceMonitoringTestsResponse({required this.overviewMetrics, required this.tests, });
 
 factory DigitalExperienceMonitoringTestsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponse(
-  overviewMetrics: DigitalExperienceMonitoringTestsResponseOverviewMetrics.fromJson(json['overviewMetrics'] as Map<String, dynamic>),
-  tests: (json['tests'] as List<dynamic>).map((e) => DigitalExperienceMonitoringTestsResponseTests.fromJson(e as Map<String, dynamic>)).toList(),
+  overviewMetrics: OverviewMetrics.fromJson(json['overviewMetrics'] as Map<String, dynamic>),
+  tests: (json['tests'] as List<dynamic>).map((e) => Tests.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final DigitalExperienceMonitoringTestsResponseOverviewMetrics overviewMetrics;
+final OverviewMetrics overviewMetrics;
 
 /// array of test results objects.
-final List<DigitalExperienceMonitoringTestsResponseTests> tests;
+final List<Tests> tests;
 
 Map<String, dynamic> toJson() { return {
   'overviewMetrics': overviewMetrics.toJson(),
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('overviewMetrics') &&
       json.containsKey('tests'); } 
-DigitalExperienceMonitoringTestsResponse copyWith({DigitalExperienceMonitoringTestsResponseOverviewMetrics? overviewMetrics, List<DigitalExperienceMonitoringTestsResponseTests>? tests, }) { return DigitalExperienceMonitoringTestsResponse(
+DigitalExperienceMonitoringTestsResponse copyWith({OverviewMetrics? overviewMetrics, List<Tests>? tests, }) { return DigitalExperienceMonitoringTestsResponse(
   overviewMetrics: overviewMetrics ?? this.overviewMetrics,
   tests: tests ?? this.tests,
 ); } 

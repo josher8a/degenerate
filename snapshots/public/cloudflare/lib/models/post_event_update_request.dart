@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_update_request_raw.dart';@immutable final class PostEventUpdateRequest {const PostEventUpdateRequest({this.attacker, this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/patch_event_update_request/patch_event_update_request_raw.dart';@immutable final class PostEventUpdateRequest {const PostEventUpdateRequest({this.attacker, this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
 
 factory PostEventUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventUpdateRequest(
   attacker: json['attacker'] as String?,
@@ -13,7 +13,7 @@ factory PostEventUpdateRequest.fromJson(Map<String, dynamic> json) { return Post
   indicator: json['indicator'] as String?,
   indicatorType: json['indicatorType'] as String?,
   insight: json['insight'] as String?,
-  raw: json['raw'] != null ? PostEventUpdateRequestRaw.fromJson(json['raw'] as Map<String, dynamic>) : null,
+  raw: json['raw'] != null ? PatchEventUpdateRequestRaw.fromJson(json['raw'] as Map<String, dynamic>) : null,
   targetCountry: json['targetCountry'] as String?,
   targetIndustry: json['targetIndustry'] as String?,
   tlp: json['tlp'] as String?,
@@ -39,7 +39,7 @@ final String? indicatorType;
 
 final String? insight;
 
-final PostEventUpdateRequestRaw? raw;
+final PatchEventUpdateRequestRaw? raw;
 
 final String? targetCountry;
 
@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'tlp': ?tlp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key)); } 
-PostEventUpdateRequest copyWith({String? Function()? attacker, String Function()? attackerCountry, String Function()? category, DateTime Function()? createdAt, String Function()? datasetId, DateTime Function()? date, String Function()? event, String Function()? indicator, String Function()? indicatorType, String Function()? insight, PostEventUpdateRequestRaw Function()? raw, String Function()? targetCountry, String Function()? targetIndustry, String Function()? tlp, }) { return PostEventUpdateRequest(
+PostEventUpdateRequest copyWith({String? Function()? attacker, String Function()? attackerCountry, String Function()? category, DateTime Function()? createdAt, String Function()? datasetId, DateTime Function()? date, String Function()? event, String Function()? indicator, String Function()? indicatorType, String Function()? insight, PatchEventUpdateRequestRaw Function()? raw, String Function()? targetCountry, String Function()? targetIndustry, String Function()? tlp, }) { return PostEventUpdateRequest(
   attacker: attacker != null ? attacker() : this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,
   category: category != null ? category() : this.category,

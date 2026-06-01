@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/archive_security_center_insight_request.dart';import '../models/archive_zone_security_center_insight_request.dart';import '../models/get_security_center_insights_response_result_variant1.dart';import '../models/get_zone_security_center_insights_response_result_variant1.dart';import '../models/response_common61.dart';import '../models/security_center_dismissed.dart';import '../models/security_center_identifier.dart';import '../models/security_center_issue_class.dart';import '../models/security_center_issue_type.dart';import '../models/security_center_page.dart';import '../models/security_center_per_page.dart';import '../models/security_center_severity_query_param2.dart';import '../models/security_center_subject.dart';import '../models/security_center_value_counts_response_result_variant1.dart';/// SecurityCenterInsightsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/archive_security_center_insight_request.dart';import 'package:pub_cloudflare/models/archive_zone_security_center_insight_request.dart';import 'package:pub_cloudflare/models/get_security_center_insights_response/get_security_center_insights_response_result_variant1.dart';import 'package:pub_cloudflare/models/response_common61.dart';import 'package:pub_cloudflare/models/security_center_dismissed.dart';import 'package:pub_cloudflare/models/security_center_identifier.dart';import 'package:pub_cloudflare/models/security_center_issue_class.dart';import 'package:pub_cloudflare/models/security_center_issue_type.dart';import 'package:pub_cloudflare/models/security_center_page.dart';import 'package:pub_cloudflare/models/security_center_per_page.dart';import 'package:pub_cloudflare/models/security_center_severity_query_param2.dart';import 'package:pub_cloudflare/models/security_center_subject.dart';import 'package:pub_cloudflare/models/security_center_value_counts_response/security_center_value_counts_response_result_variant1.dart';/// SecurityCenterInsightsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -392,7 +392,7 @@ return execute(
 /// Retrieves Zone Security Center Insights
 ///
 /// `GET /zones/{zone_id}/security-center/insights`
-Future<ApiResult<GetZoneSecurityCenterInsightsResponseResultVariant1?, Never>> getZoneSecurityCenterInsights({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSecurityCenterInsightsResponseResultVariant1?, Never>> getZoneSecurityCenterInsights({required SecurityCenterIdentifier zoneId, SecurityCenterDismissed? dismissed, List<SecurityCenterIssueClass>? issueClass, List<SecurityCenterIssueType>? issueType, List<String>? product, List<SecurityCenterSeverityQueryParam2>? severity, List<SecurityCenterSubject>? subject, List<SecurityCenterIssueClass>? issueClassneq, List<SecurityCenterIssueType>? issueTypeneq, List<String>? productneq, List<SecurityCenterSeverityQueryParam2>? severityneq, List<SecurityCenterSubject>? subjectneq, SecurityCenterPage? page, SecurityCenterPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dismissed != null) {
   queryParameters['dismissed'] = dismissed.toString();
@@ -469,7 +469,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? GetZoneSecurityCenterInsightsResponseResultVariant1.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? GetSecurityCenterInsightsResponseResultVariant1.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

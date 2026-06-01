@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_model_response.dart';import '../models/list_models_response.dart';import '../models/model.dart';/// ModelsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_model_response.dart';import 'package:pub_openai/models/list_models_response.dart';import 'package:pub_openai/models/model.dart';/// ModelsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_diff2_vulnerabilities.dart';@immutable final class DependencyGraphDiff2ChangeType {const DependencyGraphDiff2ChangeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff/dependency_graph_diff_vulnerabilities.dart';@immutable final class ChangeType {const ChangeType._(this.value);
 
-factory DependencyGraphDiff2ChangeType.fromJson(String json) { return switch (json) {
+factory ChangeType.fromJson(String json) { return switch (json) {
   'added' => added,
   'removed' => removed,
-  _ => DependencyGraphDiff2ChangeType._(json),
+  _ => ChangeType._(json),
 }; }
 
-static const DependencyGraphDiff2ChangeType added = DependencyGraphDiff2ChangeType._('added');
+static const ChangeType added = ChangeType._('added');
 
-static const DependencyGraphDiff2ChangeType removed = DependencyGraphDiff2ChangeType._('removed');
+static const ChangeType removed = ChangeType._('removed');
 
-static const List<DependencyGraphDiff2ChangeType> values = [added, removed];
+static const List<ChangeType> values = [added, removed];
 
 final String value;
 
@@ -20,27 +20,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependencyGraphDiff2ChangeType && other.value == value; } 
+    other is ChangeType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependencyGraphDiff2ChangeType($value)'; } 
+@override String toString() { return 'ChangeType($value)'; } 
  }
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
-@immutable final class DependencyGraphDiff2Scope {const DependencyGraphDiff2Scope._(this.value);
+@immutable final class DependencyGraphDiffScope {const DependencyGraphDiffScope._(this.value);
 
-factory DependencyGraphDiff2Scope.fromJson(String json) { return switch (json) {
+factory DependencyGraphDiffScope.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'runtime' => runtime,
   'development' => development,
-  _ => DependencyGraphDiff2Scope._(json),
+  _ => DependencyGraphDiffScope._(json),
 }; }
 
-static const DependencyGraphDiff2Scope unknown = DependencyGraphDiff2Scope._('unknown');
+static const DependencyGraphDiffScope unknown = DependencyGraphDiffScope._('unknown');
 
-static const DependencyGraphDiff2Scope runtime = DependencyGraphDiff2Scope._('runtime');
+static const DependencyGraphDiffScope runtime = DependencyGraphDiffScope._('runtime');
 
-static const DependencyGraphDiff2Scope development = DependencyGraphDiff2Scope._('development');
+static const DependencyGraphDiffScope development = DependencyGraphDiffScope._('development');
 
-static const List<DependencyGraphDiff2Scope> values = [unknown, runtime, development];
+static const List<DependencyGraphDiffScope> values = [unknown, runtime, development];
 
 final String value;
 
@@ -48,14 +48,14 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependencyGraphDiff2Scope && other.value == value; } 
+    other is DependencyGraphDiffScope && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependencyGraphDiff2Scope($value)'; } 
+@override String toString() { return 'DependencyGraphDiffScope($value)'; } 
  }
 @immutable final class DependencyGraphDiff2 {const DependencyGraphDiff2({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope, });
 
 factory DependencyGraphDiff2.fromJson(Map<String, dynamic> json) { return DependencyGraphDiff2(
-  changeType: DependencyGraphDiff2ChangeType.fromJson(json['change_type'] as String),
+  changeType: ChangeType.fromJson(json['change_type'] as String),
   manifest: json['manifest'] as String,
   ecosystem: json['ecosystem'] as String,
   name: json['name'] as String,
@@ -63,11 +63,11 @@ factory DependencyGraphDiff2.fromJson(Map<String, dynamic> json) { return Depend
   packageUrl: json['package_url'] as String?,
   license: json['license'] as String?,
   sourceRepositoryUrl: json['source_repository_url'] as String?,
-  vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependencyGraphDiff2Vulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
-  scope: DependencyGraphDiff2Scope.fromJson(json['scope'] as String),
+  vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependencyGraphDiffVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
+  scope: DependencyGraphDiffScope.fromJson(json['scope'] as String),
 ); }
 
-final DependencyGraphDiff2ChangeType changeType;
+final ChangeType changeType;
 
 final String manifest;
 
@@ -83,10 +83,10 @@ final String? license;
 
 final String? sourceRepositoryUrl;
 
-final List<DependencyGraphDiff2Vulnerabilities> vulnerabilities;
+final List<DependencyGraphDiffVulnerabilities> vulnerabilities;
 
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
-final DependencyGraphDiff2Scope scope;
+final DependencyGraphDiffScope scope;
 
 Map<String, dynamic> toJson() { return {
   'change_type': changeType.toJson(),
@@ -110,7 +110,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chang
       json.containsKey('source_repository_url') && json['source_repository_url'] is String &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('scope'); } 
-DependencyGraphDiff2 copyWith({DependencyGraphDiff2ChangeType? changeType, String? manifest, String? ecosystem, String? name, String? version, String? Function()? packageUrl, String? Function()? license, String? Function()? sourceRepositoryUrl, List<DependencyGraphDiff2Vulnerabilities>? vulnerabilities, DependencyGraphDiff2Scope? scope, }) { return DependencyGraphDiff2(
+DependencyGraphDiff2 copyWith({ChangeType? changeType, String? manifest, String? ecosystem, String? name, String? version, String? Function()? packageUrl, String? Function()? license, String? Function()? sourceRepositoryUrl, List<DependencyGraphDiffVulnerabilities>? vulnerabilities, DependencyGraphDiffScope? scope, }) { return DependencyGraphDiff2(
   changeType: changeType ?? this.changeType,
   manifest: manifest ?? this.manifest,
   ecosystem: ecosystem ?? this.ecosystem,

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
-@immutable final class SecretScanningPatternOverrideDefaultSetting {const SecretScanningPatternOverrideDefaultSetting._(this.value);
+@immutable final class DefaultSetting {const DefaultSetting._(this.value);
 
-factory SecretScanningPatternOverrideDefaultSetting.fromJson(String json) { return switch (json) {
+factory DefaultSetting.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => SecretScanningPatternOverrideDefaultSetting._(json),
+  _ => DefaultSetting._(json),
 }; }
 
-static const SecretScanningPatternOverrideDefaultSetting disabled = SecretScanningPatternOverrideDefaultSetting._('disabled');
+static const DefaultSetting disabled = DefaultSetting._('disabled');
 
-static const SecretScanningPatternOverrideDefaultSetting enabled = SecretScanningPatternOverrideDefaultSetting._('enabled');
+static const DefaultSetting enabled = DefaultSetting._('enabled');
 
-static const List<SecretScanningPatternOverrideDefaultSetting> values = [disabled, enabled];
+static const List<DefaultSetting> values = [disabled, enabled];
 
 final String value;
 
@@ -21,30 +21,30 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideDefaultSetting && other.value == value; } 
+    other is DefaultSetting && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideDefaultSetting($value)'; } 
+@override String toString() { return 'DefaultSetting($value)'; } 
  }
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-@immutable final class SecretScanningPatternOverrideEnterpriseSetting {const SecretScanningPatternOverrideEnterpriseSetting._(this.value);
+@immutable final class EnterpriseSetting {const EnterpriseSetting._(this.value);
 
-factory SecretScanningPatternOverrideEnterpriseSetting.fromJson(String json) { return switch (json) {
+factory EnterpriseSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   'null' => $null,
-  _ => SecretScanningPatternOverrideEnterpriseSetting._(json),
+  _ => EnterpriseSetting._(json),
 }; }
 
-static const SecretScanningPatternOverrideEnterpriseSetting notSet = SecretScanningPatternOverrideEnterpriseSetting._('not-set');
+static const EnterpriseSetting notSet = EnterpriseSetting._('not-set');
 
-static const SecretScanningPatternOverrideEnterpriseSetting disabled = SecretScanningPatternOverrideEnterpriseSetting._('disabled');
+static const EnterpriseSetting disabled = EnterpriseSetting._('disabled');
 
-static const SecretScanningPatternOverrideEnterpriseSetting enabled = SecretScanningPatternOverrideEnterpriseSetting._('enabled');
+static const EnterpriseSetting enabled = EnterpriseSetting._('enabled');
 
-static const SecretScanningPatternOverrideEnterpriseSetting $null = SecretScanningPatternOverrideEnterpriseSetting._('null');
+static const EnterpriseSetting $null = EnterpriseSetting._('null');
 
-static const List<SecretScanningPatternOverrideEnterpriseSetting> values = [notSet, disabled, enabled, $null];
+static const List<EnterpriseSetting> values = [notSet, disabled, enabled, $null];
 
 final String value;
 
@@ -52,27 +52,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideEnterpriseSetting && other.value == value; } 
+    other is EnterpriseSetting && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideEnterpriseSetting($value)'; } 
+@override String toString() { return 'EnterpriseSetting($value)'; } 
  }
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
-@immutable final class SecretScanningPatternOverrideSetting {const SecretScanningPatternOverrideSetting._(this.value);
+@immutable final class Setting {const Setting._(this.value);
 
-factory SecretScanningPatternOverrideSetting.fromJson(String json) { return switch (json) {
+factory Setting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => SecretScanningPatternOverrideSetting._(json),
+  _ => Setting._(json),
 }; }
 
-static const SecretScanningPatternOverrideSetting notSet = SecretScanningPatternOverrideSetting._('not-set');
+static const Setting notSet = Setting._('not-set');
 
-static const SecretScanningPatternOverrideSetting disabled = SecretScanningPatternOverrideSetting._('disabled');
+static const Setting disabled = Setting._('disabled');
 
-static const SecretScanningPatternOverrideSetting enabled = SecretScanningPatternOverrideSetting._('enabled');
+static const Setting enabled = Setting._('enabled');
 
-static const List<SecretScanningPatternOverrideSetting> values = [notSet, disabled, enabled];
+static const List<Setting> values = [notSet, disabled, enabled];
 
 final String value;
 
@@ -80,9 +80,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningPatternOverrideSetting && other.value == value; } 
+    other is Setting && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningPatternOverrideSetting($value)'; } 
+@override String toString() { return 'Setting($value)'; } 
  }
 @immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
 
@@ -96,9 +96,9 @@ factory SecretScanningPatternOverride.fromJson(Map<String, dynamic> json) { retu
   falsePositives: json['false_positives'] != null ? (json['false_positives'] as num).toInt() : null,
   falsePositiveRate: json['false_positive_rate'] != null ? (json['false_positive_rate'] as num).toInt() : null,
   bypassRate: json['bypass_rate'] != null ? (json['bypass_rate'] as num).toInt() : null,
-  defaultSetting: json['default_setting'] != null ? SecretScanningPatternOverrideDefaultSetting.fromJson(json['default_setting'] as String) : null,
-  enterpriseSetting: json['enterprise_setting'] != null ? SecretScanningPatternOverrideEnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null,
-  setting: json['setting'] != null ? SecretScanningPatternOverrideSetting.fromJson(json['setting'] as String) : null,
+  defaultSetting: json['default_setting'] != null ? DefaultSetting.fromJson(json['default_setting'] as String) : null,
+  enterpriseSetting: json['enterprise_setting'] != null ? EnterpriseSetting.fromJson(json['enterprise_setting'] as String) : null,
+  setting: json['setting'] != null ? Setting.fromJson(json['setting'] as String) : null,
 ); }
 
 /// The ID of the pattern.
@@ -129,13 +129,13 @@ final int? falsePositiveRate;
 final int? bypassRate;
 
 /// The default push protection setting for this pattern.
-final SecretScanningPatternOverrideDefaultSetting? defaultSetting;
+final DefaultSetting? defaultSetting;
 
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-final SecretScanningPatternOverrideEnterpriseSetting? enterpriseSetting;
+final EnterpriseSetting? enterpriseSetting;
 
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
-final SecretScanningPatternOverrideSetting? setting;
+final Setting? setting;
 
 Map<String, dynamic> toJson() { return {
   'token_type': ?tokenType,
@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   if (setting != null) 'setting': setting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token_type', 'custom_pattern_version', 'slug', 'display_name', 'alert_total', 'alert_total_percentage', 'false_positives', 'false_positive_rate', 'bypass_rate', 'default_setting', 'enterprise_setting', 'setting'}.contains(key)); } 
-SecretScanningPatternOverride copyWith({String Function()? tokenType, String? Function()? customPatternVersion, String Function()? slug, String Function()? displayName, int Function()? alertTotal, int Function()? alertTotalPercentage, int Function()? falsePositives, int Function()? falsePositiveRate, int Function()? bypassRate, SecretScanningPatternOverrideDefaultSetting Function()? defaultSetting, SecretScanningPatternOverrideEnterpriseSetting? Function()? enterpriseSetting, SecretScanningPatternOverrideSetting Function()? setting, }) { return SecretScanningPatternOverride(
+SecretScanningPatternOverride copyWith({String Function()? tokenType, String? Function()? customPatternVersion, String Function()? slug, String Function()? displayName, int Function()? alertTotal, int Function()? alertTotalPercentage, int Function()? falsePositives, int Function()? falsePositiveRate, int Function()? bypassRate, DefaultSetting Function()? defaultSetting, EnterpriseSetting? Function()? enterpriseSetting, Setting Function()? setting, }) { return SecretScanningPatternOverride(
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
   slug: slug != null ? slug() : this.slug,

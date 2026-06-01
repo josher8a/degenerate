@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'simple_user.dart';import 'timeline_reviewed_event_links.dart';/// Timeline Reviewed Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review/pull_request_review_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Timeline Reviewed Event
 @immutable final class TimelineReviewedEvent {const TimelineReviewedEvent({required this.event, required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, required this.commitId, required this.authorAssociation, this.submittedAt, this.updatedAt, this.bodyHtml, this.bodyText, });
 
 factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return TimelineReviewedEvent(
@@ -12,7 +12,7 @@ factory TimelineReviewedEvent.fromJson(Map<String, dynamic> json) { return Timel
   state: json['state'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
   pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
-  links: TimelineReviewedEventLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: PullRequestReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
   submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   commitId: json['commit_id'] as String,
@@ -39,7 +39,7 @@ final Uri htmlUrl;
 
 final Uri pullRequestUrl;
 
-final TimelineReviewedEventLinks links;
+final PullRequestReviewLinks links;
 
 final DateTime? submittedAt;
 
@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('_links') &&
       json.containsKey('commit_id') && json['commit_id'] is String &&
       json.containsKey('author_association'); } 
-TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, TimelineReviewedEventLinks? links, DateTime Function()? submittedAt, DateTime? Function()? updatedAt, String? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
+TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUser? user, String? Function()? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime Function()? submittedAt, DateTime? Function()? updatedAt, String? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return TimelineReviewedEvent(
   event: event ?? this.event,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

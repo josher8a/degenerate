@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_enqueued_pull_request.dart';@immutable final class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_dequeued/webhook_pull_request_dequeued_pull_request.dart';@immutable final class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction._(this.value);
 
 factory WebhookPullRequestEnqueuedAction.fromJson(String json) { return switch (json) {
   'enqueued' => enqueued,
@@ -29,7 +29,7 @@ factory WebhookPullRequestEnqueued.fromJson(Map<String, dynamic> json) { return 
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: (json['number'] as num).toInt(),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
-  pullRequest: WebhookPullRequestEnqueuedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  pullRequest: WebhookPullRequestDequeuedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
@@ -44,7 +44,7 @@ final int number;
 
 final OrganizationSimpleWebhooks? organization;
 
-final WebhookPullRequestEnqueuedPullRequest pullRequest;
+final WebhookPullRequestDequeuedPullRequest pullRequest;
 
 final RepositoryWebhooks repository;
 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestEnqueued copyWith({WebhookPullRequestEnqueuedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, int? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestEnqueuedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestEnqueued(
+WebhookPullRequestEnqueued copyWith({WebhookPullRequestEnqueuedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, int? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestDequeuedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestEnqueued(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

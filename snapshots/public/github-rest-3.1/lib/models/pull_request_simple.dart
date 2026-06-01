@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_simple_base.dart';import 'pull_request_simple_head.dart';import 'pull_request_simple_labels.dart';import 'pull_request_simple_links.dart';import 'simple_user.dart';import 'team.dart';/// Pull Request Simple
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/auto_merge.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_links.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_base.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_head.dart';import 'package:pub_github_rest_3_1/models/pull_request_simple/pull_request_simple_labels.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Pull Request Simple
 @immutable final class PullRequestSimple {const PullRequestSimple({required this.statusesUrl, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.url, required this.number, required this.state, required this.locked, required this.title, required this.user, required this.body, required this.labels, required this.milestone, required this.autoMerge, required this.createdAt, required this.updatedAt, required this.authorAssociation, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.links, required this.base, required this.head, required this.closedAt, this.requestedReviewers, this.assignees, this.draft, this.activeLockReason, this.requestedTeams, });
 
 factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullRequestSimple(
@@ -36,7 +36,7 @@ factory PullRequestSimple.fromJson(Map<String, dynamic> json) { return PullReque
   requestedTeams: (json['requested_teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
   head: PullRequestSimpleHead.fromJson(json['head'] as Map<String, dynamic>),
   base: PullRequestSimpleBase.fromJson(json['base'] as Map<String, dynamic>),
-  links: PullRequestSimpleLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: PullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>),
   draft: json['draft'] as bool?,
@@ -106,7 +106,7 @@ final PullRequestSimpleHead head;
 
 final PullRequestSimpleBase base;
 
-final PullRequestSimpleLinks links;
+final PullRequestLinks links;
 
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
@@ -185,7 +185,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('_links') &&
       json.containsKey('author_association') &&
       json.containsKey('auto_merge'); } 
-PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<Team> Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestSimpleLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, }) { return PullRequestSimple(
+PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, String? state, bool? locked, String? title, SimpleUser? Function()? user, String? Function()? body, List<PullRequestSimpleLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<Team> Function()? requestedTeams, PullRequestSimpleHead? head, PullRequestSimpleBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, }) { return PullRequestSimple(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

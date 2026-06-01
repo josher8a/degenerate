@@ -1,32 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method to use for the health check.
-@immutable final class SmartshieldHttpConfigMethod {const SmartshieldHttpConfigMethod._(this.value);
-
-factory SmartshieldHttpConfigMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'HEAD' => head,
-  _ => SmartshieldHttpConfigMethod._(json),
-}; }
-
-static const SmartshieldHttpConfigMethod $get = SmartshieldHttpConfigMethod._('GET');
-
-static const SmartshieldHttpConfigMethod head = SmartshieldHttpConfigMethod._('HEAD');
-
-static const List<SmartshieldHttpConfigMethod> values = [$get, head];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SmartshieldHttpConfigMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SmartshieldHttpConfigMethod($value)'; } 
- }
-/// Parameters specific to an HTTP or HTTPS health check.
-@immutable final class SmartshieldHttpConfig {const SmartshieldHttpConfig({this.allowInsecure = false, this.expectedBody, this.expectedCodes, this.followRedirects = false, this.header, this.method = SmartshieldHttpConfigMethod.$get, this.path = '/', this.port = 80, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/healthchecks_http_config/healthchecks_http_config_method.dart';/// Parameters specific to an HTTP or HTTPS health check.
+@immutable final class SmartshieldHttpConfig {const SmartshieldHttpConfig({this.allowInsecure = false, this.expectedBody, this.expectedCodes, this.followRedirects = false, this.header, this.method = HealthchecksHttpConfigMethod.$get, this.path = '/', this.port = 80, });
 
 factory SmartshieldHttpConfig.fromJson(Map<String, dynamic> json) { return SmartshieldHttpConfig(
   allowInsecure: json.containsKey('allow_insecure') ? json['allow_insecure'] as bool : false,
@@ -34,7 +9,7 @@ factory SmartshieldHttpConfig.fromJson(Map<String, dynamic> json) { return Smart
   expectedCodes: (json['expected_codes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   followRedirects: json.containsKey('follow_redirects') ? json['follow_redirects'] as bool : false,
   header: (json['header'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
-  method: json.containsKey('method') ? SmartshieldHttpConfigMethod.fromJson(json['method'] as String) : SmartshieldHttpConfigMethod.$get,
+  method: json.containsKey('method') ? HealthchecksHttpConfigMethod.fromJson(json['method'] as String) : HealthchecksHttpConfigMethod.$get,
   path: json.containsKey('path') ? json['path'] as String : '/',
   port: json.containsKey('port') ? (json['port'] as num).toInt() : 80,
 ); }
@@ -55,7 +30,7 @@ final bool followRedirects;
 final Map<String,List<String>>? header;
 
 /// The HTTP method to use for the health check.
-final SmartshieldHttpConfigMethod method;
+final HealthchecksHttpConfigMethod method;
 
 /// The endpoint path to health check against.
 final String path;
@@ -74,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'port': port,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'method', 'path', 'port'}.contains(key)); } 
-SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String Function()? expectedBody, List<String>? Function()? expectedCodes, bool Function()? followRedirects, Map<String, List<String>>? Function()? header, SmartshieldHttpConfigMethod Function()? method, String Function()? path, int Function()? port, }) { return SmartshieldHttpConfig(
+SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String Function()? expectedBody, List<String>? Function()? expectedCodes, bool Function()? followRedirects, Map<String, List<String>>? Function()? header, HealthchecksHttpConfigMethod Function()? method, String Function()? path, int Function()? port, }) { return SmartshieldHttpConfig(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   expectedBody: expectedBody != null ? expectedBody() : this.expectedBody,
   expectedCodes: expectedCodes != null ? expectedCodes() : this.expectedCodes,

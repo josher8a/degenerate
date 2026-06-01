@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_changed/webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
 
 factory WebhookMarketplacePurchaseChangedAction.fromJson(String json) { return switch (json) {
   'changed' => changed,

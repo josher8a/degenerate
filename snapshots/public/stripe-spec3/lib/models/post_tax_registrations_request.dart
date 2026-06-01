@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_active_from.dart';import 'post_tax_registrations_request_country_options.dart';@immutable final class PostTaxRegistrationsRequest {const PostTaxRegistrationsRequest({required this.activeFrom, required this.country, required this.countryOptions, this.expand, this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/trial_end_variant1.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_id_request/active_from.dart';import 'package:pub_stripe_spec3/models/post_tax_registrations_request/country_options.dart';@immutable final class PostTaxRegistrationsRequest {const PostTaxRegistrationsRequest({required this.activeFrom, required this.country, required this.countryOptions, this.expand, this.expiresAt, });
 
 factory PostTaxRegistrationsRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequest(
-  activeFrom: OneOf2.parse(json['active_from'], fromA: (v) => PostTaxRegistrationsRequestActiveFromVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),),
+  activeFrom: OneOf2.parse(json['active_from'], fromA: (v) => TrialEndVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),),
   country: json['country'] as String,
-  countryOptions: PostTaxRegistrationsRequestCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
+  countryOptions: CountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
 ); }
 
 /// Time at which the Tax Registration becomes active. It can be either `now` to indicate the current time, or a future timestamp measured in seconds since the Unix epoch.
-final PostTaxRegistrationsRequestActiveFrom activeFrom;
+final ActiveFrom activeFrom;
 
 /// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
 final String country;
 
 /// Specific options for a registration in the specified `country`.
-final PostTaxRegistrationsRequestCountryOptions countryOptions;
+final CountryOptions countryOptions;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_options'); } 
-PostTaxRegistrationsRequest copyWith({PostTaxRegistrationsRequestActiveFrom? activeFrom, String? country, PostTaxRegistrationsRequestCountryOptions? countryOptions, List<String> Function()? expand, int Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
+PostTaxRegistrationsRequest copyWith({ActiveFrom? activeFrom, String? country, CountryOptions? countryOptions, List<String> Function()? expand, int Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,

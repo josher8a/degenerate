@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_document_fingerprint.dart';import '../models/dlp_document_fingerprint_upload.dart';import '../models/dlp_document_fingerprints_create_request.dart';import '../models/dlp_document_fingerprints_upload_request.dart';import '../models/dlp_update_document_fingerprint.dart';/// DlpDocumentFingerprintsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_create_request.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_upload_request.dart';import 'package:pub_cloudflare/models/dlp_update_document_fingerprint.dart';/// DlpDocumentFingerprintsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

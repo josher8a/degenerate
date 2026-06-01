@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_assistant_message_audio.dart';import 'chat_completion_request_assistant_message_content.dart';import 'chat_completion_request_assistant_message_content_part.dart';import 'chat_completion_request_assistant_message_function_call.dart';/// Messages sent by the model in response to user messages.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_audio.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_content.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_function_call.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message_content_part.dart';/// Messages sent by the model in response to user messages.
 /// 
 @immutable final class ChatCompletionRequestAssistantMessage {const ChatCompletionRequestAssistantMessage({required this.role, this.content, this.refusal, this.name, this.audio, this.toolCalls, this.functionCall, });
 

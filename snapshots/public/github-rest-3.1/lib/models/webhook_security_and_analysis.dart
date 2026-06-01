@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'full_repository.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_and_analysis_changes.dart';@immutable final class WebhookSecurityAndAnalysis {const WebhookSecurityAndAnalysis({required this.changes, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/full_repository.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_security_and_analysis/webhook_security_and_analysis_changes.dart';@immutable final class WebhookSecurityAndAnalysis {const WebhookSecurityAndAnalysis({required this.changes, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return WebhookSecurityAndAnalysis(
   changes: WebhookSecurityAndAnalysisChanges.fromJson(json['changes'] as Map<String, dynamic>),

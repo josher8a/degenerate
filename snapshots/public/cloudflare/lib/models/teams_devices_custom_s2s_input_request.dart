@@ -1,44 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
-@immutable final class TeamsDevicesCustomS2sInputRequestOperator {const TeamsDevicesCustomS2sInputRequestOperator._(this.value);
-
-factory TeamsDevicesCustomS2sInputRequestOperator.fromJson(String json) { return switch (json) {
-  '<' => $empty,
-  '<=' => $empty2,
-  '>' => $empty3,
-  '>=' => $empty4,
-  '==' => $empty5,
-  _ => TeamsDevicesCustomS2sInputRequestOperator._(json),
-}; }
-
-static const TeamsDevicesCustomS2sInputRequestOperator $empty = TeamsDevicesCustomS2sInputRequestOperator._('<');
-
-static const TeamsDevicesCustomS2sInputRequestOperator $empty2 = TeamsDevicesCustomS2sInputRequestOperator._('<=');
-
-static const TeamsDevicesCustomS2sInputRequestOperator $empty3 = TeamsDevicesCustomS2sInputRequestOperator._('>');
-
-static const TeamsDevicesCustomS2sInputRequestOperator $empty4 = TeamsDevicesCustomS2sInputRequestOperator._('>=');
-
-static const TeamsDevicesCustomS2sInputRequestOperator $empty5 = TeamsDevicesCustomS2sInputRequestOperator._('==');
-
-static const List<TeamsDevicesCustomS2sInputRequestOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesCustomS2sInputRequestOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesCustomS2sInputRequestOperator($value)'; } 
- }
-@immutable final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';@immutable final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
 
 factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCustomS2sInputRequest(
   connectionId: json['connection_id'] as String,
-  $operator: TeamsDevicesCustomS2sInputRequestOperator.fromJson(json['operator'] as String),
+  $operator: TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(json['operator'] as String),
   score: (json['score'] as num).toDouble(),
 ); }
 
@@ -46,7 +12,7 @@ factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) { 
 final String connectionId;
 
 /// Operator.
-final TeamsDevicesCustomS2sInputRequestOperator $operator;
+final TeamsDevicesCrowdstrikeInputRequestOperator $operator;
 
 /// A value between 0-100 assigned to devices set by the 3rd party posture provider.
 final double score;
@@ -59,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String &&
       json.containsKey('operator') &&
       json.containsKey('score') && json['score'] is num; } 
-TeamsDevicesCustomS2sInputRequest copyWith({String? connectionId, TeamsDevicesCustomS2sInputRequestOperator? $operator, double? score, }) { return TeamsDevicesCustomS2sInputRequest(
+TeamsDevicesCustomS2sInputRequest copyWith({String? connectionId, TeamsDevicesCrowdstrikeInputRequestOperator? $operator, double? score, }) { return TeamsDevicesCustomS2sInputRequest(
   connectionId: connectionId ?? this.connectionId,
   $operator: $operator ?? this.$operator,
   score: score ?? this.score,

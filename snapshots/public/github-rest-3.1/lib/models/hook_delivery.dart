@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_delivery_request.dart';import 'hook_delivery_response.dart';/// Delivery made by a webhook.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_delivery/request.dart';import 'package:pub_github_rest_3_1/models/hook_delivery/response.dart';/// Delivery made by a webhook.
 @immutable final class HookDelivery {const HookDelivery({required this.id, required this.guid, required this.deliveredAt, required this.redelivery, required this.duration, required this.status, required this.statusCode, required this.event, required this.action, required this.installationId, required this.repositoryId, required this.request, required this.response, this.throttledAt, this.url, });
 
 factory HookDelivery.fromJson(Map<String, dynamic> json) { return HookDelivery(
@@ -17,8 +17,8 @@ factory HookDelivery.fromJson(Map<String, dynamic> json) { return HookDelivery(
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   throttledAt: json['throttled_at'] != null ? DateTime.parse(json['throttled_at'] as String) : null,
   url: json['url'] as String?,
-  request: HookDeliveryRequest.fromJson(json['request'] as Map<String, dynamic>),
-  response: HookDeliveryResponse.fromJson(json['response'] as Map<String, dynamic>),
+  request: Request.fromJson(json['request'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
 ); }
 
 /// Unique identifier of the delivery.
@@ -60,9 +60,9 @@ final DateTime? throttledAt;
 /// The URL target of the delivery.
 final String? url;
 
-final HookDeliveryRequest request;
+final Request request;
 
-final HookDeliveryResponse response;
+final Response response;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -94,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repository_id') && json['repository_id'] is num &&
       json.containsKey('request') &&
       json.containsKey('response'); } 
-HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, DateTime? Function()? throttledAt, String Function()? url, HookDeliveryRequest? request, HookDeliveryResponse? response, }) { return HookDelivery(
+HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redelivery, double? duration, String? status, int? statusCode, String? event, String? Function()? action, int? Function()? installationId, int? Function()? repositoryId, DateTime? Function()? throttledAt, String Function()? url, Request? request, Response? response, }) { return HookDelivery(
   id: id ?? this.id,
   guid: guid ?? this.guid,
   deliveredAt: deliveredAt ?? this.deliveredAt,

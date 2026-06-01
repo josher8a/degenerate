@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency.dart';import 'identifier.dart';import 'schemas_frequency.dart';import 'schemas_name.dart';/// Indicates whether you can subscribe to this plan.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/currency.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/schemas_frequency.dart';import 'package:pub_cloudflare/models/schemas_name.dart';/// Indicates whether you can subscribe to this plan.
 extension type const CanSubscribe(bool value) {
 factory CanSubscribe.fromJson(bool json) => CanSubscribe(json);
 

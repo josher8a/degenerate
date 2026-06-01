@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_worker/observability.dart';import 'package:pub_cloudflare/models/workers_worker/references.dart';import 'package:pub_cloudflare/models/workers_worker/subdomain.dart';import 'package:pub_cloudflare/models/workers_worker/tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
 
 factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),
@@ -8,11 +8,11 @@ factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker
   id: json['id'] as String,
   logpush: json['logpush'] as bool,
   name: json['name'] as String,
-  observability: WorkersWorkerObservability.fromJson(json['observability'] as Map<String, dynamic>),
-  references: WorkersWorkerReferences.fromJson(json['references'] as Map<String, dynamic>),
-  subdomain: WorkersWorkerSubdomain.fromJson(json['subdomain'] as Map<String, dynamic>),
+  observability: Observability.fromJson(json['observability'] as Map<String, dynamic>),
+  references: References.fromJson(json['references'] as Map<String, dynamic>),
+  subdomain: Subdomain.fromJson(json['subdomain'] as Map<String, dynamic>),
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-  tailConsumers: (json['tail_consumers'] as List<dynamic>).map((e) => WorkersWorkerTailConsumers.fromJson(e as Map<String, dynamic>)).toList(),
+  tailConsumers: (json['tail_consumers'] as List<dynamic>).map((e) => TailConsumers.fromJson(e as Map<String, dynamic>)).toList(),
   updatedOn: DateTime.parse(json['updated_on'] as String),
 ); }
 
@@ -32,19 +32,19 @@ final bool logpush;
 final String name;
 
 /// Observability settings for the Worker.
-final WorkersWorkerObservability observability;
+final Observability observability;
 
 /// Other resources that reference the Worker and depend on it existing.
-final WorkersWorkerReferences references;
+final References references;
 
 /// Subdomain settings for the Worker.
-final WorkersWorkerSubdomain subdomain;
+final Subdomain subdomain;
 
 /// Tags associated with the Worker.
 final List<String> tags;
 
 /// Other Workers that should consume logs from the Worker.
-final List<WorkersWorkerTailConsumers> tailConsumers;
+final List<TailConsumers> tailConsumers;
 
 /// When the Worker was most recently updated.
 final DateTime updatedOn;
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('tags') &&
       json.containsKey('tail_consumers') &&
       json.containsKey('updated_on') && json['updated_on'] is String; } 
-WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, WorkersWorkerObservability? observability, WorkersWorkerReferences? references, WorkersWorkerSubdomain? subdomain, List<String>? tags, List<WorkersWorkerTailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
+WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,
   deployedOn: deployedOn != null ? deployedOn() : this.deployedOn,
   id: id ?? this.id,

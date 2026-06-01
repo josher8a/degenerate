@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_text.dart';import 'prediction_content_content.dart';/// The type of the predicted content you want to provide. This type is
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_developer_message/chat_completion_request_developer_message_content.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';/// The type of the predicted content you want to provide. This type is
 /// currently always `content`.
 /// 
 @immutable final class PredictionContentType {const PredictionContentType._(this.value);
@@ -43,7 +43,7 @@ final PredictionContentType type;
 /// If generated tokens would match this content, the entire model response
 /// can be returned much more quickly.
 /// 
-final PredictionContentContent content;
+final ChatCompletionRequestDeveloperMessageContent content;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('content'); } 
-PredictionContent copyWith({PredictionContentType? type, PredictionContentContent? content, }) { return PredictionContent(
+PredictionContent copyWith({PredictionContentType? type, ChatCompletionRequestDeveloperMessageContent? content, }) { return PredictionContent(
   type: type ?? this.type,
   content: content ?? this.content,
 ); } 

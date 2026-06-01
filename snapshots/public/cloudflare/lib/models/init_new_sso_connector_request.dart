@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification = true, this.useFedrampLanguage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification = true, this.useFedrampLanguage, });
 
 factory InitNewSsoConnectorRequest.fromJson(Map<String, dynamic> json) { return InitNewSsoConnectorRequest(
   beginVerification: json.containsKey('begin_verification') ? json['begin_verification'] as bool : true,

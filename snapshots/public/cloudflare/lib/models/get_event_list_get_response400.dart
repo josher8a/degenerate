@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_list_get_response400_errors.dart';@immutable final class GetEventListGetResponse400 {const GetEventListGetResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class GetEventListGetResponse400 {const GetEventListGetResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetEventListGetResponse400.fromJson(Map<String, dynamic> json) { return GetEventListGetResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => GetEventListGetResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<GetEventListGetResponse400Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetEventListGetResponse400 copyWith({List<GetEventListGetResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return GetEventListGetResponse400(
+GetEventListGetResponse400 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return GetEventListGetResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

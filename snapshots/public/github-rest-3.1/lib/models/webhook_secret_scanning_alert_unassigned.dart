@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertUnassignedAction {const WebhookSecretScanningAlertUnassignedAction._(this.value);
-
-factory WebhookSecretScanningAlertUnassignedAction.fromJson(String json) { return switch (json) {
-  'unassigned' => unassigned,
-  _ => WebhookSecretScanningAlertUnassignedAction._(json),
-}; }
-
-static const WebhookSecretScanningAlertUnassignedAction unassigned = WebhookSecretScanningAlertUnassignedAction._('unassigned');
-
-static const List<WebhookSecretScanningAlertUnassignedAction> values = [unassigned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertUnassignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertUnassignedAction($value)'; } 
- }
-@immutable final class WebhookSecretScanningAlertUnassigned {const WebhookSecretScanningAlertUnassigned({required this.action, required this.alert, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';@immutable final class WebhookSecretScanningAlertUnassigned {const WebhookSecretScanningAlertUnassigned({required this.action, required this.alert, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertUnassigned.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertUnassigned(
-  action: WebhookSecretScanningAlertUnassignedAction.fromJson(json['action'] as String),
+  action: WebhookIssuesUnassignedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookSecretScanningAlertUnassigned.fromJson(Map<String, dynamic> json)
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookSecretScanningAlertUnassignedAction action;
+final WebhookIssuesUnassignedAction action;
 
 final SecretScanningAlertWebhook alert;
 
@@ -63,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository'); } 
-WebhookSecretScanningAlertUnassigned copyWith({WebhookSecretScanningAlertUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertUnassigned(
+WebhookSecretScanningAlertUnassigned copyWith({WebhookIssuesUnassignedAction? action, SecretScanningAlertWebhook? alert, SimpleUser Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertUnassigned(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   assignee: assignee != null ? assignee() : this.assignee,

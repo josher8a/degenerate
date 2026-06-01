@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_list_get_search_value.dart';@immutable final class GetEventListGetSearchOp {const GetEventListGetSearchOp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_list_get_search/get_event_list_get_search_value.dart';@immutable final class GetEventListGetSearchOp {const GetEventListGetSearchOp._(this.value);
 
 factory GetEventListGetSearchOp.fromJson(String json) { return switch (json) {
   'equals' => equals,

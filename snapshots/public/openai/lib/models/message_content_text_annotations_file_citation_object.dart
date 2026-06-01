@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
-@immutable final class MessageContentTextAnnotationsFileCitationObjectType {const MessageContentTextAnnotationsFileCitationObjectType._(this.value);
-
-factory MessageContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
-  'file_citation' => fileCitation,
-  _ => MessageContentTextAnnotationsFileCitationObjectType._(json),
-}; }
-
-static const MessageContentTextAnnotationsFileCitationObjectType fileCitation = MessageContentTextAnnotationsFileCitationObjectType._('file_citation');
-
-static const List<MessageContentTextAnnotationsFileCitationObjectType> values = [fileCitation];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentTextAnnotationsFileCitationObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageContentTextAnnotationsFileCitationObjectType($value)'; } 
- }
-/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_file_citation.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_type.dart';/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
 @immutable final class MessageContentTextAnnotationsFileCitationObject {const MessageContentTextAnnotationsFileCitationObject({required this.type, required this.text, required this.fileCitation, required this.startIndex, required this.endIndex, });
 
 factory MessageContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFileCitationObject(

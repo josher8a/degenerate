@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_refund_request_amount.dart';import 'post_payment_records_id_report_refund_request_metadata.dart';import 'post_payment_records_id_report_refund_request_processor_details.dart';import 'post_payment_records_id_report_refund_request_refunded.dart';/// The outcome of the reported refund.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_amount.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/refunded.dart';/// The outcome of the reported refund.
 @immutable final class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome._(this.value);
 
 factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
@@ -28,10 +28,10 @@ factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> js
   amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   initiatedAt: json['initiated_at'] != null ? (json['initiated_at'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportRefundRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   outcome: PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(json['outcome'] as String),
   processorDetails: PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
-  refunded: PostPaymentRecordsIdReportRefundRequestRefunded.fromJson(json['refunded'] as Map<String, dynamic>),
+  refunded: Refunded.fromJson(json['refunded'] as Map<String, dynamic>),
 ); }
 
 /// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
@@ -44,7 +44,7 @@ final List<String>? expand;
 final int? initiatedAt;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPaymentRecordsIdReportRefundRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The outcome of the reported refund.
 final PostPaymentRecordsIdReportRefundRequestOutcome outcome;
@@ -53,7 +53,7 @@ final PostPaymentRecordsIdReportRefundRequestOutcome outcome;
 final PostPaymentRecordsIdReportRefundRequestProcessorDetails processorDetails;
 
 /// Information about the payment attempt refund.
-final PostPaymentRecordsIdReportRefundRequestRefunded refunded;
+final Refunded refunded;
 
 Map<String, dynamic> toJson() { return {
   if (amount != null) 'amount': amount?.toJson(),
@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('outcome') &&
       json.containsKey('processor_details') &&
       json.containsKey('refunded'); } 
-PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount Function()? amount, List<String> Function()? expand, int Function()? initiatedAt, PostPaymentRecordsIdReportRefundRequestMetadata Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, PostPaymentRecordsIdReportRefundRequestRefunded? refunded, }) { return PostPaymentRecordsIdReportRefundRequest(
+PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefundRequestAmount Function()? amount, List<String> Function()? expand, int Function()? initiatedAt, Metadata Function()? metadata, PostPaymentRecordsIdReportRefundRequestOutcome? outcome, PostPaymentRecordsIdReportRefundRequestProcessorDetails? processorDetails, Refunded? refunded, }) { return PostPaymentRecordsIdReportRefundRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   initiatedAt: initiatedAt != null ? initiatedAt() : this.initiatedAt,

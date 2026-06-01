@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'milestone.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_number.dart';import 'webhooks_pull_request5.dart';@immutable final class WebhookPullRequestMilestonedAction {const WebhookPullRequestMilestonedAction._(this.value);
-
-factory WebhookPullRequestMilestonedAction.fromJson(String json) { return switch (json) {
-  'milestoned' => milestoned,
-  _ => WebhookPullRequestMilestonedAction._(json),
-}; }
-
-static const WebhookPullRequestMilestonedAction milestoned = WebhookPullRequestMilestonedAction._('milestoned');
-
-static const List<WebhookPullRequestMilestonedAction> values = [milestoned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestMilestonedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestMilestonedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestMilestoned {const WebhookPullRequestMilestoned({required this.action, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.milestone, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_milestoned/webhook_issues_milestoned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5.dart';@immutable final class WebhookPullRequestMilestoned {const WebhookPullRequestMilestoned({required this.action, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.milestone, this.organization, this.sender, });
 
 factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestMilestoned(
-  action: WebhookPullRequestMilestonedAction.fromJson(json['action'] as String),
+  action: WebhookIssuesMilestonedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   number: WebhooksNumber.fromJson(json['number'] as num),
@@ -34,7 +13,7 @@ factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) { retur
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookPullRequestMilestonedAction action;
+final WebhookIssuesMilestonedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -65,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository'); } 
-WebhookPullRequestMilestoned copyWith({WebhookPullRequestMilestonedAction? action, EnterpriseWebhooks Function()? enterprise, Milestone Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestMilestoned(
+WebhookPullRequestMilestoned copyWith({WebhookIssuesMilestonedAction? action, EnterpriseWebhooks Function()? enterprise, Milestone Function()? milestone, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhooksPullRequest5? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestMilestoned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   milestone: milestone != null ? milestone() : this.milestone,

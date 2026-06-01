@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
+@immutable final class ObservabilityLogs {const ObservabilityLogs({this.enabled = false, this.headSamplingRate = 1.0, this.invocationLogs = true, });
+
+factory ObservabilityLogs.fromJson(Map<String, dynamic> json) { return ObservabilityLogs(
+  enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
+  headSamplingRate: json.containsKey('head_sampling_rate') ? (json['head_sampling_rate'] as num).toDouble() : 1.0,
+  invocationLogs: json.containsKey('invocation_logs') ? json['invocation_logs'] as bool : true,
+); }
+
+/// Whether logs are enabled for the Worker.
+final bool enabled;
+
+/// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%).
+final double headSamplingRate;
+
+/// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+final bool invocationLogs;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  'head_sampling_rate': headSamplingRate,
+  'invocation_logs': invocationLogs,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'invocation_logs'}.contains(key)); } 
+ObservabilityLogs copyWith({bool Function()? enabled, double Function()? headSamplingRate, bool Function()? invocationLogs, }) { return ObservabilityLogs(
+  enabled: enabled != null ? enabled() : this.enabled,
+  headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
+  invocationLogs: invocationLogs != null ? invocationLogs() : this.invocationLogs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ObservabilityLogs &&
+          enabled == other.enabled &&
+          headSamplingRate == other.headSamplingRate &&
+          invocationLogs == other.invocationLogs; } 
+@override int get hashCode { return Object.hash(enabled, headSamplingRate, invocationLogs); } 
+@override String toString() { return 'ObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)'; } 
+ }

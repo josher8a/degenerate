@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_response_choices.dart';import 'ai_search_instance_chat_completion_response_chunks.dart';@immutable final class AiSearchInstanceChatCompletionResponse {const AiSearchInstanceChatCompletionResponse({required this.choices, required this.chunks, this.id, this.model, this.object, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/choices.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_response/chunks.dart';@immutable final class AiSearchInstanceChatCompletionResponse {const AiSearchInstanceChatCompletionResponse({required this.choices, required this.chunks, this.id, this.model, this.object, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceChatCompletionResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponse(
-  choices: (json['choices'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
-  chunks: (json['chunks'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionResponseChunks.fromJson(e as Map<String, dynamic>)).toList(),
+  choices: (json['choices'] as List<dynamic>).map((e) => Choices.fromJson(e as Map<String, dynamic>)).toList(),
+  chunks: (json['chunks'] as List<dynamic>).map((e) => Chunks.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String?,
   model: json['model'] as String?,
   object: json['object'] as String?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'choices', 'chunks', 'id', 'model', 'object'}.contains(e.key))),
 ); }
 
-final List<AiSearchInstanceChatCompletionResponseChoices> choices;
+final List<Choices> choices;
 
-final List<AiSearchInstanceChatCompletionResponseChunks> chunks;
+final List<Chunks> chunks;
 
 final String? id;
 
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('choices') &&
       json.containsKey('chunks'); } 
-AiSearchInstanceChatCompletionResponse copyWith({List<AiSearchInstanceChatCompletionResponseChoices>? choices, List<AiSearchInstanceChatCompletionResponseChunks>? chunks, String Function()? id, String Function()? model, String Function()? object, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionResponse(
+AiSearchInstanceChatCompletionResponse copyWith({List<Choices>? choices, List<Chunks>? chunks, String Function()? id, String Function()? model, String Function()? object, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionResponse(
   choices: choices ?? this.choices,
   chunks: chunks ?? this.chunks,
   id: id != null ? id() : this.id,

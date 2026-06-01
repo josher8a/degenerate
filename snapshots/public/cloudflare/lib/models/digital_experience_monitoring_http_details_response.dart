@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_response_http_stats.dart';import 'digital_experience_monitoring_http_details_response_http_stats_by_colo.dart';import 'digital_experience_monitoring_http_details_response_target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats, this.httpStatsByColo, this.interval, this.kind, this.method, this.name, this.targetPolicies, this.targeted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/http_stats_by_colo.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';@immutable final class DigitalExperienceMonitoringHttpDetailsResponse {const DigitalExperienceMonitoringHttpDetailsResponse({this.host, this.httpStats, this.httpStatsByColo, this.interval, this.kind, this.method, this.name, this.targetPolicies, this.targeted, });
 
 factory DigitalExperienceMonitoringHttpDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: json['host'] as String?,
-  httpStats: json['httpStats'] != null ? DigitalExperienceMonitoringHttpDetailsResponseHttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null,
-  httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
+  httpStats: json['httpStats'] != null ? HttpStats.fromJson(json['httpStats'] as Map<String, dynamic>) : null,
+  httpStatsByColo: (json['httpStatsByColo'] as List<dynamic>?)?.map((e) => HttpStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
   interval: json['interval'] as String?,
   kind: json['kind'],
   method: json['method'] as String?,
   name: json['name'] as String?,
-  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
+  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
 ); }
 
 /// The url of the HTTP synthetic application test
 final String? host;
 
-final DigitalExperienceMonitoringHttpDetailsResponseHttpStats? httpStats;
+final HttpStats? httpStats;
 
-final List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo>? httpStatsByColo;
+final List<HttpStatsByColo>? httpStatsByColo;
 
 /// The interval at which the HTTP synthetic application test is set to run.
 final String? interval;
@@ -32,7 +32,7 @@ final String? method;
 /// The name of the HTTP synthetic application test
 final String? name;
 
-final List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? targetPolicies;
+final List<TargetPolicies>? targetPolicies;
 
 final bool? targeted;
 
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'targeted': ?targeted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'httpStats', 'httpStatsByColo', 'interval', 'kind', 'method', 'name', 'target_policies', 'targeted'}.contains(key)); } 
-DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, DigitalExperienceMonitoringHttpDetailsResponseHttpStats? Function()? httpStats, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, dynamic Function()? kind, String Function()? method, String Function()? name, List<DigitalExperienceMonitoringHttpDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
+DigitalExperienceMonitoringHttpDetailsResponse copyWith({String Function()? host, HttpStats? Function()? httpStats, List<HttpStatsByColo> Function()? httpStatsByColo, String Function()? interval, dynamic Function()? kind, String Function()? method, String Function()? name, List<TargetPolicies>? Function()? targetPolicies, bool Function()? targeted, }) { return DigitalExperienceMonitoringHttpDetailsResponse(
   host: host != null ? host() : this.host,
   httpStats: httpStats != null ? httpStats() : this.httpStats,
   httpStatsByColo: httpStatsByColo != null ? httpStatsByColo() : this.httpStatsByColo,

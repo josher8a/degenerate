@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/available_rate_plan.dart';import '../models/identifier.dart';import '../models/rate_plan.dart';/// ZoneRatePlanApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/available_rate_plan.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/rate_plan.dart';/// ZoneRatePlanApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

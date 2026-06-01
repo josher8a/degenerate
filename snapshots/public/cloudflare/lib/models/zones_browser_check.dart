@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
 /// spammers and certain bots.
 /// 
 @immutable final class ZonesBrowserCheckId {const ZonesBrowserCheckId._(this.value);

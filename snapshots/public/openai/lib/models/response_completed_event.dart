@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// Emitted when the model response is complete.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response.dart';/// Emitted when the model response is complete.
 @immutable final class ResponseCompletedEvent {const ResponseCompletedEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseCompletedEvent(

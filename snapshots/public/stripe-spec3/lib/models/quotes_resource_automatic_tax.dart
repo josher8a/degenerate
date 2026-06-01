@@ -1,41 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this quote.
-@immutable final class QuotesResourceAutomaticTaxStatus {const QuotesResourceAutomaticTaxStatus._(this.value);
-
-factory QuotesResourceAutomaticTaxStatus.fromJson(String json) { return switch (json) {
-  'complete' => complete,
-  'failed' => failed,
-  'requires_location_inputs' => requiresLocationInputs,
-  _ => QuotesResourceAutomaticTaxStatus._(json),
-}; }
-
-static const QuotesResourceAutomaticTaxStatus complete = QuotesResourceAutomaticTaxStatus._('complete');
-
-static const QuotesResourceAutomaticTaxStatus failed = QuotesResourceAutomaticTaxStatus._('failed');
-
-static const QuotesResourceAutomaticTaxStatus requiresLocationInputs = QuotesResourceAutomaticTaxStatus._('requires_location_inputs');
-
-static const List<QuotesResourceAutomaticTaxStatus> values = [complete, failed, requiresLocationInputs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuotesResourceAutomaticTaxStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuotesResourceAutomaticTaxStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// 
 @immutable final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
 
 factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return QuotesResourceAutomaticTax(
   enabled: json['enabled'] as bool,
   liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
-  status: json['status'] != null ? QuotesResourceAutomaticTaxStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? AutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// Automatically calculate taxes
@@ -48,7 +20,7 @@ final ConnectAccountReference? liability;
 final String? provider;
 
 /// The status of the most recent automated tax calculation for this quote.
-final QuotesResourceAutomaticTaxStatus? status;
+final AutomaticTaxStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
@@ -57,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-QuotesResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, QuotesResourceAutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
+QuotesResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, AutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
   provider: provider != null ? provider() : this.provider,

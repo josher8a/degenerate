@@ -1,42 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam100CaptureMethod {const PaymentMethodOptionsParam100CaptureMethod._(this.value);
-
-factory PaymentMethodOptionsParam100CaptureMethod.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'manual' => manual,
-  _ => PaymentMethodOptionsParam100CaptureMethod._(json),
-}; }
-
-static const PaymentMethodOptionsParam100CaptureMethod $empty = PaymentMethodOptionsParam100CaptureMethod._('');
-
-static const PaymentMethodOptionsParam100CaptureMethod manual = PaymentMethodOptionsParam100CaptureMethod._('manual');
-
-static const List<PaymentMethodOptionsParam100CaptureMethod> values = [$empty, manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam100CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam100CaptureMethod($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam100 {const PaymentMethodOptionsParam100({this.captureMethod});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';@immutable final class PaymentMethodOptionsParam100 {const PaymentMethodOptionsParam100({this.captureMethod});
 
 factory PaymentMethodOptionsParam100.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam100(
-  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam100CaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
 ); }
 
-final PaymentMethodOptionsParam100CaptureMethod? captureMethod;
+final payment_intent_paramCaptureMethod? captureMethod;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentMethodOptionsParam100 copyWith({PaymentMethodOptionsParam100CaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam100(
+PaymentMethodOptionsParam100 copyWith({payment_intent_paramCaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam100(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

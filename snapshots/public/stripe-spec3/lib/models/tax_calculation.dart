@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_calculation_line_items.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_breakdown.dart';import 'tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_calculation/tax_calculation_line_items.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_breakdown.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxCalculationObject {const TaxCalculationObject._(this.value);
 
 factory TaxCalculationObject.fromJson(String json) { return switch (json) {

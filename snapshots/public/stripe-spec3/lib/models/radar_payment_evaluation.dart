@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_client_device_metadata.dart';import 'insights_resources_payment_evaluation_customer_details.dart';import 'insights_resources_payment_evaluation_event.dart';import 'insights_resources_payment_evaluation_insights.dart';import 'insights_resources_payment_evaluation_outcome.dart';import 'insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_client_device_metadata.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_customer_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_event.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_insights.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_outcome.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
 
 factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {

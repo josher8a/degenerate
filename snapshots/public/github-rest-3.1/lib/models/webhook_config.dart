@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';/// Configuration object of the webhook
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_config_content_type.dart';import 'package:pub_github_rest_3_1/models/webhook_config_insecure_ssl.dart';import 'package:pub_github_rest_3_1/models/webhook_config_secret.dart';import 'package:pub_github_rest_3_1/models/webhook_config_url.dart';/// Configuration object of the webhook
 @immutable final class WebhookConfig {const WebhookConfig({this.url, this.contentType, this.secret, this.insecureSsl, });
 
 factory WebhookConfig.fromJson(Map<String, dynamic> json) { return WebhookConfig(

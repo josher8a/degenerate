@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon_applies_to.dart';import 'coupon_currency_option.dart';/// One of `forever`, `once`, or `repeating`. Describes how long a customer who applies this coupon will get the discount.
-@immutable final class CouponDuration {const CouponDuration._(this.value);
-
-factory CouponDuration.fromJson(String json) { return switch (json) {
-  'forever' => forever,
-  'once' => once,
-  'repeating' => repeating,
-  _ => CouponDuration._(json),
-}; }
-
-static const CouponDuration forever = CouponDuration._('forever');
-
-static const CouponDuration once = CouponDuration._('once');
-
-static const CouponDuration repeating = CouponDuration._('repeating');
-
-static const List<CouponDuration> values = [forever, once, repeating];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CouponDuration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CouponDuration($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CouponObject {const CouponObject._(this.value);
-
-factory CouponObject.fromJson(String json) { return switch (json) {
-  'coupon' => coupon,
-  _ => CouponObject._(json),
-}; }
-
-static const CouponObject coupon = CouponObject._('coupon');
-
-static const List<CouponObject> values = [coupon];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CouponObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CouponObject($value)'; } 
- }
-/// A coupon contains information about a percent-off or amount-off discount you
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_object.dart';import 'package:pub_stripe_spec3/models/coupon_applies_to.dart';import 'package:pub_stripe_spec3/models/coupon_currency_option.dart';/// A coupon contains information about a percent-off or amount-off discount you
 /// might want to apply to a customer. Coupons may be applied to [subscriptions](https://api.stripe.com#subscriptions), [invoices](https://api.stripe.com#invoices),
 /// [checkout sessions](https://docs.stripe.com/api/checkout/sessions), [quotes](https://api.stripe.com#quotes), and more. Coupons do not work with conventional one-off [charges](https://api.stripe.com#create_charge) or [payment intents](https://docs.stripe.com/api/payment_intents).
 @immutable final class Coupon {const Coupon({required this.created, required this.duration, required this.id, required this.livemode, required this.object, required this.timesRedeemed, required this.valid, this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.durationInMonths, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });

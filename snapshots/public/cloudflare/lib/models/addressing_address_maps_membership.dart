@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_identifier.dart';import 'addressing_kind.dart';import 'addressing_timestamp.dart';/// Controls whether the membership can be deleted via the API or not.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_identifier.dart';import 'package:pub_cloudflare/models/addressing_kind.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Controls whether the membership can be deleted via the API or not.
 extension type const AddressingSchemasCanDelete(bool value) {
 factory AddressingSchemasCanDelete.fromJson(bool json) => AddressingSchemasCanDelete(json);
 

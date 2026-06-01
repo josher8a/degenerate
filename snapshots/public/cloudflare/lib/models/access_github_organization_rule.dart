@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_github_organization_rule_github_organization.dart';/// Matches a Github organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_github_organization_rule/github_organization.dart';/// Matches a Github organization.
 /// Requires a Github identity provider.
 @immutable final class AccessGithubOrganizationRule {const AccessGithubOrganizationRule({required this.githubOrganization});
 
 factory AccessGithubOrganizationRule.fromJson(Map<String, dynamic> json) { return AccessGithubOrganizationRule(
-  githubOrganization: AccessGithubOrganizationRuleGithubOrganization.fromJson(json['github-organization'] as Map<String, dynamic>),
+  githubOrganization: GithubOrganization.fromJson(json['github-organization'] as Map<String, dynamic>),
 ); }
 
-final AccessGithubOrganizationRuleGithubOrganization githubOrganization;
+final GithubOrganization githubOrganization;
 
 Map<String, dynamic> toJson() { return {
   'github-organization': githubOrganization.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('github-organization'); } 
-AccessGithubOrganizationRule copyWith({AccessGithubOrganizationRuleGithubOrganization? githubOrganization}) { return AccessGithubOrganizationRule(
+AccessGithubOrganizationRule copyWith({GithubOrganization? githubOrganization}) { return AccessGithubOrganizationRule(
   githubOrganization: githubOrganization ?? this.githubOrganization,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

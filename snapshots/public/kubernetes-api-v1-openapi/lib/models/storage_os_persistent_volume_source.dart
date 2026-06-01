@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_reference.dart';/// Represents a StorageOS persistent volume resource.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_reference.dart';/// Represents a StorageOS persistent volume resource.
 @immutable final class StorageOsPersistentVolumeSource {const StorageOsPersistentVolumeSource({this.fsType, this.readOnly, this.secretRef, this.volumeName, this.volumeNamespace, });
 
 factory StorageOsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return StorageOsPersistentVolumeSource(

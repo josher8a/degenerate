@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_refunds_refund_request_metadata.dart';@immutable final class PostChargesChargeRefundsRefundRequest {const PostChargesChargeRefundsRefundRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';@immutable final class PostChargesChargeRefundsRefundRequest {const PostChargesChargeRefundsRefundRequest({this.expand, this.metadata, });
 
 factory PostChargesChargeRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundsRefundRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRefundsRefundRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
-final PostChargesChargeRefundsRefundRequestMetadata? metadata;
+final Metadata? metadata;
 
 Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'metadata'}.contains(key)); } 
-PostChargesChargeRefundsRefundRequest copyWith({List<String> Function()? expand, PostChargesChargeRefundsRefundRequestMetadata Function()? metadata, }) { return PostChargesChargeRefundsRefundRequest(
+PostChargesChargeRefundsRefundRequest copyWith({List<String> Function()? expand, Metadata Function()? metadata, }) { return PostChargesChargeRefundsRefundRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

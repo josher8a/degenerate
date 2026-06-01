@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_response_buffering_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
 /// from the origin server before forwarding it to the site visitor. By
 /// default, Cloudflare sends packets to the client as they arrive from
 /// the origin server.

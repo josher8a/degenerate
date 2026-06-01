@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_account_ruleset_request.dart';import '../models/create_account_ruleset_rule_request.dart';import '../models/list_account_entrypoint_ruleset_versions_response_result.dart';import '../models/list_account_ruleset_versions_response_result.dart';import '../models/list_account_rulesets_response_result.dart';import '../models/rulesets_account_id.dart';import '../models/rulesets_cursor.dart';import '../models/rulesets_per_page.dart';import '../models/rulesets_rule_category.dart';import '../models/rulesets_rule_id.dart';import '../models/rulesets_ruleset_id.dart';import '../models/rulesets_ruleset_phase.dart';import '../models/rulesets_ruleset_version.dart';import '../models/update_account_entrypoint_ruleset_request.dart';import '../models/update_account_ruleset_request.dart';import '../models/update_account_ruleset_rule_request.dart';/// AccountRulesetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_account_ruleset_request.dart';import 'package:pub_cloudflare/models/create_account_ruleset_rule_request.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_account_id.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';import 'package:pub_cloudflare/models/rulesets_per_page.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';import 'package:pub_cloudflare/models/update_account_entrypoint_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_request.dart';import 'package:pub_cloudflare/models/update_account_ruleset_rule_request.dart';/// AccountRulesetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountRulesetsApi with ApiExecutor {const AccountRulesetsApi(this.a
 /// Fetches all rulesets at the account level.
 ///
 /// `GET /accounts/{account_id}/rulesets`
-Future<ApiResult<List<ListAccountRulesetsResponseResult>, Never>> listAccountRulesets({required RulesetsAccountId accountId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listAccountRulesets({required RulesetsAccountId accountId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toString();
@@ -37,7 +37,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ListAccountRulesetsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -205,7 +205,7 @@ return execute(
 /// Fetches the versions of an account ruleset.
 ///
 /// `GET /accounts/{account_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<List<ListAccountRulesetVersionsResponseResult>, Never>> listAccountRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listAccountRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -218,7 +218,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ListAccountRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

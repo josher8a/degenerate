@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method by which the fraud challenge was delivered to the cardholder.
-@immutable final class IssuingAuthorizationFraudChallengeChannel {const IssuingAuthorizationFraudChallengeChannel._(this.value);
+@immutable final class Channel {const Channel._(this.value);
 
-factory IssuingAuthorizationFraudChallengeChannel.fromJson(String json) { return switch (json) {
+factory Channel.fromJson(String json) { return switch (json) {
   'sms' => sms,
-  _ => IssuingAuthorizationFraudChallengeChannel._(json),
+  _ => Channel._(json),
 }; }
 
-static const IssuingAuthorizationFraudChallengeChannel sms = IssuingAuthorizationFraudChallengeChannel._('sms');
+static const Channel sms = Channel._('sms');
 
-static const List<IssuingAuthorizationFraudChallengeChannel> values = [sms];
+static const List<Channel> values = [sms];
 
 final String value;
 
@@ -18,9 +18,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeChannel && other.value == value; } 
+    other is Channel && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeChannel($value)'; } 
+@override String toString() { return 'Channel($value)'; } 
  }
 /// The status of the fraud challenge.
 @immutable final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
@@ -57,19 +57,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFraudChallengeStatus($value)'; } 
  }
 /// If the challenge is not deliverable, the reason why.
-@immutable final class IssuingAuthorizationFraudChallengeUndeliverableReason {const IssuingAuthorizationFraudChallengeUndeliverableReason._(this.value);
+@immutable final class UndeliverableReason {const UndeliverableReason._(this.value);
 
-factory IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(String json) { return switch (json) {
+factory UndeliverableReason.fromJson(String json) { return switch (json) {
   'no_phone_number' => noPhoneNumber,
   'unsupported_phone_number' => unsupportedPhoneNumber,
-  _ => IssuingAuthorizationFraudChallengeUndeliverableReason._(json),
+  _ => UndeliverableReason._(json),
 }; }
 
-static const IssuingAuthorizationFraudChallengeUndeliverableReason noPhoneNumber = IssuingAuthorizationFraudChallengeUndeliverableReason._('no_phone_number');
+static const UndeliverableReason noPhoneNumber = UndeliverableReason._('no_phone_number');
 
-static const IssuingAuthorizationFraudChallengeUndeliverableReason unsupportedPhoneNumber = IssuingAuthorizationFraudChallengeUndeliverableReason._('unsupported_phone_number');
+static const UndeliverableReason unsupportedPhoneNumber = UndeliverableReason._('unsupported_phone_number');
 
-static const List<IssuingAuthorizationFraudChallengeUndeliverableReason> values = [noPhoneNumber, unsupportedPhoneNumber];
+static const List<UndeliverableReason> values = [noPhoneNumber, unsupportedPhoneNumber];
 
 final String value;
 
@@ -77,27 +77,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeUndeliverableReason && other.value == value; } 
+    other is UndeliverableReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeUndeliverableReason($value)'; } 
+@override String toString() { return 'UndeliverableReason($value)'; } 
  }
 /// 
 @immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason, });
 
 factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFraudChallenge(
-  channel: IssuingAuthorizationFraudChallengeChannel.fromJson(json['channel'] as String),
+  channel: Channel.fromJson(json['channel'] as String),
   status: IssuingAuthorizationFraudChallengeStatus.fromJson(json['status'] as String),
-  undeliverableReason: json['undeliverable_reason'] != null ? IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null,
+  undeliverableReason: json['undeliverable_reason'] != null ? UndeliverableReason.fromJson(json['undeliverable_reason'] as String) : null,
 ); }
 
 /// The method by which the fraud challenge was delivered to the cardholder.
-final IssuingAuthorizationFraudChallengeChannel channel;
+final Channel channel;
 
 /// The status of the fraud challenge.
 final IssuingAuthorizationFraudChallengeStatus status;
 
 /// If the challenge is not deliverable, the reason why.
-final IssuingAuthorizationFraudChallengeUndeliverableReason? undeliverableReason;
+final UndeliverableReason? undeliverableReason;
 
 Map<String, dynamic> toJson() { return {
   'channel': channel.toJson(),
@@ -106,7 +106,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('channel') &&
       json.containsKey('status'); } 
-IssuingAuthorizationFraudChallenge copyWith({IssuingAuthorizationFraudChallengeChannel? channel, IssuingAuthorizationFraudChallengeStatus? status, IssuingAuthorizationFraudChallengeUndeliverableReason? Function()? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
+IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizationFraudChallengeStatus? status, UndeliverableReason? Function()? undeliverableReason, }) { return IssuingAuthorizationFraudChallenge(
   channel: channel ?? this.channel,
   status: status ?? this.status,
   undeliverableReason: undeliverableReason != null ? undeliverableReason() : this.undeliverableReason,

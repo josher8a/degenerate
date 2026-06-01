@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_hostname.dart';import 'workers_schemas_environment.dart';import 'workers_schemas_service.dart';import 'workers_zone_identifier.dart';@immutable final class WorkerDomainAttachToDomainRequest {const WorkerDomainAttachToDomainRequest({required this.hostname, required this.service, required this.zoneId, this.environment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_hostname.dart';import 'package:pub_cloudflare/models/workers_schemas_environment.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';@immutable final class WorkerDomainAttachToDomainRequest {const WorkerDomainAttachToDomainRequest({required this.hostname, required this.service, required this.zoneId, this.environment, });
 
 factory WorkerDomainAttachToDomainRequest.fromJson(Map<String, dynamic> json) { return WorkerDomainAttachToDomainRequest(
   environment: json['environment'] != null ? WorkersSchemasEnvironment.fromJson(json['environment'] as String) : null,

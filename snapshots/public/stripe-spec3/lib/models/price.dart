@@ -1,119 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'custom_unit_amount.dart';import 'deleted_product.dart';import 'price_product.dart';import 'price_tier.dart';import 'product.dart';import 'recurring.dart';import 'transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-@immutable final class PriceBillingScheme {const PriceBillingScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price/price_product.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
+@immutable final class PriceType$1 {const PriceType$1._(this.value);
 
-factory PriceBillingScheme.fromJson(String json) { return switch (json) {
-  'per_unit' => perUnit,
-  'tiered' => tiered,
-  _ => PriceBillingScheme._(json),
-}; }
-
-static const PriceBillingScheme perUnit = PriceBillingScheme._('per_unit');
-
-static const PriceBillingScheme tiered = PriceBillingScheme._('tiered');
-
-static const List<PriceBillingScheme> values = [perUnit, tiered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceBillingScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceBillingScheme($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PriceObject {const PriceObject._(this.value);
-
-factory PriceObject.fromJson(String json) { return switch (json) {
-  'price' => price,
-  _ => PriceObject._(json),
-}; }
-
-static const PriceObject price = PriceObject._('price');
-
-static const List<PriceObject> values = [price];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceObject($value)'; } 
- }
-/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-@immutable final class PriceTaxBehavior {const PriceTaxBehavior._(this.value);
-
-factory PriceTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => PriceTaxBehavior._(json),
-}; }
-
-static const PriceTaxBehavior exclusive = PriceTaxBehavior._('exclusive');
-
-static const PriceTaxBehavior inclusive = PriceTaxBehavior._('inclusive');
-
-static const PriceTaxBehavior unspecified = PriceTaxBehavior._('unspecified');
-
-static const List<PriceTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceTaxBehavior($value)'; } 
- }
-/// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-@immutable final class PriceTiersMode {const PriceTiersMode._(this.value);
-
-factory PriceTiersMode.fromJson(String json) { return switch (json) {
-  'graduated' => graduated,
-  'volume' => volume,
-  _ => PriceTiersMode._(json),
-}; }
-
-static const PriceTiersMode graduated = PriceTiersMode._('graduated');
-
-static const PriceTiersMode volume = PriceTiersMode._('volume');
-
-static const List<PriceTiersMode> values = [graduated, volume];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceTiersMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceTiersMode($value)'; } 
- }
-/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
-@immutable final class PriceType {const PriceType._(this.value);
-
-factory PriceType.fromJson(String json) { return switch (json) {
+factory PriceType$1.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
   'recurring' => recurring,
-  _ => PriceType._(json),
+  _ => PriceType$1._(json),
 }; }
 
-static const PriceType oneTime = PriceType._('one_time');
+static const PriceType$1 oneTime = PriceType$1._('one_time');
 
-static const PriceType recurring = PriceType._('recurring');
+static const PriceType$1 recurring = PriceType$1._('recurring');
 
-static const List<PriceType> values = [oneTime, recurring];
+static const List<PriceType$1> values = [oneTime, recurring];
 
 final String value;
 
@@ -121,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceType && other.value == value; } 
+    other is PriceType$1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceType($value)'; } 
+@override String toString() { return 'PriceType\$1($value)'; } 
  }
 /// Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.
 /// [Products](https://api.stripe.com#products) help you track inventory or provisioning, and prices help you track payment terms. Different physical goods or levels of service should be represented by products, and pricing options should be represented by prices. This approach lets you change prices without having to change your provisioning scheme.
@@ -135,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Price.fromJson(Map<String, dynamic> json) { return Price(
   active: json['active'] as bool,
-  billingScheme: PriceBillingScheme.fromJson(json['billing_scheme'] as String),
+  billingScheme: BillingScheme.fromJson(json['billing_scheme'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CurrencyOption.fromJson(v as Map<String, dynamic>))),
@@ -145,14 +45,14 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   lookupKey: json['lookup_key'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] as String?,
-  object: PriceObject.fromJson(json['object'] as String),
+  object: DeletedPriceObject.fromJson(json['object'] as String),
   product: OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),),
   recurring: json['recurring'] != null ? Recurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
-  taxBehavior: json['tax_behavior'] != null ? PriceTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
-  tiersMode: json['tiers_mode'] != null ? PriceTiersMode.fromJson(json['tiers_mode'] as String) : null,
+  tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transformQuantity: json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
-  type: PriceType.fromJson(json['type'] as String),
+  type: PriceType$1.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }
@@ -161,7 +61,7 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
 final bool active;
 
 /// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final PriceBillingScheme billingScheme;
+final BillingScheme billingScheme;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -191,7 +91,7 @@ final Map<String,String> metadata;
 final String? nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final PriceObject object;
+final DeletedPriceObject object;
 
 /// The ID of the product this price is associated with.
 final PriceProduct product;
@@ -200,19 +100,19 @@ final PriceProduct product;
 final Recurring? recurring;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final PriceTaxBehavior? taxBehavior;
+final CurrencyOptionTaxBehavior? taxBehavior;
 
 /// Each element represents a pricing tier. This parameter requires `billing_scheme` to be set to `tiered`. See also the documentation for `billing_scheme`.
 final List<PriceTier>? tiers;
 
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-final PriceTiersMode? tiersMode;
+final PlanTiersMode? tiersMode;
 
 /// Apply a transformation to the reported usage or set quantity before computing the amount billed. Cannot be combined with `tiers`.
 final TransformQuantity? transformQuantity;
 
 /// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
-final PriceType type;
+final PriceType$1 type;
 
 /// The unit amount in cents (or local equivalent) to be charged, represented as a whole integer if possible. Only set if `billing_scheme=per_unit`.
 final int? unitAmount;
@@ -253,7 +153,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('type'); } 
-Price copyWith({bool? active, PriceBillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, PriceObject? object, PriceProduct? product, Recurring? Function()? recurring, PriceTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PriceTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
+Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PriceProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,

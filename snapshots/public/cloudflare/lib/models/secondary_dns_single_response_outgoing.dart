@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_single_response_outgoing_result.dart';@immutable final class SecondaryDnsSingleResponseOutgoing {const SecondaryDnsSingleResponseOutgoing({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_outgoing/secondary_dns_single_response_outgoing_result.dart';@immutable final class SecondaryDnsSingleResponseOutgoing {const SecondaryDnsSingleResponseOutgoing({this.result});
 
 factory SecondaryDnsSingleResponseOutgoing.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleResponseOutgoing(
   result: json['result'] != null ? SecondaryDnsSingleResponseOutgoingResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_ip_info.dart';import 'infra_target_id.dart';@immutable final class InfraTarget {const InfraTarget({required this.createdAt, required this.hostname, required this.id, required this.ip, required this.modifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info.dart';import 'package:pub_cloudflare/models/infra_target_id.dart';@immutable final class InfraTarget {const InfraTarget({required this.createdAt, required this.hostname, required this.id, required this.ip, required this.modifiedAt, });
 
 factory InfraTarget.fromJson(Map<String, dynamic> json) { return InfraTarget(
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_session.dart';import 'key2.dart';/// The type of actor. Is either `session` or `api_key`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_actor_session.dart';import 'package:pub_openai/models/key2.dart';/// The type of actor. Is either `session` or `api_key`.
 @immutable final class AuditLogActorType {const AuditLogActorType._(this.value);
 
 factory AuditLogActorType.fromJson(String json) { return switch (json) {

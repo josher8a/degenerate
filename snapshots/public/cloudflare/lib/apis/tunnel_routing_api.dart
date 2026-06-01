@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip.dart';import '../models/tunnel_ip_network.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_route_comment.dart';import '../models/tunnel_route_create_a_tunnel_route_request.dart';import '../models/tunnel_route_id.dart';import '../models/tunnel_route_update_a_tunnel_route_request.dart';import '../models/tunnel_teamnet.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_ip.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_route_create_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_route_id.dart';import 'package:pub_cloudflare/models/tunnel_route_update_a_tunnel_route_request.dart';import 'package:pub_cloudflare/models/tunnel_teamnet.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_type.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -75,7 +75,7 @@ return execute(
 /// Routes a private network through a Cloudflare Tunnel.
 ///
 /// `POST /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteCreateATunnelRoute({required TunnelAccountId accountId, required TunnelRouteCreateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,7 +99,7 @@ return execute(
 /// Get a private network route in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteGetTunnelRoute({required TunnelAccountId accountId, required TunnelRouteId routeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,7 +121,7 @@ return execute(
 /// Updates an existing private network route in an account. The fields that are meant to be updated should be provided in the body of the request.
 ///
 /// `PATCH /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteUpdateATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, required TunnelRouteUpdateATunnelRouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -146,7 +146,7 @@ return execute(
 /// 
 ///
 /// `DELETE /accounts/{account_id}/teamnet/routes/{route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteDeleteATunnelRoute({required TunnelRouteId routeId, required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -168,7 +168,7 @@ return execute(
 /// Fetches routes that contain the given IP address.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes/ip/{ip}`
-Future<ApiResult<ResponseCommon69Result, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon33Result, Never>> tunnelRouteGetTunnelRouteByIp({required TunnelIp ip, required TunnelAccountId accountId, TunnelVirtualNetworkId? virtualNetworkId, bool? defaultVirtualNetworkFallback, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (virtualNetworkId != null) {
   queryParameters['virtual_network_id'] = virtualNetworkId.toString();

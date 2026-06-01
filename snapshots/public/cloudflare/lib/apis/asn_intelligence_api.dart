@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/asn_intelligence_get_asn_subnets_response.dart';import '../models/intel_asn.dart';import '../models/intel_identifier.dart';/// AsnIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/asn_intelligence_get_asn_subnets_response.dart';import 'package:pub_cloudflare/models/intel_asn.dart';import 'package:pub_cloudflare/models/intel_identifier.dart';/// AsnIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

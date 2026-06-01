@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/base_error_response.dart';import '../models/cc_account_registry_token.dart';import '../models/cc_image_registry_credentials_configuration.dart';/// ImageRegistriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/base_error_response.dart';import 'package:pub_cloudflare/models/cc_account_registry_token.dart';import 'package:pub_cloudflare/models/cc_image_registry_credentials_configuration.dart';/// ImageRegistriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

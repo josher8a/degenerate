@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_custom_tool_call_custom.dart';/// The type of the tool. Always `custom`.
-@immutable final class ChatCompletionMessageCustomToolCallType {const ChatCompletionMessageCustomToolCallType._(this.value);
-
-factory ChatCompletionMessageCustomToolCallType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => ChatCompletionMessageCustomToolCallType._(json),
-}; }
-
-static const ChatCompletionMessageCustomToolCallType custom = ChatCompletionMessageCustomToolCallType._('custom');
-
-static const List<ChatCompletionMessageCustomToolCallType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageCustomToolCallType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageCustomToolCallType($value)'; } 
- }
-/// A call to a custom tool created by the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_custom.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';/// A call to a custom tool created by the model.
 /// 
 @immutable final class ChatCompletionMessageCustomToolCall {const ChatCompletionMessageCustomToolCall({required this.id, required this.type, required this.custom, });
 

@@ -23,19 +23,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)'; } 
  }
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
-@immutable final class WorkersAiPostRunCfDeepgramFluxRequestMipOptOut {const WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._(this.value);
+@immutable final class MipOptOut {const MipOptOut._(this.value);
 
-factory WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.fromJson(String json) { return switch (json) {
+factory MipOptOut.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
-  _ => WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._(json),
+  _ => MipOptOut._(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramFluxRequestMipOptOut $true = WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._('true');
+static const MipOptOut $true = MipOptOut._('true');
 
-static const WorkersAiPostRunCfDeepgramFluxRequestMipOptOut $false = WorkersAiPostRunCfDeepgramFluxRequestMipOptOut._('false');
+static const MipOptOut $false = MipOptOut._('false');
 
-static const List<WorkersAiPostRunCfDeepgramFluxRequestMipOptOut> values = [$true, $false];
+static const List<MipOptOut> values = [$true, $false];
 
 final String value;
 
@@ -43,11 +43,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramFluxRequestMipOptOut && other.value == value; } 
+    other is MipOptOut && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequestMipOptOut($value)'; } 
+@override String toString() { return 'MipOptOut($value)'; } 
  }
-@immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.$false, this.tag, });
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = MipOptOut.$false, this.tag, });
 
 factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: json['eager_eot_threshold'] as String?,
@@ -55,7 +55,7 @@ factory WorkersAiPostRunCfDeepgramFluxRequest.fromJson(Map<String, dynamic> json
   eotThreshold: json.containsKey('eot_threshold') ? json['eot_threshold'] as String : '0.7',
   eotTimeoutMs: json.containsKey('eot_timeout_ms') ? json['eot_timeout_ms'] as String : '5000',
   keyterm: json['keyterm'] as String?,
-  mipOptOut: json.containsKey('mip_opt_out') ? WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.fromJson(json['mip_opt_out'] as String) : WorkersAiPostRunCfDeepgramFluxRequestMipOptOut.$false,
+  mipOptOut: json.containsKey('mip_opt_out') ? MipOptOut.fromJson(json['mip_opt_out'] as String) : MipOptOut.$false,
   sampleRate: json['sample_rate'] as String,
   tag: json['tag'] as String?,
 ); }
@@ -76,7 +76,7 @@ final String eotTimeoutMs;
 final String? keyterm;
 
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
-final WorkersAiPostRunCfDeepgramFluxRequestMipOptOut mipOptOut;
+final MipOptOut mipOptOut;
 
 /// Sample rate of the audio stream in Hz.
 final String sampleRate;
@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding') &&
       json.containsKey('sample_rate') && json['sample_rate'] is String; } 
-WorkersAiPostRunCfDeepgramFluxRequest copyWith({String Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String Function()? keyterm, WorkersAiPostRunCfDeepgramFluxRequestMipOptOut Function()? mipOptOut, String? sampleRate, String Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
+WorkersAiPostRunCfDeepgramFluxRequest copyWith({String Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String Function()? keyterm, MipOptOut Function()? mipOptOut, String? sampleRate, String Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: eagerEotThreshold != null ? eagerEotThreshold() : this.eagerEotThreshold,
   encoding: encoding ?? this.encoding,
   eotThreshold: eotThreshold != null ? eotThreshold() : this.eotThreshold,

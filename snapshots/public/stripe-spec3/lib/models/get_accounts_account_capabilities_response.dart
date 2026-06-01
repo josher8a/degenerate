@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'capability.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetAccountsAccountCapabilitiesResponseObject {const GetAccountsAccountCapabilitiesResponseObject._(this.value);
-
-factory GetAccountsAccountCapabilitiesResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetAccountsAccountCapabilitiesResponseObject._(json),
-}; }
-
-static const GetAccountsAccountCapabilitiesResponseObject list = GetAccountsAccountCapabilitiesResponseObject._('list');
-
-static const List<GetAccountsAccountCapabilitiesResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAccountsAccountCapabilitiesResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAccountsAccountCapabilitiesResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/capability.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetAccountsAccountCapabilitiesResponse {const GetAccountsAccountCapabilitiesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetAccountsAccountCapabilitiesResponse.fromJson(Map<String, dynamic> json) { return GetAccountsAccountCapabilitiesResponse(

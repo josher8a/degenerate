@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_fraudulent_evidence_additional_documentation.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';/// 
 @immutable final class IssuingDisputeFraudulentEvidence {const IssuingDisputeFraudulentEvidence({this.additionalDocumentation, this.explanation, });
 
 factory IssuingDisputeFraudulentEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeFraudulentEvidence(
@@ -9,7 +9,7 @@ factory IssuingDisputeFraudulentEvidence.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeFraudulentEvidenceAdditionalDocumentation? additionalDocumentation;
+final IssuingDisputeCanceledEvidenceAdditionalDocumentation? additionalDocumentation;
 
 /// Explanation of why the cardholder is disputing this transaction.
 final String? explanation;
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'explanation': ?explanation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
-IssuingDisputeFraudulentEvidence copyWith({IssuingDisputeFraudulentEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, }) { return IssuingDisputeFraudulentEvidence(
+IssuingDisputeFraudulentEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, }) { return IssuingDisputeFraudulentEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
 ); } 

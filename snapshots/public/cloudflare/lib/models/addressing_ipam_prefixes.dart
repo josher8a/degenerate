@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_account_identifier.dart';import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';import 'addressing_prefix_identifier.dart';import 'addressing_timestamp.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_account_identifier.dart';import 'package:pub_cloudflare/models/addressing_asn.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_delegate_loa_creation.dart';import 'package:pub_cloudflare/models/addressing_description.dart';import 'package:pub_cloudflare/models/addressing_loa_document_identifier.dart';import 'package:pub_cloudflare/models/addressing_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingAdvertised(bool value) {
 factory AddressingAdvertised.fromJson(bool json) => AddressingAdvertised(json);
 

@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_realtime_call_incoming_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookRealtimeCallIncomingObject {const WebhookRealtimeCallIncomingObject._(this.value);
-
-factory WebhookRealtimeCallIncomingObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookRealtimeCallIncomingObject._(json),
-}; }
-
-static const WebhookRealtimeCallIncomingObject event = WebhookRealtimeCallIncomingObject._('event');
-
-static const List<WebhookRealtimeCallIncomingObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRealtimeCallIncomingObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRealtimeCallIncomingObject($value)'; } 
- }
-/// The type of the event. Always `realtime.call.incoming`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';import 'package:pub_openai/models/webhook_realtime_call_incoming/webhook_realtime_call_incoming_data.dart';/// The type of the event. Always `realtime.call.incoming`.
 /// 
 @immutable final class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType._(this.value);
 
@@ -54,7 +31,7 @@ factory WebhookRealtimeCallIncoming.fromJson(Map<String, dynamic> json) { return
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
   data: WebhookRealtimeCallIncomingData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookRealtimeCallIncomingObject.fromJson(json['object'] as String) : null,
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookRealtimeCallIncomingType.fromJson(json['type'] as String),
 ); }
 
@@ -72,7 +49,7 @@ final WebhookRealtimeCallIncomingData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookRealtimeCallIncomingObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `realtime.call.incoming`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtimeCallIncomingData? data, WebhookRealtimeCallIncomingObject Function()? object, WebhookRealtimeCallIncomingType? type, }) { return WebhookRealtimeCallIncoming(
+WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtimeCallIncomingData? data, WebhookBatchCancelledObject Function()? object, WebhookRealtimeCallIncomingType? type, }) { return WebhookRealtimeCallIncoming(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

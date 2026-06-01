@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_object_delta.dart';/// The object type, which is always `thread.message.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_object/message_delta_object_delta.dart';/// The object type, which is always `thread.message.delta`.
 @immutable final class MessageDeltaObjectObject {const MessageDeltaObjectObject._(this.value);
 
 factory MessageDeltaObjectObject.fromJson(String json) { return switch (json) {

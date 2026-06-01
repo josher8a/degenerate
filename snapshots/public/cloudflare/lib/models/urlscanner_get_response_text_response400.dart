@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_response_text_response400_errors.dart';import 'urlscanner_get_response_text_response400_messages.dart';@immutable final class UrlscannerGetResponseTextResponse400 {const UrlscannerGetResponseTextResponse400({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';import 'package:pub_cloudflare/models/destination_create_response400/destination_create_response400_messages.dart';@immutable final class UrlscannerGetResponseTextResponse400 {const UrlscannerGetResponseTextResponse400({required this.errors, required this.messages, required this.success, });
 
 factory UrlscannerGetResponseTextResponse400.fromJson(Map<String, dynamic> json) { return UrlscannerGetResponseTextResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetResponseTextResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  messages: (json['messages'] as List<dynamic>).map((e) => UrlscannerGetResponseTextResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationCreateResponse400Messages.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<UrlscannerGetResponseTextResponse400Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
-final List<UrlscannerGetResponseTextResponse400Messages> messages;
+final List<DestinationCreateResponse400Messages> messages;
 
 /// Whether request was successful or not
 final bool success;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-UrlscannerGetResponseTextResponse400 copyWith({List<UrlscannerGetResponseTextResponse400Errors>? errors, List<UrlscannerGetResponseTextResponse400Messages>? messages, bool? success, }) { return UrlscannerGetResponseTextResponse400(
+UrlscannerGetResponseTextResponse400 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, List<DestinationCreateResponse400Messages>? messages, bool? success, }) { return UrlscannerGetResponseTextResponse400(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

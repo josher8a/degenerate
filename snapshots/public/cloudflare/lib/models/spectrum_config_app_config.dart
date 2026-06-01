@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_dns.dart';import 'spectrum_config_edge_ips.dart';import 'spectrum_config_edge_ips_dynamic.dart';import 'spectrum_config_edge_ips_static.dart';import 'spectrum_config_identifier.dart';import 'spectrum_config_origin_dns.dart';import 'spectrum_config_origin_port.dart';import 'spectrum_config_protocol.dart';import 'spectrum_config_timestamp.dart';/// Enables Argo Smart Routing for this application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/dynamic.dart';import 'package:pub_cloudflare/models/spectrum_config_edge_ips/static.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_origin_port.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';/// Enables Argo Smart Routing for this application.
 /// Notes: Only available for TCP applications with traffic_type set to "direct".
 extension type const SpectrumConfigArgoSmartRouting(bool value) {
 factory SpectrumConfigArgoSmartRouting.fromJson(bool json) => SpectrumConfigArgoSmartRouting(json);
@@ -114,7 +114,7 @@ factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return Spe
   modifiedOn: SpectrumConfigTimestamp.fromJson(json['modified_on'] as String),
   argoSmartRouting: json['argo_smart_routing'] != null ? SpectrumConfigArgoSmartRouting.fromJson(json['argo_smart_routing'] as bool) : null,
   dns: SpectrumConfigDns.fromJson(json['dns'] as Map<String, dynamic>),
-  edgeIps: json['edge_ips'] != null ? OneOf2.parse(json['edge_ips'], fromA: (v) => SpectrumConfigEdgeIpsDynamic.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigEdgeIpsStatic.fromJson(v as Map<String, dynamic>),) : null,
+  edgeIps: json['edge_ips'] != null ? OneOf2.parse(json['edge_ips'], fromA: (v) => Dynamic.fromJson(v as Map<String, dynamic>), fromB: (v) => Static.fromJson(v as Map<String, dynamic>),) : null,
   ipFirewall: json['ip_firewall'] != null ? SpectrumConfigIpFirewall.fromJson(json['ip_firewall'] as bool) : null,
   originDirect: (json['origin_direct'] as List<dynamic>?)?.map((e) => e as String).toList(),
   originDns: json['origin_dns'] != null ? SpectrumConfigOriginDns.fromJson(json['origin_dns'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment/deployment_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
 
 factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentRequest(
   ref: json['ref'] as String,
@@ -26,7 +26,7 @@ final bool autoMerge;
 /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
 final List<String>? requiredContexts;
 
-final ReposCreateDeploymentRequestPayload? payload;
+final DeploymentPayload? payload;
 
 /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
 final String environment;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'production_environment': ?productionEnvironment,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, bool Function()? autoMerge, List<String> Function()? requiredContexts, ReposCreateDeploymentRequestPayload Function()? payload, String Function()? environment, String? Function()? description, bool Function()? transientEnvironment, bool Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
+ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, bool Function()? autoMerge, List<String> Function()? requiredContexts, DeploymentPayload Function()? payload, String Function()? environment, String? Function()? description, bool Function()? transientEnvironment, bool Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
   ref: ref ?? this.ref,
   task: task != null ? task() : this.task,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,

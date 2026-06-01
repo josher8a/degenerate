@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_query_meta_timings.dart';/// The three letters airport code of the colo that handled the query.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_query_meta/timings.dart';/// The three letters airport code of the colo that handled the query.
 extension type const D1ServedByColo(String value) {
 factory D1ServedByColo.fromJson(String json) => D1ServedByColo(json);
 
@@ -57,7 +57,7 @@ factory D1QueryMeta.fromJson(Map<String, dynamic> json) { return D1QueryMeta(
   servedByPrimary: json['served_by_primary'] as bool?,
   servedByRegion: json['served_by_region'] != null ? D1ServedByRegion.fromJson(json['served_by_region'] as String) : null,
   sizeAfter: json['size_after'] != null ? (json['size_after'] as num).toDouble() : null,
-  timings: json['timings'] != null ? D1QueryMetaTimings.fromJson(json['timings'] as Map<String, dynamic>) : null,
+  timings: json['timings'] != null ? Timings.fromJson(json['timings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Denotes if the database has been altered in some way, like deleting rows.
@@ -89,7 +89,7 @@ final D1ServedByRegion? servedByRegion;
 final double? sizeAfter;
 
 /// Various durations for the query.
-final D1QueryMetaTimings? timings;
+final Timings? timings;
 
 Map<String, dynamic> toJson() { return {
   'changed_db': ?changedDb,
@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   if (timings != null) 'timings': timings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'changed_db', 'changes', 'duration', 'last_row_id', 'rows_read', 'rows_written', 'served_by_colo', 'served_by_primary', 'served_by_region', 'size_after', 'timings'}.contains(key)); } 
-D1QueryMeta copyWith({bool Function()? changedDb, double Function()? changes, double Function()? duration, double Function()? lastRowId, double Function()? rowsRead, double Function()? rowsWritten, D1ServedByColo Function()? servedByColo, bool Function()? servedByPrimary, D1ServedByRegion Function()? servedByRegion, double Function()? sizeAfter, D1QueryMetaTimings Function()? timings, }) { return D1QueryMeta(
+D1QueryMeta copyWith({bool Function()? changedDb, double Function()? changes, double Function()? duration, double Function()? lastRowId, double Function()? rowsRead, double Function()? rowsWritten, D1ServedByColo Function()? servedByColo, bool Function()? servedByPrimary, D1ServedByRegion Function()? servedByRegion, double Function()? sizeAfter, Timings Function()? timings, }) { return D1QueryMeta(
   changedDb: changedDb != null ? changedDb() : this.changedDb,
   changes: changes != null ? changes() : this.changes,
   duration: duration != null ? duration() : this.duration,

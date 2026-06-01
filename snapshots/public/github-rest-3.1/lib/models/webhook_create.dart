@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object created in the repository.
-@immutable final class WebhookCreateRefType {const WebhookCreateRefType._(this.value);
-
-factory WebhookCreateRefType.fromJson(String json) { return switch (json) {
-  'tag' => tag,
-  'branch' => branch,
-  _ => WebhookCreateRefType._(json),
-}; }
-
-static const WebhookCreateRefType tag = WebhookCreateRefType._('tag');
-
-static const WebhookCreateRefType branch = WebhookCreateRefType._('branch');
-
-static const List<WebhookCreateRefType> values = [tag, branch];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCreateRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCreateRefType($value)'; } 
- }
-@immutable final class WebhookCreate {const WebhookCreate({required this.description, required this.masterBranch, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_create/ref_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_deploy_pusher_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_ref0.dart';@immutable final class WebhookCreate {const WebhookCreate({required this.description, required this.masterBranch, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
   description: json['description'] as String?,
@@ -35,7 +10,7 @@ factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusherType: WebhooksDeployPusherType.fromJson(json['pusher_type'] as String),
   ref: WebhooksRef0.fromJson(json['ref'] as String),
-  refType: WebhookCreateRefType.fromJson(json['ref_type'] as String),
+  refType: RefType.fromJson(json['ref_type'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
@@ -59,7 +34,7 @@ final WebhooksDeployPusherType pusherType;
 final WebhooksRef0 ref;
 
 /// The type of Git ref object created in the repository.
-final WebhookCreateRefType refType;
+final RefType refType;
 
 final RepositoryWebhooks repository;
 
@@ -84,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, String? masterBranch, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookCreateRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
+WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, String? masterBranch, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCreate(
   description: description != null ? description() : this.description,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_fine_tuning_job_cancelled_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookFineTuningJobCancelledObject {const WebhookFineTuningJobCancelledObject._(this.value);
-
-factory WebhookFineTuningJobCancelledObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookFineTuningJobCancelledObject._(json),
-}; }
-
-static const WebhookFineTuningJobCancelledObject event = WebhookFineTuningJobCancelledObject._('event');
-
-static const List<WebhookFineTuningJobCancelledObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookFineTuningJobCancelledObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookFineTuningJobCancelledObject($value)'; } 
- }
-/// The type of the event. Always `fine_tuning.job.cancelled`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `fine_tuning.job.cancelled`.
 /// 
 @immutable final class WebhookFineTuningJobCancelledType {const WebhookFineTuningJobCancelledType._(this.value);
 
@@ -53,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookFineTuningJobCancelled.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobCancelled(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
-  data: WebhookFineTuningJobCancelledData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookFineTuningJobCancelledObject.fromJson(json['object'] as String) : null,
+  data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookFineTuningJobCancelledType.fromJson(json['type'] as String),
 ); }
 
@@ -68,11 +45,11 @@ final String id;
 
 /// Event data payload.
 /// 
-final WebhookFineTuningJobCancelledData data;
+final WebhookBatchCancelledData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookFineTuningJobCancelledObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `fine_tuning.job.cancelled`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookFineTuningJobCancelled copyWith({int? createdAt, String? id, WebhookFineTuningJobCancelledData? data, WebhookFineTuningJobCancelledObject Function()? object, WebhookFineTuningJobCancelledType? type, }) { return WebhookFineTuningJobCancelled(
+WebhookFineTuningJobCancelled copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject Function()? object, WebhookFineTuningJobCancelledType? type, }) { return WebhookFineTuningJobCancelled(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

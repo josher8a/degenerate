@@ -3,12 +3,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/event_request.dart';
-import '../models/join_response.dart';
-import '../models/remove_participant_payload.dart';
-import '../models/remove_reason.dart';
-import '../models/room_error_response.dart';
-import '../models/room_state.dart';
+import 'package:pub_totem_mobile/models/event_request.dart';
+import 'package:pub_totem_mobile/models/join_response.dart';
+import 'package:pub_totem_mobile/models/remove_participant_payload.dart';
+import 'package:pub_totem_mobile/models/remove_reason.dart';
+import 'package:pub_totem_mobile/models/room_error_response.dart';
+import 'package:pub_totem_mobile/models/room_state.dart';
 
 /// RoomsApi operations.
 ///

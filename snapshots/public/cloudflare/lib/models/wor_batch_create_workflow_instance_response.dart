@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_batch_create_workflow_instance_response_errors.dart';import 'wor_batch_create_workflow_instance_response_messages.dart';import 'wor_batch_create_workflow_instance_response_result.dart';import 'wor_batch_create_workflow_instance_response_result_info.dart';@immutable final class WorBatchCreateWorkflowInstanceResponse {const WorBatchCreateWorkflowInstanceResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_messages.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result.dart';import 'package:pub_cloudflare/models/wor_batch_create_workflow_instance_response/wor_batch_create_workflow_instance_response_result_info.dart';@immutable final class WorBatchCreateWorkflowInstanceResponse {const WorBatchCreateWorkflowInstanceResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory WorBatchCreateWorkflowInstanceResponse.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   resultInfo: json['result_info'] != null ? WorBatchCreateWorkflowInstanceResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
-final List<WorBatchCreateWorkflowInstanceResponseErrors> errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final List<WorBatchCreateWorkflowInstanceResponseMessages> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorBatchCreateWorkflowInstanceResponse copyWith({List<WorBatchCreateWorkflowInstanceResponseErrors>? errors, List<WorBatchCreateWorkflowInstanceResponseMessages>? messages, List<WorBatchCreateWorkflowInstanceResponseResult>? result, WorBatchCreateWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorBatchCreateWorkflowInstanceResponse(
+WorBatchCreateWorkflowInstanceResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, List<WorBatchCreateWorkflowInstanceResponseMessages>? messages, List<WorBatchCreateWorkflowInstanceResponseResult>? result, WorBatchCreateWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorBatchCreateWorkflowInstanceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

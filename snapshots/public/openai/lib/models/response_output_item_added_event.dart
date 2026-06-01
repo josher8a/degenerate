@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// Emitted when a new output item is added.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_item.dart';/// Emitted when a new output item is added.
 @immutable final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemAddedEvent(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_version.dart';/// Share Recipient error message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_version.dart';/// Share Recipient error message.
 extension type const ResourceSharingRecipientResourceError(String value) {
 factory ResourceSharingRecipientResourceError.fromJson(String json) => ResourceSharingRecipientResourceError(json);
 

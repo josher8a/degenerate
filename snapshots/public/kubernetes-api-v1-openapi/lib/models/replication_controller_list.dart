@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'replication_controller.dart';/// ReplicationControllerList is a collection of replication controllers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller.dart';/// ReplicationControllerList is a collection of replication controllers.
 @immutable final class ReplicationControllerList {const ReplicationControllerList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ReplicationControllerList.fromJson(Map<String, dynamic> json) { return ReplicationControllerList(

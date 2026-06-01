@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit.dart';import 'diff_entry.dart';@immutable final class CommitComparisonStatus {const CommitComparisonStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';@immutable final class CommitComparisonStatus {const CommitComparisonStatus._(this.value);
 
 factory CommitComparisonStatus.fromJson(String json) { return switch (json) {
   'diverged' => diverged,

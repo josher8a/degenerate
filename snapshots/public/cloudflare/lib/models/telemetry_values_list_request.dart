@@ -1,56 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_values_list_request_filters.dart';import 'telemetry_values_list_request_needle.dart';import 'telemetry_values_list_request_timeframe.dart';@immutable final class TelemetryValuesListRequestType {const TelemetryValuesListRequestType._(this.value);
-
-factory TelemetryValuesListRequestType.fromJson(String json) { return switch (json) {
-  'string' => string,
-  'boolean' => boolean,
-  'number' => number,
-  _ => TelemetryValuesListRequestType._(json),
-}; }
-
-static const TelemetryValuesListRequestType string = TelemetryValuesListRequestType._('string');
-
-static const TelemetryValuesListRequestType boolean = TelemetryValuesListRequestType._('boolean');
-
-static const TelemetryValuesListRequestType number = TelemetryValuesListRequestType._('number');
-
-static const List<TelemetryValuesListRequestType> values = [string, boolean, number];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TelemetryValuesListRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TelemetryValuesListRequestType($value)'; } 
- }
-@immutable final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, required this.key, required this.timeframe, required this.type, this.filters = const [], this.limit = 50.0, this.needle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/telemetry_values_list_request/telemetry_values_list_request_type.dart';@immutable final class TelemetryValuesListRequest {const TelemetryValuesListRequest({required this.datasets, required this.key, required this.timeframe, required this.type, this.filters = const [], this.limit = 50.0, this.needle, });
 
 factory TelemetryValuesListRequest.fromJson(Map<String, dynamic> json) { return TelemetryValuesListRequest(
   datasets: (json['datasets'] as List<dynamic>).map((e) => e as String).toList(),
-  filters: json.containsKey('filters') ? (json['filters'] as List<dynamic>).map((e) => TelemetryValuesListRequestFilters.fromJson(e as Map<String, dynamic>)).toList() : const [],
+  filters: json.containsKey('filters') ? (json['filters'] as List<dynamic>).map((e) => TelemetryKeysListRequestFilters.fromJson(e as Map<String, dynamic>)).toList() : const [],
   key: json['key'] as String,
   limit: json.containsKey('limit') ? (json['limit'] as num).toDouble() : 50.0,
-  needle: json['needle'] != null ? TelemetryValuesListRequestNeedle.fromJson(json['needle'] as Map<String, dynamic>) : null,
-  timeframe: TelemetryValuesListRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
+  needle: json['needle'] != null ? Needle.fromJson(json['needle'] as Map<String, dynamic>) : null,
+  timeframe: Timeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   type: TelemetryValuesListRequestType.fromJson(json['type'] as String),
 ); }
 
 final List<String> datasets;
 
-final List<TelemetryValuesListRequestFilters> filters;
+final List<TelemetryKeysListRequestFilters> filters;
 
 final String key;
 
 final double limit;
 
 /// Search for a specific substring in the event.
-final TelemetryValuesListRequestNeedle? needle;
+final Needle? needle;
 
-final TelemetryValuesListRequestTimeframe timeframe;
+final Timeframe timeframe;
 
 final TelemetryValuesListRequestType type;
 
@@ -67,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('timeframe') &&
       json.containsKey('type'); } 
-TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryValuesListRequestFilters> Function()? filters, String? key, double Function()? limit, TelemetryValuesListRequestNeedle Function()? needle, TelemetryValuesListRequestTimeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
+TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysListRequestFilters> Function()? filters, String? key, double Function()? limit, Needle Function()? needle, Timeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
   datasets: datasets ?? this.datasets,
   filters: filters != null ? filters() : this.filters,
   key: key ?? this.key,

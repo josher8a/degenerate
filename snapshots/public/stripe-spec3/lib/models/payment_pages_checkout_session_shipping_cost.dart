@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'line_items_tax_amount.dart';import 'payment_pages_checkout_session_shipping_cost_shipping_rate.dart';import 'shipping_rate.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost/invoices_resource_shipping_cost_shipping_rate.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionShippingCost {const PaymentPagesCheckoutSessionShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate, this.taxes, });
 
 factory PaymentPagesCheckoutSessionShippingCost.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingCost(
@@ -21,7 +21,7 @@ final int amountTax;
 final int amountTotal;
 
 /// The ID of the ShippingRate for this order.
-final PaymentPagesCheckoutSessionShippingCostShippingRate? shippingRate;
+final InvoicesResourceShippingCostShippingRate? shippingRate;
 
 /// The taxes applied to the shipping rate.
 final List<LineItemsTaxAmount>? taxes;
@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num; } 
-PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, PaymentPagesCheckoutSessionShippingCostShippingRate? Function()? shippingRate, List<LineItemsTaxAmount> Function()? taxes, }) { return PaymentPagesCheckoutSessionShippingCost(
+PaymentPagesCheckoutSessionShippingCost copyWith({int? amountSubtotal, int? amountTax, int? amountTotal, InvoicesResourceShippingCostShippingRate? Function()? shippingRate, List<LineItemsTaxAmount> Function()? taxes, }) { return PaymentPagesCheckoutSessionShippingCost(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTax: amountTax ?? this.amountTax,
   amountTotal: amountTotal ?? this.amountTotal,

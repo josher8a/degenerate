@@ -1,49 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param_mandate_options.dart';@immutable final class InvoicePaymentMethodOptionsParamVerificationMethod {const InvoicePaymentMethodOptionsParamVerificationMethod._(this.value);
-
-factory InvoicePaymentMethodOptionsParamVerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  'microdeposits' => microdeposits,
-  _ => InvoicePaymentMethodOptionsParamVerificationMethod._(json),
-}; }
-
-static const InvoicePaymentMethodOptionsParamVerificationMethod automatic = InvoicePaymentMethodOptionsParamVerificationMethod._('automatic');
-
-static const InvoicePaymentMethodOptionsParamVerificationMethod instant = InvoicePaymentMethodOptionsParamVerificationMethod._('instant');
-
-static const InvoicePaymentMethodOptionsParamVerificationMethod microdeposits = InvoicePaymentMethodOptionsParamVerificationMethod._('microdeposits');
-
-static const List<InvoicePaymentMethodOptionsParamVerificationMethod> values = [automatic, instant, microdeposits];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParamVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamVerificationMethod($value)'; } 
- }
-@immutable final class InvoicePaymentMethodOptionsParam {const InvoicePaymentMethodOptionsParam({this.mandateOptions, this.verificationMethod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/invoice_payment_method_options_param15_mandate_options.dart';@immutable final class InvoicePaymentMethodOptionsParam {const InvoicePaymentMethodOptionsParam({this.mandateOptions, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam(
-  mandateOptions: json['mandate_options'] != null ? InvoicePaymentMethodOptionsParamMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  verificationMethod: json['verification_method'] != null ? InvoicePaymentMethodOptionsParamVerificationMethod.fromJson(json['verification_method'] as String) : null,
+  mandateOptions: json['mandate_options'] != null ? InvoicePaymentMethodOptionsParam15MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
-final InvoicePaymentMethodOptionsParamMandateOptions? mandateOptions;
+final InvoicePaymentMethodOptionsParam15MandateOptions? mandateOptions;
 
-final InvoicePaymentMethodOptionsParamVerificationMethod? verificationMethod;
+final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam copyWith({InvoicePaymentMethodOptionsParamMandateOptions Function()? mandateOptions, InvoicePaymentMethodOptionsParamVerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam(
+InvoicePaymentMethodOptionsParam copyWith({InvoicePaymentMethodOptionsParam15MandateOptions Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 

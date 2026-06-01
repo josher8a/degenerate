@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt22_image.dart';@immutable final class Prompt22 {const Prompt22({required this.prompt, this.frequencyPenalty, this.image, this.lora, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_image.dart';@immutable final class Prompt22 {const Prompt22({required this.prompt, this.frequencyPenalty, this.image, this.lora, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
 
 factory Prompt22.fromJson(Map<String, dynamic> json) { return Prompt22(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
@@ -21,7 +21,7 @@ factory Prompt22.fromJson(Map<String, dynamic> json) { return Prompt22(
 /// Decreases the likelihood of the model repeating the same lines verbatim.
 final double? frequencyPenalty;
 
-final Prompt22Image? image;
+final MessagesImage? image;
 
 /// Name of the LoRA (Low-Rank Adaptation) model to fine-tune the base model.
 final String? lora;
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt22 copyWith({double Function()? frequencyPenalty, Prompt22Image Function()? image, String Function()? lora, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt22(
+Prompt22 copyWith({double Function()? frequencyPenalty, MessagesImage Function()? image, String Function()? lora, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt22(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image != null ? image() : this.image,
   lora: lora != null ? lora() : this.lora,

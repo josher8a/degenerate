@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_confirm_payment_intent_request_confirm_config.dart';@immutable final class PostTerminalReadersReaderConfirmPaymentIntentRequest {const PostTerminalReadersReaderConfirmPaymentIntentRequest({required this.paymentIntent, this.confirmConfig, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_confirm_payment_intent_request/confirm_config.dart';@immutable final class PostTerminalReadersReaderConfirmPaymentIntentRequest {const PostTerminalReadersReaderConfirmPaymentIntentRequest({required this.paymentIntent, this.confirmConfig, this.expand, });
 
 factory PostTerminalReadersReaderConfirmPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
-  confirmConfig: json['confirm_config'] != null ? PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,
+  confirmConfig: json['confirm_config'] != null ? ConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
 ); }
 
 /// Configuration overrides for this confirmation, such as surcharge settings and return URL.
-final PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig? confirmConfig;
+final ConfirmConfig? confirmConfig;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'payment_intent': paymentIntent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
-PostTerminalReadersReaderConfirmPaymentIntentRequest copyWith({PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig Function()? confirmConfig, List<String> Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
+PostTerminalReadersReaderConfirmPaymentIntentRequest copyWith({ConfirmConfig Function()? confirmConfig, List<String> Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
   confirmConfig: confirmConfig != null ? confirmConfig() : this.confirmConfig,
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluations_response_result.dart';@immutable final class AigConfigListEvaluationsResponse {const AigConfigListEvaluationsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_evaluations_response/aig_config_create_evaluations_response_result.dart';@immutable final class AigConfigListEvaluationsResponse {const AigConfigListEvaluationsResponse({required this.result, required this.success, });
 
 factory AigConfigListEvaluationsResponse.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluationsResponse(
-  result: (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => AigConfigCreateEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<AigConfigListEvaluationsResponseResult> result;
+final List<AigConfigCreateEvaluationsResponseResult> result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigListEvaluationsResponse copyWith({List<AigConfigListEvaluationsResponseResult>? result, bool? success, }) { return AigConfigListEvaluationsResponse(
+AigConfigListEvaluationsResponse copyWith({List<AigConfigCreateEvaluationsResponseResult>? result, bool? success, }) { return AigConfigListEvaluationsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

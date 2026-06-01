@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_source_param.dart';/// Defines an inline skill for this request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/inline_skill_source_param.dart';/// Defines an inline skill for this request.
 @immutable final class InlineSkillParamType {const InlineSkillParamType._(this.value);
 
 factory InlineSkillParamType.fromJson(String json) { return switch (json) {

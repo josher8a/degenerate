@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
 @immutable final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
 
 factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch (json) {

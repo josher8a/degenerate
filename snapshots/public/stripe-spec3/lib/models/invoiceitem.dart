@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class InvoiceitemObject {const InvoiceitemObject._(this.value);
-
-factory InvoiceitemObject.fromJson(String json) { return switch (json) {
-  'invoiceitem' => invoiceitem,
-  _ => InvoiceitemObject._(json),
-}; }
-
-static const InvoiceitemObject invoiceitem = InvoiceitemObject._('invoiceitem');
-
-static const List<InvoiceitemObject> values = [invoiceitem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceitemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceitemObject($value)'; } 
- }
-/// Invoice Items represent the component lines of an [invoice](https://docs.stripe.com/api/invoices). When you create an invoice item with an `invoice` field, it is attached to the specified invoice and included as [an invoice line item](https://docs.stripe.com/api/invoices/line_item) within [invoice.lines](https://docs.stripe.com/api/invoices/object#invoice_object-lines).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary/billing_credit_balance_summary_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_invoice.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_invoiceitem/deleted_invoiceitem_object.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_line_item_period.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/proration_details.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// Invoice Items represent the component lines of an [invoice](https://docs.stripe.com/api/invoices). When you create an invoice item with an `invoice` field, it is attached to the specified invoice and included as [an invoice line item](https://docs.stripe.com/api/invoices/line_item) within [invoice.lines](https://docs.stripe.com/api/invoices/object#invoice_object-lines).
 /// 
 /// Invoice Items can be created before you are ready to actually send the invoice. This can be particularly useful when combined
 /// with a [subscription](https://docs.stripe.com/api/subscriptions). Sometimes you want to add a charge or credit to a customer, but actually charge
@@ -46,7 +24,7 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   netAmount: json['net_amount'] != null ? (json['net_amount'] as num).toInt() : null,
-  object: InvoiceitemObject.fromJson(json['object'] as String),
+  object: DeletedInvoiceitemObject.fromJson(json['object'] as String),
   parent: json['parent'] != null ? BillingBillResourceInvoiceItemParentsInvoiceItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   period: InvoiceLineItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
   pricing: json['pricing'] != null ? BillingBillResourceInvoicingPricingPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
@@ -64,7 +42,7 @@ final int amount;
 final String currency;
 
 /// The ID of the customer to bill for this invoice item.
-final InvoiceitemCustomer customer;
+final BillingCreditBalanceSummaryCustomer customer;
 
 /// The ID of the account to bill for this invoice item.
 final String? customerAccount;
@@ -85,7 +63,7 @@ final List<InvoiceitemDiscounts>? discounts;
 final String id;
 
 /// The ID of the invoice this invoice item belongs to.
-final InvoiceitemInvoice? invoice;
+final CheckoutSessionInvoice? invoice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -97,7 +75,7 @@ final Map<String,String>? metadata;
 final int? netAmount;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final InvoiceitemObject object;
+final DeletedInvoiceitemObject object;
 
 /// The parent that generated this invoice item.
 final BillingBillResourceInvoiceItemParentsInvoiceItemParent? parent;
@@ -119,7 +97,7 @@ final int quantity;
 final List<TaxRate>? taxRates;
 
 /// ID of the test clock this invoice item belongs to.
-final InvoiceitemTestClock? testClock;
+final TestClock? testClock;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -156,7 +134,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('period') &&
       json.containsKey('proration') && json['proration'] is bool &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? customer, String? Function()? customerAccount, int? date, String? Function()? description, bool? discountable, List<InvoiceitemDiscounts>? Function()? discounts, String? id, InvoiceitemInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, int Function()? netAmount, InvoiceitemObject? object, BillingBillResourceInvoiceItemParentsInvoiceItemParent? Function()? parent, InvoiceLineItemPeriod? period, BillingBillResourceInvoicingPricingPricing? Function()? pricing, bool? proration, ProrationDetails Function()? prorationDetails, int? quantity, List<TaxRate>? Function()? taxRates, InvoiceitemTestClock? Function()? testClock, }) { return Invoiceitem(
+Invoiceitem copyWith({int? amount, String? currency, BillingCreditBalanceSummaryCustomer? customer, String? Function()? customerAccount, int? date, String? Function()? description, bool? discountable, List<InvoiceitemDiscounts>? Function()? discounts, String? id, CheckoutSessionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, int Function()? netAmount, DeletedInvoiceitemObject? object, BillingBillResourceInvoiceItemParentsInvoiceItemParent? Function()? parent, InvoiceLineItemPeriod? period, BillingBillResourceInvoicingPricingPricing? Function()? pricing, bool? proration, ProrationDetails Function()? prorationDetails, int? quantity, List<TaxRate>? Function()? taxRates, TestClock? Function()? testClock, }) { return Invoiceitem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,

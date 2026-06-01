@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpCustomEntry {const DlpCustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, this.description, this.profileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class DlpCustomEntry {const DlpCustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, this.description, this.profileId, });
 
 factory DlpCustomEntry.fromJson(Map<String, dynamic> json) { return DlpCustomEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2_source.dart';@immutable final class PagesMessages2 {const PagesMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_messages/access_messages_source.dart';@immutable final class PagesMessages2 {const PagesMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory PagesMessages2.fromJson(Map<String, dynamic> json) { return PagesMessages2(
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  source: json['source'] != null ? PagesMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? AccessMessagesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;
@@ -15,7 +15,7 @@ final String? documentationUrl;
 
 final String message;
 
-final PagesMessages2Source? source;
+final AccessMessagesSource? source;
 
 Map<String, dynamic> toJson() { return {
   'code': code,
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-PagesMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, PagesMessages2Source Function()? source, }) { return PagesMessages2(
+PagesMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, AccessMessagesSource Function()? source, }) { return PagesMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

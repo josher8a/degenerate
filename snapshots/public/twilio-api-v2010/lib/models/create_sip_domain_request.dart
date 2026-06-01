@@ -1,89 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
-@immutable final class CreateSipDomainRequestVoiceMethod {const CreateSipDomainRequestVoiceMethod._(this.value);
-
-factory CreateSipDomainRequestVoiceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateSipDomainRequestVoiceMethod._(json),
-}; }
-
-static const CreateSipDomainRequestVoiceMethod $get = CreateSipDomainRequestVoiceMethod._('GET');
-
-static const CreateSipDomainRequestVoiceMethod post = CreateSipDomainRequestVoiceMethod._('POST');
-
-static const List<CreateSipDomainRequestVoiceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSipDomainRequestVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSipDomainRequestVoiceMethod($value)'; } 
- }
-/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class CreateSipDomainRequestVoiceFallbackMethod {const CreateSipDomainRequestVoiceFallbackMethod._(this.value);
-
-factory CreateSipDomainRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateSipDomainRequestVoiceFallbackMethod._(json),
-}; }
-
-static const CreateSipDomainRequestVoiceFallbackMethod $get = CreateSipDomainRequestVoiceFallbackMethod._('GET');
-
-static const CreateSipDomainRequestVoiceFallbackMethod post = CreateSipDomainRequestVoiceFallbackMethod._('POST');
-
-static const List<CreateSipDomainRequestVoiceFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSipDomainRequestVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSipDomainRequestVoiceFallbackMethod($value)'; } 
- }
-/// The HTTP method we should use to call `voice_status_callback_url`. Can be: `GET` or `POST`.
-@immutable final class CreateSipDomainRequestVoiceStatusCallbackMethod {const CreateSipDomainRequestVoiceStatusCallbackMethod._(this.value);
-
-factory CreateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateSipDomainRequestVoiceStatusCallbackMethod._(json),
-}; }
-
-static const CreateSipDomainRequestVoiceStatusCallbackMethod $get = CreateSipDomainRequestVoiceStatusCallbackMethod._('GET');
-
-static const CreateSipDomainRequestVoiceStatusCallbackMethod post = CreateSipDomainRequestVoiceStatusCallbackMethod._('POST');
-
-static const List<CreateSipDomainRequestVoiceStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSipDomainRequestVoiceStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSipDomainRequestVoiceStatusCallbackMethod($value)'; } 
- }
-@immutable final class CreateSipDomainRequest {const CreateSipDomainRequest({required this.domainName, this.friendlyName, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.voiceStatusCallbackUrl, this.voiceStatusCallbackMethod, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_voice_method.dart';import 'package:pub_twilio_api_v2010/models/create_sip_domain_request/create_sip_domain_request_voice_status_callback_method.dart';@immutable final class CreateSipDomainRequest {const CreateSipDomainRequest({required this.domainName, this.friendlyName, this.voiceUrl, this.voiceMethod, this.voiceFallbackUrl, this.voiceFallbackMethod, this.voiceStatusCallbackUrl, this.voiceStatusCallbackMethod, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
 factory CreateSipDomainRequest.fromJson(Map<String, dynamic> json) { return CreateSipDomainRequest(
   domainName: json['DomainName'] as String,
   friendlyName: json['FriendlyName'] as String?,
   voiceUrl: json['VoiceUrl'] != null ? Uri.parse(json['VoiceUrl'] as String) : null,
-  voiceMethod: json['VoiceMethod'] != null ? CreateSipDomainRequestVoiceMethod.fromJson(json['VoiceMethod'] as String) : null,
+  voiceMethod: json['VoiceMethod'] != null ? CreateApplicationRequestVoiceMethod.fromJson(json['VoiceMethod'] as String) : null,
   voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? Uri.parse(json['VoiceFallbackUrl'] as String) : null,
-  voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? CreateSipDomainRequestVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null,
+  voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? CreateApplicationRequestVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null,
   voiceStatusCallbackUrl: json['VoiceStatusCallbackUrl'] != null ? Uri.parse(json['VoiceStatusCallbackUrl'] as String) : null,
   voiceStatusCallbackMethod: json['VoiceStatusCallbackMethod'] != null ? CreateSipDomainRequestVoiceStatusCallbackMethod.fromJson(json['VoiceStatusCallbackMethod'] as String) : null,
   sipRegistration: json['SipRegistration'] as bool?,
@@ -103,13 +28,13 @@ final String? friendlyName;
 final Uri? voiceUrl;
 
 /// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
-final CreateSipDomainRequestVoiceMethod? voiceMethod;
+final CreateApplicationRequestVoiceMethod? voiceMethod;
 
 /// The URL that we should call when an error occurs while retrieving or executing the TwiML from `voice_url`.
 final Uri? voiceFallbackUrl;
 
 /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final CreateSipDomainRequestVoiceFallbackMethod? voiceFallbackMethod;
+final CreateApplicationRequestVoiceFallbackMethod? voiceFallbackMethod;
 
 /// The URL that we should call to pass status parameters (such as call ended) to your application.
 final Uri? voiceStatusCallbackUrl;
@@ -148,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'EmergencyCallerSid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('DomainName') && json['DomainName'] is String; } 
-CreateSipDomainRequest copyWith({String? domainName, String Function()? friendlyName, Uri Function()? voiceUrl, CreateSipDomainRequestVoiceMethod Function()? voiceMethod, Uri Function()? voiceFallbackUrl, CreateSipDomainRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod Function()? voiceStatusCallbackMethod, bool Function()? sipRegistration, bool Function()? emergencyCallingEnabled, bool Function()? secure, String Function()? byocTrunkSid, String Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
+CreateSipDomainRequest copyWith({String? domainName, String Function()? friendlyName, Uri Function()? voiceUrl, CreateApplicationRequestVoiceMethod Function()? voiceMethod, Uri Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod Function()? voiceStatusCallbackMethod, bool Function()? sipRegistration, bool Function()? emergencyCallingEnabled, bool Function()? secure, String Function()? byocTrunkSid, String Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
   domainName: domainName ?? this.domainName,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,

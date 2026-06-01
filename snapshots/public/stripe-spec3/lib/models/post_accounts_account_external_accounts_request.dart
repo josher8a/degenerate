@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account3.dart';import 'post_accounts_account_external_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountExternalAccountsRequest {const PostAccountsAccountExternalAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountExternalAccountsRequest {const PostAccountsAccountExternalAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 
 factory PostAccountsAccountExternalAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountExternalAccountsRequest(
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount3.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => external_account_payout_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,
@@ -11,7 +11,7 @@ factory PostAccountsAccountExternalAccountsRequest.fromJson(Map<String, dynamic>
 ); }
 
 /// Either a token, like the ones returned by [Stripe.js](https://stripe.com/docs/js), or a dictionary containing a user's bank account details.
-final PostAccountsAccountExternalAccountsRequestBankAccount? bankAccount;
+final PostAccountsAccountBankAccountsRequestBankAccount? bankAccount;
 
 /// When set to true, or if this is the first external account added in this currency, this account becomes the default external account for its currency.
 final bool? defaultForCurrency;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'default_for_currency', 'expand', 'external_account', 'metadata'}.contains(key)); } 
-PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountExternalAccountsRequestBankAccount Function()? bankAccount, bool Function()? defaultForCurrency, List<String> Function()? expand, String Function()? externalAccount, Map<String, String> Function()? metadata, }) { return PostAccountsAccountExternalAccountsRequest(
+PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountBankAccountsRequestBankAccount Function()? bankAccount, bool Function()? defaultForCurrency, List<String> Function()? expand, String Function()? externalAccount, Map<String, String> Function()? metadata, }) { return PostAccountsAccountExternalAccountsRequest(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,
   expand: expand != null ? expand() : this.expand,

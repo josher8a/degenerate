@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'address.dart';import 'application.dart';import 'automatic_tax.dart';import 'bank_account.dart';import 'billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'card.dart';import 'connect_account_reference.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_discount.dart';import 'deleted_tax_id.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'errors.dart';import 'invoice_account_tax_ids.dart';import 'invoice_application.dart';import 'invoice_customer.dart';import 'invoice_default_payment_method.dart';import 'invoice_default_source.dart';import 'invoice_discounts.dart';import 'invoice_latest_revision.dart';import 'invoice_lines.dart';import 'invoice_on_behalf_of.dart';import 'invoice_payments.dart';import 'invoice_setting_custom_field.dart';import 'invoice_test_clock.dart';import 'invoice_threshold_reason.dart';import 'invoices_payment_settings.dart';import 'invoices_resource_confirmation_secret.dart';import 'invoices_resource_from_invoice.dart';import 'invoices_resource_invoice_rendering.dart';import 'invoices_resource_invoice_tax_id.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'invoices_resource_shipping_cost.dart';import 'invoices_resource_status_transitions.dart';import 'payment_method.dart';import 'shipping.dart';import 'source.dart';import 'tax_id.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/automatic_tax.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_customer.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/deleted_invoice/deleted_invoice_object.dart';import 'package:pub_stripe_spec3/models/deleted_tax_id.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_discounts.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_lines.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_payments.dart';import 'package:pub_stripe_spec3/models/invoice/latest_revision.dart';import 'package:pub_stripe_spec3/models/invoice_setting_custom_field.dart';import 'package:pub_stripe_spec3/models/invoice_threshold_reason.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings.dart';import 'package:pub_stripe_spec3/models/invoices_resource_confirmation_secret.dart';import 'package:pub_stripe_spec3/models/invoices_resource_from_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_rendering.dart';import 'package:pub_stripe_spec3/models/invoices_resource_invoice_tax_id.dart';import 'package:pub_stripe_spec3/models/invoices_resource_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';import 'package:pub_stripe_spec3/models/invoices_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
 /// 
 /// * `manual`: Unrelated to a subscription, for example, created via the invoice editor.
 /// * `subscription`: No longer in use. Applies to subscriptions from before May 2018 where no distinction was made between updates, cycles, and thresholds.
@@ -9,9 +9,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart
 /// * `subscription_threshold`: A subscription reached a billing threshold.
 /// * `subscription_update`: A subscription was updated.
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
-@immutable final class InvoiceBillingReason {const InvoiceBillingReason._(this.value);
+@immutable final class BillingReason {const BillingReason._(this.value);
 
-factory InvoiceBillingReason.fromJson(String json) { return switch (json) {
+factory BillingReason.fromJson(String json) { return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
   'manual' => manual,
   'quote_accept' => quoteAccept,
@@ -21,28 +21,28 @@ factory InvoiceBillingReason.fromJson(String json) { return switch (json) {
   'subscription_threshold' => subscriptionThreshold,
   'subscription_update' => subscriptionUpdate,
   'upcoming' => upcoming,
-  _ => InvoiceBillingReason._(json),
+  _ => BillingReason._(json),
 }; }
 
-static const InvoiceBillingReason automaticPendingInvoiceItemInvoice = InvoiceBillingReason._('automatic_pending_invoice_item_invoice');
+static const BillingReason automaticPendingInvoiceItemInvoice = BillingReason._('automatic_pending_invoice_item_invoice');
 
-static const InvoiceBillingReason manual = InvoiceBillingReason._('manual');
+static const BillingReason manual = BillingReason._('manual');
 
-static const InvoiceBillingReason quoteAccept = InvoiceBillingReason._('quote_accept');
+static const BillingReason quoteAccept = BillingReason._('quote_accept');
 
-static const InvoiceBillingReason subscription = InvoiceBillingReason._('subscription');
+static const BillingReason subscription = BillingReason._('subscription');
 
-static const InvoiceBillingReason subscriptionCreate = InvoiceBillingReason._('subscription_create');
+static const BillingReason subscriptionCreate = BillingReason._('subscription_create');
 
-static const InvoiceBillingReason subscriptionCycle = InvoiceBillingReason._('subscription_cycle');
+static const BillingReason subscriptionCycle = BillingReason._('subscription_cycle');
 
-static const InvoiceBillingReason subscriptionThreshold = InvoiceBillingReason._('subscription_threshold');
+static const BillingReason subscriptionThreshold = BillingReason._('subscription_threshold');
 
-static const InvoiceBillingReason subscriptionUpdate = InvoiceBillingReason._('subscription_update');
+static const BillingReason subscriptionUpdate = BillingReason._('subscription_update');
 
-static const InvoiceBillingReason upcoming = InvoiceBillingReason._('upcoming');
+static const BillingReason upcoming = BillingReason._('upcoming');
 
-static const List<InvoiceBillingReason> values = [automaticPendingInvoiceItemInvoice, manual, quoteAccept, subscription, subscriptionCreate, subscriptionCycle, subscriptionThreshold, subscriptionUpdate, upcoming];
+static const List<BillingReason> values = [automaticPendingInvoiceItemInvoice, manual, quoteAccept, subscription, subscriptionCreate, subscriptionCycle, subscriptionThreshold, subscriptionUpdate, upcoming];
 
 final String value;
 
@@ -50,34 +50,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceBillingReason && other.value == value; } 
+    other is BillingReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceBillingReason($value)'; } 
- }
-/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions.
-@immutable final class InvoiceCollectionMethod {const InvoiceCollectionMethod._(this.value);
-
-factory InvoiceCollectionMethod.fromJson(String json) { return switch (json) {
-  'charge_automatically' => chargeAutomatically,
-  'send_invoice' => sendInvoice,
-  _ => InvoiceCollectionMethod._(json),
-}; }
-
-static const InvoiceCollectionMethod chargeAutomatically = InvoiceCollectionMethod._('charge_automatically');
-
-static const InvoiceCollectionMethod sendInvoice = InvoiceCollectionMethod._('send_invoice');
-
-static const List<InvoiceCollectionMethod> values = [chargeAutomatically, sendInvoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceCollectionMethod($value)'; } 
+@override String toString() { return 'BillingReason($value)'; } 
  }
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 @immutable final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
@@ -106,28 +81,6 @@ bool get isUnknown { return !values.contains(this); }
     other is InvoiceCustomerTaxExempt && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoiceCustomerTaxExempt($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class InvoiceObject {const InvoiceObject._(this.value);
-
-factory InvoiceObject.fromJson(String json) { return switch (json) {
-  'invoice' => invoice,
-  _ => InvoiceObject._(json),
-}; }
-
-static const InvoiceObject invoice = InvoiceObject._('invoice');
-
-static const List<InvoiceObject> values = [invoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceObject($value)'; } 
  }
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
 @immutable final class InvoiceStatus {const InvoiceStatus._(this.value);
@@ -212,7 +165,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   autoAdvance: json['auto_advance'] as bool,
   automaticTax: AutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
-  billingReason: json['billing_reason'] != null ? InvoiceBillingReason.fromJson(json['billing_reason'] as String) : null,
+  billingReason: json['billing_reason'] != null ? BillingReason.fromJson(json['billing_reason'] as String) : null,
   collectionMethod: InvoiceCollectionMethod.fromJson(json['collection_method'] as String),
   confirmationSecret: json['confirmation_secret'] != null ? InvoicesResourceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
@@ -248,7 +201,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nextPaymentAttempt: json['next_payment_attempt'] != null ? (json['next_payment_attempt'] as num).toInt() : null,
   number: json['number'] as String?,
-  object: InvoiceObject.fromJson(json['object'] as String),
+  object: DeletedInvoiceObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   parent: json['parent'] != null ? BillingBillResourceInvoicingParentsInvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   paymentSettings: InvoicesPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>),
@@ -302,7 +255,7 @@ final int amountRemaining;
 final int amountShipping;
 
 /// ID of the Connect Application that created the invoice.
-final InvoiceApplication? application;
+final BillingPortalConfigurationApplication? application;
 
 /// Number of payment attempts made for this invoice, from the perspective of the payment retry schedule. Any payment attempt counts as the first attempt, and subsequently only automatic retries increment the attempt count. In other words, manual payment attempts after the first attempt do not affect the retry schedule. If a failure is returned with a non-retryable return code, the invoice can no longer be retried unless a new payment method is obtained. Retries will continue to be scheduled, and attempt_count will continue to increment, but retries will only be executed if a new payment method is obtained.
 final int attemptCount;
@@ -327,7 +280,7 @@ final int? automaticallyFinalizesAt;
 /// * `subscription_threshold`: A subscription reached a billing threshold.
 /// * `subscription_update`: A subscription was updated.
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
-final InvoiceBillingReason? billingReason;
+final BillingReason? billingReason;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, Stripe will email this invoice to the customer with payment instructions.
 final InvoiceCollectionMethod collectionMethod;
@@ -345,7 +298,7 @@ final String currency;
 final List<InvoiceSettingCustomField>? customFields;
 
 /// The ID of the customer to bill.
-final InvoiceCustomer customer;
+final BillingCreditGrantCustomer customer;
 
 /// The ID of the account representing the customer to bill.
 final String? customerAccount;
@@ -372,10 +325,10 @@ final InvoiceCustomerTaxExempt? customerTaxExempt;
 final List<InvoicesResourceInvoiceTaxId>? customerTaxIds;
 
 /// ID of the default payment method for the invoice. It must belong to the customer associated with the invoice. If not set, defaults to the subscription's default payment method, if any, or to the default payment method in the customer's invoice settings.
-final InvoiceDefaultPaymentMethod? defaultPaymentMethod;
+final DefaultPaymentMethod? defaultPaymentMethod;
 
 /// ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
-final InvoiceDefaultSource? defaultSource;
+final CustomerDefaultSource? defaultSource;
 
 /// The tax rates applied to this invoice, if any.
 final List<TaxRate> defaultTaxRates;
@@ -416,7 +369,7 @@ final ConnectAccountReference issuer;
 final Errors? lastFinalizationError;
 
 /// The ID of the most recent non-draft revision of this invoice
-final InvoiceLatestRevision? latestRevision;
+final LatestRevision? latestRevision;
 
 /// The individual line items that make up the invoice. `lines` is sorted as follows: (1) pending invoice items (including prorations) in reverse chronological order, (2) subscription items in reverse chronological order, and (3) invoice items added after invoice creation in chronological order.
 final InvoiceLines lines;
@@ -434,10 +387,10 @@ final int? nextPaymentAttempt;
 final String? number;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final InvoiceObject object;
+final DeletedInvoiceObject object;
 
 /// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
-final InvoiceOnBehalfOf? onBehalfOf;
+final ChargeOnBehalfOf? onBehalfOf;
 
 /// The parent that generated this invoice
 final BillingBillResourceInvoicingParentsInvoiceParent? parent;
@@ -489,7 +442,7 @@ final int subtotal;
 final int? subtotalExcludingTax;
 
 /// ID of the test clock this invoice belongs to.
-final InvoiceTestClock? testClock;
+final TestClock? testClock;
 
 final InvoiceThresholdReason? thresholdReason;
 
@@ -619,7 +572,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num; } 
-Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, InvoiceApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceBillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoicesResourceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, InvoiceCustomer? customer, String? Function()? customerAccount, Address? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, Shipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, InvoiceDefaultPaymentMethod? Function()? defaultPaymentMethod, InvoiceDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoicesResourceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, Errors? Function()? lastFinalizationError, InvoiceLatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, InvoiceObject? object, InvoiceOnBehalfOf? Function()? onBehalfOf, BillingBillResourceInvoicingParentsInvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoicesResourceInvoiceRendering? Function()? rendering, InvoicesResourceShippingCost? Function()? shippingCost, Shipping? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, InvoiceTestClock? Function()? testClock, InvoiceThresholdReason Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
+Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, BillingPortalConfigurationApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, BillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoicesResourceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, BillingCreditGrantCustomer? customer, String? Function()? customerAccount, Address? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, Shipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, DefaultPaymentMethod? Function()? defaultPaymentMethod, CustomerDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoicesResourceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, Errors? Function()? lastFinalizationError, LatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, DeletedInvoiceObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, BillingBillResourceInvoicingParentsInvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoicesResourceInvoiceRendering? Function()? rendering, InvoicesResourceShippingCost? Function()? shippingCost, Shipping? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, TestClock? Function()? testClock, InvoiceThresholdReason Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
   accountCountry: accountCountry != null ? accountCountry() : this.accountCountry,
   accountName: accountName != null ? accountName() : this.accountName,
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,

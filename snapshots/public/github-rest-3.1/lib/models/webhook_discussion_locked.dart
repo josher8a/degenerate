@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionLockedAction {const WebhookDiscussionLockedAction._(this.value);
-
-factory WebhookDiscussionLockedAction.fromJson(String json) { return switch (json) {
-  'locked' => locked,
-  _ => WebhookDiscussionLockedAction._(json),
-}; }
-
-static const WebhookDiscussionLockedAction locked = WebhookDiscussionLockedAction._('locked');
-
-static const List<WebhookDiscussionLockedAction> values = [locked];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionLockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionLockedAction($value)'; } 
- }
-@immutable final class WebhookDiscussionLocked {const WebhookDiscussionLocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_locked/webhook_discussion_locked_action.dart';@immutable final class WebhookDiscussionLocked {const WebhookDiscussionLocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionLocked.fromJson(Map<String, dynamic> json) { return WebhookDiscussionLocked(
   action: WebhookDiscussionLockedAction.fromJson(json['action'] as String),

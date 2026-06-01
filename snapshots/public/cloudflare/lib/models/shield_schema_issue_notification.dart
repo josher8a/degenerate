@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_schema_issue_notification_source.dart';@immutable final class ShieldSchemaIssueNotification {const ShieldSchemaIssueNotification({required this.code, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_schema_issue_notification/shield_schema_issue_notification_source.dart';@immutable final class ShieldSchemaIssueNotification {const ShieldSchemaIssueNotification({required this.code, required this.message, this.source, });
 
 factory ShieldSchemaIssueNotification.fromJson(Map<String, dynamic> json) { return ShieldSchemaIssueNotification(
   code: (json['code'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';@immutable final class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction._(this.value);
 
 factory WebhookGithubAppAuthorizationRevokedAction.fromJson(String json) { return switch (json) {
   'revoked' => revoked,

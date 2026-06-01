@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_transaction_resource_reversal.dart';import 'tax_product_resource_tax_transaction_shipping_cost.dart';import 'tax_transaction_line_items.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_resource_reversal.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_shipping_cost.dart';import 'package:pub_stripe_spec3/models/tax_transaction/tax_transaction_line_items.dart';import 'package:pub_stripe_spec3/models/tax_transaction_line_item/tax_transaction_line_item_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxTransactionObject {const TaxTransactionObject._(this.value);
 
 factory TaxTransactionObject.fromJson(String json) { return switch (json) {
@@ -21,31 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is TaxTransactionObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TaxTransactionObject($value)'; } 
- }
-/// If `reversal`, this transaction reverses an earlier transaction.
-@immutable final class TaxTransactionType {const TaxTransactionType._(this.value);
-
-factory TaxTransactionType.fromJson(String json) { return switch (json) {
-  'reversal' => reversal,
-  'transaction' => transaction,
-  _ => TaxTransactionType._(json),
-}; }
-
-static const TaxTransactionType reversal = TaxTransactionType._('reversal');
-
-static const TaxTransactionType transaction = TaxTransactionType._('transaction');
-
-static const List<TaxTransactionType> values = [reversal, transaction];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionType($value)'; } 
  }
 /// A Tax Transaction records the tax collected from or refunded to your customer.
 /// 
@@ -68,7 +43,7 @@ factory TaxTransaction.fromJson(Map<String, dynamic> json) { return TaxTransacti
   shipFromDetails: json['ship_from_details'] != null ? TaxProductResourceShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
   shippingCost: json['shipping_cost'] != null ? TaxProductResourceTaxTransactionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   taxDate: (json['tax_date'] as num).toInt(),
-  type: TaxTransactionType.fromJson(json['type'] as String),
+  type: TaxTransactionLineItemType.fromJson(json['type'] as String),
 ); }
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
@@ -116,7 +91,7 @@ final TaxProductResourceTaxTransactionShippingCost? shippingCost;
 final int taxDate;
 
 /// If `reversal`, this transaction reverses an earlier transaction.
-final TaxTransactionType type;
+final TaxTransactionLineItemType type;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
@@ -146,7 +121,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('tax_date') && json['tax_date'] is num &&
       json.containsKey('type'); } 
-TaxTransaction copyWith({int? created, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, String? id, TaxTransactionLineItems? Function()? lineItems, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionObject? object, int? postedAt, String? reference, TaxProductResourceTaxTransactionResourceReversal? Function()? reversal, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxTransactionShippingCost? Function()? shippingCost, int? taxDate, TaxTransactionType? type, }) { return TaxTransaction(
+TaxTransaction copyWith({int? created, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, String? id, TaxTransactionLineItems? Function()? lineItems, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionObject? object, int? postedAt, String? reference, TaxProductResourceTaxTransactionResourceReversal? Function()? reversal, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxTransactionShippingCost? Function()? shippingCost, int? taxDate, TaxTransactionLineItemType? type, }) { return TaxTransaction(
   created: created ?? this.created,
   currency: currency ?? this.currency,
   customer: customer != null ? customer() : this.customer,

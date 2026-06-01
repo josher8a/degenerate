@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_image_variation_request_model.dart';/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
-@immutable final class CreateImageVariationRequestResponseFormat {const CreateImageVariationRequestResponseFormat._(this.value);
-
-factory CreateImageVariationRequestResponseFormat.fromJson(String json) { return switch (json) {
-  'url' => url,
-  'b64_json' => b64Json,
-  _ => CreateImageVariationRequestResponseFormat._(json),
-}; }
-
-static const CreateImageVariationRequestResponseFormat url = CreateImageVariationRequestResponseFormat._('url');
-
-static const CreateImageVariationRequestResponseFormat b64Json = CreateImageVariationRequestResponseFormat._('b64_json');
-
-static const List<CreateImageVariationRequestResponseFormat> values = [url, b64Json];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageVariationRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageVariationRequestResponseFormat($value)'; } 
- }
-/// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/create_image_variation_request/create_image_variation_request_model.dart';/// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 @immutable final class CreateImageVariationRequestSize {const CreateImageVariationRequestSize._(this.value);
 
 factory CreateImageVariationRequestSize.fromJson(String json) { return switch (json) {
@@ -53,13 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageVariationRequestSize($value)'; } 
  }
-@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageVariationRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
+@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
 
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageVariationRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageVariationRequestResponseFormat.url,
+  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageEditRequestResponseFormat.url,
   size: json.containsKey('size') ? json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null : CreateImageVariationRequestSize.$1024x1024,
   user: json['user'] as String?,
 ); }
@@ -74,7 +49,7 @@ final CreateImageVariationRequestModel? model;
 final int? n;
 
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
-final CreateImageVariationRequestResponseFormat? responseFormat;
+final CreateImageEditRequestResponseFormat? responseFormat;
 
 /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
 final CreateImageVariationRequestSize? size;
@@ -92,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageVariationRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String Function()? user, }) { return CreateImageVariationRequest(
+CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String Function()? user, }) { return CreateImageVariationRequest(
   image: image ?? this.image,
   model: model != null ? model() : this.model,
   n: n != null ? n() : this.n,

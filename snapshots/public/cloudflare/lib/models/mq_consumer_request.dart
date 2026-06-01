@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_request.dart';import 'mq_http_consumer_request_settings.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_request.dart';import 'mq_worker_consumer_request_settings.dart';/// Request body for creating or updating a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';/// Request body for creating or updating a consumer
 sealed class MqConsumerRequest {const MqConsumerRequest();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
-@immutable final class RealtimekitAudioConfigChannel {const RealtimekitAudioConfigChannel._(this.value);
+@immutable final class Channel {const Channel._(this.value);
 
-factory RealtimekitAudioConfigChannel.fromJson(String json) { return switch (json) {
+factory Channel.fromJson(String json) { return switch (json) {
   'mono' => mono,
   'stereo' => stereo,
-  _ => RealtimekitAudioConfigChannel._(json),
+  _ => Channel._(json),
 }; }
 
-static const RealtimekitAudioConfigChannel mono = RealtimekitAudioConfigChannel._('mono');
+static const Channel mono = Channel._('mono');
 
-static const RealtimekitAudioConfigChannel stereo = RealtimekitAudioConfigChannel._('stereo');
+static const Channel stereo = Channel._('stereo');
 
-static const List<RealtimekitAudioConfigChannel> values = [mono, stereo];
+static const List<Channel> values = [mono, stereo];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitAudioConfigChannel && other.value == value; } 
+    other is Channel && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitAudioConfigChannel($value)'; } 
+@override String toString() { return 'Channel($value)'; } 
  }
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
 @immutable final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
@@ -51,16 +51,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitAudioConfigCodec($value)'; } 
  }
 /// Object containing configuration regarding the audio that is being recorded.
-@immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = RealtimekitAudioConfigChannel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
+@immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = Channel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
 
 factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAudioConfig(
-  channel: json.containsKey('channel') ? RealtimekitAudioConfigChannel.fromJson(json['channel'] as String) : RealtimekitAudioConfigChannel.stereo,
+  channel: json.containsKey('channel') ? Channel.fromJson(json['channel'] as String) : Channel.stereo,
   codec: json.containsKey('codec') ? RealtimekitAudioConfigCodec.fromJson(json['codec'] as String) : RealtimekitAudioConfigCodec.aac,
   exportFile: json.containsKey('export_file') ? json['export_file'] as bool : true,
 ); }
 
 /// Audio signal pathway within an audio file that carries a specific sound source.
-final RealtimekitAudioConfigChannel channel;
+final Channel channel;
 
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
 final RealtimekitAudioConfigCodec codec;
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'export_file': exportFile,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'channel', 'codec', 'export_file'}.contains(key)); } 
-RealtimekitAudioConfig copyWith({RealtimekitAudioConfigChannel Function()? channel, RealtimekitAudioConfigCodec Function()? codec, bool Function()? exportFile, }) { return RealtimekitAudioConfig(
+RealtimekitAudioConfig copyWith({Channel Function()? channel, RealtimekitAudioConfigCodec Function()? codec, bool Function()? exportFile, }) { return RealtimekitAudioConfig(
   channel: channel != null ? channel() : this.channel,
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,

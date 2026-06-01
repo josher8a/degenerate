@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_virtual_network_id_computed_optional.dart';@immutable final class TunnelRouteCreateATunnelRouteRequest {const TunnelRouteCreateATunnelRouteRequest({required this.network, required this.tunnelId, this.comment, this.virtualNetworkId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_route_comment.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_virtual_network_id_computed_optional.dart';@immutable final class TunnelRouteCreateATunnelRouteRequest {const TunnelRouteCreateATunnelRouteRequest({required this.network, required this.tunnelId, this.comment, this.virtualNetworkId, });
 
 factory TunnelRouteCreateATunnelRouteRequest.fromJson(Map<String, dynamic> json) { return TunnelRouteCreateATunnelRouteRequest(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,

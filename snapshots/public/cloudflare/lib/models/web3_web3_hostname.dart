@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_identifier.dart';import 'web3_name.dart';import 'web3_target.dart';import 'web3_timestamp.dart';/// Specifies the status of the hostname's activation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_name.dart';import 'package:pub_cloudflare/models/web3_target.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specifies the status of the hostname's activation.
 @immutable final class Web3Status {const Web3Status._(this.value);
 
 factory Web3Status.fromJson(String json) { return switch (json) {

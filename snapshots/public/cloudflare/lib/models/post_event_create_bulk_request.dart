@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_request_data.dart';@immutable final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dos_event_create_bulk_with_relationships_request/post_dos_event_create_bulk_with_relationships_request_data.dart';@immutable final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
 
 factory PostEventCreateBulkRequest.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequest(
-  data: (json['data'] as List<dynamic>).map((e) => PostEventCreateBulkRequestData.fromJson(e as Map<String, dynamic>)).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(e as Map<String, dynamic>)).toList(),
   datasetId: json['datasetId'] as String,
   includeCreatedEvents: json['includeCreatedEvents'] as bool?,
 ); }
 
-final List<PostEventCreateBulkRequestData> data;
+final List<PostDosEventCreateBulkWithRelationshipsRequestData> data;
 
 final String datasetId;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('datasetId') && json['datasetId'] is String; } 
-PostEventCreateBulkRequest copyWith({List<PostEventCreateBulkRequestData>? data, String? datasetId, bool Function()? includeCreatedEvents, }) { return PostEventCreateBulkRequest(
+PostEventCreateBulkRequest copyWith({List<PostDosEventCreateBulkWithRelationshipsRequestData>? data, String? datasetId, bool Function()? includeCreatedEvents, }) { return PostEventCreateBulkRequest(
   data: data ?? this.data,
   datasetId: datasetId ?? this.datasetId,
   includeCreatedEvents: includeCreatedEvents != null ? includeCreatedEvents() : this.includeCreatedEvents,

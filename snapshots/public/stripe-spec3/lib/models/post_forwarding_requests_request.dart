@@ -1,46 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request.dart';@immutable final class PostForwardingRequestsRequestReplacements {const PostForwardingRequestsRequestReplacements._(this.value);
-
-factory PostForwardingRequestsRequestReplacements.fromJson(String json) { return switch (json) {
-  'card_cvc' => cardCvc,
-  'card_expiry' => cardExpiry,
-  'card_number' => cardNumber,
-  'cardholder_name' => cardholderName,
-  'request_signature' => requestSignature,
-  _ => PostForwardingRequestsRequestReplacements._(json),
-}; }
-
-static const PostForwardingRequestsRequestReplacements cardCvc = PostForwardingRequestsRequestReplacements._('card_cvc');
-
-static const PostForwardingRequestsRequestReplacements cardExpiry = PostForwardingRequestsRequestReplacements._('card_expiry');
-
-static const PostForwardingRequestsRequestReplacements cardNumber = PostForwardingRequestsRequestReplacements._('card_number');
-
-static const PostForwardingRequestsRequestReplacements cardholderName = PostForwardingRequestsRequestReplacements._('cardholder_name');
-
-static const PostForwardingRequestsRequestReplacements requestSignature = PostForwardingRequestsRequestReplacements._('request_signature');
-
-static const List<PostForwardingRequestsRequestReplacements> values = [cardCvc, cardExpiry, cardNumber, cardholderName, requestSignature];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostForwardingRequestsRequestReplacements && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostForwardingRequestsRequestReplacements($value)'; } 
- }
-@immutable final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({required this.paymentMethod, required this.replacements, required this.url, this.expand, this.metadata, this.request, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarding_request/replacements.dart';import 'package:pub_stripe_spec3/models/post_forwarding_requests_request/request.dart';@immutable final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({required this.paymentMethod, required this.replacements, required this.url, this.expand, this.metadata, this.request, });
 
 factory PostForwardingRequestsRequest.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentMethod: json['payment_method'] as String,
-  replacements: (json['replacements'] as List<dynamic>).map((e) => PostForwardingRequestsRequestReplacements.fromJson(e as String)).toList(),
-  request: json['request'] != null ? PostForwardingRequestsRequestRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
+  replacements: (json['replacements'] as List<dynamic>).map((e) => Replacements.fromJson(e as String)).toList(),
+  request: json['request'] != null ? Request.fromJson(json['request'] as Map<String, dynamic>) : null,
   url: json['url'] as String,
 ); }
 
@@ -54,10 +21,10 @@ final Map<String,String>? metadata;
 final String paymentMethod;
 
 /// The field kinds to be replaced in the forwarded request.
-final List<PostForwardingRequestsRequestReplacements> replacements;
+final List<Replacements> replacements;
 
 /// The request body and headers to be sent to the destination endpoint.
-final PostForwardingRequestsRequestRequest? request;
+final Request? request;
 
 /// The destination URL for the forwarded request. Must be supported by the config.
 final String url;
@@ -73,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements') &&
       json.containsKey('url') && json['url'] is String; } 
-PostForwardingRequestsRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, String? paymentMethod, List<PostForwardingRequestsRequestReplacements>? replacements, PostForwardingRequestsRequestRequest Function()? request, String? url, }) { return PostForwardingRequestsRequest(
+PostForwardingRequestsRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, String? paymentMethod, List<Replacements>? replacements, Request Function()? request, String? url, }) { return PostForwardingRequestsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   paymentMethod: paymentMethod ?? this.paymentMethod,

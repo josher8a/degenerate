@@ -1,41 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories in the organization that the secret is visible to
-@immutable final class CodespacesSecretVisibility {const CodespacesSecretVisibility._(this.value);
-
-factory CodespacesSecretVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => CodespacesSecretVisibility._(json),
-}; }
-
-static const CodespacesSecretVisibility all = CodespacesSecretVisibility._('all');
-
-static const CodespacesSecretVisibility private = CodespacesSecretVisibility._('private');
-
-static const CodespacesSecretVisibility selected = CodespacesSecretVisibility._('selected');
-
-static const List<CodespacesSecretVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesSecretVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesSecretVisibility($value)'; } 
- }
-/// Secrets for a GitHub Codespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Secrets for a GitHub Codespace.
 @immutable final class CodespacesSecret {const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl, });
 
 factory CodespacesSecret.fromJson(Map<String, dynamic> json) { return CodespacesSecret(
   name: json['name'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  visibility: CodespacesSecretVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoriesUrl: Uri.parse(json['selected_repositories_url'] as String),
 ); }
 
@@ -49,7 +21,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The type of repositories in the organization that the secret is visible to
-final CodespacesSecretVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 /// The API URL at which the list of repositories this secret is visible to can be retrieved
 final Uri selectedRepositoriesUrl;
@@ -66,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('visibility') &&
       json.containsKey('selected_repositories_url') && json['selected_repositories_url'] is String; } 
-CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, CodespacesSecretVisibility? visibility, Uri? selectedRepositoriesUrl, }) { return CodespacesSecret(
+CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri? selectedRepositoriesUrl, }) { return CodespacesSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,

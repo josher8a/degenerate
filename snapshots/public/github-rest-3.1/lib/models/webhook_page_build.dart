@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_page_build_build.dart';@immutable final class WebhookPageBuild {const WebhookPageBuild({required this.build, required this.id, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_page_build/build.dart';@immutable final class WebhookPageBuild {const WebhookPageBuild({required this.build, required this.id, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPageBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuild(
-  build: WebhookPageBuildBuild.fromJson(json['build'] as Map<String, dynamic>),
+  build: Build.fromJson(json['build'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   id: (json['id'] as num).toInt(),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -13,7 +13,7 @@ factory WebhookPageBuild.fromJson(Map<String, dynamic> json) { return WebhookPag
 ); }
 
 /// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
-final WebhookPageBuildBuild build;
+final Build build;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('build
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPageBuild copyWith({WebhookPageBuildBuild? build, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPageBuild(
+WebhookPageBuild copyWith({Build? build, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPageBuild(
   build: build ?? this.build,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   id: id ?? this.id,

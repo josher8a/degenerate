@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'room_state_status_detail.dart';
+import 'package:pub_totem_mobile/models/room_state/status_detail.dart';
 
 @immutable
 final class RoomStatus {
@@ -128,7 +128,7 @@ final class RoomState {
       version: (json['version'] as num).toInt(),
       status: RoomStatus.fromJson(json['status'] as String),
       turnState: TurnState.fromJson(json['turn_state'] as String),
-      statusDetail: RoomStateStatusDetail.fromJson(
+      statusDetail: StatusDetail.fromJson(
         json['status_detail'] as Map<String, dynamic>,
       ),
       currentSpeaker: json['current_speaker'] as String?,
@@ -153,7 +153,7 @@ final class RoomState {
 
   final TurnState turnState;
 
-  final RoomStateStatusDetail statusDetail;
+  final StatusDetail statusDetail;
 
   final String? currentSpeaker;
 
@@ -198,7 +198,7 @@ final class RoomState {
     int? version,
     RoomStatus? status,
     TurnState? turnState,
-    RoomStateStatusDetail? statusDetail,
+    StatusDetail? statusDetail,
     String? Function()? currentSpeaker,
     String? Function()? nextSpeaker,
     List<String>? talkingOrder,

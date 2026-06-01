@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bundle_custom_detection.dart';import '../models/bundle_identifier.dart';import '../models/bundle_status.dart';import '../models/response_common74_result.dart';/// LeakedCredentialChecksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_detection.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';import 'package:pub_cloudflare/models/bundle_status.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';/// LeakedCredentialChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -151,7 +151,7 @@ return execute(
 /// Remove user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `DELETE /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<ResponseCommon74Result, Never>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon31Result, Never>> wafProductApiLeakedCredentialsDeleteDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',

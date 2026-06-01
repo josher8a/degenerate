@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spam_response_result.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamResponse {const RadarGetEmailSecurityTopTldsBySpamResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_industries_response/radar_get_attacks_layer3_top_industries_response_result.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpamResponse {const RadarGetEmailSecurityTopTldsBySpamResponse({required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTopTldsBySpamResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpamResponse(
-  result: RadarGetEmailSecurityTopTldsBySpamResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAttacksLayer3TopIndustriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetEmailSecurityTopTldsBySpamResponseResult result;
+final RadarGetAttacksLayer3TopIndustriesResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailSecurityTopTldsBySpamResponse copyWith({RadarGetEmailSecurityTopTldsBySpamResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTopTldsBySpamResponse(
+RadarGetEmailSecurityTopTldsBySpamResponse copyWith({RadarGetAttacksLayer3TopIndustriesResponseResult? result, bool? success, }) { return RadarGetEmailSecurityTopTldsBySpamResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

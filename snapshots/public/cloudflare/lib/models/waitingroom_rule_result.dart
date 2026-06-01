@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_action.dart';import 'waitingroom_rule_description.dart';import 'waitingroom_rule_enabled.dart';import 'waitingroom_rule_expression.dart';import 'waitingroom_rule_id.dart';import 'waitingroom_timestamp.dart';/// The version of the rule.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_rule_action.dart';import 'package:pub_cloudflare/models/waitingroom_rule_description.dart';import 'package:pub_cloudflare/models/waitingroom_rule_enabled.dart';import 'package:pub_cloudflare/models/waitingroom_rule_expression.dart';import 'package:pub_cloudflare/models/waitingroom_rule_id.dart';import 'package:pub_cloudflare/models/waitingroom_timestamp.dart';/// The version of the rule.
 extension type const WaitingroomRuleVersion(String value) {
 factory WaitingroomRuleVersion.fromJson(String json) => WaitingroomRuleVersion(json);
 

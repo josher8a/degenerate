@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_tlsa_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_smimea_record/dns_records_smimea_record_data.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
 @immutable final class DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType._(this.value);
 
 factory DnsRecordsTlsaRecordType.fromJson(String json) { return switch (json) {
@@ -32,7 +32,7 @@ factory DnsRecordsTlsaRecord.fromJson(Map<String, dynamic> json) { return DnsRec
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
   content: json['content'] as String?,
-  data: json['data'] != null ? DnsRecordsTlsaRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
+  data: json['data'] != null ? DnsRecordsSmimeaRecordData.fromJson(json['data'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? DnsRecordsTlsaRecordType.fromJson(json['type'] as String) : null,
 ); }
 
@@ -52,7 +52,7 @@ final DnsRecordsTtl? ttl;
 final String? content;
 
 /// Components of a TLSA record.
-final DnsRecordsTlsaRecordData? data;
+final DnsRecordsSmimeaRecordData? data;
 
 /// Record type.
 final DnsRecordsTlsaRecordType? type;
@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'name', 'proxied', 'settings', 'tags', 'ttl', 'content', 'data', 'type'}.contains(key)); } 
-DnsRecordsTlsaRecord copyWith({DnsRecordsComment Function()? comment, DnsRecordsName Function()? name, DnsRecordsProxied Function()? proxied, DnsRecordsSettings Function()? settings, List<String> Function()? tags, DnsRecordsTtl Function()? ttl, String Function()? content, DnsRecordsTlsaRecordData Function()? data, DnsRecordsTlsaRecordType Function()? type, }) { return DnsRecordsTlsaRecord(
+DnsRecordsTlsaRecord copyWith({DnsRecordsComment Function()? comment, DnsRecordsName Function()? name, DnsRecordsProxied Function()? proxied, DnsRecordsSettings Function()? settings, List<String> Function()? tags, DnsRecordsTtl Function()? ttl, String Function()? content, DnsRecordsSmimeaRecordData Function()? data, DnsRecordsTlsaRecordType Function()? type, }) { return DnsRecordsTlsaRecord(
   comment: comment != null ? comment() : this.comment,
   name: name != null ? name() : this.name,
   proxied: proxied != null ? proxied() : this.proxied,

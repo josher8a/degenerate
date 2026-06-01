@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_account_id_pipelines_deprecated_request_destination.dart';import 'accounts_by_account_id_pipelines_deprecated_request_source.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedRequest {const AccountsByAccountIdPipelinesDeprecatedRequest({required this.destination, required this.name, required this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_source.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_deprecated_request/accounts_by_account_id_pipelines_deprecated_request_destination.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedRequest {const AccountsByAccountIdPipelinesDeprecatedRequest({required this.destination, required this.name, required this.source, });
 
 factory AccountsByAccountIdPipelinesDeprecatedRequest.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequest(
   destination: AccountsByAccountIdPipelinesDeprecatedRequestDestination.fromJson(json['destination'] as Map<String, dynamic>),
   name: json['name'] as String,
-  source: (json['source'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesDeprecatedRequestSource.fromJson(e as Map<String, dynamic>)).toList(),
+  source: (json['source'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final AccountsByAccountIdPipelinesDeprecatedRequestDestination destination;
@@ -13,7 +13,7 @@ final AccountsByAccountIdPipelinesDeprecatedRequestDestination destination;
 /// Defines the name of the pipeline.
 final String name;
 
-final List<AccountsByAccountIdPipelinesDeprecatedRequestSource> source;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> source;
 
 Map<String, dynamic> toJson() { return {
   'destination': destination.toJson(),
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source'); } 
-AccountsByAccountIdPipelinesDeprecatedRequest copyWith({AccountsByAccountIdPipelinesDeprecatedRequestDestination? destination, String? name, List<AccountsByAccountIdPipelinesDeprecatedRequestSource>? source, }) { return AccountsByAccountIdPipelinesDeprecatedRequest(
+AccountsByAccountIdPipelinesDeprecatedRequest copyWith({AccountsByAccountIdPipelinesDeprecatedRequestDestination? destination, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, }) { return AccountsByAccountIdPipelinesDeprecatedRequest(
   destination: destination ?? this.destination,
   name: name ?? this.name,
   source: source ?? this.source,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_apply_progress.dart';import 'mcn_error.dart';import 'mcn_plan_progress.dart';extension type const McnConduitRouteId(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_apply_progress.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_plan_progress.dart';extension type const McnConduitRouteId(String value) {
 factory McnConduitRouteId.fromJson(String json) => McnConduitRouteId(json);
 
 String toJson() => value;

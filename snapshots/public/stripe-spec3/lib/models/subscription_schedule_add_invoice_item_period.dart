@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_schedules_resource_invoice_item_period_resource_period_end.dart';import 'subscription_schedules_resource_invoice_item_period_resource_period_start.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_invoice_item_period_resource_period_end.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_invoice_item_period_resource_period_start.dart';/// 
 @immutable final class SubscriptionScheduleAddInvoiceItemPeriod {const SubscriptionScheduleAddInvoiceItemPeriod({required this.end, required this.start, });
 
 factory SubscriptionScheduleAddInvoiceItemPeriod.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleAddInvoiceItemPeriod(

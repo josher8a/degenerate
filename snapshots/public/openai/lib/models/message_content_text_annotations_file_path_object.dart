@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_path_object_file_path.dart';/// Always `file_path`.
-@immutable final class MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType._(this.value);
-
-factory MessageContentTextAnnotationsFilePathObjectType.fromJson(String json) { return switch (json) {
-  'file_path' => filePath,
-  _ => MessageContentTextAnnotationsFilePathObjectType._(json),
-}; }
-
-static const MessageContentTextAnnotationsFilePathObjectType filePath = MessageContentTextAnnotationsFilePathObjectType._('file_path');
-
-static const List<MessageContentTextAnnotationsFilePathObjectType> values = [filePath];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentTextAnnotationsFilePathObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageContentTextAnnotationsFilePathObjectType($value)'; } 
- }
-/// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_path_object/message_content_text_annotations_file_path_object_file_path.dart';import 'package:pub_openai/models/message_content_text_annotations_file_path_object/message_content_text_annotations_file_path_object_type.dart';/// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
 @immutable final class MessageContentTextAnnotationsFilePathObject {const MessageContentTextAnnotationsFilePathObject({required this.type, required this.text, required this.filePath, required this.startIndex, required this.endIndex, });
 
 factory MessageContentTextAnnotationsFilePathObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFilePathObject(

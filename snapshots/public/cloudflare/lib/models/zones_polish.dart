@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_polish_value.dart';/// Apply options from the Polish feature of the Cloudflare Speed app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_polish_value.dart';/// Apply options from the Polish feature of the Cloudflare Speed app.
 /// 
 @immutable final class ZonesPolishId {const ZonesPolishId._(this.value);
 

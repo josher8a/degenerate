@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// TokenRequestStatus is the result of a token request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// TokenRequestStatus is the result of a token request.
 @immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token = '', });
 
 factory TokenRequestStatus.fromJson(Map<String, dynamic> json) { return TokenRequestStatus(

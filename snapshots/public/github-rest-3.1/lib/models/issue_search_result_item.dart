@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_search_result_item_labels.dart';import 'issue_search_result_item_pull_request.dart';import 'issue_type.dart';import 'milestone.dart';import 'reaction_rollup.dart';import 'repository.dart';import 'search_result_text_matches2.dart';import 'simple_user.dart';import 'sub_issues_summary.dart';/// Issue Search Result Item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/issue/issue_pull_request.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';import 'package:pub_github_rest_3_1/models/issue_dependencies_summary.dart';import 'package:pub_github_rest_3_1/models/issue_field_value.dart';import 'package:pub_github_rest_3_1/models/issue_search_result_item/issue_search_result_item_labels.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/sub_issues_summary.dart';/// Issue Search Result Item
 @immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees, this.activeLockReason, this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.performedViaGithubApp, this.pinnedComment, this.stateReason, });
 
 factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return IssueSearchResultItem(
@@ -31,7 +31,7 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   updatedAt: DateTime.parse(json['updated_at'] as String),
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-  pullRequest: json['pull_request'] != null ? IssueSearchResultItemPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
+  pullRequest: json['pull_request'] != null ? IssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,
   score: (json['score'] as num).toDouble(),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
@@ -100,7 +100,7 @@ final DateTime? closedAt;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-final IssueSearchResultItemPullRequest? pullRequest;
+final IssuePullRequest? pullRequest;
 
 final String? body;
 
@@ -191,7 +191,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('closed_at') && json['closed_at'] is String &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('author_association'); } 
-IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, String? Function()? activeLockReason, List<SimpleUser>? Function()? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, String? state, String? Function()? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2> Function()? textMatches, IssueSearchResultItemPullRequest Function()? pullRequest, String Function()? body, double? score, AuthorAssociation? authorAssociation, bool Function()? draft, Repository Function()? repository, String Function()? bodyHtml, String Function()? bodyText, Uri Function()? timelineUrl, IssueType Function()? type, Integration? Function()? performedViaGithubApp, IssueComment? Function()? pinnedComment, ReactionRollup Function()? reactions, }) { return IssueSearchResultItem(
+IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, String? Function()? activeLockReason, List<SimpleUser>? Function()? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, String? state, String? Function()? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2> Function()? textMatches, IssuePullRequest Function()? pullRequest, String Function()? body, double? score, AuthorAssociation? authorAssociation, bool Function()? draft, Repository Function()? repository, String Function()? bodyHtml, String Function()? bodyText, Uri Function()? timelineUrl, IssueType Function()? type, Integration? Function()? performedViaGithubApp, IssueComment? Function()? pinnedComment, ReactionRollup Function()? reactions, }) { return IssueSearchResultItem(
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,

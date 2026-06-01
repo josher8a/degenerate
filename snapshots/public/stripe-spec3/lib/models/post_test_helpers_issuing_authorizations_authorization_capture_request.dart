@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_capture_request_purchase_details.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest({this.captureAmount, this.closeAuthorization, this.expand, this.purchaseDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/purchase_details.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest({this.captureAmount, this.closeAuthorization, this.expand, this.purchaseDetails, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
   captureAmount: json['capture_amount'] != null ? (json['capture_amount'] as num).toInt() : null,
   closeAuthorization: json['close_authorization'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  purchaseDetails: json['purchase_details'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
+  purchaseDetails: json['purchase_details'] != null ? PurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The amount to capture from the authorization. If not provided, the full amount of the authorization will be captured. This amount is in the authorization currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
@@ -19,7 +19,7 @@ final bool? closeAuthorization;
 final List<String>? expand;
 
 /// Additional purchase information that is optionally provided by the merchant.
-final PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails? purchaseDetails;
+final PurchaseDetails? purchaseDetails;
 
 Map<String, dynamic> toJson() { return {
   'capture_amount': ?captureAmount,
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (purchaseDetails != null) 'purchase_details': purchaseDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_amount', 'close_authorization', 'expand', 'purchase_details'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest copyWith({int Function()? captureAmount, bool Function()? closeAuthorization, List<String> Function()? expand, PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequestPurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
+PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest copyWith({int Function()? captureAmount, bool Function()? closeAuthorization, List<String> Function()? expand, PurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(
   captureAmount: captureAmount != null ? captureAmount() : this.captureAmount,
   closeAuthorization: closeAuthorization != null ? closeAuthorization() : this.closeAuthorization,
   expand: expand != null ? expand() : this.expand,

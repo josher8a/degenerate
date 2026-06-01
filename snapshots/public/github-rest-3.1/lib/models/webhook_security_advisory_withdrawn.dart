@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_advisory_withdrawn_security_advisory.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_security_advisory_withdrawn/security_advisory.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
 
 factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
   'withdrawn' => withdrawn,
@@ -29,7 +29,7 @@ factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { r
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
-  securityAdvisory: WebhookSecurityAdvisoryWithdrawnSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
+  securityAdvisory: SecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
@@ -44,7 +44,7 @@ final OrganizationSimpleWebhooks? organization;
 final RepositoryWebhooks? repository;
 
 /// The details of the security advisory, including summary, description, and severity.
-final WebhookSecurityAdvisoryWithdrawnSecurityAdvisory securityAdvisory;
+final SecurityAdvisory securityAdvisory;
 
 final SimpleUser? sender;
 
@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('security_advisory'); } 
-WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, WebhookSecurityAdvisoryWithdrawnSecurityAdvisory? securityAdvisory, SimpleUser Function()? sender, }) { return WebhookSecurityAdvisoryWithdrawn(
+WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SecurityAdvisory? securityAdvisory, SimpleUser Function()? sender, }) { return WebhookSecurityAdvisoryWithdrawn(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

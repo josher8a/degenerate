@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_call_item_status.dart';import 'function_call_output_item_param_output.dart';import 'function_call_output_item_param_output_variant2.dart';/// The output of a function tool call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_call_output_item_param/output_variant2.dart';/// The output of a function tool call.
 @immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.output, this.id, this.type = 'function_call_output', this.status, });
 
 factory FunctionCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParam(
   id: json['id'] as String?,
   callId: json['call_id'] as String,
   type: json['type'] as String,
-  output: OneOf2.parse(json['output'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => FunctionCallOutputItemParamOutputVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  output: OneOf2.parse(json['output'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OutputVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
   status: json['status'] != null ? FunctionCallItemStatus.fromJson(json['status'] as String) : null,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/shield_identifier.dart';import '../models/shield_request_expression_templates_fallthrough.dart';import '../models/shield_response_expression_templates_fallthrough.dart';/// ShieldWafExpressionTemplatesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_request_expression_templates_fallthrough.dart';import 'package:pub_cloudflare/models/shield_response_expression_templates_fallthrough.dart';/// ShieldWafExpressionTemplatesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

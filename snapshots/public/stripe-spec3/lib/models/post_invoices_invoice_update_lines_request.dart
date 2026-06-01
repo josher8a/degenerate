@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_update_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequest {const PostInvoicesInvoiceUpdateLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_add_lines_request/invoice_metadata.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_update_lines_request/post_invoices_invoice_update_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequest {const PostInvoicesInvoiceUpdateLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
 factory PostInvoicesInvoiceUpdateLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null ? OneOf2.parse(json['invoice_metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2.fromJson(v as String),) : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? OneOf2.parse(json['invoice_metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceUpdateLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -12,7 +12,7 @@ factory PostInvoicesInvoiceUpdateLinesRequest.fromJson(Map<String, dynamic> json
 final List<String>? expand;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`. For [type=subscription](https://docs.stripe.com/api/invoices/line_item#invoice_line_item_object-type) line items, the incoming metadata specified on the request is directly used to set this value, in contrast to [type=invoiceitem](api/invoices/line_item#invoice_line_item_object-type) line items, where any existing metadata on the invoice line is merged with the incoming data.
-final PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadata? invoiceMetadata;
+final InvoiceMetadata? invoiceMetadata;
 
 /// The line items to update.
 final List<PostInvoicesInvoiceUpdateLinesRequestLines> lines;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'lines': lines.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lines'); } 
-PostInvoicesInvoiceUpdateLinesRequest copyWith({List<String> Function()? expand, PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadata Function()? invoiceMetadata, List<PostInvoicesInvoiceUpdateLinesRequestLines>? lines, }) { return PostInvoicesInvoiceUpdateLinesRequest(
+PostInvoicesInvoiceUpdateLinesRequest copyWith({List<String> Function()? expand, InvoiceMetadata Function()? invoiceMetadata, List<PostInvoicesInvoiceUpdateLinesRequestLines>? lines, }) { return PostInvoicesInvoiceUpdateLinesRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,

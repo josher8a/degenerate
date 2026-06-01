@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the SOFORT authorization page that the customer is redirected to.
+/// Can be one of `de`, `en`, `es`, `fr`, `it`, `nl`, or `pl`
+@immutable final class PaymentMethodDetailsSofortPreferredLanguage {const PaymentMethodDetailsSofortPreferredLanguage._(this.value);
+
+factory PaymentMethodDetailsSofortPreferredLanguage.fromJson(String json) { return switch (json) {
+  'de' => de,
+  'en' => en,
+  'es' => es,
+  'fr' => fr,
+  'it' => it,
+  'nl' => nl,
+  'pl' => pl,
+  _ => PaymentMethodDetailsSofortPreferredLanguage._(json),
+}; }
+
+static const PaymentMethodDetailsSofortPreferredLanguage de = PaymentMethodDetailsSofortPreferredLanguage._('de');
+
+static const PaymentMethodDetailsSofortPreferredLanguage en = PaymentMethodDetailsSofortPreferredLanguage._('en');
+
+static const PaymentMethodDetailsSofortPreferredLanguage es = PaymentMethodDetailsSofortPreferredLanguage._('es');
+
+static const PaymentMethodDetailsSofortPreferredLanguage fr = PaymentMethodDetailsSofortPreferredLanguage._('fr');
+
+static const PaymentMethodDetailsSofortPreferredLanguage it = PaymentMethodDetailsSofortPreferredLanguage._('it');
+
+static const PaymentMethodDetailsSofortPreferredLanguage nl = PaymentMethodDetailsSofortPreferredLanguage._('nl');
+
+static const PaymentMethodDetailsSofortPreferredLanguage pl = PaymentMethodDetailsSofortPreferredLanguage._('pl');
+
+static const List<PaymentMethodDetailsSofortPreferredLanguage> values = [de, en, es, fr, it, nl, pl];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsSofortPreferredLanguage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsSofortPreferredLanguage($value)'; } 
+ }

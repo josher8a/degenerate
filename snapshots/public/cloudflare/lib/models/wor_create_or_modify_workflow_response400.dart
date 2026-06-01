@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_or_modify_workflow_response400_errors.dart';@immutable final class WorCreateOrModifyWorkflowResponse400 {const WorCreateOrModifyWorkflowResponse400({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class WorCreateOrModifyWorkflowResponse400 {const WorCreateOrModifyWorkflowResponse400({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorCreateOrModifyWorkflowResponse400.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => WorCreateOrModifyWorkflowResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 
-final List<WorCreateOrModifyWorkflowResponse400Errors> errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final List<String> messages;
 
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorCreateOrModifyWorkflowResponse400 copyWith({List<WorCreateOrModifyWorkflowResponse400Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorCreateOrModifyWorkflowResponse400(
+WorCreateOrModifyWorkflowResponse400 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return WorCreateOrModifyWorkflowResponse400(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

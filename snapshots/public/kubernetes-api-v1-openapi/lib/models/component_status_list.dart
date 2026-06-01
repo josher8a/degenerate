@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'component_status.dart';import 'list_meta.dart';/// Status of all the conditions for the component as a list of ComponentStatus objects. Deprecated: This API is deprecated in v1.19+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/component_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';/// Status of all the conditions for the component as a list of ComponentStatus objects. Deprecated: This API is deprecated in v1.19+
 @immutable final class ComponentStatusList {const ComponentStatusList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory ComponentStatusList.fromJson(Map<String, dynamic> json) { return ComponentStatusList(

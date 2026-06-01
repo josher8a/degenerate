@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_locked_pull_request.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestLockedAction {const WebhookPullRequestLockedAction._(this.value);
-
-factory WebhookPullRequestLockedAction.fromJson(String json) { return switch (json) {
-  'locked' => locked,
-  _ => WebhookPullRequestLockedAction._(json),
-}; }
-
-static const WebhookPullRequestLockedAction locked = WebhookPullRequestLockedAction._('locked');
-
-static const List<WebhookPullRequestLockedAction> values = [locked];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestLockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestLockedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestLocked {const WebhookPullRequestLocked({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_locked/webhook_discussion_locked_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_locked/webhook_pull_request_locked_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestLocked {const WebhookPullRequestLocked({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestLocked.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLocked(
-  action: WebhookPullRequestLockedAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionLockedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: WebhooksNumber.fromJson(json['number'] as num),
@@ -34,7 +13,7 @@ factory WebhookPullRequestLocked.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPullRequestLockedAction action;
+final WebhookDiscussionLockedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -66,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestLocked copyWith({WebhookPullRequestLockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestLockedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestLocked(
+WebhookPullRequestLocked copyWith({WebhookDiscussionLockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestLockedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestLocked(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

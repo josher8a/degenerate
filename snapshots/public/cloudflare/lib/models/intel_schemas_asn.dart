@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';extension type const IntelAsnCountry(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_asn.dart';extension type const IntelAsnCountry(String value) {
 factory IntelAsnCountry.fromJson(String json) => IntelAsnCountry(json);
 
 String toJson() => value;

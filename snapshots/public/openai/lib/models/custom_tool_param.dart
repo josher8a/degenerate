@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_param_format.dart';/// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';/// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
 @immutable final class CustomToolParam {const CustomToolParam({required this.name, this.type = 'custom', this.description, this.format, this.deferLoading, });
 
 factory CustomToolParam.fromJson(Map<String, dynamic> json) { return CustomToolParam(

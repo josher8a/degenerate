@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_tag_request_tagger.dart';/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
-@immutable final class GitCreateTagRequestType {const GitCreateTagRequestType._(this.value);
-
-factory GitCreateTagRequestType.fromJson(String json) { return switch (json) {
-  'commit' => commit,
-  'tree' => tree,
-  'blob' => blob,
-  _ => GitCreateTagRequestType._(json),
-}; }
-
-static const GitCreateTagRequestType commit = GitCreateTagRequestType._('commit');
-
-static const GitCreateTagRequestType tree = GitCreateTagRequestType._('tree');
-
-static const GitCreateTagRequestType blob = GitCreateTagRequestType._('blob');
-
-static const List<GitCreateTagRequestType> values = [commit, tree, blob];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GitCreateTagRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GitCreateTagRequestType($value)'; } 
- }
-@immutable final class GitCreateTagRequest {const GitCreateTagRequest({required this.tag, required this.message, required this.object, required this.type, this.tagger, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_tag_request/git_create_tag_request_tagger.dart';import 'package:pub_github_rest_3_1/models/git_create_tag_request/git_create_tag_request_type.dart';@immutable final class GitCreateTagRequest {const GitCreateTagRequest({required this.tag, required this.message, required this.object, required this.type, this.tagger, });
 
 factory GitCreateTagRequest.fromJson(Map<String, dynamic> json) { return GitCreateTagRequest(
   tag: json['tag'] as String,

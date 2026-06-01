@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filters_components_schemas_id.dart';/// When true, indicates that the firewall rule was deleted.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_filters_components_schemas_id.dart';/// When true, indicates that the firewall rule was deleted.
 extension type const FirewallDeleted(bool value) {
 factory FirewallDeleted.fromJson(bool json) => FirewallDeleted(json);
 

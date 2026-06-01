@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_usage_input_tokens_details.dart';import 'response_usage_output_tokens_details.dart';/// Represents token usage details including input tokens, output tokens,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_usage/output_tokens_details.dart';import 'package:pub_openai/models/response_usage/response_usage_input_tokens_details.dart';/// Represents token usage details including input tokens, output tokens,
 /// a breakdown of output tokens, and the total tokens used.
 /// 
 @immutable final class ResponseUsage {const ResponseUsage({required this.inputTokens, required this.inputTokensDetails, required this.outputTokens, required this.outputTokensDetails, required this.totalTokens, });
@@ -9,7 +9,7 @@ factory ResponseUsage.fromJson(Map<String, dynamic> json) { return ResponseUsage
   inputTokens: (json['input_tokens'] as num).toInt(),
   inputTokensDetails: ResponseUsageInputTokensDetails.fromJson(json['input_tokens_details'] as Map<String, dynamic>),
   outputTokens: (json['output_tokens'] as num).toInt(),
-  outputTokensDetails: ResponseUsageOutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>),
+  outputTokensDetails: OutputTokensDetails.fromJson(json['output_tokens_details'] as Map<String, dynamic>),
   totalTokens: (json['total_tokens'] as num).toInt(),
 ); }
 
@@ -23,7 +23,7 @@ final ResponseUsageInputTokensDetails inputTokensDetails;
 final int outputTokens;
 
 /// A detailed breakdown of the output tokens.
-final ResponseUsageOutputTokensDetails outputTokensDetails;
+final OutputTokensDetails outputTokensDetails;
 
 /// The total number of tokens used.
 final int totalTokens;
@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
       json.containsKey('output_tokens') && json['output_tokens'] is num &&
       json.containsKey('output_tokens_details') &&
       json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-ResponseUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? inputTokensDetails, int? outputTokens, ResponseUsageOutputTokensDetails? outputTokensDetails, int? totalTokens, }) { return ResponseUsage(
+ResponseUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? inputTokensDetails, int? outputTokens, OutputTokensDetails? outputTokensDetails, int? totalTokens, }) { return ResponseUsage(
   inputTokens: inputTokens ?? this.inputTokens,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
   outputTokens: outputTokens ?? this.outputTokens,

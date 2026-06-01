@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_dataset_response_result.dart';@immutable final class AigConfigFetchDatasetResponse {const AigConfigFetchDatasetResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_dataset_response/aig_config_create_dataset_response_result.dart';@immutable final class AigConfigFetchDatasetResponse {const AigConfigFetchDatasetResponse({required this.result, required this.success, });
 
 factory AigConfigFetchDatasetResponse.fromJson(Map<String, dynamic> json) { return AigConfigFetchDatasetResponse(
-  result: AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AigConfigFetchDatasetResponseResult result;
+final AigConfigCreateDatasetResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigFetchDatasetResponse copyWith({AigConfigFetchDatasetResponseResult? result, bool? success, }) { return AigConfigFetchDatasetResponse(
+AigConfigFetchDatasetResponse copyWith({AigConfigCreateDatasetResponseResult? result, bool? success, }) { return AigConfigFetchDatasetResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

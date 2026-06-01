@@ -1,40 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool.dart';import 'prompt.dart';import 'realtime_conversation_item.dart';import 'realtime_function_tool.dart';import 'realtime_response_create_params_audio.dart';import 'realtime_response_create_params_conversation.dart';import 'realtime_response_create_params_max_output_tokens.dart';import 'realtime_response_create_params_tool_choice.dart';import 'realtime_response_create_params_tools.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';@immutable final class RealtimeResponseCreateParamsOutputModalities {const RealtimeResponseCreateParamsOutputModalities._(this.value);
-
-factory RealtimeResponseCreateParamsOutputModalities.fromJson(String json) { return switch (json) {
-  'text' => text,
-  'audio' => audio,
-  _ => RealtimeResponseCreateParamsOutputModalities._(json),
-}; }
-
-static const RealtimeResponseCreateParamsOutputModalities text = RealtimeResponseCreateParamsOutputModalities._('text');
-
-static const RealtimeResponseCreateParamsOutputModalities audio = RealtimeResponseCreateParamsOutputModalities._('audio');
-
-static const List<RealtimeResponseCreateParamsOutputModalities> values = [text, audio];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeResponseCreateParamsOutputModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeResponseCreateParamsOutputModalities($value)'; } 
- }
-/// Create a new Realtime response with these parameters
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_conversation.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_audio.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_tools.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';/// Create a new Realtime response with these parameters
 @immutable final class RealtimeResponseCreateParams {const RealtimeResponseCreateParams({this.outputModalities, this.instructions, this.audio, this.tools, this.toolChoice, this.maxOutputTokens, this.conversation, this.metadata, this.prompt, this.input, });
 
 factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeResponseCreateParams(
-  outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseCreateParamsOutputModalities.fromJson(e as String)).toList(),
+  outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => OutputModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeResponseCreateParamsAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => McpTool.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
-  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeResponseCreateParamsMaxOutputTokensVariant2.fromJson(v as String),) : null,
-  conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => RealtimeResponseCreateParamsConversationVariant2.fromJson(v as String),) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
+  conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationVariant2.fromJson(v as String),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -44,7 +20,7 @@ factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { retur
 /// `[\"audio\"]`, `[\"text\"]`. Audio output always include a text transcript. Setting the
 /// output to mode `text` will disable audio output from the model.
 /// 
-final List<RealtimeResponseCreateParamsOutputModalities>? outputModalities;
+final List<OutputModalities>? outputModalities;
 
 /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.
 /// Note that the server sets default instructions which will be used if this field is not set and are visible in the `session.created` event at the start of the session.
@@ -60,14 +36,14 @@ final List<RealtimeResponseCreateParamsTools>? tools;
 /// How the model chooses tools. Provide one of the string modes or force a specific
 /// function/MCP tool.
 /// 
-final RealtimeResponseCreateParamsToolChoice? toolChoice;
+final RealtimeBetaResponseCreateParamsToolChoice? toolChoice;
 
 /// Maximum number of output tokens for a single assistant response,
 /// inclusive of tool calls. Provide an integer between 1 and 4096 to
 /// limit output tokens, or `inf` for the maximum available tokens for a
 /// given model. Defaults to `inf`.
 /// 
-final RealtimeResponseCreateParamsMaxOutputTokens? maxOutputTokens;
+final MaxOutputTokens? maxOutputTokens;
 
 /// Controls which conversation the response is added to. Currently supports
 /// `auto` and `none`, with `auto` as the default value. The `auto` value
@@ -75,7 +51,7 @@ final RealtimeResponseCreateParamsMaxOutputTokens? maxOutputTokens;
 /// conversation. Set this to `none` to create an out-of-band response which
 /// will not add items to default conversation.
 /// 
-final RealtimeResponseCreateParamsConversation? conversation;
+final RealtimeBetaResponseCreateParamsConversation? conversation;
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -109,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'output_modalities', 'instructions', 'audio', 'tools', 'tool_choice', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities> Function()? outputModalities, String Function()? instructions, RealtimeResponseCreateParamsAudio Function()? audio, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeResponseCreateParamsToolChoice Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation Function()? conversation, Map<String, String>? Function()? metadata, Prompt Function()? prompt, List<RealtimeConversationItem> Function()? input, }) { return RealtimeResponseCreateParams(
+RealtimeResponseCreateParams copyWith({List<OutputModalities> Function()? outputModalities, String Function()? instructions, RealtimeResponseCreateParamsAudio Function()? audio, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation Function()? conversation, Map<String, String>? Function()? metadata, Prompt Function()? prompt, List<RealtimeConversationItem> Function()? input, }) { return RealtimeResponseCreateParams(
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   instructions: instructions != null ? instructions() : this.instructions,
   audio: audio != null ? audio() : this.audio,

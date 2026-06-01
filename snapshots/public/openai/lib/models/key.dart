@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_owner.dart';/// Represents an individual Admin API key in an org.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key/key_owner.dart';/// Represents an individual Admin API key in an org.
 @immutable final class Key {const Key({required this.object, required this.id, required this.name, required this.redactedValue, required this.createdAt, required this.lastUsedAt, required this.owner, this.value, });
 
 factory Key.fromJson(Map<String, dynamic> json) { return Key(

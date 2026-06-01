@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_infra_policy_resp.dart';/// The policies that Access applies to the application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_infra_policy_resp.dart';/// The policies that Access applies to the application.
 @immutable final class AccessInfraAppRespEmbeddedPolicies {const AccessInfraAppRespEmbeddedPolicies({this.policies});
 
 factory AccessInfraAppRespEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessInfraAppRespEmbeddedPolicies(

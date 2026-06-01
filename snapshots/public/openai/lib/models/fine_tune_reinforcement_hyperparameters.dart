@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_reinforcement_hyperparameters_batch_size.dart';import 'fine_tune_reinforcement_hyperparameters_compute_multiplier.dart';import 'fine_tune_reinforcement_hyperparameters_eval_interval.dart';import 'fine_tune_reinforcement_hyperparameters_eval_samples.dart';import 'fine_tune_reinforcement_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_reinforcement_hyperparameters_n_epochs.dart';/// Level of reasoning effort.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/fine_tune_dpo_hyperparameters_batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/compute_multiplier.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_interval.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_samples.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// Level of reasoning effort.
 /// 
 @immutable final class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort._(this.value);
 
@@ -36,26 +36,26 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
 
 factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementHyperparameters(
-  batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneReinforcementHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => FineTuneReinforcementHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
-  nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuneReinforcementHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
+  nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   reasoningEffort: json.containsKey('reasoning_effort') ? FineTuneReinforcementHyperparametersReasoningEffort.fromJson(json['reasoning_effort'] as String) : FineTuneReinforcementHyperparametersReasoningEffort.$default,
-  computeMultiplier: json['compute_multiplier'] != null ? OneOf2.parse(json['compute_multiplier'], fromA: (v) => FineTuneReinforcementHyperparametersComputeMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
-  evalInterval: json['eval_interval'] != null ? OneOf2.parse(json['eval_interval'], fromA: (v) => FineTuneReinforcementHyperparametersEvalIntervalVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-  evalSamples: json['eval_samples'] != null ? OneOf2.parse(json['eval_samples'], fromA: (v) => FineTuneReinforcementHyperparametersEvalSamplesVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  computeMultiplier: json['compute_multiplier'] != null ? OneOf2.parse(json['compute_multiplier'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
+  evalInterval: json['eval_interval'] != null ? OneOf2.parse(json['eval_interval'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  evalSamples: json['eval_samples'] != null ? OneOf2.parse(json['eval_samples'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
 ); }
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 /// 
-final FineTuneReinforcementHyperparametersBatchSize? batchSize;
+final FineTuneDpoHyperparametersBatchSize? batchSize;
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.
 /// 
-final FineTuneReinforcementHyperparametersLearningRateMultiplier? learningRateMultiplier;
+final LearningRateMultiplier? learningRateMultiplier;
 
 /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
 /// 
-final FineTuneReinforcementHyperparametersNEpochs? nEpochs;
+final NEpochs? nEpochs;
 
 /// Level of reasoning effort.
 /// 
@@ -63,15 +63,15 @@ final FineTuneReinforcementHyperparametersReasoningEffort reasoningEffort;
 
 /// Multiplier on amount of compute used for exploring search space during training.
 /// 
-final FineTuneReinforcementHyperparametersComputeMultiplier? computeMultiplier;
+final ComputeMultiplier? computeMultiplier;
 
 /// The number of training steps between evaluation runs.
 /// 
-final FineTuneReinforcementHyperparametersEvalInterval? evalInterval;
+final EvalInterval? evalInterval;
 
 /// Number of evaluation samples to generate per training step.
 /// 
-final FineTuneReinforcementHyperparametersEvalSamples? evalSamples;
+final EvalSamples? evalSamples;
 
 Map<String, dynamic> toJson() { return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (evalSamples != null) 'eval_samples': evalSamples?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs', 'reasoning_effort', 'compute_multiplier', 'eval_interval', 'eval_samples'}.contains(key)); } 
-FineTuneReinforcementHyperparameters copyWith({FineTuneReinforcementHyperparametersBatchSize Function()? batchSize, FineTuneReinforcementHyperparametersLearningRateMultiplier Function()? learningRateMultiplier, FineTuneReinforcementHyperparametersNEpochs Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, FineTuneReinforcementHyperparametersComputeMultiplier Function()? computeMultiplier, FineTuneReinforcementHyperparametersEvalInterval Function()? evalInterval, FineTuneReinforcementHyperparametersEvalSamples Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
+FineTuneReinforcementHyperparameters copyWith({FineTuneDpoHyperparametersBatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, FineTuneReinforcementHyperparametersReasoningEffort Function()? reasoningEffort, ComputeMultiplier Function()? computeMultiplier, EvalInterval Function()? evalInterval, EvalSamples Function()? evalSamples, }) { return FineTuneReinforcementHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,

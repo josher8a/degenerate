@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_ownership_verification.dart';import 'tls_certificates_and_hostnames_ownership_verification_http.dart';import 'tls_certificates_and_hostnames_ssl.dart';/// Status of the hostname's activation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_server.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_origin_sni.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification_http.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl.dart';/// Status of the hostname's activation.
 @immutable final class TlsCertificatesAndHostnamesComponentsSchemasStatus {const TlsCertificatesAndHostnamesComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json) { return switch (json) {

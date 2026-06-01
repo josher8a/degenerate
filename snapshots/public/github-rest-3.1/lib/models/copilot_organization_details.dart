@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
-@immutable final class CopilotOrganizationDetailsPublicCodeSuggestions {const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
+@immutable final class PublicCodeSuggestions {const PublicCodeSuggestions._(this.value);
 
-factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String json) { return switch (json) {
+factory PublicCodeSuggestions.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'block' => block,
   'unconfigured' => unconfigured,
-  _ => CopilotOrganizationDetailsPublicCodeSuggestions._(json),
+  _ => PublicCodeSuggestions._(json),
 }; }
 
-static const CopilotOrganizationDetailsPublicCodeSuggestions allow = CopilotOrganizationDetailsPublicCodeSuggestions._('allow');
+static const PublicCodeSuggestions allow = PublicCodeSuggestions._('allow');
 
-static const CopilotOrganizationDetailsPublicCodeSuggestions block = CopilotOrganizationDetailsPublicCodeSuggestions._('block');
+static const PublicCodeSuggestions block = PublicCodeSuggestions._('block');
 
-static const CopilotOrganizationDetailsPublicCodeSuggestions unconfigured = CopilotOrganizationDetailsPublicCodeSuggestions._('unconfigured');
+static const PublicCodeSuggestions unconfigured = PublicCodeSuggestions._('unconfigured');
 
-static const List<CopilotOrganizationDetailsPublicCodeSuggestions> values = [allow, block, unconfigured];
+static const List<PublicCodeSuggestions> values = [allow, block, unconfigured];
 
 final String value;
 
@@ -24,27 +24,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPublicCodeSuggestions && other.value == value; } 
+    other is PublicCodeSuggestions && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPublicCodeSuggestions($value)'; } 
+@override String toString() { return 'PublicCodeSuggestions($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
-@immutable final class CopilotOrganizationDetailsIdeChat {const CopilotOrganizationDetailsIdeChat._(this.value);
+@immutable final class IdeChat {const IdeChat._(this.value);
 
-factory CopilotOrganizationDetailsIdeChat.fromJson(String json) { return switch (json) {
+factory IdeChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => CopilotOrganizationDetailsIdeChat._(json),
+  _ => IdeChat._(json),
 }; }
 
-static const CopilotOrganizationDetailsIdeChat enabled = CopilotOrganizationDetailsIdeChat._('enabled');
+static const IdeChat enabled = IdeChat._('enabled');
 
-static const CopilotOrganizationDetailsIdeChat disabled = CopilotOrganizationDetailsIdeChat._('disabled');
+static const IdeChat disabled = IdeChat._('disabled');
 
-static const CopilotOrganizationDetailsIdeChat unconfigured = CopilotOrganizationDetailsIdeChat._('unconfigured');
+static const IdeChat unconfigured = IdeChat._('unconfigured');
 
-static const List<CopilotOrganizationDetailsIdeChat> values = [enabled, disabled, unconfigured];
+static const List<IdeChat> values = [enabled, disabled, unconfigured];
 
 final String value;
 
@@ -52,27 +52,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsIdeChat && other.value == value; } 
+    other is IdeChat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsIdeChat($value)'; } 
+@override String toString() { return 'IdeChat($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
-@immutable final class CopilotOrganizationDetailsPlatformChat {const CopilotOrganizationDetailsPlatformChat._(this.value);
+@immutable final class PlatformChat {const PlatformChat._(this.value);
 
-factory CopilotOrganizationDetailsPlatformChat.fromJson(String json) { return switch (json) {
+factory PlatformChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => CopilotOrganizationDetailsPlatformChat._(json),
+  _ => PlatformChat._(json),
 }; }
 
-static const CopilotOrganizationDetailsPlatformChat enabled = CopilotOrganizationDetailsPlatformChat._('enabled');
+static const PlatformChat enabled = PlatformChat._('enabled');
 
-static const CopilotOrganizationDetailsPlatformChat disabled = CopilotOrganizationDetailsPlatformChat._('disabled');
+static const PlatformChat disabled = PlatformChat._('disabled');
 
-static const CopilotOrganizationDetailsPlatformChat unconfigured = CopilotOrganizationDetailsPlatformChat._('unconfigured');
+static const PlatformChat unconfigured = PlatformChat._('unconfigured');
 
-static const List<CopilotOrganizationDetailsPlatformChat> values = [enabled, disabled, unconfigured];
+static const List<PlatformChat> values = [enabled, disabled, unconfigured];
 
 final String value;
 
@@ -80,27 +80,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPlatformChat && other.value == value; } 
+    other is PlatformChat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPlatformChat($value)'; } 
+@override String toString() { return 'PlatformChat($value)'; } 
  }
 /// The organization policy for allowing or disallowing Copilot CLI.
-@immutable final class CopilotOrganizationDetailsCli {const CopilotOrganizationDetailsCli._(this.value);
+@immutable final class Cli {const Cli._(this.value);
 
-factory CopilotOrganizationDetailsCli.fromJson(String json) { return switch (json) {
+factory Cli.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => CopilotOrganizationDetailsCli._(json),
+  _ => Cli._(json),
 }; }
 
-static const CopilotOrganizationDetailsCli enabled = CopilotOrganizationDetailsCli._('enabled');
+static const Cli enabled = Cli._('enabled');
 
-static const CopilotOrganizationDetailsCli disabled = CopilotOrganizationDetailsCli._('disabled');
+static const Cli disabled = Cli._('disabled');
 
-static const CopilotOrganizationDetailsCli unconfigured = CopilotOrganizationDetailsCli._('unconfigured');
+static const Cli unconfigured = Cli._('unconfigured');
 
-static const List<CopilotOrganizationDetailsCli> values = [enabled, disabled, unconfigured];
+static const List<Cli> values = [enabled, disabled, unconfigured];
 
 final String value;
 
@@ -108,30 +108,30 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsCli && other.value == value; } 
+    other is Cli && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsCli($value)'; } 
+@override String toString() { return 'Cli($value)'; } 
  }
 /// The mode of assigning new seats.
-@immutable final class CopilotOrganizationDetailsSeatManagementSetting {const CopilotOrganizationDetailsSeatManagementSetting._(this.value);
+@immutable final class SeatManagementSetting {const SeatManagementSetting._(this.value);
 
-factory CopilotOrganizationDetailsSeatManagementSetting.fromJson(String json) { return switch (json) {
+factory SeatManagementSetting.fromJson(String json) { return switch (json) {
   'assign_all' => assignAll,
   'assign_selected' => assignSelected,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => CopilotOrganizationDetailsSeatManagementSetting._(json),
+  _ => SeatManagementSetting._(json),
 }; }
 
-static const CopilotOrganizationDetailsSeatManagementSetting assignAll = CopilotOrganizationDetailsSeatManagementSetting._('assign_all');
+static const SeatManagementSetting assignAll = SeatManagementSetting._('assign_all');
 
-static const CopilotOrganizationDetailsSeatManagementSetting assignSelected = CopilotOrganizationDetailsSeatManagementSetting._('assign_selected');
+static const SeatManagementSetting assignSelected = SeatManagementSetting._('assign_selected');
 
-static const CopilotOrganizationDetailsSeatManagementSetting disabled = CopilotOrganizationDetailsSeatManagementSetting._('disabled');
+static const SeatManagementSetting disabled = SeatManagementSetting._('disabled');
 
-static const CopilotOrganizationDetailsSeatManagementSetting unconfigured = CopilotOrganizationDetailsSeatManagementSetting._('unconfigured');
+static const SeatManagementSetting unconfigured = SeatManagementSetting._('unconfigured');
 
-static const List<CopilotOrganizationDetailsSeatManagementSetting> values = [assignAll, assignSelected, disabled, unconfigured];
+static const List<SeatManagementSetting> values = [assignAll, assignSelected, disabled, unconfigured];
 
 final String value;
 
@@ -139,9 +139,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsSeatManagementSetting && other.value == value; } 
+    other is SeatManagementSetting && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsSeatManagementSetting($value)'; } 
+@override String toString() { return 'SeatManagementSetting($value)'; } 
  }
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 @immutable final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
@@ -173,11 +173,11 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return CopilotOrganizationDetails(
   seatBreakdown: CopilotOrganizationSeatBreakdown.fromJson(json['seat_breakdown'] as Map<String, dynamic>),
-  publicCodeSuggestions: CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(json['public_code_suggestions'] as String),
-  ideChat: json['ide_chat'] != null ? CopilotOrganizationDetailsIdeChat.fromJson(json['ide_chat'] as String) : null,
-  platformChat: json['platform_chat'] != null ? CopilotOrganizationDetailsPlatformChat.fromJson(json['platform_chat'] as String) : null,
-  cli: json['cli'] != null ? CopilotOrganizationDetailsCli.fromJson(json['cli'] as String) : null,
-  seatManagementSetting: CopilotOrganizationDetailsSeatManagementSetting.fromJson(json['seat_management_setting'] as String),
+  publicCodeSuggestions: PublicCodeSuggestions.fromJson(json['public_code_suggestions'] as String),
+  ideChat: json['ide_chat'] != null ? IdeChat.fromJson(json['ide_chat'] as String) : null,
+  platformChat: json['platform_chat'] != null ? PlatformChat.fromJson(json['platform_chat'] as String) : null,
+  cli: json['cli'] != null ? Cli.fromJson(json['cli'] as String) : null,
+  seatManagementSetting: SeatManagementSetting.fromJson(json['seat_management_setting'] as String),
   planType: json['plan_type'] != null ? CopilotOrganizationDetailsPlanType.fromJson(json['plan_type'] as String) : null,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'seat_breakdown', 'public_code_suggestions', 'ide_chat', 'platform_chat', 'cli', 'seat_management_setting', 'plan_type'}.contains(e.key))),
 ); }
@@ -185,19 +185,19 @@ factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return 
 final CopilotOrganizationSeatBreakdown seatBreakdown;
 
 /// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
-final CopilotOrganizationDetailsPublicCodeSuggestions publicCodeSuggestions;
+final PublicCodeSuggestions publicCodeSuggestions;
 
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
-final CopilotOrganizationDetailsIdeChat? ideChat;
+final IdeChat? ideChat;
 
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
-final CopilotOrganizationDetailsPlatformChat? platformChat;
+final PlatformChat? platformChat;
 
 /// The organization policy for allowing or disallowing Copilot CLI.
-final CopilotOrganizationDetailsCli? cli;
+final Cli? cli;
 
 /// The mode of assigning new seats.
-final CopilotOrganizationDetailsSeatManagementSetting seatManagementSetting;
+final SeatManagementSetting seatManagementSetting;
 
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final CopilotOrganizationDetailsPlanType? planType;
@@ -217,7 +217,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('seat_breakdown') &&
       json.containsKey('public_code_suggestions') &&
       json.containsKey('seat_management_setting'); } 
-CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions? publicCodeSuggestions, CopilotOrganizationDetailsIdeChat Function()? ideChat, CopilotOrganizationDetailsPlatformChat Function()? platformChat, CopilotOrganizationDetailsCli Function()? cli, CopilotOrganizationDetailsSeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
+CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, PublicCodeSuggestions? publicCodeSuggestions, IdeChat Function()? ideChat, PlatformChat Function()? platformChat, Cli Function()? cli, SeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
   seatBreakdown: seatBreakdown ?? this.seatBreakdown,
   publicCodeSuggestions: publicCodeSuggestions ?? this.publicCodeSuggestions,
   ideChat: ideChat != null ? ideChat() : this.ideChat,

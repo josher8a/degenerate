@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/collected_information.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/post_checkout_sessions_session_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_session_request/shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
 factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
-  collectedInformation: json['collected_information'] != null ? PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
+  collectedInformation: json['collected_information'] != null ? CollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCheckoutSessionsSessionRequestMetadataVariant2.fromJson(v as String),) : null,
-  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => (v as List<dynamic>).map((e) => PostCheckoutSessionsSessionRequestShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCheckoutSessionsSessionRequestShippingOptionsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => (v as List<dynamic>).map((e) => ShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.
-final PostCheckoutSessionsSessionRequestCollectedInformation? collectedInformation;
+final CollectedInformation? collectedInformation;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -32,7 +32,7 @@ final List<String>? expand;
 final List<PostCheckoutSessionsSessionRequestLineItems>? lineItems;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostCheckoutSessionsSessionRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The shipping rate options to apply to this Session. Up to a maximum of 5.
 final PostCheckoutSessionsSessionRequestShippingOptions? shippingOptions;
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingOptions != null) 'shipping_options': shippingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collected_information', 'expand', 'line_items', 'metadata', 'shipping_options'}.contains(key)); } 
-PostCheckoutSessionsSessionRequest copyWith({PostCheckoutSessionsSessionRequestCollectedInformation Function()? collectedInformation, List<String> Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems> Function()? lineItems, PostCheckoutSessionsSessionRequestMetadata Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions Function()? shippingOptions, }) { return PostCheckoutSessionsSessionRequest(
+PostCheckoutSessionsSessionRequest copyWith({CollectedInformation Function()? collectedInformation, List<String> Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems> Function()? lineItems, Metadata Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions Function()? shippingOptions, }) { return PostCheckoutSessionsSessionRequest(
   collectedInformation: collectedInformation != null ? collectedInformation() : this.collectedInformation,
   expand: expand != null ? expand() : this.expand,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'limit_range_spec.dart';import 'object_meta.dart';/// LimitRange sets resource usage limits for each kind of resource in a Namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/limit_range_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// LimitRange sets resource usage limits for each kind of resource in a Namespace.
 @immutable final class LimitRange {const LimitRange({this.apiVersion, this.kind, this.metadata, this.spec, });
 
 factory LimitRange.fromJson(Map<String, dynamic> json) { return LimitRange(

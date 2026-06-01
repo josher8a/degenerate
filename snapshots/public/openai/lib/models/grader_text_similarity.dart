@@ -1,96 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of grader.
-@immutable final class GraderTextSimilarityType {const GraderTextSimilarityType._(this.value);
-
-factory GraderTextSimilarityType.fromJson(String json) { return switch (json) {
-  'text_similarity' => textSimilarity,
-  _ => GraderTextSimilarityType._(json),
-}; }
-
-static const GraderTextSimilarityType textSimilarity = GraderTextSimilarityType._('text_similarity');
-
-static const List<GraderTextSimilarityType> values = [textSimilarity];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderTextSimilarityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderTextSimilarityType($value)'; } 
- }
-/// The evaluation metric to use. One of `cosine`, `fuzzy_match`, `bleu`,
-/// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`,
-/// or `rouge_l`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_text_similarity/eval_grader_text_similarity_type.dart';import 'package:pub_openai/models/eval_grader_text_similarity/evaluation_metric.dart';/// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 
-@immutable final class GraderTextSimilarityEvaluationMetric {const GraderTextSimilarityEvaluationMetric._(this.value);
-
-factory GraderTextSimilarityEvaluationMetric.fromJson(String json) { return switch (json) {
-  'cosine' => cosine,
-  'fuzzy_match' => fuzzyMatch,
-  'bleu' => bleu,
-  'gleu' => gleu,
-  'meteor' => meteor,
-  'rouge_1' => rouge1,
-  'rouge_2' => rouge2,
-  'rouge_3' => rouge3,
-  'rouge_4' => rouge4,
-  'rouge_5' => rouge5,
-  'rouge_l' => rougeL,
-  _ => GraderTextSimilarityEvaluationMetric._(json),
-}; }
-
-static const GraderTextSimilarityEvaluationMetric cosine = GraderTextSimilarityEvaluationMetric._('cosine');
-
-static const GraderTextSimilarityEvaluationMetric fuzzyMatch = GraderTextSimilarityEvaluationMetric._('fuzzy_match');
-
-static const GraderTextSimilarityEvaluationMetric bleu = GraderTextSimilarityEvaluationMetric._('bleu');
-
-static const GraderTextSimilarityEvaluationMetric gleu = GraderTextSimilarityEvaluationMetric._('gleu');
-
-static const GraderTextSimilarityEvaluationMetric meteor = GraderTextSimilarityEvaluationMetric._('meteor');
-
-static const GraderTextSimilarityEvaluationMetric rouge1 = GraderTextSimilarityEvaluationMetric._('rouge_1');
-
-static const GraderTextSimilarityEvaluationMetric rouge2 = GraderTextSimilarityEvaluationMetric._('rouge_2');
-
-static const GraderTextSimilarityEvaluationMetric rouge3 = GraderTextSimilarityEvaluationMetric._('rouge_3');
-
-static const GraderTextSimilarityEvaluationMetric rouge4 = GraderTextSimilarityEvaluationMetric._('rouge_4');
-
-static const GraderTextSimilarityEvaluationMetric rouge5 = GraderTextSimilarityEvaluationMetric._('rouge_5');
-
-static const GraderTextSimilarityEvaluationMetric rougeL = GraderTextSimilarityEvaluationMetric._('rouge_l');
-
-static const List<GraderTextSimilarityEvaluationMetric> values = [cosine, fuzzyMatch, bleu, gleu, meteor, rouge1, rouge2, rouge3, rouge4, rouge5, rougeL];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderTextSimilarityEvaluationMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderTextSimilarityEvaluationMetric($value)'; } 
- }
-/// A TextSimilarityGrader object which grades text based on similarity metrics.
-/// 
-@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, this.type = GraderTextSimilarityType.textSimilarity, });
+@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, this.type = EvalGraderTextSimilarityType.textSimilarity, });
 
 factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
-  type: GraderTextSimilarityType.fromJson(json['type'] as String),
+  type: EvalGraderTextSimilarityType.fromJson(json['type'] as String),
   name: json['name'] as String,
   input: json['input'] as String,
   reference: json['reference'] as String,
-  evaluationMetric: GraderTextSimilarityEvaluationMetric.fromJson(json['evaluation_metric'] as String),
+  evaluationMetric: EvaluationMetric.fromJson(json['evaluation_metric'] as String),
 ); }
 
 /// The type of grader.
-final GraderTextSimilarityType type;
+final EvalGraderTextSimilarityType type;
 
 /// The name of the grader.
 final String name;
@@ -105,7 +28,7 @@ final String reference;
 /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`,
 /// or `rouge_l`.
 /// 
-final GraderTextSimilarityEvaluationMetric evaluationMetric;
+final EvaluationMetric evaluationMetric;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -119,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('evaluation_metric'); } 
-GraderTextSimilarity copyWith({GraderTextSimilarityType? type, String? name, String? input, String? reference, GraderTextSimilarityEvaluationMetric? evaluationMetric, }) { return GraderTextSimilarity(
+GraderTextSimilarity copyWith({EvalGraderTextSimilarityType? type, String? name, String? input, String? reference, EvaluationMetric? evaluationMetric, }) { return GraderTextSimilarity(
   type: type ?? this.type,
   name: name ?? this.name,
   input: input ?? this.input,

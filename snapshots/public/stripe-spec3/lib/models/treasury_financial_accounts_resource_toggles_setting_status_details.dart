@@ -47,22 +47,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)'; } 
  }
 /// Represents what the user should do, if anything, to activate the Feature.
-@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(this.value);
+@immutable final class Resolution {const Resolution._(this.value);
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(String json) { return switch (json) {
+factory Resolution.fromJson(String json) { return switch (json) {
   'contact_stripe' => contactStripe,
   'provide_information' => provideInformation,
   'remove_restriction' => removeRestriction,
-  _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._(json),
+  _ => Resolution._(json),
 }; }
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution contactStripe = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._('contact_stripe');
+static const Resolution contactStripe = Resolution._('contact_stripe');
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution provideInformation = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._('provide_information');
+static const Resolution provideInformation = Resolution._('provide_information');
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution removeRestriction = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution._('remove_restriction');
+static const Resolution removeRestriction = Resolution._('remove_restriction');
 
-static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution> values = [contactStripe, provideInformation, removeRestriction];
+static const List<Resolution> values = [contactStripe, provideInformation, removeRestriction];
 
 final String value;
 
@@ -70,24 +70,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution && other.value == value; } 
+    other is Resolution && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution($value)'; } 
+@override String toString() { return 'Resolution($value)'; } 
  }
 /// The `platform_restrictions` that are restricting this Feature.
-@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(this.value);
+@immutable final class Restriction {const Restriction._(this.value);
 
-factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(String json) { return switch (json) {
+factory Restriction.fromJson(String json) { return switch (json) {
   'inbound_flows' => inboundFlows,
   'outbound_flows' => outboundFlows,
-  _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._(json),
+  _ => Restriction._(json),
 }; }
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction inboundFlows = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._('inbound_flows');
+static const Restriction inboundFlows = Restriction._('inbound_flows');
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction outboundFlows = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction._('outbound_flows');
+static const Restriction outboundFlows = Restriction._('outbound_flows');
 
-static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction> values = [inboundFlows, outboundFlows];
+static const List<Restriction> values = [inboundFlows, outboundFlows];
 
 final String value;
 
@@ -95,27 +95,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction && other.value == value; } 
+    other is Restriction && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction($value)'; } 
+@override String toString() { return 'Restriction($value)'; } 
  }
 /// Additional details on the FinancialAccount Features information.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution, this.restriction, });
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(json['code'] as String),
-  resolution: json['resolution'] != null ? TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution.fromJson(json['resolution'] as String) : null,
-  restriction: json['restriction'] != null ? TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction.fromJson(json['restriction'] as String) : null,
+  resolution: json['resolution'] != null ? Resolution.fromJson(json['resolution'] as String) : null,
+  restriction: json['restriction'] != null ? Restriction.fromJson(json['restriction'] as String) : null,
 ); }
 
 /// Represents the reason why the status is `pending` or `restricted`.
 final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode code;
 
 /// Represents what the user should do, if anything, to activate the Feature.
-final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution? resolution;
+final Resolution? resolution;
 
 /// The `platform_restrictions` that are restricting this Feature.
-final TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction? restriction;
+final Restriction? restriction;
 
 Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   if (restriction != null) 'restriction': restriction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
-TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsResolution? Function()? resolution, TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsRestriction Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
+TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode? code, Resolution? Function()? resolution, Restriction Function()? restriction, }) { return TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(
   code: code ?? this.code,
   resolution: resolution != null ? resolution() : this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,

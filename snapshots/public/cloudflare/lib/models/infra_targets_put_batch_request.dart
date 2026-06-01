@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_ip_info.dart';@immutable final class InfraTargetsPutBatchRequest {const InfraTargetsPutBatchRequest({required this.hostname, required this.ip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_ip_info.dart';@immutable final class InfraTargetsPutBatchRequest {const InfraTargetsPutBatchRequest({required this.hostname, required this.ip, });
 
 factory InfraTargetsPutBatchRequest.fromJson(Map<String, dynamic> json) { return InfraTargetsPutBatchRequest(
   hostname: json['hostname'] as String,

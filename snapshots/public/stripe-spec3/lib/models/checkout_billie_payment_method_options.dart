@@ -1,42 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
-@immutable final class CheckoutBilliePaymentMethodOptionsCaptureMethod {const CheckoutBilliePaymentMethodOptionsCaptureMethod._(this.value);
-
-factory CheckoutBilliePaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
-  'manual' => manual,
-  _ => CheckoutBilliePaymentMethodOptionsCaptureMethod._(json),
-}; }
-
-static const CheckoutBilliePaymentMethodOptionsCaptureMethod manual = CheckoutBilliePaymentMethodOptionsCaptureMethod._('manual');
-
-static const List<CheckoutBilliePaymentMethodOptionsCaptureMethod> values = [manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutBilliePaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutBilliePaymentMethodOptionsCaptureMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';/// 
 @immutable final class CheckoutBilliePaymentMethodOptions {const CheckoutBilliePaymentMethodOptions({this.captureMethod});
 
 factory CheckoutBilliePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutBilliePaymentMethodOptions(
-  captureMethod: json['capture_method'] != null ? CheckoutBilliePaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
 ); }
 
 /// Controls when the funds will be captured from the customer's account.
-final CheckoutBilliePaymentMethodOptionsCaptureMethod? captureMethod;
+final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-CheckoutBilliePaymentMethodOptions copyWith({CheckoutBilliePaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return CheckoutBilliePaymentMethodOptions(
+CheckoutBilliePaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return CheckoutBilliePaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Contexts {const Contexts({required this.message, required this.octicon, });
+
+factory Contexts.fromJson(Map<String, dynamic> json) { return Contexts(
+  message: json['message'] as String,
+  octicon: json['octicon'] as String,
+); }
+
+final String message;
+
+final String octicon;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+  'octicon': octicon,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('octicon') && json['octicon'] is String; } 
+Contexts copyWith({String? message, String? octicon, }) { return Contexts(
+  message: message ?? this.message,
+  octicon: octicon ?? this.octicon,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Contexts &&
+          message == other.message &&
+          octicon == other.octicon; } 
+@override int get hashCode { return Object.hash(message, octicon); } 
+@override String toString() { return 'Contexts(message: $message, octicon: $octicon)'; } 
+ }

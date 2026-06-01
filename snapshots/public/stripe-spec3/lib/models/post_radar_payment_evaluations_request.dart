@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_radar_payment_evaluations_request_client_device_metadata_details.dart';import 'post_radar_payment_evaluations_request_customer_details.dart';import 'post_radar_payment_evaluations_request_payment_details.dart';@immutable final class PostRadarPaymentEvaluationsRequest {const PostRadarPaymentEvaluationsRequest({required this.customerDetails, required this.paymentDetails, this.clientDeviceMetadataDetails, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/client_device_metadata_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/post_radar_payment_evaluations_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_radar_payment_evaluations_request/post_radar_payment_evaluations_request_payment_details.dart';@immutable final class PostRadarPaymentEvaluationsRequest {const PostRadarPaymentEvaluationsRequest({required this.customerDetails, required this.paymentDetails, this.clientDeviceMetadataDetails, this.expand, this.metadata, });
 
 factory PostRadarPaymentEvaluationsRequest.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequest(
-  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
+  clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? ClientDeviceMetadataDetails.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,
   customerDetails: PostRadarPaymentEvaluationsRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -11,7 +11,7 @@ factory PostRadarPaymentEvaluationsRequest.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Details about the Client Device Metadata to associate with the payment evaluation.
-final PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails? clientDeviceMetadataDetails;
+final ClientDeviceMetadataDetails? clientDeviceMetadataDetails;
 
 /// Details about the customer associated with the payment evaluation.
 final PostRadarPaymentEvaluationsRequestCustomerDetails customerDetails;
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_details') &&
       json.containsKey('payment_details'); } 
-PostRadarPaymentEvaluationsRequest copyWith({PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails Function()? clientDeviceMetadataDetails, PostRadarPaymentEvaluationsRequestCustomerDetails? customerDetails, List<String> Function()? expand, Map<String, String> Function()? metadata, PostRadarPaymentEvaluationsRequestPaymentDetails? paymentDetails, }) { return PostRadarPaymentEvaluationsRequest(
+PostRadarPaymentEvaluationsRequest copyWith({ClientDeviceMetadataDetails Function()? clientDeviceMetadataDetails, PostRadarPaymentEvaluationsRequestCustomerDetails? customerDetails, List<String> Function()? expand, Map<String, String> Function()? metadata, PostRadarPaymentEvaluationsRequestPaymentDetails? paymentDetails, }) { return PostRadarPaymentEvaluationsRequest(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   customerDetails: customerDetails ?? this.customerDetails,
   expand: expand != null ? expand() : this.expand,

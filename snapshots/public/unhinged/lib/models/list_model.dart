@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'n3_incident.dart';
+import 'package:pub_unhinged/models/n3_incident.dart';
 
 @immutable
 final class ListModel {

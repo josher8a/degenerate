@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors.dart';import 'copilot_ide_code_completions_languages.dart';/// Usage metrics for Copilot editor code completions in the IDE.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/copilot_ide_code_completions_editors.dart';import 'package:pub_github_rest_3_1/models/copilot_ide_code_completions/copilot_ide_code_completions_languages.dart';/// Usage metrics for Copilot editor code completions in the IDE.
 @immutable final class CopilotIdeCodeCompletions {const CopilotIdeCodeCompletions({this.totalEngagedUsers, this.languages, this.editors, this.additionalProperties = const {}, });
 
 factory CopilotIdeCodeCompletions.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletions(

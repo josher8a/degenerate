@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_categories.dart';import '../models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayCategoriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_categories.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayCategoriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

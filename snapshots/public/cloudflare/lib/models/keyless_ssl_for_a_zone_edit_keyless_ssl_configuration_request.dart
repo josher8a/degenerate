@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_host.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_keyless_tunnel.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_name_write.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
 extension type const TlsCertificatesAndHostnamesEnabledWrite(bool value) {
 factory TlsCertificatesAndHostnamesEnabledWrite.fromJson(bool json) => TlsCertificatesAndHostnamesEnabledWrite(json);
 

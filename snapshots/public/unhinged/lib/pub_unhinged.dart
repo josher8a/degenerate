@@ -10,6 +10,8 @@ export 'models/error_model.dart';
 export 'models/list_model.dart';
 export 'models/n3_incident.dart';
 export 'models/new.dart';
+export 'models/new/new0.dart';
+export 'models/new/new_null.dart';
 export 'models/object_model.dart';
 export 'models/phase.dart';
 export 'models/proto.dart';

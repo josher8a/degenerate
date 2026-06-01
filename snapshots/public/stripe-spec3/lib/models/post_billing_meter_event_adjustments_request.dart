@@ -1,38 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_meter_event_adjustments_request_cancel.dart';/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-@immutable final class PostBillingMeterEventAdjustmentsRequestType {const PostBillingMeterEventAdjustmentsRequestType._(this.value);
-
-factory PostBillingMeterEventAdjustmentsRequestType.fromJson(String json) { return switch (json) {
-  'cancel' => cancel,
-  _ => PostBillingMeterEventAdjustmentsRequestType._(json),
-}; }
-
-static const PostBillingMeterEventAdjustmentsRequestType cancel = PostBillingMeterEventAdjustmentsRequestType._('cancel');
-
-static const List<PostBillingMeterEventAdjustmentsRequestType> values = [cancel];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingMeterEventAdjustmentsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingMeterEventAdjustmentsRequestType($value)'; } 
- }
-@immutable final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({required this.eventName, required this.type, this.cancel, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_type.dart';import 'package:pub_stripe_spec3/models/post_billing_meter_event_adjustments_request/cancel.dart';@immutable final class PostBillingMeterEventAdjustmentsRequest {const PostBillingMeterEventAdjustmentsRequest({required this.eventName, required this.type, this.cancel, this.expand, });
 
 factory PostBillingMeterEventAdjustmentsRequest.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventAdjustmentsRequest(
-  cancel: json['cancel'] != null ? PostBillingMeterEventAdjustmentsRequestCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
+  cancel: json['cancel'] != null ? Cancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
   eventName: json['event_name'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  type: PostBillingMeterEventAdjustmentsRequestType.fromJson(json['type'] as String),
+  type: BillingMeterEventAdjustmentType.fromJson(json['type'] as String),
 ); }
 
 /// Specifies which event to cancel.
-final PostBillingMeterEventAdjustmentsRequestCancel? cancel;
+final Cancel? cancel;
 
 /// The name of the meter event. Corresponds with the `event_name` field on a meter.
 final String eventName;
@@ -41,7 +19,7 @@ final String eventName;
 final List<String>? expand;
 
 /// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-final PostBillingMeterEventAdjustmentsRequestType type;
+final BillingMeterEventAdjustmentType type;
 
 Map<String, dynamic> toJson() { return {
   if (cancel != null) 'cancel': cancel?.toJson(),
@@ -51,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_name') && json['event_name'] is String &&
       json.containsKey('type'); } 
-PostBillingMeterEventAdjustmentsRequest copyWith({PostBillingMeterEventAdjustmentsRequestCancel Function()? cancel, String? eventName, List<String> Function()? expand, PostBillingMeterEventAdjustmentsRequestType? type, }) { return PostBillingMeterEventAdjustmentsRequest(
+PostBillingMeterEventAdjustmentsRequest copyWith({Cancel Function()? cancel, String? eventName, List<String> Function()? expand, BillingMeterEventAdjustmentType? type, }) { return PostBillingMeterEventAdjustmentsRequest(
   cancel: cancel != null ? cancel() : this.cancel,
   eventName: eventName ?? this.eventName,
   expand: expand != null ? expand() : this.expand,

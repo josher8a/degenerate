@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// Stargazer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Stargazer
 @immutable final class Stargazer {const Stargazer({required this.starredAt, required this.user, });
 
 factory Stargazer.fromJson(Map<String, dynamic> json) { return Stargazer(

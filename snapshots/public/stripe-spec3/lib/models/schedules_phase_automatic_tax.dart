@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
-@immutable final class SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason._(this.value);
-
-factory SchedulesPhaseAutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
-  'requires_location_inputs' => requiresLocationInputs,
-  _ => SchedulesPhaseAutomaticTaxDisabledReason._(json),
-}; }
-
-static const SchedulesPhaseAutomaticTaxDisabledReason requiresLocationInputs = SchedulesPhaseAutomaticTaxDisabledReason._('requires_location_inputs');
-
-static const List<SchedulesPhaseAutomaticTaxDisabledReason> values = [requiresLocationInputs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchedulesPhaseAutomaticTaxDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchedulesPhaseAutomaticTaxDisabledReason($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';import 'package:pub_stripe_spec3/models/schedules_phase_automatic_tax/schedules_phase_automatic_tax_disabled_reason.dart';/// 
 @immutable final class SchedulesPhaseAutomaticTax {const SchedulesPhaseAutomaticTax({required this.enabled, this.disabledReason, this.liability, });
 
 factory SchedulesPhaseAutomaticTax.fromJson(Map<String, dynamic> json) { return SchedulesPhaseAutomaticTax(

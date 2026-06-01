@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_label.dart';@immutable final class WebhookLabelDeletedAction {const WebhookLabelDeletedAction._(this.value);
-
-factory WebhookLabelDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookLabelDeletedAction._(json),
-}; }
-
-static const WebhookLabelDeletedAction deleted = WebhookLabelDeletedAction._('deleted');
-
-static const List<WebhookLabelDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookLabelDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookLabelDeletedAction($value)'; } 
- }
-@immutable final class WebhookLabelDeleted {const WebhookLabelDeleted({required this.action, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_label.dart';@immutable final class WebhookLabelDeleted {const WebhookLabelDeleted({required this.action, required this.label, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookLabelDeleted.fromJson(Map<String, dynamic> json) { return WebhookLabelDeleted(
-  action: WebhookLabelDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   label: WebhooksLabel.fromJson(json['label'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookLabelDeleted.fromJson(Map<String, dynamic> json) { return Webhook
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookLabelDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('label') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookLabelDeleted copyWith({WebhookLabelDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelDeleted(
+WebhookLabelDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksLabel? label, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookLabelDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

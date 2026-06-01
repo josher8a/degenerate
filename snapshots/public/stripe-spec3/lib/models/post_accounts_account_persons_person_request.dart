@@ -1,45 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs6.dart';import 'post_accounts_account_persons_person_request_additional_tos_acceptances.dart';import 'post_accounts_account_persons_person_request_address.dart';import 'post_accounts_account_persons_person_request_address_kana.dart';import 'post_accounts_account_persons_person_request_address_kanji.dart';import 'post_accounts_account_persons_person_request_dob.dart';import 'post_accounts_account_persons_person_request_documents.dart';import 'post_accounts_account_persons_person_request_full_name_aliases.dart';import 'post_accounts_account_persons_person_request_metadata.dart';import 'post_accounts_account_persons_person_request_registered_address.dart';import 'post_accounts_account_persons_person_request_relationship.dart';import 'post_accounts_account_persons_person_request_us_cfpb_data.dart';import 'post_accounts_account_persons_person_request_verification.dart';/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-@immutable final class PostAccountsAccountPersonsPersonRequestPoliticalExposure {const PostAccountsAccountPersonsPersonRequestPoliticalExposure._(this.value);
-
-factory PostAccountsAccountPersonsPersonRequestPoliticalExposure.fromJson(String json) { return switch (json) {
-  'existing' => existing,
-  'none' => none,
-  _ => PostAccountsAccountPersonsPersonRequestPoliticalExposure._(json),
-}; }
-
-static const PostAccountsAccountPersonsPersonRequestPoliticalExposure existing = PostAccountsAccountPersonsPersonRequestPoliticalExposure._('existing');
-
-static const PostAccountsAccountPersonsPersonRequestPoliticalExposure none = PostAccountsAccountPersonsPersonRequestPoliticalExposure._('none');
-
-static const List<PostAccountsAccountPersonsPersonRequestPoliticalExposure> values = [existing, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsAccountPersonsPersonRequestPoliticalExposure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsAccountPersonsPersonRequestPoliticalExposure($value)'; } 
- }
-@immutable final class PostAccountsAccountPersonsPersonRequest {const PostAccountsAccountPersonsPersonRequest({this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.documents, this.email, this.expand, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.personToken, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.usCfpbData, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/date_of_birth_specs.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/person/political_exposure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/additional_tos_acceptances.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/full_name_aliases.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_dob.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_documents.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_relationship.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/registered_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/us_cfpb_data.dart';@immutable final class PostAccountsAccountPersonsPersonRequest {const PostAccountsAccountPersonsPersonRequest({this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.documents, this.email, this.expand, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.personToken, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.usCfpbData, this.verification, });
 
 factory PostAccountsAccountPersonsPersonRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsPersonRequest(
-  additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
-  address: json['address'] != null ? PostAccountsAccountPersonsPersonRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
-  addressKana: json['address_kana'] != null ? PostAccountsAccountPersonsPersonRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
-  addressKanji: json['address_kanji'] != null ? PostAccountsAccountPersonsPersonRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => DateOfBirthSpecs6.fromJson(v as Map<String, dynamic>), fromB: (v) => PostAccountsAccountPersonsPersonRequestDobVariant2.fromJson(v as String),) : null,
-  documents: json['documents'] != null ? PostAccountsAccountPersonsPersonRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  additionalTosAcceptances: json['additional_tos_acceptances'] != null ? AdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => date_of_birth_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  documents: json['documents'] != null ? PostAccountsAccountPeoplePersonRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
-  fullNameAliases: json['full_name_aliases'] != null ? OneOf2.parse(json['full_name_aliases'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostAccountsAccountPersonsPersonRequestFullNameAliasesVariant2.fromJson(v as String),) : null,
+  fullNameAliases: json['full_name_aliases'] != null ? OneOf2.parse(json['full_name_aliases'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   gender: json['gender'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberSecondary: json['id_number_secondary'] as String?,
@@ -47,35 +22,35 @@ factory PostAccountsAccountPersonsPersonRequest.fromJson(Map<String, dynamic> js
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsAccountPersonsPersonRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   nationality: json['nationality'] as String?,
   personToken: json['person_token'] as String?,
   phone: json['phone'] as String?,
-  politicalExposure: json['political_exposure'] != null ? PostAccountsAccountPersonsPersonRequestPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
-  registeredAddress: json['registered_address'] != null ? PostAccountsAccountPersonsPersonRequestRegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
-  relationship: json['relationship'] != null ? PostAccountsAccountPersonsPersonRequestRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
+  politicalExposure: json['political_exposure'] != null ? PoliticalExposure.fromJson(json['political_exposure'] as String) : null,
+  registeredAddress: json['registered_address'] != null ? RegisteredAddress.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
+  relationship: json['relationship'] != null ? PostAccountsAccountPeoplePersonRequestRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
   ssnLast4: json['ssn_last_4'] as String?,
-  usCfpbData: json['us_cfpb_data'] != null ? PostAccountsAccountPersonsPersonRequestUsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
-  verification: json['verification'] != null ? PostAccountsAccountPersonsPersonRequestVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+  usCfpbData: json['us_cfpb_data'] != null ? UsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
+  verification: json['verification'] != null ? PostAccountsAccountPeoplePersonRequestVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details on the legal guardian's or authorizer's acceptance of the required Stripe agreements.
-final PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances? additionalTosAcceptances;
+final AdditionalTosAcceptances? additionalTosAcceptances;
 
 /// The person's address.
-final PostAccountsAccountPersonsPersonRequestAddress? address;
+final customer_shippingAddress? address;
 
 /// The Kana variation of the person's address (Japan only).
-final PostAccountsAccountPersonsPersonRequestAddressKana? addressKana;
+final AddressKana? addressKana;
 
 /// The Kanji variation of the person's address (Japan only).
-final PostAccountsAccountPersonsPersonRequestAddressKanji? addressKanji;
+final AddressKanji? addressKanji;
 
 /// The person's date of birth.
-final PostAccountsAccountPersonsPersonRequestDob? dob;
+final PostAccountsAccountPeoplePersonRequestDob? dob;
 
 /// Documents that may be submitted to satisfy various informational requests.
-final PostAccountsAccountPersonsPersonRequestDocuments? documents;
+final PostAccountsAccountPeoplePersonRequestDocuments? documents;
 
 /// The person's email address.
 final String? email;
@@ -93,7 +68,7 @@ final String? firstNameKana;
 final String? firstNameKanji;
 
 /// A list of alternate names or aliases that the person is known by.
-final PostAccountsAccountPersonsPersonRequestFullNameAliases? fullNameAliases;
+final FullNameAliases? fullNameAliases;
 
 /// The person's gender (International regulations require either "male" or "female").
 final String? gender;
@@ -117,7 +92,7 @@ final String? lastNameKanji;
 final String? maidenName;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostAccountsAccountPersonsPersonRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The country where the person is a national. Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)), or "XX" if unavailable.
 final String? nationality;
@@ -129,22 +104,22 @@ final String? personToken;
 final String? phone;
 
 /// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-final PostAccountsAccountPersonsPersonRequestPoliticalExposure? politicalExposure;
+final PoliticalExposure? politicalExposure;
 
 /// The person's registered address.
-final PostAccountsAccountPersonsPersonRequestRegisteredAddress? registeredAddress;
+final RegisteredAddress? registeredAddress;
 
 /// The relationship that this person has with the account's legal entity.
-final PostAccountsAccountPersonsPersonRequestRelationship? relationship;
+final PostAccountsAccountPeoplePersonRequestRelationship? relationship;
 
 /// The last four digits of the person's Social Security number (U.S. only).
 final String? ssnLast4;
 
 /// Demographic data related to the person.
-final PostAccountsAccountPersonsPersonRequestUsCfpbData? usCfpbData;
+final UsCfpbData? usCfpbData;
 
 /// The person's verification status.
-final PostAccountsAccountPersonsPersonRequestVerification? verification;
+final PostAccountsAccountPeoplePersonRequestVerification? verification;
 
 Map<String, dynamic> toJson() { return {
   if (additionalTosAcceptances != null) 'additional_tos_acceptances': additionalTosAcceptances?.toJson(),
@@ -178,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_tos_acceptances', 'address', 'address_kana', 'address_kanji', 'dob', 'documents', 'email', 'expand', 'first_name', 'first_name_kana', 'first_name_kanji', 'full_name_aliases', 'gender', 'id_number', 'id_number_secondary', 'last_name', 'last_name_kana', 'last_name_kanji', 'maiden_name', 'metadata', 'nationality', 'person_token', 'phone', 'political_exposure', 'registered_address', 'relationship', 'ssn_last_4', 'us_cfpb_data', 'verification'}.contains(key)); } 
-PostAccountsAccountPersonsPersonRequest copyWith({PostAccountsAccountPersonsPersonRequestAdditionalTosAcceptances Function()? additionalTosAcceptances, PostAccountsAccountPersonsPersonRequestAddress Function()? address, PostAccountsAccountPersonsPersonRequestAddressKana Function()? addressKana, PostAccountsAccountPersonsPersonRequestAddressKanji Function()? addressKanji, PostAccountsAccountPersonsPersonRequestDob Function()? dob, PostAccountsAccountPersonsPersonRequestDocuments Function()? documents, String Function()? email, List<String> Function()? expand, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, PostAccountsAccountPersonsPersonRequestFullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, PostAccountsAccountPersonsPersonRequestMetadata Function()? metadata, String Function()? nationality, String Function()? personToken, String Function()? phone, PostAccountsAccountPersonsPersonRequestPoliticalExposure Function()? politicalExposure, PostAccountsAccountPersonsPersonRequestRegisteredAddress Function()? registeredAddress, PostAccountsAccountPersonsPersonRequestRelationship Function()? relationship, String Function()? ssnLast4, PostAccountsAccountPersonsPersonRequestUsCfpbData Function()? usCfpbData, PostAccountsAccountPersonsPersonRequestVerification Function()? verification, }) { return PostAccountsAccountPersonsPersonRequest(
+PostAccountsAccountPersonsPersonRequest copyWith({AdditionalTosAcceptances Function()? additionalTosAcceptances, customer_shippingAddress Function()? address, AddressKana Function()? addressKana, AddressKanji Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob Function()? dob, PostAccountsAccountPeoplePersonRequestDocuments Function()? documents, String Function()? email, List<String> Function()? expand, String Function()? firstName, String Function()? firstNameKana, String Function()? firstNameKanji, FullNameAliases Function()? fullNameAliases, String Function()? gender, String Function()? idNumber, String Function()? idNumberSecondary, String Function()? lastName, String Function()? lastNameKana, String Function()? lastNameKanji, String Function()? maidenName, Metadata Function()? metadata, String Function()? nationality, String Function()? personToken, String Function()? phone, PoliticalExposure Function()? politicalExposure, RegisteredAddress Function()? registeredAddress, PostAccountsAccountPeoplePersonRequestRelationship Function()? relationship, String Function()? ssnLast4, UsCfpbData Function()? usCfpbData, PostAccountsAccountPeoplePersonRequestVerification Function()? verification, }) { return PostAccountsAccountPersonsPersonRequest(
   additionalTosAcceptances: additionalTosAcceptances != null ? additionalTosAcceptances() : this.additionalTosAcceptances,
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,

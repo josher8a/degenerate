@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_supported_models.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'create_assistant_request_model.dart';import 'create_assistant_request_tool_resources.dart';import 'create_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';@immutable final class CreateAssistantRequest {const CreateAssistantRequest({required this.model, this.name, this.description, this.instructions, this.reasoningEffort, this.tools = const [], this.toolResources, this.metadata, this.temperature, this.topP, this.responseFormat, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_supported_models.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_model.dart';import 'package:pub_openai/models/create_assistant_request/create_assistant_request_tool_resources.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';@immutable final class CreateAssistantRequest {const CreateAssistantRequest({required this.model, this.name, this.description, this.instructions, this.reasoningEffort, this.tools = const [], this.toolResources, this.metadata, this.temperature, this.topP, this.responseFormat, });
 
 factory CreateAssistantRequest.fromJson(Map<String, dynamic> json) { return CreateAssistantRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AssistantSupportedModels.fromJson(v as String),),
@@ -36,7 +36,7 @@ final ReasoningEffort? reasoningEffort;
 
 /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
 /// 
-final List<CreateAssistantRequestTools> tools;
+final List<AssistantObjectTools> tools;
 
 /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model'); } 
-CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, String? Function()? name, String? Function()? description, String? Function()? instructions, ReasoningEffort? Function()? reasoningEffort, List<CreateAssistantRequestTools> Function()? tools, CreateAssistantRequestToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return CreateAssistantRequest(
+CreateAssistantRequest copyWith({CreateAssistantRequestModel? model, String? Function()? name, String? Function()? description, String? Function()? instructions, ReasoningEffort? Function()? reasoningEffort, List<AssistantObjectTools> Function()? tools, CreateAssistantRequestToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return CreateAssistantRequest(
   model: model ?? this.model,
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

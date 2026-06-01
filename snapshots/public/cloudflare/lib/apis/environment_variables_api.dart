@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_environment_variable_key.dart';import '../models/builds_environment_variables_request_value.dart';import '../models/builds_error_response.dart';import '../models/builds_trigger_uuid.dart';/// EnvironmentVariablesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_account_id.dart';import 'package:pub_cloudflare/models/builds_environment_variable_key.dart';import 'package:pub_cloudflare/models/builds_environment_variables_request/builds_environment_variables_request_value.dart';import 'package:pub_cloudflare/models/builds_error_response.dart';import 'package:pub_cloudflare/models/builds_trigger_uuid.dart';/// EnvironmentVariablesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_branding_settings_icon.dart';import 'payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
 @immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
 
 factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 @immutable final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
 
 factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
@@ -24,34 +24,6 @@ bool get isUnknown { return !values.contains(this); }
     other is AutomaticTaxDisabledReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AutomaticTaxDisabledReason($value)'; } 
- }
-/// The status of the most recent automated tax calculation for this invoice.
-@immutable final class AutomaticTaxStatus {const AutomaticTaxStatus._(this.value);
-
-factory AutomaticTaxStatus.fromJson(String json) { return switch (json) {
-  'complete' => complete,
-  'failed' => failed,
-  'requires_location_inputs' => requiresLocationInputs,
-  _ => AutomaticTaxStatus._(json),
-}; }
-
-static const AutomaticTaxStatus complete = AutomaticTaxStatus._('complete');
-
-static const AutomaticTaxStatus failed = AutomaticTaxStatus._('failed');
-
-static const AutomaticTaxStatus requiresLocationInputs = AutomaticTaxStatus._('requires_location_inputs');
-
-static const List<AutomaticTaxStatus> values = [complete, failed, requiresLocationInputs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutomaticTaxStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutomaticTaxStatus($value)'; } 
  }
 /// 
 @immutable final class AutomaticTax {const AutomaticTax({required this.enabled, this.disabledReason, this.liability, this.provider, this.status, });

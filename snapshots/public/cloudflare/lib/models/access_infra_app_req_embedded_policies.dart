@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_infra_policy_req.dart';@immutable final class AccessInfraAppReqEmbeddedPolicies {const AccessInfraAppReqEmbeddedPolicies({this.policies});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_infra_policy_req.dart';@immutable final class AccessInfraAppReqEmbeddedPolicies {const AccessInfraAppReqEmbeddedPolicies({this.policies});
 
 factory AccessInfraAppReqEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessInfraAppReqEmbeddedPolicies(
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessInfraPolicyReq.fromJson(e as Map<String, dynamic>)).toList(),

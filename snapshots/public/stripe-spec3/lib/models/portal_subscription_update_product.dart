@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_subscription_update_product_adjustable_quantity.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update_product_adjustable_quantity.dart';/// 
 @immutable final class PortalSubscriptionUpdateProduct {const PortalSubscriptionUpdateProduct({required this.adjustableQuantity, required this.prices, required this.product, });
 
 factory PortalSubscriptionUpdateProduct.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdateProduct(

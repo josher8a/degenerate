@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_cashapp_handle_redirect_or_display_qr_code.dart';import 'setup_intent_next_action_redirect_to_url.dart';import 'setup_intent_next_action_verify_with_microdeposits.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_cashapp_handle_redirect_or_display_qr_code.dart';import 'package:pub_stripe_spec3/models/setup_intent_next_action_redirect_to_url.dart';import 'package:pub_stripe_spec3/models/setup_intent_next_action_verify_with_microdeposits.dart';/// 
 @immutable final class SetupIntentNextAction {const SetupIntentNextAction({required this.type, this.cashappHandleRedirectOrDisplayQrCode, this.redirectToUrl, this.useStripeSdk, this.verifyWithMicrodeposits, });
 
 factory SetupIntentNextAction.fromJson(Map<String, dynamic> json) { return SetupIntentNextAction(

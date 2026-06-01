@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_tcp_resets_timeouts_timeseries_group_response_result.dart';@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponse {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tcp_resets_timeouts_timeseries_group_response/radar_get_tcp_resets_timeouts_timeseries_group_response_result.dart';@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponse {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponse({required this.result, required this.success, });
 
 factory RadarGetTcpResetsTimeoutsTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsTimeseriesGroupResponse(
   result: RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id.dart';import 'access_meta.dart';/// The IdP-generated Id of the SCIM resource.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_id.dart';import 'package:pub_cloudflare/models/access_meta.dart';/// The IdP-generated Id of the SCIM resource.
 extension type const AccessExternalId(String value) {
 factory AccessExternalId.fromJson(String json) => AccessExternalId(json);
 

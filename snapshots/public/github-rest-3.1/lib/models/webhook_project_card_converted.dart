@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_converted_changes.dart';import 'webhooks_project_card.dart';@immutable final class WebhookProjectCardConvertedAction {const WebhookProjectCardConvertedAction._(this.value);
-
-factory WebhookProjectCardConvertedAction.fromJson(String json) { return switch (json) {
-  'converted' => converted,
-  _ => WebhookProjectCardConvertedAction._(json),
-}; }
-
-static const WebhookProjectCardConvertedAction converted = WebhookProjectCardConvertedAction._('converted');
-
-static const List<WebhookProjectCardConvertedAction> values = [converted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectCardConvertedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectCardConvertedAction($value)'; } 
- }
-@immutable final class WebhookProjectCardConverted {const WebhookProjectCardConverted({required this.action, required this.changes, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_converted/item_converted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_converted/webhook_project_card_converted_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_card.dart';@immutable final class WebhookProjectCardConverted {const WebhookProjectCardConverted({required this.action, required this.changes, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectCardConverted.fromJson(Map<String, dynamic> json) { return WebhookProjectCardConverted(
-  action: WebhookProjectCardConvertedAction.fromJson(json['action'] as String),
+  action: ItemConvertedAction.fromJson(json['action'] as String),
   changes: WebhookProjectCardConvertedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookProjectCardConverted.fromJson(Map<String, dynamic> json) { return
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookProjectCardConvertedAction action;
+final ItemConvertedAction action;
 
 final WebhookProjectCardConvertedChanges changes;
 
@@ -64,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('project_card') &&
       json.containsKey('sender'); } 
-WebhookProjectCardConverted copyWith({WebhookProjectCardConvertedAction? action, WebhookProjectCardConvertedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectCard? projectCard, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardConverted(
+WebhookProjectCardConverted copyWith({ItemConvertedAction? action, WebhookProjectCardConvertedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectCard? projectCard, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardConverted(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

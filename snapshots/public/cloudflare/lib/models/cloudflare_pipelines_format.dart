@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_json_format.dart';import 'cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_json_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

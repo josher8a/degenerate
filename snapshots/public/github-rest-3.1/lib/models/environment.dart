@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy_settings.dart';import 'environment_protection_rules.dart';import 'environment_protection_rules_variant1.dart';import 'environment_protection_rules_variant2.dart';import 'environment_protection_rules_variant3.dart';/// Details of a deployment environment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_settings.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant1.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant2.dart';import 'package:pub_github_rest_3_1/models/environment/protection_rules_variant3.dart';/// Details of a deployment environment
 @immutable final class Environment {const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules, this.deploymentBranchPolicy, });
 
 factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
@@ -11,7 +11,7 @@ factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
   htmlUrl: json['html_url'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  protectionRules: (json['protection_rules'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => EnvironmentProtectionRulesVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => EnvironmentProtectionRulesVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => EnvironmentProtectionRulesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
+  protectionRules: (json['protection_rules'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => ProtectionRulesVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ProtectionRulesVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => ProtectionRulesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
   deploymentBranchPolicy: json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null,
 ); }
 
@@ -34,7 +34,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// Built-in deployment protection rules for the environment.
-final List<EnvironmentProtectionRules>? protectionRules;
+final List<ProtectionRules>? protectionRules;
 
 final DeploymentBranchPolicySettings? deploymentBranchPolicy;
 
@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<EnvironmentProtectionRules> Function()? protectionRules, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return Environment(
+Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<ProtectionRules> Function()? protectionRules, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return Environment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

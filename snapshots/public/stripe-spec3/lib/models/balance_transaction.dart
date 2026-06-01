@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction_source.dart';import 'fee.dart';/// The balance that this transaction impacts.
-@immutable final class BalanceTransactionBalanceType {const BalanceTransactionBalanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction/balance_transaction_source.dart';import 'package:pub_stripe_spec3/models/fee.dart';/// The balance that this transaction impacts.
+@immutable final class BalanceType {const BalanceType._(this.value);
 
-factory BalanceTransactionBalanceType.fromJson(String json) { return switch (json) {
+factory BalanceType.fromJson(String json) { return switch (json) {
   'issuing' => issuing,
   'payments' => payments,
   'refund_and_dispute_prefunding' => refundAndDisputePrefunding,
   'risk_reserved' => riskReserved,
-  _ => BalanceTransactionBalanceType._(json),
+  _ => BalanceType._(json),
 }; }
 
-static const BalanceTransactionBalanceType issuing = BalanceTransactionBalanceType._('issuing');
+static const BalanceType issuing = BalanceType._('issuing');
 
-static const BalanceTransactionBalanceType payments = BalanceTransactionBalanceType._('payments');
+static const BalanceType payments = BalanceType._('payments');
 
-static const BalanceTransactionBalanceType refundAndDisputePrefunding = BalanceTransactionBalanceType._('refund_and_dispute_prefunding');
+static const BalanceType refundAndDisputePrefunding = BalanceType._('refund_and_dispute_prefunding');
 
-static const BalanceTransactionBalanceType riskReserved = BalanceTransactionBalanceType._('risk_reserved');
+static const BalanceType riskReserved = BalanceType._('risk_reserved');
 
-static const List<BalanceTransactionBalanceType> values = [issuing, payments, refundAndDisputePrefunding, riskReserved];
+static const List<BalanceType> values = [issuing, payments, refundAndDisputePrefunding, riskReserved];
 
 final String value;
 
@@ -27,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceTransactionBalanceType && other.value == value; } 
+    other is BalanceType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceTransactionBalanceType($value)'; } 
+@override String toString() { return 'BalanceType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BalanceTransactionObject {const BalanceTransactionObject._(this.value);
@@ -219,7 +219,7 @@ bool get isUnknown { return !values.contains(this); }
 factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceTransaction(
   amount: (json['amount'] as num).toInt(),
   availableOn: (json['available_on'] as num).toInt(),
-  balanceType: BalanceTransactionBalanceType.fromJson(json['balance_type'] as String),
+  balanceType: BalanceType.fromJson(json['balance_type'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
@@ -242,7 +242,7 @@ final int amount;
 final int availableOn;
 
 /// The balance that this transaction impacts.
-final BalanceTransactionBalanceType balanceType;
+final BalanceType balanceType;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -314,7 +314,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reporting_category') && json['reporting_category'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-BalanceTransaction copyWith({int? amount, int? availableOn, BalanceTransactionBalanceType? balanceType, int? created, String? currency, String? Function()? description, double? Function()? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, BalanceTransactionSource? Function()? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
+BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balanceType, int? created, String? currency, String? Function()? description, double? Function()? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, BalanceTransactionSource? Function()? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
   amount: amount ?? this.amount,
   availableOn: availableOn ?? this.availableOn,
   balanceType: balanceType ?? this.balanceType,

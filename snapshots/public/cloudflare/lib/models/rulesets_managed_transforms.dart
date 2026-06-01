@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_managed_transform.dart';/// A Managed Transforms object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_managed_transform.dart';/// A Managed Transforms object.
 @immutable final class RulesetsManagedTransforms {const RulesetsManagedTransforms({required this.managedRequestHeaders, required this.managedResponseHeaders, });
 
 factory RulesetsManagedTransforms.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransforms(

@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source balance to use for this transfer. One of `bank_account`, `card`, or `fpx`. For most users, this will default to `card`.
-@immutable final class PostTransfersRequestSourceType {const PostTransfersRequestSourceType._(this.value);
-
-factory PostTransfersRequestSourceType.fromJson(String json) { return switch (json) {
-  'bank_account' => bankAccount,
-  'card' => card,
-  'fpx' => fpx,
-  _ => PostTransfersRequestSourceType._(json),
-}; }
-
-static const PostTransfersRequestSourceType bankAccount = PostTransfersRequestSourceType._('bank_account');
-
-static const PostTransfersRequestSourceType card = PostTransfersRequestSourceType._('card');
-
-static const PostTransfersRequestSourceType fpx = PostTransfersRequestSourceType._('fpx');
-
-static const List<PostTransfersRequestSourceType> values = [bankAccount, card, fpx];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTransfersRequestSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTransfersRequestSourceType($value)'; } 
- }
-@immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payouts_request/source_type.dart';@immutable final class PostTransfersRequest {const PostTransfersRequest({required this.currency, required this.destination, this.amount, this.description, this.expand, this.metadata, this.sourceTransaction, this.sourceType, this.transferGroup, });
 
 factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTransfersRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
@@ -38,7 +10,7 @@ factory PostTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTr
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   sourceTransaction: json['source_transaction'] as String?,
-  sourceType: json['source_type'] != null ? PostTransfersRequestSourceType.fromJson(json['source_type'] as String) : null,
+  sourceType: json['source_type'] != null ? SourceType.fromJson(json['source_type'] as String) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 
@@ -64,7 +36,7 @@ final Map<String,String>? metadata;
 final String? sourceTransaction;
 
 /// The source balance to use for this transfer. One of `bank_account`, `card`, or `fpx`. For most users, this will default to `card`.
-final PostTransfersRequestSourceType? sourceType;
+final SourceType? sourceType;
 
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
@@ -82,7 +54,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('destination') && json['destination'] is String; } 
-PostTransfersRequest copyWith({int Function()? amount, String? currency, String Function()? description, String? destination, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? sourceTransaction, PostTransfersRequestSourceType Function()? sourceType, String Function()? transferGroup, }) { return PostTransfersRequest(
+PostTransfersRequest copyWith({int Function()? amount, String? currency, String Function()? description, String? destination, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? sourceTransaction, SourceType Function()? sourceType, String Function()? transferGroup, }) { return PostTransfersRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_model.dart';import '../models/query.dart';import '../models/query_bulk.dart';import '../models/query_match.dart';/// DomainSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model.dart';import 'package:pub_cloudflare/models/query.dart';import 'package:pub_cloudflare/models/query_bulk.dart';import 'package:pub_cloudflare/models/query_match.dart';/// DomainSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

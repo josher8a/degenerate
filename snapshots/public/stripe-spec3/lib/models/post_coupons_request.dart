@@ -1,46 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons_request_applies_to.dart';import 'post_coupons_request_currency_options_value.dart';import 'post_coupons_request_metadata.dart';/// Specifies how long the discount will be in effect if used on a subscription. Defaults to `once`.
-@immutable final class PostCouponsRequestDuration {const PostCouponsRequestDuration._(this.value);
-
-factory PostCouponsRequestDuration.fromJson(String json) { return switch (json) {
-  'forever' => forever,
-  'once' => once,
-  'repeating' => repeating,
-  _ => PostCouponsRequestDuration._(json),
-}; }
-
-static const PostCouponsRequestDuration forever = PostCouponsRequestDuration._('forever');
-
-static const PostCouponsRequestDuration once = PostCouponsRequestDuration._('once');
-
-static const PostCouponsRequestDuration repeating = PostCouponsRequestDuration._('repeating');
-
-static const List<PostCouponsRequestDuration> values = [forever, once, repeating];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCouponsRequestDuration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCouponsRequestDuration($value)'; } 
- }
-@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon/coupon_duration.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_coupons_coupon_request/post_coupons_coupon_request_currency_options_value.dart';import 'package:pub_stripe_spec3/models/post_coupons_request/applies_to.dart';@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 
 factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCouponsRequest(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,
-  appliesTo: json['applies_to'] != null ? PostCouponsRequestAppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
+  appliesTo: json['applies_to'] != null ? AppliesTo.fromJson(json['applies_to'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
-  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
-  duration: json['duration'] != null ? PostCouponsRequestDuration.fromJson(json['duration'] as String) : null,
+  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsCouponRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
+  duration: json['duration'] != null ? CouponDuration.fromJson(json['duration'] as String) : null,
   durationInMonths: json['duration_in_months'] != null ? (json['duration_in_months'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCouponsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   name: json['name'] as String?,
   percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
   redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,
@@ -50,16 +22,16 @@ factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCoup
 final int? amountOff;
 
 /// A hash containing directions for what this Coupon will apply discounts to.
-final PostCouponsRequestAppliesTo? appliesTo;
+final AppliesTo? appliesTo;
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/currencies) of the `amount_off` parameter (required if `amount_off` is passed).
 final String? currency;
 
 /// Coupons defined in each available currency option (only supported if `amount_off` is passed). Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
-final Map<String,PostCouponsRequestCurrencyOptionsValue>? currencyOptions;
+final Map<String,PostCouponsCouponRequestCurrencyOptionsValue>? currencyOptions;
 
 /// Specifies how long the discount will be in effect if used on a subscription. Defaults to `once`.
-final PostCouponsRequestDuration? duration;
+final CouponDuration? duration;
 
 /// Required only if `duration` is `repeating`, in which case it must be a positive integer that specifies the number of months the discount will be in effect.
 final int? durationInMonths;
@@ -74,7 +46,7 @@ final String? id;
 final int? maxRedemptions;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostCouponsRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Name of the coupon displayed to customers on, for instance invoices, or receipts. By default the `id` is shown if `name` is not set.
 final String? name;
@@ -101,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'redeem_by': ?redeemBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_off', 'applies_to', 'currency', 'currency_options', 'duration', 'duration_in_months', 'expand', 'id', 'max_redemptions', 'metadata', 'name', 'percent_off', 'redeem_by'}.contains(key)); } 
-PostCouponsRequest copyWith({int Function()? amountOff, PostCouponsRequestAppliesTo Function()? appliesTo, String Function()? currency, Map<String, PostCouponsRequestCurrencyOptionsValue> Function()? currencyOptions, PostCouponsRequestDuration Function()? duration, int Function()? durationInMonths, List<String> Function()? expand, String Function()? id, int Function()? maxRedemptions, PostCouponsRequestMetadata Function()? metadata, String Function()? name, double Function()? percentOff, int Function()? redeemBy, }) { return PostCouponsRequest(
+PostCouponsRequest copyWith({int Function()? amountOff, AppliesTo Function()? appliesTo, String Function()? currency, Map<String, PostCouponsCouponRequestCurrencyOptionsValue> Function()? currencyOptions, CouponDuration Function()? duration, int Function()? durationInMonths, List<String> Function()? expand, String Function()? id, int Function()? maxRedemptions, Metadata Function()? metadata, String Function()? name, double Function()? percentOff, int Function()? redeemBy, }) { return PostCouponsRequest(
   amountOff: amountOff != null ? amountOff() : this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,
   currency: currency != null ? currency() : this.currency,

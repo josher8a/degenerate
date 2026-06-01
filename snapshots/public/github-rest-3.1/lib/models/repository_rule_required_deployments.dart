@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_required_deployments_parameters.dart';@immutable final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_deployments/repository_rule_required_deployments_parameters.dart';@immutable final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
 
 factory RepositoryRuleRequiredDeploymentsType.fromJson(String json) { return switch (json) {
   'required_deployments' => requiredDeployments,

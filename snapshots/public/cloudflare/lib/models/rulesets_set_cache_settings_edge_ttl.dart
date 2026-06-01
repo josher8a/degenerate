@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_status_code_ttl2.dart';/// The edge TTL mode.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_status_code_ttl2.dart';/// The edge TTL mode.
 @immutable final class RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode._(this.value);
 
 factory RulesetsSetCacheSettingsEdgeTtlMode.fromJson(String json) { return switch (json) {

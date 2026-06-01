@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ContainerStateTerminated is a terminated state of a container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ContainerStateTerminated is a terminated state of a container.
 @immutable final class ContainerStateTerminated {const ContainerStateTerminated({this.containerId, this.exitCode = 0, this.finishedAt, this.message, this.reason, this.signal, this.startedAt, });
 
 factory ContainerStateTerminated.fromJson(Map<String, dynamic> json) { return ContainerStateTerminated(

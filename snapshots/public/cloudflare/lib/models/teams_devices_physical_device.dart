@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_registration_details.dart';import 'teams_devices_user.dart';/// A WARP Device.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_registration_details.dart';import 'package:pub_cloudflare/models/teams_devices_user.dart';/// A WARP Device.
 @immutable final class TeamsDevicesPhysicalDevice {const TeamsDevicesPhysicalDevice({required this.activeRegistrations, required this.createdAt, required this.id, required this.lastSeenAt, required this.name, required this.updatedAt, this.clientVersion, this.deletedAt, this.deviceType, this.hardwareId, this.lastSeenRegistration, this.lastSeenUser, this.macAddress, this.manufacturer, this.model, this.osVersion, this.osVersionExtra, this.publicIp, this.serialNumber, });
 
 factory TeamsDevicesPhysicalDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesPhysicalDevice(

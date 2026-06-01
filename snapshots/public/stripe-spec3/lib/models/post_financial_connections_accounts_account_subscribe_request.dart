@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._(this.value);
-
-factory PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures.fromJson(String json) { return switch (json) {
-  'transactions' => transactions,
-  _ => PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._(json),
-}; }
-
-static const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures transactions = PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._('transactions');
-
-static const List<PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures> values = [transactions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures($value)'; } 
- }
-@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequest {const PostFinancialConnectionsAccountsAccountSubscribeRequest({required this.features, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_financial_connections_accounts_account_subscribe_request/post_financial_connections_accounts_account_subscribe_request_features.dart';@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequest {const PostFinancialConnectionsAccountsAccountSubscribeRequest({required this.features, this.expand, });
 
 factory PostFinancialConnectionsAccountsAccountSubscribeRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsAccountsAccountSubscribeRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

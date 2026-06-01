@@ -1,45 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not the capture window is extended beyond the standard authorization.
-@immutable final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._(this.value);
-
-factory ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus.fromJson(String json) { return switch (json) {
-  'disabled' => disabled,
-  'enabled' => enabled,
-  _ => ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._(json),
-}; }
-
-static const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus disabled = ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._('disabled');
-
-static const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus enabled = ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus._('enabled');
-
-static const List<ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus> values = [disabled, enabled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payouts/balance_settings_resource_payouts_status.dart';/// 
 @immutable final class ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization {const ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization({required this.status});
 
 factory ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization.fromJson(Map<String, dynamic> json) { return ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization(
-  status: ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus.fromJson(json['status'] as String),
+  status: BalanceSettingsResourcePayoutsStatus.fromJson(json['status'] as String),
 ); }
 
 /// Indicates whether or not the capture window is extended beyond the standard authorization.
-final ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus status;
+final BalanceSettingsResourcePayoutsStatus status;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization copyWith({ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorizationStatus? status}) { return ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization(
+ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization copyWith({BalanceSettingsResourcePayoutsStatus? status}) { return ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization(
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

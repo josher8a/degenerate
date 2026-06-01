@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_state.dart';import 'custom_pages_url.dart';@immutable final class CustomPagesForAnAccountUpdateACustomPageRequest {const CustomPagesForAnAccountUpdateACustomPageRequest({required this.state, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_pages_state.dart';import 'package:pub_cloudflare/models/custom_pages_url.dart';@immutable final class CustomPagesForAnAccountUpdateACustomPageRequest {const CustomPagesForAnAccountUpdateACustomPageRequest({required this.state, required this.url, });
 
 factory CustomPagesForAnAccountUpdateACustomPageRequest.fromJson(Map<String, dynamic> json) { return CustomPagesForAnAccountUpdateACustomPageRequest(
   state: CustomPagesState.fromJson(json['state'] as String),

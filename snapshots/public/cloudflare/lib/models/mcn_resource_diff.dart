@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cost_diff.dart';import 'mcn_resource_preview.dart';import 'mcn_yaml_diff.dart';@immutable final class McnPlannedAction {const McnPlannedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cost_diff.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';@immutable final class McnPlannedAction {const McnPlannedAction._(this.value);
 
 factory McnPlannedAction.fromJson(String json) { return switch (json) {
   'no_op' => noOp,

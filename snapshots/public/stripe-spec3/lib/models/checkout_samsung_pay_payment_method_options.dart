@@ -1,42 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
-@immutable final class CheckoutSamsungPayPaymentMethodOptionsCaptureMethod {const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
-
-factory CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
-  'manual' => manual,
-  _ => CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._(json),
-}; }
-
-static const CheckoutSamsungPayPaymentMethodOptionsCaptureMethod manual = CheckoutSamsungPayPaymentMethodOptionsCaptureMethod._('manual');
-
-static const List<CheckoutSamsungPayPaymentMethodOptionsCaptureMethod> values = [manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSamsungPayPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSamsungPayPaymentMethodOptionsCaptureMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';/// 
 @immutable final class CheckoutSamsungPayPaymentMethodOptions {const CheckoutSamsungPayPaymentMethodOptions({this.captureMethod});
 
 factory CheckoutSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutSamsungPayPaymentMethodOptions(
-  captureMethod: json['capture_method'] != null ? CheckoutSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
 ); }
 
 /// Controls when the funds will be captured from the customer's account.
-final CheckoutSamsungPayPaymentMethodOptionsCaptureMethod? captureMethod;
+final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-CheckoutSamsungPayPaymentMethodOptions copyWith({CheckoutSamsungPayPaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return CheckoutSamsungPayPaymentMethodOptions(
+CheckoutSamsungPayPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return CheckoutSamsungPayPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,77 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// If the account is disabled, this enum describes why. [Learn more about handling verification issues](https://docs.stripe.com/connect/handling-api-verification).
-@immutable final class AccountRequirementsDisabledReason {const AccountRequirementsDisabledReason._(this.value);
-
-factory AccountRequirementsDisabledReason.fromJson(String json) { return switch (json) {
-  'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
-  'listed' => listed,
-  'other' => $other,
-  'platform_paused' => platformPaused,
-  'rejected.fraud' => rejectedFraud,
-  'rejected.incomplete_verification' => rejectedIncompleteVerification,
-  'rejected.listed' => rejectedListed,
-  'rejected.other' => rejectedOther,
-  'rejected.platform_fraud' => rejectedPlatformFraud,
-  'rejected.platform_other' => rejectedPlatformOther,
-  'rejected.platform_terms_of_service' => rejectedPlatformTermsOfService,
-  'rejected.terms_of_service' => rejectedTermsOfService,
-  'requirements.past_due' => requirementsPastDue,
-  'requirements.pending_verification' => requirementsPendingVerification,
-  'under_review' => underReview,
-  _ => AccountRequirementsDisabledReason._(json),
-}; }
-
-static const AccountRequirementsDisabledReason actionRequiredRequestedCapabilities = AccountRequirementsDisabledReason._('action_required.requested_capabilities');
-
-static const AccountRequirementsDisabledReason listed = AccountRequirementsDisabledReason._('listed');
-
-static const AccountRequirementsDisabledReason $other = AccountRequirementsDisabledReason._('other');
-
-static const AccountRequirementsDisabledReason platformPaused = AccountRequirementsDisabledReason._('platform_paused');
-
-static const AccountRequirementsDisabledReason rejectedFraud = AccountRequirementsDisabledReason._('rejected.fraud');
-
-static const AccountRequirementsDisabledReason rejectedIncompleteVerification = AccountRequirementsDisabledReason._('rejected.incomplete_verification');
-
-static const AccountRequirementsDisabledReason rejectedListed = AccountRequirementsDisabledReason._('rejected.listed');
-
-static const AccountRequirementsDisabledReason rejectedOther = AccountRequirementsDisabledReason._('rejected.other');
-
-static const AccountRequirementsDisabledReason rejectedPlatformFraud = AccountRequirementsDisabledReason._('rejected.platform_fraud');
-
-static const AccountRequirementsDisabledReason rejectedPlatformOther = AccountRequirementsDisabledReason._('rejected.platform_other');
-
-static const AccountRequirementsDisabledReason rejectedPlatformTermsOfService = AccountRequirementsDisabledReason._('rejected.platform_terms_of_service');
-
-static const AccountRequirementsDisabledReason rejectedTermsOfService = AccountRequirementsDisabledReason._('rejected.terms_of_service');
-
-static const AccountRequirementsDisabledReason requirementsPastDue = AccountRequirementsDisabledReason._('requirements.past_due');
-
-static const AccountRequirementsDisabledReason requirementsPendingVerification = AccountRequirementsDisabledReason._('requirements.pending_verification');
-
-static const AccountRequirementsDisabledReason underReview = AccountRequirementsDisabledReason._('under_review');
-
-static const List<AccountRequirementsDisabledReason> values = [actionRequiredRequestedCapabilities, listed, $other, platformPaused, rejectedFraud, rejectedIncompleteVerification, rejectedListed, rejectedOther, rejectedPlatformFraud, rejectedPlatformOther, rejectedPlatformTermsOfService, rejectedTermsOfService, requirementsPastDue, requirementsPendingVerification, underReview];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountRequirementsDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountRequirementsDisabledReason($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_future_requirements/account_future_requirements_disabled_reason.dart';import 'package:pub_stripe_spec3/models/account_requirements_alternative.dart';import 'package:pub_stripe_spec3/models/account_requirements_error.dart';/// 
 @immutable final class AccountRequirements {const AccountRequirements({this.alternatives, this.currentDeadline, this.currentlyDue, this.disabledReason, this.errors, this.eventuallyDue, this.pastDue, this.pendingVerification, });
 
 factory AccountRequirements.fromJson(Map<String, dynamic> json) { return AccountRequirements(
   alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),
   currentDeadline: json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null,
   currentlyDue: (json['currently_due'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  disabledReason: json['disabled_reason'] != null ? AccountRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,
+  disabledReason: json['disabled_reason'] != null ? AccountFutureRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountRequirementsError.fromJson(e as Map<String, dynamic>)).toList(),
   eventuallyDue: (json['eventually_due'] as List<dynamic>?)?.map((e) => e as String).toList(),
   pastDue: (json['past_due'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -88,7 +24,7 @@ final int? currentDeadline;
 final List<String>? currentlyDue;
 
 /// If the account is disabled, this enum describes why. [Learn more about handling verification issues](https://docs.stripe.com/connect/handling-api-verification).
-final AccountRequirementsDisabledReason? disabledReason;
+final AccountFutureRequirementsDisabledReason? disabledReason;
 
 /// Details about validation and verification failures for `due` requirements that must be resolved.
 final List<AccountRequirementsError>? errors;
@@ -113,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'pending_verification': ?pendingVerification,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alternatives', 'current_deadline', 'currently_due', 'disabled_reason', 'errors', 'eventually_due', 'past_due', 'pending_verification'}.contains(key)); } 
-AccountRequirements copyWith({List<AccountRequirementsAlternative>? Function()? alternatives, int? Function()? currentDeadline, List<String>? Function()? currentlyDue, AccountRequirementsDisabledReason? Function()? disabledReason, List<AccountRequirementsError>? Function()? errors, List<String>? Function()? eventuallyDue, List<String>? Function()? pastDue, List<String>? Function()? pendingVerification, }) { return AccountRequirements(
+AccountRequirements copyWith({List<AccountRequirementsAlternative>? Function()? alternatives, int? Function()? currentDeadline, List<String>? Function()? currentlyDue, AccountFutureRequirementsDisabledReason? Function()? disabledReason, List<AccountRequirementsError>? Function()? errors, List<String>? Function()? eventuallyDue, List<String>? Function()? pastDue, List<String>? Function()? pendingVerification, }) { return AccountRequirements(
   alternatives: alternatives != null ? alternatives() : this.alternatives,
   currentDeadline: currentDeadline != null ? currentDeadline() : this.currentDeadline,
   currentlyDue: currentlyDue != null ? currentlyDue() : this.currentlyDue,

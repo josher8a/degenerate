@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_hostname.dart';import 'dls_region_key.dart';import 'dls_routing.dart';extension type DlsTimestamp(DateTime value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dls_hostname.dart';import 'package:pub_cloudflare/models/dls_region_key.dart';import 'package:pub_cloudflare/models/dls_routing.dart';extension type DlsTimestamp(DateTime value) {
 factory DlsTimestamp.fromJson(String json) => DlsTimestamp(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();

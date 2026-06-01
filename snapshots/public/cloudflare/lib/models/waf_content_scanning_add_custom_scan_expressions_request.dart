@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_custom_scan_payload.dart';@immutable final class WafContentScanningAddCustomScanExpressionsRequest {const WafContentScanningAddCustomScanExpressionsRequest({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan_payload.dart';@immutable final class WafContentScanningAddCustomScanExpressionsRequest {const WafContentScanningAddCustomScanExpressionsRequest({required this.payload});
 
 factory WafContentScanningAddCustomScanExpressionsRequest.fromJson(Map<String, dynamic> json) { return WafContentScanningAddCustomScanExpressionsRequest(
   payload: BundleCustomScanPayload.fromJson(json['payload'] as String),

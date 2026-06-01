@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_update_credits.dart';import 'repository_advisory_update_vulnerabilities.dart';/// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-@immutable final class RepositoryAdvisoryUpdateSeverity {const RepositoryAdvisoryUpdateSeverity._(this.value);
-
-factory RepositoryAdvisoryUpdateSeverity.fromJson(String json) { return switch (json) {
-  'critical' => critical,
-  'high' => high,
-  'medium' => medium,
-  'low' => low,
-  'null' => $null,
-  _ => RepositoryAdvisoryUpdateSeverity._(json),
-}; }
-
-static const RepositoryAdvisoryUpdateSeverity critical = RepositoryAdvisoryUpdateSeverity._('critical');
-
-static const RepositoryAdvisoryUpdateSeverity high = RepositoryAdvisoryUpdateSeverity._('high');
-
-static const RepositoryAdvisoryUpdateSeverity medium = RepositoryAdvisoryUpdateSeverity._('medium');
-
-static const RepositoryAdvisoryUpdateSeverity low = RepositoryAdvisoryUpdateSeverity._('low');
-
-static const RepositoryAdvisoryUpdateSeverity $null = RepositoryAdvisoryUpdateSeverity._('null');
-
-static const List<RepositoryAdvisoryUpdateSeverity> values = [critical, high, medium, low, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryUpdateSeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryUpdateSeverity($value)'; } 
- }
-/// The state of the advisory.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';/// The state of the advisory.
 @immutable final class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState._(this.value);
 
 factory RepositoryAdvisoryUpdateState.fromJson(String json) { return switch (json) {
@@ -68,10 +34,10 @@ factory RepositoryAdvisoryUpdate.fromJson(Map<String, dynamic> json) { return Re
   summary: json['summary'] as String?,
   description: json['description'] as String?,
   cveId: json['cve_id'] as String?,
-  vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryUpdateVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
+  vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => PrivateVulnerabilityReportCreateVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
   cweIds: (json['cwe_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  credits: (json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryUpdateCredits.fromJson(e as Map<String, dynamic>)).toList(),
-  severity: json['severity'] != null ? RepositoryAdvisoryUpdateSeverity.fromJson(json['severity'] as String) : null,
+  credits: (json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCreateCredits.fromJson(e as Map<String, dynamic>)).toList(),
+  severity: json['severity'] != null ? PrivateVulnerabilityReportCreateSeverity.fromJson(json['severity'] as String) : null,
   cvssVectorString: json['cvss_vector_string'] as String?,
   state: json['state'] != null ? RepositoryAdvisoryUpdateState.fromJson(json['state'] as String) : null,
   collaboratingUsers: (json['collaborating_users'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -88,16 +54,16 @@ final String? description;
 final String? cveId;
 
 /// A product affected by the vulnerability detailed in a repository security advisory.
-final List<RepositoryAdvisoryUpdateVulnerabilities>? vulnerabilities;
+final List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities;
 
 /// A list of Common Weakness Enumeration (CWE) IDs.
 final List<String>? cweIds;
 
 /// A list of users receiving credit for their participation in the security advisory.
-final List<RepositoryAdvisoryUpdateCredits>? credits;
+final List<RepositoryAdvisoryCreateCredits>? credits;
 
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-final RepositoryAdvisoryUpdateSeverity? severity;
+final PrivateVulnerabilityReportCreateSeverity? severity;
 
 /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
 final String? cvssVectorString;
@@ -125,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'collaborating_teams': ?collaboratingTeams,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary', 'description', 'cve_id', 'vulnerabilities', 'cwe_ids', 'credits', 'severity', 'cvss_vector_string', 'state', 'collaborating_users', 'collaborating_teams'}.contains(key)); } 
-RepositoryAdvisoryUpdate copyWith({String Function()? summary, String Function()? description, String? Function()? cveId, List<RepositoryAdvisoryUpdateVulnerabilities> Function()? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryUpdateCredits>? Function()? credits, RepositoryAdvisoryUpdateSeverity? Function()? severity, String? Function()? cvssVectorString, RepositoryAdvisoryUpdateState Function()? state, List<String>? Function()? collaboratingUsers, List<String>? Function()? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(
+RepositoryAdvisoryUpdate copyWith({String Function()? summary, String Function()? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities> Function()? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, RepositoryAdvisoryUpdateState Function()? state, List<String>? Function()? collaboratingUsers, List<String>? Function()? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(
   summary: summary != null ? summary() : this.summary,
   description: description != null ? description() : this.description,
   cveId: cveId != null ? cveId() : this.cveId,

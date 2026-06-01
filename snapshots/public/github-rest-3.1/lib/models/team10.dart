@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team10_parent.dart';@immutable final class Team10Privacy {const Team10Privacy._(this.value);
-
-factory Team10Privacy.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  'secret' => secret,
-  _ => Team10Privacy._(json),
-}; }
-
-static const Team10Privacy open = Team10Privacy._('open');
-
-static const Team10Privacy closed = Team10Privacy._('closed');
-
-static const Team10Privacy secret = Team10Privacy._('secret');
-
-static const List<Team10Privacy> values = [open, closed, secret];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Team10Privacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Team10Privacy($value)'; } 
- }
-/// Groups of organization members that gives permissions on specified repositories.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_parent.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team10 {const Team10({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
 
 factory Team10.fromJson(Map<String, dynamic> json) { return Team10(
@@ -38,9 +11,9 @@ factory Team10.fromJson(Map<String, dynamic> json) { return Team10(
   membersUrl: json['members_url'] as String,
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
-  parent: json['parent'] != null ? Team10Parent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String,
-  privacy: Team10Privacy.fromJson(json['privacy'] as String),
+  privacy: TeamPrivacy.fromJson(json['privacy'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   url: Uri.parse(json['url'] as String),
@@ -63,12 +36,12 @@ final String name;
 
 final String nodeId;
 
-final Team10Parent? parent;
+final TeamParent? parent;
 
 /// Permission that the team will have for its repositories
 final String permission;
 
-final Team10Privacy privacy;
+final TeamPrivacy privacy;
 
 final Uri repositoriesUrl;
 
@@ -103,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-Team10 copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, Team10Parent? Function()? parent, String? permission, Team10Privacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team10(
+Team10 copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, TeamParent? Function()? parent, String? permission, TeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return Team10(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl ?? this.htmlUrl,

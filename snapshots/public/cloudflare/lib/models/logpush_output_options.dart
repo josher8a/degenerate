@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
-@immutable final class LogpushOutputOptionsOutputType {const LogpushOutputOptionsOutputType._(this.value);
+@immutable final class OutputType {const OutputType._(this.value);
 
-factory LogpushOutputOptionsOutputType.fromJson(String json) { return switch (json) {
+factory OutputType.fromJson(String json) { return switch (json) {
   'ndjson' => ndjson,
   'csv' => csv,
-  _ => LogpushOutputOptionsOutputType._(json),
+  _ => OutputType._(json),
 }; }
 
-static const LogpushOutputOptionsOutputType ndjson = LogpushOutputOptionsOutputType._('ndjson');
+static const OutputType ndjson = OutputType._('ndjson');
 
-static const LogpushOutputOptionsOutputType csv = LogpushOutputOptionsOutputType._('csv');
+static const OutputType csv = OutputType._('csv');
 
-static const List<LogpushOutputOptionsOutputType> values = [ndjson, csv];
+static const List<OutputType> values = [ndjson, csv];
 
 final String value;
 
@@ -21,30 +21,30 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushOutputOptionsOutputType && other.value == value; } 
+    other is OutputType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushOutputOptionsOutputType($value)'; } 
+@override String toString() { return 'OutputType($value)'; } 
  }
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
-@immutable final class LogpushOutputOptionsTimestampFormat {const LogpushOutputOptionsTimestampFormat._(this.value);
+@immutable final class TimestampFormat {const TimestampFormat._(this.value);
 
-factory LogpushOutputOptionsTimestampFormat.fromJson(String json) { return switch (json) {
+factory TimestampFormat.fromJson(String json) { return switch (json) {
   'unixnano' => unixnano,
   'unix' => unix,
   'rfc3339' => rfc3339,
   'rfc3339nano' => rfc3339nano,
-  _ => LogpushOutputOptionsTimestampFormat._(json),
+  _ => TimestampFormat._(json),
 }; }
 
-static const LogpushOutputOptionsTimestampFormat unixnano = LogpushOutputOptionsTimestampFormat._('unixnano');
+static const TimestampFormat unixnano = TimestampFormat._('unixnano');
 
-static const LogpushOutputOptionsTimestampFormat unix = LogpushOutputOptionsTimestampFormat._('unix');
+static const TimestampFormat unix = TimestampFormat._('unix');
 
-static const LogpushOutputOptionsTimestampFormat rfc3339 = LogpushOutputOptionsTimestampFormat._('rfc3339');
+static const TimestampFormat rfc3339 = TimestampFormat._('rfc3339');
 
-static const LogpushOutputOptionsTimestampFormat rfc3339nano = LogpushOutputOptionsTimestampFormat._('rfc3339nano');
+static const TimestampFormat rfc3339nano = TimestampFormat._('rfc3339nano');
 
-static const List<LogpushOutputOptionsTimestampFormat> values = [unixnano, unix, rfc3339, rfc3339nano];
+static const List<TimestampFormat> values = [unixnano, unix, rfc3339, rfc3339nano];
 
 final String value;
 
@@ -52,9 +52,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogpushOutputOptionsTimestampFormat && other.value == value; } 
+    other is TimestampFormat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogpushOutputOptionsTimestampFormat($value)'; } 
+@override String toString() { return 'TimestampFormat($value)'; } 
  }
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
 @immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228, this.batchPrefix, this.batchSuffix, this.fieldDelimiter, this.fieldNames, this.outputType, this.recordDelimiter, this.recordPrefix, this.recordSuffix, this.recordTemplate, this.sampleRate, this.timestampFormat, });
@@ -65,13 +65,13 @@ factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return Logpus
   batchSuffix: json['batch_suffix'] as String?,
   fieldDelimiter: json['field_delimiter'] as String?,
   fieldNames: (json['field_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  outputType: json['output_type'] != null ? LogpushOutputOptionsOutputType.fromJson(json['output_type'] as String) : null,
+  outputType: json['output_type'] != null ? OutputType.fromJson(json['output_type'] as String) : null,
   recordDelimiter: json['record_delimiter'] as String?,
   recordPrefix: json['record_prefix'] as String?,
   recordSuffix: json['record_suffix'] as String?,
   recordTemplate: json['record_template'] as String?,
   sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
-  timestampFormat: json['timestamp_format'] != null ? LogpushOutputOptionsTimestampFormat.fromJson(json['timestamp_format'] as String) : null,
+  timestampFormat: json['timestamp_format'] != null ? TimestampFormat.fromJson(json['timestamp_format'] as String) : null,
 ); }
 
 /// If set to true, will cause all occurrences of `${` in the generated files to be replaced with `x{`.
@@ -90,7 +90,7 @@ final String? fieldDelimiter;
 final List<String>? fieldNames;
 
 /// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
-final LogpushOutputOptionsOutputType? outputType;
+final OutputType? outputType;
 
 /// String to be inserted in-between the records as separator.
 final String? recordDelimiter;
@@ -108,7 +108,7 @@ final String? recordTemplate;
 final double? sampleRate;
 
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
-final LogpushOutputOptionsTimestampFormat? timestampFormat;
+final TimestampFormat? timestampFormat;
 
 Map<String, dynamic> toJson() { return {
   'CVE-2021-44228': ?cve202144228,
@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
-LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function()? batchPrefix, String? Function()? batchSuffix, String? Function()? fieldDelimiter, List<String> Function()? fieldNames, LogpushOutputOptionsOutputType Function()? outputType, String? Function()? recordDelimiter, String? Function()? recordPrefix, String? Function()? recordSuffix, String? Function()? recordTemplate, double? Function()? sampleRate, LogpushOutputOptionsTimestampFormat Function()? timestampFormat, }) { return LogpushOutputOptions(
+LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function()? batchPrefix, String? Function()? batchSuffix, String? Function()? fieldDelimiter, List<String> Function()? fieldNames, OutputType Function()? outputType, String? Function()? recordDelimiter, String? Function()? recordPrefix, String? Function()? recordSuffix, String? Function()? recordTemplate, double? Function()? sampleRate, TimestampFormat Function()? timestampFormat, }) { return LogpushOutputOptions(
   cve202144228: cve202144228 != null ? cve202144228() : this.cve202144228,
   batchPrefix: batchPrefix != null ? batchPrefix() : this.batchPrefix,
   batchSuffix: batchSuffix != null ? batchSuffix() : this.batchSuffix,

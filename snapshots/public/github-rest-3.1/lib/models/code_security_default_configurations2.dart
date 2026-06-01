@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_configuration.dart';@immutable final class CodeSecurityDefaultConfigurations2 {const CodeSecurityDefaultConfigurations2({this.defaultForNewRepos, this.configuration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration.dart';@immutable final class CodeSecurityDefaultConfigurations2 {const CodeSecurityDefaultConfigurations2({this.defaultForNewRepos, this.configuration, });
 
 factory CodeSecurityDefaultConfigurations2.fromJson(Map<String, dynamic> json) { return CodeSecurityDefaultConfigurations2(
   defaultForNewRepos: json['default_for_new_repos'],

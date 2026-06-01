@@ -1,53 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'webhooks_issue_comment_reactions.dart';import 'webhooks_issue_comment_user.dart';/// How the author is associated with the repository.
-@immutable final class WebhooksIssueCommentAuthorAssociation {const WebhooksIssueCommentAuthorAssociation._(this.value);
-
-factory WebhooksIssueCommentAuthorAssociation.fromJson(String json) { return switch (json) {
-  'COLLABORATOR' => collaborator,
-  'CONTRIBUTOR' => contributor,
-  'FIRST_TIMER' => firstTimer,
-  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
-  'MANNEQUIN' => mannequin,
-  'MEMBER' => member,
-  'NONE' => none,
-  'OWNER' => owner,
-  _ => WebhooksIssueCommentAuthorAssociation._(json),
-}; }
-
-static const WebhooksIssueCommentAuthorAssociation collaborator = WebhooksIssueCommentAuthorAssociation._('COLLABORATOR');
-
-static const WebhooksIssueCommentAuthorAssociation contributor = WebhooksIssueCommentAuthorAssociation._('CONTRIBUTOR');
-
-static const WebhooksIssueCommentAuthorAssociation firstTimer = WebhooksIssueCommentAuthorAssociation._('FIRST_TIMER');
-
-static const WebhooksIssueCommentAuthorAssociation firstTimeContributor = WebhooksIssueCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-
-static const WebhooksIssueCommentAuthorAssociation mannequin = WebhooksIssueCommentAuthorAssociation._('MANNEQUIN');
-
-static const WebhooksIssueCommentAuthorAssociation member = WebhooksIssueCommentAuthorAssociation._('MEMBER');
-
-static const WebhooksIssueCommentAuthorAssociation none = WebhooksIssueCommentAuthorAssociation._('NONE');
-
-static const WebhooksIssueCommentAuthorAssociation owner = WebhooksIssueCommentAuthorAssociation._('OWNER');
-
-static const List<WebhooksIssueCommentAuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksIssueCommentAuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksIssueCommentAuthorAssociation($value)'; } 
- }
-/// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pinned_issue_comment.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';/// The [comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment) itself.
 @immutable final class WebhooksIssueComment {const WebhooksIssueComment({required this.authorAssociation, required this.body, required this.createdAt, required this.htmlUrl, required this.id, required this.issueUrl, required this.nodeId, required this.performedViaGithubApp, required this.reactions, required this.updatedAt, required this.url, required this.user, this.pin, });
 
 factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return WebhooksIssueComment(
-  authorAssociation: WebhooksIssueCommentAuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -55,7 +12,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
   issueUrl: Uri.parse(json['issue_url'] as String),
   nodeId: json['node_id'] as String,
   performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
-  reactions: WebhooksIssueCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
+  reactions: DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
@@ -63,7 +20,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
 ); }
 
 /// How the author is associated with the repository.
-final WebhooksIssueCommentAuthorAssociation authorAssociation;
+final DiscussionAuthorAssociation authorAssociation;
 
 /// Contents of the issue comment
 final String body;
@@ -81,7 +38,7 @@ final String nodeId;
 
 final Integration performedViaGithubApp;
 
-final WebhooksIssueCommentReactions reactions;
+final DiscussionReactions reactions;
 
 final DateTime updatedAt;
 
@@ -119,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, PinnedIssueComment? Function()? pin, }) { return WebhooksIssueComment(
+WebhooksIssueComment copyWith({DiscussionAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, DiscussionReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, PinnedIssueComment? Function()? pin, }) { return WebhooksIssueComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   createdAt: createdAt ?? this.createdAt,

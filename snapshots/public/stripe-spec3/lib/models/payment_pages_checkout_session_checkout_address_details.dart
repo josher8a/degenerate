@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCheckoutAddressDetails {const PaymentPagesCheckoutSessionCheckoutAddressDetails({required this.address, required this.name, });
 
 factory PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(

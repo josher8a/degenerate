@@ -1,63 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_role_assignment_permissions.dart';import 'team_simple.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
-@immutable final class TeamRoleAssignmentAssignment {const TeamRoleAssignmentAssignment._(this.value);
-
-factory TeamRoleAssignmentAssignment.fromJson(String json) { return switch (json) {
-  'direct' => direct,
-  'indirect' => indirect,
-  'mixed' => mixed,
-  _ => TeamRoleAssignmentAssignment._(json),
-}; }
-
-static const TeamRoleAssignmentAssignment direct = TeamRoleAssignmentAssignment._('direct');
-
-static const TeamRoleAssignmentAssignment indirect = TeamRoleAssignmentAssignment._('indirect');
-
-static const TeamRoleAssignmentAssignment mixed = TeamRoleAssignmentAssignment._('mixed');
-
-static const List<TeamRoleAssignmentAssignment> values = [direct, indirect, mixed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamRoleAssignmentAssignment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamRoleAssignmentAssignment($value)'; } 
- }
-/// The ownership type of the team
-@immutable final class TeamRoleAssignmentType {const TeamRoleAssignmentType._(this.value);
-
-factory TeamRoleAssignmentType.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  _ => TeamRoleAssignmentType._(json),
-}; }
-
-static const TeamRoleAssignmentType enterprise = TeamRoleAssignmentType._('enterprise');
-
-static const TeamRoleAssignmentType organization = TeamRoleAssignmentType._('organization');
-
-static const List<TeamRoleAssignmentType> values = [enterprise, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamRoleAssignmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamRoleAssignmentType($value)'; } 
- }
-/// The Relationship a Team has with a role.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_permissions.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment/assignment.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The Relationship a Team has with a role.
 @immutable final class TeamRoleAssignment {const TeamRoleAssignment({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.assignment, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
 factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRoleAssignment(
-  assignment: json['assignment'] != null ? TeamRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,
+  assignment: json['assignment'] != null ? Assignment.fromJson(json['assignment'] as String) : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   name: json['name'] as String,
@@ -66,19 +13,19 @@ factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRole
   privacy: json['privacy'] as String?,
   notificationSetting: json['notification_setting'] as String?,
   permission: json['permission'] as String,
-  permissions: json['permissions'] != null ? TeamRoleAssignmentPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? TeamPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   url: Uri.parse(json['url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   membersUrl: json['members_url'] as String,
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
-  type: TeamRoleAssignmentType.fromJson(json['type'] as String),
+  type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
 ); }
 
 /// Determines if the team has a direct, indirect, or mixed relationship to a role
-final TeamRoleAssignmentAssignment? assignment;
+final Assignment? assignment;
 
 final int id;
 
@@ -96,7 +43,7 @@ final String? notificationSetting;
 
 final String permission;
 
-final TeamRoleAssignmentPermissions? permissions;
+final TeamPermissions? permissions;
 
 final Uri url;
 
@@ -109,7 +56,7 @@ final Uri repositoriesUrl;
 final TeamSimple? parent;
 
 /// The ownership type of the team
-final TeamRoleAssignmentType type;
+final TeamFullType type;
 
 /// Unique identifier of the organization to which this team belongs
 final int? organizationId;
@@ -149,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('parent') &&
       json.containsKey('type'); } 
-TeamRoleAssignment copyWith({TeamRoleAssignmentAssignment Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamRoleAssignmentPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamRoleAssignmentType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamRoleAssignment(
+TeamRoleAssignment copyWith({Assignment Function()? assignment, int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamSimple? Function()? parent, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

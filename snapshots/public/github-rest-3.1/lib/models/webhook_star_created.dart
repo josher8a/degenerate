@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookStarCreatedAction {const WebhookStarCreatedAction._(this.value);
-
-factory WebhookStarCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookStarCreatedAction._(json),
-}; }
-
-static const WebhookStarCreatedAction created = WebhookStarCreatedAction._('created');
-
-static const List<WebhookStarCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookStarCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookStarCreatedAction($value)'; } 
- }
-@immutable final class WebhookStarCreated {const WebhookStarCreated({required this.action, required this.repository, required this.sender, required this.starredAt, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookStarCreated {const WebhookStarCreated({required this.action, required this.repository, required this.sender, required this.starredAt, this.enterprise, this.installation, this.organization, });
 
 factory WebhookStarCreated.fromJson(Map<String, dynamic> json) { return WebhookStarCreated(
-  action: WebhookStarCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookStarCreated.fromJson(Map<String, dynamic> json) { return WebhookS
   starredAt: json['starred_at'] as String?,
 ); }
 
-final WebhookStarCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('sender') &&
       json.containsKey('starred_at') && json['starred_at'] is String; } 
-WebhookStarCreated copyWith({WebhookStarCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? Function()? starredAt, }) { return WebhookStarCreated(
+WebhookStarCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? Function()? starredAt, }) { return WebhookStarCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

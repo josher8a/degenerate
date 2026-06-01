@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description.dart';import 'zero_trust_gateway_items2.dart';import 'zero_trust_gateway_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_type.dart';import 'zero_trust_gateway_schemas_uuid.dart';/// Indicate the number of items in the list.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_description.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_items2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_name.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_type.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_uuid.dart';/// Indicate the number of items in the list.
 extension type const ZeroTrustGatewayCount(double value) {
 factory ZeroTrustGatewayCount.fromJson(num json) => ZeroTrustGatewayCount(json.toDouble());
 

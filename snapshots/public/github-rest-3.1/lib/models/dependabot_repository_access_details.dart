@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_repository.dart';/// The default repository access level for Dependabot updates.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';/// The default repository access level for Dependabot updates.
 @immutable final class DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel._(this.value);
 
 factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(String json) { return switch (json) {

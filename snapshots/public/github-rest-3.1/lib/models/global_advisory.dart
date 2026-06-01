@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'global_advisory_credits.dart';import 'global_advisory_cvss.dart';import 'global_advisory_cwes.dart';import 'global_advisory_identifiers.dart';import 'security_advisory_epss.dart';import 'vulnerability.dart';/// The type of advisory.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/global_advisory/global_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';import 'package:pub_github_rest_3_1/models/vulnerability.dart';/// The type of advisory.
 @immutable final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);
 
 factory GlobalAdvisoryType.fromJson(String json) { return switch (json) {
@@ -76,7 +76,7 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   type: GlobalAdvisoryType.fromJson(json['type'] as String),
   severity: GlobalAdvisorySeverity.fromJson(json['severity'] as String),
   sourceCodeLocation: json['source_code_location'] != null ? Uri.parse(json['source_code_location'] as String) : null,
-  identifiers: (json['identifiers'] as List<dynamic>?)?.map((e) => GlobalAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
+  identifiers: (json['identifiers'] as List<dynamic>?)?.map((e) => DependabotAlertSecurityAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
   references: (json['references'] as List<dynamic>?)?.map((e) => e as String).toList(),
   publishedAt: DateTime.parse(json['published_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
@@ -84,10 +84,10 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   nvdPublishedAt: json['nvd_published_at'] != null ? DateTime.parse(json['nvd_published_at'] as String) : null,
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => Vulnerability.fromJson(e as Map<String, dynamic>)).toList(),
-  cvss: json['cvss'] != null ? GlobalAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
+  cvss: json['cvss'] != null ? CvssSeveritiesCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
   cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
   epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
-  cwes: (json['cwes'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
+  cwes: (json['cwes'] as List<dynamic>?)?.map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -121,7 +121,7 @@ final GlobalAdvisorySeverity severity;
 /// The URL of the advisory's source code.
 final Uri? sourceCodeLocation;
 
-final List<GlobalAdvisoryIdentifiers>? identifiers;
+final List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers;
 
 final List<String>? references;
 
@@ -144,13 +144,13 @@ final DateTime? withdrawnAt;
 /// The products and respective version ranges affected by the advisory.
 final List<Vulnerability>? vulnerabilities;
 
-final GlobalAdvisoryCvss? cvss;
+final CvssSeveritiesCvss? cvss;
 
 final CvssSeverities? cvssSeverities;
 
 final SecurityAdvisoryEpss? epss;
 
-final List<GlobalAdvisoryCwes>? cwes;
+final List<Cwes>? cwes;
 
 /// The users who contributed to the advisory.
 final List<GlobalAdvisoryCredits>? credits;
@@ -201,7 +201,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
       json.containsKey('credits'); } 
-GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
+GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<DependabotAlertSecurityAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<Cwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,

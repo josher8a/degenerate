@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret scope type.
+@immutable final class GetAppsSecretsFindScopeType {const GetAppsSecretsFindScopeType._(this.value);
+
+factory GetAppsSecretsFindScopeType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'user' => user,
+  _ => GetAppsSecretsFindScopeType._(json),
+}; }
+
+static const GetAppsSecretsFindScopeType account = GetAppsSecretsFindScopeType._('account');
+
+static const GetAppsSecretsFindScopeType user = GetAppsSecretsFindScopeType._('user');
+
+static const List<GetAppsSecretsFindScopeType> values = [account, user];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetAppsSecretsFindScopeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetAppsSecretsFindScopeType($value)'; } 
+ }

@@ -1,44 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
-@immutable final class TeamsDevicesSentineloneInputRequestOperatingSystem {const TeamsDevicesSentineloneInputRequestOperatingSystem._(this.value);
-
-factory TeamsDevicesSentineloneInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
-  'windows' => windows,
-  'linux' => linux,
-  'mac' => mac,
-  _ => TeamsDevicesSentineloneInputRequestOperatingSystem._(json),
-}; }
-
-static const TeamsDevicesSentineloneInputRequestOperatingSystem windows = TeamsDevicesSentineloneInputRequestOperatingSystem._('windows');
-
-static const TeamsDevicesSentineloneInputRequestOperatingSystem linux = TeamsDevicesSentineloneInputRequestOperatingSystem._('linux');
-
-static const TeamsDevicesSentineloneInputRequestOperatingSystem mac = TeamsDevicesSentineloneInputRequestOperatingSystem._('mac');
-
-static const List<TeamsDevicesSentineloneInputRequestOperatingSystem> values = [windows, linux, mac];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesSentineloneInputRequestOperatingSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesSentineloneInputRequestOperatingSystem($value)'; } 
- }
-@immutable final class TeamsDevicesSentineloneInputRequest {const TeamsDevicesSentineloneInputRequest({required this.operatingSystem, required this.path, this.sha256, this.thumbprint, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';@immutable final class TeamsDevicesSentineloneInputRequest {const TeamsDevicesSentineloneInputRequest({required this.operatingSystem, required this.path, this.sha256, this.thumbprint, });
 
 factory TeamsDevicesSentineloneInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneInputRequest(
-  operatingSystem: TeamsDevicesSentineloneInputRequestOperatingSystem.fromJson(json['operating_system'] as String),
+  operatingSystem: InputRequestOperatingSystem.fromJson(json['operating_system'] as String),
   path: json['path'] as String,
   sha256: json['sha256'] as String?,
   thumbprint: json['thumbprint'] as String?,
 ); }
 
 /// Operating system.
-final TeamsDevicesSentineloneInputRequestOperatingSystem operatingSystem;
+final InputRequestOperatingSystem operatingSystem;
 
 /// File path.
 final String path;
@@ -57,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
       json.containsKey('path') && json['path'] is String; } 
-TeamsDevicesSentineloneInputRequest copyWith({TeamsDevicesSentineloneInputRequestOperatingSystem? operatingSystem, String? path, String Function()? sha256, String Function()? thumbprint, }) { return TeamsDevicesSentineloneInputRequest(
+TeamsDevicesSentineloneInputRequest copyWith({InputRequestOperatingSystem? operatingSystem, String? path, String Function()? sha256, String Function()? thumbprint, }) { return TeamsDevicesSentineloneInputRequest(
   operatingSystem: operatingSystem ?? this.operatingSystem,
   path: path ?? this.path,
   sha256: sha256 != null ? sha256() : this.sha256,

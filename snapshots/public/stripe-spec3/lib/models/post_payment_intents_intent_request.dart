@@ -1,96 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param.dart';import 'optional_fields_shipping.dart';import 'payment_details.dart';import 'post_payment_intents_intent_request_amount_details.dart';import 'post_payment_intents_intent_request_application_fee_amount.dart';import 'post_payment_intents_intent_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_request_hooks.dart';import 'post_payment_intents_intent_request_metadata.dart';import 'post_payment_intents_intent_request_payment_details.dart';import 'post_payment_intents_intent_request_payment_method_data.dart';import 'post_payment_intents_intent_request_payment_method_options.dart';import 'post_payment_intents_intent_request_receipt_email.dart';import 'post_payment_intents_intent_request_shipping.dart';import 'post_payment_intents_intent_request_transfer_data.dart';/// Controls when the funds will be captured from the customer's account.
-@immutable final class PostPaymentIntentsIntentRequestCaptureMethod {const PostPaymentIntentsIntentRequestCaptureMethod._(this.value);
-
-factory PostPaymentIntentsIntentRequestCaptureMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'automatic_async' => automaticAsync,
-  'manual' => manual,
-  _ => PostPaymentIntentsIntentRequestCaptureMethod._(json),
-}; }
-
-static const PostPaymentIntentsIntentRequestCaptureMethod automatic = PostPaymentIntentsIntentRequestCaptureMethod._('automatic');
-
-static const PostPaymentIntentsIntentRequestCaptureMethod automaticAsync = PostPaymentIntentsIntentRequestCaptureMethod._('automatic_async');
-
-static const PostPaymentIntentsIntentRequestCaptureMethod manual = PostPaymentIntentsIntentRequestCaptureMethod._('manual');
-
-static const List<PostPaymentIntentsIntentRequestCaptureMethod> values = [automatic, automaticAsync, manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestCaptureMethod($value)'; } 
- }
-/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-/// 
-/// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
-@immutable final class PostPaymentIntentsIntentRequestSetupFutureUsage {const PostPaymentIntentsIntentRequestSetupFutureUsage._(this.value);
-
-factory PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PostPaymentIntentsIntentRequestSetupFutureUsage._(json),
-}; }
-
-static const PostPaymentIntentsIntentRequestSetupFutureUsage $empty = PostPaymentIntentsIntentRequestSetupFutureUsage._('');
-
-static const PostPaymentIntentsIntentRequestSetupFutureUsage offSession = PostPaymentIntentsIntentRequestSetupFutureUsage._('off_session');
-
-static const PostPaymentIntentsIntentRequestSetupFutureUsage onSession = PostPaymentIntentsIntentRequestSetupFutureUsage._('on_session');
-
-static const List<PostPaymentIntentsIntentRequestSetupFutureUsage> values = [$empty, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentRequestSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentRequestSetupFutureUsage($value)'; } 
- }
-@immutable final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentRequest({this.amount, this.amountDetails, this.applicationFeeAmount, this.captureMethod, this.currency, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.metadata, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/optional_fields_shipping.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_payment_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/receipt_email.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_request/application_fee_amount.dart';@immutable final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentRequest({this.amount, this.amountDetails, this.applicationFeeAmount, this.captureMethod, this.currency, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.metadata, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => AmountDetailsParam.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentRequestAmountDetailsVariant2.fromJson(v as String),) : null,
-  applicationFeeAmount: json['application_fee_amount'] != null ? OneOf2.parse(json['application_fee_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostPaymentIntentsIntentRequestApplicationFeeAmountVariant2.fromJson(v as String),) : null,
-  captureMethod: json['capture_method'] != null ? PostPaymentIntentsIntentRequestCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => amount_details_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  applicationFeeAmount: json['application_fee_amount'] != null ? OneOf2.parse(json['application_fee_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  captureMethod: json['capture_method'] != null ? PaymentIntentCaptureMethod.fromJson(json['capture_method'] as String) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => PostPaymentIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostPaymentIntentsIntentRequestExcludedPaymentMethodTypesVariant2.fromJson(v as String),) : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => ExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  hooks: json['hooks'] != null ? PostPaymentIntentsIntentRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentIntentsIntentRequestMetadataVariant2.fromJson(v as String),) : null,
-  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => PaymentDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentRequestPaymentDetailsVariant2.fromJson(v as String),) : null,
+  hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => payment_details.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  receiptEmail: json['receipt_email'] != null ? OneOf2.parse(json['receipt_email'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsIntentRequestReceiptEmailVariant2.fromJson(v as String),) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => OptionalFieldsShipping.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentRequestShippingVariant2.fromJson(v as String),) : null,
+  receiptEmail: json['receipt_email'] != null ? OneOf2.parse(json['receipt_email'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => optional_fields_shipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 
@@ -98,13 +34,13 @@ factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { re
 final int? amount;
 
 /// Provides industry-specific information about the amount.
-final PostPaymentIntentsIntentRequestAmountDetails? amountDetails;
+final PostPaymentIntentsIntentConfirmRequestAmountDetails? amountDetails;
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. The amount of the application fee collected will be capped at the total amount captured. For more information, see the PaymentIntents [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final PostPaymentIntentsIntentRequestApplicationFeeAmount? applicationFeeAmount;
+final ApplicationFeeAmount? applicationFeeAmount;
 
 /// Controls when the funds will be captured from the customer's account.
-final PostPaymentIntentsIntentRequestCaptureMethod? captureMethod;
+final PaymentIntentCaptureMethod? captureMethod;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String? currency;
@@ -127,19 +63,19 @@ final String? customerAccount;
 final String? description;
 
 /// The list of payment method types to exclude from use with this payment.
-final PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes? excludedPaymentMethodTypes;
+final PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes? excludedPaymentMethodTypes;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
 /// Automations to be run during the PaymentIntent lifecycle
-final PostPaymentIntentsIntentRequestHooks? hooks;
+final Hooks? hooks;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPaymentIntentsIntentRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Provides industry-specific information about the charge.
-final PostPaymentIntentsIntentRequestPaymentDetails? paymentDetails;
+final PostPaymentIntentsIntentCaptureRequestPaymentDetails? paymentDetails;
 
 /// ID of the payment method (a PaymentMethod, Card, or [compatible Source](https://docs.stripe.com/payments/payment-methods/transitioning#compatibility) object) to attach to this PaymentIntent. To unset this field to null, pass in an empty string.
 final String? paymentMethod;
@@ -150,16 +86,16 @@ final String? paymentMethodConfiguration;
 /// If provided, this hash will be used to create a PaymentMethod. The new PaymentMethod will appear
 /// in the [payment_method](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-payment_method)
 /// property on the PaymentIntent.
-final PostPaymentIntentsIntentRequestPaymentMethodData? paymentMethodData;
+final PostPaymentIntentsIntentConfirmRequestPaymentMethodData? paymentMethodData;
 
 /// Payment-method-specific configuration for this PaymentIntent.
-final PostPaymentIntentsIntentRequestPaymentMethodOptions? paymentMethodOptions;
+final PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? paymentMethodOptions;
 
 /// The list of payment method types (for example, card) that this PaymentIntent can use. Use `automatic_payment_methods` to manage payment methods from the [Stripe Dashboard](https://dashboard.stripe.com/settings/payment_methods). A list of valid payment method types can be found [here](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type).
 final List<String>? paymentMethodTypes;
 
 /// Email address that the receipt for the resulting payment will be sent to. If `receipt_email` is specified for a payment in live mode, a receipt will be sent regardless of your [email settings](https://dashboard.stripe.com/account/emails).
-final PostPaymentIntentsIntentRequestReceiptEmail? receiptEmail;
+final ReceiptEmail? receiptEmail;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -170,10 +106,10 @@ final PostPaymentIntentsIntentRequestReceiptEmail? receiptEmail;
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 /// 
 /// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
-final PostPaymentIntentsIntentRequestSetupFutureUsage? setupFutureUsage;
+final PostPaymentIntentsIntentConfirmRequestSetupFutureUsage? setupFutureUsage;
 
 /// Shipping information for this PaymentIntent.
-final PostPaymentIntentsIntentRequestShipping? shipping;
+final PostPaymentIntentsIntentConfirmRequestShipping? shipping;
 
 /// Text that appears on the customer's statement as the statement descriptor for a non-card charge. This value overrides the account's default statement descriptor. For information about requirements, including the 22-character limit, see [the Statement Descriptor docs](https://docs.stripe.com/get-started/account/statement-descriptors).
 /// 
@@ -184,7 +120,7 @@ final String? statementDescriptor;
 final String? statementDescriptorSuffix;
 
 /// Use this parameter to automatically create a Transfer when the payment succeeds. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final PostPaymentIntentsIntentRequestTransferData? transferData;
+final PostChargesChargeCaptureRequestTransferData? transferData;
 
 /// A string that identifies the resulting payment as part of a group. You can only provide `transfer_group` if it hasn't been set. Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
 final String? transferGroup;
@@ -217,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_group': ?transferGroup,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_details', 'application_fee_amount', 'capture_method', 'currency', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'hooks', 'metadata', 'payment_details', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostPaymentIntentsIntentRequest copyWith({int Function()? amount, PostPaymentIntentsIntentRequestAmountDetails Function()? amountDetails, PostPaymentIntentsIntentRequestApplicationFeeAmount Function()? applicationFeeAmount, PostPaymentIntentsIntentRequestCaptureMethod Function()? captureMethod, String Function()? currency, String Function()? customer, String Function()? customerAccount, String Function()? description, PostPaymentIntentsIntentRequestExcludedPaymentMethodTypes Function()? excludedPaymentMethodTypes, List<String> Function()? expand, PostPaymentIntentsIntentRequestHooks Function()? hooks, PostPaymentIntentsIntentRequestMetadata Function()? metadata, PostPaymentIntentsIntentRequestPaymentDetails Function()? paymentDetails, String Function()? paymentMethod, String Function()? paymentMethodConfiguration, PostPaymentIntentsIntentRequestPaymentMethodData Function()? paymentMethodData, PostPaymentIntentsIntentRequestPaymentMethodOptions Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, PostPaymentIntentsIntentRequestReceiptEmail Function()? receiptEmail, PostPaymentIntentsIntentRequestSetupFutureUsage Function()? setupFutureUsage, PostPaymentIntentsIntentRequestShipping Function()? shipping, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostPaymentIntentsIntentRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostPaymentIntentsIntentRequest(
+PostPaymentIntentsIntentRequest copyWith({int Function()? amount, PostPaymentIntentsIntentConfirmRequestAmountDetails Function()? amountDetails, ApplicationFeeAmount Function()? applicationFeeAmount, PaymentIntentCaptureMethod Function()? captureMethod, String Function()? currency, String Function()? customer, String Function()? customerAccount, String Function()? description, PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes Function()? excludedPaymentMethodTypes, List<String> Function()? expand, Hooks Function()? hooks, Metadata Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails Function()? paymentDetails, String Function()? paymentMethod, String Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, ReceiptEmail Function()? receiptEmail, PostPaymentIntentsIntentConfirmRequestSetupFutureUsage Function()? setupFutureUsage, PostPaymentIntentsIntentConfirmRequestShipping Function()? shipping, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostPaymentIntentsIntentRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

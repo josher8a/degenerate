@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_delegation_identifier.dart';import '../models/addressing_id_response_result.dart';import '../models/addressing_ipam_delegations.dart';import '../models/addressing_prefix_identifier.dart';import '../models/ip_address_management_prefix_delegation_create_prefix_delegation_request.dart';/// IpAddressManagementPrefixDelegationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/addressing_account_identifier.dart';import 'package:pub_cloudflare/models/addressing_delegation_identifier.dart';import 'package:pub_cloudflare/models/addressing_ipam_delegations.dart';import 'package:pub_cloudflare/models/addressing_prefix_identifier.dart';import 'package:pub_cloudflare/models/ip_address_management_prefix_delegation_create_prefix_delegation_request.dart';/// IpAddressManagementPrefixDelegationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -59,7 +59,7 @@ return execute(
 /// Delete an account delegation for a given IP prefix.
 ///
 /// `DELETE /accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}`
-Future<ApiResult<AddressingIdResponseResult?, Never>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> ipAddressManagementPrefixDelegationDeletePrefixDelegation({required AddressingDelegationIdentifier delegationId, required AddressingPrefixIdentifier prefixId, required AddressingAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -72,7 +72,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AddressingIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

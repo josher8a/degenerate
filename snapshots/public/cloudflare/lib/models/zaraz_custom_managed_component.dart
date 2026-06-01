@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_custom_managed_component_worker.dart';@immutable final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_custom_managed_component/zaraz_custom_managed_component_worker.dart';@immutable final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
 
 factory ZarazCustomManagedComponentType.fromJson(String json) { return switch (json) {
   'custom-mc' => customMc,

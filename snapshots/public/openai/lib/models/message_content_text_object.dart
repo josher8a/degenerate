@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_object_text.dart';/// Always `text`.
-@immutable final class MessageContentTextObjectType {const MessageContentTextObjectType._(this.value);
-
-factory MessageContentTextObjectType.fromJson(String json) { return switch (json) {
-  'text' => text,
-  _ => MessageContentTextObjectType._(json),
-}; }
-
-static const MessageContentTextObjectType text = MessageContentTextObjectType._('text');
-
-static const List<MessageContentTextObjectType> values = [text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentTextObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageContentTextObjectType($value)'; } 
- }
-/// The text content that is part of a message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';import 'package:pub_openai/models/message_content_text_object/message_content_text_object_text.dart';/// The text content that is part of a message.
 @immutable final class MessageContentTextObject {const MessageContentTextObject({required this.type, required this.text, });
 
 factory MessageContentTextObject.fromJson(Map<String, dynamic> json) { return MessageContentTextObject(
-  type: MessageContentTextObjectType.fromJson(json['type'] as String),
+  type: CustomTextFormatParamType.fromJson(json['type'] as String),
   text: MessageContentTextObjectText.fromJson(json['text'] as Map<String, dynamic>),
 ); }
 
 /// Always `text`.
-final MessageContentTextObjectType type;
+final CustomTextFormatParamType type;
 
 final MessageContentTextObjectText text;
 
@@ -41,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('text'); } 
-MessageContentTextObject copyWith({MessageContentTextObjectType? type, MessageContentTextObjectText? text, }) { return MessageContentTextObject(
+MessageContentTextObject copyWith({CustomTextFormatParamType? type, MessageContentTextObjectText? text, }) { return MessageContentTextObject(
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 

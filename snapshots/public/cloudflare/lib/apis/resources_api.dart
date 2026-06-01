@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_bad_response.dart';import '../models/mcn_resource_details.dart';import '../models/mcn_resource_id.dart';import '../models/mcn_resource_type.dart';import '../models/mcn_resources_catalog_policy_preview_request.dart';import '../models/mcn_resources_catalog_policy_preview_response.dart';/// ResourcesApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_account_id.dart';import 'package:pub_cloudflare/models/mcn_bad_response.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';import 'package:pub_cloudflare/models/mcn_resource_id.dart';import 'package:pub_cloudflare/models/mcn_resource_type.dart';import 'package:pub_cloudflare/models/mcn_resources_catalog_policy_preview_request.dart';import 'package:pub_cloudflare/models/mcn_resources_catalog_policy_preview_response.dart';/// ResourcesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

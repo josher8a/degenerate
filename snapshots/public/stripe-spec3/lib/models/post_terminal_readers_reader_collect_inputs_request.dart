@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequest {const PostTerminalReadersReaderCollectInputsRequest({required this.inputs, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_inputs_request/post_terminal_readers_reader_collect_inputs_request_inputs.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequest {const PostTerminalReadersReaderCollectInputsRequest({required this.inputs, this.expand, this.metadata, });
 
 factory PostTerminalReadersReaderCollectInputsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

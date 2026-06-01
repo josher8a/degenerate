@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_device_type.dart';import 'observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_device_type.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report/observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
 @immutable final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);
 
 factory ObservatoryLighthouseState.fromJson(String json) { return switch (json) {

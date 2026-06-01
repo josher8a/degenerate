@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message/message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
 
 factory MessageStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

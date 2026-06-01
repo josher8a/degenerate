@@ -1,67 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_returned_details_transaction.dart';import 'treasury_transaction.dart';/// Reason for the return.
-@immutable final class TreasuryOutboundTransfersResourceReturnedDetailsCode {const TreasuryOutboundTransfersResourceReturnedDetailsCode._(this.value);
-
-factory TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(String json) { return switch (json) {
-  'account_closed' => accountClosed,
-  'account_frozen' => accountFrozen,
-  'bank_account_restricted' => bankAccountRestricted,
-  'bank_ownership_changed' => bankOwnershipChanged,
-  'declined' => declined,
-  'incorrect_account_holder_name' => incorrectAccountHolderName,
-  'invalid_account_number' => invalidAccountNumber,
-  'invalid_currency' => invalidCurrency,
-  'no_account' => noAccount,
-  'other' => $other,
-  _ => TreasuryOutboundTransfersResourceReturnedDetailsCode._(json),
-}; }
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode accountClosed = TreasuryOutboundTransfersResourceReturnedDetailsCode._('account_closed');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode accountFrozen = TreasuryOutboundTransfersResourceReturnedDetailsCode._('account_frozen');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode bankAccountRestricted = TreasuryOutboundTransfersResourceReturnedDetailsCode._('bank_account_restricted');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode bankOwnershipChanged = TreasuryOutboundTransfersResourceReturnedDetailsCode._('bank_ownership_changed');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode declined = TreasuryOutboundTransfersResourceReturnedDetailsCode._('declined');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode incorrectAccountHolderName = TreasuryOutboundTransfersResourceReturnedDetailsCode._('incorrect_account_holder_name');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode invalidAccountNumber = TreasuryOutboundTransfersResourceReturnedDetailsCode._('invalid_account_number');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode invalidCurrency = TreasuryOutboundTransfersResourceReturnedDetailsCode._('invalid_currency');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode noAccount = TreasuryOutboundTransfersResourceReturnedDetailsCode._('no_account');
-
-static const TreasuryOutboundTransfersResourceReturnedDetailsCode $other = TreasuryOutboundTransfersResourceReturnedDetailsCode._('other');
-
-static const List<TreasuryOutboundTransfersResourceReturnedDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundTransfersResourceReturnedDetailsCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundTransfersResourceReturnedDetailsCode($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status/treasury_outbound_payments_resource_returned_status_code.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceReturnedDetails {const TreasuryOutboundTransfersResourceReturnedDetails({required this.code, required this.transaction, });
 
 factory TreasuryOutboundTransfersResourceReturnedDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceReturnedDetails(
-  code: TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(json['code'] as String),
+  code: TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(json['code'] as String),
   transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
 ); }
 
 /// Reason for the return.
-final TreasuryOutboundTransfersResourceReturnedDetailsCode code;
+final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
 
 /// The Transaction associated with this object.
-final TreasuryOutboundTransfersResourceReturnedDetailsTransaction transaction;
+final IssuingDisputeTransaction transaction;
 
 Map<String, dynamic> toJson() { return {
   'code': code.toJson(),
@@ -69,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundTransfersResourceReturnedDetails copyWith({TreasuryOutboundTransfersResourceReturnedDetailsCode? code, TreasuryOutboundTransfersResourceReturnedDetailsTransaction? transaction, }) { return TreasuryOutboundTransfersResourceReturnedDetails(
+TreasuryOutboundTransfersResourceReturnedDetails copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, IssuingDisputeTransaction? transaction, }) { return TreasuryOutboundTransfersResourceReturnedDetails(
   code: code ?? this.code,
   transaction: transaction ?? this.transaction,
 ); } 

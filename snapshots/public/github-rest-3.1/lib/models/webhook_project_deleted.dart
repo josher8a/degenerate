@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project.dart';@immutable final class WebhookProjectDeletedAction {const WebhookProjectDeletedAction._(this.value);
-
-factory WebhookProjectDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookProjectDeletedAction._(json),
-}; }
-
-static const WebhookProjectDeletedAction deleted = WebhookProjectDeletedAction._('deleted');
-
-static const List<WebhookProjectDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectDeletedAction($value)'; } 
- }
-@immutable final class WebhookProjectDeleted {const WebhookProjectDeleted({required this.action, required this.project, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project.dart';@immutable final class WebhookProjectDeleted {const WebhookProjectDeleted({required this.action, required this.project, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookProjectDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectDeleted(
-  action: WebhookProjectDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookProjectDeleted.fromJson(Map<String, dynamic> json) { return Webho
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookProjectDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -58,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project'); } 
-WebhookProjectDeleted copyWith({WebhookProjectDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookProjectDeleted(
+WebhookProjectDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookProjectDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

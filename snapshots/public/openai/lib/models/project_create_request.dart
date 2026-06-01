@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
-@immutable final class ProjectCreateRequestGeography {const ProjectCreateRequestGeography._(this.value);
+@immutable final class Geography {const Geography._(this.value);
 
-factory ProjectCreateRequestGeography.fromJson(String json) { return switch (json) {
+factory Geography.fromJson(String json) { return switch (json) {
   'US' => us,
   'EU' => eu,
   'JP' => jp,
@@ -12,26 +12,26 @@ factory ProjectCreateRequestGeography.fromJson(String json) { return switch (jso
   'CA' => ca,
   'AU' => au,
   'SG' => sg,
-  _ => ProjectCreateRequestGeography._(json),
+  _ => Geography._(json),
 }; }
 
-static const ProjectCreateRequestGeography us = ProjectCreateRequestGeography._('US');
+static const Geography us = Geography._('US');
 
-static const ProjectCreateRequestGeography eu = ProjectCreateRequestGeography._('EU');
+static const Geography eu = Geography._('EU');
 
-static const ProjectCreateRequestGeography jp = ProjectCreateRequestGeography._('JP');
+static const Geography jp = Geography._('JP');
 
-static const ProjectCreateRequestGeography $in = ProjectCreateRequestGeography._('IN');
+static const Geography $in = Geography._('IN');
 
-static const ProjectCreateRequestGeography kr = ProjectCreateRequestGeography._('KR');
+static const Geography kr = Geography._('KR');
 
-static const ProjectCreateRequestGeography ca = ProjectCreateRequestGeography._('CA');
+static const Geography ca = Geography._('CA');
 
-static const ProjectCreateRequestGeography au = ProjectCreateRequestGeography._('AU');
+static const Geography au = Geography._('AU');
 
-static const ProjectCreateRequestGeography sg = ProjectCreateRequestGeography._('SG');
+static const Geography sg = Geography._('SG');
 
-static const List<ProjectCreateRequestGeography> values = [us, eu, jp, $in, kr, ca, au, sg];
+static const List<Geography> values = [us, eu, jp, $in, kr, ca, au, sg];
 
 final String value;
 
@@ -39,29 +39,29 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectCreateRequestGeography && other.value == value; } 
+    other is Geography && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectCreateRequestGeography($value)'; } 
+@override String toString() { return 'Geography($value)'; } 
  }
 @immutable final class ProjectCreateRequest {const ProjectCreateRequest({required this.name, this.geography, });
 
 factory ProjectCreateRequest.fromJson(Map<String, dynamic> json) { return ProjectCreateRequest(
   name: json['name'] as String,
-  geography: json['geography'] != null ? ProjectCreateRequestGeography.fromJson(json['geography'] as String) : null,
+  geography: json['geography'] != null ? Geography.fromJson(json['geography'] as String) : null,
 ); }
 
 /// The friendly name of the project, this name appears in reports.
 final String name;
 
 /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
-final ProjectCreateRequestGeography? geography;
+final Geography? geography;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
   if (geography != null) 'geography': geography?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ProjectCreateRequest copyWith({String? name, ProjectCreateRequestGeography Function()? geography, }) { return ProjectCreateRequest(
+ProjectCreateRequest copyWith({String? name, Geography Function()? geography, }) { return ProjectCreateRequest(
   name: name ?? this.name,
   geography: geography != null ? geography() : this.geography,
 ); } 

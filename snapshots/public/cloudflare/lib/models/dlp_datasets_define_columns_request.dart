@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'existing_column2.dart';import 'new_column2.dart';typedef DlpDatasetsDefineColumnsRequest = OneOf2<ExistingColumn2,NewColumn2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/existing_column.dart';import 'package:pub_cloudflare/models/new_column.dart';typedef DlpDatasetsDefineColumnsRequest = OneOf2<ExistingColumn,NewColumn>;

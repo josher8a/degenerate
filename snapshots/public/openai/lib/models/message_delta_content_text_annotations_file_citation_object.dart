@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
-@immutable final class MessageDeltaContentTextAnnotationsFileCitationObjectType {const MessageDeltaContentTextAnnotationsFileCitationObjectType._(this.value);
-
-factory MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
-  'file_citation' => fileCitation,
-  _ => MessageDeltaContentTextAnnotationsFileCitationObjectType._(json),
-}; }
-
-static const MessageDeltaContentTextAnnotationsFileCitationObjectType fileCitation = MessageDeltaContentTextAnnotationsFileCitationObjectType._('file_citation');
-
-static const List<MessageDeltaContentTextAnnotationsFileCitationObjectType> values = [fileCitation];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaContentTextAnnotationsFileCitationObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObjectType($value)'; } 
- }
-/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_text_annotations_file_citation_object/message_content_text_annotations_file_citation_object_type.dart';import 'package:pub_openai/models/message_delta_content_text_annotations_file_citation_object/message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
 @immutable final class MessageDeltaContentTextAnnotationsFileCitationObject {const MessageDeltaContentTextAnnotationsFileCitationObject({required this.index, required this.type, this.text, this.fileCitation, this.startIndex, this.endIndex, });
 
 factory MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFileCitationObject(
   index: (json['index'] as num).toInt(),
-  type: MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
+  type: MessageContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
   text: json['text'] as String?,
   fileCitation: json['file_citation'] != null ? MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>) : null,
   startIndex: json['start_index'] != null ? (json['start_index'] as num).toInt() : null,
@@ -38,7 +16,7 @@ factory MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(Map<String
 final int index;
 
 /// Always `file_citation`.
-final MessageDeltaContentTextAnnotationsFileCitationObjectType type;
+final MessageContentTextAnnotationsFileCitationObjectType type;
 
 /// The text in the message content that needs to be replaced.
 final String? text;
@@ -59,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, MessageDeltaContentTextAnnotationsFileCitationObjectType? type, String Function()? text, MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation Function()? fileCitation, int Function()? startIndex, int Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFileCitationObject(
+MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, MessageContentTextAnnotationsFileCitationObjectType? type, String Function()? text, MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation Function()? fileCitation, int Function()? startIndex, int Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFileCitationObject(
   index: index ?? this.index,
   type: type ?? this.type,
   text: text != null ? text() : this.text,

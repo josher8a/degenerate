@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_forward_locally.dart';import 'magic_lan_acl_configuration.dart';import 'magic_unidirectional.dart';/// Array of allowed communication protocols between configured LANs. If no protocols are provided, all protocols are allowed.
-@immutable final class MagicAclsAddSingleRequestProtocols {const MagicAclsAddSingleRequestProtocols._(this.value);
-
-factory MagicAclsAddSingleRequestProtocols.fromJson(String json) { return switch (json) {
-  'tcp' => tcp,
-  'udp' => udp,
-  'icmp' => icmp,
-  _ => MagicAclsAddSingleRequestProtocols._(json),
-}; }
-
-static const MagicAclsAddSingleRequestProtocols tcp = MagicAclsAddSingleRequestProtocols._('tcp');
-
-static const MagicAclsAddSingleRequestProtocols udp = MagicAclsAddSingleRequestProtocols._('udp');
-
-static const MagicAclsAddSingleRequestProtocols icmp = MagicAclsAddSingleRequestProtocols._('icmp');
-
-static const List<MagicAclsAddSingleRequestProtocols> values = [tcp, udp, icmp];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicAclsAddSingleRequestProtocols && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicAclsAddSingleRequestProtocols($value)'; } 
- }
-/// Bidirectional ACL policy for local network traffic within a site.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl/magic_acl_protocols.dart';import 'package:pub_cloudflare/models/magic_forward_locally.dart';import 'package:pub_cloudflare/models/magic_lan_acl_configuration.dart';import 'package:pub_cloudflare/models/magic_unidirectional.dart';/// Bidirectional ACL policy for local network traffic within a site.
 @immutable final class MagicAclsAddSingleRequest {const MagicAclsAddSingleRequest({required this.lan1, required this.lan2, required this.name, this.description, this.forwardLocally, this.protocols, this.unidirectional, });
 
 factory MagicAclsAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicAclsAddSingleRequest(
@@ -37,7 +9,7 @@ factory MagicAclsAddSingleRequest.fromJson(Map<String, dynamic> json) { return M
   lan1: MagicLanAclConfiguration.fromJson(json['lan_1'] as Map<String, dynamic>),
   lan2: MagicLanAclConfiguration.fromJson(json['lan_2'] as Map<String, dynamic>),
   name: json['name'] as String,
-  protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclsAddSingleRequestProtocols.fromJson(e as String)).toList(),
+  protocols: (json['protocols'] as List<dynamic>?)?.map((e) => MagicAclProtocols.fromJson(e as String)).toList(),
   unidirectional: json['unidirectional'] != null ? MagicUnidirectional.fromJson(json['unidirectional'] as bool) : null,
 ); }
 
@@ -53,7 +25,7 @@ final MagicLanAclConfiguration lan2;
 /// The name of the ACL.
 final String name;
 
-final List<MagicAclsAddSingleRequestProtocols>? protocols;
+final List<MagicAclProtocols>? protocols;
 
 final MagicUnidirectional? unidirectional;
 
@@ -69,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lan_1') &&
       json.containsKey('lan_2') &&
       json.containsKey('name') && json['name'] is String; } 
-MagicAclsAddSingleRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration? lan1, MagicLanAclConfiguration? lan2, String? name, List<MagicAclsAddSingleRequestProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclsAddSingleRequest(
+MagicAclsAddSingleRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration? lan1, MagicLanAclConfiguration? lan2, String? name, List<MagicAclProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclsAddSingleRequest(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   lan1: lan1 ?? this.lan1,

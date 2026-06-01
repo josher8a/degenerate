@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
-@immutable final class TeamsDevicesCrowdstrikeInputRequestOperator {const TeamsDevicesCrowdstrikeInputRequestOperator._(this.value);
-
-factory TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(String json) { return switch (json) {
-  '<' => $empty,
-  '<=' => $empty2,
-  '>' => $empty3,
-  '>=' => $empty4,
-  '==' => $empty5,
-  _ => TeamsDevicesCrowdstrikeInputRequestOperator._(json),
-}; }
-
-static const TeamsDevicesCrowdstrikeInputRequestOperator $empty = TeamsDevicesCrowdstrikeInputRequestOperator._('<');
-
-static const TeamsDevicesCrowdstrikeInputRequestOperator $empty2 = TeamsDevicesCrowdstrikeInputRequestOperator._('<=');
-
-static const TeamsDevicesCrowdstrikeInputRequestOperator $empty3 = TeamsDevicesCrowdstrikeInputRequestOperator._('>');
-
-static const TeamsDevicesCrowdstrikeInputRequestOperator $empty4 = TeamsDevicesCrowdstrikeInputRequestOperator._('>=');
-
-static const TeamsDevicesCrowdstrikeInputRequestOperator $empty5 = TeamsDevicesCrowdstrikeInputRequestOperator._('==');
-
-static const List<TeamsDevicesCrowdstrikeInputRequestOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesCrowdstrikeInputRequestOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestOperator($value)'; } 
- }
-/// For more details on state, please refer to the Crowdstrike documentation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on state, please refer to the Crowdstrike documentation.
 @immutable final class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState._(this.value);
 
 factory TeamsDevicesCrowdstrikeInputRequestState.fromJson(String json) { return switch (json) {
@@ -63,28 +29,28 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestState($value)'; } 
  }
 /// Version Operator.
-@immutable final class TeamsDevicesCrowdstrikeInputRequestVersionOperator {const TeamsDevicesCrowdstrikeInputRequestVersionOperator._(this.value);
+@immutable final class VersionOperator {const VersionOperator._(this.value);
 
-factory TeamsDevicesCrowdstrikeInputRequestVersionOperator.fromJson(String json) { return switch (json) {
+factory VersionOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => TeamsDevicesCrowdstrikeInputRequestVersionOperator._(json),
+  _ => VersionOperator._(json),
 }; }
 
-static const TeamsDevicesCrowdstrikeInputRequestVersionOperator $empty = TeamsDevicesCrowdstrikeInputRequestVersionOperator._('<');
+static const VersionOperator $empty = VersionOperator._('<');
 
-static const TeamsDevicesCrowdstrikeInputRequestVersionOperator $empty2 = TeamsDevicesCrowdstrikeInputRequestVersionOperator._('<=');
+static const VersionOperator $empty2 = VersionOperator._('<=');
 
-static const TeamsDevicesCrowdstrikeInputRequestVersionOperator $empty3 = TeamsDevicesCrowdstrikeInputRequestVersionOperator._('>');
+static const VersionOperator $empty3 = VersionOperator._('>');
 
-static const TeamsDevicesCrowdstrikeInputRequestVersionOperator $empty4 = TeamsDevicesCrowdstrikeInputRequestVersionOperator._('>=');
+static const VersionOperator $empty4 = VersionOperator._('>=');
 
-static const TeamsDevicesCrowdstrikeInputRequestVersionOperator $empty5 = TeamsDevicesCrowdstrikeInputRequestVersionOperator._('==');
+static const VersionOperator $empty5 = VersionOperator._('==');
 
-static const List<TeamsDevicesCrowdstrikeInputRequestVersionOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
+static const List<VersionOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
 final String value;
 
@@ -92,9 +58,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesCrowdstrikeInputRequestVersionOperator && other.value == value; } 
+    other is VersionOperator && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestVersionOperator($value)'; } 
+@override String toString() { return 'VersionOperator($value)'; } 
  }
 @immutable final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });
 
@@ -107,7 +73,7 @@ factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) 
   sensorConfig: json['sensor_config'] as String?,
   state: json['state'] != null ? TeamsDevicesCrowdstrikeInputRequestState.fromJson(json['state'] as String) : null,
   version: json['version'] as String?,
-  versionOperator: json['versionOperator'] != null ? TeamsDevicesCrowdstrikeInputRequestVersionOperator.fromJson(json['versionOperator'] as String) : null,
+  versionOperator: json['versionOperator'] != null ? VersionOperator.fromJson(json['versionOperator'] as String) : null,
 ); }
 
 /// Posture Integration ID.
@@ -135,7 +101,7 @@ final TeamsDevicesCrowdstrikeInputRequestState? state;
 final String? version;
 
 /// Version Operator.
-final TeamsDevicesCrowdstrikeInputRequestVersionOperator? versionOperator;
+final VersionOperator? versionOperator;
 
 Map<String, dynamic> toJson() { return {
   'connection_id': connectionId,
@@ -149,7 +115,7 @@ Map<String, dynamic> toJson() { return {
   if (versionOperator != null) 'versionOperator': versionOperator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator Function()? $operator, String Function()? os, String Function()? overall, String Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState Function()? state, String Function()? version, TeamsDevicesCrowdstrikeInputRequestVersionOperator Function()? versionOperator, }) { return TeamsDevicesCrowdstrikeInputRequest(
+TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String Function()? lastSeen, TeamsDevicesCrowdstrikeInputRequestOperator Function()? $operator, String Function()? os, String Function()? overall, String Function()? sensorConfig, TeamsDevicesCrowdstrikeInputRequestState Function()? state, String Function()? version, VersionOperator Function()? versionOperator, }) { return TeamsDevicesCrowdstrikeInputRequest(
   connectionId: connectionId ?? this.connectionId,
   lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
   $operator: $operator != null ? $operator() : this.$operator,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_summary_response_result.dart';@immutable final class RadarGetOriginPostQuantumSummaryResponse {const RadarGetOriginPostQuantumSummaryResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';@immutable final class RadarGetOriginPostQuantumSummaryResponse {const RadarGetOriginPostQuantumSummaryResponse({required this.result, required this.success, });
 
 factory RadarGetOriginPostQuantumSummaryResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumSummaryResponse(
-  result: RadarGetOriginPostQuantumSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetOriginPostQuantumSummaryResponseResult result;
+final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetOriginPostQuantumSummaryResponse copyWith({RadarGetOriginPostQuantumSummaryResponseResult? result, bool? success, }) { return RadarGetOriginPostQuantumSummaryResponse(
+RadarGetOriginPostQuantumSummaryResponse copyWith({RadarGetAiBotsSummaryByUserAgentResponseResult? result, bool? success, }) { return RadarGetOriginPostQuantumSummaryResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

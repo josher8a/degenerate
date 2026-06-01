@@ -1,74 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_update_request_labels.dart';import 'issues_update_request_labels_variant2.dart';/// The open or closed state of the issue.
-@immutable final class IssuesUpdateRequestState {const IssuesUpdateRequestState._(this.value);
-
-factory IssuesUpdateRequestState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => IssuesUpdateRequestState._(json),
-}; }
-
-static const IssuesUpdateRequestState open = IssuesUpdateRequestState._('open');
-
-static const IssuesUpdateRequestState closed = IssuesUpdateRequestState._('closed');
-
-static const List<IssuesUpdateRequestState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesUpdateRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesUpdateRequestState($value)'; } 
- }
-/// The reason for the state change. Ignored unless `state` is changed.
-@immutable final class IssuesUpdateRequestStateReason {const IssuesUpdateRequestStateReason._(this.value);
-
-factory IssuesUpdateRequestStateReason.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'not_planned' => notPlanned,
-  'duplicate' => duplicate,
-  'reopened' => reopened,
-  'null' => $null,
-  _ => IssuesUpdateRequestStateReason._(json),
-}; }
-
-static const IssuesUpdateRequestStateReason completed = IssuesUpdateRequestStateReason._('completed');
-
-static const IssuesUpdateRequestStateReason notPlanned = IssuesUpdateRequestStateReason._('not_planned');
-
-static const IssuesUpdateRequestStateReason duplicate = IssuesUpdateRequestStateReason._('duplicate');
-
-static const IssuesUpdateRequestStateReason reopened = IssuesUpdateRequestStateReason._('reopened');
-
-static const IssuesUpdateRequestStateReason $null = IssuesUpdateRequestStateReason._('null');
-
-static const List<IssuesUpdateRequestStateReason> values = [completed, notPlanned, duplicate, reopened, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuesUpdateRequestStateReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuesUpdateRequestStateReason($value)'; } 
- }
-@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue/issue_state_reason.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels.dart';import 'package:pub_github_rest_3_1/models/issues_create_request/issues_create_request_labels_variant2.dart';@immutable final class IssuesUpdateRequest {const IssuesUpdateRequest({this.title, this.body, this.assignee, this.state, this.stateReason, this.milestone, this.labels, this.assignees, this.type, });
 
 factory IssuesUpdateRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateRequest(
   title: json['title'],
   body: json['body'] as String?,
   assignee: json['assignee'] as String?,
-  state: json['state'] != null ? IssuesUpdateRequestState.fromJson(json['state'] as String) : null,
-  stateReason: json['state_reason'] != null ? IssuesUpdateRequestStateReason.fromJson(json['state_reason'] as String) : null,
+  state: json['state'] != null ? IssuesCreateMilestoneRequestState.fromJson(json['state'] as String) : null,
+  stateReason: json['state_reason'] != null ? IssueStateReason.fromJson(json['state_reason'] as String) : null,
   milestone: json['milestone'],
-  labels: (json['labels'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => IssuesUpdateRequestLabelsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  labels: (json['labels'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => IssuesCreateRequestLabelsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: json['type'] as String?,
 ); }
@@ -87,16 +28,16 @@ final String? body;
 final String? assignee;
 
 /// The open or closed state of the issue.
-final IssuesUpdateRequestState? state;
+final IssuesCreateMilestoneRequestState? state;
 
 /// The reason for the state change. Ignored unless `state` is changed.
-final IssuesUpdateRequestStateReason? stateReason;
+final IssueStateReason? stateReason;
 
 /// One of: String, int
 final dynamic milestone;
 
 /// Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
-final List<IssuesUpdateRequestLabels>? labels;
+final List<IssuesCreateRequestLabels>? labels;
 
 /// Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
 final List<String>? assignees;
@@ -116,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key)); } 
-IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState Function()? state, IssuesUpdateRequestStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesUpdateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
+IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesCreateMilestoneRequestState Function()? state, IssueStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesCreateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,
   assignee: assignee != null ? assignee() : this.assignee,

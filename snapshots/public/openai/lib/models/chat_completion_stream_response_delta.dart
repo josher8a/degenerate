@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_call_chunk.dart';import 'chat_completion_stream_response_delta_function_call.dart';/// The role of the author of this message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_call_chunk.dart';import 'package:pub_openai/models/chat_completion_stream_response_delta/chat_completion_stream_response_delta_function_call.dart';/// The role of the author of this message.
 @immutable final class ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole._(this.value);
 
 factory ChatCompletionStreamResponseDeltaRole.fromJson(String json) { return switch (json) {

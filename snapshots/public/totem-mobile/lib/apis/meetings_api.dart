@@ -3,10 +3,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/error_response_schema.dart';
-import '../models/livekit_order_schema.dart';
-import '../models/livekit_token_response_schema.dart';
-import '../models/session_state.dart';
+import 'package:pub_totem_mobile/models/error_response_schema.dart';
+import 'package:pub_totem_mobile/models/livekit_order_schema.dart';
+import 'package:pub_totem_mobile/models/livekit_token_response_schema.dart';
+import 'package:pub_totem_mobile/models/session_state.dart';
 
 /// MeetingsApi operations.
 ///

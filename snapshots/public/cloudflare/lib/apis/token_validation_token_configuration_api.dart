@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common6.dart';import '../models/shield_credentials.dart';import '../models/shield_identifier.dart';import '../models/shield_token_configuration.dart';import '../models/shield_uuid.dart';import '../models/token_validation_config_create_request.dart';import '../models/token_validation_config_delete_response_result.dart';import '../models/token_validation_config_edit_request.dart';import '../models/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/response_common6.dart';import 'package:pub_cloudflare/models/shield_credentials.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_token_configuration.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';import 'package:pub_cloudflare/models/token_validation_config_create_request.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_request.dart';import 'package:pub_cloudflare/models/token_validation_config_edit_response/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -110,7 +110,7 @@ return execute(
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<TokenValidationConfigDeleteResponseResult, Never>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult, Never>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

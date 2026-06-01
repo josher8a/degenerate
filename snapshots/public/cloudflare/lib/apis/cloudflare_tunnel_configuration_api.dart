@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_configuration_put_configuration_request.dart';import '../models/tunnel_configuration.dart';import '../models/tunnel_identifier.dart';import '../models/tunnel_schemas_tunnel_id.dart';/// CloudflareTunnelConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_configuration_put_configuration_request.dart';import 'package:pub_cloudflare/models/tunnel_configuration.dart';import 'package:pub_cloudflare/models/tunnel_identifier.dart';import 'package:pub_cloudflare/models/tunnel_schemas_tunnel_id.dart';/// CloudflareTunnelConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleDeletedAction {const WebhookBranchProtectionRuleDeletedAction._(this.value);
-
-factory WebhookBranchProtectionRuleDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookBranchProtectionRuleDeletedAction._(json),
-}; }
-
-static const WebhookBranchProtectionRuleDeletedAction deleted = WebhookBranchProtectionRuleDeletedAction._('deleted');
-
-static const List<WebhookBranchProtectionRuleDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBranchProtectionRuleDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionRuleDeletedAction($value)'; } 
- }
-@immutable final class WebhookBranchProtectionRuleDeleted {const WebhookBranchProtectionRuleDeleted({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleDeleted {const WebhookBranchProtectionRuleDeleted({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleDeleted(
-  action: WebhookBranchProtectionRuleDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) {
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookBranchProtectionRuleDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('rule') &&
       json.containsKey('sender'); } 
-WebhookBranchProtectionRuleDeleted copyWith({WebhookBranchProtectionRuleDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleDeleted(
+WebhookBranchProtectionRuleDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

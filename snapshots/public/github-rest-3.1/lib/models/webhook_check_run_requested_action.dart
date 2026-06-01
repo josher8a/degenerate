@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_run_requested_action_requested_action.dart';@immutable final class WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_requested_action/requested_action.dart';@immutable final class WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction._(this.value);
 
 factory WebhookCheckRunRequestedActionAction.fromJson(String json) { return switch (json) {
   'requested_action' => requestedAction,
@@ -30,7 +30,7 @@ factory WebhookCheckRunRequestedAction.fromJson(Map<String, dynamic> json) { ret
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  requestedAction: json['requested_action'] != null ? WebhookCheckRunRequestedActionRequestedAction.fromJson(json['requested_action'] as Map<String, dynamic>) : null,
+  requestedAction: json['requested_action'] != null ? RequestedAction.fromJson(json['requested_action'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
@@ -47,7 +47,7 @@ final OrganizationSimpleWebhooks? organization;
 final RepositoryWebhooks repository;
 
 /// The action requested by the user.
-final WebhookCheckRunRequestedActionRequestedAction? requestedAction;
+final RequestedAction? requestedAction;
 
 final SimpleUser sender;
 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('check_run') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCheckRunRequestedAction copyWith({WebhookCheckRunRequestedActionAction? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation Function()? installation, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhookCheckRunRequestedActionRequestedAction Function()? requestedAction, SimpleUser? sender, }) { return WebhookCheckRunRequestedAction(
+WebhookCheckRunRequestedAction copyWith({WebhookCheckRunRequestedActionAction? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation Function()? installation, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, RequestedAction Function()? requestedAction, SimpleUser? sender, }) { return WebhookCheckRunRequestedAction(
   action: action ?? this.action,
   checkRun: checkRun ?? this.checkRun,
   installation: installation != null ? installation() : this.installation,

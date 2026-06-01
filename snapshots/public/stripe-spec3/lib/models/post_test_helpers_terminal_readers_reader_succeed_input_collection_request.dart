@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This parameter defines the skip behavior for input collection.
-@immutable final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._(this.value);
+@immutable final class SkipNonRequiredInputs {const SkipNonRequiredInputs._(this.value);
 
-factory PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs.fromJson(String json) { return switch (json) {
+factory SkipNonRequiredInputs.fromJson(String json) { return switch (json) {
   'all' => all,
   'none' => none,
-  _ => PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._(json),
+  _ => SkipNonRequiredInputs._(json),
 }; }
 
-static const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs all = PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._('all');
+static const SkipNonRequiredInputs all = SkipNonRequiredInputs._('all');
 
-static const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs none = PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._('none');
+static const SkipNonRequiredInputs none = SkipNonRequiredInputs._('none');
 
-static const List<PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs> values = [all, none];
+static const List<SkipNonRequiredInputs> values = [all, none];
 
 final String value;
 
@@ -21,29 +21,29 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs && other.value == value; } 
+    other is SkipNonRequiredInputs && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs($value)'; } 
+@override String toString() { return 'SkipNonRequiredInputs($value)'; } 
  }
 @immutable final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest({this.expand, this.skipNonRequiredInputs, });
 
 factory PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  skipNonRequiredInputs: json['skip_non_required_inputs'] != null ? PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs.fromJson(json['skip_non_required_inputs'] as String) : null,
+  skipNonRequiredInputs: json['skip_non_required_inputs'] != null ? SkipNonRequiredInputs.fromJson(json['skip_non_required_inputs'] as String) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
 /// This parameter defines the skip behavior for input collection.
-final PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs? skipNonRequiredInputs;
+final SkipNonRequiredInputs? skipNonRequiredInputs;
 
 Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (skipNonRequiredInputs != null) 'skip_non_required_inputs': skipNonRequiredInputs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'skip_non_required_inputs'}.contains(key)); } 
-PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest copyWith({List<String> Function()? expand, PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs Function()? skipNonRequiredInputs, }) { return PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest(
+PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest copyWith({List<String> Function()? expand, SkipNonRequiredInputs Function()? skipNonRequiredInputs, }) { return PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest(
   expand: expand != null ? expand() : this.expand,
   skipNonRequiredInputs: skipNonRequiredInputs != null ? skipNonRequiredInputs() : this.skipNonRequiredInputs,
 ); } 

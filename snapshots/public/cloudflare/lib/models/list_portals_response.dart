@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_portals_response_result.dart';@immutable final class ListPortalsResponse {const ListPortalsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_response/create_portals_response_result.dart';@immutable final class ListPortalsResponse {const ListPortalsResponse({required this.result, required this.success, });
 
 factory ListPortalsResponse.fromJson(Map<String, dynamic> json) { return ListPortalsResponse(
-  result: (json['result'] as List<dynamic>).map((e) => ListPortalsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => CreatePortalsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<ListPortalsResponseResult> result;
+final List<CreatePortalsResponseResult> result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ListPortalsResponse copyWith({List<ListPortalsResponseResult>? result, bool? success, }) { return ListPortalsResponse(
+ListPortalsResponse copyWith({List<CreatePortalsResponseResult>? result, bool? success, }) { return ListPortalsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

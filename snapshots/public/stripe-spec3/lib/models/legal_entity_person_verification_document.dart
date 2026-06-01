@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'legal_entity_person_verification_document_back.dart';import 'legal_entity_person_verification_document_front.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
 @immutable final class LegalEntityPersonVerificationDocument {const LegalEntityPersonVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
 
 factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerificationDocument(
@@ -11,7 +11,7 @@ factory LegalEntityPersonVerificationDocument.fromJson(Map<String, dynamic> json
 ); }
 
 /// The back of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final LegalEntityPersonVerificationDocumentBack? back;
+final Back? back;
 
 /// A user-displayable string describing the verification state of this document. For example, if a document is uploaded and the picture is too fuzzy, this may say "Identity document is too unclear to read".
 final String? details;
@@ -20,7 +20,7 @@ final String? details;
 final String? detailsCode;
 
 /// The front of an ID returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final LegalEntityPersonVerificationDocumentFront? front;
+final Front? front;
 
 Map<String, dynamic> toJson() { return {
   if (back != null) 'back': back?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (front != null) 'front': front?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
-LegalEntityPersonVerificationDocument copyWith({LegalEntityPersonVerificationDocumentBack? Function()? back, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocumentFront? Function()? front, }) { return LegalEntityPersonVerificationDocument(
+LegalEntityPersonVerificationDocument copyWith({Back? Function()? back, String? Function()? details, String? Function()? detailsCode, Front? Function()? front, }) { return LegalEntityPersonVerificationDocument(
   back: back != null ? back() : this.back,
   details: details != null ? details() : this.details,
   detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,

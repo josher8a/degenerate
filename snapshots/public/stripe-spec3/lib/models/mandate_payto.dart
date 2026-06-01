@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
-@immutable final class MandatePaytoAmountType {const MandatePaytoAmountType._(this.value);
-
-factory MandatePaytoAmountType.fromJson(String json) { return switch (json) {
-  'fixed' => fixed,
-  'maximum' => maximum,
-  _ => MandatePaytoAmountType._(json),
-}; }
-
-static const MandatePaytoAmountType fixed = MandatePaytoAmountType._('fixed');
-
-static const MandatePaytoAmountType maximum = MandatePaytoAmountType._('maximum');
-
-static const List<MandatePaytoAmountType> values = [fixed, maximum];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandatePaytoAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandatePaytoAmountType($value)'; } 
- }
-/// The periodicity at which payments will be collected. Defaults to `adhoc`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_payto/invoice_mandate_options_payto_purpose.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';/// The periodicity at which payments will be collected. Defaults to `adhoc`.
 @immutable final class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule._(this.value);
 
 factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json) {
@@ -68,58 +43,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MandatePaytoPaymentSchedule($value)'; } 
  }
-/// The purpose for which payments are made. Has a default value based on your merchant category code.
-@immutable final class MandatePaytoPurpose {const MandatePaytoPurpose._(this.value);
-
-factory MandatePaytoPurpose.fromJson(String json) { return switch (json) {
-  'dependant_support' => dependantSupport,
-  'government' => government,
-  'loan' => loan,
-  'mortgage' => mortgage,
-  'other' => $other,
-  'pension' => pension,
-  'personal' => personal,
-  'retail' => retail,
-  'salary' => salary,
-  'tax' => tax,
-  'utility' => utility,
-  _ => MandatePaytoPurpose._(json),
-}; }
-
-static const MandatePaytoPurpose dependantSupport = MandatePaytoPurpose._('dependant_support');
-
-static const MandatePaytoPurpose government = MandatePaytoPurpose._('government');
-
-static const MandatePaytoPurpose loan = MandatePaytoPurpose._('loan');
-
-static const MandatePaytoPurpose mortgage = MandatePaytoPurpose._('mortgage');
-
-static const MandatePaytoPurpose $other = MandatePaytoPurpose._('other');
-
-static const MandatePaytoPurpose pension = MandatePaytoPurpose._('pension');
-
-static const MandatePaytoPurpose personal = MandatePaytoPurpose._('personal');
-
-static const MandatePaytoPurpose retail = MandatePaytoPurpose._('retail');
-
-static const MandatePaytoPurpose salary = MandatePaytoPurpose._('salary');
-
-static const MandatePaytoPurpose tax = MandatePaytoPurpose._('tax');
-
-static const MandatePaytoPurpose utility = MandatePaytoPurpose._('utility');
-
-static const List<MandatePaytoPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandatePaytoPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandatePaytoPurpose($value)'; } 
- }
 /// 
 @immutable final class MandatePayto {const MandatePayto({required this.amountType, required this.paymentSchedule, this.amount, this.endDate, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
@@ -129,7 +52,7 @@ factory MandatePayto.fromJson(Map<String, dynamic> json) { return MandatePayto(
   endDate: json['end_date'] as String?,
   paymentSchedule: MandatePaytoPaymentSchedule.fromJson(json['payment_schedule'] as String),
   paymentsPerPeriod: json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null,
-  purpose: json['purpose'] != null ? MandatePaytoPurpose.fromJson(json['purpose'] as String) : null,
+  purpose: json['purpose'] != null ? InvoiceMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null,
   startDate: json['start_date'] as String?,
 ); }
 
@@ -149,7 +72,7 @@ final MandatePaytoPaymentSchedule paymentSchedule;
 final int? paymentsPerPeriod;
 
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final MandatePaytoPurpose? purpose;
+final InvoiceMandateOptionsPaytoPurpose? purpose;
 
 /// Date, in YYYY-MM-DD format, from which payments will be collected. Defaults to confirmation time.
 final String? startDate;
@@ -165,7 +88,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_type') &&
       json.containsKey('payment_schedule'); } 
-MandatePayto copyWith({int? Function()? amount, MandatePaytoAmountType? amountType, String? Function()? endDate, MandatePaytoPaymentSchedule? paymentSchedule, int? Function()? paymentsPerPeriod, MandatePaytoPurpose? Function()? purpose, String? Function()? startDate, }) { return MandatePayto(
+MandatePayto copyWith({int? Function()? amount, MandatePaytoAmountType? amountType, String? Function()? endDate, MandatePaytoPaymentSchedule? paymentSchedule, int? Function()? paymentsPerPeriod, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, String? Function()? startDate, }) { return MandatePayto(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType ?? this.amountType,
   endDate: endDate != null ? endDate() : this.endDate,

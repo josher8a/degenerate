@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
+
+factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) { return switch (json) {
+  'cart' => cart,
+  _ => PostTerminalReadersReaderSetReaderDisplayRequestType._(json),
+}; }
+
+static const PostTerminalReadersReaderSetReaderDisplayRequestType cart = PostTerminalReadersReaderSetReaderDisplayRequestType._('cart');
+
+static const List<PostTerminalReadersReaderSetReaderDisplayRequestType> values = [cart];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTerminalReadersReaderSetReaderDisplayRequestType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)'; } 
+ }

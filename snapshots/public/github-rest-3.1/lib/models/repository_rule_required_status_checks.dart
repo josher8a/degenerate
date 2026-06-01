@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_required_status_checks_parameters.dart';@immutable final class RepositoryRuleRequiredStatusChecksType {const RepositoryRuleRequiredStatusChecksType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_required_status_checks/repository_rule_required_status_checks_parameters.dart';@immutable final class RepositoryRuleRequiredStatusChecksType {const RepositoryRuleRequiredStatusChecksType._(this.value);
 
 factory RepositoryRuleRequiredStatusChecksType.fromJson(String json) { return switch (json) {
   'required_status_checks' => requiredStatusChecks,

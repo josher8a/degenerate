@@ -1,41 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_identity_verification_sessions_request_options.dart';import 'post_identity_verification_sessions_request_provided_details.dart';import 'post_identity_verification_sessions_request_related_person.dart';/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed. You must provide a `type` if not passing `verification_flow`.
-@immutable final class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType._(this.value);
-
-factory PostIdentityVerificationSessionsRequestType.fromJson(String json) { return switch (json) {
-  'document' => document,
-  'id_number' => idNumber,
-  _ => PostIdentityVerificationSessionsRequestType._(json),
-}; }
-
-static const PostIdentityVerificationSessionsRequestType document = PostIdentityVerificationSessionsRequestType._('document');
-
-static const PostIdentityVerificationSessionsRequestType idNumber = PostIdentityVerificationSessionsRequestType._('id_number');
-
-static const List<PostIdentityVerificationSessionsRequestType> values = [document, idNumber];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIdentityVerificationSessionsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIdentityVerificationSessionsRequestType($value)'; } 
- }
-@immutable final class PostIdentityVerificationSessionsRequest {const PostIdentityVerificationSessionsRequest({this.clientReferenceId, this.expand, this.metadata, this.options, this.providedDetails, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.returnUrl, this.type, this.verificationFlow, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_options.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/post_identity_verification_sessions_request_type.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/provided_details.dart';import 'package:pub_stripe_spec3/models/post_identity_verification_sessions_request/related_person.dart';@immutable final class PostIdentityVerificationSessionsRequest {const PostIdentityVerificationSessionsRequest({this.clientReferenceId, this.expand, this.metadata, this.options, this.providedDetails, this.relatedCustomer, this.relatedCustomerAccount, this.relatedPerson, this.returnUrl, this.type, this.verificationFlow, });
 
 factory PostIdentityVerificationSessionsRequest.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequest(
   clientReferenceId: json['client_reference_id'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   options: json['options'] != null ? PostIdentityVerificationSessionsRequestOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
-  providedDetails: json['provided_details'] != null ? PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
+  providedDetails: json['provided_details'] != null ? ProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
   relatedCustomer: json['related_customer'] as String?,
   relatedCustomerAccount: json['related_customer_account'] as String?,
-  relatedPerson: json['related_person'] != null ? PostIdentityVerificationSessionsRequestRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
+  relatedPerson: json['related_person'] != null ? RelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   type: json['type'] != null ? PostIdentityVerificationSessionsRequestType.fromJson(json['type'] as String) : null,
   verificationFlow: json['verification_flow'] as String?,
@@ -54,7 +29,7 @@ final Map<String,String>? metadata;
 final PostIdentityVerificationSessionsRequestOptions? options;
 
 /// Details provided about the user being verified. These details may be shown to the user.
-final PostIdentityVerificationSessionsRequestProvidedDetails? providedDetails;
+final ProvidedDetails? providedDetails;
 
 /// Customer ID
 final String? relatedCustomer;
@@ -63,7 +38,7 @@ final String? relatedCustomer;
 final String? relatedCustomerAccount;
 
 /// Tokens referencing a Person resource and it's associated account.
-final PostIdentityVerificationSessionsRequestRelatedPerson? relatedPerson;
+final RelatedPerson? relatedPerson;
 
 /// The URL that the user will be redirected to upon completing the verification flow.
 final String? returnUrl;
@@ -88,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'verification_flow': ?verificationFlow,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_reference_id', 'expand', 'metadata', 'options', 'provided_details', 'related_customer', 'related_customer_account', 'related_person', 'return_url', 'type', 'verification_flow'}.contains(key)); } 
-PostIdentityVerificationSessionsRequest copyWith({String Function()? clientReferenceId, List<String> Function()? expand, Map<String, String> Function()? metadata, PostIdentityVerificationSessionsRequestOptions Function()? options, PostIdentityVerificationSessionsRequestProvidedDetails Function()? providedDetails, String Function()? relatedCustomer, String Function()? relatedCustomerAccount, PostIdentityVerificationSessionsRequestRelatedPerson Function()? relatedPerson, String Function()? returnUrl, PostIdentityVerificationSessionsRequestType Function()? type, String Function()? verificationFlow, }) { return PostIdentityVerificationSessionsRequest(
+PostIdentityVerificationSessionsRequest copyWith({String Function()? clientReferenceId, List<String> Function()? expand, Map<String, String> Function()? metadata, PostIdentityVerificationSessionsRequestOptions Function()? options, ProvidedDetails Function()? providedDetails, String Function()? relatedCustomer, String Function()? relatedCustomerAccount, RelatedPerson Function()? relatedPerson, String Function()? returnUrl, PostIdentityVerificationSessionsRequestType Function()? type, String Function()? verificationFlow, }) { return PostIdentityVerificationSessionsRequest(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

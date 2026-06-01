@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_platform_restrictions.dart';import 'treasury_financial_accounts_resource_status_details.dart';@immutable final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_balance.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_address.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_platform_restrictions.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_status_details.dart';@immutable final class ActiveFeatures {const ActiveFeatures._(this.value);
 
-factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return switch (json) {
+factory ActiveFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -14,32 +14,32 @@ factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return sw
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => TreasuryFinancialAccountActiveFeatures._(json),
+  _ => ActiveFeatures._(json),
 }; }
 
-static const TreasuryFinancialAccountActiveFeatures cardIssuing = TreasuryFinancialAccountActiveFeatures._('card_issuing');
+static const ActiveFeatures cardIssuing = ActiveFeatures._('card_issuing');
 
-static const TreasuryFinancialAccountActiveFeatures depositInsurance = TreasuryFinancialAccountActiveFeatures._('deposit_insurance');
+static const ActiveFeatures depositInsurance = ActiveFeatures._('deposit_insurance');
 
-static const TreasuryFinancialAccountActiveFeatures financialAddressesAba = TreasuryFinancialAccountActiveFeatures._('financial_addresses.aba');
+static const ActiveFeatures financialAddressesAba = ActiveFeatures._('financial_addresses.aba');
 
-static const TreasuryFinancialAccountActiveFeatures financialAddressesAbaForwarding = TreasuryFinancialAccountActiveFeatures._('financial_addresses.aba.forwarding');
+static const ActiveFeatures financialAddressesAbaForwarding = ActiveFeatures._('financial_addresses.aba.forwarding');
 
-static const TreasuryFinancialAccountActiveFeatures inboundTransfersAch = TreasuryFinancialAccountActiveFeatures._('inbound_transfers.ach');
+static const ActiveFeatures inboundTransfersAch = ActiveFeatures._('inbound_transfers.ach');
 
-static const TreasuryFinancialAccountActiveFeatures intraStripeFlows = TreasuryFinancialAccountActiveFeatures._('intra_stripe_flows');
+static const ActiveFeatures intraStripeFlows = ActiveFeatures._('intra_stripe_flows');
 
-static const TreasuryFinancialAccountActiveFeatures outboundPaymentsAch = TreasuryFinancialAccountActiveFeatures._('outbound_payments.ach');
+static const ActiveFeatures outboundPaymentsAch = ActiveFeatures._('outbound_payments.ach');
 
-static const TreasuryFinancialAccountActiveFeatures outboundPaymentsUsDomesticWire = TreasuryFinancialAccountActiveFeatures._('outbound_payments.us_domestic_wire');
+static const ActiveFeatures outboundPaymentsUsDomesticWire = ActiveFeatures._('outbound_payments.us_domestic_wire');
 
-static const TreasuryFinancialAccountActiveFeatures outboundTransfersAch = TreasuryFinancialAccountActiveFeatures._('outbound_transfers.ach');
+static const ActiveFeatures outboundTransfersAch = ActiveFeatures._('outbound_transfers.ach');
 
-static const TreasuryFinancialAccountActiveFeatures outboundTransfersUsDomesticWire = TreasuryFinancialAccountActiveFeatures._('outbound_transfers.us_domestic_wire');
+static const ActiveFeatures outboundTransfersUsDomesticWire = ActiveFeatures._('outbound_transfers.us_domestic_wire');
 
-static const TreasuryFinancialAccountActiveFeatures remoteDepositCapture = TreasuryFinancialAccountActiveFeatures._('remote_deposit_capture');
+static const ActiveFeatures remoteDepositCapture = ActiveFeatures._('remote_deposit_capture');
 
-static const List<TreasuryFinancialAccountActiveFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
+static const List<ActiveFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 final String value;
 
@@ -47,9 +47,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountActiveFeatures && other.value == value; } 
+    other is ActiveFeatures && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountActiveFeatures($value)'; } 
+@override String toString() { return 'ActiveFeatures($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
@@ -73,9 +73,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TreasuryFinancialAccountObject($value)'; } 
  }
-@immutable final class TreasuryFinancialAccountPendingFeatures {const TreasuryFinancialAccountPendingFeatures._(this.value);
+@immutable final class PendingFeatures {const PendingFeatures._(this.value);
 
-factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) { return switch (json) {
+factory PendingFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -87,32 +87,32 @@ factory TreasuryFinancialAccountPendingFeatures.fromJson(String json) { return s
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => TreasuryFinancialAccountPendingFeatures._(json),
+  _ => PendingFeatures._(json),
 }; }
 
-static const TreasuryFinancialAccountPendingFeatures cardIssuing = TreasuryFinancialAccountPendingFeatures._('card_issuing');
+static const PendingFeatures cardIssuing = PendingFeatures._('card_issuing');
 
-static const TreasuryFinancialAccountPendingFeatures depositInsurance = TreasuryFinancialAccountPendingFeatures._('deposit_insurance');
+static const PendingFeatures depositInsurance = PendingFeatures._('deposit_insurance');
 
-static const TreasuryFinancialAccountPendingFeatures financialAddressesAba = TreasuryFinancialAccountPendingFeatures._('financial_addresses.aba');
+static const PendingFeatures financialAddressesAba = PendingFeatures._('financial_addresses.aba');
 
-static const TreasuryFinancialAccountPendingFeatures financialAddressesAbaForwarding = TreasuryFinancialAccountPendingFeatures._('financial_addresses.aba.forwarding');
+static const PendingFeatures financialAddressesAbaForwarding = PendingFeatures._('financial_addresses.aba.forwarding');
 
-static const TreasuryFinancialAccountPendingFeatures inboundTransfersAch = TreasuryFinancialAccountPendingFeatures._('inbound_transfers.ach');
+static const PendingFeatures inboundTransfersAch = PendingFeatures._('inbound_transfers.ach');
 
-static const TreasuryFinancialAccountPendingFeatures intraStripeFlows = TreasuryFinancialAccountPendingFeatures._('intra_stripe_flows');
+static const PendingFeatures intraStripeFlows = PendingFeatures._('intra_stripe_flows');
 
-static const TreasuryFinancialAccountPendingFeatures outboundPaymentsAch = TreasuryFinancialAccountPendingFeatures._('outbound_payments.ach');
+static const PendingFeatures outboundPaymentsAch = PendingFeatures._('outbound_payments.ach');
 
-static const TreasuryFinancialAccountPendingFeatures outboundPaymentsUsDomesticWire = TreasuryFinancialAccountPendingFeatures._('outbound_payments.us_domestic_wire');
+static const PendingFeatures outboundPaymentsUsDomesticWire = PendingFeatures._('outbound_payments.us_domestic_wire');
 
-static const TreasuryFinancialAccountPendingFeatures outboundTransfersAch = TreasuryFinancialAccountPendingFeatures._('outbound_transfers.ach');
+static const PendingFeatures outboundTransfersAch = PendingFeatures._('outbound_transfers.ach');
 
-static const TreasuryFinancialAccountPendingFeatures outboundTransfersUsDomesticWire = TreasuryFinancialAccountPendingFeatures._('outbound_transfers.us_domestic_wire');
+static const PendingFeatures outboundTransfersUsDomesticWire = PendingFeatures._('outbound_transfers.us_domestic_wire');
 
-static const TreasuryFinancialAccountPendingFeatures remoteDepositCapture = TreasuryFinancialAccountPendingFeatures._('remote_deposit_capture');
+static const PendingFeatures remoteDepositCapture = PendingFeatures._('remote_deposit_capture');
 
-static const List<TreasuryFinancialAccountPendingFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
+static const List<PendingFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 final String value;
 
@@ -120,13 +120,13 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountPendingFeatures && other.value == value; } 
+    other is PendingFeatures && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountPendingFeatures($value)'; } 
+@override String toString() { return 'PendingFeatures($value)'; } 
  }
-@immutable final class TreasuryFinancialAccountRestrictedFeatures {const TreasuryFinancialAccountRestrictedFeatures._(this.value);
+@immutable final class RestrictedFeatures {const RestrictedFeatures._(this.value);
 
-factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) { return switch (json) {
+factory RestrictedFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
   'deposit_insurance' => depositInsurance,
   'financial_addresses.aba' => financialAddressesAba,
@@ -138,32 +138,32 @@ factory TreasuryFinancialAccountRestrictedFeatures.fromJson(String json) { retur
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => TreasuryFinancialAccountRestrictedFeatures._(json),
+  _ => RestrictedFeatures._(json),
 }; }
 
-static const TreasuryFinancialAccountRestrictedFeatures cardIssuing = TreasuryFinancialAccountRestrictedFeatures._('card_issuing');
+static const RestrictedFeatures cardIssuing = RestrictedFeatures._('card_issuing');
 
-static const TreasuryFinancialAccountRestrictedFeatures depositInsurance = TreasuryFinancialAccountRestrictedFeatures._('deposit_insurance');
+static const RestrictedFeatures depositInsurance = RestrictedFeatures._('deposit_insurance');
 
-static const TreasuryFinancialAccountRestrictedFeatures financialAddressesAba = TreasuryFinancialAccountRestrictedFeatures._('financial_addresses.aba');
+static const RestrictedFeatures financialAddressesAba = RestrictedFeatures._('financial_addresses.aba');
 
-static const TreasuryFinancialAccountRestrictedFeatures financialAddressesAbaForwarding = TreasuryFinancialAccountRestrictedFeatures._('financial_addresses.aba.forwarding');
+static const RestrictedFeatures financialAddressesAbaForwarding = RestrictedFeatures._('financial_addresses.aba.forwarding');
 
-static const TreasuryFinancialAccountRestrictedFeatures inboundTransfersAch = TreasuryFinancialAccountRestrictedFeatures._('inbound_transfers.ach');
+static const RestrictedFeatures inboundTransfersAch = RestrictedFeatures._('inbound_transfers.ach');
 
-static const TreasuryFinancialAccountRestrictedFeatures intraStripeFlows = TreasuryFinancialAccountRestrictedFeatures._('intra_stripe_flows');
+static const RestrictedFeatures intraStripeFlows = RestrictedFeatures._('intra_stripe_flows');
 
-static const TreasuryFinancialAccountRestrictedFeatures outboundPaymentsAch = TreasuryFinancialAccountRestrictedFeatures._('outbound_payments.ach');
+static const RestrictedFeatures outboundPaymentsAch = RestrictedFeatures._('outbound_payments.ach');
 
-static const TreasuryFinancialAccountRestrictedFeatures outboundPaymentsUsDomesticWire = TreasuryFinancialAccountRestrictedFeatures._('outbound_payments.us_domestic_wire');
+static const RestrictedFeatures outboundPaymentsUsDomesticWire = RestrictedFeatures._('outbound_payments.us_domestic_wire');
 
-static const TreasuryFinancialAccountRestrictedFeatures outboundTransfersAch = TreasuryFinancialAccountRestrictedFeatures._('outbound_transfers.ach');
+static const RestrictedFeatures outboundTransfersAch = RestrictedFeatures._('outbound_transfers.ach');
 
-static const TreasuryFinancialAccountRestrictedFeatures outboundTransfersUsDomesticWire = TreasuryFinancialAccountRestrictedFeatures._('outbound_transfers.us_domestic_wire');
+static const RestrictedFeatures outboundTransfersUsDomesticWire = RestrictedFeatures._('outbound_transfers.us_domestic_wire');
 
-static const TreasuryFinancialAccountRestrictedFeatures remoteDepositCapture = TreasuryFinancialAccountRestrictedFeatures._('remote_deposit_capture');
+static const RestrictedFeatures remoteDepositCapture = RestrictedFeatures._('remote_deposit_capture');
 
-static const List<TreasuryFinancialAccountRestrictedFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
+static const List<RestrictedFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
 final String value;
 
@@ -171,9 +171,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountRestrictedFeatures && other.value == value; } 
+    other is RestrictedFeatures && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountRestrictedFeatures($value)'; } 
+@override String toString() { return 'RestrictedFeatures($value)'; } 
  }
 /// Status of this FinancialAccount.
 @immutable final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
@@ -205,7 +205,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata, this.nickname, this.pendingFeatures, this.platformRestrictions, this.restrictedFeatures, });
 
 factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccount(
-  activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountActiveFeatures.fromJson(e as String)).toList(),
+  activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => ActiveFeatures.fromJson(e as String)).toList(),
   balance: TreasuryFinancialAccountsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>),
   country: json['country'] as String,
   created: (json['created'] as num).toInt(),
@@ -217,16 +217,16 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   nickname: json['nickname'] as String?,
   object: TreasuryFinancialAccountObject.fromJson(json['object'] as String),
-  pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountPendingFeatures.fromJson(e as String)).toList(),
+  pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => PendingFeatures.fromJson(e as String)).toList(),
   platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
-  restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountRestrictedFeatures.fromJson(e as String)).toList(),
+  restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => RestrictedFeatures.fromJson(e as String)).toList(),
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
 /// The array of paths to active Features in the Features hash.
-final List<TreasuryFinancialAccountActiveFeatures>? activeFeatures;
+final List<ActiveFeatures>? activeFeatures;
 
 final TreasuryFinancialAccountsResourceBalance balance;
 
@@ -259,13 +259,13 @@ final String? nickname;
 final TreasuryFinancialAccountObject object;
 
 /// The array of paths to pending Features in the Features hash.
-final List<TreasuryFinancialAccountPendingFeatures>? pendingFeatures;
+final List<PendingFeatures>? pendingFeatures;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
 final TreasuryFinancialAccountsResourcePlatformRestrictions? platformRestrictions;
 
 /// The array of paths to restricted Features in the Features hash.
-final List<TreasuryFinancialAccountRestrictedFeatures>? restrictedFeatures;
+final List<RestrictedFeatures>? restrictedFeatures;
 
 /// Status of this FinancialAccount.
 final TreasuryFinancialAccountStatus status;
@@ -305,7 +305,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('status') &&
       json.containsKey('status_details') &&
       json.containsKey('supported_currencies'); } 
-TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures> Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures> Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures> Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
+TreasuryFinancialAccount copyWith({List<ActiveFeatures> Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<PendingFeatures> Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<RestrictedFeatures> Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,
   country: country ?? this.country,

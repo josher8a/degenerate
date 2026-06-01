@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart';@immutable final class ListsCreateAListRequest {const ListsCreateAListRequest({required this.kind, required this.name, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_description.dart';import 'package:pub_cloudflare/models/lists_kind.dart';import 'package:pub_cloudflare/models/lists_name.dart';@immutable final class ListsCreateAListRequest {const ListsCreateAListRequest({required this.kind, required this.name, this.description, });
 
 factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,

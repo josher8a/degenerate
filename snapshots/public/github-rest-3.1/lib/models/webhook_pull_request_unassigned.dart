@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_unassigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user_mannequin.dart';@immutable final class WebhookPullRequestUnassignedAction {const WebhookPullRequestUnassignedAction._(this.value);
-
-factory WebhookPullRequestUnassignedAction.fromJson(String json) { return switch (json) {
-  'unassigned' => unassigned,
-  _ => WebhookPullRequestUnassignedAction._(json),
-}; }
-
-static const WebhookPullRequestUnassignedAction unassigned = WebhookPullRequestUnassignedAction._('unassigned');
-
-static const List<WebhookPullRequestUnassignedAction> values = [unassigned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestUnassignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestUnassignedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestUnassigned {const WebhookPullRequestUnassigned({required this.action, required this.number, required this.pullRequest, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unassigned/webhook_issues_unassigned_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_unassigned/webhook_pull_request_unassigned_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';import 'package:pub_github_rest_3_1/models/webhooks_user_mannequin.dart';@immutable final class WebhookPullRequestUnassigned {const WebhookPullRequestUnassigned({required this.action, required this.number, required this.pullRequest, required this.repository, this.assignee, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnassigned(
-  action: WebhookPullRequestUnassignedAction.fromJson(json['action'] as String),
+  action: WebhookIssuesUnassignedAction.fromJson(json['action'] as String),
   assignee: json['assignee'] != null ? WebhooksUserMannequin.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookPullRequestUnassigned.fromJson(Map<String, dynamic> json) { retur
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookPullRequestUnassignedAction action;
+final WebhookIssuesUnassignedAction action;
 
 final WebhooksUserMannequin? assignee;
 
@@ -69,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository'); } 
-WebhookPullRequestUnassigned copyWith({WebhookPullRequestUnassignedAction? action, WebhooksUserMannequin Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestUnassignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestUnassigned(
+WebhookPullRequestUnassigned copyWith({WebhookIssuesUnassignedAction? action, WebhooksUserMannequin Function()? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestUnassignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestUnassigned(
   action: action ?? this.action,
   assignee: assignee != null ? assignee() : this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

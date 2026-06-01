@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_amount_details_line_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject {const GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject._(this.value);
-
-factory GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject._(json),
-}; }
-
-static const GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject list = GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject._('list');
-
-static const List<GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/payment_intent_amount_details_line_item.dart';/// 
 @immutable final class GetPaymentIntentsIntentAmountDetailsLineItemsResponse {const GetPaymentIntentsIntentAmountDetailsLineItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(Map<String, dynamic> json) { return GetPaymentIntentsIntentAmountDetailsLineItemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => PaymentIntentAmountDetailsLineItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -39,7 +17,7 @@ final List<PaymentIntentAmountDetailsLineItem> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetPaymentIntentsIntentAmountDetailsLineItemsResponse copyWith({List<PaymentIntentAmountDetailsLineItem>? data, bool? hasMore, GetPaymentIntentsIntentAmountDetailsLineItemsResponseObject? object, String? url, }) { return GetPaymentIntentsIntentAmountDetailsLineItemsResponse(
+GetPaymentIntentsIntentAmountDetailsLineItemsResponse copyWith({List<PaymentIntentAmountDetailsLineItem>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetPaymentIntentsIntentAmountDetailsLineItemsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

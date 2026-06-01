@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class CustomEntryType {const CustomEntryType._(this.value);
-
-factory CustomEntryType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => CustomEntryType._(json),
-}; }
-
-static const CustomEntryType custom = CustomEntryType._('custom');
-
-static const List<CustomEntryType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomEntryType($value)'; } 
- }
-@immutable final class CustomEntry {const CustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, required this.type, this.description, this.profileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_pattern.dart';@immutable final class CustomEntry {const CustomEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.pattern, required this.updatedAt, required this.type, this.description, this.profileId, });
 
 factory CustomEntry.fromJson(Map<String, dynamic> json) { return CustomEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_spf_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponse {const RadarGetEmailRoutingSummaryBySpfResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_summary_by_arc_response/radar_get_email_routing_summary_by_arc_response_result.dart';@immutable final class RadarGetEmailRoutingSummaryBySpfResponse {const RadarGetEmailRoutingSummaryBySpfResponse({required this.result, required this.success, });
 
 factory RadarGetEmailRoutingSummaryBySpfResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryBySpfResponse(
-  result: RadarGetEmailRoutingSummaryBySpfResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetEmailRoutingSummaryByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetEmailRoutingSummaryBySpfResponseResult result;
+final RadarGetEmailRoutingSummaryByArcResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailRoutingSummaryBySpfResponse copyWith({RadarGetEmailRoutingSummaryBySpfResponseResult? result, bool? success, }) { return RadarGetEmailRoutingSummaryBySpfResponse(
+RadarGetEmailRoutingSummaryBySpfResponse copyWith({RadarGetEmailRoutingSummaryByArcResponseResult? result, bool? success, }) { return RadarGetEmailRoutingSummaryBySpfResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

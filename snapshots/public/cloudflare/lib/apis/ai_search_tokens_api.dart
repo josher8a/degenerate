@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_response400.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response400.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_tokens_request.dart';import 'package:pub_cloudflare/models/ai_search_create_tokens_response/ai_search_create_tokens_response_result.dart';import 'package:pub_cloudflare/models/ai_search_create_tokens_response400.dart';import 'package:pub_cloudflare/models/ai_search_delete_tokens_response404.dart';import 'package:pub_cloudflare/models/ai_search_fetch_tokens_response400.dart';import 'package:pub_cloudflare/models/ai_search_list_tokens_order_by.dart';import 'package:pub_cloudflare/models/ai_search_list_tokens_order_by_direction.dart';import 'package:pub_cloudflare/models/ai_search_list_tokens_response400.dart';import 'package:pub_cloudflare/models/ai_search_update_tokens_request.dart';import 'package:pub_cloudflare/models/ai_search_update_tokens_response400.dart';/// AiSearchTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AiSearchTokensApi with ApiExecutor {const AiSearchTokensApi(this.api
 /// List tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens`
-Future<ApiResult<List<AiSearchListTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchCreateTokensResponseResult>, AiSearchListTokensResponse400>> aiSearchListTokens({required String accountId, int? page, int? perPage, AiSearchListTokensOrderBy? orderBy, AiSearchListTokensOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -41,7 +41,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AiSearchListTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => AiSearchCreateTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return AiSearchListTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -78,7 +78,7 @@ return execute(
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensResponse400>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchFetchTokensResponse400>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -91,7 +91,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchFetchTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -101,7 +101,7 @@ return execute(
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensResponse400>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchUpdateTokensResponse400>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,7 +116,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchUpdateTokensResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -126,7 +126,7 @@ return execute(
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchDeleteTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateTokensResponseResult, AiSearchDeleteTokensResponse404>> aiSearchDeleteTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,7 +139,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchDeleteTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchDeleteTokensResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

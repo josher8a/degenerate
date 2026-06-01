@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rename {const Rename({required this.from, required this.to, });
+
+factory Rename.fromJson(Map<String, dynamic> json) { return Rename(
+  from: json['from'] as String,
+  to: json['to'] as String,
+); }
+
+final String from;
+
+final String to;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+  'to': to,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String &&
+      json.containsKey('to') && json['to'] is String; } 
+Rename copyWith({String? from, String? to, }) { return Rename(
+  from: from ?? this.from,
+  to: to ?? this.to,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Rename &&
+          from == other.from &&
+          to == other.to; } 
+@override int get hashCode { return Object.hash(from, to); } 
+@override String toString() { return 'Rename(from: $from, to: $to)'; } 
+ }

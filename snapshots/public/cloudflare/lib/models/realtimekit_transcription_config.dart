@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the language code for transcription to ensure accurate results.
-@immutable final class RealtimekitTranscriptionConfigLanguage {const RealtimekitTranscriptionConfigLanguage._(this.value);
+@immutable final class Language {const Language._(this.value);
 
-factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) { return switch (json) {
+factory Language.fromJson(String json) { return switch (json) {
   'en-US' => enUs,
   'en-IN' => enIn,
   'de' => de,
@@ -14,30 +14,30 @@ factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) { return sw
   'el' => el,
   'fr' => fr,
   'nl' => nl,
-  _ => RealtimekitTranscriptionConfigLanguage._(json),
+  _ => Language._(json),
 }; }
 
-static const RealtimekitTranscriptionConfigLanguage enUs = RealtimekitTranscriptionConfigLanguage._('en-US');
+static const Language enUs = Language._('en-US');
 
-static const RealtimekitTranscriptionConfigLanguage enIn = RealtimekitTranscriptionConfigLanguage._('en-IN');
+static const Language enIn = Language._('en-IN');
 
-static const RealtimekitTranscriptionConfigLanguage de = RealtimekitTranscriptionConfigLanguage._('de');
+static const Language de = Language._('de');
 
-static const RealtimekitTranscriptionConfigLanguage hi = RealtimekitTranscriptionConfigLanguage._('hi');
+static const Language hi = Language._('hi');
 
-static const RealtimekitTranscriptionConfigLanguage sv = RealtimekitTranscriptionConfigLanguage._('sv');
+static const Language sv = Language._('sv');
 
-static const RealtimekitTranscriptionConfigLanguage ru = RealtimekitTranscriptionConfigLanguage._('ru');
+static const Language ru = Language._('ru');
 
-static const RealtimekitTranscriptionConfigLanguage pl = RealtimekitTranscriptionConfigLanguage._('pl');
+static const Language pl = Language._('pl');
 
-static const RealtimekitTranscriptionConfigLanguage el = RealtimekitTranscriptionConfigLanguage._('el');
+static const Language el = Language._('el');
 
-static const RealtimekitTranscriptionConfigLanguage fr = RealtimekitTranscriptionConfigLanguage._('fr');
+static const Language fr = Language._('fr');
 
-static const RealtimekitTranscriptionConfigLanguage nl = RealtimekitTranscriptionConfigLanguage._('nl');
+static const Language nl = Language._('nl');
 
-static const List<RealtimekitTranscriptionConfigLanguage> values = [enUs, enIn, de, hi, sv, ru, pl, el, fr, nl];
+static const List<Language> values = [enUs, enIn, de, hi, sv, ru, pl, el, fr, nl];
 
 final String value;
 
@@ -45,16 +45,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitTranscriptionConfigLanguage && other.value == value; } 
+    other is Language && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitTranscriptionConfigLanguage($value)'; } 
+@override String toString() { return 'Language($value)'; } 
  }
 /// Transcription Configurations
-@immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = RealtimekitTranscriptionConfigLanguage.enUs, this.profanityFilter = false, });
+@immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = Language.enUs, this.profanityFilter = false, });
 
 factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) { return RealtimekitTranscriptionConfig(
   keywords: (json['keywords'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  language: json.containsKey('language') ? RealtimekitTranscriptionConfigLanguage.fromJson(json['language'] as String) : RealtimekitTranscriptionConfigLanguage.enUs,
+  language: json.containsKey('language') ? Language.fromJson(json['language'] as String) : Language.enUs,
   profanityFilter: json.containsKey('profanity_filter') ? json['profanity_filter'] as bool : false,
 ); }
 
@@ -62,7 +62,7 @@ factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) { ret
 final List<String>? keywords;
 
 /// Specifies the language code for transcription to ensure accurate results.
-final RealtimekitTranscriptionConfigLanguage language;
+final Language language;
 
 /// Control the inclusion of offensive language in transcriptions.
 final bool profanityFilter;
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   'profanity_filter': profanityFilter,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keywords', 'language', 'profanity_filter'}.contains(key)); } 
-RealtimekitTranscriptionConfig copyWith({List<String> Function()? keywords, RealtimekitTranscriptionConfigLanguage Function()? language, bool Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
+RealtimekitTranscriptionConfig copyWith({List<String> Function()? keywords, Language Function()? language, bool Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
   keywords: keywords != null ? keywords() : this.keywords,
   language: language != null ? language() : this.language,
   profanityFilter: profanityFilter != null ? profanityFilter() : this.profanityFilter,

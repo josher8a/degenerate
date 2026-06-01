@@ -1,145 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-
-@immutable
-final class TrueNull {
-  const TrueNull._(this.value);
-
-  factory TrueNull.fromJson(String json) {
-    return switch (json) {
-      'null' => $null,
-      'Null' => $null2,
-      'NULL' => $null3,
-      '~' => $empty,
-      '' => $empty2,
-      ' ' => $empty3,
-      '\t' => $empty4,
-      '\n' => $empty5,
-      _ => TrueNull._(json),
-    };
-  }
-
-  static const TrueNull $null = TrueNull._('null');
-
-  static const TrueNull $null2 = TrueNull._('Null');
-
-  static const TrueNull $null3 = TrueNull._('NULL');
-
-  static const TrueNull $empty = TrueNull._('~');
-
-  static const TrueNull $empty2 = TrueNull._('');
-
-  static const TrueNull $empty3 = TrueNull._(' ');
-
-  static const TrueNull $empty4 = TrueNull._('\t');
-
-  static const TrueNull $empty5 = TrueNull._('\n');
-
-  static const List<TrueNull> values = [
-    $null,
-    $null2,
-    $null3,
-    $empty,
-    $empty2,
-    $empty3,
-    $empty4,
-    $empty5,
-  ];
-
-  final String value;
-
-  String toJson() {
-    return value;
-  }
-
-  /// Whether this value is unknown (not defined in the OpenAPI spec).
-  bool get isUnknown {
-    return !values.contains(this);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is TrueNull && other.value == value;
-  }
-
-  @override
-  int get hashCode {
-    return value.hashCode;
-  }
-
-  @override
-  String toString() {
-    return 'TrueNull($value)';
-  }
-}
-
-@immutable
-final class True0 {
-  const True0._(this.value);
-
-  factory True0.fromJson(int json) {
-    return switch (json) {
-      0 => $0,
-      1 => $1,
-      -1 => minus1,
-      2147483647 => $2147483647,
-      -2147483648 => minus2147483648,
-      9999999999999999 => $9999999999999999,
-      _ => True0._(json),
-    };
-  }
-
-  static const True0 $0 = True0._(0);
-
-  static const True0 $02 = True0._(0);
-
-  static const True0 $1 = True0._(1);
-
-  static const True0 minus1 = True0._(-1);
-
-  static const True0 $2147483647 = True0._(2147483647);
-
-  static const True0 minus2147483648 = True0._(-2147483648);
-
-  static const True0 $9999999999999999 = True0._(9999999999999999);
-
-  static const List<True0> values = [
-    $0,
-    $02,
-    $1,
-    minus1,
-    $2147483647,
-    minus2147483648,
-    $9999999999999999,
-  ];
-
-  final int value;
-
-  int toJson() {
-    return value;
-  }
-
-  /// Whether this value is unknown (not defined in the OpenAPI spec).
-  bool get isUnknown {
-    return !values.contains(this);
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is True0 && other.value == value;
-  }
-
-  @override
-  int get hashCode {
-    return value.hashCode;
-  }
-
-  @override
-  String toString() {
-    return 'True0($value)';
-  }
-}
+import 'package:pub_unhinged/models/new/new0.dart';
+import 'package:pub_unhinged/models/new/new_null.dart';
 
 @immutable
 final class True {
@@ -148,7 +11,7 @@ final class True {
     required this.$0,
     required this.$empty,
     this.$false = true,
-    this.$null = TrueNull.$null,
+    this.$null = NewNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,
@@ -163,8 +26,8 @@ final class True {
     return True(
       $false: json['false'] as bool,
       none: json['none'],
-      $null: TrueNull.fromJson(json['null'] as String),
-      $0: True0.fromJson((json['0'] as num).toInt()),
+      $null: NewNull.fromJson(json['null'] as String),
+      $0: New0.fromJson((json['0'] as num).toInt()),
       $empty: json[''] as String,
       constructor: json['constructor'] as String?,
       proto: json['__proto__'] as String?,
@@ -205,9 +68,9 @@ final class True {
 
   final dynamic none;
 
-  final TrueNull $null;
+  final NewNull $null;
 
-  final True0 $0;
+  final New0 $0;
 
   final String $empty;
 
@@ -260,8 +123,8 @@ final class True {
   True copyWith({
     bool? $false,
     dynamic Function()? none,
-    TrueNull? $null,
-    True0? $0,
+    NewNull? $null,
+    New0? $0,
     String? $empty,
     String Function()? constructor,
     String Function()? proto,

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_mechanisms_email.dart';import 'aaa_mechanisms_pagerduty.dart';import 'aaa_mechanisms_webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/aaa_mechanisms_email.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/pagerduty.dart';import 'package:pub_cloudflare/models/aaa_mechanisms/webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
 @immutable final class AaaMechanisms {const AaaMechanisms({this.email, this.pagerduty, this.webhooks, });
 
 factory AaaMechanisms.fromJson(Map<String, dynamic> json) { return AaaMechanisms(
   email: (json['email'] as List<dynamic>?)?.map((e) => AaaMechanismsEmail.fromJson(e as Map<String, dynamic>)).toList(),
-  pagerduty: (json['pagerduty'] as List<dynamic>?)?.map((e) => AaaMechanismsPagerduty.fromJson(e as Map<String, dynamic>)).toList(),
-  webhooks: (json['webhooks'] as List<dynamic>?)?.map((e) => AaaMechanismsWebhooks.fromJson(e as Map<String, dynamic>)).toList(),
+  pagerduty: (json['pagerduty'] as List<dynamic>?)?.map((e) => Pagerduty.fromJson(e as Map<String, dynamic>)).toList(),
+  webhooks: (json['webhooks'] as List<dynamic>?)?.map((e) => Webhooks.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<AaaMechanismsEmail>? email;
 
-final List<AaaMechanismsPagerduty>? pagerduty;
+final List<Pagerduty>? pagerduty;
 
-final List<AaaMechanismsWebhooks>? webhooks;
+final List<Webhooks>? webhooks;
 
 Map<String, dynamic> toJson() { return {
   if (email != null) 'email': email?.map((e) => e.toJson()).toList(),
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (webhooks != null) 'webhooks': webhooks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'pagerduty', 'webhooks'}.contains(key)); } 
-AaaMechanisms copyWith({List<AaaMechanismsEmail> Function()? email, List<AaaMechanismsPagerduty> Function()? pagerduty, List<AaaMechanismsWebhooks> Function()? webhooks, }) { return AaaMechanisms(
+AaaMechanisms copyWith({List<AaaMechanismsEmail> Function()? email, List<Pagerduty> Function()? pagerduty, List<Webhooks> Function()? webhooks, }) { return AaaMechanisms(
   email: email != null ? email() : this.email,
   pagerduty: pagerduty != null ? pagerduty() : this.pagerduty,
   webhooks: webhooks != null ? webhooks() : this.webhooks,

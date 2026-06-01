@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'repository_advisory_credit.dart';import 'repository_advisory_credits.dart';import 'repository_advisory_cvss.dart';import 'repository_advisory_cwes.dart';import 'repository_advisory_identifiers.dart';import 'repository_advisory_submission.dart';import 'repository_advisory_vulnerability.dart';import 'simple_repository.dart';import 'simple_user.dart';import 'team.dart';/// The severity of the advisory.
-@immutable final class RepositoryAdvisorySeverity {const RepositoryAdvisorySeverity._(this.value);
-
-factory RepositoryAdvisorySeverity.fromJson(String json) { return switch (json) {
-  'critical' => critical,
-  'high' => high,
-  'medium' => medium,
-  'low' => low,
-  'null' => $null,
-  _ => RepositoryAdvisorySeverity._(json),
-}; }
-
-static const RepositoryAdvisorySeverity critical = RepositoryAdvisorySeverity._('critical');
-
-static const RepositoryAdvisorySeverity high = RepositoryAdvisorySeverity._('high');
-
-static const RepositoryAdvisorySeverity medium = RepositoryAdvisorySeverity._('medium');
-
-static const RepositoryAdvisorySeverity low = RepositoryAdvisorySeverity._('low');
-
-static const RepositoryAdvisorySeverity $null = RepositoryAdvisorySeverity._('null');
-
-static const List<RepositoryAdvisorySeverity> values = [critical, high, medium, low, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisorySeverity($value)'; } 
- }
-/// The state of the advisory.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/repository_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/submission.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_credit.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The state of the advisory.
 @immutable final class RepositoryAdvisoryState {const RepositoryAdvisoryState._(this.value);
 
 factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
@@ -78,21 +44,21 @@ factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return Reposito
   htmlUrl: Uri.parse(json['html_url'] as String),
   summary: json['summary'] as String,
   description: json['description'] as String?,
-  severity: json['severity'] != null ? RepositoryAdvisorySeverity.fromJson(json['severity'] as String) : null,
+  severity: json['severity'] != null ? PrivateVulnerabilityReportCreateSeverity.fromJson(json['severity'] as String) : null,
   author: json['author'] != null ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null,
   publisher: json['publisher'] != null ? SimpleUser.fromJson(json['publisher'] as Map<String, dynamic>) : null,
-  identifiers: (json['identifiers'] as List<dynamic>).map((e) => RepositoryAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
+  identifiers: (json['identifiers'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
   state: RepositoryAdvisoryState.fromJson(json['state'] as String),
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   publishedAt: json['published_at'] != null ? DateTime.parse(json['published_at'] as String) : null,
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
-  submission: json['submission'] != null ? RepositoryAdvisorySubmission.fromJson(json['submission'] as Map<String, dynamic>) : null,
+  submission: json['submission'] != null ? Submission.fromJson(json['submission'] as Map<String, dynamic>) : null,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
-  cvss: json['cvss'] != null ? RepositoryAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
+  cvss: json['cvss'] != null ? CvssSeveritiesCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
   cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
-  cwes: (json['cwes'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
+  cwes: (json['cwes'] as List<dynamic>?)?.map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
   cweIds: (json['cwe_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
   creditsDetailed: (json['credits_detailed'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCredit.fromJson(e as Map<String, dynamic>)).toList(),
@@ -120,7 +86,7 @@ final String summary;
 final String? description;
 
 /// The severity of the advisory.
-final RepositoryAdvisorySeverity? severity;
+final PrivateVulnerabilityReportCreateSeverity? severity;
 
 /// The author of the advisory.
 final SimpleUser? author;
@@ -128,7 +94,7 @@ final SimpleUser? author;
 /// The publisher of the advisory.
 final SimpleUser? publisher;
 
-final List<RepositoryAdvisoryIdentifiers> identifiers;
+final List<DependabotAlertSecurityAdvisoryIdentifiers> identifiers;
 
 /// The state of the advisory.
 final RepositoryAdvisoryState state;
@@ -148,15 +114,15 @@ final DateTime? closedAt;
 /// The date and time of when the advisory was withdrawn, in ISO 8601 format.
 final DateTime? withdrawnAt;
 
-final RepositoryAdvisorySubmission? submission;
+final Submission? submission;
 
 final List<RepositoryAdvisoryVulnerability>? vulnerabilities;
 
-final RepositoryAdvisoryCvss? cvss;
+final CvssSeveritiesCvss? cvss;
 
 final CvssSeverities? cvssSeverities;
 
-final List<RepositoryAdvisoryCwes>? cwes;
+final List<Cwes>? cwes;
 
 /// A list of only the CWE IDs.
 final List<String>? cweIds;
@@ -229,7 +195,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('collaborating_users') &&
       json.containsKey('collaborating_teams') &&
       json.containsKey('private_fork'); } 
-RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, RepositoryAdvisorySeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<RepositoryAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, RepositoryAdvisorySubmission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, RepositoryAdvisoryCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, List<RepositoryAdvisoryCwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
+RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, CvssSeverities Function()? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,

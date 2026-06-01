@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options.dart';import 'ai_search_instance_search_request_messages.dart';@immutable final class AiSearchInstanceSearchRequest {const AiSearchInstanceSearchRequest({required this.messages, this.aiSearchOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_instance_chat_completion_request_messages.dart';import 'package:pub_cloudflare/models/ai_search_instance_chat_completion_request/ai_search_options.dart';@immutable final class AiSearchInstanceSearchRequest {const AiSearchInstanceSearchRequest({required this.messages, this.aiSearchOptions, });
 
 factory AiSearchInstanceSearchRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequest(
-  aiSearchOptions: json['ai_search_options'] != null ? AiSearchInstanceSearchRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
-  messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceSearchRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  aiSearchOptions: json['ai_search_options'] != null ? AiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
+  messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final AiSearchInstanceSearchRequestAiSearchOptions? aiSearchOptions;
+final AiSearchOptions? aiSearchOptions;
 
-final List<AiSearchInstanceSearchRequestMessages> messages;
+final List<AiSearchInstanceChatCompletionRequestMessages> messages;
 
 Map<String, dynamic> toJson() { return {
   if (aiSearchOptions != null) 'ai_search_options': aiSearchOptions?.toJson(),
   'messages': messages.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-AiSearchInstanceSearchRequest copyWith({AiSearchInstanceSearchRequestAiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceSearchRequestMessages>? messages, }) { return AiSearchInstanceSearchRequest(
+AiSearchInstanceSearchRequest copyWith({AiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, }) { return AiSearchInstanceSearchRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
 ); } 

@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of supported action.
-@immutable final class EmailRuleActionType {const EmailRuleActionType._(this.value);
-
-factory EmailRuleActionType.fromJson(String json) { return switch (json) {
-  'drop' => drop,
-  'forward' => forward,
-  'worker' => worker,
-  _ => EmailRuleActionType._(json),
-}; }
-
-static const EmailRuleActionType drop = EmailRuleActionType._('drop');
-
-static const EmailRuleActionType forward = EmailRuleActionType._('forward');
-
-static const EmailRuleActionType worker = EmailRuleActionType._('worker');
-
-static const List<EmailRuleActionType> values = [drop, forward, worker];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailRuleActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailRuleActionType($value)'; } 
- }
-/// Actions pattern.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_rule_action/email_rule_action_type.dart';/// Actions pattern.
 @immutable final class EmailRuleAction {const EmailRuleAction({required this.type, this.value, });
 
 factory EmailRuleAction.fromJson(Map<String, dynamic> json) { return EmailRuleAction(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_commit_author.dart';import 'git_commit_committer.dart';import 'git_commit_parents.dart';import 'git_commit_tree.dart';import 'git_commit_verification.dart';/// Low-level Git commit operations within a repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_author.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_committer.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_parents.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_verification.dart';/// Low-level Git commit operations within a repository
 @immutable final class GitCommit {const GitCommit({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, });
 
 factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(

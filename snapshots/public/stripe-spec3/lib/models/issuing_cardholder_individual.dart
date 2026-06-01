@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_card_issuing.dart';import 'issuing_cardholder_individual_dob.dart';import 'issuing_cardholder_verification.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_card_issuing.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_individual_dob.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_verification.dart';/// 
 @immutable final class IssuingCardholderIndividual {const IssuingCardholderIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory IssuingCardholderIndividual.fromJson(Map<String, dynamic> json) { return IssuingCardholderIndividual(

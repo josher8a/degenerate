@@ -1,31 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_file_resource.dart';/// The type of object returned, must be 'list'.
-@immutable final class ContainerFileListResourceObject {const ContainerFileListResourceObject._(this.value);
-
-factory ContainerFileListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ContainerFileListResourceObject._(json),
-}; }
-
-static const ContainerFileListResourceObject list = ContainerFileListResourceObject._('list');
-
-static const List<ContainerFileListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerFileListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerFileListResourceObject($value)'; } 
- }
-@immutable final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/container_file_resource.dart';@immutable final class ContainerFileListResource {const ContainerFileListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ContainerFileListResource.fromJson(Map<String, dynamic> json) { return ContainerFileListResource(
-  object: ContainerFileListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ContainerFileResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
@@ -33,7 +11,7 @@ factory ContainerFileListResource.fromJson(Map<String, dynamic> json) { return C
 ); }
 
 /// The type of object returned, must be 'list'.
-final ContainerFileListResourceObject object;
+final ChatCompletionListObject object;
 
 /// A list of container files.
 final List<ContainerFileResource> data;
@@ -59,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ContainerFileListResource copyWith({ContainerFileListResourceObject? object, List<ContainerFileResource>? data, String? firstId, String? lastId, bool? hasMore, }) { return ContainerFileListResource(
+ContainerFileListResource copyWith({ChatCompletionListObject? object, List<ContainerFileResource>? data, String? firstId, String? lastId, bool? hasMore, }) { return ContainerFileListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sessions_session_id_summary_response2_xx_data.dart';@immutable final class PostSessionsSessionIdSummaryResponse2Xx {const PostSessionsSessionIdSummaryResponse2Xx({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_sessions_session_id_summary_response2_xx/post_sessions_session_id_summary_response2_xx_data.dart';@immutable final class PostSessionsSessionIdSummaryResponse2Xx {const PostSessionsSessionIdSummaryResponse2Xx({this.data, this.success, });
 
 factory PostSessionsSessionIdSummaryResponse2Xx.fromJson(Map<String, dynamic> json) { return PostSessionsSessionIdSummaryResponse2Xx(
   data: json['data'] != null ? PostSessionsSessionIdSummaryResponse2XxData.fromJson(json['data'] as Map<String, dynamic>) : null,

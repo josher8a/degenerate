@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_output_enabled.dart';import 'stream_output_stream_key.dart';import 'stream_output_url.dart';@immutable final class StreamCreateOutputRequest {const StreamCreateOutputRequest({required this.streamKey, required this.url, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_output_enabled.dart';import 'package:pub_cloudflare/models/stream_output_stream_key.dart';import 'package:pub_cloudflare/models/stream_output_url.dart';@immutable final class StreamCreateOutputRequest {const StreamCreateOutputRequest({required this.streamKey, required this.url, this.enabled, });
 
 factory StreamCreateOutputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateOutputRequest(
   enabled: json['enabled'] != null ? StreamOutputEnabled.fromJson(json['enabled'] as bool) : null,

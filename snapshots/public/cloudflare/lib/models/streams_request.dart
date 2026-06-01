@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'streams_request_http.dart';import 'streams_request_worker_binding.dart';@immutable final class StreamsRequest {const StreamsRequest({required this.name, this.format, this.http, this.schema, this.workerBinding, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_connection_schema.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_request/http.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_request/worker_binding.dart';@immutable final class StreamsRequest {const StreamsRequest({required this.name, this.format, this.http, this.schema, this.workerBinding, });
 
 factory StreamsRequest.fromJson(Map<String, dynamic> json) { return StreamsRequest(
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
-  http: json['http'] != null ? StreamsRequestHttp.fromJson(json['http'] as Map<String, dynamic>) : null,
+  http: json['http'] != null ? Http.fromJson(json['http'] as Map<String, dynamic>) : null,
   name: json['name'] as String,
   schema: json['schema'] != null ? CloudflarePipelinesConnectionSchema.fromJson(json['schema'] as Map<String, dynamic>) : null,
-  workerBinding: json['worker_binding'] != null ? StreamsRequestWorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>) : null,
+  workerBinding: json['worker_binding'] != null ? WorkerBinding.fromJson(json['worker_binding'] as Map<String, dynamic>) : null,
 ); }
 
 final CloudflarePipelinesFormat? format;
 
-final StreamsRequestHttp? http;
+final Http? http;
 
 /// Specifies the name of the Stream.
 final String name;
 
 final CloudflarePipelinesConnectionSchema? schema;
 
-final StreamsRequestWorkerBinding? workerBinding;
+final WorkerBinding? workerBinding;
 
 Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (workerBinding != null) 'worker_binding': workerBinding?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-StreamsRequest copyWith({CloudflarePipelinesFormat Function()? format, StreamsRequestHttp Function()? http, String? name, CloudflarePipelinesConnectionSchema Function()? schema, StreamsRequestWorkerBinding Function()? workerBinding, }) { return StreamsRequest(
+StreamsRequest copyWith({CloudflarePipelinesFormat Function()? format, Http Function()? http, String? name, CloudflarePipelinesConnectionSchema Function()? schema, WorkerBinding Function()? workerBinding, }) { return StreamsRequest(
   format: format != null ? format() : this.format,
   http: http != null ? http() : this.http,
   name: name ?? this.name,

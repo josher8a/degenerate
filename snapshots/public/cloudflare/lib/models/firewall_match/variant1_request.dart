@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The URL pattern to match, composed of a host and a path such as `example.org/path*`. Normalization is applied before the pattern is matched. `*` wildcards are expanded to match applicable traffic. Query strings are not matched. Set the value to `*` to match all traffic to your zone.
+extension type const FirewallUrl(String value) {
+factory FirewallUrl.fromJson(String json) => FirewallUrl(json);
+
+String toJson() => value;
+
+}
+/// An HTTP method or `_ALL_` to indicate all methods.
+@immutable final class FirewallMethods2 {const FirewallMethods2._(this.value);
+
+factory FirewallMethods2.fromJson(String json) { return switch (json) {
+  'GET' => $get,
+  'POST' => post,
+  'PUT' => put,
+  'DELETE' => delete,
+  'PATCH' => patch,
+  'HEAD' => head,
+  '_ALL_' => all,
+  _ => FirewallMethods2._(json),
+}; }
+
+static const FirewallMethods2 $get = FirewallMethods2._('GET');
+
+static const FirewallMethods2 post = FirewallMethods2._('POST');
+
+static const FirewallMethods2 put = FirewallMethods2._('PUT');
+
+static const FirewallMethods2 delete = FirewallMethods2._('DELETE');
+
+static const FirewallMethods2 patch = FirewallMethods2._('PATCH');
+
+static const FirewallMethods2 head = FirewallMethods2._('HEAD');
+
+static const FirewallMethods2 all = FirewallMethods2._('_ALL_');
+
+static const List<FirewallMethods2> values = [$get, post, put, delete, patch, head, all];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FirewallMethods2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FirewallMethods2($value)'; } 
+ }
+@immutable final class Variant1Request {const Variant1Request({this.methods, this.schemes, this.url, });
+
+factory Variant1Request.fromJson(Map<String, dynamic> json) { return Variant1Request(
+  methods: (json['methods'] as List<dynamic>?)?.map((e) => FirewallMethods2.fromJson(e as String)).toList(),
+  schemes: (json['schemes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  url: json['url'] != null ? FirewallUrl.fromJson(json['url'] as String) : null,
+); }
+
+final List<FirewallMethods2>? methods;
+
+final List<String>? schemes;
+
+final FirewallUrl? url;
+
+Map<String, dynamic> toJson() { return {
+  if (methods != null) 'methods': methods?.map((e) => e.toJson()).toList(),
+  'schemes': ?schemes,
+  if (url != null) 'url': url?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'methods', 'schemes', 'url'}.contains(key)); } 
+Variant1Request copyWith({List<FirewallMethods2> Function()? methods, List<String> Function()? schemes, FirewallUrl Function()? url, }) { return Variant1Request(
+  methods: methods != null ? methods() : this.methods,
+  schemes: schemes != null ? schemes() : this.schemes,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Variant1Request &&
+          listEquals(methods, other.methods) &&
+          listEquals(schemes, other.schemes) &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(Object.hashAll(methods ?? const []), Object.hashAll(schemes ?? const []), url); } 
+@override String toString() { return 'Variant1Request(methods: $methods, schemes: $schemes, url: $url)'; } 
+ }

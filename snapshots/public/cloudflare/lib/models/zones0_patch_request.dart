@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones0_patch_request_plan.dart';import 'zones_paused.dart';/// A full zone implies that DNS is hosted with Cloudflare. A partial
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones0_patch_request/zones0_patch_request_plan.dart';import 'package:pub_cloudflare/models/zones_paused.dart';/// A full zone implies that DNS is hosted with Cloudflare. A partial
 /// zone is typically a partner-hosted zone or a CNAME setup. This
 /// parameter is only available to Enterprise customers or if it has
 /// been explicitly enabled on a zone.

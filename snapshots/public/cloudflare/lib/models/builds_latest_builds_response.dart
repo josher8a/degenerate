@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_response.dart';@immutable final class BuildsLatestBuildsResponse {const BuildsLatestBuildsResponse({this.builds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_response.dart';@immutable final class BuildsLatestBuildsResponse {const BuildsLatestBuildsResponse({this.builds});
 
 factory BuildsLatestBuildsResponse.fromJson(Map<String, dynamic> json) { return BuildsLatestBuildsResponse(
   builds: (json['builds'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, BuildsBuildResponse.fromJson(v as Map<String, dynamic>))),

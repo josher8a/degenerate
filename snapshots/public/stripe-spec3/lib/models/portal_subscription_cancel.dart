@@ -1,66 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_subscription_cancellation_reason.dart';/// Whether to cancel subscriptions immediately or at the end of the billing period.
-@immutable final class PortalSubscriptionCancelMode {const PortalSubscriptionCancelMode._(this.value);
-
-factory PortalSubscriptionCancelMode.fromJson(String json) { return switch (json) {
-  'at_period_end' => atPeriodEnd,
-  'immediately' => immediately,
-  _ => PortalSubscriptionCancelMode._(json),
-}; }
-
-static const PortalSubscriptionCancelMode atPeriodEnd = PortalSubscriptionCancelMode._('at_period_end');
-
-static const PortalSubscriptionCancelMode immediately = PortalSubscriptionCancelMode._('immediately');
-
-static const List<PortalSubscriptionCancelMode> values = [atPeriodEnd, immediately];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancelMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancelMode($value)'; } 
- }
-/// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
-@immutable final class PortalSubscriptionCancelProrationBehavior {const PortalSubscriptionCancelProrationBehavior._(this.value);
-
-factory PortalSubscriptionCancelProrationBehavior.fromJson(String json) { return switch (json) {
-  'always_invoice' => alwaysInvoice,
-  'create_prorations' => createProrations,
-  'none' => none,
-  _ => PortalSubscriptionCancelProrationBehavior._(json),
-}; }
-
-static const PortalSubscriptionCancelProrationBehavior alwaysInvoice = PortalSubscriptionCancelProrationBehavior._('always_invoice');
-
-static const PortalSubscriptionCancelProrationBehavior createProrations = PortalSubscriptionCancelProrationBehavior._('create_prorations');
-
-static const PortalSubscriptionCancelProrationBehavior none = PortalSubscriptionCancelProrationBehavior._('none');
-
-static const List<PortalSubscriptionCancelProrationBehavior> values = [alwaysInvoice, createProrations, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancelProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancelProrationBehavior($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_cancel/portal_subscription_cancel_mode.dart';import 'package:pub_stripe_spec3/models/portal_subscription_cancellation_reason.dart';/// 
 @immutable final class PortalSubscriptionCancel {const PortalSubscriptionCancel({required this.cancellationReason, required this.enabled, required this.mode, required this.prorationBehavior, });
 
 factory PortalSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalSubscriptionCancel(
   cancellationReason: PortalSubscriptionCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   mode: PortalSubscriptionCancelMode.fromJson(json['mode'] as String),
-  prorationBehavior: PortalSubscriptionCancelProrationBehavior.fromJson(json['proration_behavior'] as String),
+  prorationBehavior: DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String),
 ); }
 
 final PortalSubscriptionCancellationReason cancellationReason;
@@ -72,7 +19,7 @@ final bool enabled;
 final PortalSubscriptionCancelMode mode;
 
 /// Whether to create prorations when canceling subscriptions. Possible values are `none` and `create_prorations`.
-final PortalSubscriptionCancelProrationBehavior prorationBehavior;
+final DeleteSubscriptionItemsItemRequestProrationBehavior prorationBehavior;
 
 Map<String, dynamic> toJson() { return {
   'cancellation_reason': cancellationReason.toJson(),
@@ -84,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cance
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('mode') &&
       json.containsKey('proration_behavior'); } 
-PortalSubscriptionCancel copyWith({PortalSubscriptionCancellationReason? cancellationReason, bool? enabled, PortalSubscriptionCancelMode? mode, PortalSubscriptionCancelProrationBehavior? prorationBehavior, }) { return PortalSubscriptionCancel(
+PortalSubscriptionCancel copyWith({PortalSubscriptionCancellationReason? cancellationReason, bool? enabled, PortalSubscriptionCancelMode? mode, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, }) { return PortalSubscriptionCancel(
   cancellationReason: cancellationReason ?? this.cancellationReason,
   enabled: enabled ?? this.enabled,
   mode: mode ?? this.mode,

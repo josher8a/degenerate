@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'tls_certificates_and_hostnames_certificate_pack_validation_errors.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validation_record.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack/validation_errors.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_record.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
 @immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) { return switch (json) {
@@ -145,7 +145,7 @@ factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic>
   primaryCertificate: json['primary_certificate'] != null ? TlsCertificatesAndHostnamesPrimary.fromJson(json['primary_certificate'] as String) : null,
   status: TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(json['status'] as String),
   type: TlsCertificatesAndHostnamesSchemasType.fromJson(json['type'] as String),
-  validationErrors: (json['validation_errors'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCertificatePackValidationErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  validationErrors: (json['validation_errors'] as List<dynamic>?)?.map((e) => ValidationErrors.fromJson(e as Map<String, dynamic>)).toList(),
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String) : null,
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
   validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()) : null,
@@ -173,7 +173,7 @@ final TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus status;
 final TlsCertificatesAndHostnamesSchemasType type;
 
 /// Domain validation errors that have been received by the certificate authority (CA).
-final List<TlsCertificatesAndHostnamesCertificatePackValidationErrors>? validationErrors;
+final List<ValidationErrors>? validationErrors;
 
 final TlsCertificatesAndHostnamesValidationMethod? validationMethod;
 
@@ -202,7 +202,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('id') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord> Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<TlsCertificatesAndHostnamesCertificatePackValidationErrors> Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord> Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays Function()? validityDays, }) { return TlsCertificatesAndHostnamesCertificatePack(
+TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority Function()? certificateAuthority, List<TlsCertificatesAndHostnamesCertificatePackCertificate>? certificates, TlsCertificatesAndHostnamesCloudflareBranding Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesValidationRecord> Function()? dcvDelegationRecords, List<String>? hosts, TlsCertificatesAndHostnamesIdentifier? id, TlsCertificatesAndHostnamesPrimary Function()? primaryCertificate, TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus? status, TlsCertificatesAndHostnamesSchemasType? type, List<ValidationErrors> Function()? validationErrors, TlsCertificatesAndHostnamesValidationMethod Function()? validationMethod, List<TlsCertificatesAndHostnamesValidationRecord> Function()? validationRecords, TlsCertificatesAndHostnamesValidityDays Function()? validityDays, }) { return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   certificates: certificates ?? this.certificates,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,

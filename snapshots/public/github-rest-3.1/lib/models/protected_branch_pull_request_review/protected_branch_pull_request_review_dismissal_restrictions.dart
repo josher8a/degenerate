@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';@immutable final class ProtectedBranchPullRequestReviewDismissalRestrictions {const ProtectedBranchPullRequestReviewDismissalRestrictions({this.users, this.teams, this.apps, this.url, this.usersUrl, this.teamsUrl, });
+
+factory ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
+  users: (json['users'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
+  teams: (json['teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList(),
+  url: json['url'] as String?,
+  usersUrl: json['users_url'] as String?,
+  teamsUrl: json['teams_url'] as String?,
+); }
+
+/// The list of users with review dismissal access.
+final List<SimpleUser>? users;
+
+/// The list of teams with review dismissal access.
+final List<Team>? teams;
+
+/// The list of apps with review dismissal access.
+final List<Integration>? apps;
+
+final String? url;
+
+final String? usersUrl;
+
+final String? teamsUrl;
+
+Map<String, dynamic> toJson() { return {
+  if (users != null) 'users': users?.map((e) => e.toJson()).toList(),
+  if (teams != null) 'teams': teams?.map((e) => e.toJson()).toList(),
+  if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
+  'url': ?url,
+  'users_url': ?usersUrl,
+  'teams_url': ?teamsUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps', 'url', 'users_url', 'teams_url'}.contains(key)); } 
+ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser> Function()? users, List<Team> Function()? teams, List<Integration> Function()? apps, String Function()? url, String Function()? usersUrl, String Function()? teamsUrl, }) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
+  users: users != null ? users() : this.users,
+  teams: teams != null ? teams() : this.teams,
+  apps: apps != null ? apps() : this.apps,
+  url: url != null ? url() : this.url,
+  usersUrl: usersUrl != null ? usersUrl() : this.usersUrl,
+  teamsUrl: teamsUrl != null ? teamsUrl() : this.teamsUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProtectedBranchPullRequestReviewDismissalRestrictions &&
+          listEquals(users, other.users) &&
+          listEquals(teams, other.teams) &&
+          listEquals(apps, other.apps) &&
+          url == other.url &&
+          usersUrl == other.usersUrl &&
+          teamsUrl == other.teamsUrl; } 
+@override int get hashCode { return Object.hash(Object.hashAll(users ?? const []), Object.hashAll(teams ?? const []), Object.hashAll(apps ?? const []), url, usersUrl, teamsUrl); } 
+@override String toString() { return 'ProtectedBranchPullRequestReviewDismissalRestrictions(users: $users, teams: $teams, apps: $apps, url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl)'; } 
+ }

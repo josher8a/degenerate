@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_description.dart';@immutable final class ListsUpdateAListRequest {const ListsUpdateAListRequest({this.description});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_description.dart';@immutable final class ListsUpdateAListRequest {const ListsUpdateAListRequest({this.description});
 
 factory ListsUpdateAListRequest.fromJson(Map<String, dynamic> json) { return ListsUpdateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,

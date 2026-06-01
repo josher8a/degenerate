@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_sync_response_result.dart';@immutable final class AutoragConfigSyncResponse {const AutoragConfigSyncResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_sync_response/autorag_config_sync_response_result.dart';@immutable final class AutoragConfigSyncResponse {const AutoragConfigSyncResponse({required this.result, required this.success, });
 
 factory AutoragConfigSyncResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigSyncResponse(
   result: AutoragConfigSyncResponseResult.fromJson(json['result'] as Map<String, dynamic>),

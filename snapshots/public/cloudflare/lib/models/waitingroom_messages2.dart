@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_messages2_source.dart';@immutable final class WaitingroomMessages2 {const WaitingroomMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_messages/access_messages_source.dart';@immutable final class WaitingroomMessages2 {const WaitingroomMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory WaitingroomMessages2.fromJson(Map<String, dynamic> json) { return WaitingroomMessages2(
   code: (json['code'] as num).toInt(),
   documentationUrl: json['documentation_url'] as String?,
   message: json['message'] as String,
-  source: json['source'] != null ? WaitingroomMessages2Source.fromJson(json['source'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? AccessMessagesSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 final int code;
@@ -15,7 +15,7 @@ final String? documentationUrl;
 
 final String message;
 
-final WaitingroomMessages2Source? source;
+final AccessMessagesSource? source;
 
 Map<String, dynamic> toJson() { return {
   'code': code,
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-WaitingroomMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, WaitingroomMessages2Source Function()? source, }) { return WaitingroomMessages2(
+WaitingroomMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, AccessMessagesSource Function()? source, }) { return WaitingroomMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

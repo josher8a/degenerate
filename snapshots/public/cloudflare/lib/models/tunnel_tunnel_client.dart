@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_connection_id.dart';import 'tunnel_schemas_connection.dart';import 'tunnel_version.dart';/// The cloudflared OS architecture used to establish this connection.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_connection_id.dart';import 'package:pub_cloudflare/models/tunnel_schemas_connection.dart';import 'package:pub_cloudflare/models/tunnel_version.dart';/// The cloudflared OS architecture used to establish this connection.
 extension type const TunnelArch(String value) {
 factory TunnelArch.fromJson(String json) => TunnelArch(json);
 

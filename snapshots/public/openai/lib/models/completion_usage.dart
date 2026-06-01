@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage_completion_tokens_details.dart';import 'completion_usage_prompt_tokens_details.dart';/// Usage statistics for the completion request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage/completion_tokens_details.dart';import 'package:pub_openai/models/completion_usage/prompt_tokens_details.dart';/// Usage statistics for the completion request.
 @immutable final class CompletionUsage {const CompletionUsage({this.completionTokens = 0, this.promptTokens = 0, this.totalTokens = 0, this.completionTokensDetails, this.promptTokensDetails, });
 
 factory CompletionUsage.fromJson(Map<String, dynamic> json) { return CompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),
   promptTokens: (json['prompt_tokens'] as num).toInt(),
   totalTokens: (json['total_tokens'] as num).toInt(),
-  completionTokensDetails: json['completion_tokens_details'] != null ? CompletionUsageCompletionTokensDetails.fromJson(json['completion_tokens_details'] as Map<String, dynamic>) : null,
-  promptTokensDetails: json['prompt_tokens_details'] != null ? CompletionUsagePromptTokensDetails.fromJson(json['prompt_tokens_details'] as Map<String, dynamic>) : null,
+  completionTokensDetails: json['completion_tokens_details'] != null ? CompletionTokensDetails.fromJson(json['completion_tokens_details'] as Map<String, dynamic>) : null,
+  promptTokensDetails: json['prompt_tokens_details'] != null ? PromptTokensDetails.fromJson(json['prompt_tokens_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Number of tokens in the generated completion.
@@ -21,10 +21,10 @@ final int promptTokens;
 final int totalTokens;
 
 /// Breakdown of tokens used in a completion.
-final CompletionUsageCompletionTokensDetails? completionTokensDetails;
+final CompletionTokensDetails? completionTokensDetails;
 
 /// Breakdown of tokens used in the prompt.
-final CompletionUsagePromptTokensDetails? promptTokensDetails;
+final PromptTokensDetails? promptTokensDetails;
 
 Map<String, dynamic> toJson() { return {
   'completion_tokens': completionTokens,
@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('completion_tokens') && json['completion_tokens'] is num &&
       json.containsKey('prompt_tokens') && json['prompt_tokens'] is num &&
       json.containsKey('total_tokens') && json['total_tokens'] is num; } 
-CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionUsageCompletionTokensDetails Function()? completionTokensDetails, CompletionUsagePromptTokensDetails Function()? promptTokensDetails, }) { return CompletionUsage(
+CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTokens, CompletionTokensDetails Function()? completionTokensDetails, PromptTokensDetails Function()? promptTokensDetails, }) { return CompletionUsage(
   completionTokens: completionTokens ?? this.completionTokens,
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,

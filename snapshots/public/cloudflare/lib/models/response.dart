@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_pagination_info.dart';import 'response_errors2.dart';@immutable final class Response {const Response({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_pagination_info.dart';import 'package:pub_cloudflare/models/response_common_failure55/response_common_failure55_errors.dart';@immutable final class Response {const Response({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
-  errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors2.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => ResponseCommonFailure55Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
   result: json['result'] as Map<String, dynamic>?,
   resultInfo: json['result_info'] != null ? BuildsPaginationInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
-final List<ResponseErrors2> errors;
+final List<ResponseCommonFailure55Errors> errors;
 
 final List<String> messages;
 
@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-Response copyWith({List<ResponseErrors2>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return Response(
+Response copyWith({List<ResponseCommonFailure55Errors>? errors, List<String>? messages, Map<String, dynamic>? Function()? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return Response(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

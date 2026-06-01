@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_tree_entries.dart';import 'content_tree_links.dart';/// Content Tree
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/content_tree/entries.dart';/// Content Tree
 @immutable final class ContentTree {const ContentTree({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, this.entries, this.encoding, });
 
 factory ContentTree.fromJson(Map<String, dynamic> json) { return ContentTree(
@@ -14,9 +14,9 @@ factory ContentTree.fromJson(Map<String, dynamic> json) { return ContentTree(
   gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
-  entries: (json['entries'] as List<dynamic>?)?.map((e) => ContentTreeEntries.fromJson(e as Map<String, dynamic>)).toList(),
+  entries: (json['entries'] as List<dynamic>?)?.map((e) => Entries.fromJson(e as Map<String, dynamic>)).toList(),
   encoding: json['encoding'] as String?,
-  links: ContentTreeLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
 ); }
 
 final String type;
@@ -39,11 +39,11 @@ final Uri? htmlUrl;
 
 final Uri? downloadUrl;
 
-final List<ContentTreeEntries>? entries;
+final List<Entries>? entries;
 
 final String? encoding;
 
-final ContentTreeLinks links;
+final ContentDirectoryLinks links;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<ContentTreeEntries> Function()? entries, String Function()? encoding, ContentTreeLinks? links, }) { return ContentTree(
+ContentTree copyWith({String? type, int? size, String? name, String? path, String? sha, String Function()? content, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, List<Entries> Function()? entries, String Function()? encoding, ContentDirectoryLinks? links, }) { return ContentTree(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,

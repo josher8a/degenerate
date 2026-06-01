@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_delete_dns_firewall_cluster_response4_xx_result.dart';@immutable final class DnsFirewallDeleteDnsFirewallClusterResponse4Xx {const DnsFirewallDeleteDnsFirewallClusterResponse4Xx({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';@immutable final class DnsFirewallDeleteDnsFirewallClusterResponse4Xx {const DnsFirewallDeleteDnsFirewallClusterResponse4Xx({this.result});
 
 factory DnsFirewallDeleteDnsFirewallClusterResponse4Xx.fromJson(Map<String, dynamic> json) { return DnsFirewallDeleteDnsFirewallClusterResponse4Xx(
-  result: json['result'] != null ? DnsFirewallDeleteDnsFirewallClusterResponse4XxResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
-final DnsFirewallDeleteDnsFirewallClusterResponse4XxResult? result;
+final AaaIdResponseResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-DnsFirewallDeleteDnsFirewallClusterResponse4Xx copyWith({DnsFirewallDeleteDnsFirewallClusterResponse4XxResult Function()? result}) { return DnsFirewallDeleteDnsFirewallClusterResponse4Xx(
+DnsFirewallDeleteDnsFirewallClusterResponse4Xx copyWith({AaaIdResponseResult Function()? result}) { return DnsFirewallDeleteDnsFirewallClusterResponse4Xx(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

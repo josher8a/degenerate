@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobLogResponseLogType {const R2SlurperJobLogResponseLogType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogType {const LogType._(this.value);
 
-factory R2SlurperJobLogResponseLogType.fromJson(String json) { return switch (json) {
+factory LogType.fromJson(String json) { return switch (json) {
   'migrationStart' => migrationStart,
   'migrationComplete' => migrationComplete,
   'migrationAbort' => migrationAbort,
@@ -18,40 +18,40 @@ factory R2SlurperJobLogResponseLogType.fromJson(String json) { return switch (js
   'importSkippedExcludedContentType' => importSkippedExcludedContentType,
   'importSkippedInvalidMedia' => importSkippedInvalidMedia,
   'importSkippedRequiresRetrieval' => importSkippedRequiresRetrieval,
-  _ => R2SlurperJobLogResponseLogType._(json),
+  _ => LogType._(json),
 }; }
 
-static const R2SlurperJobLogResponseLogType migrationStart = R2SlurperJobLogResponseLogType._('migrationStart');
+static const LogType migrationStart = LogType._('migrationStart');
 
-static const R2SlurperJobLogResponseLogType migrationComplete = R2SlurperJobLogResponseLogType._('migrationComplete');
+static const LogType migrationComplete = LogType._('migrationComplete');
 
-static const R2SlurperJobLogResponseLogType migrationAbort = R2SlurperJobLogResponseLogType._('migrationAbort');
+static const LogType migrationAbort = LogType._('migrationAbort');
 
-static const R2SlurperJobLogResponseLogType migrationError = R2SlurperJobLogResponseLogType._('migrationError');
+static const LogType migrationError = LogType._('migrationError');
 
-static const R2SlurperJobLogResponseLogType migrationPause = R2SlurperJobLogResponseLogType._('migrationPause');
+static const LogType migrationPause = LogType._('migrationPause');
 
-static const R2SlurperJobLogResponseLogType migrationResume = R2SlurperJobLogResponseLogType._('migrationResume');
+static const LogType migrationResume = LogType._('migrationResume');
 
-static const R2SlurperJobLogResponseLogType migrationErrorFailedContinuation = R2SlurperJobLogResponseLogType._('migrationErrorFailedContinuation');
+static const LogType migrationErrorFailedContinuation = LogType._('migrationErrorFailedContinuation');
 
-static const R2SlurperJobLogResponseLogType importErrorRetryExhaustion = R2SlurperJobLogResponseLogType._('importErrorRetryExhaustion');
+static const LogType importErrorRetryExhaustion = LogType._('importErrorRetryExhaustion');
 
-static const R2SlurperJobLogResponseLogType importSkippedStorageClass = R2SlurperJobLogResponseLogType._('importSkippedStorageClass');
+static const LogType importSkippedStorageClass = LogType._('importSkippedStorageClass');
 
-static const R2SlurperJobLogResponseLogType importSkippedOversized = R2SlurperJobLogResponseLogType._('importSkippedOversized');
+static const LogType importSkippedOversized = LogType._('importSkippedOversized');
 
-static const R2SlurperJobLogResponseLogType importSkippedEmptyObject = R2SlurperJobLogResponseLogType._('importSkippedEmptyObject');
+static const LogType importSkippedEmptyObject = LogType._('importSkippedEmptyObject');
 
-static const R2SlurperJobLogResponseLogType importSkippedUnsupportedContentType = R2SlurperJobLogResponseLogType._('importSkippedUnsupportedContentType');
+static const LogType importSkippedUnsupportedContentType = LogType._('importSkippedUnsupportedContentType');
 
-static const R2SlurperJobLogResponseLogType importSkippedExcludedContentType = R2SlurperJobLogResponseLogType._('importSkippedExcludedContentType');
+static const LogType importSkippedExcludedContentType = LogType._('importSkippedExcludedContentType');
 
-static const R2SlurperJobLogResponseLogType importSkippedInvalidMedia = R2SlurperJobLogResponseLogType._('importSkippedInvalidMedia');
+static const LogType importSkippedInvalidMedia = LogType._('importSkippedInvalidMedia');
 
-static const R2SlurperJobLogResponseLogType importSkippedRequiresRetrieval = R2SlurperJobLogResponseLogType._('importSkippedRequiresRetrieval');
+static const LogType importSkippedRequiresRetrieval = LogType._('importSkippedRequiresRetrieval');
 
-static const List<R2SlurperJobLogResponseLogType> values = [migrationStart, migrationComplete, migrationAbort, migrationError, migrationPause, migrationResume, migrationErrorFailedContinuation, importErrorRetryExhaustion, importSkippedStorageClass, importSkippedOversized, importSkippedEmptyObject, importSkippedUnsupportedContentType, importSkippedExcludedContentType, importSkippedInvalidMedia, importSkippedRequiresRetrieval];
+static const List<LogType> values = [migrationStart, migrationComplete, migrationAbort, migrationError, migrationPause, migrationResume, migrationErrorFailedContinuation, importErrorRetryExhaustion, importSkippedStorageClass, importSkippedOversized, importSkippedEmptyObject, importSkippedUnsupportedContentType, importSkippedExcludedContentType, importSkippedInvalidMedia, importSkippedRequiresRetrieval];
 
 final String value;
 
@@ -59,16 +59,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperJobLogResponseLogType && other.value == value; } 
+    other is LogType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperJobLogResponseLogType($value)'; } 
+@override String toString() { return 'LogType($value)'; } 
  }
 @immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message, this.objectKey, });
 
 factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobLogResponse(
   createdAt: json['createdAt'] as String?,
   job: json['job'] as String?,
-  logType: json['logType'] != null ? R2SlurperJobLogResponseLogType.fromJson(json['logType'] as String) : null,
+  logType: json['logType'] != null ? LogType.fromJson(json['logType'] as String) : null,
   message: json['message'] as String?,
   objectKey: json['objectKey'] as String?,
 ); }
@@ -77,7 +77,7 @@ final String? createdAt;
 
 final String? job;
 
-final R2SlurperJobLogResponseLogType? logType;
+final LogType? logType;
 
 final String? message;
 
@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'objectKey': ?objectKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key)); } 
-R2SlurperJobLogResponse copyWith({String Function()? createdAt, String Function()? job, R2SlurperJobLogResponseLogType Function()? logType, String? Function()? message, String? Function()? objectKey, }) { return R2SlurperJobLogResponse(
+R2SlurperJobLogResponse copyWith({String Function()? createdAt, String Function()? job, LogType Function()? logType, String? Function()? message, String? Function()? objectKey, }) { return R2SlurperJobLogResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   job: job != null ? job() : this.job,
   logType: logType != null ? logType() : this.logType,

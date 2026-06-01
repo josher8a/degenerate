@@ -1,43 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `text`.
-@immutable final class ResponseFormatTextType {const ResponseFormatTextType._(this.value);
-
-factory ResponseFormatTextType.fromJson(String json) { return switch (json) {
-  'text' => text,
-  _ => ResponseFormatTextType._(json),
-}; }
-
-static const ResponseFormatTextType text = ResponseFormatTextType._('text');
-
-static const List<ResponseFormatTextType> values = [text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseFormatTextType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseFormatTextType($value)'; } 
- }
-/// Default response format. Used to generate text responses.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';/// Default response format. Used to generate text responses.
 /// 
 @immutable final class ResponseFormatText {const ResponseFormatText({required this.type});
 
 factory ResponseFormatText.fromJson(Map<String, dynamic> json) { return ResponseFormatText(
-  type: ResponseFormatTextType.fromJson(json['type'] as String),
+  type: CustomTextFormatParamType.fromJson(json['type'] as String),
 ); }
 
 /// The type of response format being defined. Always `text`.
-final ResponseFormatTextType type;
+final CustomTextFormatParamType type;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ResponseFormatText copyWith({ResponseFormatTextType? type}) { return ResponseFormatText(
+ResponseFormatText copyWith({CustomTextFormatParamType? type}) { return ResponseFormatText(
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

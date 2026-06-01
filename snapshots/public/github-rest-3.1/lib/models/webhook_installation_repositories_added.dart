@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhook_installation_repositories_added_repositories_removed.dart';import 'webhooks_repositories_added2.dart';import 'webhooks_repository_selection.dart';import 'webhooks_user.dart';@immutable final class WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction._(this.value);
-
-factory WebhookInstallationRepositoriesAddedAction.fromJson(String json) { return switch (json) {
-  'added' => added,
-  _ => WebhookInstallationRepositoriesAddedAction._(json),
-}; }
-
-static const WebhookInstallationRepositoriesAddedAction added = WebhookInstallationRepositoriesAddedAction._('added');
-
-static const List<WebhookInstallationRepositoriesAddedAction> values = [added];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationRepositoriesAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationRepositoriesAddedAction($value)'; } 
- }
-@immutable final class WebhookInstallationRepositoriesAdded {const WebhookInstallationRepositoriesAdded({required this.action, required this.installation, required this.repositoriesAdded, required this.repositoriesRemoved, required this.repositorySelection, required this.requester, required this.sender, this.enterprise, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_action.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_repositories_removed.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories_added2.dart';import 'package:pub_github_rest_3_1/models/webhooks_repository_selection.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookInstallationRepositoriesAdded {const WebhookInstallationRepositoriesAdded({required this.action, required this.installation, required this.repositoriesAdded, required this.repositoriesRemoved, required this.repositorySelection, required this.requester, required this.sender, this.enterprise, this.organization, this.repository, });
 
 factory WebhookInstallationRepositoriesAdded.fromJson(Map<String, dynamic> json) { return WebhookInstallationRepositoriesAdded(
   action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),

@@ -1,34 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval.dart';/// The type of this object. It is always set to "list".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/eval.dart';/// An object representing a list of evals.
 /// 
-@immutable final class EvalListObject {const EvalListObject._(this.value);
-
-factory EvalListObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => EvalListObject._(json),
-}; }
-
-static const EvalListObject list = EvalListObject._('list');
-
-static const List<EvalListObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalListObject($value)'; } 
- }
-/// An object representing a list of evals.
-/// 
-@immutable final class EvalList {const EvalList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = EvalListObject.list, });
+@immutable final class EvalList {const EvalList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
 
 factory EvalList.fromJson(Map<String, dynamic> json) { return EvalList(
-  object: EvalListObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Eval.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
@@ -37,7 +14,7 @@ factory EvalList.fromJson(Map<String, dynamic> json) { return EvalList(
 
 /// The type of this object. It is always set to "list".
 /// 
-final EvalListObject object;
+final ChatCompletionListObject object;
 
 /// An array of eval objects.
 /// 
@@ -64,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-EvalList copyWith({EvalListObject? object, List<Eval>? data, String? firstId, String? lastId, bool? hasMore, }) { return EvalList(
+EvalList copyWith({ChatCompletionListObject? object, List<Eval>? data, String? firstId, String? lastId, bool? hasMore, }) { return EvalList(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

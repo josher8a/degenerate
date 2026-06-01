@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_logs.dart';/// Observability settings for the Worker.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability/workers_observability_logs.dart';/// Observability settings for the Worker.
 @immutable final class WorkersObservability {const WorkersObservability({required this.enabled, this.headSamplingRate, this.logs, });
 
 factory WorkersObservability.fromJson(Map<String, dynamic> json) { return WorkersObservability(

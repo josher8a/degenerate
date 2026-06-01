@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_run_requested_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookWorkflowRunRequestedAction {const WebhookWorkflowRunRequestedAction._(this.value);
-
-factory WebhookWorkflowRunRequestedAction.fromJson(String json) { return switch (json) {
-  'requested' => requested,
-  _ => WebhookWorkflowRunRequestedAction._(json),
-}; }
-
-static const WebhookWorkflowRunRequestedAction requested = WebhookWorkflowRunRequestedAction._('requested');
-
-static const List<WebhookWorkflowRunRequestedAction> values = [requested];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowRunRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowRunRequestedAction($value)'; } 
- }
-@immutable final class WebhookWorkflowRunRequested {const WebhookWorkflowRunRequested({required this.action, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_requested/webhook_workflow_run_requested_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookWorkflowRunRequested {const WebhookWorkflowRunRequested({required this.action, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
 factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequested(
-  action: WebhookWorkflowRunRequestedAction.fromJson(json['action'] as String),
+  action: WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) { return
   workflowRun: WebhookWorkflowRunRequestedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
 ); }
 
-final WebhookWorkflowRunRequestedAction action;
+final WebhookCheckSuiteRequestedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -65,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
       json.containsKey('workflow_run'); } 
-WebhookWorkflowRunRequested copyWith({WebhookWorkflowRunRequestedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) { return WebhookWorkflowRunRequested(
+WebhookWorkflowRunRequested copyWith({WebhookCheckSuiteRequestedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) { return WebhookWorkflowRunRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

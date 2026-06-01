@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
-@immutable final class ReviewClosedReason {const ReviewClosedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';import 'package:pub_stripe_spec3/models/refund/refund_charge.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
+@immutable final class ClosedReason {const ClosedReason._(this.value);
 
-factory ReviewClosedReason.fromJson(String json) { return switch (json) {
+factory ClosedReason.fromJson(String json) { return switch (json) {
   'acknowledged' => acknowledged,
   'approved' => approved,
   'canceled' => canceled,
@@ -12,26 +12,26 @@ factory ReviewClosedReason.fromJson(String json) { return switch (json) {
   'redacted' => redacted,
   'refunded' => refunded,
   'refunded_as_fraud' => refundedAsFraud,
-  _ => ReviewClosedReason._(json),
+  _ => ClosedReason._(json),
 }; }
 
-static const ReviewClosedReason acknowledged = ReviewClosedReason._('acknowledged');
+static const ClosedReason acknowledged = ClosedReason._('acknowledged');
 
-static const ReviewClosedReason approved = ReviewClosedReason._('approved');
+static const ClosedReason approved = ClosedReason._('approved');
 
-static const ReviewClosedReason canceled = ReviewClosedReason._('canceled');
+static const ClosedReason canceled = ClosedReason._('canceled');
 
-static const ReviewClosedReason disputed = ReviewClosedReason._('disputed');
+static const ClosedReason disputed = ClosedReason._('disputed');
 
-static const ReviewClosedReason paymentNeverSettled = ReviewClosedReason._('payment_never_settled');
+static const ClosedReason paymentNeverSettled = ClosedReason._('payment_never_settled');
 
-static const ReviewClosedReason redacted = ReviewClosedReason._('redacted');
+static const ClosedReason redacted = ClosedReason._('redacted');
 
-static const ReviewClosedReason refunded = ReviewClosedReason._('refunded');
+static const ClosedReason refunded = ClosedReason._('refunded');
 
-static const ReviewClosedReason refundedAsFraud = ReviewClosedReason._('refunded_as_fraud');
+static const ClosedReason refundedAsFraud = ClosedReason._('refunded_as_fraud');
 
-static const List<ReviewClosedReason> values = [acknowledged, approved, canceled, disputed, paymentNeverSettled, redacted, refunded, refundedAsFraud];
+static const List<ClosedReason> values = [acknowledged, approved, canceled, disputed, paymentNeverSettled, redacted, refunded, refundedAsFraud];
 
 final String value;
 
@@ -39,9 +39,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewClosedReason && other.value == value; } 
+    other is ClosedReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewClosedReason($value)'; } 
+@override String toString() { return 'ClosedReason($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReviewObject {const ReviewObject._(this.value);
@@ -66,19 +66,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewObject($value)'; } 
  }
 /// The reason the review was opened. One of `rule` or `manual`.
-@immutable final class ReviewOpenedReason {const ReviewOpenedReason._(this.value);
+@immutable final class OpenedReason {const OpenedReason._(this.value);
 
-factory ReviewOpenedReason.fromJson(String json) { return switch (json) {
+factory OpenedReason.fromJson(String json) { return switch (json) {
   'manual' => manual,
   'rule' => rule,
-  _ => ReviewOpenedReason._(json),
+  _ => OpenedReason._(json),
 }; }
 
-static const ReviewOpenedReason manual = ReviewOpenedReason._('manual');
+static const OpenedReason manual = OpenedReason._('manual');
 
-static const ReviewOpenedReason rule = ReviewOpenedReason._('rule');
+static const OpenedReason rule = OpenedReason._('rule');
 
-static const List<ReviewOpenedReason> values = [manual, rule];
+static const List<OpenedReason> values = [manual, rule];
 
 final String value;
 
@@ -86,9 +86,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewOpenedReason && other.value == value; } 
+    other is OpenedReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewOpenedReason($value)'; } 
+@override String toString() { return 'OpenedReason($value)'; } 
  }
 /// Reviews can be used to supplement automated fraud detection with human expertise.
 /// 
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
   billingZip: json['billing_zip'] as String?,
   charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
-  closedReason: json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null,
+  closedReason: json['closed_reason'] != null ? ClosedReason.fromJson(json['closed_reason'] as String) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   ipAddress: json['ip_address'] as String?,
@@ -107,7 +107,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   livemode: json['livemode'] as bool,
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
-  openedReason: ReviewOpenedReason.fromJson(json['opened_reason'] as String),
+  openedReason: OpenedReason.fromJson(json['opened_reason'] as String),
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
   reason: json['reason'] as String,
   session: json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null,
@@ -117,10 +117,10 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
 final String? billingZip;
 
 /// The charge associated with this review.
-final ReviewCharge? charge;
+final RefundCharge? charge;
 
 /// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
-final ReviewClosedReason? closedReason;
+final ClosedReason? closedReason;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -144,10 +144,10 @@ final ReviewObject object;
 final bool open;
 
 /// The reason the review was opened. One of `rule` or `manual`.
-final ReviewOpenedReason openedReason;
+final OpenedReason openedReason;
 
 /// The PaymentIntent ID associated with this review, if one exists.
-final ReviewPaymentIntent? paymentIntent;
+final CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent? paymentIntent;
 
 /// The reason the review is currently open or closed. One of `rule`, `manual`, `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 final String reason;
@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
       json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({String? Function()? billingZip, ReviewCharge? Function()? charge, ReviewClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
+Review copyWith({String? Function()? billingZip, RefundCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransactionPaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
   billingZip: billingZip != null ? billingZip() : this.billingZip,
   charge: charge != null ? charge() : this.charge,
   closedReason: closedReason != null ? closedReason() : this.closedReason,

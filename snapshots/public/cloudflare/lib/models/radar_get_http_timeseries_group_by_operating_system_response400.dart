@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_operating_system_response400_errors.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemResponse400 {const RadarGetHttpTimeseriesGroupByOperatingSystemResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemResponse400 {const RadarGetHttpTimeseriesGroupByOperatingSystemResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemResponse400.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByOperatingSystemResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupByOperatingSystemResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<RadarGetHttpTimeseriesGroupByOperatingSystemResponse400Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByOperatingSystemResponse400 copyWith({List<RadarGetHttpTimeseriesGroupByOperatingSystemResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByOperatingSystemResponse400(
+RadarGetHttpTimeseriesGroupByOperatingSystemResponse400 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByOperatingSystemResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

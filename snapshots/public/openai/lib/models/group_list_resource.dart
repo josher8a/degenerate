@@ -1,39 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'group_response.dart';/// Always `list`.
-@immutable final class GroupListResourceObject {const GroupListResourceObject._(this.value);
-
-factory GroupListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GroupListResourceObject._(json),
-}; }
-
-static const GroupListResourceObject list = GroupListResourceObject._('list');
-
-static const List<GroupListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupListResourceObject($value)'; } 
- }
-/// Paginated list of organization groups.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/group_response.dart';/// Paginated list of organization groups.
 @immutable final class GroupListResource {const GroupListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory GroupListResource.fromJson(Map<String, dynamic> json) { return GroupListResource(
-  object: GroupListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => GroupResponse.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   next: json['next'] as String?,
 ); }
 
 /// Always `list`.
-final GroupListResourceObject object;
+final ChatCompletionListObject object;
 
 /// Groups returned in the current page.
 final List<GroupResponse> data;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('next') && json['next'] is String; } 
-GroupListResource copyWith({GroupListResourceObject? object, List<GroupResponse>? data, bool? hasMore, String? Function()? next, }) { return GroupListResource(
+GroupListResource copyWith({ChatCompletionListObject? object, List<GroupResponse>? data, bool? hasMore, String? Function()? next, }) { return GroupListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

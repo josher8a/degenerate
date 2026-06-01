@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_device_session.dart';import 'access_geo.dart';import 'access_identity_idp.dart';import 'access_identity_mtls_auth.dart';import 'access_schemas_device_posture_rule.dart';@immutable final class AccessIdentity {const AccessIdentity({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_session.dart';import 'package:pub_cloudflare/models/access_geo.dart';import 'package:pub_cloudflare/models/access_identity/idp.dart';import 'package:pub_cloudflare/models/access_identity/mtls_auth.dart';import 'package:pub_cloudflare/models/access_schemas_device_posture_rule.dart';@immutable final class AccessIdentity {const AccessIdentity({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, });
 
 factory AccessIdentity.fromJson(Map<String, dynamic> json) { return AccessIdentity(
   accountId: json['account_id'] as String?,
@@ -12,11 +12,11 @@ factory AccessIdentity.fromJson(Map<String, dynamic> json) { return AccessIdenti
   email: json['email'] as String?,
   geo: json['geo'] != null ? AccessGeo.fromJson(json['geo'] as Map<String, dynamic>) : null,
   iat: json['iat'] != null ? (json['iat'] as num).toDouble() : null,
-  idp: json['idp'] != null ? AccessIdentityIdp.fromJson(json['idp'] as Map<String, dynamic>) : null,
+  idp: json['idp'] != null ? Idp.fromJson(json['idp'] as Map<String, dynamic>) : null,
   ip: json['ip'] as String?,
   isGateway: json['is_gateway'] as bool?,
   isWarp: json['is_warp'] as bool?,
-  mtlsAuth: json['mtls_auth'] != null ? AccessIdentityMtlsAuth.fromJson(json['mtls_auth'] as Map<String, dynamic>) : null,
+  mtlsAuth: json['mtls_auth'] != null ? MtlsAuth.fromJson(json['mtls_auth'] as Map<String, dynamic>) : null,
   serviceTokenId: json['service_token_id'] as String?,
   serviceTokenStatus: json['service_token_status'] as bool?,
   userUuid: json['user_uuid'] as String?,
@@ -41,7 +41,7 @@ final AccessGeo? geo;
 
 final double? iat;
 
-final AccessIdentityIdp? idp;
+final Idp? idp;
 
 final String? ip;
 
@@ -49,7 +49,7 @@ final bool? isGateway;
 
 final bool? isWarp;
 
-final AccessIdentityMtlsAuth? mtlsAuth;
+final MtlsAuth? mtlsAuth;
 
 final String? serviceTokenId;
 
@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'auth_status', 'common_name', 'device_id', 'device_sessions', 'devicePosture', 'email', 'geo', 'iat', 'idp', 'ip', 'is_gateway', 'is_warp', 'mtls_auth', 'service_token_id', 'service_token_status', 'user_uuid', 'version'}.contains(key)); } 
-AccessIdentity copyWith({String Function()? accountId, String Function()? authStatus, String Function()? commonName, String Function()? deviceId, Map<String, AccessDeviceSession> Function()? deviceSessions, Map<String, AccessSchemasDevicePostureRule> Function()? devicePosture, String Function()? email, AccessGeo Function()? geo, double Function()? iat, AccessIdentityIdp Function()? idp, String Function()? ip, bool Function()? isGateway, bool Function()? isWarp, AccessIdentityMtlsAuth Function()? mtlsAuth, String Function()? serviceTokenId, bool Function()? serviceTokenStatus, String Function()? userUuid, double Function()? version, }) { return AccessIdentity(
+AccessIdentity copyWith({String Function()? accountId, String Function()? authStatus, String Function()? commonName, String Function()? deviceId, Map<String, AccessDeviceSession> Function()? deviceSessions, Map<String, AccessSchemasDevicePostureRule> Function()? devicePosture, String Function()? email, AccessGeo Function()? geo, double Function()? iat, Idp Function()? idp, String Function()? ip, bool Function()? isGateway, bool Function()? isWarp, MtlsAuth Function()? mtlsAuth, String Function()? serviceTokenId, bool Function()? serviceTokenStatus, String Function()? userUuid, double Function()? version, }) { return AccessIdentity(
   accountId: accountId != null ? accountId() : this.accountId,
   authStatus: authStatus != null ? authStatus() : this.authStatus,
   commonName: commonName != null ? commonName() : this.commonName,

@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'users_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'users_list_attestations_bulk_response_page_info.dart';@immutable final class UsersListAttestationsBulkResponse {const UsersListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response/attestations_subject_digests_value.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response/page_info.dart';@immutable final class UsersListAttestationsBulkResponse {const UsersListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
 
 factory UsersListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponse(
-  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
-  pageInfo: json['page_info'] != null ? UsersListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
+  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
+  pageInfo: json['page_info'] != null ? PageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
 ); }
 
 /// Mapping of subject digest to bundles.
-final Map<String,List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? attestationsSubjectDigests;
+final Map<String,List<AttestationsSubjectDigestsValue>?>? attestationsSubjectDigests;
 
 /// Information about the current page.
-final UsersListAttestationsBulkResponsePageInfo? pageInfo;
+final PageInfo? pageInfo;
 
 Map<String, dynamic> toJson() { return {
   if (attestationsSubjectDigests != null) 'attestations_subject_digests': attestationsSubjectDigests?.map((k, v) => MapEntry(k, v?.map((e) => e.toJson()).toList())),
   if (pageInfo != null) 'page_info': pageInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key)); } 
-UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>> Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
+UsersListAttestationsBulkResponse copyWith({Map<String, List<AttestationsSubjectDigestsValue>> Function()? attestationsSubjectDigests, PageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
 ); } 

@@ -1,36 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method Twilio will use when requesting the above `Url`. Either `GET` or `POST`. Default is `POST`.
-@immutable final class CreateUserDefinedMessageSubscriptionRequestMethod {const CreateUserDefinedMessageSubscriptionRequestMethod._(this.value);
-
-factory CreateUserDefinedMessageSubscriptionRequestMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateUserDefinedMessageSubscriptionRequestMethod._(json),
-}; }
-
-static const CreateUserDefinedMessageSubscriptionRequestMethod $get = CreateUserDefinedMessageSubscriptionRequestMethod._('GET');
-
-static const CreateUserDefinedMessageSubscriptionRequestMethod post = CreateUserDefinedMessageSubscriptionRequestMethod._('POST');
-
-static const List<CreateUserDefinedMessageSubscriptionRequestMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateUserDefinedMessageSubscriptionRequestMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateUserDefinedMessageSubscriptionRequestMethod($value)'; } 
- }
-@immutable final class CreateUserDefinedMessageSubscriptionRequest {const CreateUserDefinedMessageSubscriptionRequest({required this.callback, this.idempotencyKey, this.method, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';@immutable final class CreateUserDefinedMessageSubscriptionRequest {const CreateUserDefinedMessageSubscriptionRequest({required this.callback, this.idempotencyKey, this.method, });
 
 factory CreateUserDefinedMessageSubscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateUserDefinedMessageSubscriptionRequest(
   callback: Uri.parse(json['Callback'] as String),
   idempotencyKey: json['IdempotencyKey'] as String?,
-  method: json['Method'] != null ? CreateUserDefinedMessageSubscriptionRequestMethod.fromJson(json['Method'] as String) : null,
+  method: json['Method'] != null ? Method.fromJson(json['Method'] as String) : null,
 ); }
 
 /// The URL we should call using the `method` to send user defined events to your application. URLs must contain a valid hostname (underscores are not permitted).
@@ -40,7 +15,7 @@ final Uri callback;
 final String? idempotencyKey;
 
 /// The HTTP method Twilio will use when requesting the above `Url`. Either `GET` or `POST`. Default is `POST`.
-final CreateUserDefinedMessageSubscriptionRequestMethod? method;
+final Method? method;
 
 Map<String, dynamic> toJson() { return {
   'Callback': callback.toString(),
@@ -48,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (method != null) 'Method': method?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('Callback') && json['Callback'] is String; } 
-CreateUserDefinedMessageSubscriptionRequest copyWith({Uri? callback, String Function()? idempotencyKey, CreateUserDefinedMessageSubscriptionRequestMethod Function()? method, }) { return CreateUserDefinedMessageSubscriptionRequest(
+CreateUserDefinedMessageSubscriptionRequest copyWith({Uri? callback, String Function()? idempotencyKey, Method Function()? method, }) { return CreateUserDefinedMessageSubscriptionRequest(
   callback: callback ?? this.callback,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
   method: method != null ? method() : this.method,

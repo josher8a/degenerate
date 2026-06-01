@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_details_response_target_policies.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats.dart';import 'digital_experience_monitoring_traceroute_details_response_traceroute_stats_by_colo.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsResponse {const DigitalExperienceMonitoringTracerouteDetailsResponse({required this.host, required this.interval, required this.kind, required this.name, this.targetPolicies, this.targeted, this.tracerouteStats, this.tracerouteStatsByColo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response/target_policies.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_details_response/traceroute_stats.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_details_response/traceroute_stats_by_colo.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsResponse {const DigitalExperienceMonitoringTracerouteDetailsResponse({required this.host, required this.interval, required this.kind, required this.name, this.targetPolicies, this.targeted, this.tracerouteStats, this.tracerouteStatsByColo, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: json['host'] as String,
   interval: json['interval'] as String,
   kind: json['kind'],
   name: json['name'] as String,
-  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
+  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => TargetPolicies.fromJson(e as Map<String, dynamic>)).toList(),
   targeted: json['targeted'] as bool?,
-  tracerouteStats: json['tracerouteStats'] != null ? DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats.fromJson(json['tracerouteStats'] as Map<String, dynamic>) : null,
-  tracerouteStatsByColo: (json['tracerouteStatsByColo'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
+  tracerouteStats: json['tracerouteStats'] != null ? TracerouteStats.fromJson(json['tracerouteStats'] as Map<String, dynamic>) : null,
+  tracerouteStatsByColo: (json['tracerouteStatsByColo'] as List<dynamic>?)?.map((e) => TracerouteStatsByColo.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The host of the Traceroute synthetic application test
@@ -24,13 +24,13 @@ final dynamic kind;
 /// The name of the Traceroute synthetic application test
 final String name;
 
-final List<DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies>? targetPolicies;
+final List<TargetPolicies>? targetPolicies;
 
 final bool? targeted;
 
-final DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? tracerouteStats;
+final TracerouteStats? tracerouteStats;
 
-final List<DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo>? tracerouteStatsByColo;
+final List<TracerouteStatsByColo>? tracerouteStatsByColo;
 
 Map<String, dynamic> toJson() { return {
   'host': host,
@@ -46,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'
       json.containsKey('interval') && json['interval'] is String &&
       json.containsKey('kind') &&
       json.containsKey('name') && json['name'] is String; } 
-DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, dynamic Function()? kind, String? name, List<DigitalExperienceMonitoringTracerouteDetailsResponseTargetPolicies>? Function()? targetPolicies, bool Function()? targeted, DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? Function()? tracerouteStats, List<DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColo> Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
+DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, String? interval, dynamic Function()? kind, String? name, List<TargetPolicies>? Function()? targetPolicies, bool Function()? targeted, TracerouteStats? Function()? tracerouteStats, List<TracerouteStatsByColo> Function()? tracerouteStatsByColo, }) { return DigitalExperienceMonitoringTracerouteDetailsResponse(
   host: host ?? this.host,
   interval: interval ?? this.interval,
   kind: kind != null ? kind() : this.kind,

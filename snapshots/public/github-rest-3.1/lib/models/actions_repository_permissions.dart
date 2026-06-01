@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_enabled.dart';import 'allowed_actions.dart';import 'selected_actions_url.dart';import 'sha_pinning_required.dart';@immutable final class ActionsRepositoryPermissions {const ActionsRepositoryPermissions({required this.enabled, this.allowedActions, this.selectedActionsUrl, this.shaPinningRequired, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_enabled.dart';import 'package:pub_github_rest_3_1/models/allowed_actions.dart';import 'package:pub_github_rest_3_1/models/selected_actions_url.dart';import 'package:pub_github_rest_3_1/models/sha_pinning_required.dart';@immutable final class ActionsRepositoryPermissions {const ActionsRepositoryPermissions({required this.enabled, this.allowedActions, this.selectedActionsUrl, this.shaPinningRequired, });
 
 factory ActionsRepositoryPermissions.fromJson(Map<String, dynamic> json) { return ActionsRepositoryPermissions(
   enabled: ActionsEnabled.fromJson(json['enabled'] as bool),

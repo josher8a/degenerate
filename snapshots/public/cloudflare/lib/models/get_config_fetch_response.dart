@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages22.dart';import 'scan_config.dart';@immutable final class GetConfigFetchResponse {const GetConfigFetchResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages22.dart';import 'package:pub_cloudflare/models/scan_config.dart';@immutable final class GetConfigFetchResponse {const GetConfigFetchResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory GetConfigFetchResponse.fromJson(Map<String, dynamic> json) { return GetConfigFetchResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages22.fromJson(e as Map<String, dynamic>)).toList(),

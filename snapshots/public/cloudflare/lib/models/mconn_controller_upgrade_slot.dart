@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnControllerUpgradeSlot {const MconnControllerUpgradeSlot({required this.id, this.connectorId, this.startedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnControllerUpgradeSlot {const MconnControllerUpgradeSlot({required this.id, this.connectorId, this.startedAt, });
 
 factory MconnControllerUpgradeSlot.fromJson(Map<String, dynamic> json) { return MconnControllerUpgradeSlot(
   connectorId: json['connector_id'] != null ? MconnUuid.fromJson(json['connector_id'] as String) : null,

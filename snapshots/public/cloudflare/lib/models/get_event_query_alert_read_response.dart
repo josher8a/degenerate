@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
-@immutable final class GetEventQueryAlertReadResponseFrequency {const GetEventQueryAlertReadResponseFrequency._(this.value);
-
-factory GetEventQueryAlertReadResponseFrequency.fromJson(String json) { return switch (json) {
-  'immediate' => immediate,
-  'daily' => daily,
-  _ => GetEventQueryAlertReadResponseFrequency._(json),
-}; }
-
-static const GetEventQueryAlertReadResponseFrequency immediate = GetEventQueryAlertReadResponseFrequency._('immediate');
-
-static const GetEventQueryAlertReadResponseFrequency daily = GetEventQueryAlertReadResponseFrequency._('daily');
-
-static const List<GetEventQueryAlertReadResponseFrequency> values = [immediate, daily];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEventQueryAlertReadResponseFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEventQueryAlertReadResponseFrequency($value)'; } 
- }
-@immutable final class GetEventQueryAlertReadResponse {const GetEventQueryAlertReadResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class GetEventQueryAlertReadResponse {const GetEventQueryAlertReadResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
 factory GetEventQueryAlertReadResponse.fromJson(Map<String, dynamic> json) { return GetEventQueryAlertReadResponse(
   accountId: (json['account_id'] as num).toInt(),
   createdAt: json['created_at'] as String,
   enabled: json['enabled'] as bool,
-  frequency: GetEventQueryAlertReadResponseFrequency.fromJson(json['frequency'] as String),
+  frequency: GetEventQueryAlertListResponseFrequency.fromJson(json['frequency'] as String),
   id: (json['id'] as num).toInt(),
   lastSentAt: json['last_sent_at'] as String?,
   notificationType: json['notification_type'] as String,
@@ -50,7 +25,7 @@ final String createdAt;
 final bool enabled;
 
 /// Alert frequency (immediate or daily)
-final GetEventQueryAlertReadResponseFrequency frequency;
+final GetEventQueryAlertListResponseFrequency frequency;
 
 /// Unique identifier for the event query alert
 final int id;
@@ -91,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-GetEventQueryAlertReadResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertReadResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return GetEventQueryAlertReadResponse(
+GetEventQueryAlertReadResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return GetEventQueryAlertReadResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,

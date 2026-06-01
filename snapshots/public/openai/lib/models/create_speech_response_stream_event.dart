@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speech_audio_delta_event.dart';import 'speech_audio_done_event.dart';import 'speech_audio_done_event_usage.dart';sealed class CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/speech_audio_delta_event.dart';import 'package:pub_openai/models/speech_audio_done_event.dart';import 'package:pub_openai/models/speech_audio_done_event/speech_audio_done_event_usage.dart';sealed class CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateSpeechResponseStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

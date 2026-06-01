@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'organization_simple_webhooks.dart';import 'pull_request.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDeploymentProtectionRuleRequestedAction {const WebhookDeploymentProtectionRuleRequestedAction._(this.value);
-
-factory WebhookDeploymentProtectionRuleRequestedAction.fromJson(String json) { return switch (json) {
-  'requested' => requested,
-  _ => WebhookDeploymentProtectionRuleRequestedAction._(json),
-}; }
-
-static const WebhookDeploymentProtectionRuleRequestedAction requested = WebhookDeploymentProtectionRuleRequestedAction._('requested');
-
-static const List<WebhookDeploymentProtectionRuleRequestedAction> values = [requested];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentProtectionRuleRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentProtectionRuleRequestedAction($value)'; } 
- }
-@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
 
 factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentProtectionRuleRequested(
-  action: json['action'] != null ? WebhookDeploymentProtectionRuleRequestedAction.fromJson(json['action'] as String) : null,
+  action: json['action'] != null ? WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String) : null,
   environment: json['environment'] as String?,
   event: json['event'] as String?,
   sha: json['sha'] as String?,
@@ -38,7 +17,7 @@ factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> j
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookDeploymentProtectionRuleRequestedAction? action;
+final WebhookCheckSuiteRequestedAction? action;
 
 /// The name of the environment that has the deployment protection rule.
 final String? environment;
@@ -82,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'environment', 'event', 'sha', 'ref', 'deployment_callback_url', 'deployment', 'pull_requests', 'repository', 'organization', 'installation', 'sender'}.contains(key)); } 
-WebhookDeploymentProtectionRuleRequested copyWith({WebhookDeploymentProtectionRuleRequestedAction Function()? action, String Function()? environment, String Function()? event, String Function()? sha, String Function()? ref, Uri Function()? deploymentCallbackUrl, Deployment? Function()? deployment, List<PullRequest> Function()? pullRequests, RepositoryWebhooks Function()? repository, OrganizationSimpleWebhooks Function()? organization, SimpleInstallation Function()? installation, SimpleUser Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
+WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAction Function()? action, String Function()? environment, String Function()? event, String Function()? sha, String Function()? ref, Uri Function()? deploymentCallbackUrl, Deployment? Function()? deployment, List<PullRequest> Function()? pullRequests, RepositoryWebhooks Function()? repository, OrganizationSimpleWebhooks Function()? organization, SimpleInstallation Function()? installation, SimpleUser Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
   action: action != null ? action() : this.action,
   environment: environment != null ? environment() : this.environment,
   event: event != null ? event() : this.event,

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response4002_errors.dart';@immutable final class UrlscannerGetScanResponse4002 {const UrlscannerGetScanResponse4002({required this.errors, required this.message, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response400/urlscanner_create_scan_bulk_response400_errors.dart';@immutable final class UrlscannerGetScanResponse4002 {const UrlscannerGetScanResponse4002({required this.errors, required this.message, required this.status, });
 
 factory UrlscannerGetScanResponse4002.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse4002(
-  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanResponse4002Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
   status: (json['status'] as num).toInt(),
 ); }
 
-final List<UrlscannerGetScanResponse4002Errors> errors;
+final List<UrlscannerCreateScanBulkResponse400Errors> errors;
 
 final String message;
 
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('status') && json['status'] is num; } 
-UrlscannerGetScanResponse4002 copyWith({List<UrlscannerGetScanResponse4002Errors>? errors, String? message, int? status, }) { return UrlscannerGetScanResponse4002(
+UrlscannerGetScanResponse4002 copyWith({List<UrlscannerCreateScanBulkResponse400Errors>? errors, String? message, int? status, }) { return UrlscannerGetScanResponse4002(
   errors: errors ?? this.errors,
   message: message ?? this.message,
   status: status ?? this.status,

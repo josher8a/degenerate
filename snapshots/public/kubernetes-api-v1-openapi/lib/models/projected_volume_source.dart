@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_projection.dart';/// Represents a projected volume source
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_projection.dart';/// Represents a projected volume source
 @immutable final class ProjectedVolumeSource {const ProjectedVolumeSource({this.defaultMode, this.sources, });
 
 factory ProjectedVolumeSource.fromJson(Map<String, dynamic> json) { return ProjectedVolumeSource(

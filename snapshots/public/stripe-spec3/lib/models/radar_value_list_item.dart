@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class RadarValueListItemObject {const RadarValueListItemObject._(this.value);
-
-factory RadarValueListItemObject.fromJson(String json) { return switch (json) {
-  'radar.value_list_item' => radarValueListItem,
-  _ => RadarValueListItemObject._(json),
-}; }
-
-static const RadarValueListItemObject radarValueListItem = RadarValueListItemObject._('radar.value_list_item');
-
-static const List<RadarValueListItemObject> values = [radarValueListItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarValueListItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarValueListItemObject($value)'; } 
- }
-/// Value list items allow you to add specific values to a given Radar value list, which can then be used in rules.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list_item/deleted_radar_value_list_item_object.dart';/// Value list items allow you to add specific values to a given Radar value list, which can then be used in rules.
 /// 
 /// Related guide: [Managing list items](https://docs.stripe.com/radar/lists#managing-list-items)
 @immutable final class RadarValueListItem {const RadarValueListItem({required this.created, required this.createdBy, required this.id, required this.livemode, required this.object, required this.value, required this.valueList, });
@@ -32,7 +10,7 @@ factory RadarValueListItem.fromJson(Map<String, dynamic> json) { return RadarVal
   createdBy: json['created_by'] as String,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  object: RadarValueListItemObject.fromJson(json['object'] as String),
+  object: DeletedRadarValueListItemObject.fromJson(json['object'] as String),
   value: json['value'] as String,
   valueList: json['value_list'] as String,
 ); }
@@ -50,7 +28,7 @@ final String id;
 final bool livemode;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final RadarValueListItemObject object;
+final DeletedRadarValueListItemObject object;
 
 /// The value of the item.
 final String value;
@@ -74,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('value') && json['value'] is String &&
       json.containsKey('value_list') && json['value_list'] is String; } 
-RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? livemode, RadarValueListItemObject? object, String? value, String? valueList, }) { return RadarValueListItem(
+RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? livemode, DeletedRadarValueListItemObject? object, String? value, String? valueList, }) { return RadarValueListItem(
   created: created ?? this.created,
   createdBy: createdBy ?? this.createdBy,
   id: id ?? this.id,

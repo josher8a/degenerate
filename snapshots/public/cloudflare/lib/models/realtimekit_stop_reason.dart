@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_stop_reason_caller.dart';/// Specifies the reason why the recording stopped.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_start_reason/caller.dart';/// Specifies the reason why the recording stopped.
 @immutable final class RealtimekitStopReasonReason {const RealtimekitStopReasonReason._(this.value);
 
 factory RealtimekitStopReasonReason.fromJson(String json) { return switch (json) {
@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class RealtimekitStopReason {const RealtimekitStopReason({this.caller, this.reason, });
 
 factory RealtimekitStopReason.fromJson(Map<String, dynamic> json) { return RealtimekitStopReason(
-  caller: json['caller'] != null ? RealtimekitStopReasonCaller.fromJson(json['caller'] as Map<String, dynamic>) : null,
+  caller: json['caller'] != null ? Caller.fromJson(json['caller'] as Map<String, dynamic>) : null,
   reason: json['reason'] != null ? RealtimekitStopReasonReason.fromJson(json['reason'] as String) : null,
 ); }
 
-final RealtimekitStopReasonCaller? caller;
+final Caller? caller;
 
 /// Specifies the reason why the recording stopped.
 final RealtimekitStopReasonReason? reason;
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'caller', 'reason'}.contains(key)); } 
-RealtimekitStopReason copyWith({RealtimekitStopReasonCaller Function()? caller, RealtimekitStopReasonReason Function()? reason, }) { return RealtimekitStopReason(
+RealtimekitStopReason copyWith({Caller Function()? caller, RealtimekitStopReasonReason Function()? reason, }) { return RealtimekitStopReason(
   caller: caller != null ? caller() : this.caller,
   reason: reason != null ? reason() : this.reason,
 ); } 

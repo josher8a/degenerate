@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_model.dart';import '../models/image_file.dart';import '../models/logo.dart';import '../models/logo_match.dart';/// LogoMatchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_model.dart';import 'package:pub_cloudflare/models/image_file.dart';import 'package:pub_cloudflare/models/logo.dart';import 'package:pub_cloudflare/models/logo_match.dart';/// LogoMatchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

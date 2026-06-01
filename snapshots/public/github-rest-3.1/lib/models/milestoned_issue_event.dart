@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'milestoned_issue_event_milestone.dart';import 'simple_user.dart';/// Milestoned Issue Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/demilestoned_issue_event/demilestoned_issue_event_milestone.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Milestoned Issue Event
 @immutable final class MilestonedIssueEvent {const MilestonedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.milestone, });
 
 factory MilestonedIssueEvent.fromJson(Map<String, dynamic> json) { return MilestonedIssueEvent(
@@ -13,7 +13,7 @@ factory MilestonedIssueEvent.fromJson(Map<String, dynamic> json) { return Milest
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
-  milestone: MilestonedIssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
+  milestone: DemilestonedIssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>),
 ); }
 
 final int id;
@@ -34,7 +34,7 @@ final String createdAt;
 
 final Integration? performedViaGithubApp;
 
-final MilestonedIssueEventMilestone milestone;
+final DemilestonedIssueEventMilestone milestone;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('milestone'); } 
-MilestonedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, MilestonedIssueEventMilestone? milestone, }) { return MilestonedIssueEvent(
+MilestonedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, DemilestonedIssueEventMilestone? milestone, }) { return MilestonedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

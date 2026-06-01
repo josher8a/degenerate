@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// Represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// Represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
 @immutable final class IscsiVolumeSource {const IscsiVolumeSource({this.chapAuthDiscovery, this.chapAuthSession, this.fsType, this.initiatorName, this.iqn = '', this.iscsiInterface = 'default', this.lun = 0, this.portals, this.readOnly, this.secretRef, this.targetPortal = '', });
 
 factory IscsiVolumeSource.fromJson(Map<String, dynamic> json) { return IscsiVolumeSource(

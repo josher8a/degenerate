@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_certificates.dart';import '../models/access_components_schemas_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_mtls_authentication_add_an_mtls_certificate_request.dart';import '../models/access_mtls_authentication_update_an_mtls_certificate_request.dart';import '../models/access_mtls_authentication_update_an_mtls_certificate_settings_request.dart';import '../models/access_settings.dart';import '../models/access_uuid.dart';/// AccessMTlsAuthenticationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/access_certificates.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_mtls_authentication_add_an_mtls_certificate_request.dart';import 'package:pub_cloudflare/models/access_mtls_authentication_update_an_mtls_certificate_request.dart';import 'package:pub_cloudflare/models/access_mtls_authentication_update_an_mtls_certificate_settings_request.dart';import 'package:pub_cloudflare/models/access_settings.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// AccessMTlsAuthenticationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -116,7 +116,7 @@ return execute(
 /// Deletes an mTLS certificate.
 ///
 /// `DELETE /accounts/{account_id}/access/certificates/{certificate_id}`
-Future<ApiResult<AccessComponentsSchemasIdResponseResult?, Never>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> accessMtlsAuthenticationDeleteAnMtlsCertificate({required AccessUuid certificateId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,7 +129,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

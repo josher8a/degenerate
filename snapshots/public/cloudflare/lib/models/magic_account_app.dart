@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_account_app_id.dart';import 'magic_app_name.dart';import 'magic_app_type.dart';import 'magic_cidr.dart';/// Custom app defined for an account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_account_app_id.dart';import 'package:pub_cloudflare/models/magic_app_name.dart';import 'package:pub_cloudflare/models/magic_app_type.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';/// Custom app defined for an account.
 @immutable final class MagicAccountApp {const MagicAccountApp({required this.accountAppId, this.hostnames, this.ipSubnets, this.name, this.sourceSubnets, this.type, });
 
 factory MagicAccountApp.fromJson(Map<String, dynamic> json) { return MagicAccountApp(

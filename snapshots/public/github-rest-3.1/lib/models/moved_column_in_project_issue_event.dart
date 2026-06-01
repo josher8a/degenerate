@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'moved_column_in_project_issue_event_project_card.dart';import 'simple_user.dart';/// Moved Column in Project Issue Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/added_to_project_issue_event/added_to_project_issue_event_project_card.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Moved Column in Project Issue Event
 @immutable final class MovedColumnInProjectIssueEvent {const MovedColumnInProjectIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, this.projectCard, });
 
 factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) { return MovedColumnInProjectIssueEvent(
@@ -13,7 +13,7 @@ factory MovedColumnInProjectIssueEvent.fromJson(Map<String, dynamic> json) { ret
   commitUrl: json['commit_url'] as String?,
   createdAt: json['created_at'] as String,
   performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
-  projectCard: json['project_card'] != null ? MovedColumnInProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
+  projectCard: json['project_card'] != null ? AddedToProjectIssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
 ); }
 
 final int id;
@@ -34,7 +34,7 @@ final String createdAt;
 
 final Integration? performedViaGithubApp;
 
-final MovedColumnInProjectIssueEventProjectCard? projectCard;
+final AddedToProjectIssueEventProjectCard? projectCard;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('commit_url') && json['commit_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app'); } 
-MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, MovedColumnInProjectIssueEventProjectCard Function()? projectCard, }) { return MovedColumnInProjectIssueEvent(
+MovedColumnInProjectIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, AddedToProjectIssueEventProjectCard Function()? projectCard, }) { return MovedColumnInProjectIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

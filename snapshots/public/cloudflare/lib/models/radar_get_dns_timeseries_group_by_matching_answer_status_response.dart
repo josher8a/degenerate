@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_matching_answer_status_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_timeseries_group_by_cache_hit_status_response/radar_get_dns_timeseries_group_by_cache_hit_status_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse({required this.result, required this.success, });
 
 factory RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse(
-  result: RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseResult result;
+final RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse copyWith({RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse(
+RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse copyWith({RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

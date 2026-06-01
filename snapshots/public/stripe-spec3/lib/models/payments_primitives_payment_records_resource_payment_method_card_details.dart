@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
@@ -142,19 +142,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)'; } 
  }
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(this.value);
+@immutable final class StoredCredentialUsage {const StoredCredentialUsage._(this.value);
 
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(String json) { return switch (json) {
+factory StoredCredentialUsage.fromJson(String json) { return switch (json) {
   'recurring' => recurring,
   'unscheduled' => unscheduled,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._(json),
+  _ => StoredCredentialUsage._(json),
 }; }
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage recurring = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._('recurring');
+static const StoredCredentialUsage recurring = StoredCredentialUsage._('recurring');
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage unscheduled = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage._('unscheduled');
+static const StoredCredentialUsage unscheduled = StoredCredentialUsage._('unscheduled');
 
-static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage> values = [recurring, unscheduled];
+static const List<StoredCredentialUsage> values = [recurring, unscheduled];
 
 final String value;
 
@@ -162,9 +162,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage && other.value == value; } 
+    other is StoredCredentialUsage && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage($value)'; } 
+@override String toString() { return 'StoredCredentialUsage($value)'; } 
  }
 /// Details of the card used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode, this.captureBefore, this.checks, this.country, this.description, this.fingerprint, this.iin, this.installments, this.issuer, this.network, this.networkAdviceCode, this.networkDeclineCode, this.networkToken, this.networkTransactionId, this.storedCredentialUsage, this.threeDSecure, this.wallet, });
@@ -189,7 +189,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   networkDeclineCode: json['network_decline_code'] as String?,
   networkToken: json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
   networkTransactionId: json['network_transaction_id'] as String?,
-  storedCredentialUsage: json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null,
+  storedCredentialUsage: json['stored_credential_usage'] != null ? StoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null,
   threeDSecure: json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
@@ -254,7 +254,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNe
 final String? networkTransactionId;
 
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? storedCredentialUsage;
+final StoredCredentialUsage? storedCredentialUsage;
 
 /// Populated if this transaction used 3D Secure authentication.
 final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? threeDSecure;
@@ -291,7 +291,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, StoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   brand: brand ?? this.brand,
   captureBefore: captureBefore != null ? captureBefore() : this.captureBefore,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_retention.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/portal_flows_retention.dart';/// 
 @immutable final class PortalFlowsFlowSubscriptionCancel {const PortalFlowsFlowSubscriptionCancel({required this.subscription, this.retention, });
 
 factory PortalFlowsFlowSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionCancel(

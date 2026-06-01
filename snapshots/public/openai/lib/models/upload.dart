@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'open_ai_file.dart';/// The status of the Upload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/open_ai_file.dart';/// The status of the Upload.
 @immutable final class UploadStatus {const UploadStatus._(this.value);
 
 factory UploadStatus.fromJson(String json) { return switch (json) {

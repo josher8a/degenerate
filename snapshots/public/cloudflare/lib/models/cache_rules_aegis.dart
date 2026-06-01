@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_aegis_value.dart';/// ID of the zone setting.
-@immutable final class CacheRulesAegisId {const CacheRulesAegisId._(this.value);
-
-factory CacheRulesAegisId.fromJson(String json) { return switch (json) {
-  'aegis' => aegis,
-  _ => CacheRulesAegisId._(json),
-}; }
-
-static const CacheRulesAegisId aegis = CacheRulesAegisId._('aegis');
-
-static const List<CacheRulesAegisId> values = [aegis];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesAegisId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesAegisId($value)'; } 
- }
-/// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis/cache_rules_aegis_id.dart';import 'package:pub_cloudflare/models/cache_rules_aegis_value.dart';/// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 @immutable final class CacheRulesAegis {const CacheRulesAegis({required this.id, this.modifiedOn, this.value, });
 
 factory CacheRulesAegis.fromJson(Map<String, dynamic> json) { return CacheRulesAegis(

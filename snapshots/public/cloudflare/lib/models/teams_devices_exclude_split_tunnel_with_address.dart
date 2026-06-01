@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_split_tunnel_description.dart';/// The address in CIDR format to exclude from the tunnel. If `address` is present, `host` must not be present.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_split_tunnel_description.dart';/// The address in CIDR format to exclude from the tunnel. If `address` is present, `host` must not be present.
 extension type const TeamsDevicesSplitTunnelAddress(String value) {
 factory TeamsDevicesSplitTunnelAddress.fromJson(String json) => TeamsDevicesSplitTunnelAddress(json);
 

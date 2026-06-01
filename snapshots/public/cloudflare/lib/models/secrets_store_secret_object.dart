@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';import 'secrets_store_created.dart';import 'secrets_store_identifier.dart';import 'secrets_store_modified.dart';import 'secrets_store_secret_name.dart';import 'secrets_store_store_identifier.dart';@immutable final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';@immutable final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
 
 factory SecretsStoreSecretStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,

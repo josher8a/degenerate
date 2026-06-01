@@ -1,41 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-@immutable final class CodespacesCreateWithPrForAuthenticatedUserRequestGeo {const CodespacesCreateWithPrForAuthenticatedUserRequestGeo._(this.value);
-
-factory CodespacesCreateWithPrForAuthenticatedUserRequestGeo.fromJson(String json) { return switch (json) {
-  'EuropeWest' => europeWest,
-  'SoutheastAsia' => southeastAsia,
-  'UsEast' => usEast,
-  'UsWest' => usWest,
-  _ => CodespacesCreateWithPrForAuthenticatedUserRequestGeo._(json),
-}; }
-
-static const CodespacesCreateWithPrForAuthenticatedUserRequestGeo europeWest = CodespacesCreateWithPrForAuthenticatedUserRequestGeo._('EuropeWest');
-
-static const CodespacesCreateWithPrForAuthenticatedUserRequestGeo southeastAsia = CodespacesCreateWithPrForAuthenticatedUserRequestGeo._('SoutheastAsia');
-
-static const CodespacesCreateWithPrForAuthenticatedUserRequestGeo usEast = CodespacesCreateWithPrForAuthenticatedUserRequestGeo._('UsEast');
-
-static const CodespacesCreateWithPrForAuthenticatedUserRequestGeo usWest = CodespacesCreateWithPrForAuthenticatedUserRequestGeo._('UsWest');
-
-static const List<CodespacesCreateWithPrForAuthenticatedUserRequestGeo> values = [europeWest, southeastAsia, usEast, usWest];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesCreateWithPrForAuthenticatedUserRequestGeo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesCreateWithPrForAuthenticatedUserRequestGeo($value)'; } 
- }
-@immutable final class CodespacesCreateWithPrForAuthenticatedUserRequest {const CodespacesCreateWithPrForAuthenticatedUserRequest({this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/codespaces_create_with_pr_for_authenticated_user_request/geo.dart';@immutable final class CodespacesCreateWithPrForAuthenticatedUserRequest {const CodespacesCreateWithPrForAuthenticatedUserRequest({this.location, this.geo, this.clientIp, this.machine, this.devcontainerPath, this.multiRepoPermissionsOptOut, this.workingDirectory, this.idleTimeoutMinutes, this.displayName, this.retentionPeriodMinutes, });
 
 factory CodespacesCreateWithPrForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
   location: json['location'] as String?,
-  geo: json['geo'] != null ? CodespacesCreateWithPrForAuthenticatedUserRequestGeo.fromJson(json['geo'] as String) : null,
+  geo: json['geo'] != null ? Geo.fromJson(json['geo'] as String) : null,
   clientIp: json['client_ip'] as String?,
   machine: json['machine'] as String?,
   devcontainerPath: json['devcontainer_path'] as String?,
@@ -50,7 +19,7 @@ factory CodespacesCreateWithPrForAuthenticatedUserRequest.fromJson(Map<String, d
 final String? location;
 
 /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
-final CodespacesCreateWithPrForAuthenticatedUserRequestGeo? geo;
+final Geo? geo;
 
 /// IP for location auto-detection when proxying a request
 final String? clientIp;
@@ -89,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'retention_period_minutes': ?retentionPeriodMinutes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key)); } 
-CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String Function()? location, CodespacesCreateWithPrForAuthenticatedUserRequestGeo Function()? geo, String Function()? clientIp, String Function()? machine, String Function()? devcontainerPath, bool Function()? multiRepoPermissionsOptOut, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, String Function()? displayName, int Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
+CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String Function()? location, Geo Function()? geo, String Function()? clientIp, String Function()? machine, String Function()? devcontainerPath, bool Function()? multiRepoPermissionsOptOut, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, String Function()? displayName, int Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithPrForAuthenticatedUserRequest(
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,
   clientIp: clientIp != null ? clientIp() : this.clientIp,

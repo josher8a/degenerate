@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_onboarding_links_request_link_options.dart';/// The type of link being generated.
-@immutable final class PostTerminalOnboardingLinksRequestLinkType {const PostTerminalOnboardingLinksRequestLinkType._(this.value);
-
-factory PostTerminalOnboardingLinksRequestLinkType.fromJson(String json) { return switch (json) {
-  'apple_terms_and_conditions' => appleTermsAndConditions,
-  _ => PostTerminalOnboardingLinksRequestLinkType._(json),
-}; }
-
-static const PostTerminalOnboardingLinksRequestLinkType appleTermsAndConditions = PostTerminalOnboardingLinksRequestLinkType._('apple_terms_and_conditions');
-
-static const List<PostTerminalOnboardingLinksRequestLinkType> values = [appleTermsAndConditions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalOnboardingLinksRequestLinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalOnboardingLinksRequestLinkType($value)'; } 
- }
-@immutable final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({required this.linkOptions, required this.linkType, this.expand, this.onBehalfOf, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_options.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';@immutable final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({required this.linkOptions, required this.linkType, this.expand, this.onBehalfOf, });
 
 factory PostTerminalOnboardingLinksRequest.fromJson(Map<String, dynamic> json) { return PostTerminalOnboardingLinksRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  linkOptions: PostTerminalOnboardingLinksRequestLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
-  linkType: PostTerminalOnboardingLinksRequestLinkType.fromJson(json['link_type'] as String),
+  linkOptions: LinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
+  linkType: LinkType.fromJson(json['link_type'] as String),
   onBehalfOf: json['on_behalf_of'] as String?,
 ); }
 
@@ -35,10 +13,10 @@ factory PostTerminalOnboardingLinksRequest.fromJson(Map<String, dynamic> json) {
 final List<String>? expand;
 
 /// Specific fields needed to generate the desired link type.
-final PostTerminalOnboardingLinksRequestLinkOptions linkOptions;
+final LinkOptions linkOptions;
 
 /// The type of link being generated.
-final PostTerminalOnboardingLinksRequestLinkType linkType;
+final LinkType linkType;
 
 /// Stripe account ID to generate the link for.
 final String? onBehalfOf;
@@ -51,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
       json.containsKey('link_type'); } 
-PostTerminalOnboardingLinksRequest copyWith({List<String> Function()? expand, PostTerminalOnboardingLinksRequestLinkOptions? linkOptions, PostTerminalOnboardingLinksRequestLinkType? linkType, String Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
+PostTerminalOnboardingLinksRequest copyWith({List<String> Function()? expand, LinkOptions? linkOptions, LinkType? linkType, String Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
   expand: expand != null ? expand() : this.expand,
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';@immutable final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
 
 factory GrammarSyntax1.fromJson(String json) { return switch (json) {
   'lark' => lark,
@@ -23,28 +23,6 @@ bool get isUnknown { return !values.contains(this); }
     other is GrammarSyntax1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GrammarSyntax1($value)'; } 
- }
-/// Grammar format. Always `grammar`.
-@immutable final class CustomGrammarFormatParamType {const CustomGrammarFormatParamType._(this.value);
-
-factory CustomGrammarFormatParamType.fromJson(String json) { return switch (json) {
-  'grammar' => grammar,
-  _ => CustomGrammarFormatParamType._(json),
-}; }
-
-static const CustomGrammarFormatParamType grammar = CustomGrammarFormatParamType._('grammar');
-
-static const List<CustomGrammarFormatParamType> values = [grammar];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomGrammarFormatParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomGrammarFormatParamType($value)'; } 
  }
 /// A grammar defined by the user.
 @immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.syntax, required this.definition, this.type = CustomGrammarFormatParamType.grammar, });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_customer_events_get_latest_result.dart';@immutable final class MconnCustomerEventsGetLatestSuccess {const MconnCustomerEventsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_coded_message.dart';import 'package:pub_cloudflare/models/mconn_customer_events_get_latest_result.dart';@immutable final class MconnCustomerEventsGetLatestSuccess {const MconnCustomerEventsGetLatestSuccess({required this.success, required this.result, this.errors, this.messages, });
 
 factory MconnCustomerEventsGetLatestSuccess.fromJson(Map<String, dynamic> json) { return MconnCustomerEventsGetLatestSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

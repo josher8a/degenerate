@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketingFeaturesVariant1 {const MarketingFeaturesVariant1({required this.name});
+
+factory MarketingFeaturesVariant1.fromJson(Map<String, dynamic> json) { return MarketingFeaturesVariant1(
+  name: json['name'] as String,
+); }
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+MarketingFeaturesVariant1 copyWith({String? name}) { return MarketingFeaturesVariant1(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MarketingFeaturesVariant1 &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'MarketingFeaturesVariant1(name: $name)'; } 
+ }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_execute_sensitivity_level.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_id.dart';/// A rule-level override.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';/// A rule-level override.
 @immutable final class RulesetsExecuteRuleOverrides2 {const RulesetsExecuteRuleOverrides2({required this.id, this.action, this.enabled, this.scoreThreshold, this.sensitivityLevel, });
 
 factory RulesetsExecuteRuleOverrides2.fromJson(Map<String, dynamic> json) { return RulesetsExecuteRuleOverrides2(

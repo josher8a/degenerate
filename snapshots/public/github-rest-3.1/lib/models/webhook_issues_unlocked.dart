@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_unlocked_issue.dart';@immutable final class WebhookIssuesUnlockedAction {const WebhookIssuesUnlockedAction._(this.value);
-
-factory WebhookIssuesUnlockedAction.fromJson(String json) { return switch (json) {
-  'unlocked' => unlocked,
-  _ => WebhookIssuesUnlockedAction._(json),
-}; }
-
-static const WebhookIssuesUnlockedAction unlocked = WebhookIssuesUnlockedAction._('unlocked');
-
-static const List<WebhookIssuesUnlockedAction> values = [unlocked];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesUnlockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesUnlockedAction($value)'; } 
- }
-@immutable final class WebhookIssuesUnlocked {const WebhookIssuesUnlocked({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unlocked/webhook_discussion_unlocked_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_unlocked/webhook_issues_unlocked_issue.dart';@immutable final class WebhookIssuesUnlocked {const WebhookIssuesUnlocked({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesUnlocked.fromJson(Map<String, dynamic> json) { return WebhookIssuesUnlocked(
-  action: WebhookIssuesUnlockedAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionUnlockedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhookIssuesUnlockedIssue.fromJson(json['issue'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookIssuesUnlocked.fromJson(Map<String, dynamic> json) { return Webho
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssuesUnlockedAction action;
+final WebhookDiscussionUnlockedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesUnlocked copyWith({WebhookIssuesUnlockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesUnlockedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnlocked(
+WebhookIssuesUnlocked copyWith({WebhookDiscussionUnlockedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesUnlockedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesUnlocked(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

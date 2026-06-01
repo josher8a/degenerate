@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ignore all query string parameters.
+/// 
+@immutable final class ExcludeVariant1 {const ExcludeVariant1._(this.value);
+
+factory ExcludeVariant1.fromJson(String json) { return switch (json) {
+  '*' => $empty,
+  _ => ExcludeVariant1._(json),
+}; }
+
+static const ExcludeVariant1 $empty = ExcludeVariant1._('*');
+
+static const List<ExcludeVariant1> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ExcludeVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ExcludeVariant1($value)'; } 
+ }

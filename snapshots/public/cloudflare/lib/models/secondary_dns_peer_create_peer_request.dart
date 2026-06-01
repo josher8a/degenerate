@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_components_schemas_name.dart';@immutable final class SecondaryDnsPeerCreatePeerRequest {const SecondaryDnsPeerCreatePeerRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_name.dart';@immutable final class SecondaryDnsPeerCreatePeerRequest {const SecondaryDnsPeerCreatePeerRequest({required this.name});
 
 factory SecondaryDnsPeerCreatePeerRequest.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeerCreatePeerRequest(
   name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),

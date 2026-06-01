@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_allowed_tools.dart';import 'mcp_tool_approval_filter.dart';import 'mcp_tool_filter.dart';import 'mcp_tool_require_approval.dart';/// Identifier for service connectors, like those available in ChatGPT. One of
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool/allowed_tools.dart';import 'package:pub_openai/models/mcp_tool/require_approval.dart';import 'package:pub_openai/models/mcp_tool_approval_filter.dart';import 'package:pub_openai/models/mcp_tool_filter.dart';/// Identifier for service connectors, like those available in ChatGPT. One of
 /// `server_url` or `connector_id` must be provided. Learn more about service
 /// connectors [here](/docs/guides/tools-remote-mcp#connectors).
 /// 
@@ -15,9 +15,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_all
 /// - Outlook Email: `connector_outlookemail`
 /// - SharePoint: `connector_sharepoint`
 /// 
-@immutable final class McpToolConnectorId {const McpToolConnectorId._(this.value);
+@immutable final class ConnectorId {const ConnectorId._(this.value);
 
-factory McpToolConnectorId.fromJson(String json) { return switch (json) {
+factory ConnectorId.fromJson(String json) { return switch (json) {
   'connector_dropbox' => connectorDropbox,
   'connector_gmail' => connectorGmail,
   'connector_googlecalendar' => connectorGooglecalendar,
@@ -26,26 +26,26 @@ factory McpToolConnectorId.fromJson(String json) { return switch (json) {
   'connector_outlookcalendar' => connectorOutlookcalendar,
   'connector_outlookemail' => connectorOutlookemail,
   'connector_sharepoint' => connectorSharepoint,
-  _ => McpToolConnectorId._(json),
+  _ => ConnectorId._(json),
 }; }
 
-static const McpToolConnectorId connectorDropbox = McpToolConnectorId._('connector_dropbox');
+static const ConnectorId connectorDropbox = ConnectorId._('connector_dropbox');
 
-static const McpToolConnectorId connectorGmail = McpToolConnectorId._('connector_gmail');
+static const ConnectorId connectorGmail = ConnectorId._('connector_gmail');
 
-static const McpToolConnectorId connectorGooglecalendar = McpToolConnectorId._('connector_googlecalendar');
+static const ConnectorId connectorGooglecalendar = ConnectorId._('connector_googlecalendar');
 
-static const McpToolConnectorId connectorGoogledrive = McpToolConnectorId._('connector_googledrive');
+static const ConnectorId connectorGoogledrive = ConnectorId._('connector_googledrive');
 
-static const McpToolConnectorId connectorMicrosoftteams = McpToolConnectorId._('connector_microsoftteams');
+static const ConnectorId connectorMicrosoftteams = ConnectorId._('connector_microsoftteams');
 
-static const McpToolConnectorId connectorOutlookcalendar = McpToolConnectorId._('connector_outlookcalendar');
+static const ConnectorId connectorOutlookcalendar = ConnectorId._('connector_outlookcalendar');
 
-static const McpToolConnectorId connectorOutlookemail = McpToolConnectorId._('connector_outlookemail');
+static const ConnectorId connectorOutlookemail = ConnectorId._('connector_outlookemail');
 
-static const McpToolConnectorId connectorSharepoint = McpToolConnectorId._('connector_sharepoint');
+static const ConnectorId connectorSharepoint = ConnectorId._('connector_sharepoint');
 
-static const List<McpToolConnectorId> values = [connectorDropbox, connectorGmail, connectorGooglecalendar, connectorGoogledrive, connectorMicrosoftteams, connectorOutlookcalendar, connectorOutlookemail, connectorSharepoint];
+static const List<ConnectorId> values = [connectorDropbox, connectorGmail, connectorGooglecalendar, connectorGoogledrive, connectorMicrosoftteams, connectorOutlookcalendar, connectorOutlookemail, connectorSharepoint];
 
 final String value;
 
@@ -53,9 +53,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is McpToolConnectorId && other.value == value; } 
+    other is ConnectorId && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McpToolConnectorId($value)'; } 
+@override String toString() { return 'ConnectorId($value)'; } 
  }
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
@@ -66,7 +66,7 @@ factory McpTool.fromJson(Map<String, dynamic> json) { return McpTool(
   type: json['type'] as String,
   serverLabel: json['server_label'] as String,
   serverUrl: json['server_url'] as String?,
-  connectorId: json['connector_id'] != null ? McpToolConnectorId.fromJson(json['connector_id'] as String) : null,
+  connectorId: json['connector_id'] != null ? ConnectorId.fromJson(json['connector_id'] as String) : null,
   authorization: json['authorization'] as String?,
   serverDescription: json['server_description'] as String?,
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -102,7 +102,7 @@ final String? serverUrl;
 /// - Outlook Email: `connector_outlookemail`
 /// - SharePoint: `connector_sharepoint`
 /// 
-final McpToolConnectorId? connectorId;
+final ConnectorId? connectorId;
 
 /// An OAuth access token that can be used with a remote MCP server, either
 /// with a custom MCP server URL or a service connector. Your application
@@ -121,10 +121,10 @@ final Map<String,String>? headers;
 
 /// List of allowed tool names or a filter object.
 /// 
-final McpToolAllowedTools? allowedTools;
+final AllowedTools? allowedTools;
 
 /// Specify which of the MCP server's tools require approval.
-final McpToolRequireApproval? requireApproval;
+final RequireApproval? requireApproval;
 
 /// Whether this MCP tool is deferred and discovered via tool search.
 /// 
@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('server_label') && json['server_label'] is String; } 
-McpTool copyWith({String? type, String? serverLabel, String Function()? serverUrl, McpToolConnectorId Function()? connectorId, String Function()? authorization, String Function()? serverDescription, Map<String, String>? Function()? headers, McpToolAllowedTools? Function()? allowedTools, McpToolRequireApproval? Function()? requireApproval, bool Function()? deferLoading, }) { return McpTool(
+McpTool copyWith({String? type, String? serverLabel, String Function()? serverUrl, ConnectorId Function()? connectorId, String Function()? authorization, String Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool Function()? deferLoading, }) { return McpTool(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
   serverUrl: serverUrl != null ? serverUrl() : this.serverUrl,

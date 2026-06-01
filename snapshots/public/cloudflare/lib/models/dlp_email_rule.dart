@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action.dart';import 'dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_action.dart';import 'package:pub_cloudflare/models/dlp_email_rule_condition.dart';@immutable final class DlpEmailRule {const DlpEmailRule({required this.action, required this.conditions, required this.createdAt, required this.enabled, required this.name, required this.priority, required this.ruleId, required this.updatedAt, this.description, });
 
 factory DlpEmailRule.fromJson(Map<String, dynamic> json) { return DlpEmailRule(
   action: DlpEmailRuleAction.fromJson(json['action'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_identifier.dart';import '../models/firewall_rule.dart';import '../models/firewall_rule_identifier.dart';import '../models/firewall_rule_single_id_response_result.dart';import '../models/firewall_schemas_mode.dart';import '../models/ip_access_rules_for_a_zone_create_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_configuration_target.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_direction.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_match.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_order.dart';import '../models/ip_access_rules_for_a_zone_update_an_ip_access_rule_request.dart';/// IpAccessRulesForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_rule.dart';import 'package:pub_cloudflare/models/firewall_rule_identifier.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_create_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_request.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_list_ip_access_rules_configuration_target.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_list_ip_access_rules_direction.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_list_ip_access_rules_match.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_list_ip_access_rules_order.dart';import 'package:pub_cloudflare/models/ip_access_rules_for_a_zone_update_an_ip_access_rule_request.dart';/// IpAccessRulesForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -119,7 +119,7 @@ return execute(
 /// Optionally, you can use the `cascade` property to specify that you wish to delete similar rules in other zones managed by the same zone owner.
 ///
 /// `DELETE /zones/{zone_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRuleSingleIdResponseResult?, Never>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -134,7 +134,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? FirewallRuleSingleIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

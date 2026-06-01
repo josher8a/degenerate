@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// State of the release asset.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// State of the release asset.
 @immutable final class ReleaseAssetState {const ReleaseAssetState._(this.value);
 
 factory ReleaseAssetState.fromJson(String json) { return switch (json) {

@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// Whether this tax is inclusive or exclusive.
-@immutable final class BillingBillResourceInvoicingTaxesTaxTaxBehavior {const BillingBillResourceInvoicingTaxesTaxTaxBehavior._(this.value);
-
-factory BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  _ => BillingBillResourceInvoicingTaxesTaxTaxBehavior._(json),
-}; }
-
-static const BillingBillResourceInvoicingTaxesTaxTaxBehavior exclusive = BillingBillResourceInvoicingTaxesTaxTaxBehavior._('exclusive');
-
-static const BillingBillResourceInvoicingTaxesTaxTaxBehavior inclusive = BillingBillResourceInvoicingTaxesTaxTaxBehavior._('inclusive');
-
-static const List<BillingBillResourceInvoicingTaxesTaxTaxBehavior> values = [exclusive, inclusive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoicingTaxesTaxTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingTaxesTaxTaxBehavior($value)'; } 
- }
-/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 @immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason._(this.value);
 
 factory BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(String json) { return switch (json) {

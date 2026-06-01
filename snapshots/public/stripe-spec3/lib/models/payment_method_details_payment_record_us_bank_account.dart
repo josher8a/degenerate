@@ -1,61 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method_details_payment_record_us_bank_account_mandate.dart';/// The type of entity that holds the account. This can be either 'individual' or 'company'.
-@immutable final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(this.value);
-
-factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(json),
-}; }
-
-static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType company = PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._('company');
-
-static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType individual = PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._('individual');
-
-static const List<PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType($value)'; } 
- }
-/// The type of the bank account. This can be either 'checking' or 'savings'.
-@immutable final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(this.value);
-
-factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountType.fromJson(String json) { return switch (json) {
-  'checking' => checking,
-  'savings' => savings,
-  _ => PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(json),
-}; }
-
-static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType checking = PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._('checking');
-
-static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType savings = PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._('savings');
-
-static const List<PaymentMethodDetailsPaymentRecordUsBankAccountAccountType> values = [checking, savings];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsPaymentRecordUsBankAccountAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'package:pub_stripe_spec3/models/mandate.dart';/// 
 @immutable final class PaymentMethodDetailsPaymentRecordUsBankAccount {const PaymentMethodDetailsPaymentRecordUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
 
 factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   bankName: json['bank_name'] as String?,
   expectedDebitDate: json['expected_debit_date'] as String?,
   fingerprint: json['fingerprint'] as String?,
@@ -66,10 +16,10 @@ factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dyna
 ); }
 
 /// The type of entity that holds the account. This can be either 'individual' or 'company'.
-final PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType? accountHolderType;
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
 
 /// The type of the bank account. This can be either 'checking' or 'savings'.
-final PaymentMethodDetailsPaymentRecordUsBankAccountAccountType? accountType;
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? accountType;
 
 /// Name of the bank associated with the bank account.
 final String? bankName;
@@ -84,7 +34,7 @@ final String? fingerprint;
 final String? last4;
 
 /// ID of the mandate used to make this payment.
-final PaymentMethodDetailsPaymentRecordUsBankAccountMandate? mandate;
+final InboundTransfersPaymentMethodDetailsUsBankAccountMandate? mandate;
 
 /// The ACH payment reference for this transaction.
 final String? paymentReference;
@@ -104,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'routing_number': ?routingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'payment_reference', 'routing_number'}.contains(key)); } 
-PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodDetailsPaymentRecordUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, PaymentMethodDetailsPaymentRecordUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
+PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
   bankName: bankName != null ? bankName() : this.bankName,

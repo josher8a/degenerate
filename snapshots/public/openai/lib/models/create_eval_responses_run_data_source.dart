@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_responses_run_data_source_input_messages.dart';import 'create_eval_responses_run_data_source_sampling_params.dart';import 'create_eval_responses_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';import 'eval_responses_source.dart';import 'input_messages_item_reference.dart';import 'input_messages_template.dart';/// The type of run data source. Always `responses`.
-@immutable final class CreateEvalResponsesRunDataSourceType {const CreateEvalResponsesRunDataSourceType._(this.value);
-
-factory CreateEvalResponsesRunDataSourceType.fromJson(String json) { return switch (json) {
-  'responses' => responses,
-  _ => CreateEvalResponsesRunDataSourceType._(json),
-}; }
-
-static const CreateEvalResponsesRunDataSourceType responses = CreateEvalResponsesRunDataSourceType._('responses');
-
-static const List<CreateEvalResponsesRunDataSourceType> values = [responses];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalResponsesRunDataSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalResponsesRunDataSourceType($value)'; } 
- }
-/// A ResponsesRunDataSource object describing a model sampling configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_input_messages.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_sampling_params.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_type.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';import 'package:pub_openai/models/eval_responses_source.dart';import 'package:pub_openai/models/input_messages_item_reference.dart';import 'package:pub_openai/models/input_messages_template.dart';/// A ResponsesRunDataSource object describing a model sampling configuration.
 /// 
 @immutable final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSource({required this.source, this.type = CreateEvalResponsesRunDataSourceType.responses, this.inputMessages, this.samplingParams, this.model, });
 

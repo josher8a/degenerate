@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';/// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
-@immutable final class RunStepDeltaStepDetailsToolCallsCodeObjectType {const RunStepDeltaStepDetailsToolCallsCodeObjectType._(this.value);
-
-factory RunStepDeltaStepDetailsToolCallsCodeObjectType.fromJson(String json) { return switch (json) {
-  'code_interpreter' => codeInterpreter,
-  _ => RunStepDeltaStepDetailsToolCallsCodeObjectType._(json),
-}; }
-
-static const RunStepDeltaStepDetailsToolCallsCodeObjectType codeInterpreter = RunStepDeltaStepDetailsToolCallsCodeObjectType._('code_interpreter');
-
-static const List<RunStepDeltaStepDetailsToolCallsCodeObjectType> values = [codeInterpreter];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsToolCallsCodeObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeObjectType($value)'; } 
- }
-/// Details of the Code Interpreter tool call the run step was involved in.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_code/assistant_tools_code_type.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_object/run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';/// Details of the Code Interpreter tool call the run step was involved in.
 @immutable final class RunStepDeltaStepDetailsToolCallsCodeObject {const RunStepDeltaStepDetailsToolCallsCodeObject({required this.index, required this.type, this.id, this.codeInterpreter, });
 
 factory RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeObject(
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
-  type: RunStepDeltaStepDetailsToolCallsCodeObjectType.fromJson(json['type'] as String),
+  type: AssistantToolsCodeType.fromJson(json['type'] as String),
   codeInterpreter: json['code_interpreter'] != null ? RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,
 ); }
 
@@ -39,7 +17,7 @@ final int index;
 final String? id;
 
 /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
-final RunStepDeltaStepDetailsToolCallsCodeObjectType type;
+final AssistantToolsCodeType type;
 
 /// The Code Interpreter tool call definition.
 final RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter? codeInterpreter;
@@ -52,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-RunStepDeltaStepDetailsToolCallsCodeObject copyWith({int? index, String Function()? id, RunStepDeltaStepDetailsToolCallsCodeObjectType? type, RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter Function()? codeInterpreter, }) { return RunStepDeltaStepDetailsToolCallsCodeObject(
+RunStepDeltaStepDetailsToolCallsCodeObject copyWith({int? index, String Function()? id, AssistantToolsCodeType? type, RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter Function()? codeInterpreter, }) { return RunStepDeltaStepDetailsToolCallsCodeObject(
   index: index ?? this.index,
   id: id != null ? id() : this.id,
   type: type ?? this.type,

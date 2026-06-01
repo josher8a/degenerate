@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_plan.dart';/// Public User
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';/// Public User
 @immutable final class PublicUser {const PublicUser({required this.organizationsUrl, required this.id, required this.updatedAt, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.login, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.createdAt, required this.following, required this.bio, required this.followers, required this.publicRepos, required this.publicGists, required this.hireable, this.collaborators, this.notificationEmail, this.userViewType, this.plan, this.privateGists, this.totalPrivateRepos, this.ownedPrivateRepos, this.diskUsage, this.twitterUsername, });
 
 factory PublicUser.fromJson(Map<String, dynamic> json) { return PublicUser(
@@ -38,7 +38,7 @@ factory PublicUser.fromJson(Map<String, dynamic> json) { return PublicUser(
   following: (json['following'] as num).toInt(),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  plan: json['plan'] != null ? PublicUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
+  plan: json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   privateGists: json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null,
   totalPrivateRepos: json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null,
   ownedPrivateRepos: json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null,
@@ -114,7 +114,7 @@ final DateTime createdAt;
 
 final DateTime updatedAt;
 
-final PublicUserPlan? plan;
+final PrivateUserPlan? plan;
 
 final int? privateGists;
 
@@ -199,7 +199,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('following') && json['following'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-PublicUser copyWith({String? login, int? id, String Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PublicUserPlan Function()? plan, int Function()? privateGists, int Function()? totalPrivateRepos, int Function()? ownedPrivateRepos, int Function()? diskUsage, int Function()? collaborators, }) { return PublicUser(
+PublicUser copyWith({String? login, int? id, String Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan Function()? plan, int Function()? privateGists, int Function()? totalPrivateRepos, int Function()? ownedPrivateRepos, int Function()? diskUsage, int Function()? collaborators, }) { return PublicUser(
   login: login ?? this.login,
   id: id ?? this.id,
   userViewType: userViewType != null ? userViewType() : this.userViewType,

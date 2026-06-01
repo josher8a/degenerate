@@ -3,15 +3,15 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/error_response.dart';
-import '../models/fcm_token_register_schema.dart';
-import '../models/fcm_token_response_schema.dart';
-import '../models/message_response.dart';
-import '../models/onboard_schema.dart';
-import '../models/pin_request_schema.dart';
-import '../models/refresh_token_schema.dart';
-import '../models/token_response.dart';
-import '../models/validate_pin_schema.dart';
+import 'package:pub_totem_mobile/models/error_response.dart';
+import 'package:pub_totem_mobile/models/fcm_token_register_schema.dart';
+import 'package:pub_totem_mobile/models/fcm_token_response_schema.dart';
+import 'package:pub_totem_mobile/models/message_response.dart';
+import 'package:pub_totem_mobile/models/onboard_schema.dart';
+import 'package:pub_totem_mobile/models/pin_request_schema.dart';
+import 'package:pub_totem_mobile/models/refresh_token_schema.dart';
+import 'package:pub_totem_mobile/models/token_response.dart';
+import 'package:pub_totem_mobile/models/validate_pin_schema.dart';
 
 /// DefaultApi operations.
 ///

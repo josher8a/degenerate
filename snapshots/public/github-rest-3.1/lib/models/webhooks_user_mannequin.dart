@@ -1,36 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksUserMannequinType {const WebhooksUserMannequinType._(this.value);
-
-factory WebhooksUserMannequinType.fromJson(String json) { return switch (json) {
-  'Bot' => bot,
-  'User' => user,
-  'Organization' => organization,
-  'Mannequin' => mannequin,
-  _ => WebhooksUserMannequinType._(json),
-}; }
-
-static const WebhooksUserMannequinType bot = WebhooksUserMannequinType._('Bot');
-
-static const WebhooksUserMannequinType user = WebhooksUserMannequinType._('User');
-
-static const WebhooksUserMannequinType organization = WebhooksUserMannequinType._('Organization');
-
-static const WebhooksUserMannequinType mannequin = WebhooksUserMannequinType._('Mannequin');
-
-static const List<WebhooksUserMannequinType> values = [bot, user, organization, mannequin];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksUserMannequinType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksUserMannequinType($value)'; } 
- }
-@immutable final class WebhooksUserMannequin {const WebhooksUserMannequin({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user12_type.dart';@immutable final class WebhooksUserMannequin {const WebhooksUserMannequin({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhooksUserMannequin.fromJson(Map<String, dynamic> json) { return WebhooksUserMannequin(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
@@ -52,7 +22,7 @@ factory WebhooksUserMannequin.fromJson(Map<String, dynamic> json) { return Webho
   siteAdmin: json['site_admin'] as bool?,
   starredUrl: json['starred_url'] as String?,
   subscriptionsUrl: json['subscriptions_url'] != null ? Uri.parse(json['subscriptions_url'] as String) : null,
-  type: json['type'] != null ? WebhooksUserMannequinType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? User12Type.fromJson(json['type'] as String) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
   userViewType: json['user_view_type'] as String?,
 ); }
@@ -95,7 +65,7 @@ final String? starredUrl;
 
 final Uri? subscriptionsUrl;
 
-final WebhooksUserMannequinType? type;
+final User12Type? type;
 
 final Uri? url;
 
@@ -127,7 +97,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String; } 
-WebhooksUserMannequin copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int? id, String? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, WebhooksUserMannequinType Function()? type, Uri Function()? url, String Function()? userViewType, }) { return WebhooksUserMannequin(
+WebhooksUserMannequin copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int? id, String? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, User12Type Function()? type, Uri Function()? url, String Function()? userViewType, }) { return WebhooksUserMannequin(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
   email: email != null ? email() : this.email,

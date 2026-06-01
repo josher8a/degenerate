@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/botnet_threat_feed_delete_asn_response_result.dart';import '../models/botnet_threat_feed_get_day_report_response_result.dart';import '../models/botnet_threat_feed_get_full_report_response_result.dart';import '../models/botnet_threat_feed_list_asn_response_result.dart';import '../models/dos_asn.dart';import '../models/dos_identifier.dart';import '../models/dos_timestamp.dart';/// BotnetThreatFeedApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_delete_asn_response/botnet_threat_feed_delete_asn_response_result.dart';import 'package:pub_cloudflare/models/botnet_threat_feed_get_day_report_response/botnet_threat_feed_get_day_report_response_result.dart';import 'package:pub_cloudflare/models/dos_asn.dart';import 'package:pub_cloudflare/models/dos_identifier.dart';import 'package:pub_cloudflare/models/dos_timestamp.dart';/// BotnetThreatFeedApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -43,7 +43,7 @@ return execute(
 /// Gets all the data the botnet threat feed tracking database has for a given ASN registered to user account.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report`
-Future<ApiResult<BotnetThreatFeedGetFullReportResponseResult?, Never>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotnetThreatFeedGetDayReportResponseResult?, Never>> botnetThreatFeedGetFullReport({required DosIdentifier accountId, required DosAsn asnId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -56,7 +56,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? BotnetThreatFeedGetFullReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? BotnetThreatFeedGetDayReportResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -65,7 +65,7 @@ return execute(
 /// Gets a list of all ASNs registered for a user for the DDoS Botnet Feed API.
 ///
 /// `GET /accounts/{account_id}/botnet_feed/configs/asn`
-Future<ApiResult<BotnetThreatFeedListAsnResponseResult?, Never>> botnetThreatFeedListAsn({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotnetThreatFeedDeleteAsnResponseResult?, Never>> botnetThreatFeedListAsn({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,7 +78,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? BotnetThreatFeedListAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? BotnetThreatFeedDeleteAsnResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

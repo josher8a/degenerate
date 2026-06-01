@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_description.dart';@immutable final class IpAddressManagementPrefixesUpdatePrefixDescriptionRequest {const IpAddressManagementPrefixesUpdatePrefixDescriptionRequest({required this.description});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_description.dart';@immutable final class IpAddressManagementPrefixesUpdatePrefixDescriptionRequest {const IpAddressManagementPrefixesUpdatePrefixDescriptionRequest({required this.description});
 
 factory IpAddressManagementPrefixesUpdatePrefixDescriptionRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixesUpdatePrefixDescriptionRequest(
   description: AddressingDescription.fromJson(json['description'] as String),

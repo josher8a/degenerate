@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_or_modify_workflow_request_limits.dart';@immutable final class WorCreateOrModifyWorkflowRequest {const WorCreateOrModifyWorkflowRequest({required this.className, required this.scriptName, this.limits, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_create_or_modify_workflow_request/wor_create_or_modify_workflow_request_limits.dart';@immutable final class WorCreateOrModifyWorkflowRequest {const WorCreateOrModifyWorkflowRequest({required this.className, required this.scriptName, this.limits, });
 
 factory WorCreateOrModifyWorkflowRequest.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowRequest(
   className: json['class_name'] as String,

@@ -1,38 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// For function calling, the type is always `function`.
-@immutable final class ToolChoiceFunctionType {const ToolChoiceFunctionType._(this.value);
-
-factory ToolChoiceFunctionType.fromJson(String json) { return switch (json) {
-  'function' => function,
-  _ => ToolChoiceFunctionType._(json),
-}; }
-
-static const ToolChoiceFunctionType function = ToolChoiceFunctionType._('function');
-
-static const List<ToolChoiceFunctionType> values = [function];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolChoiceFunctionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolChoiceFunctionType($value)'; } 
- }
-/// Use this option to force the model to call a specific function.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';/// Use this option to force the model to call a specific function.
 /// 
 @immutable final class ToolChoiceFunction {const ToolChoiceFunction({required this.type, required this.name, });
 
 factory ToolChoiceFunction.fromJson(Map<String, dynamic> json) { return ToolChoiceFunction(
-  type: ToolChoiceFunctionType.fromJson(json['type'] as String),
+  type: AssistantToolsFunctionType.fromJson(json['type'] as String),
   name: json['name'] as String,
 ); }
 
 /// For function calling, the type is always `function`.
-final ToolChoiceFunctionType type;
+final AssistantToolsFunctionType type;
 
 /// The name of the function to call.
 final String name;
@@ -43,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String; } 
-ToolChoiceFunction copyWith({ToolChoiceFunctionType? type, String? name, }) { return ToolChoiceFunction(
+ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) { return ToolChoiceFunction(
   type: type ?? this.type,
   name: name ?? this.name,
 ); } 

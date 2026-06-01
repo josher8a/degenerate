@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue.dart';import 'webhooks_user.dart';/// The action that was performed.
-@immutable final class WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction._(this.value);
-
-factory WebhookIssuesAssignedAction.fromJson(String json) { return switch (json) {
-  'assigned' => assigned,
-  _ => WebhookIssuesAssignedAction._(json),
-}; }
-
-static const WebhookIssuesAssignedAction assigned = WebhookIssuesAssignedAction._('assigned');
-
-static const List<WebhookIssuesAssignedAction> values = [assigned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesAssignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesAssignedAction($value)'; } 
- }
-@immutable final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_assigned/webhook_issues_assigned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return WebhookIssuesAssigned(
   action: WebhookIssuesAssignedAction.fromJson(json['action'] as String),

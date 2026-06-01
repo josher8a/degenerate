@@ -1,63 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card.
-/// One of `month`.
-@immutable final class PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval._(this.value);
-
-factory PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(String json) { return switch (json) {
-  'month' => month,
-  _ => PaymentMethodDetailsCardInstallmentsPlanInterval._(json),
-}; }
-
-static const PaymentMethodDetailsCardInstallmentsPlanInterval month = PaymentMethodDetailsCardInstallmentsPlanInterval._('month');
-
-static const List<PaymentMethodDetailsCardInstallmentsPlanInterval> values = [month];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardInstallmentsPlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlanInterval($value)'; } 
- }
-/// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
-@immutable final class PaymentMethodDetailsCardInstallmentsPlanType {const PaymentMethodDetailsCardInstallmentsPlanType._(this.value);
-
-factory PaymentMethodDetailsCardInstallmentsPlanType.fromJson(String json) { return switch (json) {
-  'bonus' => bonus,
-  'fixed_count' => fixedCount,
-  'revolving' => revolving,
-  _ => PaymentMethodDetailsCardInstallmentsPlanType._(json),
-}; }
-
-static const PaymentMethodDetailsCardInstallmentsPlanType bonus = PaymentMethodDetailsCardInstallmentsPlanType._('bonus');
-
-static const PaymentMethodDetailsCardInstallmentsPlanType fixedCount = PaymentMethodDetailsCardInstallmentsPlanType._('fixed_count');
-
-static const PaymentMethodDetailsCardInstallmentsPlanType revolving = PaymentMethodDetailsCardInstallmentsPlanType._('revolving');
-
-static const List<PaymentMethodDetailsCardInstallmentsPlanType> values = [bonus, fixedCount, revolving];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardInstallmentsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlanType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_type.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_installments_plan/payment_method_details_card_installments_plan_interval.dart';/// 
 @immutable final class PaymentMethodDetailsCardInstallmentsPlan {const PaymentMethodDetailsCardInstallmentsPlan({required this.type, this.count, this.interval, });
 
 factory PaymentMethodDetailsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
   interval: json['interval'] != null ? PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null,
-  type: PaymentMethodDetailsCardInstallmentsPlanType.fromJson(json['type'] as String),
+  type: installment_planType.fromJson(json['type'] as String),
 ); }
 
 /// For `fixed_count` installment plans, this is the number of installment payments your customer will make to their credit card.
@@ -68,7 +17,7 @@ final int? count;
 final PaymentMethodDetailsCardInstallmentsPlanInterval? interval;
 
 /// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
-final PaymentMethodDetailsCardInstallmentsPlanType type;
+final installment_planType type;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -76,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, PaymentMethodDetailsCardInstallmentsPlanType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
+PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, installment_planType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,

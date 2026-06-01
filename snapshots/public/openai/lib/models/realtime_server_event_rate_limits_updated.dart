@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_rate_limits_updated_rate_limits.dart';/// Emitted at the beginning of a Response to indicate the updated rate limits.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_rate_limits_updated/rate_limits.dart';/// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output
 /// tokens, the rate limits shown here reflect that reservation, which is then
 /// adjusted accordingly once the Response is completed.
@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_ser
 factory RealtimeServerEventRateLimitsUpdated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventRateLimitsUpdated(
   eventId: json['event_id'] as String,
   type: json['type'] as String,
-  rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RealtimeServerEventRateLimitsUpdatedRateLimits.fromJson(e as Map<String, dynamic>)).toList(),
+  rateLimits: (json['rate_limits'] as List<dynamic>).map((e) => RateLimits.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The unique ID of the server event.
@@ -20,7 +20,7 @@ final String eventId;
 final String type;
 
 /// List of rate limit information.
-final List<RealtimeServerEventRateLimitsUpdatedRateLimits> rateLimits;
+final List<RateLimits> rateLimits;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('rate_limits'); } 
-RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, List<RealtimeServerEventRateLimitsUpdatedRateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated(
+RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, List<RateLimits>? rateLimits, }) { return RealtimeServerEventRateLimitsUpdated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,

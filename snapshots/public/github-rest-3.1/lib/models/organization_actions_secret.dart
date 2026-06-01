@@ -1,41 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a secret
-@immutable final class OrganizationActionsSecretVisibility {const OrganizationActionsSecretVisibility._(this.value);
-
-factory OrganizationActionsSecretVisibility.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'private' => private,
-  'selected' => selected,
-  _ => OrganizationActionsSecretVisibility._(json),
-}; }
-
-static const OrganizationActionsSecretVisibility all = OrganizationActionsSecretVisibility._('all');
-
-static const OrganizationActionsSecretVisibility private = OrganizationActionsSecretVisibility._('private');
-
-static const OrganizationActionsSecretVisibility selected = OrganizationActionsSecretVisibility._('selected');
-
-static const List<OrganizationActionsSecretVisibility> values = [all, private, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationActionsSecretVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationActionsSecretVisibility($value)'; } 
- }
-/// Secrets for GitHub Actions for an organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_create_or_update_org_secret_request/actions_create_or_update_org_secret_request_visibility.dart';/// Secrets for GitHub Actions for an organization.
 @immutable final class OrganizationActionsSecret {const OrganizationActionsSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
 factory OrganizationActionsSecret.fromJson(Map<String, dynamic> json) { return OrganizationActionsSecret(
   name: json['name'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  visibility: OrganizationActionsSecretVisibility.fromJson(json['visibility'] as String),
+  visibility: ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(json['visibility'] as String),
   selectedRepositoriesUrl: json['selected_repositories_url'] != null ? Uri.parse(json['selected_repositories_url'] as String) : null,
 ); }
 
@@ -47,7 +19,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// Visibility of a secret
-final OrganizationActionsSecretVisibility visibility;
+final ActionsCreateOrUpdateOrgSecretRequestVisibility visibility;
 
 final Uri? selectedRepositoriesUrl;
 
@@ -62,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('visibility'); } 
-OrganizationActionsSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, OrganizationActionsSecretVisibility? visibility, Uri Function()? selectedRepositoriesUrl, }) { return OrganizationActionsSecret(
+OrganizationActionsSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, Uri Function()? selectedRepositoriesUrl, }) { return OrganizationActionsSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,

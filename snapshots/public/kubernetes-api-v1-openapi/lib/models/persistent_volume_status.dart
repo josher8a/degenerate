@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PersistentVolumeStatus is the current status of a persistent volume.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// PersistentVolumeStatus is the current status of a persistent volume.
 @immutable final class PersistentVolumeStatus {const PersistentVolumeStatus({this.lastPhaseTransitionTime, this.message, this.phase, this.reason, });
 
 factory PersistentVolumeStatus.fromJson(Map<String, dynamic> json) { return PersistentVolumeStatus(

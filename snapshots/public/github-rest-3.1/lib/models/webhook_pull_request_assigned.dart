@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_assigned_pull_request.dart';import 'webhooks_number.dart';import 'webhooks_user.dart';@immutable final class WebhookPullRequestAssignedAction {const WebhookPullRequestAssignedAction._(this.value);
-
-factory WebhookPullRequestAssignedAction.fromJson(String json) { return switch (json) {
-  'assigned' => assigned,
-  _ => WebhookPullRequestAssignedAction._(json),
-}; }
-
-static const WebhookPullRequestAssignedAction assigned = WebhookPullRequestAssignedAction._('assigned');
-
-static const List<WebhookPullRequestAssignedAction> values = [assigned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestAssignedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestAssignedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestAssigned {const WebhookPullRequestAssigned({required this.action, required this.assignee, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_assigned/webhook_issues_assigned_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_assigned/webhook_pull_request_assigned_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookPullRequestAssigned {const WebhookPullRequestAssigned({required this.action, required this.assignee, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssigned(
-  action: WebhookPullRequestAssignedAction.fromJson(json['action'] as String),
+  action: WebhookIssuesAssignedAction.fromJson(json['action'] as String),
   assignee: WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -35,7 +14,7 @@ factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPullRequestAssignedAction action;
+final WebhookIssuesAssignedAction action;
 
 final WebhooksUser assignee;
 
@@ -71,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, WebhooksUser? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAssigned(
+WebhookPullRequestAssigned copyWith({WebhookIssuesAssignedAction? action, WebhooksUser? assignee, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAssigned(
   action: action ?? this.action,
   assignee: assignee ?? this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

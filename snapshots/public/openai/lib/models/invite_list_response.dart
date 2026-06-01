@@ -1,31 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invite.dart';/// The object type, which is always `list`
-@immutable final class InviteListResponseObject {const InviteListResponseObject._(this.value);
-
-factory InviteListResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => InviteListResponseObject._(json),
-}; }
-
-static const InviteListResponseObject list = InviteListResponseObject._('list');
-
-static const List<InviteListResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteListResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteListResponseObject($value)'; } 
- }
-@immutable final class InviteListResponse {const InviteListResponse({required this.object, required this.data, this.firstId, this.lastId, this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/invite.dart';@immutable final class InviteListResponse {const InviteListResponse({required this.object, required this.data, this.firstId, this.lastId, this.hasMore, });
 
 factory InviteListResponse.fromJson(Map<String, dynamic> json) { return InviteListResponse(
-  object: InviteListResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Invite.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
@@ -33,7 +11,7 @@ factory InviteListResponse.fromJson(Map<String, dynamic> json) { return InviteLi
 ); }
 
 /// The object type, which is always `list`
-final InviteListResponseObject object;
+final ChatCompletionListObject object;
 
 final List<Invite> data;
 
@@ -55,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data'); } 
-InviteListResponse copyWith({InviteListResponseObject? object, List<Invite>? data, String Function()? firstId, String Function()? lastId, bool Function()? hasMore, }) { return InviteListResponse(
+InviteListResponse copyWith({ChatCompletionListObject? object, List<Invite>? data, String Function()? firstId, String Function()? lastId, bool Function()? hasMore, }) { return InviteListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

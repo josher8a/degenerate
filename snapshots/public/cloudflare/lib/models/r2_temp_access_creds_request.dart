@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions allowed on the credentials.
-@immutable final class R2TempAccessCredsRequestPermission {const R2TempAccessCredsRequestPermission._(this.value);
+@immutable final class Permission {const Permission._(this.value);
 
-factory R2TempAccessCredsRequestPermission.fromJson(String json) { return switch (json) {
+factory Permission.fromJson(String json) { return switch (json) {
   'admin-read-write' => adminReadWrite,
   'admin-read-only' => adminReadOnly,
   'object-read-write' => objectReadWrite,
   'object-read-only' => objectReadOnly,
-  _ => R2TempAccessCredsRequestPermission._(json),
+  _ => Permission._(json),
 }; }
 
-static const R2TempAccessCredsRequestPermission adminReadWrite = R2TempAccessCredsRequestPermission._('admin-read-write');
+static const Permission adminReadWrite = Permission._('admin-read-write');
 
-static const R2TempAccessCredsRequestPermission adminReadOnly = R2TempAccessCredsRequestPermission._('admin-read-only');
+static const Permission adminReadOnly = Permission._('admin-read-only');
 
-static const R2TempAccessCredsRequestPermission objectReadWrite = R2TempAccessCredsRequestPermission._('object-read-write');
+static const Permission objectReadWrite = Permission._('object-read-write');
 
-static const R2TempAccessCredsRequestPermission objectReadOnly = R2TempAccessCredsRequestPermission._('object-read-only');
+static const Permission objectReadOnly = Permission._('object-read-only');
 
-static const List<R2TempAccessCredsRequestPermission> values = [adminReadWrite, adminReadOnly, objectReadWrite, objectReadOnly];
+static const List<Permission> values = [adminReadWrite, adminReadOnly, objectReadWrite, objectReadOnly];
 
 final String value;
 
@@ -27,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2TempAccessCredsRequestPermission && other.value == value; } 
+    other is Permission && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2TempAccessCredsRequestPermission($value)'; } 
+@override String toString() { return 'Permission($value)'; } 
  }
 @immutable final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, required this.parentAccessKeyId, required this.permission, this.objects, this.prefixes, this.ttlSeconds = 900.0, });
 
@@ -37,7 +37,7 @@ factory R2TempAccessCredsRequest.fromJson(Map<String, dynamic> json) { return R2
   bucket: json['bucket'] as String,
   objects: (json['objects'] as List<dynamic>?)?.map((e) => e as String).toList(),
   parentAccessKeyId: json['parentAccessKeyId'] as String,
-  permission: R2TempAccessCredsRequestPermission.fromJson(json['permission'] as String),
+  permission: Permission.fromJson(json['permission'] as String),
   prefixes: (json['prefixes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   ttlSeconds: (json['ttlSeconds'] as num).toDouble(),
 ); }
@@ -52,7 +52,7 @@ final List<String>? objects;
 final String parentAccessKeyId;
 
 /// Permissions allowed on the credentials.
-final R2TempAccessCredsRequestPermission permission;
+final Permission permission;
 
 /// Optional prefix paths to scope the credentials to.
 final List<String>? prefixes;
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
       json.containsKey('parentAccessKeyId') && json['parentAccessKeyId'] is String &&
       json.containsKey('permission') &&
       json.containsKey('ttlSeconds') && json['ttlSeconds'] is num; } 
-R2TempAccessCredsRequest copyWith({String? bucket, List<String> Function()? objects, String? parentAccessKeyId, R2TempAccessCredsRequestPermission? permission, List<String> Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
+R2TempAccessCredsRequest copyWith({String? bucket, List<String> Function()? objects, String? parentAccessKeyId, Permission? permission, List<String> Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
   bucket: bucket ?? this.bucket,
   objects: objects != null ? objects() : this.objects,
   parentAccessKeyId: parentAccessKeyId ?? this.parentAccessKeyId,

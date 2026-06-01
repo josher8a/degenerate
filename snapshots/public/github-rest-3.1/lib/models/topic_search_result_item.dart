@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';import 'topic_search_result_item_aliases.dart';import 'topic_search_result_item_related.dart';/// Topic Search Result Item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/aliases.dart';import 'package:pub_github_rest_3_1/models/topic_search_result_item/related.dart';/// Topic Search Result Item
 @immutable final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount, this.logoUrl, this.textMatches, this.related, this.aliases, });
 
 factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return TopicSearchResultItem(
@@ -18,8 +18,8 @@ factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return Topic
   repositoryCount: json['repository_count'] != null ? (json['repository_count'] as num).toInt() : null,
   logoUrl: json['logo_url'] != null ? Uri.parse(json['logo_url'] as String) : null,
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
-  related: (json['related'] as List<dynamic>?)?.map((e) => TopicSearchResultItemRelated.fromJson(e as Map<String, dynamic>)).toList(),
-  aliases: (json['aliases'] as List<dynamic>?)?.map((e) => TopicSearchResultItemAliases.fromJson(e as Map<String, dynamic>)).toList(),
+  related: (json['related'] as List<dynamic>?)?.map((e) => Related.fromJson(e as Map<String, dynamic>)).toList(),
+  aliases: (json['aliases'] as List<dynamic>?)?.map((e) => Aliases.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final String name;
@@ -50,9 +50,9 @@ final Uri? logoUrl;
 
 final List<SearchResultTextMatches2>? textMatches;
 
-final List<TopicSearchResultItemRelated>? related;
+final List<Related>? related;
 
-final List<TopicSearchResultItemAliases>? aliases;
+final List<Aliases>? aliases;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('featured') && json['featured'] is bool &&
       json.containsKey('curated') && json['curated'] is bool &&
       json.containsKey('score') && json['score'] is num; } 
-TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, int? Function()? repositoryCount, Uri? Function()? logoUrl, List<SearchResultTextMatches2> Function()? textMatches, List<TopicSearchResultItemRelated>? Function()? related, List<TopicSearchResultItemAliases>? Function()? aliases, }) { return TopicSearchResultItem(
+TopicSearchResultItem copyWith({String? name, String? Function()? displayName, String? Function()? shortDescription, String? Function()? description, String? Function()? createdBy, String? Function()? released, DateTime? createdAt, DateTime? updatedAt, bool? featured, bool? curated, double? score, int? Function()? repositoryCount, Uri? Function()? logoUrl, List<SearchResultTextMatches2> Function()? textMatches, List<Related>? Function()? related, List<Aliases>? Function()? aliases, }) { return TopicSearchResultItem(
   name: name ?? this.name,
   displayName: displayName != null ? displayName() : this.displayName,
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,

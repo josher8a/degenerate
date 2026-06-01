@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_present.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_present.dart';/// 
 @immutable final class CardGeneratedFromPaymentMethodDetails {const CardGeneratedFromPaymentMethodDetails({required this.type, this.cardPresent, });
 
 factory CardGeneratedFromPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return CardGeneratedFromPaymentMethodDetails(

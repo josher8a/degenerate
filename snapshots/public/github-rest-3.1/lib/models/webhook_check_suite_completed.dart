@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_completed_check_suite.dart';@immutable final class WebhookCheckSuiteCompletedAction {const WebhookCheckSuiteCompletedAction._(this.value);
-
-factory WebhookCheckSuiteCompletedAction.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  _ => WebhookCheckSuiteCompletedAction._(json),
-}; }
-
-static const WebhookCheckSuiteCompletedAction completed = WebhookCheckSuiteCompletedAction._('completed');
-
-static const List<WebhookCheckSuiteCompletedAction> values = [completed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteCompletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteCompletedAction($value)'; } 
- }
-@immutable final class WebhookCheckSuiteCompleted {const WebhookCheckSuiteCompleted({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_completed/webhook_check_run_completed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/webhook_check_suite_completed_check_suite.dart';@immutable final class WebhookCheckSuiteCompleted {const WebhookCheckSuiteCompleted({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCheckSuiteCompleted.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompleted(
-  action: WebhookCheckSuiteCompletedAction.fromJson(json['action'] as String),
+  action: WebhookCheckRunCompletedAction.fromJson(json['action'] as String),
   checkSuite: WebhookCheckSuiteCompletedCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookCheckSuiteCompleted.fromJson(Map<String, dynamic> json) { return 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookCheckSuiteCompletedAction action;
+final WebhookCheckRunCompletedAction action;
 
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 final WebhookCheckSuiteCompletedCheckSuite checkSuite;
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('check_suite') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCheckSuiteCompleted copyWith({WebhookCheckSuiteCompletedAction? action, WebhookCheckSuiteCompletedCheckSuite? checkSuite, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckSuiteCompleted(
+WebhookCheckSuiteCompleted copyWith({WebhookCheckRunCompletedAction? action, WebhookCheckSuiteCompletedCheckSuite? checkSuite, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckSuiteCompleted(
   action: action ?? this.action,
   checkSuite: checkSuite ?? this.checkSuite,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

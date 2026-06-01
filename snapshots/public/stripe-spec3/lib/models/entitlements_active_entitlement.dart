@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'entitlements_active_entitlement_feature.dart';import 'entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement/feature.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject._(this.value);
 
 factory EntitlementsActiveEntitlementObject.fromJson(String json) { return switch (json) {
@@ -34,7 +34,7 @@ factory EntitlementsActiveEntitlement.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// The [Feature](https://docs.stripe.com/api/entitlements/feature) that the customer is entitled to.
-final EntitlementsActiveEntitlementFeature feature;
+final Feature feature;
 
 /// Unique identifier for the object.
 final String id;
@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('featu
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('lookup_key') && json['lookup_key'] is String &&
       json.containsKey('object'); } 
-EntitlementsActiveEntitlement copyWith({EntitlementsActiveEntitlementFeature? feature, String? id, bool? livemode, String? lookupKey, EntitlementsActiveEntitlementObject? object, }) { return EntitlementsActiveEntitlement(
+EntitlementsActiveEntitlement copyWith({Feature? feature, String? id, bool? livemode, String? lookupKey, EntitlementsActiveEntitlementObject? object, }) { return EntitlementsActiveEntitlement(
   feature: feature ?? this.feature,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

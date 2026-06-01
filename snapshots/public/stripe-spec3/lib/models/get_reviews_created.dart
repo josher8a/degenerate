@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'range_query_specs40.dart';typedef GetReviewsCreated = OneOf2<RangeQuerySpecs40,int>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/range_query_specs.dart';typedef GetReviewsCreated = OneOf2<range_query_specs,int>;

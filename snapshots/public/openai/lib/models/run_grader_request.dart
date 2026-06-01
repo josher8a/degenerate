@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';import 'run_grader_request_grader.dart';@immutable final class RunGraderRequest {const RunGraderRequest({required this.grader, required this.modelSample, this.item, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method/grader.dart';import 'package:pub_openai/models/grader_multi.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';@immutable final class RunGraderRequest {const RunGraderRequest({required this.grader, required this.modelSample, this.item, });
 
 factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderRequest(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),
@@ -9,7 +9,7 @@ factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderR
 ); }
 
 /// The grader used for the fine-tuning job.
-final RunGraderRequestGrader grader;
+final Grader grader;
 
 /// The dataset item provided to the grader. This will be used to populate
 /// the `item` namespace. See [the guide](/docs/guides/graders) for more details.
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader') &&
       json.containsKey('model_sample') && json['model_sample'] is String; } 
-RunGraderRequest copyWith({RunGraderRequestGrader? grader, Map<String, dynamic> Function()? item, String? modelSample, }) { return RunGraderRequest(
+RunGraderRequest copyWith({Grader? grader, Map<String, dynamic> Function()? item, String? modelSample, }) { return RunGraderRequest(
   grader: grader ?? this.grader,
   item: item != null ? item() : this.item,
   modelSample: modelSample ?? this.modelSample,

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class WebhookEndpointObject {const WebhookEndpointObject._(this.value);
-
-factory WebhookEndpointObject.fromJson(String json) { return switch (json) {
-  'webhook_endpoint' => webhookEndpoint,
-  _ => WebhookEndpointObject._(json),
-}; }
-
-static const WebhookEndpointObject webhookEndpoint = WebhookEndpointObject._('webhook_endpoint');
-
-static const List<WebhookEndpointObject> values = [webhookEndpoint];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookEndpointObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookEndpointObject($value)'; } 
- }
-/// You can configure [webhook endpoints](https://docs.stripe.com/webhooks/) via the API to be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_webhook_endpoint/deleted_webhook_endpoint_object.dart';/// You can configure [webhook endpoints](https://docs.stripe.com/webhooks/) via the API to be
 /// notified about events that happen in your Stripe account or connected
 /// accounts.
 /// 
@@ -40,7 +18,7 @@ factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndp
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  object: WebhookEndpointObject.fromJson(json['object'] as String),
+  object: DeletedWebhookEndpointObject.fromJson(json['object'] as String),
   secret: json['secret'] as String?,
   status: json['status'] as String,
   url: json['url'] as String,
@@ -71,7 +49,7 @@ final bool livemode;
 final Map<String,String> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final WebhookEndpointObject object;
+final DeletedWebhookEndpointObject object;
 
 /// The endpoint's secret, used to generate [webhook signatures](https://docs.stripe.com/webhooks/signatures). Only returned at creation.
 final String? secret;
@@ -104,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, WebhookEndpointObject? object, String Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
+WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   application: application != null ? application() : this.application,
   created: created ?? this.created,

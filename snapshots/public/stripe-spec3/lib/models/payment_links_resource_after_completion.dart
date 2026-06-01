@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_completion_behavior_confirmation_page.dart';import 'payment_links_resource_completion_behavior_redirect.dart';/// The specified behavior after the purchase is complete.
-@immutable final class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType._(this.value);
-
-factory PaymentLinksResourceAfterCompletionType.fromJson(String json) { return switch (json) {
-  'hosted_confirmation' => hostedConfirmation,
-  'redirect' => redirect,
-  _ => PaymentLinksResourceAfterCompletionType._(json),
-}; }
-
-static const PaymentLinksResourceAfterCompletionType hostedConfirmation = PaymentLinksResourceAfterCompletionType._('hosted_confirmation');
-
-static const PaymentLinksResourceAfterCompletionType redirect = PaymentLinksResourceAfterCompletionType._('redirect');
-
-static const List<PaymentLinksResourceAfterCompletionType> values = [hostedConfirmation, redirect];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceAfterCompletionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceAfterCompletionType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion/payment_links_resource_after_completion_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completion_behavior_confirmation_page.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completion_behavior_redirect.dart';/// 
 @immutable final class PaymentLinksResourceAfterCompletion {const PaymentLinksResourceAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 
 factory PaymentLinksResourceAfterCompletion.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceAfterCompletion(

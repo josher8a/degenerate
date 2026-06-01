@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// Timeline Assigned Issue Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Timeline Assigned Issue Event
 @immutable final class TimelineAssignedIssueEvent {const TimelineAssignedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.assignee, });
 
 factory TimelineAssignedIssueEvent.fromJson(Map<String, dynamic> json) { return TimelineAssignedIssueEvent(

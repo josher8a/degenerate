@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class User10Type {const User10Type._(this.value);
-
-factory User10Type.fromJson(String json) { return switch (json) {
-  'Bot' => bot,
-  'User' => user,
-  'Organization' => organization,
-  _ => User10Type._(json),
-}; }
-
-static const User10Type bot = User10Type._('Bot');
-
-static const User10Type user = User10Type._('User');
-
-static const User10Type organization = User10Type._('Organization');
-
-static const List<User10Type> values = [bot, user, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is User10Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'User10Type($value)'; } 
- }
-@immutable final class User10 {const User10({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/user/user10_type.dart';@immutable final class User10 {const User10({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory User10.fromJson(Map<String, dynamic> json) { return User10(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_bundle_method.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// The zone's SSL certificate or SSL certificate and intermediate(s).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_host.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_keyless_tunnel.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_name_write.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_port.dart';/// The zone's SSL certificate or SSL certificate and intermediate(s).
 extension type const TlsCertificatesAndHostnamesSchemasCertificate(String value) {
 factory TlsCertificatesAndHostnamesSchemasCertificate.fromJson(String json) => TlsCertificatesAndHostnamesSchemasCertificate(json);
 

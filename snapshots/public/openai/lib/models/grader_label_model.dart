@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_item.dart';/// The object type, which is always `label_model`.
-@immutable final class GraderLabelModelType {const GraderLabelModelType._(this.value);
-
-factory GraderLabelModelType.fromJson(String json) { return switch (json) {
-  'label_model' => labelModel,
-  _ => GraderLabelModelType._(json),
-}; }
-
-static const GraderLabelModelType labelModel = GraderLabelModelType._('label_model');
-
-static const List<GraderLabelModelType> values = [labelModel];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderLabelModelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderLabelModelType($value)'; } 
- }
-/// A LabelModelGrader object which uses a model to assign labels to each item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_label_model_grader/create_eval_label_model_grader_type.dart';import 'package:pub_openai/models/eval_item.dart';/// A LabelModelGrader object which uses a model to assign labels to each item
 /// in the evaluation.
 /// 
 @immutable final class GraderLabelModel {const GraderLabelModel({required this.type, required this.name, required this.model, required this.input, required this.labels, required this.passingLabels, });
 
 factory GraderLabelModel.fromJson(Map<String, dynamic> json) { return GraderLabelModel(
-  type: GraderLabelModelType.fromJson(json['type'] as String),
+  type: CreateEvalLabelModelGraderType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
   input: (json['input'] as List<dynamic>).map((e) => EvalItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -37,7 +15,7 @@ factory GraderLabelModel.fromJson(Map<String, dynamic> json) { return GraderLabe
 ); }
 
 /// The object type, which is always `label_model`.
-final GraderLabelModelType type;
+final CreateEvalLabelModelGraderType type;
 
 /// The name of the grader.
 final String name;
@@ -67,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('input') &&
       json.containsKey('labels') &&
       json.containsKey('passing_labels'); } 
-GraderLabelModel copyWith({GraderLabelModelType? type, String? name, String? model, List<EvalItem>? input, List<String>? labels, List<String>? passingLabels, }) { return GraderLabelModel(
+GraderLabelModel copyWith({CreateEvalLabelModelGraderType? type, String? name, String? model, List<EvalItem>? input, List<String>? labels, List<String>? passingLabels, }) { return GraderLabelModel(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,

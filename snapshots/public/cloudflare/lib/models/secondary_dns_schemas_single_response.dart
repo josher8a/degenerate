@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_peer.dart';@immutable final class SecondaryDnsSchemasSingleResponse {const SecondaryDnsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_peer.dart';@immutable final class SecondaryDnsSchemasSingleResponse {const SecondaryDnsSchemasSingleResponse({this.result});
 
 factory SecondaryDnsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsSchemasSingleResponse(
   result: json['result'] != null ? SecondaryDnsPeer.fromJson(json['result'] as Map<String, dynamic>) : null,

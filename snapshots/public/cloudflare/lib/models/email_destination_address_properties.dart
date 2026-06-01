@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_created.dart';import 'email_destination_address_identifier.dart';import 'email_email.dart';import 'email_modified.dart';/// Destination address tag. (Deprecated, replaced by destination address identifier)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_created.dart';import 'package:pub_cloudflare/models/email_destination_address_identifier.dart';import 'package:pub_cloudflare/models/email_email.dart';import 'package:pub_cloudflare/models/email_modified.dart';/// Destination address tag. (Deprecated, replaced by destination address identifier)
 extension type const EmailDestinationAddressTag(String value) {
 factory EmailDestinationAddressTag.fromJson(String json) => EmailDestinationAddressTag(json);
 

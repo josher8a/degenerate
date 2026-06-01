@@ -1,34 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_gcs_like_creds_schema.dart';@immutable final class R2SlurperGcsSourceSchemaVendor {const R2SlurperGcsSourceSchemaVendor._(this.value);
-
-factory R2SlurperGcsSourceSchemaVendor.fromJson(String json) { return switch (json) {
-  'gcs' => gcs,
-  _ => R2SlurperGcsSourceSchemaVendor._(json),
-}; }
-
-static const R2SlurperGcsSourceSchemaVendor gcs = R2SlurperGcsSourceSchemaVendor._('gcs');
-
-static const List<R2SlurperGcsSourceSchemaVendor> values = [gcs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperGcsSourceSchemaVendor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperGcsSourceSchemaVendor($value)'; } 
- }
-@immutable final class R2SlurperGcsSourceSchema {const R2SlurperGcsSourceSchema({required this.bucket, required this.secret, required this.vendor, this.keys, this.pathPrefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/g_c_s_source_response_schema/g_c_s_source_response_schema_vendor.dart';import 'package:pub_cloudflare/models/r2_slurper_gcs_like_creds_schema.dart';@immutable final class R2SlurperGcsSourceSchema {const R2SlurperGcsSourceSchema({required this.bucket, required this.secret, required this.vendor, this.keys, this.pathPrefix, });
 
 factory R2SlurperGcsSourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperGcsSourceSchema(
   bucket: json['bucket'] as String,
   keys: (json['keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   pathPrefix: json['pathPrefix'] as String?,
   secret: R2SlurperGcsLikeCredsSchema.fromJson(json['secret'] as Map<String, dynamic>),
-  vendor: R2SlurperGcsSourceSchemaVendor.fromJson(json['vendor'] as String),
+  vendor: GCSSourceResponseSchemaVendor.fromJson(json['vendor'] as String),
 ); }
 
 final String bucket;
@@ -39,7 +18,7 @@ final String? pathPrefix;
 
 final R2SlurperGcsLikeCredsSchema secret;
 
-final R2SlurperGcsSourceSchemaVendor vendor;
+final GCSSourceResponseSchemaVendor vendor;
 
 Map<String, dynamic> toJson() { return {
   'bucket': bucket,
@@ -51,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('secret') &&
       json.containsKey('vendor'); } 
-R2SlurperGcsSourceSchema copyWith({String? bucket, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperGcsLikeCredsSchema? secret, R2SlurperGcsSourceSchemaVendor? vendor, }) { return R2SlurperGcsSourceSchema(
+R2SlurperGcsSourceSchema copyWith({String? bucket, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperGcsLikeCredsSchema? secret, GCSSourceResponseSchemaVendor? vendor, }) { return R2SlurperGcsSourceSchema(
   bucket: bucket ?? this.bucket,
   keys: keys != null ? keys() : this.keys,
   pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,

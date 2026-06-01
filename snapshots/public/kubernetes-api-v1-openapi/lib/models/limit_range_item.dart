@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';/// LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
 @immutable final class LimitRangeItem {const LimitRangeItem({this.$default, this.defaultRequest, this.max, this.maxLimitRequestRatio, this.min, this.type = '', });
 
 factory LimitRangeItem.fromJson(Map<String, dynamic> json) { return LimitRangeItem(

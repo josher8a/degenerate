@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_after_expiration_recovery.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_after_expiration_recovery.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
 
 factory PaymentPagesCheckoutSessionAfterExpiration.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpiration(

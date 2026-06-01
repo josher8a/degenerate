@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';@immutable final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
 
 factory WorkersBindingKindJson.fromJson(Map<String, dynamic> json) { return WorkersBindingKindJson(
   json: json['json'] as Map<String, dynamic>,

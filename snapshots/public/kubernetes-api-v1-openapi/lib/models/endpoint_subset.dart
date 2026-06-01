@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'endpoint_address.dart';import 'endpoint_port.dart';/// EndpointSubset is a group of addresses with a common set of ports. The expanded set of endpoints is the Cartesian product of Addresses x Ports. For example, given:
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/endpoint_address.dart';import 'package:pub_kubernetes_api_v1_openapi/models/endpoint_port.dart';/// EndpointSubset is a group of addresses with a common set of ports. The expanded set of endpoints is the Cartesian product of Addresses x Ports. For example, given:
 /// 
 /// 	{
 /// 	  Addresses: `[{"ip": "10.10.1.1"}, {"ip": "10.10.2.2"}]`,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fetch_gateways_response_result.dart';@immutable final class FetchGatewaysResponse {const FetchGatewaysResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fetch_gateways_response/fetch_gateways_response_result.dart';@immutable final class FetchGatewaysResponse {const FetchGatewaysResponse({required this.result, required this.success, });
 
 factory FetchGatewaysResponse.fromJson(Map<String, dynamic> json) { return FetchGatewaysResponse(
   result: FetchGatewaysResponseResult.fromJson(json['result'] as Map<String, dynamic>),

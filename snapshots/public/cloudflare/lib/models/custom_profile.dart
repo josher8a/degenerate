@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class CustomProfileType {const CustomProfileType._(this.value);
-
-factory CustomProfileType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => CustomProfileType._(json),
-}; }
-
-static const CustomProfileType custom = CustomProfileType._('custom');
-
-static const List<CustomProfileType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomProfileType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomProfileType($value)'; } 
- }
-@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/custom_entry/custom_entry_type.dart';import 'package:pub_cloudflare/models/dlp_confidence.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 
 factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
@@ -39,7 +18,7 @@ factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile
   sensitivityLevels: (json['sensitivity_levels'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as String).toList()).toList(),
   sharedEntries: (json['shared_entries'] as List<dynamic>?)?.map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  type: CustomProfileType.fromJson(json['type'] as String),
+  type: CustomEntryType.fromJson(json['type'] as String),
 ); }
 
 final bool aiContextEnabled;
@@ -81,7 +60,7 @@ final List<DlpEntry>? sharedEntries;
 /// When the profile was lasted updated.
 final DateTime updatedAt;
 
-final CustomProfileType type;
+final CustomEntryType type;
 
 Map<String, dynamic> toJson() { return {
   'ai_context_enabled': aiContextEnabled,
@@ -108,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('ocr_enabled') && json['ocr_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type'); } 
-CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, DateTime? createdAt, List<String> Function()? dataClasses, List<String> Function()? dataTags, String? Function()? description, List<DlpEntry> Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>> Function()? sensitivityLevels, List<DlpEntry> Function()? sharedEntries, DateTime? updatedAt, CustomProfileType? type, }) { return CustomProfile(
+CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, DateTime? createdAt, List<String> Function()? dataClasses, List<String> Function()? dataTags, String? Function()? description, List<DlpEntry> Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>> Function()? sensitivityLevels, List<DlpEntry> Function()? sharedEntries, DateTime? updatedAt, CustomEntryType? type, }) { return CustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

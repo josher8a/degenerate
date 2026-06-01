@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise.dart';import 'integration_installation_request_account.dart';import 'simple_user.dart';/// Request to install an integration on a target
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/integration_installation_request/integration_installation_request_account.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Request to install an integration on a target
 @immutable final class IntegrationInstallationRequest {const IntegrationInstallationRequest({required this.id, required this.account, required this.requester, required this.createdAt, this.nodeId, });
 
 factory IntegrationInstallationRequest.fromJson(Map<String, dynamic> json) { return IntegrationInstallationRequest(

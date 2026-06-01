@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_origin.dart';/// Status of the fallback origin's activation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_origin.dart';/// Status of the fallback origin's activation.
 @immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus.fromJson(String json) { return switch (json) {

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single_id6_result.dart';import 'speed_messages2.dart';@immutable final class ResponseSingleId6 {const ResponseSingleId6({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/speed_messages2.dart';@immutable final class ResponseSingleId6 {const ResponseSingleId6({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId6.fromJson(Map<String, dynamic> json) { return ResponseSingleId6(
   errors: (json['errors'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? ResponseSingleId6Result.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SpeedMessages2> errors;
@@ -16,7 +16,7 @@ final List<SpeedMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final ResponseSingleId6Result? result;
+final ResponseSingleId4Result? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingleId6 copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, ResponseSingleId6Result? Function()? result, }) { return ResponseSingleId6(
+ResponseSingleId6 copyWith({List<SpeedMessages2>? errors, List<SpeedMessages2>? messages, bool? success, ResponseSingleId4Result? Function()? result, }) { return ResponseSingleId6(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

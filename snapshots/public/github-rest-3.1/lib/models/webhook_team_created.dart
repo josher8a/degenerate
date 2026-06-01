@@ -1,39 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_created_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamCreatedAction {const WebhookTeamCreatedAction._(this.value);
-
-factory WebhookTeamCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookTeamCreatedAction._(json),
-}; }
-
-static const WebhookTeamCreatedAction created = WebhookTeamCreatedAction._('created');
-
-static const List<WebhookTeamCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookTeamCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookTeamCreatedAction($value)'; } 
- }
-@immutable final class WebhookTeamCreated {const WebhookTeamCreated({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';@immutable final class WebhookTeamCreated {const WebhookTeamCreated({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
 factory WebhookTeamCreated.fromJson(Map<String, dynamic> json) { return WebhookTeamCreated(
-  action: WebhookTeamCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
-  repository: json['repository'] != null ? WebhookTeamCreatedRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? WebhookTeamAddedToRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
 ); }
 
-final WebhookTeamCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -42,7 +21,7 @@ final SimpleInstallation? installation;
 final OrganizationSimpleWebhooks organization;
 
 /// A git repository
-final WebhookTeamCreatedRepository? repository;
+final WebhookTeamAddedToRepositoryRepository? repository;
 
 final SimpleUser sender;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('sender') &&
       json.containsKey('team'); } 
-WebhookTeamCreated copyWith({WebhookTeamCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamCreatedRepository Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamCreated(
+WebhookTeamCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository Function()? repository, SimpleUser? sender, WebhooksTeam1? team, }) { return WebhookTeamCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

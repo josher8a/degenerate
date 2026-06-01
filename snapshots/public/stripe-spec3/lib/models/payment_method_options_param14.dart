@@ -1,45 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam14SetupFutureUsage {const PaymentMethodOptionsParam14SetupFutureUsage._(this.value);
-
-factory PaymentMethodOptionsParam14SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  _ => PaymentMethodOptionsParam14SetupFutureUsage._(json),
-}; }
-
-static const PaymentMethodOptionsParam14SetupFutureUsage $empty = PaymentMethodOptionsParam14SetupFutureUsage._('');
-
-static const PaymentMethodOptionsParam14SetupFutureUsage none = PaymentMethodOptionsParam14SetupFutureUsage._('none');
-
-static const PaymentMethodOptionsParam14SetupFutureUsage offSession = PaymentMethodOptionsParam14SetupFutureUsage._('off_session');
-
-static const List<PaymentMethodOptionsParam14SetupFutureUsage> values = [$empty, none, offSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam14SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam14SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam14 {const PaymentMethodOptionsParam14({this.setupFutureUsage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param11_setup_future_usage.dart';@immutable final class PaymentMethodOptionsParam14 {const PaymentMethodOptionsParam14({this.setupFutureUsage});
 
 factory PaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam14(
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam14SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final PaymentMethodOptionsParam14SetupFutureUsage? setupFutureUsage;
+final PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam14 copyWith({PaymentMethodOptionsParam14SetupFutureUsage Function()? setupFutureUsage}) { return PaymentMethodOptionsParam14(
+PaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage Function()? setupFutureUsage}) { return PaymentMethodOptionsParam14(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

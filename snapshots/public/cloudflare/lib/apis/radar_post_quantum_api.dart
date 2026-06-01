@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_origin_post_quantum_summary_dimension.dart';import '../models/radar_get_origin_post_quantum_summary_format.dart';import '../models/radar_get_origin_post_quantum_summary_response400.dart';import '../models/radar_get_origin_post_quantum_summary_response_result.dart';import '../models/radar_get_origin_post_quantum_timeseries_groups_dimension.dart';import '../models/radar_get_origin_post_quantum_timeseries_groups_format.dart';import '../models/radar_get_origin_post_quantum_timeseries_groups_response400.dart';import '../models/radar_get_origin_post_quantum_timeseries_groups_response_result.dart';import '../models/radar_get_post_quantum_tls_support_response400.dart';import '../models/radar_get_post_quantum_tls_support_response_result.dart';/// RadarPostQuantumApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_summary_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_summary_format.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_summary_response400.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_timeseries_groups_dimension.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_timeseries_groups_format.dart';import 'package:pub_cloudflare/models/radar_get_origin_post_quantum_timeseries_groups_response400.dart';import 'package:pub_cloudflare/models/radar_get_post_quantum_tls_support_response/radar_get_post_quantum_tls_support_response_result.dart';import 'package:pub_cloudflare/models/radar_get_post_quantum_tls_support_response400.dart';/// RadarPostQuantumApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarPostQuantumApi with ApiExecutor {const RadarPostQuantumApi(this
 /// Returns a summary of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/summary/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumSummaryResponseResult, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsSummaryByUserAgentResponseResult, RadarGetOriginPostQuantumSummaryResponse400>> radarGetOriginPostQuantumSummary({required RadarGetOriginPostQuantumSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -54,7 +54,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetOriginPostQuantumSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetOriginPostQuantumSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -66,7 +66,7 @@ return execute(
 /// Returns a timeseries of origin post-quantum data grouped by the specified dimension.
 ///
 /// `GET /radar/post_quantum/origin/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginPostQuantumTimeseriesGroupsResponseResult, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult, RadarGetOriginPostQuantumTimeseriesGroupsResponse400>> radarGetOriginPostQuantumTimeseriesGroups({required RadarGetOriginPostQuantumTimeseriesGroupsDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetOriginPostQuantumTimeseriesGroupsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -107,7 +107,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetOriginPostQuantumTimeseriesGroupsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetOriginPostQuantumTimeseriesGroupsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

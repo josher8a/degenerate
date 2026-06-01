@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_card_specs.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/cvc_update.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/pii.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_card.dart';import 'package:pub_stripe_spec3/models/post_tokens_request/post_tokens_request_person.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 
 factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   bankAccount: json['bank_account'] != null ? PostTokensRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CreditCardSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => credit_card_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   customer: json['customer'] as String?,
-  cvcUpdate: json['cvc_update'] != null ? PostTokensRequestCvcUpdate.fromJson(json['cvc_update'] as Map<String, dynamic>) : null,
+  cvcUpdate: json['cvc_update'] != null ? CvcUpdate.fromJson(json['cvc_update'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   person: json['person'] != null ? PostTokensRequestPerson.fromJson(json['person'] as Map<String, dynamic>) : null,
-  pii: json['pii'] != null ? PostTokensRequestPii.fromJson(json['pii'] as Map<String, dynamic>) : null,
+  pii: json['pii'] != null ? Pii.fromJson(json['pii'] as Map<String, dynamic>) : null,
 ); }
 
 /// Information for the account this token represents.
@@ -26,7 +26,7 @@ final PostTokensRequestCard? card;
 final String? customer;
 
 /// The updated CVC value this token represents.
-final PostTokensRequestCvcUpdate? cvcUpdate;
+final CvcUpdate? cvcUpdate;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -35,7 +35,7 @@ final List<String>? expand;
 final PostTokensRequestPerson? person;
 
 /// The PII this token represents.
-final PostTokensRequestPii? pii;
+final Pii? pii;
 
 Map<String, dynamic> toJson() { return {
   if (account != null) 'account': account?.toJson(),
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (pii != null) 'pii': pii?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'bank_account', 'card', 'customer', 'cvc_update', 'expand', 'person', 'pii'}.contains(key)); } 
-PostTokensRequest copyWith({PostTokensRequestAccount Function()? account, PostTokensRequestBankAccount Function()? bankAccount, PostTokensRequestCard Function()? card, String Function()? customer, PostTokensRequestCvcUpdate Function()? cvcUpdate, List<String> Function()? expand, PostTokensRequestPerson Function()? person, PostTokensRequestPii Function()? pii, }) { return PostTokensRequest(
+PostTokensRequest copyWith({PostTokensRequestAccount Function()? account, PostTokensRequestBankAccount Function()? bankAccount, PostTokensRequestCard Function()? card, String Function()? customer, CvcUpdate Function()? cvcUpdate, List<String> Function()? expand, PostTokensRequestPerson Function()? person, Pii Function()? pii, }) { return PostTokensRequest(
   account: account != null ? account() : this.account,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,

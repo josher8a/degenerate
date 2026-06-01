@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';/// User Search Result Item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';/// User Search Result Item
 @immutable final class UserSearchResultItem {const UserSearchResultItem({required this.type, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.receivedEventsUrl, required this.login, required this.score, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.eventsUrl, required this.siteAdmin, this.publicGists, this.followers, this.following, this.userViewType, this.updatedAt, this.name, this.bio, this.email, this.location, this.publicRepos, this.hireable, this.textMatches, this.blog, this.company, this.suspendedAt, this.createdAt, });
 
 factory UserSearchResultItem.fromJson(Map<String, dynamic> json) { return UserSearchResultItem(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpEntryWithUploadStatus {const DlpEntryWithUploadStatus({this.uploadStatus});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset_upload_status.dart';@immutable final class DlpEntryWithUploadStatus {const DlpEntryWithUploadStatus({this.uploadStatus});
 
 factory DlpEntryWithUploadStatus.fromJson(Map<String, dynamic> json) { return DlpEntryWithUploadStatus(
   uploadStatus: json['upload_status'] != null ? DlpDatasetUploadStatus.fromJson(json['upload_status'] as String) : null,

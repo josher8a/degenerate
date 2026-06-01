@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_components_schemas_tunnel_id.dart';import 'tunnel_hostname.dart';import 'tunnel_hostname_comment.dart';@immutable final class ZeroTrustNetworksRouteHostnameCreateRequest {const ZeroTrustNetworksRouteHostnameCreateRequest({this.comment, this.hostname, this.tunnelId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_components_schemas_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_hostname.dart';import 'package:pub_cloudflare/models/tunnel_hostname_comment.dart';@immutable final class ZeroTrustNetworksRouteHostnameCreateRequest {const ZeroTrustNetworksRouteHostnameCreateRequest({this.comment, this.hostname, this.tunnelId, });
 
 factory ZeroTrustNetworksRouteHostnameCreateRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustNetworksRouteHostnameCreateRequest(
   comment: json['comment'] != null ? TunnelHostnameComment.fromJson(json['comment'] as String) : null,

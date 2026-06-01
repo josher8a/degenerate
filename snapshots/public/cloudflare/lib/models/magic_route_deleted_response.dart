@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route_deleted_response_result.dart';@immutable final class MagicRouteDeletedResponse {const MagicRouteDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_route_deleted_response/magic_route_deleted_response_result.dart';@immutable final class MagicRouteDeletedResponse {const MagicRouteDeletedResponse({this.result});
 
 factory MagicRouteDeletedResponse.fromJson(Map<String, dynamic> json) { return MagicRouteDeletedResponse(
   result: json['result'] != null ? MagicRouteDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'issue_comment.dart';@immutable final class IssueCommentEvent {const IssueCommentEvent({required this.action, required this.issue, required this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/issue_comment.dart';@immutable final class IssueCommentEvent {const IssueCommentEvent({required this.action, required this.issue, required this.comment, });
 
 factory IssueCommentEvent.fromJson(Map<String, dynamic> json) { return IssueCommentEvent(
   action: json['action'] as String,

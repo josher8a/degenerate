@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ItemCreatedAction {const ItemCreatedAction._(this.value);
-
-factory ItemCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => ItemCreatedAction._(json),
-}; }
-
-static const ItemCreatedAction created = ItemCreatedAction._('created');
-
-static const List<ItemCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemCreatedAction($value)'; } 
- }
-@immutable final class ItemCreated {const ItemCreated({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ItemCreated {const ItemCreated({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
 factory ItemCreated.fromJson(Map<String, dynamic> json) { return ItemCreated(
   action: ItemCreatedAction.fromJson(json['action'] as String),

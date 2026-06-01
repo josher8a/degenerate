@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetShippingRatesResponseObject {const GetShippingRatesResponseObject._(this.value);
-
-factory GetShippingRatesResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetShippingRatesResponseObject._(json),
-}; }
-
-static const GetShippingRatesResponseObject list = GetShippingRatesResponseObject._('list');
-
-static const List<GetShippingRatesResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetShippingRatesResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetShippingRatesResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/shipping_rate.dart';/// 
 @immutable final class GetShippingRatesResponse {const GetShippingRatesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetShippingRatesResponse.fromJson(Map<String, dynamic> json) { return GetShippingRatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => ShippingRate.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetShippingRatesResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<ShippingRate> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetShippingRatesResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetShippingRatesResponse copyWith({List<ShippingRate>? data, bool? hasMore, GetShippingRatesResponseObject? object, String? url, }) { return GetShippingRatesResponse(
+GetShippingRatesResponse copyWith({List<ShippingRate>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetShippingRatesResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/invite_project_group_body.dart';import '../models/list_project_groups_order.dart';import '../models/project_group.dart';import '../models/project_group_deleted_resource.dart';import '../models/project_group_list_resource.dart';/// ProjectGroupsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite_project_group_body.dart';import 'package:pub_openai/models/list_project_groups_order.dart';import 'package:pub_openai/models/project_group.dart';import 'package:pub_openai/models/project_group_deleted_resource.dart';import 'package:pub_openai/models/project_group_list_resource.dart';/// ProjectGroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

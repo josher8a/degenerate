@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_options.dart';@immutable final class DiagnosticsTracerouteRequest {const DiagnosticsTracerouteRequest({required this.targets, this.colos, this.options, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_options.dart';@immutable final class DiagnosticsTracerouteRequest {const DiagnosticsTracerouteRequest({required this.targets, this.colos, this.options, });
 
 factory DiagnosticsTracerouteRequest.fromJson(Map<String, dynamic> json) { return DiagnosticsTracerouteRequest(
   colos: (json['colos'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,0 +1,136 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/api.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_performance.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_related.dart';import 'package:pub_cloudflare/models/radar_get_certificate_log_details_response/certificate_log_state.dart';@immutable final class CertificateLog {const CertificateLog({required this.api, required this.avgThroughput, required this.description, required this.endExclusive, required this.lastUpdate, required this.$operator, required this.performance, required this.related, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.submittableCertCount, required this.submittedCertCount, required this.url, });
+
+factory CertificateLog.fromJson(Map<String, dynamic> json) { return CertificateLog(
+  api: Api.fromJson(json['api'] as String),
+  avgThroughput: (json['avgThroughput'] as num).toDouble(),
+  description: json['description'] as String,
+  endExclusive: DateTime.parse(json['endExclusive'] as String),
+  lastUpdate: DateTime.parse(json['lastUpdate'] as String),
+  $operator: json['operator'] as String,
+  performance: json['performance'] != null ? CertificateLogPerformance.fromJson(json['performance'] as Map<String, dynamic>) : null,
+  related: (json['related'] as List<dynamic>).map((e) => CertificateLogRelated.fromJson(e as Map<String, dynamic>)).toList(),
+  slug: json['slug'] as String,
+  startInclusive: DateTime.parse(json['startInclusive'] as String),
+  state: CertificateLogState.fromJson(json['state'] as String),
+  stateTimestamp: DateTime.parse(json['stateTimestamp'] as String),
+  submittableCertCount: json['submittableCertCount'] as String?,
+  submittedCertCount: json['submittedCertCount'] as String?,
+  url: json['url'] as String,
+); }
+
+/// The API standard that the certificate log follows.
+final Api api;
+
+/// The average throughput of the CT log, measured in certificates per hour (certs/hour).
+final double avgThroughput;
+
+/// A brief description of the certificate log.
+final String description;
+
+/// The end date and time for when the log will stop accepting certificates.
+final DateTime endExclusive;
+
+/// Timestamp of the most recent update to the CT log.
+final DateTime lastUpdate;
+
+/// The organization responsible for operating the certificate log.
+final String $operator;
+
+/// Log performance metrics, including averages and per-endpoint details.
+final CertificateLogPerformance? performance;
+
+/// Logs from the same operator.
+final List<CertificateLogRelated> related;
+
+/// A URL-friendly, kebab-case identifier for the certificate log.
+final String slug;
+
+/// The start date and time for when the log starts accepting certificates.
+final DateTime startInclusive;
+
+/// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
+final CertificateLogState state;
+
+/// Timestamp of when the log state was last updated.
+final DateTime stateTimestamp;
+
+/// Number of certificates that are eligible for inclusion to this log but have not been included yet. Based on certificates signed by trusted root CAs within the log's accepted date range.
+final String? submittableCertCount;
+
+/// Number of certificates already included in this CT log.
+final String? submittedCertCount;
+
+/// The URL for the certificate log.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'api': api.toJson(),
+  'avgThroughput': avgThroughput,
+  'description': description,
+  'endExclusive': endExclusive.toIso8601String(),
+  'lastUpdate': lastUpdate.toIso8601String(),
+  'operator': $operator,
+  if (performance != null) 'performance': performance?.toJson(),
+  'related': related.map((e) => e.toJson()).toList(),
+  'slug': slug,
+  'startInclusive': startInclusive.toIso8601String(),
+  'state': state.toJson(),
+  'stateTimestamp': stateTimestamp.toIso8601String(),
+  'submittableCertCount': ?submittableCertCount,
+  'submittedCertCount': ?submittedCertCount,
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') &&
+      json.containsKey('avgThroughput') && json['avgThroughput'] is num &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endExclusive') && json['endExclusive'] is String &&
+      json.containsKey('lastUpdate') && json['lastUpdate'] is String &&
+      json.containsKey('operator') && json['operator'] is String &&
+      json.containsKey('performance') &&
+      json.containsKey('related') &&
+      json.containsKey('slug') && json['slug'] is String &&
+      json.containsKey('startInclusive') && json['startInclusive'] is String &&
+      json.containsKey('state') &&
+      json.containsKey('stateTimestamp') && json['stateTimestamp'] is String &&
+      json.containsKey('submittableCertCount') && json['submittableCertCount'] is String &&
+      json.containsKey('submittedCertCount') && json['submittedCertCount'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+CertificateLog copyWith({Api? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, CertificateLogPerformance? Function()? performance, List<CertificateLogRelated>? related, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return CertificateLog(
+  api: api ?? this.api,
+  avgThroughput: avgThroughput ?? this.avgThroughput,
+  description: description ?? this.description,
+  endExclusive: endExclusive ?? this.endExclusive,
+  lastUpdate: lastUpdate ?? this.lastUpdate,
+  $operator: $operator ?? this.$operator,
+  performance: performance != null ? performance() : this.performance,
+  related: related ?? this.related,
+  slug: slug ?? this.slug,
+  startInclusive: startInclusive ?? this.startInclusive,
+  state: state ?? this.state,
+  stateTimestamp: stateTimestamp ?? this.stateTimestamp,
+  submittableCertCount: submittableCertCount != null ? submittableCertCount() : this.submittableCertCount,
+  submittedCertCount: submittedCertCount != null ? submittedCertCount() : this.submittedCertCount,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CertificateLog &&
+          api == other.api &&
+          avgThroughput == other.avgThroughput &&
+          description == other.description &&
+          endExclusive == other.endExclusive &&
+          lastUpdate == other.lastUpdate &&
+          $operator == other.$operator &&
+          performance == other.performance &&
+          listEquals(related, other.related) &&
+          slug == other.slug &&
+          startInclusive == other.startInclusive &&
+          state == other.state &&
+          stateTimestamp == other.stateTimestamp &&
+          submittableCertCount == other.submittableCertCount &&
+          submittedCertCount == other.submittedCertCount &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(api, avgThroughput, description, endExclusive, lastUpdate, $operator, performance, Object.hashAll(related), slug, startInclusive, state, stateTimestamp, submittableCertCount, submittedCertCount, url); } 
+@override String toString() { return 'CertificateLog(api: $api, avgThroughput: $avgThroughput, description: $description, endExclusive: $endExclusive, lastUpdate: $lastUpdate, \$operator: ${$operator}, performance: $performance, related: $related, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, submittableCertCount: $submittableCertCount, submittedCertCount: $submittedCertCount, url: $url)'; } 
+ }

@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'source_code_verification_flow.dart';import 'source_order.dart';import 'source_owner.dart';import 'source_receiver_flow.dart';import 'source_redirect_flow.dart';import 'source_type_ach_credit_transfer.dart';import 'source_type_ach_debit.dart';import 'source_type_acss_debit.dart';import 'source_type_alipay.dart';import 'source_type_au_becs_debit.dart';import 'source_type_bancontact.dart';import 'source_type_card.dart';import 'source_type_card_present.dart';import 'source_type_eps.dart';import 'source_type_giropay.dart';import 'source_type_ideal.dart';import 'source_type_klarna.dart';import 'source_type_multibanco.dart';import 'source_type_p24.dart';import 'source_type_sepa_debit.dart';import 'source_type_sofort.dart';import 'source_type_three_d_secure.dart';import 'source_type_wechat.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-@immutable final class SourceAllowRedisplay {const SourceAllowRedisplay._(this.value);
-
-factory SourceAllowRedisplay.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'limited' => limited,
-  'unspecified' => unspecified,
-  _ => SourceAllowRedisplay._(json),
-}; }
-
-static const SourceAllowRedisplay always = SourceAllowRedisplay._('always');
-
-static const SourceAllowRedisplay limited = SourceAllowRedisplay._('limited');
-
-static const SourceAllowRedisplay unspecified = SourceAllowRedisplay._('unspecified');
-
-static const List<SourceAllowRedisplay> values = [always, limited, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceAllowRedisplay($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/source_code_verification_flow.dart';import 'package:pub_stripe_spec3/models/source_order.dart';import 'package:pub_stripe_spec3/models/source_owner.dart';import 'package:pub_stripe_spec3/models/source_receiver_flow.dart';import 'package:pub_stripe_spec3/models/source_redirect_flow.dart';import 'package:pub_stripe_spec3/models/source_type_ach_credit_transfer.dart';import 'package:pub_stripe_spec3/models/source_type_ach_debit.dart';import 'package:pub_stripe_spec3/models/source_type_acss_debit.dart';import 'package:pub_stripe_spec3/models/source_type_alipay.dart';import 'package:pub_stripe_spec3/models/source_type_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/source_type_bancontact.dart';import 'package:pub_stripe_spec3/models/source_type_card.dart';import 'package:pub_stripe_spec3/models/source_type_card_present.dart';import 'package:pub_stripe_spec3/models/source_type_eps.dart';import 'package:pub_stripe_spec3/models/source_type_giropay.dart';import 'package:pub_stripe_spec3/models/source_type_ideal.dart';import 'package:pub_stripe_spec3/models/source_type_klarna.dart';import 'package:pub_stripe_spec3/models/source_type_multibanco.dart';import 'package:pub_stripe_spec3/models/source_type_p24.dart';import 'package:pub_stripe_spec3/models/source_type_sepa_debit.dart';import 'package:pub_stripe_spec3/models/source_type_sofort.dart';import 'package:pub_stripe_spec3/models/source_type_three_d_secure.dart';import 'package:pub_stripe_spec3/models/source_type_wechat.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SourceObject {const SourceObject._(this.value);
 
 factory SourceObject.fromJson(String json) { return switch (json) {
@@ -51,9 +23,9 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SourceObject($value)'; } 
  }
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
-@immutable final class SourceType {const SourceType._(this.value);
+@immutable final class SourceType$1 {const SourceType$1._(this.value);
 
-factory SourceType.fromJson(String json) { return switch (json) {
+factory SourceType$1.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
   'ach_debit' => achDebit,
   'acss_debit' => acssDebit,
@@ -72,46 +44,46 @@ factory SourceType.fromJson(String json) { return switch (json) {
   'sofort' => sofort,
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
-  _ => SourceType._(json),
+  _ => SourceType$1._(json),
 }; }
 
-static const SourceType achCreditTransfer = SourceType._('ach_credit_transfer');
+static const SourceType$1 achCreditTransfer = SourceType$1._('ach_credit_transfer');
 
-static const SourceType achDebit = SourceType._('ach_debit');
+static const SourceType$1 achDebit = SourceType$1._('ach_debit');
 
-static const SourceType acssDebit = SourceType._('acss_debit');
+static const SourceType$1 acssDebit = SourceType$1._('acss_debit');
 
-static const SourceType alipay = SourceType._('alipay');
+static const SourceType$1 alipay = SourceType$1._('alipay');
 
-static const SourceType auBecsDebit = SourceType._('au_becs_debit');
+static const SourceType$1 auBecsDebit = SourceType$1._('au_becs_debit');
 
-static const SourceType bancontact = SourceType._('bancontact');
+static const SourceType$1 bancontact = SourceType$1._('bancontact');
 
-static const SourceType card = SourceType._('card');
+static const SourceType$1 card = SourceType$1._('card');
 
-static const SourceType cardPresent = SourceType._('card_present');
+static const SourceType$1 cardPresent = SourceType$1._('card_present');
 
-static const SourceType eps = SourceType._('eps');
+static const SourceType$1 eps = SourceType$1._('eps');
 
-static const SourceType giropay = SourceType._('giropay');
+static const SourceType$1 giropay = SourceType$1._('giropay');
 
-static const SourceType ideal = SourceType._('ideal');
+static const SourceType$1 ideal = SourceType$1._('ideal');
 
-static const SourceType klarna = SourceType._('klarna');
+static const SourceType$1 klarna = SourceType$1._('klarna');
 
-static const SourceType multibanco = SourceType._('multibanco');
+static const SourceType$1 multibanco = SourceType$1._('multibanco');
 
-static const SourceType p24 = SourceType._('p24');
+static const SourceType$1 p24 = SourceType$1._('p24');
 
-static const SourceType sepaDebit = SourceType._('sepa_debit');
+static const SourceType$1 sepaDebit = SourceType$1._('sepa_debit');
 
-static const SourceType sofort = SourceType._('sofort');
+static const SourceType$1 sofort = SourceType$1._('sofort');
 
-static const SourceType threeDSecure = SourceType._('three_d_secure');
+static const SourceType$1 threeDSecure = SourceType$1._('three_d_secure');
 
-static const SourceType wechat = SourceType._('wechat');
+static const SourceType$1 wechat = SourceType$1._('wechat');
 
-static const List<SourceType> values = [achCreditTransfer, achDebit, acssDebit, alipay, auBecsDebit, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
+static const List<SourceType$1> values = [achCreditTransfer, achDebit, acssDebit, alipay, auBecsDebit, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
 
 final String value;
 
@@ -119,9 +91,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceType && other.value == value; } 
+    other is SourceType$1 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceType($value)'; } 
+@override String toString() { return 'SourceType\$1($value)'; } 
  }
 /// `Source` objects allow you to accept a variety of payment methods. They
 /// represent a customer's payment instrument, and can be used with the Stripe API
@@ -140,7 +112,7 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   achDebit: json['ach_debit'] != null ? SourceTypeAchDebit.fromJson(json['ach_debit'] as Map<String, dynamic>) : null,
   acssDebit: json['acss_debit'] != null ? SourceTypeAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   alipay: json['alipay'] != null ? SourceTypeAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
-  allowRedisplay: json['allow_redisplay'] != null ? SourceAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
+  allowRedisplay: json['allow_redisplay'] != null ? CardAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   auBecsDebit: json['au_becs_debit'] != null ? SourceTypeAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
   bancontact: json['bancontact'] != null ? SourceTypeBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
@@ -171,7 +143,7 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] as String,
   threeDSecure: json['three_d_secure'] != null ? SourceTypeThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-  type: SourceType.fromJson(json['type'] as String),
+  type: SourceType$1.fromJson(json['type'] as String),
   usage: json['usage'] as String?,
   wechat: json['wechat'] != null ? SourceTypeWechat.fromJson(json['wechat'] as Map<String, dynamic>) : null,
 ); }
@@ -185,7 +157,7 @@ final SourceTypeAcssDebit? acssDebit;
 final SourceTypeAlipay? alipay;
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-final SourceAllowRedisplay? allowRedisplay;
+final CardAllowRedisplay? allowRedisplay;
 
 /// A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the total amount associated with the source. This is the amount for which the source will be chargeable once ready. Required for `single_use` sources.
 final int? amount;
@@ -261,7 +233,7 @@ final String status;
 final SourceTypeThreeDSecure? threeDSecure;
 
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
-final SourceType type;
+final SourceType$1 type;
 
 /// Either `reusable` or `single_use`. Whether this source should be reusable or not. Some source types may or may not be reusable by construction, while others may leave the option at creation. If an incompatible value is passed, an error will be returned.
 final String? usage;
@@ -316,7 +288,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, SourceTypeAchDebit Function()? achDebit, SourceTypeAcssDebit Function()? acssDebit, SourceTypeAlipay Function()? alipay, SourceAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit Function()? auBecsDebit, SourceTypeBancontact Function()? bancontact, SourceTypeCard Function()? card, SourceTypeCardPresent Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow Function()? codeVerification, int? created, String? Function()? currency, String Function()? customer, SourceTypeEps Function()? eps, String? flow, SourceTypeGiropay Function()? giropay, String? id, SourceTypeIdeal Function()? ideal, SourceTypeKlarna Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco Function()? multibanco, SourceObject? object, SourceOwner? Function()? owner, SourceTypeP24 Function()? p24, SourceReceiverFlow Function()? receiver, SourceRedirectFlow Function()? redirect, SourceTypeSepaDebit Function()? sepaDebit, SourceTypeSofort Function()? sofort, SourceOrder Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure Function()? threeDSecure, SourceType? type, String? Function()? usage, SourceTypeWechat Function()? wechat, }) { return Source(
+Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, SourceTypeAchDebit Function()? achDebit, SourceTypeAcssDebit Function()? acssDebit, SourceTypeAlipay Function()? alipay, CardAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit Function()? auBecsDebit, SourceTypeBancontact Function()? bancontact, SourceTypeCard Function()? card, SourceTypeCardPresent Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow Function()? codeVerification, int? created, String? Function()? currency, String Function()? customer, SourceTypeEps Function()? eps, String? flow, SourceTypeGiropay Function()? giropay, String? id, SourceTypeIdeal Function()? ideal, SourceTypeKlarna Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco Function()? multibanco, SourceObject? object, SourceOwner? Function()? owner, SourceTypeP24 Function()? p24, SourceReceiverFlow Function()? receiver, SourceRedirectFlow Function()? redirect, SourceTypeSepaDebit Function()? sepaDebit, SourceTypeSofort Function()? sofort, SourceOrder Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure Function()? threeDSecure, SourceType$1? type, String? Function()? usage, SourceTypeWechat Function()? wechat, }) { return Source(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   achDebit: achDebit != null ? achDebit() : this.achDebit,
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,

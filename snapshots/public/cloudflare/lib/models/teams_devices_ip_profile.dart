@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_ip_profile_enabled.dart';import 'teams_devices_ip_profile_match.dart';import 'teams_devices_ip_profile_name.dart';import 'teams_devices_ip_profile_precedence.dart';import 'teams_devices_ip_profile_subnet_id.dart';/// The RFC3339Nano timestamp when the Device IP profile was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_enabled.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_match.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_name.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_precedence.dart';import 'package:pub_cloudflare/models/teams_devices_ip_profile_subnet_id.dart';/// The RFC3339Nano timestamp when the Device IP profile was created.
 extension type const TeamsDevicesIpProfileCreatedAt(String value) {
 factory TeamsDevicesIpProfileCreatedAt.fromJson(String json) => TeamsDevicesIpProfileCreatedAt(json);
 

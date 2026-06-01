@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'errors_source.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/errors/errors_source.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 @immutable final class ErrorsType {const ErrorsType._(this.value);
 
 factory ErrorsType.fromJson(String json) { return switch (json) {

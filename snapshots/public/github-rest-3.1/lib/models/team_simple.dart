@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ownership type of the team
-@immutable final class TeamSimpleType {const TeamSimpleType._(this.value);
-
-factory TeamSimpleType.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  _ => TeamSimpleType._(json),
-}; }
-
-static const TeamSimpleType enterprise = TeamSimpleType._('enterprise');
-
-static const TeamSimpleType organization = TeamSimpleType._('organization');
-
-static const List<TeamSimpleType> values = [enterprise, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamSimpleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamSimpleType($value)'; } 
- }
-/// Groups of organization members that gives permissions on specified repositories.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, required this.htmlUrl, required this.repositoriesUrl, required this.slug, required this.type, this.privacy, this.notificationSetting, this.ldapDn, this.organizationId, this.enterpriseId, });
 
 factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
@@ -42,7 +17,7 @@ factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   slug: json['slug'] as String,
   ldapDn: json['ldap_dn'] as String?,
-  type: TeamSimpleType.fromJson(json['type'] as String),
+  type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
 ); }
@@ -82,7 +57,7 @@ final String slug;
 final String? ldapDn;
 
 /// The ownership type of the team
-final TeamSimpleType type;
+final TeamFullType type;
 
 /// Unique identifier of the organization to which this team belongs
 final int? organizationId;
@@ -119,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('type'); } 
-TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String Function()? privacy, String Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String Function()? ldapDn, TeamSimpleType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamSimple(
+TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, String? name, String? Function()? description, String? permission, String Function()? privacy, String Function()? notificationSetting, Uri? htmlUrl, Uri? repositoriesUrl, String? slug, String Function()? ldapDn, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, }) { return TeamSimple(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,

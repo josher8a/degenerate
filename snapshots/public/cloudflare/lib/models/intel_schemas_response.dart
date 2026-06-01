@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_schemas_ip.dart';@immutable final class IntelSchemasResponse {const IntelSchemasResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_schemas_ip.dart';@immutable final class IntelSchemasResponse {const IntelSchemasResponse({this.result});
 
 factory IntelSchemasResponse.fromJson(Map<String, dynamic> json) { return IntelSchemasResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList(),

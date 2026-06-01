@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_opened_changes.dart';import 'webhook_issues_opened_issue.dart';@immutable final class WebhookIssuesOpenedAction {const WebhookIssuesOpenedAction._(this.value);
-
-factory WebhookIssuesOpenedAction.fromJson(String json) { return switch (json) {
-  'opened' => opened,
-  _ => WebhookIssuesOpenedAction._(json),
-}; }
-
-static const WebhookIssuesOpenedAction opened = WebhookIssuesOpenedAction._('opened');
-
-static const List<WebhookIssuesOpenedAction> values = [opened];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesOpenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesOpenedAction($value)'; } 
- }
-@immutable final class WebhookIssuesOpened {const WebhookIssuesOpened({required this.action, required this.issue, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_opened/webhook_issues_opened_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_opened/webhook_issues_opened_changes.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_opened/webhook_issues_opened_issue.dart';@immutable final class WebhookIssuesOpened {const WebhookIssuesOpened({required this.action, required this.issue, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesOpened.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpened(
   action: WebhookIssuesOpenedAction.fromJson(json['action'] as String),

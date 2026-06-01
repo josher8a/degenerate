@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_storage_use_response_result.dart';@immutable final class StreamStorageUseResponse {const StreamStorageUseResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_storage_use_response/stream_storage_use_response_result.dart';@immutable final class StreamStorageUseResponse {const StreamStorageUseResponse({this.result});
 
 factory StreamStorageUseResponse.fromJson(Map<String, dynamic> json) { return StreamStorageUseResponse(
   result: json['result'] != null ? StreamStorageUseResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,133 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_max_output_tokens.dart';import 'realtime_beta_response_status_details.dart';import 'realtime_beta_response_usage.dart';import 'realtime_conversation_item.dart';import 'voice_ids_shared.dart';/// The object type, must be `realtime.response`.
-@immutable final class RealtimeBetaResponseObject {const RealtimeBetaResponseObject._(this.value);
-
-factory RealtimeBetaResponseObject.fromJson(String json) { return switch (json) {
-  'realtime.response' => realtimeResponse,
-  _ => RealtimeBetaResponseObject._(json),
-}; }
-
-static const RealtimeBetaResponseObject realtimeResponse = RealtimeBetaResponseObject._('realtime.response');
-
-static const List<RealtimeBetaResponseObject> values = [realtimeResponse];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseObject($value)'; } 
- }
-/// The final status of the response (`completed`, `cancelled`, `failed`, or
-/// `incomplete`, `in_progress`).
-/// 
-@immutable final class RealtimeBetaResponseStatus {const RealtimeBetaResponseStatus._(this.value);
-
-factory RealtimeBetaResponseStatus.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'cancelled' => cancelled,
-  'failed' => failed,
-  'incomplete' => incomplete,
-  'in_progress' => inProgress,
-  _ => RealtimeBetaResponseStatus._(json),
-}; }
-
-static const RealtimeBetaResponseStatus completed = RealtimeBetaResponseStatus._('completed');
-
-static const RealtimeBetaResponseStatus cancelled = RealtimeBetaResponseStatus._('cancelled');
-
-static const RealtimeBetaResponseStatus failed = RealtimeBetaResponseStatus._('failed');
-
-static const RealtimeBetaResponseStatus incomplete = RealtimeBetaResponseStatus._('incomplete');
-
-static const RealtimeBetaResponseStatus inProgress = RealtimeBetaResponseStatus._('in_progress');
-
-static const List<RealtimeBetaResponseStatus> values = [completed, cancelled, failed, incomplete, inProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseStatus($value)'; } 
- }
-@immutable final class RealtimeBetaResponseModalities {const RealtimeBetaResponseModalities._(this.value);
-
-factory RealtimeBetaResponseModalities.fromJson(String json) { return switch (json) {
-  'text' => text,
-  'audio' => audio,
-  _ => RealtimeBetaResponseModalities._(json),
-}; }
-
-static const RealtimeBetaResponseModalities text = RealtimeBetaResponseModalities._('text');
-
-static const RealtimeBetaResponseModalities audio = RealtimeBetaResponseModalities._('audio');
-
-static const List<RealtimeBetaResponseModalities> values = [text, audio];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseModalities($value)'; } 
- }
-/// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-/// 
-@immutable final class RealtimeBetaResponseOutputAudioFormat {const RealtimeBetaResponseOutputAudioFormat._(this.value);
-
-factory RealtimeBetaResponseOutputAudioFormat.fromJson(String json) { return switch (json) {
-  'pcm16' => pcm16,
-  'g711_ulaw' => g711Ulaw,
-  'g711_alaw' => g711Alaw,
-  _ => RealtimeBetaResponseOutputAudioFormat._(json),
-}; }
-
-static const RealtimeBetaResponseOutputAudioFormat pcm16 = RealtimeBetaResponseOutputAudioFormat._('pcm16');
-
-static const RealtimeBetaResponseOutputAudioFormat g711Ulaw = RealtimeBetaResponseOutputAudioFormat._('g711_ulaw');
-
-static const RealtimeBetaResponseOutputAudioFormat g711Alaw = RealtimeBetaResponseOutputAudioFormat._('g711_alaw');
-
-static const List<RealtimeBetaResponseOutputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseOutputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseOutputAudioFormat($value)'; } 
- }
-/// The response resource.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_object.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_status.dart';import 'package:pub_openai/models/realtime_beta_response/realtime_beta_response_usage.dart';import 'package:pub_openai/models/realtime_beta_response/status_details.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The response resource.
 @immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
 
 factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponse(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeBetaResponseObject.fromJson(json['object'] as String) : null,
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
-  statusDetails: json['status_details'] != null ? RealtimeBetaResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
+  statusDetails: json['status_details'] != null ? StatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
-  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseModalities.fromJson(e as String)).toList(),
-  outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
+  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Modalities.fromJson(e as String)).toList(),
+  outputAudioFormat: json['output_audio_format'] != null ? OutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeBetaResponseMaxOutputTokensVariant2.fromJson(v as String),) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
 ); }
 
 /// The unique ID of the response.
@@ -142,7 +31,7 @@ final RealtimeBetaResponseObject? object;
 final RealtimeBetaResponseStatus? status;
 
 /// Additional details about the status.
-final RealtimeBetaResponseStatusDetails? statusDetails;
+final StatusDetails? statusDetails;
 
 /// The list of output items generated by the response.
 final List<RealtimeConversationItem>? output;
@@ -183,11 +72,11 @@ final VoiceIdsShared? voice;
 /// the model will pick one, for example if `modalities` is `["text", "audio"]`, the model
 /// could be responding in either text or audio.
 /// 
-final List<RealtimeBetaResponseModalities>? modalities;
+final List<Modalities>? modalities;
 
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final RealtimeBetaResponseOutputAudioFormat? outputAudioFormat;
+final OutputAudioFormat? outputAudioFormat;
 
 /// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
@@ -196,7 +85,7 @@ final double? temperature;
 /// Maximum number of output tokens for a single assistant response,
 /// inclusive of tool calls, that was used in this response.
 /// 
-final RealtimeBetaResponseMaxOutputTokens? maxOutputTokens;
+final MaxOutputTokens? maxOutputTokens;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -214,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
-RealtimeBetaResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, RealtimeBetaResponseStatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, VoiceIdsShared Function()? voice, List<RealtimeBetaResponseModalities> Function()? modalities, RealtimeBetaResponseOutputAudioFormat Function()? outputAudioFormat, double Function()? temperature, RealtimeBetaResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
+RealtimeBetaResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, StatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, VoiceIdsShared Function()? voice, List<Modalities> Function()? modalities, OutputAudioFormat Function()? outputAudioFormat, double Function()? temperature, MaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,

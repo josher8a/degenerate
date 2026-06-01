@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Alert frequency (immediate or daily)
-@immutable final class GetEventQueryAlertListResponseFrequency {const GetEventQueryAlertListResponseFrequency._(this.value);
-
-factory GetEventQueryAlertListResponseFrequency.fromJson(String json) { return switch (json) {
-  'immediate' => immediate,
-  'daily' => daily,
-  _ => GetEventQueryAlertListResponseFrequency._(json),
-}; }
-
-static const GetEventQueryAlertListResponseFrequency immediate = GetEventQueryAlertListResponseFrequency._('immediate');
-
-static const GetEventQueryAlertListResponseFrequency daily = GetEventQueryAlertListResponseFrequency._('daily');
-
-static const List<GetEventQueryAlertListResponseFrequency> values = [immediate, daily];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEventQueryAlertListResponseFrequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEventQueryAlertListResponseFrequency($value)'; } 
- }
-@immutable final class GetEventQueryAlertListResponse {const GetEventQueryAlertListResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_event_query_alert_list_response/get_event_query_alert_list_response_frequency.dart';@immutable final class GetEventQueryAlertListResponse {const GetEventQueryAlertListResponse({required this.accountId, required this.createdAt, required this.enabled, required this.frequency, required this.id, required this.notificationType, required this.queryId, required this.updatedAt, required this.userEmail, this.lastSentAt, });
 
 factory GetEventQueryAlertListResponse.fromJson(Map<String, dynamic> json) { return GetEventQueryAlertListResponse(
   accountId: (json['account_id'] as num).toInt(),

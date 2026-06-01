@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_not_received_evidence_additional_documentation.dart';/// Whether the product was a merchandise or service.
-@immutable final class IssuingDisputeNotReceivedEvidenceProductType {const IssuingDisputeNotReceivedEvidenceProductType._(this.value);
-
-factory IssuingDisputeNotReceivedEvidenceProductType.fromJson(String json) { return switch (json) {
-  'merchandise' => merchandise,
-  'service' => service,
-  _ => IssuingDisputeNotReceivedEvidenceProductType._(json),
-}; }
-
-static const IssuingDisputeNotReceivedEvidenceProductType merchandise = IssuingDisputeNotReceivedEvidenceProductType._('merchandise');
-
-static const IssuingDisputeNotReceivedEvidenceProductType service = IssuingDisputeNotReceivedEvidenceProductType._('service');
-
-static const List<IssuingDisputeNotReceivedEvidenceProductType> values = [merchandise, service];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeNotReceivedEvidenceProductType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeNotReceivedEvidenceProductType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_product_type.dart';/// 
 @immutable final class IssuingDisputeNotReceivedEvidence {const IssuingDisputeNotReceivedEvidence({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
 factory IssuingDisputeNotReceivedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeNotReceivedEvidence(
@@ -33,11 +8,11 @@ factory IssuingDisputeNotReceivedEvidence.fromJson(Map<String, dynamic> json) { 
   expectedAt: json['expected_at'] != null ? (json['expected_at'] as num).toInt() : null,
   explanation: json['explanation'] as String?,
   productDescription: json['product_description'] as String?,
-  productType: json['product_type'] != null ? IssuingDisputeNotReceivedEvidenceProductType.fromJson(json['product_type'] as String) : null,
+  productType: json['product_type'] != null ? IssuingDisputeCanceledEvidenceProductType.fromJson(json['product_type'] as String) : null,
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeNotReceivedEvidenceAdditionalDocumentation? additionalDocumentation;
+final IssuingDisputeCanceledEvidenceAdditionalDocumentation? additionalDocumentation;
 
 /// Date when the cardholder expected to receive the product.
 final int? expectedAt;
@@ -49,7 +24,7 @@ final String? explanation;
 final String? productDescription;
 
 /// Whether the product was a merchandise or service.
-final IssuingDisputeNotReceivedEvidenceProductType? productType;
+final IssuingDisputeCanceledEvidenceProductType? productType;
 
 Map<String, dynamic> toJson() { return {
   if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
@@ -59,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-IssuingDisputeNotReceivedEvidence copyWith({IssuingDisputeNotReceivedEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? expectedAt, String? Function()? explanation, String? Function()? productDescription, IssuingDisputeNotReceivedEvidenceProductType? Function()? productType, }) { return IssuingDisputeNotReceivedEvidence(
+IssuingDisputeNotReceivedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? expectedAt, String? Function()? explanation, String? Function()? productDescription, IssuingDisputeCanceledEvidenceProductType? Function()? productType, }) { return IssuingDisputeNotReceivedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,
   explanation: explanation != null ? explanation() : this.explanation,

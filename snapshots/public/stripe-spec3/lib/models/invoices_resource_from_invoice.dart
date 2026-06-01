@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice.dart';import 'invoices_resource_from_invoice_invoice.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// 
 @immutable final class InvoicesResourceFromInvoice {const InvoicesResourceFromInvoice({required this.action, required this.invoice, });
 
 factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) { return InvoicesResourceFromInvoice(
@@ -12,7 +12,7 @@ factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) { return
 final String action;
 
 /// The invoice that was cloned.
-final InvoicesResourceFromInvoiceInvoice invoice;
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice invoice;
 
 Map<String, dynamic> toJson() { return {
   'action': action,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
       json.containsKey('invoice'); } 
-InvoicesResourceFromInvoice copyWith({String? action, InvoicesResourceFromInvoiceInvoice? invoice, }) { return InvoicesResourceFromInvoice(
+InvoicesResourceFromInvoice copyWith({String? action, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, }) { return InvoicesResourceFromInvoice(
   action: action ?? this.action,
   invoice: invoice ?? this.invoice,
 ); } 

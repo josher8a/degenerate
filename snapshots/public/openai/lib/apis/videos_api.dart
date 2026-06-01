@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_video_body.dart';import '../models/create_video_remix_body.dart';import '../models/deleted_video_resource.dart';import '../models/order_enum.dart';import '../models/video_content_variant.dart';import '../models/video_list_resource.dart';import '../models/video_resource.dart';/// VideosApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_video_body.dart';import 'package:pub_openai/models/create_video_remix_body.dart';import 'package:pub_openai/models/deleted_video_resource.dart';import 'package:pub_openai/models/order_enum.dart';import 'package:pub_openai/models/video_content_variant.dart';import 'package:pub_openai/models/video_list_resource.dart';import 'package:pub_openai/models/video_resource.dart';/// VideosApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

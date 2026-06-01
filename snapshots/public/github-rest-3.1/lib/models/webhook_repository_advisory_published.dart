@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_advisory.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryAdvisoryPublishedAction {const WebhookRepositoryAdvisoryPublishedAction._(this.value);
-
-factory WebhookRepositoryAdvisoryPublishedAction.fromJson(String json) { return switch (json) {
-  'published' => published,
-  _ => WebhookRepositoryAdvisoryPublishedAction._(json),
-}; }
-
-static const WebhookRepositoryAdvisoryPublishedAction published = WebhookRepositoryAdvisoryPublishedAction._('published');
-
-static const List<WebhookRepositoryAdvisoryPublishedAction> values = [published];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryAdvisoryPublishedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryAdvisoryPublishedAction($value)'; } 
- }
-@immutable final class WebhookRepositoryAdvisoryPublished {const WebhookRepositoryAdvisoryPublished({required this.action, required this.repository, required this.repositoryAdvisory, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_advisory.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/webhook_package_published_action.dart';@immutable final class WebhookRepositoryAdvisoryPublished {const WebhookRepositoryAdvisoryPublished({required this.action, required this.repository, required this.repositoryAdvisory, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookRepositoryAdvisoryPublished.fromJson(Map<String, dynamic> json) { return WebhookRepositoryAdvisoryPublished(
-  action: WebhookRepositoryAdvisoryPublishedAction.fromJson(json['action'] as String),
+  action: WebhookPackagePublishedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookRepositoryAdvisoryPublished.fromJson(Map<String, dynamic> json) {
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookRepositoryAdvisoryPublishedAction action;
+final WebhookPackagePublishedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('repository_advisory'); } 
-WebhookRepositoryAdvisoryPublished copyWith({WebhookRepositoryAdvisoryPublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, RepositoryAdvisory? repositoryAdvisory, SimpleUser Function()? sender, }) { return WebhookRepositoryAdvisoryPublished(
+WebhookRepositoryAdvisoryPublished copyWith({WebhookPackagePublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, RepositoryAdvisory? repositoryAdvisory, SimpleUser Function()? sender, }) { return WebhookRepositoryAdvisoryPublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_message.dart';/// A response object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_message.dart';/// A response object.
 @immutable final class RulesetsResponse {const RulesetsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory RulesetsResponse.fromJson(Map<String, dynamic> json) { return RulesetsResponse(

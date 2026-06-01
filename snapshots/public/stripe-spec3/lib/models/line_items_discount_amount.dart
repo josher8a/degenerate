@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
 @immutable final class LineItemsDiscountAmount {const LineItemsDiscountAmount({required this.amount, required this.discount, });
 
 factory LineItemsDiscountAmount.fromJson(Map<String, dynamic> json) { return LineItemsDiscountAmount(

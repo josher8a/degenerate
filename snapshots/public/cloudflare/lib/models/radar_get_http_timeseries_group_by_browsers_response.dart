@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_browsers_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowsersResponse {const RadarGetHttpTimeseriesGroupByBrowsersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowsersResponse {const RadarGetHttpTimeseriesGroupByBrowsersResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByBrowsersResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBrowsersResponse(
-  result: RadarGetHttpTimeseriesGroupByBrowsersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetHttpTimeseriesGroupByBrowsersResponseResult result;
+final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByBrowsersResponse copyWith({RadarGetHttpTimeseriesGroupByBrowsersResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByBrowsersResponse(
+RadarGetHttpTimeseriesGroupByBrowsersResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByBrowsersResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

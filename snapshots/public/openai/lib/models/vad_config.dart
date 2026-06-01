@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Must be set to `server_vad` to enable manual chunking using server side VAD.
-@immutable final class VadConfigType {const VadConfigType._(this.value);
-
-factory VadConfigType.fromJson(String json) { return switch (json) {
-  'server_vad' => serverVad,
-  _ => VadConfigType._(json),
-}; }
-
-static const VadConfigType serverVad = VadConfigType._('server_vad');
-
-static const List<VadConfigType> values = [serverVad];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VadConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VadConfigType($value)'; } 
- }
-@immutable final class VadConfig {const VadConfig({required this.type, this.prefixPaddingMs = 300, this.silenceDurationMs = 200, this.threshold = 0.5, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vad_config/vad_config_type.dart';@immutable final class VadConfig {const VadConfig({required this.type, this.prefixPaddingMs = 300, this.silenceDurationMs = 200, this.threshold = 0.5, });
 
 factory VadConfig.fromJson(Map<String, dynamic> json) { return VadConfig(
   type: VadConfigType.fromJson(json['type'] as String),

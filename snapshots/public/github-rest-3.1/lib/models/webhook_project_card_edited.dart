@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_card_edited_changes.dart';import 'webhooks_project_card.dart';@immutable final class WebhookProjectCardEditedAction {const WebhookProjectCardEditedAction._(this.value);
-
-factory WebhookProjectCardEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookProjectCardEditedAction._(json),
-}; }
-
-static const WebhookProjectCardEditedAction edited = WebhookProjectCardEditedAction._('edited');
-
-static const List<WebhookProjectCardEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectCardEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectCardEditedAction($value)'; } 
- }
-@immutable final class WebhookProjectCardEdited {const WebhookProjectCardEdited({required this.action, required this.changes, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_edited/webhook_project_card_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_card.dart';@immutable final class WebhookProjectCardEdited {const WebhookProjectCardEdited({required this.action, required this.changes, required this.projectCard, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectCardEdited.fromJson(Map<String, dynamic> json) { return WebhookProjectCardEdited(
-  action: WebhookProjectCardEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookProjectCardEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookProjectCardEdited.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookProjectCardEditedAction action;
+final ItemEditedAction action;
 
 final WebhookProjectCardEditedChanges changes;
 
@@ -64,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('project_card') &&
       json.containsKey('sender'); } 
-WebhookProjectCardEdited copyWith({WebhookProjectCardEditedAction? action, WebhookProjectCardEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectCard? projectCard, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardEdited(
+WebhookProjectCardEdited copyWith({ItemEditedAction? action, WebhookProjectCardEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectCard? projectCard, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectCardEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

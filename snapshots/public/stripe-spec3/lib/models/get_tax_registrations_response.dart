@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_registration.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetTaxRegistrationsResponseObject {const GetTaxRegistrationsResponseObject._(this.value);
-
-factory GetTaxRegistrationsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetTaxRegistrationsResponseObject._(json),
-}; }
-
-static const GetTaxRegistrationsResponseObject list = GetTaxRegistrationsResponseObject._('list');
-
-static const List<GetTaxRegistrationsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTaxRegistrationsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTaxRegistrationsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/tax_registration.dart';/// 
 @immutable final class GetTaxRegistrationsResponse {const GetTaxRegistrationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetTaxRegistrationsResponse.fromJson(Map<String, dynamic> json) { return GetTaxRegistrationsResponse(
   data: (json['data'] as List<dynamic>).map((e) => TaxRegistration.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetTaxRegistrationsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<TaxRegistration> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetTaxRegistrationsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetTaxRegistrationsResponse copyWith({List<TaxRegistration>? data, bool? hasMore, GetTaxRegistrationsResponseObject? object, String? url, }) { return GetTaxRegistrationsResponse(
+GetTaxRegistrationsResponse copyWith({List<TaxRegistration>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetTaxRegistrationsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_group_by_edns_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByEdnsResponse {const RadarGetDnsAs112TimeseriesGroupByEdnsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_dnssec_response/radar_get_dns_as112_timeseries_group_by_dnssec_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesGroupByEdnsResponse {const RadarGetDnsAs112TimeseriesGroupByEdnsResponse({required this.result, required this.success, });
 
 factory RadarGetDnsAs112TimeseriesGroupByEdnsResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByEdnsResponse(
-  result: RadarGetDnsAs112TimeseriesGroupByEdnsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetDnsAs112TimeseriesGroupByEdnsResponseResult result;
+final RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsAs112TimeseriesGroupByEdnsResponse copyWith({RadarGetDnsAs112TimeseriesGroupByEdnsResponseResult? result, bool? success, }) { return RadarGetDnsAs112TimeseriesGroupByEdnsResponse(
+RadarGetDnsAs112TimeseriesGroupByEdnsResponse copyWith({RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult? result, bool? success, }) { return RadarGetDnsAs112TimeseriesGroupByEdnsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_merchant_blocked.dart';import 'insights_resources_payment_evaluation_rejected.dart';import 'insights_resources_payment_evaluation_succeeded.dart';/// Indicates the outcome of the payment evaluation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_merchant_blocked.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_succeeded.dart';/// Indicates the outcome of the payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationOutcomeType.fromJson(String json) { return switch (json) {

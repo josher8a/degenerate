@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount_by_source_type.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';/// 
 @immutable final class BalanceAmount {const BalanceAmount({required this.amount, required this.currency, this.sourceTypes, });
 
 factory BalanceAmount.fromJson(Map<String, dynamic> json) { return BalanceAmount(

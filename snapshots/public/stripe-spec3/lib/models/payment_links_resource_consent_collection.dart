@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
-@immutable final class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions._(this.value);
-
-factory PaymentLinksResourceConsentCollectionPromotions.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'none' => none,
-  _ => PaymentLinksResourceConsentCollectionPromotions._(json),
-}; }
-
-static const PaymentLinksResourceConsentCollectionPromotions auto = PaymentLinksResourceConsentCollectionPromotions._('auto');
-
-static const PaymentLinksResourceConsentCollectionPromotions none = PaymentLinksResourceConsentCollectionPromotions._('none');
-
-static const List<PaymentLinksResourceConsentCollectionPromotions> values = [auto, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceConsentCollectionPromotions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceConsentCollectionPromotions($value)'; } 
- }
-/// If set to `required`, it requires cutomers to accept the terms of service before being able to pay. If set to `none`, customers won't be shown a checkbox to accept the terms of service.
-@immutable final class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService._(this.value);
-
-factory PaymentLinksResourceConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'required' => $required,
-  _ => PaymentLinksResourceConsentCollectionTermsOfService._(json),
-}; }
-
-static const PaymentLinksResourceConsentCollectionTermsOfService none = PaymentLinksResourceConsentCollectionTermsOfService._('none');
-
-static const PaymentLinksResourceConsentCollectionTermsOfService $required = PaymentLinksResourceConsentCollectionTermsOfService._('required');
-
-static const List<PaymentLinksResourceConsentCollectionTermsOfService> values = [none, $required];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceConsentCollectionTermsOfService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceConsentCollectionTermsOfService($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_consent_collection/payment_links_resource_consent_collection_promotions.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_consent_collection/payment_links_resource_consent_collection_terms_of_service.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_payment_method_reuse_agreement.dart';/// 
 @immutable final class PaymentLinksResourceConsentCollection {const PaymentLinksResourceConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentLinksResourceConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceConsentCollection(

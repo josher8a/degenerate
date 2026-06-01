@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';import 'billing_portal_session_configuration.dart';import 'portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session/configuration.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 @immutable final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
 
 factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
@@ -214,7 +214,7 @@ factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return Billin
 ); }
 
 /// The configuration used by this session, describing the features available.
-final BillingPortalSessionConfiguration configuration;
+final Configuration configuration;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -270,7 +270,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, String? Function()? customerAccount, PortalFlowsFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
+BillingPortalSession copyWith({Configuration? configuration, int? created, String? customer, String? Function()? customerAccount, PortalFlowsFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
   configuration: configuration ?? this.configuration,
   created: created ?? this.created,
   customer: customer ?? this.customer,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
 @immutable final class AccountEnumType {const AccountEnumType._(this.value);
 
 factory AccountEnumType.fromJson(String json) { return switch (json) {

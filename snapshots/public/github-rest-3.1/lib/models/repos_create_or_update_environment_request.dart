@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy_settings.dart';import 'repos_create_or_update_environment_request_reviewers.dart';import 'wait_timer.dart';/// Whether or not a user who created the job is prevented from approving their own job.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_settings.dart';import 'package:pub_github_rest_3_1/models/repos_create_or_update_environment_request/repos_create_or_update_environment_request_reviewers.dart';import 'package:pub_github_rest_3_1/models/wait_timer.dart';/// Whether or not a user who created the job is prevented from approving their own job.
 extension type const PreventSelfReview(bool value) {
 factory PreventSelfReview.fromJson(bool json) => PreventSelfReview(json);
 

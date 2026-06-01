@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'contributor_activity_weeks.dart';import 'simple_user.dart';/// Contributor Activity
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/contributor_activity/weeks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Contributor Activity
 @immutable final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });
 
 factory ContributorActivity.fromJson(Map<String, dynamic> json) { return ContributorActivity(
   author: json['author'] != null ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
-  weeks: (json['weeks'] as List<dynamic>).map((e) => ContributorActivityWeeks.fromJson(e as Map<String, dynamic>)).toList(),
+  weeks: (json['weeks'] as List<dynamic>).map((e) => Weeks.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final SimpleUser? author;
 
 final int total;
 
-final List<ContributorActivityWeeks> weeks;
+final List<Weeks> weeks;
 
 Map<String, dynamic> toJson() { return {
   if (author != null) 'author': author?.toJson(),
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
       json.containsKey('total') && json['total'] is num &&
       json.containsKey('weeks'); } 
-ContributorActivity copyWith({SimpleUser? Function()? author, int? total, List<ContributorActivityWeeks>? weeks, }) { return ContributorActivity(
+ContributorActivity copyWith({SimpleUser? Function()? author, int? total, List<Weeks>? weeks, }) { return ContributorActivity(
   author: author != null ? author() : this.author,
   total: total ?? this.total,
   weeks: weeks ?? this.weeks,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_email_setting_name.dart';/// The date and time the settings have been created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_email_setting_name.dart';/// The date and time the settings have been created.
 extension type EmailEmailSettingCreated(DateTime value) {
 factory EmailEmailSettingCreated.fromJson(String json) => EmailEmailSettingCreated(DateTime.parse(json));
 

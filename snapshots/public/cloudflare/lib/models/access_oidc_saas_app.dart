@@ -1,94 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_saas_app_custom_claims.dart';import 'access_oidc_saas_app_hybrid_and_implicit_options.dart';import 'access_oidc_saas_app_refresh_token_options.dart';import 'access_timestamp.dart';/// Identifier of the authentication protocol used for the saas app. Required for OIDC.
-@immutable final class AccessOidcSaasAppAuthType {const AccessOidcSaasAppAuthType._(this.value);
-
-factory AccessOidcSaasAppAuthType.fromJson(String json) { return switch (json) {
-  'saml' => saml,
-  'oidc' => oidc,
-  _ => AccessOidcSaasAppAuthType._(json),
-}; }
-
-static const AccessOidcSaasAppAuthType saml = AccessOidcSaasAppAuthType._('saml');
-
-static const AccessOidcSaasAppAuthType oidc = AccessOidcSaasAppAuthType._('oidc');
-
-static const List<AccessOidcSaasAppAuthType> values = [saml, oidc];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppAuthType($value)'; } 
- }
-@immutable final class AccessOidcSaasAppGrantTypes {const AccessOidcSaasAppGrantTypes._(this.value);
-
-factory AccessOidcSaasAppGrantTypes.fromJson(String json) { return switch (json) {
-  'authorization_code' => authorizationCode,
-  'authorization_code_with_pkce' => authorizationCodeWithPkce,
-  'refresh_tokens' => refreshTokens,
-  'hybrid' => hybrid,
-  'implicit' => implicit,
-  _ => AccessOidcSaasAppGrantTypes._(json),
-}; }
-
-static const AccessOidcSaasAppGrantTypes authorizationCode = AccessOidcSaasAppGrantTypes._('authorization_code');
-
-static const AccessOidcSaasAppGrantTypes authorizationCodeWithPkce = AccessOidcSaasAppGrantTypes._('authorization_code_with_pkce');
-
-static const AccessOidcSaasAppGrantTypes refreshTokens = AccessOidcSaasAppGrantTypes._('refresh_tokens');
-
-static const AccessOidcSaasAppGrantTypes hybrid = AccessOidcSaasAppGrantTypes._('hybrid');
-
-static const AccessOidcSaasAppGrantTypes implicit = AccessOidcSaasAppGrantTypes._('implicit');
-
-static const List<AccessOidcSaasAppGrantTypes> values = [authorizationCode, authorizationCodeWithPkce, refreshTokens, hybrid, implicit];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppGrantTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppGrantTypes($value)'; } 
- }
-@immutable final class AccessOidcSaasAppScopes {const AccessOidcSaasAppScopes._(this.value);
-
-factory AccessOidcSaasAppScopes.fromJson(String json) { return switch (json) {
-  'openid' => openid,
-  'groups' => groups,
-  'email' => email,
-  'profile' => profile,
-  _ => AccessOidcSaasAppScopes._(json),
-}; }
-
-static const AccessOidcSaasAppScopes openid = AccessOidcSaasAppScopes._('openid');
-
-static const AccessOidcSaasAppScopes groups = AccessOidcSaasAppScopes._('groups');
-
-static const AccessOidcSaasAppScopes email = AccessOidcSaasAppScopes._('email');
-
-static const AccessOidcSaasAppScopes profile = AccessOidcSaasAppScopes._('profile');
-
-static const List<AccessOidcSaasAppScopes> values = [openid, groups, email, profile];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOidcSaasAppScopes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOidcSaasAppScopes($value)'; } 
- }
-@immutable final class AccessOidcSaasApp {const AccessOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_custom_claims.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_scopes.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/grant_types.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/hybrid_and_implicit_options.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/refresh_token_options.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessOidcSaasApp {const AccessOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
 
 factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOidcSaasApp(
   accessTokenLifetime: json['access_token_lifetime'] as String?,
@@ -99,12 +11,12 @@ factory AccessOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessOid
   clientSecret: json['client_secret'] as String?,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   customClaims: (json['custom_claims'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppCustomClaims.fromJson(e as Map<String, dynamic>)).toList(),
-  grantTypes: (json['grant_types'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppGrantTypes.fromJson(e as String)).toList(),
+  grantTypes: (json['grant_types'] as List<dynamic>?)?.map((e) => GrantTypes.fromJson(e as String)).toList(),
   groupFilterRegex: json['group_filter_regex'] as String?,
-  hybridAndImplicitOptions: json['hybrid_and_implicit_options'] != null ? AccessOidcSaasAppHybridAndImplicitOptions.fromJson(json['hybrid_and_implicit_options'] as Map<String, dynamic>) : null,
+  hybridAndImplicitOptions: json['hybrid_and_implicit_options'] != null ? HybridAndImplicitOptions.fromJson(json['hybrid_and_implicit_options'] as Map<String, dynamic>) : null,
   publicKey: json['public_key'] as String?,
   redirectUris: (json['redirect_uris'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  refreshTokenOptions: json['refresh_token_options'] != null ? AccessOidcSaasAppRefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>) : null,
+  refreshTokenOptions: json['refresh_token_options'] != null ? RefreshTokenOptions.fromJson(json['refresh_token_options'] as Map<String, dynamic>) : null,
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => AccessOidcSaasAppScopes.fromJson(e as String)).toList(),
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
@@ -132,12 +44,12 @@ final AccessTimestamp? createdAt;
 final List<AccessOidcSaasAppCustomClaims>? customClaims;
 
 /// The OIDC flows supported by this application
-final List<AccessOidcSaasAppGrantTypes>? grantTypes;
+final List<GrantTypes>? grantTypes;
 
 /// A regex to filter Cloudflare groups returned in ID token and userinfo endpoint
 final String? groupFilterRegex;
 
-final AccessOidcSaasAppHybridAndImplicitOptions? hybridAndImplicitOptions;
+final HybridAndImplicitOptions? hybridAndImplicitOptions;
 
 /// The Access public certificate that will be used to verify your identity.
 final String? publicKey;
@@ -145,7 +57,7 @@ final String? publicKey;
 /// The permitted URL's for Cloudflare to return Authorization codes and Access/ID tokens
 final List<String>? redirectUris;
 
-final AccessOidcSaasAppRefreshTokenOptions? refreshTokenOptions;
+final RefreshTokenOptions? refreshTokenOptions;
 
 /// Define the user information shared with access, "offline_access" scope will be automatically enabled if refresh tokens are enabled
 final List<AccessOidcSaasAppScopes>? scopes;
@@ -171,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_token_lifetime', 'allow_pkce_without_client_secret', 'app_launcher_url', 'auth_type', 'client_id', 'client_secret', 'created_at', 'custom_claims', 'grant_types', 'group_filter_regex', 'hybrid_and_implicit_options', 'public_key', 'redirect_uris', 'refresh_token_options', 'scopes', 'updated_at'}.contains(key)); } 
-AccessOidcSaasApp copyWith({String Function()? accessTokenLifetime, bool Function()? allowPkceWithoutClientSecret, String Function()? appLauncherUrl, AccessOidcSaasAppAuthType Function()? authType, String Function()? clientId, String Function()? clientSecret, AccessTimestamp Function()? createdAt, List<AccessOidcSaasAppCustomClaims> Function()? customClaims, List<AccessOidcSaasAppGrantTypes> Function()? grantTypes, String Function()? groupFilterRegex, AccessOidcSaasAppHybridAndImplicitOptions Function()? hybridAndImplicitOptions, String Function()? publicKey, List<String> Function()? redirectUris, AccessOidcSaasAppRefreshTokenOptions Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes> Function()? scopes, AccessTimestamp Function()? updatedAt, }) { return AccessOidcSaasApp(
+AccessOidcSaasApp copyWith({String Function()? accessTokenLifetime, bool Function()? allowPkceWithoutClientSecret, String Function()? appLauncherUrl, AccessOidcSaasAppAuthType Function()? authType, String Function()? clientId, String Function()? clientSecret, AccessTimestamp Function()? createdAt, List<AccessOidcSaasAppCustomClaims> Function()? customClaims, List<GrantTypes> Function()? grantTypes, String Function()? groupFilterRegex, HybridAndImplicitOptions Function()? hybridAndImplicitOptions, String Function()? publicKey, List<String> Function()? redirectUris, RefreshTokenOptions Function()? refreshTokenOptions, List<AccessOidcSaasAppScopes> Function()? scopes, AccessTimestamp Function()? updatedAt, }) { return AccessOidcSaasApp(
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   allowPkceWithoutClientSecret: allowPkceWithoutClientSecret != null ? allowPkceWithoutClientSecret() : this.allowPkceWithoutClientSecret,
   appLauncherUrl: appLauncherUrl != null ? appLauncherUrl() : this.appLauncherUrl,

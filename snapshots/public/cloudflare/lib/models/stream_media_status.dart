@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_media_state.dart';/// Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_media_state.dart';/// Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
 extension type const StreamErrorReasonCode(String value) {
 factory StreamErrorReasonCode.fromJson(String json) => StreamErrorReasonCode(json);
 

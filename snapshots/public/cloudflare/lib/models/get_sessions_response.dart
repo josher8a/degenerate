@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_sessions_response_data.dart';@immutable final class GetSessionsResponse {const GetSessionsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_sessions_response/get_sessions_response_data.dart';@immutable final class GetSessionsResponse {const GetSessionsResponse({this.data, this.success, });
 
 factory GetSessionsResponse.fromJson(Map<String, dynamic> json) { return GetSessionsResponse(
   data: json['data'] != null ? GetSessionsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

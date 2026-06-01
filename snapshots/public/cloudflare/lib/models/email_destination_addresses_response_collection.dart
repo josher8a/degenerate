@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_destination_address_properties.dart';import 'email_destination_addresses_response_collection_result_info.dart';@immutable final class EmailDestinationAddressesResponseCollection {const EmailDestinationAddressesResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_response_collection/access_users_components_schemas_response_collection_result_info.dart';import 'package:pub_cloudflare/models/email_destination_address_properties.dart';@immutable final class EmailDestinationAddressesResponseCollection {const EmailDestinationAddressesResponseCollection({this.result, this.resultInfo, });
 
 factory EmailDestinationAddressesResponseCollection.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressesResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => EmailDestinationAddressProperties.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: json['result_info'] != null ? EmailDestinationAddressesResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? AccessUsersComponentsSchemasResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
 
 final List<EmailDestinationAddressProperties>? result;
 
-final EmailDestinationAddressesResponseCollectionResultInfo? resultInfo;
+final AccessUsersComponentsSchemasResponseCollectionResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result', 'result_info'}.contains(key)); } 
-EmailDestinationAddressesResponseCollection copyWith({List<EmailDestinationAddressProperties> Function()? result, EmailDestinationAddressesResponseCollectionResultInfo Function()? resultInfo, }) { return EmailDestinationAddressesResponseCollection(
+EmailDestinationAddressesResponseCollection copyWith({List<EmailDestinationAddressProperties> Function()? result, AccessUsersComponentsSchemasResponseCollectionResultInfo Function()? resultInfo, }) { return EmailDestinationAddressesResponseCollection(
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 

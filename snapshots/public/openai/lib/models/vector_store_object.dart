@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_expiration_after.dart';import 'vector_store_object_file_counts.dart';/// The object type, which is always `vector_store`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';/// The object type, which is always `vector_store`.
 @immutable final class VectorStoreObjectObject {const VectorStoreObjectObject._(this.value);
 
 factory VectorStoreObjectObject.fromJson(String json) { return switch (json) {
@@ -59,7 +59,7 @@ factory VectorStoreObject.fromJson(Map<String, dynamic> json) { return VectorSto
   createdAt: (json['created_at'] as num).toInt(),
   name: json['name'] as String,
   usageBytes: (json['usage_bytes'] as num).toInt(),
-  fileCounts: VectorStoreObjectFileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
+  fileCounts: FileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
   status: VectorStoreObjectStatus.fromJson(json['status'] as String),
   expiresAfter: json['expires_after'] != null ? VectorStoreExpirationAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
@@ -82,7 +82,7 @@ final String name;
 /// The total number of bytes used by the files in the vector store.
 final int usageBytes;
 
-final VectorStoreObjectFileCounts fileCounts;
+final FileCounts fileCounts;
 
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
 final VectorStoreObjectStatus status;
@@ -126,7 +126,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('status') &&
       json.containsKey('last_active_at') && json['last_active_at'] is num &&
       json.containsKey('metadata'); } 
-VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, VectorStoreObjectFileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter Function()? expiresAfter, int? Function()? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
+VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? createdAt, String? name, int? usageBytes, FileCounts? fileCounts, VectorStoreObjectStatus? status, VectorStoreExpirationAfter Function()? expiresAfter, int? Function()? expiresAt, int? Function()? lastActiveAt, Map<String, String>? Function()? metadata, }) { return VectorStoreObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

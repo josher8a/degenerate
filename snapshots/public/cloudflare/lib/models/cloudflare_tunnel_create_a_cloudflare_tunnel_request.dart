@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config_src.dart';import 'tunnel_tunnel_name.dart';import 'tunnel_tunnel_secret.dart';@immutable final class CloudflareTunnelCreateACloudflareTunnelRequest {const CloudflareTunnelCreateACloudflareTunnelRequest({required this.name, this.configSrc, this.tunnelSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config_src.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_secret.dart';@immutable final class CloudflareTunnelCreateACloudflareTunnelRequest {const CloudflareTunnelCreateACloudflareTunnelRequest({required this.name, this.configSrc, this.tunnelSecret, });
 
 factory CloudflareTunnelCreateACloudflareTunnelRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelCreateACloudflareTunnelRequest(
   configSrc: json['config_src'] != null ? TunnelConfigSrc.fromJson(json['config_src'] as String) : null,

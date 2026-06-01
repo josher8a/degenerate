@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_card_request_metadata.dart';import 'post_issuing_cards_card_request_pin.dart';import 'post_issuing_cards_card_request_shipping.dart';import 'post_issuing_cards_card_request_spending_controls.dart';/// Reason why the `status` of this card is `canceled`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';/// Reason why the `status` of this card is `canceled`.
 @immutable final class PostIssuingCardsCardRequestCancellationReason {const PostIssuingCardsCardRequestCancellationReason._(this.value);
 
 factory PostIssuingCardsCardRequestCancellationReason.fromJson(String json) { return switch (json) {
@@ -25,45 +25,17 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsCardRequestCancellationReason($value)'; } 
  }
-/// Dictates whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`. If this card is being canceled because it was lost or stolen, this information should be provided as `cancellation_reason`.
-@immutable final class PostIssuingCardsCardRequestStatus {const PostIssuingCardsCardRequestStatus._(this.value);
-
-factory PostIssuingCardsCardRequestStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'canceled' => canceled,
-  'inactive' => inactive,
-  _ => PostIssuingCardsCardRequestStatus._(json),
-}; }
-
-static const PostIssuingCardsCardRequestStatus active = PostIssuingCardsCardRequestStatus._('active');
-
-static const PostIssuingCardsCardRequestStatus canceled = PostIssuingCardsCardRequestStatus._('canceled');
-
-static const PostIssuingCardsCardRequestStatus inactive = PostIssuingCardsCardRequestStatus._('inactive');
-
-static const List<PostIssuingCardsCardRequestStatus> values = [active, canceled, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsCardRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsCardRequestStatus($value)'; } 
- }
 @immutable final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this.cancellationReason, this.expand, this.metadata, this.personalizationDesign, this.pin, this.shipping, this.spendingControls, this.status, });
 
 factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostIssuingCardsCardRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostIssuingCardsCardRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   personalizationDesign: json['personalization_design'] as String?,
-  pin: json['pin'] != null ? PostIssuingCardsCardRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  pin: json['pin'] != null ? Pin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsCardRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
-  status: json['status'] != null ? PostIssuingCardsCardRequestStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? IssuingCardStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// Reason why the `status` of this card is `canceled`.
@@ -73,12 +45,12 @@ final PostIssuingCardsCardRequestCancellationReason? cancellationReason;
 final List<String>? expand;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostIssuingCardsCardRequestMetadata? metadata;
+final Metadata? metadata;
 
 final String? personalizationDesign;
 
 /// The desired new PIN for this card.
-final PostIssuingCardsCardRequestPin? pin;
+final Pin? pin;
 
 /// Updated shipping information for the card.
 final PostIssuingCardsCardRequestShipping? shipping;
@@ -87,7 +59,7 @@ final PostIssuingCardsCardRequestShipping? shipping;
 final PostIssuingCardsCardRequestSpendingControls? spendingControls;
 
 /// Dictates whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`. If this card is being canceled because it was lost or stolen, this information should be provided as `cancellation_reason`.
-final PostIssuingCardsCardRequestStatus? status;
+final IssuingCardStatus? status;
 
 Map<String, dynamic> toJson() { return {
   if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
@@ -100,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand', 'metadata', 'personalization_design', 'pin', 'shipping', 'spending_controls', 'status'}.contains(key)); } 
-PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason Function()? cancellationReason, List<String> Function()? expand, PostIssuingCardsCardRequestMetadata Function()? metadata, String Function()? personalizationDesign, PostIssuingCardsCardRequestPin Function()? pin, PostIssuingCardsCardRequestShipping Function()? shipping, PostIssuingCardsCardRequestSpendingControls Function()? spendingControls, PostIssuingCardsCardRequestStatus Function()? status, }) { return PostIssuingCardsCardRequest(
+PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason Function()? cancellationReason, List<String> Function()? expand, Metadata Function()? metadata, String Function()? personalizationDesign, Pin Function()? pin, PostIssuingCardsCardRequestShipping Function()? shipping, PostIssuingCardsCardRequestSpendingControls Function()? spendingControls, IssuingCardStatus Function()? status, }) { return PostIssuingCardsCardRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

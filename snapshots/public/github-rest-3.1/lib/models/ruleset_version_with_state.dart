@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ruleset_version_with_state_actor.dart';@immutable final class RulesetVersionWithState {const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/ruleset_version/ruleset_version_actor.dart';@immutable final class RulesetVersionWithState {const RulesetVersionWithState({required this.versionId, required this.actor, required this.updatedAt, required this.state, });
 
 factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) { return RulesetVersionWithState(
   versionId: (json['version_id'] as num).toInt(),
-  actor: RulesetVersionWithStateActor.fromJson(json['actor'] as Map<String, dynamic>),
+  actor: RulesetVersionActor.fromJson(json['actor'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   state: json['state'] as Map<String, dynamic>,
 ); }
@@ -13,7 +13,7 @@ factory RulesetVersionWithState.fromJson(Map<String, dynamic> json) { return Rul
 final int versionId;
 
 /// The actor who updated the ruleset
-final RulesetVersionWithStateActor actor;
+final RulesetVersionActor actor;
 
 final DateTime updatedAt;
 
@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('versi
       json.containsKey('actor') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('state'); } 
-RulesetVersionWithState copyWith({int? versionId, RulesetVersionWithStateActor? actor, DateTime? updatedAt, Map<String,dynamic>? state, }) { return RulesetVersionWithState(
+RulesetVersionWithState copyWith({int? versionId, RulesetVersionActor? actor, DateTime? updatedAt, Map<String,dynamic>? state, }) { return RulesetVersionWithState(
   versionId: versionId ?? this.versionId,
   actor: actor ?? this.actor,
   updatedAt: updatedAt ?? this.updatedAt,

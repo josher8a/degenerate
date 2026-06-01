@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
 /// 
 @immutable final class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId._(this.value);
 

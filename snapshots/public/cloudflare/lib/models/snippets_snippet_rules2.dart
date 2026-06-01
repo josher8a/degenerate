@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'snippets_snippet_name.dart';/// Define a snippet rule.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/snippets_snippet_name.dart';/// Define a snippet rule.
 @immutable final class SnippetsSnippetRules2 {const SnippetsSnippetRules2({required this.expression, required this.id, required this.lastUpdated, required this.snippetName, this.description = '', this.enabled = false, });
 
 factory SnippetsSnippetRules2.fromJson(Map<String, dynamic> json) { return SnippetsSnippetRules2(

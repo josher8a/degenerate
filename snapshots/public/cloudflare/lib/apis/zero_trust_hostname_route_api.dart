@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_components_schemas_tunnel_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_hostname.dart';import '../models/tunnel_hostname_query_comment.dart';import '../models/tunnel_hostname_route.dart';import '../models/tunnel_hostname_route_id.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/zero_trust_networks_route_hostname_create_request.dart';import '../models/zero_trust_networks_route_hostname_update_request.dart';/// ZeroTrustHostnameRouteApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/tunnel_account_id.dart';import 'package:pub_cloudflare/models/tunnel_components_schemas_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_existed_at.dart';import 'package:pub_cloudflare/models/tunnel_hostname.dart';import 'package:pub_cloudflare/models/tunnel_hostname_query_comment.dart';import 'package:pub_cloudflare/models/tunnel_hostname_route.dart';import 'package:pub_cloudflare/models/tunnel_hostname_route_id.dart';import 'package:pub_cloudflare/models/tunnel_page_number.dart';import 'package:pub_cloudflare/models/tunnel_per_page.dart';import 'package:pub_cloudflare/models/zero_trust_networks_route_hostname_create_request.dart';import 'package:pub_cloudflare/models/zero_trust_networks_route_hostname_update_request.dart';/// ZeroTrustHostnameRouteApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -64,7 +64,7 @@ return execute(
 /// Create a hostname route.
 ///
 /// `POST /accounts/{account_id}/zerotrust/routes/hostname`
-Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameCreate({required TunnelAccountId accountId, required ZeroTrustNetworksRouteHostnameCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -88,7 +88,7 @@ return execute(
 /// Get a hostname route.
 ///
 /// `GET /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameGet({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,7 +110,7 @@ return execute(
 /// Updates a hostname route.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameUpdate({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, required ZeroTrustNetworksRouteHostnameUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -134,7 +134,7 @@ return execute(
 /// Delete a hostname route.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}`
-Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, Never>> zeroTrustNetworksRouteHostnameDelete({required TunnelAccountId accountId, required TunnelHostnameRouteId hostnameRouteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',

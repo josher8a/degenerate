@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
-@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
-
-factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
-  'card' => card,
-  _ => AmazonPayUnderlyingPaymentMethodFundingDetailsType._(json),
-}; }
-
-static const AmazonPayUnderlyingPaymentMethodFundingDetailsType card = AmazonPayUnderlyingPaymentMethodFundingDetailsType._('card');
-
-static const List<AmazonPayUnderlyingPaymentMethodFundingDetailsType> values = [card];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AmazonPayUnderlyingPaymentMethodFundingDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amazon_pay_underlying_payment_method_funding_details/amazon_pay_underlying_payment_method_funding_details_type.dart';import 'package:pub_stripe_spec3/models/payment_method_details_passthrough_card.dart';/// 
 @immutable final class AmazonPayUnderlyingPaymentMethodFundingDetails {const AmazonPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
 
 factory AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return AmazonPayUnderlyingPaymentMethodFundingDetails(

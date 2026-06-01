@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_delta_event.dart';import 'transcript_text_delta_event_logprobs.dart';import 'transcript_text_done_event.dart';import 'transcript_text_done_event_logprobs.dart';import 'transcript_text_segment_event.dart';import 'transcript_text_usage_tokens.dart';sealed class CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_done_event.dart';import 'package:pub_openai/models/transcript_text_segment_event.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';sealed class CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateTranscriptionResponseStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +17,7 @@ factory CreateTranscriptionResponseStreamEvent.transcriptTextSegment({required S
 factory CreateTranscriptionResponseStreamEvent.transcriptTextDelta({required String delta, List<TranscriptTextDeltaEventLogprobs>? logprobs, String? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(TranscriptTextDeltaEvent(type: 'transcript.text.delta', delta: delta, logprobs: logprobs, segmentId: segmentId)); }
 
 /// Build the `transcript.text.done` variant.
-factory CreateTranscriptionResponseStreamEvent.transcriptTextDone({required String text, List<TranscriptTextDoneEventLogprobs>? logprobs, TranscriptTextUsageTokens? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(TranscriptTextDoneEvent(type: 'transcript.text.done', text: text, logprobs: logprobs, usage: usage)); }
+factory CreateTranscriptionResponseStreamEvent.transcriptTextDone({required String text, List<TranscriptTextDeltaEventLogprobs>? logprobs, TranscriptTextUsageTokens? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(TranscriptTextDoneEvent(type: 'transcript.text.done', text: text, logprobs: logprobs, usage: usage)); }
 
 /// The discriminator value identifying this variant.
 String get type;

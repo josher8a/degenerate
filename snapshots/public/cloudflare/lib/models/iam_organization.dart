@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';/// Whether the user is a member of the organization or has an invitation pending.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';/// Whether the user is a member of the organization or has an invitation pending.
 @immutable final class IamComponentsSchemasStatus {const IamComponentsSchemasStatus._(this.value);
 
 factory IamComponentsSchemasStatus.fromJson(String json) { return switch (json) {

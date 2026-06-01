@@ -1,31 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponseObject {const ListFineTuningJobCheckpointsResponseObject._(this.value);
-
-factory ListFineTuningJobCheckpointsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ListFineTuningJobCheckpointsResponseObject._(json),
-}; }
-
-static const ListFineTuningJobCheckpointsResponseObject list = ListFineTuningJobCheckpointsResponseObject._('list');
-
-static const List<ListFineTuningJobCheckpointsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListFineTuningJobCheckpointsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListFineTuningJobCheckpointsResponseObject($value)'; } 
- }
-@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint.dart';@immutable final class ListFineTuningJobCheckpointsResponse {const ListFineTuningJobCheckpointsResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
 
 factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobCheckpointsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobCheckpoint.fromJson(e as Map<String, dynamic>)).toList(),
-  object: ListFineTuningJobCheckpointsResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
@@ -33,7 +12,7 @@ factory ListFineTuningJobCheckpointsResponse.fromJson(Map<String, dynamic> json)
 
 final List<FineTuningJobCheckpoint> data;
 
-final ListFineTuningJobCheckpointsResponseObject object;
+final ChatCompletionListObject object;
 
 final String? firstId;
 
@@ -51,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ListFineTuningJobCheckpointsResponseObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
+ListFineTuningJobCheckpointsResponse copyWith({List<FineTuningJobCheckpoint>? data, ChatCompletionListObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningJobCheckpointsResponse(
   data: data ?? this.data,
   object: object ?? this.object,
   firstId: firstId != null ? firstId() : this.firstId,

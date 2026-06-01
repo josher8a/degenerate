@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_swap_status.dart';/// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_swap_status.dart';/// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
 @immutable final class NodeSystemInfo {const NodeSystemInfo({this.architecture = '', this.bootId = '', this.containerRuntimeVersion = '', this.kernelVersion = '', this.kubeProxyVersion = '', this.kubeletVersion = '', this.machineId = '', this.operatingSystem = '', this.osImage = '', this.swap, this.systemUuid = '', });
 
 factory NodeSystemInfo.fromJson(Map<String, dynamic> json) { return NodeSystemInfo(

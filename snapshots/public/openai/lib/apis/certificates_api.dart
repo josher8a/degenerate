@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/certificate.dart';import '../models/delete_certificate_response.dart';import '../models/get_certificate_include.dart';import '../models/list_certificates_response.dart';import '../models/list_organization_certificates_order.dart';import '../models/list_project_certificates_order.dart';import '../models/modify_certificate_request.dart';import '../models/toggle_certificates_request.dart';import '../models/upload_certificate_request.dart';/// CertificatesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/certificate.dart';import 'package:pub_openai/models/delete_certificate_response.dart';import 'package:pub_openai/models/get_certificate_include.dart';import 'package:pub_openai/models/list_certificates_response.dart';import 'package:pub_openai/models/list_organization_certificates_order.dart';import 'package:pub_openai/models/list_project_certificates_order.dart';import 'package:pub_openai/models/modify_certificate_request.dart';import 'package:pub_openai/models/toggle_certificates_request.dart';import 'package:pub_openai/models/upload_certificate_request.dart';/// CertificatesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

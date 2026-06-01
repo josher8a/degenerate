@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_address.dart';import 'issuing_cardholder_authorization_controls.dart';import 'issuing_cardholder_company.dart';import 'issuing_cardholder_individual.dart';import 'issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/issuing_cardholder_type.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_address.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_company.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_individual.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
 
 factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
@@ -21,39 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is IssuingCardholderObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderObject($value)'; } 
- }
-@immutable final class IssuingCardholderPreferredLocales {const IssuingCardholderPreferredLocales._(this.value);
-
-factory IssuingCardholderPreferredLocales.fromJson(String json) { return switch (json) {
-  'de' => de,
-  'en' => en,
-  'es' => es,
-  'fr' => fr,
-  'it' => it,
-  _ => IssuingCardholderPreferredLocales._(json),
-}; }
-
-static const IssuingCardholderPreferredLocales de = IssuingCardholderPreferredLocales._('de');
-
-static const IssuingCardholderPreferredLocales en = IssuingCardholderPreferredLocales._('en');
-
-static const IssuingCardholderPreferredLocales es = IssuingCardholderPreferredLocales._('es');
-
-static const IssuingCardholderPreferredLocales fr = IssuingCardholderPreferredLocales._('fr');
-
-static const IssuingCardholderPreferredLocales it = IssuingCardholderPreferredLocales._('it');
-
-static const List<IssuingCardholderPreferredLocales> values = [de, en, es, fr, it];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderPreferredLocales && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderPreferredLocales($value)'; } 
  }
 /// Specifies whether to permit authorizations on this cardholder's cards.
 @immutable final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
@@ -83,31 +50,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderStatus($value)'; } 
  }
-/// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
-@immutable final class IssuingCardholderType {const IssuingCardholderType._(this.value);
-
-factory IssuingCardholderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => IssuingCardholderType._(json),
-}; }
-
-static const IssuingCardholderType company = IssuingCardholderType._('company');
-
-static const IssuingCardholderType individual = IssuingCardholderType._('individual');
-
-static const List<IssuingCardholderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderType($value)'; } 
- }
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
 /// Related guide: [How to create a cardholder](https://docs.stripe.com/issuing/cards/virtual/issue-cards#create-cardholder)
@@ -125,7 +67,7 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
   name: json['name'] as String,
   object: IssuingCardholderObject.fromJson(json['object'] as String),
   phoneNumber: json['phone_number'] as String?,
-  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => IssuingCardholderPreferredLocales.fromJson(e as String)).toList(),
+  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PreferredLocales.fromJson(e as String)).toList(),
   requirements: IssuingCardholderRequirements.fromJson(json['requirements'] as Map<String, dynamic>),
   spendingControls: json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
@@ -166,7 +108,7 @@ final String? phoneNumber;
 
 /// The cardholder’s preferred locales (languages), ordered by preference. Locales can be `de`, `en`, `es`, `fr`, or `it`.
 ///  This changes the language of the [3D Secure flow](https://docs.stripe.com/issuing/3d-secure) and one-time password messages sent to the cardholder.
-final List<IssuingCardholderPreferredLocales>? preferredLocales;
+final List<PreferredLocales>? preferredLocales;
 
 final IssuingCardholderRequirements requirements;
 
@@ -207,7 +149,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('requirements') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<IssuingCardholderPreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
+IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
   billing: billing ?? this.billing,
   company: company != null ? company() : this.company,
   created: created ?? this.created,

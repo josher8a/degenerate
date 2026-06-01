@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchPatch {const DnsRecordsDnsRecordBatchPatch({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchPatch {const DnsRecordsDnsRecordBatchPatch({required this.id});
 
 factory DnsRecordsDnsRecordBatchPatch.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchPatch(
   id: DnsRecordsIdentifier.fromJson(json['id'] as String),

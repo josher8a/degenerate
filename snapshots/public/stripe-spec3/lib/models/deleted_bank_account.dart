@@ -1,35 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedBankAccountObject {const DeletedBankAccountObject._(this.value);
-
-factory DeletedBankAccountObject.fromJson(String json) { return switch (json) {
-  'bank_account' => bankAccount,
-  _ => DeletedBankAccountObject._(json),
-}; }
-
-static const DeletedBankAccountObject bankAccount = DeletedBankAccountObject._('bank_account');
-
-static const List<DeletedBankAccountObject> values = [bankAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedBankAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedBankAccountObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';/// 
 @immutable final class DeletedBankAccount {const DeletedBankAccount({required this.deleted, required this.id, required this.object, this.currency, });
 
 factory DeletedBankAccount.fromJson(Map<String, dynamic> json) { return DeletedBankAccount(
   currency: json['currency'] as String?,
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  object: DeletedBankAccountObject.fromJson(json['object'] as String),
+  object: BankAccountObject.fromJson(json['object'] as String),
 ); }
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/payouts) paid out to the bank account.
@@ -42,7 +20,7 @@ final bool deleted;
 final String id;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final DeletedBankAccountObject object;
+final BankAccountObject object;
 
 Map<String, dynamic> toJson() { return {
   'currency': ?currency,
@@ -53,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String? id, DeletedBankAccountObject? object, }) { return DeletedBankAccount(
+DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String? id, BankAccountObject? object, }) { return DeletedBankAccount(
   currency: currency != null ? currency() : this.currency,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,

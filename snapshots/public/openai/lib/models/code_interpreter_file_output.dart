@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_interpreter_file_output_files.dart';/// The type of the code interpreter file output. Always `files`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_file_output/code_interpreter_file_output_files.dart';/// The type of the code interpreter file output. Always `files`.
 /// 
 @immutable final class CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType._(this.value);
 

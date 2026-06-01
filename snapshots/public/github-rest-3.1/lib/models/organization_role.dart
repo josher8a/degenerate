@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The system role from which this role inherits permissions.
-@immutable final class OrganizationRoleBaseRole {const OrganizationRoleBaseRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The system role from which this role inherits permissions.
+@immutable final class BaseRole {const BaseRole._(this.value);
 
-factory OrganizationRoleBaseRole.fromJson(String json) { return switch (json) {
+factory BaseRole.fromJson(String json) { return switch (json) {
   'read' => read,
   'triage' => triage,
   'write' => write,
   'maintain' => maintain,
   'admin' => admin,
   'null' => $null,
-  _ => OrganizationRoleBaseRole._(json),
+  _ => BaseRole._(json),
 }; }
 
-static const OrganizationRoleBaseRole read = OrganizationRoleBaseRole._('read');
+static const BaseRole read = BaseRole._('read');
 
-static const OrganizationRoleBaseRole triage = OrganizationRoleBaseRole._('triage');
+static const BaseRole triage = BaseRole._('triage');
 
-static const OrganizationRoleBaseRole write = OrganizationRoleBaseRole._('write');
+static const BaseRole write = BaseRole._('write');
 
-static const OrganizationRoleBaseRole maintain = OrganizationRoleBaseRole._('maintain');
+static const BaseRole maintain = BaseRole._('maintain');
 
-static const OrganizationRoleBaseRole admin = OrganizationRoleBaseRole._('admin');
+static const BaseRole admin = BaseRole._('admin');
 
-static const OrganizationRoleBaseRole $null = OrganizationRoleBaseRole._('null');
+static const BaseRole $null = BaseRole._('null');
 
-static const List<OrganizationRoleBaseRole> values = [read, triage, write, maintain, admin, $null];
+static const List<BaseRole> values = [read, triage, write, maintain, admin, $null];
 
 final String value;
 
@@ -33,9 +33,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationRoleBaseRole && other.value == value; } 
+    other is BaseRole && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationRoleBaseRole($value)'; } 
+@override String toString() { return 'BaseRole($value)'; } 
  }
 /// Source answers the question, "where did this role come from?"
 @immutable final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
@@ -75,7 +75,7 @@ factory OrganizationRole.fromJson(Map<String, dynamic> json) { return Organizati
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   description: json['description'] as String?,
-  baseRole: json['base_role'] != null ? OrganizationRoleBaseRole.fromJson(json['base_role'] as String) : null,
+  baseRole: json['base_role'] != null ? BaseRole.fromJson(json['base_role'] as String) : null,
   source: json['source'] != null ? OrganizationRoleSource.fromJson(json['source'] as String) : null,
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
   organization: json['organization'] != null ? SimpleUser.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -93,7 +93,7 @@ final String name;
 final String? description;
 
 /// The system role from which this role inherits permissions.
-final OrganizationRoleBaseRole? baseRole;
+final BaseRole? baseRole;
 
 /// Source answers the question, "where did this role come from?"
 final OrganizationRoleSource? source;
@@ -126,7 +126,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('organization') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrganizationRole copyWith({int? id, String? name, String? Function()? description, OrganizationRoleBaseRole? Function()? baseRole, OrganizationRoleSource? Function()? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) { return OrganizationRole(
+OrganizationRole copyWith({int? id, String? name, String? Function()? description, BaseRole? Function()? baseRole, OrganizationRoleSource? Function()? source, List<String>? permissions, SimpleUser? Function()? organization, DateTime? createdAt, DateTime? updatedAt, }) { return OrganizationRole(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description != null ? description() : this.description,

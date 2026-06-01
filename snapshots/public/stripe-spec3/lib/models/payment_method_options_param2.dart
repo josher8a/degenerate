@@ -1,63 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam2CaptureMethod {const PaymentMethodOptionsParam2CaptureMethod._(this.value);
-
-factory PaymentMethodOptionsParam2CaptureMethod.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'manual' => manual,
-  _ => PaymentMethodOptionsParam2CaptureMethod._(json),
-}; }
-
-static const PaymentMethodOptionsParam2CaptureMethod $empty = PaymentMethodOptionsParam2CaptureMethod._('');
-
-static const PaymentMethodOptionsParam2CaptureMethod manual = PaymentMethodOptionsParam2CaptureMethod._('manual');
-
-static const List<PaymentMethodOptionsParam2CaptureMethod> values = [$empty, manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam2CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam2CaptureMethod($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam2SetupFutureUsage {const PaymentMethodOptionsParam2SetupFutureUsage._(this.value);
-
-factory PaymentMethodOptionsParam2SetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  _ => PaymentMethodOptionsParam2SetupFutureUsage._(json),
-}; }
-
-static const PaymentMethodOptionsParam2SetupFutureUsage none = PaymentMethodOptionsParam2SetupFutureUsage._('none');
-
-static const List<PaymentMethodOptionsParam2SetupFutureUsage> values = [none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam2SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam2SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam2 {const PaymentMethodOptionsParam2({this.captureMethod, this.reference, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';@immutable final class PaymentMethodOptionsParam2 {const PaymentMethodOptionsParam2({this.captureMethod, this.reference, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam2.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam2(
-  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam2CaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
   reference: json['reference'] as String?,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam2SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final PaymentMethodOptionsParam2CaptureMethod? captureMethod;
+final payment_intent_paramCaptureMethod? captureMethod;
 
 final String? reference;
 
-final PaymentMethodOptionsParam2SetupFutureUsage? setupFutureUsage;
+final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
@@ -65,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam2 copyWith({PaymentMethodOptionsParam2CaptureMethod Function()? captureMethod, String Function()? reference, PaymentMethodOptionsParam2SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam2(
+PaymentMethodOptionsParam2 copyWith({payment_intent_paramCaptureMethod Function()? captureMethod, String Function()? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam2(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

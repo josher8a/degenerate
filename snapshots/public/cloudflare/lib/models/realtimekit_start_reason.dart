@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_start_reason_caller.dart';/// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_start_reason/caller.dart';/// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
 /// 
 /// If the recording is initiated using the "RECORD_ON_START" parameter, the user details will not be populated.
 @immutable final class RealtimekitStartReasonReason {const RealtimekitStartReasonReason._(this.value);
@@ -30,11 +30,11 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class RealtimekitStartReason {const RealtimekitStartReason({this.caller, this.reason, });
 
 factory RealtimekitStartReason.fromJson(Map<String, dynamic> json) { return RealtimekitStartReason(
-  caller: json['caller'] != null ? RealtimekitStartReasonCaller.fromJson(json['caller'] as Map<String, dynamic>) : null,
+  caller: json['caller'] != null ? Caller.fromJson(json['caller'] as Map<String, dynamic>) : null,
   reason: json['reason'] != null ? RealtimekitStartReasonReason.fromJson(json['reason'] as String) : null,
 ); }
 
-final RealtimekitStartReasonCaller? caller;
+final Caller? caller;
 
 /// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
 /// 
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'caller', 'reason'}.contains(key)); } 
-RealtimekitStartReason copyWith({RealtimekitStartReasonCaller Function()? caller, RealtimekitStartReasonReason Function()? reason, }) { return RealtimekitStartReason(
+RealtimekitStartReason copyWith({Caller Function()? caller, RealtimekitStartReasonReason Function()? reason, }) { return RealtimekitStartReason(
   caller: caller != null ? caller() : this.caller,
   reason: reason != null ? reason() : this.reason,
 ); } 

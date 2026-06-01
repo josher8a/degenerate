@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_organizations_components_schemas_identifier.dart';import '../models/access_schemas_organizations.dart';import '../models/zone_level_zero_trust_organization_create_your_zero_trust_organization_request.dart';import '../models/zone_level_zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import '../models/zone_level_zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZoneLevelZeroTrustOrganizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_organizations_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_organizations.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_create_your_zero_trust_organization_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZoneLevelZeroTrustOrganizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

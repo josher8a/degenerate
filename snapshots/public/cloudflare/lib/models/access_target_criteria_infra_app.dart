@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_port.dart';/// The communication protocol your application secures.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_port.dart';/// The communication protocol your application secures.
 @immutable final class AccessProtocolInfraApp {const AccessProtocolInfraApp._(this.value);
 
 factory AccessProtocolInfraApp.fromJson(String json) { return switch (json) {

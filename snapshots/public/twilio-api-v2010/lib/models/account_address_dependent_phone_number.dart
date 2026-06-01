@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 @immutable final class DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement._(this.value);
 
 factory DependentPhoneNumberEnumAddressRequirement.fromJson(String json) { return switch (json) {
@@ -55,131 +55,6 @@ bool get isUnknown { return !values.contains(this); }
     other is DependentPhoneNumberEnumEmergencyStatus && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DependentPhoneNumberEnumEmergencyStatus($value)'; } 
- }
-/// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod._(this.value);
-
-factory AccountAddressDependentPhoneNumberVoiceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountAddressDependentPhoneNumberVoiceMethod._(json),
-}; }
-
-static const AccountAddressDependentPhoneNumberVoiceMethod $get = AccountAddressDependentPhoneNumberVoiceMethod._('GET');
-
-static const AccountAddressDependentPhoneNumberVoiceMethod post = AccountAddressDependentPhoneNumberVoiceMethod._('POST');
-
-static const List<AccountAddressDependentPhoneNumberVoiceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountAddressDependentPhoneNumberVoiceMethod($value)'; } 
- }
-/// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberVoiceFallbackMethod {const AccountAddressDependentPhoneNumberVoiceFallbackMethod._(this.value);
-
-factory AccountAddressDependentPhoneNumberVoiceFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountAddressDependentPhoneNumberVoiceFallbackMethod._(json),
-}; }
-
-static const AccountAddressDependentPhoneNumberVoiceFallbackMethod $get = AccountAddressDependentPhoneNumberVoiceFallbackMethod._('GET');
-
-static const AccountAddressDependentPhoneNumberVoiceFallbackMethod post = AccountAddressDependentPhoneNumberVoiceFallbackMethod._('POST');
-
-static const List<AccountAddressDependentPhoneNumberVoiceFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountAddressDependentPhoneNumberVoiceFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberSmsFallbackMethod {const AccountAddressDependentPhoneNumberSmsFallbackMethod._(this.value);
-
-factory AccountAddressDependentPhoneNumberSmsFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountAddressDependentPhoneNumberSmsFallbackMethod._(json),
-}; }
-
-static const AccountAddressDependentPhoneNumberSmsFallbackMethod $get = AccountAddressDependentPhoneNumberSmsFallbackMethod._('GET');
-
-static const AccountAddressDependentPhoneNumberSmsFallbackMethod post = AccountAddressDependentPhoneNumberSmsFallbackMethod._('POST');
-
-static const List<AccountAddressDependentPhoneNumberSmsFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountAddressDependentPhoneNumberSmsFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberSmsMethod {const AccountAddressDependentPhoneNumberSmsMethod._(this.value);
-
-factory AccountAddressDependentPhoneNumberSmsMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountAddressDependentPhoneNumberSmsMethod._(json),
-}; }
-
-static const AccountAddressDependentPhoneNumberSmsMethod $get = AccountAddressDependentPhoneNumberSmsMethod._('GET');
-
-static const AccountAddressDependentPhoneNumberSmsMethod post = AccountAddressDependentPhoneNumberSmsMethod._('POST');
-
-static const List<AccountAddressDependentPhoneNumberSmsMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountAddressDependentPhoneNumberSmsMethod($value)'; } 
- }
-/// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberStatusCallbackMethod {const AccountAddressDependentPhoneNumberStatusCallbackMethod._(this.value);
-
-factory AccountAddressDependentPhoneNumberStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountAddressDependentPhoneNumberStatusCallbackMethod._(json),
-}; }
-
-static const AccountAddressDependentPhoneNumberStatusCallbackMethod $get = AccountAddressDependentPhoneNumberStatusCallbackMethod._('GET');
-
-static const AccountAddressDependentPhoneNumberStatusCallbackMethod post = AccountAddressDependentPhoneNumberStatusCallbackMethod._('POST');
-
-static const List<AccountAddressDependentPhoneNumberStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountAddressDependentPhoneNumberStatusCallbackMethod($value)'; } 
  }
 @immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid, this.accountSid, this.friendlyName, this.phoneNumber, this.voiceUrl, this.voiceMethod, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceCallerIdLookup, this.dateCreated, this.dateUpdated, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.addressRequirements, this.capabilities, this.statusCallback, this.statusCallbackMethod, this.apiVersion, this.smsApplicationSid, this.voiceApplicationSid, this.trunkSid, this.emergencyStatus, this.emergencyAddressSid, this.uri, });
 

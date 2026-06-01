@@ -1,128 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage.dart';/// The size of the generated image.
-/// 
-@immutable final class ImageGenCompletedEventSize {const ImageGenCompletedEventSize._(this.value);
-
-factory ImageGenCompletedEventSize.fromJson(String json) { return switch (json) {
-  '1024x1024' => $1024x1024,
-  '1024x1536' => $1024x1536,
-  '1536x1024' => $1536x1024,
-  'auto' => auto,
-  _ => ImageGenCompletedEventSize._(json),
-}; }
-
-static const ImageGenCompletedEventSize $1024x1024 = ImageGenCompletedEventSize._('1024x1024');
-
-static const ImageGenCompletedEventSize $1024x1536 = ImageGenCompletedEventSize._('1024x1536');
-
-static const ImageGenCompletedEventSize $1536x1024 = ImageGenCompletedEventSize._('1536x1024');
-
-static const ImageGenCompletedEventSize auto = ImageGenCompletedEventSize._('auto');
-
-static const List<ImageGenCompletedEventSize> values = [$1024x1024, $1024x1536, $1536x1024, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenCompletedEventSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenCompletedEventSize($value)'; } 
- }
-/// The quality setting for the generated image.
-/// 
-@immutable final class ImageGenCompletedEventQuality {const ImageGenCompletedEventQuality._(this.value);
-
-factory ImageGenCompletedEventQuality.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'medium' => medium,
-  'high' => high,
-  'auto' => auto,
-  _ => ImageGenCompletedEventQuality._(json),
-}; }
-
-static const ImageGenCompletedEventQuality low = ImageGenCompletedEventQuality._('low');
-
-static const ImageGenCompletedEventQuality medium = ImageGenCompletedEventQuality._('medium');
-
-static const ImageGenCompletedEventQuality high = ImageGenCompletedEventQuality._('high');
-
-static const ImageGenCompletedEventQuality auto = ImageGenCompletedEventQuality._('auto');
-
-static const List<ImageGenCompletedEventQuality> values = [low, medium, high, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenCompletedEventQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenCompletedEventQuality($value)'; } 
- }
-/// The background setting for the generated image.
-/// 
-@immutable final class ImageGenCompletedEventBackground {const ImageGenCompletedEventBackground._(this.value);
-
-factory ImageGenCompletedEventBackground.fromJson(String json) { return switch (json) {
-  'transparent' => transparent,
-  'opaque' => opaque,
-  'auto' => auto,
-  _ => ImageGenCompletedEventBackground._(json),
-}; }
-
-static const ImageGenCompletedEventBackground transparent = ImageGenCompletedEventBackground._('transparent');
-
-static const ImageGenCompletedEventBackground opaque = ImageGenCompletedEventBackground._('opaque');
-
-static const ImageGenCompletedEventBackground auto = ImageGenCompletedEventBackground._('auto');
-
-static const List<ImageGenCompletedEventBackground> values = [transparent, opaque, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenCompletedEventBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenCompletedEventBackground($value)'; } 
- }
-/// The output format for the generated image.
-/// 
-@immutable final class ImageGenCompletedEventOutputFormat {const ImageGenCompletedEventOutputFormat._(this.value);
-
-factory ImageGenCompletedEventOutputFormat.fromJson(String json) { return switch (json) {
-  'png' => png,
-  'webp' => webp,
-  'jpeg' => jpeg,
-  _ => ImageGenCompletedEventOutputFormat._(json),
-}; }
-
-static const ImageGenCompletedEventOutputFormat png = ImageGenCompletedEventOutputFormat._('png');
-
-static const ImageGenCompletedEventOutputFormat webp = ImageGenCompletedEventOutputFormat._('webp');
-
-static const ImageGenCompletedEventOutputFormat jpeg = ImageGenCompletedEventOutputFormat._('jpeg');
-
-static const List<ImageGenCompletedEventOutputFormat> values = [png, webp, jpeg];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenCompletedEventOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenCompletedEventOutputFormat($value)'; } 
- }
-/// Emitted when image generation has completed and the final image is available.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/images_usage.dart';/// Emitted when image generation has completed and the final image is available.
 /// 
 @immutable final class ImageGenCompletedEvent {const ImageGenCompletedEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.usage, });
 
@@ -130,10 +8,10 @@ factory ImageGenCompletedEvent.fromJson(Map<String, dynamic> json) { return Imag
   type: json['type'] as String,
   b64Json: json['b64_json'] as String,
   createdAt: (json['created_at'] as num).toInt(),
-  size: ImageGenCompletedEventSize.fromJson(json['size'] as String),
-  quality: ImageGenCompletedEventQuality.fromJson(json['quality'] as String),
-  background: ImageGenCompletedEventBackground.fromJson(json['background'] as String),
-  outputFormat: ImageGenCompletedEventOutputFormat.fromJson(json['output_format'] as String),
+  size: ImageEditCompletedEventSize.fromJson(json['size'] as String),
+  quality: ImageEditCompletedEventQuality.fromJson(json['quality'] as String),
+  background: ImageEditCompletedEventBackground.fromJson(json['background'] as String),
+  outputFormat: ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String),
   usage: ImagesUsage.fromJson(json['usage'] as Map<String, dynamic>),
 ); }
 
@@ -151,19 +29,19 @@ final int createdAt;
 
 /// The size of the generated image.
 /// 
-final ImageGenCompletedEventSize size;
+final ImageEditCompletedEventSize size;
 
 /// The quality setting for the generated image.
 /// 
-final ImageGenCompletedEventQuality quality;
+final ImageEditCompletedEventQuality quality;
 
 /// The background setting for the generated image.
 /// 
-final ImageGenCompletedEventBackground background;
+final ImageEditCompletedEventBackground background;
 
 /// The output format for the generated image.
 /// 
-final ImageGenCompletedEventOutputFormat outputFormat;
+final ImageEditCompletedEventOutputFormat outputFormat;
 
 final ImagesUsage usage;
 
@@ -185,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('background') &&
       json.containsKey('output_format') &&
       json.containsKey('usage'); } 
-ImageGenCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, ImageGenCompletedEventSize? size, ImageGenCompletedEventQuality? quality, ImageGenCompletedEventBackground? background, ImageGenCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenCompletedEvent(
+ImageGenCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenCompletedEvent(
   type: type ?? this.type,
   b64Json: b64Json ?? this.b64Json,
   createdAt: createdAt ?? this.createdAt,

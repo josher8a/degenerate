@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_uuid.dart';/// The name of the pagerduty service.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_uuid.dart';/// The name of the pagerduty service.
 extension type const AaaName(String value) {
 factory AaaName.fromJson(String json) => AaaName(json);
 

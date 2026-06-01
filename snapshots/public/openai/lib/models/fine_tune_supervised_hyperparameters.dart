@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_supervised_hyperparameters_batch_size.dart';import 'fine_tune_supervised_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_supervised_hyperparameters_n_epochs.dart';/// The hyperparameters used for the fine-tuning job.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/fine_tune_dpo_hyperparameters_batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// The hyperparameters used for the fine-tuning job.
 @immutable final class FineTuneSupervisedHyperparameters {const FineTuneSupervisedHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuneSupervisedHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneSupervisedHyperparameters(
-  batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneSupervisedHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
-  learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => FineTuneSupervisedHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
-  nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuneSupervisedHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
+  nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
 ); }
 
 /// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
 /// 
-final FineTuneSupervisedHyperparametersBatchSize? batchSize;
+final FineTuneDpoHyperparametersBatchSize? batchSize;
 
 /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.
 /// 
-final FineTuneSupervisedHyperparametersLearningRateMultiplier? learningRateMultiplier;
+final LearningRateMultiplier? learningRateMultiplier;
 
 /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
 /// 
-final FineTuneSupervisedHyperparametersNEpochs? nEpochs;
+final NEpochs? nEpochs;
 
 Map<String, dynamic> toJson() { return {
   if (batchSize != null) 'batch_size': batchSize?.toJson(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
-FineTuneSupervisedHyperparameters copyWith({FineTuneSupervisedHyperparametersBatchSize Function()? batchSize, FineTuneSupervisedHyperparametersLearningRateMultiplier Function()? learningRateMultiplier, FineTuneSupervisedHyperparametersNEpochs Function()? nEpochs, }) { return FineTuneSupervisedHyperparameters(
+FineTuneSupervisedHyperparameters copyWith({FineTuneDpoHyperparametersBatchSize Function()? batchSize, LearningRateMultiplier Function()? learningRateMultiplier, NEpochs Function()? nEpochs, }) { return FineTuneSupervisedHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,

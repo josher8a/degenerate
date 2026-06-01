@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_telemetry_event_source.dart';import 'workers_observability_telemetry_eventmetadata.dart';import 'workers_observability_telemetry_eventworkers.dart';import 'workers_observability_telemetry_eventworkers_variant1.dart';import 'workers_observability_telemetry_eventworkers_variant2.dart';/// The data structure of a telemetry event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/metadata.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_observability_telemetry_event_source.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_variant1.dart';import 'package:pub_cloudflare/models/workers_observability_telemetry_event/workers_variant2.dart';/// The data structure of a telemetry event
 @immutable final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({required this.$metadata, required this.dataset, required this.source, required this.timestamp, this.$containers, this.$workers, });
 
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
   $containers: json[r'$containers'] as Map<String, dynamic>?,
-  $metadata: WorkersObservabilityTelemetryEvent$metadata.fromJson(json[r'$metadata'] as Map<String, dynamic>),
-  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  $metadata: $metadata.fromJson(json[r'$metadata'] as Map<String, dynamic>),
+  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => $workersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => $workersVariant2.fromJson(v as Map<String, dynamic>),) : null,
   dataset: json['dataset'] as String,
   source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,),
   timestamp: (json['timestamp'] as num).toInt(),
@@ -15,10 +15,10 @@ factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) {
 /// Cloudflare Containers event information enriches your logs so you can easily identify and debug issues.
 final Map<String,dynamic>? $containers;
 
-final WorkersObservabilityTelemetryEvent$metadata $metadata;
+final $metadata $metadata;
 
 /// Cloudflare Workers event information enriches your logs so you can easily identify and debug issues.
-final WorkersObservabilityTelemetryEvent$workers? $workers;
+final $workers? $workers;
 
 final String dataset;
 
@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey(r'$met
       json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('source') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
-WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic> Function()? $containers, WorkersObservabilityTelemetryEvent$metadata? $metadata, WorkersObservabilityTelemetryEvent$workers Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
+WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic> Function()? $containers, $metadata? $metadata, $workers Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
   $containers: $containers != null ? $containers() : this.$containers,
   $metadata: $metadata ?? this.$metadata,
   $workers: $workers != null ? $workers() : this.$workers,

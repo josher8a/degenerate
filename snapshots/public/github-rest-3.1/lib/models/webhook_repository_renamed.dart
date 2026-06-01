@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_repository_renamed_changes.dart';@immutable final class WebhookRepositoryRenamedAction {const WebhookRepositoryRenamedAction._(this.value);
-
-factory WebhookRepositoryRenamedAction.fromJson(String json) { return switch (json) {
-  'renamed' => renamed,
-  _ => WebhookRepositoryRenamedAction._(json),
-}; }
-
-static const WebhookRepositoryRenamedAction renamed = WebhookRepositoryRenamedAction._('renamed');
-
-static const List<WebhookRepositoryRenamedAction> values = [renamed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryRenamedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryRenamedAction($value)'; } 
- }
-@immutable final class WebhookRepositoryRenamed {const WebhookRepositoryRenamed({required this.action, required this.changes, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_target_renamed/webhook_installation_target_renamed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_repository_renamed/webhook_repository_renamed_changes.dart';@immutable final class WebhookRepositoryRenamed {const WebhookRepositoryRenamed({required this.action, required this.changes, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryRenamed.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRenamed(
-  action: WebhookRepositoryRenamedAction.fromJson(json['action'] as String),
+  action: WebhookInstallationTargetRenamedAction.fromJson(json['action'] as String),
   changes: WebhookRepositoryRenamedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookRepositoryRenamed.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookRepositoryRenamedAction action;
+final WebhookInstallationTargetRenamedAction action;
 
 final WebhookRepositoryRenamedChanges changes;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookRepositoryRenamed copyWith({WebhookRepositoryRenamedAction? action, WebhookRepositoryRenamedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryRenamed(
+WebhookRepositoryRenamed copyWith({WebhookInstallationTargetRenamedAction? action, WebhookRepositoryRenamedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryRenamed(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

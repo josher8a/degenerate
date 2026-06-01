@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turbo_request_audio.dart';import 'turbo_request_audio_variant2.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/turbo_request/audio_variant2.dart';import 'package:pub_cloudflare/models/turbo_request/turbo_request_audio.dart';@immutable final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
 
 factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
-  audio: OneOf2.parse(json['audio'], fromA: (v) => v as String, fromB: (v) => TurboRequestAudioVariant2.fromJson(v as Map<String, dynamic>),),
+  audio: OneOf2.parse(json['audio'], fromA: (v) => v as String, fromB: (v) => AudioVariant2.fromJson(v as Map<String, dynamic>),),
   beamSize: json.containsKey('beam_size') ? (json['beam_size'] as num).toInt() : 5,
   compressionRatioThreshold: json.containsKey('compression_ratio_threshold') ? (json['compression_ratio_threshold'] as num).toDouble() : 2.4,
   conditionOnPreviousText: json.containsKey('condition_on_previous_text') ? json['condition_on_previous_text'] as bool : true,

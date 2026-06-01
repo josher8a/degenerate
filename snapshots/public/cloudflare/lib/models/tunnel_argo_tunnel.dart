@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_connection.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_tunnel_name.dart';@immutable final class TunnelArgoTunnel {const TunnelArgoTunnel({required this.connections, required this.createdAt, required this.id, required this.name, this.deletedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_connection.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_id.dart';import 'package:pub_cloudflare/models/tunnel_tunnel_name.dart';@immutable final class TunnelArgoTunnel {const TunnelArgoTunnel({required this.connections, required this.createdAt, required this.id, required this.name, this.deletedAt, });
 
 factory TunnelArgoTunnel.fromJson(Map<String, dynamic> json) { return TunnelArgoTunnel(
   connections: (json['connections'] as List<dynamic>).map((e) => TunnelConnection.fromJson(e as Map<String, dynamic>)).toList(),

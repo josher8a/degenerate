@@ -1,34 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class S3SourceResponseSchemaVendor {const S3SourceResponseSchemaVendor._(this.value);
-
-factory S3SourceResponseSchemaVendor.fromJson(String json) { return switch (json) {
-  's3' => s3,
-  _ => S3SourceResponseSchemaVendor._(json),
-}; }
-
-static const S3SourceResponseSchemaVendor s3 = S3SourceResponseSchemaVendor._('s3');
-
-static const List<S3SourceResponseSchemaVendor> values = [s3];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is S3SourceResponseSchemaVendor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'S3SourceResponseSchemaVendor($value)'; } 
- }
-@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_source_schema/r2_slurper_s3_source_schema_vendor.dart';@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
 
 factory S3SourceResponseSchema.fromJson(Map<String, dynamic> json) { return S3SourceResponseSchema(
   bucket: json['bucket'] as String?,
   endpoint: json['endpoint'] as String?,
   keys: (json['keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
   pathPrefix: json['pathPrefix'] as String?,
-  vendor: json['vendor'] != null ? S3SourceResponseSchemaVendor.fromJson(json['vendor'] as String) : null,
+  vendor: json['vendor'] != null ? R2SlurperS3SourceSchemaVendor.fromJson(json['vendor'] as String) : null,
 ); }
 
 final String? bucket;
@@ -39,7 +18,7 @@ final List<String>? keys;
 
 final String? pathPrefix;
 
-final S3SourceResponseSchemaVendor? vendor;
+final R2SlurperS3SourceSchemaVendor? vendor;
 
 Map<String, dynamic> toJson() { return {
   'bucket': ?bucket,
@@ -49,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (vendor != null) 'vendor': vendor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'endpoint', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
-S3SourceResponseSchema copyWith({String Function()? bucket, String? Function()? endpoint, List<String>? Function()? keys, String? Function()? pathPrefix, S3SourceResponseSchemaVendor Function()? vendor, }) { return S3SourceResponseSchema(
+S3SourceResponseSchema copyWith({String Function()? bucket, String? Function()? endpoint, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3SourceSchemaVendor Function()? vendor, }) { return S3SourceResponseSchema(
   bucket: bucket != null ? bucket() : this.bucket,
   endpoint: endpoint != null ? endpoint() : this.endpoint,
   keys: keys != null ? keys() : this.keys,

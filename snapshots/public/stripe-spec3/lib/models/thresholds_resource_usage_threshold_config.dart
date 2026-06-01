@@ -1,35 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter.dart';import 'thresholds_resource_usage_alert_filter.dart';import 'thresholds_resource_usage_threshold_config_meter.dart';/// Defines how the alert will behave.
-@immutable final class ThresholdsResourceUsageThresholdConfigRecurrence {const ThresholdsResourceUsageThresholdConfigRecurrence._(this.value);
-
-factory ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(String json) { return switch (json) {
-  'one_time' => oneTime,
-  _ => ThresholdsResourceUsageThresholdConfigRecurrence._(json),
-}; }
-
-static const ThresholdsResourceUsageThresholdConfigRecurrence oneTime = ThresholdsResourceUsageThresholdConfigRecurrence._('one_time');
-
-static const List<ThresholdsResourceUsageThresholdConfigRecurrence> values = [oneTime];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThresholdsResourceUsageThresholdConfigRecurrence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThresholdsResourceUsageThresholdConfigRecurrence($value)'; } 
- }
-/// The usage threshold alert configuration enables setting up alerts for when a certain usage threshold on a specific meter is crossed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config/meter.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config/recurrence.dart';/// The usage threshold alert configuration enables setting up alerts for when a certain usage threshold on a specific meter is crossed.
 @immutable final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({required this.gte, required this.meter, required this.recurrence, this.filters, });
 
 factory ThresholdsResourceUsageThresholdConfig.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageThresholdConfig(
   filters: (json['filters'] as List<dynamic>?)?.map((e) => ThresholdsResourceUsageAlertFilter.fromJson(e as Map<String, dynamic>)).toList(),
   gte: (json['gte'] as num).toInt(),
   meter: OneOf2.parse(json['meter'], fromA: (v) => v as String, fromB: (v) => BillingMeter.fromJson(v as Map<String, dynamic>),),
-  recurrence: ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(json['recurrence'] as String),
+  recurrence: Recurrence.fromJson(json['recurrence'] as String),
 ); }
 
 /// The filters allow limiting the scope of this usage alert. You can only specify up to one filter at this time.
@@ -39,10 +17,10 @@ final List<ThresholdsResourceUsageAlertFilter>? filters;
 final int gte;
 
 /// The [Billing Meter](/api/billing/meter) ID whose usage is monitored.
-final ThresholdsResourceUsageThresholdConfigMeter meter;
+final Meter meter;
 
 /// Defines how the alert will behave.
-final ThresholdsResourceUsageThresholdConfigRecurrence recurrence;
+final Recurrence recurrence;
 
 Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.map((e) => e.toJson()).toList(),
@@ -53,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('gte') && json['gte'] is num &&
       json.containsKey('meter') &&
       json.containsKey('recurrence'); } 
-ThresholdsResourceUsageThresholdConfig copyWith({List<ThresholdsResourceUsageAlertFilter>? Function()? filters, int? gte, ThresholdsResourceUsageThresholdConfigMeter? meter, ThresholdsResourceUsageThresholdConfigRecurrence? recurrence, }) { return ThresholdsResourceUsageThresholdConfig(
+ThresholdsResourceUsageThresholdConfig copyWith({List<ThresholdsResourceUsageAlertFilter>? Function()? filters, int? gte, Meter? meter, Recurrence? recurrence, }) { return ThresholdsResourceUsageThresholdConfig(
   filters: filters != null ? filters() : this.filters,
   gte: gte ?? this.gte,
   meter: meter ?? this.meter,

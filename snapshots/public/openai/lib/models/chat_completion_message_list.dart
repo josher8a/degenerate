@@ -1,34 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_list_data.dart';/// The type of this object. It is always set to "list".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/chat_completion_message_list/chat_completion_message_list_data.dart';/// An object representing a list of chat completion messages.
 /// 
-@immutable final class ChatCompletionMessageListObject {const ChatCompletionMessageListObject._(this.value);
-
-factory ChatCompletionMessageListObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ChatCompletionMessageListObject._(json),
-}; }
-
-static const ChatCompletionMessageListObject list = ChatCompletionMessageListObject._('list');
-
-static const List<ChatCompletionMessageListObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageListObject($value)'; } 
- }
-/// An object representing a list of chat completion messages.
-/// 
-@immutable final class ChatCompletionMessageList {const ChatCompletionMessageList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionMessageListObject.list, });
+@immutable final class ChatCompletionMessageList {const ChatCompletionMessageList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
 
 factory ChatCompletionMessageList.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageList(
-  object: ChatCompletionMessageListObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ChatCompletionMessageListData.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
@@ -37,7 +14,7 @@ factory ChatCompletionMessageList.fromJson(Map<String, dynamic> json) { return C
 
 /// The type of this object. It is always set to "list".
 /// 
-final ChatCompletionMessageListObject object;
+final ChatCompletionListObject object;
 
 /// An array of chat completion message objects.
 /// 
@@ -64,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ChatCompletionMessageList copyWith({ChatCompletionMessageListObject? object, List<ChatCompletionMessageListData>? data, String? firstId, String? lastId, bool? hasMore, }) { return ChatCompletionMessageList(
+ChatCompletionMessageList copyWith({ChatCompletionListObject? object, List<ChatCompletionMessageListData>? data, String? firstId, String? lastId, bool? hasMore, }) { return ChatCompletionMessageList(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

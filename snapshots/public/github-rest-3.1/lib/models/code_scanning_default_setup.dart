@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code scanning default setup has been configured or not.
-@immutable final class CodeScanningDefaultSetupState {const CodeScanningDefaultSetupState._(this.value);
-
-factory CodeScanningDefaultSetupState.fromJson(String json) { return switch (json) {
-  'configured' => configured,
-  'not-configured' => notConfigured,
-  _ => CodeScanningDefaultSetupState._(json),
-}; }
-
-static const CodeScanningDefaultSetupState configured = CodeScanningDefaultSetupState._('configured');
-
-static const CodeScanningDefaultSetupState notConfigured = CodeScanningDefaultSetupState._('not-configured');
-
-static const List<CodeScanningDefaultSetupState> values = [configured, notConfigured];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupState($value)'; } 
- }
-@immutable final class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/code_scanning_default_setup_state.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/query_suite.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/threat_model.dart';@immutable final class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages._(this.value);
 
 factory CodeScanningDefaultSetupLanguages.fromJson(String json) { return switch (json) {
   'actions' => actions,
@@ -104,70 +79,20 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningDefaultSetupRunnerType($value)'; } 
  }
-/// CodeQL query suite to be used.
-@immutable final class CodeScanningDefaultSetupQuerySuite {const CodeScanningDefaultSetupQuerySuite._(this.value);
-
-factory CodeScanningDefaultSetupQuerySuite.fromJson(String json) { return switch (json) {
-  'default' => $default,
-  'extended' => extended,
-  _ => CodeScanningDefaultSetupQuerySuite._(json),
-}; }
-
-static const CodeScanningDefaultSetupQuerySuite $default = CodeScanningDefaultSetupQuerySuite._('default');
-
-static const CodeScanningDefaultSetupQuerySuite extended = CodeScanningDefaultSetupQuerySuite._('extended');
-
-static const List<CodeScanningDefaultSetupQuerySuite> values = [$default, extended];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupQuerySuite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupQuerySuite($value)'; } 
- }
-/// Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
-@immutable final class CodeScanningDefaultSetupThreatModel {const CodeScanningDefaultSetupThreatModel._(this.value);
-
-factory CodeScanningDefaultSetupThreatModel.fromJson(String json) { return switch (json) {
-  'remote' => remote,
-  'remote_and_local' => remoteAndLocal,
-  _ => CodeScanningDefaultSetupThreatModel._(json),
-}; }
-
-static const CodeScanningDefaultSetupThreatModel remote = CodeScanningDefaultSetupThreatModel._('remote');
-
-static const CodeScanningDefaultSetupThreatModel remoteAndLocal = CodeScanningDefaultSetupThreatModel._('remote_and_local');
-
-static const List<CodeScanningDefaultSetupThreatModel> values = [remote, remoteAndLocal];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupThreatModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupThreatModel($value)'; } 
- }
 /// The frequency of the periodic analysis.
-@immutable final class CodeScanningDefaultSetupSchedule {const CodeScanningDefaultSetupSchedule._(this.value);
+@immutable final class Schedule {const Schedule._(this.value);
 
-factory CodeScanningDefaultSetupSchedule.fromJson(String json) { return switch (json) {
+factory Schedule.fromJson(String json) { return switch (json) {
   'weekly' => weekly,
   'null' => $null,
-  _ => CodeScanningDefaultSetupSchedule._(json),
+  _ => Schedule._(json),
 }; }
 
-static const CodeScanningDefaultSetupSchedule weekly = CodeScanningDefaultSetupSchedule._('weekly');
+static const Schedule weekly = Schedule._('weekly');
 
-static const CodeScanningDefaultSetupSchedule $null = CodeScanningDefaultSetupSchedule._('null');
+static const Schedule $null = Schedule._('null');
 
-static const List<CodeScanningDefaultSetupSchedule> values = [weekly, $null];
+static const List<Schedule> values = [weekly, $null];
 
 final String value;
 
@@ -175,9 +100,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupSchedule && other.value == value; } 
+    other is Schedule && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupSchedule($value)'; } 
+@override String toString() { return 'Schedule($value)'; } 
  }
 /// Configuration for code scanning default setup.
 @immutable final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.updatedAt, this.schedule, });
@@ -187,10 +112,10 @@ factory CodeScanningDefaultSetup.fromJson(Map<String, dynamic> json) { return Co
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CodeScanningDefaultSetupLanguages.fromJson(e as String)).toList(),
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupRunnerType.fromJson(json['runner_type'] as String) : null,
   runnerLabel: json['runner_label'] as String?,
-  querySuite: json['query_suite'] != null ? CodeScanningDefaultSetupQuerySuite.fromJson(json['query_suite'] as String) : null,
-  threatModel: json['threat_model'] != null ? CodeScanningDefaultSetupThreatModel.fromJson(json['threat_model'] as String) : null,
+  querySuite: json['query_suite'] != null ? QuerySuite.fromJson(json['query_suite'] as String) : null,
+  threatModel: json['threat_model'] != null ? ThreatModel.fromJson(json['threat_model'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  schedule: json['schedule'] != null ? CodeScanningDefaultSetupSchedule.fromJson(json['schedule'] as String) : null,
+  schedule: json['schedule'] != null ? Schedule.fromJson(json['schedule'] as String) : null,
 ); }
 
 /// Code scanning default setup has been configured or not.
@@ -206,16 +131,16 @@ final CodeScanningDefaultSetupRunnerType? runnerType;
 final String? runnerLabel;
 
 /// CodeQL query suite to be used.
-final CodeScanningDefaultSetupQuerySuite? querySuite;
+final QuerySuite? querySuite;
 
 /// Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
-final CodeScanningDefaultSetupThreatModel? threatModel;
+final ThreatModel? threatModel;
 
 /// Timestamp of latest configuration update.
 final DateTime? updatedAt;
 
 /// The frequency of the periodic analysis.
-final CodeScanningDefaultSetupSchedule? schedule;
+final Schedule? schedule;
 
 Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
@@ -228,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   if (schedule != null) 'schedule': schedule?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'languages', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'updated_at', 'schedule'}.contains(key)); } 
-CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState Function()? state, List<CodeScanningDefaultSetupLanguages> Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, CodeScanningDefaultSetupQuerySuite Function()? querySuite, CodeScanningDefaultSetupThreatModel Function()? threatModel, DateTime? Function()? updatedAt, CodeScanningDefaultSetupSchedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
+CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState Function()? state, List<CodeScanningDefaultSetupLanguages> Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, QuerySuite Function()? querySuite, ThreatModel Function()? threatModel, DateTime? Function()? updatedAt, Schedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
   state: state != null ? state() : this.state,
   languages: languages != null ? languages() : this.languages,
   runnerType: runnerType != null ? runnerType() : this.runnerType,

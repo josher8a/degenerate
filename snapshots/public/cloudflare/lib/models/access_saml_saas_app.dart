@@ -1,65 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_saml_saas_app_custom_attributes.dart';import 'access_timestamp.dart';/// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
-@immutable final class AccessSamlSaasAppAuthType {const AccessSamlSaasAppAuthType._(this.value);
-
-factory AccessSamlSaasAppAuthType.fromJson(String json) { return switch (json) {
-  'saml' => saml,
-  'oidc' => oidc,
-  _ => AccessSamlSaasAppAuthType._(json),
-}; }
-
-static const AccessSamlSaasAppAuthType saml = AccessSamlSaasAppAuthType._('saml');
-
-static const AccessSamlSaasAppAuthType oidc = AccessSamlSaasAppAuthType._('oidc');
-
-static const List<AccessSamlSaasAppAuthType> values = [saml, oidc];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSamlSaasAppAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSamlSaasAppAuthType($value)'; } 
- }
-/// The format of the name identifier sent to the SaaS application.
-@immutable final class AccessSamlSaasAppNameIdFormat {const AccessSamlSaasAppNameIdFormat._(this.value);
-
-factory AccessSamlSaasAppNameIdFormat.fromJson(String json) { return switch (json) {
-  'id' => id,
-  'email' => email,
-  _ => AccessSamlSaasAppNameIdFormat._(json),
-}; }
-
-static const AccessSamlSaasAppNameIdFormat id = AccessSamlSaasAppNameIdFormat._('id');
-
-static const AccessSamlSaasAppNameIdFormat email = AccessSamlSaasAppNameIdFormat._('email');
-
-static const List<AccessSamlSaasAppNameIdFormat> values = [id, email];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSamlSaasAppNameIdFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSamlSaasAppNameIdFormat($value)'; } 
- }
-@immutable final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oidc_saas_app/access_oidc_saas_app_auth_type.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/access_saml_saas_app_custom_attributes.dart';import 'package:pub_cloudflare/models/access_saml_saas_app/name_id_format.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 
 factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSamlSaasApp(
-  authType: json['auth_type'] != null ? AccessSamlSaasAppAuthType.fromJson(json['auth_type'] as String) : null,
+  authType: json['auth_type'] != null ? AccessOidcSaasAppAuthType.fromJson(json['auth_type'] as String) : null,
   consumerServiceUrl: json['consumer_service_url'] as String?,
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   customAttributes: (json['custom_attributes'] as List<dynamic>?)?.map((e) => AccessSamlSaasAppCustomAttributes.fromJson(e as Map<String, dynamic>)).toList(),
   defaultRelayState: json['default_relay_state'] as String?,
   idpEntityId: json['idp_entity_id'] as String?,
-  nameIdFormat: json['name_id_format'] != null ? AccessSamlSaasAppNameIdFormat.fromJson(json['name_id_format'] as String) : null,
+  nameIdFormat: json['name_id_format'] != null ? NameIdFormat.fromJson(json['name_id_format'] as String) : null,
   nameIdTransformJsonata: json['name_id_transform_jsonata'] as String?,
   publicKey: json['public_key'] as String?,
   samlAttributeTransformJsonata: json['saml_attribute_transform_jsonata'] as String?,
@@ -69,7 +19,7 @@ factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSam
 ); }
 
 /// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
-final AccessSamlSaasAppAuthType? authType;
+final AccessOidcSaasAppAuthType? authType;
 
 /// The service provider's endpoint that is responsible for receiving and parsing a SAML assertion.
 final String? consumerServiceUrl;
@@ -85,7 +35,7 @@ final String? defaultRelayState;
 final String? idpEntityId;
 
 /// The format of the name identifier sent to the SaaS application.
-final AccessSamlSaasAppNameIdFormat? nameIdFormat;
+final NameIdFormat? nameIdFormat;
 
 /// A [JSONata](https://jsonata.org/) expression that transforms an application's user identities into a NameID value for its SAML assertion. This expression should evaluate to a singular string. The output of this expression can override the `name_id_format` setting.
 /// 
@@ -122,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'default_relay_state', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'saml_attribute_transform_jsonata', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key)); } 
-AccessSamlSaasApp copyWith({AccessSamlSaasAppAuthType Function()? authType, String Function()? consumerServiceUrl, AccessTimestamp Function()? createdAt, List<AccessSamlSaasAppCustomAttributes> Function()? customAttributes, String Function()? defaultRelayState, String Function()? idpEntityId, AccessSamlSaasAppNameIdFormat Function()? nameIdFormat, String Function()? nameIdTransformJsonata, String Function()? publicKey, String Function()? samlAttributeTransformJsonata, String Function()? spEntityId, String Function()? ssoEndpoint, AccessTimestamp Function()? updatedAt, }) { return AccessSamlSaasApp(
+AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType Function()? authType, String Function()? consumerServiceUrl, AccessTimestamp Function()? createdAt, List<AccessSamlSaasAppCustomAttributes> Function()? customAttributes, String Function()? defaultRelayState, String Function()? idpEntityId, NameIdFormat Function()? nameIdFormat, String Function()? nameIdTransformJsonata, String Function()? publicKey, String Function()? samlAttributeTransformJsonata, String Function()? spEntityId, String Function()? ssoEndpoint, AccessTimestamp Function()? updatedAt, }) { return AccessSamlSaasApp(
   authType: authType != null ? authType() : this.authType,
   consumerServiceUrl: consumerServiceUrl != null ? consumerServiceUrl() : this.consumerServiceUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

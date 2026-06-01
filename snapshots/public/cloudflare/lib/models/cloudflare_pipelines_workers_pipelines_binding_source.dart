@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the format of source data.
-@immutable final class CloudflarePipelinesWorkersPipelinesBindingSourceFormat {const CloudflarePipelinesWorkersPipelinesBindingSourceFormat._(this.value);
-
-factory CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(String json) { return switch (json) {
-  'json' => $json,
-  _ => CloudflarePipelinesWorkersPipelinesBindingSourceFormat._(json),
-}; }
-
-static const CloudflarePipelinesWorkersPipelinesBindingSourceFormat $json = CloudflarePipelinesWorkersPipelinesBindingSourceFormat._('json');
-
-static const List<CloudflarePipelinesWorkersPipelinesBindingSourceFormat> values = [$json];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesWorkersPipelinesBindingSourceFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesBindingSourceFormat($value)'; } 
- }
-/// `[DEPRECATED]` Worker binding source configuration. Use the new streams API instead.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';/// `[DEPRECATED]` Worker binding source configuration. Use the new streams API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesBindingSource {const CloudflarePipelinesWorkersPipelinesBindingSource({required this.format, required this.type, });
 
 factory CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesBindingSource(

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_ip_version_response_result.dart';@immutable final class RadarGetHttpTopLocationsByIpVersionResponse {const RadarGetHttpTopLocationsByIpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_top_locations_by_dnssec_response/radar_get_dns_as112_top_locations_by_dnssec_response_result.dart';@immutable final class RadarGetHttpTopLocationsByIpVersionResponse {const RadarGetHttpTopLocationsByIpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTopLocationsByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByIpVersionResponse(
-  result: RadarGetHttpTopLocationsByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsAs112TopLocationsByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetHttpTopLocationsByIpVersionResponseResult result;
+final RadarGetDnsAs112TopLocationsByDnssecResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTopLocationsByIpVersionResponse copyWith({RadarGetHttpTopLocationsByIpVersionResponseResult? result, bool? success, }) { return RadarGetHttpTopLocationsByIpVersionResponse(
+RadarGetHttpTopLocationsByIpVersionResponse copyWith({RadarGetDnsAs112TopLocationsByDnssecResponseResult? result, bool? success, }) { return RadarGetHttpTopLocationsByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

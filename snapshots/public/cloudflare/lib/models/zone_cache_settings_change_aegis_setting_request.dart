@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_aegis_value.dart';@immutable final class ZoneCacheSettingsChangeAegisSettingRequest {const ZoneCacheSettingsChangeAegisSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis_value.dart';@immutable final class ZoneCacheSettingsChangeAegisSettingRequest {const ZoneCacheSettingsChangeAegisSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeAegisSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeAegisSettingRequest(
   value: CacheRulesAegisValue.fromJson(json['value'] as Map<String, dynamic>),

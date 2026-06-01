@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_response_results.dart';/// Represents if a given text input is potentially harmful.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_moderation_response/create_moderation_response_results.dart';/// Represents if a given text input is potentially harmful.
 @immutable final class CreateModerationResponse {const CreateModerationResponse({required this.id, required this.model, required this.results, });
 
 factory CreateModerationResponse.fromJson(Map<String, dynamic> json) { return CreateModerationResponse(

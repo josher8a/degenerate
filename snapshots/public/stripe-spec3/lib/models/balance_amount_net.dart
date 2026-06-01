@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount_by_source_type.dart';import 'balance_net_available.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount_by_source_type.dart';import 'package:pub_stripe_spec3/models/balance_net_available.dart';/// 
 @immutable final class BalanceAmountNet {const BalanceAmountNet({required this.amount, required this.currency, this.netAvailable, this.sourceTypes, });
 
 factory BalanceAmountNet.fromJson(Map<String, dynamic> json) { return BalanceAmountNet(

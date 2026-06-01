@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization_amount_details.dart';import 'issuing_authorization_cardholder.dart';import 'issuing_authorization_fleet_data.dart';import 'issuing_authorization_fraud_challenge.dart';import 'issuing_authorization_fuel_data.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_authorization_network_data.dart';import 'issuing_authorization_pending_request.dart';import 'issuing_authorization_request.dart';import 'issuing_authorization_token.dart';import 'issuing_authorization_treasury.dart';import 'issuing_authorization_verification_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_token.dart';import 'issuing_transaction.dart';/// How the card details were provided.
-@immutable final class IssuingAuthorizationAuthorizationMethod {const IssuingAuthorizationAuthorizationMethod._(this.value);
-
-factory IssuingAuthorizationAuthorizationMethod.fromJson(String json) { return switch (json) {
-  'chip' => chip,
-  'contactless' => contactless,
-  'keyed_in' => keyedIn,
-  'online' => online,
-  'swipe' => swipe,
-  _ => IssuingAuthorizationAuthorizationMethod._(json),
-}; }
-
-static const IssuingAuthorizationAuthorizationMethod chip = IssuingAuthorizationAuthorizationMethod._('chip');
-
-static const IssuingAuthorizationAuthorizationMethod contactless = IssuingAuthorizationAuthorizationMethod._('contactless');
-
-static const IssuingAuthorizationAuthorizationMethod keyedIn = IssuingAuthorizationAuthorizationMethod._('keyed_in');
-
-static const IssuingAuthorizationAuthorizationMethod online = IssuingAuthorizationAuthorizationMethod._('online');
-
-static const IssuingAuthorizationAuthorizationMethod swipe = IssuingAuthorizationAuthorizationMethod._('swipe');
-
-static const List<IssuingAuthorizationAuthorizationMethod> values = [chip, contactless, keyedIn, online, swipe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationAuthorizationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationAuthorizationMethod($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/issuing_authorization_token.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fraud_challenge.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fuel_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_merchant_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_pending_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingAuthorizationObject {const IssuingAuthorizationObject._(this.value);
 
 factory IssuingAuthorizationObject.fromJson(String json) { return switch (json) {
@@ -98,7 +64,7 @@ factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return Issuin
   amount: (json['amount'] as num).toInt(),
   amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   approved: json['approved'] as bool,
-  authorizationMethod: IssuingAuthorizationAuthorizationMethod.fromJson(json['authorization_method'] as String),
+  authorizationMethod: AuthorizationMethod.fromJson(json['authorization_method'] as String),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   card: IssuingCard.fromJson(json['card'] as Map<String, dynamic>),
   cardholder: json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null,
@@ -136,7 +102,7 @@ final IssuingAuthorizationAmountDetails? amountDetails;
 final bool approved;
 
 /// How the card details were provided.
-final IssuingAuthorizationAuthorizationMethod authorizationMethod;
+final AuthorizationMethod authorizationMethod;
 
 /// List of balance transactions associated with this authorization.
 final List<BalanceTransaction> balanceTransactions;
@@ -144,7 +110,7 @@ final List<BalanceTransaction> balanceTransactions;
 final IssuingCard card;
 
 /// The cardholder to whom this authorization belongs.
-final IssuingAuthorizationCardholder? cardholder;
+final Cardholder? cardholder;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -259,7 +225,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('transactions') &&
       json.containsKey('verification_data'); } 
-IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, IssuingAuthorizationAuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, IssuingAuthorizationCardholder? Function()? cardholder, int? created, String? currency, IssuingAuthorizationFleetData? Function()? fleet, List<IssuingAuthorizationFraudChallenge>? Function()? fraudChallenges, IssuingAuthorizationFuelData? Function()? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingAuthorizationNetworkData? Function()? networkData, IssuingAuthorizationObject? object, IssuingAuthorizationPendingRequest? Function()? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, IssuingAuthorizationToken? Function()? token, List<IssuingTransaction>? transactions, IssuingAuthorizationTreasury? Function()? treasury, IssuingAuthorizationVerificationData? verificationData, bool? Function()? verifiedByFraudChallenge, String? Function()? wallet, }) { return IssuingAuthorization(
+IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, AuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, Cardholder? Function()? cardholder, int? created, String? currency, IssuingAuthorizationFleetData? Function()? fleet, List<IssuingAuthorizationFraudChallenge>? Function()? fraudChallenges, IssuingAuthorizationFuelData? Function()? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingAuthorizationNetworkData? Function()? networkData, IssuingAuthorizationObject? object, IssuingAuthorizationPendingRequest? Function()? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, IssuingAuthorizationToken? Function()? token, List<IssuingTransaction>? transactions, IssuingAuthorizationTreasury? Function()? treasury, IssuingAuthorizationVerificationData? verificationData, bool? Function()? verifiedByFraudChallenge, String? Function()? wallet, }) { return IssuingAuthorization(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   approved: approved ?? this.approved,

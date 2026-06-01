@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_domain_secret_param.dart';/// Allow outbound network access only to specified domains. Always `allowlist`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_network_policy_domain_secret_param.dart';/// Allow outbound network access only to specified domains. Always `allowlist`.
 @immutable final class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType._(this.value);
 
 factory ContainerNetworkPolicyAllowlistParamType.fromJson(String json) { return switch (json) {

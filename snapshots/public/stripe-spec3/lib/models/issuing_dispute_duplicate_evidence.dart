@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_duplicate_evidence_additional_documentation.dart';import 'issuing_dispute_duplicate_evidence_card_statement.dart';import 'issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'issuing_dispute_duplicate_evidence_check_image.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_card_statement.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence/issuing_dispute_duplicate_evidence_check_image.dart';/// 
 @immutable final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory IssuingDisputeDuplicateEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeDuplicateEvidence(
@@ -13,7 +13,7 @@ factory IssuingDisputeDuplicateEvidence.fromJson(Map<String, dynamic> json) { re
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeDuplicateEvidenceAdditionalDocumentation? additionalDocumentation;
+final IssuingDisputeCanceledEvidenceAdditionalDocumentation? additionalDocumentation;
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Copy of the card statement showing that the product had already been paid for.
 final IssuingDisputeDuplicateEvidenceCardStatement? cardStatement;
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'original_transaction': ?originalTransaction,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key)); } 
-IssuingDisputeDuplicateEvidence copyWith({IssuingDisputeDuplicateEvidenceAdditionalDocumentation? Function()? additionalDocumentation, IssuingDisputeDuplicateEvidenceCardStatement? Function()? cardStatement, IssuingDisputeDuplicateEvidenceCashReceipt? Function()? cashReceipt, IssuingDisputeDuplicateEvidenceCheckImage? Function()? checkImage, String? Function()? explanation, String? Function()? originalTransaction, }) { return IssuingDisputeDuplicateEvidence(
+IssuingDisputeDuplicateEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, IssuingDisputeDuplicateEvidenceCardStatement? Function()? cardStatement, IssuingDisputeDuplicateEvidenceCashReceipt? Function()? cashReceipt, IssuingDisputeDuplicateEvidenceCheckImage? Function()? checkImage, String? Function()? explanation, String? Function()? originalTransaction, }) { return IssuingDisputeDuplicateEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   cardStatement: cardStatement != null ? cardStatement() : this.cardStatement,
   cashReceipt: cashReceipt != null ? cashReceipt() : this.cashReceipt,

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of input messages. Always `item_reference`.
-@immutable final class InputMessagesItemReferenceType {const InputMessagesItemReferenceType._(this.value);
-
-factory InputMessagesItemReferenceType.fromJson(String json) { return switch (json) {
-  'item_reference' => itemReference,
-  _ => InputMessagesItemReferenceType._(json),
-}; }
-
-static const InputMessagesItemReferenceType itemReference = InputMessagesItemReferenceType._('item_reference');
-
-static const List<InputMessagesItemReferenceType> values = [itemReference];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputMessagesItemReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputMessagesItemReferenceType($value)'; } 
- }
-@immutable final class InputMessagesItemReference {const InputMessagesItemReference({required this.type, required this.itemReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_messages_item_reference/input_messages_item_reference_type.dart';@immutable final class InputMessagesItemReference {const InputMessagesItemReference({required this.type, required this.itemReference, });
 
 factory InputMessagesItemReference.fromJson(Map<String, dynamic> json) { return InputMessagesItemReference(
   type: InputMessagesItemReferenceType.fromJson(json['type'] as String),

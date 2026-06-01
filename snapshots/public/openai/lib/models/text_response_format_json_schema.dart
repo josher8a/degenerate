@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_schema`.
-@immutable final class TextResponseFormatJsonSchemaType {const TextResponseFormatJsonSchemaType._(this.value);
-
-factory TextResponseFormatJsonSchemaType.fromJson(String json) { return switch (json) {
-  'json_schema' => jsonSchema,
-  _ => TextResponseFormatJsonSchemaType._(json),
-}; }
-
-static const TextResponseFormatJsonSchemaType jsonSchema = TextResponseFormatJsonSchemaType._('json_schema');
-
-static const List<TextResponseFormatJsonSchemaType> values = [jsonSchema];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TextResponseFormatJsonSchemaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TextResponseFormatJsonSchemaType($value)'; } 
- }
-/// JSON Schema response format. Used to generate structured JSON responses.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_format_json_schema/response_format_json_schema_type.dart';/// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 /// 
 @immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict, });
 
 factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
-  type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
+  type: ResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
   schema: json['schema'] as Map<String, dynamic>,
@@ -36,7 +14,7 @@ factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// The type of response format being defined. Always `json_schema`.
-final TextResponseFormatJsonSchemaType type;
+final ResponseFormatJsonSchemaType type;
 
 /// A description of what the response format is for, used by the model to
 /// determine how to respond in the format.
@@ -71,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema'); } 
-TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
+TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
   type: type ?? this.type,
   description: description != null ? description() : this.description,
   name: name ?? this.name,

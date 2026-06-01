@@ -3,12 +3,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/mobile_space_detail_schema.dart';
-import '../models/paged_mobile_space_detail_schema.dart';
-import '../models/session_detail_schema.dart';
-import '../models/session_feedback_schema.dart';
-import '../models/space_schema.dart';
-import '../models/summary_spaces_schema.dart';
+import 'package:pub_totem_mobile/models/mobile_space_detail_schema.dart';
+import 'package:pub_totem_mobile/models/paged_mobile_space_detail_schema.dart';
+import 'package:pub_totem_mobile/models/session_detail_schema.dart';
+import 'package:pub_totem_mobile/models/session_feedback_schema.dart';
+import 'package:pub_totem_mobile/models/space_schema.dart';
+import 'package:pub_totem_mobile/models/summary_spaces_schema.dart';
 
 /// SpacesApi operations.
 ///

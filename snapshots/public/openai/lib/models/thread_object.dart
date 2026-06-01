@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_object_tool_resources.dart';/// The object type, which is always `thread`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';/// The object type, which is always `thread`.
 @immutable final class ThreadObjectObject {const ThreadObjectObject._(this.value);
 
 factory ThreadObjectObject.fromJson(String json) { return switch (json) {
@@ -29,7 +29,7 @@ factory ThreadObject.fromJson(Map<String, dynamic> json) { return ThreadObject(
   id: json['id'] as String,
   object: ThreadObjectObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
-  toolResources: json['tool_resources'] != null ? ThreadObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
+  toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 
@@ -44,7 +44,7 @@ final int createdAt;
 
 /// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
-final ThreadObjectToolResources? toolResources;
+final AssistantObjectToolResources? toolResources;
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
 /// useful for storing additional information about the object in a structured
@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('tool_resources') &&
       json.containsKey('metadata'); } 
-ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, ThreadObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) { return ThreadObject(
+ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, }) { return ThreadObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

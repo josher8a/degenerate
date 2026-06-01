@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_prefix_update_advertisement_on_demand.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn_prepend_count.dart';import 'package:pub_cloudflare/models/addressing_auto_advertise_withdraw.dart';import 'package:pub_cloudflare/models/addressing_bgp_prefix_update_advertisement/on_demand.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
 
 factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
-  onDemand: json['on_demand'] != null ? AddressingBgpPrefixUpdateAdvertisementOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
+  onDemand: json['on_demand'] != null ? OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
 ); }
 
 /// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
@@ -14,7 +14,7 @@ final AddressingAsnPrependCount? asnPrependCount;
 /// Determines if Cloudflare advertises a BYOIP BGP prefix even when there is no matching BGP prefix in the Magic routing table. When true, Cloudflare will automatically withdraw the BGP prefix when there are no matching BGP routes, and will resume advertising when there is at least one matching BGP route.
 final AddressingAutoAdvertiseWithdraw? autoAdvertiseWithdraw;
 
-final AddressingBgpPrefixUpdateAdvertisementOnDemand? onDemand;
+final OnDemand? onDemand;
 
 Map<String, dynamic> toJson() { return {
   if (asnPrependCount != null) 'asn_prepend_count': asnPrependCount?.toJson(),
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn_prepend_count', 'auto_advertise_withdraw', 'on_demand'}.contains(key)); } 
-AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw Function()? autoAdvertiseWithdraw, AddressingBgpPrefixUpdateAdvertisementOnDemand Function()? onDemand, }) { return AddressingBgpPrefixUpdateAdvertisement(
+AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw Function()? autoAdvertiseWithdraw, OnDemand Function()? onDemand, }) { return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
   onDemand: onDemand != null ? onDemand() : this.onDemand,

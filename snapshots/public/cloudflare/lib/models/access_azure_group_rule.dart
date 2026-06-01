@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_azure_group_rule_azure_ad.dart';/// Matches an Azure group.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_azure_group_rule/azure_ad.dart';/// Matches an Azure group.
 /// Requires an Azure identity provider.
 @immutable final class AccessAzureGroupRule {const AccessAzureGroupRule({required this.azureAd});
 
 factory AccessAzureGroupRule.fromJson(Map<String, dynamic> json) { return AccessAzureGroupRule(
-  azureAd: AccessAzureGroupRuleAzureAd.fromJson(json['azureAD'] as Map<String, dynamic>),
+  azureAd: AzureAd.fromJson(json['azureAD'] as Map<String, dynamic>),
 ); }
 
-final AccessAzureGroupRuleAzureAd azureAd;
+final AzureAd azureAd;
 
 Map<String, dynamic> toJson() { return {
   'azureAD': azureAd.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('azureAD'); } 
-AccessAzureGroupRule copyWith({AccessAzureGroupRuleAzureAd? azureAd}) { return AccessAzureGroupRule(
+AccessAzureGroupRule copyWith({AzureAd? azureAd}) { return AccessAzureGroupRule(
   azureAd: azureAd ?? this.azureAd,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_indicator_update_request_related_events.dart';import 'patch_indicator_update_request_tags.dart';import 'patch_indicator_update_request_tags_variant2.dart';@immutable final class PatchIndicatorUpdateRequest {const PatchIndicatorUpdateRequest({this.indicatorType, this.relatedEvents, this.tags, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_indicator_read_response/related_events.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/patch_indicator_update_request_tags.dart';import 'package:pub_cloudflare/models/patch_indicator_update_request/tags_variant2.dart';@immutable final class PatchIndicatorUpdateRequest {const PatchIndicatorUpdateRequest({this.indicatorType, this.relatedEvents, this.tags, this.value, });
 
 factory PatchIndicatorUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateRequest(
   indicatorType: json['indicatorType'] as String?,
-  relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PatchIndicatorUpdateRequestRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PatchIndicatorUpdateRequestTagsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => RelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TagsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   value: json['value'] as String?,
 ); }
 
 final String? indicatorType;
 
-final List<PatchIndicatorUpdateRequestRelatedEvents>? relatedEvents;
+final List<RelatedEvents>? relatedEvents;
 
 final List<PatchIndicatorUpdateRequestTags>? tags;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key)); } 
-PatchIndicatorUpdateRequest copyWith({String Function()? indicatorType, List<PatchIndicatorUpdateRequestRelatedEvents> Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags> Function()? tags, String Function()? value, }) { return PatchIndicatorUpdateRequest(
+PatchIndicatorUpdateRequest copyWith({String Function()? indicatorType, List<RelatedEvents> Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags> Function()? tags, String Function()? value, }) { return PatchIndicatorUpdateRequest(
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,

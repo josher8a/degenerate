@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters.dart';import 'create_fine_tuning_job_request_integrations.dart';import 'create_fine_tuning_job_request_model.dart';import 'fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_hyperparameters.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/create_fine_tuning_job_request_model.dart';import 'package:pub_openai/models/create_fine_tuning_job_request/integrations.dart';import 'package:pub_openai/models/fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
 
 factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateFineTuningJobRequestModelVariant2.fromJson(v as String),),
@@ -8,7 +8,7 @@ factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return 
   hyperparameters: json['hyperparameters'] != null ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
   suffix: json['suffix'] as String?,
   validationFile: json['validation_file'] as String?,
-  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => CreateFineTuningJobRequestIntegrations.fromJson(e as Map<String, dynamic>)).toList(),
+  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => Integrations.fromJson(e as Map<String, dynamic>)).toList(),
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -56,7 +56,7 @@ final String? suffix;
 final String? validationFile;
 
 /// A list of integrations to enable for your fine-tuning job.
-final List<CreateFineTuningJobRequestIntegrations>? integrations;
+final List<Integrations>? integrations;
 
 /// The seed controls the reproducibility of the job. Passing in the same seed and job parameters should produce the same results, but may differ in rare cases.
 /// If a seed is not specified, one will be generated for you.
@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('training_file') && json['training_file'] is String; } 
-CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<CreateFineTuningJobRequestIntegrations>? Function()? integrations, int? Function()? seed, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
+CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<Integrations>? Function()? integrations, int? Function()? seed, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
   model: model ?? this.model,
   trainingFile: trainingFile ?? this.trainingFile,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,

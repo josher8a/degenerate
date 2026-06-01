@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Fields {const Fields({required this.id, required this.value, });
+
+factory Fields.fromJson(Map<String, dynamic> json) { return Fields(
+  id: (json['id'] as num).toInt(),
+  value: json['value'],
+); }
+
+/// The ID of the project field to update.
+final int id;
+
+/// The new value for the field:
+/// - For text, number, and date fields, provide the new value directly.
+/// - For single select and iteration fields, provide the ID of the option or iteration.
+/// - To clear the field, set this to null.
+/// 
+/// The new value for the field:
+/// - For text, number, and date fields, provide the new value directly.
+/// - For single select and iteration fields, provide the ID of the option or iteration.
+/// - To clear the field, set this to null.
+/// 
+/// One of: String, double
+final dynamic value;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('value'); } 
+Fields copyWith({int? id, dynamic Function()? value, }) { return Fields(
+  id: id ?? this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Fields &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'Fields(id: $id, value: $value)'; } 
+ }

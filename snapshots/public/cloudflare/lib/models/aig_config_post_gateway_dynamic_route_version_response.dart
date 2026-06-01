@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_version_response_result.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponse {const AigConfigPostGatewayDynamicRouteVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_delete_gateway_dynamic_route_response/aig_config_delete_gateway_dynamic_route_response_result.dart';@immutable final class AigConfigPostGatewayDynamicRouteVersionResponse {const AigConfigPostGatewayDynamicRouteVersionResponse({required this.result, required this.success, });
 
 factory AigConfigPostGatewayDynamicRouteVersionResponse.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponse(
-  result: AigConfigPostGatewayDynamicRouteVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AigConfigDeleteGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AigConfigPostGatewayDynamicRouteVersionResponseResult result;
+final AigConfigDeleteGatewayDynamicRouteResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigPostGatewayDynamicRouteVersionResponseResult? result, bool? success, }) { return AigConfigPostGatewayDynamicRouteVersionResponse(
+AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigDeleteGatewayDynamicRouteResponseResult? result, bool? success, }) { return AigConfigPostGatewayDynamicRouteVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

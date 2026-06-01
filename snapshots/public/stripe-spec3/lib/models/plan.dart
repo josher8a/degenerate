@@ -1,134 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'product.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-@immutable final class PlanBillingScheme {const PlanBillingScheme._(this.value);
-
-factory PlanBillingScheme.fromJson(String json) { return switch (json) {
-  'per_unit' => perUnit,
-  'tiered' => tiered,
-  _ => PlanBillingScheme._(json),
-}; }
-
-static const PlanBillingScheme perUnit = PlanBillingScheme._('per_unit');
-
-static const PlanBillingScheme tiered = PlanBillingScheme._('tiered');
-
-static const List<PlanBillingScheme> values = [perUnit, tiered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanBillingScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanBillingScheme($value)'; } 
- }
-/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-@immutable final class PlanInterval {const PlanInterval._(this.value);
-
-factory PlanInterval.fromJson(String json) { return switch (json) {
-  'day' => day,
-  'month' => month,
-  'week' => week,
-  'year' => year,
-  _ => PlanInterval._(json),
-}; }
-
-static const PlanInterval day = PlanInterval._('day');
-
-static const PlanInterval month = PlanInterval._('month');
-
-static const PlanInterval week = PlanInterval._('week');
-
-static const PlanInterval year = PlanInterval._('year');
-
-static const List<PlanInterval> values = [day, month, week, year];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanInterval($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PlanObject {const PlanObject._(this.value);
-
-factory PlanObject.fromJson(String json) { return switch (json) {
-  'plan' => plan,
-  _ => PlanObject._(json),
-}; }
-
-static const PlanObject plan = PlanObject._('plan');
-
-static const List<PlanObject> values = [plan];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanObject($value)'; } 
- }
-/// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price. In `graduated` tiering, pricing can change as the quantity grows.
-@immutable final class PlanTiersMode {const PlanTiersMode._(this.value);
-
-factory PlanTiersMode.fromJson(String json) { return switch (json) {
-  'graduated' => graduated,
-  'volume' => volume,
-  _ => PlanTiersMode._(json),
-}; }
-
-static const PlanTiersMode graduated = PlanTiersMode._('graduated');
-
-static const PlanTiersMode volume = PlanTiersMode._('volume');
-
-static const List<PlanTiersMode> values = [graduated, volume];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanTiersMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanTiersMode($value)'; } 
- }
-/// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
-@immutable final class PlanUsageType {const PlanUsageType._(this.value);
-
-factory PlanUsageType.fromJson(String json) { return switch (json) {
-  'licensed' => licensed,
-  'metered' => metered,
-  _ => PlanUsageType._(json),
-}; }
-
-static const PlanUsageType licensed = PlanUsageType._('licensed');
-
-static const PlanUsageType metered = PlanUsageType._('metered');
-
-static const List<PlanUsageType> values = [licensed, metered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlanUsageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlanUsageType($value)'; } 
- }
-/// You can now model subscriptions more flexibly using the [Prices API](https://api.stripe.com#prices). It replaces the Plans API and is backwards compatible to simplify your migration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_plan/deleted_plan_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/usage_type.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/plan_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/transform_usage.dart';/// You can now model subscriptions more flexibly using the [Prices API](https://api.stripe.com#prices). It replaces the Plans API and is backwards compatible to simplify your migration.
 /// 
 /// Plans define the base price, currency, and billing cycle for recurring purchases of products.
 /// [Products](https://api.stripe.com#products) help you track inventory or provisioning, and plans help you track pricing. Different physical goods or levels of service should be represented by products, and pricing options should be represented by plans. This approach lets you change prices without having to change your provisioning scheme.
@@ -142,23 +14,23 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   active: json['active'] as bool,
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   amountDecimal: json['amount_decimal'] as String?,
-  billingScheme: PlanBillingScheme.fromJson(json['billing_scheme'] as String),
+  billingScheme: BillingScheme.fromJson(json['billing_scheme'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   id: json['id'] as String,
-  interval: PlanInterval.fromJson(json['interval'] as String),
+  interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: (json['interval_count'] as num).toInt(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
-  object: PlanObject.fromJson(json['object'] as String),
+  object: DeletedPlanObject.fromJson(json['object'] as String),
   product: json['product'] != null ? OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PlanTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transformUsage: json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
-  usageType: PlanUsageType.fromJson(json['usage_type'] as String),
+  usageType: UsageType.fromJson(json['usage_type'] as String),
 ); }
 
 /// Whether the plan can be used for new purchases.
@@ -171,7 +43,7 @@ final int? amount;
 final String? amountDecimal;
 
 /// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final PlanBillingScheme billingScheme;
+final BillingScheme billingScheme;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -183,7 +55,7 @@ final String currency;
 final String id;
 
 /// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-final PlanInterval interval;
+final GetPricesRecurringInterval interval;
 
 /// The number of intervals (specified in the `interval` attribute) between subscription billings. For example, `interval=month` and `interval_count=3` bills every 3 months.
 final int intervalCount;
@@ -201,7 +73,7 @@ final String? meter;
 final String? nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final PlanObject object;
+final DeletedPlanObject object;
 
 /// The product whose pricing this plan determines.
 final PlanProduct? product;
@@ -219,7 +91,7 @@ final TransformUsage? transformUsage;
 final int? trialPeriodDays;
 
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
-final PlanUsageType usageType;
+final UsageType usageType;
 
 Map<String, dynamic> toJson() { return {
   'active': active,
@@ -253,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('usage_type'); } 
-Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, PlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
+Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? billingScheme, int? created, String? currency, String? id, GetPricesRecurringInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, DeletedPlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? usageType, }) { return Plan(
   active: active ?? this.active,
   amount: amount != null ? amount() : this.amount,
   amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_components_schemas_domain.dart';import 'access_schemas_auto_redirect_to_identity.dart';/// The application type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_components_schemas_domain.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';/// The application type.
 @immutable final class AccessComponentsSchemasType {const AccessComponentsSchemasType._(this.value);
 
 factory AccessComponentsSchemasType.fromJson(String json) { return switch (json) {

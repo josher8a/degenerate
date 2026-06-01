@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_account_move_response_statuses.dart';@immutable final class BatchAccountMoveResponse {const BatchAccountMoveResponse({required this.statuses});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/batch_account_move_response/statuses.dart';@immutable final class BatchAccountMoveResponse {const BatchAccountMoveResponse({required this.statuses});
 
 factory BatchAccountMoveResponse.fromJson(Map<String, dynamic> json) { return BatchAccountMoveResponse(
-  statuses: BatchAccountMoveResponseStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
+  statuses: Statuses.fromJson(json['statuses'] as Map<String, dynamic>),
 ); }
 
-final BatchAccountMoveResponseStatuses statuses;
+final Statuses statuses;
 
 Map<String, dynamic> toJson() { return {
   'statuses': statuses.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('statuses'); } 
-BatchAccountMoveResponse copyWith({BatchAccountMoveResponseStatuses? statuses}) { return BatchAccountMoveResponse(
+BatchAccountMoveResponse copyWith({Statuses? statuses}) { return BatchAccountMoveResponse(
   statuses: statuses ?? this.statuses,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

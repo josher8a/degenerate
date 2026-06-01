@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_logo.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/custom_logo.dart';/// 
 @immutable final class PaymentMethodCustom {const PaymentMethodCustom({required this.type, this.displayName, this.logo, });
 
 factory PaymentMethodCustom.fromJson(Map<String, dynamic> json) { return PaymentMethodCustom(

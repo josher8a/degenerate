@@ -1,49 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_dispute_canceled_evidence.dart';import 'issuing_dispute_duplicate_evidence.dart';import 'issuing_dispute_fraudulent_evidence.dart';import 'issuing_dispute_merchandise_not_as_described_evidence.dart';import 'issuing_dispute_no_valid_authorization_evidence.dart';import 'issuing_dispute_not_received_evidence.dart';import 'issuing_dispute_other_evidence.dart';import 'issuing_dispute_service_not_as_described_evidence.dart';/// The reason for filing the dispute. Its value will match the field containing the evidence.
-@immutable final class IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason._(this.value);
-
-factory IssuingDisputeEvidenceReason.fromJson(String json) { return switch (json) {
-  'canceled' => canceled,
-  'duplicate' => duplicate,
-  'fraudulent' => fraudulent,
-  'merchandise_not_as_described' => merchandiseNotAsDescribed,
-  'no_valid_authorization' => noValidAuthorization,
-  'not_received' => notReceived,
-  'other' => $other,
-  'service_not_as_described' => serviceNotAsDescribed,
-  _ => IssuingDisputeEvidenceReason._(json),
-}; }
-
-static const IssuingDisputeEvidenceReason canceled = IssuingDisputeEvidenceReason._('canceled');
-
-static const IssuingDisputeEvidenceReason duplicate = IssuingDisputeEvidenceReason._('duplicate');
-
-static const IssuingDisputeEvidenceReason fraudulent = IssuingDisputeEvidenceReason._('fraudulent');
-
-static const IssuingDisputeEvidenceReason merchandiseNotAsDescribed = IssuingDisputeEvidenceReason._('merchandise_not_as_described');
-
-static const IssuingDisputeEvidenceReason noValidAuthorization = IssuingDisputeEvidenceReason._('no_valid_authorization');
-
-static const IssuingDisputeEvidenceReason notReceived = IssuingDisputeEvidenceReason._('not_received');
-
-static const IssuingDisputeEvidenceReason $other = IssuingDisputeEvidenceReason._('other');
-
-static const IssuingDisputeEvidenceReason serviceNotAsDescribed = IssuingDisputeEvidenceReason._('service_not_as_described');
-
-static const List<IssuingDisputeEvidenceReason> values = [canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, $other, serviceNotAsDescribed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeEvidenceReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeEvidenceReason($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_duplicate_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_evidence/issuing_dispute_evidence_reason.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_fraudulent_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_merchandise_not_as_described_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_no_valid_authorization_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_not_received_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_other_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_service_not_as_described_evidence.dart';/// 
 @immutable final class IssuingDisputeEvidence {const IssuingDisputeEvidence({required this.reason, this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.serviceNotAsDescribed, });
 
 factory IssuingDisputeEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeEvidence(

@@ -1,38 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag.
-@immutable final class DeploymentBranchPolicyType {const DeploymentBranchPolicyType._(this.value);
-
-factory DeploymentBranchPolicyType.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  _ => DeploymentBranchPolicyType._(json),
-}; }
-
-static const DeploymentBranchPolicyType branch = DeploymentBranchPolicyType._('branch');
-
-static const DeploymentBranchPolicyType tag = DeploymentBranchPolicyType._('tag');
-
-static const List<DeploymentBranchPolicyType> values = [branch, tag];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentBranchPolicyType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentBranchPolicyType($value)'; } 
- }
-/// Details of a deployment branch or tag policy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_name_pattern_with_type/deployment_branch_policy_name_pattern_with_type_type.dart';/// Details of a deployment branch or tag policy.
 @immutable final class DeploymentBranchPolicy {const DeploymentBranchPolicy({this.id, this.nodeId, this.name, this.type, });
 
 factory DeploymentBranchPolicy.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicy(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,
   nodeId: json['node_id'] as String?,
   name: json['name'] as String?,
-  type: json['type'] != null ? DeploymentBranchPolicyType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? DeploymentBranchPolicyNamePatternWithTypeType.fromJson(json['type'] as String) : null,
 ); }
 
 /// The unique identifier of the branch or tag policy.
@@ -44,7 +19,7 @@ final String? nodeId;
 final String? name;
 
 /// Whether this rule targets a branch or tag.
-final DeploymentBranchPolicyType? type;
+final DeploymentBranchPolicyNamePatternWithTypeType? type;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -53,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'type'}.contains(key)); } 
-DeploymentBranchPolicy copyWith({int Function()? id, String Function()? nodeId, String Function()? name, DeploymentBranchPolicyType Function()? type, }) { return DeploymentBranchPolicy(
+DeploymentBranchPolicy copyWith({int Function()? id, String Function()? nodeId, String Function()? name, DeploymentBranchPolicyNamePatternWithTypeType Function()? type, }) { return DeploymentBranchPolicy(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,

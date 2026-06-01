@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'status_update.dart';@immutable final class StatusUpdateCreatedAction {const StatusUpdateCreatedAction._(this.value);
-
-factory StatusUpdateCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => StatusUpdateCreatedAction._(json),
-}; }
-
-static const StatusUpdateCreatedAction created = StatusUpdateCreatedAction._('created');
-
-static const List<StatusUpdateCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusUpdateCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusUpdateCreatedAction($value)'; } 
- }
-@immutable final class StatusUpdateCreated {const StatusUpdateCreated({required this.action, required this.organization, required this.projectsV2StatusUpdate, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/status_update.dart';@immutable final class StatusUpdateCreated {const StatusUpdateCreated({required this.action, required this.organization, required this.projectsV2StatusUpdate, required this.sender, this.installation, });
 
 factory StatusUpdateCreated.fromJson(Map<String, dynamic> json) { return StatusUpdateCreated(
-  action: StatusUpdateCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2StatusUpdate: StatusUpdate.fromJson(json['projects_v2_status_update'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final StatusUpdateCreatedAction action;
+final ItemCreatedAction action;
 
 final SimpleInstallation? installation;
 
@@ -52,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('projects_v2_status_update') &&
       json.containsKey('sender'); } 
-StatusUpdateCreated copyWith({StatusUpdateCreatedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, StatusUpdate? projectsV2StatusUpdate, SimpleUser? sender, }) { return StatusUpdateCreated(
+StatusUpdateCreated copyWith({ItemCreatedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, StatusUpdate? projectsV2StatusUpdate, SimpleUser? sender, }) { return StatusUpdateCreated(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,

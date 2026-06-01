@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet_resource_apple_pay.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet_resource_google_pay.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet_resource_apple_pay.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet_resource_google_pay.dart';/// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet({required this.type, this.applePay, this.dynamicLast4, this.googlePay, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(

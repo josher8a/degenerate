@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject._(this.value);
 
 factory PaymentMethodConfigurationObject.fromJson(String json) { return switch (json) {

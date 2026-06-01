@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_zone_ruleset_versions_response_result.dart';import 'rulesets_message.dart';import 'rulesets_result_info.dart';@immutable final class ListZoneRulesetVersionsResponse {const ListZoneRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_message.dart';import 'package:pub_cloudflare/models/rulesets_result_info.dart';@immutable final class ListZoneRulesetVersionsResponse {const ListZoneRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListZoneRulesetVersionsResponse.fromJson(Map<String, dynamic> json) { return ListZoneRulesetVersionsResponse(
   errors: json['errors'],
   messages: (json['messages'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => ListZoneRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'],
   resultInfo: json['result_info'] != null ? RulesetsResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
@@ -16,7 +16,7 @@ final dynamic errors;
 final List<RulesetsMessage> messages;
 
 /// A list of rulesets. The returned information will not include the rules in each ruleset.
-final List<ListZoneRulesetVersionsResponseResult> result;
+final List<ListAccountEntrypointRulesetVersionsResponseResult> result;
 
 final dynamic success;
 
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success'); } 
-ListZoneRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListZoneRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo Function()? resultInfo, }) { return ListZoneRulesetVersionsResponse(
+ListZoneRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo Function()? resultInfo, }) { return ListZoneRulesetVersionsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

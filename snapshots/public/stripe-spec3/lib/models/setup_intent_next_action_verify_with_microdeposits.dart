@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
-@immutable final class SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType {const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
-
-factory SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) { return switch (json) {
-  'amounts' => amounts,
-  'descriptor_code' => descriptorCode,
-  _ => SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(json),
-}; }
-
-static const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType amounts = SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._('amounts');
-
-static const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType descriptorCode = SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._('descriptor_code');
-
-static const List<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType> values = [amounts, descriptorCode];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_next_action_verify_with_microdeposits/microdeposit_type.dart';/// 
 @immutable final class SetupIntentNextActionVerifyWithMicrodeposits {const SetupIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });
 
 factory SetupIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) { return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: (json['arrival_date'] as num).toInt(),
   hostedVerificationUrl: json['hosted_verification_url'] as String,
-  microdepositType: json['microdeposit_type'] != null ? SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(json['microdeposit_type'] as String) : null,
+  microdepositType: json['microdeposit_type'] != null ? MicrodepositType.fromJson(json['microdeposit_type'] as String) : null,
 ); }
 
 /// The timestamp when the microdeposits are expected to land.
@@ -41,7 +16,7 @@ final int arrivalDate;
 final String hostedVerificationUrl;
 
 /// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
-final SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType? microdepositType;
+final MicrodepositType? microdepositType;
 
 Map<String, dynamic> toJson() { return {
   'arrival_date': arrivalDate,
@@ -50,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('arrival_date') && json['arrival_date'] is num &&
       json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
-SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType? Function()? microdepositType, }) { return SetupIntentNextActionVerifyWithMicrodeposits(
+SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, MicrodepositType? Function()? microdepositType, }) { return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: arrivalDate ?? this.arrivalDate,
   hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,
   microdepositType: microdepositType != null ? microdepositType() : this.microdepositType,

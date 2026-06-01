@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_data.dart';import 'digital_experience_monitoring_dex_target_policy.dart';import 'digital_experience_monitoring_schemas_test_id.dart';/// Additional details about the test.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_target_policy.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';/// Additional details about the test.
 extension type const DigitalExperienceMonitoringDeviceDexTestSchemasDescription(String value) {
 factory DigitalExperienceMonitoringDeviceDexTestSchemasDescription.fromJson(String json) => DigitalExperienceMonitoringDeviceDexTestSchemasDescription(json);
 

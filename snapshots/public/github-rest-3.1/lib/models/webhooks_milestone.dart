@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_milestone_creator.dart';/// The state of the milestone.
-@immutable final class WebhooksMilestoneState {const WebhooksMilestoneState._(this.value);
-
-factory WebhooksMilestoneState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => WebhooksMilestoneState._(json),
-}; }
-
-static const WebhooksMilestoneState open = WebhooksMilestoneState._('open');
-
-static const WebhooksMilestoneState closed = WebhooksMilestoneState._('closed');
-
-static const List<WebhooksMilestoneState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksMilestoneState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksMilestoneState($value)'; } 
- }
-/// A collection of related issues and pull requests.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone/webhooks_milestone_creator.dart';/// A collection of related issues and pull requests.
 @immutable final class WebhooksMilestone {const WebhooksMilestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
 
 factory WebhooksMilestone.fromJson(Map<String, dynamic> json) { return WebhooksMilestone(
@@ -41,7 +16,7 @@ factory WebhooksMilestone.fromJson(Map<String, dynamic> json) { return WebhooksM
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   openIssues: (json['open_issues'] as num).toInt(),
-  state: WebhooksMilestoneState.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
@@ -73,7 +48,7 @@ final int number;
 final int openIssues;
 
 /// The state of the milestone.
-final WebhooksMilestoneState state;
+final IssuesCreateMilestoneRequestState state;
 
 /// The title of the milestone.
 final String title;
@@ -116,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('close
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhooksMilestoneCreator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, WebhooksMilestoneState? state, String? title, DateTime? updatedAt, Uri? url, }) { return WebhooksMilestone(
+WebhooksMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, DateTime? createdAt, WebhooksMilestoneCreator? Function()? creator, String? Function()? description, DateTime? Function()? dueOn, Uri? htmlUrl, int? id, Uri? labelsUrl, String? nodeId, int? number, int? openIssues, IssuesCreateMilestoneRequestState? state, String? title, DateTime? updatedAt, Uri? url, }) { return WebhooksMilestone(
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   closedIssues: closedIssues ?? this.closedIssues,
   createdAt: createdAt ?? this.createdAt,

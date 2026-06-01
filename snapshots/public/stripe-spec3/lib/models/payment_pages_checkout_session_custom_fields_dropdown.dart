@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_custom_fields_option.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields_option.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionCustomFieldsDropdown {const PaymentPagesCheckoutSessionCustomFieldsDropdown({required this.options, this.defaultValue, this.value, });
 
 factory PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsDropdown(

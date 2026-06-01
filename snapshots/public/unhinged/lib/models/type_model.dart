@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
-final class TypeModelEventType {
-  const TypeModelEventType._(this.value);
+final class EventType {
+  const EventType._(this.value);
 
-  factory TypeModelEventType.fromJson(String json) {
+  factory EventType.fromJson(String json) {
     return switch (json) {
       'ectoplasm_spike' => ectoplasmSpike,
       'null' => $null,
@@ -26,57 +26,47 @@ final class TypeModelEventType {
       'hasOwnProperty' => hasOwnProperty,
       '__proto__' => proto,
       'constructor' => constructor,
-      _ => TypeModelEventType._(json),
+      _ => EventType._(json),
     };
   }
 
-  static const TypeModelEventType ectoplasmSpike = TypeModelEventType._(
-    'ectoplasm_spike',
-  );
+  static const EventType ectoplasmSpike = EventType._('ectoplasm_spike');
 
-  static const TypeModelEventType $null = TypeModelEventType._('null');
+  static const EventType $null = EventType._('null');
 
-  static const TypeModelEventType $true = TypeModelEventType._('true');
+  static const EventType $true = EventType._('true');
 
-  static const TypeModelEventType $false = TypeModelEventType._('false');
+  static const EventType $false = EventType._('false');
 
-  static const TypeModelEventType $0 = TypeModelEventType._('0');
+  static const EventType $0 = EventType._('0');
 
-  static const TypeModelEventType naN = TypeModelEventType._('NaN');
+  static const EventType naN = EventType._('NaN');
 
-  static const TypeModelEventType $empty = TypeModelEventType._('');
+  static const EventType $empty = EventType._('');
 
-  static const TypeModelEventType $empty2 = TypeModelEventType._(' ');
+  static const EventType $empty2 = EventType._(' ');
 
-  static const TypeModelEventType $empty3 = TypeModelEventType._('  ');
+  static const EventType $empty3 = EventType._('  ');
 
-  static const TypeModelEventType ectoplasmSpike2 = TypeModelEventType._(
-    'ectoplasm spike',
-  );
+  static const EventType ectoplasmSpike2 = EventType._('ectoplasm spike');
 
-  static const TypeModelEventType ectoplasmSpike3 = TypeModelEventType._(
-    'ectoplasm_spike ',
-  );
+  static const EventType ectoplasmSpike3 = EventType._('ectoplasm_spike ');
 
-  static const TypeModelEventType $empty4 = TypeModelEventType._('\t');
+  static const EventType $empty4 = EventType._('\t');
 
-  static const TypeModelEventType $empty5 = TypeModelEventType._('🔥');
+  static const EventType $empty5 = EventType._('🔥');
 
-  static const TypeModelEventType $empty6 = TypeModelEventType._('🔥🔥');
+  static const EventType $empty6 = EventType._('🔥🔥');
 
-  static const TypeModelEventType $toString = TypeModelEventType._('toString');
+  static const EventType $toString = EventType._('toString');
 
-  static const TypeModelEventType hasOwnProperty = TypeModelEventType._(
-    'hasOwnProperty',
-  );
+  static const EventType hasOwnProperty = EventType._('hasOwnProperty');
 
-  static const TypeModelEventType proto = TypeModelEventType._('__proto__');
+  static const EventType proto = EventType._('__proto__');
 
-  static const TypeModelEventType constructor = TypeModelEventType._(
-    'constructor',
-  );
+  static const EventType constructor = EventType._('constructor');
 
-  static const List<TypeModelEventType> values = [
+  static const List<EventType> values = [
     ectoplasmSpike,
     $null,
     $true,
@@ -110,8 +100,7 @@ final class TypeModelEventType {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is TypeModelEventType && other.value == value;
+    return identical(this, other) || other is EventType && other.value == value;
   }
 
   @override
@@ -121,7 +110,7 @@ final class TypeModelEventType {
 
   @override
   String toString() {
-    return 'TypeModelEventType($value)';
+    return 'EventType($value)';
   }
 }
 
@@ -132,7 +121,7 @@ final class TypeModel {
   factory TypeModel.fromJson(Map<String, dynamic> json) {
     return TypeModel(
       eventType: json['event_type'] != null
-          ? TypeModelEventType.fromJson(json['event_type'] as String)
+          ? EventType.fromJson(json['event_type'] as String)
           : null,
       timestamp: json['timestamp'] != null
           ? DateTime.parse(json['timestamp'] as String)
@@ -141,7 +130,7 @@ final class TypeModel {
     );
   }
 
-  final TypeModelEventType? eventType;
+  final EventType? eventType;
 
   final DateTime? timestamp;
 
@@ -162,7 +151,7 @@ final class TypeModel {
   }
 
   TypeModel copyWith({
-    TypeModelEventType Function()? eventType,
+    EventType Function()? eventType,
     DateTime Function()? timestamp,
     String Function()? details,
   }) {

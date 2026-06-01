@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source for the ruleset that includes this rule.
-@immutable final class RepositoryRuleRulesetInfoRulesetSourceType {const RepositoryRuleRulesetInfoRulesetSourceType._(this.value);
+@immutable final class RulesetSourceType {const RulesetSourceType._(this.value);
 
-factory RepositoryRuleRulesetInfoRulesetSourceType.fromJson(String json) { return switch (json) {
+factory RulesetSourceType.fromJson(String json) { return switch (json) {
   'Repository' => repository,
   'Organization' => organization,
-  _ => RepositoryRuleRulesetInfoRulesetSourceType._(json),
+  _ => RulesetSourceType._(json),
 }; }
 
-static const RepositoryRuleRulesetInfoRulesetSourceType repository = RepositoryRuleRulesetInfoRulesetSourceType._('Repository');
+static const RulesetSourceType repository = RulesetSourceType._('Repository');
 
-static const RepositoryRuleRulesetInfoRulesetSourceType organization = RepositoryRuleRulesetInfoRulesetSourceType._('Organization');
+static const RulesetSourceType organization = RulesetSourceType._('Organization');
 
-static const List<RepositoryRuleRulesetInfoRulesetSourceType> values = [repository, organization];
+static const List<RulesetSourceType> values = [repository, organization];
 
 final String value;
 
@@ -21,21 +21,21 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRulesetInfoRulesetSourceType && other.value == value; } 
+    other is RulesetSourceType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleRulesetInfoRulesetSourceType($value)'; } 
+@override String toString() { return 'RulesetSourceType($value)'; } 
  }
 /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 @immutable final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
 
 factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) { return RepositoryRuleRulesetInfo(
-  rulesetSourceType: json['ruleset_source_type'] != null ? RepositoryRuleRulesetInfoRulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null,
+  rulesetSourceType: json['ruleset_source_type'] != null ? RulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null,
   rulesetSource: json['ruleset_source'] as String?,
   rulesetId: json['ruleset_id'] != null ? (json['ruleset_id'] as num).toInt() : null,
 ); }
 
 /// The type of source for the ruleset that includes this rule.
-final RepositoryRuleRulesetInfoRulesetSourceType? rulesetSourceType;
+final RulesetSourceType? rulesetSourceType;
 
 /// The name of the source of the ruleset that includes this rule.
 final String? rulesetSource;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'ruleset_id': ?rulesetId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ruleset_source_type', 'ruleset_source', 'ruleset_id'}.contains(key)); } 
-RepositoryRuleRulesetInfo copyWith({RepositoryRuleRulesetInfoRulesetSourceType Function()? rulesetSourceType, String Function()? rulesetSource, int Function()? rulesetId, }) { return RepositoryRuleRulesetInfo(
+RepositoryRuleRulesetInfo copyWith({RulesetSourceType Function()? rulesetSourceType, String Function()? rulesetSource, int Function()? rulesetId, }) { return RepositoryRuleRulesetInfo(
   rulesetSourceType: rulesetSourceType != null ? rulesetSourceType() : this.rulesetSourceType,
   rulesetSource: rulesetSource != null ? rulesetSource() : this.rulesetSource,
   rulesetId: rulesetId != null ? rulesetId() : this.rulesetId,

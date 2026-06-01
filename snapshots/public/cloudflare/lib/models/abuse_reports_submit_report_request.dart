@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_base_report_fields.dart';import 'abuse_reports_submission_report_type.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/abuse_reports_base_report_fields.dart';import 'package:pub_cloudflare/models/abuse_reports_submission_report_type.dart';sealed class AbuseReportsSubmitReportRequest {const AbuseReportsSubmitReportRequest();
 
 /// Deserialize from JSON, dispatching on the `act` discriminator.
 factory AbuseReportsSubmitReportRequest.fromJson(Map<String, dynamic> json) { return switch (json['act']) {

@@ -1,36 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_amount.dart';import 'post_billing_credit_grants_request_applicability_config.dart';/// The category of this credit grant. It defaults to `paid` if not specified.
-@immutable final class PostBillingCreditGrantsRequestCategory {const PostBillingCreditGrantsRequestCategory._(this.value);
-
-factory PostBillingCreditGrantsRequestCategory.fromJson(String json) { return switch (json) {
-  'paid' => paid,
-  'promotional' => promotional,
-  _ => PostBillingCreditGrantsRequestCategory._(json),
-}; }
-
-static const PostBillingCreditGrantsRequestCategory paid = PostBillingCreditGrantsRequestCategory._('paid');
-
-static const PostBillingCreditGrantsRequestCategory promotional = PostBillingCreditGrantsRequestCategory._('promotional');
-
-static const List<PostBillingCreditGrantsRequestCategory> values = [paid, promotional];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingCreditGrantsRequestCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingCreditGrantsRequestCategory($value)'; } 
- }
-@immutable final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/applicability_config.dart';import 'package:pub_stripe_spec3/models/post_billing_credit_grants_request/post_billing_credit_grants_request_amount.dart';@immutable final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
 
 factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequest(
   amount: PostBillingCreditGrantsRequestAmount.fromJson(json['amount'] as Map<String, dynamic>),
-  applicabilityConfig: PostBillingCreditGrantsRequestApplicabilityConfig.fromJson(json['applicability_config'] as Map<String, dynamic>),
-  category: json['category'] != null ? PostBillingCreditGrantsRequestCategory.fromJson(json['category'] as String) : null,
+  applicabilityConfig: ApplicabilityConfig.fromJson(json['applicability_config'] as Map<String, dynamic>),
+  category: json['category'] != null ? BillingCreditGrantCategory.fromJson(json['category'] as String) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
@@ -45,10 +20,10 @@ factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) { ret
 final PostBillingCreditGrantsRequestAmount amount;
 
 /// Configuration specifying what this credit grant applies to. We currently only support `metered` prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them.
-final PostBillingCreditGrantsRequestApplicabilityConfig applicabilityConfig;
+final ApplicabilityConfig applicabilityConfig;
 
 /// The category of this credit grant. It defaults to `paid` if not specified.
-final PostBillingCreditGrantsRequestCategory? category;
+final BillingCreditGrantCategory? category;
 
 /// ID of the customer receiving the billing credits.
 final String? customer;
@@ -89,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
       json.containsKey('applicability_config'); } 
-PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, PostBillingCreditGrantsRequestApplicabilityConfig? applicabilityConfig, PostBillingCreditGrantsRequestCategory Function()? category, String Function()? customer, String Function()? customerAccount, int Function()? effectiveAt, List<String> Function()? expand, int Function()? expiresAt, Map<String, String> Function()? metadata, String Function()? name, int Function()? priority, }) { return PostBillingCreditGrantsRequest(
+PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? amount, ApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory Function()? category, String Function()? customer, String Function()? customerAccount, int Function()? effectiveAt, List<String> Function()? expand, int Function()? expiresAt, Map<String, String> Function()? metadata, String Function()? name, int Function()? priority, }) { return PostBillingCreditGrantsRequest(
   amount: amount ?? this.amount,
   applicabilityConfig: applicabilityConfig ?? this.applicabilityConfig,
   category: category != null ? category() : this.category,

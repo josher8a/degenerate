@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset.dart';@immutable final class DlpDatasetCreation {const DlpDatasetCreation({required this.dataset, required this.encodingVersion, required this.maxCells, required this.version, this.secret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset.dart';@immutable final class DlpDatasetCreation {const DlpDatasetCreation({required this.dataset, required this.encodingVersion, required this.maxCells, required this.version, this.secret, });
 
 factory DlpDatasetCreation.fromJson(Map<String, dynamic> json) { return DlpDatasetCreation(
   dataset: DlpDataset.fromJson(json['dataset'] as Map<String, dynamic>),

@@ -1,43 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options.dart';import 'post_prices_price_request_currency_options_variant1_value.dart';import 'post_prices_price_request_metadata.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-@immutable final class PostPricesPriceRequestTaxBehavior {const PostPricesPriceRequestTaxBehavior._(this.value);
-
-factory PostPricesPriceRequestTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => PostPricesPriceRequestTaxBehavior._(json),
-}; }
-
-static const PostPricesPriceRequestTaxBehavior exclusive = PostPricesPriceRequestTaxBehavior._('exclusive');
-
-static const PostPricesPriceRequestTaxBehavior inclusive = PostPricesPriceRequestTaxBehavior._('inclusive');
-
-static const PostPricesPriceRequestTaxBehavior unspecified = PostPricesPriceRequestTaxBehavior._('unspecified');
-
-static const List<PostPricesPriceRequestTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPricesPriceRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPricesPriceRequestTaxBehavior($value)'; } 
- }
-@immutable final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_prices_price_request/currency_options.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';@immutable final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
 
 factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
   active: json['active'] as bool?,
-  currencyOptions: json['currency_options'] != null ? OneOf2.parse(json['currency_options'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, PostPricesPriceRequestCurrencyOptionsVariant1Value.fromJson(v as Map<String, dynamic>))), fromB: (v) => PostPricesPriceRequestCurrencyOptionsVariant2.fromJson(v as String),) : null,
+  currencyOptions: json['currency_options'] != null ? OneOf2.parse(json['currency_options'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, PostPricesRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lookupKey: json['lookup_key'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPricesPriceRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   nickname: json['nickname'] as String?,
-  taxBehavior: json['tax_behavior'] != null ? PostPricesPriceRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,
 ); }
 
@@ -45,7 +17,7 @@ factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return Post
 final bool? active;
 
 /// Prices defined in each available currency option. Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
-final PostPricesPriceRequestCurrencyOptions? currencyOptions;
+final CurrencyOptions? currencyOptions;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -54,13 +26,13 @@ final List<String>? expand;
 final String? lookupKey;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPricesPriceRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// A brief description of the price, hidden from customers.
 final String? nickname;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final PostPricesPriceRequestTaxBehavior? taxBehavior;
+final PostInvoiceitemsInvoiceitemRequestTaxBehavior? taxBehavior;
 
 /// If set to true, will atomically remove the lookup key from the existing price, and assign it to this price.
 final bool? transferLookupKey;
@@ -76,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_lookup_key': ?transferLookupKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key)); } 
-PostPricesPriceRequest copyWith({bool Function()? active, PostPricesPriceRequestCurrencyOptions Function()? currencyOptions, List<String> Function()? expand, String Function()? lookupKey, PostPricesPriceRequestMetadata Function()? metadata, String Function()? nickname, PostPricesPriceRequestTaxBehavior Function()? taxBehavior, bool Function()? transferLookupKey, }) { return PostPricesPriceRequest(
+PostPricesPriceRequest copyWith({bool Function()? active, CurrencyOptions Function()? currencyOptions, List<String> Function()? expand, String Function()? lookupKey, Metadata Function()? metadata, String Function()? nickname, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, bool Function()? transferLookupKey, }) { return PostPricesPriceRequest(
   active: active != null ? active() : this.active,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,

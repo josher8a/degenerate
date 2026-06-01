@@ -1,41 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_image_edit_request_image.dart';import 'create_image_edit_request_model.dart';import 'input_fidelity.dart';import 'partial_images.dart';/// Allows to set transparency for the background of the generated image(s).
-/// This parameter is only supported for the GPT image models. Must be one of
-/// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the
-/// model will automatically determine the best background for the image.
-/// 
-/// If `transparent`, the output format needs to support transparency, so it
-/// should be set to either `png` (default value) or `webp`.
-/// 
-@immutable final class CreateImageEditRequestBackground {const CreateImageEditRequestBackground._(this.value);
-
-factory CreateImageEditRequestBackground.fromJson(String json) { return switch (json) {
-  'transparent' => transparent,
-  'opaque' => opaque,
-  'auto' => auto,
-  _ => CreateImageEditRequestBackground._(json),
-}; }
-
-static const CreateImageEditRequestBackground transparent = CreateImageEditRequestBackground._('transparent');
-
-static const CreateImageEditRequestBackground opaque = CreateImageEditRequestBackground._('opaque');
-
-static const CreateImageEditRequestBackground auto = CreateImageEditRequestBackground._('auto');
-
-static const List<CreateImageEditRequestBackground> values = [transparent, opaque, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestBackground($value)'; } 
- }
-/// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_image.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_model.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/partial_images.dart';/// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
 @immutable final class CreateImageEditRequestSize {const CreateImageEditRequestSize._(this.value);
 
 factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) {
@@ -71,62 +36,6 @@ bool get isUnknown { return !values.contains(this); }
     other is CreateImageEditRequestSize && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageEditRequestSize($value)'; } 
- }
-/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
-@immutable final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);
-
-factory CreateImageEditRequestResponseFormat.fromJson(String json) { return switch (json) {
-  'url' => url,
-  'b64_json' => b64Json,
-  _ => CreateImageEditRequestResponseFormat._(json),
-}; }
-
-static const CreateImageEditRequestResponseFormat url = CreateImageEditRequestResponseFormat._('url');
-
-static const CreateImageEditRequestResponseFormat b64Json = CreateImageEditRequestResponseFormat._('b64_json');
-
-static const List<CreateImageEditRequestResponseFormat> values = [url, b64Json];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestResponseFormat($value)'; } 
- }
-/// The format in which the generated images are returned. This parameter is
-/// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
-/// The default value is `png`.
-/// 
-@immutable final class CreateImageEditRequestOutputFormat {const CreateImageEditRequestOutputFormat._(this.value);
-
-factory CreateImageEditRequestOutputFormat.fromJson(String json) { return switch (json) {
-  'png' => png,
-  'jpeg' => jpeg,
-  'webp' => webp,
-  _ => CreateImageEditRequestOutputFormat._(json),
-}; }
-
-static const CreateImageEditRequestOutputFormat png = CreateImageEditRequestOutputFormat._('png');
-
-static const CreateImageEditRequestOutputFormat jpeg = CreateImageEditRequestOutputFormat._('jpeg');
-
-static const CreateImageEditRequestOutputFormat webp = CreateImageEditRequestOutputFormat._('webp');
-
-static const List<CreateImageEditRequestOutputFormat> values = [png, jpeg, webp];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestOutputFormat($value)'; } 
  }
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 

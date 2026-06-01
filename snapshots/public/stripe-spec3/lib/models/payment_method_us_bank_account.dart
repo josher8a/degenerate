@@ -1,61 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_us_bank_account_status_details.dart';import 'us_bank_account_networks.dart';/// Account holder type: individual or company.
-@immutable final class PaymentMethodUsBankAccountAccountHolderType {const PaymentMethodUsBankAccountAccountHolderType._(this.value);
-
-factory PaymentMethodUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => PaymentMethodUsBankAccountAccountHolderType._(json),
-}; }
-
-static const PaymentMethodUsBankAccountAccountHolderType company = PaymentMethodUsBankAccountAccountHolderType._('company');
-
-static const PaymentMethodUsBankAccountAccountHolderType individual = PaymentMethodUsBankAccountAccountHolderType._('individual');
-
-static const List<PaymentMethodUsBankAccountAccountHolderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodUsBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodUsBankAccountAccountHolderType($value)'; } 
- }
-/// Account type: checkings or savings. Defaults to checking if omitted.
-@immutable final class PaymentMethodUsBankAccountAccountType {const PaymentMethodUsBankAccountAccountType._(this.value);
-
-factory PaymentMethodUsBankAccountAccountType.fromJson(String json) { return switch (json) {
-  'checking' => checking,
-  'savings' => savings,
-  _ => PaymentMethodUsBankAccountAccountType._(json),
-}; }
-
-static const PaymentMethodUsBankAccountAccountType checking = PaymentMethodUsBankAccountAccountType._('checking');
-
-static const PaymentMethodUsBankAccountAccountType savings = PaymentMethodUsBankAccountAccountType._('savings');
-
-static const List<PaymentMethodUsBankAccountAccountType> values = [checking, savings];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodUsBankAccountAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodUsBankAccountAccountType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account_status_details.dart';import 'package:pub_stripe_spec3/models/us_bank_account_networks.dart';/// 
 @immutable final class PaymentMethodUsBankAccount {const PaymentMethodUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.financialConnectionsAccount, this.fingerprint, this.last4, this.networks, this.routingNumber, this.statusDetails, });
 
 factory PaymentMethodUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? PaymentMethodUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? PaymentMethodUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   bankName: json['bank_name'] as String?,
   financialConnectionsAccount: json['financial_connections_account'] as String?,
   fingerprint: json['fingerprint'] as String?,
@@ -66,10 +16,10 @@ factory PaymentMethodUsBankAccount.fromJson(Map<String, dynamic> json) { return 
 ); }
 
 /// Account holder type: individual or company.
-final PaymentMethodUsBankAccountAccountHolderType? accountHolderType;
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
 
 /// Account type: checkings or savings. Defaults to checking if omitted.
-final PaymentMethodUsBankAccountAccountType? accountType;
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? accountType;
 
 /// The name of the bank.
 final String? bankName;
@@ -104,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'financial_connections_account', 'fingerprint', 'last4', 'networks', 'routing_number', 'status_details'}.contains(key)); } 
-PaymentMethodUsBankAccount copyWith({PaymentMethodUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? financialConnectionsAccount, String? Function()? fingerprint, String? Function()? last4, UsBankAccountNetworks? Function()? networks, String? Function()? routingNumber, PaymentMethodUsBankAccountStatusDetails? Function()? statusDetails, }) { return PaymentMethodUsBankAccount(
+PaymentMethodUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? financialConnectionsAccount, String? Function()? fingerprint, String? Function()? last4, UsBankAccountNetworks? Function()? networks, String? Function()? routingNumber, PaymentMethodUsBankAccountStatusDetails? Function()? statusDetails, }) { return PaymentMethodUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
   bankName: bankName != null ? bankName() : this.bankName,

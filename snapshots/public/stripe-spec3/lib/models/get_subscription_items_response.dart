@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetSubscriptionItemsResponseObject {const GetSubscriptionItemsResponseObject._(this.value);
-
-factory GetSubscriptionItemsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetSubscriptionItemsResponseObject._(json),
-}; }
-
-static const GetSubscriptionItemsResponseObject list = GetSubscriptionItemsResponseObject._('list');
-
-static const List<GetSubscriptionItemsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetSubscriptionItemsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetSubscriptionItemsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';/// 
 @immutable final class GetSubscriptionItemsResponse {const GetSubscriptionItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetSubscriptionItemsResponse.fromJson(Map<String, dynamic> json) { return GetSubscriptionItemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => SubscriptionItem.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetSubscriptionItemsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<SubscriptionItem> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetSubscriptionItemsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetSubscriptionItemsResponse copyWith({List<SubscriptionItem>? data, bool? hasMore, GetSubscriptionItemsResponseObject? object, String? url, }) { return GetSubscriptionItemsResponse(
+GetSubscriptionItemsResponse copyWith({List<SubscriptionItem>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetSubscriptionItemsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Form of authorization has been accepted by the registrant.
-@immutable final class TransferInAcceptFoa {const TransferInAcceptFoa._(this.value);
+@immutable final class AcceptFoa {const AcceptFoa._(this.value);
 
-factory TransferInAcceptFoa.fromJson(String json) { return switch (json) {
+factory AcceptFoa.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
-  _ => TransferInAcceptFoa._(json),
+  _ => AcceptFoa._(json),
 }; }
 
-static const TransferInAcceptFoa needed = TransferInAcceptFoa._('needed');
+static const AcceptFoa needed = AcceptFoa._('needed');
 
-static const TransferInAcceptFoa ok = TransferInAcceptFoa._('ok');
+static const AcceptFoa ok = AcceptFoa._('ok');
 
-static const List<TransferInAcceptFoa> values = [needed, ok];
+static const List<AcceptFoa> values = [needed, ok];
 
 final String value;
 
@@ -21,36 +21,36 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferInAcceptFoa && other.value == value; } 
+    other is AcceptFoa && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferInAcceptFoa($value)'; } 
+@override String toString() { return 'AcceptFoa($value)'; } 
  }
 /// Shows transfer status with the registry.
-@immutable final class TransferInApproveTransfer {const TransferInApproveTransfer._(this.value);
+@immutable final class ApproveTransfer {const ApproveTransfer._(this.value);
 
-factory TransferInApproveTransfer.fromJson(String json) { return switch (json) {
+factory ApproveTransfer.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
   'trying' => trying,
   'rejected' => rejected,
   'unknown' => unknown,
-  _ => TransferInApproveTransfer._(json),
+  _ => ApproveTransfer._(json),
 }; }
 
-static const TransferInApproveTransfer needed = TransferInApproveTransfer._('needed');
+static const ApproveTransfer needed = ApproveTransfer._('needed');
 
-static const TransferInApproveTransfer ok = TransferInApproveTransfer._('ok');
+static const ApproveTransfer ok = ApproveTransfer._('ok');
 
-static const TransferInApproveTransfer pending = TransferInApproveTransfer._('pending');
+static const ApproveTransfer pending = ApproveTransfer._('pending');
 
-static const TransferInApproveTransfer trying = TransferInApproveTransfer._('trying');
+static const ApproveTransfer trying = ApproveTransfer._('trying');
 
-static const TransferInApproveTransfer rejected = TransferInApproveTransfer._('rejected');
+static const ApproveTransfer rejected = ApproveTransfer._('rejected');
 
-static const TransferInApproveTransfer unknown = TransferInApproveTransfer._('unknown');
+static const ApproveTransfer unknown = ApproveTransfer._('unknown');
 
-static const List<TransferInApproveTransfer> values = [needed, ok, pending, trying, rejected, unknown];
+static const List<ApproveTransfer> values = [needed, ok, pending, trying, rejected, unknown];
 
 final String value;
 
@@ -58,27 +58,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferInApproveTransfer && other.value == value; } 
+    other is ApproveTransfer && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferInApproveTransfer($value)'; } 
+@override String toString() { return 'ApproveTransfer($value)'; } 
  }
 /// Privacy guards are disabled at the foreign registrar.
-@immutable final class TransferInDisablePrivacy {const TransferInDisablePrivacy._(this.value);
+@immutable final class DisablePrivacy {const DisablePrivacy._(this.value);
 
-factory TransferInDisablePrivacy.fromJson(String json) { return switch (json) {
+factory DisablePrivacy.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'unknown' => unknown,
-  _ => TransferInDisablePrivacy._(json),
+  _ => DisablePrivacy._(json),
 }; }
 
-static const TransferInDisablePrivacy needed = TransferInDisablePrivacy._('needed');
+static const DisablePrivacy needed = DisablePrivacy._('needed');
 
-static const TransferInDisablePrivacy ok = TransferInDisablePrivacy._('ok');
+static const DisablePrivacy ok = DisablePrivacy._('ok');
 
-static const TransferInDisablePrivacy unknown = TransferInDisablePrivacy._('unknown');
+static const DisablePrivacy unknown = DisablePrivacy._('unknown');
 
-static const List<TransferInDisablePrivacy> values = [needed, ok, unknown];
+static const List<DisablePrivacy> values = [needed, ok, unknown];
 
 final String value;
 
@@ -86,33 +86,33 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferInDisablePrivacy && other.value == value; } 
+    other is DisablePrivacy && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferInDisablePrivacy($value)'; } 
+@override String toString() { return 'DisablePrivacy($value)'; } 
  }
 /// Auth code has been entered and verified.
-@immutable final class TransferInEnterAuthCode {const TransferInEnterAuthCode._(this.value);
+@immutable final class EnterAuthCode {const EnterAuthCode._(this.value);
 
-factory TransferInEnterAuthCode.fromJson(String json) { return switch (json) {
+factory EnterAuthCode.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
   'trying' => trying,
   'rejected' => rejected,
-  _ => TransferInEnterAuthCode._(json),
+  _ => EnterAuthCode._(json),
 }; }
 
-static const TransferInEnterAuthCode needed = TransferInEnterAuthCode._('needed');
+static const EnterAuthCode needed = EnterAuthCode._('needed');
 
-static const TransferInEnterAuthCode ok = TransferInEnterAuthCode._('ok');
+static const EnterAuthCode ok = EnterAuthCode._('ok');
 
-static const TransferInEnterAuthCode pending = TransferInEnterAuthCode._('pending');
+static const EnterAuthCode pending = EnterAuthCode._('pending');
 
-static const TransferInEnterAuthCode trying = TransferInEnterAuthCode._('trying');
+static const EnterAuthCode trying = EnterAuthCode._('trying');
 
-static const TransferInEnterAuthCode rejected = TransferInEnterAuthCode._('rejected');
+static const EnterAuthCode rejected = EnterAuthCode._('rejected');
 
-static const List<TransferInEnterAuthCode> values = [needed, ok, pending, trying, rejected];
+static const List<EnterAuthCode> values = [needed, ok, pending, trying, rejected];
 
 final String value;
 
@@ -120,33 +120,33 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferInEnterAuthCode && other.value == value; } 
+    other is EnterAuthCode && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferInEnterAuthCode($value)'; } 
+@override String toString() { return 'EnterAuthCode($value)'; } 
  }
 /// Domain is unlocked at the foreign registrar.
-@immutable final class TransferInUnlockDomain {const TransferInUnlockDomain._(this.value);
+@immutable final class UnlockDomain {const UnlockDomain._(this.value);
 
-factory TransferInUnlockDomain.fromJson(String json) { return switch (json) {
+factory UnlockDomain.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'pending' => pending,
   'trying' => trying,
   'unknown' => unknown,
-  _ => TransferInUnlockDomain._(json),
+  _ => UnlockDomain._(json),
 }; }
 
-static const TransferInUnlockDomain needed = TransferInUnlockDomain._('needed');
+static const UnlockDomain needed = UnlockDomain._('needed');
 
-static const TransferInUnlockDomain ok = TransferInUnlockDomain._('ok');
+static const UnlockDomain ok = UnlockDomain._('ok');
 
-static const TransferInUnlockDomain pending = TransferInUnlockDomain._('pending');
+static const UnlockDomain pending = UnlockDomain._('pending');
 
-static const TransferInUnlockDomain trying = TransferInUnlockDomain._('trying');
+static const UnlockDomain trying = UnlockDomain._('trying');
 
-static const TransferInUnlockDomain unknown = TransferInUnlockDomain._('unknown');
+static const UnlockDomain unknown = UnlockDomain._('unknown');
 
-static const List<TransferInUnlockDomain> values = [needed, ok, pending, trying, unknown];
+static const List<UnlockDomain> values = [needed, ok, pending, trying, unknown];
 
 final String value;
 
@@ -154,39 +154,39 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferInUnlockDomain && other.value == value; } 
+    other is UnlockDomain && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferInUnlockDomain($value)'; } 
+@override String toString() { return 'UnlockDomain($value)'; } 
  }
 /// Statuses for domain transfers into Cloudflare Registrar.
 @immutable final class TransferIn {const TransferIn({this.acceptFoa, this.approveTransfer, this.canCancelTransfer, this.disablePrivacy, this.enterAuthCode, this.unlockDomain, });
 
 factory TransferIn.fromJson(Map<String, dynamic> json) { return TransferIn(
-  acceptFoa: json['accept_foa'] != null ? TransferInAcceptFoa.fromJson(json['accept_foa'] as String) : null,
-  approveTransfer: json['approve_transfer'] != null ? TransferInApproveTransfer.fromJson(json['approve_transfer'] as String) : null,
+  acceptFoa: json['accept_foa'] != null ? AcceptFoa.fromJson(json['accept_foa'] as String) : null,
+  approveTransfer: json['approve_transfer'] != null ? ApproveTransfer.fromJson(json['approve_transfer'] as String) : null,
   canCancelTransfer: json['can_cancel_transfer'] as bool?,
-  disablePrivacy: json['disable_privacy'] != null ? TransferInDisablePrivacy.fromJson(json['disable_privacy'] as String) : null,
-  enterAuthCode: json['enter_auth_code'] != null ? TransferInEnterAuthCode.fromJson(json['enter_auth_code'] as String) : null,
-  unlockDomain: json['unlock_domain'] != null ? TransferInUnlockDomain.fromJson(json['unlock_domain'] as String) : null,
+  disablePrivacy: json['disable_privacy'] != null ? DisablePrivacy.fromJson(json['disable_privacy'] as String) : null,
+  enterAuthCode: json['enter_auth_code'] != null ? EnterAuthCode.fromJson(json['enter_auth_code'] as String) : null,
+  unlockDomain: json['unlock_domain'] != null ? UnlockDomain.fromJson(json['unlock_domain'] as String) : null,
 ); }
 
 /// Form of authorization has been accepted by the registrant.
-final TransferInAcceptFoa? acceptFoa;
+final AcceptFoa? acceptFoa;
 
 /// Shows transfer status with the registry.
-final TransferInApproveTransfer? approveTransfer;
+final ApproveTransfer? approveTransfer;
 
 /// Indicates if cancellation is still possible.
 final bool? canCancelTransfer;
 
 /// Privacy guards are disabled at the foreign registrar.
-final TransferInDisablePrivacy? disablePrivacy;
+final DisablePrivacy? disablePrivacy;
 
 /// Auth code has been entered and verified.
-final TransferInEnterAuthCode? enterAuthCode;
+final EnterAuthCode? enterAuthCode;
 
 /// Domain is unlocked at the foreign registrar.
-final TransferInUnlockDomain? unlockDomain;
+final UnlockDomain? unlockDomain;
 
 Map<String, dynamic> toJson() { return {
   if (acceptFoa != null) 'accept_foa': acceptFoa?.toJson(),
@@ -197,7 +197,7 @@ Map<String, dynamic> toJson() { return {
   if (unlockDomain != null) 'unlock_domain': unlockDomain?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accept_foa', 'approve_transfer', 'can_cancel_transfer', 'disable_privacy', 'enter_auth_code', 'unlock_domain'}.contains(key)); } 
-TransferIn copyWith({TransferInAcceptFoa Function()? acceptFoa, TransferInApproveTransfer Function()? approveTransfer, bool Function()? canCancelTransfer, TransferInDisablePrivacy Function()? disablePrivacy, TransferInEnterAuthCode Function()? enterAuthCode, TransferInUnlockDomain Function()? unlockDomain, }) { return TransferIn(
+TransferIn copyWith({AcceptFoa Function()? acceptFoa, ApproveTransfer Function()? approveTransfer, bool Function()? canCancelTransfer, DisablePrivacy Function()? disablePrivacy, EnterAuthCode Function()? enterAuthCode, UnlockDomain Function()? unlockDomain, }) { return TransferIn(
   acceptFoa: acceptFoa != null ? acceptFoa() : this.acceptFoa,
   approveTransfer: approveTransfer != null ? approveTransfer() : this.approveTransfer,
   canCancelTransfer: canCancelTransfer != null ? canCancelTransfer() : this.canCancelTransfer,

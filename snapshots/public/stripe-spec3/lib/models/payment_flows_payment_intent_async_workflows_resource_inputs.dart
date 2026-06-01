@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_payment_intent_async_workflows_resource_inputs_resource_tax.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_async_workflows_resource_inputs_resource_tax.dart';/// 
 @immutable final class PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs {const PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs({this.tax});
 
 factory PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs.fromJson(Map<String, dynamic> json) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(

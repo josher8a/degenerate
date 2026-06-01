@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedApplePayDomainObject {const DeletedApplePayDomainObject._(this.value);
-
-factory DeletedApplePayDomainObject.fromJson(String json) { return switch (json) {
-  'apple_pay_domain' => applePayDomain,
-  _ => DeletedApplePayDomainObject._(json),
-}; }
-
-static const DeletedApplePayDomainObject applePayDomain = DeletedApplePayDomainObject._('apple_pay_domain');
-
-static const List<DeletedApplePayDomainObject> values = [applePayDomain];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedApplePayDomainObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedApplePayDomainObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/apple_pay_domain/apple_pay_domain_object.dart';/// 
 @immutable final class DeletedApplePayDomain {const DeletedApplePayDomain({required this.deleted, required this.id, required this.object, });
 
 factory DeletedApplePayDomain.fromJson(Map<String, dynamic> json) { return DeletedApplePayDomain(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  object: DeletedApplePayDomainObject.fromJson(json['object'] as String),
+  object: ApplePayDomainObject.fromJson(json['object'] as String),
 ); }
 
 /// Always true for a deleted object
@@ -38,7 +16,7 @@ final bool deleted;
 final String id;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final DeletedApplePayDomainObject object;
+final ApplePayDomainObject object;
 
 Map<String, dynamic> toJson() { return {
   'deleted': deleted,
@@ -48,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-DeletedApplePayDomain copyWith({bool? deleted, String? id, DeletedApplePayDomainObject? object, }) { return DeletedApplePayDomain(
+DeletedApplePayDomain copyWith({bool? deleted, String? id, ApplePayDomainObject? object, }) { return DeletedApplePayDomain(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,

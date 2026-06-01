@@ -1,74 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_components_schemas_name.dart';import 'access_schemas_identity_provider_scim_config.dart';import 'access_uuid.dart';/// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
-@immutable final class AccessSchemasIdentityProviderType {const AccessSchemasIdentityProviderType._(this.value);
-
-factory AccessSchemasIdentityProviderType.fromJson(String json) { return switch (json) {
-  'onetimepin' => onetimepin,
-  'azureAD' => azureAd,
-  'saml' => saml,
-  'centrify' => centrify,
-  'facebook' => facebook,
-  'github' => github,
-  'google-apps' => googleApps,
-  'google' => google,
-  'linkedin' => linkedin,
-  'oidc' => oidc,
-  'okta' => okta,
-  'onelogin' => onelogin,
-  'pingone' => pingone,
-  'yandex' => yandex,
-  _ => AccessSchemasIdentityProviderType._(json),
-}; }
-
-static const AccessSchemasIdentityProviderType onetimepin = AccessSchemasIdentityProviderType._('onetimepin');
-
-static const AccessSchemasIdentityProviderType azureAd = AccessSchemasIdentityProviderType._('azureAD');
-
-static const AccessSchemasIdentityProviderType saml = AccessSchemasIdentityProviderType._('saml');
-
-static const AccessSchemasIdentityProviderType centrify = AccessSchemasIdentityProviderType._('centrify');
-
-static const AccessSchemasIdentityProviderType facebook = AccessSchemasIdentityProviderType._('facebook');
-
-static const AccessSchemasIdentityProviderType github = AccessSchemasIdentityProviderType._('github');
-
-static const AccessSchemasIdentityProviderType googleApps = AccessSchemasIdentityProviderType._('google-apps');
-
-static const AccessSchemasIdentityProviderType google = AccessSchemasIdentityProviderType._('google');
-
-static const AccessSchemasIdentityProviderType linkedin = AccessSchemasIdentityProviderType._('linkedin');
-
-static const AccessSchemasIdentityProviderType oidc = AccessSchemasIdentityProviderType._('oidc');
-
-static const AccessSchemasIdentityProviderType okta = AccessSchemasIdentityProviderType._('okta');
-
-static const AccessSchemasIdentityProviderType onelogin = AccessSchemasIdentityProviderType._('onelogin');
-
-static const AccessSchemasIdentityProviderType pingone = AccessSchemasIdentityProviderType._('pingone');
-
-static const AccessSchemasIdentityProviderType yandex = AccessSchemasIdentityProviderType._('yandex');
-
-static const List<AccessSchemasIdentityProviderType> values = [onetimepin, azureAd, saml, centrify, facebook, github, googleApps, google, linkedin, oidc, okta, onelogin, pingone, yandex];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessSchemasIdentityProviderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessSchemasIdentityProviderType($value)'; } 
- }
-@immutable final class AccessSchemasIdentityProvider {const AccessSchemasIdentityProvider({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_identity_provider/access_identity_provider_type.dart';import 'package:pub_cloudflare/models/access_identity_provider/scim_config.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessSchemasIdentityProvider {const AccessSchemasIdentityProvider({required this.config, required this.name, required this.type, this.id, this.scimConfig, });
 
 factory AccessSchemasIdentityProvider.fromJson(Map<String, dynamic> json) { return AccessSchemasIdentityProvider(
   config: json['config'] as Map<String, dynamic>,
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
   name: AccessComponentsSchemasName.fromJson(json['name'] as String),
-  scimConfig: json['scim_config'] != null ? AccessSchemasIdentityProviderScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
-  type: AccessSchemasIdentityProviderType.fromJson(json['type'] as String),
+  scimConfig: json['scim_config'] != null ? ScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  type: AccessIdentityProviderType.fromJson(json['type'] as String),
 ); }
 
 /// The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
@@ -80,10 +19,10 @@ final AccessUuid? id;
 final AccessComponentsSchemasName name;
 
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
-final AccessSchemasIdentityProviderScimConfig? scimConfig;
+final ScimConfig? scimConfig;
 
 /// The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).
-final AccessSchemasIdentityProviderType type;
+final AccessIdentityProviderType type;
 
 Map<String, dynamic> toJson() { return {
   'config': config,
@@ -95,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasIdentityProviderScimConfig Function()? scimConfig, AccessSchemasIdentityProviderType? type, }) { return AccessSchemasIdentityProvider(
+AccessSchemasIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, ScimConfig Function()? scimConfig, AccessIdentityProviderType? type, }) { return AccessSchemasIdentityProvider(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

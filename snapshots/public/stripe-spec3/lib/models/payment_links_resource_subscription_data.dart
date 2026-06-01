@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_subscription_data_invoice_settings.dart';import 'subscriptions_trials_resource_trial_settings.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_trials_resource_trial_settings.dart';/// 
 @immutable final class PaymentLinksResourceSubscriptionData {const PaymentLinksResourceSubscriptionData({required this.invoiceSettings, required this.metadata, this.description, this.trialPeriodDays, this.trialSettings, });
 
 factory PaymentLinksResourceSubscriptionData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceSubscriptionData(

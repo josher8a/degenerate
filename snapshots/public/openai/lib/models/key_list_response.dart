@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key3.dart';@immutable final class KeyListResponseObject {const KeyListResponseObject._(this.value);
-
-factory KeyListResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => KeyListResponseObject._(json),
-}; }
-
-static const KeyListResponseObject list = KeyListResponseObject._('list');
-
-static const List<KeyListResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is KeyListResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'KeyListResponseObject($value)'; } 
- }
-@immutable final class KeyListResponse {const KeyListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/key3.dart';@immutable final class KeyListResponse {const KeyListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory KeyListResponse.fromJson(Map<String, dynamic> json) { return KeyListResponse(
-  object: KeyListResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => Key3.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
 ); }
 
-final KeyListResponseObject object;
+final ChatCompletionListObject object;
 
 final List<Key3> data;
 
@@ -53,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-KeyListResponse copyWith({KeyListResponseObject? object, List<Key3>? data, String? firstId, String? lastId, bool? hasMore, }) { return KeyListResponse(
+KeyListResponse copyWith({ChatCompletionListObject? object, List<Key3>? data, String? firstId, String? lastId, bool? hasMore, }) { return KeyListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/list_project_roles_order.dart';import '../models/list_roles_order.dart';import '../models/public_create_organization_role_body.dart';import '../models/public_role_list_resource.dart';import '../models/public_update_organization_role_body.dart';import '../models/role.dart';import '../models/role_deleted_resource.dart';/// RolesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/list_project_roles_order.dart';import 'package:pub_openai/models/list_roles_order.dart';import 'package:pub_openai/models/public_create_organization_role_body.dart';import 'package:pub_openai/models/public_role_list_resource.dart';import 'package:pub_openai/models/public_update_organization_role_body.dart';import 'package:pub_openai/models/role.dart';import 'package:pub_openai/models/role_deleted_resource.dart';/// RolesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

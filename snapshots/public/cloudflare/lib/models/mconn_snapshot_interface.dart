@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_snapshot_interface_address.dart';/// Snapshot Interface
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_snapshot_interface_address.dart';/// Snapshot Interface
 @immutable final class MconnSnapshotInterface {const MconnSnapshotInterface({required this.name, required this.operstate, this.connectorId, this.ipAddresses, this.speed, });
 
 factory MconnSnapshotInterface.fromJson(Map<String, dynamic> json) { return MconnSnapshotInterface(

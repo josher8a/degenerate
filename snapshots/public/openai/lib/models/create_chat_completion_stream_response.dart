@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage.dart';import 'create_chat_completion_stream_response_choices.dart';import 'service_tier.dart';/// The object type, which is always `chat.completion.chunk`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_chat_completion_stream_response/create_chat_completion_stream_response_choices.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type, which is always `chat.completion.chunk`.
 @immutable final class CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject._(this.value);
 
 factory CreateChatCompletionStreamResponseObject.fromJson(String json) { return switch (json) {

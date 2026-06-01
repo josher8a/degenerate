@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable or disable the Smart Tiered Cache.
-@immutable final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);
-
-factory CacheRulesSmartTieredCachePatchValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => CacheRulesSmartTieredCachePatchValue._(json),
-}; }
-
-static const CacheRulesSmartTieredCachePatchValue $on = CacheRulesSmartTieredCachePatchValue._('on');
-
-static const CacheRulesSmartTieredCachePatchValue off = CacheRulesSmartTieredCachePatchValue._('off');
-
-static const List<CacheRulesSmartTieredCachePatchValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesSmartTieredCachePatchValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesSmartTieredCachePatchValue($value)'; } 
- }
-/// Update enablement of Smart Tiered Cache.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Update enablement of Smart Tiered Cache.
 @immutable final class CacheRulesSmartTieredCachePatch {const CacheRulesSmartTieredCachePatch({required this.value});
 
 factory CacheRulesSmartTieredCachePatch.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCachePatch(

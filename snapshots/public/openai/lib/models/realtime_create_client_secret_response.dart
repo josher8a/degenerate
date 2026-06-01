@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_create_client_secret_response_session.dart';/// Response from creating a session and client secret for the Realtime API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_create_client_secret_response/realtime_create_client_secret_response_session.dart';/// Response from creating a session and client secret for the Realtime API.
 /// 
 @immutable final class RealtimeCreateClientSecretResponse {const RealtimeCreateClientSecretResponse({required this.value, required this.expiresAt, required this.session, });
 

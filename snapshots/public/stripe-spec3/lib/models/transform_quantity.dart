@@ -1,43 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// After division, either round the result `up` or `down`.
-@immutable final class TransformQuantityRound {const TransformQuantityRound._(this.value);
-
-factory TransformQuantityRound.fromJson(String json) { return switch (json) {
-  'down' => down,
-  'up' => up,
-  _ => TransformQuantityRound._(json),
-}; }
-
-static const TransformQuantityRound down = TransformQuantityRound._('down');
-
-static const TransformQuantityRound up = TransformQuantityRound._('up');
-
-static const List<TransformQuantityRound> values = [down, up];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransformQuantityRound && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransformQuantityRound($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/transform_quantity/round.dart';/// 
 @immutable final class TransformQuantity {const TransformQuantity({required this.divideBy, required this.round, });
 
 factory TransformQuantity.fromJson(Map<String, dynamic> json) { return TransformQuantity(
   divideBy: (json['divide_by'] as num).toInt(),
-  round: TransformQuantityRound.fromJson(json['round'] as String),
+  round: Round.fromJson(json['round'] as String),
 ); }
 
 /// Divide usage by this number.
 final int divideBy;
 
 /// After division, either round the result `up` or `down`.
-final TransformQuantityRound round;
+final Round round;
 
 Map<String, dynamic> toJson() { return {
   'divide_by': divideBy,
@@ -45,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('divide_by') && json['divide_by'] is num &&
       json.containsKey('round'); } 
-TransformQuantity copyWith({int? divideBy, TransformQuantityRound? round, }) { return TransformQuantity(
+TransformQuantity copyWith({int? divideBy, Round? round, }) { return TransformQuantity(
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_keys_list_request.dart';import '../models/telemetry_keys_list_response401.dart';import '../models/telemetry_keys_list_response_result.dart';/// KeysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_response/telemetry_keys_list_response_result.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_response401.dart';/// KeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

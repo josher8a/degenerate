@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_custom_ns.dart';@immutable final class DnsCustomNameserversAcnsResponseSingle {const DnsCustomNameserversAcnsResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_custom_ns.dart';@immutable final class DnsCustomNameserversAcnsResponseSingle {const DnsCustomNameserversAcnsResponseSingle({this.result});
 
 factory DnsCustomNameserversAcnsResponseSingle.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversAcnsResponseSingle(
   result: json['result'] != null ? DnsCustomNameserversCustomNs.fromJson(json['result'] as Map<String, dynamic>) : null,

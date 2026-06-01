@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';/// A group of scoped resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';/// A group of scoped resources.
 @immutable final class IamResourceGroupIds2 {const IamResourceGroupIds2({required this.id});
 
 factory IamResourceGroupIds2.fromJson(Map<String, dynamic> json) { return IamResourceGroupIds2(

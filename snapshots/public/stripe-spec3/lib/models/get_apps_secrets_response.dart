@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apps_secret.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetAppsSecretsResponseObject {const GetAppsSecretsResponseObject._(this.value);
-
-factory GetAppsSecretsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetAppsSecretsResponseObject._(json),
-}; }
-
-static const GetAppsSecretsResponseObject list = GetAppsSecretsResponseObject._('list');
-
-static const List<GetAppsSecretsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAppsSecretsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAppsSecretsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/apps_secret.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetAppsSecretsResponse {const GetAppsSecretsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetAppsSecretsResponse.fromJson(Map<String, dynamic> json) { return GetAppsSecretsResponse(
   data: (json['data'] as List<dynamic>).map((e) => AppsSecret.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetAppsSecretsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<AppsSecret> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetAppsSecretsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetAppsSecretsResponse copyWith({List<AppsSecret>? data, bool? hasMore, GetAppsSecretsResponseObject? object, String? url, }) { return GetAppsSecretsResponse(
+GetAppsSecretsResponse copyWith({List<AppsSecret>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetAppsSecretsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

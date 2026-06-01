@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_cidr.dart';@immutable final class MagicNat {const MagicNat({this.staticPrefix});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_cidr.dart';@immutable final class MagicNat {const MagicNat({this.staticPrefix});
 
 factory MagicNat.fromJson(Map<String, dynamic> json) { return MagicNat(
   staticPrefix: json['static_prefix'] != null ? MagicCidr.fromJson(json['static_prefix'] as String) : null,

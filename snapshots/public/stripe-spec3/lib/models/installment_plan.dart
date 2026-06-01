@@ -1,66 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InstallmentPlanInterval {const InstallmentPlanInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_interval.dart';import 'package:pub_stripe_spec3/models/installment_plan/installment_plan_type.dart';@immutable final class installment_plan {const installment_plan({required this.type, this.count, this.interval, });
 
-factory InstallmentPlanInterval.fromJson(String json) { return switch (json) {
-  'month' => month,
-  _ => InstallmentPlanInterval._(json),
-}; }
-
-static const InstallmentPlanInterval month = InstallmentPlanInterval._('month');
-
-static const List<InstallmentPlanInterval> values = [month];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InstallmentPlanInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InstallmentPlanInterval($value)'; } 
- }
-@immutable final class InstallmentPlanType {const InstallmentPlanType._(this.value);
-
-factory InstallmentPlanType.fromJson(String json) { return switch (json) {
-  'bonus' => bonus,
-  'fixed_count' => fixedCount,
-  'revolving' => revolving,
-  _ => InstallmentPlanType._(json),
-}; }
-
-static const InstallmentPlanType bonus = InstallmentPlanType._('bonus');
-
-static const InstallmentPlanType fixedCount = InstallmentPlanType._('fixed_count');
-
-static const InstallmentPlanType revolving = InstallmentPlanType._('revolving');
-
-static const List<InstallmentPlanType> values = [bonus, fixedCount, revolving];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InstallmentPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InstallmentPlanType($value)'; } 
- }
-@immutable final class InstallmentPlan {const InstallmentPlan({required this.type, this.count, this.interval, });
-
-factory InstallmentPlan.fromJson(Map<String, dynamic> json) { return InstallmentPlan(
+factory installment_plan.fromJson(Map<String, dynamic> json) { return installment_plan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
-  interval: json['interval'] != null ? InstallmentPlanInterval.fromJson(json['interval'] as String) : null,
-  type: InstallmentPlanType.fromJson(json['type'] as String),
+  interval: json['interval'] != null ? installment_planInterval.fromJson(json['interval'] as String) : null,
+  type: installment_planType.fromJson(json['type'] as String),
 ); }
 
 final int? count;
 
-final InstallmentPlanInterval? interval;
+final installment_planInterval? interval;
 
-final InstallmentPlanType type;
+final installment_planType type;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -68,16 +20,16 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InstallmentPlan copyWith({int Function()? count, InstallmentPlanInterval Function()? interval, InstallmentPlanType? type, }) { return InstallmentPlan(
+installment_plan copyWith({int Function()? count, installment_planInterval Function()? interval, installment_planType? type, }) { return installment_plan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is InstallmentPlan &&
+      other is installment_plan &&
           count == other.count &&
           interval == other.interval &&
           type == other.type; } 
 @override int get hashCode { return Object.hash(count, interval, type); } 
-@override String toString() { return 'InstallmentPlan(count: $count, interval: $interval, type: $type)'; } 
+@override String toString() { return 'installment_plan(count: $count, interval: $interval, type: $type)'; } 
  }

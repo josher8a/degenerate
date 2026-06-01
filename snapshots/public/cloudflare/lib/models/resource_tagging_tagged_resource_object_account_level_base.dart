@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';/// Base schema for account-level resources (without type discriminator)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';/// Base schema for account-level resources (without type discriminator)
 @immutable final class ResourceTaggingTaggedResourceObjectAccountLevelBase {const ResourceTaggingTaggedResourceObjectAccountLevelBase({required this.etag, required this.id, required this.name, required this.tags, });
 
 factory ResourceTaggingTaggedResourceObjectAccountLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectAccountLevelBase(

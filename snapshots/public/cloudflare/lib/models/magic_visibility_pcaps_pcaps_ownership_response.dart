@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_ownership_challenge.dart';/// The status of the ownership challenge. Can be pending, success or failed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_destination_conf.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_challenge.dart';/// The status of the ownership challenge. Can be pending, success or failed.
 @immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus._(this.value);
 
 factory MagicVisibilityPcapsPcapsOwnershipResponseStatus.fromJson(String json) { return switch (json) {

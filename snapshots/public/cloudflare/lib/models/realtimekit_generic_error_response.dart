@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_generic_error_response_error.dart';@immutable final class RealtimekitGenericErrorResponse {const RealtimekitGenericErrorResponse({required this.error, this.success = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_error_response/realtimekit_error_response_error.dart';@immutable final class RealtimekitGenericErrorResponse {const RealtimekitGenericErrorResponse({required this.error, this.success = false, });
 
 factory RealtimekitGenericErrorResponse.fromJson(Map<String, dynamic> json) { return RealtimekitGenericErrorResponse(
-  error: RealtimekitGenericErrorResponseError.fromJson(json['error'] as Map<String, dynamic>),
+  error: RealtimekitErrorResponseError.fromJson(json['error'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RealtimekitGenericErrorResponseError error;
+final RealtimekitErrorResponseError error;
 
 /// Success status of the request.
 final bool success;
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') &&
       json.containsKey('success') && json['success'] is bool; } 
-RealtimekitGenericErrorResponse copyWith({RealtimekitGenericErrorResponseError? error, bool? success, }) { return RealtimekitGenericErrorResponse(
+RealtimekitGenericErrorResponse copyWith({RealtimekitErrorResponseError? error, bool? success, }) { return RealtimekitGenericErrorResponse(
   error: error ?? this.error,
   success: success ?? this.success,
 ); } 

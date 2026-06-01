@@ -1,40 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the code interpreter text output. Always `logs`.
-/// 
-@immutable final class CodeInterpreterTextOutputType {const CodeInterpreterTextOutputType._(this.value);
-
-factory CodeInterpreterTextOutputType.fromJson(String json) { return switch (json) {
-  'logs' => logs,
-  _ => CodeInterpreterTextOutputType._(json),
-}; }
-
-static const CodeInterpreterTextOutputType logs = CodeInterpreterTextOutputType._('logs');
-
-static const List<CodeInterpreterTextOutputType> values = [logs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterTextOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeInterpreterTextOutputType($value)'; } 
- }
-/// The output of a code interpreter tool call that is text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// The output of a code interpreter tool call that is text.
 /// 
 @immutable final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
 
 factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterTextOutput(
-  type: CodeInterpreterTextOutputType.fromJson(json['type'] as String),
+  type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),
   logs: json['logs'] as String,
 ); }
 
 /// The type of the code interpreter text output. Always `logs`.
 /// 
-final CodeInterpreterTextOutputType type;
+final CodeInterpreterOutputLogsType type;
 
 /// The logs of the code interpreter tool call.
 /// 
@@ -46,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('logs') && json['logs'] is String; } 
-CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String? logs, }) { return CodeInterpreterTextOutput(
+CodeInterpreterTextOutput copyWith({CodeInterpreterOutputLogsType? type, String? logs, }) { return CodeInterpreterTextOutput(
   type: type ?? this.type,
   logs: logs ?? this.logs,
 ); } 

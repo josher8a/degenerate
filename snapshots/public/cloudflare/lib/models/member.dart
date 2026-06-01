@@ -1,36 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'member_id.dart';import 'member_subject_user.dart';@immutable final class MemberStatus {const MemberStatus._(this.value);
-
-factory MemberStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'canceled' => canceled,
-  _ => MemberStatus._(json),
-}; }
-
-static const MemberStatus active = MemberStatus._('active');
-
-static const MemberStatus canceled = MemberStatus._('canceled');
-
-static const List<MemberStatus> values = [active, canceled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MemberStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MemberStatus($value)'; } 
- }
-@immutable final class Member {const Member({required this.createTime, required this.id, required this.meta, required this.status, required this.updateTime, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_single_member/create_single_member_status.dart';import 'package:pub_cloudflare/models/member_id.dart';import 'package:pub_cloudflare/models/member_subject_user.dart';@immutable final class Member {const Member({required this.createTime, required this.id, required this.meta, required this.status, required this.updateTime, required this.user, });
 
 factory Member.fromJson(Map<String, dynamic> json) { return Member(
   createTime: DateTime.parse(json['create_time'] as String),
   id: MemberId.fromJson(json['id'] as String),
   meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
-  status: MemberStatus.fromJson(json['status'] as String),
+  status: CreateSingleMemberStatus.fromJson(json['status'] as String),
   updateTime: DateTime.parse(json['update_time'] as String),
   user: MemberSubjectUser.fromJson(json['user'] as Map<String, dynamic>),
 ); }
@@ -41,7 +17,7 @@ final MemberId id;
 
 final Map<String,Map<String,dynamic>> meta;
 
-final MemberStatus status;
+final CreateSingleMemberStatus status;
 
 final DateTime updateTime;
 
@@ -61,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status') &&
       json.containsKey('update_time') && json['update_time'] is String &&
       json.containsKey('user'); } 
-Member copyWith({DateTime? createTime, MemberId? id, Map<String,Map<String,dynamic>>? meta, MemberStatus? status, DateTime? updateTime, MemberSubjectUser? user, }) { return Member(
+Member copyWith({DateTime? createTime, MemberId? id, Map<String,Map<String,dynamic>>? meta, CreateSingleMemberStatus? status, DateTime? updateTime, MemberSubjectUser? user, }) { return Member(
   createTime: createTime ?? this.createTime,
   id: id ?? this.id,
   meta: meta ?? this.meta,

@@ -1,35 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class GetSubscriptionsSearchResponseObject {const GetSubscriptionsSearchResponseObject._(this.value);
-
-factory GetSubscriptionsSearchResponseObject.fromJson(String json) { return switch (json) {
-  'search_result' => searchResult,
-  _ => GetSubscriptionsSearchResponseObject._(json),
-}; }
-
-static const GetSubscriptionsSearchResponseObject searchResult = GetSubscriptionsSearchResponseObject._('search_result');
-
-static const List<GetSubscriptionsSearchResponseObject> values = [searchResult];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetSubscriptionsSearchResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetSubscriptionsSearchResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_charges_search_response/get_charges_search_response_object.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// 
 @immutable final class GetSubscriptionsSearchResponse {const GetSubscriptionsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage, this.totalCount, });
 
 factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) { return GetSubscriptionsSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Subscription.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   nextPage: json['next_page'] as String?,
-  object: GetSubscriptionsSearchResponseObject.fromJson(json['object'] as String),
+  object: GetChargesSearchResponseObject.fromJson(json['object'] as String),
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
   url: json['url'] as String,
 ); }
@@ -41,7 +19,7 @@ final bool hasMore;
 final String? nextPage;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final GetSubscriptionsSearchResponseObject object;
+final GetChargesSearchResponseObject object;
 
 /// The total number of objects that match the query, only accurate up to 10,000.
 final int? totalCount;
@@ -60,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, String? Function()? nextPage, GetSubscriptionsSearchResponseObject? object, int Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
+GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,

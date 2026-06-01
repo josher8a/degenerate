@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_field.dart';import 'response_usage.dart';/// The object type. Always `response.compaction`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/item_field.dart';import 'package:pub_openai/models/response_usage.dart';/// The object type. Always `response.compaction`.
 @immutable final class CompactResourceObject {const CompactResourceObject._(this.value);
 
 factory CompactResourceObject.fromJson(String json) { return switch (json) {

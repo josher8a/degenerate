@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_common67_result.dart';import 'teams_devices_messages2.dart';@immutable final class ResponseCommon67 {const ResponseCommon67({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';import 'package:pub_cloudflare/models/teams_devices_messages2.dart';@immutable final class ResponseCommon67 {const ResponseCommon67({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon67.fromJson(Map<String, dynamic> json) { return ResponseCommon67(
   errors: (json['errors'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ final List<TeamsDevicesMessages2> errors;
 
 final List<TeamsDevicesMessages2> messages;
 
-final ResponseCommon67Result result;
+final ResponseCommon31Result result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon67 copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, ResponseCommon67Result? result, bool? success, }) { return ResponseCommon67(
+ResponseCommon67 copyWith({List<TeamsDevicesMessages2>? errors, List<TeamsDevicesMessages2>? messages, ResponseCommon31Result? result, bool? success, }) { return ResponseCommon67(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

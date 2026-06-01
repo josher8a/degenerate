@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'other_chunking_strategy_response_param.dart';import 'static_chunking_strategy_response_param.dart';import 'vector_store_file_object_chunking_strategy.dart';import 'vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/other_chunking_strategy_response_param.dart';import 'package:pub_openai/models/static_chunking_strategy_response_param.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_chunking_strategy.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
 @immutable final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);
 
 factory VectorStoreFileObjectObject.fromJson(String json) { return switch (json) {
@@ -22,37 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorStoreFileObjectObject($value)'; } 
  }
-/// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
-@immutable final class VectorStoreFileObjectStatus {const VectorStoreFileObjectStatus._(this.value);
-
-factory VectorStoreFileObjectStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'cancelled' => cancelled,
-  'failed' => failed,
-  _ => VectorStoreFileObjectStatus._(json),
-}; }
-
-static const VectorStoreFileObjectStatus inProgress = VectorStoreFileObjectStatus._('in_progress');
-
-static const VectorStoreFileObjectStatus completed = VectorStoreFileObjectStatus._('completed');
-
-static const VectorStoreFileObjectStatus cancelled = VectorStoreFileObjectStatus._('cancelled');
-
-static const VectorStoreFileObjectStatus failed = VectorStoreFileObjectStatus._('failed');
-
-static const List<VectorStoreFileObjectStatus> values = [inProgress, completed, cancelled, failed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileObjectStatus($value)'; } 
- }
 /// A list of files attached to a vector store.
 @immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
 
@@ -62,7 +31,7 @@ factory VectorStoreFileObject.fromJson(Map<String, dynamic> json) { return Vecto
   usageBytes: (json['usage_bytes'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),
   vectorStoreId: json['vector_store_id'] as String,
-  status: VectorStoreFileObjectStatus.fromJson(json['status'] as String),
+  status: VectorStoreFileBatchObjectStatus.fromJson(json['status'] as String),
   lastError: json['last_error'] != null ? VectorStoreFileObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => StaticChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>), fromB: (v) => OtherChunkingStrategyResponseParam.fromJson(v as Map<String, dynamic>),) : null,
   attributes: json['attributes'] as Map<String, dynamic>?,
@@ -84,7 +53,7 @@ final int createdAt;
 final String vectorStoreId;
 
 /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
-final VectorStoreFileObjectStatus status;
+final VectorStoreFileBatchObjectStatus status;
 
 /// The last error associated with this vector store file. Will be `null` if there are no errors.
 final VectorStoreFileObjectLastError? lastError;
@@ -118,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('last_error'); } 
-VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
+VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object, int? usageBytes, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileObjectLastError? Function()? lastError, VectorStoreFileObjectChunkingStrategy Function()? chunkingStrategy, Map<String, dynamic>? Function()? attributes, }) { return VectorStoreFileObject(
   id: id ?? this.id,
   object: object ?? this.object,
   usageBytes: usageBytes ?? this.usageBytes,

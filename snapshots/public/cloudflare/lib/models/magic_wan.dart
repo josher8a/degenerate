@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_identifier.dart';import 'magic_port.dart';import 'magic_vlan_tag.dart';import 'magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
-@immutable final class MagicWanHealthCheckRate {const MagicWanHealthCheckRate._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';import 'package:pub_cloudflare/models/magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
+@immutable final class HealthCheckRate {const HealthCheckRate._(this.value);
 
-factory MagicWanHealthCheckRate.fromJson(String json) { return switch (json) {
+factory HealthCheckRate.fromJson(String json) { return switch (json) {
   'low' => low,
   'mid' => mid,
   'high' => high,
-  _ => MagicWanHealthCheckRate._(json),
+  _ => HealthCheckRate._(json),
 }; }
 
-static const MagicWanHealthCheckRate low = MagicWanHealthCheckRate._('low');
+static const HealthCheckRate low = HealthCheckRate._('low');
 
-static const MagicWanHealthCheckRate mid = MagicWanHealthCheckRate._('mid');
+static const HealthCheckRate mid = HealthCheckRate._('mid');
 
-static const MagicWanHealthCheckRate high = MagicWanHealthCheckRate._('high');
+static const HealthCheckRate high = HealthCheckRate._('high');
 
-static const List<MagicWanHealthCheckRate> values = [low, mid, high];
+static const List<HealthCheckRate> values = [low, mid, high];
 
 final String value;
 
@@ -24,14 +24,14 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicWanHealthCheckRate && other.value == value; } 
+    other is HealthCheckRate && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicWanHealthCheckRate($value)'; } 
+@override String toString() { return 'HealthCheckRate($value)'; } 
  }
-@immutable final class MagicWan {const MagicWan({this.healthCheckRate = MagicWanHealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
+@immutable final class MagicWan {const MagicWan({this.healthCheckRate = HealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
 
 factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
-  healthCheckRate: json.containsKey('health_check_rate') ? MagicWanHealthCheckRate.fromJson(json['health_check_rate'] as String) : MagicWanHealthCheckRate.mid,
+  healthCheckRate: json.containsKey('health_check_rate') ? HealthCheckRate.fromJson(json['health_check_rate'] as String) : HealthCheckRate.mid,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
   name: json['name'] as String?,
   physport: json['physport'] != null ? MagicPort.fromJson(json['physport'] as num) : null,
@@ -42,7 +42,7 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
 ); }
 
 /// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
-final MagicWanHealthCheckRate healthCheckRate;
+final HealthCheckRate healthCheckRate;
 
 /// Identifier
 final MagicIdentifier? id;
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'health_check_rate', 'id', 'name', 'physport', 'priority', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicWan copyWith({MagicWanHealthCheckRate Function()? healthCheckRate, MagicIdentifier Function()? id, String Function()? name, MagicPort Function()? physport, int Function()? priority, MagicIdentifier Function()? siteId, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWan(
+MagicWan copyWith({HealthCheckRate Function()? healthCheckRate, MagicIdentifier Function()? id, String Function()? name, MagicPort Function()? physport, int Function()? priority, MagicIdentifier Function()? siteId, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWan(
   healthCheckRate: healthCheckRate != null ? healthCheckRate() : this.healthCheckRate,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

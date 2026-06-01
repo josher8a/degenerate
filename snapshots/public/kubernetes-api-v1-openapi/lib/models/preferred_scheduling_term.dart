@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector_term.dart';/// An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/node_selector_term.dart';/// An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
 @immutable final class PreferredSchedulingTerm {const PreferredSchedulingTerm({required this.preference, this.weight = 0, });
 
 factory PreferredSchedulingTerm.fromJson(Map<String, dynamic> json) { return PreferredSchedulingTerm(

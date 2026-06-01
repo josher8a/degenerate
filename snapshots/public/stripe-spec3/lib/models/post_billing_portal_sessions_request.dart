@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 @immutable final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
 
 factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
@@ -167,7 +167,7 @@ factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { r
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  flowData: json['flow_data'] != null ? PostBillingPortalSessionsRequestFlowData.fromJson(json['flow_data'] as Map<String, dynamic>) : null,
+  flowData: json['flow_data'] != null ? FlowData.fromJson(json['flow_data'] as Map<String, dynamic>) : null,
   locale: json['locale'] != null ? PostBillingPortalSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   returnUrl: json['return_url'] as String?,
@@ -186,7 +186,7 @@ final String? customerAccount;
 final List<String>? expand;
 
 /// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
-final PostBillingPortalSessionsRequestFlowData? flowData;
+final FlowData? flowData;
 
 /// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 final PostBillingPortalSessionsRequestLocale? locale;
@@ -208,7 +208,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key)); } 
-PostBillingPortalSessionsRequest copyWith({String Function()? configuration, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, PostBillingPortalSessionsRequestFlowData Function()? flowData, PostBillingPortalSessionsRequestLocale Function()? locale, String Function()? onBehalfOf, String Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
+PostBillingPortalSessionsRequest copyWith({String Function()? configuration, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, FlowData Function()? flowData, PostBillingPortalSessionsRequestLocale Function()? locale, String Function()? onBehalfOf, String Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
   configuration: configuration != null ? configuration() : this.configuration,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

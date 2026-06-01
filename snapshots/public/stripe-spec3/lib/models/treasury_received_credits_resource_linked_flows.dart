@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credits_resource_source_flows_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_source_flows_details.dart';/// 
 @immutable final class TreasuryReceivedCreditsResourceLinkedFlows {const TreasuryReceivedCreditsResourceLinkedFlows({this.creditReversal, this.issuingAuthorization, this.issuingTransaction, this.sourceFlow, this.sourceFlowDetails, this.sourceFlowType, });
 
 factory TreasuryReceivedCreditsResourceLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceLinkedFlows(

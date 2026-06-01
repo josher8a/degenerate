@@ -1,38 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_rules_aegis_value.dart';/// ID of the zone setting.
-@immutable final class ZonesCacheRulesAegisId {const ZonesCacheRulesAegisId._(this.value);
-
-factory ZonesCacheRulesAegisId.fromJson(String json) { return switch (json) {
-  'aegis' => aegis,
-  _ => ZonesCacheRulesAegisId._(json),
-}; }
-
-static const ZonesCacheRulesAegisId aegis = ZonesCacheRulesAegisId._('aegis');
-
-static const List<ZonesCacheRulesAegisId> values = [aegis];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheRulesAegisId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheRulesAegisId($value)'; } 
- }
-/// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_aegis/cache_rules_aegis_id.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis_value.dart';/// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 @immutable final class ZonesCacheRulesAegis {const ZonesCacheRulesAegis({required this.id, this.modifiedOn, this.value, });
 
 factory ZonesCacheRulesAegis.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesAegis(
-  id: ZonesCacheRulesAegisId.fromJson(json['id'] as String),
+  id: CacheRulesAegisId.fromJson(json['id'] as String),
   modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
   value: json['value'] != null ? ZonesCacheRulesAegisValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 /// ID of the zone setting.
-final ZonesCacheRulesAegisId id;
+final CacheRulesAegisId id;
 
 /// Last time this setting was modified.
 final DateTime? modifiedOn;
@@ -45,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-ZonesCacheRulesAegis copyWith({ZonesCacheRulesAegisId? id, DateTime? Function()? modifiedOn, ZonesCacheRulesAegisValue Function()? value, }) { return ZonesCacheRulesAegis(
+ZonesCacheRulesAegis copyWith({CacheRulesAegisId? id, DateTime? Function()? modifiedOn, ZonesCacheRulesAegisValue Function()? value, }) { return ZonesCacheRulesAegis(
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,

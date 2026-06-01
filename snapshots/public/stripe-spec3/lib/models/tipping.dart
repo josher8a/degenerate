@@ -1,72 +1,72 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tipping_aed.dart';import 'tipping_aud.dart';import 'tipping_cad.dart';import 'tipping_chf.dart';import 'tipping_czk.dart';import 'tipping_dkk.dart';import 'tipping_eur.dart';import 'tipping_gbp.dart';import 'tipping_gip.dart';import 'tipping_hkd.dart';import 'tipping_huf.dart';import 'tipping_jpy.dart';import 'tipping_mxn.dart';import 'tipping_myr.dart';import 'tipping_nok.dart';import 'tipping_nzd.dart';import 'tipping_pln.dart';import 'tipping_ron.dart';import 'tipping_sek.dart';import 'tipping_sgd.dart';import 'tipping_usd.dart';@immutable final class Tipping {const Tipping({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tipping/aed.dart';import 'package:pub_stripe_spec3/models/tipping/aud.dart';import 'package:pub_stripe_spec3/models/tipping/cad.dart';import 'package:pub_stripe_spec3/models/tipping/chf.dart';import 'package:pub_stripe_spec3/models/tipping/czk.dart';import 'package:pub_stripe_spec3/models/tipping/dkk.dart';import 'package:pub_stripe_spec3/models/tipping/eur.dart';import 'package:pub_stripe_spec3/models/tipping/gbp.dart';import 'package:pub_stripe_spec3/models/tipping/gip.dart';import 'package:pub_stripe_spec3/models/tipping/hkd.dart';import 'package:pub_stripe_spec3/models/tipping/huf.dart';import 'package:pub_stripe_spec3/models/tipping/jpy.dart';import 'package:pub_stripe_spec3/models/tipping/mxn.dart';import 'package:pub_stripe_spec3/models/tipping/myr.dart';import 'package:pub_stripe_spec3/models/tipping/nok.dart';import 'package:pub_stripe_spec3/models/tipping/nzd.dart';import 'package:pub_stripe_spec3/models/tipping/pln.dart';import 'package:pub_stripe_spec3/models/tipping/ron.dart';import 'package:pub_stripe_spec3/models/tipping/sek.dart';import 'package:pub_stripe_spec3/models/tipping/sgd.dart';import 'package:pub_stripe_spec3/models/tipping/usd.dart';@immutable final class tipping {const tipping({this.aed, this.aud, this.cad, this.chf, this.czk, this.dkk, this.eur, this.gbp, this.gip, this.hkd, this.huf, this.jpy, this.mxn, this.myr, this.nok, this.nzd, this.pln, this.ron, this.sek, this.sgd, this.usd, });
 
-factory Tipping.fromJson(Map<String, dynamic> json) { return Tipping(
-  aed: json['aed'] != null ? TippingAed.fromJson(json['aed'] as Map<String, dynamic>) : null,
-  aud: json['aud'] != null ? TippingAud.fromJson(json['aud'] as Map<String, dynamic>) : null,
-  cad: json['cad'] != null ? TippingCad.fromJson(json['cad'] as Map<String, dynamic>) : null,
-  chf: json['chf'] != null ? TippingChf.fromJson(json['chf'] as Map<String, dynamic>) : null,
-  czk: json['czk'] != null ? TippingCzk.fromJson(json['czk'] as Map<String, dynamic>) : null,
-  dkk: json['dkk'] != null ? TippingDkk.fromJson(json['dkk'] as Map<String, dynamic>) : null,
-  eur: json['eur'] != null ? TippingEur.fromJson(json['eur'] as Map<String, dynamic>) : null,
-  gbp: json['gbp'] != null ? TippingGbp.fromJson(json['gbp'] as Map<String, dynamic>) : null,
-  gip: json['gip'] != null ? TippingGip.fromJson(json['gip'] as Map<String, dynamic>) : null,
-  hkd: json['hkd'] != null ? TippingHkd.fromJson(json['hkd'] as Map<String, dynamic>) : null,
-  huf: json['huf'] != null ? TippingHuf.fromJson(json['huf'] as Map<String, dynamic>) : null,
-  jpy: json['jpy'] != null ? TippingJpy.fromJson(json['jpy'] as Map<String, dynamic>) : null,
-  mxn: json['mxn'] != null ? TippingMxn.fromJson(json['mxn'] as Map<String, dynamic>) : null,
-  myr: json['myr'] != null ? TippingMyr.fromJson(json['myr'] as Map<String, dynamic>) : null,
-  nok: json['nok'] != null ? TippingNok.fromJson(json['nok'] as Map<String, dynamic>) : null,
-  nzd: json['nzd'] != null ? TippingNzd.fromJson(json['nzd'] as Map<String, dynamic>) : null,
-  pln: json['pln'] != null ? TippingPln.fromJson(json['pln'] as Map<String, dynamic>) : null,
-  ron: json['ron'] != null ? TippingRon.fromJson(json['ron'] as Map<String, dynamic>) : null,
-  sek: json['sek'] != null ? TippingSek.fromJson(json['sek'] as Map<String, dynamic>) : null,
-  sgd: json['sgd'] != null ? TippingSgd.fromJson(json['sgd'] as Map<String, dynamic>) : null,
-  usd: json['usd'] != null ? TippingUsd.fromJson(json['usd'] as Map<String, dynamic>) : null,
+factory tipping.fromJson(Map<String, dynamic> json) { return tipping(
+  aed: json['aed'] != null ? Aed.fromJson(json['aed'] as Map<String, dynamic>) : null,
+  aud: json['aud'] != null ? Aud.fromJson(json['aud'] as Map<String, dynamic>) : null,
+  cad: json['cad'] != null ? Cad.fromJson(json['cad'] as Map<String, dynamic>) : null,
+  chf: json['chf'] != null ? Chf.fromJson(json['chf'] as Map<String, dynamic>) : null,
+  czk: json['czk'] != null ? Czk.fromJson(json['czk'] as Map<String, dynamic>) : null,
+  dkk: json['dkk'] != null ? Dkk.fromJson(json['dkk'] as Map<String, dynamic>) : null,
+  eur: json['eur'] != null ? Eur.fromJson(json['eur'] as Map<String, dynamic>) : null,
+  gbp: json['gbp'] != null ? Gbp.fromJson(json['gbp'] as Map<String, dynamic>) : null,
+  gip: json['gip'] != null ? Gip.fromJson(json['gip'] as Map<String, dynamic>) : null,
+  hkd: json['hkd'] != null ? Hkd.fromJson(json['hkd'] as Map<String, dynamic>) : null,
+  huf: json['huf'] != null ? Huf.fromJson(json['huf'] as Map<String, dynamic>) : null,
+  jpy: json['jpy'] != null ? Jpy.fromJson(json['jpy'] as Map<String, dynamic>) : null,
+  mxn: json['mxn'] != null ? Mxn.fromJson(json['mxn'] as Map<String, dynamic>) : null,
+  myr: json['myr'] != null ? Myr.fromJson(json['myr'] as Map<String, dynamic>) : null,
+  nok: json['nok'] != null ? Nok.fromJson(json['nok'] as Map<String, dynamic>) : null,
+  nzd: json['nzd'] != null ? Nzd.fromJson(json['nzd'] as Map<String, dynamic>) : null,
+  pln: json['pln'] != null ? Pln.fromJson(json['pln'] as Map<String, dynamic>) : null,
+  ron: json['ron'] != null ? Ron.fromJson(json['ron'] as Map<String, dynamic>) : null,
+  sek: json['sek'] != null ? Sek.fromJson(json['sek'] as Map<String, dynamic>) : null,
+  sgd: json['sgd'] != null ? Sgd.fromJson(json['sgd'] as Map<String, dynamic>) : null,
+  usd: json['usd'] != null ? Usd.fromJson(json['usd'] as Map<String, dynamic>) : null,
 ); }
 
-final TippingAed? aed;
+final Aed? aed;
 
-final TippingAud? aud;
+final Aud? aud;
 
-final TippingCad? cad;
+final Cad? cad;
 
-final TippingChf? chf;
+final Chf? chf;
 
-final TippingCzk? czk;
+final Czk? czk;
 
-final TippingDkk? dkk;
+final Dkk? dkk;
 
-final TippingEur? eur;
+final Eur? eur;
 
-final TippingGbp? gbp;
+final Gbp? gbp;
 
-final TippingGip? gip;
+final Gip? gip;
 
-final TippingHkd? hkd;
+final Hkd? hkd;
 
-final TippingHuf? huf;
+final Huf? huf;
 
-final TippingJpy? jpy;
+final Jpy? jpy;
 
-final TippingMxn? mxn;
+final Mxn? mxn;
 
-final TippingMyr? myr;
+final Myr? myr;
 
-final TippingNok? nok;
+final Nok? nok;
 
-final TippingNzd? nzd;
+final Nzd? nzd;
 
-final TippingPln? pln;
+final Pln? pln;
 
-final TippingRon? ron;
+final Ron? ron;
 
-final TippingSek? sek;
+final Sek? sek;
 
-final TippingSgd? sgd;
+final Sgd? sgd;
 
-final TippingUsd? usd;
+final Usd? usd;
 
 Map<String, dynamic> toJson() { return {
   if (aed != null) 'aed': aed?.toJson(),
@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   if (usd != null) 'usd': usd?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aed', 'aud', 'cad', 'chf', 'czk', 'dkk', 'eur', 'gbp', 'gip', 'hkd', 'huf', 'jpy', 'mxn', 'myr', 'nok', 'nzd', 'pln', 'ron', 'sek', 'sgd', 'usd'}.contains(key)); } 
-Tipping copyWith({TippingAed Function()? aed, TippingAud Function()? aud, TippingCad Function()? cad, TippingChf Function()? chf, TippingCzk Function()? czk, TippingDkk Function()? dkk, TippingEur Function()? eur, TippingGbp Function()? gbp, TippingGip Function()? gip, TippingHkd Function()? hkd, TippingHuf Function()? huf, TippingJpy Function()? jpy, TippingMxn Function()? mxn, TippingMyr Function()? myr, TippingNok Function()? nok, TippingNzd Function()? nzd, TippingPln Function()? pln, TippingRon Function()? ron, TippingSek Function()? sek, TippingSgd Function()? sgd, TippingUsd Function()? usd, }) { return Tipping(
+tipping copyWith({Aed Function()? aed, Aud Function()? aud, Cad Function()? cad, Chf Function()? chf, Czk Function()? czk, Dkk Function()? dkk, Eur Function()? eur, Gbp Function()? gbp, Gip Function()? gip, Hkd Function()? hkd, Huf Function()? huf, Jpy Function()? jpy, Mxn Function()? mxn, Myr Function()? myr, Nok Function()? nok, Nzd Function()? nzd, Pln Function()? pln, Ron Function()? ron, Sek Function()? sek, Sgd Function()? sgd, Usd Function()? usd, }) { return tipping(
   aed: aed != null ? aed() : this.aed,
   aud: aud != null ? aud() : this.aud,
   cad: cad != null ? cad() : this.cad,
@@ -116,7 +116,7 @@ Tipping copyWith({TippingAed Function()? aed, TippingAud Function()? aud, Tippin
   usd: usd != null ? usd() : this.usd,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Tipping &&
+      other is tipping &&
           aed == other.aed &&
           aud == other.aud &&
           cad == other.cad &&
@@ -139,5 +139,5 @@ Tipping copyWith({TippingAed Function()? aed, TippingAud Function()? aud, Tippin
           sgd == other.sgd &&
           usd == other.usd; } 
 @override int get hashCode { return Object.hashAll([aed, aud, cad, chf, czk, dkk, eur, gbp, gip, hkd, huf, jpy, mxn, myr, nok, nzd, pln, ron, sek, sgd, usd]); } 
-@override String toString() { return 'Tipping(aed: $aed, aud: $aud, cad: $cad, chf: $chf, czk: $czk, dkk: $dkk, eur: $eur, gbp: $gbp, gip: $gip, hkd: $hkd, huf: $huf, jpy: $jpy, mxn: $mxn, myr: $myr, nok: $nok, nzd: $nzd, pln: $pln, ron: $ron, sek: $sek, sgd: $sgd, usd: $usd)'; } 
+@override String toString() { return 'tipping(aed: $aed, aud: $aud, cad: $cad, chf: $chf, czk: $czk, dkk: $dkk, eur: $eur, gbp: $gbp, gip: $gip, hkd: $hkd, huf: $huf, jpy: $jpy, mxn: $mxn, myr: $myr, nok: $nok, nzd: $nzd, pln: $pln, ron: $ron, sek: $sek, sgd: $sgd, usd: $usd)'; } 
  }

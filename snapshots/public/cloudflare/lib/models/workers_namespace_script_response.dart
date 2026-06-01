@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_created_on.dart';import 'workers_dispatch_namespace_name.dart';import 'workers_modified_on.dart';import 'workers_script_response.dart';/// Details about a worker uploaded to a Workers for Platforms namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_script_response.dart';/// Details about a worker uploaded to a Workers for Platforms namespace.
 @immutable final class WorkersNamespaceScriptResponse {const WorkersNamespaceScriptResponse({this.createdOn, this.dispatchNamespace, this.modifiedOn, this.script, });
 
 factory WorkersNamespaceScriptResponse.fromJson(Map<String, dynamic> json) { return WorkersNamespaceScriptResponse(

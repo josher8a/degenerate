@@ -1,35 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service to use for the network configuration.
-@immutable final class HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService {const HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService._(this.value);
-
-factory HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'actions' => actions,
-  _ => HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService._(json),
-}; }
-
-static const HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService none = HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService._('none');
-
-static const HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService actions = HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService._('actions');
-
-static const List<HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService> values = [none, actions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService($value)'; } 
- }
-@immutable final class HostedComputeUpdateNetworkConfigurationForOrgRequest {const HostedComputeUpdateNetworkConfigurationForOrgRequest({this.name, this.computeService, this.networkSettingsIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hosted_compute_create_network_configuration_for_org_request/hosted_compute_create_network_configuration_for_org_request_compute_service.dart';@immutable final class HostedComputeUpdateNetworkConfigurationForOrgRequest {const HostedComputeUpdateNetworkConfigurationForOrgRequest({this.name, this.computeService, this.networkSettingsIds, });
 
 factory HostedComputeUpdateNetworkConfigurationForOrgRequest.fromJson(Map<String, dynamic> json) { return HostedComputeUpdateNetworkConfigurationForOrgRequest(
   name: json['name'] as String?,
-  computeService: json['compute_service'] != null ? HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService.fromJson(json['compute_service'] as String) : null,
+  computeService: json['compute_service'] != null ? HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(json['compute_service'] as String) : null,
   networkSettingsIds: (json['network_settings_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
@@ -37,7 +12,7 @@ factory HostedComputeUpdateNetworkConfigurationForOrgRequest.fromJson(Map<String
 final String? name;
 
 /// The hosted compute service to use for the network configuration.
-final HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService? computeService;
+final HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? computeService;
 
 /// A list of identifiers of the network settings resources to use for the network configuration. Exactly one resource identifier must be specified in the list.
 final List<String>? networkSettingsIds;
@@ -48,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'network_settings_ids': ?networkSettingsIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'compute_service', 'network_settings_ids'}.contains(key)); } 
-HostedComputeUpdateNetworkConfigurationForOrgRequest copyWith({String Function()? name, HostedComputeUpdateNetworkConfigurationForOrgRequestComputeService Function()? computeService, List<String> Function()? networkSettingsIds, }) { return HostedComputeUpdateNetworkConfigurationForOrgRequest(
+HostedComputeUpdateNetworkConfigurationForOrgRequest copyWith({String Function()? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService Function()? computeService, List<String> Function()? networkSettingsIds, }) { return HostedComputeUpdateNetworkConfigurationForOrgRequest(
   name: name != null ? name() : this.name,
   computeService: computeService != null ? computeService() : this.computeService,
   networkSettingsIds: networkSettingsIds != null ? networkSettingsIds() : this.networkSettingsIds,

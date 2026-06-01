@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_completed_sessions.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_completed_sessions.dart';/// 
 @immutable final class PaymentLinksResourceRestrictions {const PaymentLinksResourceRestrictions({required this.completedSessions});
 
 factory PaymentLinksResourceRestrictions.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceRestrictions(

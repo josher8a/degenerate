@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_direction.dart';import '../models/dns_settings_dns_view.dart';import '../models/dns_settings_dns_view_response.dart';import '../models/dns_settings_identifier.dart';import '../models/dns_settings_match.dart';import '../models/dns_settings_order.dart';import '../models/dns_settings_page.dart';import '../models/dns_settings_per_page.dart';import '../models/dns_views_for_an_account_delete_internal_dns_view_response_result.dart';/// DnsInternalViewsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/dns_settings_direction.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/dns_settings_match.dart';import 'package:pub_cloudflare/models/dns_settings_order.dart';import 'package:pub_cloudflare/models/dns_settings_page.dart';import 'package:pub_cloudflare/models/dns_settings_per_page.dart';/// DnsInternalViewsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -146,7 +146,7 @@ return execute(
 /// Delete an existing Internal DNS View
 ///
 /// `DELETE /accounts/{account_id}/dns_settings/views/{view_id}`
-Future<ApiResult<DnsViewsForAnAccountDeleteInternalDnsViewResponseResult?, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> dnsViewsForAnAccountDeleteInternalDnsView({required DnsSettingsIdentifier accountId, required DnsSettingsIdentifier viewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -159,7 +159,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? DnsViewsForAnAccountDeleteInternalDnsViewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

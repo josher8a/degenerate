@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate_bound.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate_bound.dart';/// 
 @immutable final class ShippingRateDeliveryEstimate {const ShippingRateDeliveryEstimate({this.maximum, this.minimum, });
 
 factory ShippingRateDeliveryEstimate.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimate(

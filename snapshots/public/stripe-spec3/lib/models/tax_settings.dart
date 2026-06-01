@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_settings_defaults.dart';import 'tax_product_resource_tax_settings_head_office.dart';import 'tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_defaults.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_head_office.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxSettingsObject {const TaxSettingsObject._(this.value);
 
 factory TaxSettingsObject.fromJson(String json) { return switch (json) {

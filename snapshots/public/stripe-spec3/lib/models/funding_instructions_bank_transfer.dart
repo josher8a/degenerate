@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_financial_address.dart';/// The bank_transfer type
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_financial_address.dart';/// The bank_transfer type
 @immutable final class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType._(this.value);
 
 factory FundingInstructionsBankTransferType.fromJson(String json) { return switch (json) {

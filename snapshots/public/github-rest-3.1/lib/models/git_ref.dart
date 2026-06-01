@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_ref_object.dart';/// Git references within a repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_ref/git_ref_object.dart';/// Git references within a repository
 @immutable final class GitRef {const GitRef({required this.ref, required this.nodeId, required this.url, required this.object, });
 
 factory GitRef.fromJson(Map<String, dynamic> json) { return GitRef(

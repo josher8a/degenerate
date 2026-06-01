@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_schemas_paused.dart';import 'firewall_components_schemas_priority.dart';import 'firewall_deleted_filter.dart';import 'firewall_filter.dart';import 'firewall_filter_rule_response_filter.dart';import 'firewall_firewall_rules_components_schemas_description.dart';import 'firewall_firewall_rules_components_schemas_id.dart';import 'firewall_products2.dart';import 'firewall_ref.dart';import 'firewall_schemas_action.dart';@immutable final class FirewallFilterRuleResponse {const FirewallFilterRuleResponse({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, this.filter, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_paused.dart';import 'package:pub_cloudflare/models/firewall_components_schemas_priority.dart';import 'package:pub_cloudflare/models/firewall_deleted_filter.dart';import 'package:pub_cloudflare/models/firewall_filter.dart';import 'package:pub_cloudflare/models/firewall_filter_rule_response/filter.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_description.dart';import 'package:pub_cloudflare/models/firewall_firewall_rules_components_schemas_id.dart';import 'package:pub_cloudflare/models/firewall_products2.dart';import 'package:pub_cloudflare/models/firewall_ref.dart';import 'package:pub_cloudflare/models/firewall_schemas_action.dart';@immutable final class FirewallFilterRuleResponse {const FirewallFilterRuleResponse({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, this.filter, });
 
 factory FirewallFilterRuleResponse.fromJson(Map<String, dynamic> json) { return FirewallFilterRuleResponse(
   action: json['action'] != null ? FirewallSchemasAction.fromJson(json['action'] as String) : null,
@@ -29,7 +29,7 @@ final List<FirewallProducts2>? products;
 
 final FirewallRef? ref;
 
-final FirewallFilterRuleResponseFilter? filter;
+final Filter? filter;
 
 Map<String, dynamic> toJson() { return {
   if (action != null) 'action': action?.toJson(),
@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (filter != null) 'filter': filter?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'id', 'paused', 'priority', 'products', 'ref', 'filter'}.contains(key)); } 
-FirewallFilterRuleResponse copyWith({FirewallSchemasAction Function()? action, FirewallFirewallRulesComponentsSchemasDescription Function()? description, FirewallFirewallRulesComponentsSchemasId Function()? id, FirewallComponentsSchemasPaused Function()? paused, FirewallComponentsSchemasPriority Function()? priority, List<FirewallProducts2> Function()? products, FirewallRef Function()? ref, FirewallFilterRuleResponseFilter Function()? filter, }) { return FirewallFilterRuleResponse(
+FirewallFilterRuleResponse copyWith({FirewallSchemasAction Function()? action, FirewallFirewallRulesComponentsSchemasDescription Function()? description, FirewallFirewallRulesComponentsSchemasId Function()? id, FirewallComponentsSchemasPaused Function()? paused, FirewallComponentsSchemasPriority Function()? priority, List<FirewallProducts2> Function()? products, FirewallRef Function()? ref, Filter Function()? filter, }) { return FirewallFilterRuleResponse(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

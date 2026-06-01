@@ -1,80 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
-@immutable final class CodeScanningAlertRuleSummarySeverity {const CodeScanningAlertRuleSummarySeverity._(this.value);
-
-factory CodeScanningAlertRuleSummarySeverity.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'note' => note,
-  'warning' => warning,
-  'error' => error,
-  'null' => $null,
-  _ => CodeScanningAlertRuleSummarySeverity._(json),
-}; }
-
-static const CodeScanningAlertRuleSummarySeverity none = CodeScanningAlertRuleSummarySeverity._('none');
-
-static const CodeScanningAlertRuleSummarySeverity note = CodeScanningAlertRuleSummarySeverity._('note');
-
-static const CodeScanningAlertRuleSummarySeverity warning = CodeScanningAlertRuleSummarySeverity._('warning');
-
-static const CodeScanningAlertRuleSummarySeverity error = CodeScanningAlertRuleSummarySeverity._('error');
-
-static const CodeScanningAlertRuleSummarySeverity $null = CodeScanningAlertRuleSummarySeverity._('null');
-
-static const List<CodeScanningAlertRuleSummarySeverity> values = [none, note, warning, error, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertRuleSummarySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertRuleSummarySeverity($value)'; } 
- }
-/// The security severity of the alert.
-@immutable final class CodeScanningAlertRuleSummarySecuritySeverityLevel {const CodeScanningAlertRuleSummarySecuritySeverityLevel._(this.value);
-
-factory CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'medium' => medium,
-  'high' => high,
-  'critical' => critical,
-  'null' => $null,
-  _ => CodeScanningAlertRuleSummarySecuritySeverityLevel._(json),
-}; }
-
-static const CodeScanningAlertRuleSummarySecuritySeverityLevel low = CodeScanningAlertRuleSummarySecuritySeverityLevel._('low');
-
-static const CodeScanningAlertRuleSummarySecuritySeverityLevel medium = CodeScanningAlertRuleSummarySecuritySeverityLevel._('medium');
-
-static const CodeScanningAlertRuleSummarySecuritySeverityLevel high = CodeScanningAlertRuleSummarySecuritySeverityLevel._('high');
-
-static const CodeScanningAlertRuleSummarySecuritySeverityLevel critical = CodeScanningAlertRuleSummarySecuritySeverityLevel._('critical');
-
-static const CodeScanningAlertRuleSummarySecuritySeverityLevel $null = CodeScanningAlertRuleSummarySecuritySeverityLevel._('null');
-
-static const List<CodeScanningAlertRuleSummarySecuritySeverityLevel> values = [low, medium, high, critical, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertRuleSummarySecuritySeverityLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertRuleSummarySecuritySeverityLevel($value)'; } 
- }
-@immutable final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/code_scanning_alert_rule_severity.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_rule/security_severity_level.dart';@immutable final class CodeScanningAlertRuleSummary {const CodeScanningAlertRuleSummary({this.id, this.name, this.severity, this.securitySeverityLevel, this.description, this.fullDescription, this.tags, this.help, this.helpUri, });
 
 factory CodeScanningAlertRuleSummary.fromJson(Map<String, dynamic> json) { return CodeScanningAlertRuleSummary(
   id: json['id'] as String?,
   name: json['name'] as String?,
-  severity: json['severity'] != null ? CodeScanningAlertRuleSummarySeverity.fromJson(json['severity'] as String) : null,
-  securitySeverityLevel: json['security_severity_level'] != null ? CodeScanningAlertRuleSummarySecuritySeverityLevel.fromJson(json['security_severity_level'] as String) : null,
+  severity: json['severity'] != null ? CodeScanningAlertRuleSeverity.fromJson(json['severity'] as String) : null,
+  securitySeverityLevel: json['security_severity_level'] != null ? SecuritySeverityLevel.fromJson(json['security_severity_level'] as String) : null,
   description: json['description'] as String?,
   fullDescription: json['full_description'] as String?,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -89,10 +21,10 @@ final String? id;
 final String? name;
 
 /// The severity of the alert.
-final CodeScanningAlertRuleSummarySeverity? severity;
+final CodeScanningAlertRuleSeverity? severity;
 
 /// The security severity of the alert.
-final CodeScanningAlertRuleSummarySecuritySeverityLevel? securitySeverityLevel;
+final SecuritySeverityLevel? securitySeverityLevel;
 
 /// A short description of the rule used to detect the alert.
 final String? description;
@@ -121,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'help_uri': ?helpUri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'severity', 'security_severity_level', 'description', 'full_description', 'tags', 'help', 'help_uri'}.contains(key)); } 
-CodeScanningAlertRuleSummary copyWith({String? Function()? id, String Function()? name, CodeScanningAlertRuleSummarySeverity? Function()? severity, CodeScanningAlertRuleSummarySecuritySeverityLevel? Function()? securitySeverityLevel, String Function()? description, String Function()? fullDescription, List<String>? Function()? tags, String? Function()? help, String? Function()? helpUri, }) { return CodeScanningAlertRuleSummary(
+CodeScanningAlertRuleSummary copyWith({String? Function()? id, String Function()? name, CodeScanningAlertRuleSeverity? Function()? severity, SecuritySeverityLevel? Function()? securitySeverityLevel, String Function()? description, String Function()? fullDescription, List<String>? Function()? tags, String? Function()? help, String? Function()? helpUri, }) { return CodeScanningAlertRuleSummary(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   severity: severity != null ? severity() : this.severity,

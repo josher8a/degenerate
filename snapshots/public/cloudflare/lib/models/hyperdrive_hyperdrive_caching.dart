@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_caching_common.dart';import 'hyperdrive_hyperdrive_caching_enabled.dart';sealed class HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCaching();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching_common.dart';import 'package:pub_cloudflare/models/hyperdrive_hyperdrive_caching_enabled.dart';sealed class HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCaching();
 
 /// Deserialize from JSON, dispatching on the `disabled` discriminator.
 factory HyperdriveHyperdriveCaching.fromJson(Map<String, dynamic> json) { return switch (json['disabled']) {

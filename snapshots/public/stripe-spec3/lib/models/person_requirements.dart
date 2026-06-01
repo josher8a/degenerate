@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_requirements_alternative.dart';import 'package:pub_stripe_spec3/models/account_requirements_error.dart';/// 
 @immutable final class PersonRequirements {const PersonRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives, });
 
 factory PersonRequirements.fromJson(Map<String, dynamic> json) { return PersonRequirements(

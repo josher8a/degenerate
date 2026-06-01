@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_transaction_line_item_resource_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_transaction_line_item_resource_reversal.dart';import 'package:pub_stripe_spec3/models/tax_transaction_line_item/tax_transaction_line_item_type.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxTransactionLineItemObject {const TaxTransactionLineItemObject._(this.value);
 
 factory TaxTransactionLineItemObject.fromJson(String json) { return switch (json) {
@@ -22,56 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TaxTransactionLineItemObject($value)'; } 
  }
-/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-@immutable final class TaxTransactionLineItemTaxBehavior {const TaxTransactionLineItemTaxBehavior._(this.value);
-
-factory TaxTransactionLineItemTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  _ => TaxTransactionLineItemTaxBehavior._(json),
-}; }
-
-static const TaxTransactionLineItemTaxBehavior exclusive = TaxTransactionLineItemTaxBehavior._('exclusive');
-
-static const TaxTransactionLineItemTaxBehavior inclusive = TaxTransactionLineItemTaxBehavior._('inclusive');
-
-static const List<TaxTransactionLineItemTaxBehavior> values = [exclusive, inclusive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemTaxBehavior($value)'; } 
- }
-/// If `reversal`, this line item reverses an earlier transaction.
-@immutable final class TaxTransactionLineItemType {const TaxTransactionLineItemType._(this.value);
-
-factory TaxTransactionLineItemType.fromJson(String json) { return switch (json) {
-  'reversal' => reversal,
-  'transaction' => transaction,
-  _ => TaxTransactionLineItemType._(json),
-}; }
-
-static const TaxTransactionLineItemType reversal = TaxTransactionLineItemType._('reversal');
-
-static const TaxTransactionLineItemType transaction = TaxTransactionLineItemType._('transaction');
-
-static const List<TaxTransactionLineItemType> values = [reversal, transaction];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemType($value)'; } 
- }
 /// 
 @immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata, this.product, this.reversal, });
 
@@ -86,7 +36,7 @@ factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxT
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
   reversal: json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
-  taxBehavior: TaxTransactionLineItemTaxBehavior.fromJson(json['tax_behavior'] as String),
+  taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
 ); }
@@ -122,7 +72,7 @@ final String reference;
 final TaxProductResourceTaxTransactionLineItemResourceReversal? reversal;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final TaxTransactionLineItemTaxBehavior taxBehavior;
+final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// The [tax code](https://docs.stripe.com/tax/tax-categories) ID used for this resource.
 final String taxCode;
@@ -155,7 +105,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String &&
       json.containsKey('type'); } 
-TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, TaxTransactionLineItemTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
+TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,

@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'refund.dart';import 'terminal_reader_reader_resource_refund_payment_action_charge.dart';import 'terminal_reader_reader_resource_refund_payment_action_payment_intent.dart';import 'terminal_reader_reader_resource_refund_payment_action_refund.dart';import 'terminal_reader_reader_resource_refund_payment_config.dart';/// The reason for the refund.
-@immutable final class TerminalReaderReaderResourceRefundPaymentActionReason {const TerminalReaderReaderResourceRefundPaymentActionReason._(this.value);
-
-factory TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(String json) { return switch (json) {
-  'duplicate' => duplicate,
-  'fraudulent' => fraudulent,
-  'requested_by_customer' => requestedByCustomer,
-  _ => TerminalReaderReaderResourceRefundPaymentActionReason._(json),
-}; }
-
-static const TerminalReaderReaderResourceRefundPaymentActionReason duplicate = TerminalReaderReaderResourceRefundPaymentActionReason._('duplicate');
-
-static const TerminalReaderReaderResourceRefundPaymentActionReason fraudulent = TerminalReaderReaderResourceRefundPaymentActionReason._('fraudulent');
-
-static const TerminalReaderReaderResourceRefundPaymentActionReason requestedByCustomer = TerminalReaderReaderResourceRefundPaymentActionReason._('requested_by_customer');
-
-static const List<TerminalReaderReaderResourceRefundPaymentActionReason> values = [duplicate, fraudulent, requestedByCustomer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceRefundPaymentActionReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceRefundPaymentActionReason($value)'; } 
- }
-/// Represents a reader action to refund a payment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_charge.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_config.dart';/// Represents a reader action to refund a payment
 @immutable final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
 factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
@@ -36,7 +8,7 @@ factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dyn
   charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
-  reason: json['reason'] != null ? TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(json['reason'] as String) : null,
+  reason: json['reason'] != null ? PostChargesChargeRefundRequestReason.fromJson(json['reason'] as String) : null,
   refund: json['refund'] != null ? OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   refundPaymentConfig: json['refund_payment_config'] != null ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
@@ -47,19 +19,19 @@ factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dyn
 final int? amount;
 
 /// Charge that is being refunded.
-final TerminalReaderReaderResourceRefundPaymentActionCharge? charge;
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge? charge;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String>? metadata;
 
 /// Payment intent that is being refunded.
-final TerminalReaderReaderResourceRefundPaymentActionPaymentIntent? paymentIntent;
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent;
 
 /// The reason for the refund.
-final TerminalReaderReaderResourceRefundPaymentActionReason? reason;
+final PostChargesChargeRefundRequestReason? reason;
 
 /// Unique identifier for the refund object.
-final TerminalReaderReaderResourceRefundPaymentActionRefund? refund;
+final CreditNoteRefundRefund? refund;
 
 /// Boolean indicating whether the application fee should be refunded when refunding this charge. If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded. An application fee can be refunded only by the application that created the charge.
 final bool? refundApplicationFee;
@@ -81,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
-TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, TerminalReaderReaderResourceRefundPaymentActionCharge Function()? charge, Map<String, String> Function()? metadata, TerminalReaderReaderResourceRefundPaymentActionPaymentIntent Function()? paymentIntent, TerminalReaderReaderResourceRefundPaymentActionReason Function()? reason, TerminalReaderReaderResourceRefundPaymentActionRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
+TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge Function()? charge, Map<String, String> Function()? metadata, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, CreditNoteRefundRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   metadata: metadata != null ? metadata() : this.metadata,

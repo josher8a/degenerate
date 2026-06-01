@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'person_ethnicity_details.dart';import 'person_race_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/person_ethnicity_details.dart';import 'package:pub_stripe_spec3/models/person_race_details.dart';/// 
 @immutable final class PersonUsCfpbData {const PersonUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
 
 factory PersonUsCfpbData.fromJson(Map<String, dynamic> json) { return PersonUsCfpbData(

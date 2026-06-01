@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_uuid.dart';import 'builds_created_on.dart';@immutable final class BuildsInsertBuildResponse {const BuildsInsertBuildResponse({this.buildUuid, this.createdOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';@immutable final class BuildsInsertBuildResponse {const BuildsInsertBuildResponse({this.buildUuid, this.createdOn, });
 
 factory BuildsInsertBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsInsertBuildResponse(
   buildUuid: json['build_uuid'] != null ? BuildsBuildUuid.fromJson(json['build_uuid'] as String) : null,

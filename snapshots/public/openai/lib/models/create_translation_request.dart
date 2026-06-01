@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_translation_request_model.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_translation_request/create_translation_request_model.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 /// 
 @immutable final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
 

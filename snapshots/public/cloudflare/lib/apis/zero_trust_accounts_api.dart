@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_zero_trust_account_device_settings.dart';import '../models/zero_trust_gateway_gateway_account_config_result.dart';import '../models/zero_trust_gateway_gateway_account_logging_settings.dart';import '../models/zero_trust_gateway_gateway_account_result.dart';import '../models/zero_trust_gateway_gateway_account_settings.dart';import '../models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_zero_trust_account_device_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account/zero_trust_gateway_gateway_account_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_logging_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

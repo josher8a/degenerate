@@ -1,57 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
-@immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccountCountry {const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(this.value);
-
-factory PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(String json) { return switch (json) {
-  'BE' => be,
-  'DE' => de,
-  'ES' => es,
-  'FR' => fr,
-  'IE' => ie,
-  'NL' => nl,
-  _ => PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._(json),
-}; }
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry be = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('BE');
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry de = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('DE');
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry es = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('ES');
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry fr = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('FR');
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry ie = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('IE');
-
-static const PaymentMethodOptionsCustomerBalanceEuBankAccountCountry nl = PaymentMethodOptionsCustomerBalanceEuBankAccountCountry._('NL');
-
-static const List<PaymentMethodOptionsCustomerBalanceEuBankAccountCountry> values = [be, de, es, fr, ie, nl];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsCustomerBalanceEuBankAccountCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsCustomerBalanceEuBankAccountCountry($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_customer_balance_bank_transfer_eu_bank_transfer/invoice_payment_method_options_customer_balance_bank_transfer_eu_bank_transfer_country.dart';/// 
 @immutable final class PaymentMethodOptionsCustomerBalanceEuBankAccount {const PaymentMethodOptionsCustomerBalanceEuBankAccount({required this.country});
 
 factory PaymentMethodOptionsCustomerBalanceEuBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
-  country: PaymentMethodOptionsCustomerBalanceEuBankAccountCountry.fromJson(json['country'] as String),
+  country: InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry.fromJson(json['country'] as String),
 ); }
 
 /// The desired country code of the bank account information. Permitted values include: `DE`, `FR`, `IE`, or `NL`.
-final PaymentMethodOptionsCustomerBalanceEuBankAccountCountry country;
+final InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry country;
 
 Map<String, dynamic> toJson() { return {
   'country': country.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country'); } 
-PaymentMethodOptionsCustomerBalanceEuBankAccount copyWith({PaymentMethodOptionsCustomerBalanceEuBankAccountCountry? country}) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
+PaymentMethodOptionsCustomerBalanceEuBankAccount copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry? country}) { return PaymentMethodOptionsCustomerBalanceEuBankAccount(
   country: country ?? this.country,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

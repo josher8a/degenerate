@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_time_bucket.dart';@immutable final class UsageResponseObject {const UsageResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/usage_time_bucket.dart';@immutable final class UsageResponseObject {const UsageResponseObject._(this.value);
 
 factory UsageResponseObject.fromJson(String json) { return switch (json) {
   'page' => page,

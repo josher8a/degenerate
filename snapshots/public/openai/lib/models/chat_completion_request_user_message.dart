@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_audio.dart';import 'chat_completion_request_message_content_part_file.dart';import 'chat_completion_request_message_content_part_image.dart';import 'chat_completion_request_message_content_part_text.dart';import 'chat_completion_request_user_message_content.dart';/// Messages sent by an end user, containing prompts or additional context
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_audio.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_file.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';import 'package:pub_openai/models/chat_completion_request_user_message/chat_completion_request_user_message_content.dart';/// Messages sent by an end user, containing prompts or additional context
 /// information.
 /// 
 @immutable final class ChatCompletionRequestUserMessage {const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name, });

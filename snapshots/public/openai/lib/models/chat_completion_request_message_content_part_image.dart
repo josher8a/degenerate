@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_image_image_url.dart';/// The type of the content part.
-@immutable final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);
-
-factory ChatCompletionRequestMessageContentPartImageType.fromJson(String json) { return switch (json) {
-  'image_url' => imageUrl,
-  _ => ChatCompletionRequestMessageContentPartImageType._(json),
-}; }
-
-static const ChatCompletionRequestMessageContentPartImageType imageUrl = ChatCompletionRequestMessageContentPartImageType._('image_url');
-
-static const List<ChatCompletionRequestMessageContentPartImageType> values = [imageUrl];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartImageType($value)'; } 
- }
-/// Learn about [image inputs](/docs/guides/vision).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/chat_completion_request_message_content_part_image_image_url.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/chat_completion_request_message_content_part_image_type.dart';/// Learn about [image inputs](/docs/guides/vision).
 /// 
 @immutable final class ChatCompletionRequestMessageContentPartImage {const ChatCompletionRequestMessageContentPartImage({required this.type, required this.imageUrl, });
 

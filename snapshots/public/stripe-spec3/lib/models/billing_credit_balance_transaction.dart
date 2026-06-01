@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grant.dart';import 'billing_credit_grants_resource_balance_credit.dart';import 'billing_credit_grants_resource_balance_debit.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credit.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_debit.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
 
 factory BillingCreditBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -70,7 +70,7 @@ final int created;
 final BillingCreditGrantsResourceBalanceCredit? credit;
 
 /// The credit grant associated with this credit balance transaction.
-final BillingCreditBalanceTransactionCreditGrant creditGrant;
+final CreditGrant creditGrant;
 
 /// Debit details for this credit balance transaction. Only present if type is `debit`.
 final BillingCreditGrantsResourceBalanceDebit? debit;
@@ -88,7 +88,7 @@ final bool livemode;
 final BillingCreditBalanceTransactionObject object;
 
 /// ID of the test clock this credit balance transaction belongs to.
-final BillingCreditBalanceTransactionTestClock? testClock;
+final TestClock? testClock;
 
 /// The type of credit balance transaction (credit or debit).
 final BillingCreditBalanceTransactionType? type;
@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResourceBalanceCredit? Function()? credit, BillingCreditBalanceTransactionCreditGrant? creditGrant, BillingCreditGrantsResourceBalanceDebit? Function()? debit, int? effectiveAt, String? id, bool? livemode, BillingCreditBalanceTransactionObject? object, BillingCreditBalanceTransactionTestClock? Function()? testClock, BillingCreditBalanceTransactionType? Function()? type, }) { return BillingCreditBalanceTransaction(
+BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResourceBalanceCredit? Function()? credit, CreditGrant? creditGrant, BillingCreditGrantsResourceBalanceDebit? Function()? debit, int? effectiveAt, String? id, bool? livemode, BillingCreditBalanceTransactionObject? object, TestClock? Function()? testClock, BillingCreditBalanceTransactionType? Function()? type, }) { return BillingCreditBalanceTransaction(
   created: created ?? this.created,
   credit: credit != null ? credit() : this.credit,
   creditGrant: creditGrant ?? this.creditGrant,

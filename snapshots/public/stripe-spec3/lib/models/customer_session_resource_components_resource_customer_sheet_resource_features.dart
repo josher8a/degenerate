@@ -1,71 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
-
-factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'limited' => limited,
-  'unspecified' => unspecified,
-  _ => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._(json),
-}; }
-
-static const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters always = CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._('always');
-
-static const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters limited = CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._('limited');
-
-static const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters unspecified = CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._('unspecified');
-
-static const List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters> values = [always, limited, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
- }
-/// Controls whether the customer sheet displays the option to remove a saved payment method."
-/// 
-/// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._(this.value);
-
-factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
-  'disabled' => disabled,
-  'enabled' => enabled,
-  _ => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._(json),
-}; }
-
-static const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove disabled = CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._('disabled');
-
-static const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove enabled = CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._('enabled');
-
-static const List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove> values = [disabled, enabled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove($value)'; } 
- }
-/// This hash contains the features the customer sheet supports.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/customer_session_resource_components_resource_customer_sheet_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';/// This hash contains the features the customer sheet supports.
 @immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
 
 factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
-  paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
+  paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
   paymentMethodRemove: json['payment_method_remove'] != null ? CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null,
 ); }
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the customer sheet displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
 /// If not specified, defaults to `["always"]`. In order to display all saved payment methods, specify `["always", "limited", "unspecified"]`.
-final List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters;
+final List<PaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters;
 
 /// Controls whether the customer sheet displays the option to remove a saved payment method."
 /// 
@@ -77,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_remove'}.contains(key)); } 
-CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures copyWith({List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>? Function()? paymentMethodAllowRedisplayFilters, CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove? Function()? paymentMethodRemove, }) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
+CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures copyWith({List<PaymentMethodAllowRedisplayFilters>? Function()? paymentMethodAllowRedisplayFilters, CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove? Function()? paymentMethodRemove, }) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
   paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters != null ? paymentMethodAllowRedisplayFilters() : this.paymentMethodAllowRedisplayFilters,
   paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
 ); } 

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
-@immutable final class MigrationsStartForAuthenticatedUserRequestExclude {const MigrationsStartForAuthenticatedUserRequestExclude._(this.value);
-
-factory MigrationsStartForAuthenticatedUserRequestExclude.fromJson(String json) { return switch (json) {
-  'repositories' => repositories,
-  _ => MigrationsStartForAuthenticatedUserRequestExclude._(json),
-}; }
-
-static const MigrationsStartForAuthenticatedUserRequestExclude repositories = MigrationsStartForAuthenticatedUserRequestExclude._('repositories');
-
-static const List<MigrationsStartForAuthenticatedUserRequestExclude> values = [repositories];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MigrationsStartForAuthenticatedUserRequestExclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MigrationsStartForAuthenticatedUserRequestExclude($value)'; } 
- }
-@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly = false, this.exclude, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request/migrations_start_for_authenticated_user_request_exclude.dart';@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly = false, this.exclude, });
 
 factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: json['lock_repositories'] as bool?,

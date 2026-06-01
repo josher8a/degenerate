@@ -1,66 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Payment schedule for the mandate.
-@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
-  'combined' => combined,
-  'interval' => interval,
-  'sporadic' => sporadic,
-  _ => PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule combined = PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._('combined');
-
-static const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule interval = PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._('interval');
-
-static const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule sporadic = PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._('sporadic');
-
-static const List<PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule> values = [combined, interval, sporadic];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule($value)'; } 
- }
-/// Transaction type of the mandate.
-@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(String json) { return switch (json) {
-  'business' => business,
-  'personal' => personal,
-  _ => PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType business = PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._('business');
-
-static const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType personal = PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._('personal');
-
-static const List<PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType> values = [business, personal];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_mandate_options/checkout_acss_debit_mandate_options_payment_schedule.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_mandate_options/checkout_acss_debit_mandate_options_transaction_type.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: json['custom_mandate_url'] as String?,
   intervalDescription: json['interval_description'] as String?,
-  paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  transactionType: json['transaction_type'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(json['transaction_type'] as String) : null,
+  paymentSchedule: json['payment_schedule'] != null ? CheckoutAcssDebitMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
+  transactionType: json['transaction_type'] != null ? CheckoutAcssDebitMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,
 ); }
 
 /// A URL for custom mandate text
@@ -70,10 +17,10 @@ final String? customMandateUrl;
 final String? intervalDescription;
 
 /// Payment schedule for the mandate.
-final PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule? paymentSchedule;
+final CheckoutAcssDebitMandateOptionsPaymentSchedule? paymentSchedule;
 
 /// Transaction type of the mandate.
-final PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType? transactionType;
+final CheckoutAcssDebitMandateOptionsTransactionType? transactionType;
 
 Map<String, dynamic> toJson() { return {
   'custom_mandate_url': ?customMandateUrl,
@@ -82,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String Function()? customMandateUrl, String? Function()? intervalDescription, PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule? Function()? paymentSchedule, PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType? Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit(
+PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String Function()? customMandateUrl, String? Function()? intervalDescription, CheckoutAcssDebitMandateOptionsPaymentSchedule? Function()? paymentSchedule, CheckoutAcssDebitMandateOptionsTransactionType? Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
   paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,

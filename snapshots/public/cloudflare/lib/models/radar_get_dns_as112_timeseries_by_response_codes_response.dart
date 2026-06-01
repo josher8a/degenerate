@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_by_response_codes_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesByResponseCodesResponse {const RadarGetDnsAs112TimeseriesByResponseCodesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';@immutable final class RadarGetDnsAs112TimeseriesByResponseCodesResponse {const RadarGetDnsAs112TimeseriesByResponseCodesResponse({required this.result, required this.success, });
 
 factory RadarGetDnsAs112TimeseriesByResponseCodesResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByResponseCodesResponse(
-  result: RadarGetDnsAs112TimeseriesByResponseCodesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetDnsAs112TimeseriesByResponseCodesResponseResult result;
+final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsAs112TimeseriesByResponseCodesResponse copyWith({RadarGetDnsAs112TimeseriesByResponseCodesResponseResult? result, bool? success, }) { return RadarGetDnsAs112TimeseriesByResponseCodesResponse(
+RadarGetDnsAs112TimeseriesByResponseCodesResponse copyWith({RadarGetAiBotsSummaryByUserAgentResponseResult? result, bool? success, }) { return RadarGetDnsAs112TimeseriesByResponseCodesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

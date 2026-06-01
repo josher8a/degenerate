@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/local_object_reference.dart';/// Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
 @immutable final class CephFsVolumeSource {const CephFsVolumeSource({required this.monitors, this.path, this.readOnly, this.secretFile, this.secretRef, this.user, });
 
 factory CephFsVolumeSource.fromJson(Map<String, dynamic> json) { return CephFsVolumeSource(

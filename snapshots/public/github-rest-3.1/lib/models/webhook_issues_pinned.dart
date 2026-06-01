@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue2.dart';@immutable final class WebhookIssuesPinnedAction {const WebhookIssuesPinnedAction._(this.value);
-
-factory WebhookIssuesPinnedAction.fromJson(String json) { return switch (json) {
-  'pinned' => pinned,
-  _ => WebhookIssuesPinnedAction._(json),
-}; }
-
-static const WebhookIssuesPinnedAction pinned = WebhookIssuesPinnedAction._('pinned');
-
-static const List<WebhookIssuesPinnedAction> values = [pinned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesPinnedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesPinnedAction($value)'; } 
- }
-@immutable final class WebhookIssuesPinned {const WebhookIssuesPinned({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_pinned/webhook_discussion_pinned_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2.dart';@immutable final class WebhookIssuesPinned {const WebhookIssuesPinned({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesPinned.fromJson(Map<String, dynamic> json) { return WebhookIssuesPinned(
-  action: WebhookIssuesPinnedAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionPinnedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhooksIssue2.fromJson(json['issue'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookIssuesPinned.fromJson(Map<String, dynamic> json) { return Webhook
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssuesPinnedAction action;
+final WebhookDiscussionPinnedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesPinned copyWith({WebhookIssuesPinnedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesPinned(
+WebhookIssuesPinned copyWith({WebhookDiscussionPinnedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksIssue2? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesPinned(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

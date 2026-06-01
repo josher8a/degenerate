@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_labeled_region.dart';import 'observatory_lighthouse_report.dart';import 'observatory_schedule_frequency.dart';import 'observatory_timestamp.dart';import 'observatory_url.dart';/// UUID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_labeled_region.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report.dart';import 'package:pub_cloudflare/models/observatory_schedule_frequency.dart';import 'package:pub_cloudflare/models/observatory_timestamp.dart';import 'package:pub_cloudflare/models/observatory_url.dart';/// UUID.
 extension type const ObservatoryUuid(String value) {
 factory ObservatoryUuid.fromJson(String json) => ObservatoryUuid(json);
 

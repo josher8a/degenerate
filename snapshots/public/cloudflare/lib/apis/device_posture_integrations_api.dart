@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_posture_integrations_create_device_posture_integration_request.dart';import '../models/device_posture_integrations_update_device_posture_integration_request.dart';import '../models/teams_devices_device_posture_integrations.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DevicePostureIntegrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_posture_integrations_create_device_posture_integration_request.dart';import 'package:pub_cloudflare/models/device_posture_integrations_update_device_posture_integration_request.dart';import 'package:pub_cloudflare/models/teams_devices_device_posture_integrations.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';/// DevicePostureIntegrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

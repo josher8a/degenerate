@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_notes_pretax_credit_amount.dart';import 'discounts_resource_discount_amount.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item/credit_note_line_item_type.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CreditNoteLineItemObject {const CreditNoteLineItemObject._(this.value);
 
 factory CreditNoteLineItemObject.fromJson(String json) { return switch (json) {
@@ -21,31 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is CreditNoteLineItemObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreditNoteLineItemObject($value)'; } 
- }
-/// The type of the credit note line item, one of `invoice_line_item` or `custom_line_item`. When the type is `invoice_line_item` there is an additional `invoice_line_item` property on the resource the value of which is the id of the credited line item on the invoice.
-@immutable final class CreditNoteLineItemType {const CreditNoteLineItemType._(this.value);
-
-factory CreditNoteLineItemType.fromJson(String json) { return switch (json) {
-  'custom_line_item' => customLineItem,
-  'invoice_line_item' => invoiceLineItem,
-  _ => CreditNoteLineItemType._(json),
-}; }
-
-static const CreditNoteLineItemType customLineItem = CreditNoteLineItemType._('custom_line_item');
-
-static const CreditNoteLineItemType invoiceLineItem = CreditNoteLineItemType._('invoice_line_item');
-
-static const List<CreditNoteLineItemType> values = [customLineItem, invoiceLineItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteLineItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteLineItemType($value)'; } 
  }
 /// The credit note line item object
 @immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description, this.invoiceLineItem, this.quantity, this.taxes, this.unitAmount, this.unitAmountDecimal, });

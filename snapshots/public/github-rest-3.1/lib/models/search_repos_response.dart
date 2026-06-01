@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repo_search_result_item.dart';@immutable final class SearchReposResponse {const SearchReposResponse({required this.totalCount, required this.incompleteResults, required this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repo_search_result_item.dart';@immutable final class SearchReposResponse {const SearchReposResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
 factory SearchReposResponse.fromJson(Map<String, dynamic> json) { return SearchReposResponse(
   totalCount: (json['total_count'] as num).toInt(),

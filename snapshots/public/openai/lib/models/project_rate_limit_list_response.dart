@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_rate_limit.dart';@immutable final class ProjectRateLimitListResponseObject {const ProjectRateLimitListResponseObject._(this.value);
-
-factory ProjectRateLimitListResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ProjectRateLimitListResponseObject._(json),
-}; }
-
-static const ProjectRateLimitListResponseObject list = ProjectRateLimitListResponseObject._('list');
-
-static const List<ProjectRateLimitListResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectRateLimitListResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectRateLimitListResponseObject($value)'; } 
- }
-@immutable final class ProjectRateLimitListResponse {const ProjectRateLimitListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/project_rate_limit.dart';@immutable final class ProjectRateLimitListResponse {const ProjectRateLimitListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ProjectRateLimitListResponse.fromJson(Map<String, dynamic> json) { return ProjectRateLimitListResponse(
-  object: ProjectRateLimitListResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ProjectRateLimit.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
 ); }
 
-final ProjectRateLimitListResponseObject object;
+final ChatCompletionListObject object;
 
 final List<ProjectRateLimit> data;
 
@@ -53,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ProjectRateLimitListResponse copyWith({ProjectRateLimitListResponseObject? object, List<ProjectRateLimit>? data, String? firstId, String? lastId, bool? hasMore, }) { return ProjectRateLimitListResponse(
+ProjectRateLimitListResponse copyWith({ChatCompletionListObject? object, List<ProjectRateLimit>? data, String? firstId, String? lastId, bool? hasMore, }) { return ProjectRateLimitListResponse(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

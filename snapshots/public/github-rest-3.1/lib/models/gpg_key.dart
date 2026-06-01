@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_emails.dart';import 'gpg_key_subkeys.dart';/// A unique encryption key
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';import 'package:pub_github_rest_3_1/models/gpg_key/subkeys.dart';/// A unique encryption key
 @immutable final class GpgKey {const GpgKey({required this.id, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, this.name, });
 
 factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
@@ -10,7 +10,7 @@ factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
   keyId: json['key_id'] as String,
   publicKey: json['public_key'] as String,
   emails: (json['emails'] as List<dynamic>).map((e) => GpgKeyEmails.fromJson(e as Map<String, dynamic>)).toList(),
-  subkeys: (json['subkeys'] as List<dynamic>).map((e) => GpgKeySubkeys.fromJson(e as Map<String, dynamic>)).toList(),
+  subkeys: (json['subkeys'] as List<dynamic>).map((e) => Subkeys.fromJson(e as Map<String, dynamic>)).toList(),
   canSign: json['can_sign'] as bool,
   canEncryptComms: json['can_encrypt_comms'] as bool,
   canEncryptStorage: json['can_encrypt_storage'] as bool,
@@ -33,7 +33,7 @@ final String publicKey;
 
 final List<GpgKeyEmails> emails;
 
-final List<GpgKeySubkeys> subkeys;
+final List<Subkeys> subkeys;
 
 final bool canSign;
 
@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('expires_at') && json['expires_at'] is String &&
       json.containsKey('revoked') && json['revoked'] is bool &&
       json.containsKey('raw_key') && json['raw_key'] is String; } 
-GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyId, String? keyId, String? publicKey, List<GpgKeyEmails>? emails, List<GpgKeySubkeys>? subkeys, bool? canSign, bool? canEncryptComms, bool? canEncryptStorage, bool? canCertify, DateTime? createdAt, DateTime? Function()? expiresAt, bool? revoked, String? Function()? rawKey, }) { return GpgKey(
+GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyId, String? keyId, String? publicKey, List<GpgKeyEmails>? emails, List<Subkeys>? subkeys, bool? canSign, bool? canEncryptComms, bool? canEncryptStorage, bool? canCertify, DateTime? createdAt, DateTime? Function()? expiresAt, bool? revoked, String? Function()? rawKey, }) { return GpgKey(
   id: id ?? this.id,
   name: name != null ? name() : this.name,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,

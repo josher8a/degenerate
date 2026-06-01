@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the image input. Always `input_image`.
-/// 
-@immutable final class EvalItemInputImageType {const EvalItemInputImageType._(this.value);
-
-factory EvalItemInputImageType.fromJson(String json) { return switch (json) {
-  'input_image' => inputImage,
-  _ => EvalItemInputImageType._(json),
-}; }
-
-static const EvalItemInputImageType inputImage = EvalItemInputImageType._('input_image');
-
-static const List<EvalItemInputImageType> values = [inputImage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalItemInputImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalItemInputImageType($value)'; } 
- }
-/// An image input block used within EvalItem content arrays.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';/// An image input block used within EvalItem content arrays.
 @immutable final class EvalItemInputImage {const EvalItemInputImage({required this.type, required this.imageUrl, this.detail, });
 
 factory EvalItemInputImage.fromJson(Map<String, dynamic> json) { return EvalItemInputImage(

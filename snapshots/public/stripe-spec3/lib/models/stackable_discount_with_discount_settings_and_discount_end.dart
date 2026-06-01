@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'discount.dart';import 'promotion_code.dart';import 'stackable_discount_with_discount_settings_and_discount_end_coupon.dart';import 'stackable_discount_with_discount_settings_and_discount_end_discount.dart';import 'stackable_discount_with_discount_settings_and_discount_end_promotion_code.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/coupon.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discount_source/discount_source_coupon.dart';import 'package:pub_stripe_spec3/models/discounts_resource_stackable_discount_with_discount_end/discounts_resource_stackable_discount_with_discount_end_discount.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// 
 @immutable final class StackableDiscountWithDiscountSettingsAndDiscountEnd {const StackableDiscountWithDiscountSettingsAndDiscountEnd({this.coupon, this.discount, this.promotionCode, });
 
 factory StackableDiscountWithDiscountSettingsAndDiscountEnd.fromJson(Map<String, dynamic> json) { return StackableDiscountWithDiscountSettingsAndDiscountEnd(
@@ -10,13 +10,13 @@ factory StackableDiscountWithDiscountSettingsAndDiscountEnd.fromJson(Map<String,
 ); }
 
 /// ID of the coupon to create a new discount for.
-final StackableDiscountWithDiscountSettingsAndDiscountEndCoupon? coupon;
+final DiscountSourceCoupon? coupon;
 
 /// ID of an existing discount on the object (or one of its ancestors) to reuse.
-final StackableDiscountWithDiscountSettingsAndDiscountEndDiscount? discount;
+final DiscountsResourceStackableDiscountWithDiscountEndDiscount? discount;
 
 /// ID of the promotion code to create a new discount for.
-final StackableDiscountWithDiscountSettingsAndDiscountEndPromotionCode? promotionCode;
+final DeletedDiscountPromotionCode? promotionCode;
 
 Map<String, dynamic> toJson() { return {
   if (coupon != null) 'coupon': coupon?.toJson(),
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'discount', 'promotion_code'}.contains(key)); } 
-StackableDiscountWithDiscountSettingsAndDiscountEnd copyWith({StackableDiscountWithDiscountSettingsAndDiscountEndCoupon? Function()? coupon, StackableDiscountWithDiscountSettingsAndDiscountEndDiscount? Function()? discount, StackableDiscountWithDiscountSettingsAndDiscountEndPromotionCode? Function()? promotionCode, }) { return StackableDiscountWithDiscountSettingsAndDiscountEnd(
+StackableDiscountWithDiscountSettingsAndDiscountEnd copyWith({DiscountSourceCoupon? Function()? coupon, DiscountsResourceStackableDiscountWithDiscountEndDiscount? Function()? discount, DeletedDiscountPromotionCode? Function()? promotionCode, }) { return StackableDiscountWithDiscountSettingsAndDiscountEnd(
   coupon: coupon != null ? coupon() : this.coupon,
   discount: discount != null ? discount() : this.discount,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,

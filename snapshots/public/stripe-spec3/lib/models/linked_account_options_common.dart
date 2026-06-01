@@ -1,79 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_financial_connections_common_linked_account_options_filters.dart';@immutable final class LinkedAccountOptionsCommonPermissions {const LinkedAccountOptionsCommonPermissions._(this.value);
-
-factory LinkedAccountOptionsCommonPermissions.fromJson(String json) { return switch (json) {
-  'balances' => balances,
-  'ownership' => ownership,
-  'payment_method' => paymentMethod,
-  'transactions' => transactions,
-  _ => LinkedAccountOptionsCommonPermissions._(json),
-}; }
-
-static const LinkedAccountOptionsCommonPermissions balances = LinkedAccountOptionsCommonPermissions._('balances');
-
-static const LinkedAccountOptionsCommonPermissions ownership = LinkedAccountOptionsCommonPermissions._('ownership');
-
-static const LinkedAccountOptionsCommonPermissions paymentMethod = LinkedAccountOptionsCommonPermissions._('payment_method');
-
-static const LinkedAccountOptionsCommonPermissions transactions = LinkedAccountOptionsCommonPermissions._('transactions');
-
-static const List<LinkedAccountOptionsCommonPermissions> values = [balances, ownership, paymentMethod, transactions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LinkedAccountOptionsCommonPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LinkedAccountOptionsCommonPermissions($value)'; } 
- }
-@immutable final class LinkedAccountOptionsCommonPrefetch {const LinkedAccountOptionsCommonPrefetch._(this.value);
-
-factory LinkedAccountOptionsCommonPrefetch.fromJson(String json) { return switch (json) {
-  'balances' => balances,
-  'ownership' => ownership,
-  'transactions' => transactions,
-  _ => LinkedAccountOptionsCommonPrefetch._(json),
-}; }
-
-static const LinkedAccountOptionsCommonPrefetch balances = LinkedAccountOptionsCommonPrefetch._('balances');
-
-static const LinkedAccountOptionsCommonPrefetch ownership = LinkedAccountOptionsCommonPrefetch._('ownership');
-
-static const LinkedAccountOptionsCommonPrefetch transactions = LinkedAccountOptionsCommonPrefetch._('transactions');
-
-static const List<LinkedAccountOptionsCommonPrefetch> values = [balances, ownership, transactions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LinkedAccountOptionsCommonPrefetch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LinkedAccountOptionsCommonPrefetch($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_financial_connections_common_linked_account_options_filters.dart';/// 
 @immutable final class LinkedAccountOptionsCommon {const LinkedAccountOptionsCommon({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory LinkedAccountOptionsCommon.fromJson(Map<String, dynamic> json) { return LinkedAccountOptionsCommon(
   filters: json['filters'] != null ? PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
-  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => LinkedAccountOptionsCommonPermissions.fromJson(e as String)).toList(),
-  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => LinkedAccountOptionsCommonPrefetch.fromJson(e as String)).toList(),
+  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
+  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => Prefetch.fromJson(e as String)).toList(),
   returnUrl: json['return_url'] as String?,
 ); }
 
 final PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters? filters;
 
 /// The list of permissions to request. The `payment_method` permission must be included.
-final List<LinkedAccountOptionsCommonPermissions>? permissions;
+final List<FinancialConnectionsAccountPermissions>? permissions;
 
 /// Data features requested to be retrieved upon account creation.
-final List<LinkedAccountOptionsCommonPrefetch>? prefetch;
+final List<Prefetch>? prefetch;
 
 /// For webview integrations only. Upon completing OAuth login in the native browser, the user will be redirected to this URL to return to your app.
 final String? returnUrl;
@@ -85,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch', 'return_url'}.contains(key)); } 
-LinkedAccountOptionsCommon copyWith({PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters Function()? filters, List<LinkedAccountOptionsCommonPermissions> Function()? permissions, List<LinkedAccountOptionsCommonPrefetch>? Function()? prefetch, String Function()? returnUrl, }) { return LinkedAccountOptionsCommon(
+LinkedAccountOptionsCommon copyWith({PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters Function()? filters, List<FinancialConnectionsAccountPermissions> Function()? permissions, List<Prefetch>? Function()? prefetch, String Function()? returnUrl, }) { return LinkedAccountOptionsCommon(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RangeQuerySpecs {const RangeQuerySpecs({this.gt, this.gte, this.lt, this.lte, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class range_query_specs {const range_query_specs({this.gt, this.gte, this.lt, this.lte, });
 
-factory RangeQuerySpecs.fromJson(Map<String, dynamic> json) { return RangeQuerySpecs(
+factory range_query_specs.fromJson(Map<String, dynamic> json) { return range_query_specs(
   gt: json['gt'] != null ? (json['gt'] as num).toInt() : null,
   gte: json['gte'] != null ? (json['gte'] as num).toInt() : null,
   lt: json['lt'] != null ? (json['lt'] as num).toInt() : null,
@@ -24,18 +24,18 @@ Map<String, dynamic> toJson() { return {
   'lte': ?lte,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key)); } 
-RangeQuerySpecs copyWith({int Function()? gt, int Function()? gte, int Function()? lt, int Function()? lte, }) { return RangeQuerySpecs(
+range_query_specs copyWith({int Function()? gt, int Function()? gte, int Function()? lt, int Function()? lte, }) { return range_query_specs(
   gt: gt != null ? gt() : this.gt,
   gte: gte != null ? gte() : this.gte,
   lt: lt != null ? lt() : this.lt,
   lte: lte != null ? lte() : this.lte,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is RangeQuerySpecs &&
+      other is range_query_specs &&
           gt == other.gt &&
           gte == other.gte &&
           lt == other.lt &&
           lte == other.lte; } 
 @override int get hashCode { return Object.hash(gt, gte, lt, lte); } 
-@override String toString() { return 'RangeQuerySpecs(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
+@override String toString() { return 'range_query_specs(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
  }

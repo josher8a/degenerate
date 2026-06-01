@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import '../models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import '../models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_visibility_pcaps_identifier.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response_result.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_request.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import '../models/magic_visibility_pcaps_pcaps_request_pcap.dart';import '../models/magic_visibility_pcaps_pcaps_response_full.dart';import '../models/magic_visibility_pcaps_pcaps_response_simple.dart';import '../models/magic_visibility_pcaps_pcaps_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_single_response_result.dart';import '../models/response_common47.dart';import '../models/response_common47_result.dart';import '../models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import 'package:pub_cloudflare/models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_identifier.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_collection_response.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_collection_response/magic_visibility_pcaps_pcaps_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_response.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_request_pcap.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_response_full.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_response_simple.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_single_response.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/response_common47.dart';import 'package:pub_cloudflare/models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -38,7 +38,7 @@ return execute(
 /// Create new PCAP request for account.
 ///
 /// `POST /accounts/{account_id}/pcaps`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult?, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsCollectionResponseResult?, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ return execute(
 /// Get information for a PCAP request by id.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult?, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsCollectionResponseResult?, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -156,7 +156,7 @@ return execute(
 /// Adds an AWS or GCP bucket to use with full packet captures.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<ResponseCommon47Result, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -202,7 +202,7 @@ return execute(
 /// Validates buckets added to the packet captures API.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership/validate`
-Future<ApiResult<ResponseCommon47Result, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

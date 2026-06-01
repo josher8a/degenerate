@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_key_name_bulk.dart';/// Whether to parse JSON values in the response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_key_name_bulk.dart';/// Whether to parse JSON values in the response.
 @immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(this.value);
 
 factory WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(String json) { return switch (json) {

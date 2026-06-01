@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/avatar_update.dart';import '../models/message.dart';import '../models/public_user_schema.dart';import '../models/user_upload_profile_image_request.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/avatar_update.dart';import 'package:pub_totem_web/models/message.dart';import 'package:pub_totem_web/models/public_user_schema.dart';import 'package:pub_totem_web/models/user_upload_profile_image_request.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

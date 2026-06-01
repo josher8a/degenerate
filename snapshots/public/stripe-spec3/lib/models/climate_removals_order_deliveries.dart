@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_removals_location.dart';import 'climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_removals_location.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
 @immutable final class ClimateRemovalsOrderDeliveries {const ClimateRemovalsOrderDeliveries({required this.deliveredAt, required this.metricTons, required this.supplier, this.location, this.registryUrl, });
 
 factory ClimateRemovalsOrderDeliveries.fromJson(Map<String, dynamic> json) { return ClimateRemovalsOrderDeliveries(

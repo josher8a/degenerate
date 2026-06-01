@@ -1,40 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'simple_user.dart';/// The permission associated with the invitation.
-@immutable final class RepositoryInvitationPermissions {const RepositoryInvitationPermissions._(this.value);
-
-factory RepositoryInvitationPermissions.fromJson(String json) { return switch (json) {
-  'read' => read,
-  'write' => write,
-  'admin' => admin,
-  'triage' => triage,
-  'maintain' => maintain,
-  _ => RepositoryInvitationPermissions._(json),
-}; }
-
-static const RepositoryInvitationPermissions read = RepositoryInvitationPermissions._('read');
-
-static const RepositoryInvitationPermissions write = RepositoryInvitationPermissions._('write');
-
-static const RepositoryInvitationPermissions admin = RepositoryInvitationPermissions._('admin');
-
-static const RepositoryInvitationPermissions triage = RepositoryInvitationPermissions._('triage');
-
-static const RepositoryInvitationPermissions maintain = RepositoryInvitationPermissions._('maintain');
-
-static const List<RepositoryInvitationPermissions> values = [read, write, admin, triage, maintain];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryInvitationPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryInvitationPermissions($value)'; } 
- }
-/// Repository invitations let you manage who you collaborate with.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/repos_update_invitation_request/repos_update_invitation_request_permissions.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Repository invitations let you manage who you collaborate with.
 @immutable final class RepositoryInvitation {const RepositoryInvitation({required this.id, required this.repository, required this.invitee, required this.inviter, required this.permissions, required this.createdAt, required this.url, required this.htmlUrl, required this.nodeId, this.expired, });
 
 factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return RepositoryInvitation(
@@ -42,7 +8,7 @@ factory RepositoryInvitation.fromJson(Map<String, dynamic> json) { return Reposi
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   invitee: json['invitee'] != null ? SimpleUser.fromJson(json['invitee'] as Map<String, dynamic>) : null,
   inviter: json['inviter'] != null ? SimpleUser.fromJson(json['inviter'] as Map<String, dynamic>) : null,
-  permissions: RepositoryInvitationPermissions.fromJson(json['permissions'] as String),
+  permissions: ReposUpdateInvitationRequestPermissions.fromJson(json['permissions'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   expired: json['expired'] as bool?,
   url: json['url'] as String,
@@ -60,7 +26,7 @@ final SimpleUser? invitee;
 final SimpleUser? inviter;
 
 /// The permission associated with the invitation.
-final RepositoryInvitationPermissions permissions;
+final ReposUpdateInvitationRequestPermissions permissions;
 
 final DateTime createdAt;
 
@@ -95,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, RepositoryInvitationPermissions? permissions, DateTime? createdAt, bool Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
+RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, ReposUpdateInvitationRequestPermissions? permissions, DateTime? createdAt, bool Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   invitee: invitee != null ? invitee() : this.invitee,

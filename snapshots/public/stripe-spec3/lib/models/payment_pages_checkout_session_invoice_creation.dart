@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_invoice_settings.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_invoice_settings.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionInvoiceCreation {const PaymentPagesCheckoutSessionInvoiceCreation({required this.enabled, required this.invoiceData, });
 
 factory PaymentPagesCheckoutSessionInvoiceCreation.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionInvoiceCreation(

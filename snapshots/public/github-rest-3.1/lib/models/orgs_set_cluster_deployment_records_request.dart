@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_set_cluster_deployment_records_request_deployments.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequest {const OrgsSetClusterDeploymentRecordsRequest({required this.logicalEnvironment, required this.deployments, this.physicalEnvironment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_set_cluster_deployment_records_request/orgs_set_cluster_deployment_records_request_deployments.dart';@immutable final class OrgsSetClusterDeploymentRecordsRequest {const OrgsSetClusterDeploymentRecordsRequest({required this.logicalEnvironment, required this.deployments, this.physicalEnvironment, });
 
 factory OrgsSetClusterDeploymentRecordsRequest.fromJson(Map<String, dynamic> json) { return OrgsSetClusterDeploymentRecordsRequest(
   logicalEnvironment: json['logical_environment'] as String,

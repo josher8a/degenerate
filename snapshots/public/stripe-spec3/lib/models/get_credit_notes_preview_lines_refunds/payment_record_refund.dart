@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentRecordRefund {const PaymentRecordRefund({required this.paymentRecord, required this.refundGroup, });
+
+factory PaymentRecordRefund.fromJson(Map<String, dynamic> json) { return PaymentRecordRefund(
+  paymentRecord: json['payment_record'] as String,
+  refundGroup: json['refund_group'] as String,
+); }
+
+final String paymentRecord;
+
+final String refundGroup;
+
+Map<String, dynamic> toJson() { return {
+  'payment_record': paymentRecord,
+  'refund_group': refundGroup,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_record') && json['payment_record'] is String &&
+      json.containsKey('refund_group') && json['refund_group'] is String; } 
+PaymentRecordRefund copyWith({String? paymentRecord, String? refundGroup, }) { return PaymentRecordRefund(
+  paymentRecord: paymentRecord ?? this.paymentRecord,
+  refundGroup: refundGroup ?? this.refundGroup,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentRecordRefund &&
+          paymentRecord == other.paymentRecord &&
+          refundGroup == other.refundGroup; } 
+@override int get hashCode { return Object.hash(paymentRecord, refundGroup); } 
+@override String toString() { return 'PaymentRecordRefund(paymentRecord: $paymentRecord, refundGroup: $refundGroup)'; } 
+ }

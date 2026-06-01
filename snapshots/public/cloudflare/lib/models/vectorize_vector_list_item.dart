@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeVectorListItem {const VectorizeVectorListItem({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeVectorListItem {const VectorizeVectorListItem({required this.id});
 
 factory VectorizeVectorListItem.fromJson(Map<String, dynamic> json) { return VectorizeVectorListItem(
   id: VectorizeVectorIdentifier.fromJson(json['id'] as String),

@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RuleMatches {const RuleMatches({this.banning, this.blocking, this.description, this.name, });
+
+factory RuleMatches.fromJson(Map<String, dynamic> json) { return RuleMatches(
+  banning: json['banning'] as bool?,
+  blocking: json['blocking'] as bool?,
+  description: json['description'] as String?,
+  name: json['name'] as String?,
+); }
+
+/// For internal use.
+final bool? banning;
+
+/// For internal use.
+final bool? blocking;
+
+/// Description of the signature that matched.
+final String? description;
+
+/// Name of the signature that matched.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'banning': ?banning,
+  'blocking': ?blocking,
+  'description': ?description,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'banning', 'blocking', 'description', 'name'}.contains(key)); } 
+RuleMatches copyWith({bool Function()? banning, bool Function()? blocking, String Function()? description, String Function()? name, }) { return RuleMatches(
+  banning: banning != null ? banning() : this.banning,
+  blocking: blocking != null ? blocking() : this.blocking,
+  description: description != null ? description() : this.description,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RuleMatches &&
+          banning == other.banning &&
+          blocking == other.blocking &&
+          description == other.description &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(banning, blocking, description, name); } 
+@override String toString() { return 'RuleMatches(banning: $banning, blocking: $blocking, description: $description, name: $name)'; } 
+ }

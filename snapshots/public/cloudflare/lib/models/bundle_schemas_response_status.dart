@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_schemas_status.dart';@immutable final class BundleSchemasResponseStatus {const BundleSchemasResponseStatus({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_schemas_status.dart';@immutable final class BundleSchemasResponseStatus {const BundleSchemasResponseStatus({this.result});
 
 factory BundleSchemasResponseStatus.fromJson(Map<String, dynamic> json) { return BundleSchemasResponseStatus(
   result: json['result'] != null ? BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,55 +1,55 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_event_configure_cloudflared_tunnel.dart';import 'mconn_event_finish_attestation_failure.dart';import 'mconn_event_finish_attestation_success.dart';import 'mconn_event_finish_rotate_crypt_key_failure.dart';import 'mconn_event_finish_rotate_crypt_key_success.dart';import 'mconn_event_finish_rotate_pki_failure.dart';import 'mconn_event_finish_rotate_pki_success.dart';import 'mconn_event_finish_upgrade_failure.dart';import 'mconn_event_finish_upgrade_success.dart';import 'mconn_event_init.dart';import 'mconn_event_leave.dart';import 'mconn_event_reconcile.dart';import 'mconn_event_start_attestation.dart';import 'mconn_event_start_rotate_crypt_key.dart';import 'mconn_event_start_rotate_pki.dart';import 'mconn_event_start_upgrade.dart';/// A value that is one of: `MconnEventInit`, `MconnEventLeave`, `MconnEventStartAttestation`, `MconnEventFinishAttestationSuccess`, `MconnEventFinishAttestationFailure`, `MconnEventStartRotateCryptKey`, `MconnEventFinishRotateCryptKeySuccess`, `MconnEventFinishRotateCryptKeyFailure`, `MconnEventStartRotatePki`, `MconnEventFinishRotatePkiSuccess`, `MconnEventFinishRotatePkiFailure`, `MconnEventStartUpgrade`, `MconnEventFinishUpgradeSuccess`, `MconnEventFinishUpgradeFailure`, `MconnEventReconcile`, `MconnEventConfigureCloudflaredTunnel`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_event/configure_cloudflared_tunnel.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_attestation_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_crypt_key_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_rotate_pki_success.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_failure.dart';import 'package:pub_cloudflare/models/mconn_event/finish_upgrade_success.dart';import 'package:pub_cloudflare/models/mconn_event/init.dart';import 'package:pub_cloudflare/models/mconn_event/leave.dart';import 'package:pub_cloudflare/models/mconn_event/reconcile.dart';import 'package:pub_cloudflare/models/mconn_event/start_attestation.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_crypt_key.dart';import 'package:pub_cloudflare/models/mconn_event/start_rotate_pki.dart';import 'package:pub_cloudflare/models/mconn_event/start_upgrade.dart';/// A value that is one of: `Init`, `Leave`, `StartAttestation`, `FinishAttestationSuccess`, `FinishAttestationFailure`, `StartRotateCryptKey`, `FinishRotateCryptKeySuccess`, `FinishRotateCryptKeyFailure`, `StartRotatePki`, `FinishRotatePkiSuccess`, `FinishRotatePkiFailure`, `StartUpgrade`, `FinishUpgradeSuccess`, `FinishUpgradeFailure`, `Reconcile`, `ConfigureCloudflaredTunnel`.
 sealed class MconnEvent {const MconnEvent();
 
-factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.canParse(json)) {
-    return MconnEventMconnEventInit(MconnEventInit.fromJson(json));
+factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (Init.canParse(json)) {
+    return MconnEventInit(Init.fromJson(json));
   }
-  if (MconnEventLeave.canParse(json)) {
-    return MconnEventMconnEventLeave(MconnEventLeave.fromJson(json));
+  if (Leave.canParse(json)) {
+    return MconnEventLeave(Leave.fromJson(json));
   }
-  if (MconnEventStartAttestation.canParse(json)) {
-    return MconnEventMconnEventStartAttestation(MconnEventStartAttestation.fromJson(json));
+  if (StartAttestation.canParse(json)) {
+    return MconnEventStartAttestation(StartAttestation.fromJson(json));
   }
-  if (MconnEventFinishAttestationSuccess.canParse(json)) {
-    return MconnEventMconnEventFinishAttestationSuccess(MconnEventFinishAttestationSuccess.fromJson(json));
+  if (FinishAttestationSuccess.canParse(json)) {
+    return MconnEventFinishAttestationSuccess(FinishAttestationSuccess.fromJson(json));
   }
-  if (MconnEventFinishAttestationFailure.canParse(json)) {
-    return MconnEventMconnEventFinishAttestationFailure(MconnEventFinishAttestationFailure.fromJson(json));
+  if (FinishAttestationFailure.canParse(json)) {
+    return MconnEventFinishAttestationFailure(FinishAttestationFailure.fromJson(json));
   }
-  if (MconnEventStartRotateCryptKey.canParse(json)) {
-    return MconnEventMconnEventStartRotateCryptKey(MconnEventStartRotateCryptKey.fromJson(json));
+  if (StartRotateCryptKey.canParse(json)) {
+    return MconnEventStartRotateCryptKey(StartRotateCryptKey.fromJson(json));
   }
-  if (MconnEventFinishRotateCryptKeySuccess.canParse(json)) {
-    return MconnEventMconnEventFinishRotateCryptKeySuccess(MconnEventFinishRotateCryptKeySuccess.fromJson(json));
+  if (FinishRotateCryptKeySuccess.canParse(json)) {
+    return MconnEventFinishRotateCryptKeySuccess(FinishRotateCryptKeySuccess.fromJson(json));
   }
-  if (MconnEventFinishRotateCryptKeyFailure.canParse(json)) {
-    return MconnEventMconnEventFinishRotateCryptKeyFailure(MconnEventFinishRotateCryptKeyFailure.fromJson(json));
+  if (FinishRotateCryptKeyFailure.canParse(json)) {
+    return MconnEventFinishRotateCryptKeyFailure(FinishRotateCryptKeyFailure.fromJson(json));
   }
-  if (MconnEventStartRotatePki.canParse(json)) {
-    return MconnEventMconnEventStartRotatePki(MconnEventStartRotatePki.fromJson(json));
+  if (StartRotatePki.canParse(json)) {
+    return MconnEventStartRotatePki(StartRotatePki.fromJson(json));
   }
-  if (MconnEventFinishRotatePkiSuccess.canParse(json)) {
-    return MconnEventMconnEventFinishRotatePkiSuccess(MconnEventFinishRotatePkiSuccess.fromJson(json));
+  if (FinishRotatePkiSuccess.canParse(json)) {
+    return MconnEventFinishRotatePkiSuccess(FinishRotatePkiSuccess.fromJson(json));
   }
-  if (MconnEventFinishRotatePkiFailure.canParse(json)) {
-    return MconnEventMconnEventFinishRotatePkiFailure(MconnEventFinishRotatePkiFailure.fromJson(json));
+  if (FinishRotatePkiFailure.canParse(json)) {
+    return MconnEventFinishRotatePkiFailure(FinishRotatePkiFailure.fromJson(json));
   }
-  if (MconnEventStartUpgrade.canParse(json)) {
-    return MconnEventMconnEventStartUpgrade(MconnEventStartUpgrade.fromJson(json));
+  if (StartUpgrade.canParse(json)) {
+    return MconnEventStartUpgrade(StartUpgrade.fromJson(json));
   }
-  if (MconnEventFinishUpgradeSuccess.canParse(json)) {
-    return MconnEventMconnEventFinishUpgradeSuccess(MconnEventFinishUpgradeSuccess.fromJson(json));
+  if (FinishUpgradeSuccess.canParse(json)) {
+    return MconnEventFinishUpgradeSuccess(FinishUpgradeSuccess.fromJson(json));
   }
-  if (MconnEventFinishUpgradeFailure.canParse(json)) {
-    return MconnEventMconnEventFinishUpgradeFailure(MconnEventFinishUpgradeFailure.fromJson(json));
+  if (FinishUpgradeFailure.canParse(json)) {
+    return MconnEventFinishUpgradeFailure(FinishUpgradeFailure.fromJson(json));
   }
-  if (MconnEventReconcile.canParse(json)) {
-    return MconnEventMconnEventReconcile(MconnEventReconcile.fromJson(json));
+  if (Reconcile.canParse(json)) {
+    return MconnEventReconcile(Reconcile.fromJson(json));
   }
-  if (MconnEventConfigureCloudflaredTunnel.canParse(json)) {
-    return MconnEventMconnEventConfigureCloudflaredTunnel(MconnEventConfigureCloudflaredTunnel.fromJson(json));
+  if (ConfigureCloudflaredTunnel.canParse(json)) {
+    return MconnEventConfigureCloudflaredTunnel(ConfigureCloudflaredTunnel.fromJson(json));
   }
   return MconnEvent$Unknown(json); }
 
@@ -57,165 +57,165 @@ factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.ca
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class MconnEventMconnEventInit extends MconnEvent {const MconnEventMconnEventInit(this._value);
+@immutable final class MconnEventInit extends MconnEvent {const MconnEventInit(this._value);
 
-final MconnEventInit _value;
+final Init _value;
 
-@override MconnEventInit get value { return _value; } 
+@override Init get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventInit && _value == other._value; } 
+    other is MconnEventInit && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventInit($_value)'; } 
+@override String toString() { return 'MconnEvent.init($_value)'; } 
  }
-@immutable final class MconnEventMconnEventLeave extends MconnEvent {const MconnEventMconnEventLeave(this._value);
+@immutable final class MconnEventLeave extends MconnEvent {const MconnEventLeave(this._value);
 
-final MconnEventLeave _value;
+final Leave _value;
 
-@override MconnEventLeave get value { return _value; } 
+@override Leave get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventLeave && _value == other._value; } 
+    other is MconnEventLeave && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventLeave($_value)'; } 
+@override String toString() { return 'MconnEvent.leave($_value)'; } 
  }
-@immutable final class MconnEventMconnEventStartAttestation extends MconnEvent {const MconnEventMconnEventStartAttestation(this._value);
+@immutable final class MconnEventStartAttestation extends MconnEvent {const MconnEventStartAttestation(this._value);
 
-final MconnEventStartAttestation _value;
+final StartAttestation _value;
 
-@override MconnEventStartAttestation get value { return _value; } 
+@override StartAttestation get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventStartAttestation && _value == other._value; } 
+    other is MconnEventStartAttestation && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventStartAttestation($_value)'; } 
+@override String toString() { return 'MconnEvent.startAttestation($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishAttestationSuccess extends MconnEvent {const MconnEventMconnEventFinishAttestationSuccess(this._value);
+@immutable final class MconnEventFinishAttestationSuccess extends MconnEvent {const MconnEventFinishAttestationSuccess(this._value);
 
-final MconnEventFinishAttestationSuccess _value;
+final FinishAttestationSuccess _value;
 
-@override MconnEventFinishAttestationSuccess get value { return _value; } 
+@override FinishAttestationSuccess get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishAttestationSuccess && _value == other._value; } 
+    other is MconnEventFinishAttestationSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishAttestationSuccess($_value)'; } 
+@override String toString() { return 'MconnEvent.finishAttestationSuccess($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishAttestationFailure extends MconnEvent {const MconnEventMconnEventFinishAttestationFailure(this._value);
+@immutable final class MconnEventFinishAttestationFailure extends MconnEvent {const MconnEventFinishAttestationFailure(this._value);
 
-final MconnEventFinishAttestationFailure _value;
+final FinishAttestationFailure _value;
 
-@override MconnEventFinishAttestationFailure get value { return _value; } 
+@override FinishAttestationFailure get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishAttestationFailure && _value == other._value; } 
+    other is MconnEventFinishAttestationFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishAttestationFailure($_value)'; } 
+@override String toString() { return 'MconnEvent.finishAttestationFailure($_value)'; } 
  }
-@immutable final class MconnEventMconnEventStartRotateCryptKey extends MconnEvent {const MconnEventMconnEventStartRotateCryptKey(this._value);
+@immutable final class MconnEventStartRotateCryptKey extends MconnEvent {const MconnEventStartRotateCryptKey(this._value);
 
-final MconnEventStartRotateCryptKey _value;
+final StartRotateCryptKey _value;
 
-@override MconnEventStartRotateCryptKey get value { return _value; } 
+@override StartRotateCryptKey get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventStartRotateCryptKey && _value == other._value; } 
+    other is MconnEventStartRotateCryptKey && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventStartRotateCryptKey($_value)'; } 
+@override String toString() { return 'MconnEvent.startRotateCryptKey($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishRotateCryptKeySuccess extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeySuccess(this._value);
+@immutable final class MconnEventFinishRotateCryptKeySuccess extends MconnEvent {const MconnEventFinishRotateCryptKeySuccess(this._value);
 
-final MconnEventFinishRotateCryptKeySuccess _value;
+final FinishRotateCryptKeySuccess _value;
 
-@override MconnEventFinishRotateCryptKeySuccess get value { return _value; } 
+@override FinishRotateCryptKeySuccess get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishRotateCryptKeySuccess && _value == other._value; } 
+    other is MconnEventFinishRotateCryptKeySuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishRotateCryptKeySuccess($_value)'; } 
+@override String toString() { return 'MconnEvent.finishRotateCryptKeySuccess($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishRotateCryptKeyFailure extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeyFailure(this._value);
+@immutable final class MconnEventFinishRotateCryptKeyFailure extends MconnEvent {const MconnEventFinishRotateCryptKeyFailure(this._value);
 
-final MconnEventFinishRotateCryptKeyFailure _value;
+final FinishRotateCryptKeyFailure _value;
 
-@override MconnEventFinishRotateCryptKeyFailure get value { return _value; } 
+@override FinishRotateCryptKeyFailure get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishRotateCryptKeyFailure && _value == other._value; } 
+    other is MconnEventFinishRotateCryptKeyFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishRotateCryptKeyFailure($_value)'; } 
+@override String toString() { return 'MconnEvent.finishRotateCryptKeyFailure($_value)'; } 
  }
-@immutable final class MconnEventMconnEventStartRotatePki extends MconnEvent {const MconnEventMconnEventStartRotatePki(this._value);
+@immutable final class MconnEventStartRotatePki extends MconnEvent {const MconnEventStartRotatePki(this._value);
 
-final MconnEventStartRotatePki _value;
+final StartRotatePki _value;
 
-@override MconnEventStartRotatePki get value { return _value; } 
+@override StartRotatePki get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventStartRotatePki && _value == other._value; } 
+    other is MconnEventStartRotatePki && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventStartRotatePki($_value)'; } 
+@override String toString() { return 'MconnEvent.startRotatePki($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishRotatePkiSuccess extends MconnEvent {const MconnEventMconnEventFinishRotatePkiSuccess(this._value);
+@immutable final class MconnEventFinishRotatePkiSuccess extends MconnEvent {const MconnEventFinishRotatePkiSuccess(this._value);
 
-final MconnEventFinishRotatePkiSuccess _value;
+final FinishRotatePkiSuccess _value;
 
-@override MconnEventFinishRotatePkiSuccess get value { return _value; } 
+@override FinishRotatePkiSuccess get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishRotatePkiSuccess && _value == other._value; } 
+    other is MconnEventFinishRotatePkiSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishRotatePkiSuccess($_value)'; } 
+@override String toString() { return 'MconnEvent.finishRotatePkiSuccess($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishRotatePkiFailure extends MconnEvent {const MconnEventMconnEventFinishRotatePkiFailure(this._value);
+@immutable final class MconnEventFinishRotatePkiFailure extends MconnEvent {const MconnEventFinishRotatePkiFailure(this._value);
 
-final MconnEventFinishRotatePkiFailure _value;
+final FinishRotatePkiFailure _value;
 
-@override MconnEventFinishRotatePkiFailure get value { return _value; } 
+@override FinishRotatePkiFailure get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishRotatePkiFailure && _value == other._value; } 
+    other is MconnEventFinishRotatePkiFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishRotatePkiFailure($_value)'; } 
+@override String toString() { return 'MconnEvent.finishRotatePkiFailure($_value)'; } 
  }
-@immutable final class MconnEventMconnEventStartUpgrade extends MconnEvent {const MconnEventMconnEventStartUpgrade(this._value);
+@immutable final class MconnEventStartUpgrade extends MconnEvent {const MconnEventStartUpgrade(this._value);
 
-final MconnEventStartUpgrade _value;
+final StartUpgrade _value;
 
-@override MconnEventStartUpgrade get value { return _value; } 
+@override StartUpgrade get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventStartUpgrade && _value == other._value; } 
+    other is MconnEventStartUpgrade && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventStartUpgrade($_value)'; } 
+@override String toString() { return 'MconnEvent.startUpgrade($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishUpgradeSuccess extends MconnEvent {const MconnEventMconnEventFinishUpgradeSuccess(this._value);
+@immutable final class MconnEventFinishUpgradeSuccess extends MconnEvent {const MconnEventFinishUpgradeSuccess(this._value);
 
-final MconnEventFinishUpgradeSuccess _value;
+final FinishUpgradeSuccess _value;
 
-@override MconnEventFinishUpgradeSuccess get value { return _value; } 
+@override FinishUpgradeSuccess get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishUpgradeSuccess && _value == other._value; } 
+    other is MconnEventFinishUpgradeSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishUpgradeSuccess($_value)'; } 
+@override String toString() { return 'MconnEvent.finishUpgradeSuccess($_value)'; } 
  }
-@immutable final class MconnEventMconnEventFinishUpgradeFailure extends MconnEvent {const MconnEventMconnEventFinishUpgradeFailure(this._value);
+@immutable final class MconnEventFinishUpgradeFailure extends MconnEvent {const MconnEventFinishUpgradeFailure(this._value);
 
-final MconnEventFinishUpgradeFailure _value;
+final FinishUpgradeFailure _value;
 
-@override MconnEventFinishUpgradeFailure get value { return _value; } 
+@override FinishUpgradeFailure get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventFinishUpgradeFailure && _value == other._value; } 
+    other is MconnEventFinishUpgradeFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventFinishUpgradeFailure($_value)'; } 
+@override String toString() { return 'MconnEvent.finishUpgradeFailure($_value)'; } 
  }
-@immutable final class MconnEventMconnEventReconcile extends MconnEvent {const MconnEventMconnEventReconcile(this._value);
+@immutable final class MconnEventReconcile extends MconnEvent {const MconnEventReconcile(this._value);
 
-final MconnEventReconcile _value;
+final Reconcile _value;
 
-@override MconnEventReconcile get value { return _value; } 
+@override Reconcile get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventReconcile && _value == other._value; } 
+    other is MconnEventReconcile && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventReconcile($_value)'; } 
+@override String toString() { return 'MconnEvent.reconcile($_value)'; } 
  }
-@immutable final class MconnEventMconnEventConfigureCloudflaredTunnel extends MconnEvent {const MconnEventMconnEventConfigureCloudflaredTunnel(this._value);
+@immutable final class MconnEventConfigureCloudflaredTunnel extends MconnEvent {const MconnEventConfigureCloudflaredTunnel(this._value);
 
-final MconnEventConfigureCloudflaredTunnel _value;
+final ConfigureCloudflaredTunnel _value;
 
-@override MconnEventConfigureCloudflaredTunnel get value { return _value; } 
+@override ConfigureCloudflaredTunnel get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MconnEventMconnEventConfigureCloudflaredTunnel && _value == other._value; } 
+    other is MconnEventConfigureCloudflaredTunnel && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'MconnEvent.mconnEventConfigureCloudflaredTunnel($_value)'; } 
+@override String toString() { return 'MconnEvent.configureCloudflaredTunnel($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class MconnEvent$Unknown extends MconnEvent {const MconnEvent$Unknown(this._value);

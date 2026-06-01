@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_price.dart';import 'price.dart';import 'stackable_discount_with_discount_settings.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_schedule_configuration_item_price.dart';import 'tax_rate.dart';/// A phase item describes the price and quantity of a phase.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_price.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings.dart';import 'package:pub_stripe_spec3/models/subscription_item_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item/subscription_schedule_add_invoice_item_price.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// A phase item describes the price and quantity of a phase.
 @immutable final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({required this.discounts, required this.price, this.billingThresholds, this.metadata, this.quantity, this.taxRates, });
 
 factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleConfigurationItem(
@@ -22,7 +22,7 @@ final List<StackableDiscountWithDiscountSettings> discounts;
 final Map<String,String>? metadata;
 
 /// ID of the price to which the customer should be subscribed.
-final SubscriptionScheduleConfigurationItemPrice price;
+final SubscriptionScheduleAddInvoiceItemPrice price;
 
 /// Quantity of the plan to which the customer should be subscribed.
 final int? quantity;
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('discounts') &&
       json.containsKey('price'); } 
-SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleConfigurationItemPrice? price, int Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
+SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleAddInvoiceItemPrice? price, int Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts ?? this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,

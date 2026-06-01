@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_device_posture_rule_device_posture.dart';/// Enforces a device posture rule has run successfully
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_device_posture_rule/device_posture.dart';/// Enforces a device posture rule has run successfully
 @immutable final class AccessDevicePostureRule {const AccessDevicePostureRule({required this.devicePosture});
 
 factory AccessDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessDevicePostureRule(
-  devicePosture: AccessDevicePostureRuleDevicePosture.fromJson(json['device_posture'] as Map<String, dynamic>),
+  devicePosture: DevicePosture.fromJson(json['device_posture'] as Map<String, dynamic>),
 ); }
 
-final AccessDevicePostureRuleDevicePosture devicePosture;
+final DevicePosture devicePosture;
 
 Map<String, dynamic> toJson() { return {
   'device_posture': devicePosture.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('device_posture'); } 
-AccessDevicePostureRule copyWith({AccessDevicePostureRuleDevicePosture? devicePosture}) { return AccessDevicePostureRule(
+AccessDevicePostureRule copyWith({DevicePosture? devicePosture}) { return AccessDevicePostureRule(
   devicePosture: devicePosture ?? this.devicePosture,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

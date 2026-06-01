@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_limit.dart';import 'rate_limit_overview_resources.dart';/// Rate Limit Overview
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rate_limit.dart';import 'package:pub_github_rest_3_1/models/rate_limit_overview/resources.dart';/// Rate Limit Overview
 @immutable final class RateLimitOverview {const RateLimitOverview({required this.resources, required this.rate, });
 
 factory RateLimitOverview.fromJson(Map<String, dynamic> json) { return RateLimitOverview(
-  resources: RateLimitOverviewResources.fromJson(json['resources'] as Map<String, dynamic>),
+  resources: Resources.fromJson(json['resources'] as Map<String, dynamic>),
   rate: RateLimit.fromJson(json['rate'] as Map<String, dynamic>),
 ); }
 
-final RateLimitOverviewResources resources;
+final Resources resources;
 
 final RateLimit rate;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources') &&
       json.containsKey('rate'); } 
-RateLimitOverview copyWith({RateLimitOverviewResources? resources, RateLimit? rate, }) { return RateLimitOverview(
+RateLimitOverview copyWith({Resources? resources, RateLimit? rate, }) { return RateLimitOverview(
   resources: resources ?? this.resources,
   rate: rate ?? this.rate,
 ); } 

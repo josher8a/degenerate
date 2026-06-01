@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-@immutable final class PostTerminalRefundsRequestReason {const PostTerminalRefundsRequestReason._(this.value);
-
-factory PostTerminalRefundsRequestReason.fromJson(String json) { return switch (json) {
-  'duplicate' => duplicate,
-  'fraudulent' => fraudulent,
-  'requested_by_customer' => requestedByCustomer,
-  _ => PostTerminalRefundsRequestReason._(json),
-}; }
-
-static const PostTerminalRefundsRequestReason duplicate = PostTerminalRefundsRequestReason._('duplicate');
-
-static const PostTerminalRefundsRequestReason fraudulent = PostTerminalRefundsRequestReason._('fraudulent');
-
-static const PostTerminalRefundsRequestReason requestedByCustomer = PostTerminalRefundsRequestReason._('requested_by_customer');
-
-static const List<PostTerminalRefundsRequestReason> values = [duplicate, fraudulent, requestedByCustomer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalRefundsRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalRefundsRequestReason($value)'; } 
- }
-@immutable final class PostTerminalRefundsRequest {const PostTerminalRefundsRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';@immutable final class PostTerminalRefundsRequest {const PostTerminalRefundsRequest({this.amount, this.charge, this.expand, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
 factory PostTerminalRefundsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
@@ -36,7 +8,7 @@ factory PostTerminalRefundsRequest.fromJson(Map<String, dynamic> json) { return 
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentIntent: json['payment_intent'] as String?,
-  reason: json['reason'] != null ? PostTerminalRefundsRequestReason.fromJson(json['reason'] as String) : null,
+  reason: json['reason'] != null ? PostChargesChargeRefundRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   reverseTransfer: json['reverse_transfer'] as bool?,
 ); }
@@ -57,7 +29,7 @@ final Map<String,String>? metadata;
 final String? paymentIntent;
 
 /// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-final PostTerminalRefundsRequestReason? reason;
+final PostChargesChargeRefundRequestReason? reason;
 
 /// Boolean indicating whether the application fee should be refunded when refunding this charge. If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded. An application fee can be refunded only by the application that created the charge.
 final bool? refundApplicationFee;
@@ -76,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostTerminalRefundsRequest copyWith({int Function()? amount, String Function()? charge, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? paymentIntent, PostTerminalRefundsRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(
+PostTerminalRefundsRequest copyWith({int Function()? amount, String Function()? charge, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   expand: expand != null ? expand() : this.expand,

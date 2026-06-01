@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_modified_at_nullable.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_modified_at_nullable.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingSchemasAdvertised(bool value) {
 factory AddressingSchemasAdvertised.fromJson(bool json) => AddressingSchemasAdvertised(json);
 

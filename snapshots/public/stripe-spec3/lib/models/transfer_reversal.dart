@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'refund.dart';import 'transfer.dart';import 'transfer_reversal_balance_transaction.dart';import 'transfer_reversal_destination_payment_refund.dart';import 'transfer_reversal_source_refund.dart';import 'transfer_reversal_transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferReversalObject {const TransferReversalObject._(this.value);
 
 factory TransferReversalObject.fromJson(String json) { return switch (json) {
@@ -54,7 +54,7 @@ factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferRe
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final TransferReversalBalanceTransaction? balanceTransaction;
+final FeeRefundBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -63,7 +63,7 @@ final int created;
 final String currency;
 
 /// Linked payment refund for the transfer reversal.
-final TransferReversalDestinationPaymentRefund? destinationPaymentRefund;
+final DestinationPaymentRefund? destinationPaymentRefund;
 
 /// Unique identifier for the object.
 final String id;
@@ -75,10 +75,10 @@ final Map<String,String>? metadata;
 final TransferReversalObject object;
 
 /// ID of the refund responsible for the transfer reversal.
-final TransferReversalSourceRefund? sourceRefund;
+final SourceRefund? sourceRefund;
 
 /// ID of the transfer that was reversed.
-final TransferReversalTransfer transfer;
+final ChargeTransfer transfer;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('transfer'); } 
-TransferReversal copyWith({int? amount, TransferReversalBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, TransferReversalDestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, TransferReversalSourceRefund? Function()? sourceRefund, TransferReversalTransfer? transfer, }) { return TransferReversal(
+TransferReversal copyWith({int? amount, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, DestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, SourceRefund? Function()? sourceRefund, ChargeTransfer? transfer, }) { return TransferReversal(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   created: created ?? this.created,

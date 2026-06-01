@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_disconnect.dart';/// When the Global WARP override state was updated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_disconnect.dart';/// When the Global WARP override state was updated.
 extension type TeamsDevicesTimestamp(DateTime value) {
 factory TeamsDevicesTimestamp.fromJson(String json) => TeamsDevicesTimestamp(DateTime.parse(json));
 

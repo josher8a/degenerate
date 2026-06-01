@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'revolut_pay_underlying_payment_method_funding_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/revolut_pay_underlying_payment_method_funding_details.dart';/// 
 @immutable final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId, });
 
 factory PaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsRevolutPay(

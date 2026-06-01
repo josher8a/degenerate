@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_file_links.dart';@immutable final class ContentFileType {const ContentFileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentFileType {const ContentFileType._(this.value);
 
 factory ContentFileType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -36,7 +36,7 @@ factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
   gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
-  links: ContentFileLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
   target: json['target'] as String?,
   submoduleGitUrl: json['submodule_git_url'] as String?,
 ); }
@@ -63,7 +63,7 @@ final Uri? htmlUrl;
 
 final Uri? downloadUrl;
 
-final ContentFileLinks links;
+final ContentDirectoryLinks links;
 
 final String? target;
 
@@ -97,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentFileLinks? links, String Function()? target, String Function()? submoduleGitUrl, }) { return ContentFile(
+ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String Function()? target, String Function()? submoduleGitUrl, }) { return ContentFile(
   type: type ?? this.type,
   encoding: encoding ?? this.encoding,
   size: size ?? this.size,

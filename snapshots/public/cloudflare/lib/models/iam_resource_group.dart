@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_resource_group_meta.dart';import 'iam_scope.dart';/// A group of scoped resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group/iam_permission_group_meta.dart';import 'package:pub_cloudflare/models/iam_scope.dart';/// A group of scoped resources.
 @immutable final class IamResourceGroup {const IamResourceGroup({required this.id, required this.scope, this.meta, this.name, });
 
 factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourceGroup(
   id: json['id'] as String,
-  meta: json['meta'] != null ? IamResourceGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
+  meta: json['meta'] != null ? IamPermissionGroupMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   scope: (json['scope'] as List<dynamic>).map((e) => IamScope.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -14,7 +14,7 @@ factory IamResourceGroup.fromJson(Map<String, dynamic> json) { return IamResourc
 final String id;
 
 /// Attributes associated to the resource group.
-final IamResourceGroupMeta? meta;
+final IamPermissionGroupMeta? meta;
 
 /// Name of the resource group.
 final String? name;
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('scope'); } 
-IamResourceGroup copyWith({String? id, IamResourceGroupMeta Function()? meta, String Function()? name, List<IamScope>? scope, }) { return IamResourceGroup(
+IamResourceGroup copyWith({String? id, IamPermissionGroupMeta Function()? meta, String Function()? name, List<IamScope>? scope, }) { return IamResourceGroup(
   id: id ?? this.id,
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,

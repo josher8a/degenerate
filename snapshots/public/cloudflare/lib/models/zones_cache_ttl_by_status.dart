@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_ttl_by_status_value_value.dart';/// Enterprise customers can set cache time-to-live (TTL) based on the
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';/// Enterprise customers can set cache time-to-live (TTL) based on the
 /// response status from the origin web server. Cache TTL refers to the
 /// duration of a resource in the Cloudflare network before being
 /// marked as stale or discarded from cache. Status codes are returned
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) { return ZonesCacheTtlByStatus(
   id: json['id'] != null ? ZonesCacheTtlByStatusId.fromJson(json['id'] as String) : null,
-  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ZonesCacheTtlByStatusValueValueVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),))),
+  value: (json['value'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ValueVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),))),
 ); }
 
 /// Enterprise customers can set cache time-to-live (TTL) based on the
@@ -67,14 +67,14 @@ final ZonesCacheTtlByStatusId? id;
 ///   valid in seconds or one of the following strings: no-store
 ///   (equivalent to -1), no-cache (equivalent to 0).
 /// 
-final Map<String,ZonesCacheTtlByStatusValueValue>? value;
+final Map<String,ValueValue>? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId Function()? id, Map<String, ZonesCacheTtlByStatusValueValue> Function()? value, }) { return ZonesCacheTtlByStatus(
+ZonesCacheTtlByStatus copyWith({ZonesCacheTtlByStatusId Function()? id, Map<String, ValueValue> Function()? value, }) { return ZonesCacheTtlByStatus(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

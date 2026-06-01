@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_details_percentiles_response.dart';@immutable final class DexEndpointsTracerouteTestPercentilesResponse {const DexEndpointsTracerouteTestPercentilesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_details_percentiles_response.dart';@immutable final class DexEndpointsTracerouteTestPercentilesResponse {const DexEndpointsTracerouteTestPercentilesResponse({this.result});
 
 factory DexEndpointsTracerouteTestPercentilesResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsTracerouteTestPercentilesResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

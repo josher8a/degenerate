@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stop_livestreaming_response_data.dart';@immutable final class StopLivestreamingResponse {const StopLivestreamingResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stop_livestreaming_response/stop_livestreaming_response_data.dart';@immutable final class StopLivestreamingResponse {const StopLivestreamingResponse({this.data, this.success, });
 
 factory StopLivestreamingResponse.fromJson(Map<String, dynamic> json) { return StopLivestreamingResponse(
   data: json['data'] != null ? StopLivestreamingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

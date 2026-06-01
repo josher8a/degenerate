@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zones0_hold_delete_response_result.dart';import '../models/zones0_hold_get_response_result.dart';import '../models/zones0_hold_patch_request.dart';import '../models/zones0_hold_patch_response_result.dart';import '../models/zones0_hold_post_response_result.dart';import '../models/zones_schemas_identifier.dart';/// ZoneHoldsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones0_hold_delete_response/zones0_hold_delete_response_result.dart';import 'package:pub_cloudflare/models/zones0_hold_patch_request.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// ZoneHoldsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneHoldsApi with ApiExecutor {const ZoneHoldsApi(this.apiConfig);
 /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
 ///
 /// `GET /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldGetResponseResult?, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Zones0HoldDeleteResponseResult?, Never>> zones0HoldGet({required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldGetResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -35,7 +35,7 @@ return execute(
 /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname.
 ///
 /// `POST /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldPostResponseResult?, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Zones0HoldDeleteResponseResult?, Never>> zones0HoldPost({required ZonesSchemasIdentifier zoneId, bool? includeSubdomains, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeSubdomains != null) {
   queryParameters['include_subdomains'] = includeSubdomains.toString();
@@ -56,7 +56,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldPostResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -66,7 +66,7 @@ return execute(
 /// The hold is enabled if the `hold_after` date-time value is in the past.
 ///
 /// `PATCH /zones/{zone_id}/hold`
-Future<ApiResult<Zones0HoldPatchResponseResult?, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Zones0HoldDeleteResponseResult?, Never>> zones0HoldPatch({required ZonesSchemasIdentifier zoneId, required Zones0HoldPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -81,7 +81,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? Zones0HoldPatchResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? Zones0HoldDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

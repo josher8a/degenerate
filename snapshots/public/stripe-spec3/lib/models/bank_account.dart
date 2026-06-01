@@ -1,52 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'external_account_requirements.dart';@immutable final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
-
-factory BankAccountAvailablePayoutMethods.fromJson(String json) { return switch (json) {
-  'instant' => instant,
-  'standard' => standard,
-  _ => BankAccountAvailablePayoutMethods._(json),
-}; }
-
-static const BankAccountAvailablePayoutMethods instant = BankAccountAvailablePayoutMethods._('instant');
-
-static const BankAccountAvailablePayoutMethods standard = BankAccountAvailablePayoutMethods._('standard');
-
-static const List<BankAccountAvailablePayoutMethods> values = [instant, standard];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankAccountAvailablePayoutMethods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankAccountAvailablePayoutMethods($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BankAccountObject {const BankAccountObject._(this.value);
-
-factory BankAccountObject.fromJson(String json) { return switch (json) {
-  'bank_account' => bankAccount,
-  _ => BankAccountObject._(json),
-}; }
-
-static const BankAccountObject bankAccount = BankAccountObject._('bank_account');
-
-static const List<BankAccountObject> values = [bankAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankAccountObject($value)'; } 
- }
-/// These bank accounts are payment methods on `Customer` objects.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/bank_account/available_payout_methods.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_account.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/external_account_requirements.dart';/// These bank accounts are payment methods on `Customer` objects.
 /// 
 /// On the other hand [External Accounts](/api#external_accounts) are transfer
 /// destinations on `Account` objects for connected accounts.
@@ -60,7 +14,7 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] as String?,
   accountType: json['account_type'] as String?,
-  availablePayoutMethods: (json['available_payout_methods'] as List<dynamic>?)?.map((e) => BankAccountAvailablePayoutMethods.fromJson(e as String)).toList(),
+  availablePayoutMethods: (json['available_payout_methods'] as List<dynamic>?)?.map((e) => AvailablePayoutMethods.fromJson(e as String)).toList(),
   bankName: json['bank_name'] as String?,
   country: json['country'] as String,
   currency: json['currency'] as String,
@@ -90,7 +44,7 @@ final String? accountHolderType;
 final String? accountType;
 
 /// A set of available payout methods for this bank account. Only values from this set should be passed as the `method` when creating a payout.
-final List<BankAccountAvailablePayoutMethods>? availablePayoutMethods;
+final List<AvailablePayoutMethods>? availablePayoutMethods;
 
 /// Name of the bank associated with the routing number (e.g., `WELLS FARGO`).
 final String? bankName;
@@ -163,7 +117,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String; } 
-BankAccount copyWith({BankAccountAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<BankAccountAvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
+BankAccount copyWith({BankAccountAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
   account: account != null ? account() : this.account,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

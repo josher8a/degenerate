@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class PaymentMethodOptionsKonbiniSetupFutureUsage {const PaymentMethodOptionsKonbiniSetupFutureUsage._(this.value);
-
-factory PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  _ => PaymentMethodOptionsKonbiniSetupFutureUsage._(json),
-}; }
-
-static const PaymentMethodOptionsKonbiniSetupFutureUsage none = PaymentMethodOptionsKonbiniSetupFutureUsage._('none');
-
-static const List<PaymentMethodOptionsKonbiniSetupFutureUsage> values = [none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsKonbiniSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsKonbiniSetupFutureUsage($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// 
 @immutable final class PaymentMethodOptionsKonbini {const PaymentMethodOptionsKonbini({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKonbini(
@@ -36,7 +8,7 @@ factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return
   expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   productDescription: json['product_description'] as String?,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// An optional 10 to 11 digit numeric-only string determining the confirmation code at applicable convenience stores.
@@ -58,7 +30,7 @@ final String? productDescription;
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final PaymentMethodOptionsKonbiniSetupFutureUsage? setupFutureUsage;
+final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   'confirmation_number': ?confirmationNumber,
@@ -68,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsKonbini copyWith({String? Function()? confirmationNumber, int? Function()? expiresAfterDays, int? Function()? expiresAt, String? Function()? productDescription, PaymentMethodOptionsKonbiniSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
+PaymentMethodOptionsKonbini copyWith({String? Function()? confirmationNumber, int? Function()? expiresAfterDays, int? Function()? expiresAt, String? Function()? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

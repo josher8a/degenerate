@@ -1,65 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'gelato_data_verified_outputs_date.dart';/// The user's verified id number type.
-@immutable final class GelatoVerifiedOutputsIdNumberType {const GelatoVerifiedOutputsIdNumberType._(this.value);
-
-factory GelatoVerifiedOutputsIdNumberType.fromJson(String json) { return switch (json) {
-  'br_cpf' => brCpf,
-  'sg_nric' => sgNric,
-  'us_ssn' => usSsn,
-  _ => GelatoVerifiedOutputsIdNumberType._(json),
-}; }
-
-static const GelatoVerifiedOutputsIdNumberType brCpf = GelatoVerifiedOutputsIdNumberType._('br_cpf');
-
-static const GelatoVerifiedOutputsIdNumberType sgNric = GelatoVerifiedOutputsIdNumberType._('sg_nric');
-
-static const GelatoVerifiedOutputsIdNumberType usSsn = GelatoVerifiedOutputsIdNumberType._('us_ssn');
-
-static const List<GelatoVerifiedOutputsIdNumberType> values = [brCpf, sgNric, usSsn];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoVerifiedOutputsIdNumberType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoVerifiedOutputsIdNumberType($value)'; } 
- }
-/// The user's verified sex.
-@immutable final class GelatoVerifiedOutputsSex {const GelatoVerifiedOutputsSex._(this.value);
-
-factory GelatoVerifiedOutputsSex.fromJson(String json) { return switch (json) {
-  '[redacted]' => redacted,
-  'female' => female,
-  'male' => male,
-  'unknown' => unknown,
-  _ => GelatoVerifiedOutputsSex._(json),
-}; }
-
-static const GelatoVerifiedOutputsSex redacted = GelatoVerifiedOutputsSex._('[redacted]');
-
-static const GelatoVerifiedOutputsSex female = GelatoVerifiedOutputsSex._('female');
-
-static const GelatoVerifiedOutputsSex male = GelatoVerifiedOutputsSex._('male');
-
-static const GelatoVerifiedOutputsSex unknown = GelatoVerifiedOutputsSex._('unknown');
-
-static const List<GelatoVerifiedOutputsSex> values = [redacted, female, male, unknown];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoVerifiedOutputsSex && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoVerifiedOutputsSex($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_verified_outputs_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report/id_number_type.dart';/// 
 @immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
@@ -68,10 +9,10 @@ factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return Gelat
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   idNumber: json['id_number'] as String?,
-  idNumberType: json['id_number_type'] != null ? GelatoVerifiedOutputsIdNumberType.fromJson(json['id_number_type'] as String) : null,
+  idNumberType: json['id_number_type'] != null ? IdNumberType.fromJson(json['id_number_type'] as String) : null,
   lastName: json['last_name'] as String?,
   phone: json['phone'] as String?,
-  sex: json['sex'] != null ? GelatoVerifiedOutputsSex.fromJson(json['sex'] as String) : null,
+  sex: json['sex'] != null ? Sex.fromJson(json['sex'] as String) : null,
   unparsedPlaceOfBirth: json['unparsed_place_of_birth'] as String?,
   unparsedSex: json['unparsed_sex'] as String?,
 ); }
@@ -92,7 +33,7 @@ final String? firstName;
 final String? idNumber;
 
 /// The user's verified id number type.
-final GelatoVerifiedOutputsIdNumberType? idNumberType;
+final IdNumberType? idNumberType;
 
 /// The user's verified last name.
 final String? lastName;
@@ -101,7 +42,7 @@ final String? lastName;
 final String? phone;
 
 /// The user's verified sex.
-final GelatoVerifiedOutputsSex? sex;
+final Sex? sex;
 
 /// The user's verified place of birth as it appears in the document.
 final String? unparsedPlaceOfBirth;
@@ -123,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'unparsed_sex': ?unparsedSex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
-GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, GelatoVerifiedOutputsIdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, GelatoVerifiedOutputsSex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
+GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, IdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, Sex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,
   email: email != null ? email() : this.email,

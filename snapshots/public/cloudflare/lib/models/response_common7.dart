@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_analytics_messages2.dart';import 'response_common7_result.dart';@immutable final class ResponseCommon7 {const ResponseCommon7({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_analytics_messages2.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';@immutable final class ResponseCommon7 {const ResponseCommon7({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon7.fromJson(Map<String, dynamic> json) { return ResponseCommon7(
   errors: (json['errors'] as List<dynamic>).map((e) => ArgoAnalyticsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ final List<ArgoAnalyticsMessages2> errors;
 
 final List<ArgoAnalyticsMessages2> messages;
 
-final ResponseCommon7Result result;
+final ResponseCommon33Result result;
 
 /// Whether the API call was successful
 final bool success;
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon7 copyWith({List<ArgoAnalyticsMessages2>? errors, List<ArgoAnalyticsMessages2>? messages, ResponseCommon7Result? result, bool? success, }) { return ResponseCommon7(
+ResponseCommon7 copyWith({List<ArgoAnalyticsMessages2>? errors, List<ArgoAnalyticsMessages2>? messages, ResponseCommon33Result? result, bool? success, }) { return ResponseCommon7(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// PersistentVolumeClaimCondition contains details about state of pvc
 @immutable final class PersistentVolumeClaimCondition {const PersistentVolumeClaimCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
 
 factory PersistentVolumeClaimCondition.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimCondition(

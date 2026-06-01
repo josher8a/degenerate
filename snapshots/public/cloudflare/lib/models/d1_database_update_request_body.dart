@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_update_request_body_read_replication.dart';@immutable final class D1DatabaseUpdateRequestBody {const D1DatabaseUpdateRequestBody({required this.readReplication});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_database_update_partial_request_body/read_replication.dart';@immutable final class D1DatabaseUpdateRequestBody {const D1DatabaseUpdateRequestBody({required this.readReplication});
 
 factory D1DatabaseUpdateRequestBody.fromJson(Map<String, dynamic> json) { return D1DatabaseUpdateRequestBody(
-  readReplication: D1DatabaseUpdateRequestBodyReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>),
+  readReplication: ReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>),
 ); }
 
 /// Configuration for D1 read replication.
-final D1DatabaseUpdateRequestBodyReadReplication readReplication;
+final ReadReplication readReplication;
 
 Map<String, dynamic> toJson() { return {
   'read_replication': readReplication.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('read_replication'); } 
-D1DatabaseUpdateRequestBody copyWith({D1DatabaseUpdateRequestBodyReadReplication? readReplication}) { return D1DatabaseUpdateRequestBody(
+D1DatabaseUpdateRequestBody copyWith({ReadReplication? readReplication}) { return D1DatabaseUpdateRequestBody(
   readReplication: readReplication ?? this.readReplication,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

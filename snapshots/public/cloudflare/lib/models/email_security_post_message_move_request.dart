@@ -1,51 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPostMessageMoveRequestDestination {const EmailSecurityPostMessageMoveRequestDestination._(this.value);
-
-factory EmailSecurityPostMessageMoveRequestDestination.fromJson(String json) { return switch (json) {
-  'Inbox' => inbox,
-  'JunkEmail' => junkEmail,
-  'DeletedItems' => deletedItems,
-  'RecoverableItemsDeletions' => recoverableItemsDeletions,
-  'RecoverableItemsPurges' => recoverableItemsPurges,
-  _ => EmailSecurityPostMessageMoveRequestDestination._(json),
-}; }
-
-static const EmailSecurityPostMessageMoveRequestDestination inbox = EmailSecurityPostMessageMoveRequestDestination._('Inbox');
-
-static const EmailSecurityPostMessageMoveRequestDestination junkEmail = EmailSecurityPostMessageMoveRequestDestination._('JunkEmail');
-
-static const EmailSecurityPostMessageMoveRequestDestination deletedItems = EmailSecurityPostMessageMoveRequestDestination._('DeletedItems');
-
-static const EmailSecurityPostMessageMoveRequestDestination recoverableItemsDeletions = EmailSecurityPostMessageMoveRequestDestination._('RecoverableItemsDeletions');
-
-static const EmailSecurityPostMessageMoveRequestDestination recoverableItemsPurges = EmailSecurityPostMessageMoveRequestDestination._('RecoverableItemsPurges');
-
-static const List<EmailSecurityPostMessageMoveRequestDestination> values = [inbox, junkEmail, deletedItems, recoverableItemsDeletions, recoverableItemsPurges];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityPostMessageMoveRequestDestination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityPostMessageMoveRequestDestination($value)'; } 
- }
-@immutable final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_post_bulk_message_move_request/email_security_post_bulk_message_move_request_destination.dart';@immutable final class EmailSecurityPostMessageMoveRequest {const EmailSecurityPostMessageMoveRequest({required this.destination});
 
 factory EmailSecurityPostMessageMoveRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostMessageMoveRequest(
-  destination: EmailSecurityPostMessageMoveRequestDestination.fromJson(json['destination'] as String),
+  destination: EmailSecurityPostBulkMessageMoveRequestDestination.fromJson(json['destination'] as String),
 ); }
 
-final EmailSecurityPostMessageMoveRequestDestination destination;
+final EmailSecurityPostBulkMessageMoveRequestDestination destination;
 
 Map<String, dynamic> toJson() { return {
   'destination': destination.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-EmailSecurityPostMessageMoveRequest copyWith({EmailSecurityPostMessageMoveRequestDestination? destination}) { return EmailSecurityPostMessageMoveRequest(
+EmailSecurityPostMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMoveRequestDestination? destination}) { return EmailSecurityPostMessageMoveRequest(
   destination: destination ?? this.destination,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_response.dart';@immutable final class DexEndpointsHttpTestDetailsResponse {const DexEndpointsHttpTestDetailsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_http_details_response.dart';@immutable final class DexEndpointsHttpTestDetailsResponse {const DexEndpointsHttpTestDetailsResponse({this.result});
 
 factory DexEndpointsHttpTestDetailsResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsHttpTestDetailsResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringHttpDetailsResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

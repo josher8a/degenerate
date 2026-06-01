@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_app_response_data.dart';@immutable final class CreateAppResponse {const CreateAppResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_app_response/create_app_response_data.dart';@immutable final class CreateAppResponse {const CreateAppResponse({this.data, this.success, });
 
 factory CreateAppResponse.fromJson(Map<String, dynamic> json) { return CreateAppResponse(
   data: json['data'] != null ? CreateAppResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

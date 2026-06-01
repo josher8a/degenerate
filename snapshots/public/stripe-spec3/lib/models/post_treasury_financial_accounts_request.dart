@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features.dart';import 'post_treasury_financial_accounts_request_nickname.dart';import 'post_treasury_financial_accounts_request_platform_restrictions.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/nickname.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/platform_restrictions.dart';import 'package:pub_stripe_spec3/models/post_treasury_financial_accounts_financial_account_request/post_treasury_financial_accounts_financial_account_request_features.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
 
 factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  features: json['features'] != null ? PostTreasuryFinancialAccountsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+  features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] != null ? OneOf2.parse(json['nickname'], fromA: (v) => v as String, fromB: (v) => PostTreasuryFinancialAccountsRequestNicknameVariant2.fromJson(v as String),) : null,
-  platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
+  nickname: json['nickname'] != null ? OneOf2.parse(json['nickname'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  platformRestrictions: json['platform_restrictions'] != null ? PlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   supportedCurrencies: (json['supported_currencies'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
 
@@ -15,16 +15,16 @@ factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json)
 final List<String>? expand;
 
 /// Encodes whether a FinancialAccount has access to a particular feature. Stripe or the platform can control features via the requested field.
-final PostTreasuryFinancialAccountsRequestFeatures? features;
+final PostTreasuryFinancialAccountsFinancialAccountRequestFeatures? features;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
 final Map<String,String>? metadata;
 
 /// The nickname for the FinancialAccount.
-final PostTreasuryFinancialAccountsRequestNickname? nickname;
+final Nickname? nickname;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final PostTreasuryFinancialAccountsRequestPlatformRestrictions? platformRestrictions;
+final PlatformRestrictions? platformRestrictions;
 
 /// The currencies the FinancialAccount can hold a balance in.
 final List<String> supportedCurrencies;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'supported_currencies': supportedCurrencies,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported_currencies'); } 
-PostTreasuryFinancialAccountsRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsRequestFeatures Function()? features, Map<String, String> Function()? metadata, PostTreasuryFinancialAccountsRequestNickname Function()? nickname, PostTreasuryFinancialAccountsRequestPlatformRestrictions Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
+PostTreasuryFinancialAccountsRequest copyWith({List<String> Function()? expand, PostTreasuryFinancialAccountsFinancialAccountRequestFeatures Function()? features, Map<String, String> Function()? metadata, Nickname Function()? nickname, PlatformRestrictions Function()? platformRestrictions, List<String>? supportedCurrencies, }) { return PostTreasuryFinancialAccountsRequest(
   expand: expand != null ? expand() : this.expand,
   features: features != null ? features() : this.features,
   metadata: metadata != null ? metadata() : this.metadata,

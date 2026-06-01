@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_attacker_list_response_items.dart';@immutable final class GetAttackerListResponse {const GetAttackerListResponse({required this.items, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_attacker_list_response/get_attacker_list_response_items.dart';@immutable final class GetAttackerListResponse {const GetAttackerListResponse({required this.items, required this.type, });
 
 factory GetAttackerListResponse.fromJson(Map<String, dynamic> json) { return GetAttackerListResponse(
   items: GetAttackerListResponseItems.fromJson(json['items'] as Map<String, dynamic>),

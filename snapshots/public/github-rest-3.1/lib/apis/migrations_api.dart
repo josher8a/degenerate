@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/migration.dart';import '../models/migrations_get_status_for_org_exclude.dart';import '../models/migrations_list_for_org_exclude.dart';import '../models/migrations_start_for_authenticated_user_request.dart';import '../models/migrations_start_for_org_request.dart';import '../models/minimal_repository.dart';import '../models/validation_error.dart';/// MigrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/basic_error.dart';import 'package:pub_github_rest_3_1/models/migration.dart';import 'package:pub_github_rest_3_1/models/migrations_get_status_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_list_for_org_exclude.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_authenticated_user_request.dart';import 'package:pub_github_rest_3_1/models/migrations_start_for_org_request.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/validation_error.dart';/// MigrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

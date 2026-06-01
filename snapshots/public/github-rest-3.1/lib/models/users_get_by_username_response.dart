@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'private_user.dart';import 'private_user_plan.dart';import 'public_user.dart';import 'public_user_plan.dart';sealed class UsersGetByUsernameResponse {const UsersGetByUsernameResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';import 'package:pub_github_rest_3_1/models/public_user.dart';sealed class UsersGetByUsernameResponse {const UsersGetByUsernameResponse();
 
 /// Deserialize from JSON, dispatching on the `user_view_type` discriminator.
 factory UsersGetByUsernameResponse.fromJson(Map<String, dynamic> json) { return switch (json['user_view_type']) {
@@ -10,7 +10,7 @@ factory UsersGetByUsernameResponse.fromJson(Map<String, dynamic> json) { return 
 }; }
 
 /// Build the `public` variant.
-factory UsersGetByUsernameResponse.public({required String login, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required Uri reposUrl, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, String? notificationEmail, required bool? hireable, required String? bio, String? twitterUsername, required int publicRepos, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, PublicUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, }) { return UsersGetByUsernameResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators)); }
+factory UsersGetByUsernameResponse.public({required String login, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required Uri reposUrl, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, String? notificationEmail, required bool? hireable, required String? bio, String? twitterUsername, required int publicRepos, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, PrivateUserPlan? plan, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, }) { return UsersGetByUsernameResponsePublic(PublicUser(userViewType: 'public', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, plan: plan, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators)); }
 
 /// Build the `private` variant.
 factory UsersGetByUsernameResponse.private({required String login, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required Uri reposUrl, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, String? notificationEmail, required bool? hireable, required String? bio, String? twitterUsername, required int publicRepos, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int diskUsage, required int collaborators, required bool twoFactorAuthentication, PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) { return UsersGetByUsernameResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn)); }
@@ -87,6 +87,8 @@ DateTime get createdAt;
 /// Shared by all variants of this union.
 DateTime get updatedAt;
 /// Shared by all variants of this union.
+PrivateUserPlan? get plan;
+/// Shared by all variants of this union.
 int? get privateGists;
 /// Shared by all variants of this union.
 int? get totalPrivateRepos;
@@ -142,6 +144,7 @@ final PublicUser publicUser;
 @override int get following { return publicUser.following; } 
 @override DateTime get createdAt { return publicUser.createdAt; } 
 @override DateTime get updatedAt { return publicUser.updatedAt; } 
+@override PrivateUserPlan? get plan { return publicUser.plan; } 
 @override int? get privateGists { return publicUser.privateGists; } 
 @override int? get totalPrivateRepos { return publicUser.totalPrivateRepos; } 
 @override int? get ownedPrivateRepos { return publicUser.ownedPrivateRepos; } 
@@ -193,6 +196,7 @@ final PrivateUser privateUser;
 @override int get following { return privateUser.following; } 
 @override DateTime get createdAt { return privateUser.createdAt; } 
 @override DateTime get updatedAt { return privateUser.updatedAt; } 
+@override PrivateUserPlan? get plan { return privateUser.plan; } 
 @override int? get privateGists { return privateUser.privateGists; } 
 @override int? get totalPrivateRepos { return privateUser.totalPrivateRepos; } 
 @override int? get ownedPrivateRepos { return privateUser.ownedPrivateRepos; } 
@@ -244,6 +248,7 @@ final Map<String, dynamic> json;
 @override int get following { return (json['following'] as num).toInt(); } 
 @override DateTime get createdAt { return DateTime.parse(json['created_at'] as String); } 
 @override DateTime get updatedAt { return DateTime.parse(json['updated_at'] as String); } 
+@override PrivateUserPlan? get plan { return json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null; } 
 @override int? get privateGists { return json['private_gists'] != null ? (json['private_gists'] as num).toInt() : null; } 
 @override int? get totalPrivateRepos { return json['total_private_repos'] != null ? (json['total_private_repos'] as num).toInt() : null; } 
 @override int? get ownedPrivateRepos { return json['owned_private_repos'] != null ? (json['owned_private_repos'] as num).toInt() : null; } 

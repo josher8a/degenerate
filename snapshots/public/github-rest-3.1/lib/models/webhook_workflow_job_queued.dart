@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_queued_workflow_job.dart';@immutable final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/webhook_workflow_job_queued_workflow_job.dart';@immutable final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
 
 factory WebhookWorkflowJobQueuedAction.fromJson(String json) { return switch (json) {
   'queued' => queued,

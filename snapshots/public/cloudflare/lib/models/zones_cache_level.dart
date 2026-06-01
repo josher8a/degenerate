@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
 /// 
 @immutable final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
 

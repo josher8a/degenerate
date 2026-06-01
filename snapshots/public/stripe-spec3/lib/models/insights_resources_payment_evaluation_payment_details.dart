@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_money_movement_details.dart';import 'insights_resources_payment_evaluation_payment_method_details.dart';import 'insights_resources_payment_evaluation_shipping.dart';/// Payment details attached to this payment evaluation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_shipping.dart';/// Payment details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationPaymentDetails {const InsightsResourcesPaymentEvaluationPaymentDetails({required this.amount, required this.currency, this.description, this.moneyMovementDetails, this.paymentMethodDetails, this.shippingDetails, this.statementDescriptor, });
 
 factory InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentDetails(

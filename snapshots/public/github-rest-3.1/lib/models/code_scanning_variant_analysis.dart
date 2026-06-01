@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'code_scanning_variant_analysis_status.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_status.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
 @immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
 
 factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
@@ -50,22 +50,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
  }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
-@immutable final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
+@immutable final class FailureReason {const FailureReason._(this.value);
 
-factory CodeScanningVariantAnalysisFailureReason.fromJson(String json) { return switch (json) {
+factory FailureReason.fromJson(String json) { return switch (json) {
   'no_repos_queried' => noReposQueried,
   'actions_workflow_run_failed' => actionsWorkflowRunFailed,
   'internal_error' => internalError,
-  _ => CodeScanningVariantAnalysisFailureReason._(json),
+  _ => FailureReason._(json),
 }; }
 
-static const CodeScanningVariantAnalysisFailureReason noReposQueried = CodeScanningVariantAnalysisFailureReason._('no_repos_queried');
+static const FailureReason noReposQueried = FailureReason._('no_repos_queried');
 
-static const CodeScanningVariantAnalysisFailureReason actionsWorkflowRunFailed = CodeScanningVariantAnalysisFailureReason._('actions_workflow_run_failed');
+static const FailureReason actionsWorkflowRunFailed = FailureReason._('actions_workflow_run_failed');
 
-static const CodeScanningVariantAnalysisFailureReason internalError = CodeScanningVariantAnalysisFailureReason._('internal_error');
+static const FailureReason internalError = FailureReason._('internal_error');
 
-static const List<CodeScanningVariantAnalysisFailureReason> values = [noReposQueried, actionsWorkflowRunFailed, internalError];
+static const List<FailureReason> values = [noReposQueried, actionsWorkflowRunFailed, internalError];
 
 final String value;
 
@@ -73,9 +73,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisFailureReason && other.value == value; } 
+    other is FailureReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisFailureReason($value)'; } 
+@override String toString() { return 'FailureReason($value)'; } 
  }
 /// A run of a CodeQL query against one or more repositories.
 @immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
@@ -91,9 +91,9 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
   status: CodeScanningVariantAnalysisStatus.fromJson(json['status'] as String),
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
-  failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
-  scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => CodeScanningVariantAnalysisScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
-  skippedRepositories: json['skipped_repositories'] != null ? CodeScanningVariantAnalysisSkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
+  failureReason: json['failure_reason'] != null ? FailureReason.fromJson(json['failure_reason'] as String) : null,
+  scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => ScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
+  skippedRepositories: json['skipped_repositories'] != null ? SkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of the variant analysis.
@@ -124,12 +124,12 @@ final CodeScanningVariantAnalysisStatus status;
 final int? actionsWorkflowRunId;
 
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
-final CodeScanningVariantAnalysisFailureReason? failureReason;
+final FailureReason? failureReason;
 
-final List<CodeScanningVariantAnalysisScannedRepositories>? scannedRepositories;
+final List<ScannedRepositories>? scannedRepositories;
 
 /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
-final CodeScanningVariantAnalysisSkippedRepositories? skippedRepositories;
+final SkippedRepositories? skippedRepositories;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -152,7 +152,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
       json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories> Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int Function()? actionsWorkflowRunId, FailureReason Function()? failureReason, List<ScannedRepositories> Function()? scannedRepositories, SkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,

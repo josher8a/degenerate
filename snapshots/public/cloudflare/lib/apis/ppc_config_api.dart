@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_response2.dart';import '../models/no_result_response.dart';import '../models/pay_per_crawl_daric_config.dart';import '../models/pay_per_crawl_zones_can_be_enabled_payload.dart';/// PpcConfigApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/error_response2.dart';import 'package:pub_cloudflare/models/no_result_response.dart';import 'package:pub_cloudflare/models/pay_per_crawl_daric_config.dart';import 'package:pub_cloudflare/models/pay_per_crawl_zones_can_be_enabled_payload.dart';/// PpcConfigApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

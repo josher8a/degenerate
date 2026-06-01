@@ -1,70 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linked_account_options_common.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage {const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(this.value);
-
-factory CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
-
-static const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage none = CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._('none');
-
-static const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage offSession = CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._('off_session');
-
-static const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage onSession = CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._('on_session');
-
-static const List<CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage> values = [none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
-/// Bank account verification method.
-@immutable final class CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod {const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(this.value);
-
-factory CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  _ => CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(json),
-}; }
-
-static const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod automatic = CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._('automatic');
-
-static const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod instant = CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._('instant');
-
-static const List<CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod> values = [automatic, instant];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_us_bank_account_payment_method_options/checkout_us_bank_account_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/linked_account_options_common.dart';/// 
 @immutable final class CheckoutUsBankAccountPaymentMethodOptions {const CheckoutUsBankAccountPaymentMethodOptions({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory CheckoutUsBankAccountPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
@@ -78,7 +19,7 @@ final LinkedAccountOptionsCommon? financialConnections;
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
+final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
@@ -93,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-CheckoutUsBankAccountPaymentMethodOptions copyWith({LinkedAccountOptionsCommon Function()? financialConnections, CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return CheckoutUsBankAccountPaymentMethodOptions(
+CheckoutUsBankAccountPaymentMethodOptions copyWith({LinkedAccountOptionsCommon Function()? financialConnections, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

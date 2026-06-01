@@ -1,37 +1,37 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_stream_event_thread_run_cancelled.dart';import 'run_stream_event_thread_run_cancelling.dart';import 'run_stream_event_thread_run_completed.dart';import 'run_stream_event_thread_run_created.dart';import 'run_stream_event_thread_run_expired.dart';import 'run_stream_event_thread_run_failed.dart';import 'run_stream_event_thread_run_in_progress.dart';import 'run_stream_event_thread_run_incomplete.dart';import 'run_stream_event_thread_run_queued.dart';import 'run_stream_event_thread_run_requires_action.dart';/// A value that is one of: `RunStreamEventThreadRunCreated`, `RunStreamEventThreadRunQueued`, `RunStreamEventThreadRunInProgress`, `RunStreamEventThreadRunRequiresAction`, `RunStreamEventThreadRunCompleted`, `RunStreamEventThreadRunIncomplete`, `RunStreamEventThreadRunFailed`, `RunStreamEventThreadRunCancelling`, `RunStreamEventThreadRunCancelled`, `RunStreamEventThreadRunExpired`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_stream_event/thread_run_cancelled.dart';import 'package:pub_openai/models/run_stream_event/thread_run_cancelling.dart';import 'package:pub_openai/models/run_stream_event/thread_run_completed.dart';import 'package:pub_openai/models/run_stream_event/thread_run_created.dart';import 'package:pub_openai/models/run_stream_event/thread_run_expired.dart';import 'package:pub_openai/models/run_stream_event/thread_run_failed.dart';import 'package:pub_openai/models/run_stream_event/thread_run_in_progress.dart';import 'package:pub_openai/models/run_stream_event/thread_run_incomplete.dart';import 'package:pub_openai/models/run_stream_event/thread_run_queued.dart';import 'package:pub_openai/models/run_stream_event/thread_run_requires_action.dart';/// A value that is one of: `ThreadRunCreated`, `ThreadRunQueued`, `ThreadRunInProgress`, `ThreadRunRequiresAction`, `ThreadRunCompleted`, `ThreadRunIncomplete`, `ThreadRunFailed`, `ThreadRunCancelling`, `ThreadRunCancelled`, `ThreadRunExpired`.
 sealed class RunStreamEvent {const RunStreamEvent();
 
-factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (RunStreamEventThreadRunCreated.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunCreated(RunStreamEventThreadRunCreated.fromJson(json));
+factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadRunCreated.canParse(json)) {
+    return RunStreamEventThreadRunCreated(ThreadRunCreated.fromJson(json));
   }
-  if (RunStreamEventThreadRunQueued.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunQueued(RunStreamEventThreadRunQueued.fromJson(json));
+  if (ThreadRunQueued.canParse(json)) {
+    return RunStreamEventThreadRunQueued(ThreadRunQueued.fromJson(json));
   }
-  if (RunStreamEventThreadRunInProgress.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunInProgress(RunStreamEventThreadRunInProgress.fromJson(json));
+  if (ThreadRunInProgress.canParse(json)) {
+    return RunStreamEventThreadRunInProgress(ThreadRunInProgress.fromJson(json));
   }
-  if (RunStreamEventThreadRunRequiresAction.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunRequiresAction(RunStreamEventThreadRunRequiresAction.fromJson(json));
+  if (ThreadRunRequiresAction.canParse(json)) {
+    return RunStreamEventThreadRunRequiresAction(ThreadRunRequiresAction.fromJson(json));
   }
-  if (RunStreamEventThreadRunCompleted.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunCompleted(RunStreamEventThreadRunCompleted.fromJson(json));
+  if (ThreadRunCompleted.canParse(json)) {
+    return RunStreamEventThreadRunCompleted(ThreadRunCompleted.fromJson(json));
   }
-  if (RunStreamEventThreadRunIncomplete.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunIncomplete(RunStreamEventThreadRunIncomplete.fromJson(json));
+  if (ThreadRunIncomplete.canParse(json)) {
+    return RunStreamEventThreadRunIncomplete(ThreadRunIncomplete.fromJson(json));
   }
-  if (RunStreamEventThreadRunFailed.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunFailed(RunStreamEventThreadRunFailed.fromJson(json));
+  if (ThreadRunFailed.canParse(json)) {
+    return RunStreamEventThreadRunFailed(ThreadRunFailed.fromJson(json));
   }
-  if (RunStreamEventThreadRunCancelling.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunCancelling(RunStreamEventThreadRunCancelling.fromJson(json));
+  if (ThreadRunCancelling.canParse(json)) {
+    return RunStreamEventThreadRunCancelling(ThreadRunCancelling.fromJson(json));
   }
-  if (RunStreamEventThreadRunCancelled.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunCancelled(RunStreamEventThreadRunCancelled.fromJson(json));
+  if (ThreadRunCancelled.canParse(json)) {
+    return RunStreamEventThreadRunCancelled(ThreadRunCancelled.fromJson(json));
   }
-  if (RunStreamEventThreadRunExpired.canParse(json)) {
-    return RunStreamEventRunStreamEventThreadRunExpired(RunStreamEventThreadRunExpired.fromJson(json));
+  if (ThreadRunExpired.canParse(json)) {
+    return RunStreamEventThreadRunExpired(ThreadRunExpired.fromJson(json));
   }
   return RunStreamEvent$Unknown(json); }
 
@@ -39,105 +39,105 @@ factory RunStreamEvent.fromJson(Map<String, dynamic> json) {   if (RunStreamEven
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunCreated extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCreated(this._value);
+@immutable final class RunStreamEventThreadRunCreated extends RunStreamEvent {const RunStreamEventThreadRunCreated(this._value);
 
-final RunStreamEventThreadRunCreated _value;
+final ThreadRunCreated _value;
 
-@override RunStreamEventThreadRunCreated get value { return _value; } 
+@override ThreadRunCreated get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunCreated && _value == other._value; } 
+    other is RunStreamEventThreadRunCreated && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCreated($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunCreated($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunQueued extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunQueued(this._value);
+@immutable final class RunStreamEventThreadRunQueued extends RunStreamEvent {const RunStreamEventThreadRunQueued(this._value);
 
-final RunStreamEventThreadRunQueued _value;
+final ThreadRunQueued _value;
 
-@override RunStreamEventThreadRunQueued get value { return _value; } 
+@override ThreadRunQueued get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunQueued && _value == other._value; } 
+    other is RunStreamEventThreadRunQueued && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunQueued($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunQueued($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunInProgress extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunInProgress(this._value);
+@immutable final class RunStreamEventThreadRunInProgress extends RunStreamEvent {const RunStreamEventThreadRunInProgress(this._value);
 
-final RunStreamEventThreadRunInProgress _value;
+final ThreadRunInProgress _value;
 
-@override RunStreamEventThreadRunInProgress get value { return _value; } 
+@override ThreadRunInProgress get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunInProgress && _value == other._value; } 
+    other is RunStreamEventThreadRunInProgress && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunInProgress($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunInProgress($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunRequiresAction extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunRequiresAction(this._value);
+@immutable final class RunStreamEventThreadRunRequiresAction extends RunStreamEvent {const RunStreamEventThreadRunRequiresAction(this._value);
 
-final RunStreamEventThreadRunRequiresAction _value;
+final ThreadRunRequiresAction _value;
 
-@override RunStreamEventThreadRunRequiresAction get value { return _value; } 
+@override ThreadRunRequiresAction get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunRequiresAction && _value == other._value; } 
+    other is RunStreamEventThreadRunRequiresAction && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunRequiresAction($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunRequiresAction($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunCompleted extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCompleted(this._value);
+@immutable final class RunStreamEventThreadRunCompleted extends RunStreamEvent {const RunStreamEventThreadRunCompleted(this._value);
 
-final RunStreamEventThreadRunCompleted _value;
+final ThreadRunCompleted _value;
 
-@override RunStreamEventThreadRunCompleted get value { return _value; } 
+@override ThreadRunCompleted get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunCompleted && _value == other._value; } 
+    other is RunStreamEventThreadRunCompleted && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCompleted($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunCompleted($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunIncomplete extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunIncomplete(this._value);
+@immutable final class RunStreamEventThreadRunIncomplete extends RunStreamEvent {const RunStreamEventThreadRunIncomplete(this._value);
 
-final RunStreamEventThreadRunIncomplete _value;
+final ThreadRunIncomplete _value;
 
-@override RunStreamEventThreadRunIncomplete get value { return _value; } 
+@override ThreadRunIncomplete get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunIncomplete && _value == other._value; } 
+    other is RunStreamEventThreadRunIncomplete && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunIncomplete($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunIncomplete($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunFailed extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunFailed(this._value);
+@immutable final class RunStreamEventThreadRunFailed extends RunStreamEvent {const RunStreamEventThreadRunFailed(this._value);
 
-final RunStreamEventThreadRunFailed _value;
+final ThreadRunFailed _value;
 
-@override RunStreamEventThreadRunFailed get value { return _value; } 
+@override ThreadRunFailed get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunFailed && _value == other._value; } 
+    other is RunStreamEventThreadRunFailed && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunFailed($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunFailed($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunCancelling extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelling(this._value);
+@immutable final class RunStreamEventThreadRunCancelling extends RunStreamEvent {const RunStreamEventThreadRunCancelling(this._value);
 
-final RunStreamEventThreadRunCancelling _value;
+final ThreadRunCancelling _value;
 
-@override RunStreamEventThreadRunCancelling get value { return _value; } 
+@override ThreadRunCancelling get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunCancelling && _value == other._value; } 
+    other is RunStreamEventThreadRunCancelling && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCancelling($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunCancelling($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunCancelled extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunCancelled(this._value);
+@immutable final class RunStreamEventThreadRunCancelled extends RunStreamEvent {const RunStreamEventThreadRunCancelled(this._value);
 
-final RunStreamEventThreadRunCancelled _value;
+final ThreadRunCancelled _value;
 
-@override RunStreamEventThreadRunCancelled get value { return _value; } 
+@override ThreadRunCancelled get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunCancelled && _value == other._value; } 
+    other is RunStreamEventThreadRunCancelled && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunCancelled($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunCancelled($_value)'; } 
  }
-@immutable final class RunStreamEventRunStreamEventThreadRunExpired extends RunStreamEvent {const RunStreamEventRunStreamEventThreadRunExpired(this._value);
+@immutable final class RunStreamEventThreadRunExpired extends RunStreamEvent {const RunStreamEventThreadRunExpired(this._value);
 
-final RunStreamEventThreadRunExpired _value;
+final ThreadRunExpired _value;
 
-@override RunStreamEventThreadRunExpired get value { return _value; } 
+@override ThreadRunExpired get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventRunStreamEventThreadRunExpired && _value == other._value; } 
+    other is RunStreamEventThreadRunExpired && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.runStreamEventThreadRunExpired($_value)'; } 
+@override String toString() { return 'RunStreamEvent.threadRunExpired($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RunStreamEvent$Unknown extends RunStreamEvent {const RunStreamEvent$Unknown(this._value);

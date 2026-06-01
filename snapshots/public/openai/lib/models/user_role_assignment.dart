@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'role.dart';import 'user.dart';/// Always `user.role`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/role.dart';import 'package:pub_openai/models/user.dart';/// Always `user.role`.
 @immutable final class UserRoleAssignmentObject {const UserRoleAssignmentObject._(this.value);
 
 factory UserRoleAssignmentObject.fromJson(String json) { return switch (json) {

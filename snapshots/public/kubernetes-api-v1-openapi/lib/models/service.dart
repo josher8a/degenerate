@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'service_spec.dart';import 'service_status.dart';/// Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/service_status.dart';/// Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
 @immutable final class Service {const Service({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Service.fromJson(Map<String, dynamic> json) { return Service(

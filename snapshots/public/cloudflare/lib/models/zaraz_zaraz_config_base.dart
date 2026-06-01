@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_base_analytics.dart';import 'zaraz_zaraz_config_base_consent.dart';import 'zaraz_zaraz_config_base_settings.dart';import 'zaraz_zaraz_config_base_triggers_value.dart';import 'zaraz_zaraz_config_base_variables_value.dart';/// Zaraz configuration
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/analytics.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/consent.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/triggers_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/variables_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/zaraz_zaraz_config_base_settings.dart';/// Zaraz configuration
 @immutable final class ZarazZarazConfigBase {const ZarazZarazConfigBase({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBase(
-  analytics: json['analytics'] != null ? ZarazZarazConfigBaseAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
-  consent: json['consent'] != null ? ZarazZarazConfigBaseConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
+  analytics: json['analytics'] != null ? Analytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
+  consent: json['consent'] != null ? Consent.fromJson(json['consent'] as Map<String, dynamic>) : null,
   dataLayer: json['dataLayer'] as bool,
   debugKey: json['debugKey'] as String,
   historyChange: json['historyChange'] as bool?,
   settings: ZarazZarazConfigBaseSettings.fromJson(json['settings'] as Map<String, dynamic>),
-  triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseTriggersValue.fromJson(v as Map<String, dynamic>))),
-  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigBaseVariablesValue.fromJson(v as Map<String, dynamic>))),
+  triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, TriggersValue.fromJson(v as Map<String, dynamic>))),
+  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, VariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
 ); }
 
 /// Cloudflare Monitoring settings.
-final ZarazZarazConfigBaseAnalytics? analytics;
+final Analytics? analytics;
 
 /// Consent management configuration.
-final ZarazZarazConfigBaseConsent? consent;
+final Consent? consent;
 
 /// Data layer compatibility mode enabled.
 final bool dataLayer;
@@ -34,10 +34,10 @@ final bool? historyChange;
 final ZarazZarazConfigBaseSettings settings;
 
 /// Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
-final Map<String,ZarazZarazConfigBaseTriggersValue> triggers;
+final Map<String,TriggersValue> triggers;
 
 /// Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
-final Map<String,ZarazZarazConfigBaseVariablesValue> variables;
+final Map<String,VariablesValue> variables;
 
 /// Zaraz internal version of the config.
 final int zarazVersion;
@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataL
       json.containsKey('triggers') &&
       json.containsKey('variables') &&
       json.containsKey('zarazVersion') && json['zarazVersion'] is num; } 
-ZarazZarazConfigBase copyWith({ZarazZarazConfigBaseAnalytics Function()? analytics, ZarazZarazConfigBaseConsent Function()? consent, bool? dataLayer, String? debugKey, bool Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,ZarazZarazConfigBaseTriggersValue>? triggers, Map<String,ZarazZarazConfigBaseVariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
+ZarazZarazConfigBase copyWith({Analytics Function()? analytics, Consent Function()? consent, bool? dataLayer, String? debugKey, bool Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, }) { return ZarazZarazConfigBase(
   analytics: analytics != null ? analytics() : this.analytics,
   consent: consent != null ? consent() : this.consent,
   dataLayer: dataLayer ?? this.dataLayer,

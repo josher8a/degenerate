@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_collection_membership_response.dart';import '../models/iam_collection_membership_response_with_policies.dart';import '../models/iam_membership_components_schemas_identifier.dart';import '../models/iam_membership_with_policies.dart';import '../models/iam_properties_name.dart';import '../models/user_s_account_memberships_delete_membership_response_result.dart';import '../models/user_s_account_memberships_list_memberships_direction.dart';import '../models/user_s_account_memberships_list_memberships_order.dart';import '../models/user_s_account_memberships_list_memberships_response.dart';import '../models/user_s_account_memberships_list_memberships_status.dart';import '../models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response_with_policies.dart';import 'package:pub_cloudflare/models/iam_membership_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_membership_with_policies.dart';import 'package:pub_cloudflare/models/iam_properties_name.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_direction.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_order.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_response.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_status.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -106,7 +106,7 @@ return execute(
 /// Remove the associated member from an account.
 ///
 /// `DELETE /memberships/{membership_id}`
-Future<ApiResult<UserSAccountMembershipsDeleteMembershipResponseResult?, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,7 +119,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? UserSAccountMembershipsDeleteMembershipResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

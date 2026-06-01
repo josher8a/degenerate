@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates when the funds will be captured from the customer's account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_token/confirmation_token_setup_future_usage.dart';/// Indicates when the funds will be captured from the customer's account.
 @immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod._(this.value);
 
 factory PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
@@ -28,31 +28,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)'; } 
  }
-/// Indicates that you intend to make future payments with the payment method collected during checkout.
-@immutable final class PaymentLinksResourcePaymentIntentDataSetupFutureUsage {const PaymentLinksResourcePaymentIntentDataSetupFutureUsage._(this.value);
-
-factory PaymentLinksResourcePaymentIntentDataSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentLinksResourcePaymentIntentDataSetupFutureUsage._(json),
-}; }
-
-static const PaymentLinksResourcePaymentIntentDataSetupFutureUsage offSession = PaymentLinksResourcePaymentIntentDataSetupFutureUsage._('off_session');
-
-static const PaymentLinksResourcePaymentIntentDataSetupFutureUsage onSession = PaymentLinksResourcePaymentIntentDataSetupFutureUsage._('on_session');
-
-static const List<PaymentLinksResourcePaymentIntentDataSetupFutureUsage> values = [offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourcePaymentIntentDataSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourcePaymentIntentDataSetupFutureUsage($value)'; } 
- }
 /// 
 @immutable final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({required this.metadata, this.captureMethod, this.description, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
@@ -60,7 +35,7 @@ factory PaymentLinksResourcePaymentIntentData.fromJson(Map<String, dynamic> json
   captureMethod: json['capture_method'] != null ? PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null,
   description: json['description'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentLinksResourcePaymentIntentDataSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferGroup: json['transfer_group'] as String?,
@@ -76,7 +51,7 @@ final String? description;
 final Map<String,String> metadata;
 
 /// Indicates that you intend to make future payments with the payment method collected during checkout.
-final PaymentLinksResourcePaymentIntentDataSetupFutureUsage? setupFutureUsage;
+final ConfirmationTokenSetupFutureUsage? setupFutureUsage;
 
 /// For a non-card payment, information about the charge that appears on the customer's statement when this payment succeeds in creating a charge.
 final String? statementDescriptor;
@@ -97,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_group': ?transferGroup,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-PaymentLinksResourcePaymentIntentData copyWith({PaymentLinksResourcePaymentIntentDataCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String,String>? metadata, PaymentLinksResourcePaymentIntentDataSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, String? Function()? transferGroup, }) { return PaymentLinksResourcePaymentIntentData(
+PaymentLinksResourcePaymentIntentData copyWith({PaymentLinksResourcePaymentIntentDataCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String,String>? metadata, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, String? Function()? transferGroup, }) { return PaymentLinksResourcePaymentIntentData(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   description: description != null ? description() : this.description,
   metadata: metadata ?? this.metadata,

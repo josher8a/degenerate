@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityPostPreviewRequest {const EmailSecurityPostPreviewRequest({required this.postfixId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';@immutable final class EmailSecurityPostPreviewRequest {const EmailSecurityPostPreviewRequest({required this.postfixId});
 
 factory EmailSecurityPostPreviewRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostPreviewRequest(
   postfixId: EmailSecurityPostfixId.fromJson(json['postfix_id'] as String),

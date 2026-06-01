@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Set the directive with optional qualifiers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_cloudflare_only.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_control_operation.dart';/// Set the directive with optional qualifiers.
 @immutable final class SetDirective2 {const SetDirective2({required this.operation, this.cloudflareOnly, this.qualifiers, });
 
 factory SetDirective2.fromJson(Map<String, dynamic> json) { return SetDirective2(

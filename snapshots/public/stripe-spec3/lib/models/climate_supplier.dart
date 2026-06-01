@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_removals_location.dart';/// String representing the object’s type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_removals_location.dart';/// String representing the object’s type. Objects of the same type share the same value.
 @immutable final class ClimateSupplierObject {const ClimateSupplierObject._(this.value);
 
 factory ClimateSupplierObject.fromJson(String json) { return switch (json) {
@@ -23,22 +23,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClimateSupplierObject($value)'; } 
  }
 /// The scientific pathway used for carbon removal.
-@immutable final class ClimateSupplierRemovalPathway {const ClimateSupplierRemovalPathway._(this.value);
+@immutable final class RemovalPathway {const RemovalPathway._(this.value);
 
-factory ClimateSupplierRemovalPathway.fromJson(String json) { return switch (json) {
+factory RemovalPathway.fromJson(String json) { return switch (json) {
   'biomass_carbon_removal_and_storage' => biomassCarbonRemovalAndStorage,
   'direct_air_capture' => directAirCapture,
   'enhanced_weathering' => enhancedWeathering,
-  _ => ClimateSupplierRemovalPathway._(json),
+  _ => RemovalPathway._(json),
 }; }
 
-static const ClimateSupplierRemovalPathway biomassCarbonRemovalAndStorage = ClimateSupplierRemovalPathway._('biomass_carbon_removal_and_storage');
+static const RemovalPathway biomassCarbonRemovalAndStorage = RemovalPathway._('biomass_carbon_removal_and_storage');
 
-static const ClimateSupplierRemovalPathway directAirCapture = ClimateSupplierRemovalPathway._('direct_air_capture');
+static const RemovalPathway directAirCapture = RemovalPathway._('direct_air_capture');
 
-static const ClimateSupplierRemovalPathway enhancedWeathering = ClimateSupplierRemovalPathway._('enhanced_weathering');
+static const RemovalPathway enhancedWeathering = RemovalPathway._('enhanced_weathering');
 
-static const List<ClimateSupplierRemovalPathway> values = [biomassCarbonRemovalAndStorage, directAirCapture, enhancedWeathering];
+static const List<RemovalPathway> values = [biomassCarbonRemovalAndStorage, directAirCapture, enhancedWeathering];
 
 final String value;
 
@@ -46,9 +46,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateSupplierRemovalPathway && other.value == value; } 
+    other is RemovalPathway && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateSupplierRemovalPathway($value)'; } 
+@override String toString() { return 'RemovalPathway($value)'; } 
  }
 /// A supplier of carbon removal.
 @immutable final class ClimateSupplier {const ClimateSupplier({required this.id, required this.infoUrl, required this.livemode, required this.locations, required this.name, required this.object, required this.removalPathway, });
@@ -60,7 +60,7 @@ factory ClimateSupplier.fromJson(Map<String, dynamic> json) { return ClimateSupp
   locations: (json['locations'] as List<dynamic>).map((e) => ClimateRemovalsLocation.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String,
   object: ClimateSupplierObject.fromJson(json['object'] as String),
-  removalPathway: ClimateSupplierRemovalPathway.fromJson(json['removal_pathway'] as String),
+  removalPathway: RemovalPathway.fromJson(json['removal_pathway'] as String),
 ); }
 
 /// Unique identifier for the object.
@@ -82,7 +82,7 @@ final String name;
 final ClimateSupplierObject object;
 
 /// The scientific pathway used for carbon removal.
-final ClimateSupplierRemovalPathway removalPathway;
+final RemovalPathway removalPathway;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -100,7 +100,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('removal_pathway'); } 
-ClimateSupplier copyWith({String? id, String? infoUrl, bool? livemode, List<ClimateRemovalsLocation>? locations, String? name, ClimateSupplierObject? object, ClimateSupplierRemovalPathway? removalPathway, }) { return ClimateSupplier(
+ClimateSupplier copyWith({String? id, String? infoUrl, bool? livemode, List<ClimateRemovalsLocation>? locations, String? name, ClimateSupplierObject? object, RemovalPathway? removalPathway, }) { return ClimateSupplier(
   id: id ?? this.id,
   infoUrl: infoUrl ?? this.infoUrl,
   livemode: livemode ?? this.livemode,

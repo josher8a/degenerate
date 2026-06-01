@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_colo.dart';import 'magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_colo.dart';import 'package:pub_cloudflare/models/magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
 @immutable final class MagicTransitError {const MagicTransitError._(this.value);
 
 factory MagicTransitError.fromJson(String json) { return switch (json) {

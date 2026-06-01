@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_pull_request_pull_request.dart';/// Metadata for a pull request rule evaluation result.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite_pull_request/rule_suite_pull_request_pull_request.dart';/// Metadata for a pull request rule evaluation result.
 @immutable final class RuleSuitePullRequest {const RuleSuitePullRequest({this.pullRequest});
 
 factory RuleSuitePullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequest(

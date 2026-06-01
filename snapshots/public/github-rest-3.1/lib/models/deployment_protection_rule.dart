@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_deployment_rule_app.dart';/// Deployment protection rule
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_deployment_rule_app.dart';/// Deployment protection rule
 @immutable final class DeploymentProtectionRule {const DeploymentProtectionRule({required this.id, required this.nodeId, required this.enabled, required this.app, });
 
 factory DeploymentProtectionRule.fromJson(Map<String, dynamic> json) { return DeploymentProtectionRule(

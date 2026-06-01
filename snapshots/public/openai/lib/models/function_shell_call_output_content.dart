@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content_outcome.dart';/// The content of a shell tool call output that was emitted.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content/outcome.dart';/// The content of a shell tool call output that was emitted.
 @immutable final class FunctionShellCallOutputContent {const FunctionShellCallOutputContent({required this.stdout, required this.stderr, required this.outcome, this.createdBy, });
 
 factory FunctionShellCallOutputContent.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContent(
   stdout: json['stdout'] as String,
   stderr: json['stderr'] as String,
-  outcome: FunctionShellCallOutputContentOutcome.fromJson(json['outcome'] as Map<String, dynamic>),
+  outcome: Outcome.fromJson(json['outcome'] as Map<String, dynamic>),
   createdBy: json['created_by'] as String?,
 ); }
 
@@ -17,7 +17,7 @@ final String stdout;
 final String stderr;
 
 /// Represents either an exit outcome (with an exit code) or a timeout outcome for a shell call output chunk.
-final FunctionShellCallOutputContentOutcome outcome;
+final Outcome outcome;
 
 /// The identifier of the actor that created the item.
 final String? createdBy;
@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('stdout') && json['stdout'] is String &&
       json.containsKey('stderr') && json['stderr'] is String &&
       json.containsKey('outcome'); } 
-FunctionShellCallOutputContent copyWith({String? stdout, String? stderr, FunctionShellCallOutputContentOutcome? outcome, String Function()? createdBy, }) { return FunctionShellCallOutputContent(
+FunctionShellCallOutputContent copyWith({String? stdout, String? stderr, Outcome? outcome, String Function()? createdBy, }) { return FunctionShellCallOutputContent(
   stdout: stdout ?? this.stdout,
   stderr: stderr ?? this.stderr,
   outcome: outcome ?? this.outcome,

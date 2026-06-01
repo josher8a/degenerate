@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_invoices_settings_default_account_tax_ids.dart';import 'tax_id.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_invoices_settings/account_invoices_settings_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
 @immutable final class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave._(this.value);
 
 factory AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(String json) { return switch (json) {

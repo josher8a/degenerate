@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'task_group_task.dart';/// Type discriminator that is always `chatkit.thread_item`.
-@immutable final class TaskGroupItemObject {const TaskGroupItemObject._(this.value);
-
-factory TaskGroupItemObject.fromJson(String json) { return switch (json) {
-  'chatkit.thread_item' => chatkitThreadItem,
-  _ => TaskGroupItemObject._(json),
-}; }
-
-static const TaskGroupItemObject chatkitThreadItem = TaskGroupItemObject._('chatkit.thread_item');
-
-static const List<TaskGroupItemObject> values = [chatkitThreadItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaskGroupItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaskGroupItemObject($value)'; } 
- }
-/// Collection of workflow tasks grouped together in the thread.
-@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.createdAt, required this.threadId, required this.tasks, this.object = TaskGroupItemObject.chatkitThreadItem, this.type = 'chatkit.task_group', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/task_group_task.dart';/// Collection of workflow tasks grouped together in the thread.
+@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.createdAt, required this.threadId, required this.tasks, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.task_group', });
 
 factory TaskGroupItem.fromJson(Map<String, dynamic> json) { return TaskGroupItem(
   id: json['id'] as String,
-  object: TaskGroupItemObject.fromJson(json['object'] as String),
+  object: AssistantMessageItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   threadId: json['thread_id'] as String,
   type: json['type'] as String,
@@ -38,7 +16,7 @@ factory TaskGroupItem.fromJson(Map<String, dynamic> json) { return TaskGroupItem
 final String id;
 
 /// Type discriminator that is always `chatkit.thread_item`.
-final TaskGroupItemObject object;
+final AssistantMessageItemObject object;
 
 /// Unix timestamp (in seconds) for when the item was created.
 final int createdAt;
@@ -66,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('thread_id') && json['thread_id'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('tasks'); } 
-TaskGroupItem copyWith({String? id, TaskGroupItemObject? object, int? createdAt, String? threadId, String? type, List<TaskGroupTask>? tasks, }) { return TaskGroupItem(
+TaskGroupItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, List<TaskGroupTask>? tasks, }) { return TaskGroupItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

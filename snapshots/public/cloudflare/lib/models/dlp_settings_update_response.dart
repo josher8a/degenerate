@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dlp_settings.dart';@immutable final class DlpSettingsUpdateResponse {const DlpSettingsUpdateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings.dart';@immutable final class DlpSettingsUpdateResponse {const DlpSettingsUpdateResponse({this.result});
 
 factory DlpSettingsUpdateResponse.fromJson(Map<String, dynamic> json) { return DlpSettingsUpdateResponse(
   result: json['result'] != null ? DlpDlpSettings.fromJson(json['result'] as Map<String, dynamic>) : null,

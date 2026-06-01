@@ -1,85 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_check_suite.dart';import 'check_run_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';/// The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
-@immutable final class CheckRunStatus {const CheckRunStatus._(this.value);
-
-factory CheckRunStatus.fromJson(String json) { return switch (json) {
-  'queued' => queued,
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'waiting' => waiting,
-  'requested' => requested,
-  'pending' => pending,
-  _ => CheckRunStatus._(json),
-}; }
-
-static const CheckRunStatus queued = CheckRunStatus._('queued');
-
-static const CheckRunStatus inProgress = CheckRunStatus._('in_progress');
-
-static const CheckRunStatus completed = CheckRunStatus._('completed');
-
-static const CheckRunStatus waiting = CheckRunStatus._('waiting');
-
-static const CheckRunStatus requested = CheckRunStatus._('requested');
-
-static const CheckRunStatus pending = CheckRunStatus._('pending');
-
-static const List<CheckRunStatus> values = [queued, inProgress, completed, waiting, requested, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunStatus($value)'; } 
- }
-@immutable final class CheckRunConclusion {const CheckRunConclusion._(this.value);
-
-factory CheckRunConclusion.fromJson(String json) { return switch (json) {
-  'success' => success,
-  'failure' => failure,
-  'neutral' => neutral,
-  'cancelled' => cancelled,
-  'skipped' => skipped,
-  'timed_out' => timedOut,
-  'action_required' => actionRequired,
-  'null' => $null,
-  _ => CheckRunConclusion._(json),
-}; }
-
-static const CheckRunConclusion success = CheckRunConclusion._('success');
-
-static const CheckRunConclusion failure = CheckRunConclusion._('failure');
-
-static const CheckRunConclusion neutral = CheckRunConclusion._('neutral');
-
-static const CheckRunConclusion cancelled = CheckRunConclusion._('cancelled');
-
-static const CheckRunConclusion skipped = CheckRunConclusion._('skipped');
-
-static const CheckRunConclusion timedOut = CheckRunConclusion._('timed_out');
-
-static const CheckRunConclusion actionRequired = CheckRunConclusion._('action_required');
-
-static const CheckRunConclusion $null = CheckRunConclusion._('null');
-
-static const List<CheckRunConclusion> values = [success, failure, neutral, cancelled, skipped, timedOut, actionRequired, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunConclusion($value)'; } 
- }
-/// A check performed on the code of a given code change
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_check_suite.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';/// A check performed on the code of a given code change
 @immutable final class CheckRun {const CheckRun({required this.id, required this.headSha, required this.nodeId, required this.externalId, required this.url, required this.htmlUrl, required this.detailsUrl, required this.status, required this.conclusion, required this.startedAt, required this.completedAt, required this.output, required this.name, required this.checkSuite, required this.app, required this.pullRequests, this.deployment, });
 
 factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
@@ -94,7 +15,7 @@ factory CheckRun.fromJson(Map<String, dynamic> json) { return CheckRun(
   conclusion: json['conclusion'] != null ? CheckRunConclusion.fromJson(json['conclusion'] as String) : null,
   startedAt: json['started_at'] != null ? DateTime.parse(json['started_at'] as String) : null,
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
-  output: CheckRunOutput.fromJson(json['output'] as Map<String, dynamic>),
+  output: Output.fromJson(json['output'] as Map<String, dynamic>),
   name: json['name'] as String,
   checkSuite: json['check_suite'] != null ? CheckRunCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>) : null,
   app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
@@ -127,7 +48,7 @@ final DateTime? startedAt;
 
 final DateTime? completedAt;
 
-final CheckRunOutput output;
+final Output output;
 
 /// The name of the check.
 final String name;
@@ -176,7 +97,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('check_suite') &&
       json.containsKey('app') &&
       json.containsKey('pull_requests'); } 
-CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, CheckRunOutput? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple Function()? deployment, }) { return CheckRun(
+CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()? externalId, String? url, String? Function()? htmlUrl, String? Function()? detailsUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? Function()? startedAt, DateTime? Function()? completedAt, Output? output, String? name, CheckRunCheckSuite? Function()? checkSuite, Integration? Function()? app, List<PullRequestMinimal>? pullRequests, DeploymentSimple Function()? deployment, }) { return CheckRun(
   id: id ?? this.id,
   headSha: headSha ?? this.headSha,
   nodeId: nodeId ?? this.nodeId,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/organization_shares_list_direction.dart';import '../models/organization_shares_list_order.dart';import '../models/resource_sharing_account_id.dart';import '../models/resource_sharing_create_share_recipient_request.dart';import '../models/resource_sharing_create_share_request.dart';import '../models/resource_sharing_create_share_resource_request.dart';import '../models/resource_sharing_organization_id.dart';import '../models/resource_sharing_recipient_id.dart';import '../models/resource_sharing_resource_id.dart';import '../models/resource_sharing_resource_status.dart';import '../models/resource_sharing_resource_type.dart';import '../models/resource_sharing_share_id.dart';import '../models/resource_sharing_share_kind.dart';import '../models/resource_sharing_share_object.dart';import '../models/resource_sharing_share_recipient_object.dart';import '../models/resource_sharing_share_resource_object.dart';import '../models/resource_sharing_share_status.dart';import '../models/resource_sharing_share_target_type.dart';import '../models/resource_sharing_update_share_request.dart';import '../models/resource_sharing_update_share_resource_request.dart';import '../models/response_common55_result.dart';import '../models/shares_list_direction.dart';import '../models/shares_list_order.dart';/// ResourceSharingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization_shares_list_direction.dart';import 'package:pub_cloudflare/models/organization_shares_list_order.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_recipient_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_create_share_resource_request.dart';import 'package:pub_cloudflare/models/resource_sharing_organization_id.dart';import 'package:pub_cloudflare/models/resource_sharing_recipient_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_id.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_status.dart';import 'package:pub_cloudflare/models/resource_sharing_resource_type.dart';import 'package:pub_cloudflare/models/resource_sharing_share_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_kind.dart';import 'package:pub_cloudflare/models/resource_sharing_share_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_recipient_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_resource_object.dart';import 'package:pub_cloudflare/models/resource_sharing_share_status.dart';import 'package:pub_cloudflare/models/resource_sharing_share_target_type.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_request.dart';import 'package:pub_cloudflare/models/resource_sharing_update_share_resource_request.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/shares_list_direction.dart';import 'package:pub_cloudflare/models/shares_list_order.dart';/// ResourceSharingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -72,7 +72,7 @@ return execute(
 /// Creates a new resource share for sharing Cloudflare resources with other accounts or organizations.
 ///
 /// `POST /accounts/{account_id}/shares`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareCreate({required ResourceSharingAccountId accountId, required ResourceSharingCreateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,7 +96,7 @@ return execute(
 /// Fetches share by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon33Result?, Never>> sharesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -129,7 +129,7 @@ return execute(
 /// Updating is not immediate, an updated share object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingUpdateShareRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,7 +153,7 @@ return execute(
 /// Deletion is not immediate, an updated share object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -211,7 +211,7 @@ return execute(
 /// Adds a recipient to a resource share, granting them access to the shared resources.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareRecipientCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareRecipientRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -256,7 +256,7 @@ return execute(
 /// Get share recipient by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareRecipientsGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, bool? includeResources, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -286,7 +286,7 @@ return execute(
 /// Deletion is not immediate, an updated share recipient object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareRecipientDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingRecipientId recipientId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -347,7 +347,7 @@ return execute(
 /// Adds a resource to an existing share, making it available to share recipients.
 ///
 /// `POST /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareResourceCreate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingCreateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -371,7 +371,7 @@ return execute(
 /// Get share resource by ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareResourcesGetById({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -393,7 +393,7 @@ return execute(
 /// Update is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `PUT /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareResourceUpdate({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, required ResourceSharingUpdateShareResourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -417,7 +417,7 @@ return execute(
 /// Deletion is not immediate, an updated share resource object with a new status will be returned.
 ///
 /// `DELETE /accounts/{account_id}/shares/{share_id}/resources/{resource_id}`
-Future<ApiResult<ResponseCommon55Result?, Never>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon33Result?, Never>> shareResourceDelete({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, required ResourceSharingResourceId resourceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',

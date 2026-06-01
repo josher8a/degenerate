@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_transcript_summary.dart';@immutable final class GetSessionSummaryResponse {const GetSessionSummaryResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_transcript_summary.dart';@immutable final class GetSessionSummaryResponse {const GetSessionSummaryResponse({this.data, this.success, });
 
 factory GetSessionSummaryResponse.fromJson(Map<String, dynamic> json) { return GetSessionSummaryResponse(
   data: json['data'] != null ? RealtimekitTranscriptSummary.fromJson(json['data'] as Map<String, dynamic>) : null,

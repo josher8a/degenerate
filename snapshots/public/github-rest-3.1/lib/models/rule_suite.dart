@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_rule_evaluations.dart';/// The result of the rule evaluations for rules with the `active` enforcement status.
-@immutable final class RuleSuiteResult {const RuleSuiteResult._(this.value);
-
-factory RuleSuiteResult.fromJson(String json) { return switch (json) {
-  'pass' => pass,
-  'fail' => fail,
-  'bypass' => bypass,
-  _ => RuleSuiteResult._(json),
-}; }
-
-static const RuleSuiteResult pass = RuleSuiteResult._('pass');
-
-static const RuleSuiteResult fail = RuleSuiteResult._('fail');
-
-static const RuleSuiteResult bypass = RuleSuiteResult._('bypass');
-
-static const List<RuleSuiteResult> values = [pass, fail, bypass];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleSuiteResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleSuiteResult($value)'; } 
- }
-/// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite/rule_evaluations.dart';import 'package:pub_github_rest_3_1/models/rule_suite/rule_suite_result.dart';/// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
 @immutable final class RuleSuiteEvaluationResult {const RuleSuiteEvaluationResult._(this.value);
 
 factory RuleSuiteEvaluationResult.fromJson(String json) { return switch (json) {
@@ -74,7 +46,7 @@ factory RuleSuite.fromJson(Map<String, dynamic> json) { return RuleSuite(
   pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
   result: json['result'] != null ? RuleSuiteResult.fromJson(json['result'] as String) : null,
   evaluationResult: json['evaluation_result'] != null ? RuleSuiteEvaluationResult.fromJson(json['evaluation_result'] as String) : null,
-  ruleEvaluations: (json['rule_evaluations'] as List<dynamic>?)?.map((e) => RuleSuiteRuleEvaluations.fromJson(e as Map<String, dynamic>)).toList(),
+  ruleEvaluations: (json['rule_evaluations'] as List<dynamic>?)?.map((e) => RuleEvaluations.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The unique identifier of the rule insight.
@@ -110,7 +82,7 @@ final RuleSuiteResult? result;
 final RuleSuiteEvaluationResult? evaluationResult;
 
 /// Details on the evaluated rules.
-final List<RuleSuiteRuleEvaluations>? ruleEvaluations;
+final List<RuleEvaluations>? ruleEvaluations;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -127,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (ruleEvaluations != null) 'rule_evaluations': ruleEvaluations?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'actor_id', 'actor_name', 'before_sha', 'after_sha', 'ref', 'repository_id', 'repository_name', 'pushed_at', 'result', 'evaluation_result', 'rule_evaluations'}.contains(key)); } 
-RuleSuite copyWith({int Function()? id, int? Function()? actorId, String? Function()? actorName, String Function()? beforeSha, String Function()? afterSha, String Function()? ref, int Function()? repositoryId, String Function()? repositoryName, DateTime Function()? pushedAt, RuleSuiteResult Function()? result, RuleSuiteEvaluationResult? Function()? evaluationResult, List<RuleSuiteRuleEvaluations> Function()? ruleEvaluations, }) { return RuleSuite(
+RuleSuite copyWith({int Function()? id, int? Function()? actorId, String? Function()? actorName, String Function()? beforeSha, String Function()? afterSha, String Function()? ref, int Function()? repositoryId, String Function()? repositoryName, DateTime Function()? pushedAt, RuleSuiteResult Function()? result, RuleSuiteEvaluationResult? Function()? evaluationResult, List<RuleEvaluations> Function()? ruleEvaluations, }) { return RuleSuite(
   id: id != null ? id() : this.id,
   actorId: actorId != null ? actorId() : this.actorId,
   actorName: actorName != null ? actorName() : this.actorName,

@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-@immutable final class RequestReturnMetadata {const RequestReturnMetadata._(this.value);
+@immutable final class ReturnMetadata {const ReturnMetadata._(this.value);
 
-factory RequestReturnMetadata.fromJson(String json) { return switch (json) {
+factory ReturnMetadata.fromJson(String json) { return switch (json) {
   'none' => none,
   'indexed' => indexed,
   'all' => all,
-  _ => RequestReturnMetadata._(json),
+  _ => ReturnMetadata._(json),
 }; }
 
-static const RequestReturnMetadata none = RequestReturnMetadata._('none');
+static const ReturnMetadata none = ReturnMetadata._('none');
 
-static const RequestReturnMetadata indexed = RequestReturnMetadata._('indexed');
+static const ReturnMetadata indexed = ReturnMetadata._('indexed');
 
-static const RequestReturnMetadata all = RequestReturnMetadata._('all');
+static const ReturnMetadata all = ReturnMetadata._('all');
 
-static const List<RequestReturnMetadata> values = [none, indexed, all];
+static const List<ReturnMetadata> values = [none, indexed, all];
 
 final String value;
 
@@ -24,15 +24,15 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is RequestReturnMetadata && other.value == value; } 
+    other is ReturnMetadata && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RequestReturnMetadata($value)'; } 
+@override String toString() { return 'ReturnMetadata($value)'; } 
  }
-@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
+@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = ReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
 
 factory Request.fromJson(Map<String, dynamic> json) { return Request(
   filter: json['filter'] as Map<String, dynamic>?,
-  returnMetadata: json.containsKey('returnMetadata') ? RequestReturnMetadata.fromJson(json['returnMetadata'] as String) : RequestReturnMetadata.none,
+  returnMetadata: json.containsKey('returnMetadata') ? ReturnMetadata.fromJson(json['returnMetadata'] as String) : ReturnMetadata.none,
   returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
   topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,
   vector: (json['vector'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
@@ -42,7 +42,7 @@ factory Request.fromJson(Map<String, dynamic> json) { return Request(
 final Map<String,dynamic>? filter;
 
 /// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-final RequestReturnMetadata returnMetadata;
+final ReturnMetadata returnMetadata;
 
 /// Whether to return the values associated with the closest vectors.
 final bool returnValues;
@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-Request copyWith({Map<String, dynamic> Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
+Request copyWith({Map<String, dynamic> Function()? filter, ReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_comment_event_comment.dart';@immutable final class CommitCommentEvent {const CommitCommentEvent({required this.action, required this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit_comment_event/commit_comment_event_comment.dart';@immutable final class CommitCommentEvent {const CommitCommentEvent({required this.action, required this.comment, });
 
 factory CommitCommentEvent.fromJson(Map<String, dynamic> json) { return CommitCommentEvent(
   action: json['action'] as String,

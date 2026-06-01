@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'bank_account.dart';import 'card.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';import 'source.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CustomerObject {const CustomerObject._(this.value);
-
-factory CustomerObject.fromJson(String json) { return switch (json) {
-  'customer' => customer,
-  _ => CustomerObject._(json),
-}; }
-
-static const CustomerObject customer = CustomerObject._('customer');
-
-static const List<CustomerObject> values = [customer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerObject($value)'; } 
- }
-/// Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`. When set to `reverse`, invoice and receipt PDFs include the following text: **"Reverse charge"**.
-@immutable final class CustomerTaxExempt {const CustomerTaxExempt._(this.value);
-
-factory CustomerTaxExempt.fromJson(String json) { return switch (json) {
-  'exempt' => exempt,
-  'none' => none,
-  'reverse' => reverse,
-  _ => CustomerTaxExempt._(json),
-}; }
-
-static const CustomerTaxExempt exempt = CustomerTaxExempt._('exempt');
-
-static const CustomerTaxExempt none = CustomerTaxExempt._('none');
-
-static const CustomerTaxExempt reverse = CustomerTaxExempt._('reverse');
-
-static const List<CustomerTaxExempt> values = [exempt, none, reverse];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxExempt($value)'; } 
- }
-/// This object represents a customer of your business. Use it to [create recurring charges](https://docs.stripe.com/invoicing/customer), [save payment](https://docs.stripe.com/payments/save-during-payment) and contact information,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/cash_balance.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/customer/customer_object.dart';import 'package:pub_stripe_spec3/models/customer/customer_subscriptions.dart';import 'package:pub_stripe_spec3/models/customer/customer_tax_exempt.dart';import 'package:pub_stripe_spec3/models/customer/customer_tax_ids.dart';import 'package:pub_stripe_spec3/models/customer/sources.dart';import 'package:pub_stripe_spec3/models/customer_tax.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoice_setting_customer_setting.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// This object represents a customer of your business. Use it to [create recurring charges](https://docs.stripe.com/invoicing/customer), [save payment](https://docs.stripe.com/payments/save-during-payment) and contact information,
 /// and track payments that belong to the same customer.
 @immutable final class Customer {const Customer({required this.created, required this.id, required this.livemode, required this.object, this.address, this.balance, this.businessName, this.cashBalance, this.currency, this.customerAccount, this.defaultSource, this.delinquent, this.description, this.discount, this.email, this.individualName, this.invoiceCreditBalance, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.sources, this.subscriptions, this.tax, this.taxExempt, this.taxIds, this.testClock, });
 
@@ -80,7 +30,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
-  sources: json['sources'] != null ? CustomerSources.fromJson(json['sources'] as Map<String, dynamic>) : null,
+  sources: json['sources'] != null ? Sources.fromJson(json['sources'] as Map<String, dynamic>) : null,
   subscriptions: json['subscriptions'] != null ? CustomerSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
   tax: json['tax'] != null ? CustomerTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null,
@@ -169,7 +119,7 @@ final List<String>? preferredLocales;
 final Shipping? shipping;
 
 /// The customer's payment sources, if any.
-final CustomerSources? sources;
+final Sources? sources;
 
 /// The customer's current subscriptions, if any.
 final CustomerSubscriptions? subscriptions;
@@ -183,7 +133,7 @@ final CustomerTaxExempt? taxExempt;
 final CustomerTaxIds? taxIds;
 
 /// ID of the test clock that this customer belongs to.
-final CustomerTestClock? testClock;
+final TestClock? testClock;
 
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
@@ -222,7 +172,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-Customer copyWith({Address? Function()? address, int Function()? balance, String Function()? businessName, CashBalance? Function()? cashBalance, int? created, String? Function()? currency, String? Function()? customerAccount, CustomerDefaultSource? Function()? defaultSource, bool? Function()? delinquent, String? Function()? description, Discount? Function()? discount, String? Function()? email, String? id, String Function()? individualName, Map<String, int> Function()? invoiceCreditBalance, String? Function()? invoicePrefix, InvoiceSettingCustomerSetting Function()? invoiceSettings, bool? livemode, Map<String, String> Function()? metadata, String? Function()? name, int Function()? nextInvoiceSequence, CustomerObject? object, String? Function()? phone, List<String>? Function()? preferredLocales, Shipping? Function()? shipping, CustomerSources Function()? sources, CustomerSubscriptions Function()? subscriptions, CustomerTax Function()? tax, CustomerTaxExempt? Function()? taxExempt, CustomerTaxIds Function()? taxIds, CustomerTestClock? Function()? testClock, }) { return Customer(
+Customer copyWith({Address? Function()? address, int Function()? balance, String Function()? businessName, CashBalance? Function()? cashBalance, int? created, String? Function()? currency, String? Function()? customerAccount, CustomerDefaultSource? Function()? defaultSource, bool? Function()? delinquent, String? Function()? description, Discount? Function()? discount, String? Function()? email, String? id, String Function()? individualName, Map<String, int> Function()? invoiceCreditBalance, String? Function()? invoicePrefix, InvoiceSettingCustomerSetting Function()? invoiceSettings, bool? livemode, Map<String, String> Function()? metadata, String? Function()? name, int Function()? nextInvoiceSequence, CustomerObject? object, String? Function()? phone, List<String>? Function()? preferredLocales, Shipping? Function()? shipping, Sources Function()? sources, CustomerSubscriptions Function()? subscriptions, CustomerTax Function()? tax, CustomerTaxExempt? Function()? taxExempt, CustomerTaxIds Function()? taxIds, TestClock? Function()? testClock, }) { return Customer(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,

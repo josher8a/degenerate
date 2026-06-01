@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_response.dart';/// The event type, must be `transcription_session.updated`.
-@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);
-
-factory RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(String json) { return switch (json) {
-  'transcription_session.updated' => transcriptionSessionUpdated,
-  _ => RealtimeBetaServerEventTranscriptionSessionUpdatedType._(json),
-}; }
-
-static const RealtimeBetaServerEventTranscriptionSessionUpdatedType transcriptionSessionUpdated = RealtimeBetaServerEventTranscriptionSessionUpdatedType._('transcription_session.updated');
-
-static const List<RealtimeBetaServerEventTranscriptionSessionUpdatedType> values = [transcriptionSessionUpdated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventTranscriptionSessionUpdatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventTranscriptionSessionUpdatedType($value)'; } 
- }
-/// Returned when a transcription session is updated with a `transcription_session.update` event, unless
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_transcription_session_updated/realtime_beta_server_event_transcription_session_updated_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response.dart';/// Returned when a transcription session is updated with a `transcription_session.update` event, unless
 /// there is an error.
 /// 
 @immutable final class RealtimeBetaServerEventTranscriptionSessionUpdated {const RealtimeBetaServerEventTranscriptionSessionUpdated({required this.eventId, required this.type, required this.session, });

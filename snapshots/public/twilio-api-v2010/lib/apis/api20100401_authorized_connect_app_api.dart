@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_authorized_connect_app.dart';import '../models/list_authorized_connect_app_response.dart';/// Api20100401AuthorizedConnectAppApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_authorized_connect_app.dart';import 'package:pub_twilio_api_v2010/models/list_authorized_connect_app_response.dart';/// Api20100401AuthorizedConnectAppApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

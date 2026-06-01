@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'profile_avatar_type_enum.dart';@immutable final class PublicUserSchema {const PublicUserSchema({required this.profileAvatarType, required this.dateCreated, this.circleCount, this.name, this.slug, this.isStaff = false, this.profileAvatarSeed, this.profileImage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/profile_avatar_type_enum.dart';@immutable final class PublicUserSchema {const PublicUserSchema({required this.profileAvatarType, required this.dateCreated, this.circleCount, this.name, this.slug, this.isStaff = false, this.profileAvatarSeed, this.profileImage, });
 
 factory PublicUserSchema.fromJson(Map<String, dynamic> json) { return PublicUserSchema(
   profileAvatarType: ProfileAvatarTypeEnum.fromJson(json['profile_avatar_type'] as String),

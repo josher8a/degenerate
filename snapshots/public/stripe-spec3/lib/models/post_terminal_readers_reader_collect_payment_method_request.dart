@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_payment_method_request_collect_config.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({required this.paymentIntent, this.collectConfig, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_collect_payment_method_request/collect_config.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequest {const PostTerminalReadersReaderCollectPaymentMethodRequest({required this.paymentIntent, this.collectConfig, this.expand, });
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
-  collectConfig: json['collect_config'] != null ? PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
+  collectConfig: json['collect_config'] != null ? CollectConfig.fromJson(json['collect_config'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentIntent: json['payment_intent'] as String,
 ); }
 
 /// Configuration overrides for this collection, such as tipping, surcharging, and customer cancellation settings.
-final PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig? collectConfig;
+final CollectConfig? collectConfig;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'payment_intent': paymentIntent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
-PostTerminalReadersReaderCollectPaymentMethodRequest copyWith({PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig Function()? collectConfig, List<String> Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
+PostTerminalReadersReaderCollectPaymentMethodRequest copyWith({CollectConfig Function()? collectConfig, List<String> Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderCollectPaymentMethodRequest(
   collectConfig: collectConfig != null ? collectConfig() : this.collectConfig,
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,

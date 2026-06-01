@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_https_certificate.dart';import 'pages_source_hash.dart';/// The status of the most recent build of the Page.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pages_https_certificate.dart';import 'package:pub_github_rest_3_1/models/pages_source_hash.dart';/// The status of the most recent build of the Page.
 @immutable final class PageStatus {const PageStatus._(this.value);
 
 factory PageStatus.fromJson(String json) { return switch (json) {
@@ -32,25 +32,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PageStatus($value)'; } 
  }
 /// The state if the domain is verified
-@immutable final class PageProtectedDomainState {const PageProtectedDomainState._(this.value);
+@immutable final class ProtectedDomainState {const ProtectedDomainState._(this.value);
 
-factory PageProtectedDomainState.fromJson(String json) { return switch (json) {
+factory ProtectedDomainState.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'verified' => verified,
   'unverified' => unverified,
   'null' => $null,
-  _ => PageProtectedDomainState._(json),
+  _ => ProtectedDomainState._(json),
 }; }
 
-static const PageProtectedDomainState pending = PageProtectedDomainState._('pending');
+static const ProtectedDomainState pending = ProtectedDomainState._('pending');
 
-static const PageProtectedDomainState verified = PageProtectedDomainState._('verified');
+static const ProtectedDomainState verified = ProtectedDomainState._('verified');
 
-static const PageProtectedDomainState unverified = PageProtectedDomainState._('unverified');
+static const ProtectedDomainState unverified = ProtectedDomainState._('unverified');
 
-static const PageProtectedDomainState $null = PageProtectedDomainState._('null');
+static const ProtectedDomainState $null = ProtectedDomainState._('null');
 
-static const List<PageProtectedDomainState> values = [pending, verified, unverified, $null];
+static const List<ProtectedDomainState> values = [pending, verified, unverified, $null];
 
 final String value;
 
@@ -58,27 +58,27 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageProtectedDomainState && other.value == value; } 
+    other is ProtectedDomainState && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageProtectedDomainState($value)'; } 
+@override String toString() { return 'ProtectedDomainState($value)'; } 
  }
 /// The process in which the Page will be built.
-@immutable final class PageBuildType {const PageBuildType._(this.value);
+@immutable final class BuildType {const BuildType._(this.value);
 
-factory PageBuildType.fromJson(String json) { return switch (json) {
+factory BuildType.fromJson(String json) { return switch (json) {
   'legacy' => legacy,
   'workflow' => workflow,
   'null' => $null,
-  _ => PageBuildType._(json),
+  _ => BuildType._(json),
 }; }
 
-static const PageBuildType legacy = PageBuildType._('legacy');
+static const BuildType legacy = BuildType._('legacy');
 
-static const PageBuildType workflow = PageBuildType._('workflow');
+static const BuildType workflow = BuildType._('workflow');
 
-static const PageBuildType $null = PageBuildType._('null');
+static const BuildType $null = BuildType._('null');
 
-static const List<PageBuildType> values = [legacy, workflow, $null];
+static const List<BuildType> values = [legacy, workflow, $null];
 
 final String value;
 
@@ -86,9 +86,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageBuildType && other.value == value; } 
+    other is BuildType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageBuildType($value)'; } 
+@override String toString() { return 'BuildType($value)'; } 
  }
 /// The configuration for GitHub Pages for a repository.
 @immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState, this.pendingDomainUnverifiedAt, this.custom404 = false, this.htmlUrl, this.buildType, this.source, this.httpsCertificate, this.httpsEnforced, });
@@ -97,11 +97,11 @@ factory Page.fromJson(Map<String, dynamic> json) { return Page(
   url: Uri.parse(json['url'] as String),
   status: json['status'] != null ? PageStatus.fromJson(json['status'] as String) : null,
   cname: json['cname'] as String?,
-  protectedDomainState: json['protected_domain_state'] != null ? PageProtectedDomainState.fromJson(json['protected_domain_state'] as String) : null,
+  protectedDomainState: json['protected_domain_state'] != null ? ProtectedDomainState.fromJson(json['protected_domain_state'] as String) : null,
   pendingDomainUnverifiedAt: json['pending_domain_unverified_at'] != null ? DateTime.parse(json['pending_domain_unverified_at'] as String) : null,
   custom404: json['custom_404'] as bool,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
-  buildType: json['build_type'] != null ? PageBuildType.fromJson(json['build_type'] as String) : null,
+  buildType: json['build_type'] != null ? BuildType.fromJson(json['build_type'] as String) : null,
   source: json['source'] != null ? PagesSourceHash.fromJson(json['source'] as Map<String, dynamic>) : null,
   public: json['public'] as bool,
   httpsCertificate: json['https_certificate'] != null ? PagesHttpsCertificate.fromJson(json['https_certificate'] as Map<String, dynamic>) : null,
@@ -118,7 +118,7 @@ final PageStatus? status;
 final String? cname;
 
 /// The state if the domain is verified
-final PageProtectedDomainState? protectedDomainState;
+final ProtectedDomainState? protectedDomainState;
 
 /// The timestamp when a pending domain becomes unverified.
 final DateTime? pendingDomainUnverifiedAt;
@@ -130,7 +130,7 @@ final bool custom404;
 final Uri? htmlUrl;
 
 /// The process in which the Page will be built.
-final PageBuildType? buildType;
+final BuildType? buildType;
 
 final PagesSourceHash? source;
 
@@ -161,7 +161,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('cname') && json['cname'] is String &&
       json.containsKey('custom_404') && json['custom_404'] is bool &&
       json.containsKey('public') && json['public'] is bool; } 
-Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, PageProtectedDomainState? Function()? protectedDomainState, DateTime? Function()? pendingDomainUnverifiedAt, bool? custom404, Uri Function()? htmlUrl, PageBuildType? Function()? buildType, PagesSourceHash Function()? source, bool? public, PagesHttpsCertificate Function()? httpsCertificate, bool Function()? httpsEnforced, }) { return Page(
+Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cname, ProtectedDomainState? Function()? protectedDomainState, DateTime? Function()? pendingDomainUnverifiedAt, bool? custom404, Uri Function()? htmlUrl, BuildType? Function()? buildType, PagesSourceHash Function()? source, bool? public, PagesHttpsCertificate Function()? httpsCertificate, bool Function()? httpsEnforced, }) { return Page(
   url: url ?? this.url,
   status: status != null ? status() : this.status,
   cname: cname != null ? cname() : this.cname,

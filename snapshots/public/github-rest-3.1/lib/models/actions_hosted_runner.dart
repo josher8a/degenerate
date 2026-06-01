@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_machine_spec.dart';import 'actions_hosted_runner_pool_image.dart';import 'public_ip.dart';/// The status of the runner.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_machine_spec.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_pool_image.dart';import 'package:pub_github_rest_3_1/models/public_ip.dart';/// The status of the runner.
 @immutable final class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus._(this.value);
 
 factory ActionsHostedRunnerStatus.fromJson(String json) { return switch (json) {

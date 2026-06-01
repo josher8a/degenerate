@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';@immutable final class AccessComponentsSchemasCertificates {const AccessComponentsSchemasCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_certificates_components_schemas_name2.dart';import 'package:pub_cloudflare/models/access_fingerprint.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';@immutable final class AccessComponentsSchemasCertificates {const AccessComponentsSchemasCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
 
 factory AccessComponentsSchemasCertificates.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasCertificates(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

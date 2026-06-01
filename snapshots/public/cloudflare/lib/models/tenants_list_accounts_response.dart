@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'message3.dart';@immutable final class TenantsListAccountsResponse {const TenantsListAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account.dart';import 'package:pub_cloudflare/models/message3.dart';@immutable final class TenantsListAccountsResponse {const TenantsListAccountsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory TenantsListAccountsResponse.fromJson(Map<String, dynamic> json) { return TenantsListAccountsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),

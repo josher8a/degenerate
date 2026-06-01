@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payout.dart';import 'treasury_credit_reversal.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
 @immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(this.value);
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String json) { return switch (json) {

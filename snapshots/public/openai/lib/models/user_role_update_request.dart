@@ -1,44 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `reader`
-@immutable final class UserRoleUpdateRequestRole {const UserRoleUpdateRequestRole._(this.value);
-
-factory UserRoleUpdateRequestRole.fromJson(String json) { return switch (json) {
-  'owner' => owner,
-  'reader' => reader,
-  _ => UserRoleUpdateRequestRole._(json),
-}; }
-
-static const UserRoleUpdateRequestRole owner = UserRoleUpdateRequestRole._('owner');
-
-static const UserRoleUpdateRequestRole reader = UserRoleUpdateRequestRole._('reader');
-
-static const List<UserRoleUpdateRequestRole> values = [owner, reader];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserRoleUpdateRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserRoleUpdateRequestRole($value)'; } 
- }
-@immutable final class UserRoleUpdateRequest {const UserRoleUpdateRequest({required this.role});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';@immutable final class UserRoleUpdateRequest {const UserRoleUpdateRequest({required this.role});
 
 factory UserRoleUpdateRequest.fromJson(Map<String, dynamic> json) { return UserRoleUpdateRequest(
-  role: UserRoleUpdateRequestRole.fromJson(json['role'] as String),
+  role: InviteRequestRole.fromJson(json['role'] as String),
 ); }
 
 /// `owner` or `reader`
-final UserRoleUpdateRequestRole role;
+final InviteRequestRole role;
 
 Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-UserRoleUpdateRequest copyWith({UserRoleUpdateRequestRole? role}) { return UserRoleUpdateRequest(
+UserRoleUpdateRequest copyWith({InviteRequestRole? role}) { return UserRoleUpdateRequest(
   role: role ?? this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,43 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// After division, either round the result `up` or `down`.
-@immutable final class TransformUsageRound {const TransformUsageRound._(this.value);
-
-factory TransformUsageRound.fromJson(String json) { return switch (json) {
-  'down' => down,
-  'up' => up,
-  _ => TransformUsageRound._(json),
-}; }
-
-static const TransformUsageRound down = TransformUsageRound._('down');
-
-static const TransformUsageRound up = TransformUsageRound._('up');
-
-static const List<TransformUsageRound> values = [down, up];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransformUsageRound && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransformUsageRound($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/transform_quantity/round.dart';/// 
 @immutable final class TransformUsage {const TransformUsage({required this.divideBy, required this.round, });
 
 factory TransformUsage.fromJson(Map<String, dynamic> json) { return TransformUsage(
   divideBy: (json['divide_by'] as num).toInt(),
-  round: TransformUsageRound.fromJson(json['round'] as String),
+  round: Round.fromJson(json['round'] as String),
 ); }
 
 /// Divide usage by this number.
 final int divideBy;
 
 /// After division, either round the result `up` or `down`.
-final TransformUsageRound round;
+final Round round;
 
 Map<String, dynamic> toJson() { return {
   'divide_by': divideBy,
@@ -45,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('divide_by') && json['divide_by'] is num &&
       json.containsKey('round'); } 
-TransformUsage copyWith({int? divideBy, TransformUsageRound? round, }) { return TransformUsage(
+TransformUsage copyWith({int? divideBy, Round? round, }) { return TransformUsage(
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
 ); } 

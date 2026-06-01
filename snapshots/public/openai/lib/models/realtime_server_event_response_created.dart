@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response.dart';/// Returned when a new Response is created. The first event of response creation,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_response.dart';/// Returned when a new Response is created. The first event of response creation,
 /// where the response is in an initial state of `in_progress`.
 /// 
 @immutable final class RealtimeServerEventResponseCreated {const RealtimeServerEventResponseCreated({required this.eventId, required this.type, required this.response, });

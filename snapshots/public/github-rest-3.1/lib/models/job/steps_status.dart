@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the lifecycle that the job is currently in.
+@immutable final class StepsStatus {const StepsStatus._(this.value);
+
+factory StepsStatus.fromJson(String json) { return switch (json) {
+  'queued' => queued,
+  'in_progress' => inProgress,
+  'completed' => completed,
+  _ => StepsStatus._(json),
+}; }
+
+static const StepsStatus queued = StepsStatus._('queued');
+
+static const StepsStatus inProgress = StepsStatus._('in_progress');
+
+static const StepsStatus completed = StepsStatus._('completed');
+
+static const List<StepsStatus> values = [queued, inProgress, completed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is StepsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'StepsStatus($value)'; } 
+ }

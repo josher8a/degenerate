@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_login_method_rule_login_method.dart';/// Matches a specific identity provider id.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_login_method_rule/login_method.dart';/// Matches a specific identity provider id.
 @immutable final class AccessLoginMethodRule {const AccessLoginMethodRule({required this.loginMethod});
 
 factory AccessLoginMethodRule.fromJson(Map<String, dynamic> json) { return AccessLoginMethodRule(
-  loginMethod: AccessLoginMethodRuleLoginMethod.fromJson(json['login_method'] as Map<String, dynamic>),
+  loginMethod: LoginMethod.fromJson(json['login_method'] as Map<String, dynamic>),
 ); }
 
-final AccessLoginMethodRuleLoginMethod loginMethod;
+final LoginMethod loginMethod;
 
 Map<String, dynamic> toJson() { return {
   'login_method': loginMethod.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('login_method'); } 
-AccessLoginMethodRule copyWith({AccessLoginMethodRuleLoginMethod? loginMethod}) { return AccessLoginMethodRule(
+AccessLoginMethodRule copyWith({LoginMethod? loginMethod}) { return AccessLoginMethodRule(
   loginMethod: loginMethod ?? this.loginMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

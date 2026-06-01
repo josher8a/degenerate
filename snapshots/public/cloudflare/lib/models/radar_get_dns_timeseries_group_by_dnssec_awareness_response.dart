@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_dnssec_awareness_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse {const RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_dnssec_response/radar_get_dns_as112_timeseries_group_by_dnssec_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse {const RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse({required this.result, required this.success, });
 
 factory RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
-  result: RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult result;
+final RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse copyWith({RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
+RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse copyWith({RadarGetDnsAs112TimeseriesGroupByDnssecResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

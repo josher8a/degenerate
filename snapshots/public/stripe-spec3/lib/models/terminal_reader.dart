@@ -1,80 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_location.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
-@immutable final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
-
-factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
-  'bbpos_chipper2x' => bbposChipper2x,
-  'bbpos_wisepad3' => bbposWisepad3,
-  'bbpos_wisepos_e' => bbposWiseposE,
-  'mobile_phone_reader' => mobilePhoneReader,
-  'simulated_stripe_s700' => simulatedStripeS700,
-  'simulated_stripe_s710' => simulatedStripeS710,
-  'simulated_wisepos_e' => simulatedWiseposE,
-  'stripe_m2' => stripeM2,
-  'stripe_s700' => stripeS700,
-  'stripe_s710' => stripeS710,
-  'verifone_P400' => verifoneP400,
-  _ => TerminalReaderDeviceType._(json),
-}; }
-
-static const TerminalReaderDeviceType bbposChipper2x = TerminalReaderDeviceType._('bbpos_chipper2x');
-
-static const TerminalReaderDeviceType bbposWisepad3 = TerminalReaderDeviceType._('bbpos_wisepad3');
-
-static const TerminalReaderDeviceType bbposWiseposE = TerminalReaderDeviceType._('bbpos_wisepos_e');
-
-static const TerminalReaderDeviceType mobilePhoneReader = TerminalReaderDeviceType._('mobile_phone_reader');
-
-static const TerminalReaderDeviceType simulatedStripeS700 = TerminalReaderDeviceType._('simulated_stripe_s700');
-
-static const TerminalReaderDeviceType simulatedStripeS710 = TerminalReaderDeviceType._('simulated_stripe_s710');
-
-static const TerminalReaderDeviceType simulatedWiseposE = TerminalReaderDeviceType._('simulated_wisepos_e');
-
-static const TerminalReaderDeviceType stripeM2 = TerminalReaderDeviceType._('stripe_m2');
-
-static const TerminalReaderDeviceType stripeS700 = TerminalReaderDeviceType._('stripe_s700');
-
-static const TerminalReaderDeviceType stripeS710 = TerminalReaderDeviceType._('stripe_s710');
-
-static const TerminalReaderDeviceType verifoneP400 = TerminalReaderDeviceType._('verifone_P400');
-
-static const List<TerminalReaderDeviceType> values = [bbposChipper2x, bbposWisepad3, bbposWiseposE, mobilePhoneReader, simulatedStripeS700, simulatedStripeS710, simulatedWiseposE, stripeM2, stripeS700, stripeS710, verifoneP400];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderDeviceType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TerminalReaderObject {const TerminalReaderObject._(this.value);
-
-factory TerminalReaderObject.fromJson(String json) { return switch (json) {
-  'terminal.reader' => terminalReader,
-  _ => TerminalReaderObject._(json),
-}; }
-
-static const TerminalReaderObject terminalReader = TerminalReaderObject._('terminal.reader');
-
-static const List<TerminalReaderObject> values = [terminalReader];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderObject($value)'; } 
- }
-/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
 @immutable final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);
 
 factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
@@ -107,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
   action: json['action'] != null ? TerminalReaderReaderResourceReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   deviceSwVersion: json['device_sw_version'] as String?,
-  deviceType: TerminalReaderDeviceType.fromJson(json['device_type'] as String),
+  deviceType: DeviceType.fromJson(json['device_type'] as String),
   id: json['id'] as String,
   ipAddress: json['ip_address'] as String?,
   label: json['label'] as String,
@@ -115,7 +41,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   livemode: json['livemode'] as bool,
   location: json['location'] != null ? OneOf2.parse(json['location'], fromA: (v) => v as String, fromB: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  object: TerminalReaderObject.fromJson(json['object'] as String),
+  object: DeletedTerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,
   status: json['status'] != null ? TerminalReaderStatus.fromJson(json['status'] as String) : null,
 ); }
@@ -127,7 +53,7 @@ final TerminalReaderReaderResourceReaderAction? action;
 final String? deviceSwVersion;
 
 /// Device type of the reader.
-final TerminalReaderDeviceType deviceType;
+final DeviceType deviceType;
 
 /// Unique identifier for the object.
 final String id;
@@ -145,13 +71,13 @@ final int? lastSeenAt;
 final bool livemode;
 
 /// The location identifier of the reader.
-final TerminalReaderLocation? location;
+final Location? location;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final TerminalReaderObject object;
+final DeletedTerminalReaderObject object;
 
 /// Serial number of the reader.
 final String serialNumber;
@@ -181,7 +107,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('devic
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
-TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? action, String? Function()? deviceSwVersion, TerminalReaderDeviceType? deviceType, String? id, String? Function()? ipAddress, String? label, int? Function()? lastSeenAt, bool? livemode, TerminalReaderLocation? Function()? location, Map<String,String>? metadata, TerminalReaderObject? object, String? serialNumber, TerminalReaderStatus? Function()? status, }) { return TerminalReader(
+TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? action, String? Function()? deviceSwVersion, DeviceType? deviceType, String? id, String? Function()? ipAddress, String? label, int? Function()? lastSeenAt, bool? livemode, Location? Function()? location, Map<String,String>? metadata, DeletedTerminalReaderObject? object, String? serialNumber, TerminalReaderStatus? Function()? status, }) { return TerminalReader(
   action: action != null ? action() : this.action,
   deviceSwVersion: deviceSwVersion != null ? deviceSwVersion() : this.deviceSwVersion,
   deviceType: deviceType ?? this.deviceType,

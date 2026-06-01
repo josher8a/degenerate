@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_reference_create_response_result.dart';@immutable final class PostEventReferenceCreateResponse {const PostEventReferenceCreateResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_event_reference_delete_response/delete_event_reference_delete_response_result.dart';@immutable final class PostEventReferenceCreateResponse {const PostEventReferenceCreateResponse({required this.result, required this.success, });
 
 factory PostEventReferenceCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventReferenceCreateResponse(
-  result: PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final PostEventReferenceCreateResponseResult result;
+final DeleteEventReferenceDeleteResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostEventReferenceCreateResponse copyWith({PostEventReferenceCreateResponseResult? result, bool? success, }) { return PostEventReferenceCreateResponse(
+PostEventReferenceCreateResponse copyWith({DeleteEventReferenceDeleteResponseResult? result, bool? success, }) { return PostEventReferenceCreateResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

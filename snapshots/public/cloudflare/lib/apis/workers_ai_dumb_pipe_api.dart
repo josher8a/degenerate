@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response400.dart';import '../models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response4002.dart';import '../models/workers_ai_post_websocket_run_cf_test_hello_world_cog_response400.dart';/// WorkersAiDumbPipeApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response4002.dart';import 'package:pub_cloudflare/models/workers_ai_post_websocket_run_cf_test_hello_world_cog_response400.dart';/// WorkersAiDumbPipeApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

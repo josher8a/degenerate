@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ownership_verification_http_variant1.dart';/// A value that is one of: `TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ownership_verification_http/tls_certificates_and_hostnames_ownership_verification_http_variant1.dart';/// A value that is one of: `TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1`.
 sealed class TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp();
 
 factory TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(Map<String, dynamic> json) {   if (TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.canParse(json)) {

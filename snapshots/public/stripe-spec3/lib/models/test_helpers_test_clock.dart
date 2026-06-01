@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_clocks_resource_status_details_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TestHelpersTestClockObject {const TestHelpersTestClockObject._(this.value);
-
-factory TestHelpersTestClockObject.fromJson(String json) { return switch (json) {
-  'test_helpers.test_clock' => testHelpersTestClock,
-  _ => TestHelpersTestClockObject._(json),
-}; }
-
-static const TestHelpersTestClockObject testHelpersTestClock = TestHelpersTestClockObject._('test_helpers.test_clock');
-
-static const List<TestHelpersTestClockObject> values = [testHelpersTestClock];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TestHelpersTestClockObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TestHelpersTestClockObject($value)'; } 
- }
-/// The status of the Test Clock.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_clocks_resource_status_details_status_details.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock/deleted_test_helpers_test_clock_object.dart';/// The status of the Test Clock.
 @immutable final class TestHelpersTestClockStatus {const TestHelpersTestClockStatus._(this.value);
 
 factory TestHelpersTestClockStatus.fromJson(String json) { return switch (json) {
@@ -62,7 +40,7 @@ factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHe
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   name: json['name'] as String?,
-  object: TestHelpersTestClockObject.fromJson(json['object'] as String),
+  object: DeletedTestHelpersTestClockObject.fromJson(json['object'] as String),
   status: TestHelpersTestClockStatus.fromJson(json['status'] as String),
   statusDetails: BillingClocksResourceStatusDetailsStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
 ); }
@@ -86,7 +64,7 @@ final bool livemode;
 final String? name;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final TestHelpersTestClockObject object;
+final DeletedTestHelpersTestClockObject object;
 
 /// The status of the Test Clock.
 final TestHelpersTestClockStatus status;
@@ -112,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, String? Function()? name, TestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(
+TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, String? Function()? name, DeletedTestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(
   created: created ?? this.created,
   deletesAfter: deletesAfter ?? this.deletesAfter,
   frozenTime: frozenTime ?? this.frozenTime,

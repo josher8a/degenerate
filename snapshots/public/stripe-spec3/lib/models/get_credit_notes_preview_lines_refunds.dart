@@ -1,41 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_refunds_payment_record_refund.dart';@immutable final class GetCreditNotesPreviewLinesRefundsType {const GetCreditNotesPreviewLinesRefundsType._(this.value);
-
-factory GetCreditNotesPreviewLinesRefundsType.fromJson(String json) { return switch (json) {
-  'payment_record_refund' => paymentRecordRefund,
-  'refund' => refund,
-  _ => GetCreditNotesPreviewLinesRefundsType._(json),
-}; }
-
-static const GetCreditNotesPreviewLinesRefundsType paymentRecordRefund = GetCreditNotesPreviewLinesRefundsType._('payment_record_refund');
-
-static const GetCreditNotesPreviewLinesRefundsType refund = GetCreditNotesPreviewLinesRefundsType._('refund');
-
-static const List<GetCreditNotesPreviewLinesRefundsType> values = [paymentRecordRefund, refund];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewLinesRefundsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewLinesRefundsType($value)'; } 
- }
-@immutable final class GetCreditNotesPreviewLinesRefunds {const GetCreditNotesPreviewLinesRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds/get_credit_notes_preview_lines_refunds_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds/payment_record_refund.dart';@immutable final class GetCreditNotesPreviewLinesRefunds {const GetCreditNotesPreviewLinesRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
 
 factory GetCreditNotesPreviewLinesRefunds.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,
-  paymentRecordRefund: json['payment_record_refund'] != null ? GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? PaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: json['refund'] as String?,
   type: json['type'] != null ? GetCreditNotesPreviewLinesRefundsType.fromJson(json['type'] as String) : null,
 ); }
 
 final int? amountRefunded;
 
-final GetCreditNotesPreviewLinesRefundsPaymentRecordRefund? paymentRecordRefund;
+final PaymentRecordRefund? paymentRecordRefund;
 
 final String? refund;
 
@@ -48,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_refunded', 'payment_record_refund', 'refund', 'type'}.contains(key)); } 
-GetCreditNotesPreviewLinesRefunds copyWith({int Function()? amountRefunded, GetCreditNotesPreviewLinesRefundsPaymentRecordRefund Function()? paymentRecordRefund, String Function()? refund, GetCreditNotesPreviewLinesRefundsType Function()? type, }) { return GetCreditNotesPreviewLinesRefunds(
+GetCreditNotesPreviewLinesRefunds copyWith({int Function()? amountRefunded, PaymentRecordRefund Function()? paymentRecordRefund, String Function()? refund, GetCreditNotesPreviewLinesRefundsType Function()? type, }) { return GetCreditNotesPreviewLinesRefunds(
   amountRefunded: amountRefunded != null ? amountRefunded() : this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,
   refund: refund != null ? refund() : this.refund,

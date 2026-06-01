@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
 @immutable final class ReplicationControllerStatus {const ReplicationControllerStatus({this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, this.replicas = 0, });
 
 factory ReplicationControllerStatus.fromJson(Map<String, dynamic> json) { return ReplicationControllerStatus(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'vector_store_search_request_filters.dart';import 'vector_store_search_request_query.dart';import 'vector_store_search_request_ranking_options.dart';@immutable final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery = false, this.maxNumResults = 10, this.filters, this.rankingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/comparison_filter.dart';import 'package:pub_openai/models/compound_filter.dart';import 'package:pub_openai/models/vector_store_search_request/query.dart';import 'package:pub_openai/models/vector_store_search_request/vector_store_search_request_filters.dart';import 'package:pub_openai/models/vector_store_search_request/vector_store_search_request_ranking_options.dart';@immutable final class VectorStoreSearchRequest {const VectorStoreSearchRequest({required this.query, this.rewriteQuery = false, this.maxNumResults = 10, this.filters, this.rankingOptions, });
 
 factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequest(
   query: OneOf2.parse(json['query'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
@@ -11,7 +11,7 @@ factory VectorStoreSearchRequest.fromJson(Map<String, dynamic> json) { return Ve
 ); }
 
 /// A query string for a search
-final VectorStoreSearchRequestQuery query;
+final Query query;
 
 /// Whether to rewrite the natural language query for vector search.
 final bool rewriteQuery;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
-VectorStoreSearchRequest copyWith({VectorStoreSearchRequestQuery? query, bool Function()? rewriteQuery, int Function()? maxNumResults, VectorStoreSearchRequestFilters Function()? filters, VectorStoreSearchRequestRankingOptions Function()? rankingOptions, }) { return VectorStoreSearchRequest(
+VectorStoreSearchRequest copyWith({Query? query, bool Function()? rewriteQuery, int Function()? maxNumResults, VectorStoreSearchRequestFilters Function()? filters, VectorStoreSearchRequestRankingOptions Function()? rankingOptions, }) { return VectorStoreSearchRequest(
   query: query ?? this.query,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,

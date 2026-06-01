@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_release_assets.dart';import 'webhooks_release_author.dart';import 'webhooks_release_reactions.dart';/// The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/webhooks_release/webhooks_release_assets.dart';import 'package:pub_github_rest_3_1/models/webhooks_release1/webhooks_release1_author.dart';/// The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
 @immutable final class WebhooksRelease {const WebhooksRelease({required this.assets, required this.assetsUrl, required this.author, required this.body, required this.createdAt, required this.updatedAt, required this.draft, required this.htmlUrl, required this.id, required this.immutable, required this.name, required this.nodeId, required this.prerelease, required this.publishedAt, required this.tagName, required this.tarballUrl, required this.targetCommitish, required this.uploadUrl, required this.url, required this.zipballUrl, this.discussionUrl, this.reactions, });
 
 factory WebhooksRelease.fromJson(Map<String, dynamic> json) { return WebhooksRelease(
   assets: (json['assets'] as List<dynamic>).map((e) => WebhooksReleaseAssets.fromJson(e as Map<String, dynamic>)).toList(),
   assetsUrl: Uri.parse(json['assets_url'] as String),
-  author: json['author'] != null ? WebhooksReleaseAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
+  author: json['author'] != null ? WebhooksRelease1Author.fromJson(json['author'] as Map<String, dynamic>) : null,
   body: json['body'] as String?,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
@@ -19,7 +19,7 @@ factory WebhooksRelease.fromJson(Map<String, dynamic> json) { return WebhooksRel
   nodeId: json['node_id'] as String,
   prerelease: json['prerelease'] as bool,
   publishedAt: json['published_at'] != null ? DateTime.parse(json['published_at'] as String) : null,
-  reactions: json['reactions'] != null ? WebhooksReleaseReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
+  reactions: json['reactions'] != null ? DiscussionReactions.fromJson(json['reactions'] as Map<String, dynamic>) : null,
   tagName: json['tag_name'] as String,
   tarballUrl: json['tarball_url'] != null ? Uri.parse(json['tarball_url'] as String) : null,
   targetCommitish: json['target_commitish'] as String,
@@ -32,7 +32,7 @@ final List<WebhooksReleaseAssets> assets;
 
 final Uri assetsUrl;
 
-final WebhooksReleaseAuthor? author;
+final WebhooksRelease1Author? author;
 
 final String? body;
 
@@ -61,7 +61,7 @@ final bool prerelease;
 
 final DateTime? publishedAt;
 
-final WebhooksReleaseReactions? reactions;
+final DiscussionReactions? reactions;
 
 /// The name of the tag.
 final String tagName;
@@ -121,7 +121,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asset
       json.containsKey('upload_url') && json['upload_url'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('zipball_url') && json['zipball_url'] is String; } 
-WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksReleaseAuthor? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, WebhooksReleaseReactions Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
+WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, WebhooksRelease1Author? Function()? author, String? Function()? body, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Uri Function()? discussionUrl, bool? draft, Uri? htmlUrl, int? id, bool? immutable, String? Function()? name, String? nodeId, bool? prerelease, DateTime? Function()? publishedAt, DiscussionReactions Function()? reactions, String? tagName, Uri? Function()? tarballUrl, String? targetCommitish, String? uploadUrl, Uri? url, Uri? Function()? zipballUrl, }) { return WebhooksRelease(
   assets: assets ?? this.assets,
   assetsUrl: assetsUrl ?? this.assetsUrl,
   author: author != null ? author() : this.author,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_workflows_parameters.dart';@immutable final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_workflows/repository_rule_workflows_parameters.dart';@immutable final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
 
 factory RepositoryRuleWorkflowsType.fromJson(String json) { return switch (json) {
   'workflows' => workflows,

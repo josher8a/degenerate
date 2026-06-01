@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_application_health_instances.dart';import 'cc_application_network.dart';import 'cc_custom_resource_allocation.dart';import 'cc_durable_objects_configuration_namespace_id.dart';import 'cc_instance_type.dart';import 'cc_observability.dart';import 'cc_public_instance_type.dart';/// An Application ID represents an identifier of an application
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_application_health_instances.dart';import 'package:pub_cloudflare/models/cc_application_network.dart';import 'package:pub_cloudflare/models/cc_custom_resource_allocation.dart';import 'package:pub_cloudflare/models/cc_durable_objects_configuration_namespace_id.dart';import 'package:pub_cloudflare/models/cc_instance_type.dart';import 'package:pub_cloudflare/models/cc_observability.dart';import 'package:pub_cloudflare/models/cc_public_instance_type.dart';/// An Application ID represents an identifier of an application
 extension type const CcApplicationId(String value) {
 factory CcApplicationId.fromJson(String json) => CcApplicationId(json);
 

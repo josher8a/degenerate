@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_bin_db_get_binary_response400.dart';import '../models/post_bin_db_post_request.dart';import '../models/post_bin_db_post_response.dart';import '../models/post_bin_db_post_response400.dart';/// BinDbApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_bin_db_get_binary_response400.dart';import 'package:pub_cloudflare/models/post_bin_db_post_request.dart';import 'package:pub_cloudflare/models/post_bin_db_post_response.dart';import 'package:pub_cloudflare/models/post_bin_db_post_response400.dart';/// BinDbApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

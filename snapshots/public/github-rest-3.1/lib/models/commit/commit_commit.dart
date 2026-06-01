@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_commit/git_commit_tree.dart';import 'package:pub_github_rest_3_1/models/git_user.dart';import 'package:pub_github_rest_3_1/models/verification.dart';@immutable final class CommitCommit {const CommitCommit({required this.url, required this.author, required this.committer, required this.message, required this.commentCount, required this.tree, this.verification, });
+
+factory CommitCommit.fromJson(Map<String, dynamic> json) { return CommitCommit(
+  url: Uri.parse(json['url'] as String),
+  author: json['author'] != null ? GitUser.fromJson(json['author'] as Map<String, dynamic>) : null,
+  committer: json['committer'] != null ? GitUser.fromJson(json['committer'] as Map<String, dynamic>) : null,
+  message: json['message'] as String,
+  commentCount: (json['comment_count'] as num).toInt(),
+  tree: GitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
+  verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+); }
+
+final Uri url;
+
+final GitUser? author;
+
+final GitUser? committer;
+
+final String message;
+
+final int commentCount;
+
+final GitCommitTree tree;
+
+final Verification? verification;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  if (author != null) 'author': author?.toJson(),
+  if (committer != null) 'committer': committer?.toJson(),
+  'message': message,
+  'comment_count': commentCount,
+  'tree': tree.toJson(),
+  if (verification != null) 'verification': verification?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('author') &&
+      json.containsKey('committer') &&
+      json.containsKey('message') && json['message'] is String &&
+      json.containsKey('comment_count') && json['comment_count'] is num &&
+      json.containsKey('tree'); } 
+CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function()? committer, String? message, int? commentCount, GitCommitTree? tree, Verification Function()? verification, }) { return CommitCommit(
+  url: url ?? this.url,
+  author: author != null ? author() : this.author,
+  committer: committer != null ? committer() : this.committer,
+  message: message ?? this.message,
+  commentCount: commentCount ?? this.commentCount,
+  tree: tree ?? this.tree,
+  verification: verification != null ? verification() : this.verification,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CommitCommit &&
+          url == other.url &&
+          author == other.author &&
+          committer == other.committer &&
+          message == other.message &&
+          commentCount == other.commentCount &&
+          tree == other.tree &&
+          verification == other.verification; } 
+@override int get hashCode { return Object.hash(url, author, committer, message, commentCount, tree, verification); } 
+@override String toString() { return 'CommitCommit(url: $url, author: $author, committer: $committer, message: $message, commentCount: $commentCount, tree: $tree, verification: $verification)'; } 
+ }

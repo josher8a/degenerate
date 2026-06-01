@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';@immutable final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
 
 factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -24,34 +24,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ClientToolCallStatus($value)'; } 
  }
-/// Type discriminator that is always `chatkit.thread_item`.
-@immutable final class ClientToolCallItemObject {const ClientToolCallItemObject._(this.value);
-
-factory ClientToolCallItemObject.fromJson(String json) { return switch (json) {
-  'chatkit.thread_item' => chatkitThreadItem,
-  _ => ClientToolCallItemObject._(json),
-}; }
-
-static const ClientToolCallItemObject chatkitThreadItem = ClientToolCallItemObject._('chatkit.thread_item');
-
-static const List<ClientToolCallItemObject> values = [chatkitThreadItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClientToolCallItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClientToolCallItemObject($value)'; } 
- }
 /// Record of a client side tool invocation initiated by the assistant.
-@immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.createdAt, required this.threadId, required this.status, required this.callId, required this.name, required this.arguments, required this.output, this.object = ClientToolCallItemObject.chatkitThreadItem, this.type = 'chatkit.client_tool_call', });
+@immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.createdAt, required this.threadId, required this.status, required this.callId, required this.name, required this.arguments, required this.output, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.client_tool_call', });
 
 factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
   id: json['id'] as String,
-  object: ClientToolCallItemObject.fromJson(json['object'] as String),
+  object: AssistantMessageItemObject.fromJson(json['object'] as String),
   createdAt: (json['created_at'] as num).toInt(),
   threadId: json['thread_id'] as String,
   type: json['type'] as String,
@@ -66,7 +44,7 @@ factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientTo
 final String id;
 
 /// Type discriminator that is always `chatkit.thread_item`.
-final ClientToolCallItemObject object;
+final AssistantMessageItemObject object;
 
 /// Unix timestamp (in seconds) for when the item was created.
 final int createdAt;
@@ -114,7 +92,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
+ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,

@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_event.dart';@immutable final class ListFineTuningJobEventsResponseObject {const ListFineTuningJobEventsResponseObject._(this.value);
-
-factory ListFineTuningJobEventsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ListFineTuningJobEventsResponseObject._(json),
-}; }
-
-static const ListFineTuningJobEventsResponseObject list = ListFineTuningJobEventsResponseObject._('list');
-
-static const List<ListFineTuningJobEventsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListFineTuningJobEventsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListFineTuningJobEventsResponseObject($value)'; } 
- }
-@immutable final class ListFineTuningJobEventsResponse {const ListFineTuningJobEventsResponse({required this.data, required this.object, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/fine_tuning_job_event.dart';@immutable final class ListFineTuningJobEventsResponse {const ListFineTuningJobEventsResponse({required this.data, required this.object, required this.hasMore, });
 
 factory ListFineTuningJobEventsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobEventsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobEvent.fromJson(e as Map<String, dynamic>)).toList(),
-  object: ListFineTuningJobEventsResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   hasMore: json['has_more'] as bool,
 ); }
 
 final List<FineTuningJobEvent> data;
 
-final ListFineTuningJobEventsResponseObject object;
+final ChatCompletionListObject object;
 
 final bool hasMore;
 
@@ -43,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningJobEventsResponse copyWith({List<FineTuningJobEvent>? data, ListFineTuningJobEventsResponseObject? object, bool? hasMore, }) { return ListFineTuningJobEventsResponse(
+ListFineTuningJobEventsResponse copyWith({List<FineTuningJobEvent>? data, ChatCompletionListObject? object, bool? hasMore, }) { return ListFineTuningJobEventsResponse(
   data: data ?? this.data,
   object: object ?? this.object,
   hasMore: hasMore ?? this.hasMore,

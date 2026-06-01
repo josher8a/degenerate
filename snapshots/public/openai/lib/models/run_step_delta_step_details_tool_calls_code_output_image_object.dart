@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_output_image_object_image.dart';/// Always `image`.
-@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType._(this.value);
-
-factory RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.fromJson(String json) { return switch (json) {
-  'image' => image,
-  _ => RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType._(json),
-}; }
-
-static const RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType image = RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType._('image');
-
-static const List<RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType> values = [image];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType($value)'; } 
- }
-@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObject({required this.index, required this.type, this.image, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image/code_interpreter_output_image_type.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_output_image_object/run_step_delta_step_details_tool_calls_code_output_image_object_image.dart';@immutable final class RunStepDeltaStepDetailsToolCallsCodeOutputImageObject {const RunStepDeltaStepDetailsToolCallsCodeOutputImageObject({required this.index, required this.type, this.image, });
 
 factory RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
   index: (json['index'] as num).toInt(),
-  type: RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType.fromJson(json['type'] as String),
+  type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),
   image: json['image'] != null ? RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(json['image'] as Map<String, dynamic>) : null,
 ); }
 
@@ -34,7 +12,7 @@ factory RunStepDeltaStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<Strin
 final int index;
 
 /// Always `image`.
-final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type;
+final CodeInterpreterOutputImageType type;
 
 final RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image;
 
@@ -45,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-RunStepDeltaStepDetailsToolCallsCodeOutputImageObject copyWith({int? index, RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage Function()? image, }) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
+RunStepDeltaStepDetailsToolCallsCodeOutputImageObject copyWith({int? index, CodeInterpreterOutputImageType? type, RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage Function()? image, }) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
   index: index ?? this.index,
   type: type ?? this.type,
   image: image != null ? image() : this.image,

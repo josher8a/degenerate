@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'persistent_volume_spec.dart';import 'persistent_volume_status.dart';/// PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/persistent_volume_status.dart';/// PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
 @immutable final class PersistentVolume {const PersistentVolume({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory PersistentVolume.fromJson(Map<String, dynamic> json) { return PersistentVolume(

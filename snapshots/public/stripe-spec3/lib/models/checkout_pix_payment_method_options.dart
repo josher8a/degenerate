@@ -1,69 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the amount includes the IOF tax.
-@immutable final class CheckoutPixPaymentMethodOptionsAmountIncludesIof {const CheckoutPixPaymentMethodOptionsAmountIncludesIof._(this.value);
-
-factory CheckoutPixPaymentMethodOptionsAmountIncludesIof.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'never' => never,
-  _ => CheckoutPixPaymentMethodOptionsAmountIncludesIof._(json),
-}; }
-
-static const CheckoutPixPaymentMethodOptionsAmountIncludesIof always = CheckoutPixPaymentMethodOptionsAmountIncludesIof._('always');
-
-static const CheckoutPixPaymentMethodOptionsAmountIncludesIof never = CheckoutPixPaymentMethodOptionsAmountIncludesIof._('never');
-
-static const List<CheckoutPixPaymentMethodOptionsAmountIncludesIof> values = [always, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutPixPaymentMethodOptionsAmountIncludesIof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutPixPaymentMethodOptionsAmountIncludesIof($value)'; } 
- }
-/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class CheckoutPixPaymentMethodOptionsSetupFutureUsage {const CheckoutPixPaymentMethodOptionsSetupFutureUsage._(this.value);
-
-factory CheckoutPixPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  _ => CheckoutPixPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
-
-static const CheckoutPixPaymentMethodOptionsSetupFutureUsage none = CheckoutPixPaymentMethodOptionsSetupFutureUsage._('none');
-
-static const List<CheckoutPixPaymentMethodOptionsSetupFutureUsage> values = [none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutPixPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutPixPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_pix_payment_method_options/amount_includes_iof.dart';/// 
 @immutable final class CheckoutPixPaymentMethodOptions {const CheckoutPixPaymentMethodOptions({this.amountIncludesIof, this.expiresAfterSeconds, this.setupFutureUsage, });
 
 factory CheckoutPixPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutPixPaymentMethodOptions(
-  amountIncludesIof: json['amount_includes_iof'] != null ? CheckoutPixPaymentMethodOptionsAmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
+  amountIncludesIof: json['amount_includes_iof'] != null ? AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
   expiresAfterSeconds: json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutPixPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// Determines if the amount includes the IOF tax.
-final CheckoutPixPaymentMethodOptionsAmountIncludesIof? amountIncludesIof;
+final AmountIncludesIof? amountIncludesIof;
 
 /// The number of seconds after which Pix payment will expire.
 final int? expiresAfterSeconds;
@@ -75,7 +22,7 @@ final int? expiresAfterSeconds;
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final CheckoutPixPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
+final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
@@ -83,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'setup_future_usage'}.contains(key)); } 
-CheckoutPixPaymentMethodOptions copyWith({CheckoutPixPaymentMethodOptionsAmountIncludesIof Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, CheckoutPixPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutPixPaymentMethodOptions(
+CheckoutPixPaymentMethodOptions copyWith({AmountIncludesIof Function()? amountIncludesIof, int? Function()? expiresAfterSeconds, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutPixPaymentMethodOptions(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

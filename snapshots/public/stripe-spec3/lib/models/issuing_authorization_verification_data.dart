@@ -1,118 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_authentication_exemption.dart';import 'issuing_authorization_three_d_secure.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
-@immutable final class IssuingAuthorizationVerificationDataAddressLine1Check {const IssuingAuthorizationVerificationDataAddressLine1Check._(this.value);
-
-factory IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(String json) { return switch (json) {
-  'match' => match,
-  'mismatch' => mismatch,
-  'not_provided' => notProvided,
-  _ => IssuingAuthorizationVerificationDataAddressLine1Check._(json),
-}; }
-
-static const IssuingAuthorizationVerificationDataAddressLine1Check match = IssuingAuthorizationVerificationDataAddressLine1Check._('match');
-
-static const IssuingAuthorizationVerificationDataAddressLine1Check mismatch = IssuingAuthorizationVerificationDataAddressLine1Check._('mismatch');
-
-static const IssuingAuthorizationVerificationDataAddressLine1Check notProvided = IssuingAuthorizationVerificationDataAddressLine1Check._('not_provided');
-
-static const List<IssuingAuthorizationVerificationDataAddressLine1Check> values = [match, mismatch, notProvided];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationVerificationDataAddressLine1Check && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationVerificationDataAddressLine1Check($value)'; } 
- }
-/// Whether the cardholder provided a postal code and if it matched the cardholder’s `billing.address.postal_code`.
-@immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck._(this.value);
-
-factory IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
-  'match' => match,
-  'mismatch' => mismatch,
-  'not_provided' => notProvided,
-  _ => IssuingAuthorizationVerificationDataAddressPostalCodeCheck._(json),
-}; }
-
-static const IssuingAuthorizationVerificationDataAddressPostalCodeCheck match = IssuingAuthorizationVerificationDataAddressPostalCodeCheck._('match');
-
-static const IssuingAuthorizationVerificationDataAddressPostalCodeCheck mismatch = IssuingAuthorizationVerificationDataAddressPostalCodeCheck._('mismatch');
-
-static const IssuingAuthorizationVerificationDataAddressPostalCodeCheck notProvided = IssuingAuthorizationVerificationDataAddressPostalCodeCheck._('not_provided');
-
-static const List<IssuingAuthorizationVerificationDataAddressPostalCodeCheck> values = [match, mismatch, notProvided];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationVerificationDataAddressPostalCodeCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationVerificationDataAddressPostalCodeCheck($value)'; } 
- }
-/// Whether the cardholder provided a CVC and if it matched Stripe’s record.
-@immutable final class IssuingAuthorizationVerificationDataCvcCheck {const IssuingAuthorizationVerificationDataCvcCheck._(this.value);
-
-factory IssuingAuthorizationVerificationDataCvcCheck.fromJson(String json) { return switch (json) {
-  'match' => match,
-  'mismatch' => mismatch,
-  'not_provided' => notProvided,
-  _ => IssuingAuthorizationVerificationDataCvcCheck._(json),
-}; }
-
-static const IssuingAuthorizationVerificationDataCvcCheck match = IssuingAuthorizationVerificationDataCvcCheck._('match');
-
-static const IssuingAuthorizationVerificationDataCvcCheck mismatch = IssuingAuthorizationVerificationDataCvcCheck._('mismatch');
-
-static const IssuingAuthorizationVerificationDataCvcCheck notProvided = IssuingAuthorizationVerificationDataCvcCheck._('not_provided');
-
-static const List<IssuingAuthorizationVerificationDataCvcCheck> values = [match, mismatch, notProvided];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationVerificationDataCvcCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationVerificationDataCvcCheck($value)'; } 
- }
-/// Whether the cardholder provided an expiry date and if it matched Stripe’s record.
-@immutable final class IssuingAuthorizationVerificationDataExpiryCheck {const IssuingAuthorizationVerificationDataExpiryCheck._(this.value);
-
-factory IssuingAuthorizationVerificationDataExpiryCheck.fromJson(String json) { return switch (json) {
-  'match' => match,
-  'mismatch' => mismatch,
-  'not_provided' => notProvided,
-  _ => IssuingAuthorizationVerificationDataExpiryCheck._(json),
-}; }
-
-static const IssuingAuthorizationVerificationDataExpiryCheck match = IssuingAuthorizationVerificationDataExpiryCheck._('match');
-
-static const IssuingAuthorizationVerificationDataExpiryCheck mismatch = IssuingAuthorizationVerificationDataExpiryCheck._('mismatch');
-
-static const IssuingAuthorizationVerificationDataExpiryCheck notProvided = IssuingAuthorizationVerificationDataExpiryCheck._('not_provided');
-
-static const List<IssuingAuthorizationVerificationDataExpiryCheck> values = [match, mismatch, notProvided];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationVerificationDataExpiryCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationVerificationDataExpiryCheck($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_authentication_exemption.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_three_d_secure.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data/expiry_check.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data/issuing_authorization_verification_data_address_line1_check.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data/issuing_authorization_verification_data_address_postal_code_check.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data/issuing_authorization_verification_data_cvc_check.dart';/// 
 @immutable final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVerificationData({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.expiryCheck, this.authenticationExemption, this.postalCode, this.threeDSecure, });
 
 factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationData(
@@ -120,7 +8,7 @@ factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json)
   addressPostalCodeCheck: IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
   authenticationExemption: json['authentication_exemption'] != null ? IssuingAuthorizationAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
   cvcCheck: IssuingAuthorizationVerificationDataCvcCheck.fromJson(json['cvc_check'] as String),
-  expiryCheck: IssuingAuthorizationVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String),
+  expiryCheck: ExpiryCheck.fromJson(json['expiry_check'] as String),
   postalCode: json['postal_code'] as String?,
   threeDSecure: json['three_d_secure'] != null ? IssuingAuthorizationThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
@@ -138,7 +26,7 @@ final IssuingAuthorizationAuthenticationExemption? authenticationExemption;
 final IssuingAuthorizationVerificationDataCvcCheck cvcCheck;
 
 /// Whether the cardholder provided an expiry date and if it matched Stripe’s record.
-final IssuingAuthorizationVerificationDataExpiryCheck expiryCheck;
+final ExpiryCheck expiryCheck;
 
 /// The postal code submitted as part of the authorization used for postal code verification.
 final String? postalCode;
@@ -159,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('address_postal_code_check') &&
       json.containsKey('cvc_check') &&
       json.containsKey('expiry_check'); } 
-IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, IssuingAuthorizationVerificationDataExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(
+IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, ExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   authenticationExemption: authenticationExemption != null ? authenticationExemption() : this.authenticationExemption,

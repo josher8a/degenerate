@@ -1,35 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_rule_settings_audit_ssh.dart';import 'zero_trust_gateway_rule_settings_biso_admin_controls.dart';import 'zero_trust_gateway_rule_settings_block_page.dart';import 'zero_trust_gateway_rule_settings_check_session.dart';import 'zero_trust_gateway_rule_settings_dns_resolvers.dart';import 'zero_trust_gateway_rule_settings_egress.dart';import 'zero_trust_gateway_rule_settings_forensic_copy.dart';import 'zero_trust_gateway_rule_settings_l4override.dart';import 'zero_trust_gateway_rule_settings_notification_settings.dart';import 'zero_trust_gateway_rule_settings_payload_log.dart';import 'zero_trust_gateway_rule_settings_quarantine.dart';import 'zero_trust_gateway_rule_settings_redirect.dart';import 'zero_trust_gateway_rule_settings_resolve_dns_internally.dart';import 'zero_trust_gateway_rule_settings_untrusted_cert.dart';/// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/audit_ssh.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/biso_admin_controls.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/block_page.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/check_session.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/dns_resolvers.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/egress.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/forensic_copy.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/l4override.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/notification_settings.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/payload_log.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/quarantine.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/redirect.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/resolve_dns_internally.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_rule_settings/untrusted_cert.dart';/// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
 @immutable final class ZeroTrustGatewayRuleSettings {const ZeroTrustGatewayRuleSettings({this.addHeaders, this.allowChildBypass, this.auditSsh, this.bisoAdminControls, this.blockPage, this.blockPageEnabled, this.blockReason, this.bypassParentRule, this.checkSession, this.dnsResolvers, this.egress, this.forensicCopy, this.ignoreCnameCategoryMatches, this.insecureDisableDnssecValidation, this.ipCategories, this.ipIndicatorFeeds, this.l4override, this.notificationSettings, this.overrideHost, this.overrideIps, this.payloadLog, this.quarantine, this.redirect, this.resolveDnsInternally, this.resolveDnsThroughCloudflare, this.untrustedCert, });
 
 factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettings(
   addHeaders: (json['add_headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
   allowChildBypass: json['allow_child_bypass'] as bool?,
-  auditSsh: json['audit_ssh'] != null ? ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(json['audit_ssh'] as Map<String, dynamic>) : null,
-  bisoAdminControls: json['biso_admin_controls'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(json['biso_admin_controls'] as Map<String, dynamic>) : null,
-  blockPage: json['block_page'] != null ? ZeroTrustGatewayRuleSettingsBlockPage.fromJson(json['block_page'] as Map<String, dynamic>) : null,
+  auditSsh: json['audit_ssh'] != null ? AuditSsh.fromJson(json['audit_ssh'] as Map<String, dynamic>) : null,
+  bisoAdminControls: json['biso_admin_controls'] != null ? BisoAdminControls.fromJson(json['biso_admin_controls'] as Map<String, dynamic>) : null,
+  blockPage: json['block_page'] != null ? BlockPage.fromJson(json['block_page'] as Map<String, dynamic>) : null,
   blockPageEnabled: json['block_page_enabled'] as bool?,
   blockReason: json['block_reason'] as String?,
   bypassParentRule: json['bypass_parent_rule'] as bool?,
-  checkSession: json['check_session'] != null ? ZeroTrustGatewayRuleSettingsCheckSession.fromJson(json['check_session'] as Map<String, dynamic>) : null,
-  dnsResolvers: json['dns_resolvers'] != null ? ZeroTrustGatewayRuleSettingsDnsResolvers.fromJson(json['dns_resolvers'] as Map<String, dynamic>) : null,
-  egress: json['egress'] != null ? ZeroTrustGatewayRuleSettingsEgress.fromJson(json['egress'] as Map<String, dynamic>) : null,
-  forensicCopy: json['forensic_copy'] != null ? ZeroTrustGatewayRuleSettingsForensicCopy.fromJson(json['forensic_copy'] as Map<String, dynamic>) : null,
+  checkSession: json['check_session'] != null ? CheckSession.fromJson(json['check_session'] as Map<String, dynamic>) : null,
+  dnsResolvers: json['dns_resolvers'] != null ? DnsResolvers.fromJson(json['dns_resolvers'] as Map<String, dynamic>) : null,
+  egress: json['egress'] != null ? Egress.fromJson(json['egress'] as Map<String, dynamic>) : null,
+  forensicCopy: json['forensic_copy'] != null ? ForensicCopy.fromJson(json['forensic_copy'] as Map<String, dynamic>) : null,
   ignoreCnameCategoryMatches: json['ignore_cname_category_matches'] as bool?,
   insecureDisableDnssecValidation: json['insecure_disable_dnssec_validation'] as bool?,
   ipCategories: json['ip_categories'] as bool?,
   ipIndicatorFeeds: json['ip_indicator_feeds'] as bool?,
-  l4override: json['l4override'] != null ? ZeroTrustGatewayRuleSettingsL4override.fromJson(json['l4override'] as Map<String, dynamic>) : null,
-  notificationSettings: json['notification_settings'] != null ? ZeroTrustGatewayRuleSettingsNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null,
+  l4override: json['l4override'] != null ? L4override.fromJson(json['l4override'] as Map<String, dynamic>) : null,
+  notificationSettings: json['notification_settings'] != null ? NotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null,
   overrideHost: json['override_host'] as String?,
   overrideIps: (json['override_ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  payloadLog: json['payload_log'] != null ? ZeroTrustGatewayRuleSettingsPayloadLog.fromJson(json['payload_log'] as Map<String, dynamic>) : null,
-  quarantine: json['quarantine'] != null ? ZeroTrustGatewayRuleSettingsQuarantine.fromJson(json['quarantine'] as Map<String, dynamic>) : null,
-  redirect: json['redirect'] != null ? ZeroTrustGatewayRuleSettingsRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
-  resolveDnsInternally: json['resolve_dns_internally'] != null ? ZeroTrustGatewayRuleSettingsResolveDnsInternally.fromJson(json['resolve_dns_internally'] as Map<String, dynamic>) : null,
+  payloadLog: json['payload_log'] != null ? PayloadLog.fromJson(json['payload_log'] as Map<String, dynamic>) : null,
+  quarantine: json['quarantine'] != null ? Quarantine.fromJson(json['quarantine'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? Redirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  resolveDnsInternally: json['resolve_dns_internally'] != null ? ResolveDnsInternally.fromJson(json['resolve_dns_internally'] as Map<String, dynamic>) : null,
   resolveDnsThroughCloudflare: json['resolve_dns_through_cloudflare'] as bool?,
-  untrustedCert: json['untrusted_cert'] != null ? ZeroTrustGatewayRuleSettingsUntrustedCert.fromJson(json['untrusted_cert'] as Map<String, dynamic>) : null,
+  untrustedCert: json['untrusted_cert'] != null ? UntrustedCert.fromJson(json['untrusted_cert'] as Map<String, dynamic>) : null,
 ); }
 
 /// Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Settable only for `http` rules with the action set to `allow`.
@@ -39,13 +39,13 @@ final Map<String,List<String>>? addHeaders;
 final bool? allowChildBypass;
 
 /// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
-final ZeroTrustGatewayRuleSettingsAuditSsh? auditSsh;
+final AuditSsh? auditSsh;
 
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
-final ZeroTrustGatewayRuleSettingsBisoAdminControls? bisoAdminControls;
+final BisoAdminControls? bisoAdminControls;
 
 /// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
-final ZeroTrustGatewayRuleSettingsBlockPage? blockPage;
+final BlockPage? blockPage;
 
 /// Enable the custom block page. Settable only for `dns` rules with action `block`.
 final bool? blockPageEnabled;
@@ -57,16 +57,16 @@ final String? blockReason;
 final bool? bypassParentRule;
 
 /// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
-final ZeroTrustGatewayRuleSettingsCheckSession? checkSession;
+final CheckSession? checkSession;
 
 /// Configure custom resolvers to route queries that match the resolver policy. Unused with 'resolve_dns_through_cloudflare' or 'resolve_dns_internally' settings. DNS queries get routed to the address closest to their origin. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
-final ZeroTrustGatewayRuleSettingsDnsResolvers? dnsResolvers;
+final DnsResolvers? dnsResolvers;
 
 /// Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules.
-final ZeroTrustGatewayRuleSettingsEgress? egress;
+final Egress? egress;
 
 /// Configure whether a copy of the HTTP request will be sent to storage when the rule matches.
-final ZeroTrustGatewayRuleSettingsForensicCopy? forensicCopy;
+final ForensicCopy? forensicCopy;
 
 /// Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.
 final bool? ignoreCnameCategoryMatches;
@@ -81,10 +81,10 @@ final bool? ipCategories;
 final bool? ipIndicatorFeeds;
 
 /// Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`.
-final ZeroTrustGatewayRuleSettingsL4override? l4override;
+final L4override? l4override;
 
 /// Configure a notification to display on the user's device when this rule matched. Settable for all types of rules with the action set to `block`.
-final ZeroTrustGatewayRuleSettingsNotificationSettings? notificationSettings;
+final NotificationSettings? notificationSettings;
 
 /// Defines a hostname for override, for the matching DNS queries. Settable only for `dns` rules with the action set to `override`.
 final String? overrideHost;
@@ -93,22 +93,22 @@ final String? overrideHost;
 final List<String>? overrideIps;
 
 /// Configure DLP payload logging. Settable only for `http` rules.
-final ZeroTrustGatewayRuleSettingsPayloadLog? payloadLog;
+final PayloadLog? payloadLog;
 
 /// Configure settings that apply to quarantine rules. Settable only for `http` rules.
-final ZeroTrustGatewayRuleSettingsQuarantine? quarantine;
+final Quarantine? quarantine;
 
 /// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
-final ZeroTrustGatewayRuleSettingsRedirect? redirect;
+final Redirect? redirect;
 
 /// Configure to forward the query to the internal DNS service, passing the specified 'view_id' as input. Not used when 'dns_resolvers' is specified or 'resolve_dns_through_cloudflare' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
-final ZeroTrustGatewayRuleSettingsResolveDnsInternally? resolveDnsInternally;
+final ResolveDnsInternally? resolveDnsInternally;
 
 /// Enable to send queries that match the policy to Cloudflare's default 1.1.1.1 DNS resolver. Cannot set when 'dns_resolvers' specified or 'resolve_dns_internally' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
 final bool? resolveDnsThroughCloudflare;
 
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
-final ZeroTrustGatewayRuleSettingsUntrustedCert? untrustedCert;
+final UntrustedCert? untrustedCert;
 
 Map<String, dynamic> toJson() { return {
   'add_headers': ?addHeaders,
@@ -139,7 +139,7 @@ Map<String, dynamic> toJson() { return {
   if (untrustedCert != null) 'untrusted_cert': untrustedCert?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add_headers', 'allow_child_bypass', 'audit_ssh', 'biso_admin_controls', 'block_page', 'block_page_enabled', 'block_reason', 'bypass_parent_rule', 'check_session', 'dns_resolvers', 'egress', 'forensic_copy', 'ignore_cname_category_matches', 'insecure_disable_dnssec_validation', 'ip_categories', 'ip_indicator_feeds', 'l4override', 'notification_settings', 'override_host', 'override_ips', 'payload_log', 'quarantine', 'redirect', 'resolve_dns_internally', 'resolve_dns_through_cloudflare', 'untrusted_cert'}.contains(key)); } 
-ZeroTrustGatewayRuleSettings copyWith({Map<String, List<String>>? Function()? addHeaders, bool? Function()? allowChildBypass, ZeroTrustGatewayRuleSettingsAuditSsh? Function()? auditSsh, ZeroTrustGatewayRuleSettingsBisoAdminControls Function()? bisoAdminControls, ZeroTrustGatewayRuleSettingsBlockPage? Function()? blockPage, bool Function()? blockPageEnabled, String? Function()? blockReason, bool? Function()? bypassParentRule, ZeroTrustGatewayRuleSettingsCheckSession? Function()? checkSession, ZeroTrustGatewayRuleSettingsDnsResolvers? Function()? dnsResolvers, ZeroTrustGatewayRuleSettingsEgress? Function()? egress, ZeroTrustGatewayRuleSettingsForensicCopy? Function()? forensicCopy, bool Function()? ignoreCnameCategoryMatches, bool Function()? insecureDisableDnssecValidation, bool Function()? ipCategories, bool Function()? ipIndicatorFeeds, ZeroTrustGatewayRuleSettingsL4override? Function()? l4override, ZeroTrustGatewayRuleSettingsNotificationSettings? Function()? notificationSettings, String Function()? overrideHost, List<String>? Function()? overrideIps, ZeroTrustGatewayRuleSettingsPayloadLog? Function()? payloadLog, ZeroTrustGatewayRuleSettingsQuarantine? Function()? quarantine, ZeroTrustGatewayRuleSettingsRedirect? Function()? redirect, ZeroTrustGatewayRuleSettingsResolveDnsInternally? Function()? resolveDnsInternally, bool? Function()? resolveDnsThroughCloudflare, ZeroTrustGatewayRuleSettingsUntrustedCert? Function()? untrustedCert, }) { return ZeroTrustGatewayRuleSettings(
+ZeroTrustGatewayRuleSettings copyWith({Map<String, List<String>>? Function()? addHeaders, bool? Function()? allowChildBypass, AuditSsh? Function()? auditSsh, BisoAdminControls Function()? bisoAdminControls, BlockPage? Function()? blockPage, bool Function()? blockPageEnabled, String? Function()? blockReason, bool? Function()? bypassParentRule, CheckSession? Function()? checkSession, DnsResolvers? Function()? dnsResolvers, Egress? Function()? egress, ForensicCopy? Function()? forensicCopy, bool Function()? ignoreCnameCategoryMatches, bool Function()? insecureDisableDnssecValidation, bool Function()? ipCategories, bool Function()? ipIndicatorFeeds, L4override? Function()? l4override, NotificationSettings? Function()? notificationSettings, String Function()? overrideHost, List<String>? Function()? overrideIps, PayloadLog? Function()? payloadLog, Quarantine? Function()? quarantine, Redirect? Function()? redirect, ResolveDnsInternally? Function()? resolveDnsInternally, bool? Function()? resolveDnsThroughCloudflare, UntrustedCert? Function()? untrustedCert, }) { return ZeroTrustGatewayRuleSettings(
   addHeaders: addHeaders != null ? addHeaders() : this.addHeaders,
   allowChildBypass: allowChildBypass != null ? allowChildBypass() : this.allowChildBypass,
   auditSsh: auditSsh != null ? auditSsh() : this.auditSsh,

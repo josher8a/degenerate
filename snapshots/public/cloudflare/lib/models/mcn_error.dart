@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error_meta.dart';import 'mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error_meta.dart';import 'package:pub_cloudflare/models/mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
 
 factory McnErrorCode.fromJson(int json) { return switch (json) {
   1001 => $1001,

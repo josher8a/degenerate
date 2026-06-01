@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_item.dart';/// The type of object returned, must be `list`.
-@immutable final class ThreadItemListResourceObject {const ThreadItemListResourceObject._(this.value);
-
-factory ThreadItemListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ThreadItemListResourceObject._(json),
-}; }
-
-static const ThreadItemListResourceObject list = ThreadItemListResourceObject._('list');
-
-static const List<ThreadItemListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadItemListResourceObject($value)'; } 
- }
-/// A paginated list of thread items rendered for the ChatKit API.
-@immutable final class ThreadItemListResource {const ThreadItemListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ThreadItemListResourceObject.list, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/thread_item.dart';/// A paginated list of thread items rendered for the ChatKit API.
+@immutable final class ThreadItemListResource {const ThreadItemListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
 
 factory ThreadItemListResource.fromJson(Map<String, dynamic> json) { return ThreadItemListResource(
-  object: ThreadItemListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ThreadItem.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
@@ -34,7 +12,7 @@ factory ThreadItemListResource.fromJson(Map<String, dynamic> json) { return Thre
 ); }
 
 /// The type of object returned, must be `list`.
-final ThreadItemListResourceObject object;
+final ChatCompletionListObject object;
 
 /// A list of items
 final List<ThreadItem> data;
@@ -60,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ThreadItemListResource copyWith({ThreadItemListResourceObject? object, List<ThreadItem>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ThreadItemListResource(
+ThreadItemListResource copyWith({ChatCompletionListObject? object, List<ThreadItem>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ThreadItemListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

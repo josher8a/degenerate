@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delete_domain_response_result.dart';import 'email_security_message.dart';@immutable final class EmailSecurityDeleteDomainResponse {const EmailSecurityDeleteDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delete_allow_policy_response/email_security_delete_allow_policy_response_result.dart';import 'package:pub_cloudflare/models/email_security_message.dart';@immutable final class EmailSecurityDeleteDomainResponse {const EmailSecurityDeleteDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory EmailSecurityDeleteDomainResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteDomainResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: EmailSecurityDeleteDomainResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: EmailSecurityDeleteAllowPolicyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
 ); }
 
 final List<EmailSecurityMessage> errors;
@@ -15,7 +15,7 @@ final List<EmailSecurityMessage> messages;
 
 final bool success;
 
-final EmailSecurityDeleteDomainResponseResult result;
+final EmailSecurityDeleteAllowPolicyResponseResult result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-EmailSecurityDeleteDomainResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityDeleteDomainResponseResult? result, }) { return EmailSecurityDeleteDomainResponse(
+EmailSecurityDeleteDomainResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, EmailSecurityDeleteAllowPolicyResponseResult? result, }) { return EmailSecurityDeleteDomainResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

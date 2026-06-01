@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';/// Starred Repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';/// Starred Repository
 @immutable final class StarredRepository {const StarredRepository({required this.starredAt, required this.repo, });
 
 factory StarredRepository.fromJson(Map<String, dynamic> json) { return StarredRepository(

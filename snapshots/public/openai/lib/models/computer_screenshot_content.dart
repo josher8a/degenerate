@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_detail.dart';/// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.
-@immutable final class ComputerScreenshotContentType {const ComputerScreenshotContentType._(this.value);
-
-factory ComputerScreenshotContentType.fromJson(String json) { return switch (json) {
-  'computer_screenshot' => computerScreenshot,
-  _ => ComputerScreenshotContentType._(json),
-}; }
-
-static const ComputerScreenshotContentType computerScreenshot = ComputerScreenshotContentType._('computer_screenshot');
-
-static const List<ComputerScreenshotContentType> values = [computerScreenshot];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerScreenshotContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerScreenshotContentType($value)'; } 
- }
-/// A screenshot of a computer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';import 'package:pub_openai/models/image_detail.dart';/// A screenshot of a computer.
 @immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.imageUrl, required this.fileId, required this.detail, this.type = ComputerScreenshotContentType.computerScreenshot, });
 
 factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(

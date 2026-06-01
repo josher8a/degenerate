@@ -1,86 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'job_steps.dart';/// The phase of the lifecycle that the job is currently in.
-@immutable final class JobStatus {const JobStatus._(this.value);
-
-factory JobStatus.fromJson(String json) { return switch (json) {
-  'queued' => queued,
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'waiting' => waiting,
-  'requested' => requested,
-  'pending' => pending,
-  _ => JobStatus._(json),
-}; }
-
-static const JobStatus queued = JobStatus._('queued');
-
-static const JobStatus inProgress = JobStatus._('in_progress');
-
-static const JobStatus completed = JobStatus._('completed');
-
-static const JobStatus waiting = JobStatus._('waiting');
-
-static const JobStatus requested = JobStatus._('requested');
-
-static const JobStatus pending = JobStatus._('pending');
-
-static const List<JobStatus> values = [queued, inProgress, completed, waiting, requested, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is JobStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'JobStatus($value)'; } 
- }
-/// The outcome of the job.
-@immutable final class JobConclusion {const JobConclusion._(this.value);
-
-factory JobConclusion.fromJson(String json) { return switch (json) {
-  'success' => success,
-  'failure' => failure,
-  'neutral' => neutral,
-  'cancelled' => cancelled,
-  'skipped' => skipped,
-  'timed_out' => timedOut,
-  'action_required' => actionRequired,
-  'null' => $null,
-  _ => JobConclusion._(json),
-}; }
-
-static const JobConclusion success = JobConclusion._('success');
-
-static const JobConclusion failure = JobConclusion._('failure');
-
-static const JobConclusion neutral = JobConclusion._('neutral');
-
-static const JobConclusion cancelled = JobConclusion._('cancelled');
-
-static const JobConclusion skipped = JobConclusion._('skipped');
-
-static const JobConclusion timedOut = JobConclusion._('timed_out');
-
-static const JobConclusion actionRequired = JobConclusion._('action_required');
-
-static const JobConclusion $null = JobConclusion._('null');
-
-static const List<JobConclusion> values = [success, failure, neutral, cancelled, skipped, timedOut, actionRequired, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is JobConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'JobConclusion($value)'; } 
- }
-/// Information of a job execution in a workflow run
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_conclusion.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/job/job_steps.dart';/// Information of a job execution in a workflow run
 @immutable final class Job {const Job({required this.id, required this.runId, required this.runUrl, required this.nodeId, required this.headSha, required this.url, required this.htmlUrl, required this.status, required this.conclusion, required this.createdAt, required this.startedAt, required this.completedAt, required this.name, required this.checkRunUrl, required this.labels, required this.runnerId, required this.runnerName, required this.runnerGroupId, required this.runnerGroupName, required this.workflowName, required this.headBranch, this.runAttempt, this.steps, });
 
 factory Job.fromJson(Map<String, dynamic> json) { return Job(
@@ -92,8 +12,8 @@ factory Job.fromJson(Map<String, dynamic> json) { return Job(
   headSha: json['head_sha'] as String,
   url: json['url'] as String,
   htmlUrl: json['html_url'] as String?,
-  status: JobStatus.fromJson(json['status'] as String),
-  conclusion: json['conclusion'] != null ? JobConclusion.fromJson(json['conclusion'] as String) : null,
+  status: CheckRunStatus.fromJson(json['status'] as String),
+  conclusion: json['conclusion'] != null ? CheckRunConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   startedAt: DateTime.parse(json['started_at'] as String),
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
@@ -130,10 +50,10 @@ final String url;
 final String? htmlUrl;
 
 /// The phase of the lifecycle that the job is currently in.
-final JobStatus status;
+final CheckRunStatus status;
 
 /// The outcome of the job.
-final JobConclusion? conclusion;
+final CheckRunConclusion? conclusion;
 
 /// The time that the job created, in ISO 8601 format.
 final DateTime createdAt;
@@ -219,7 +139,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
       json.containsKey('workflow_name') && json['workflow_name'] is String &&
       json.containsKey('head_branch') && json['head_branch'] is String; } 
-Job copyWith({int? id, int? runId, String? runUrl, int Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, JobStatus? status, JobConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps> Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
+Job copyWith({int? id, int? runId, String? runUrl, int Function()? runAttempt, String? nodeId, String? headSha, String? url, String? Function()? htmlUrl, CheckRunStatus? status, CheckRunConclusion? Function()? conclusion, DateTime? createdAt, DateTime? startedAt, DateTime? Function()? completedAt, String? name, List<JobSteps> Function()? steps, String? checkRunUrl, List<String>? labels, int? Function()? runnerId, String? Function()? runnerName, int? Function()? runnerGroupId, String? Function()? runnerGroupName, String? Function()? workflowName, String? Function()? headBranch, }) { return Job(
   id: id ?? this.id,
   runId: runId ?? this.runId,
   runUrl: runUrl ?? this.runUrl,

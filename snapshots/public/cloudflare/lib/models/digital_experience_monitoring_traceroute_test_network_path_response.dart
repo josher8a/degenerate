@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponse({required this.id, this.deviceName, this.interval, this.kind, this.name, this.networkPath, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_network_path_response/network_path.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponse {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponse({required this.id, this.deviceName, this.interval, this.kind, this.name, this.networkPath, this.url, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: json['deviceName'] as String?,
@@ -8,7 +8,7 @@ factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(Ma
   interval: json['interval'] as String?,
   kind: json['kind'],
   name: json['name'] as String?,
-  networkPath: json['networkPath'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>) : null,
+  networkPath: json['networkPath'] != null ? NetworkPath.fromJson(json['networkPath'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
 ); }
 
@@ -23,7 +23,7 @@ final dynamic kind;
 
 final String? name;
 
-final DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath? networkPath;
+final NetworkPath? networkPath;
 
 /// The host of the Traceroute synthetic application test
 final String? url;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String Function()? deviceName, DigitalExperienceMonitoringUuid? id, String Function()? interval, dynamic Function()? kind, String Function()? name, DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath? Function()? networkPath, String Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String Function()? deviceName, DigitalExperienceMonitoringUuid? id, String Function()? interval, dynamic Function()? kind, String Function()? name, NetworkPath? Function()? networkPath, String Function()? url, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   id: id ?? this.id,
   interval: interval != null ? interval() : this.interval,

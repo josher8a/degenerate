@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_response_content_part_added_part.dart';/// Returned when a new content part is added to an assistant message item during
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_response_content_part_added/realtime_beta_server_event_response_content_part_added_part.dart';/// Returned when a new content part is added to an assistant message item during
 /// response generation.
 /// 
 @immutable final class RealtimeServerEventResponseContentPartAdded {const RealtimeServerEventResponseContentPartAdded({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
@@ -12,7 +12,7 @@ factory RealtimeServerEventResponseContentPartAdded.fromJson(Map<String, dynamic
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   contentIndex: (json['content_index'] as num).toInt(),
-  $part: RealtimeServerEventResponseContentPartAddedPart.fromJson(json['part'] as Map<String, dynamic>),
+  $part: RealtimeBetaServerEventResponseContentPartAddedPart.fromJson(json['part'] as Map<String, dynamic>),
 ); }
 
 /// The unique ID of the server event.
@@ -34,7 +34,7 @@ final int outputIndex;
 final int contentIndex;
 
 /// The content part that was added.
-final RealtimeServerEventResponseContentPartAddedPart $part;
+final RealtimeBetaServerEventResponseContentPartAddedPart $part;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('part'); } 
-RealtimeServerEventResponseContentPartAdded copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeServerEventResponseContentPartAddedPart? $part, }) { return RealtimeServerEventResponseContentPartAdded(
+RealtimeServerEventResponseContentPartAdded copyWith({String? eventId, String? type, String? responseId, String? itemId, int? outputIndex, int? contentIndex, RealtimeBetaServerEventResponseContentPartAddedPart? $part, }) { return RealtimeServerEventResponseContentPartAdded(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,

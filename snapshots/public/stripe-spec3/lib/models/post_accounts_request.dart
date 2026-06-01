@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account.dart';import 'post_accounts_request_bank_account.dart';import 'post_accounts_request_business_profile.dart';import 'post_accounts_request_capabilities.dart';import 'post_accounts_request_company.dart';import 'post_accounts_request_controller.dart';import 'post_accounts_request_documents.dart';import 'post_accounts_request_groups.dart';import 'post_accounts_request_individual.dart';import 'post_accounts_request_metadata.dart';import 'post_accounts_request_settings.dart';import 'post_accounts_request_tos_acceptance.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-@immutable final class PostAccountsRequestBusinessType {const PostAccountsRequestBusinessType._(this.value);
-
-factory PostAccountsRequestBusinessType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'government_entity' => governmentEntity,
-  'individual' => individual,
-  'non_profit' => nonProfit,
-  _ => PostAccountsRequestBusinessType._(json),
-}; }
-
-static const PostAccountsRequestBusinessType company = PostAccountsRequestBusinessType._('company');
-
-static const PostAccountsRequestBusinessType governmentEntity = PostAccountsRequestBusinessType._('government_entity');
-
-static const PostAccountsRequestBusinessType individual = PostAccountsRequestBusinessType._('individual');
-
-static const PostAccountsRequestBusinessType nonProfit = PostAccountsRequestBusinessType._('non_profit');
-
-static const List<PostAccountsRequestBusinessType> values = [company, governmentEntity, individual, nonProfit];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestBusinessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestBusinessType($value)'; } 
- }
-/// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/capabilities.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/groups.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_profile.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_type.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_company.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_documents.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_individual.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/controller.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/post_accounts_request_settings.dart';/// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
 @immutable final class PostAccountsRequestType {const PostAccountsRequestType._(this.value);
 
 factory PostAccountsRequestType.fromJson(String json) { return switch (json) {
@@ -63,23 +32,23 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsRequest(
   accountToken: json['account_token'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  businessProfile: json['business_profile'] != null ? PostAccountsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
-  businessType: json['business_type'] != null ? PostAccountsRequestBusinessType.fromJson(json['business_type'] as String) : null,
-  capabilities: json['capabilities'] != null ? PostAccountsRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
-  company: json['company'] != null ? PostAccountsRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
-  controller: json['controller'] != null ? PostAccountsRequestController.fromJson(json['controller'] as Map<String, dynamic>) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => external_account_payout_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  businessProfile: json['business_profile'] != null ? PostAccountsAccountRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
+  businessType: json['business_type'] != null ? PostAccountsAccountRequestBusinessType.fromJson(json['business_type'] as String) : null,
+  capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
+  company: json['company'] != null ? PostAccountsAccountRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
+  controller: json['controller'] != null ? Controller.fromJson(json['controller'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   defaultCurrency: json['default_currency'] as String?,
-  documents: json['documents'] != null ? PostAccountsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  documents: json['documents'] != null ? PostAccountsAccountRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,
-  groups: json['groups'] != null ? PostAccountsRequestGroups.fromJson(json['groups'] as Map<String, dynamic>) : null,
-  individual: json['individual'] != null ? PostAccountsRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsRequestMetadataVariant2.fromJson(v as String),) : null,
+  groups: json['groups'] != null ? Groups.fromJson(json['groups'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? PostAccountsAccountRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   settings: json['settings'] != null ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
-  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsAccountRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostAccountsRequestType.fromJson(json['type'] as String) : null,
 ); }
 
@@ -87,13 +56,13 @@ factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAcc
 final String? accountToken;
 
 /// Either a token, like the ones returned by [Stripe.js](https://stripe.com/docs/js), or a dictionary containing a user's bank account details.
-final PostAccountsRequestBankAccount? bankAccount;
+final PostAccountsAccountBankAccountsRequestBankAccount? bankAccount;
 
 /// Business information about the account.
-final PostAccountsRequestBusinessProfile? businessProfile;
+final PostAccountsAccountRequestBusinessProfile? businessProfile;
 
 /// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-final PostAccountsRequestBusinessType? businessType;
+final PostAccountsAccountRequestBusinessType? businessType;
 
 /// Each key of the dictionary represents a capability, and each capability
 /// maps to its settings (for example, whether it has been requested or not). Each
@@ -103,13 +72,13 @@ final PostAccountsRequestBusinessType? businessType;
 /// 
 /// Required when [account.controller.stripe_dashboard.type](/api/accounts/create#create_account-controller-dashboard-type)
 /// is `none`, which includes Custom accounts.
-final PostAccountsRequestCapabilities? capabilities;
+final Capabilities? capabilities;
 
 /// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-final PostAccountsRequestCompany? company;
+final PostAccountsAccountRequestCompany? company;
 
 /// A hash of configuration describing the account controller's attributes.
-final PostAccountsRequestController? controller;
+final Controller? controller;
 
 /// The country in which the account holder resides, or in which the business is legally established. This should be an ISO 3166-1 alpha-2 country code. For example, if you are in the United States and the business for which you're creating an account is legally represented in Canada, you would use `CA` as the country for the account being created. Available countries include [Stripe's global markets](https://stripe.com/global) as well as countries where [cross-border payouts](https://stripe.com/docs/connect/cross-border-payouts) are supported.
 final String? country;
@@ -118,7 +87,7 @@ final String? country;
 final String? defaultCurrency;
 
 /// Documents that may be submitted to satisfy various informational requests.
-final PostAccountsRequestDocuments? documents;
+final PostAccountsAccountRequestDocuments? documents;
 
 /// The email address of the account holder. This is only to make the account easier to identify to you. If [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts, Stripe doesn't email the account without your consent.
 final String? email;
@@ -130,19 +99,19 @@ final List<String>? expand;
 final String? externalAccount;
 
 /// A hash of account group type to tokens. These are account groups this account should be added to.
-final PostAccountsRequestGroups? groups;
+final Groups? groups;
 
 /// Information about the person represented by the account. This field is null unless `business_type` is set to `individual`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
-final PostAccountsRequestIndividual? individual;
+final PostAccountsAccountRequestIndividual? individual;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostAccountsRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Options for customizing how the account functions within Stripe.
 final PostAccountsRequestSettings? settings;
 
 /// Details on the account's acceptance of the [Stripe Services Agreement](/connect/updating-accounts#tos-acceptance). This property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts. This property defaults to a `full` service agreement when empty.
-final PostAccountsRequestTosAcceptance? tosAcceptance;
+final PostAccountsAccountRequestTosAcceptance? tosAcceptance;
 
 /// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
 final PostAccountsRequestType? type;
@@ -169,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_token', 'bank_account', 'business_profile', 'business_type', 'capabilities', 'company', 'controller', 'country', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance', 'type'}.contains(key)); } 
-PostAccountsRequest copyWith({String Function()? accountToken, PostAccountsRequestBankAccount Function()? bankAccount, PostAccountsRequestBusinessProfile Function()? businessProfile, PostAccountsRequestBusinessType Function()? businessType, PostAccountsRequestCapabilities Function()? capabilities, PostAccountsRequestCompany Function()? company, PostAccountsRequestController Function()? controller, String Function()? country, String Function()? defaultCurrency, PostAccountsRequestDocuments Function()? documents, String Function()? email, List<String> Function()? expand, String Function()? externalAccount, PostAccountsRequestGroups Function()? groups, PostAccountsRequestIndividual Function()? individual, PostAccountsRequestMetadata Function()? metadata, PostAccountsRequestSettings Function()? settings, PostAccountsRequestTosAcceptance Function()? tosAcceptance, PostAccountsRequestType Function()? type, }) { return PostAccountsRequest(
+PostAccountsRequest copyWith({String Function()? accountToken, PostAccountsAccountBankAccountsRequestBankAccount Function()? bankAccount, PostAccountsAccountRequestBusinessProfile Function()? businessProfile, PostAccountsAccountRequestBusinessType Function()? businessType, Capabilities Function()? capabilities, PostAccountsAccountRequestCompany Function()? company, Controller Function()? controller, String Function()? country, String Function()? defaultCurrency, PostAccountsAccountRequestDocuments Function()? documents, String Function()? email, List<String> Function()? expand, String Function()? externalAccount, Groups Function()? groups, PostAccountsAccountRequestIndividual Function()? individual, Metadata Function()? metadata, PostAccountsRequestSettings Function()? settings, PostAccountsAccountRequestTosAcceptance Function()? tosAcceptance, PostAccountsRequestType Function()? type, }) { return PostAccountsRequest(
   accountToken: accountToken != null ? accountToken() : this.accountToken,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_history.dart';import 'gist_simple_files_value.dart';import 'gist_simple_fork_of.dart';import 'gist_simple_forks.dart';import 'simple_user.dart';/// Gist Simple
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gist_history.dart';import 'package:pub_github_rest_3_1/models/gist_simple/fork_of.dart';import 'package:pub_github_rest_3_1/models/gist_simple/forks.dart';import 'package:pub_github_rest_3_1/models/gist_simple/gist_simple_files_value.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Gist Simple
 @immutable final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf, this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description, this.comments, this.commentsEnabled, this.user, this.commentsUrl, this.owner, this.truncated, });
 
 factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
-  forks: (json['forks'] as List<dynamic>?)?.map((e) => GistSimpleForks.fromJson(e as Map<String, dynamic>)).toList(),
+  forks: (json['forks'] as List<dynamic>?)?.map((e) => Forks.fromJson(e as Map<String, dynamic>)).toList(),
   history: (json['history'] as List<dynamic>?)?.map((e) => GistHistory.fromJson(e as Map<String, dynamic>)).toList(),
-  forkOf: json['fork_of'] != null ? GistSimpleForkOf.fromJson(json['fork_of'] as Map<String, dynamic>) : null,
+  forkOf: json['fork_of'] != null ? ForkOf.fromJson(json['fork_of'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
   forksUrl: json['forks_url'] as String?,
   commitsUrl: json['commits_url'] as String?,
@@ -28,12 +28,12 @@ factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   truncated: json['truncated'] as bool?,
 ); }
 
-final List<GistSimpleForks>? forks;
+final List<Forks>? forks;
 
 final List<GistHistory>? history;
 
 /// Gist
-final GistSimpleForkOf? forkOf;
+final ForkOf? forkOf;
 
 final String? url;
 
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'truncated': ?truncated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forks', 'history', 'fork_of', 'url', 'forks_url', 'commits_url', 'id', 'node_id', 'git_pull_url', 'git_push_url', 'html_url', 'files', 'public', 'created_at', 'updated_at', 'description', 'comments', 'comments_enabled', 'user', 'comments_url', 'owner', 'truncated'}.contains(key)); } 
-GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>? Function()? history, GistSimpleForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
+GistSimple copyWith({List<Forks>? Function()? forks, List<GistHistory>? Function()? history, ForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,
   forkOf: forkOf != null ? forkOf() : this.forkOf,

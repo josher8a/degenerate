@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoiceitems_request_discounts.dart';import 'post_invoiceitems_request_discounts_variant1.dart';import 'post_invoiceitems_request_metadata.dart';import 'post_invoiceitems_request_period.dart';import 'post_invoiceitems_request_price_data.dart';import 'post_invoiceitems_request_pricing.dart';import 'post_invoiceitems_request_tax_code.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-@immutable final class PostInvoiceitemsRequestTaxBehavior {const PostInvoiceitemsRequestTaxBehavior._(this.value);
-
-factory PostInvoiceitemsRequestTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => PostInvoiceitemsRequestTaxBehavior._(json),
-}; }
-
-static const PostInvoiceitemsRequestTaxBehavior exclusive = PostInvoiceitemsRequestTaxBehavior._('exclusive');
-
-static const PostInvoiceitemsRequestTaxBehavior inclusive = PostInvoiceitemsRequestTaxBehavior._('inclusive');
-
-static const PostInvoiceitemsRequestTaxBehavior unspecified = PostInvoiceitemsRequestTaxBehavior._('unspecified');
-
-static const List<PostInvoiceitemsRequestTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostInvoiceitemsRequestTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostInvoiceitemsRequestTaxBehavior($value)'; } 
- }
-@immutable final class PostInvoiceitemsRequest {const PostInvoiceitemsRequest({this.amount, this.currency, this.customer, this.customerAccount, this.description, this.discountable, this.discounts, this.expand, this.invoice, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.subscription, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_period.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_price_data.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/pricing.dart';@immutable final class PostInvoiceitemsRequest {const PostInvoiceitemsRequest({this.amount, this.currency, this.customer, this.customerAccount, this.description, this.discountable, this.discounts, this.expand, this.invoice, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.subscription, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
 
 factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
@@ -37,17 +9,17 @@ factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return Pos
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoiceitemsRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoiceitemsRequestDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoice: json['invoice'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoiceitemsRequestMetadataVariant2.fromJson(v as String),) : null,
-  period: json['period'] != null ? PostInvoiceitemsRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
-  priceData: json['price_data'] != null ? PostInvoiceitemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
-  pricing: json['pricing'] != null ? PostInvoiceitemsRequestPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  period: json['period'] != null ? PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
+  priceData: json['price_data'] != null ? PostInvoiceitemsInvoiceitemRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
+  pricing: json['pricing'] != null ? Pricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String?,
-  taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => PostInvoiceitemsRequestTaxCodeVariant2.fromJson(v as String),) : null,
+  taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }
@@ -71,7 +43,7 @@ final String? description;
 final bool? discountable;
 
 /// The coupons and promotion codes to redeem into discounts for the invoice item or invoice line item.
-final PostInvoiceitemsRequestDiscounts? discounts;
+final PostCustomersCustomerSubscriptionsRequestDiscounts? discounts;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -80,16 +52,16 @@ final List<String>? expand;
 final String? invoice;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostInvoiceitemsRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The period associated with this invoice item. When set to different values, the period will be rendered on the invoice. If you have [Stripe Revenue Recognition](https://docs.stripe.com/revenue-recognition) enabled, the period will be used to recognize and defer revenue. See the [Revenue Recognition documentation](https://docs.stripe.com/revenue-recognition/methodology/subscriptions-and-invoicing) for details.
-final PostInvoiceitemsRequestPeriod? period;
+final PostInvoiceitemsInvoiceitemRequestPeriod? period;
 
 /// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object inline.
-final PostInvoiceitemsRequestPriceData? priceData;
+final PostInvoiceitemsInvoiceitemRequestPriceData? priceData;
 
 /// The pricing information for the invoice item.
-final PostInvoiceitemsRequestPricing? pricing;
+final Pricing? pricing;
 
 /// Non-negative integer. The quantity of units for the invoice item.
 final int? quantity;
@@ -98,10 +70,10 @@ final int? quantity;
 final String? subscription;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final PostInvoiceitemsRequestTaxBehavior? taxBehavior;
+final PostInvoiceitemsInvoiceitemRequestTaxBehavior? taxBehavior;
 
 /// A [tax code](https://docs.stripe.com/tax/tax-categories) ID.
-final PostInvoiceitemsRequestTaxCode? taxCode;
+final PostInvoiceitemsInvoiceitemRequestTaxCode? taxCode;
 
 /// The tax rates which apply to the invoice item. When set, the `default_tax_rates` on the invoice do not apply to this invoice item.
 final List<String>? taxRates;
@@ -131,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'customer_account', 'description', 'discountable', 'discounts', 'expand', 'invoice', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'subscription', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount_decimal'}.contains(key)); } 
-PostInvoiceitemsRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, String Function()? customerAccount, String Function()? description, bool Function()? discountable, PostInvoiceitemsRequestDiscounts Function()? discounts, List<String> Function()? expand, String Function()? invoice, PostInvoiceitemsRequestMetadata Function()? metadata, PostInvoiceitemsRequestPeriod Function()? period, PostInvoiceitemsRequestPriceData Function()? priceData, PostInvoiceitemsRequestPricing Function()? pricing, int Function()? quantity, String Function()? subscription, PostInvoiceitemsRequestTaxBehavior Function()? taxBehavior, PostInvoiceitemsRequestTaxCode Function()? taxCode, List<String> Function()? taxRates, String Function()? unitAmountDecimal, }) { return PostInvoiceitemsRequest(
+PostInvoiceitemsRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, String Function()? customerAccount, String Function()? description, bool Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts Function()? discounts, List<String> Function()? expand, String Function()? invoice, Metadata Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod Function()? period, PostInvoiceitemsInvoiceitemRequestPriceData Function()? priceData, Pricing Function()? pricing, int Function()? quantity, String Function()? subscription, PostInvoiceitemsInvoiceitemRequestTaxBehavior Function()? taxBehavior, PostInvoiceitemsInvoiceitemRequestTaxCode Function()? taxCode, List<String> Function()? taxRates, String Function()? unitAmountDecimal, }) { return PostInvoiceitemsRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,

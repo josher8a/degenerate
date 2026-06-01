@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeseries2.dart';import 'totals.dart';/// Totals and timeseries data.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/timeseries2.dart';import 'package:pub_cloudflare/models/totals.dart';/// Totals and timeseries data.
 @immutable final class Dashboard {const Dashboard({this.timeseries, this.totals, });
 
 factory Dashboard.fromJson(Map<String, dynamic> json) { return Dashboard(

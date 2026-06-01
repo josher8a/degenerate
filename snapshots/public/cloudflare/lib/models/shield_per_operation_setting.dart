@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
 /// 
 ///   - `"log"` - log request when request does not conform to schema for this operation
 ///   - `"block"` - deny access to the site when request does not conform to schema for this operation

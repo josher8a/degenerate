@@ -1,62 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role of the user in the team.
-@immutable final class TeamMembershipRole {const TeamMembershipRole._(this.value);
-
-factory TeamMembershipRole.fromJson(String json) { return switch (json) {
-  'member' => member,
-  'maintainer' => maintainer,
-  _ => TeamMembershipRole._(json),
-}; }
-
-static const TeamMembershipRole member = TeamMembershipRole._('member');
-
-static const TeamMembershipRole maintainer = TeamMembershipRole._('maintainer');
-
-static const List<TeamMembershipRole> values = [member, maintainer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamMembershipRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamMembershipRole($value)'; } 
- }
-/// The state of the user's membership in the team.
-@immutable final class TeamMembershipState {const TeamMembershipState._(this.value);
-
-factory TeamMembershipState.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'pending' => pending,
-  _ => TeamMembershipState._(json),
-}; }
-
-static const TeamMembershipState active = TeamMembershipState._('active');
-
-static const TeamMembershipState pending = TeamMembershipState._('pending');
-
-static const List<TeamMembershipState> values = [active, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamMembershipState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamMembershipState($value)'; } 
- }
-/// Team Membership
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_state.dart';import 'package:pub_github_rest_3_1/models/team_membership/team_membership_role.dart';/// Team Membership
 @immutable final class TeamMembership {const TeamMembership({required this.url, required this.state, this.role = TeamMembershipRole.member, });
 
 factory TeamMembership.fromJson(Map<String, dynamic> json) { return TeamMembership(
   url: Uri.parse(json['url'] as String),
   role: TeamMembershipRole.fromJson(json['role'] as String),
-  state: TeamMembershipState.fromJson(json['state'] as String),
+  state: OrgMembershipState.fromJson(json['state'] as String),
 ); }
 
 final Uri url;
@@ -65,7 +15,7 @@ final Uri url;
 final TeamMembershipRole role;
 
 /// The state of the user's membership in the team.
-final TeamMembershipState state;
+final OrgMembershipState state;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -75,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('role') &&
       json.containsKey('state'); } 
-TeamMembership copyWith({Uri? url, TeamMembershipRole? role, TeamMembershipState? state, }) { return TeamMembership(
+TeamMembership copyWith({Uri? url, TeamMembershipRole? role, OrgMembershipState? state, }) { return TeamMembership(
   url: url ?? this.url,
   role: role ?? this.role,
   state: state ?? this.state,

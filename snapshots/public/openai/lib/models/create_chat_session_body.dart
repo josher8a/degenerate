@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chatkit_configuration_param.dart';import 'expires_after_param.dart';import 'rate_limits_param.dart';import 'workflow_param.dart';/// Parameters for provisioning a new ChatKit session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chatkit_configuration_param.dart';import 'package:pub_openai/models/expires_after_param.dart';import 'package:pub_openai/models/rate_limits_param.dart';import 'package:pub_openai/models/workflow_param.dart';/// Parameters for provisioning a new ChatKit session.
 @immutable final class CreateChatSessionBody {const CreateChatSessionBody({required this.workflow, required this.user, this.expiresAfter, this.rateLimits, this.chatkitConfiguration, });
 
 factory CreateChatSessionBody.fromJson(Map<String, dynamic> json) { return CreateChatSessionBody(

@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// The customer's tax IDs.
+@immutable final class CustomerTaxIds {const CustomerTaxIds({required this.data, required this.hasMore, required this.object, required this.url, });
+
+factory CustomerTaxIds.fromJson(Map<String, dynamic> json) { return CustomerTaxIds(
+  data: (json['data'] as List<dynamic>).map((e) => TaxId.fromJson(e as Map<String, dynamic>)).toList(),
+  hasMore: json['has_more'] as bool,
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
+  url: json['url'] as String,
+); }
+
+/// Details about each object.
+final List<TaxId> data;
+
+/// True if this list has another page of items after this one that can be fetched.
+final bool hasMore;
+
+/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
+final GetAccountsAccountCapabilitiesResponseObject object;
+
+/// The URL where this list can be accessed.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+  'has_more': hasMore,
+  'object': object.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+      json.containsKey('has_more') && json['has_more'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('url') && json['url'] is String; } 
+CustomerTaxIds copyWith({List<TaxId>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return CustomerTaxIds(
+  data: data ?? this.data,
+  hasMore: hasMore ?? this.hasMore,
+  object: object ?? this.object,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomerTaxIds &&
+          listEquals(data, other.data) &&
+          hasMore == other.hasMore &&
+          object == other.object &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
+@override String toString() { return 'CustomerTaxIds(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
+ }

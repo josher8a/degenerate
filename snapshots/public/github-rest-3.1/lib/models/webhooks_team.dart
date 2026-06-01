@@ -1,82 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_team_parent.dart';@immutable final class WebhooksTeamPrivacy {const WebhooksTeamPrivacy._(this.value);
-
-factory WebhooksTeamPrivacy.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  'secret' => secret,
-  _ => WebhooksTeamPrivacy._(json),
-}; }
-
-static const WebhooksTeamPrivacy open = WebhooksTeamPrivacy._('open');
-
-static const WebhooksTeamPrivacy closed = WebhooksTeamPrivacy._('closed');
-
-static const WebhooksTeamPrivacy secret = WebhooksTeamPrivacy._('secret');
-
-static const List<WebhooksTeamPrivacy> values = [open, closed, secret];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksTeamPrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksTeamPrivacy($value)'; } 
- }
-@immutable final class WebhooksTeamNotificationSetting {const WebhooksTeamNotificationSetting._(this.value);
-
-factory WebhooksTeamNotificationSetting.fromJson(String json) { return switch (json) {
-  'notifications_enabled' => notificationsEnabled,
-  'notifications_disabled' => notificationsDisabled,
-  _ => WebhooksTeamNotificationSetting._(json),
-}; }
-
-static const WebhooksTeamNotificationSetting notificationsEnabled = WebhooksTeamNotificationSetting._('notifications_enabled');
-
-static const WebhooksTeamNotificationSetting notificationsDisabled = WebhooksTeamNotificationSetting._('notifications_disabled');
-
-static const List<WebhooksTeamNotificationSetting> values = [notificationsEnabled, notificationsDisabled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksTeamNotificationSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksTeamNotificationSetting($value)'; } 
- }
-/// The ownership type of the team
-@immutable final class WebhooksTeamType {const WebhooksTeamType._(this.value);
-
-factory WebhooksTeamType.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  _ => WebhooksTeamType._(json),
-}; }
-
-static const WebhooksTeamType enterprise = WebhooksTeamType._('enterprise');
-
-static const WebhooksTeamType organization = WebhooksTeamType._('organization');
-
-static const List<WebhooksTeamType> values = [enterprise, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksTeamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksTeamType($value)'; } 
- }
-/// Groups of organization members that gives permissions on specified repositories.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1/webhooks_team1_parent.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class WebhooksTeam {const WebhooksTeam({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
 
 factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
@@ -87,14 +11,14 @@ factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null ? WebhooksTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? WebhooksTeam1Parent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String?,
-  privacy: json['privacy'] != null ? WebhooksTeamPrivacy.fromJson(json['privacy'] as String) : null,
-  notificationSetting: json['notification_setting'] != null ? WebhooksTeamNotificationSetting.fromJson(json['notification_setting'] as String) : null,
+  privacy: json['privacy'] != null ? TeamPrivacy.fromJson(json['privacy'] as String) : null,
+  notificationSetting: json['notification_setting'] != null ? TeamFullNotificationSetting.fromJson(json['notification_setting'] as String) : null,
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,
   slug: json['slug'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
-  type: json['type'] != null ? WebhooksTeamType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? TeamFullType.fromJson(json['type'] as String) : null,
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
 ); }
@@ -116,14 +40,14 @@ final String name;
 
 final String? nodeId;
 
-final WebhooksTeamParent? parent;
+final WebhooksTeam1Parent? parent;
 
 /// Permission that the team will have for its repositories
 final String? permission;
 
-final WebhooksTeamPrivacy? privacy;
+final TeamPrivacy? privacy;
 
-final WebhooksTeamNotificationSetting? notificationSetting;
+final TeamFullNotificationSetting? notificationSetting;
 
 final Uri? repositoriesUrl;
 
@@ -133,7 +57,7 @@ final String? slug;
 final Uri? url;
 
 /// The ownership type of the team
-final WebhooksTeamType? type;
+final TeamFullType? type;
 
 /// Unique identifier of the organization to which this team belongs
 final int? organizationId;
@@ -162,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-WebhooksTeam copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, WebhooksTeamParent? Function()? parent, String Function()? permission, WebhooksTeamPrivacy Function()? privacy, WebhooksTeamNotificationSetting Function()? notificationSetting, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, WebhooksTeamType Function()? type, int Function()? organizationId, int Function()? enterpriseId, }) { return WebhooksTeam(
+WebhooksTeam copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, WebhooksTeam1Parent? Function()? parent, String Function()? permission, TeamPrivacy Function()? privacy, TeamFullNotificationSetting Function()? notificationSetting, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, TeamFullType Function()? type, int Function()? organizationId, int Function()? enterpriseId, }) { return WebhooksTeam(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

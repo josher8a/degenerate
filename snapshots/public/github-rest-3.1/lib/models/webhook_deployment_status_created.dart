@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_status_created_check_run.dart';import 'webhook_deployment_status_created_deployment.dart';import 'webhook_deployment_status_created_deployment_status.dart';import 'webhook_deployment_status_created_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookDeploymentStatusCreatedAction {const WebhookDeploymentStatusCreatedAction._(this.value);
-
-factory WebhookDeploymentStatusCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookDeploymentStatusCreatedAction._(json),
-}; }
-
-static const WebhookDeploymentStatusCreatedAction created = WebhookDeploymentStatusCreatedAction._('created');
-
-static const List<WebhookDeploymentStatusCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentStatusCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedAction($value)'; } 
- }
-@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun, this.enterprise, this.installation, this.organization, this.workflow, this.workflowRun, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_check_run.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_deployment_status.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_status_created/webhook_deployment_status_created_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow.dart';@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun, this.enterprise, this.installation, this.organization, this.workflow, this.workflowRun, });
 
 factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreated(
-  action: WebhookDeploymentStatusCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   checkRun: json['check_run'] != null ? WebhookDeploymentStatusCreatedCheckRun.fromJson(json['check_run'] as Map<String, dynamic>) : null,
   deployment: WebhookDeploymentStatusCreatedDeployment.fromJson(json['deployment'] as Map<String, dynamic>),
   deploymentStatus: WebhookDeploymentStatusCreatedDeploymentStatus.fromJson(json['deployment_status'] as Map<String, dynamic>),
@@ -37,7 +16,7 @@ factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { ret
   workflowRun: json['workflow_run'] != null ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookDeploymentStatusCreatedAction action;
+final ItemCreatedAction action;
 
 final WebhookDeploymentStatusCreatedCheckRun? checkRun;
 
@@ -79,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('deployment_status') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeploymentStatusCreated copyWith({WebhookDeploymentStatusCreatedAction? action, WebhookDeploymentStatusCreatedCheckRun? Function()? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow Function()? workflow, WebhookDeploymentStatusCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentStatusCreated(
+WebhookDeploymentStatusCreated copyWith({ItemCreatedAction? action, WebhookDeploymentStatusCreatedCheckRun? Function()? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow Function()? workflow, WebhookDeploymentStatusCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentStatusCreated(
   action: action ?? this.action,
   checkRun: checkRun != null ? checkRun() : this.checkRun,
   deployment: deployment ?? this.deployment,

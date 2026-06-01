@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_reinforcement_hyperparameters.dart';import 'fine_tune_reinforcement_method_grader.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';/// Configuration for the reinforcement fine-tuning method.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method/grader.dart';import 'package:pub_openai/models/grader_multi.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// Configuration for the reinforcement fine-tuning method.
 @immutable final class FineTuneReinforcementMethod {const FineTuneReinforcementMethod({required this.grader, this.hyperparameters, });
 
 factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementMethod(
@@ -9,7 +9,7 @@ factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The grader used for the fine-tuning job.
-final FineTuneReinforcementMethodGrader grader;
+final Grader grader;
 
 final FineTuneReinforcementHyperparameters? hyperparameters;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (hyperparameters != null) 'hyperparameters': hyperparameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grader'); } 
-FineTuneReinforcementMethod copyWith({FineTuneReinforcementMethodGrader? grader, FineTuneReinforcementHyperparameters Function()? hyperparameters, }) { return FineTuneReinforcementMethod(
+FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyperparameters Function()? hyperparameters, }) { return FineTuneReinforcementMethod(
   grader: grader ?? this.grader,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
 ); } 

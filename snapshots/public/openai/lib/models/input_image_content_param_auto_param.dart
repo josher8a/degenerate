@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DetailEnum {const DetailEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';@immutable final class DetailEnum {const DetailEnum._(this.value);
 
 factory DetailEnum.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -30,40 +30,18 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DetailEnum($value)'; } 
  }
-/// The type of the input item. Always `input_image`.
-@immutable final class InputImageContentParamAutoParamType {const InputImageContentParamAutoParamType._(this.value);
-
-factory InputImageContentParamAutoParamType.fromJson(String json) { return switch (json) {
-  'input_image' => inputImage,
-  _ => InputImageContentParamAutoParamType._(json),
-}; }
-
-static const InputImageContentParamAutoParamType inputImage = InputImageContentParamAutoParamType._('input_image');
-
-static const List<InputImageContentParamAutoParamType> values = [inputImage];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputImageContentParamAutoParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputImageContentParamAutoParamType($value)'; } 
- }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
-@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl, this.fileId, this.detail, });
+@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = EvalItemInputImageType.inputImage, this.imageUrl, this.fileId, this.detail, });
 
 factory InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { return InputImageContentParamAutoParam(
-  type: InputImageContentParamAutoParamType.fromJson(json['type'] as String),
+  type: EvalItemInputImageType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
   detail: json['detail'] != null ? DetailEnum.fromJson(json['detail'] as String) : null,
 ); }
 
 /// The type of the input item. Always `input_image`.
-final InputImageContentParamAutoParamType type;
+final EvalItemInputImageType type;
 
 /// The URL of the image to be sent to the model. A fully qualified URL or base64 encoded image in a data URL.
 final String? imageUrl;
@@ -80,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InputImageContentParamAutoParam copyWith({InputImageContentParamAutoParamType? type, String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return InputImageContentParamAutoParam(
+InputImageContentParamAutoParam copyWith({EvalItemInputImageType? type, String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return InputImageContentParamAutoParam(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,

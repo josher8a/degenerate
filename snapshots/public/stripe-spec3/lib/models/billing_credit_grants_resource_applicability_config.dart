@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_scope.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_scope.dart';/// 
 @immutable final class BillingCreditGrantsResourceApplicabilityConfig {const BillingCreditGrantsResourceApplicabilityConfig({required this.scope});
 
 factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicabilityConfig(

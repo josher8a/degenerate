@@ -1,245 +1,245 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_acss_debit.dart';import 'post_payment_method_configurations_request_affirm.dart';import 'post_payment_method_configurations_request_afterpay_clearpay.dart';import 'post_payment_method_configurations_request_alipay.dart';import 'post_payment_method_configurations_request_alma.dart';import 'post_payment_method_configurations_request_amazon_pay.dart';import 'post_payment_method_configurations_request_apple_pay.dart';import 'post_payment_method_configurations_request_apple_pay_later.dart';import 'post_payment_method_configurations_request_au_becs_debit.dart';import 'post_payment_method_configurations_request_bacs_debit.dart';import 'post_payment_method_configurations_request_bancontact.dart';import 'post_payment_method_configurations_request_billie.dart';import 'post_payment_method_configurations_request_blik.dart';import 'post_payment_method_configurations_request_boleto.dart';import 'post_payment_method_configurations_request_card.dart';import 'post_payment_method_configurations_request_cartes_bancaires.dart';import 'post_payment_method_configurations_request_cashapp.dart';import 'post_payment_method_configurations_request_crypto.dart';import 'post_payment_method_configurations_request_customer_balance.dart';import 'post_payment_method_configurations_request_eps.dart';import 'post_payment_method_configurations_request_fpx.dart';import 'post_payment_method_configurations_request_fr_meal_voucher_conecs.dart';import 'post_payment_method_configurations_request_giropay.dart';import 'post_payment_method_configurations_request_google_pay.dart';import 'post_payment_method_configurations_request_grabpay.dart';import 'post_payment_method_configurations_request_ideal.dart';import 'post_payment_method_configurations_request_jcb.dart';import 'post_payment_method_configurations_request_kakao_pay.dart';import 'post_payment_method_configurations_request_klarna.dart';import 'post_payment_method_configurations_request_konbini.dart';import 'post_payment_method_configurations_request_kr_card.dart';import 'post_payment_method_configurations_request_link.dart';import 'post_payment_method_configurations_request_mb_way.dart';import 'post_payment_method_configurations_request_mobilepay.dart';import 'post_payment_method_configurations_request_multibanco.dart';import 'post_payment_method_configurations_request_naver_pay.dart';import 'post_payment_method_configurations_request_nz_bank_account.dart';import 'post_payment_method_configurations_request_oxxo.dart';import 'post_payment_method_configurations_request_p24.dart';import 'post_payment_method_configurations_request_pay_by_bank.dart';import 'post_payment_method_configurations_request_payco.dart';import 'post_payment_method_configurations_request_paynow.dart';import 'post_payment_method_configurations_request_paypal.dart';import 'post_payment_method_configurations_request_payto.dart';import 'post_payment_method_configurations_request_pix.dart';import 'post_payment_method_configurations_request_promptpay.dart';import 'post_payment_method_configurations_request_revolut_pay.dart';import 'post_payment_method_configurations_request_samsung_pay.dart';import 'post_payment_method_configurations_request_satispay.dart';import 'post_payment_method_configurations_request_sepa_debit.dart';import 'post_payment_method_configurations_request_sofort.dart';import 'post_payment_method_configurations_request_swish.dart';import 'post_payment_method_configurations_request_twint.dart';import 'post_payment_method_configurations_request_us_bank_account.dart';import 'post_payment_method_configurations_request_wechat_pay.dart';import 'post_payment_method_configurations_request_zip.dart';@immutable final class PostPaymentMethodConfigurationsRequest {const PostPaymentMethodConfigurationsRequest({this.expand, this.affirm, this.afterpayClearpay, this.alipay, this.alma, this.amazonPay, this.applePay, this.applePayLater, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.blik, this.boleto, this.card, this.cartesBancaires, this.cashapp, this.crypto, this.customerBalance, this.eps, this.acssDebit, this.fpx, this.frMealVoucherConecs, this.giropay, this.googlePay, this.grabpay, this.ideal, this.jcb, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.mobilepay, this.multibanco, this.name, this.naverPay, this.zip, this.oxxo, this.p24, this.parent, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/apple_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/apple_pay_later.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/fr_meal_voucher_conecs.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/google_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/jcb.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_acss_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_affirm.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_alipay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_alma.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_amazon_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_bacs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_bancontact.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_billie.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_blik.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_boleto.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_card.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_cartes_bancaires.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_cashapp.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_crypto.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_customer_balance.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_eps.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_fpx.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_giropay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_grabpay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_ideal.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_kakao_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_klarna.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_konbini.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_kr_card.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_link.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_mb_way.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_mobilepay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_multibanco.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_naver_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_oxxo.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_p24.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_payco.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_paynow.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_paypal.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_pix.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_promptpay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_revolut_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_samsung_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_satispay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_sepa_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_sofort.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_swish.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_twint.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_wechat_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/post_payment_method_configurations_configuration_request_zip.dart';@immutable final class PostPaymentMethodConfigurationsRequest {const PostPaymentMethodConfigurationsRequest({this.expand, this.affirm, this.afterpayClearpay, this.alipay, this.alma, this.amazonPay, this.applePay, this.applePayLater, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.blik, this.boleto, this.card, this.cartesBancaires, this.cashapp, this.crypto, this.customerBalance, this.eps, this.acssDebit, this.fpx, this.frMealVoucherConecs, this.giropay, this.googlePay, this.grabpay, this.ideal, this.jcb, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.mobilepay, this.multibanco, this.name, this.naverPay, this.zip, this.oxxo, this.p24, this.parent, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
 
 factory PostPaymentMethodConfigurationsRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequest(
-  acssDebit: json['acss_debit'] != null ? PostPaymentMethodConfigurationsRequestAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
-  affirm: json['affirm'] != null ? PostPaymentMethodConfigurationsRequestAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
-  afterpayClearpay: json['afterpay_clearpay'] != null ? PostPaymentMethodConfigurationsRequestAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
-  alipay: json['alipay'] != null ? PostPaymentMethodConfigurationsRequestAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
-  alma: json['alma'] != null ? PostPaymentMethodConfigurationsRequestAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
-  amazonPay: json['amazon_pay'] != null ? PostPaymentMethodConfigurationsRequestAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
-  applePay: json['apple_pay'] != null ? PostPaymentMethodConfigurationsRequestApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
-  applePayLater: json['apple_pay_later'] != null ? PostPaymentMethodConfigurationsRequestApplePayLater.fromJson(json['apple_pay_later'] as Map<String, dynamic>) : null,
-  auBecsDebit: json['au_becs_debit'] != null ? PostPaymentMethodConfigurationsRequestAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
-  bacsDebit: json['bacs_debit'] != null ? PostPaymentMethodConfigurationsRequestBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
-  bancontact: json['bancontact'] != null ? PostPaymentMethodConfigurationsRequestBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
-  billie: json['billie'] != null ? PostPaymentMethodConfigurationsRequestBillie.fromJson(json['billie'] as Map<String, dynamic>) : null,
-  blik: json['blik'] != null ? PostPaymentMethodConfigurationsRequestBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
-  boleto: json['boleto'] != null ? PostPaymentMethodConfigurationsRequestBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? PostPaymentMethodConfigurationsRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
-  cartesBancaires: json['cartes_bancaires'] != null ? PostPaymentMethodConfigurationsRequestCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
-  cashapp: json['cashapp'] != null ? PostPaymentMethodConfigurationsRequestCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
-  crypto: json['crypto'] != null ? PostPaymentMethodConfigurationsRequestCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
-  customerBalance: json['customer_balance'] != null ? PostPaymentMethodConfigurationsRequestCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
-  eps: json['eps'] != null ? PostPaymentMethodConfigurationsRequestEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  acssDebit: json['acss_debit'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  affirm: json['affirm'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
+  alma: json['alma'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  applePay: json['apple_pay'] != null ? ApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
+  applePayLater: json['apple_pay_later'] != null ? ApplePayLater.fromJson(json['apple_pay_later'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  billie: json['billie'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBillie.fromJson(json['billie'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  boleto: json['boleto'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cartesBancaires: json['cartes_bancaires'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? PostPaymentMethodConfigurationsConfigurationRequestEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fpx: json['fpx'] != null ? PostPaymentMethodConfigurationsRequestFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
-  frMealVoucherConecs: json['fr_meal_voucher_conecs'] != null ? PostPaymentMethodConfigurationsRequestFrMealVoucherConecs.fromJson(json['fr_meal_voucher_conecs'] as Map<String, dynamic>) : null,
-  giropay: json['giropay'] != null ? PostPaymentMethodConfigurationsRequestGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
-  googlePay: json['google_pay'] != null ? PostPaymentMethodConfigurationsRequestGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
-  grabpay: json['grabpay'] != null ? PostPaymentMethodConfigurationsRequestGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
-  ideal: json['ideal'] != null ? PostPaymentMethodConfigurationsRequestIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
-  jcb: json['jcb'] != null ? PostPaymentMethodConfigurationsRequestJcb.fromJson(json['jcb'] as Map<String, dynamic>) : null,
-  kakaoPay: json['kakao_pay'] != null ? PostPaymentMethodConfigurationsRequestKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
-  klarna: json['klarna'] != null ? PostPaymentMethodConfigurationsRequestKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
-  konbini: json['konbini'] != null ? PostPaymentMethodConfigurationsRequestKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
-  krCard: json['kr_card'] != null ? PostPaymentMethodConfigurationsRequestKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
-  link: json['link'] != null ? PostPaymentMethodConfigurationsRequestLink.fromJson(json['link'] as Map<String, dynamic>) : null,
-  mbWay: json['mb_way'] != null ? PostPaymentMethodConfigurationsRequestMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
-  mobilepay: json['mobilepay'] != null ? PostPaymentMethodConfigurationsRequestMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
-  multibanco: json['multibanco'] != null ? PostPaymentMethodConfigurationsRequestMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  fpx: json['fpx'] != null ? PostPaymentMethodConfigurationsConfigurationRequestFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
+  frMealVoucherConecs: json['fr_meal_voucher_conecs'] != null ? FrMealVoucherConecs.fromJson(json['fr_meal_voucher_conecs'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  googlePay: json['google_pay'] != null ? GooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  ideal: json['ideal'] != null ? PostPaymentMethodConfigurationsConfigurationRequestIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  jcb: json['jcb'] != null ? Jcb.fromJson(json['jcb'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostPaymentMethodConfigurationsConfigurationRequestLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? PostPaymentMethodConfigurationsConfigurationRequestMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
+  mobilepay: json['mobilepay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? PostPaymentMethodConfigurationsConfigurationRequestMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
-  naverPay: json['naver_pay'] != null ? PostPaymentMethodConfigurationsRequestNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
-  nzBankAccount: json['nz_bank_account'] != null ? PostPaymentMethodConfigurationsRequestNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
-  oxxo: json['oxxo'] != null ? PostPaymentMethodConfigurationsRequestOxxo.fromJson(json['oxxo'] as Map<String, dynamic>) : null,
-  p24: json['p24'] != null ? PostPaymentMethodConfigurationsRequestP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  oxxo: json['oxxo'] != null ? PostPaymentMethodConfigurationsConfigurationRequestOxxo.fromJson(json['oxxo'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? PostPaymentMethodConfigurationsConfigurationRequestP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
   parent: json['parent'] as String?,
-  payByBank: json['pay_by_bank'] != null ? PostPaymentMethodConfigurationsRequestPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>) : null,
-  payco: json['payco'] != null ? PostPaymentMethodConfigurationsRequestPayco.fromJson(json['payco'] as Map<String, dynamic>) : null,
-  paynow: json['paynow'] != null ? PostPaymentMethodConfigurationsRequestPaynow.fromJson(json['paynow'] as Map<String, dynamic>) : null,
-  paypal: json['paypal'] != null ? PostPaymentMethodConfigurationsRequestPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
-  payto: json['payto'] != null ? PostPaymentMethodConfigurationsRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
-  pix: json['pix'] != null ? PostPaymentMethodConfigurationsRequestPix.fromJson(json['pix'] as Map<String, dynamic>) : null,
-  promptpay: json['promptpay'] != null ? PostPaymentMethodConfigurationsRequestPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>) : null,
-  revolutPay: json['revolut_pay'] != null ? PostPaymentMethodConfigurationsRequestRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
-  samsungPay: json['samsung_pay'] != null ? PostPaymentMethodConfigurationsRequestSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
-  satispay: json['satispay'] != null ? PostPaymentMethodConfigurationsRequestSatispay.fromJson(json['satispay'] as Map<String, dynamic>) : null,
-  sepaDebit: json['sepa_debit'] != null ? PostPaymentMethodConfigurationsRequestSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
-  sofort: json['sofort'] != null ? PostPaymentMethodConfigurationsRequestSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
-  swish: json['swish'] != null ? PostPaymentMethodConfigurationsRequestSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
-  twint: json['twint'] != null ? PostPaymentMethodConfigurationsRequestTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
-  usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodConfigurationsRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
-  wechatPay: json['wechat_pay'] != null ? PostPaymentMethodConfigurationsRequestWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
-  zip: json['zip'] != null ? PostPaymentMethodConfigurationsRequestZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
+  payByBank: json['pay_by_bank'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>) : null,
+  payco: json['payco'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPayco.fromJson(json['payco'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaynow.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPix.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  promptpay: json['promptpay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  samsungPay: json['samsung_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
+  satispay: json['satispay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSatispay.fromJson(json['satispay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? PostPaymentMethodConfigurationsConfigurationRequestTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
+  usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? PostPaymentMethodConfigurationsConfigurationRequestWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? PostPaymentMethodConfigurationsConfigurationRequestZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
 ); }
 
 /// Canadian pre-authorized debit payments, check this [page](https://docs.stripe.com/payments/acss-debit) for more details like country availability.
-final PostPaymentMethodConfigurationsRequestAcssDebit? acssDebit;
+final PostPaymentMethodConfigurationsConfigurationRequestAcssDebit? acssDebit;
 
 /// [Affirm](https://www.affirm.com/) gives your customers a way to split purchases over a series of payments. Depending on the purchase, they can pay with four interest-free payments (Split Pay) or pay over a longer term (Installments), which might include interest. Check this [page](https://docs.stripe.com/payments/affirm) for more details like country availability.
-final PostPaymentMethodConfigurationsRequestAffirm? affirm;
+final PostPaymentMethodConfigurationsConfigurationRequestAffirm? affirm;
 
 /// Afterpay gives your customers a way to pay for purchases in installments, check this [page](https://docs.stripe.com/payments/afterpay-clearpay) for more details like country availability. Afterpay is particularly popular among businesses selling fashion, beauty, and sports products.
-final PostPaymentMethodConfigurationsRequestAfterpayClearpay? afterpayClearpay;
+final PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay? afterpayClearpay;
 
 /// Alipay is a digital wallet in China that has more than a billion active users worldwide. Alipay users can pay on the web or on a mobile device using login credentials or their Alipay app. Alipay has a low dispute rate and reduces fraud by authenticating payments using the customer's login credentials. Check this [page](https://docs.stripe.com/payments/alipay) for more details.
-final PostPaymentMethodConfigurationsRequestAlipay? alipay;
+final PostPaymentMethodConfigurationsConfigurationRequestAlipay? alipay;
 
 /// Alma is a Buy Now, Pay Later payment method that offers customers the ability to pay in 2, 3, or 4 installments.
-final PostPaymentMethodConfigurationsRequestAlma? alma;
+final PostPaymentMethodConfigurationsConfigurationRequestAlma? alma;
 
 /// Amazon Pay is a wallet payment method that lets your customers check out the same way as on Amazon.
-final PostPaymentMethodConfigurationsRequestAmazonPay? amazonPay;
+final PostPaymentMethodConfigurationsConfigurationRequestAmazonPay? amazonPay;
 
 /// Stripe users can accept [Apple Pay](https://stripe.com/payments/apple-pay) in iOS applications in iOS 9 and later, and on the web in Safari starting with iOS 10 or macOS Sierra. There are no additional fees to process Apple Pay payments, and the [pricing](https://stripe.com/pricing) is the same as other card transactions. Check this [page](https://docs.stripe.com/apple-pay) for more details.
-final PostPaymentMethodConfigurationsRequestApplePay? applePay;
+final ApplePay? applePay;
 
 /// Apple Pay Later, a payment method for customers to buy now and pay later, gives your customers a way to split purchases into four installments across six weeks.
-final PostPaymentMethodConfigurationsRequestApplePayLater? applePayLater;
+final ApplePayLater? applePayLater;
 
 /// Stripe users in Australia can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with an Australian bank account. Check this [page](https://docs.stripe.com/payments/au-becs-debit) for more details.
-final PostPaymentMethodConfigurationsRequestAuBecsDebit? auBecsDebit;
+final PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit? auBecsDebit;
 
 /// Stripe users in the UK can accept Bacs Direct Debit payments from customers with a UK bank account, check this [page](https://docs.stripe.com/payments/payment-methods/bacs-debit) for more details.
-final PostPaymentMethodConfigurationsRequestBacsDebit? bacsDebit;
+final PostPaymentMethodConfigurationsConfigurationRequestBacsDebit? bacsDebit;
 
 /// Bancontact is the most popular online payment method in Belgium, with over 15 million cards in circulation. [Customers](https://docs.stripe.com/api/customers) use a Bancontact card or mobile app linked to a Belgian bank account to make online payments that are secure, guaranteed, and confirmed immediately. Check this [page](https://docs.stripe.com/payments/bancontact) for more details.
-final PostPaymentMethodConfigurationsRequestBancontact? bancontact;
+final PostPaymentMethodConfigurationsConfigurationRequestBancontact? bancontact;
 
 /// Billie is a [single-use](https://docs.stripe.com/payments/payment-methods#usage) payment method that offers businesses Pay by Invoice where they offer payment terms ranging from 7-120 days. Customers are redirected from your website or app, authorize the payment with Billie, then return to your website or app. You get [immediate notification](/payments/payment-methods#payment-notification) of whether the payment succeeded or failed.
-final PostPaymentMethodConfigurationsRequestBillie? billie;
+final PostPaymentMethodConfigurationsConfigurationRequestBillie? billie;
 
 /// BLIK is a [single use](https://docs.stripe.com/payments/payment-methods#usage) payment method that requires customers to authenticate their payments. When customers want to pay online using BLIK, they request a six-digit code from their banking application and enter it into the payment collection form. Check this [page](https://docs.stripe.com/payments/blik) for more details.
-final PostPaymentMethodConfigurationsRequestBlik? blik;
+final PostPaymentMethodConfigurationsConfigurationRequestBlik? blik;
 
 /// Boleto is an official (regulated by the Central Bank of Brazil) payment method in Brazil. Check this [page](https://docs.stripe.com/payments/boleto) for more details.
-final PostPaymentMethodConfigurationsRequestBoleto? boleto;
+final PostPaymentMethodConfigurationsConfigurationRequestBoleto? boleto;
 
 /// Cards are a popular way for consumers and businesses to pay online or in person. Stripe supports global and local card networks.
-final PostPaymentMethodConfigurationsRequestCard? card;
+final PostPaymentMethodConfigurationsConfigurationRequestCard? card;
 
 /// Cartes Bancaires is France's local card network. More than 95% of these cards are co-branded with either Visa or Mastercard, meaning you can process these cards over either Cartes Bancaires or the Visa or Mastercard networks. Check this [page](https://docs.stripe.com/payments/cartes-bancaires) for more details.
-final PostPaymentMethodConfigurationsRequestCartesBancaires? cartesBancaires;
+final PostPaymentMethodConfigurationsConfigurationRequestCartesBancaires? cartesBancaires;
 
 /// Cash App is a popular consumer app in the US that allows customers to bank, invest, send, and receive money using their digital wallet. Check this [page](https://docs.stripe.com/payments/cash-app-pay) for more details.
-final PostPaymentMethodConfigurationsRequestCashapp? cashapp;
+final PostPaymentMethodConfigurationsConfigurationRequestCashapp? cashapp;
 
 /// [Stablecoin payments](https://docs.stripe.com/payments/stablecoin-payments) enable customers to pay in stablecoins like USDC from 100s of wallets including Phantom and Metamask.
-final PostPaymentMethodConfigurationsRequestCrypto? crypto;
+final PostPaymentMethodConfigurationsConfigurationRequestCrypto? crypto;
 
 /// Uses a customer’s [cash balance](https://docs.stripe.com/payments/customer-balance) for the payment. The cash balance can be funded via a bank transfer. Check this [page](https://docs.stripe.com/payments/bank-transfers) for more details.
-final PostPaymentMethodConfigurationsRequestCustomerBalance? customerBalance;
+final PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance? customerBalance;
 
 /// EPS is an Austria-based payment method that allows customers to complete transactions online using their bank credentials. EPS is supported by all Austrian banks and is accepted by over 80% of Austrian online retailers. Check this [page](https://docs.stripe.com/payments/eps) for more details.
-final PostPaymentMethodConfigurationsRequestEps? eps;
+final PostPaymentMethodConfigurationsConfigurationRequestEps? eps;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
 
 /// Financial Process Exchange (FPX) is a Malaysia-based payment method that allows customers to complete transactions online using their bank credentials. Bank Negara Malaysia (BNM), the Central Bank of Malaysia, and eleven other major Malaysian financial institutions are members of the PayNet Group, which owns and operates FPX. It is one of the most popular online payment methods in Malaysia, with nearly 90 million transactions in 2018 according to BNM. Check this [page](https://docs.stripe.com/payments/fpx) for more details.
-final PostPaymentMethodConfigurationsRequestFpx? fpx;
+final PostPaymentMethodConfigurationsConfigurationRequestFpx? fpx;
 
 /// Meal vouchers in France, or “titres-restaurant”, is a local benefits program commonly offered by employers for their employees to purchase prepared food and beverages on working days. Check this [page](https://docs.stripe.com/payments/meal-vouchers/fr-meal-vouchers) for more details.
-final PostPaymentMethodConfigurationsRequestFrMealVoucherConecs? frMealVoucherConecs;
+final FrMealVoucherConecs? frMealVoucherConecs;
 
 /// giropay is a German payment method based on online banking, introduced in 2006. It allows customers to complete transactions online using their online banking environment, with funds debited from their bank account. Depending on their bank, customers confirm payments on giropay using a second factor of authentication or a PIN. giropay accounts for 10% of online checkouts in Germany. Check this [page](https://docs.stripe.com/payments/giropay) for more details.
-final PostPaymentMethodConfigurationsRequestGiropay? giropay;
+final PostPaymentMethodConfigurationsConfigurationRequestGiropay? giropay;
 
 /// Google Pay allows customers to make payments in your app or website using any credit or debit card saved to their Google Account, including those from Google Play, YouTube, Chrome, or an Android device. Use the Google Pay API to request any credit or debit card stored in your customer's Google account. Check this [page](https://docs.stripe.com/google-pay) for more details.
-final PostPaymentMethodConfigurationsRequestGooglePay? googlePay;
+final GooglePay? googlePay;
 
 /// GrabPay is a payment method developed by [Grab](https://www.grab.com/sg/consumer/finance/pay/). GrabPay is a digital wallet - customers maintain a balance in their wallets that they pay out with. Check this [page](https://docs.stripe.com/payments/grabpay) for more details.
-final PostPaymentMethodConfigurationsRequestGrabpay? grabpay;
+final PostPaymentMethodConfigurationsConfigurationRequestGrabpay? grabpay;
 
 /// iDEAL is a Netherlands-based payment method that allows customers to complete transactions online using their bank credentials. All major Dutch banks are members of Currence, the scheme that operates iDEAL, making it the most popular online payment method in the Netherlands with a share of online transactions close to 55%. Check this [page](https://docs.stripe.com/payments/ideal) for more details.
-final PostPaymentMethodConfigurationsRequestIdeal? ideal;
+final PostPaymentMethodConfigurationsConfigurationRequestIdeal? ideal;
 
 /// JCB is a credit card company based in Japan. JCB is currently available in Japan to businesses approved by JCB, and available to all businesses in Australia, Canada, Hong Kong, Japan, New Zealand, Singapore, Switzerland, United Kingdom, United States, and all countries in the European Economic Area except Iceland. Check this [page](https://support.stripe.com/questions/accepting-japan-credit-bureau-%28jcb%29-payments) for more details.
-final PostPaymentMethodConfigurationsRequestJcb? jcb;
+final Jcb? jcb;
 
 /// Kakao Pay is a popular local wallet available in South Korea.
-final PostPaymentMethodConfigurationsRequestKakaoPay? kakaoPay;
+final PostPaymentMethodConfigurationsConfigurationRequestKakaoPay? kakaoPay;
 
 /// Klarna gives customers a range of [payment options](https://docs.stripe.com/payments/klarna#payment-options) during checkout. Available payment options vary depending on the customer's billing address and the transaction amount. These payment options make it convenient for customers to purchase items in all price ranges. Check this [page](https://docs.stripe.com/payments/klarna) for more details.
-final PostPaymentMethodConfigurationsRequestKlarna? klarna;
+final PostPaymentMethodConfigurationsConfigurationRequestKlarna? klarna;
 
 /// Konbini allows customers in Japan to pay for bills and online purchases at convenience stores with cash. Check this [page](https://docs.stripe.com/payments/konbini) for more details.
-final PostPaymentMethodConfigurationsRequestKonbini? konbini;
+final PostPaymentMethodConfigurationsConfigurationRequestKonbini? konbini;
 
 /// Korean cards let users pay using locally issued cards from South Korea.
-final PostPaymentMethodConfigurationsRequestKrCard? krCard;
+final PostPaymentMethodConfigurationsConfigurationRequestKrCard? krCard;
 
 /// [Link](https://docs.stripe.com/payments/link) is a payment method network. With Link, users save their payment details once, then reuse that information to pay with one click for any business on the network.
-final PostPaymentMethodConfigurationsRequestLink? link;
+final PostPaymentMethodConfigurationsConfigurationRequestLink? link;
 
 /// MB WAY is the most popular wallet in Portugal. After entering their phone number in your checkout, customers approve the payment directly in their MB WAY app. Check this [page](https://docs.stripe.com/payments/mb-way) for more details.
-final PostPaymentMethodConfigurationsRequestMbWay? mbWay;
+final PostPaymentMethodConfigurationsConfigurationRequestMbWay? mbWay;
 
 /// MobilePay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage) card wallet payment method used in Denmark and Finland. It allows customers to [authenticate and approve](https://docs.stripe.com/payments/payment-methods#customer-actions) payments using the MobilePay app. Check this [page](https://docs.stripe.com/payments/mobilepay) for more details.
-final PostPaymentMethodConfigurationsRequestMobilepay? mobilepay;
+final PostPaymentMethodConfigurationsConfigurationRequestMobilepay? mobilepay;
 
 /// Stripe users in Europe and the United States can accept Multibanco payments from customers in Portugal using [Sources](https://stripe.com/docs/sources)—a single integration path for creating payments using any supported method.
-final PostPaymentMethodConfigurationsRequestMultibanco? multibanco;
+final PostPaymentMethodConfigurationsConfigurationRequestMultibanco? multibanco;
 
 /// Configuration name.
 final String? name;
 
 /// Naver Pay is a popular local wallet available in South Korea.
-final PostPaymentMethodConfigurationsRequestNaverPay? naverPay;
+final PostPaymentMethodConfigurationsConfigurationRequestNaverPay? naverPay;
 
 /// Stripe users in New Zealand can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with a New Zeland bank account. Check this [page](https://docs.stripe.com/payments/nz-bank-account) for more details.
-final PostPaymentMethodConfigurationsRequestNzBankAccount? nzBankAccount;
+final PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount? nzBankAccount;
 
 /// OXXO is a Mexican chain of convenience stores with thousands of locations across Latin America and represents nearly 20% of online transactions in Mexico. OXXO allows customers to pay bills and online purchases in-store with cash. Check this [page](https://docs.stripe.com/payments/oxxo) for more details.
-final PostPaymentMethodConfigurationsRequestOxxo? oxxo;
+final PostPaymentMethodConfigurationsConfigurationRequestOxxo? oxxo;
 
 /// Przelewy24 is a Poland-based payment method aggregator that allows customers to complete transactions online using bank transfers and other methods. Bank transfers account for 30% of online payments in Poland and Przelewy24 provides a way for customers to pay with over 165 banks. Check this [page](https://docs.stripe.com/payments/p24) for more details.
-final PostPaymentMethodConfigurationsRequestP24? p24;
+final PostPaymentMethodConfigurationsConfigurationRequestP24? p24;
 
 /// Configuration's parent configuration. Specify to create a child configuration.
 final String? parent;
 
 /// Pay by bank is a redirect payment method backed by bank transfers. A customer is redirected to their bank to authorize a bank transfer for a given amount. This removes a lot of the error risks inherent in waiting for the customer to initiate a transfer themselves, and is less expensive than card payments.
-final PostPaymentMethodConfigurationsRequestPayByBank? payByBank;
+final PostPaymentMethodConfigurationsConfigurationRequestPayByBank? payByBank;
 
 /// PAYCO is a [single-use](https://docs.stripe.com/payments/payment-methods#usage local wallet available in South Korea.
-final PostPaymentMethodConfigurationsRequestPayco? payco;
+final PostPaymentMethodConfigurationsConfigurationRequestPayco? payco;
 
 /// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
-final PostPaymentMethodConfigurationsRequestPaynow? paynow;
+final PostPaymentMethodConfigurationsConfigurationRequestPaynow? paynow;
 
 /// PayPal, a digital wallet popular with customers in Europe, allows your customers worldwide to pay using their PayPal account. Check this [page](https://docs.stripe.com/payments/paypal) for more details.
-final PostPaymentMethodConfigurationsRequestPaypal? paypal;
+final PostPaymentMethodConfigurationsConfigurationRequestPaypal? paypal;
 
 /// PayTo is a [real-time](https://docs.stripe.com/payments/real-time) payment method that enables customers in Australia to pay by providing their bank account details. Customers must accept a mandate authorizing you to debit their account. Check this [page](https://docs.stripe.com/payments/payto) for more details.
-final PostPaymentMethodConfigurationsRequestPayto? payto;
+final PostPaymentMethodConfigurationsConfigurationRequestPayto? payto;
 
 /// Pix is a payment method popular in Brazil. When paying with Pix, customers authenticate and approve payments by scanning a QR code in their preferred banking app. Check this [page](https://docs.stripe.com/payments/pix) for more details.
-final PostPaymentMethodConfigurationsRequestPix? pix;
+final PostPaymentMethodConfigurationsConfigurationRequestPix? pix;
 
 /// PromptPay is a Thailand-based payment method that allows customers to make a payment using their preferred app from participating banks. Check this [page](https://docs.stripe.com/payments/promptpay) for more details.
-final PostPaymentMethodConfigurationsRequestPromptpay? promptpay;
+final PostPaymentMethodConfigurationsConfigurationRequestPromptpay? promptpay;
 
 /// Revolut Pay, developed by Revolut, a global finance app, is a digital wallet payment method. Revolut Pay uses the customer’s stored balance or cards to fund the payment, and offers the option for non-Revolut customers to save their details after their first purchase.
-final PostPaymentMethodConfigurationsRequestRevolutPay? revolutPay;
+final PostPaymentMethodConfigurationsConfigurationRequestRevolutPay? revolutPay;
 
 /// Samsung Pay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage local wallet available in South Korea.
-final PostPaymentMethodConfigurationsRequestSamsungPay? samsungPay;
+final PostPaymentMethodConfigurationsConfigurationRequestSamsungPay? samsungPay;
 
 /// Satispay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage) payment method where customers are required to [authenticate](/payments/payment-methods#customer-actions) their payment. Customers pay by being redirected from your website or app, authorizing the payment with Satispay, then returning to your website or app. You get [immediate notification](/payments/payment-methods#payment-notification) of whether the payment succeeded or failed.
-final PostPaymentMethodConfigurationsRequestSatispay? satispay;
+final PostPaymentMethodConfigurationsConfigurationRequestSatispay? satispay;
 
 /// The [Single Euro Payments Area (SEPA)](https://en.wikipedia.org/wiki/Single_Euro_Payments_Area) is an initiative of the European Union to simplify payments within and across member countries. SEPA established and enforced banking standards to allow for the direct debiting of every EUR-denominated bank account within the SEPA region, check this [page](https://docs.stripe.com/payments/sepa-debit) for more details.
-final PostPaymentMethodConfigurationsRequestSepaDebit? sepaDebit;
+final PostPaymentMethodConfigurationsConfigurationRequestSepaDebit? sepaDebit;
 
 /// Stripe users in Europe and the United States can use the [Payment Intents API](https://stripe.com/docs/payments/payment-intents)—a single integration path for creating payments using any supported method—to accept [Sofort](https://www.sofort.com/) payments from customers. Check this [page](https://docs.stripe.com/payments/sofort) for more details.
-final PostPaymentMethodConfigurationsRequestSofort? sofort;
+final PostPaymentMethodConfigurationsConfigurationRequestSofort? sofort;
 
 /// Swish is a [real-time](https://docs.stripe.com/payments/real-time) payment method popular in Sweden. It allows customers to [authenticate and approve](https://docs.stripe.com/payments/payment-methods#customer-actions) payments using the Swish mobile app and the Swedish BankID mobile app. Check this [page](https://docs.stripe.com/payments/swish) for more details.
-final PostPaymentMethodConfigurationsRequestSwish? swish;
+final PostPaymentMethodConfigurationsConfigurationRequestSwish? swish;
 
 /// Twint is a payment method popular in Switzerland. It allows customers to pay using their mobile phone. Check this [page](https://docs.stripe.com/payments/twint) for more details.
-final PostPaymentMethodConfigurationsRequestTwint? twint;
+final PostPaymentMethodConfigurationsConfigurationRequestTwint? twint;
 
 /// Stripe users in the United States can accept ACH direct debit payments from customers with a US bank account using the Automated Clearing House (ACH) payments system operated by Nacha. Check this [page](https://docs.stripe.com/payments/ach-direct-debit) for more details.
-final PostPaymentMethodConfigurationsRequestUsBankAccount? usBankAccount;
+final PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount? usBankAccount;
 
 /// WeChat, owned by Tencent, is China's leading mobile app with over 1 billion monthly active users. Chinese consumers can use WeChat Pay to pay for goods and services inside of businesses' apps and websites. WeChat Pay users buy most frequently in gaming, e-commerce, travel, online education, and food/nutrition. Check this [page](https://docs.stripe.com/payments/wechat-pay) for more details.
-final PostPaymentMethodConfigurationsRequestWechatPay? wechatPay;
+final PostPaymentMethodConfigurationsConfigurationRequestWechatPay? wechatPay;
 
 /// Zip gives your customers a way to split purchases over a series of payments. Check this [page](https://docs.stripe.com/payments/zip) for more details like country availability.
-final PostPaymentMethodConfigurationsRequestZip? zip;
+final PostPaymentMethodConfigurationsConfigurationRequestZip? zip;
 
 Map<String, dynamic> toJson() { return {
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
@@ -303,7 +303,7 @@ Map<String, dynamic> toJson() { return {
   if (zip != null) 'zip': zip?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'affirm', 'afterpay_clearpay', 'alipay', 'alma', 'amazon_pay', 'apple_pay', 'apple_pay_later', 'au_becs_debit', 'bacs_debit', 'bancontact', 'billie', 'blik', 'boleto', 'card', 'cartes_bancaires', 'cashapp', 'crypto', 'customer_balance', 'eps', 'expand', 'fpx', 'fr_meal_voucher_conecs', 'giropay', 'google_pay', 'grabpay', 'ideal', 'jcb', 'kakao_pay', 'klarna', 'konbini', 'kr_card', 'link', 'mb_way', 'mobilepay', 'multibanco', 'name', 'naver_pay', 'nz_bank_account', 'oxxo', 'p24', 'parent', 'pay_by_bank', 'payco', 'paynow', 'paypal', 'payto', 'pix', 'promptpay', 'revolut_pay', 'samsung_pay', 'satispay', 'sepa_debit', 'sofort', 'swish', 'twint', 'us_bank_account', 'wechat_pay', 'zip'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequest copyWith({PostPaymentMethodConfigurationsRequestAcssDebit Function()? acssDebit, PostPaymentMethodConfigurationsRequestAffirm Function()? affirm, PostPaymentMethodConfigurationsRequestAfterpayClearpay Function()? afterpayClearpay, PostPaymentMethodConfigurationsRequestAlipay Function()? alipay, PostPaymentMethodConfigurationsRequestAlma Function()? alma, PostPaymentMethodConfigurationsRequestAmazonPay Function()? amazonPay, PostPaymentMethodConfigurationsRequestApplePay Function()? applePay, PostPaymentMethodConfigurationsRequestApplePayLater Function()? applePayLater, PostPaymentMethodConfigurationsRequestAuBecsDebit Function()? auBecsDebit, PostPaymentMethodConfigurationsRequestBacsDebit Function()? bacsDebit, PostPaymentMethodConfigurationsRequestBancontact Function()? bancontact, PostPaymentMethodConfigurationsRequestBillie Function()? billie, PostPaymentMethodConfigurationsRequestBlik Function()? blik, PostPaymentMethodConfigurationsRequestBoleto Function()? boleto, PostPaymentMethodConfigurationsRequestCard Function()? card, PostPaymentMethodConfigurationsRequestCartesBancaires Function()? cartesBancaires, PostPaymentMethodConfigurationsRequestCashapp Function()? cashapp, PostPaymentMethodConfigurationsRequestCrypto Function()? crypto, PostPaymentMethodConfigurationsRequestCustomerBalance Function()? customerBalance, PostPaymentMethodConfigurationsRequestEps Function()? eps, List<String> Function()? expand, PostPaymentMethodConfigurationsRequestFpx Function()? fpx, PostPaymentMethodConfigurationsRequestFrMealVoucherConecs Function()? frMealVoucherConecs, PostPaymentMethodConfigurationsRequestGiropay Function()? giropay, PostPaymentMethodConfigurationsRequestGooglePay Function()? googlePay, PostPaymentMethodConfigurationsRequestGrabpay Function()? grabpay, PostPaymentMethodConfigurationsRequestIdeal Function()? ideal, PostPaymentMethodConfigurationsRequestJcb Function()? jcb, PostPaymentMethodConfigurationsRequestKakaoPay Function()? kakaoPay, PostPaymentMethodConfigurationsRequestKlarna Function()? klarna, PostPaymentMethodConfigurationsRequestKonbini Function()? konbini, PostPaymentMethodConfigurationsRequestKrCard Function()? krCard, PostPaymentMethodConfigurationsRequestLink Function()? link, PostPaymentMethodConfigurationsRequestMbWay Function()? mbWay, PostPaymentMethodConfigurationsRequestMobilepay Function()? mobilepay, PostPaymentMethodConfigurationsRequestMultibanco Function()? multibanco, String Function()? name, PostPaymentMethodConfigurationsRequestNaverPay Function()? naverPay, PostPaymentMethodConfigurationsRequestNzBankAccount Function()? nzBankAccount, PostPaymentMethodConfigurationsRequestOxxo Function()? oxxo, PostPaymentMethodConfigurationsRequestP24 Function()? p24, String Function()? parent, PostPaymentMethodConfigurationsRequestPayByBank Function()? payByBank, PostPaymentMethodConfigurationsRequestPayco Function()? payco, PostPaymentMethodConfigurationsRequestPaynow Function()? paynow, PostPaymentMethodConfigurationsRequestPaypal Function()? paypal, PostPaymentMethodConfigurationsRequestPayto Function()? payto, PostPaymentMethodConfigurationsRequestPix Function()? pix, PostPaymentMethodConfigurationsRequestPromptpay Function()? promptpay, PostPaymentMethodConfigurationsRequestRevolutPay Function()? revolutPay, PostPaymentMethodConfigurationsRequestSamsungPay Function()? samsungPay, PostPaymentMethodConfigurationsRequestSatispay Function()? satispay, PostPaymentMethodConfigurationsRequestSepaDebit Function()? sepaDebit, PostPaymentMethodConfigurationsRequestSofort Function()? sofort, PostPaymentMethodConfigurationsRequestSwish Function()? swish, PostPaymentMethodConfigurationsRequestTwint Function()? twint, PostPaymentMethodConfigurationsRequestUsBankAccount Function()? usBankAccount, PostPaymentMethodConfigurationsRequestWechatPay Function()? wechatPay, PostPaymentMethodConfigurationsRequestZip Function()? zip, }) { return PostPaymentMethodConfigurationsRequest(
+PostPaymentMethodConfigurationsRequest copyWith({PostPaymentMethodConfigurationsConfigurationRequestAcssDebit Function()? acssDebit, PostPaymentMethodConfigurationsConfigurationRequestAffirm Function()? affirm, PostPaymentMethodConfigurationsConfigurationRequestAfterpayClearpay Function()? afterpayClearpay, PostPaymentMethodConfigurationsConfigurationRequestAlipay Function()? alipay, PostPaymentMethodConfigurationsConfigurationRequestAlma Function()? alma, PostPaymentMethodConfigurationsConfigurationRequestAmazonPay Function()? amazonPay, ApplePay Function()? applePay, ApplePayLater Function()? applePayLater, PostPaymentMethodConfigurationsConfigurationRequestAuBecsDebit Function()? auBecsDebit, PostPaymentMethodConfigurationsConfigurationRequestBacsDebit Function()? bacsDebit, PostPaymentMethodConfigurationsConfigurationRequestBancontact Function()? bancontact, PostPaymentMethodConfigurationsConfigurationRequestBillie Function()? billie, PostPaymentMethodConfigurationsConfigurationRequestBlik Function()? blik, PostPaymentMethodConfigurationsConfigurationRequestBoleto Function()? boleto, PostPaymentMethodConfigurationsConfigurationRequestCard Function()? card, PostPaymentMethodConfigurationsConfigurationRequestCartesBancaires Function()? cartesBancaires, PostPaymentMethodConfigurationsConfigurationRequestCashapp Function()? cashapp, PostPaymentMethodConfigurationsConfigurationRequestCrypto Function()? crypto, PostPaymentMethodConfigurationsConfigurationRequestCustomerBalance Function()? customerBalance, PostPaymentMethodConfigurationsConfigurationRequestEps Function()? eps, List<String> Function()? expand, PostPaymentMethodConfigurationsConfigurationRequestFpx Function()? fpx, FrMealVoucherConecs Function()? frMealVoucherConecs, PostPaymentMethodConfigurationsConfigurationRequestGiropay Function()? giropay, GooglePay Function()? googlePay, PostPaymentMethodConfigurationsConfigurationRequestGrabpay Function()? grabpay, PostPaymentMethodConfigurationsConfigurationRequestIdeal Function()? ideal, Jcb Function()? jcb, PostPaymentMethodConfigurationsConfigurationRequestKakaoPay Function()? kakaoPay, PostPaymentMethodConfigurationsConfigurationRequestKlarna Function()? klarna, PostPaymentMethodConfigurationsConfigurationRequestKonbini Function()? konbini, PostPaymentMethodConfigurationsConfigurationRequestKrCard Function()? krCard, PostPaymentMethodConfigurationsConfigurationRequestLink Function()? link, PostPaymentMethodConfigurationsConfigurationRequestMbWay Function()? mbWay, PostPaymentMethodConfigurationsConfigurationRequestMobilepay Function()? mobilepay, PostPaymentMethodConfigurationsConfigurationRequestMultibanco Function()? multibanco, String Function()? name, PostPaymentMethodConfigurationsConfigurationRequestNaverPay Function()? naverPay, PostPaymentMethodConfigurationsConfigurationRequestNzBankAccount Function()? nzBankAccount, PostPaymentMethodConfigurationsConfigurationRequestOxxo Function()? oxxo, PostPaymentMethodConfigurationsConfigurationRequestP24 Function()? p24, String Function()? parent, PostPaymentMethodConfigurationsConfigurationRequestPayByBank Function()? payByBank, PostPaymentMethodConfigurationsConfigurationRequestPayco Function()? payco, PostPaymentMethodConfigurationsConfigurationRequestPaynow Function()? paynow, PostPaymentMethodConfigurationsConfigurationRequestPaypal Function()? paypal, PostPaymentMethodConfigurationsConfigurationRequestPayto Function()? payto, PostPaymentMethodConfigurationsConfigurationRequestPix Function()? pix, PostPaymentMethodConfigurationsConfigurationRequestPromptpay Function()? promptpay, PostPaymentMethodConfigurationsConfigurationRequestRevolutPay Function()? revolutPay, PostPaymentMethodConfigurationsConfigurationRequestSamsungPay Function()? samsungPay, PostPaymentMethodConfigurationsConfigurationRequestSatispay Function()? satispay, PostPaymentMethodConfigurationsConfigurationRequestSepaDebit Function()? sepaDebit, PostPaymentMethodConfigurationsConfigurationRequestSofort Function()? sofort, PostPaymentMethodConfigurationsConfigurationRequestSwish Function()? swish, PostPaymentMethodConfigurationsConfigurationRequestTwint Function()? twint, PostPaymentMethodConfigurationsConfigurationRequestUsBankAccount Function()? usBankAccount, PostPaymentMethodConfigurationsConfigurationRequestWechatPay Function()? wechatPay, PostPaymentMethodConfigurationsConfigurationRequestZip Function()? zip, }) { return PostPaymentMethodConfigurationsRequest(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,

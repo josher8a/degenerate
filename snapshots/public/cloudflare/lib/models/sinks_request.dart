@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_connection_schema.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_r2_data_catalog_table.dart';import 'cloudflare_pipelines_r2_table.dart';import 'sinks_request_config.dart';/// Specifies the type of sink.
-@immutable final class SinksRequestType {const SinksRequestType._(this.value);
-
-factory SinksRequestType.fromJson(String json) { return switch (json) {
-  'r2' => r2,
-  'r2_data_catalog' => r2DataCatalog,
-  _ => SinksRequestType._(json),
-}; }
-
-static const SinksRequestType r2 = SinksRequestType._('r2');
-
-static const SinksRequestType r2DataCatalog = SinksRequestType._('r2_data_catalog');
-
-static const List<SinksRequestType> values = [r2, r2DataCatalog];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SinksRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SinksRequestType($value)'; } 
- }
-@immutable final class SinksRequest {const SinksRequest({required this.name, required this.type, this.config, this.format, this.schema, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_connection_schema.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_config.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_type.dart';@immutable final class SinksRequest {const SinksRequest({required this.name, required this.type, this.config, this.format, this.schema, });
 
 factory SinksRequest.fromJson(Map<String, dynamic> json) { return SinksRequest(
   config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2Table.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTable.fromJson(v as Map<String, dynamic>),) : null,

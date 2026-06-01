@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/repos_update_branch_protection_request_required_status_checks.dart';import 'package:pub_github_rest_3_1/models/repos_update_branch_protection_request/restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes, this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
 
 factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
   enforceAdmins: json['enforce_admins'] as bool?,
   requiredPullRequestReviews: json['required_pull_request_reviews'] != null ? ReposUpdateBranchProtectionRequestRequiredPullRequestReviews.fromJson(json['required_pull_request_reviews'] as Map<String, dynamic>) : null,
-  restrictions: json['restrictions'] != null ? ReposUpdateBranchProtectionRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? Restrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
   requiredLinearHistory: json['required_linear_history'] as bool?,
   allowForcePushes: json['allow_force_pushes'] as bool?,
   allowDeletions: json['allow_deletions'] as bool?,
@@ -26,7 +26,7 @@ final bool? enforceAdmins;
 final ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? requiredPullRequestReviews;
 
 /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
-final ReposUpdateBranchProtectionRequestRestrictions? restrictions;
+final Restrictions? restrictions;
 
 /// Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
 final bool? requiredLinearHistory;
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('requi
       json.containsKey('enforce_admins') && json['enforce_admins'] is bool &&
       json.containsKey('required_pull_request_reviews') &&
       json.containsKey('restrictions'); } 
-ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool Function()? requiredLinearHistory, bool? Function()? allowForcePushes, bool Function()? allowDeletions, bool Function()? blockCreations, bool Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
+ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, Restrictions? Function()? restrictions, bool Function()? requiredLinearHistory, bool? Function()? allowForcePushes, bool Function()? allowDeletions, bool Function()? blockCreations, bool Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   enforceAdmins: enforceAdmins != null ? enforceAdmins() : this.enforceAdmins,
   requiredPullRequestReviews: requiredPullRequestReviews != null ? requiredPullRequestReviews() : this.requiredPullRequestReviews,

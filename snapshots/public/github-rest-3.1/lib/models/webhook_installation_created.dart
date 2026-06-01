@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_repositories2.dart';import 'webhooks_user.dart';@immutable final class WebhookInstallationCreatedAction {const WebhookInstallationCreatedAction._(this.value);
-
-factory WebhookInstallationCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookInstallationCreatedAction._(json),
-}; }
-
-static const WebhookInstallationCreatedAction created = WebhookInstallationCreatedAction._('created');
-
-static const List<WebhookInstallationCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationCreatedAction($value)'; } 
- }
-@immutable final class WebhookInstallationCreated {const WebhookInstallationCreated({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookInstallationCreated {const WebhookInstallationCreated({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });
 
 factory WebhookInstallationCreated.fromJson(Map<String, dynamic> json) { return WebhookInstallationCreated(
-  action: WebhookInstallationCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookInstallationCreated.fromJson(Map<String, dynamic> json) { return 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookInstallationCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -64,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('installation') &&
       json.containsKey('sender'); } 
-WebhookInstallationCreated copyWith({WebhookInstallationCreatedAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, WebhooksUser Function()? requester, SimpleUser? sender, }) { return WebhookInstallationCreated(
+WebhookInstallationCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, WebhooksUser Function()? requester, SimpleUser? sender, }) { return WebhookInstallationCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,

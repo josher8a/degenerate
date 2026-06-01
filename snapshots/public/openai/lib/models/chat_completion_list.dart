@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_chat_completion_response.dart';/// The type of this object. It is always set to "list".
-/// 
-@immutable final class ChatCompletionListObject {const ChatCompletionListObject._(this.value);
-
-factory ChatCompletionListObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ChatCompletionListObject._(json),
-}; }
-
-static const ChatCompletionListObject list = ChatCompletionListObject._('list');
-
-static const List<ChatCompletionListObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionListObject($value)'; } 
- }
-/// An object representing a list of Chat Completions.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/create_chat_completion_response.dart';/// An object representing a list of Chat Completions.
 /// 
 @immutable final class ChatCompletionList {const ChatCompletionList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ChatCompletionListObject.list, });
 

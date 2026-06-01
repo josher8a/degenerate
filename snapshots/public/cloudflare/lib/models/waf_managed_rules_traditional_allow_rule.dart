@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_priority.dart';import 'waf_managed_rules_rule_components_schemas_identifier.dart';import 'waf_managed_rules_schemas_description.dart';import 'waf_managed_rules_traditional_allow_rule_group.dart';/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_base/waf_managed_rules_base_group.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_priority.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rule_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_description.dart';/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
 @immutable final class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional._(this.value);
 
 factory WafManagedRulesModeAllowTraditional.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalAllowRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),
-  group: WafManagedRulesTraditionalAllowRuleGroup.fromJson(json['group'] as Map<String, dynamic>),
+  group: WafManagedRulesBaseGroup.fromJson(json['group'] as Map<String, dynamic>),
   id: WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(json['id'] as String),
   packageId: WafManagedRulesIdentifier.fromJson(json['package_id'] as String),
   priority: WafManagedRulesPriority.fromJson(json['priority'] as String),
@@ -42,7 +42,7 @@ factory WafManagedRulesTraditionalAllowRule.fromJson(Map<String, dynamic> json) 
 final WafManagedRulesSchemasDescription description;
 
 /// Defines the rule group to which the current WAF rule belongs.
-final WafManagedRulesTraditionalAllowRuleGroup group;
+final WafManagedRulesBaseGroup group;
 
 /// Defines the unique identifier of the WAF rule.
 final WafManagedRulesRuleComponentsSchemasIdentifier id;
@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('priority') &&
       json.containsKey('allowed_modes') &&
       json.containsKey('mode'); } 
-WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesTraditionalAllowRuleGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeAllowTraditional>? allowedModes, WafManagedRulesModeAllowTraditional? mode, }) { return WafManagedRulesTraditionalAllowRule(
+WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription? description, WafManagedRulesBaseGroup? group, WafManagedRulesRuleComponentsSchemasIdentifier? id, WafManagedRulesIdentifier? packageId, WafManagedRulesPriority? priority, List<WafManagedRulesModeAllowTraditional>? allowedModes, WafManagedRulesModeAllowTraditional? mode, }) { return WafManagedRulesTraditionalAllowRule(
   description: description ?? this.description,
   group: group ?? this.group,
   id: id ?? this.id,

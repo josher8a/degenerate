@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error2.dart';import 'video_model.dart';import 'video_size.dart';@immutable final class VideoStatus {const VideoStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';@immutable final class VideoStatus {const VideoStatus._(this.value);
 
 factory VideoStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,

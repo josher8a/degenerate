@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'country_spec_verification_field_details.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/country_spec_verification_field_details.dart';/// 
 @immutable final class CountrySpecVerificationFields {const CountrySpecVerificationFields({required this.company, required this.individual, });
 
 factory CountrySpecVerificationFields.fromJson(Map<String, dynamic> json) { return CountrySpecVerificationFields(

@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_applicable_price.dart';/// The price type that credit grants can apply to. We currently only support the `metered` price type. This refers to prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them. Cannot be used in combination with `prices`.
-@immutable final class BillingCreditGrantsResourceScopePriceType {const BillingCreditGrantsResourceScopePriceType._(this.value);
-
-factory BillingCreditGrantsResourceScopePriceType.fromJson(String json) { return switch (json) {
-  'metered' => metered,
-  _ => BillingCreditGrantsResourceScopePriceType._(json),
-}; }
-
-static const BillingCreditGrantsResourceScopePriceType metered = BillingCreditGrantsResourceScopePriceType._('metered');
-
-static const List<BillingCreditGrantsResourceScopePriceType> values = [metered];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditGrantsResourceScopePriceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditGrantsResourceScopePriceType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicable_price.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_scope/price_type.dart';/// 
 @immutable final class BillingCreditGrantsResourceScope {const BillingCreditGrantsResourceScope({this.priceType, this.prices, });
 
 factory BillingCreditGrantsResourceScope.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceScope(
-  priceType: json['price_type'] != null ? BillingCreditGrantsResourceScopePriceType.fromJson(json['price_type'] as String) : null,
+  priceType: json['price_type'] != null ? PriceType.fromJson(json['price_type'] as String) : null,
   prices: (json['prices'] as List<dynamic>?)?.map((e) => BillingCreditGrantsResourceApplicablePrice.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The price type that credit grants can apply to. We currently only support the `metered` price type. This refers to prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them. Cannot be used in combination with `prices`.
-final BillingCreditGrantsResourceScopePriceType? priceType;
+final PriceType? priceType;
 
 /// The prices that credit grants can apply to. We currently only support `metered` prices. This refers to prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them. Cannot be used in combination with `price_type`.
 final List<BillingCreditGrantsResourceApplicablePrice>? prices;
@@ -41,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (prices != null) 'prices': prices?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price_type', 'prices'}.contains(key)); } 
-BillingCreditGrantsResourceScope copyWith({BillingCreditGrantsResourceScopePriceType Function()? priceType, List<BillingCreditGrantsResourceApplicablePrice> Function()? prices, }) { return BillingCreditGrantsResourceScope(
+BillingCreditGrantsResourceScope copyWith({PriceType Function()? priceType, List<BillingCreditGrantsResourceApplicablePrice> Function()? prices, }) { return BillingCreditGrantsResourceScope(
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,
 ); } 

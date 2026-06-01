@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_credit_types.dart';import 'simple_user.dart';/// The state of the user's acceptance of the credit.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/security_advisory_credit_types.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The state of the user's acceptance of the credit.
 @immutable final class RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState._(this.value);
 
 factory RepositoryAdvisoryCreditState.fromJson(String json) { return switch (json) {

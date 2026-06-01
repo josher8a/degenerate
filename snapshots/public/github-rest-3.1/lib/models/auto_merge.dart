@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The merge method to use.
-@immutable final class AutoMergeMergeMethod {const AutoMergeMergeMethod._(this.value);
-
-factory AutoMergeMergeMethod.fromJson(String json) { return switch (json) {
-  'merge' => merge,
-  'squash' => squash,
-  'rebase' => rebase,
-  _ => AutoMergeMergeMethod._(json),
-}; }
-
-static const AutoMergeMergeMethod merge = AutoMergeMergeMethod._('merge');
-
-static const AutoMergeMergeMethod squash = AutoMergeMergeMethod._('squash');
-
-static const AutoMergeMergeMethod rebase = AutoMergeMergeMethod._('rebase');
-
-static const List<AutoMergeMergeMethod> values = [merge, squash, rebase];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoMergeMergeMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoMergeMergeMethod($value)'; } 
- }
-/// The status of auto merging a pull request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/auto_merge/auto_merge_merge_method.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The status of auto merging a pull request.
 @immutable final class AutoMerge {const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage, });
 
 factory AutoMerge.fromJson(Map<String, dynamic> json) { return AutoMerge(

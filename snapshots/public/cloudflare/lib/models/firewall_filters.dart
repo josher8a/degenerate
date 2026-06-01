@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_schemas_mode.dart';/// The target to search in existing rules.
-@immutable final class FirewallFiltersConfigurationTarget {const FirewallFiltersConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';/// The target to search in existing rules.
+@immutable final class ConfigurationTarget {const ConfigurationTarget._(this.value);
 
-factory FirewallFiltersConfigurationTarget.fromJson(String json) { return switch (json) {
+factory ConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,
   'ip_range' => ipRange,
   'asn' => asn,
   'country' => country,
-  _ => FirewallFiltersConfigurationTarget._(json),
+  _ => ConfigurationTarget._(json),
 }; }
 
-static const FirewallFiltersConfigurationTarget ip = FirewallFiltersConfigurationTarget._('ip');
+static const ConfigurationTarget ip = ConfigurationTarget._('ip');
 
-static const FirewallFiltersConfigurationTarget ipRange = FirewallFiltersConfigurationTarget._('ip_range');
+static const ConfigurationTarget ipRange = ConfigurationTarget._('ip_range');
 
-static const FirewallFiltersConfigurationTarget asn = FirewallFiltersConfigurationTarget._('asn');
+static const ConfigurationTarget asn = ConfigurationTarget._('asn');
 
-static const FirewallFiltersConfigurationTarget country = FirewallFiltersConfigurationTarget._('country');
+static const ConfigurationTarget country = ConfigurationTarget._('country');
 
-static const List<FirewallFiltersConfigurationTarget> values = [ip, ipRange, asn, country];
+static const List<ConfigurationTarget> values = [ip, ipRange, asn, country];
 
 final String value;
 
@@ -27,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallFiltersConfigurationTarget && other.value == value; } 
+    other is ConfigurationTarget && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallFiltersConfigurationTarget($value)'; } 
+@override String toString() { return 'ConfigurationTarget($value)'; } 
  }
 /// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 @immutable final class FirewallFiltersMatch {const FirewallFiltersMatch._(this.value);
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });
 
 factory FirewallFilters.fromJson(Map<String, dynamic> json) { return FirewallFilters(
-  configurationTarget: json['configuration.target'] != null ? FirewallFiltersConfigurationTarget.fromJson(json['configuration.target'] as String) : null,
+  configurationTarget: json['configuration.target'] != null ? ConfigurationTarget.fromJson(json['configuration.target'] as String) : null,
   configurationValue: json['configuration.value'] as String?,
   match: json.containsKey('match') ? FirewallFiltersMatch.fromJson(json['match'] as String) : FirewallFiltersMatch.all,
   mode: json['mode'] != null ? FirewallSchemasMode.fromJson(json['mode'] as String) : null,
@@ -67,7 +67,7 @@ factory FirewallFilters.fromJson(Map<String, dynamic> json) { return FirewallFil
 ); }
 
 /// The target to search in existing rules.
-final FirewallFiltersConfigurationTarget? configurationTarget;
+final ConfigurationTarget? configurationTarget;
 
 /// The target value to search for in existing rules: an IP address, an IP address range, or a country code, depending on the provided `configuration.target`.
 /// Notes: You can search for a single IPv4 address, an IP address range with a subnet of '/16' or '/24', or a two-letter ISO-3166-1 alpha-2 country code.
@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   'notes': ?notes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration.target', 'configuration.value', 'match', 'mode', 'notes'}.contains(key)); } 
-FirewallFilters copyWith({FirewallFiltersConfigurationTarget Function()? configurationTarget, String Function()? configurationValue, FirewallFiltersMatch Function()? match, FirewallSchemasMode Function()? mode, String Function()? notes, }) { return FirewallFilters(
+FirewallFilters copyWith({ConfigurationTarget Function()? configurationTarget, String Function()? configurationValue, FirewallFiltersMatch Function()? match, FirewallSchemasMode Function()? mode, String Function()? notes, }) { return FirewallFilters(
   configurationTarget: configurationTarget != null ? configurationTarget() : this.configurationTarget,
   configurationValue: configurationValue != null ? configurationValue() : this.configurationValue,
   match: match != null ? match() : this.match,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_connection.dart';@immutable final class PageShieldGetZoneConnectionResponse {const PageShieldGetZoneConnectionResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_connection.dart';@immutable final class PageShieldGetZoneConnectionResponse {const PageShieldGetZoneConnectionResponse({required this.result});
 
 factory PageShieldGetZoneConnectionResponse.fromJson(Map<String, dynamic> json) { return PageShieldGetZoneConnectionResponse(
   result: PageShieldConnection.fromJson(json['result'] as Map<String, dynamic>),

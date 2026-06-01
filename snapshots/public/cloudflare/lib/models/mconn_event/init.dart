@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Initialized process
+@immutable final class InitK {const InitK._(this.value);
+
+factory InitK.fromJson(String json) { return switch (json) {
+  'Init' => init,
+  _ => InitK._(json),
+}; }
+
+static const InitK init = InitK._('Init');
+
+static const List<InitK> values = [init];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InitK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InitK($value)'; } 
+ }
+@immutable final class Init {const Init({required this.k});
+
+factory Init.fromJson(Map<String, dynamic> json) { return Init(
+  k: InitK.fromJson(json['k'] as String),
+); }
+
+/// Initialized process
+final InitK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+Init copyWith({InitK? k}) { return Init(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Init &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'Init(k: $k)'; } 
+ }

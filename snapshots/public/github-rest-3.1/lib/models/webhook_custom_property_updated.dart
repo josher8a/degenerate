@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyUpdatedAction {const WebhookCustomPropertyUpdatedAction._(this.value);
-
-factory WebhookCustomPropertyUpdatedAction.fromJson(String json) { return switch (json) {
-  'updated' => updated,
-  _ => WebhookCustomPropertyUpdatedAction._(json),
-}; }
-
-static const WebhookCustomPropertyUpdatedAction updated = WebhookCustomPropertyUpdatedAction._('updated');
-
-static const List<WebhookCustomPropertyUpdatedAction> values = [updated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyUpdatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyUpdatedAction($value)'; } 
- }
-@immutable final class WebhookCustomPropertyUpdated {const WebhookCustomPropertyUpdated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_updated/webhook_custom_property_updated_action.dart';@immutable final class WebhookCustomPropertyUpdated {const WebhookCustomPropertyUpdated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyUpdated(
   action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),

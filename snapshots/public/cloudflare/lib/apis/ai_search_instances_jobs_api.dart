@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_instance_change_job_status_request.dart';import '../models/ai_search_instance_change_job_status_response400.dart';import '../models/ai_search_instance_change_job_status_response_result.dart';import '../models/ai_search_instance_create_job_request.dart';import '../models/ai_search_instance_create_job_response400.dart';import '../models/ai_search_instance_create_job_response_result.dart';import '../models/ai_search_instance_get_job_response400.dart';import '../models/ai_search_instance_get_job_response_result.dart';import '../models/ai_search_instance_list_job_logs_response400.dart';import '../models/ai_search_instance_list_job_logs_response_result.dart';import '../models/ai_search_instance_list_jobs_response400.dart';import '../models/ai_search_instance_list_jobs_response_result.dart';/// AiSearchInstancesJobsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_request.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response/ai_search_instance_change_job_status_response_result.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400.dart';import 'package:pub_cloudflare/models/ai_search_instance_create_job_request.dart';import 'package:pub_cloudflare/models/ai_search_instance_create_job_response400.dart';import 'package:pub_cloudflare/models/ai_search_instance_get_job_response400.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response400.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_jobs_response400.dart';/// AiSearchInstancesJobsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AiSearchInstancesJobsApi with ApiExecutor {const AiSearchInstancesJo
 /// Lists indexing jobs for an AI Search instance.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<List<AiSearchInstanceListJobsResponseResult>, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchInstanceChangeJobStatusResponseResult>, AiSearchInstanceListJobsResponse400>> aiSearchInstanceListJobs({required String id, required String accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,7 +37,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return AiSearchInstanceListJobsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -49,7 +49,7 @@ return execute(
 /// Creates a new indexing job for an AI Search instance.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/jobs`
-Future<ApiResult<AiSearchInstanceCreateJobResponseResult, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceCreateJobResponse400>> aiSearchInstanceCreateJob({required String id, required String accountId, AiSearchInstanceCreateJobRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -64,7 +64,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchInstanceCreateJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchInstanceCreateJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -76,7 +76,7 @@ return execute(
 /// Retrieves details for a specific AI Search indexing job.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}`
-Future<ApiResult<AiSearchInstanceGetJobResponseResult, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceChangeJobStatusResponseResult, AiSearchInstanceGetJobResponse400>> aiSearchInstanceGetJob({required String id, required String jobId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -89,7 +89,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchInstanceGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+    return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchInstanceGetJobResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

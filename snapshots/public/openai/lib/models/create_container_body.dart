@@ -1,45 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_container_body_expires_after.dart';import 'create_container_body_network_policy.dart';import 'create_container_body_skills.dart';/// Optional memory limit for the container. Defaults to "1g".
-@immutable final class CreateContainerBodyMemoryLimit {const CreateContainerBodyMemoryLimit._(this.value);
-
-factory CreateContainerBodyMemoryLimit.fromJson(String json) { return switch (json) {
-  '1g' => $1g,
-  '4g' => $4g,
-  '16g' => $16g,
-  '64g' => $64g,
-  _ => CreateContainerBodyMemoryLimit._(json),
-}; }
-
-static const CreateContainerBodyMemoryLimit $1g = CreateContainerBodyMemoryLimit._('1g');
-
-static const CreateContainerBodyMemoryLimit $4g = CreateContainerBodyMemoryLimit._('4g');
-
-static const CreateContainerBodyMemoryLimit $16g = CreateContainerBodyMemoryLimit._('16g');
-
-static const CreateContainerBodyMemoryLimit $64g = CreateContainerBodyMemoryLimit._('64g');
-
-static const List<CreateContainerBodyMemoryLimit> values = [$1g, $4g, $16g, $64g];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodyMemoryLimit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateContainerBodyMemoryLimit($value)'; } 
- }
-@immutable final class CreateContainerBody {const CreateContainerBody({required this.name, this.fileIds, this.expiresAfter, this.skills, this.memoryLimit, this.networkPolicy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_auto_param/skills.dart';import 'package:pub_openai/models/container_resource/memory_limit.dart';import 'package:pub_openai/models/create_container_body/create_container_body_expires_after.dart';@immutable final class CreateContainerBody {const CreateContainerBody({required this.name, this.fileIds, this.expiresAfter, this.skills, this.memoryLimit, this.networkPolicy, });
 
 factory CreateContainerBody.fromJson(Map<String, dynamic> json) { return CreateContainerBody(
   name: json['name'] as String,
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAfter: json['expires_after'] != null ? CreateContainerBodyExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  skills: (json['skills'] as List<dynamic>?)?.map((e) => CreateContainerBodySkills.fromJson(e as Map<String, dynamic>)).toList(),
-  memoryLimit: json['memory_limit'] != null ? CreateContainerBodyMemoryLimit.fromJson(json['memory_limit'] as String) : null,
-  networkPolicy: json['network_policy'] != null ? CreateContainerBodyNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
+  skills: (json['skills'] as List<dynamic>?)?.map((e) => Skills.fromJson(e as Map<String, dynamic>)).toList(),
+  memoryLimit: json['memory_limit'] != null ? MemoryLimit.fromJson(json['memory_limit'] as String) : null,
+  networkPolicy: json['network_policy'] != null ? AutoCodeInterpreterToolParamNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
 /// Name of the container to create.
@@ -52,13 +21,13 @@ final List<String>? fileIds;
 final CreateContainerBodyExpiresAfter? expiresAfter;
 
 /// An optional list of skills referenced by id or inline data.
-final List<CreateContainerBodySkills>? skills;
+final List<Skills>? skills;
 
 /// Optional memory limit for the container. Defaults to "1g".
-final CreateContainerBodyMemoryLimit? memoryLimit;
+final MemoryLimit? memoryLimit;
 
 /// Network access policy for the container.
-final CreateContainerBodyNetworkPolicy? networkPolicy;
+final AutoCodeInterpreterToolParamNetworkPolicy? networkPolicy;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -69,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CreateContainerBody copyWith({String? name, List<String> Function()? fileIds, CreateContainerBodyExpiresAfter Function()? expiresAfter, List<CreateContainerBodySkills> Function()? skills, CreateContainerBodyMemoryLimit Function()? memoryLimit, CreateContainerBodyNetworkPolicy Function()? networkPolicy, }) { return CreateContainerBody(
+CreateContainerBody copyWith({String? name, List<String> Function()? fileIds, CreateContainerBodyExpiresAfter Function()? expiresAfter, List<Skills> Function()? skills, MemoryLimit Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy Function()? networkPolicy, }) { return CreateContainerBody(
   name: name ?? this.name,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,

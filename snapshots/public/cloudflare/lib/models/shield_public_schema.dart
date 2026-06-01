@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// The kind of the schema
-@immutable final class ShieldPublicSchemaKind {const ShieldPublicSchemaKind._(this.value);
-
-factory ShieldPublicSchemaKind.fromJson(String json) { return switch (json) {
-  'openapi_v3' => openapiV3,
-  _ => ShieldPublicSchemaKind._(json),
-}; }
-
-static const ShieldPublicSchemaKind openapiV3 = ShieldPublicSchemaKind._('openapi_v3');
-
-static const List<ShieldPublicSchemaKind> values = [openapiV3];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldPublicSchemaKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldPublicSchemaKind($value)'; } 
- }
-/// A schema used in schema validation
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/schema_validation_create_schema_request/schema_validation_create_schema_request_kind.dart';import 'package:pub_cloudflare/models/shield_timestamp.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';/// A schema used in schema validation
 @immutable final class ShieldPublicSchema {const ShieldPublicSchema({required this.createdAt, required this.kind, required this.name, required this.schemaId, required this.source, this.validationEnabled, });
 
 factory ShieldPublicSchema.fromJson(Map<String, dynamic> json) { return ShieldPublicSchema(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),
-  kind: ShieldPublicSchemaKind.fromJson(json['kind'] as String),
+  kind: SchemaValidationCreateSchemaRequestKind.fromJson(json['kind'] as String),
   name: json['name'] as String,
   schemaId: ShieldUuid.fromJson(json['schema_id'] as String),
   source: json['source'] as String,
@@ -37,7 +15,7 @@ factory ShieldPublicSchema.fromJson(Map<String, dynamic> json) { return ShieldPu
 final ShieldTimestamp createdAt;
 
 /// The kind of the schema
-final ShieldPublicSchemaKind kind;
+final SchemaValidationCreateSchemaRequestKind kind;
 
 /// A human-readable name for the schema
 final String name;
@@ -64,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('schema_id') &&
       json.containsKey('source') && json['source'] is String; } 
-ShieldPublicSchema copyWith({ShieldTimestamp? createdAt, ShieldPublicSchemaKind? kind, String? name, ShieldUuid? schemaId, String? source, bool Function()? validationEnabled, }) { return ShieldPublicSchema(
+ShieldPublicSchema copyWith({ShieldTimestamp? createdAt, SchemaValidationCreateSchemaRequestKind? kind, String? name, ShieldUuid? schemaId, String? source, bool Function()? validationEnabled, }) { return ShieldPublicSchema(
   createdAt: createdAt ?? this.createdAt,
   kind: kind ?? this.kind,
   name: name ?? this.name,

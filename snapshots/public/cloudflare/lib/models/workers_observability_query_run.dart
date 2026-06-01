@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query.dart';import 'workers_observability_query_run_statistics.dart';import 'workers_observability_query_run_timeframe.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/workers_observability_query.dart';import 'package:pub_cloudflare/models/workers_observability_query_run/statistics.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
 
 factory WorkersObservabilityQueryRunStatus.fromJson(String json) { return switch (json) {
   'STARTED' => started,
@@ -35,9 +35,9 @@ factory WorkersObservabilityQueryRun.fromJson(Map<String, dynamic> json) { retur
   granularity: (json['granularity'] as num).toDouble(),
   id: json['id'] as String,
   query: WorkersObservabilityQuery.fromJson(json['query'] as Map<String, dynamic>),
-  statistics: json['statistics'] != null ? WorkersObservabilityQueryRunStatistics.fromJson(json['statistics'] as Map<String, dynamic>) : null,
+  statistics: json['statistics'] != null ? Statistics.fromJson(json['statistics'] as Map<String, dynamic>) : null,
   status: WorkersObservabilityQueryRunStatus.fromJson(json['status'] as String),
-  timeframe: WorkersObservabilityQueryRunTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
+  timeframe: Timeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
   updated: json['updated'] as String?,
   userId: json['userId'] as String,
   workspaceId: json['workspaceId'] as String,
@@ -57,12 +57,12 @@ final String id;
 
 final WorkersObservabilityQuery query;
 
-final WorkersObservabilityQueryRunStatistics? statistics;
+final Statistics? statistics;
 
 final WorkersObservabilityQueryRunStatus status;
 
 /// Time range for the query execution
-final WorkersObservabilityQueryRunTimeframe timeframe;
+final Timeframe timeframe;
 
 final String? updated;
 
@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('timeframe') &&
       json.containsKey('userId') && json['userId'] is String &&
       json.containsKey('workspaceId') && json['workspaceId'] is String; } 
-WorkersObservabilityQueryRun copyWith({String? accountId, String Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, WorkersObservabilityQueryRunStatistics Function()? statistics, WorkersObservabilityQueryRunStatus? status, WorkersObservabilityQueryRunTimeframe? timeframe, String Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
+WorkersObservabilityQueryRun copyWith({String? accountId, String Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, Statistics Function()? statistics, WorkersObservabilityQueryRunStatus? status, Timeframe? timeframe, String Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
   accountId: accountId ?? this.accountId,
   created: created != null ? created() : this.created,
   dry: dry ?? this.dry,

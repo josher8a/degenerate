@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_name.dart';/// Whether the origin has changed health status.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_address.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_enabled.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_name.dart';/// Whether the origin has changed health status.
 extension type const LoadBalancingOriginChanged(bool value) {
 factory LoadBalancingOriginChanged.fromJson(bool json) => LoadBalancingOriginChanged(json);
 

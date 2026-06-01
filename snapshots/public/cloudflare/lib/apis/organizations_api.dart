@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account.dart';import '../models/delete_organization_response.dart';import '../models/organization.dart';import '../models/organization_id.dart';import '../models/organization_list_organizations_parent_id.dart';import '../models/profile.dart';/// OrganizationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account.dart';import 'package:pub_cloudflare/models/delete_organization_response.dart';import 'package:pub_cloudflare/models/organization.dart';import 'package:pub_cloudflare/models/organization_id.dart';import 'package:pub_cloudflare/models/organization_list_organizations_parent_id.dart';import 'package:pub_cloudflare/models/profile.dart';/// OrganizationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

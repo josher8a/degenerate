@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_object.dart';import 'run_step_delta_step_details_tool_calls_file_search_object.dart';import 'run_step_delta_step_details_tool_calls_function_object.dart';import 'run_step_delta_step_details_tool_calls_object_tool_calls.dart';/// Always `tool_calls`.
-@immutable final class RunStepDeltaStepDetailsToolCallsObjectType {const RunStepDeltaStepDetailsToolCallsObjectType._(this.value);
-
-factory RunStepDeltaStepDetailsToolCallsObjectType.fromJson(String json) { return switch (json) {
-  'tool_calls' => toolCalls,
-  _ => RunStepDeltaStepDetailsToolCallsObjectType._(json),
-}; }
-
-static const RunStepDeltaStepDetailsToolCallsObjectType toolCalls = RunStepDeltaStepDetailsToolCallsObjectType._('tool_calls');
-
-static const List<RunStepDeltaStepDetailsToolCallsObjectType> values = [toolCalls];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsToolCallsObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsObjectType($value)'; } 
- }
-/// Details of the tool call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_code_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_file_search_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_function_object.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_object/run_step_delta_step_details_tool_calls_object_tool_calls.dart';import 'package:pub_openai/models/run_step_delta_step_details_tool_calls_object/run_step_delta_step_details_tool_calls_object_type.dart';/// Details of the tool call.
 @immutable final class RunStepDeltaStepDetailsToolCallsObject {const RunStepDeltaStepDetailsToolCallsObject({required this.type, this.toolCalls, });
 
 factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsObject(

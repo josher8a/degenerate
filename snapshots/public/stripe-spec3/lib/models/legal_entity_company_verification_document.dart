@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'legal_entity_company_verification_document_back.dart';import 'legal_entity_company_verification_document_front.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
 @immutable final class LegalEntityCompanyVerificationDocument {const LegalEntityCompanyVerificationDocument({this.back, this.details, this.detailsCode, this.front, });
 
 factory LegalEntityCompanyVerificationDocument.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyVerificationDocument(
@@ -11,7 +11,7 @@ factory LegalEntityCompanyVerificationDocument.fromJson(Map<String, dynamic> jso
 ); }
 
 /// The back of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `additional_verification`. Note that `additional_verification` files are [not downloadable](/file-upload#uploading-a-file).
-final LegalEntityCompanyVerificationDocumentBack? back;
+final Back? back;
 
 /// A user-displayable string describing the verification state of this document.
 final String? details;
@@ -20,7 +20,7 @@ final String? details;
 final String? detailsCode;
 
 /// The front of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `additional_verification`. Note that `additional_verification` files are [not downloadable](/file-upload#uploading-a-file).
-final LegalEntityCompanyVerificationDocumentFront? front;
+final Front? front;
 
 Map<String, dynamic> toJson() { return {
   if (back != null) 'back': back?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (front != null) 'front': front?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
-LegalEntityCompanyVerificationDocument copyWith({LegalEntityCompanyVerificationDocumentBack? Function()? back, String? Function()? details, String? Function()? detailsCode, LegalEntityCompanyVerificationDocumentFront? Function()? front, }) { return LegalEntityCompanyVerificationDocument(
+LegalEntityCompanyVerificationDocument copyWith({Back? Function()? back, String? Function()? details, String? Function()? detailsCode, Front? Function()? front, }) { return LegalEntityCompanyVerificationDocument(
   back: back != null ? back() : this.back,
   details: details != null ? details() : this.details,
   detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,

@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payout_schedule.dart';/// Whether the funds in this account can be paid out.
-@immutable final class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus._(this.value);
-
-factory BalanceSettingsResourcePayoutsStatus.fromJson(String json) { return switch (json) {
-  'disabled' => disabled,
-  'enabled' => enabled,
-  _ => BalanceSettingsResourcePayoutsStatus._(json),
-}; }
-
-static const BalanceSettingsResourcePayoutsStatus disabled = BalanceSettingsResourcePayoutsStatus._('disabled');
-
-static const BalanceSettingsResourcePayoutsStatus enabled = BalanceSettingsResourcePayoutsStatus._('enabled');
-
-static const List<BalanceSettingsResourcePayoutsStatus> values = [disabled, enabled];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsResourcePayoutsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsResourcePayoutsStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payouts/balance_settings_resource_payouts_status.dart';/// 
 @immutable final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({required this.status, this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, });
 
 factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayouts(

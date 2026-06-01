@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_merchant_data.dart';import 'post_test_helpers_issuing_transactions_create_unlinked_refund_request_purchase_details.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/purchase_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
   amount: (json['amount'] as num).toInt(),
   card: json['card'] as String,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  merchantData: json['merchant_data'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
-  purchaseDetails: json['purchase_details'] != null ? PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
+  merchantData: json['merchant_data'] != null ? MerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
+  purchaseDetails: json['purchase_details'] != null ? PurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The total amount to attempt to refund. This amount is in the provided currency, or defaults to the cards currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
@@ -24,10 +24,10 @@ final String? currency;
 final List<String>? expand;
 
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
-final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData? merchantData;
+final MerchantData? merchantData;
 
 /// Additional purchase information that is optionally provided by the merchant.
-final PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails? purchaseDetails;
+final PurchaseDetails? purchaseDetails;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('card') && json['card'] is String; } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest copyWith({int? amount, String? card, String Function()? currency, List<String> Function()? expand, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData Function()? merchantData, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest copyWith({int? amount, String? card, String Function()? currency, List<String> Function()? expand, MerchantData Function()? merchantData, PurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
   amount: amount ?? this.amount,
   card: card ?? this.card,
   currency: currency != null ? currency() : this.currency,

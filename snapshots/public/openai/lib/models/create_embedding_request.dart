@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_embedding_request_input.dart';import 'create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
-@immutable final class CreateEmbeddingRequestEncodingFormat {const CreateEmbeddingRequestEncodingFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_input.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
+@immutable final class EncodingFormat {const EncodingFormat._(this.value);
 
-factory CreateEmbeddingRequestEncodingFormat.fromJson(String json) { return switch (json) {
+factory EncodingFormat.fromJson(String json) { return switch (json) {
   'float' => float,
   'base64' => base64,
-  _ => CreateEmbeddingRequestEncodingFormat._(json),
+  _ => EncodingFormat._(json),
 }; }
 
-static const CreateEmbeddingRequestEncodingFormat float = CreateEmbeddingRequestEncodingFormat._('float');
+static const EncodingFormat float = EncodingFormat._('float');
 
-static const CreateEmbeddingRequestEncodingFormat base64 = CreateEmbeddingRequestEncodingFormat._('base64');
+static const EncodingFormat base64 = EncodingFormat._('base64');
 
-static const List<CreateEmbeddingRequestEncodingFormat> values = [float, base64];
+static const List<EncodingFormat> values = [float, base64];
 
 final String value;
 
@@ -21,16 +21,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEmbeddingRequestEncodingFormat && other.value == value; } 
+    other is EncodingFormat && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEmbeddingRequestEncodingFormat($value)'; } 
+@override String toString() { return 'EncodingFormat($value)'; } 
  }
-@immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = CreateEmbeddingRequestEncodingFormat.float, this.dimensions, this.user, });
+@immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = EncodingFormat.float, this.dimensions, this.user, });
 
 factory CreateEmbeddingRequest.fromJson(Map<String, dynamic> json) { return CreateEmbeddingRequest(
   input: OneOf4.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),),
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateEmbeddingRequestModelVariant2.fromJson(v as String),),
-  encodingFormat: json.containsKey('encoding_format') ? CreateEmbeddingRequestEncodingFormat.fromJson(json['encoding_format'] as String) : CreateEmbeddingRequestEncodingFormat.float,
+  encodingFormat: json.containsKey('encoding_format') ? EncodingFormat.fromJson(json['encoding_format'] as String) : EncodingFormat.float,
   dimensions: json['dimensions'] != null ? (json['dimensions'] as num).toInt() : null,
   user: json['user'] as String?,
 ); }
@@ -44,7 +44,7 @@ final CreateEmbeddingRequestInput input;
 final CreateEmbeddingRequestModel model;
 
 /// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
-final CreateEmbeddingRequestEncodingFormat encodingFormat;
+final EncodingFormat encodingFormat;
 
 /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
 /// 
@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') &&
       json.containsKey('model'); } 
-CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, CreateEmbeddingRequestEncodingFormat Function()? encodingFormat, int Function()? dimensions, String Function()? user, }) { return CreateEmbeddingRequest(
+CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, EncodingFormat Function()? encodingFormat, int Function()? dimensions, String Function()? user, }) { return CreateEmbeddingRequest(
   input: input ?? this.input,
   model: model ?? this.model,
   encodingFormat: encodingFormat != null ? encodingFormat() : this.encodingFormat,

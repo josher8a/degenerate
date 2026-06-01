@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';/// Unique WebSocket address that will receive messages from Cloudflare’s edge.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_fields.dart';import 'package:pub_cloudflare/models/logpush_sample.dart';import 'package:pub_cloudflare/models/logpush_schemas_filter.dart';/// Unique WebSocket address that will receive messages from Cloudflare’s edge.
 extension type LogpushSchemasDestinationConf(Uri value) {
 factory LogpushSchemasDestinationConf.fromJson(String json) => LogpushSchemasDestinationConf(Uri.parse(json));
 

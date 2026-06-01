@@ -2,25 +2,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
 /// 
-@immutable final class SemanticVadEagerness {const SemanticVadEagerness._(this.value);
+@immutable final class Eagerness {const Eagerness._(this.value);
 
-factory SemanticVadEagerness.fromJson(String json) { return switch (json) {
+factory Eagerness.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
-  _ => SemanticVadEagerness._(json),
+  _ => Eagerness._(json),
 }; }
 
-static const SemanticVadEagerness low = SemanticVadEagerness._('low');
+static const Eagerness low = Eagerness._('low');
 
-static const SemanticVadEagerness medium = SemanticVadEagerness._('medium');
+static const Eagerness medium = Eagerness._('medium');
 
-static const SemanticVadEagerness high = SemanticVadEagerness._('high');
+static const Eagerness high = Eagerness._('high');
 
-static const SemanticVadEagerness auto = SemanticVadEagerness._('auto');
+static const Eagerness auto = Eagerness._('auto');
 
-static const List<SemanticVadEagerness> values = [low, medium, high, auto];
+static const List<Eagerness> values = [low, medium, high, auto];
 
 final String value;
 
@@ -28,16 +28,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is SemanticVadEagerness && other.value == value; } 
+    other is Eagerness && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SemanticVadEagerness($value)'; } 
+@override String toString() { return 'Eagerness($value)'; } 
  }
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
-@immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness = SemanticVadEagerness.auto, this.createResponse = true, this.interruptResponse = true, });
+@immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness = Eagerness.auto, this.createResponse = true, this.interruptResponse = true, });
 
 factory SemanticVad.fromJson(Map<String, dynamic> json) { return SemanticVad(
   type: json['type'] as String,
-  eagerness: json.containsKey('eagerness') ? SemanticVadEagerness.fromJson(json['eagerness'] as String) : SemanticVadEagerness.auto,
+  eagerness: json.containsKey('eagerness') ? Eagerness.fromJson(json['eagerness'] as String) : Eagerness.auto,
   createResponse: json.containsKey('create_response') ? json['create_response'] as bool : true,
   interruptResponse: json.containsKey('interrupt_response') ? json['interrupt_response'] as bool : true,
 ); }
@@ -48,7 +48,7 @@ final String type;
 
 /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
 /// 
-final SemanticVadEagerness eagerness;
+final Eagerness eagerness;
 
 /// Whether or not to automatically generate a response when a VAD stop event occurs.
 /// 
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'interrupt_response': interruptResponse,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SemanticVad copyWith({String? type, SemanticVadEagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return SemanticVad(
+SemanticVad copyWith({String? type, Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return SemanticVad(
   type: type ?? this.type,
   eagerness: eagerness != null ? eagerness() : this.eagerness,
   createResponse: createResponse != null ? createResponse() : this.createResponse,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact_deployment_record.dart';@immutable final class OrgsSetClusterDeploymentRecordsResponse {const OrgsSetClusterDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record.dart';@immutable final class OrgsSetClusterDeploymentRecordsResponse {const OrgsSetClusterDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
 
 factory OrgsSetClusterDeploymentRecordsResponse.fromJson(Map<String, dynamic> json) { return OrgsSetClusterDeploymentRecordsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

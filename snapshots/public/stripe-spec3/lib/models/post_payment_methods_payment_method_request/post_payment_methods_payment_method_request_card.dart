@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/card_networks.dart';/// If this is a `card` PaymentMethod, this hash contains the user's card details.
+@immutable final class PostPaymentMethodsPaymentMethodRequestCard {const PostPaymentMethodsPaymentMethodRequestCard({this.expMonth, this.expYear, this.networks, });
+
+factory PostPaymentMethodsPaymentMethodRequestCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestCard(
+  expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
+  expYear: json['exp_year'] != null ? (json['exp_year'] as num).toInt() : null,
+  networks: json['networks'] != null ? CardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+); }
+
+final int? expMonth;
+
+final int? expYear;
+
+final CardNetworks? networks;
+
+Map<String, dynamic> toJson() { return {
+  'exp_month': ?expMonth,
+  'exp_year': ?expYear,
+  if (networks != null) 'networks': networks?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exp_month', 'exp_year', 'networks'}.contains(key)); } 
+PostPaymentMethodsPaymentMethodRequestCard copyWith({int Function()? expMonth, int Function()? expYear, CardNetworks Function()? networks, }) { return PostPaymentMethodsPaymentMethodRequestCard(
+  expMonth: expMonth != null ? expMonth() : this.expMonth,
+  expYear: expYear != null ? expYear() : this.expYear,
+  networks: networks != null ? networks() : this.networks,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodsPaymentMethodRequestCard &&
+          expMonth == other.expMonth &&
+          expYear == other.expYear &&
+          networks == other.networks; } 
+@override int get hashCode { return Object.hash(expMonth, expYear, networks); } 
+@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestCard(expMonth: $expMonth, expYear: $expYear, networks: $networks)'; } 
+ }

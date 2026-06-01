@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'env_var_source.dart';/// EnvVar represents an environment variable present in a Container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/env_var_source.dart';/// EnvVar represents an environment variable present in a Container.
 @immutable final class EnvVar {const EnvVar({this.name = '', this.value, this.valueFrom, });
 
 factory EnvVar.fromJson(Map<String, dynamic> json) { return EnvVar(

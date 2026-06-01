@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate.dart';import 'post_sources_request_owner.dart';import 'post_sources_request_receiver.dart';import 'post_sources_request_redirect.dart';import 'post_sources_request_source_order.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
-@immutable final class PostSourcesRequestFlow {const PostSourcesRequestFlow._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_mandate.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_redirect.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_source_order.dart';import 'package:pub_stripe_spec3/models/post_sources_request/receiver.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
+@immutable final class Flow {const Flow._(this.value);
 
-factory PostSourcesRequestFlow.fromJson(String json) { return switch (json) {
+factory Flow.fromJson(String json) { return switch (json) {
   'code_verification' => codeVerification,
   'none' => none,
   'receiver' => receiver,
   'redirect' => redirect,
-  _ => PostSourcesRequestFlow._(json),
+  _ => Flow._(json),
 }; }
 
-static const PostSourcesRequestFlow codeVerification = PostSourcesRequestFlow._('code_verification');
+static const Flow codeVerification = Flow._('code_verification');
 
-static const PostSourcesRequestFlow none = PostSourcesRequestFlow._('none');
+static const Flow none = Flow._('none');
 
-static const PostSourcesRequestFlow receiver = PostSourcesRequestFlow._('receiver');
+static const Flow receiver = Flow._('receiver');
 
-static const PostSourcesRequestFlow redirect = PostSourcesRequestFlow._('redirect');
+static const Flow redirect = Flow._('redirect');
 
-static const List<PostSourcesRequestFlow> values = [codeVerification, none, receiver, redirect];
+static const List<Flow> values = [codeVerification, none, receiver, redirect];
 
 final String value;
 
@@ -27,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestFlow && other.value == value; } 
+    other is Flow && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestFlow($value)'; } 
+@override String toString() { return 'Flow($value)'; } 
  }
 @immutable final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
 
@@ -62,12 +62,12 @@ factory PostSourcesRequest.fromJson(Map<String, dynamic> json) { return PostSour
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  flow: json['flow'] != null ? PostSourcesRequestFlow.fromJson(json['flow'] as String) : null,
+  flow: json['flow'] != null ? Flow.fromJson(json['flow'] as String) : null,
   mandate: json['mandate'] != null ? PostSourcesRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   originalSource: json['original_source'] as String?,
-  owner: json['owner'] != null ? PostSourcesRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
-  receiver: json['receiver'] != null ? PostSourcesRequestReceiver.fromJson(json['receiver'] as Map<String, dynamic>) : null,
+  owner: json['owner'] != null ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  receiver: json['receiver'] != null ? Receiver.fromJson(json['receiver'] as Map<String, dynamic>) : null,
   redirect: json['redirect'] != null ? PostSourcesRequestRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   sourceOrder: json['source_order'] != null ? PostSourcesRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
@@ -89,7 +89,7 @@ final String? customer;
 final List<String>? expand;
 
 /// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
-final PostSourcesRequestFlow? flow;
+final Flow? flow;
 
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.
 final PostSourcesRequestMandate? mandate;
@@ -100,10 +100,10 @@ final Map<String,String>? metadata;
 final String? originalSource;
 
 /// Information about the owner of the payment instrument that may be used or required by particular source types.
-final PostSourcesRequestOwner? owner;
+final PostCustomersCustomerBankAccountsIdRequestOwner? owner;
 
 /// Optional parameters for the receiver flow. Can be set only if the source is a receiver (`flow` is `receiver`).
-final PostSourcesRequestReceiver? receiver;
+final Receiver? receiver;
 
 /// Parameters required for the redirect flow. Required if the source is authenticated by a redirect (`flow` is `redirect`).
 final PostSourcesRequestRedirect? redirect;
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'flow', 'mandate', 'metadata', 'original_source', 'owner', 'receiver', 'redirect', 'source_order', 'statement_descriptor', 'token', 'type', 'usage'}.contains(key)); } 
-PostSourcesRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, List<String> Function()? expand, PostSourcesRequestFlow Function()? flow, PostSourcesRequestMandate Function()? mandate, Map<String, String> Function()? metadata, String Function()? originalSource, PostSourcesRequestOwner Function()? owner, PostSourcesRequestReceiver Function()? receiver, PostSourcesRequestRedirect Function()? redirect, PostSourcesRequestSourceOrder Function()? sourceOrder, String Function()? statementDescriptor, String Function()? token, String Function()? type, PostSourcesRequestUsage Function()? usage, }) { return PostSourcesRequest(
+PostSourcesRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, List<String> Function()? expand, Flow Function()? flow, PostSourcesRequestMandate Function()? mandate, Map<String, String> Function()? metadata, String Function()? originalSource, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, Receiver Function()? receiver, PostSourcesRequestRedirect Function()? redirect, PostSourcesRequestSourceOrder Function()? sourceOrder, String Function()? statementDescriptor, String Function()? token, String Function()? type, PostSourcesRequestUsage Function()? usage, }) { return PostSourcesRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,

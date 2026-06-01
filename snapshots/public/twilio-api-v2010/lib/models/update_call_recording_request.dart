@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'call_recording_enum_status.dart';@immutable final class UpdateCallRecordingRequest {const UpdateCallRecordingRequest({required this.status, this.pauseBehavior, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/call_recording_enum_status.dart';@immutable final class UpdateCallRecordingRequest {const UpdateCallRecordingRequest({required this.status, this.pauseBehavior, });
 
 factory UpdateCallRecordingRequest.fromJson(Map<String, dynamic> json) { return UpdateCallRecordingRequest(
   status: CallRecordingEnumStatus.fromJson(json['Status'] as String),

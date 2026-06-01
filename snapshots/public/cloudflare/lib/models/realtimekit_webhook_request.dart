@@ -1,55 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitWebhookRequestEvents {const RealtimekitWebhookRequestEvents._(this.value);
-
-factory RealtimekitWebhookRequestEvents.fromJson(String json) { return switch (json) {
-  'meeting.started' => meetingStarted,
-  'meeting.ended' => meetingEnded,
-  'meeting.participantJoined' => meetingParticipantJoined,
-  'meeting.participantLeft' => meetingParticipantLeft,
-  'meeting.chatSynced' => meetingChatSynced,
-  'recording.statusUpdate' => recordingStatusUpdate,
-  'livestreaming.statusUpdate' => livestreamingStatusUpdate,
-  'meeting.transcript' => meetingTranscript,
-  'meeting.summary' => meetingSummary,
-  _ => RealtimekitWebhookRequestEvents._(json),
-}; }
-
-static const RealtimekitWebhookRequestEvents meetingStarted = RealtimekitWebhookRequestEvents._('meeting.started');
-
-static const RealtimekitWebhookRequestEvents meetingEnded = RealtimekitWebhookRequestEvents._('meeting.ended');
-
-static const RealtimekitWebhookRequestEvents meetingParticipantJoined = RealtimekitWebhookRequestEvents._('meeting.participantJoined');
-
-static const RealtimekitWebhookRequestEvents meetingParticipantLeft = RealtimekitWebhookRequestEvents._('meeting.participantLeft');
-
-static const RealtimekitWebhookRequestEvents meetingChatSynced = RealtimekitWebhookRequestEvents._('meeting.chatSynced');
-
-static const RealtimekitWebhookRequestEvents recordingStatusUpdate = RealtimekitWebhookRequestEvents._('recording.statusUpdate');
-
-static const RealtimekitWebhookRequestEvents livestreamingStatusUpdate = RealtimekitWebhookRequestEvents._('livestreaming.statusUpdate');
-
-static const RealtimekitWebhookRequestEvents meetingTranscript = RealtimekitWebhookRequestEvents._('meeting.transcript');
-
-static const RealtimekitWebhookRequestEvents meetingSummary = RealtimekitWebhookRequestEvents._('meeting.summary');
-
-static const List<RealtimekitWebhookRequestEvents> values = [meetingStarted, meetingEnded, meetingParticipantJoined, meetingParticipantLeft, meetingChatSynced, recordingStatusUpdate, livestreamingStatusUpdate, meetingTranscript, meetingSummary];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitWebhookRequestEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitWebhookRequestEvents($value)'; } 
- }
-@immutable final class RealtimekitWebhookRequest {const RealtimekitWebhookRequest({required this.events, required this.name, required this.url, this.enabled = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_patch_webhook_request/realtimekit_patch_webhook_request_events.dart';@immutable final class RealtimekitWebhookRequest {const RealtimekitWebhookRequest({required this.events, required this.name, required this.url, this.enabled = true, });
 
 factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitWebhookRequest(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  events: (json['events'] as List<dynamic>).map((e) => RealtimekitWebhookRequestEvents.fromJson(e as String)).toList(),
+  events: (json['events'] as List<dynamic>).map((e) => RealtimekitPatchWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
 ); }
@@ -58,7 +13,7 @@ factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) { return R
 final bool enabled;
 
 /// Events that this webhook will get triggered by
-final List<RealtimekitWebhookRequestEvents> events;
+final List<RealtimekitPatchWebhookRequestEvents> events;
 
 /// Name of the webhook
 final String name;
@@ -75,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('events') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-RealtimekitWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitWebhookRequestEvents>? events, String? name, Uri? url, }) { return RealtimekitWebhookRequest(
+RealtimekitWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? events, String? name, Uri? url, }) { return RealtimekitWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events ?? this.events,
   name: name ?? this.name,

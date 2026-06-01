@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Select how to calculate the end of the invoice item period.
-@immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(this.value);
-
-factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType.fromJson(String json) { return switch (json) {
-  'min_item_period_end' => minItemPeriodEnd,
-  'phase_end' => phaseEnd,
-  'timestamp' => timestamp,
-  _ => SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._(json),
-}; }
-
-static const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType minItemPeriodEnd = SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._('min_item_period_end');
-
-static const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType phaseEnd = SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._('phase_end');
-
-static const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType timestamp = SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType._('timestamp');
-
-static const List<SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType> values = [minItemPeriodEnd, phaseEnd, timestamp];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEndType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_invoice_item_period_resource_period_end/subscription_schedules_resource_invoice_item_period_resource_period_end_type.dart';/// 
 @immutable final class SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd {const SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd({required this.type, this.timestamp, });
 
 factory SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(

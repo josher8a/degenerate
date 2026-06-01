@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_cache_list_actions_caches.dart';/// Repository actions caches
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_cache_list/actions_caches.dart';/// Repository actions caches
 @immutable final class ActionsCacheList {const ActionsCacheList({required this.totalCount, required this.actionsCaches, });
 
 factory ActionsCacheList.fromJson(Map<String, dynamic> json) { return ActionsCacheList(
   totalCount: (json['total_count'] as num).toInt(),
-  actionsCaches: (json['actions_caches'] as List<dynamic>).map((e) => ActionsCacheListActionsCaches.fromJson(e as Map<String, dynamic>)).toList(),
+  actionsCaches: (json['actions_caches'] as List<dynamic>).map((e) => ActionsCaches.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// Total number of caches
 final int totalCount;
 
 /// Array of caches
-final List<ActionsCacheListActionsCaches> actionsCaches;
+final List<ActionsCaches> actionsCaches;
 
 Map<String, dynamic> toJson() { return {
   'total_count': totalCount,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('actions_caches'); } 
-ActionsCacheList copyWith({int? totalCount, List<ActionsCacheListActionsCaches>? actionsCaches, }) { return ActionsCacheList(
+ActionsCacheList copyWith({int? totalCount, List<ActionsCaches>? actionsCaches, }) { return ActionsCacheList(
   totalCount: totalCount ?? this.totalCount,
   actionsCaches: actionsCaches ?? this.actionsCaches,
 ); } 

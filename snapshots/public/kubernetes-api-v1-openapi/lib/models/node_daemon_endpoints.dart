@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'daemon_endpoint.dart';/// NodeDaemonEndpoints lists ports opened by daemons running on the Node.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/daemon_endpoint.dart';/// NodeDaemonEndpoints lists ports opened by daemons running on the Node.
 @immutable final class NodeDaemonEndpoints {const NodeDaemonEndpoints({this.kubeletEndpoint});
 
 factory NodeDaemonEndpoints.fromJson(Map<String, dynamic> json) { return NodeDaemonEndpoints(

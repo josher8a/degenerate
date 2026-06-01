@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_response.dart';import 'mq_http_consumer_response_settings.dart';import 'mq_identifier.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_response.dart';import 'mq_worker_consumer_response_settings.dart';/// Response body representing a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_http_consumer_response.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_response.dart';/// Response body representing a consumer
 sealed class MqConsumerResponse {const MqConsumerResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -11,10 +11,10 @@ factory MqConsumerResponse.fromJson(Map<String, dynamic> json) { return switch (
 }; }
 
 /// Build the `http_pull` variant.
-factory MqConsumerResponse.httpPull({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqHttpConsumerResponseSettings? settings, }) { return MqConsumerResponseHttpPull(MqHttpConsumerResponse(type: 'http_pull', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, settings: settings)); }
+factory MqConsumerResponse.httpPull({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqHttpConsumerRequestSettings? settings, }) { return MqConsumerResponseHttpPull(MqHttpConsumerResponse(type: 'http_pull', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, settings: settings)); }
 
 /// Build the `worker` variant.
-factory MqConsumerResponse.worker({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqScriptName? scriptName, MqWorkerConsumerResponseSettings? settings, }) { return MqConsumerResponseWorker(MqWorkerConsumerResponse(type: 'worker', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, scriptName: scriptName, settings: settings)); }
+factory MqConsumerResponse.worker({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerResponseWorker(MqWorkerConsumerResponse(type: 'worker', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, scriptName: scriptName, settings: settings)); }
 
 /// The discriminator value identifying this variant.
 String get type;

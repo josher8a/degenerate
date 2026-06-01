@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_info_categorizations.dart';import 'intel_phishing_url_info_model_results.dart';import 'intel_phishing_url_info_rule_matches.dart';import 'intel_phishing_url_info_scan_status.dart';@immutable final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/intel_phishing_url_info_categorizations.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/model_results.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/rule_matches.dart';import 'package:pub_cloudflare/models/intel_phishing_url_info/scan_status.dart';@immutable final class IntelPhishingUrlInfo {const IntelPhishingUrlInfo({this.categorizations, this.modelResults, this.ruleMatches, this.scanStatus, this.screenshotDownloadSignature, this.screenshotPath, this.url, });
 
 factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlInfo(
   categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoCategorizations.fromJson(e as Map<String, dynamic>)).toList(),
-  modelResults: (json['model_results'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoModelResults.fromJson(e as Map<String, dynamic>)).toList(),
-  ruleMatches: (json['rule_matches'] as List<dynamic>?)?.map((e) => IntelPhishingUrlInfoRuleMatches.fromJson(e as Map<String, dynamic>)).toList(),
-  scanStatus: json['scan_status'] != null ? IntelPhishingUrlInfoScanStatus.fromJson(json['scan_status'] as Map<String, dynamic>) : null,
+  modelResults: (json['model_results'] as List<dynamic>?)?.map((e) => ModelResults.fromJson(e as Map<String, dynamic>)).toList(),
+  ruleMatches: (json['rule_matches'] as List<dynamic>?)?.map((e) => RuleMatches.fromJson(e as Map<String, dynamic>)).toList(),
+  scanStatus: json['scan_status'] != null ? ScanStatus.fromJson(json['scan_status'] as Map<String, dynamic>) : null,
   screenshotDownloadSignature: json['screenshot_download_signature'] as String?,
   screenshotPath: json['screenshot_path'] as String?,
   url: json['url'] as String?,
@@ -16,13 +16,13 @@ factory IntelPhishingUrlInfo.fromJson(Map<String, dynamic> json) { return IntelP
 final List<IntelPhishingUrlInfoCategorizations>? categorizations;
 
 /// List of model results for completed scans.
-final List<IntelPhishingUrlInfoModelResults>? modelResults;
+final List<ModelResults>? modelResults;
 
 /// List of signatures that matched against site content found when crawling the URL.
-final List<IntelPhishingUrlInfoRuleMatches>? ruleMatches;
+final List<RuleMatches>? ruleMatches;
 
 /// Status of the most recent scan found.
-final IntelPhishingUrlInfoScanStatus? scanStatus;
+final ScanStatus? scanStatus;
 
 /// For internal use.
 final String? screenshotDownloadSignature;
@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categorizations', 'model_results', 'rule_matches', 'scan_status', 'screenshot_download_signature', 'screenshot_path', 'url'}.contains(key)); } 
-IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations> Function()? categorizations, List<IntelPhishingUrlInfoModelResults> Function()? modelResults, List<IntelPhishingUrlInfoRuleMatches> Function()? ruleMatches, IntelPhishingUrlInfoScanStatus Function()? scanStatus, String Function()? screenshotDownloadSignature, String Function()? screenshotPath, String Function()? url, }) { return IntelPhishingUrlInfo(
+IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations> Function()? categorizations, List<ModelResults> Function()? modelResults, List<RuleMatches> Function()? ruleMatches, ScanStatus Function()? scanStatus, String Function()? screenshotDownloadSignature, String Function()? screenshotPath, String Function()? url, }) { return IntelPhishingUrlInfo(
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   modelResults: modelResults != null ? modelResults() : this.modelResults,
   ruleMatches: ruleMatches != null ? ruleMatches() : this.ruleMatches,

@@ -1,35 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_bank_accounts_id_request_metadata.dart';import 'post_customers_customer_bank_accounts_id_request_owner.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
-@immutable final class PostCustomersCustomerBankAccountsIdRequestAccountHolderType {const PostCustomersCustomerBankAccountsIdRequestAccountHolderType._(this.value);
-
-factory PostCustomersCustomerBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => PostCustomersCustomerBankAccountsIdRequestAccountHolderType._(json),
-}; }
-
-static const PostCustomersCustomerBankAccountsIdRequestAccountHolderType company = PostCustomersCustomerBankAccountsIdRequestAccountHolderType._('company');
-
-static const PostCustomersCustomerBankAccountsIdRequestAccountHolderType individual = PostCustomersCustomerBankAccountsIdRequestAccountHolderType._('individual');
-
-static const List<PostCustomersCustomerBankAccountsIdRequestAccountHolderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerBankAccountsIdRequestAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerBankAccountsIdRequestAccountHolderType($value)'; } 
- }
-@immutable final class PostCustomersCustomerBankAccountsIdRequest {const PostCustomersCustomerBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.expMonth, this.expYear, this.expand, this.metadata, this.name, this.owner, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';@immutable final class PostCustomersCustomerBankAccountsIdRequest {const PostCustomersCustomerBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.expMonth, this.expYear, this.expand, this.metadata, this.name, this.owner, });
 
 factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? PostCustomersCustomerBankAccountsIdRequestAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -39,7 +14,7 @@ factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic>
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCustomersCustomerBankAccountsIdRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   name: json['name'] as String?,
   owner: json['owner'] != null ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
 ); }
@@ -48,7 +23,7 @@ factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic>
 final String? accountHolderName;
 
 /// The type of entity that holds the account. This can be either `individual` or `company`.
-final PostCustomersCustomerBankAccountsIdRequestAccountHolderType? accountHolderType;
+final customer_payment_source_bank_accountAccountHolderType? accountHolderType;
 
 /// City/District/Suburb/Town/Village.
 final String? addressCity;
@@ -78,7 +53,7 @@ final String? expYear;
 final List<String>? expand;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostCustomersCustomerBankAccountsIdRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Cardholder name.
 final String? name;
@@ -102,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (owner != null) 'owner': owner?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key)); } 
-PostCustomersCustomerBankAccountsIdRequest copyWith({String Function()? accountHolderName, PostCustomersCustomerBankAccountsIdRequestAccountHolderType Function()? accountHolderType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, PostCustomersCustomerBankAccountsIdRequestMetadata Function()? metadata, String Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, }) { return PostCustomersCustomerBankAccountsIdRequest(
+PostCustomersCustomerBankAccountsIdRequest copyWith({String Function()? accountHolderName, customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, Metadata Function()? metadata, String Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, }) { return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   addressCity: addressCity != null ? addressCity() : this.addressCity,

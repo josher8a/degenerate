@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_resource_expires_after.dart';import 'container_resource_network_policy.dart';/// The memory limit configured for the container.
-@immutable final class ContainerResourceMemoryLimit {const ContainerResourceMemoryLimit._(this.value);
-
-factory ContainerResourceMemoryLimit.fromJson(String json) { return switch (json) {
-  '1g' => $1g,
-  '4g' => $4g,
-  '16g' => $16g,
-  '64g' => $64g,
-  _ => ContainerResourceMemoryLimit._(json),
-}; }
-
-static const ContainerResourceMemoryLimit $1g = ContainerResourceMemoryLimit._('1g');
-
-static const ContainerResourceMemoryLimit $4g = ContainerResourceMemoryLimit._('4g');
-
-static const ContainerResourceMemoryLimit $16g = ContainerResourceMemoryLimit._('16g');
-
-static const ContainerResourceMemoryLimit $64g = ContainerResourceMemoryLimit._('64g');
-
-static const List<ContainerResourceMemoryLimit> values = [$1g, $4g, $16g, $64g];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerResourceMemoryLimit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerResourceMemoryLimit($value)'; } 
- }
-@immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_resource/container_resource_expires_after.dart';import 'package:pub_openai/models/container_resource/container_resource_network_policy.dart';import 'package:pub_openai/models/container_resource/memory_limit.dart';@immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
 
 factory ContainerResource.fromJson(Map<String, dynamic> json) { return ContainerResource(
   id: json['id'] as String,
@@ -41,7 +10,7 @@ factory ContainerResource.fromJson(Map<String, dynamic> json) { return Container
   status: json['status'] as String,
   lastActiveAt: json['last_active_at'] != null ? (json['last_active_at'] as num).toInt() : null,
   expiresAfter: json['expires_after'] != null ? ContainerResourceExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
-  memoryLimit: json['memory_limit'] != null ? ContainerResourceMemoryLimit.fromJson(json['memory_limit'] as String) : null,
+  memoryLimit: json['memory_limit'] != null ? MemoryLimit.fromJson(json['memory_limit'] as String) : null,
   networkPolicy: json['network_policy'] != null ? ContainerResourceNetworkPolicy.fromJson(json['network_policy'] as Map<String, dynamic>) : null,
 ); }
 
@@ -70,7 +39,7 @@ final int? lastActiveAt;
 final ContainerResourceExpiresAfter? expiresAfter;
 
 /// The memory limit configured for the container.
-final ContainerResourceMemoryLimit? memoryLimit;
+final MemoryLimit? memoryLimit;
 
 /// Network access policy for the container.
 final ContainerResourceNetworkPolicy? networkPolicy;
@@ -91,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('status') && json['status'] is String; } 
-ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int Function()? lastActiveAt, ContainerResourceExpiresAfter Function()? expiresAfter, ContainerResourceMemoryLimit Function()? memoryLimit, ContainerResourceNetworkPolicy Function()? networkPolicy, }) { return ContainerResource(
+ContainerResource copyWith({String? id, String? object, String? name, int? createdAt, String? status, int Function()? lastActiveAt, ContainerResourceExpiresAfter Function()? expiresAfter, MemoryLimit Function()? memoryLimit, ContainerResourceNetworkPolicy Function()? networkPolicy, }) { return ContainerResource(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,

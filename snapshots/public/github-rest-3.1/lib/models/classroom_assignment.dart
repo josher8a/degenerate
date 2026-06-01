@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'classroom.dart';import 'simple_classroom_repository.dart';/// Whether it's a group assignment or individual assignment.
-@immutable final class ClassroomAssignmentType {const ClassroomAssignmentType._(this.value);
-
-factory ClassroomAssignmentType.fromJson(String json) { return switch (json) {
-  'individual' => individual,
-  'group' => group,
-  _ => ClassroomAssignmentType._(json),
-}; }
-
-static const ClassroomAssignmentType individual = ClassroomAssignmentType._('individual');
-
-static const ClassroomAssignmentType group = ClassroomAssignmentType._('group');
-
-static const List<ClassroomAssignmentType> values = [individual, group];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClassroomAssignmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClassroomAssignmentType($value)'; } 
- }
-/// A GitHub Classroom assignment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment/classroom_assignment_type.dart';import 'package:pub_github_rest_3_1/models/simple_classroom_repository.dart';/// A GitHub Classroom assignment
 @immutable final class ClassroomAssignment {const ClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.maxTeams, required this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.starterCodeRepository, required this.classroom, });
 
 factory ClassroomAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAssignment(

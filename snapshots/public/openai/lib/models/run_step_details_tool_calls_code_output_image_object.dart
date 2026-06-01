@@ -1,36 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_output_image_object_image.dart';/// Always `image`.
-@immutable final class RunStepDetailsToolCallsCodeOutputImageObjectType {const RunStepDetailsToolCallsCodeOutputImageObjectType._(this.value);
-
-factory RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(String json) { return switch (json) {
-  'image' => image,
-  _ => RunStepDetailsToolCallsCodeOutputImageObjectType._(json),
-}; }
-
-static const RunStepDetailsToolCallsCodeOutputImageObjectType image = RunStepDetailsToolCallsCodeOutputImageObjectType._('image');
-
-static const List<RunStepDetailsToolCallsCodeOutputImageObjectType> values = [image];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDetailsToolCallsCodeOutputImageObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObjectType($value)'; } 
- }
-@immutable final class RunStepDetailsToolCallsCodeOutputImageObject {const RunStepDetailsToolCallsCodeOutputImageObject({required this.type, required this.image, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image/code_interpreter_output_image_type.dart';import 'package:pub_openai/models/run_step_details_tool_calls_code_output_image_object/run_step_details_tool_calls_code_output_image_object_image.dart';@immutable final class RunStepDetailsToolCallsCodeOutputImageObject {const RunStepDetailsToolCallsCodeOutputImageObject({required this.type, required this.image, });
 
 factory RunStepDetailsToolCallsCodeOutputImageObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeOutputImageObject(
-  type: RunStepDetailsToolCallsCodeOutputImageObjectType.fromJson(json['type'] as String),
+  type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),
   image: RunStepDetailsToolCallsCodeOutputImageObjectImage.fromJson(json['image'] as Map<String, dynamic>),
 ); }
 
 /// Always `image`.
-final RunStepDetailsToolCallsCodeOutputImageObjectType type;
+final CodeInterpreterOutputImageType type;
 
 final RunStepDetailsToolCallsCodeOutputImageObjectImage image;
 
@@ -40,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('image'); } 
-RunStepDetailsToolCallsCodeOutputImageObject copyWith({RunStepDetailsToolCallsCodeOutputImageObjectType? type, RunStepDetailsToolCallsCodeOutputImageObjectImage? image, }) { return RunStepDetailsToolCallsCodeOutputImageObject(
+RunStepDetailsToolCallsCodeOutputImageObject copyWith({CodeInterpreterOutputImageType? type, RunStepDetailsToolCallsCodeOutputImageObjectImage? image, }) { return RunStepDetailsToolCallsCodeOutputImageObject(
   type: type ?? this.type,
   image: image ?? this.image,
 ); } 

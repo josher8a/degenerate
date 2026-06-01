@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_group_read_response_members.dart';@immutable final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_group_read_response/members.dart';@immutable final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
 
 factory GetGroupReadResponse.fromJson(Map<String, dynamic> json) { return GetGroupReadResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),
   description: json['description'] as String,
-  members: (json['members'] as List<dynamic>).map((e) => GetGroupReadResponseMembers.fromJson(e as Map<String, dynamic>)).toList(),
+  members: (json['members'] as List<dynamic>).map((e) => Members.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String,
   updatedAt: DateTime.parse(json['updatedAt'] as String),
   uuid: json['uuid'] as String,
@@ -15,7 +15,7 @@ final DateTime createdAt;
 
 final String description;
 
-final List<GetGroupReadResponseMembers> members;
+final List<Members> members;
 
 final String name;
 
@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<GetGroupReadResponseMembers>? members, String? name, DateTime? updatedAt, String? uuid, }) { return GetGroupReadResponse(
+GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<Members>? members, String? name, DateTime? updatedAt, String? uuid, }) { return GetGroupReadResponse(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   members: members ?? this.members,

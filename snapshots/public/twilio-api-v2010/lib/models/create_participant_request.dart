@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `status_callback`. Can be: `GET` and `POST` and defaults to `POST`.
-@immutable final class CreateParticipantRequestStatusCallbackMethod {const CreateParticipantRequestStatusCallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';/// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
+@immutable final class ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod._(this.value);
 
-factory CreateParticipantRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory ConferenceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => CreateParticipantRequestStatusCallbackMethod._(json),
+  _ => ConferenceStatusCallbackMethod._(json),
 }; }
 
-static const CreateParticipantRequestStatusCallbackMethod $get = CreateParticipantRequestStatusCallbackMethod._('GET');
+static const ConferenceStatusCallbackMethod $get = ConferenceStatusCallbackMethod._('GET');
 
-static const CreateParticipantRequestStatusCallbackMethod post = CreateParticipantRequestStatusCallbackMethod._('POST');
+static const ConferenceStatusCallbackMethod post = ConferenceStatusCallbackMethod._('POST');
 
-static const List<CreateParticipantRequestStatusCallbackMethod> values = [$get, post];
+static const List<ConferenceStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
@@ -21,99 +21,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestStatusCallbackMethod && other.value == value; } 
+    other is ConferenceStatusCallbackMethod && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestStatusCallbackMethod($value)'; } 
- }
-/// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-@immutable final class CreateParticipantRequestWaitMethod {const CreateParticipantRequestWaitMethod._(this.value);
-
-factory CreateParticipantRequestWaitMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateParticipantRequestWaitMethod._(json),
-}; }
-
-static const CreateParticipantRequestWaitMethod $get = CreateParticipantRequestWaitMethod._('GET');
-
-static const CreateParticipantRequestWaitMethod post = CreateParticipantRequestWaitMethod._('POST');
-
-static const List<CreateParticipantRequestWaitMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestWaitMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestWaitMethod($value)'; } 
- }
-/// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class CreateParticipantRequestConferenceStatusCallbackMethod {const CreateParticipantRequestConferenceStatusCallbackMethod._(this.value);
-
-factory CreateParticipantRequestConferenceStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateParticipantRequestConferenceStatusCallbackMethod._(json),
-}; }
-
-static const CreateParticipantRequestConferenceStatusCallbackMethod $get = CreateParticipantRequestConferenceStatusCallbackMethod._('GET');
-
-static const CreateParticipantRequestConferenceStatusCallbackMethod post = CreateParticipantRequestConferenceStatusCallbackMethod._('POST');
-
-static const List<CreateParticipantRequestConferenceStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestConferenceStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestConferenceStatusCallbackMethod($value)'; } 
- }
-/// The HTTP method we should use when we call `recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class CreateParticipantRequestRecordingStatusCallbackMethod {const CreateParticipantRequestRecordingStatusCallbackMethod._(this.value);
-
-factory CreateParticipantRequestRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateParticipantRequestRecordingStatusCallbackMethod._(json),
-}; }
-
-static const CreateParticipantRequestRecordingStatusCallbackMethod $get = CreateParticipantRequestRecordingStatusCallbackMethod._('GET');
-
-static const CreateParticipantRequestRecordingStatusCallbackMethod post = CreateParticipantRequestRecordingStatusCallbackMethod._('POST');
-
-static const List<CreateParticipantRequestRecordingStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestRecordingStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestRecordingStatusCallbackMethod($value)'; } 
+@override String toString() { return 'ConferenceStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class CreateParticipantRequestConferenceRecordingStatusCallbackMethod {const CreateParticipantRequestConferenceRecordingStatusCallbackMethod._(this.value);
+@immutable final class ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod._(this.value);
 
-factory CreateParticipantRequestConferenceRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory ConferenceRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => CreateParticipantRequestConferenceRecordingStatusCallbackMethod._(json),
+  _ => ConferenceRecordingStatusCallbackMethod._(json),
 }; }
 
-static const CreateParticipantRequestConferenceRecordingStatusCallbackMethod $get = CreateParticipantRequestConferenceRecordingStatusCallbackMethod._('GET');
+static const ConferenceRecordingStatusCallbackMethod $get = ConferenceRecordingStatusCallbackMethod._('GET');
 
-static const CreateParticipantRequestConferenceRecordingStatusCallbackMethod post = CreateParticipantRequestConferenceRecordingStatusCallbackMethod._('POST');
+static const ConferenceRecordingStatusCallbackMethod post = ConferenceRecordingStatusCallbackMethod._('POST');
 
-static const List<CreateParticipantRequestConferenceRecordingStatusCallbackMethod> values = [$get, post];
+static const List<ConferenceRecordingStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
@@ -121,24 +46,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestConferenceRecordingStatusCallbackMethod && other.value == value; } 
+    other is ConferenceRecordingStatusCallbackMethod && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestConferenceRecordingStatusCallbackMethod($value)'; } 
+@override String toString() { return 'ConferenceRecordingStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-@immutable final class CreateParticipantRequestAmdStatusCallbackMethod {const CreateParticipantRequestAmdStatusCallbackMethod._(this.value);
+@immutable final class AmdStatusCallbackMethod {const AmdStatusCallbackMethod._(this.value);
 
-factory CreateParticipantRequestAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
+factory AmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => CreateParticipantRequestAmdStatusCallbackMethod._(json),
+  _ => AmdStatusCallbackMethod._(json),
 }; }
 
-static const CreateParticipantRequestAmdStatusCallbackMethod $get = CreateParticipantRequestAmdStatusCallbackMethod._('GET');
+static const AmdStatusCallbackMethod $get = AmdStatusCallbackMethod._('GET');
 
-static const CreateParticipantRequestAmdStatusCallbackMethod post = CreateParticipantRequestAmdStatusCallbackMethod._('POST');
+static const AmdStatusCallbackMethod post = AmdStatusCallbackMethod._('POST');
 
-static const List<CreateParticipantRequestAmdStatusCallbackMethod> values = [$get, post];
+static const List<AmdStatusCallbackMethod> values = [$get, post];
 
 final String value;
 
@@ -146,9 +71,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateParticipantRequestAmdStatusCallbackMethod && other.value == value; } 
+    other is AmdStatusCallbackMethod && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateParticipantRequestAmdStatusCallbackMethod($value)'; } 
+@override String toString() { return 'AmdStatusCallbackMethod($value)'; } 
  }
 @immutable final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.conferenceRecord, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.statusCallback, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callerDisplayName, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callSidToCoach, });
 
@@ -156,7 +81,7 @@ factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return Cr
   from: json['From'] as String,
   to: json['To'] as String,
   statusCallback: json['StatusCallback'] != null ? Uri.parse(json['StatusCallback'] as String) : null,
-  statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateParticipantRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
+  statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateApplicationRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
   statusCallbackEvent: (json['StatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),
   label: json['Label'] as String?,
   timeout: json['Timeout'] != null ? (json['Timeout'] as num).toInt() : null,
@@ -166,22 +91,22 @@ factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return Cr
   startConferenceOnEnter: json['StartConferenceOnEnter'] as bool?,
   endConferenceOnExit: json['EndConferenceOnExit'] as bool?,
   waitUrl: json['WaitUrl'] != null ? Uri.parse(json['WaitUrl'] as String) : null,
-  waitMethod: json['WaitMethod'] != null ? CreateParticipantRequestWaitMethod.fromJson(json['WaitMethod'] as String) : null,
+  waitMethod: json['WaitMethod'] != null ? WaitMethod.fromJson(json['WaitMethod'] as String) : null,
   earlyMedia: json['EarlyMedia'] as bool?,
   maxParticipants: json['MaxParticipants'] != null ? (json['MaxParticipants'] as num).toInt() : null,
   conferenceRecord: json['ConferenceRecord'] as String?,
   conferenceTrim: json['ConferenceTrim'] as String?,
   conferenceStatusCallback: json['ConferenceStatusCallback'] != null ? Uri.parse(json['ConferenceStatusCallback'] as String) : null,
-  conferenceStatusCallbackMethod: json['ConferenceStatusCallbackMethod'] != null ? CreateParticipantRequestConferenceStatusCallbackMethod.fromJson(json['ConferenceStatusCallbackMethod'] as String) : null,
+  conferenceStatusCallbackMethod: json['ConferenceStatusCallbackMethod'] != null ? ConferenceStatusCallbackMethod.fromJson(json['ConferenceStatusCallbackMethod'] as String) : null,
   conferenceStatusCallbackEvent: (json['ConferenceStatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),
   recordingChannels: json['RecordingChannels'] as String?,
   recordingStatusCallback: json['RecordingStatusCallback'] != null ? Uri.parse(json['RecordingStatusCallback'] as String) : null,
-  recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] != null ? CreateParticipantRequestRecordingStatusCallbackMethod.fromJson(json['RecordingStatusCallbackMethod'] as String) : null,
+  recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] != null ? RecordingStatusCallbackMethod.fromJson(json['RecordingStatusCallbackMethod'] as String) : null,
   sipAuthUsername: json['SipAuthUsername'] as String?,
   sipAuthPassword: json['SipAuthPassword'] as String?,
   region: json['Region'] as String?,
   conferenceRecordingStatusCallback: json['ConferenceRecordingStatusCallback'] != null ? Uri.parse(json['ConferenceRecordingStatusCallback'] as String) : null,
-  conferenceRecordingStatusCallbackMethod: json['ConferenceRecordingStatusCallbackMethod'] != null ? CreateParticipantRequestConferenceRecordingStatusCallbackMethod.fromJson(json['ConferenceRecordingStatusCallbackMethod'] as String) : null,
+  conferenceRecordingStatusCallbackMethod: json['ConferenceRecordingStatusCallbackMethod'] != null ? ConferenceRecordingStatusCallbackMethod.fromJson(json['ConferenceRecordingStatusCallbackMethod'] as String) : null,
   recordingStatusCallbackEvent: (json['RecordingStatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),
   conferenceRecordingStatusCallbackEvent: (json['ConferenceRecordingStatusCallbackEvent'] as List<dynamic>?)?.map((e) => e as String).toList(),
   coaching: json['Coaching'] as bool?,
@@ -198,7 +123,7 @@ factory CreateParticipantRequest.fromJson(Map<String, dynamic> json) { return Cr
   machineDetectionSpeechEndThreshold: json['MachineDetectionSpeechEndThreshold'] != null ? (json['MachineDetectionSpeechEndThreshold'] as num).toInt() : null,
   machineDetectionSilenceTimeout: json['MachineDetectionSilenceTimeout'] != null ? (json['MachineDetectionSilenceTimeout'] as num).toInt() : null,
   amdStatusCallback: json['AmdStatusCallback'] != null ? Uri.parse(json['AmdStatusCallback'] as String) : null,
-  amdStatusCallbackMethod: json['AmdStatusCallbackMethod'] != null ? CreateParticipantRequestAmdStatusCallbackMethod.fromJson(json['AmdStatusCallbackMethod'] as String) : null,
+  amdStatusCallbackMethod: json['AmdStatusCallbackMethod'] != null ? AmdStatusCallbackMethod.fromJson(json['AmdStatusCallbackMethod'] as String) : null,
   trim: json['Trim'] as String?,
   callToken: json['CallToken'] as String?,
   clientNotificationUrl: json['ClientNotificationUrl'] != null ? Uri.parse(json['ClientNotificationUrl'] as String) : null,
@@ -215,7 +140,7 @@ final String to;
 final Uri? statusCallback;
 
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` and `POST` and defaults to `POST`.
-final CreateParticipantRequestStatusCallbackMethod? statusCallbackMethod;
+final CreateApplicationRequestStatusCallbackMethod? statusCallbackMethod;
 
 /// The conference state changes that should generate a call to `status_callback`. Can be: `initiated`, `ringing`, `answered`, and `completed`. Separate multiple values with a space. The default value is `completed`.
 final List<String>? statusCallbackEvent;
@@ -245,7 +170,7 @@ final bool? endConferenceOnExit;
 final Uri? waitUrl;
 
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-final CreateParticipantRequestWaitMethod? waitMethod;
+final WaitMethod? waitMethod;
 
 /// Whether to allow an agent to hear the state of the outbound call, including ringing or disconnect messages. Can be: `true` or `false` and defaults to `true`.
 final bool? earlyMedia;
@@ -263,7 +188,7 @@ final String? conferenceTrim;
 final Uri? conferenceStatusCallback;
 
 /// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final CreateParticipantRequestConferenceStatusCallbackMethod? conferenceStatusCallbackMethod;
+final ConferenceStatusCallbackMethod? conferenceStatusCallbackMethod;
 
 /// The conference state changes that should generate a call to `conference_status_callback`. Can be: `start`, `end`, `join`, `leave`, `mute`, `hold`, `modify`, `speaker`, and `announcement`. Separate multiple values with a space. Defaults to `start end`.
 final List<String>? conferenceStatusCallbackEvent;
@@ -275,7 +200,7 @@ final String? recordingChannels;
 final Uri? recordingStatusCallback;
 
 /// The HTTP method we should use when we call `recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final CreateParticipantRequestRecordingStatusCallbackMethod? recordingStatusCallbackMethod;
+final RecordingStatusCallbackMethod? recordingStatusCallbackMethod;
 
 /// The SIP username used for authentication.
 final String? sipAuthUsername;
@@ -290,7 +215,7 @@ final String? region;
 final Uri? conferenceRecordingStatusCallback;
 
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final CreateParticipantRequestConferenceRecordingStatusCallbackMethod? conferenceRecordingStatusCallbackMethod;
+final ConferenceRecordingStatusCallbackMethod? conferenceRecordingStatusCallbackMethod;
 
 /// The recording state changes that should generate a call to `recording_status_callback`. Can be: `started`, `in-progress`, `paused`, `resumed`, `stopped`, `completed`, `failed`, and `absent`. Separate multiple values with a space, ex: `'in-progress completed failed'`.
 final List<String>? recordingStatusCallbackEvent;
@@ -341,7 +266,7 @@ final int? machineDetectionSilenceTimeout;
 final Uri? amdStatusCallback;
 
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-final CreateParticipantRequestAmdStatusCallbackMethod? amdStatusCallbackMethod;
+final AmdStatusCallbackMethod? amdStatusCallbackMethod;
 
 /// Whether to trim any leading and trailing silence from the participant recording. Can be: `trim-silence` or `do-not-trim` and the default is `trim-silence`.
 final String? trim;
@@ -409,7 +334,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('From') && json['From'] is String &&
       json.containsKey('To') && json['To'] is String; } 
-CreateParticipantRequest copyWith({String? from, String? to, Uri Function()? statusCallback, CreateParticipantRequestStatusCallbackMethod Function()? statusCallbackMethod, List<String> Function()? statusCallbackEvent, String Function()? label, int Function()? timeout, bool Function()? record, bool Function()? muted, String Function()? beep, bool Function()? startConferenceOnEnter, bool Function()? endConferenceOnExit, Uri Function()? waitUrl, CreateParticipantRequestWaitMethod Function()? waitMethod, bool Function()? earlyMedia, int Function()? maxParticipants, String Function()? conferenceRecord, String Function()? conferenceTrim, Uri Function()? conferenceStatusCallback, CreateParticipantRequestConferenceStatusCallbackMethod Function()? conferenceStatusCallbackMethod, List<String> Function()? conferenceStatusCallbackEvent, String Function()? recordingChannels, Uri Function()? recordingStatusCallback, CreateParticipantRequestRecordingStatusCallbackMethod Function()? recordingStatusCallbackMethod, String Function()? sipAuthUsername, String Function()? sipAuthPassword, String Function()? region, Uri Function()? conferenceRecordingStatusCallback, CreateParticipantRequestConferenceRecordingStatusCallbackMethod Function()? conferenceRecordingStatusCallbackMethod, List<String> Function()? recordingStatusCallbackEvent, List<String> Function()? conferenceRecordingStatusCallbackEvent, bool Function()? coaching, String Function()? callSidToCoach, String Function()? jitterBufferSize, String Function()? byoc, String Function()? callerId, String Function()? callReason, String Function()? recordingTrack, int Function()? timeLimit, String Function()? machineDetection, int Function()? machineDetectionTimeout, int Function()? machineDetectionSpeechThreshold, int Function()? machineDetectionSpeechEndThreshold, int Function()? machineDetectionSilenceTimeout, Uri Function()? amdStatusCallback, CreateParticipantRequestAmdStatusCallbackMethod Function()? amdStatusCallbackMethod, String Function()? trim, String Function()? callToken, Uri Function()? clientNotificationUrl, String Function()? callerDisplayName, }) { return CreateParticipantRequest(
+CreateParticipantRequest copyWith({String? from, String? to, Uri Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, List<String> Function()? statusCallbackEvent, String Function()? label, int Function()? timeout, bool Function()? record, bool Function()? muted, String Function()? beep, bool Function()? startConferenceOnEnter, bool Function()? endConferenceOnExit, Uri Function()? waitUrl, WaitMethod Function()? waitMethod, bool Function()? earlyMedia, int Function()? maxParticipants, String Function()? conferenceRecord, String Function()? conferenceTrim, Uri Function()? conferenceStatusCallback, ConferenceStatusCallbackMethod Function()? conferenceStatusCallbackMethod, List<String> Function()? conferenceStatusCallbackEvent, String Function()? recordingChannels, Uri Function()? recordingStatusCallback, RecordingStatusCallbackMethod Function()? recordingStatusCallbackMethod, String Function()? sipAuthUsername, String Function()? sipAuthPassword, String Function()? region, Uri Function()? conferenceRecordingStatusCallback, ConferenceRecordingStatusCallbackMethod Function()? conferenceRecordingStatusCallbackMethod, List<String> Function()? recordingStatusCallbackEvent, List<String> Function()? conferenceRecordingStatusCallbackEvent, bool Function()? coaching, String Function()? callSidToCoach, String Function()? jitterBufferSize, String Function()? byoc, String Function()? callerId, String Function()? callReason, String Function()? recordingTrack, int Function()? timeLimit, String Function()? machineDetection, int Function()? machineDetectionTimeout, int Function()? machineDetectionSpeechThreshold, int Function()? machineDetectionSpeechEndThreshold, int Function()? machineDetectionSilenceTimeout, Uri Function()? amdStatusCallback, AmdStatusCallbackMethod Function()? amdStatusCallbackMethod, String Function()? trim, String Function()? callToken, Uri Function()? clientNotificationUrl, String Function()? callerDisplayName, }) { return CreateParticipantRequest(
   from: from ?? this.from,
   to: to ?? this.to,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,

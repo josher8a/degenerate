@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_tld_details_format.dart';import '../models/radar_get_tld_details_response404.dart';import '../models/radar_get_tld_details_response_result.dart';import '../models/radar_get_tlds_format.dart';import '../models/radar_get_tlds_response400.dart';import '../models/radar_get_tlds_response_result.dart';import '../models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_format.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response/radar_get_tld_details_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tld_details_response404.dart';import 'package:pub_cloudflare/models/radar_get_tlds_format.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response/radar_get_tlds_response_result.dart';import 'package:pub_cloudflare/models/radar_get_tlds_response400.dart';import 'package:pub_cloudflare/models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

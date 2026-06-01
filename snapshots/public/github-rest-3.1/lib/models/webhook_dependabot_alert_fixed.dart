@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertFixedAction {const WebhookDependabotAlertFixedAction._(this.value);
-
-factory WebhookDependabotAlertFixedAction.fromJson(String json) { return switch (json) {
-  'fixed' => fixed,
-  _ => WebhookDependabotAlertFixedAction._(json),
-}; }
-
-static const WebhookDependabotAlertFixedAction fixed = WebhookDependabotAlertFixedAction._('fixed');
-
-static const List<WebhookDependabotAlertFixedAction> values = [fixed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertFixedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertFixedAction($value)'; } 
- }
-@immutable final class WebhookDependabotAlertFixed {const WebhookDependabotAlertFixed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_fixed/webhook_code_scanning_alert_fixed_action.dart';@immutable final class WebhookDependabotAlertFixed {const WebhookDependabotAlertFixed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
 factory WebhookDependabotAlertFixed.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertFixed(
-  action: WebhookDependabotAlertFixedAction.fromJson(json['action'] as String),
+  action: WebhookCodeScanningAlertFixedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookDependabotAlertFixed.fromJson(Map<String, dynamic> json) { return
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookDependabotAlertFixedAction action;
+final WebhookCodeScanningAlertFixedAction action;
 
 final DependabotAlert alert;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('alert') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDependabotAlertFixed copyWith({WebhookDependabotAlertFixedAction? action, DependabotAlert? alert, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, EnterpriseWebhooks Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertFixed(
+WebhookDependabotAlertFixed copyWith({WebhookCodeScanningAlertFixedAction? action, DependabotAlert? alert, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, EnterpriseWebhooks Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertFixed(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,

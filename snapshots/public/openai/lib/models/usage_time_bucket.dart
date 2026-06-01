@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'costs_result.dart';import 'usage_audio_speeches_result.dart';import 'usage_audio_transcriptions_result.dart';import 'usage_code_interpreter_sessions_result.dart';import 'usage_completions_result.dart';import 'usage_embeddings_result.dart';import 'usage_images_result.dart';import 'usage_moderations_result.dart';import 'usage_time_bucket_result.dart';import 'usage_vector_stores_result.dart';@immutable final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result.dart';import 'package:pub_openai/models/usage_audio_speeches_result.dart';import 'package:pub_openai/models/usage_audio_transcriptions_result.dart';import 'package:pub_openai/models/usage_code_interpreter_sessions_result.dart';import 'package:pub_openai/models/usage_completions_result.dart';import 'package:pub_openai/models/usage_embeddings_result.dart';import 'package:pub_openai/models/usage_images_result.dart';import 'package:pub_openai/models/usage_moderations_result.dart';import 'package:pub_openai/models/usage_time_bucket/result.dart';import 'package:pub_openai/models/usage_vector_stores_result.dart';@immutable final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
 
 factory UsageTimeBucketObject.fromJson(String json) { return switch (json) {
   'bucket' => bucket,
@@ -36,7 +36,7 @@ final int startTime;
 
 final int endTime;
 
-final List<UsageTimeBucketResult> result;
+final List<Result> result;
 
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
@@ -48,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('start_time') && json['start_time'] is num &&
       json.containsKey('end_time') && json['end_time'] is num &&
       json.containsKey('result'); } 
-UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? endTime, List<UsageTimeBucketResult>? result, }) { return UsageTimeBucket(
+UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? endTime, List<Result>? result, }) { return UsageTimeBucket(
   object: object ?? this.object,
   startTime: startTime ?? this.startTime,
   endTime: endTime ?? this.endTime,

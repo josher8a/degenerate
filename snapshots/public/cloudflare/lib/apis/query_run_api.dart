@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_query_request.dart';import '../models/telemetry_query_response400.dart';import '../models/workers_observability_query_results.dart';/// QueryRunApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request.dart';import 'package:pub_cloudflare/models/telemetry_query_response400.dart';import 'package:pub_cloudflare/models/workers_observability_query_results.dart';/// QueryRunApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

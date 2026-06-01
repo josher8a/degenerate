@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_identifier.dart';import 'addressing_kind.dart';@immutable final class AddressingAddressMapsMembershipRequest {const AddressingAddressMapsMembershipRequest({this.identifier, this.kind, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_identifier.dart';import 'package:pub_cloudflare/models/addressing_kind.dart';@immutable final class AddressingAddressMapsMembershipRequest {const AddressingAddressMapsMembershipRequest({this.identifier, this.kind, });
 
 factory AddressingAddressMapsMembershipRequest.fromJson(Map<String, dynamic> json) { return AddressingAddressMapsMembershipRequest(
   identifier: json['identifier'] != null ? AddressingIdentifier.fromJson(json['identifier'] as String) : null,

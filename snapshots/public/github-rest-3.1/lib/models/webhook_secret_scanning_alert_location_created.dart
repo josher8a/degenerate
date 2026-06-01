@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'secret_scanning_location.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertLocationCreatedAction {const WebhookSecretScanningAlertLocationCreatedAction._(this.value);
-
-factory WebhookSecretScanningAlertLocationCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookSecretScanningAlertLocationCreatedAction._(json),
-}; }
-
-static const WebhookSecretScanningAlertLocationCreatedAction created = WebhookSecretScanningAlertLocationCreatedAction._('created');
-
-static const List<WebhookSecretScanningAlertLocationCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertLocationCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertLocationCreatedAction($value)'; } 
- }
-@immutable final class WebhookSecretScanningAlertLocationCreated {const WebhookSecretScanningAlertLocationCreated({required this.alert, required this.location, required this.repository, required this.sender, this.action, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookSecretScanningAlertLocationCreated {const WebhookSecretScanningAlertLocationCreated({required this.alert, required this.location, required this.repository, required this.sender, this.action, this.installation, this.organization, });
 
 factory WebhookSecretScanningAlertLocationCreated.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertLocationCreated(
-  action: json['action'] != null ? WebhookSecretScanningAlertLocationCreatedAction.fromJson(json['action'] as String) : null,
+  action: json['action'] != null ? ItemCreatedAction.fromJson(json['action'] as String) : null,
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   location: SecretScanningLocation.fromJson(json['location'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookSecretScanningAlertLocationCreated.fromJson(Map<String, dynamic> 
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookSecretScanningAlertLocationCreatedAction? action;
+final ItemCreatedAction? action;
 
 final SecretScanningAlertWebhook alert;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('location') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookSecretScanningAlertLocationCreated copyWith({WebhookSecretScanningAlertLocationCreatedAction Function()? action, SecretScanningAlertWebhook? alert, SimpleInstallation Function()? installation, SecretScanningLocation? location, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookSecretScanningAlertLocationCreated(
+WebhookSecretScanningAlertLocationCreated copyWith({ItemCreatedAction Function()? action, SecretScanningAlertWebhook? alert, SimpleInstallation Function()? installation, SecretScanningLocation? location, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookSecretScanningAlertLocationCreated(
   action: action != null ? action() : this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,

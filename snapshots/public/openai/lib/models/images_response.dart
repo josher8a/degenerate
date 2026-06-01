@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image.dart';import 'image_gen_usage.dart';/// The background parameter used for the image generation. Either `transparent` or `opaque`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_gen_usage.dart';/// The background parameter used for the image generation. Either `transparent` or `opaque`.
 @immutable final class ImagesResponseBackground {const ImagesResponseBackground._(this.value);
 
 factory ImagesResponseBackground.fromJson(String json) { return switch (json) {
@@ -24,34 +24,6 @@ bool get isUnknown { return !values.contains(this); }
     other is ImagesResponseBackground && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ImagesResponseBackground($value)'; } 
- }
-/// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
-@immutable final class ImagesResponseOutputFormat {const ImagesResponseOutputFormat._(this.value);
-
-factory ImagesResponseOutputFormat.fromJson(String json) { return switch (json) {
-  'png' => png,
-  'webp' => webp,
-  'jpeg' => jpeg,
-  _ => ImagesResponseOutputFormat._(json),
-}; }
-
-static const ImagesResponseOutputFormat png = ImagesResponseOutputFormat._('png');
-
-static const ImagesResponseOutputFormat webp = ImagesResponseOutputFormat._('webp');
-
-static const ImagesResponseOutputFormat jpeg = ImagesResponseOutputFormat._('jpeg');
-
-static const List<ImagesResponseOutputFormat> values = [png, webp, jpeg];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesResponseOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesResponseOutputFormat($value)'; } 
  }
 /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
 @immutable final class ImagesResponseSize {const ImagesResponseSize._(this.value);
@@ -116,7 +88,7 @@ factory ImagesResponse.fromJson(Map<String, dynamic> json) { return ImagesRespon
   created: (json['created'] as num).toInt(),
   data: (json['data'] as List<dynamic>?)?.map((e) => Image.fromJson(e as Map<String, dynamic>)).toList(),
   background: json['background'] != null ? ImagesResponseBackground.fromJson(json['background'] as String) : null,
-  outputFormat: json['output_format'] != null ? ImagesResponseOutputFormat.fromJson(json['output_format'] as String) : null,
+  outputFormat: json['output_format'] != null ? ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String) : null,
   size: json['size'] != null ? ImagesResponseSize.fromJson(json['size'] as String) : null,
   quality: json['quality'] != null ? ImagesResponseQuality.fromJson(json['quality'] as String) : null,
   usage: json['usage'] != null ? ImageGenUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
@@ -132,7 +104,7 @@ final List<Image>? data;
 final ImagesResponseBackground? background;
 
 /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
-final ImagesResponseOutputFormat? outputFormat;
+final ImageEditCompletedEventOutputFormat? outputFormat;
 
 /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
 final ImagesResponseSize? size;
@@ -152,7 +124,7 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num; } 
-ImagesResponse copyWith({int? created, List<Image> Function()? data, ImagesResponseBackground Function()? background, ImagesResponseOutputFormat Function()? outputFormat, ImagesResponseSize Function()? size, ImagesResponseQuality Function()? quality, ImageGenUsage Function()? usage, }) { return ImagesResponse(
+ImagesResponse copyWith({int? created, List<Image> Function()? data, ImagesResponseBackground Function()? background, ImageEditCompletedEventOutputFormat Function()? outputFormat, ImagesResponseSize Function()? size, ImagesResponseQuality Function()? quality, ImageGenUsage Function()? usage, }) { return ImagesResponse(
   created: created ?? this.created,
   data: data != null ? data() : this.data,
   background: background != null ? background() : this.background,

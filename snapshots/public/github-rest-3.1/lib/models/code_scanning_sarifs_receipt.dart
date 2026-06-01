@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_analysis_sarif_id.dart';@immutable final class CodeScanningSarifsReceipt {const CodeScanningSarifsReceipt({this.id, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_sarif_id.dart';@immutable final class CodeScanningSarifsReceipt {const CodeScanningSarifsReceipt({this.id, this.url, });
 
 factory CodeScanningSarifsReceipt.fromJson(Map<String, dynamic> json) { return CodeScanningSarifsReceipt(
   id: json['id'] != null ? CodeScanningAnalysisSarifId.fromJson(json['id'] as String) : null,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_timeseries_group_by_http_method_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse(
-  result: RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResult result;
+final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse copyWith({RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse(
+RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TimeseriesGroupByHttpMethodResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `refusal`.
-@immutable final class MessageDeltaContentRefusalObjectType {const MessageDeltaContentRefusalObjectType._(this.value);
-
-factory MessageDeltaContentRefusalObjectType.fromJson(String json) { return switch (json) {
-  'refusal' => refusal,
-  _ => MessageDeltaContentRefusalObjectType._(json),
-}; }
-
-static const MessageDeltaContentRefusalObjectType refusal = MessageDeltaContentRefusalObjectType._('refusal');
-
-static const List<MessageDeltaContentRefusalObjectType> values = [refusal];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaContentRefusalObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaContentRefusalObjectType($value)'; } 
- }
-/// The refusal content that is part of a message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_content_refusal_object/message_content_refusal_object_type.dart';/// The refusal content that is part of a message.
 @immutable final class MessageDeltaContentRefusalObject {const MessageDeltaContentRefusalObject({required this.index, required this.type, this.refusal, });
 
 factory MessageDeltaContentRefusalObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentRefusalObject(
   index: (json['index'] as num).toInt(),
-  type: MessageDeltaContentRefusalObjectType.fromJson(json['type'] as String),
+  type: MessageContentRefusalObjectType.fromJson(json['type'] as String),
   refusal: json['refusal'] as String?,
 ); }
 
@@ -35,7 +13,7 @@ factory MessageDeltaContentRefusalObject.fromJson(Map<String, dynamic> json) { r
 final int index;
 
 /// Always `refusal`.
-final MessageDeltaContentRefusalObjectType type;
+final MessageContentRefusalObjectType type;
 
 final String? refusal;
 
@@ -46,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
-MessageDeltaContentRefusalObject copyWith({int? index, MessageDeltaContentRefusalObjectType? type, String Function()? refusal, }) { return MessageDeltaContentRefusalObject(
+MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObjectType? type, String Function()? refusal, }) { return MessageDeltaContentRefusalObject(
   index: index ?? this.index,
   type: type ?? this.type,
   refusal: refusal != null ? refusal() : this.refusal,

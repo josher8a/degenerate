@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_service_not_as_described_evidence_additional_documentation.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_canceled_evidence/issuing_dispute_canceled_evidence_additional_documentation.dart';/// 
 @immutable final class IssuingDisputeServiceNotAsDescribedEvidence {const IssuingDisputeServiceNotAsDescribedEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeServiceNotAsDescribedEvidence(
@@ -12,7 +12,7 @@ factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeServiceNotAsDescribedEvidenceAdditionalDocumentation? additionalDocumentation;
+final IssuingDisputeCanceledEvidenceAdditionalDocumentation? additionalDocumentation;
 
 /// Date when order was canceled.
 final int? canceledAt;
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'received_at': ?receivedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
-IssuingDisputeServiceNotAsDescribedEvidence copyWith({IssuingDisputeServiceNotAsDescribedEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? canceledAt, String? Function()? cancellationReason, String? Function()? explanation, int? Function()? receivedAt, }) { return IssuingDisputeServiceNotAsDescribedEvidence(
+IssuingDisputeServiceNotAsDescribedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? canceledAt, String? Function()? cancellationReason, String? Function()? explanation, int? Function()? receivedAt, }) { return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,

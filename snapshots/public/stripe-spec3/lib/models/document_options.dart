@@ -1,42 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DocumentOptionsAllowedTypes {const DocumentOptionsAllowedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/document_options/allowed_types.dart';@immutable final class document_options {const document_options({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
-factory DocumentOptionsAllowedTypes.fromJson(String json) { return switch (json) {
-  'driving_license' => drivingLicense,
-  'id_card' => idCard,
-  'passport' => passport,
-  _ => DocumentOptionsAllowedTypes._(json),
-}; }
-
-static const DocumentOptionsAllowedTypes drivingLicense = DocumentOptionsAllowedTypes._('driving_license');
-
-static const DocumentOptionsAllowedTypes idCard = DocumentOptionsAllowedTypes._('id_card');
-
-static const DocumentOptionsAllowedTypes passport = DocumentOptionsAllowedTypes._('passport');
-
-static const List<DocumentOptionsAllowedTypes> values = [drivingLicense, idCard, passport];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DocumentOptionsAllowedTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DocumentOptionsAllowedTypes($value)'; } 
- }
-@immutable final class DocumentOptions {const DocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
-
-factory DocumentOptions.fromJson(Map<String, dynamic> json) { return DocumentOptions(
-  allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => DocumentOptionsAllowedTypes.fromJson(e as String)).toList(),
+factory document_options.fromJson(Map<String, dynamic> json) { return document_options(
+  allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => AllowedTypes.fromJson(e as String)).toList(),
   requireIdNumber: json['require_id_number'] as bool?,
   requireLiveCapture: json['require_live_capture'] as bool?,
   requireMatchingSelfie: json['require_matching_selfie'] as bool?,
 ); }
 
-final List<DocumentOptionsAllowedTypes>? allowedTypes;
+final List<AllowedTypes>? allowedTypes;
 
 final bool? requireIdNumber;
 
@@ -51,18 +24,18 @@ Map<String, dynamic> toJson() { return {
   'require_matching_selfie': ?requireMatchingSelfie,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_types', 'require_id_number', 'require_live_capture', 'require_matching_selfie'}.contains(key)); } 
-DocumentOptions copyWith({List<DocumentOptionsAllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return DocumentOptions(
+document_options copyWith({List<AllowedTypes> Function()? allowedTypes, bool Function()? requireIdNumber, bool Function()? requireLiveCapture, bool Function()? requireMatchingSelfie, }) { return document_options(
   allowedTypes: allowedTypes != null ? allowedTypes() : this.allowedTypes,
   requireIdNumber: requireIdNumber != null ? requireIdNumber() : this.requireIdNumber,
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,
   requireMatchingSelfie: requireMatchingSelfie != null ? requireMatchingSelfie() : this.requireMatchingSelfie,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is DocumentOptions &&
+      other is document_options &&
           listEquals(allowedTypes, other.allowedTypes) &&
           requireIdNumber == other.requireIdNumber &&
           requireLiveCapture == other.requireLiveCapture &&
           requireMatchingSelfie == other.requireMatchingSelfie; } 
 @override int get hashCode { return Object.hash(Object.hashAll(allowedTypes ?? const []), requireIdNumber, requireLiveCapture, requireMatchingSelfie); } 
-@override String toString() { return 'DocumentOptions(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)'; } 
+@override String toString() { return 'document_options(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)'; } 
  }

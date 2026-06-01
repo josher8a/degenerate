@@ -1,38 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_line_item_tax_breakdown.dart';/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-@immutable final class TaxProductResourceTaxCalculationShippingCostTaxBehavior {const TaxProductResourceTaxCalculationShippingCostTaxBehavior._(this.value);
-
-factory TaxProductResourceTaxCalculationShippingCostTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  _ => TaxProductResourceTaxCalculationShippingCostTaxBehavior._(json),
-}; }
-
-static const TaxProductResourceTaxCalculationShippingCostTaxBehavior exclusive = TaxProductResourceTaxCalculationShippingCostTaxBehavior._('exclusive');
-
-static const TaxProductResourceTaxCalculationShippingCostTaxBehavior inclusive = TaxProductResourceTaxCalculationShippingCostTaxBehavior._('inclusive');
-
-static const List<TaxProductResourceTaxCalculationShippingCostTaxBehavior> values = [exclusive, inclusive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxCalculationShippingCostTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxCalculationShippingCostTaxBehavior($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown.dart';/// 
 @immutable final class TaxProductResourceTaxCalculationShippingCost {const TaxProductResourceTaxCalculationShippingCost({required this.amount, required this.amountTax, required this.taxBehavior, required this.taxCode, this.shippingRate, this.taxBreakdown, });
 
 factory TaxProductResourceTaxCalculationShippingCost.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxCalculationShippingCost(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   shippingRate: json['shipping_rate'] as String?,
-  taxBehavior: TaxProductResourceTaxCalculationShippingCostTaxBehavior.fromJson(json['tax_behavior'] as String),
+  taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>?)?.map((e) => TaxProductResourceLineItemTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),
   taxCode: json['tax_code'] as String,
 ); }
@@ -47,7 +22,7 @@ final int amountTax;
 final String? shippingRate;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final TaxProductResourceTaxCalculationShippingCostTaxBehavior taxBehavior;
+final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// Detailed account of taxes relevant to shipping cost.
 final List<TaxProductResourceLineItemTaxBreakdown>? taxBreakdown;
@@ -67,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String; } 
-TaxProductResourceTaxCalculationShippingCost copyWith({int? amount, int? amountTax, String Function()? shippingRate, TaxProductResourceTaxCalculationShippingCostTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown> Function()? taxBreakdown, String? taxCode, }) { return TaxProductResourceTaxCalculationShippingCost(
+TaxProductResourceTaxCalculationShippingCost copyWith({int? amount, int? amountTax, String Function()? shippingRate, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown> Function()? taxBreakdown, String? taxCode, }) { return TaxProductResourceTaxCalculationShippingCost(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,

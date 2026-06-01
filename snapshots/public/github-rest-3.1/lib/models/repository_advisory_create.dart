@@ -1,49 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_create_credits.dart';import 'repository_advisory_create_vulnerabilities.dart';/// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-@immutable final class RepositoryAdvisoryCreateSeverity {const RepositoryAdvisoryCreateSeverity._(this.value);
-
-factory RepositoryAdvisoryCreateSeverity.fromJson(String json) { return switch (json) {
-  'critical' => critical,
-  'high' => high,
-  'medium' => medium,
-  'low' => low,
-  'null' => $null,
-  _ => RepositoryAdvisoryCreateSeverity._(json),
-}; }
-
-static const RepositoryAdvisoryCreateSeverity critical = RepositoryAdvisoryCreateSeverity._('critical');
-
-static const RepositoryAdvisoryCreateSeverity high = RepositoryAdvisoryCreateSeverity._('high');
-
-static const RepositoryAdvisoryCreateSeverity medium = RepositoryAdvisoryCreateSeverity._('medium');
-
-static const RepositoryAdvisoryCreateSeverity low = RepositoryAdvisoryCreateSeverity._('low');
-
-static const RepositoryAdvisoryCreateSeverity $null = RepositoryAdvisoryCreateSeverity._('null');
-
-static const List<RepositoryAdvisoryCreateSeverity> values = [critical, high, medium, low, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryCreateSeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryCreateSeverity($value)'; } 
- }
-@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.startPrivateFork = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.startPrivateFork = false, });
 
 factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreate(
   summary: json['summary'] as String,
   description: json['description'] as String,
   cveId: json['cve_id'] as String?,
-  vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => RepositoryAdvisoryCreateVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
+  vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => PrivateVulnerabilityReportCreateVulnerabilities.fromJson(e as Map<String, dynamic>)).toList(),
   cweIds: (json['cwe_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCreateCredits.fromJson(e as Map<String, dynamic>)).toList(),
-  severity: json['severity'] != null ? RepositoryAdvisoryCreateSeverity.fromJson(json['severity'] as String) : null,
+  severity: json['severity'] != null ? PrivateVulnerabilityReportCreateSeverity.fromJson(json['severity'] as String) : null,
   cvssVectorString: json['cvss_vector_string'] as String?,
   startPrivateFork: json.containsKey('start_private_fork') ? json['start_private_fork'] as bool : false,
 ); }
@@ -58,7 +24,7 @@ final String description;
 final String? cveId;
 
 /// A product affected by the vulnerability detailed in a repository security advisory.
-final List<RepositoryAdvisoryCreateVulnerabilities> vulnerabilities;
+final List<PrivateVulnerabilityReportCreateVulnerabilities> vulnerabilities;
 
 /// A list of Common Weakness Enumeration (CWE) IDs.
 final List<String>? cweIds;
@@ -67,7 +33,7 @@ final List<String>? cweIds;
 final List<RepositoryAdvisoryCreateCredits>? credits;
 
 /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-final RepositoryAdvisoryCreateSeverity? severity;
+final PrivateVulnerabilityReportCreateSeverity? severity;
 
 /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
 final String? cvssVectorString;
@@ -89,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities'); } 
-RepositoryAdvisoryCreate copyWith({String? summary, String? description, String? Function()? cveId, List<RepositoryAdvisoryCreateVulnerabilities>? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, RepositoryAdvisoryCreateSeverity? Function()? severity, String? Function()? cvssVectorString, bool Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
+RepositoryAdvisoryCreate copyWith({String? summary, String? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, bool Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
   summary: summary ?? this.summary,
   description: description ?? this.description,
   cveId: cveId != null ? cveId() : this.cveId,

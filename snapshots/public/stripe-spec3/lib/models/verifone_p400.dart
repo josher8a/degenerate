@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'verifone_p400_splashscreen.dart';@immutable final class VerifoneP400 {const VerifoneP400({this.splashscreen});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bbpos_wise_pad3/bbpos_wise_pad3_splashscreen.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class verifone_p400 {const verifone_p400({this.splashscreen});
 
-factory VerifoneP400.fromJson(Map<String, dynamic> json) { return VerifoneP400(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => VerifoneP400SplashscreenVariant2.fromJson(v as String),) : null,
+factory verifone_p400.fromJson(Map<String, dynamic> json) { return verifone_p400(
+  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final VerifoneP400Splashscreen? splashscreen;
+final bbpos_wise_pad3Splashscreen? splashscreen;
 
 Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-VerifoneP400 copyWith({VerifoneP400Splashscreen Function()? splashscreen}) { return VerifoneP400(
+verifone_p400 copyWith({bbpos_wise_pad3Splashscreen Function()? splashscreen}) { return verifone_p400(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is VerifoneP400 &&
+      other is verifone_p400 &&
           splashscreen == other.splashscreen; } 
 @override int get hashCode { return splashscreen.hashCode; } 
-@override String toString() { return 'VerifoneP400(splashscreen: $splashscreen)'; } 
+@override String toString() { return 'verifone_p400(splashscreen: $splashscreen)'; } 
  }

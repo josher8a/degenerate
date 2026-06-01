@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'treasury_outbound_payments_resource_returned_status.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
@@ -21,40 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is TreasuryOutboundPaymentObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TreasuryOutboundPaymentObject($value)'; } 
- }
-/// Current status of the OutboundPayment: `processing`, `failed`, `posted`, `returned`, `canceled`. An OutboundPayment is `processing` if it has been created and is pending. The status changes to `posted` once the OutboundPayment has been "confirmed" and funds have left the account, or to `failed` or `canceled`. If an OutboundPayment fails to arrive at its destination, its status will change to `returned`.
-@immutable final class TreasuryOutboundPaymentStatus {const TreasuryOutboundPaymentStatus._(this.value);
-
-factory TreasuryOutboundPaymentStatus.fromJson(String json) { return switch (json) {
-  'canceled' => canceled,
-  'failed' => failed,
-  'posted' => posted,
-  'processing' => processing,
-  'returned' => returned,
-  _ => TreasuryOutboundPaymentStatus._(json),
-}; }
-
-static const TreasuryOutboundPaymentStatus canceled = TreasuryOutboundPaymentStatus._('canceled');
-
-static const TreasuryOutboundPaymentStatus failed = TreasuryOutboundPaymentStatus._('failed');
-
-static const TreasuryOutboundPaymentStatus posted = TreasuryOutboundPaymentStatus._('posted');
-
-static const TreasuryOutboundPaymentStatus processing = TreasuryOutboundPaymentStatus._('processing');
-
-static const TreasuryOutboundPaymentStatus returned = TreasuryOutboundPaymentStatus._('returned');
-
-static const List<TreasuryOutboundPaymentStatus> values = [canceled, failed, posted, processing, returned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundPaymentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundPaymentStatus($value)'; } 
  }
 /// Use [OutboundPayments](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-payments) to send funds to another party's external bank account or [FinancialAccount](https://api.stripe.com#financial_accounts). To send money to an account belonging to the same user, use an [OutboundTransfer](https://api.stripe.com#outbound_transfers).
 /// 
@@ -151,7 +117,7 @@ final TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions s
 final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? trackingDetails;
 
 /// The Transaction associated with this object.
-final TreasuryOutboundPaymentTransaction transaction;
+final IssuingDisputeTransaction transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -191,7 +157,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundPaymentsPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentsResourceReturnedStatus? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? Function()? trackingDetails, TreasuryOutboundPaymentTransaction? transaction, }) { return TreasuryOutboundPayment(
+TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundPaymentsPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentsResourceReturnedStatus? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? Function()? trackingDetails, IssuingDisputeTransaction? transaction, }) { return TreasuryOutboundPayment(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

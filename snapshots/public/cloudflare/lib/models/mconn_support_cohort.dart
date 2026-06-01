@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnSupportCohort {const MconnSupportCohort({required this.id, required this.name, this.desiredVersion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_uuid.dart';@immutable final class MconnSupportCohort {const MconnSupportCohort({required this.id, required this.name, this.desiredVersion, });
 
 factory MconnSupportCohort.fromJson(Map<String, dynamic> json) { return MconnSupportCohort(
   desiredVersion: json['desired_version'] as String?,

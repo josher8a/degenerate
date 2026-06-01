@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType {const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceFlowType {const SourceFlowType._(this.value);
 
-factory GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType.fromJson(String json) { return switch (json) {
+factory SourceFlowType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
   'other' => $other,
   'outbound_payment' => outboundPayment,
   'outbound_transfer' => outboundTransfer,
   'payout' => payout,
-  _ => GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._(json),
+  _ => SourceFlowType._(json),
 }; }
 
-static const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType creditReversal = GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._('credit_reversal');
+static const SourceFlowType creditReversal = SourceFlowType._('credit_reversal');
 
-static const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType $other = GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._('other');
+static const SourceFlowType $other = SourceFlowType._('other');
 
-static const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType outboundPayment = GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._('outbound_payment');
+static const SourceFlowType outboundPayment = SourceFlowType._('outbound_payment');
 
-static const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType outboundTransfer = GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._('outbound_transfer');
+static const SourceFlowType outboundTransfer = SourceFlowType._('outbound_transfer');
 
-static const GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType payout = GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType._('payout');
+static const SourceFlowType payout = SourceFlowType._('payout');
 
-static const List<GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType> values = [creditReversal, $other, outboundPayment, outboundTransfer, payout];
+static const List<SourceFlowType> values = [creditReversal, $other, outboundPayment, outboundTransfer, payout];
 
 final String value;
 
@@ -29,23 +29,23 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType && other.value == value; } 
+    other is SourceFlowType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType($value)'; } 
+@override String toString() { return 'SourceFlowType($value)'; } 
  }
 @immutable final class GetTreasuryReceivedCreditsLinkedFlows {const GetTreasuryReceivedCreditsLinkedFlows({required this.sourceFlowType});
 
 factory GetTreasuryReceivedCreditsLinkedFlows.fromJson(Map<String, dynamic> json) { return GetTreasuryReceivedCreditsLinkedFlows(
-  sourceFlowType: GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType.fromJson(json['source_flow_type'] as String),
+  sourceFlowType: SourceFlowType.fromJson(json['source_flow_type'] as String),
 ); }
 
-final GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType sourceFlowType;
+final SourceFlowType sourceFlowType;
 
 Map<String, dynamic> toJson() { return {
   'source_flow_type': sourceFlowType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('source_flow_type'); } 
-GetTreasuryReceivedCreditsLinkedFlows copyWith({GetTreasuryReceivedCreditsLinkedFlowsSourceFlowType? sourceFlowType}) { return GetTreasuryReceivedCreditsLinkedFlows(
+GetTreasuryReceivedCreditsLinkedFlows copyWith({SourceFlowType? sourceFlowType}) { return GetTreasuryReceivedCreditsLinkedFlows(
   sourceFlowType: sourceFlowType ?? this.sourceFlowType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

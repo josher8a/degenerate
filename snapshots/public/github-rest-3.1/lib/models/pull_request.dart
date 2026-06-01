@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'auto_merge.dart';import 'milestone.dart';import 'pull_request_base.dart';import 'pull_request_head.dart';import 'pull_request_labels.dart';import 'pull_request_links.dart';import 'simple_user.dart';import 'team_simple.dart';/// State of this Pull Request. Either `open` or `closed`.
-@immutable final class PullRequestState {const PullRequestState._(this.value);
-
-factory PullRequestState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => PullRequestState._(json),
-}; }
-
-static const PullRequestState open = PullRequestState._('open');
-
-static const PullRequestState closed = PullRequestState._('closed');
-
-static const List<PullRequestState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullRequestState($value)'; } 
- }
-/// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/auto_merge.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/milestone.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_base.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_head.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_labels.dart';import 'package:pub_github_rest_3_1/models/pull_request/pull_request_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
 @immutable final class PullRequest {const PullRequest({required this.title, required this.id, required this.nodeId, required this.htmlUrl, required this.diffUrl, required this.patchUrl, required this.issueUrl, required this.commitsUrl, required this.reviewCommentsUrl, required this.reviewCommentUrl, required this.commentsUrl, required this.statusesUrl, required this.number, required this.state, required this.locked, required this.url, required this.user, required this.body, required this.labels, required this.milestone, required this.deletions, required this.createdAt, required this.updatedAt, required this.closedAt, required this.mergedAt, required this.mergeCommitSha, required this.assignee, required this.additions, required this.commits, required this.maintainerCanModify, required this.head, required this.changedFiles, required this.links, required this.authorAssociation, required this.autoMerge, required this.reviewComments, required this.merged, required this.mergeable, required this.comments, required this.mergeableState, required this.mergedBy, required this.base, this.draft, this.requestedTeams, this.requestedReviewers, this.assignees, this.activeLockReason, this.rebaseable, });
 
 factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
@@ -42,7 +17,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   commentsUrl: Uri.parse(json['comments_url'] as String),
   statusesUrl: Uri.parse(json['statuses_url'] as String),
   number: (json['number'] as num).toInt(),
-  state: PullRequestState.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   locked: json['locked'] as bool,
   title: json['title'] as String,
   user: SimpleUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -107,7 +82,7 @@ final Uri statusesUrl;
 final int number;
 
 /// State of this Pull Request. Either `open` or `closed`.
-final PullRequestState state;
+final IssuesCreateMilestoneRequestState state;
 
 final bool locked;
 
@@ -273,7 +248,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
       json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<TeamSimple> Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, bool? merged, bool? Function()? mergeable, bool? Function()? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
+PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, IssuesCreateMilestoneRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, String? Function()? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser> Function()? assignees, List<SimpleUser> Function()? requestedReviewers, List<TeamSimple> Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool Function()? draft, bool? merged, bool? Function()? mergeable, bool? Function()? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_target_criteria_infra_app.dart';/// Contains the targets secured by the application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_target_criteria_infra_app.dart';/// Contains the targets secured by the application.
 @immutable final class AccessAppRespEmbeddedTargetCriteriaInfra {const AccessAppRespEmbeddedTargetCriteriaInfra({this.targetCriteria});
 
 factory AccessAppRespEmbeddedTargetCriteriaInfra.fromJson(Map<String, dynamic> json) { return AccessAppRespEmbeddedTargetCriteriaInfra(

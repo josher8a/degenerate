@@ -1,42 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOrgMfaConfigAllowedAuthenticators {const AccessOrgMfaConfigAllowedAuthenticators._(this.value);
-
-factory AccessOrgMfaConfigAllowedAuthenticators.fromJson(String json) { return switch (json) {
-  'totp' => totp,
-  'biometrics' => biometrics,
-  'security_key' => securityKey,
-  _ => AccessOrgMfaConfigAllowedAuthenticators._(json),
-}; }
-
-static const AccessOrgMfaConfigAllowedAuthenticators totp = AccessOrgMfaConfigAllowedAuthenticators._('totp');
-
-static const AccessOrgMfaConfigAllowedAuthenticators biometrics = AccessOrgMfaConfigAllowedAuthenticators._('biometrics');
-
-static const AccessOrgMfaConfigAllowedAuthenticators securityKey = AccessOrgMfaConfigAllowedAuthenticators._('security_key');
-
-static const List<AccessOrgMfaConfigAllowedAuthenticators> values = [totp, biometrics, securityKey];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessOrgMfaConfigAllowedAuthenticators && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessOrgMfaConfigAllowedAuthenticators($value)'; } 
- }
-/// Configures multi-factor authentication (MFA) settings for an organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_mfa_config/allowed_authenticators.dart';/// Configures multi-factor authentication (MFA) settings for an organization.
 @immutable final class AccessOrgMfaConfig {const AccessOrgMfaConfig({this.allowedAuthenticators, this.sessionDuration, });
 
 factory AccessOrgMfaConfig.fromJson(Map<String, dynamic> json) { return AccessOrgMfaConfig(
-  allowedAuthenticators: (json['allowed_authenticators'] as List<dynamic>?)?.map((e) => AccessOrgMfaConfigAllowedAuthenticators.fromJson(e as String)).toList(),
+  allowedAuthenticators: (json['allowed_authenticators'] as List<dynamic>?)?.map((e) => AllowedAuthenticators.fromJson(e as String)).toList(),
   sessionDuration: json['session_duration'] as String?,
 ); }
 
 /// Lists the MFA methods that users can authenticate with.
-final List<AccessOrgMfaConfigAllowedAuthenticators>? allowedAuthenticators;
+final List<AllowedAuthenticators>? allowedAuthenticators;
 
 /// Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.
 final String? sessionDuration;
@@ -46,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'session_duration': ?sessionDuration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_authenticators', 'session_duration'}.contains(key)); } 
-AccessOrgMfaConfig copyWith({List<AccessOrgMfaConfigAllowedAuthenticators> Function()? allowedAuthenticators, String Function()? sessionDuration, }) { return AccessOrgMfaConfig(
+AccessOrgMfaConfig copyWith({List<AllowedAuthenticators> Function()? allowedAuthenticators, String Function()? sessionDuration, }) { return AccessOrgMfaConfig(
   allowedAuthenticators: allowedAuthenticators != null ? allowedAuthenticators() : this.allowedAuthenticators,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter_resource_aggregation_settings.dart';import 'billing_meter_resource_billing_meter_status_transitions.dart';import 'billing_meter_resource_billing_meter_value.dart';import 'billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_status_transitions.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_value.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 @immutable final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);
 
 factory BillingMeterEventTimeWindow.fromJson(String json) { return switch (json) {
@@ -46,31 +46,6 @@ bool get isUnknown { return !values.contains(this); }
     other is BillingMeterObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BillingMeterObject($value)'; } 
- }
-/// The meter's status.
-@immutable final class BillingMeterStatus {const BillingMeterStatus._(this.value);
-
-factory BillingMeterStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  _ => BillingMeterStatus._(json),
-}; }
-
-static const BillingMeterStatus active = BillingMeterStatus._('active');
-
-static const BillingMeterStatus inactive = BillingMeterStatus._('inactive');
-
-static const List<BillingMeterStatus> values = [active, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterStatus($value)'; } 
  }
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 

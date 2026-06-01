@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_target_industry_list_complete_response_items.dart';@immutable final class GetTargetIndustryListCompleteResponse {const GetTargetIndustryListCompleteResponse({required this.items, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_attacker_list_response/get_attacker_list_response_items.dart';@immutable final class GetTargetIndustryListCompleteResponse {const GetTargetIndustryListCompleteResponse({required this.items, required this.type, });
 
 factory GetTargetIndustryListCompleteResponse.fromJson(Map<String, dynamic> json) { return GetTargetIndustryListCompleteResponse(
-  items: GetTargetIndustryListCompleteResponseItems.fromJson(json['items'] as Map<String, dynamic>),
+  items: GetAttackerListResponseItems.fromJson(json['items'] as Map<String, dynamic>),
   type: json['type'] as String,
 ); }
 
-final GetTargetIndustryListCompleteResponseItems items;
+final GetAttackerListResponseItems items;
 
 final String type;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
       json.containsKey('type') && json['type'] is String; } 
-GetTargetIndustryListCompleteResponse copyWith({GetTargetIndustryListCompleteResponseItems? items, String? type, }) { return GetTargetIndustryListCompleteResponse(
+GetTargetIndustryListCompleteResponse copyWith({GetAttackerListResponseItems? items, String? type, }) { return GetTargetIndustryListCompleteResponse(
   items: items ?? this.items,
   type: type ?? this.type,
 ); } 

@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_response/result_data_content.dart';@immutable final class ResultData {const ResultData({required this.score, this.attributes, this.content, this.fileId, this.filename, });
+
+factory ResultData.fromJson(Map<String, dynamic> json) { return ResultData(
+  attributes: json['attributes'] as Map<String, dynamic>?,
+  content: (json['content'] as List<dynamic>?)?.map((e) => ResultDataContent.fromJson(e as Map<String, dynamic>)).toList(),
+  fileId: json['file_id'] as String?,
+  filename: json['filename'] as String?,
+  score: (json['score'] as num).toDouble(),
+); }
+
+final Map<String,dynamic>? attributes;
+
+final List<ResultDataContent>? content;
+
+final String? fileId;
+
+final String? filename;
+
+final double score;
+
+Map<String, dynamic> toJson() { return {
+  'attributes': ?attributes,
+  if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
+  'file_id': ?fileId,
+  'filename': ?filename,
+  'score': score,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num; } 
+ResultData copyWith({Map<String, dynamic> Function()? attributes, List<ResultDataContent> Function()? content, String Function()? fileId, String Function()? filename, double? score, }) { return ResultData(
+  attributes: attributes != null ? attributes() : this.attributes,
+  content: content != null ? content() : this.content,
+  fileId: fileId != null ? fileId() : this.fileId,
+  filename: filename != null ? filename() : this.filename,
+  score: score ?? this.score,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResultData &&
+          attributes == other.attributes &&
+          listEquals(content, other.content) &&
+          fileId == other.fileId &&
+          filename == other.filename &&
+          score == other.score; } 
+@override int get hashCode { return Object.hash(attributes, Object.hashAll(content ?? const []), fileId, filename, score); } 
+@override String toString() { return 'ResultData(attributes: $attributes, content: $content, fileId: $fileId, filename: $filename, score: $score)'; } 
+ }

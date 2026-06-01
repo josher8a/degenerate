@@ -1,40 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_unpinned_issue.dart';import 'webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentUnpinnedAction {const WebhookIssueCommentUnpinnedAction._(this.value);
-
-factory WebhookIssueCommentUnpinnedAction.fromJson(String json) { return switch (json) {
-  'unpinned' => unpinned,
-  _ => WebhookIssueCommentUnpinnedAction._(json),
-}; }
-
-static const WebhookIssueCommentUnpinnedAction unpinned = WebhookIssueCommentUnpinnedAction._('unpinned');
-
-static const List<WebhookIssueCommentUnpinnedAction> values = [unpinned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueCommentUnpinnedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueCommentUnpinnedAction($value)'; } 
- }
-@immutable final class WebhookIssueCommentUnpinned {const WebhookIssueCommentUnpinned({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unpinned/webhook_discussion_unpinned_action.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_deleted/webhook_issue_comment_deleted_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentUnpinned {const WebhookIssueCommentUnpinned({required this.action, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssueCommentUnpinned.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentUnpinned(
-  action: WebhookIssueCommentUnpinnedAction.fromJson(json['action'] as String),
+  action: WebhookDiscussionUnpinnedAction.fromJson(json['action'] as String),
   comment: WebhooksIssueComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  issue: WebhookIssueCommentUnpinnedIssue.fromJson(json['issue'] as Map<String, dynamic>),
+  issue: WebhookIssueCommentDeletedIssue.fromJson(json['issue'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssueCommentUnpinnedAction action;
+final WebhookDiscussionUnpinnedAction action;
 
 final WebhooksIssueComment comment;
 
@@ -45,7 +24,7 @@ final SimpleInstallation? installation;
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
 /// 
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final WebhookIssueCommentUnpinnedIssue issue;
+final WebhookIssueCommentDeletedIssue issue;
 
 final OrganizationSimpleWebhooks? organization;
 
@@ -68,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssueCommentUnpinned copyWith({WebhookIssueCommentUnpinnedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentUnpinnedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentUnpinned(
+WebhookIssueCommentUnpinned copyWith({WebhookDiscussionUnpinnedAction? action, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentDeletedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentUnpinned(
   action: action ?? this.action,
   comment: comment ?? this.comment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

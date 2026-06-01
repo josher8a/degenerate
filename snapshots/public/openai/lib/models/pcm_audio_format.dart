@@ -23,16 +23,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PcmAudioFormatType($value)'; } 
  }
 /// The sample rate of the audio. Always `24000`.
-@immutable final class PcmAudioFormatRate {const PcmAudioFormatRate._(this.value);
+@immutable final class Rate {const Rate._(this.value);
 
-factory PcmAudioFormatRate.fromJson(int json) { return switch (json) {
+factory Rate.fromJson(int json) { return switch (json) {
   24000 => $24000,
-  _ => PcmAudioFormatRate._(json),
+  _ => Rate._(json),
 }; }
 
-static const PcmAudioFormatRate $24000 = PcmAudioFormatRate._(24000);
+static const Rate $24000 = Rate._(24000);
 
-static const List<PcmAudioFormatRate> values = [$24000];
+static const List<Rate> values = [$24000];
 
 final int value;
 
@@ -40,30 +40,30 @@ int toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PcmAudioFormatRate && other.value == value; } 
+    other is Rate && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PcmAudioFormatRate($value)'; } 
+@override String toString() { return 'Rate($value)'; } 
  }
 /// The PCM audio format. Only a 24kHz sample rate is supported.
 @immutable final class PcmAudioFormat {const PcmAudioFormat({this.type, this.rate, });
 
 factory PcmAudioFormat.fromJson(Map<String, dynamic> json) { return PcmAudioFormat(
   type: json['type'] != null ? PcmAudioFormatType.fromJson(json['type'] as String) : null,
-  rate: json['rate'] != null ? PcmAudioFormatRate.fromJson((json['rate'] as num).toInt()) : null,
+  rate: json['rate'] != null ? Rate.fromJson((json['rate'] as num).toInt()) : null,
 ); }
 
 /// The audio format. Always `audio/pcm`.
 final PcmAudioFormatType? type;
 
 /// The sample rate of the audio. Always `24000`.
-final PcmAudioFormatRate? rate;
+final Rate? rate;
 
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (rate != null) 'rate': rate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'rate'}.contains(key)); } 
-PcmAudioFormat copyWith({PcmAudioFormatType Function()? type, PcmAudioFormatRate Function()? rate, }) { return PcmAudioFormat(
+PcmAudioFormat copyWith({PcmAudioFormatType Function()? type, Rate Function()? rate, }) { return PcmAudioFormat(
   type: type != null ? type() : this.type,
   rate: rate != null ? rate() : this.rate,
 ); } 

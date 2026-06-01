@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_spec.dart';import 'namespace_status.dart';import 'object_meta.dart';/// Namespace provides a scope for Names. Use of multiple namespaces is optional.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace_spec.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Namespace provides a scope for Names. Use of multiple namespaces is optional.
 @immutable final class Namespace {const Namespace({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Namespace.fromJson(Map<String, dynamic> json) { return Namespace(

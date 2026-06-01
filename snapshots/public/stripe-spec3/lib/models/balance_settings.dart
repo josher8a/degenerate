@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);
 
 factory BalanceSettingsObject.fromJson(String json) { return switch (json) {

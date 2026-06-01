@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'networks.dart';import 'payment_method_card_checks.dart';import 'payment_method_card_generated_card.dart';import 'payment_method_card_wallet.dart';import 'three_d_secure_usage.dart';/// Status of a card based on the card issuer.
-@immutable final class PaymentMethodCardRegulatedStatus {const PaymentMethodCardRegulatedStatus._(this.value);
-
-factory PaymentMethodCardRegulatedStatus.fromJson(String json) { return switch (json) {
-  'regulated' => regulated,
-  'unregulated' => unregulated,
-  _ => PaymentMethodCardRegulatedStatus._(json),
-}; }
-
-static const PaymentMethodCardRegulatedStatus regulated = PaymentMethodCardRegulatedStatus._('regulated');
-
-static const PaymentMethodCardRegulatedStatus unregulated = PaymentMethodCardRegulatedStatus._('unregulated');
-
-static const List<PaymentMethodCardRegulatedStatus> values = [regulated, unregulated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodCardRegulatedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodCardRegulatedStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/regulated_status.dart';import 'package:pub_stripe_spec3/models/networks.dart';import 'package:pub_stripe_spec3/models/payment_method_card_checks.dart';import 'package:pub_stripe_spec3/models/payment_method_card_generated_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_wallet.dart';import 'package:pub_stripe_spec3/models/three_d_secure_usage.dart';/// 
 @immutable final class PaymentMethodCard {const PaymentMethodCard({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.checks, this.country, this.displayBrand, this.fingerprint, this.generatedFrom, this.networks, this.regulatedStatus, this.threeDSecureUsage, this.wallet, });
 
 factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCard(
@@ -40,7 +15,7 @@ factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMe
   generatedFrom: json['generated_from'] != null ? PaymentMethodCardGeneratedCard.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String,
   networks: json['networks'] != null ? Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
-  regulatedStatus: json['regulated_status'] != null ? PaymentMethodCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
+  regulatedStatus: json['regulated_status'] != null ? RegulatedStatus.fromJson(json['regulated_status'] as String) : null,
   threeDSecureUsage: json['three_d_secure_usage'] != null ? ThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>) : null,
   wallet: json['wallet'] != null ? PaymentMethodCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
@@ -81,7 +56,7 @@ final String last4;
 final Networks? networks;
 
 /// Status of a card based on the card issuer.
-final PaymentMethodCardRegulatedStatus? regulatedStatus;
+final RegulatedStatus? regulatedStatus;
 
 /// Contains details on how this Card may be used for 3D Secure authentication.
 final ThreeDSecureUsage? threeDSecureUsage;
@@ -110,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? checks, String? Function()? country, String? Function()? displayBrand, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, PaymentMethodCardGeneratedCard? Function()? generatedFrom, String? last4, Networks? Function()? networks, PaymentMethodCardRegulatedStatus? Function()? regulatedStatus, ThreeDSecureUsage? Function()? threeDSecureUsage, PaymentMethodCardWallet? Function()? wallet, }) { return PaymentMethodCard(
+PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? checks, String? Function()? country, String? Function()? displayBrand, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, PaymentMethodCardGeneratedCard? Function()? generatedFrom, String? last4, Networks? Function()? networks, RegulatedStatus? Function()? regulatedStatus, ThreeDSecureUsage? Function()? threeDSecureUsage, PaymentMethodCardWallet? Function()? wallet, }) { return PaymentMethodCard(
   brand: brand ?? this.brand,
   checks: checks != null ? checks() : this.checks,
   country: country != null ? country() : this.country,

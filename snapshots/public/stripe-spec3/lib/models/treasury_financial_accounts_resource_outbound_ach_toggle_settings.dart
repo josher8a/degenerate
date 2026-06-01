@@ -1,39 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-@immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus {const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(this.value);
-
-factory TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'pending' => pending,
-  'restricted' => restricted,
-  _ => TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(json),
-}; }
-
-static const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus active = TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._('active');
-
-static const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus pending = TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._('pending');
-
-static const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus restricted = TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._('restricted');
-
-static const List<TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus> values = [active, pending, restricted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus($value)'; } 
- }
-/// Toggle settings for enabling/disabling an outbound ACH specific feature
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_toggle_settings/treasury_financial_accounts_resource_aba_toggle_settings_status.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Toggle settings for enabling/disabling an outbound ACH specific feature
 @immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettings {const TreasuryFinancialAccountsResourceOutboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
   requested: json['requested'] as bool,
-  status: TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(json['status'] as String),
+  status: TreasuryFinancialAccountsResourceAbaToggleSettingsStatus.fromJson(json['status'] as String),
   statusDetails: (json['status_details'] as List<dynamic>).map((e) => TreasuryFinancialAccountsResourceTogglesSettingStatusDetails.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -41,7 +13,7 @@ factory TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(Map<
 final bool requested;
 
 /// Whether the Feature is operational.
-final TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus status;
+final TreasuryFinancialAccountsResourceAbaToggleSettingsStatus status;
 
 /// Additional details; includes at least one entry when the status is not `active`.
 final List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails> statusDetails;
@@ -54,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TreasuryFinancialAccountsResourceOutboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
+TreasuryFinancialAccountsResourceOutboundAchToggleSettings copyWith({bool? requested, TreasuryFinancialAccountsResourceAbaToggleSettingsStatus? status, List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetails>? statusDetails, }) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
   requested: requested ?? this.requested,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,

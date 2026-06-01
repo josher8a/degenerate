@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_named_tool_choice_custom_custom.dart';/// For custom tool calling, the type is always `custom`.
-@immutable final class ChatCompletionNamedToolChoiceCustomType {const ChatCompletionNamedToolChoiceCustomType._(this.value);
-
-factory ChatCompletionNamedToolChoiceCustomType.fromJson(String json) { return switch (json) {
-  'custom' => custom,
-  _ => ChatCompletionNamedToolChoiceCustomType._(json),
-}; }
-
-static const ChatCompletionNamedToolChoiceCustomType custom = ChatCompletionNamedToolChoiceCustomType._('custom');
-
-static const List<ChatCompletionNamedToolChoiceCustomType> values = [custom];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionNamedToolChoiceCustomType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionNamedToolChoiceCustomType($value)'; } 
- }
-/// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_custom_tool_call/chat_completion_message_custom_tool_call_type.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice_custom/chat_completion_named_tool_choice_custom_custom.dart';/// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
 @immutable final class ChatCompletionNamedToolChoiceCustom {const ChatCompletionNamedToolChoiceCustom({required this.type, required this.custom, });
 
 factory ChatCompletionNamedToolChoiceCustom.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoiceCustom(
-  type: ChatCompletionNamedToolChoiceCustomType.fromJson(json['type'] as String),
+  type: ChatCompletionMessageCustomToolCallType.fromJson(json['type'] as String),
   custom: ChatCompletionNamedToolChoiceCustomCustom.fromJson(json['custom'] as Map<String, dynamic>),
 ); }
 
 /// For custom tool calling, the type is always `custom`.
-final ChatCompletionNamedToolChoiceCustomType type;
+final ChatCompletionMessageCustomToolCallType type;
 
 final ChatCompletionNamedToolChoiceCustomCustom custom;
 
@@ -41,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('custom'); } 
-ChatCompletionNamedToolChoiceCustom copyWith({ChatCompletionNamedToolChoiceCustomType? type, ChatCompletionNamedToolChoiceCustomCustom? custom, }) { return ChatCompletionNamedToolChoiceCustom(
+ChatCompletionNamedToolChoiceCustom copyWith({ChatCompletionMessageCustomToolCallType? type, ChatCompletionNamedToolChoiceCustomCustom? custom, }) { return ChatCompletionNamedToolChoiceCustom(
   type: type ?? this.type,
   custom: custom ?? this.custom,
 ); } 

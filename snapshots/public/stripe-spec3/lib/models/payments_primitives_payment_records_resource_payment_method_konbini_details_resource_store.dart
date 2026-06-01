@@ -1,51 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(this.value);
-
-factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(String json) { return switch (json) {
-  'familymart' => familymart,
-  'lawson' => lawson,
-  'ministop' => ministop,
-  'seicomart' => seicomart,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(json),
-}; }
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain familymart = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('familymart');
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain lawson = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('lawson');
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain ministop = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('ministop');
-
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain seicomart = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('seicomart');
-
-static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain> values = [familymart, lawson, ministop, seicomart];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_konbini_store/chain.dart';/// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore({this.chain});
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
-  chain: json['chain'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(json['chain'] as String) : null,
+  chain: json['chain'] != null ? Chain.fromJson(json['chain'] as String) : null,
 ); }
 
 /// The name of the convenience store chain where the payment was completed.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain? chain;
+final Chain? chain;
 
 Map<String, dynamic> toJson() { return {
   if (chain != null) 'chain': chain?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'chain'}.contains(key)); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain? Function()? chain}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({Chain? Function()? chain}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
   chain: chain != null ? chain() : this.chain,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_timestamp.dart';/// The name of the Bookmark application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';/// The name of the Bookmark application.
 extension type const AccessBookmarksComponentsSchemasName(String value) {
 factory AccessBookmarksComponentsSchemasName.fromJson(String json) => AccessBookmarksComponentsSchemasName(json);
 

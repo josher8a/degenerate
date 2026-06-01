@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_answer.dart';@immutable final class WebhookDiscussionUnansweredAction {const WebhookDiscussionUnansweredAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_answer.dart';@immutable final class WebhookDiscussionUnansweredAction {const WebhookDiscussionUnansweredAction._(this.value);
 
 factory WebhookDiscussionUnansweredAction.fromJson(String json) { return switch (json) {
   'unanswered' => unanswered,

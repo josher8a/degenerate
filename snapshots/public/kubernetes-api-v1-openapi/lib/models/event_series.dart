@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'micro_time.dart';/// EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/micro_time.dart';/// EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
 @immutable final class EventSeries {const EventSeries({this.count, this.lastObservedTime, });
 
 factory EventSeries.fromJson(Map<String, dynamic> json) { return EventSeries(

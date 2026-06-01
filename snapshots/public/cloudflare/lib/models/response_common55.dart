@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_v4error.dart';import 'response_common55_result.dart';@immutable final class ResponseCommon55 {const ResponseCommon55({required this.errors, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_v4error.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';@immutable final class ResponseCommon55 {const ResponseCommon55({required this.errors, required this.success, this.result, });
 
 factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCommon55(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
@@ -10,7 +10,7 @@ factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCo
 
 final List<ResourceSharingV4error> errors;
 
-final ResponseCommon55Result? result;
+final ResponseCommon33Result? result;
 
 /// Whether the API call was successful.
 final bool success;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon55 copyWith({List<ResourceSharingV4error>? errors, ResponseCommon55Result Function()? result, bool? success, }) { return ResponseCommon55(
+ResponseCommon55 copyWith({List<ResourceSharingV4error>? errors, ResponseCommon33Result Function()? result, bool? success, }) { return ResponseCommon55(
   errors: errors ?? this.errors,
   result: result != null ? result() : this.result,
   success: success ?? this.success,

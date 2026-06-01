@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_eval_run_canceled_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookEvalRunCanceledObject {const WebhookEvalRunCanceledObject._(this.value);
-
-factory WebhookEvalRunCanceledObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookEvalRunCanceledObject._(json),
-}; }
-
-static const WebhookEvalRunCanceledObject event = WebhookEvalRunCanceledObject._('event');
-
-static const List<WebhookEvalRunCanceledObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookEvalRunCanceledObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookEvalRunCanceledObject($value)'; } 
- }
-/// The type of the event. Always `eval.run.canceled`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `eval.run.canceled`.
 /// 
 @immutable final class WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType._(this.value);
 
@@ -53,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookEvalRunCanceled.fromJson(Map<String, dynamic> json) { return WebhookEvalRunCanceled(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
-  data: WebhookEvalRunCanceledData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookEvalRunCanceledObject.fromJson(json['object'] as String) : null,
+  data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookEvalRunCanceledType.fromJson(json['type'] as String),
 ); }
 
@@ -68,11 +45,11 @@ final String id;
 
 /// Event data payload.
 /// 
-final WebhookEvalRunCanceledData data;
+final WebhookBatchCancelledData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookEvalRunCanceledObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `eval.run.canceled`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookEvalRunCanceled copyWith({int? createdAt, String? id, WebhookEvalRunCanceledData? data, WebhookEvalRunCanceledObject Function()? object, WebhookEvalRunCanceledType? type, }) { return WebhookEvalRunCanceled(
+WebhookEvalRunCanceled copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject Function()? object, WebhookEvalRunCanceledType? type, }) { return WebhookEvalRunCanceled(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

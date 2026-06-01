@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'secret_scanning_alert_resolution.dart';import 'secret_scanning_alert_state.dart';import 'secret_scanning_first_detected_location.dart';import 'simple_user.dart';/// The token status as of the latest validity check.
-@immutable final class SecretScanningAlertValidity {const SecretScanningAlertValidity._(this.value);
-
-factory SecretScanningAlertValidity.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  'unknown' => unknown,
-  _ => SecretScanningAlertValidity._(json),
-}; }
-
-static const SecretScanningAlertValidity active = SecretScanningAlertValidity._('active');
-
-static const SecretScanningAlertValidity inactive = SecretScanningAlertValidity._('inactive');
-
-static const SecretScanningAlertValidity unknown = SecretScanningAlertValidity._('unknown');
-
-static const List<SecretScanningAlertValidity> values = [active, inactive, unknown];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningAlertValidity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningAlertValidity($value)'; } 
- }
-@immutable final class SecretScanningAlert {const SecretScanningAlert({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.state, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.secret, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.validity, this.publiclyLeaked, this.multiRepo, this.isBase64Encoded, this.firstLocationDetected, this.hasMoreLocations, this.assignedTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/organization_secret_scanning_alert/validity.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_resolution.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_state.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_first_detected_location.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class SecretScanningAlert {const SecretScanningAlert({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.state, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.secret, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.validity, this.publiclyLeaked, this.multiRepo, this.isBase64Encoded, this.firstLocationDetected, this.hasMoreLocations, this.assignedTo, });
 
 factory SecretScanningAlert.fromJson(Map<String, dynamic> json) { return SecretScanningAlert(
   number: json['number'] != null ? AlertNumber.fromJson(json['number'] as num) : null,
@@ -52,7 +24,7 @@ factory SecretScanningAlert.fromJson(Map<String, dynamic> json) { return SecretS
   pushProtectionBypassRequestReviewerComment: json['push_protection_bypass_request_reviewer_comment'] as String?,
   pushProtectionBypassRequestComment: json['push_protection_bypass_request_comment'] as String?,
   pushProtectionBypassRequestHtmlUrl: json['push_protection_bypass_request_html_url'] != null ? Uri.parse(json['push_protection_bypass_request_html_url'] as String) : null,
-  validity: json['validity'] != null ? SecretScanningAlertValidity.fromJson(json['validity'] as String) : null,
+  validity: json['validity'] != null ? Validity.fromJson(json['validity'] as String) : null,
   publiclyLeaked: json['publicly_leaked'] as bool?,
   multiRepo: json['multi_repo'] as bool?,
   isBase64Encoded: json['is_base64_encoded'] as bool?,
@@ -123,7 +95,7 @@ final String? pushProtectionBypassRequestComment;
 final Uri? pushProtectionBypassRequestHtmlUrl;
 
 /// The token status as of the latest validity check.
-final SecretScanningAlertValidity? validity;
+final Validity? validity;
 
 /// Whether the detected secret was publicly leaked.
 final bool? publiclyLeaked;
@@ -172,7 +144,7 @@ Map<String, dynamic> toJson() { return {
   if (assignedTo != null) 'assigned_to': assignedTo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'state', 'resolution', 'resolved_at', 'resolved_by', 'resolution_comment', 'secret_type', 'secret_type_display_name', 'secret', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'validity', 'publicly_leaked', 'multi_repo', 'is_base64_encoded', 'first_location_detected', 'has_more_locations', 'assigned_to'}.contains(key)); } 
-SecretScanningAlert copyWith({AlertNumber Function()? number, AlertCreatedAt Function()? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl Function()? url, AlertHtmlUrl Function()? htmlUrl, Uri Function()? locationsUrl, SecretScanningAlertState Function()? state, SecretScanningAlertResolution? Function()? resolution, DateTime? Function()? resolvedAt, SimpleUser? Function()? resolvedBy, String? Function()? resolutionComment, String Function()? secretType, String Function()? secretTypeDisplayName, String Function()? secret, bool? Function()? pushProtectionBypassed, SimpleUser? Function()? pushProtectionBypassedBy, DateTime? Function()? pushProtectionBypassedAt, SimpleUser? Function()? pushProtectionBypassRequestReviewer, String? Function()? pushProtectionBypassRequestReviewerComment, String? Function()? pushProtectionBypassRequestComment, Uri? Function()? pushProtectionBypassRequestHtmlUrl, SecretScanningAlertValidity Function()? validity, bool? Function()? publiclyLeaked, bool? Function()? multiRepo, bool? Function()? isBase64Encoded, SecretScanningFirstDetectedLocation? Function()? firstLocationDetected, bool Function()? hasMoreLocations, SimpleUser? Function()? assignedTo, }) { return SecretScanningAlert(
+SecretScanningAlert copyWith({AlertNumber Function()? number, AlertCreatedAt Function()? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl Function()? url, AlertHtmlUrl Function()? htmlUrl, Uri Function()? locationsUrl, SecretScanningAlertState Function()? state, SecretScanningAlertResolution? Function()? resolution, DateTime? Function()? resolvedAt, SimpleUser? Function()? resolvedBy, String? Function()? resolutionComment, String Function()? secretType, String Function()? secretTypeDisplayName, String Function()? secret, bool? Function()? pushProtectionBypassed, SimpleUser? Function()? pushProtectionBypassedBy, DateTime? Function()? pushProtectionBypassedAt, SimpleUser? Function()? pushProtectionBypassRequestReviewer, String? Function()? pushProtectionBypassRequestReviewerComment, String? Function()? pushProtectionBypassRequestComment, Uri? Function()? pushProtectionBypassRequestHtmlUrl, Validity Function()? validity, bool? Function()? publiclyLeaked, bool? Function()? multiRepo, bool? Function()? isBase64Encoded, SecretScanningFirstDetectedLocation? Function()? firstLocationDetected, bool Function()? hasMoreLocations, SimpleUser? Function()? assignedTo, }) { return SecretScanningAlert(
   number: number != null ? number() : this.number,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LocalAmusementTax {const LocalAmusementTax({required this.jurisdiction});
+
+factory LocalAmusementTax.fromJson(Map<String, dynamic> json) { return LocalAmusementTax(
+  jurisdiction: json['jurisdiction'] as String,
+); }
+
+final String jurisdiction;
+
+Map<String, dynamic> toJson() { return {
+  'jurisdiction': jurisdiction,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('jurisdiction') && json['jurisdiction'] is String; } 
+LocalAmusementTax copyWith({String? jurisdiction}) { return LocalAmusementTax(
+  jurisdiction: jurisdiction ?? this.jurisdiction,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LocalAmusementTax &&
+          jurisdiction == other.jurisdiction; } 
+@override int get hashCode { return jurisdiction.hashCode; } 
+@override String toString() { return 'LocalAmusementTax(jurisdiction: $jurisdiction)'; } 
+ }

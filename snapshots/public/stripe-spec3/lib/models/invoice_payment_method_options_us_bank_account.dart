@@ -1,52 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_us_bank_account_linked_account_options.dart';/// Bank account verification method.
-@immutable final class InvoicePaymentMethodOptionsUsBankAccountVerificationMethod {const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
-
-factory InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  'microdeposits' => microdeposits,
-  _ => InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(json),
-}; }
-
-static const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod automatic = InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._('automatic');
-
-static const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod instant = InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._('instant');
-
-static const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod microdeposits = InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._('microdeposits');
-
-static const List<InvoicePaymentMethodOptionsUsBankAccountVerificationMethod> values = [automatic, instant, microdeposits];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_us_bank_account_linked_account_options.dart';/// 
 @immutable final class InvoicePaymentMethodOptionsUsBankAccount {const InvoicePaymentMethodOptionsUsBankAccount({this.financialConnections, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
-  verificationMethod: json['verification_method'] != null ? InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
+  verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
 final InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions? financialConnections;
 
 /// Bank account verification method.
-final InvoicePaymentMethodOptionsUsBankAccountVerificationMethod? verificationMethod;
+final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions Function()? financialConnections, InvoicePaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsUsBankAccount(
+InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions Function()? financialConnections, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 

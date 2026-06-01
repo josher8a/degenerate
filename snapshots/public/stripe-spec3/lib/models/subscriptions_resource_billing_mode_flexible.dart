@@ -1,45 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls how invoices and invoice items display proration amounts and discount amounts.
-@immutable final class SubscriptionsResourceBillingModeFlexibleProrationDiscounts {const SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(this.value);
-
-factory SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
-  'included' => included,
-  'itemized' => itemized,
-  _ => SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(json),
-}; }
-
-static const SubscriptionsResourceBillingModeFlexibleProrationDiscounts included = SubscriptionsResourceBillingModeFlexibleProrationDiscounts._('included');
-
-static const SubscriptionsResourceBillingModeFlexibleProrationDiscounts itemized = SubscriptionsResourceBillingModeFlexibleProrationDiscounts._('itemized');
-
-static const List<SubscriptionsResourceBillingModeFlexibleProrationDiscounts> values = [included, itemized];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourceBillingModeFlexibleProrationDiscounts && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourceBillingModeFlexibleProrationDiscounts($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode_flexible/proration_discounts.dart';/// 
 @immutable final class SubscriptionsResourceBillingModeFlexible {const SubscriptionsResourceBillingModeFlexible({this.prorationDiscounts});
 
 factory SubscriptionsResourceBillingModeFlexible.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingModeFlexible(
-  prorationDiscounts: json['proration_discounts'] != null ? SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
+  prorationDiscounts: json['proration_discounts'] != null ? ProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
 ); }
 
 /// Controls how invoices and invoice items display proration amounts and discount amounts.
-final SubscriptionsResourceBillingModeFlexibleProrationDiscounts? prorationDiscounts;
+final ProrationDiscounts? prorationDiscounts;
 
 Map<String, dynamic> toJson() { return {
   if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'proration_discounts'}.contains(key)); } 
-SubscriptionsResourceBillingModeFlexible copyWith({SubscriptionsResourceBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return SubscriptionsResourceBillingModeFlexible(
+SubscriptionsResourceBillingModeFlexible copyWith({ProrationDiscounts Function()? prorationDiscounts}) { return SubscriptionsResourceBillingModeFlexible(
   prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message.dart';import 'usage_record.dart';/// Represents a successful response containing billable usage records.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message.dart';import 'package:pub_cloudflare/models/usage_record.dart';/// Represents a successful response containing billable usage records.
 @immutable final class UsageResponse {const UsageResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory UsageResponse.fromJson(Map<String, dynamic> json) { return UsageResponse(

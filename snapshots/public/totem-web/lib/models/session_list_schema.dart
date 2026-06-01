@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'space_schema.dart';@immutable final class SessionListSchema {const SessionListSchema({required this.space, required this.url, required this.dateCreated, required this.dateModified, this.start, this.slug, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_totem_web/models/space_schema.dart';@immutable final class SessionListSchema {const SessionListSchema({required this.space, required this.url, required this.dateCreated, required this.dateModified, this.start, this.slug, this.title, });
 
 factory SessionListSchema.fromJson(Map<String, dynamic> json) { return SessionListSchema(
   space: SpaceSchema.fromJson(json['space'] as Map<String, dynamic>),

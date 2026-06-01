@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import '../models/workers_ai_post_run_cf_baai_bge_reranker_base_response400.dart';import '../models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';import '../models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_response400.dart';/// WorkersAiTextClassificationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_baai_bge_reranker_base_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_huggingface_distilbert_sst2_int8_response400.dart';/// WorkersAiTextClassificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

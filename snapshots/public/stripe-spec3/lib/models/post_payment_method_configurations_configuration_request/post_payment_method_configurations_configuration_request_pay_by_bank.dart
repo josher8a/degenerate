@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_method_configurations_configuration_request/display_preference.dart';/// Pay by bank is a redirect payment method backed by bank transfers. A customer is redirected to their bank to authorize a bank transfer for a given amount. This removes a lot of the error risks inherent in waiting for the customer to initiate a transfer themselves, and is less expensive than card payments.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestPayByBank {const PostPaymentMethodConfigurationsConfigurationRequestPayByBank({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPayByBank.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPayByBank(
+  displayPreference: json['display_preference'] != null ? DisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final DisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
+PostPaymentMethodConfigurationsConfigurationRequestPayByBank copyWith({DisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestPayByBank(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestPayByBank &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPayByBank(displayPreference: $displayPreference)'; } 
+ }

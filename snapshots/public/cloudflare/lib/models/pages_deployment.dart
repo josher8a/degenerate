@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_build_config.dart';import 'pages_deployment_deployment_trigger.dart';import 'pages_env_vars_value.dart';import 'pages_project_name.dart';import 'pages_source.dart';import 'pages_stage.dart';/// Type of deploy.
-@immutable final class PagesDeploymentEnvironment {const PagesDeploymentEnvironment._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_build_config.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger.dart';import 'package:pub_cloudflare/models/pages_env_vars/pages_env_vars_value.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';import 'package:pub_cloudflare/models/pages_source.dart';import 'package:pub_cloudflare/models/pages_stage.dart';/// Type of deploy.
+@immutable final class Environment {const Environment._(this.value);
 
-factory PagesDeploymentEnvironment.fromJson(String json) { return switch (json) {
+factory Environment.fromJson(String json) { return switch (json) {
   'preview' => preview,
   'production' => production,
-  _ => PagesDeploymentEnvironment._(json),
+  _ => Environment._(json),
 }; }
 
-static const PagesDeploymentEnvironment preview = PagesDeploymentEnvironment._('preview');
+static const Environment preview = Environment._('preview');
 
-static const PagesDeploymentEnvironment production = PagesDeploymentEnvironment._('production');
+static const Environment production = Environment._('production');
 
-static const List<PagesDeploymentEnvironment> values = [preview, production];
+static const List<Environment> values = [preview, production];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentEnvironment && other.value == value; } 
+    other is Environment && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentEnvironment($value)'; } 
+@override String toString() { return 'Environment($value)'; } 
  }
 @immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
 
@@ -31,9 +31,9 @@ factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeploy
   aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
   buildConfig: PagesBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>),
   createdOn: DateTime.parse(json['created_on'] as String),
-  deploymentTrigger: PagesDeploymentDeploymentTrigger.fromJson(json['deployment_trigger'] as Map<String, dynamic>),
+  deploymentTrigger: DeploymentTrigger.fromJson(json['deployment_trigger'] as Map<String, dynamic>),
   envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesEnvVarsValue.fromJson(v as Map<String, dynamic>))),
-  environment: PagesDeploymentEnvironment.fromJson(json['environment'] as String),
+  environment: Environment.fromJson(json['environment'] as String),
   id: json['id'] as String,
   isSkipped: json['is_skipped'] as bool,
   latestStage: PagesStage.fromJson(json['latest_stage'] as Map<String, dynamic>),
@@ -56,12 +56,12 @@ final PagesBuildConfig buildConfig;
 final DateTime createdOn;
 
 /// Info about what caused the deployment.
-final PagesDeploymentDeploymentTrigger deploymentTrigger;
+final DeploymentTrigger deploymentTrigger;
 
 final Map<String,PagesEnvVarsValue?>? envVars;
 
 /// Type of deploy.
-final PagesDeploymentEnvironment environment;
+final Environment environment;
 
 /// Id of the deployment.
 final String id;
@@ -128,7 +128,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('source') &&
       json.containsKey('stages') &&
       json.containsKey('url') && json['url'] is String; } 
-PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, PagesDeploymentDeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue>? Function()? envVars, PagesDeploymentEnvironment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
+PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? buildConfig, DateTime? createdOn, DeploymentTrigger? deploymentTrigger, Map<String, PagesEnvVarsValue>? Function()? envVars, Environment? environment, String? id, bool? isSkipped, PagesStage? latestStage, DateTime? modifiedOn, String? projectId, PagesProjectName? projectName, String? shortId, PagesSource? source, List<PagesStage>? stages, String? url, bool? Function()? usesFunctions, }) { return PagesDeployment(
   aliases: aliases != null ? aliases() : this.aliases,
   buildConfig: buildConfig ?? this.buildConfig,
   createdOn: createdOn ?? this.createdOn,

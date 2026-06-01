@@ -1,94 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';@immutable final class SimpleCheckSuiteConclusion {const SimpleCheckSuiteConclusion._(this.value);
-
-factory SimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
-  'success' => success,
-  'failure' => failure,
-  'neutral' => neutral,
-  'cancelled' => cancelled,
-  'skipped' => skipped,
-  'timed_out' => timedOut,
-  'action_required' => actionRequired,
-  'stale' => stale,
-  'startup_failure' => startupFailure,
-  'null' => $null,
-  _ => SimpleCheckSuiteConclusion._(json),
-}; }
-
-static const SimpleCheckSuiteConclusion success = SimpleCheckSuiteConclusion._('success');
-
-static const SimpleCheckSuiteConclusion failure = SimpleCheckSuiteConclusion._('failure');
-
-static const SimpleCheckSuiteConclusion neutral = SimpleCheckSuiteConclusion._('neutral');
-
-static const SimpleCheckSuiteConclusion cancelled = SimpleCheckSuiteConclusion._('cancelled');
-
-static const SimpleCheckSuiteConclusion skipped = SimpleCheckSuiteConclusion._('skipped');
-
-static const SimpleCheckSuiteConclusion timedOut = SimpleCheckSuiteConclusion._('timed_out');
-
-static const SimpleCheckSuiteConclusion actionRequired = SimpleCheckSuiteConclusion._('action_required');
-
-static const SimpleCheckSuiteConclusion stale = SimpleCheckSuiteConclusion._('stale');
-
-static const SimpleCheckSuiteConclusion startupFailure = SimpleCheckSuiteConclusion._('startup_failure');
-
-static const SimpleCheckSuiteConclusion $null = SimpleCheckSuiteConclusion._('null');
-
-static const List<SimpleCheckSuiteConclusion> values = [success, failure, neutral, cancelled, skipped, timedOut, actionRequired, stale, startupFailure, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleCheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleCheckSuiteConclusion($value)'; } 
- }
-@immutable final class SimpleCheckSuiteStatus {const SimpleCheckSuiteStatus._(this.value);
-
-factory SimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
-  'queued' => queued,
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'pending' => pending,
-  'waiting' => waiting,
-  _ => SimpleCheckSuiteStatus._(json),
-}; }
-
-static const SimpleCheckSuiteStatus queued = SimpleCheckSuiteStatus._('queued');
-
-static const SimpleCheckSuiteStatus inProgress = SimpleCheckSuiteStatus._('in_progress');
-
-static const SimpleCheckSuiteStatus completed = SimpleCheckSuiteStatus._('completed');
-
-static const SimpleCheckSuiteStatus pending = SimpleCheckSuiteStatus._('pending');
-
-static const SimpleCheckSuiteStatus waiting = SimpleCheckSuiteStatus._('waiting');
-
-static const List<SimpleCheckSuiteStatus> values = [queued, inProgress, completed, pending, waiting];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleCheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleCheckSuiteStatus($value)'; } 
- }
-/// A suite of checks performed on the code of a given code change
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite/simple_check_suite_status.dart';/// A suite of checks performed on the code of a given code change
 @immutable final class SimpleCheckSuite {const SimpleCheckSuite({this.after, this.app, this.before, this.conclusion, this.createdAt, this.headBranch, this.headSha, this.id, this.nodeId, this.pullRequests, this.repository, this.status, this.updatedAt, this.url, });
 
 factory SimpleCheckSuite.fromJson(Map<String, dynamic> json) { return SimpleCheckSuite(
   after: json['after'] as String?,
   app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   before: json['before'] as String?,
-  conclusion: json['conclusion'] != null ? SimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
+  conclusion: json['conclusion'] != null ? CheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   headBranch: json['head_branch'] as String?,
   headSha: json['head_sha'] as String?,
@@ -107,7 +26,7 @@ final Integration? app;
 
 final String? before;
 
-final SimpleCheckSuiteConclusion? conclusion;
+final CheckSuiteConclusion? conclusion;
 
 final DateTime? createdAt;
 
@@ -147,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key)); } 
-SimpleCheckSuite copyWith({String? Function()? after, Integration Function()? app, String? Function()? before, SimpleCheckSuiteConclusion? Function()? conclusion, DateTime Function()? createdAt, String? Function()? headBranch, String Function()? headSha, int Function()? id, String Function()? nodeId, List<PullRequestMinimal> Function()? pullRequests, MinimalRepository Function()? repository, SimpleCheckSuiteStatus Function()? status, DateTime Function()? updatedAt, String Function()? url, }) { return SimpleCheckSuite(
+SimpleCheckSuite copyWith({String? Function()? after, Integration Function()? app, String? Function()? before, CheckSuiteConclusion? Function()? conclusion, DateTime Function()? createdAt, String? Function()? headBranch, String Function()? headSha, int Function()? id, String Function()? nodeId, List<PullRequestMinimal> Function()? pullRequests, MinimalRepository Function()? repository, SimpleCheckSuiteStatus Function()? status, DateTime Function()? updatedAt, String Function()? url, }) { return SimpleCheckSuite(
   after: after != null ? after() : this.after,
   app: app != null ? app() : this.app,
   before: before != null ? before() : this.before,

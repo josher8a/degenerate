@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor._(this.value);
-
-factory R2SlurperR2SourceSchemaVendor.fromJson(String json) { return switch (json) {
-  'r2' => r2,
-  _ => R2SlurperR2SourceSchemaVendor._(json),
-}; }
-
-static const R2SlurperR2SourceSchemaVendor r2 = R2SlurperR2SourceSchemaVendor._('r2');
-
-static const List<R2SlurperR2SourceSchemaVendor> values = [r2];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperR2SourceSchemaVendor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperR2SourceSchemaVendor($value)'; } 
- }
-@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys, this.pathPrefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_slurper_jurisdiction.dart';import 'package:pub_cloudflare/models/r2_slurper_r2_source_schema/r2_slurper_r2_source_schema_vendor.dart';import 'package:pub_cloudflare/models/r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys, this.pathPrefix, });
 
 factory R2SlurperR2SourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2SourceSchema(
   bucket: json['bucket'] as String,

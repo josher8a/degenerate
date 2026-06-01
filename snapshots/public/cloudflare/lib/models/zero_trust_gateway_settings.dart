@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_public_key.dart';import 'zero_trust_gateway_read_only_timestamp.dart';/// Identify the seed ID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_public_key.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';/// Identify the seed ID.
 extension type const ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid(String value) {
 factory ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid.fromJson(String json) => ZeroTrustGatewayAuditSshSettingsComponentsSchemasUuid(json);
 

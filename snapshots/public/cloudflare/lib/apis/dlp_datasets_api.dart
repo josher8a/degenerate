@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_dataset.dart';import '../models/dlp_dataset_column.dart';import '../models/dlp_dataset_creation.dart';import '../models/dlp_dataset_new_version.dart';import '../models/dlp_datasets_create_request.dart';import '../models/dlp_datasets_define_columns_request.dart';import '../models/dlp_datasets_update_request.dart';/// DlpDatasetsApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset.dart';import 'package:pub_cloudflare/models/dlp_dataset_column.dart';import 'package:pub_cloudflare/models/dlp_dataset_creation.dart';import 'package:pub_cloudflare/models/dlp_dataset_new_version.dart';import 'package:pub_cloudflare/models/dlp_datasets_create_request.dart';import 'package:pub_cloudflare/models/dlp_datasets_define_columns_request.dart';import 'package:pub_cloudflare/models/dlp_datasets_update_request.dart';/// DlpDatasetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

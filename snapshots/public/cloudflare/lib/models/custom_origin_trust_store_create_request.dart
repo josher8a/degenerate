@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate.dart';@immutable final class CustomOriginTrustStoreCreateRequest {const CustomOriginTrustStoreCreateRequest({required this.certificate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate.dart';@immutable final class CustomOriginTrustStoreCreateRequest {const CustomOriginTrustStoreCreateRequest({required this.certificate});
 
 factory CustomOriginTrustStoreCreateRequest.fromJson(Map<String, dynamic> json) { return CustomOriginTrustStoreCreateRequest(
   certificate: TlsCertificatesAndHostnamesComponentsSchemasCertificate.fromJson(json['certificate'] as String),

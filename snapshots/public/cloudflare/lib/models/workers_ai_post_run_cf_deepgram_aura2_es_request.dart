@@ -1,74 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
-@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestContainer {const WorkersAiPostRunCfDeepgramAura2EsRequestContainer._(this.value);
-
-factory WorkersAiPostRunCfDeepgramAura2EsRequestContainer.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'wav' => wav,
-  'ogg' => ogg,
-  _ => WorkersAiPostRunCfDeepgramAura2EsRequestContainer._(json),
-}; }
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestContainer none = WorkersAiPostRunCfDeepgramAura2EsRequestContainer._('none');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestContainer wav = WorkersAiPostRunCfDeepgramAura2EsRequestContainer._('wav');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestContainer ogg = WorkersAiPostRunCfDeepgramAura2EsRequestContainer._('ogg');
-
-static const List<WorkersAiPostRunCfDeepgramAura2EsRequestContainer> values = [none, wav, ogg];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura2EsRequestContainer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EsRequestContainer($value)'; } 
- }
-/// Encoding of the output audio.
-@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestEncoding {const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._(this.value);
-
-factory WorkersAiPostRunCfDeepgramAura2EsRequestEncoding.fromJson(String json) { return switch (json) {
-  'linear16' => linear16,
-  'flac' => flac,
-  'mulaw' => mulaw,
-  'alaw' => alaw,
-  'mp3' => mp3,
-  'opus' => opus,
-  'aac' => aac,
-  _ => WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._(json),
-}; }
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('linear16');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding flac = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('flac');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding mulaw = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('mulaw');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding alaw = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('alaw');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding mp3 = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('mp3');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding opus = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('opus');
-
-static const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding aac = WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._('aac');
-
-static const List<WorkersAiPostRunCfDeepgramAura2EsRequestEncoding> values = [linear16, flac, mulaw, alaw, mp3, opus, aac];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura2EsRequestEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EsRequestEncoding($value)'; } 
- }
-/// Speaker used to produce the audio.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_container.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_encoding.dart';/// Speaker used to produce the audio.
 @immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._(this.value);
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.fromJson(String json) { return switch (json) {
@@ -121,8 +53,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura2EsRequest(
   bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,
-  container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura2EsRequestContainer.fromJson(json['container'] as String) : null,
-  encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura2EsRequestEncoding.fromJson(json['encoding'] as String) : null,
+  container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura1RequestContainer.fromJson(json['container'] as String) : null,
+  encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(json['encoding'] as String) : null,
   sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
   speaker: json.containsKey('speaker') ? WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.fromJson(json['speaker'] as String) : WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.aquila,
   text: json['text'] as String,
@@ -132,10 +64,10 @@ factory WorkersAiPostRunCfDeepgramAura2EsRequest.fromJson(Map<String, dynamic> j
 final double? bitRate;
 
 /// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
-final WorkersAiPostRunCfDeepgramAura2EsRequestContainer? container;
+final WorkersAiPostRunCfDeepgramAura1RequestContainer? container;
 
 /// Encoding of the output audio.
-final WorkersAiPostRunCfDeepgramAura2EsRequestEncoding? encoding;
+final WorkersAiPostRunCfDeepgramAura1RequestEncoding? encoding;
 
 /// Sample Rate specifies the sample rate for the output audio. Based on the encoding, different sample rates are supported. For some encodings, the sample rate is not configurable
 final double? sampleRate;
@@ -155,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfDeepgramAura2EsRequest copyWith({double Function()? bitRate, WorkersAiPostRunCfDeepgramAura2EsRequestContainer Function()? container, WorkersAiPostRunCfDeepgramAura2EsRequestEncoding Function()? encoding, double Function()? sampleRate, WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura2EsRequest(
+WorkersAiPostRunCfDeepgramAura2EsRequest copyWith({double Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding Function()? encoding, double Function()? sampleRate, WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura2EsRequest(
   bitRate: bitRate != null ? bitRate() : this.bitRate,
   container: container != null ? container() : this.container,
   encoding: encoding != null ? encoding() : this.encoding,

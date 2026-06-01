@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction_refund.dart';import 'refund.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/refund.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
@@ -8,13 +8,13 @@ factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPayment
 ); }
 
 /// The [Refund](https://docs.stripe.com/api/refunds/object) that moved these funds into the customer's cash balance.
-final CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund refund;
+final CreditNoteRefundRefund refund;
 
 Map<String, dynamic> toJson() { return {
   'refund': refund.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('refund'); } 
-CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund? refund}) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
+CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction copyWith({CreditNoteRefundRefund? refund}) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
   refund: refund ?? this.refund,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

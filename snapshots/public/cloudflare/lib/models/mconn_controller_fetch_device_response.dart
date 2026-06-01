@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_device.dart';@immutable final class MconnControllerFetchDeviceResponse {const MconnControllerFetchDeviceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mconn_controller_device.dart';@immutable final class MconnControllerFetchDeviceResponse {const MconnControllerFetchDeviceResponse({this.result});
 
 factory MconnControllerFetchDeviceResponse.fromJson(Map<String, dynamic> json) { return MconnControllerFetchDeviceResponse(
   result: json['result'] != null ? MconnControllerDevice.fromJson(json['result'] as Map<String, dynamic>) : null,

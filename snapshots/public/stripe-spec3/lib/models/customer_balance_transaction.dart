@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';import 'credit_note.dart';import 'customer.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -119,7 +119,7 @@ final CustomerBalanceTransactionCreditNote? creditNote;
 final String currency;
 
 /// The ID of the customer the transaction belongs to.
-final CustomerBalanceTransactionCustomer customer;
+final BankConnectionsResourceAccountholderCustomer customer;
 
 /// The ID of an Account representing a customer that the transaction belongs to.
 final String? customerAccount;
@@ -134,7 +134,7 @@ final int endingBalance;
 final String id;
 
 /// The ID of the invoice (if any) related to the transaction.
-final CustomerBalanceTransactionInvoice? invoice;
+final CheckoutSessionInvoice? invoice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, CustomerBalanceTransactionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, CheckoutSessionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
   amount: amount ?? this.amount,
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   created: created ?? this.created,

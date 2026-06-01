@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_max_http_version_value.dart';/// Value of the zone setting.
-@immutable final class CacheRulesOriginMaxHttpVersionId {const CacheRulesOriginMaxHttpVersionId._(this.value);
-
-factory CacheRulesOriginMaxHttpVersionId.fromJson(String json) { return switch (json) {
-  'origin_max_http_version' => originMaxHttpVersion,
-  _ => CacheRulesOriginMaxHttpVersionId._(json),
-}; }
-
-static const CacheRulesOriginMaxHttpVersionId originMaxHttpVersion = CacheRulesOriginMaxHttpVersionId._('origin_max_http_version');
-
-static const List<CacheRulesOriginMaxHttpVersionId> values = [originMaxHttpVersion];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesOriginMaxHttpVersionId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesOriginMaxHttpVersionId($value)'; } 
- }
-/// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_origin_max_http_version/cache_rules_origin_max_http_version_id.dart';import 'package:pub_cloudflare/models/cache_rules_origin_max_http_version_value.dart';/// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 @immutable final class CacheRulesOriginMaxHttpVersion {const CacheRulesOriginMaxHttpVersion({required this.id, this.modifiedOn, this.value, });
 
 factory CacheRulesOriginMaxHttpVersion.fromJson(Map<String, dynamic> json) { return CacheRulesOriginMaxHttpVersion(

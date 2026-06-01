@@ -1,77 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_value_list_list_items.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
-@immutable final class RadarValueListItemType {const RadarValueListItemType._(this.value);
-
-factory RadarValueListItemType.fromJson(String json) { return switch (json) {
-  'card_bin' => cardBin,
-  'card_fingerprint' => cardFingerprint,
-  'case_sensitive_string' => caseSensitiveString,
-  'country' => country,
-  'customer_id' => customerId,
-  'email' => email,
-  'ip_address' => ipAddress,
-  'sepa_debit_fingerprint' => sepaDebitFingerprint,
-  'string' => string,
-  'us_bank_account_fingerprint' => usBankAccountFingerprint,
-  _ => RadarValueListItemType._(json),
-}; }
-
-static const RadarValueListItemType cardBin = RadarValueListItemType._('card_bin');
-
-static const RadarValueListItemType cardFingerprint = RadarValueListItemType._('card_fingerprint');
-
-static const RadarValueListItemType caseSensitiveString = RadarValueListItemType._('case_sensitive_string');
-
-static const RadarValueListItemType country = RadarValueListItemType._('country');
-
-static const RadarValueListItemType customerId = RadarValueListItemType._('customer_id');
-
-static const RadarValueListItemType email = RadarValueListItemType._('email');
-
-static const RadarValueListItemType ipAddress = RadarValueListItemType._('ip_address');
-
-static const RadarValueListItemType sepaDebitFingerprint = RadarValueListItemType._('sepa_debit_fingerprint');
-
-static const RadarValueListItemType string = RadarValueListItemType._('string');
-
-static const RadarValueListItemType usBankAccountFingerprint = RadarValueListItemType._('us_bank_account_fingerprint');
-
-static const List<RadarValueListItemType> values = [cardBin, cardFingerprint, caseSensitiveString, country, customerId, email, ipAddress, sepaDebitFingerprint, string, usBankAccountFingerprint];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarValueListItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarValueListItemType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class RadarValueListObject {const RadarValueListObject._(this.value);
-
-factory RadarValueListObject.fromJson(String json) { return switch (json) {
-  'radar.value_list' => radarValueList,
-  _ => RadarValueListObject._(json),
-}; }
-
-static const RadarValueListObject radarValueList = RadarValueListObject._('radar.value_list');
-
-static const List<RadarValueListObject> values = [radarValueList];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarValueListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarValueListObject($value)'; } 
- }
-/// Value lists allow you to group values together which can then be referenced in rules.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_radar_value_list/deleted_radar_value_list_object.dart';import 'package:pub_stripe_spec3/models/post_radar_value_lists_request/item_type.dart';import 'package:pub_stripe_spec3/models/radar_value_list/list_items.dart';/// Value lists allow you to group values together which can then be referenced in rules.
 /// 
 /// Related guide: [Default Stripe lists](https://docs.stripe.com/radar/lists#managing-list-items)
 @immutable final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
@@ -81,12 +10,12 @@ factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueLi
   created: (json['created'] as num).toInt(),
   createdBy: json['created_by'] as String,
   id: json['id'] as String,
-  itemType: RadarValueListItemType.fromJson(json['item_type'] as String),
-  listItems: RadarValueListListItems.fromJson(json['list_items'] as Map<String, dynamic>),
+  itemType: ItemType.fromJson(json['item_type'] as String),
+  listItems: ListItems.fromJson(json['list_items'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
-  object: RadarValueListObject.fromJson(json['object'] as String),
+  object: DeletedRadarValueListObject.fromJson(json['object'] as String),
 ); }
 
 /// The name of the value list for use in rules.
@@ -102,10 +31,10 @@ final String createdBy;
 final String id;
 
 /// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
-final RadarValueListItemType itemType;
+final ItemType itemType;
 
 /// List of items contained within this value list.
-final RadarValueListListItems listItems;
+final ListItems listItems;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -117,7 +46,7 @@ final Map<String,String> metadata;
 final String name;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final RadarValueListObject object;
+final DeletedRadarValueListObject object;
 
 Map<String, dynamic> toJson() { return {
   'alias': alias,
@@ -141,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object'); } 
-RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, RadarValueListItemType? itemType, RadarValueListListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, RadarValueListObject? object, }) { return RadarValueList(
+RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, ItemType? itemType, ListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, DeletedRadarValueListObject? object, }) { return RadarValueList(
   alias: alias ?? this.alias,
   created: created ?? this.created,
   createdBy: createdBy ?? this.createdBy,

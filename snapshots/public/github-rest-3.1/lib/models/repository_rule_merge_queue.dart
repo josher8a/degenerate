@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_merge_queue/repository_rule_merge_queue_parameters.dart';@immutable final class RepositoryRuleMergeQueueType {const RepositoryRuleMergeQueueType._(this.value);
 
 factory RepositoryRuleMergeQueueType.fromJson(String json) { return switch (json) {
   'merge_queue' => mergeQueue,

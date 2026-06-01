@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The type of run data source. Always `responses`.
-@immutable final class EvalResponsesSourceType {const EvalResponsesSourceType._(this.value);
-
-factory EvalResponsesSourceType.fromJson(String json) { return switch (json) {
-  'responses' => responses,
-  _ => EvalResponsesSourceType._(json),
-}; }
-
-static const EvalResponsesSourceType responses = EvalResponsesSourceType._('responses');
-
-static const List<EvalResponsesSourceType> values = [responses];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalResponsesSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalResponsesSourceType($value)'; } 
- }
-/// A EvalResponsesSource object describing a run data source configuration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source/create_eval_responses_run_data_source_type.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// A EvalResponsesSource object describing a run data source configuration.
 /// 
 @immutable final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata, this.model, this.instructionsSearch, this.createdAfter, this.createdBefore, this.reasoningEffort, this.temperature, this.topP, this.users, this.tools, });
 
 factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
-  type: EvalResponsesSourceType.fromJson(json['type'] as String),
+  type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
   model: json['model'] as String?,
   instructionsSearch: json['instructions_search'] as String?,
@@ -41,7 +19,7 @@ factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalRes
 ); }
 
 /// The type of run data source. Always `responses`.
-final EvalResponsesSourceType type;
+final CreateEvalResponsesRunDataSourceType type;
 
 /// Metadata filter for the responses. This is a query parameter used to select responses.
 final Map<String,dynamic>? metadata;
@@ -87,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   'tools': ?tools,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
+EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   model: model != null ? model() : this.model,

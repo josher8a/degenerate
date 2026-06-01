@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_audio_config.dart';import 'realtimekit_livestreaming_config.dart';import 'realtimekit_realtimekit_bucket_config.dart';import 'realtimekit_storage_config.dart';import 'realtimekit_video_config.dart';/// Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_audio_config.dart';import 'package:pub_cloudflare/models/realtimekit_livestreaming_config.dart';import 'package:pub_cloudflare/models/realtimekit_realtimekit_bucket_config.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';import 'package:pub_cloudflare/models/realtimekit_video_config.dart';/// Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.
 /// 
 @immutable final class RealtimekitRecordingConfig {const RealtimekitRecordingConfig({this.audioConfig, this.fileNamePrefix, this.liveStreamingConfig, this.maxSeconds, this.realtimekitBucketConfig, this.storageConfig, this.videoConfig, });
 

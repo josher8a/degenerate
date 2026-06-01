@@ -1,44 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_excluded_payment_method_types.dart';import 'post_setup_intents_intent_request_metadata.dart';import 'post_setup_intents_intent_request_payment_method_data.dart';import 'post_setup_intents_intent_request_payment_method_options.dart';@immutable final class PostSetupIntentsIntentRequestFlowDirections {const PostSetupIntentsIntentRequestFlowDirections._(this.value);
-
-factory PostSetupIntentsIntentRequestFlowDirections.fromJson(String json) { return switch (json) {
-  'inbound' => inbound,
-  'outbound' => outbound,
-  _ => PostSetupIntentsIntentRequestFlowDirections._(json),
-}; }
-
-static const PostSetupIntentsIntentRequestFlowDirections inbound = PostSetupIntentsIntentRequestFlowDirections._('inbound');
-
-static const PostSetupIntentsIntentRequestFlowDirections outbound = PostSetupIntentsIntentRequestFlowDirections._('outbound');
-
-static const List<PostSetupIntentsIntentRequestFlowDirections> values = [inbound, outbound];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentRequestFlowDirections && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentRequestFlowDirections($value)'; } 
- }
-@immutable final class PostSetupIntentsIntentRequest {const PostSetupIntentsIntentRequest({this.attachToSelf, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.metadata, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';@immutable final class PostSetupIntentsIntentRequest {const PostSetupIntentsIntentRequest({this.attachToSelf, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.metadata, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory PostSetupIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequest(
   attachToSelf: json['attach_to_self'] as bool?,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostSetupIntentsIntentRequestExcludedPaymentMethodTypesVariant2.fromJson(v as String),) : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => ExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentRequestFlowDirections.fromJson(e as String)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostSetupIntentsIntentRequestMetadataVariant2.fromJson(v as String),) : null,
+  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => FlowDirections.fromJson(e as String)).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
-  paymentMethodData: json['payment_method_data'] != null ? PostSetupIntentsIntentRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
@@ -61,7 +37,7 @@ final String? customerAccount;
 final String? description;
 
 /// The list of payment method types to exclude from use with this SetupIntent.
-final PostSetupIntentsIntentRequestExcludedPaymentMethodTypes? excludedPaymentMethodTypes;
+final PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes? excludedPaymentMethodTypes;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -69,10 +45,10 @@ final List<String>? expand;
 /// Indicates the directions of money movement for which this payment method is intended to be used.
 /// 
 /// Include `inbound` if you intend to use the payment method as the origin to pull funds from. Include `outbound` if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.
-final List<PostSetupIntentsIntentRequestFlowDirections>? flowDirections;
+final List<FlowDirections>? flowDirections;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostSetupIntentsIntentRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// ID of the payment method (a PaymentMethod, Card, or saved Source object) to attach to this SetupIntent. To unset this field to null, pass in an empty string.
 final String? paymentMethod;
@@ -82,10 +58,10 @@ final String? paymentMethodConfiguration;
 
 /// When included, this hash creates a PaymentMethod that is set as the [`payment_method`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-payment_method)
 /// value in the SetupIntent.
-final PostSetupIntentsIntentRequestPaymentMethodData? paymentMethodData;
+final PostPaymentIntentsIntentConfirmRequestPaymentMethodData? paymentMethodData;
 
 /// Payment method-specific configuration for this SetupIntent.
-final PostSetupIntentsIntentRequestPaymentMethodOptions? paymentMethodOptions;
+final PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? paymentMethodOptions;
 
 /// The list of payment method types (for example, card) that this SetupIntent can set up. If you don't provide this, Stripe will dynamically show relevant payment methods from your [payment method settings](https://dashboard.stripe.com/settings/payment_methods). A list of valid payment method types can be found [here](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type).
 final List<String>? paymentMethodTypes;
@@ -106,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'payment_method_types': ?paymentMethodTypes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attach_to_self', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'flow_directions', 'metadata', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
-PostSetupIntentsIntentRequest copyWith({bool Function()? attachToSelf, String Function()? customer, String Function()? customerAccount, String Function()? description, PostSetupIntentsIntentRequestExcludedPaymentMethodTypes Function()? excludedPaymentMethodTypes, List<String> Function()? expand, List<PostSetupIntentsIntentRequestFlowDirections> Function()? flowDirections, PostSetupIntentsIntentRequestMetadata Function()? metadata, String Function()? paymentMethod, String Function()? paymentMethodConfiguration, PostSetupIntentsIntentRequestPaymentMethodData Function()? paymentMethodData, PostSetupIntentsIntentRequestPaymentMethodOptions Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, }) { return PostSetupIntentsIntentRequest(
+PostSetupIntentsIntentRequest copyWith({bool Function()? attachToSelf, String Function()? customer, String Function()? customerAccount, String Function()? description, PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes Function()? excludedPaymentMethodTypes, List<String> Function()? expand, List<FlowDirections> Function()? flowDirections, Metadata Function()? metadata, String Function()? paymentMethod, String Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, }) { return PostSetupIntentsIntentRequest(
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

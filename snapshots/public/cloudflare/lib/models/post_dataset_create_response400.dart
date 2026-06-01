@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_create_response400_errors.dart';@immutable final class PostDatasetCreateResponse400 {const PostDatasetCreateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_change_job_status_response400/ai_search_instance_change_job_status_response400_errors.dart';@immutable final class PostDatasetCreateResponse400 {const PostDatasetCreateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PostDatasetCreateResponse400.fromJson(Map<String, dynamic> json) { return PostDatasetCreateResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => PostDatasetCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<PostDatasetCreateResponse400Errors> errors;
+final List<AiSearchInstanceChangeJobStatusResponse400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostDatasetCreateResponse400 copyWith({List<PostDatasetCreateResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return PostDatasetCreateResponse400(
+PostDatasetCreateResponse400 copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return PostDatasetCreateResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

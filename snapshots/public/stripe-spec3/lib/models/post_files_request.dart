@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_request_file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_files_request/file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 @immutable final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);
 
 factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   file: base64Decode(json['file'] as String),
-  fileLinkData: json['file_link_data'] != null ? PostFilesRequestFileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
+  fileLinkData: json['file_link_data'] != null ? FileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
   purpose: PostFilesRequestPurpose.fromJson(json['purpose'] as String),
 ); }
 
@@ -80,7 +80,7 @@ final List<String>? expand;
 final Uint8List file;
 
 /// Optional parameters that automatically create a [file link](https://api.stripe.com#file_links) for the newly created file.
-final PostFilesRequestFileLinkData? fileLinkData;
+final FileLinkData? fileLinkData;
 
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 final PostFilesRequestPurpose purpose;
@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('purpose'); } 
-PostFilesRequest copyWith({List<String> Function()? expand, Uint8List? file, PostFilesRequestFileLinkData Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
+PostFilesRequest copyWith({List<String> Function()? expand, Uint8List? file, FileLinkData Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
   expand: expand != null ? expand() : this.expand,
   file: file ?? this.file,
   fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,

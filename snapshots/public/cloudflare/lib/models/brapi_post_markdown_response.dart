@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_response_errors.dart';@immutable final class BrapiPostMarkdownResponse {const BrapiPostMarkdownResponse({required this.success, this.errors, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class BrapiPostMarkdownResponse {const BrapiPostMarkdownResponse({required this.success, this.errors, this.result, });
 
 factory BrapiPostMarkdownResponse.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownResponse(
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostMarkdownResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as String?,
   success: json['success'] as bool,
 ); }
 
-final List<BrapiPostMarkdownResponseErrors>? errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors;
 
 /// Markdown
 final String? result;
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-BrapiPostMarkdownResponse copyWith({List<BrapiPostMarkdownResponseErrors> Function()? errors, String Function()? result, bool? success, }) { return BrapiPostMarkdownResponse(
+BrapiPostMarkdownResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> Function()? errors, String Function()? result, bool? success, }) { return BrapiPostMarkdownResponse(
   errors: errors != null ? errors() : this.errors,
   result: result != null ? result() : this.result,
   success: success ?? this.success,

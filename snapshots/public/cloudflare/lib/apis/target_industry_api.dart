@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_target_industry_list_by_dataset_response.dart';import '../models/get_target_industry_list_by_dataset_response400.dart';import '../models/get_target_industry_list_complete_response.dart';import '../models/get_target_industry_list_complete_response400.dart';import '../models/get_target_industry_list_response.dart';import '../models/get_target_industry_list_response400.dart';/// TargetIndustryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_target_industry_list_by_dataset_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_by_dataset_response400.dart';import 'package:pub_cloudflare/models/get_target_industry_list_complete_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_complete_response400.dart';import 'package:pub_cloudflare/models/get_target_industry_list_response.dart';import 'package:pub_cloudflare/models/get_target_industry_list_response400.dart';/// TargetIndustryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

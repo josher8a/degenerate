@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/waitingroom_create_rule.dart';import '../models/waitingroom_event_details_result.dart';import '../models/waitingroom_event_id.dart';import '../models/waitingroom_event_id_response_result.dart';import '../models/waitingroom_event_result.dart';import '../models/waitingroom_identifier.dart';import '../models/waitingroom_patch_rule.dart';import '../models/waitingroom_preview_response_result.dart';import '../models/waitingroom_query_event.dart';import '../models/waitingroom_query_preview.dart';import '../models/waitingroom_query_waitingroom.dart';import '../models/waitingroom_rule_id.dart';import '../models/waitingroom_rule_result.dart';import '../models/waitingroom_status_response_result.dart';import '../models/waitingroom_waiting_room_id.dart';import '../models/waitingroom_waiting_room_id_response_result.dart';import '../models/waitingroom_waitingroom.dart';import '../models/waitingroom_zone_settings.dart';import '../models/waitingroom_zone_settings_response_result.dart';/// WaitingRoomApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_create_rule.dart';import 'package:pub_cloudflare/models/waitingroom_event_details_result.dart';import 'package:pub_cloudflare/models/waitingroom_event_id.dart';import 'package:pub_cloudflare/models/waitingroom_event_result.dart';import 'package:pub_cloudflare/models/waitingroom_identifier.dart';import 'package:pub_cloudflare/models/waitingroom_patch_rule.dart';import 'package:pub_cloudflare/models/waitingroom_preview_response/waitingroom_preview_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_query_event.dart';import 'package:pub_cloudflare/models/waitingroom_query_preview.dart';import 'package:pub_cloudflare/models/waitingroom_query_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_rule_id.dart';import 'package:pub_cloudflare/models/waitingroom_rule_result.dart';import 'package:pub_cloudflare/models/waitingroom_status_response/waitingroom_status_response_result.dart';import 'package:pub_cloudflare/models/waitingroom_waiting_room_id.dart';import 'package:pub_cloudflare/models/waitingroom_waitingroom.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings.dart';import 'package:pub_cloudflare/models/waitingroom_zone_settings_response/waitingroom_zone_settings_response_result.dart';/// WaitingRoomApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -173,7 +173,7 @@ return execute(
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingRoomIdResponseResult?, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -186,7 +186,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WaitingroomWaitingRoomIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -322,7 +322,7 @@ return execute(
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventIdResponseResult?, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -335,7 +335,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WaitingroomEventIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

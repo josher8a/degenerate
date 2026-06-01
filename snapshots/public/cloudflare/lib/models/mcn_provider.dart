@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';@immutable final class McnProvider {const McnProvider({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cloud_type.dart';import 'package:pub_cloudflare/models/mcn_provider_discovery_status.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';import 'package:pub_cloudflare/models/mcn_provider_lifecycle_state.dart';import 'package:pub_cloudflare/models/mcn_provider_status.dart';@immutable final class McnProvider {const McnProvider({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
 
 factory McnProvider.fromJson(Map<String, dynamic> json) { return McnProvider(
   awsArn: json['aws_arn'] as String?,

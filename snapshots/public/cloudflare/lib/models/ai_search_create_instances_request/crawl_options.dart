@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CrawlOptionsSource {const CrawlOptionsSource._(this.value);
+
+factory CrawlOptionsSource.fromJson(String json) { return switch (json) {
+  'all' => all,
+  'sitemaps' => sitemaps,
+  'links' => links,
+  _ => CrawlOptionsSource._(json),
+}; }
+
+static const CrawlOptionsSource all = CrawlOptionsSource._('all');
+
+static const CrawlOptionsSource sitemaps = CrawlOptionsSource._('sitemaps');
+
+static const CrawlOptionsSource links = CrawlOptionsSource._('links');
+
+static const List<CrawlOptionsSource> values = [all, sitemaps, links];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CrawlOptionsSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CrawlOptionsSource($value)'; } 
+ }
+@immutable final class CrawlOptions {const CrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = CrawlOptionsSource.all, });
+
+factory CrawlOptions.fromJson(Map<String, dynamic> json) { return CrawlOptions(
+  depth: json['depth'] != null ? (json['depth'] as num).toDouble() : null,
+  includeExternalLinks: json.containsKey('include_external_links') ? json['include_external_links'] as bool : false,
+  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
+  maxAge: json['max_age'] != null ? (json['max_age'] as num).toDouble() : null,
+  source: json.containsKey('source') ? CrawlOptionsSource.fromJson(json['source'] as String) : CrawlOptionsSource.all,
+); }
+
+final double? depth;
+
+final bool includeExternalLinks;
+
+final bool includeSubdomains;
+
+final double? maxAge;
+
+final CrawlOptionsSource source;
+
+Map<String, dynamic> toJson() { return {
+  'depth': ?depth,
+  'include_external_links': includeExternalLinks,
+  'include_subdomains': includeSubdomains,
+  'max_age': ?maxAge,
+  'source': source.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'depth', 'include_external_links', 'include_subdomains', 'max_age', 'source'}.contains(key)); } 
+CrawlOptions copyWith({double Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double Function()? maxAge, CrawlOptionsSource Function()? source, }) { return CrawlOptions(
+  depth: depth != null ? depth() : this.depth,
+  includeExternalLinks: includeExternalLinks != null ? includeExternalLinks() : this.includeExternalLinks,
+  includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
+  maxAge: maxAge != null ? maxAge() : this.maxAge,
+  source: source != null ? source() : this.source,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CrawlOptions &&
+          depth == other.depth &&
+          includeExternalLinks == other.includeExternalLinks &&
+          includeSubdomains == other.includeSubdomains &&
+          maxAge == other.maxAge &&
+          source == other.source; } 
+@override int get hashCode { return Object.hash(depth, includeExternalLinks, includeSubdomains, maxAge, source); } 
+@override String toString() { return 'CrawlOptions(depth: $depth, includeExternalLinks: $includeExternalLinks, includeSubdomains: $includeSubdomains, maxAge: $maxAge, source: $source)'; } 
+ }

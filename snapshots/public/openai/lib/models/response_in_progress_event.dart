@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response.dart';/// Emitted when the response is in progress.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response.dart';/// Emitted when the response is in progress.
 @immutable final class ResponseInProgressEvent {const ResponseInProgressEvent({required this.type, required this.response, required this.sequenceNumber, });
 
 factory ResponseInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseInProgressEvent(

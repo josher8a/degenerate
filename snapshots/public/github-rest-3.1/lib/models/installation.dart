@@ -1,37 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'enterprise.dart';import 'installation_account.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
-@immutable final class InstallationRepositorySelection {const InstallationRepositorySelection._(this.value);
-
-factory InstallationRepositorySelection.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'selected' => selected,
-  _ => InstallationRepositorySelection._(json),
-}; }
-
-static const InstallationRepositorySelection all = InstallationRepositorySelection._('all');
-
-static const InstallationRepositorySelection selected = InstallationRepositorySelection._('selected');
-
-static const List<InstallationRepositorySelection> values = [all, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InstallationRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InstallationRepositorySelection($value)'; } 
- }
-/// Installation
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/installation/installation_account.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Installation
 @immutable final class Installation {const Installation({required this.id, required this.account, required this.repositorySelection, required this.accessTokensUrl, required this.repositoriesUrl, required this.htmlUrl, required this.appId, required this.targetId, required this.targetType, required this.permissions, required this.events, required this.createdAt, required this.updatedAt, required this.singleFileName, required this.appSlug, required this.suspendedBy, required this.suspendedAt, this.clientId, this.hasMultipleSingleFiles, this.singleFilePaths, this.contactEmail, });
 
 factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   id: (json['id'] as num).toInt(),
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),) : null,
-  repositorySelection: InstallationRepositorySelection.fromJson(json['repository_selection'] as String),
+  repositorySelection: AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String),
   accessTokensUrl: Uri.parse(json['access_tokens_url'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -58,7 +33,7 @@ final int id;
 final InstallationAccount? account;
 
 /// Describe whether all repositories have been selected or there's a selection involved
-final InstallationRepositorySelection repositorySelection;
+final AuthenticationTokenRepositorySelection repositorySelection;
 
 final Uri accessTokensUrl;
 
@@ -137,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('app_slug') && json['app_slug'] is String &&
       json.containsKey('suspended_by') &&
       json.containsKey('suspended_at') && json['suspended_at'] is String; } 
-Installation copyWith({int? id, InstallationAccount? Function()? account, InstallationRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, String? Function()? contactEmail, }) { return Installation(
+Installation copyWith({int? id, InstallationAccount? Function()? account, AuthenticationTokenRepositorySelection? repositorySelection, Uri? accessTokensUrl, Uri? repositoriesUrl, Uri? htmlUrl, int? appId, String Function()? clientId, int? targetId, String? targetType, AppPermissions? permissions, List<String>? events, DateTime? createdAt, DateTime? updatedAt, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, String? appSlug, SimpleUser? Function()? suspendedBy, DateTime? Function()? suspendedAt, String? Function()? contactEmail, }) { return Installation(
   id: id ?? this.id,
   account: account != null ? account() : this.account,
   repositorySelection: repositorySelection ?? this.repositorySelection,

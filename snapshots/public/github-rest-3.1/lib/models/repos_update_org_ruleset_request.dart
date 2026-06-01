@@ -1,41 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-@immutable final class ReposUpdateOrgRulesetRequestTarget {const ReposUpdateOrgRulesetRequestTarget._(this.value);
-
-factory ReposUpdateOrgRulesetRequestTarget.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  'push' => push,
-  'repository' => repository,
-  _ => ReposUpdateOrgRulesetRequestTarget._(json),
-}; }
-
-static const ReposUpdateOrgRulesetRequestTarget branch = ReposUpdateOrgRulesetRequestTarget._('branch');
-
-static const ReposUpdateOrgRulesetRequestTarget tag = ReposUpdateOrgRulesetRequestTarget._('tag');
-
-static const ReposUpdateOrgRulesetRequestTarget push = ReposUpdateOrgRulesetRequestTarget._('push');
-
-static const ReposUpdateOrgRulesetRequestTarget repository = ReposUpdateOrgRulesetRequestTarget._('repository');
-
-static const List<ReposUpdateOrgRulesetRequestTarget> values = [branch, tag, push, repository];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateOrgRulesetRequestTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateOrgRulesetRequestTarget($value)'; } 
- }
-@immutable final class ReposUpdateOrgRulesetRequest {const ReposUpdateOrgRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_rules.dart';import 'package:pub_github_rest_3_1/models/org_ruleset_conditions.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';@immutable final class ReposUpdateOrgRulesetRequest {const ReposUpdateOrgRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateOrgRulesetRequest(
   name: json['name'] as String?,
-  target: json['target'] != null ? ReposUpdateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: json['enforcement'] != null ? RepositoryRuleEnforcement.fromJson(json['enforcement'] as String) : null,
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryRulesetConditions.fromJson(v as Map<String, dynamic>),) : null,
@@ -46,7 +15,7 @@ factory ReposUpdateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
 final String? name;
 
 /// The target of the ruleset
-final ReposUpdateOrgRulesetRequestTarget? target;
+final ReposCreateOrgRulesetRequestTarget? target;
 
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final RepositoryRuleEnforcement? enforcement;
@@ -68,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
-ReposUpdateOrgRulesetRequest copyWith({String Function()? name, ReposUpdateOrgRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, OrgRulesetConditions Function()? conditions, List<OrgRules> Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
+ReposUpdateOrgRulesetRequest copyWith({String Function()? name, ReposCreateOrgRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, OrgRulesetConditions Function()? conditions, List<OrgRules> Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement != null ? enforcement() : this.enforcement,

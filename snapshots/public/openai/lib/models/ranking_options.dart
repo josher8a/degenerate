@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hybrid_search_options.dart';@immutable final class RankerVersionType {const RankerVersionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/hybrid_search_options.dart';@immutable final class RankerVersionType {const RankerVersionType._(this.value);
 
 factory RankerVersionType.fromJson(String json) { return switch (json) {
   'auto' => auto,

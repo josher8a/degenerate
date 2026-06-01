@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_affinity_term.dart';import 'weighted_pod_affinity_term.dart';/// Pod anti affinity is a group of inter pod anti affinity scheduling rules.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/pod_affinity_term.dart';import 'package:pub_kubernetes_api_v1_openapi/models/weighted_pod_affinity_term.dart';/// Pod anti affinity is a group of inter pod anti affinity scheduling rules.
 @immutable final class PodAntiAffinity {const PodAntiAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
 
 factory PodAntiAffinity.fromJson(Map<String, dynamic> json) { return PodAntiAffinity(

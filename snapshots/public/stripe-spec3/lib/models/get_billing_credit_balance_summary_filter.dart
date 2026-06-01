@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_billing_credit_balance_summary_filter_applicability_scope.dart';@immutable final class GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter/applicability_scope.dart';@immutable final class GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType._(this.value);
 
 factory GetBillingCreditBalanceSummaryFilterType.fromJson(String json) { return switch (json) {
   'applicability_scope' => applicabilityScope,
@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class GetBillingCreditBalanceSummaryFilter {const GetBillingCreditBalanceSummaryFilter({required this.type, this.applicabilityScope, this.creditGrant, });
 
 factory GetBillingCreditBalanceSummaryFilter.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceSummaryFilter(
-  applicabilityScope: json['applicability_scope'] != null ? GetBillingCreditBalanceSummaryFilterApplicabilityScope.fromJson(json['applicability_scope'] as Map<String, dynamic>) : null,
+  applicabilityScope: json['applicability_scope'] != null ? ApplicabilityScope.fromJson(json['applicability_scope'] as Map<String, dynamic>) : null,
   creditGrant: json['credit_grant'] as String?,
   type: GetBillingCreditBalanceSummaryFilterType.fromJson(json['type'] as String),
 ); }
 
-final GetBillingCreditBalanceSummaryFilterApplicabilityScope? applicabilityScope;
+final ApplicabilityScope? applicabilityScope;
 
 final String? creditGrant;
 
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetBillingCreditBalanceSummaryFilter copyWith({GetBillingCreditBalanceSummaryFilterApplicabilityScope Function()? applicabilityScope, String Function()? creditGrant, GetBillingCreditBalanceSummaryFilterType? type, }) { return GetBillingCreditBalanceSummaryFilter(
+GetBillingCreditBalanceSummaryFilter copyWith({ApplicabilityScope Function()? applicabilityScope, String Function()? creditGrant, GetBillingCreditBalanceSummaryFilterType? type, }) { return GetBillingCreditBalanceSummaryFilter(
   applicabilityScope: applicabilityScope != null ? applicabilityScope() : this.applicabilityScope,
   creditGrant: creditGrant != null ? creditGrant() : this.creditGrant,
   type: type ?? this.type,

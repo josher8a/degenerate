@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset.dart';@immutable final class DlpDatasetsUploadVersionResponse {const DlpDatasetsUploadVersionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dataset.dart';@immutable final class DlpDatasetsUploadVersionResponse {const DlpDatasetsUploadVersionResponse({this.result});
 
 factory DlpDatasetsUploadVersionResponse.fromJson(Map<String, dynamic> json) { return DlpDatasetsUploadVersionResponse(
   result: json['result'] != null ? DlpDataset.fromJson(json['result'] as Map<String, dynamic>) : null,

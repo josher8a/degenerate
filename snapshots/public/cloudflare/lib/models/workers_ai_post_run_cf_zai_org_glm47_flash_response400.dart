@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_zai_org_glm47_flash_response400_errors.dart';@immutable final class WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 {const WorkersAiPostRunCfZaiOrgGlm47FlashResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/n0_response400/n0_response400_errors.dart';@immutable final class WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 {const WorkersAiPostRunCfZaiOrgGlm47FlashResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfZaiOrgGlm47FlashResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfZaiOrgGlm47FlashResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfZaiOrgGlm47FlashResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => $0Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 
-final List<WorkersAiPostRunCfZaiOrgGlm47FlashResponse400Errors> errors;
+final List<$0Response400Errors> errors;
 
 final Map<String,dynamic> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 copyWith({List<WorkersAiPostRunCfZaiOrgGlm47FlashResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return WorkersAiPostRunCfZaiOrgGlm47FlashResponse400(
+WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 copyWith({List<$0Response400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return WorkersAiPostRunCfZaiOrgGlm47FlashResponse400(
   errors: errors ?? this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

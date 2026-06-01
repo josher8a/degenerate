@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_summary_customer.dart';import 'credit_balance.dart';import 'customer.dart';import 'deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_summary/billing_credit_balance_summary_customer.dart';import 'package:pub_stripe_spec3/models/credit_balance.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
 
 factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {

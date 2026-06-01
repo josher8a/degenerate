@@ -1,40 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `python`.
-@immutable final class GraderPythonType {const GraderPythonType._(this.value);
-
-factory GraderPythonType.fromJson(String json) { return switch (json) {
-  'python' => python,
-  _ => GraderPythonType._(json),
-}; }
-
-static const GraderPythonType python = GraderPythonType._('python');
-
-static const List<GraderPythonType> values = [python];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderPythonType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderPythonType($value)'; } 
- }
-/// A PythonGrader object that runs a python script on the input.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_python/eval_grader_python_type.dart';/// A PythonGrader object that runs a python script on the input.
 /// 
 @immutable final class GraderPython {const GraderPython({required this.type, required this.name, required this.source, this.imageTag, });
 
 factory GraderPython.fromJson(Map<String, dynamic> json) { return GraderPython(
-  type: GraderPythonType.fromJson(json['type'] as String),
+  type: EvalGraderPythonType.fromJson(json['type'] as String),
   name: json['name'] as String,
   source: json['source'] as String,
   imageTag: json['image_tag'] as String?,
 ); }
 
 /// The object type, which is always `python`.
-final GraderPythonType type;
+final EvalGraderPythonType type;
 
 /// The name of the grader.
 final String name;
@@ -54,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') && json['source'] is String; } 
-GraderPython copyWith({GraderPythonType? type, String? name, String? source, String Function()? imageTag, }) { return GraderPython(
+GraderPython copyWith({EvalGraderPythonType? type, String? name, String? source, String Function()? imageTag, }) { return GraderPython(
   type: type ?? this.type,
   name: name ?? this.name,
   source: source ?? this.source,

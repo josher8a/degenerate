@@ -1,222 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_card_installments_options.dart';import 'payment_pages_private_card_payment_method_options_resource_restrictions.dart';/// Controls when the funds will be captured from the customer's account.
-@immutable final class CheckoutCardPaymentMethodOptionsCaptureMethod {const CheckoutCardPaymentMethodOptionsCaptureMethod._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
-  'manual' => manual,
-  _ => CheckoutCardPaymentMethodOptionsCaptureMethod._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsCaptureMethod manual = CheckoutCardPaymentMethodOptionsCaptureMethod._('manual');
-
-static const List<CheckoutCardPaymentMethodOptionsCaptureMethod> values = [manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsCaptureMethod($value)'; } 
- }
-/// Request ability to [capture beyond the standard authorization validity window](/payments/extended-authorization) for this CheckoutSession.
-@immutable final class CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization {const CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(String json) { return switch (json) {
-  'if_available' => ifAvailable,
-  'never' => never,
-  _ => CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization ifAvailable = CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._('if_available');
-
-static const CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization never = CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization._('never');
-
-static const List<CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization> values = [ifAvailable, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization($value)'; } 
- }
-/// Request ability to [increment the authorization](/payments/incremental-authorization) for this CheckoutSession.
-@immutable final class CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization {const CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
-  'if_available' => ifAvailable,
-  'never' => never,
-  _ => CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization ifAvailable = CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._('if_available');
-
-static const CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization never = CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization._('never');
-
-static const List<CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization> values = [ifAvailable, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization($value)'; } 
- }
-/// Request ability to make [multiple captures](/payments/multicapture) for this CheckoutSession.
-@immutable final class CheckoutCardPaymentMethodOptionsRequestMulticapture {const CheckoutCardPaymentMethodOptionsRequestMulticapture._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsRequestMulticapture.fromJson(String json) { return switch (json) {
-  'if_available' => ifAvailable,
-  'never' => never,
-  _ => CheckoutCardPaymentMethodOptionsRequestMulticapture._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsRequestMulticapture ifAvailable = CheckoutCardPaymentMethodOptionsRequestMulticapture._('if_available');
-
-static const CheckoutCardPaymentMethodOptionsRequestMulticapture never = CheckoutCardPaymentMethodOptionsRequestMulticapture._('never');
-
-static const List<CheckoutCardPaymentMethodOptionsRequestMulticapture> values = [ifAvailable, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestMulticapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestMulticapture($value)'; } 
- }
-/// Request ability to [overcapture](/payments/overcapture) for this CheckoutSession.
-@immutable final class CheckoutCardPaymentMethodOptionsRequestOvercapture {const CheckoutCardPaymentMethodOptionsRequestOvercapture._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsRequestOvercapture.fromJson(String json) { return switch (json) {
-  'if_available' => ifAvailable,
-  'never' => never,
-  _ => CheckoutCardPaymentMethodOptionsRequestOvercapture._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsRequestOvercapture ifAvailable = CheckoutCardPaymentMethodOptionsRequestOvercapture._('if_available');
-
-static const CheckoutCardPaymentMethodOptionsRequestOvercapture never = CheckoutCardPaymentMethodOptionsRequestOvercapture._('never');
-
-static const List<CheckoutCardPaymentMethodOptionsRequestOvercapture> values = [ifAvailable, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestOvercapture && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestOvercapture($value)'; } 
- }
-/// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. If not provided, this value defaults to `automatic`. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-@immutable final class CheckoutCardPaymentMethodOptionsRequestThreeDSecure {const CheckoutCardPaymentMethodOptionsRequestThreeDSecure._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(String json) { return switch (json) {
-  'any' => any,
-  'automatic' => automatic,
-  'challenge' => challenge,
-  _ => CheckoutCardPaymentMethodOptionsRequestThreeDSecure._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsRequestThreeDSecure any = CheckoutCardPaymentMethodOptionsRequestThreeDSecure._('any');
-
-static const CheckoutCardPaymentMethodOptionsRequestThreeDSecure automatic = CheckoutCardPaymentMethodOptionsRequestThreeDSecure._('automatic');
-
-static const CheckoutCardPaymentMethodOptionsRequestThreeDSecure challenge = CheckoutCardPaymentMethodOptionsRequestThreeDSecure._('challenge');
-
-static const List<CheckoutCardPaymentMethodOptionsRequestThreeDSecure> values = [any, automatic, challenge];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsRequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsRequestThreeDSecure($value)'; } 
- }
-/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class CheckoutCardPaymentMethodOptionsSetupFutureUsage {const CheckoutCardPaymentMethodOptionsSetupFutureUsage._(this.value);
-
-factory CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => CheckoutCardPaymentMethodOptionsSetupFutureUsage._(json),
-}; }
-
-static const CheckoutCardPaymentMethodOptionsSetupFutureUsage none = CheckoutCardPaymentMethodOptionsSetupFutureUsage._('none');
-
-static const CheckoutCardPaymentMethodOptionsSetupFutureUsage offSession = CheckoutCardPaymentMethodOptionsSetupFutureUsage._('off_session');
-
-static const CheckoutCardPaymentMethodOptionsSetupFutureUsage onSession = CheckoutCardPaymentMethodOptionsSetupFutureUsage._('on_session');
-
-static const List<CheckoutCardPaymentMethodOptionsSetupFutureUsage> values = [none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutCardPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutCardPaymentMethodOptionsSetupFutureUsage($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';import 'package:pub_stripe_spec3/models/checkout_card_installments_options.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/checkout_card_payment_method_options_request_three_d_secure.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_extended_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_incremental_authorization.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_multicapture.dart';import 'package:pub_stripe_spec3/models/checkout_card_payment_method_options/request_overcapture.dart';import 'package:pub_stripe_spec3/models/payment_pages_private_card_payment_method_options_resource_restrictions.dart';/// 
 @immutable final class CheckoutCardPaymentMethodOptions {const CheckoutCardPaymentMethodOptions({required this.requestThreeDSecure, this.captureMethod, this.installments, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.restrictions, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
 
 factory CheckoutCardPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutCardPaymentMethodOptions(
-  captureMethod: json['capture_method'] != null ? CheckoutCardPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
   installments: json['installments'] != null ? CheckoutCardInstallmentsOptions.fromJson(json['installments'] as Map<String, dynamic>) : null,
-  requestExtendedAuthorization: json['request_extended_authorization'] != null ? CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
-  requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
-  requestMulticapture: json['request_multicapture'] != null ? CheckoutCardPaymentMethodOptionsRequestMulticapture.fromJson(json['request_multicapture'] as String) : null,
-  requestOvercapture: json['request_overcapture'] != null ? CheckoutCardPaymentMethodOptionsRequestOvercapture.fromJson(json['request_overcapture'] as String) : null,
+  requestExtendedAuthorization: json['request_extended_authorization'] != null ? RequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
+  requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? RequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
+  requestMulticapture: json['request_multicapture'] != null ? RequestMulticapture.fromJson(json['request_multicapture'] as String) : null,
+  requestOvercapture: json['request_overcapture'] != null ? RequestOvercapture.fromJson(json['request_overcapture'] as String) : null,
   requestThreeDSecure: CheckoutCardPaymentMethodOptionsRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String),
   restrictions: json['restrictions'] != null ? PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutCardPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] as String?,
   statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] as String?,
 ); }
 
 /// Controls when the funds will be captured from the customer's account.
-final CheckoutCardPaymentMethodOptionsCaptureMethod? captureMethod;
+final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
 final CheckoutCardInstallmentsOptions? installments;
 
 /// Request ability to [capture beyond the standard authorization validity window](/payments/extended-authorization) for this CheckoutSession.
-final CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization? requestExtendedAuthorization;
+final RequestExtendedAuthorization? requestExtendedAuthorization;
 
 /// Request ability to [increment the authorization](/payments/incremental-authorization) for this CheckoutSession.
-final CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization? requestIncrementalAuthorization;
+final RequestIncrementalAuthorization? requestIncrementalAuthorization;
 
 /// Request ability to make [multiple captures](/payments/multicapture) for this CheckoutSession.
-final CheckoutCardPaymentMethodOptionsRequestMulticapture? requestMulticapture;
+final RequestMulticapture? requestMulticapture;
 
 /// Request ability to [overcapture](/payments/overcapture) for this CheckoutSession.
-final CheckoutCardPaymentMethodOptionsRequestOvercapture? requestOvercapture;
+final RequestOvercapture? requestOvercapture;
 
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. If not provided, this value defaults to `automatic`. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
 final CheckoutCardPaymentMethodOptionsRequestThreeDSecure requestThreeDSecure;
@@ -230,7 +46,7 @@ final PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? restricti
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final CheckoutCardPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
+final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 /// Provides information about a card payment that customers see on their statements. Concatenated with the Kana prefix (shortened Kana descriptor) or Kana statement descriptor that’s set on the account to form the complete statement descriptor. Maximum 22 characters. On card statements, the *concatenation* of both prefix and suffix (including separators) will appear truncated to 22 characters.
 final String? statementDescriptorSuffixKana;
@@ -252,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('request_three_d_secure'); } 
-CheckoutCardPaymentMethodOptions copyWith({CheckoutCardPaymentMethodOptionsCaptureMethod Function()? captureMethod, CheckoutCardInstallmentsOptions Function()? installments, CheckoutCardPaymentMethodOptionsRequestExtendedAuthorization Function()? requestExtendedAuthorization, CheckoutCardPaymentMethodOptionsRequestIncrementalAuthorization Function()? requestIncrementalAuthorization, CheckoutCardPaymentMethodOptionsRequestMulticapture Function()? requestMulticapture, CheckoutCardPaymentMethodOptionsRequestOvercapture Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions Function()? restrictions, CheckoutCardPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? statementDescriptorSuffixKana, String Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(
+CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod Function()? captureMethod, CheckoutCardInstallmentsOptions Function()? installments, RequestExtendedAuthorization Function()? requestExtendedAuthorization, RequestIncrementalAuthorization Function()? requestIncrementalAuthorization, RequestMulticapture Function()? requestMulticapture, RequestOvercapture Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions Function()? restrictions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? statementDescriptorSuffixKana, String Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,

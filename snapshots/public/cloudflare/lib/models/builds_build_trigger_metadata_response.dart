@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_branch.dart';import 'builds_build_command.dart';import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_provider_account_name.dart';import 'builds_repo_name.dart';import 'builds_root_directory.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsBuildTriggerSource {const BuildsBuildTriggerSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsBuildTriggerSource {const BuildsBuildTriggerSource._(this.value);
 
 factory BuildsBuildTriggerSource.fromJson(String json) { return switch (json) {
   'push' => push,

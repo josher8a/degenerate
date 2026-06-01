@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_created_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'simple_user.dart';/// The reason for resolving the alert.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/organization_secret_scanning_alert/validity.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The reason for resolving the alert.
 @immutable final class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook._(this.value);
 
 factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return switch (json) {
@@ -40,34 +40,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningAlertResolutionWebhook($value)'; } 
  }
-/// The token status as of the latest validity check.
-@immutable final class SecretScanningAlertWebhookValidity {const SecretScanningAlertWebhookValidity._(this.value);
-
-factory SecretScanningAlertWebhookValidity.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  'unknown' => unknown,
-  _ => SecretScanningAlertWebhookValidity._(json),
-}; }
-
-static const SecretScanningAlertWebhookValidity active = SecretScanningAlertWebhookValidity._('active');
-
-static const SecretScanningAlertWebhookValidity inactive = SecretScanningAlertWebhookValidity._('inactive');
-
-static const SecretScanningAlertWebhookValidity unknown = SecretScanningAlertWebhookValidity._('unknown');
-
-static const List<SecretScanningAlertWebhookValidity> values = [active, inactive, unknown];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningAlertWebhookValidity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningAlertWebhookValidity($value)'; } 
- }
 @immutable final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.publiclyLeaked, this.multiRepo, this.assignedTo, });
 
 factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return SecretScanningAlertWebhook(
@@ -83,7 +55,7 @@ factory SecretScanningAlertWebhook.fromJson(Map<String, dynamic> json) { return 
   resolutionComment: json['resolution_comment'] as String?,
   secretType: json['secret_type'] as String?,
   secretTypeDisplayName: json['secret_type_display_name'] as String?,
-  validity: json['validity'] != null ? SecretScanningAlertWebhookValidity.fromJson(json['validity'] as String) : null,
+  validity: json['validity'] != null ? Validity.fromJson(json['validity'] as String) : null,
   pushProtectionBypassed: json['push_protection_bypassed'] as bool?,
   pushProtectionBypassedBy: json['push_protection_bypassed_by'] != null ? SimpleUser.fromJson(json['push_protection_bypassed_by'] as Map<String, dynamic>) : null,
   pushProtectionBypassedAt: json['push_protection_bypassed_at'] != null ? DateTime.parse(json['push_protection_bypassed_at'] as String) : null,
@@ -133,7 +105,7 @@ final String? secretType;
 final String? secretTypeDisplayName;
 
 /// The token status as of the latest validity check.
-final SecretScanningAlertWebhookValidity? validity;
+final Validity? validity;
 
 /// Whether push protection was bypassed for the detected secret.
 final bool? pushProtectionBypassed;
@@ -188,7 +160,7 @@ Map<String, dynamic> toJson() { return {
   if (assignedTo != null) 'assigned_to': assignedTo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'created_at', 'updated_at', 'url', 'html_url', 'locations_url', 'resolution', 'resolved_at', 'resolved_by', 'resolution_comment', 'secret_type', 'secret_type_display_name', 'validity', 'push_protection_bypassed', 'push_protection_bypassed_by', 'push_protection_bypassed_at', 'push_protection_bypass_request_reviewer', 'push_protection_bypass_request_reviewer_comment', 'push_protection_bypass_request_comment', 'push_protection_bypass_request_html_url', 'publicly_leaked', 'multi_repo', 'assigned_to'}.contains(key)); } 
-SecretScanningAlertWebhook copyWith({AlertNumber Function()? number, AlertCreatedAt Function()? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl Function()? url, AlertHtmlUrl Function()? htmlUrl, Uri Function()? locationsUrl, SecretScanningAlertResolutionWebhook? Function()? resolution, DateTime? Function()? resolvedAt, SimpleUser? Function()? resolvedBy, String? Function()? resolutionComment, String Function()? secretType, String Function()? secretTypeDisplayName, SecretScanningAlertWebhookValidity Function()? validity, bool? Function()? pushProtectionBypassed, SimpleUser? Function()? pushProtectionBypassedBy, DateTime? Function()? pushProtectionBypassedAt, SimpleUser? Function()? pushProtectionBypassRequestReviewer, String? Function()? pushProtectionBypassRequestReviewerComment, String? Function()? pushProtectionBypassRequestComment, Uri? Function()? pushProtectionBypassRequestHtmlUrl, bool? Function()? publiclyLeaked, bool? Function()? multiRepo, SimpleUser? Function()? assignedTo, }) { return SecretScanningAlertWebhook(
+SecretScanningAlertWebhook copyWith({AlertNumber Function()? number, AlertCreatedAt Function()? createdAt, AlertUpdatedAt? Function()? updatedAt, AlertUrl Function()? url, AlertHtmlUrl Function()? htmlUrl, Uri Function()? locationsUrl, SecretScanningAlertResolutionWebhook? Function()? resolution, DateTime? Function()? resolvedAt, SimpleUser? Function()? resolvedBy, String? Function()? resolutionComment, String Function()? secretType, String Function()? secretTypeDisplayName, Validity Function()? validity, bool? Function()? pushProtectionBypassed, SimpleUser? Function()? pushProtectionBypassedBy, DateTime? Function()? pushProtectionBypassedAt, SimpleUser? Function()? pushProtectionBypassRequestReviewer, String? Function()? pushProtectionBypassRequestReviewerComment, String? Function()? pushProtectionBypassRequestComment, Uri? Function()? pushProtectionBypassRequestHtmlUrl, bool? Function()? publiclyLeaked, bool? Function()? multiRepo, SimpleUser? Function()? assignedTo, }) { return SecretScanningAlertWebhook(
   number: number != null ? number() : this.number,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

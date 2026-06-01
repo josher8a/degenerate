@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discounts_resource_discount_amount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';/// 
 @immutable final class ProrationDetails {const ProrationDetails({required this.discountAmounts});
 
 factory ProrationDetails.fromJson(Map<String, dynamic> json) { return ProrationDetails(

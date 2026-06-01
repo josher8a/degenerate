@@ -1,40 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PauseCollectionParamBehavior {const PauseCollectionParamBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/pause_collection_param/pause_collection_param_behavior.dart';@immutable final class pause_collection_param {const pause_collection_param({required this.behavior, this.resumesAt, });
 
-factory PauseCollectionParamBehavior.fromJson(String json) { return switch (json) {
-  'keep_as_draft' => keepAsDraft,
-  'mark_uncollectible' => markUncollectible,
-  'void' => $void,
-  _ => PauseCollectionParamBehavior._(json),
-}; }
-
-static const PauseCollectionParamBehavior keepAsDraft = PauseCollectionParamBehavior._('keep_as_draft');
-
-static const PauseCollectionParamBehavior markUncollectible = PauseCollectionParamBehavior._('mark_uncollectible');
-
-static const PauseCollectionParamBehavior $void = PauseCollectionParamBehavior._('void');
-
-static const List<PauseCollectionParamBehavior> values = [keepAsDraft, markUncollectible, $void];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PauseCollectionParamBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PauseCollectionParamBehavior($value)'; } 
- }
-@immutable final class PauseCollectionParam {const PauseCollectionParam({required this.behavior, this.resumesAt, });
-
-factory PauseCollectionParam.fromJson(Map<String, dynamic> json) { return PauseCollectionParam(
-  behavior: PauseCollectionParamBehavior.fromJson(json['behavior'] as String),
+factory pause_collection_param.fromJson(Map<String, dynamic> json) { return pause_collection_param(
+  behavior: pause_collection_paramBehavior.fromJson(json['behavior'] as String),
   resumesAt: json['resumes_at'] != null ? (json['resumes_at'] as num).toInt() : null,
 ); }
 
-final PauseCollectionParamBehavior behavior;
+final pause_collection_paramBehavior behavior;
 
 final int? resumesAt;
 
@@ -43,14 +16,14 @@ Map<String, dynamic> toJson() { return {
   'resumes_at': ?resumesAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('behavior'); } 
-PauseCollectionParam copyWith({PauseCollectionParamBehavior? behavior, int Function()? resumesAt, }) { return PauseCollectionParam(
+pause_collection_param copyWith({pause_collection_paramBehavior? behavior, int Function()? resumesAt, }) { return pause_collection_param(
   behavior: behavior ?? this.behavior,
   resumesAt: resumesAt != null ? resumesAt() : this.resumesAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is PauseCollectionParam &&
+      other is pause_collection_param &&
           behavior == other.behavior &&
           resumesAt == other.resumesAt; } 
 @override int get hashCode { return Object.hash(behavior, resumesAt); } 
-@override String toString() { return 'PauseCollectionParam(behavior: $behavior, resumesAt: $resumesAt)'; } 
+@override String toString() { return 'pause_collection_param(behavior: $behavior, resumesAt: $resumesAt)'; } 
  }

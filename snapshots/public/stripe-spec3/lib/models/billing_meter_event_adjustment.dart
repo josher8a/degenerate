@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_type.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
 
 factory BillingMeterEventAdjustmentObject.fromJson(String json) { return switch (json) {
@@ -21,53 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is BillingMeterEventAdjustmentObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BillingMeterEventAdjustmentObject($value)'; } 
- }
-/// The meter event adjustment's status.
-@immutable final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);
-
-factory BillingMeterEventAdjustmentStatus.fromJson(String json) { return switch (json) {
-  'complete' => complete,
-  'pending' => pending,
-  _ => BillingMeterEventAdjustmentStatus._(json),
-}; }
-
-static const BillingMeterEventAdjustmentStatus complete = BillingMeterEventAdjustmentStatus._('complete');
-
-static const BillingMeterEventAdjustmentStatus pending = BillingMeterEventAdjustmentStatus._('pending');
-
-static const List<BillingMeterEventAdjustmentStatus> values = [complete, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventAdjustmentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventAdjustmentStatus($value)'; } 
- }
-/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-@immutable final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);
-
-factory BillingMeterEventAdjustmentType.fromJson(String json) { return switch (json) {
-  'cancel' => cancel,
-  _ => BillingMeterEventAdjustmentType._(json),
-}; }
-
-static const BillingMeterEventAdjustmentType cancel = BillingMeterEventAdjustmentType._('cancel');
-
-static const List<BillingMeterEventAdjustmentType> values = [cancel];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventAdjustmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventAdjustmentType($value)'; } 
  }
 /// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.
 @immutable final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({required this.eventName, required this.livemode, required this.object, required this.status, required this.type, this.cancel, });

@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-@immutable final class ReposUpdateReleaseRequestMakeLatest {const ReposUpdateReleaseRequestMakeLatest._(this.value);
-
-factory ReposUpdateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
-  'true' => $true,
-  'false' => $false,
-  'legacy' => legacy,
-  _ => ReposUpdateReleaseRequestMakeLatest._(json),
-}; }
-
-static const ReposUpdateReleaseRequestMakeLatest $true = ReposUpdateReleaseRequestMakeLatest._('true');
-
-static const ReposUpdateReleaseRequestMakeLatest $false = ReposUpdateReleaseRequestMakeLatest._('false');
-
-static const ReposUpdateReleaseRequestMakeLatest legacy = ReposUpdateReleaseRequestMakeLatest._('legacy');
-
-static const List<ReposUpdateReleaseRequestMakeLatest> values = [$true, $false, legacy];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposUpdateReleaseRequestMakeLatest && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposUpdateReleaseRequestMakeLatest($value)'; } 
- }
-@immutable final class ReposUpdateReleaseRequest {const ReposUpdateReleaseRequest({this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.makeLatest, this.discussionCategoryName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_release_request/repos_create_release_request_make_latest.dart';@immutable final class ReposUpdateReleaseRequest {const ReposUpdateReleaseRequest({this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.makeLatest, this.discussionCategoryName, });
 
 factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateReleaseRequest(
   tagName: json['tag_name'] as String?,
@@ -37,7 +9,7 @@ factory ReposUpdateReleaseRequest.fromJson(Map<String, dynamic> json) { return R
   body: json['body'] as String?,
   draft: json['draft'] as bool?,
   prerelease: json['prerelease'] as bool?,
-  makeLatest: json['make_latest'] != null ? ReposUpdateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : null,
+  makeLatest: json['make_latest'] != null ? ReposCreateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : null,
   discussionCategoryName: json['discussion_category_name'] as String?,
 ); }
 
@@ -60,7 +32,7 @@ final bool? draft;
 final bool? prerelease;
 
 /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-final ReposUpdateReleaseRequestMakeLatest? makeLatest;
+final ReposCreateReleaseRequestMakeLatest? makeLatest;
 
 /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
 final String? discussionCategoryName;
@@ -76,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'discussion_category_name': ?discussionCategoryName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tag_name', 'target_commitish', 'name', 'body', 'draft', 'prerelease', 'make_latest', 'discussion_category_name'}.contains(key)); } 
-ReposUpdateReleaseRequest copyWith({String Function()? tagName, String Function()? targetCommitish, String Function()? name, String Function()? body, bool Function()? draft, bool Function()? prerelease, ReposUpdateReleaseRequestMakeLatest Function()? makeLatest, String Function()? discussionCategoryName, }) { return ReposUpdateReleaseRequest(
+ReposUpdateReleaseRequest copyWith({String Function()? tagName, String Function()? targetCommitish, String Function()? name, String Function()? body, bool Function()? draft, bool Function()? prerelease, ReposCreateReleaseRequestMakeLatest Function()? makeLatest, String Function()? discussionCategoryName, }) { return ReposUpdateReleaseRequest(
   tagName: tagName != null ? tagName() : this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   name: name != null ? name() : this.name,

@@ -1,67 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_rates_tax_rate_request_metadata.dart';/// The high-level tax type, such as `vat` or `sales_tax`.
-@immutable final class PostTaxRatesTaxRateRequestTaxType {const PostTaxRatesTaxRateRequestTaxType._(this.value);
-
-factory PostTaxRatesTaxRateRequestTaxType.fromJson(String json) { return switch (json) {
-  'amusement_tax' => amusementTax,
-  'communications_tax' => communicationsTax,
-  'gst' => gst,
-  'hst' => hst,
-  'igst' => igst,
-  'jct' => jct,
-  'lease_tax' => leaseTax,
-  'pst' => pst,
-  'qst' => qst,
-  'retail_delivery_fee' => retailDeliveryFee,
-  'rst' => rst,
-  'sales_tax' => salesTax,
-  'service_tax' => serviceTax,
-  'vat' => vat,
-  _ => PostTaxRatesTaxRateRequestTaxType._(json),
-}; }
-
-static const PostTaxRatesTaxRateRequestTaxType amusementTax = PostTaxRatesTaxRateRequestTaxType._('amusement_tax');
-
-static const PostTaxRatesTaxRateRequestTaxType communicationsTax = PostTaxRatesTaxRateRequestTaxType._('communications_tax');
-
-static const PostTaxRatesTaxRateRequestTaxType gst = PostTaxRatesTaxRateRequestTaxType._('gst');
-
-static const PostTaxRatesTaxRateRequestTaxType hst = PostTaxRatesTaxRateRequestTaxType._('hst');
-
-static const PostTaxRatesTaxRateRequestTaxType igst = PostTaxRatesTaxRateRequestTaxType._('igst');
-
-static const PostTaxRatesTaxRateRequestTaxType jct = PostTaxRatesTaxRateRequestTaxType._('jct');
-
-static const PostTaxRatesTaxRateRequestTaxType leaseTax = PostTaxRatesTaxRateRequestTaxType._('lease_tax');
-
-static const PostTaxRatesTaxRateRequestTaxType pst = PostTaxRatesTaxRateRequestTaxType._('pst');
-
-static const PostTaxRatesTaxRateRequestTaxType qst = PostTaxRatesTaxRateRequestTaxType._('qst');
-
-static const PostTaxRatesTaxRateRequestTaxType retailDeliveryFee = PostTaxRatesTaxRateRequestTaxType._('retail_delivery_fee');
-
-static const PostTaxRatesTaxRateRequestTaxType rst = PostTaxRatesTaxRateRequestTaxType._('rst');
-
-static const PostTaxRatesTaxRateRequestTaxType salesTax = PostTaxRatesTaxRateRequestTaxType._('sales_tax');
-
-static const PostTaxRatesTaxRateRequestTaxType serviceTax = PostTaxRatesTaxRateRequestTaxType._('service_tax');
-
-static const PostTaxRatesTaxRateRequestTaxType vat = PostTaxRatesTaxRateRequestTaxType._('vat');
-
-static const List<PostTaxRatesTaxRateRequestTaxType> values = [amusementTax, communicationsTax, gst, hst, igst, jct, leaseTax, pst, qst, retailDeliveryFee, rst, salesTax, serviceTax, vat];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxRatesTaxRateRequestTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxRatesTaxRateRequestTaxType($value)'; } 
- }
-@immutable final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_tax_rates_request/post_tax_rates_request_tax_type.dart';@immutable final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 
 factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return PostTaxRatesTaxRateRequest(
   active: json['active'] as bool?,
@@ -70,9 +9,9 @@ factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return 
   displayName: json['display_name'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   jurisdiction: json['jurisdiction'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTaxRatesTaxRateRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   state: json['state'] as String?,
-  taxType: json['tax_type'] != null ? PostTaxRatesTaxRateRequestTaxType.fromJson(json['tax_type'] as String) : null,
+  taxType: json['tax_type'] != null ? PostTaxRatesRequestTaxType.fromJson(json['tax_type'] as String) : null,
 ); }
 
 /// Flag determining whether the tax rate is active or inactive (archived). Inactive tax rates cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
@@ -94,13 +33,13 @@ final List<String>? expand;
 final String? jurisdiction;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostTaxRatesTaxRateRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// [ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2), without country prefix. For example, "NY" for New York, United States.
 final String? state;
 
 /// The high-level tax type, such as `vat` or `sales_tax`.
-final PostTaxRatesTaxRateRequestTaxType? taxType;
+final PostTaxRatesRequestTaxType? taxType;
 
 Map<String, dynamic> toJson() { return {
   'active': ?active,
@@ -114,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (taxType != null) 'tax_type': taxType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'country', 'description', 'display_name', 'expand', 'jurisdiction', 'metadata', 'state', 'tax_type'}.contains(key)); } 
-PostTaxRatesTaxRateRequest copyWith({bool Function()? active, String Function()? country, String Function()? description, String Function()? displayName, List<String> Function()? expand, String Function()? jurisdiction, PostTaxRatesTaxRateRequestMetadata Function()? metadata, String Function()? state, PostTaxRatesTaxRateRequestTaxType Function()? taxType, }) { return PostTaxRatesTaxRateRequest(
+PostTaxRatesTaxRateRequest copyWith({bool Function()? active, String Function()? country, String Function()? description, String Function()? displayName, List<String> Function()? expand, String Function()? jurisdiction, Metadata Function()? metadata, String Function()? state, PostTaxRatesRequestTaxType Function()? taxType, }) { return PostTaxRatesTaxRateRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,

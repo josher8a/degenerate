@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_dex_test_details_kind.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import '../models/digital_experience_monitoring_dex_delete_response_collection_result.dart';import '../models/digital_experience_monitoring_schemas_test_id.dart';import '../models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_dex_test_details_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_usage_billable.dart';/// Workflow Usage
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/workflow_usage/workflow_usage_billable.dart';/// Workflow Usage
 @immutable final class WorkflowUsage {const WorkflowUsage({required this.billable});
 
 factory WorkflowUsage.fromJson(Map<String, dynamic> json) { return WorkflowUsage(

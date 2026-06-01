@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_setting_object_delete.dart';@immutable final class TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete {const TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_setting_object_delete.dart';@immutable final class TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete {const TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete({this.result});
 
 factory TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete(
   result: json['result'] != null ? TlsCertificatesAndHostnamesSettingObjectDelete.fromJson(json['result'] as Map<String, dynamic>) : null,

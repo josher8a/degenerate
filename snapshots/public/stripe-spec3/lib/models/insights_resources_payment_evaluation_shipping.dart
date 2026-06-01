@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_address.dart';/// Shipping details attached to this payment.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_address.dart';/// Shipping details attached to this payment.
 @immutable final class InsightsResourcesPaymentEvaluationShipping {const InsightsResourcesPaymentEvaluationShipping({required this.address, this.name, this.phone, });
 
 factory InsightsResourcesPaymentEvaluationShipping.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationShipping(

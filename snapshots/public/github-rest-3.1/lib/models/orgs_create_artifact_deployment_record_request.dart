@@ -1,61 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks {const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._(this.value);
-
-factory OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks.fromJson(String json) { return switch (json) {
-  'critical-resource' => criticalResource,
-  'internet-exposed' => internetExposed,
-  'lateral-movement' => lateralMovement,
-  'sensitive-data' => sensitiveData,
-  _ => OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._(json),
-}; }
-
-static const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks criticalResource = OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._('critical-resource');
-
-static const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks internetExposed = OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._('internet-exposed');
-
-static const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks lateralMovement = OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._('lateral-movement');
-
-static const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks sensitiveData = OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._('sensitive-data');
-
-static const List<OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks> values = [criticalResource, internetExposed, lateralMovement, sensitiveData];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks($value)'; } 
- }
-/// The status of the artifact. Can be either deployed or decommissioned.
-@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus._(this.value);
-
-factory OrgsCreateArtifactDeploymentRecordRequestStatus.fromJson(String json) { return switch (json) {
-  'deployed' => deployed,
-  'decommissioned' => decommissioned,
-  _ => OrgsCreateArtifactDeploymentRecordRequestStatus._(json),
-}; }
-
-static const OrgsCreateArtifactDeploymentRecordRequestStatus deployed = OrgsCreateArtifactDeploymentRecordRequestStatus._('deployed');
-
-static const OrgsCreateArtifactDeploymentRecordRequestStatus decommissioned = OrgsCreateArtifactDeploymentRecordRequestStatus._('decommissioned');
-
-static const List<OrgsCreateArtifactDeploymentRecordRequestStatus> values = [deployed, decommissioned];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateArtifactDeploymentRecordRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateArtifactDeploymentRecordRequestStatus($value)'; } 
- }
-@immutable final class OrgsCreateArtifactDeploymentRecordRequest {const OrgsCreateArtifactDeploymentRecordRequest({required this.name, required this.digest, required this.status, required this.logicalEnvironment, required this.deploymentName, this.version, this.physicalEnvironment, this.cluster, this.tags, this.runtimeRisks, this.githubRepository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/artifact_deployment_record/runtime_risks.dart';import 'package:pub_github_rest_3_1/models/orgs_create_artifact_deployment_record_request/orgs_create_artifact_deployment_record_request_status.dart';@immutable final class OrgsCreateArtifactDeploymentRecordRequest {const OrgsCreateArtifactDeploymentRecordRequest({required this.name, required this.digest, required this.status, required this.logicalEnvironment, required this.deploymentName, this.version, this.physicalEnvironment, this.cluster, this.tags, this.runtimeRisks, this.githubRepository, });
 
 factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactDeploymentRecordRequest(
   name: json['name'] as String,
@@ -67,7 +12,7 @@ factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> 
   cluster: json['cluster'] as String?,
   deploymentName: json['deployment_name'] as String,
   tags: (json['tags'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks.fromJson(e as String)).toList(),
+  runtimeRisks: (json['runtime_risks'] as List<dynamic>?)?.map((e) => RuntimeRisks.fromJson(e as String)).toList(),
   githubRepository: json['github_repository'] as String?,
 ); }
 
@@ -102,7 +47,7 @@ final String deploymentName;
 final Map<String,String>? tags;
 
 /// A list of runtime risks associated with the deployment.
-final List<OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks>? runtimeRisks;
+final List<RuntimeRisks>? runtimeRisks;
 
 /// The name of the GitHub repository associated with the artifact. This should be used
 /// when there are no provenance attestations available for the artifact. The repository
@@ -130,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('status') &&
       json.containsKey('logical_environment') && json['logical_environment'] is String &&
       json.containsKey('deployment_name') && json['deployment_name'] is String; } 
-OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String? deploymentName, Map<String, String> Function()? tags, List<OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks> Function()? runtimeRisks, String Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(
+OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String Function()? physicalEnvironment, String Function()? cluster, String? deploymentName, Map<String, String> Function()? tags, List<RuntimeRisks> Function()? runtimeRisks, String Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,

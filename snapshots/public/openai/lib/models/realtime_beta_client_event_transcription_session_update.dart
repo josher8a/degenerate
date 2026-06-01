@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_request.dart';/// The event type, must be `transcription_session.update`.
-@immutable final class RealtimeBetaClientEventTranscriptionSessionUpdateType {const RealtimeBetaClientEventTranscriptionSessionUpdateType._(this.value);
-
-factory RealtimeBetaClientEventTranscriptionSessionUpdateType.fromJson(String json) { return switch (json) {
-  'transcription_session.update' => transcriptionSessionUpdate,
-  _ => RealtimeBetaClientEventTranscriptionSessionUpdateType._(json),
-}; }
-
-static const RealtimeBetaClientEventTranscriptionSessionUpdateType transcriptionSessionUpdate = RealtimeBetaClientEventTranscriptionSessionUpdateType._('transcription_session.update');
-
-static const List<RealtimeBetaClientEventTranscriptionSessionUpdateType> values = [transcriptionSessionUpdate];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventTranscriptionSessionUpdateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventTranscriptionSessionUpdateType($value)'; } 
- }
-/// Send this event to update a transcription session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_client_event_transcription_session_update/realtime_beta_client_event_transcription_session_update_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request.dart';/// Send this event to update a transcription session.
 /// 
 @immutable final class RealtimeBetaClientEventTranscriptionSessionUpdate {const RealtimeBetaClientEventTranscriptionSessionUpdate({required this.type, required this.session, this.eventId, });
 

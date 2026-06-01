@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GithubOrganization {const GithubOrganization({required this.identityProviderId, required this.name, this.team, });
+
+factory GithubOrganization.fromJson(Map<String, dynamic> json) { return GithubOrganization(
+  identityProviderId: json['identity_provider_id'] as String,
+  name: json['name'] as String,
+  team: json['team'] as String?,
+); }
+
+/// The ID of your Github identity provider.
+final String identityProviderId;
+
+/// The name of the organization.
+final String name;
+
+/// The name of the team
+final String? team;
+
+Map<String, dynamic> toJson() { return {
+  'identity_provider_id': identityProviderId,
+  'name': name,
+  'team': ?team,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('identity_provider_id') && json['identity_provider_id'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+GithubOrganization copyWith({String? identityProviderId, String? name, String Function()? team, }) { return GithubOrganization(
+  identityProviderId: identityProviderId ?? this.identityProviderId,
+  name: name ?? this.name,
+  team: team != null ? team() : this.team,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GithubOrganization &&
+          identityProviderId == other.identityProviderId &&
+          name == other.name &&
+          team == other.team; } 
+@override int get hashCode { return Object.hash(identityProviderId, name, team); } 
+@override String toString() { return 'GithubOrganization(identityProviderId: $identityProviderId, name: $name, team: $team)'; } 
+ }

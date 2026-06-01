@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';import 'aaa_pagerduty.dart';@immutable final class AaaComponentsSchemasResponseCollection {const AaaComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_messages2.dart';import 'package:pub_cloudflare/models/aaa_pagerduty.dart';@immutable final class AaaComponentsSchemasResponseCollection {const AaaComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AaaComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AaaComponentsSchemasResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

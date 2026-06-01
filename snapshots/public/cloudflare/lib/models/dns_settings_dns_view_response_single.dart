@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_view_response.dart';@immutable final class DnsSettingsDnsViewResponseSingle {const DnsSettingsDnsViewResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_view_response.dart';@immutable final class DnsSettingsDnsViewResponseSingle {const DnsSettingsDnsViewResponseSingle({this.result});
 
 factory DnsSettingsDnsViewResponseSingle.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsViewResponseSingle(
   result: json['result'] != null ? DnsSettingsDnsViewResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

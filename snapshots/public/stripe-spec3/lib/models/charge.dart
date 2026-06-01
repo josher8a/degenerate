@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome.dart';import 'charge_payment_intent.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_method_details.dart';import 'radar_radar_options.dart';import 'review.dart';import 'shipping.dart';import 'transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/charge_failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/charge_refunds.dart';import 'package:pub_stripe_spec3/models/charge/charge_review.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/charge/source_transfer.dart';import 'package:pub_stripe_spec3/models/charge_fraud_details.dart';import 'package:pub_stripe_spec3/models/charge_outcome.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method_details.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ChargeObject {const ChargeObject._(this.value);
 
 factory ChargeObject.fromJson(String json) { return switch (json) {
@@ -21,34 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is ChargeObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChargeObject($value)'; } 
- }
-/// The status of the payment is either `succeeded`, `pending`, or `failed`.
-@immutable final class ChargeStatus {const ChargeStatus._(this.value);
-
-factory ChargeStatus.fromJson(String json) { return switch (json) {
-  'failed' => failed,
-  'pending' => pending,
-  'succeeded' => succeeded,
-  _ => ChargeStatus._(json),
-}; }
-
-static const ChargeStatus failed = ChargeStatus._('failed');
-
-static const ChargeStatus pending = ChargeStatus._('pending');
-
-static const ChargeStatus succeeded = ChargeStatus._('succeeded');
-
-static const List<ChargeStatus> values = [failed, pending, succeeded];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChargeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChargeStatus($value)'; } 
  }
 /// The `Charge` object represents a single attempt to move money into your Stripe account.
 /// PaymentIntent confirmation is the most common way to create Charges, but [Account Debits](https://docs.stripe.com/connect/account-debits) may also create Charges.
@@ -97,7 +69,7 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   sourceTransfer: json['source_transfer'] != null ? OneOf2.parse(json['source_transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  status: ChargeStatus.fromJson(json['status'] as String),
+  status: BankConnectionsResourceBalanceRefreshStatus.fromJson(json['status'] as String),
   transfer: json['transfer'] != null ? OneOf2.parse(json['transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null,
   transferData: json['transfer_data'] != null ? ChargeTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
@@ -122,7 +94,7 @@ final ChargeApplicationFee? applicationFee;
 final int? applicationFeeAmount;
 
 /// ID of the balance transaction that describes the impact of this charge on your account balance (not including refunds or disputes).
-final ChargeBalanceTransaction? balanceTransaction;
+final ApplicationFeeBalanceTransaction? balanceTransaction;
 
 final BillingDetails billingDetails;
 
@@ -139,7 +111,7 @@ final int created;
 final String currency;
 
 /// ID of the customer this charge is for if one exists.
-final ChargeCustomer? customer;
+final CardCustomer? customer;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
 final String? description;
@@ -215,7 +187,7 @@ final ChargeReview? review;
 final Shipping? shipping;
 
 /// The transfer ID which created this charge. Only present if the charge came from another Stripe account. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
-final ChargeSourceTransfer? sourceTransfer;
+final SourceTransfer? sourceTransfer;
 
 /// For a non-card charge, text that appears on the customer's statement as the statement descriptor. This value overrides the account's default statement descriptor. For information about requirements, including the 22-character limit, see [the Statement Descriptor docs](https://docs.stripe.com/get-started/account/statement-descriptors).
 /// 
@@ -226,7 +198,7 @@ final String? statementDescriptor;
 final String? statementDescriptorSuffix;
 
 /// The status of the payment is either `succeeded`, `pending`, or `failed`.
-final ChargeStatus status;
+final BankConnectionsResourceBalanceRefreshStatus status;
 
 /// ID of the transfer to the `destination` account (only applicable if the charge was created using the `destination` parameter).
 final ChargeTransfer? transfer;
@@ -299,7 +271,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('paid') && json['paid'] is bool &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('status'); } 
-Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, ChargeApplication? Function()? application, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, ChargeBalanceTransaction? Function()? balanceTransaction, BillingDetails? billingDetails, String? Function()? calculatedStatementDescriptor, bool? captured, int? created, String? currency, ChargeCustomer? Function()? customer, String? Function()? description, bool? disputed, ChargeFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, ChargeFraudDetails? Function()? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, ChargeOutcome? Function()? outcome, bool? paid, ChargePaymentIntent? Function()? paymentIntent, String? Function()? paymentMethod, PaymentMethodDetails? Function()? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RadarRadarOptions Function()? radarOptions, String? Function()? receiptEmail, String? Function()? receiptNumber, String? Function()? receiptUrl, bool? refunded, ChargeRefunds? Function()? refunds, ChargeReview? Function()? review, Shipping? Function()? shipping, ChargeSourceTransfer? Function()? sourceTransfer, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, ChargeStatus? status, ChargeTransfer Function()? transfer, ChargeTransferData? Function()? transferData, String? Function()? transferGroup, }) { return Charge(
+Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, ChargeApplication? Function()? application, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, BillingDetails? billingDetails, String? Function()? calculatedStatementDescriptor, bool? captured, int? created, String? currency, CardCustomer? Function()? customer, String? Function()? description, bool? disputed, ChargeFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, ChargeFraudDetails? Function()? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, ChargeOutcome? Function()? outcome, bool? paid, ChargePaymentIntent? Function()? paymentIntent, String? Function()? paymentMethod, PaymentMethodDetails? Function()? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RadarRadarOptions Function()? radarOptions, String? Function()? receiptEmail, String? Function()? receiptNumber, String? Function()? receiptUrl, bool? refunded, ChargeRefunds? Function()? refunds, ChargeReview? Function()? review, Shipping? Function()? shipping, SourceTransfer? Function()? sourceTransfer, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, BankConnectionsResourceBalanceRefreshStatus? status, ChargeTransfer Function()? transfer, ChargeTransferData? Function()? transferData, String? Function()? transferGroup, }) { return Charge(
   amount: amount ?? this.amount,
   amountCaptured: amountCaptured ?? this.amountCaptured,
   amountRefunded: amountRefunded ?? this.amountRefunded,

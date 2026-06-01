@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the request.
-@immutable final class OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction._(this.value);
-
-factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) { return switch (json) {
-  'approve' => approve,
-  'deny' => deny,
-  _ => OrgsReviewPatGrantRequestRequestAction._(json),
-}; }
-
-static const OrgsReviewPatGrantRequestRequestAction approve = OrgsReviewPatGrantRequestRequestAction._('approve');
-
-static const OrgsReviewPatGrantRequestRequestAction deny = OrgsReviewPatGrantRequestRequestAction._('deny');
-
-static const List<OrgsReviewPatGrantRequestRequestAction> values = [approve, deny];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsReviewPatGrantRequestRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsReviewPatGrantRequestRequestAction($value)'; } 
- }
-@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_review_pat_grant_request_request/orgs_review_pat_grant_request_request_action.dart';@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason, });
 
 factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestRequest(
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),

@@ -1,66 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam110Client {const PaymentMethodOptionsParam110Client._(this.value);
-
-factory PaymentMethodOptionsParam110Client.fromJson(String json) { return switch (json) {
-  'android' => android,
-  'ios' => ios,
-  'web' => web,
-  _ => PaymentMethodOptionsParam110Client._(json),
-}; }
-
-static const PaymentMethodOptionsParam110Client android = PaymentMethodOptionsParam110Client._('android');
-
-static const PaymentMethodOptionsParam110Client ios = PaymentMethodOptionsParam110Client._('ios');
-
-static const PaymentMethodOptionsParam110Client web = PaymentMethodOptionsParam110Client._('web');
-
-static const List<PaymentMethodOptionsParam110Client> values = [android, ios, web];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam110Client && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam110Client($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam110SetupFutureUsage {const PaymentMethodOptionsParam110SetupFutureUsage._(this.value);
-
-factory PaymentMethodOptionsParam110SetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  _ => PaymentMethodOptionsParam110SetupFutureUsage._(json),
-}; }
-
-static const PaymentMethodOptionsParam110SetupFutureUsage none = PaymentMethodOptionsParam110SetupFutureUsage._('none');
-
-static const List<PaymentMethodOptionsParam110SetupFutureUsage> values = [none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam110SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam110SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam110 {const PaymentMethodOptionsParam110({this.appId, this.client, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_client.dart';@immutable final class PaymentMethodOptionsParam110 {const PaymentMethodOptionsParam110({this.appId, this.client, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam110.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam110(
   appId: json['app_id'] as String?,
-  client: json['client'] != null ? PaymentMethodOptionsParam110Client.fromJson(json['client'] as String) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam110SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  client: json['client'] != null ? payment_method_options_paramClient.fromJson(json['client'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 final String? appId;
 
-final PaymentMethodOptionsParam110Client? client;
+final payment_method_options_paramClient? client;
 
-final PaymentMethodOptionsParam110SetupFutureUsage? setupFutureUsage;
+final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   'app_id': ?appId,
@@ -68,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam110 copyWith({String Function()? appId, PaymentMethodOptionsParam110Client Function()? client, PaymentMethodOptionsParam110SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam110(
+PaymentMethodOptionsParam110 copyWith({String Function()? appId, payment_method_options_paramClient Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam110(
   appId: appId != null ? appId() : this.appId,
   client: client != null ? client() : this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

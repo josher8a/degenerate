@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_default_standard.dart';/// Type of registration in `country`.
-@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._(this.value);
-
-factory TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType.fromJson(String json) { return switch (json) {
-  'standard' => standard,
-  _ => TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._(json),
-}; }
-
-static const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType standard = TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._('standard');
-
-static const List<TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType> values = [standard];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_default_inbound_goods/tax_product_registrations_resource_country_options_default_inbound_goods_type.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options_default_standard.dart';/// 
 @immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods({required this.type, this.standard, });
 
 factory TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods(

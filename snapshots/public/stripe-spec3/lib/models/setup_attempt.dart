@@ -1,30 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'payment_method.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_intent.dart';import 'setup_intent.dart';@immutable final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
-
-factory SetupAttemptFlowDirections.fromJson(String json) { return switch (json) {
-  'inbound' => inbound,
-  'outbound' => outbound,
-  _ => SetupAttemptFlowDirections._(json),
-}; }
-
-static const SetupAttemptFlowDirections inbound = SetupAttemptFlowDirections._('inbound');
-
-static const SetupAttemptFlowDirections outbound = SetupAttemptFlowDirections._('outbound');
-
-static const List<SetupAttemptFlowDirections> values = [inbound, outbound];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptFlowDirections && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptFlowDirections($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/mandate/mandate_payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_attempt/setup_attempt_setup_intent.dart';import 'package:pub_stripe_spec3/models/setup_attempt_payment_method_details.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupAttemptObject {const SetupAttemptObject._(this.value);
 
 factory SetupAttemptObject.fromJson(String json) { return switch (json) {
@@ -58,7 +34,7 @@ factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
   created: (json['created'] as num).toInt(),
   customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
   customerAccount: json['customer_account'] as String?,
-  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupAttemptFlowDirections.fromJson(e as String)).toList(),
+  flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => FlowDirections.fromJson(e as String)).toList(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: SetupAttemptObject.fromJson(json['object'] as String),
@@ -72,7 +48,7 @@ factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
 ); }
 
 /// The value of [application](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-application) on the SetupIntent at the time of this confirmation.
-final SetupAttemptApplication? application;
+final ChargeApplication? application;
 
 /// If present, the SetupIntent's payment method will be attached to the in-context Stripe Account.
 /// 
@@ -83,7 +59,7 @@ final bool? attachToSelf;
 final int created;
 
 /// The value of [customer](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer) on the SetupIntent at the time of this confirmation.
-final SetupAttemptCustomer? customer;
+final CardCustomer? customer;
 
 /// The value of [customer_account](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer_account) on the SetupIntent at the time of this confirmation.
 final String? customerAccount;
@@ -91,7 +67,7 @@ final String? customerAccount;
 /// Indicates the directions of money movement for which this payment method is intended to be used.
 /// 
 /// Include `inbound` if you intend to use the payment method as the origin to pull funds from. Include `outbound` if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.
-final List<SetupAttemptFlowDirections>? flowDirections;
+final List<FlowDirections>? flowDirections;
 
 /// Unique identifier for the object.
 final String id;
@@ -103,10 +79,10 @@ final bool livemode;
 final SetupAttemptObject object;
 
 /// The value of [on_behalf_of](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-on_behalf_of) on the SetupIntent at the time of this confirmation.
-final SetupAttemptOnBehalfOf? onBehalfOf;
+final ChargeOnBehalfOf? onBehalfOf;
 
 /// ID of the payment method used with this SetupAttempt.
-final SetupAttemptPaymentMethod paymentMethod;
+final MandatePaymentMethod paymentMethod;
 
 final SetupAttemptPaymentMethodDetails paymentMethodDetails;
 
@@ -149,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Function()? attachToSelf, int? created, SetupAttemptCustomer? Function()? customer, String? Function()? customerAccount, List<SetupAttemptFlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, SetupAttemptOnBehalfOf? Function()? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+SetupAttempt copyWith({ChargeApplication? Function()? application, bool Function()? attachToSelf, int? created, CardCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, MandatePaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,

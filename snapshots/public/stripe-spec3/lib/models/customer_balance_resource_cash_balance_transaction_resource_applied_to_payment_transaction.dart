@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction_payment_intent.dart';import 'payment_intent.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction/customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// 
 @immutable final class CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction({required this.paymentIntent});
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction(

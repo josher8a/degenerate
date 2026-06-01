@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_common_credited_items.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_common_credited_items.dart';/// 
 @immutable final class BillingBillResourceInvoicingLinesCommonProrationDetails {const BillingBillResourceInvoicingLinesCommonProrationDetails({this.creditedItems});
 
 factory BillingBillResourceInvoicingLinesCommonProrationDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesCommonProrationDetails(

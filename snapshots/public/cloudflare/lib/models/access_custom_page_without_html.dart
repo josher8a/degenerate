@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_pages_components_schemas_name.dart';import 'access_schemas_app_count.dart';import 'access_schemas_type.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessCustomPageWithoutHtml {const AccessCustomPageWithoutHtml({required this.name, required this.type, this.appCount, this.createdAt, this.uid, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_custom_pages_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_schemas_app_count.dart';import 'package:pub_cloudflare/models/access_schemas_type.dart';import 'package:pub_cloudflare/models/access_timestamp.dart';import 'package:pub_cloudflare/models/access_uuid.dart';@immutable final class AccessCustomPageWithoutHtml {const AccessCustomPageWithoutHtml({required this.name, required this.type, this.appCount, this.createdAt, this.uid, this.updatedAt, });
 
 factory AccessCustomPageWithoutHtml.fromJson(Map<String, dynamic> json) { return AccessCustomPageWithoutHtml(
   appCount: json['app_count'] != null ? AccessSchemasAppCount.fromJson(json['app_count'] as num) : null,

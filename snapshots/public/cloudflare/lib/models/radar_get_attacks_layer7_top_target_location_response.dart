@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_top_target_location_response_result.dart';@immutable final class RadarGetAttacksLayer7TopTargetLocationResponse {const RadarGetAttacksLayer7TopTargetLocationResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer3_top_target_locations_response/radar_get_attacks_layer3_top_target_locations_response_result.dart';@immutable final class RadarGetAttacksLayer7TopTargetLocationResponse {const RadarGetAttacksLayer7TopTargetLocationResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer7TopTargetLocationResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopTargetLocationResponse(
-  result: RadarGetAttacksLayer7TopTargetLocationResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAttacksLayer3TopTargetLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetAttacksLayer7TopTargetLocationResponseResult result;
+final RadarGetAttacksLayer3TopTargetLocationsResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer7TopTargetLocationResponse copyWith({RadarGetAttacksLayer7TopTargetLocationResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TopTargetLocationResponse(
+RadarGetAttacksLayer7TopTargetLocationResponse copyWith({RadarGetAttacksLayer3TopTargetLocationsResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7TopTargetLocationResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

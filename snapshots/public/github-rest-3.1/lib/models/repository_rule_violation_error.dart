@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_violation_error_metadata.dart';/// Repository rule violation was detected
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_violation_error/repository_rule_violation_error_metadata.dart';/// Repository rule violation was detected
 @immutable final class RepositoryRuleViolationError {const RepositoryRuleViolationError({this.message, this.documentationUrl, this.status, this.metadata, });
 
 factory RepositoryRuleViolationError.fromJson(Map<String, dynamic> json) { return RepositoryRuleViolationError(

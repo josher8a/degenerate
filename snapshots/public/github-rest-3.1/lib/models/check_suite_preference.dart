@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite_preference_preferences.dart';import 'minimal_repository.dart';/// Check suite configuration preferences for a repository.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite_preference/preferences.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';/// Check suite configuration preferences for a repository.
 @immutable final class CheckSuitePreference {const CheckSuitePreference({required this.preferences, required this.repository, });
 
 factory CheckSuitePreference.fromJson(Map<String, dynamic> json) { return CheckSuitePreference(
-  preferences: CheckSuitePreferencePreferences.fromJson(json['preferences'] as Map<String, dynamic>),
+  preferences: Preferences.fromJson(json['preferences'] as Map<String, dynamic>),
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
 ); }
 
-final CheckSuitePreferencePreferences preferences;
+final Preferences preferences;
 
 final MinimalRepository repository;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('preferences') &&
       json.containsKey('repository'); } 
-CheckSuitePreference copyWith({CheckSuitePreferencePreferences? preferences, MinimalRepository? repository, }) { return CheckSuitePreference(
+CheckSuitePreference copyWith({Preferences? preferences, MinimalRepository? repository, }) { return CheckSuitePreference(
   preferences: preferences ?? this.preferences,
   repository: repository ?? this.repository,
 ); } 

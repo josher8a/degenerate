@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
 @immutable final class TransferData {const TransferData({required this.destination, this.amount, });
 
 factory TransferData.fromJson(Map<String, dynamic> json) { return TransferData(
@@ -14,14 +14,14 @@ factory TransferData.fromJson(Map<String, dynamic> json) { return TransferData(
 final int? amount;
 
 /// The account (if any) that the payment is attributed to for tax reporting, and where funds from the payment are transferred to after payment success.
-final TransferDataDestination destination;
+final ChargeTransferDataDestination destination;
 
 Map<String, dynamic> toJson() { return {
   'amount': ?amount,
   'destination': destination.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-TransferData copyWith({int Function()? amount, TransferDataDestination? destination, }) { return TransferData(
+TransferData copyWith({int Function()? amount, ChargeTransferDataDestination? destination, }) { return TransferData(
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,
 ); } 

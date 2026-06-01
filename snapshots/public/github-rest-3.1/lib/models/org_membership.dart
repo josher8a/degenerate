@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_membership_permissions.dart';import 'organization_simple.dart';import 'simple_user.dart';/// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
-@immutable final class OrgMembershipState {const OrgMembershipState._(this.value);
-
-factory OrgMembershipState.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'pending' => pending,
-  _ => OrgMembershipState._(json),
-}; }
-
-static const OrgMembershipState active = OrgMembershipState._('active');
-
-static const OrgMembershipState pending = OrgMembershipState._('pending');
-
-static const List<OrgMembershipState> values = [active, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgMembershipState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgMembershipState($value)'; } 
- }
-/// The user's membership type in the organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_permissions.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_state.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The user's membership type in the organization.
 @immutable final class OrgMembershipRole {const OrgMembershipRole._(this.value);
 
 factory OrgMembershipRole.fromJson(String json) { return switch (json) {

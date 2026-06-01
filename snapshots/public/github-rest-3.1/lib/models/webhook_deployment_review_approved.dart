@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_review_approved_workflow_job_runs.dart';import 'webhook_deployment_review_approved_workflow_run.dart';import 'webhooks_approver.dart';import 'webhooks_reviewers2.dart';import 'webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction._(this.value);
-
-factory WebhookDeploymentReviewApprovedAction.fromJson(String json) { return switch (json) {
-  'approved' => approved,
-  _ => WebhookDeploymentReviewApprovedAction._(json),
-}; }
-
-static const WebhookDeploymentReviewApprovedAction approved = WebhookDeploymentReviewApprovedAction._('approved');
-
-static const List<WebhookDeploymentReviewApprovedAction> values = [approved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentReviewApprovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentReviewApprovedAction($value)'; } 
- }
-@immutable final class WebhookDeploymentReviewApproved {const WebhookDeploymentReviewApproved({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_job_runs.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_approver.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers2.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewApproved {const WebhookDeploymentReviewApproved({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
 factory WebhookDeploymentReviewApproved.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApproved(
   action: WebhookDeploymentReviewApprovedAction.fromJson(json['action'] as String),

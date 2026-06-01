@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_header_operation.dart';import 'rulesets_rewrite_header_value.dart';/// A header with a static value to set.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_operation.dart';import 'package:pub_cloudflare/models/rulesets_rewrite_header_value.dart';/// A header with a static value to set.
 @immutable final class SetStaticHeader {const SetStaticHeader({required this.operation, required this.value, });
 
 factory SetStaticHeader.fromJson(Map<String, dynamic> json) { return SetStaticHeader(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/autorag_config_files_response404.dart';import '../models/autorag_config_files_response_result.dart';import '../models/autorag_config_files_status.dart';import '../models/autorag_config_sync_response400.dart';import '../models/autorag_config_sync_response_result.dart';/// AutoRagRagApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_files_response/autorag_config_files_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_files_response404.dart';import 'package:pub_cloudflare/models/autorag_config_files_status.dart';import 'package:pub_cloudflare/models/autorag_config_sync_response/autorag_config_sync_response_result.dart';import 'package:pub_cloudflare/models/autorag_config_sync_response400.dart';/// AutoRagRagApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice_line_item_period.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/invoices_resource_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/line_item/line_item_subscription.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class LineItemObject {const LineItemObject._(this.value);
 
 factory LineItemObject.fromJson(String json) { return switch (json) {
@@ -65,7 +65,7 @@ final List<DiscountsResourceDiscountAmount>? discountAmounts;
 final bool discountable;
 
 /// The discounts applied to the invoice line item. Line item discounts are applied before invoice discounts. Use `expand[]=discounts` to expand each discount.
-final List<LineItemDiscounts> discounts;
+final List<InvoiceitemDiscounts> discounts;
 
 /// Unique identifier for the object.
 final String id;
@@ -135,7 +135,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('period') &&
       json.containsKey('subtotal') && json['subtotal'] is num; } 
-LineItem copyWith({int? amount, String? currency, String? Function()? description, List<DiscountsResourceDiscountAmount>? Function()? discountAmounts, bool? discountable, List<LineItemDiscounts>? discounts, String? id, String? Function()? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent? Function()? parent, InvoiceLineItemPeriod? period, List<InvoicesResourcePretaxCreditAmount>? Function()? pretaxCreditAmounts, BillingBillResourceInvoicingPricingPricing? Function()? pricing, int? Function()? quantity, LineItemSubscription? Function()? subscription, int? subtotal, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, }) { return LineItem(
+LineItem copyWith({int? amount, String? currency, String? Function()? description, List<DiscountsResourceDiscountAmount>? Function()? discountAmounts, bool? discountable, List<InvoiceitemDiscounts>? discounts, String? id, String? Function()? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent? Function()? parent, InvoiceLineItemPeriod? period, List<InvoicesResourcePretaxCreditAmount>? Function()? pretaxCreditAmounts, BillingBillResourceInvoicingPricingPricing? Function()? pricing, int? Function()? quantity, LineItemSubscription? Function()? subscription, int? subtotal, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, }) { return LineItem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

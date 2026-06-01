@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectDeletedAction {const ProjectDeletedAction._(this.value);
-
-factory ProjectDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => ProjectDeletedAction._(json),
-}; }
-
-static const ProjectDeletedAction deleted = ProjectDeletedAction._('deleted');
-
-static const List<ProjectDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectDeletedAction($value)'; } 
- }
-@immutable final class ProjectDeleted {const ProjectDeleted({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/projects.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ProjectDeleted {const ProjectDeleted({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectDeleted.fromJson(Map<String, dynamic> json) { return ProjectDeleted(
-  action: ProjectDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   projectsV2: Projects.fromJson(json['projects_v2'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final ProjectDeletedAction action;
+final ItemDeletedAction action;
 
 final SimpleInstallation? installation;
 
@@ -52,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('projects_v2') &&
       json.containsKey('sender'); } 
-ProjectDeleted copyWith({ProjectDeletedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectDeleted(
+ProjectDeleted copyWith({ItemDeletedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectDeleted(
   action: action ?? this.action,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,

@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool call. This is always going to be `file_search` for this type of tool call.
-@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObjectType {const RunStepDeltaStepDetailsToolCallsFileSearchObjectType._(this.value);
-
-factory RunStepDeltaStepDetailsToolCallsFileSearchObjectType.fromJson(String json) { return switch (json) {
-  'file_search' => fileSearch,
-  _ => RunStepDeltaStepDetailsToolCallsFileSearchObjectType._(json),
-}; }
-
-static const RunStepDeltaStepDetailsToolCallsFileSearchObjectType fileSearch = RunStepDeltaStepDetailsToolCallsFileSearchObjectType._('file_search');
-
-static const List<RunStepDeltaStepDetailsToolCallsFileSearchObjectType> values = [fileSearch];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepDeltaStepDetailsToolCallsFileSearchObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsFileSearchObjectType($value)'; } 
- }
-@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObject {const RunStepDeltaStepDetailsToolCallsFileSearchObject({required this.index, required this.type, required this.fileSearch, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_file_search/assistant_tools_file_search_type.dart';@immutable final class RunStepDeltaStepDetailsToolCallsFileSearchObject {const RunStepDeltaStepDetailsToolCallsFileSearchObject({required this.index, required this.type, required this.fileSearch, this.id, });
 
 factory RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
   index: (json['index'] as num).toInt(),
   id: json['id'] as String?,
-  type: RunStepDeltaStepDetailsToolCallsFileSearchObjectType.fromJson(json['type'] as String),
+  type: AssistantToolsFileSearchType.fromJson(json['type'] as String),
   fileSearch: json['file_search'] as Map<String, dynamic>,
 ); }
 
@@ -38,7 +16,7 @@ final int index;
 final String? id;
 
 /// The type of tool call. This is always going to be `file_search` for this type of tool call.
-final RunStepDeltaStepDetailsToolCallsFileSearchObjectType type;
+final AssistantToolsFileSearchType type;
 
 /// For now, this is always going to be an empty object.
 final Map<String,dynamic> fileSearch;
@@ -52,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type') &&
       json.containsKey('file_search'); } 
-RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String Function()? id, RunStepDeltaStepDetailsToolCallsFileSearchObjectType? type, Map<String,dynamic>? fileSearch, }) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
+RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String Function()? id, AssistantToolsFileSearchType? type, Map<String,dynamic>? fileSearch, }) { return RunStepDeltaStepDetailsToolCallsFileSearchObject(
   index: index ?? this.index,
   id: id != null ? id() : this.id,
   type: type ?? this.type,

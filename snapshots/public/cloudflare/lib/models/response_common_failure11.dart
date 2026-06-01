@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message.dart';/// Represents a failed API response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/message.dart';/// Represents a failed API response.
 @immutable final class ResponseCommonFailure11 {const ResponseCommonFailure11({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure11(

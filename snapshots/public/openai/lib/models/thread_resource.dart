@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_resource/thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
 @immutable final class ThreadResourceObject {const ThreadResourceObject._(this.value);
 
 factory ThreadResourceObject.fromJson(String json) { return switch (json) {

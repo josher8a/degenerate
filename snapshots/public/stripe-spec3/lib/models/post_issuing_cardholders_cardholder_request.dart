@@ -1,80 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_cardholder_request_billing.dart';import 'post_issuing_cardholders_cardholder_request_company.dart';import 'post_issuing_cardholders_cardholder_request_individual.dart';import 'post_issuing_cardholders_cardholder_request_spending_controls.dart';@immutable final class PostIssuingCardholdersCardholderRequestPreferredLocales {const PostIssuingCardholdersCardholderRequestPreferredLocales._(this.value);
-
-factory PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(String json) { return switch (json) {
-  'de' => de,
-  'en' => en,
-  'es' => es,
-  'fr' => fr,
-  'it' => it,
-  _ => PostIssuingCardholdersCardholderRequestPreferredLocales._(json),
-}; }
-
-static const PostIssuingCardholdersCardholderRequestPreferredLocales de = PostIssuingCardholdersCardholderRequestPreferredLocales._('de');
-
-static const PostIssuingCardholdersCardholderRequestPreferredLocales en = PostIssuingCardholdersCardholderRequestPreferredLocales._('en');
-
-static const PostIssuingCardholdersCardholderRequestPreferredLocales es = PostIssuingCardholdersCardholderRequestPreferredLocales._('es');
-
-static const PostIssuingCardholdersCardholderRequestPreferredLocales fr = PostIssuingCardholdersCardholderRequestPreferredLocales._('fr');
-
-static const PostIssuingCardholdersCardholderRequestPreferredLocales it = PostIssuingCardholdersCardholderRequestPreferredLocales._('it');
-
-static const List<PostIssuingCardholdersCardholderRequestPreferredLocales> values = [de, en, es, fr, it];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersCardholderRequestPreferredLocales && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestPreferredLocales($value)'; } 
- }
-/// Specifies whether to permit authorizations on this cardholder's cards.
-@immutable final class PostIssuingCardholdersCardholderRequestStatus {const PostIssuingCardholdersCardholderRequestStatus._(this.value);
-
-factory PostIssuingCardholdersCardholderRequestStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  _ => PostIssuingCardholdersCardholderRequestStatus._(json),
-}; }
-
-static const PostIssuingCardholdersCardholderRequestStatus active = PostIssuingCardholdersCardholderRequestStatus._('active');
-
-static const PostIssuingCardholdersCardholderRequestStatus inactive = PostIssuingCardholdersCardholderRequestStatus._('inactive');
-
-static const List<PostIssuingCardholdersCardholderRequestStatus> values = [active, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardholdersCardholderRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestStatus($value)'; } 
- }
-@immutable final class PostIssuingCardholdersCardholderRequest {const PostIssuingCardholdersCardholderRequest({this.billing, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/billing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_company.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_individual.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/post_issuing_cardholders_cardholder_request_spending_controls.dart';@immutable final class PostIssuingCardholdersCardholderRequest {const PostIssuingCardholdersCardholderRequest({this.billing, this.company, this.email, this.expand, this.individual, this.metadata, this.phoneNumber, this.preferredLocales, this.spendingControls, this.status, });
 
 factory PostIssuingCardholdersCardholderRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequest(
-  billing: json['billing'] != null ? PostIssuingCardholdersCardholderRequestBilling.fromJson(json['billing'] as Map<String, dynamic>) : null,
+  billing: json['billing'] != null ? Billing.fromJson(json['billing'] as Map<String, dynamic>) : null,
   company: json['company'] != null ? PostIssuingCardholdersCardholderRequestCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   individual: json['individual'] != null ? PostIssuingCardholdersCardholderRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   phoneNumber: json['phone_number'] as String?,
-  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PostIssuingCardholdersCardholderRequestPreferredLocales.fromJson(e as String)).toList(),
+  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => PreferredLocales.fromJson(e as String)).toList(),
   spendingControls: json['spending_controls'] != null ? PostIssuingCardholdersCardholderRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
-  status: json['status'] != null ? PostIssuingCardholdersCardholderRequestStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? BillingMeterStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The cardholder's billing address.
-final PostIssuingCardholdersCardholderRequestBilling? billing;
+final Billing? billing;
 
 /// Additional information about a `company` cardholder.
 final PostIssuingCardholdersCardholderRequestCompany? company;
@@ -96,13 +38,13 @@ final String? phoneNumber;
 
 /// The cardholder’s preferred locales (languages), ordered by preference. Locales can be `de`, `en`, `es`, `fr`, or `it`.
 ///  This changes the language of the [3D Secure flow](https://docs.stripe.com/issuing/3d-secure) and one-time password messages sent to the cardholder.
-final List<PostIssuingCardholdersCardholderRequestPreferredLocales>? preferredLocales;
+final List<PreferredLocales>? preferredLocales;
 
 /// Rules that control spending across this cardholder's cards. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
 final PostIssuingCardholdersCardholderRequestSpendingControls? spendingControls;
 
 /// Specifies whether to permit authorizations on this cardholder's cards.
-final PostIssuingCardholdersCardholderRequestStatus? status;
+final BillingMeterStatus? status;
 
 Map<String, dynamic> toJson() { return {
   if (billing != null) 'billing': billing?.toJson(),
@@ -117,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing', 'company', 'email', 'expand', 'individual', 'metadata', 'phone_number', 'preferred_locales', 'spending_controls', 'status'}.contains(key)); } 
-PostIssuingCardholdersCardholderRequest copyWith({PostIssuingCardholdersCardholderRequestBilling Function()? billing, PostIssuingCardholdersCardholderRequestCompany Function()? company, String Function()? email, List<String> Function()? expand, PostIssuingCardholdersCardholderRequestIndividual Function()? individual, Map<String, String> Function()? metadata, String Function()? phoneNumber, List<PostIssuingCardholdersCardholderRequestPreferredLocales> Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls Function()? spendingControls, PostIssuingCardholdersCardholderRequestStatus Function()? status, }) { return PostIssuingCardholdersCardholderRequest(
+PostIssuingCardholdersCardholderRequest copyWith({Billing Function()? billing, PostIssuingCardholdersCardholderRequestCompany Function()? company, String Function()? email, List<String> Function()? expand, PostIssuingCardholdersCardholderRequestIndividual Function()? individual, Map<String, String> Function()? metadata, String Function()? phoneNumber, List<PreferredLocales> Function()? preferredLocales, PostIssuingCardholdersCardholderRequestSpendingControls Function()? spendingControls, BillingMeterStatus Function()? status, }) { return PostIssuingCardholdersCardholderRequest(
   billing: billing != null ? billing() : this.billing,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,

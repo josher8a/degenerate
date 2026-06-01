@@ -1,78 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_amount_requested.dart';import 'post_payment_records_report_payment_request_customer_details.dart';import 'post_payment_records_report_payment_request_failed.dart';import 'post_payment_records_report_payment_request_guaranteed.dart';import 'post_payment_records_report_payment_request_metadata.dart';import 'post_payment_records_report_payment_request_payment_method_details.dart';import 'post_payment_records_report_payment_request_processor_details.dart';import 'post_payment_records_report_payment_request_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-@immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence._(this.value);
-
-factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) { return switch (json) {
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PostPaymentRecordsReportPaymentRequestCustomerPresence._(json),
-}; }
-
-static const PostPaymentRecordsReportPaymentRequestCustomerPresence offSession = PostPaymentRecordsReportPaymentRequestCustomerPresence._('off_session');
-
-static const PostPaymentRecordsReportPaymentRequestCustomerPresence onSession = PostPaymentRecordsReportPaymentRequestCustomerPresence._('on_session');
-
-static const List<PostPaymentRecordsReportPaymentRequestCustomerPresence> values = [offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsReportPaymentRequestCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestCustomerPresence($value)'; } 
- }
-/// The outcome of the reported payment.
-@immutable final class PostPaymentRecordsReportPaymentRequestOutcome {const PostPaymentRecordsReportPaymentRequestOutcome._(this.value);
-
-factory PostPaymentRecordsReportPaymentRequestOutcome.fromJson(String json) { return switch (json) {
-  'failed' => failed,
-  'guaranteed' => guaranteed,
-  _ => PostPaymentRecordsReportPaymentRequestOutcome._(json),
-}; }
-
-static const PostPaymentRecordsReportPaymentRequestOutcome failed = PostPaymentRecordsReportPaymentRequestOutcome._('failed');
-
-static const PostPaymentRecordsReportPaymentRequestOutcome guaranteed = PostPaymentRecordsReportPaymentRequestOutcome._('guaranteed');
-
-static const List<PostPaymentRecordsReportPaymentRequestOutcome> values = [failed, guaranteed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsReportPaymentRequestOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestOutcome($value)'; } 
- }
-@immutable final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsReportPaymentRequest({required this.amountRequested, required this.initiatedAt, required this.paymentMethodDetails, this.customerDetails, this.customerPresence, this.description, this.expand, this.failed, this.guaranteed, this.metadata, this.outcome, this.processorDetails, this.shippingDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/failed.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/guaranteed.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/post_payment_records_id_report_payment_attempt_request_outcome.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/post_payment_records_id_report_payment_attempt_request_payment_method_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_request/post_payment_records_id_report_payment_attempt_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request/amount_requested.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request/post_payment_records_report_payment_request_customer_presence.dart';import 'package:pub_stripe_spec3/models/post_payment_records_report_payment_request/post_payment_records_report_payment_request_processor_details.dart';@immutable final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsReportPaymentRequest({required this.amountRequested, required this.initiatedAt, required this.paymentMethodDetails, this.customerDetails, this.customerPresence, this.description, this.expand, this.failed, this.guaranteed, this.metadata, this.outcome, this.processorDetails, this.shippingDetails, });
 
 factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequest(
-  amountRequested: PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(json['amount_requested'] as Map<String, dynamic>),
-  customerDetails: json['customer_details'] != null ? PostPaymentRecordsReportPaymentRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
+  amountRequested: AmountRequested.fromJson(json['amount_requested'] as Map<String, dynamic>),
+  customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerPresence: json['customer_presence'] != null ? PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  failed: json['failed'] != null ? PostPaymentRecordsReportPaymentRequestFailed.fromJson(json['failed'] as Map<String, dynamic>) : null,
-  guaranteed: json['guaranteed'] != null ? PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
+  failed: json['failed'] != null ? Failed.fromJson(json['failed'] as Map<String, dynamic>) : null,
+  guaranteed: json['guaranteed'] != null ? Guaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
   initiatedAt: (json['initiated_at'] as num).toInt(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsReportPaymentRequestMetadataVariant2.fromJson(v as String),) : null,
-  outcome: json['outcome'] != null ? PostPaymentRecordsReportPaymentRequestOutcome.fromJson(json['outcome'] as String) : null,
-  paymentMethodDetails: PostPaymentRecordsReportPaymentRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  outcome: json['outcome'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(json['outcome'] as String) : null,
+  paymentMethodDetails: PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
   processorDetails: json['processor_details'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>) : null,
-  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsReportPaymentRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The amount you initially requested for this payment.
-final PostPaymentRecordsReportPaymentRequestAmountRequested amountRequested;
+final AmountRequested amountRequested;
 
 /// Customer information for this payment.
-final PostPaymentRecordsReportPaymentRequestCustomerDetails? customerDetails;
+final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? customerDetails;
 
 /// Indicates whether the customer was present in your checkout flow during this payment.
 final PostPaymentRecordsReportPaymentRequestCustomerPresence? customerPresence;
@@ -84,28 +34,28 @@ final String? description;
 final List<String>? expand;
 
 /// Information about the payment attempt failure.
-final PostPaymentRecordsReportPaymentRequestFailed? failed;
+final Failed? failed;
 
 /// Information about the payment attempt guarantee.
-final PostPaymentRecordsReportPaymentRequestGuaranteed? guaranteed;
+final Guaranteed? guaranteed;
 
 /// When the reported payment was initiated. Measured in seconds since the Unix epoch.
 final int initiatedAt;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostPaymentRecordsReportPaymentRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The outcome of the reported payment.
-final PostPaymentRecordsReportPaymentRequestOutcome? outcome;
+final PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? outcome;
 
 /// Information about the Payment Method debited for this payment.
-final PostPaymentRecordsReportPaymentRequestPaymentMethodDetails paymentMethodDetails;
+final PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails paymentMethodDetails;
 
 /// Processor information for this payment.
 final PostPaymentRecordsReportPaymentRequestProcessorDetails? processorDetails;
 
 /// Shipping information for this payment.
-final PostPaymentRecordsReportPaymentRequestShippingDetails? shippingDetails;
+final PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails? shippingDetails;
 
 Map<String, dynamic> toJson() { return {
   'amount_requested': amountRequested.toJson(),
@@ -125,7 +75,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_requested') &&
       json.containsKey('initiated_at') && json['initiated_at'] is num &&
       json.containsKey('payment_method_details'); } 
-PostPaymentRecordsReportPaymentRequest copyWith({PostPaymentRecordsReportPaymentRequestAmountRequested? amountRequested, PostPaymentRecordsReportPaymentRequestCustomerDetails Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence Function()? customerPresence, String Function()? description, List<String> Function()? expand, PostPaymentRecordsReportPaymentRequestFailed Function()? failed, PostPaymentRecordsReportPaymentRequestGuaranteed Function()? guaranteed, int? initiatedAt, PostPaymentRecordsReportPaymentRequestMetadata Function()? metadata, PostPaymentRecordsReportPaymentRequestOutcome Function()? outcome, PostPaymentRecordsReportPaymentRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails Function()? processorDetails, PostPaymentRecordsReportPaymentRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsReportPaymentRequest(
+PostPaymentRecordsReportPaymentRequest copyWith({AmountRequested? amountRequested, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence Function()? customerPresence, String Function()? description, List<String> Function()? expand, Failed Function()? failed, Guaranteed Function()? guaranteed, int? initiatedAt, Metadata Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails Function()? processorDetails, PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsReportPaymentRequest(
   amountRequested: amountRequested ?? this.amountRequested,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,

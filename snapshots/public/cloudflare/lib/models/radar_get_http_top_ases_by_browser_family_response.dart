@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_browser_family_response_result.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyResponse {const RadarGetHttpTopAsesByBrowserFamilyResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_top_ases_response/radar_get_dns_top_ases_response_result.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyResponse {const RadarGetHttpTopAsesByBrowserFamilyResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTopAsesByBrowserFamilyResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByBrowserFamilyResponse(
-  result: RadarGetHttpTopAsesByBrowserFamilyResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetHttpTopAsesByBrowserFamilyResponseResult result;
+final RadarGetDnsTopAsesResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTopAsesByBrowserFamilyResponse copyWith({RadarGetHttpTopAsesByBrowserFamilyResponseResult? result, bool? success, }) { return RadarGetHttpTopAsesByBrowserFamilyResponse(
+RadarGetHttpTopAsesByBrowserFamilyResponse copyWith({RadarGetDnsTopAsesResponseResult? result, bool? success, }) { return RadarGetHttpTopAsesByBrowserFamilyResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

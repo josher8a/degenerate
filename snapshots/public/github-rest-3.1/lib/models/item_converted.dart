@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'item_converted_changes.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ItemConvertedAction {const ItemConvertedAction._(this.value);
-
-factory ItemConvertedAction.fromJson(String json) { return switch (json) {
-  'converted' => converted,
-  _ => ItemConvertedAction._(json),
-}; }
-
-static const ItemConvertedAction converted = ItemConvertedAction._('converted');
-
-static const List<ItemConvertedAction> values = [converted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemConvertedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemConvertedAction($value)'; } 
- }
-@immutable final class ItemConverted {const ItemConverted({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_converted/item_converted_action.dart';import 'package:pub_github_rest_3_1/models/item_converted/item_converted_changes.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ItemConverted {const ItemConverted({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
 factory ItemConverted.fromJson(Map<String, dynamic> json) { return ItemConverted(
   action: ItemConvertedAction.fromJson(json['action'] as String),

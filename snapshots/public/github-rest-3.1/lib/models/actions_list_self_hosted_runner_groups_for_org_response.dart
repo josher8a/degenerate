@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner_groups_org.dart';@immutable final class ActionsListSelfHostedRunnerGroupsForOrgResponse {const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/runner_groups_org.dart';@immutable final class ActionsListSelfHostedRunnerGroupsForOrgResponse {const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups, });
 
 factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnerGroupsForOrgResponse(
   totalCount: (json['total_count'] as num).toDouble(),

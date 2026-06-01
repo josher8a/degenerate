@@ -1,35 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the event type. For a computer screenshot, this property is
-/// always set to `computer_screenshot`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_screenshot_content/computer_screenshot_content_type.dart';/// A computer screenshot image used with the computer use tool.
 /// 
-@immutable final class ComputerScreenshotImageType {const ComputerScreenshotImageType._(this.value);
-
-factory ComputerScreenshotImageType.fromJson(String json) { return switch (json) {
-  'computer_screenshot' => computerScreenshot,
-  _ => ComputerScreenshotImageType._(json),
-}; }
-
-static const ComputerScreenshotImageType computerScreenshot = ComputerScreenshotImageType._('computer_screenshot');
-
-static const List<ComputerScreenshotImageType> values = [computerScreenshot];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerScreenshotImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerScreenshotImageType($value)'; } 
- }
-/// A computer screenshot image used with the computer use tool.
-/// 
-@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotImageType.computerScreenshot, this.imageUrl, this.fileId, });
+@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotContentType.computerScreenshot, this.imageUrl, this.fileId, });
 
 factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return ComputerScreenshotImage(
-  type: ComputerScreenshotImageType.fromJson(json['type'] as String),
+  type: ComputerScreenshotContentType.fromJson(json['type'] as String),
   imageUrl: json['image_url'] as String?,
   fileId: json['file_id'] as String?,
 ); }
@@ -37,7 +13,7 @@ factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return Com
 /// Specifies the event type. For a computer screenshot, this property is
 /// always set to `computer_screenshot`.
 /// 
-final ComputerScreenshotImageType type;
+final ComputerScreenshotContentType type;
 
 /// The URL of the screenshot image.
 final String? imageUrl;
@@ -51,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ComputerScreenshotImage copyWith({ComputerScreenshotImageType? type, String Function()? imageUrl, String Function()? fileId, }) { return ComputerScreenshotImage(
+ComputerScreenshotImage copyWith({ComputerScreenshotContentType? type, String Function()? imageUrl, String Function()? fileId, }) { return ComputerScreenshotImage(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,

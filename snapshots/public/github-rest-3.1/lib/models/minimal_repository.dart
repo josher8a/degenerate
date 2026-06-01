@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_of_conduct.dart';import 'minimal_repository_license.dart';import 'minimal_repository_permissions.dart';import 'security_and_analysis.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-@immutable final class MinimalRepositoryPullRequestCreationPolicy {const MinimalRepositoryPullRequestCreationPolicy._(this.value);
-
-factory MinimalRepositoryPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'collaborators_only' => collaboratorsOnly,
-  _ => MinimalRepositoryPullRequestCreationPolicy._(json),
-}; }
-
-static const MinimalRepositoryPullRequestCreationPolicy all = MinimalRepositoryPullRequestCreationPolicy._('all');
-
-static const MinimalRepositoryPullRequestCreationPolicy collaboratorsOnly = MinimalRepositoryPullRequestCreationPolicy._('collaborators_only');
-
-static const List<MinimalRepositoryPullRequestCreationPolicy> values = [all, collaboratorsOnly];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MinimalRepositoryPullRequestCreationPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MinimalRepositoryPullRequestCreationPolicy($value)'; } 
- }
-/// Minimal Repository
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_of_conduct.dart';import 'package:pub_github_rest_3_1/models/full_repository/pull_request_creation_policy.dart';import 'package:pub_github_rest_3_1/models/minimal_repository/minimal_repository_license.dart';import 'package:pub_github_rest_3_1/models/minimal_repository/minimal_repository_permissions.dart';import 'package:pub_github_rest_3_1/models/security_and_analysis.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Minimal Repository
 @immutable final class MinimalRepository {const MinimalRepository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.hooksUrl, required this.treesUrl, this.sshUrl, this.cloneUrl, this.mirrorUrl, this.gitUrl, this.svnUrl, this.homepage, this.language, this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.defaultBranch, this.openIssuesCount, this.customProperties, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.archived, this.disabled, this.visibility, this.pushedAt, this.createdAt, this.updatedAt, this.permissions, this.roleName, this.tempCloneToken, this.deleteBranchOnMerge, this.subscribersCount, this.networkCount, this.codeOfConduct, this.license, this.forks, this.openIssues, this.watchers, this.allowForking, this.webCommitSignoffRequired, this.securityAndAnalysis, this.isTemplate, });
 
 factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRepository(
@@ -97,7 +72,7 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   hasDownloads: json['has_downloads'] as bool?,
   hasDiscussions: json['has_discussions'] as bool?,
   hasPullRequests: json['has_pull_requests'] as bool?,
-  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? MinimalRepositoryPullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
+  pullRequestCreationPolicy: json['pull_request_creation_policy'] != null ? PullRequestCreationPolicy.fromJson(json['pull_request_creation_policy'] as String) : null,
   archived: json['archived'] as bool?,
   disabled: json['disabled'] as bool?,
   visibility: json['visibility'] as String?,
@@ -259,7 +234,7 @@ final bool? hasDiscussions;
 final bool? hasPullRequests;
 
 /// The policy controlling who can create pull requests: all or collaborators_only.
-final MinimalRepositoryPullRequestCreationPolicy? pullRequestCreationPolicy;
+final PullRequestCreationPolicy? pullRequestCreationPolicy;
 
 final bool? archived;
 
@@ -442,7 +417,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
       json.containsKey('hooks_url') && json['hooks_url'] is String; } 
-MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String Function()? cloneUrl, String? Function()? mirrorUrl, Uri? hooksUrl, String Function()? svnUrl, String? Function()? homepage, String? Function()? language, int Function()? forksCount, int Function()? stargazersCount, int Function()? watchersCount, int Function()? size, String Function()? defaultBranch, int Function()? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasPages, bool Function()? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, MinimalRepositoryPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool Function()? archived, bool Function()? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, MinimalRepositoryPermissions Function()? permissions, String Function()? roleName, String Function()? tempCloneToken, bool Function()? deleteBranchOnMerge, int Function()? subscribersCount, int Function()? networkCount, CodeOfConduct Function()? codeOfConduct, MinimalRepositoryLicense? Function()? license, int Function()? forks, int Function()? openIssues, int Function()? watchers, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, SecurityAndAnalysis Function()? securityAndAnalysis, Map<String, dynamic> Function()? customProperties, }) { return MinimalRepository(
+MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String Function()? cloneUrl, String? Function()? mirrorUrl, Uri? hooksUrl, String Function()? svnUrl, String? Function()? homepage, String? Function()? language, int Function()? forksCount, int Function()? stargazersCount, int Function()? watchersCount, int Function()? size, String Function()? defaultBranch, int Function()? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasPages, bool Function()? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, PullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool Function()? archived, bool Function()? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, MinimalRepositoryPermissions Function()? permissions, String Function()? roleName, String Function()? tempCloneToken, bool Function()? deleteBranchOnMerge, int Function()? subscribersCount, int Function()? networkCount, CodeOfConduct Function()? codeOfConduct, MinimalRepositoryLicense? Function()? license, int Function()? forks, int Function()? openIssues, int Function()? watchers, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, SecurityAndAnalysis Function()? securityAndAnalysis, Map<String, dynamic> Function()? customProperties, }) { return MinimalRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

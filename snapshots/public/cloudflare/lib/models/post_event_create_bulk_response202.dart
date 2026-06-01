@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_response202_created_events.dart';import 'post_event_create_bulk_response202_errors.dart';/// Detailed result of bulk event creation with auto-tag management
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_dos_event_create_bulk_with_relationships_response/post_dos_event_create_bulk_with_relationships_response_errors.dart';import 'package:pub_cloudflare/models/post_event_create_bulk_response202/created_events.dart';/// Detailed result of bulk event creation with auto-tag management
 @immutable final class PostEventCreateBulkResponse202 {const PostEventCreateBulkResponse202({required this.createdEventsCount, required this.createdTagsCount, required this.errorCount, required this.queuedIndicatorsCount, this.createBulkEventsRequestId, this.createdEvents, this.errors, });
 
 factory PostEventCreateBulkResponse202.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkResponse202(
   createBulkEventsRequestId: json['createBulkEventsRequestId'] as String?,
-  createdEvents: (json['createdEvents'] as List<dynamic>?)?.map((e) => PostEventCreateBulkResponse202CreatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
+  createdEvents: (json['createdEvents'] as List<dynamic>?)?.map((e) => CreatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
   createdEventsCount: (json['createdEventsCount'] as num).toDouble(),
   createdTagsCount: (json['createdTagsCount'] as num).toDouble(),
   errorCount: (json['errorCount'] as num).toDouble(),
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => PostEventCreateBulkResponse202Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => PostDosEventCreateBulkWithRelationshipsResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   queuedIndicatorsCount: (json['queuedIndicatorsCount'] as num).toDouble(),
 ); }
 
@@ -17,7 +17,7 @@ factory PostEventCreateBulkResponse202.fromJson(Map<String, dynamic> json) { ret
 final String? createBulkEventsRequestId;
 
 /// Array of created events with UUIDs and shard locations. Only present when includeCreatedEvents=true
-final List<PostEventCreateBulkResponse202CreatedEvents>? createdEvents;
+final List<CreatedEvents>? createdEvents;
 
 /// Number of events created
 final double createdEventsCount;
@@ -29,7 +29,7 @@ final double createdTagsCount;
 final double errorCount;
 
 /// Array of error details
-final List<PostEventCreateBulkResponse202Errors>? errors;
+final List<PostDosEventCreateBulkWithRelationshipsResponseErrors>? errors;
 
 /// Number of indicators queued for async processing
 final double queuedIndicatorsCount;
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('createdTagsCount') && json['createdTagsCount'] is num &&
       json.containsKey('errorCount') && json['errorCount'] is num &&
       json.containsKey('queuedIndicatorsCount') && json['queuedIndicatorsCount'] is num; } 
-PostEventCreateBulkResponse202 copyWith({String Function()? createBulkEventsRequestId, List<PostEventCreateBulkResponse202CreatedEvents> Function()? createdEvents, double? createdEventsCount, double? createdTagsCount, double? errorCount, List<PostEventCreateBulkResponse202Errors> Function()? errors, double? queuedIndicatorsCount, }) { return PostEventCreateBulkResponse202(
+PostEventCreateBulkResponse202 copyWith({String Function()? createBulkEventsRequestId, List<CreatedEvents> Function()? createdEvents, double? createdEventsCount, double? createdTagsCount, double? errorCount, List<PostDosEventCreateBulkWithRelationshipsResponseErrors> Function()? errors, double? queuedIndicatorsCount, }) { return PostEventCreateBulkResponse202(
   createBulkEventsRequestId: createBulkEventsRequestId != null ? createBulkEventsRequestId() : this.createBulkEventsRequestId,
   createdEvents: createdEvents != null ? createdEvents() : this.createdEvents,
   createdEventsCount: createdEventsCount ?? this.createdEventsCount,

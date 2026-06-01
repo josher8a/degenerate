@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';import 'simple_user.dart';/// A migration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A migration.
 @immutable final class Migration {const Migration({required this.id, required this.owner, required this.guid, required this.state, required this.lockRepositories, required this.excludeMetadata, required this.excludeGitData, required this.excludeAttachments, required this.excludeReleases, required this.excludeOwnerProjects, required this.orgMetadataOnly, required this.repositories, required this.url, required this.createdAt, required this.updatedAt, required this.nodeId, this.archiveUrl, this.exclude, });
 
 factory Migration.fromJson(Map<String, dynamic> json) { return Migration(

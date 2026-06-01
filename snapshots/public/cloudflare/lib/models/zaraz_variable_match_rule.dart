@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_variable_match_rule_settings.dart';@immutable final class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule/zaraz_variable_match_rule_settings.dart';@immutable final class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction._(this.value);
 
 factory ZarazVariableMatchRuleAction.fromJson(String json) { return switch (json) {
   'variableMatch' => variableMatch,

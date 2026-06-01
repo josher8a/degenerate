@@ -1,43 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._('');
-
-static const PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage> values = [$empty, none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam16 {const PaymentIntentPaymentMethodOptionsParam16({this.setupFutureUsage, this.targetDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam16 {const PaymentIntentPaymentMethodOptionsParam16({this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsParam16.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam16(
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
-final PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage? setupFutureUsage;
+final payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
@@ -46,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam16 copyWith({PaymentIntentPaymentMethodOptionsParam16SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam16(
+PaymentIntentPaymentMethodOptionsParam16 copyWith({payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam16(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 

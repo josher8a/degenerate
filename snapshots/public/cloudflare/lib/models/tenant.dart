@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_contacts.dart';import 'tenant_tenant_metadata.dart';import 'tenant_unit.dart';@immutable final class Tenant {const Tenant({required this.cdate, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, this.customerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tenant/tenant_contacts.dart';import 'package:pub_cloudflare/models/tenant/tenant_metadata.dart';import 'package:pub_cloudflare/models/tenant_unit.dart';@immutable final class Tenant {const Tenant({required this.cdate, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, this.customerId, });
 
 factory Tenant.fromJson(Map<String, dynamic> json) { return Tenant(
   cdate: DateTime.parse(json['cdate'] as String),
   customerId: json['customer_id'] as String?,
   edate: DateTime.parse(json['edate'] as String),
-  tenantContacts: TenantTenantContacts.fromJson(json['tenant_contacts'] as Map<String, dynamic>),
+  tenantContacts: TenantContacts.fromJson(json['tenant_contacts'] as Map<String, dynamic>),
   tenantLabels: (json['tenant_labels'] as List<dynamic>).map((e) => e as String).toList(),
-  tenantMetadata: TenantTenantMetadata.fromJson(json['tenant_metadata'] as Map<String, dynamic>),
+  tenantMetadata: TenantMetadata.fromJson(json['tenant_metadata'] as Map<String, dynamic>),
   tenantName: json['tenant_name'] as String,
   tenantNetwork: json['tenant_network'] as Map<String, dynamic>,
   tenantStatus: json['tenant_status'] as String,
@@ -23,11 +23,11 @@ final String? customerId;
 
 final DateTime edate;
 
-final TenantTenantContacts tenantContacts;
+final TenantContacts tenantContacts;
 
 final List<String> tenantLabels;
 
-final TenantTenantMetadata tenantMetadata;
+final TenantMetadata tenantMetadata;
 
 final String tenantName;
 
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cdate
       json.containsKey('tenant_tag') && json['tenant_tag'] is String &&
       json.containsKey('tenant_type') && json['tenant_type'] is String &&
       json.containsKey('tenant_units'); } 
-Tenant copyWith({DateTime? cdate, String Function()? customerId, DateTime? edate, TenantTenantContacts? tenantContacts, List<String>? tenantLabels, TenantTenantMetadata? tenantMetadata, String? tenantName, Map<String,dynamic>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
+Tenant copyWith({DateTime? cdate, String Function()? customerId, DateTime? edate, TenantContacts? tenantContacts, List<String>? tenantLabels, TenantMetadata? tenantMetadata, String? tenantName, Map<String,dynamic>? tenantNetwork, String? tenantStatus, String? tenantTag, String? tenantType, List<TenantUnit>? tenantUnits, }) { return Tenant(
   cdate: cdate ?? this.cdate,
   customerId: customerId != null ? customerId() : this.customerId,
   edate: edate ?? this.edate,

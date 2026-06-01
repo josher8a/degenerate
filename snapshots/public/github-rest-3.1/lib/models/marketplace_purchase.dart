@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_purchase_marketplace_pending_change.dart';import 'marketplace_purchase_marketplace_purchase.dart';/// Marketplace Purchase
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase/marketplace_pending_change.dart';import 'package:pub_github_rest_3_1/models/marketplace_purchase/marketplace_purchase_marketplace_purchase.dart';/// Marketplace Purchase
 @immutable final class MarketplacePurchase {const MarketplacePurchase({required this.url, required this.type, required this.id, required this.login, required this.marketplacePurchase, this.organizationBillingEmail, this.email, this.marketplacePendingChange, });
 
 factory MarketplacePurchase.fromJson(Map<String, dynamic> json) { return MarketplacePurchase(
@@ -10,7 +10,7 @@ factory MarketplacePurchase.fromJson(Map<String, dynamic> json) { return Marketp
   login: json['login'] as String,
   organizationBillingEmail: json['organization_billing_email'] as String?,
   email: json['email'] as String?,
-  marketplacePendingChange: json['marketplace_pending_change'] != null ? MarketplacePurchaseMarketplacePendingChange.fromJson(json['marketplace_pending_change'] as Map<String, dynamic>) : null,
+  marketplacePendingChange: json['marketplace_pending_change'] != null ? MarketplacePendingChange.fromJson(json['marketplace_pending_change'] as Map<String, dynamic>) : null,
   marketplacePurchase: MarketplacePurchaseMarketplacePurchase.fromJson(json['marketplace_purchase'] as Map<String, dynamic>),
 ); }
 
@@ -26,7 +26,7 @@ final String? organizationBillingEmail;
 
 final String? email;
 
-final MarketplacePurchaseMarketplacePendingChange? marketplacePendingChange;
+final MarketplacePendingChange? marketplacePendingChange;
 
 final MarketplacePurchaseMarketplacePurchase marketplacePurchase;
 
@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
       json.containsKey('marketplace_purchase'); } 
-MarketplacePurchase copyWith({String? url, String? type, int? id, String? login, String Function()? organizationBillingEmail, String? Function()? email, MarketplacePurchaseMarketplacePendingChange? Function()? marketplacePendingChange, MarketplacePurchaseMarketplacePurchase? marketplacePurchase, }) { return MarketplacePurchase(
+MarketplacePurchase copyWith({String? url, String? type, int? id, String? login, String Function()? organizationBillingEmail, String? Function()? email, MarketplacePendingChange? Function()? marketplacePendingChange, MarketplacePurchaseMarketplacePurchase? marketplacePurchase, }) { return MarketplacePurchase(
   url: url ?? this.url,
   type: type ?? this.type,
   id: id ?? this.id,

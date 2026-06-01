@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_video_config_watermark.dart';/// Codec using which the recording will be encoded.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark.dart';/// Codec using which the recording will be encoded.
 @immutable final class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec._(this.value);
 
 factory RealtimekitVideoConfigCodec.fromJson(String json) { return switch (json) {
@@ -31,7 +31,7 @@ factory RealtimekitVideoConfig.fromJson(Map<String, dynamic> json) { return Real
   codec: json.containsKey('codec') ? RealtimekitVideoConfigCodec.fromJson(json['codec'] as String) : RealtimekitVideoConfigCodec.h264,
   exportFile: json.containsKey('export_file') ? json['export_file'] as bool : true,
   height: json.containsKey('height') ? (json['height'] as num).toInt() : 720,
-  watermark: json['watermark'] != null ? RealtimekitVideoConfigWatermark.fromJson(json['watermark'] as Map<String, dynamic>) : null,
+  watermark: json['watermark'] != null ? Watermark.fromJson(json['watermark'] as Map<String, dynamic>) : null,
   width: json.containsKey('width') ? (json['width'] as num).toInt() : 1280,
 ); }
 
@@ -45,7 +45,7 @@ final bool exportFile;
 final int height;
 
 /// Watermark to be added to the recording
-final RealtimekitVideoConfigWatermark? watermark;
+final Watermark? watermark;
 
 /// Width of the recording video in pixels
 final int width;
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'width': width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'codec', 'export_file', 'height', 'watermark', 'width'}.contains(key)); } 
-RealtimekitVideoConfig copyWith({RealtimekitVideoConfigCodec Function()? codec, bool Function()? exportFile, int Function()? height, RealtimekitVideoConfigWatermark Function()? watermark, int Function()? width, }) { return RealtimekitVideoConfig(
+RealtimekitVideoConfig copyWith({RealtimekitVideoConfigCodec Function()? codec, bool Function()? exportFile, int Function()? height, Watermark Function()? watermark, int Function()? width, }) { return RealtimekitVideoConfig(
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,
   height: height != null ? height() : this.height,

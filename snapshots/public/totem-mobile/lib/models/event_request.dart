@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'event_request_event.dart';
+import 'package:pub_totem_mobile/models/event_request/event.dart';
 
 /// POST body. Includes the event and the client's last-seen version
 /// for optimistic concurrency control.
@@ -11,12 +11,12 @@ final class EventRequest {
 
   factory EventRequest.fromJson(Map<String, dynamic> json) {
     return EventRequest(
-      event: EventRequestEvent.fromJson(json['event'] as Map<String, dynamic>),
+      event: Event.fromJson(json['event'] as Map<String, dynamic>),
       lastSeenVersion: (json['last_seen_version'] as num).toInt(),
     );
   }
 
-  final EventRequestEvent event;
+  final Event event;
 
   final int lastSeenVersion;
 
@@ -30,7 +30,7 @@ final class EventRequest {
         json['last_seen_version'] is num;
   }
 
-  EventRequest copyWith({EventRequestEvent? event, int? lastSeenVersion}) {
+  EventRequest copyWith({Event? event, int? lastSeenVersion}) {
     return EventRequest(
       event: event ?? this.event,
       lastSeenVersion: lastSeenVersion ?? this.lastSeenVersion,

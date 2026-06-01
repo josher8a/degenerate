@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_directory2.dart';import 'content_file.dart';import 'content_file_links.dart';import 'content_submodule.dart';import 'content_submodule_links.dart';import 'content_symlink.dart';import 'content_symlink_links.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/content_directory2.dart';import 'package:pub_github_rest_3_1/models/content_file.dart';import 'package:pub_github_rest_3_1/models/content_submodule.dart';import 'package:pub_github_rest_3_1/models/content_symlink.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -12,13 +12,13 @@ factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return swi
 }; }
 
 /// Build the `file` variant.
-factory ReposGetContentResponse.file({required String encoding, required int size, required String name, required String path, required String content, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentFileLinks links, String? target, String? submoduleGitUrl, }) { return ReposGetContentResponseFile(ContentFile(type: 'file', encoding: encoding, size: size, name: name, path: path, content: content, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links, target: target, submoduleGitUrl: submoduleGitUrl)); }
+factory ReposGetContentResponse.file({required String encoding, required int size, required String name, required String path, required String content, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentDirectoryLinks links, String? target, String? submoduleGitUrl, }) { return ReposGetContentResponseFile(ContentFile(type: 'file', encoding: encoding, size: size, name: name, path: path, content: content, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links, target: target, submoduleGitUrl: submoduleGitUrl)); }
 
 /// Build the `symlink` variant.
-factory ReposGetContentResponse.symlink({required String target, required int size, required String name, required String path, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentSymlinkLinks links, }) { return ReposGetContentResponseSymlink(ContentSymlink(type: 'symlink', target: target, size: size, name: name, path: path, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links)); }
+factory ReposGetContentResponse.symlink({required String target, required int size, required String name, required String path, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentDirectoryLinks links, }) { return ReposGetContentResponseSymlink(ContentSymlink(type: 'symlink', target: target, size: size, name: name, path: path, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links)); }
 
 /// Build the `submodule` variant.
-factory ReposGetContentResponse.submodule({required Uri submoduleGitUrl, required int size, required String name, required String path, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentSubmoduleLinks links, }) { return ReposGetContentResponseSubmodule(ContentSubmodule(type: 'submodule', submoduleGitUrl: submoduleGitUrl, size: size, name: name, path: path, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links)); }
+factory ReposGetContentResponse.submodule({required Uri submoduleGitUrl, required int size, required String name, required String path, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentDirectoryLinks links, }) { return ReposGetContentResponseSubmodule(ContentSubmodule(type: 'submodule', submoduleGitUrl: submoduleGitUrl, size: size, name: name, path: path, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links)); }
 
 /// The discriminator value identifying this variant.
 String get type;

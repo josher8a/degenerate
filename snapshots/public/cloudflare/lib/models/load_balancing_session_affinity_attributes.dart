@@ -60,22 +60,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingSessionAffinityAttributesSecure($value)'; } 
  }
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
-@immutable final class LoadBalancingSessionAffinityAttributesZeroDowntimeFailover {const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(this.value);
+@immutable final class ZeroDowntimeFailover {const ZeroDowntimeFailover._(this.value);
 
-factory LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(String json) { return switch (json) {
+factory ZeroDowntimeFailover.fromJson(String json) { return switch (json) {
   'none' => none,
   'temporary' => temporary,
   'sticky' => sticky,
-  _ => LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._(json),
+  _ => ZeroDowntimeFailover._(json),
 }; }
 
-static const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover none = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._('none');
+static const ZeroDowntimeFailover none = ZeroDowntimeFailover._('none');
 
-static const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover temporary = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._('temporary');
+static const ZeroDowntimeFailover temporary = ZeroDowntimeFailover._('temporary');
 
-static const LoadBalancingSessionAffinityAttributesZeroDowntimeFailover sticky = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover._('sticky');
+static const ZeroDowntimeFailover sticky = ZeroDowntimeFailover._('sticky');
 
-static const List<LoadBalancingSessionAffinityAttributesZeroDowntimeFailover> values = [none, temporary, sticky];
+static const List<ZeroDowntimeFailover> values = [none, temporary, sticky];
 
 final String value;
 
@@ -83,12 +83,12 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesZeroDowntimeFailover && other.value == value; } 
+    other is ZeroDowntimeFailover && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingSessionAffinityAttributesZeroDowntimeFailover($value)'; } 
+@override String toString() { return 'ZeroDowntimeFailover($value)'; } 
  }
 /// Configures attributes for session affinity.
-@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none, });
+@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = ZeroDowntimeFailover.none, });
 
 factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: json['drain_duration'] != null ? (json['drain_duration'] as num).toDouble() : null,
@@ -96,7 +96,7 @@ factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> jso
   requireAllHeaders: json.containsKey('require_all_headers') ? json['require_all_headers'] as bool : false,
   samesite: json.containsKey('samesite') ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : LoadBalancingSessionAffinityAttributesSamesite.auto,
   secure: json.containsKey('secure') ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : LoadBalancingSessionAffinityAttributesSecure.auto,
-  zeroDowntimeFailover: json.containsKey('zero_downtime_failover') ? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none,
+  zeroDowntimeFailover: json.containsKey('zero_downtime_failover') ? ZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : ZeroDowntimeFailover.none,
 ); }
 
 /// Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
@@ -115,7 +115,7 @@ final LoadBalancingSessionAffinityAttributesSamesite samesite;
 final LoadBalancingSessionAffinityAttributesSecure secure;
 
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
-final LoadBalancingSessionAffinityAttributesZeroDowntimeFailover zeroDowntimeFailover;
+final ZeroDowntimeFailover zeroDowntimeFailover;
 
 Map<String, dynamic> toJson() { return {
   'drain_duration': ?drainDuration,
@@ -126,7 +126,7 @@ Map<String, dynamic> toJson() { return {
   'zero_downtime_failover': zeroDowntimeFailover.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key)); } 
-LoadBalancingSessionAffinityAttributes copyWith({double Function()? drainDuration, List<String> Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, LoadBalancingSessionAffinityAttributesZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
+LoadBalancingSessionAffinityAttributes copyWith({double Function()? drainDuration, List<String> Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, ZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: drainDuration != null ? drainDuration() : this.drainDuration,
   headers: headers != null ? headers() : this.headers,
   requireAllHeaders: requireAllHeaders != null ? requireAllHeaders() : this.requireAllHeaders,

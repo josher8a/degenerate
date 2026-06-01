@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_payto.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_payto.dart';/// 
 @immutable final class SetupIntentPaymentMethodOptionsPayto {const SetupIntentPaymentMethodOptionsPayto({this.mandateOptions});
 
 factory SetupIntentPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsPayto(

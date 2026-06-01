@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyValuesUpdatedAction {const WebhookCustomPropertyValuesUpdatedAction._(this.value);
-
-factory WebhookCustomPropertyValuesUpdatedAction.fromJson(String json) { return switch (json) {
-  'updated' => updated,
-  _ => WebhookCustomPropertyValuesUpdatedAction._(json),
-}; }
-
-static const WebhookCustomPropertyValuesUpdatedAction updated = WebhookCustomPropertyValuesUpdatedAction._('updated');
-
-static const List<WebhookCustomPropertyValuesUpdatedAction> values = [updated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyValuesUpdatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyValuesUpdatedAction($value)'; } 
- }
-@immutable final class WebhookCustomPropertyValuesUpdated {const WebhookCustomPropertyValuesUpdated({required this.action, required this.repository, required this.organization, required this.newPropertyValues, required this.oldPropertyValues, this.enterprise, this.installation, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property_value.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_updated/webhook_custom_property_updated_action.dart';@immutable final class WebhookCustomPropertyValuesUpdated {const WebhookCustomPropertyValuesUpdated({required this.action, required this.repository, required this.organization, required this.newPropertyValues, required this.oldPropertyValues, this.enterprise, this.installation, this.sender, });
 
 factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyValuesUpdated(
-  action: WebhookCustomPropertyValuesUpdatedAction.fromJson(json['action'] as String),
+  action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
@@ -34,7 +13,7 @@ factory WebhookCustomPropertyValuesUpdated.fromJson(Map<String, dynamic> json) {
   oldPropertyValues: (json['old_property_values'] as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final WebhookCustomPropertyValuesUpdatedAction action;
+final WebhookCustomPropertyUpdatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -67,7 +46,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('new_property_values') &&
       json.containsKey('old_property_values'); } 
-WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyValuesUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, RepositoryWebhooks? repository, OrganizationSimpleWebhooks? organization, SimpleUser Function()? sender, List<CustomPropertyValue>? newPropertyValues, List<CustomPropertyValue>? oldPropertyValues, }) { return WebhookCustomPropertyValuesUpdated(
+WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, RepositoryWebhooks? repository, OrganizationSimpleWebhooks? organization, SimpleUser Function()? sender, List<CustomPropertyValue>? newPropertyValues, List<CustomPropertyValue>? oldPropertyValues, }) { return WebhookCustomPropertyValuesUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

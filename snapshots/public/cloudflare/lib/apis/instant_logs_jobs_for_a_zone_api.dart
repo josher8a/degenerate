@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logpush_identifier.dart';import '../models/logpush_instant_logs_job.dart';import '../models/post_zones_zone_id_logpush_edge_jobs_request.dart';/// InstantLogsJobsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_identifier.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_edge_jobs_request.dart';/// InstantLogsJobsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

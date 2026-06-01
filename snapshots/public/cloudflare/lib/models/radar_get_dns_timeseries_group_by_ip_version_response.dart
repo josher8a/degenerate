@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponse {const RadarGetDnsTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_dns_as112_timeseries_group_by_ip_version_response/radar_get_dns_as112_timeseries_group_by_ip_version_response_result.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponse {const RadarGetDnsTimeseriesGroupByIpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetDnsTimeseriesGroupByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByIpVersionResponse(
-  result: RadarGetDnsTimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetDnsTimeseriesGroupByIpVersionResponseResult result;
+final RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetDnsTimeseriesGroupByIpVersionResponse copyWith({RadarGetDnsTimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByIpVersionResponse(
+RadarGetDnsTimeseriesGroupByIpVersionResponse copyWith({RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResult? result, bool? success, }) { return RadarGetDnsTimeseriesGroupByIpVersionResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

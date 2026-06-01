@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_fixed_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertFixedAction {const WebhookCodeScanningAlertFixedAction._(this.value);
-
-factory WebhookCodeScanningAlertFixedAction.fromJson(String json) { return switch (json) {
-  'fixed' => fixed,
-  _ => WebhookCodeScanningAlertFixedAction._(json),
-}; }
-
-static const WebhookCodeScanningAlertFixedAction fixed = WebhookCodeScanningAlertFixedAction._('fixed');
-
-static const List<WebhookCodeScanningAlertFixedAction> values = [fixed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertFixedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertFixedAction($value)'; } 
- }
-@immutable final class WebhookCodeScanningAlertFixed {const WebhookCodeScanningAlertFixed({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_fixed/webhook_code_scanning_alert_fixed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_fixed/webhook_code_scanning_alert_fixed_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertFixed {const WebhookCodeScanningAlertFixed({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertFixed.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertFixed(
   action: WebhookCodeScanningAlertFixedAction.fromJson(json['action'] as String),

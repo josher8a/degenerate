@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_embeddings_text.dart';@immutable final class TextEmbeddings {const TextEmbeddings({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding2_text.dart';@immutable final class TextEmbeddings {const TextEmbeddings({required this.text});
 
 factory TextEmbeddings.fromJson(Map<String, dynamic> json) { return TextEmbeddings(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
-final TextEmbeddingsText text;
+final InputEmbedding2Text text;
 
 Map<String, dynamic> toJson() { return {
   'text': text.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-TextEmbeddings copyWith({TextEmbeddingsText? text}) { return TextEmbeddings(
+TextEmbeddings copyWith({InputEmbedding2Text? text}) { return TextEmbeddings(
   text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

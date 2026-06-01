@@ -1,110 +1,42 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto.dart';import 'mcp_tool.dart';import 'prompt.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_ga_audio.dart';import 'realtime_session_create_response_ga_client_secret.dart';import 'realtime_session_create_response_ga_max_output_tokens.dart';import 'realtime_session_create_response_ga_model.dart';import 'realtime_session_create_response_ga_tool_choice.dart';import 'realtime_session_create_response_ga_tools.dart';import 'realtime_session_create_response_ga_tracing.dart';import 'realtime_truncation.dart';import 'retention_ratio_truncation.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tracing_configuration5.dart';/// The type of session to create. Always `realtime` for the Realtime API.
-/// 
-@immutable final class RealtimeSessionCreateResponseGaType {const RealtimeSessionCreateResponseGaType._(this.value);
-
-factory RealtimeSessionCreateResponseGaType.fromJson(String json) { return switch (json) {
-  'realtime' => realtime,
-  _ => RealtimeSessionCreateResponseGaType._(json),
-}; }
-
-static const RealtimeSessionCreateResponseGaType realtime = RealtimeSessionCreateResponseGaType._('realtime');
-
-static const List<RealtimeSessionCreateResponseGaType> values = [realtime];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaType($value)'; } 
- }
-@immutable final class RealtimeSessionCreateResponseGaOutputModalities {const RealtimeSessionCreateResponseGaOutputModalities._(this.value);
-
-factory RealtimeSessionCreateResponseGaOutputModalities.fromJson(String json) { return switch (json) {
-  'text' => text,
-  'audio' => audio,
-  _ => RealtimeSessionCreateResponseGaOutputModalities._(json),
-}; }
-
-static const RealtimeSessionCreateResponseGaOutputModalities text = RealtimeSessionCreateResponseGaOutputModalities._('text');
-
-static const RealtimeSessionCreateResponseGaOutputModalities audio = RealtimeSessionCreateResponseGaOutputModalities._('audio');
-
-static const List<RealtimeSessionCreateResponseGaOutputModalities> values = [text, audio];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaOutputModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaOutputModalities($value)'; } 
- }
-@immutable final class RealtimeSessionCreateResponseGaInclude {const RealtimeSessionCreateResponseGaInclude._(this.value);
-
-factory RealtimeSessionCreateResponseGaInclude.fromJson(String json) { return switch (json) {
-  'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
-  _ => RealtimeSessionCreateResponseGaInclude._(json),
-}; }
-
-static const RealtimeSessionCreateResponseGaInclude itemInputAudioTranscriptionLogprobs = RealtimeSessionCreateResponseGaInclude._('item.input_audio_transcription.logprobs');
-
-static const List<RealtimeSessionCreateResponseGaInclude> values = [itemInputAudioTranscriptionLogprobs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseGaInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaInclude($value)'; } 
- }
-/// A new Realtime session configuration, with an ephemeral key. Default TTL
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_session_create_request/client_secret.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_session_create_response_ga/realtime_session_create_response_ga_audio.dart';import 'package:pub_openai/models/realtime_truncation.dart';import 'package:pub_openai/models/retention_ratio_truncation.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
 @immutable final class RealtimeSessionCreateResponseGa {const RealtimeSessionCreateResponseGa({required this.clientSecret, required this.type, this.outputModalities, this.model, this.instructions, this.audio, this.include, this.tracing, this.tools, this.toolChoice, this.maxOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateResponseGa.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseGa(
-  clientSecret: RealtimeSessionCreateResponseGaClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
-  type: RealtimeSessionCreateResponseGaType.fromJson(json['type'] as String),
-  outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaOutputModalities.fromJson(e as String)).toList(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => RealtimeSessionCreateResponseGaModelVariant2.fromJson(v as String),) : null,
+  clientSecret: ClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
+  type: RealtimeSessionCreateRequestGaType.fromJson(json['type'] as String),
+  outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => OutputModalities.fromJson(e as String)).toList(),
+  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => RealtimeSessionCreateRequestGaModelVariant2.fromJson(v as String),) : null,
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateResponseGaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseGaInclude.fromJson(e as String)).toList(),
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => Auto.fromJson(v as String), fromB: (v) => TracingConfiguration5.fromJson(v as Map<String, dynamic>),) : null,
+  include: (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(),
+  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => auto.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => McpTool.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
-  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateResponseGaMaxOutputTokensVariant2.fromJson(v as String),) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   truncation: json['truncation'] != null ? OneOf2.parse(json['truncation'], fromA: (v) => RealtimeTruncationVariant1.fromJson(v as String), fromB: (v) => RetentionRatioTruncation.fromJson(v as Map<String, dynamic>),) : null,
   prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
 ); }
 
 /// Ephemeral key returned by the API.
-final RealtimeSessionCreateResponseGaClientSecret clientSecret;
+final ClientSecret clientSecret;
 
 /// The type of session to create. Always `realtime` for the Realtime API.
 /// 
-final RealtimeSessionCreateResponseGaType type;
+final RealtimeSessionCreateRequestGaType type;
 
 /// The set of modalities the model can respond with. It defaults to `["audio"]`, indicating
 /// that the model will respond with audio plus a transcript. `["text"]` can be used to make
 /// the model respond with text only. It is not possible to request both `text` and `audio` at the same time.
 /// 
-final List<RealtimeSessionCreateResponseGaOutputModalities>? outputModalities;
+final List<OutputModalities>? outputModalities;
 
 /// The Realtime model used for this session.
 /// 
-final RealtimeSessionCreateResponseGaModel? model;
+final RealtimeSessionCreateRequestGaModel? model;
 
 /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.
 /// 
@@ -120,7 +52,7 @@ final RealtimeSessionCreateResponseGaAudio? audio;
 /// 
 /// `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
 /// 
-final List<RealtimeSessionCreateResponseGaInclude>? include;
+final List<Include>? include;
 
 /// Realtime API can write session traces to the [Traces Dashboard](/logs?api=traces). Set to null to disable tracing. Once
 /// tracing is enabled for a session, the configuration cannot be modified.
@@ -128,22 +60,22 @@ final List<RealtimeSessionCreateResponseGaInclude>? include;
 /// `auto` will create a trace for the session with default values for the
 /// workflow name, group id, and metadata.
 /// 
-final RealtimeSessionCreateResponseGaTracing? tracing;
+final RealtimeSessionCreateRequestGaTracing? tracing;
 
 /// Tools available to the model.
-final List<RealtimeSessionCreateResponseGaTools>? tools;
+final List<RealtimeResponseCreateParamsTools>? tools;
 
 /// How the model chooses tools. Provide one of the string modes or force a specific
 /// function/MCP tool.
 /// 
-final RealtimeSessionCreateResponseGaToolChoice? toolChoice;
+final RealtimeBetaResponseCreateParamsToolChoice? toolChoice;
 
 /// Maximum number of output tokens for a single assistant response,
 /// inclusive of tool calls. Provide an integer between 1 and 4096 to
 /// limit output tokens, or `inf` for the maximum available tokens for a
 /// given model. Defaults to `inf`.
 /// 
-final RealtimeSessionCreateResponseGaMaxOutputTokens? maxOutputTokens;
+final MaxOutputTokens? maxOutputTokens;
 
 final RealtimeTruncation? truncation;
 
@@ -166,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') &&
       json.containsKey('type'); } 
-RealtimeSessionCreateResponseGa copyWith({RealtimeSessionCreateResponseGaClientSecret? clientSecret, RealtimeSessionCreateResponseGaType? type, List<RealtimeSessionCreateResponseGaOutputModalities> Function()? outputModalities, RealtimeSessionCreateResponseGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<RealtimeSessionCreateResponseGaInclude> Function()? include, RealtimeSessionCreateResponseGaTracing? Function()? tracing, List<RealtimeSessionCreateResponseGaTools> Function()? tools, RealtimeSessionCreateResponseGaToolChoice Function()? toolChoice, RealtimeSessionCreateResponseGaMaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
+RealtimeSessionCreateResponseGa copyWith({ClientSecret? clientSecret, RealtimeSessionCreateRequestGaType? type, List<OutputModalities> Function()? outputModalities, RealtimeSessionCreateRequestGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<Include> Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeSessionCreateResponseGa(
   clientSecret: clientSecret ?? this.clientSecret,
   type: type ?? this.type,
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,

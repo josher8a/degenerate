@@ -1,52 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction_entries.dart';import 'treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow that created the Transaction.
-@immutable final class TreasuryTransactionFlowType {const TreasuryTransactionFlowType._(this.value);
-
-factory TreasuryTransactionFlowType.fromJson(String json) { return switch (json) {
-  'credit_reversal' => creditReversal,
-  'debit_reversal' => debitReversal,
-  'inbound_transfer' => inboundTransfer,
-  'issuing_authorization' => issuingAuthorization,
-  'other' => $other,
-  'outbound_payment' => outboundPayment,
-  'outbound_transfer' => outboundTransfer,
-  'received_credit' => receivedCredit,
-  'received_debit' => receivedDebit,
-  _ => TreasuryTransactionFlowType._(json),
-}; }
-
-static const TreasuryTransactionFlowType creditReversal = TreasuryTransactionFlowType._('credit_reversal');
-
-static const TreasuryTransactionFlowType debitReversal = TreasuryTransactionFlowType._('debit_reversal');
-
-static const TreasuryTransactionFlowType inboundTransfer = TreasuryTransactionFlowType._('inbound_transfer');
-
-static const TreasuryTransactionFlowType issuingAuthorization = TreasuryTransactionFlowType._('issuing_authorization');
-
-static const TreasuryTransactionFlowType $other = TreasuryTransactionFlowType._('other');
-
-static const TreasuryTransactionFlowType outboundPayment = TreasuryTransactionFlowType._('outbound_payment');
-
-static const TreasuryTransactionFlowType outboundTransfer = TreasuryTransactionFlowType._('outbound_transfer');
-
-static const TreasuryTransactionFlowType receivedCredit = TreasuryTransactionFlowType._('received_credit');
-
-static const TreasuryTransactionFlowType receivedDebit = TreasuryTransactionFlowType._('received_debit');
-
-static const List<TreasuryTransactionFlowType> values = [creditReversal, debitReversal, inboundTransfer, issuingAuthorization, $other, outboundPayment, outboundTransfer, receivedCredit, receivedDebit];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionFlowType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionFlowType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_transaction/entries.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry/flow_type.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_balance_impact.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_flow_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryTransactionObject {const TreasuryTransactionObject._(this.value);
 
 factory TreasuryTransactionObject.fromJson(String json) { return switch (json) {
@@ -105,11 +59,11 @@ factory TreasuryTransaction.fromJson(Map<String, dynamic> json) { return Treasur
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String,
-  entries: json['entries'] != null ? TreasuryTransactionEntries.fromJson(json['entries'] as Map<String, dynamic>) : null,
+  entries: json['entries'] != null ? Entries.fromJson(json['entries'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String,
   flow: json['flow'] as String?,
   flowDetails: json['flow_details'] != null ? TreasuryTransactionsResourceFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
-  flowType: TreasuryTransactionFlowType.fromJson(json['flow_type'] as String),
+  flowType: FlowType.fromJson(json['flow_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TreasuryTransactionObject.fromJson(json['object'] as String),
@@ -132,7 +86,7 @@ final String currency;
 final String description;
 
 /// A list of TransactionEntries that are part of this Transaction. This cannot be expanded in any list endpoints.
-final TreasuryTransactionEntries? entries;
+final Entries? entries;
 
 /// The FinancialAccount associated with this object.
 final String financialAccount;
@@ -144,7 +98,7 @@ final String? flow;
 final TreasuryTransactionsResourceFlowDetails? flowDetails;
 
 /// Type of the flow that created the Transaction.
-final TreasuryTransactionFlowType flowType;
+final FlowType flowType;
 
 /// Unique identifier for the object.
 final String id;
@@ -189,7 +143,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, String? description, TreasuryTransactionEntries? Function()? entries, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, TreasuryTransactionFlowType? flowType, String? id, bool? livemode, TreasuryTransactionObject? object, TreasuryTransactionStatus? status, TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions? statusTransitions, }) { return TreasuryTransaction(
+TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, String? description, Entries? Function()? entries, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionObject? object, TreasuryTransactionStatus? status, TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions? statusTransitions, }) { return TreasuryTransaction(
   amount: amount ?? this.amount,
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,

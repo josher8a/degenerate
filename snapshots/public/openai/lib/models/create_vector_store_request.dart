@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_chunking_strategy_request_param.dart';import 'create_vector_store_request_chunking_strategy.dart';import 'static_chunking_strategy_request_param.dart';import 'vector_store_expiration_after.dart';@immutable final class CreateVectorStoreRequest {const CreateVectorStoreRequest({this.fileIds, this.name, this.description, this.expiresAfter, this.chunkingStrategy, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_chunking_strategy_request_param.dart';import 'package:pub_openai/models/create_vector_store_request/create_vector_store_request_chunking_strategy.dart';import 'package:pub_openai/models/static_chunking_strategy_request_param.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';@immutable final class CreateVectorStoreRequest {const CreateVectorStoreRequest({this.fileIds, this.name, this.description, this.expiresAfter, this.chunkingStrategy, this.metadata, });
 
 factory CreateVectorStoreRequest.fromJson(Map<String, dynamic> json) { return CreateVectorStoreRequest(
   fileIds: (json['file_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),

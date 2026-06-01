@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_multipart_script_metadata.dart';@immutable final class WorkersMultipartScript {const WorkersMultipartScript({required this.metadata, this.files, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_multipart_script/workers_multipart_script_metadata.dart';@immutable final class WorkersMultipartScript {const WorkersMultipartScript({required this.metadata, this.files, });
 
 factory WorkersMultipartScript.fromJson(Map<String, dynamic> json) { return WorkersMultipartScript(
   files: (json['files'] as List<dynamic>?)?.map((e) => base64Decode(e as String)).toList(),

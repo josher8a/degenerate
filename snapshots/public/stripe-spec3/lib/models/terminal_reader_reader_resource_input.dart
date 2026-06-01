@@ -1,43 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_custom_text.dart';import 'terminal_reader_reader_resource_email.dart';import 'terminal_reader_reader_resource_numeric.dart';import 'terminal_reader_reader_resource_phone.dart';import 'terminal_reader_reader_resource_selection.dart';import 'terminal_reader_reader_resource_signature.dart';import 'terminal_reader_reader_resource_text.dart';import 'terminal_reader_reader_resource_toggle.dart';/// Type of input being collected.
-@immutable final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);
-
-factory TerminalReaderReaderResourceInputType.fromJson(String json) { return switch (json) {
-  'email' => email,
-  'numeric' => numeric,
-  'phone' => phone,
-  'selection' => selection,
-  'signature' => signature,
-  'text' => text,
-  _ => TerminalReaderReaderResourceInputType._(json),
-}; }
-
-static const TerminalReaderReaderResourceInputType email = TerminalReaderReaderResourceInputType._('email');
-
-static const TerminalReaderReaderResourceInputType numeric = TerminalReaderReaderResourceInputType._('numeric');
-
-static const TerminalReaderReaderResourceInputType phone = TerminalReaderReaderResourceInputType._('phone');
-
-static const TerminalReaderReaderResourceInputType selection = TerminalReaderReaderResourceInputType._('selection');
-
-static const TerminalReaderReaderResourceInputType signature = TerminalReaderReaderResourceInputType._('signature');
-
-static const TerminalReaderReaderResourceInputType text = TerminalReaderReaderResourceInputType._('text');
-
-static const List<TerminalReaderReaderResourceInputType> values = [email, numeric, phone, selection, signature, text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceInputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceInputType($value)'; } 
- }
-/// Represents an input to be collected using the reader
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_custom_text.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_email.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_input/terminal_reader_reader_resource_input_type.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_numeric.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_phone.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_selection.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_signature.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_text.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_toggle.dart';/// Represents an input to be collected using the reader
 @immutable final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({required this.type, this.customText, this.email, this.numeric, this.phone, this.$required, this.selection, this.signature, this.skipped, this.text, this.toggles, });
 
 factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceInput(

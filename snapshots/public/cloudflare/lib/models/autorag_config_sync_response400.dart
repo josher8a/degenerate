@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_sync_response400_errors.dart';@immutable final class AutoragConfigSyncResponse400 {const AutoragConfigSyncResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';@immutable final class AutoragConfigSyncResponse400 {const AutoragConfigSyncResponse400({required this.errors, required this.success, });
 
 factory AutoragConfigSyncResponse400.fromJson(Map<String, dynamic> json) { return AutoragConfigSyncResponse400(
-  errors: (json['errors'] as List<dynamic>).map((e) => AutoragConfigSyncResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<AutoragConfigSyncResponse400Errors> errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> errors;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigSyncResponse400 copyWith({List<AutoragConfigSyncResponse400Errors>? errors, bool? success, }) { return AutoragConfigSyncResponse400(
+AutoragConfigSyncResponse400 copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors, bool? success, }) { return AutoragConfigSyncResponse400(
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 

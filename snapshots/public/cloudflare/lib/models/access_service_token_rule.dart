@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_service_token_rule_service_token.dart';/// Matches a specific Access Service Token
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_service_token_rule/service_token.dart';/// Matches a specific Access Service Token
 @immutable final class AccessServiceTokenRule {const AccessServiceTokenRule({required this.serviceToken});
 
 factory AccessServiceTokenRule.fromJson(Map<String, dynamic> json) { return AccessServiceTokenRule(
-  serviceToken: AccessServiceTokenRuleServiceToken.fromJson(json['service_token'] as Map<String, dynamic>),
+  serviceToken: ServiceToken.fromJson(json['service_token'] as Map<String, dynamic>),
 ); }
 
-final AccessServiceTokenRuleServiceToken serviceToken;
+final ServiceToken serviceToken;
 
 Map<String, dynamic> toJson() { return {
   'service_token': serviceToken.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('service_token'); } 
-AccessServiceTokenRule copyWith({AccessServiceTokenRuleServiceToken? serviceToken}) { return AccessServiceTokenRule(
+AccessServiceTokenRule copyWith({ServiceToken? serviceToken}) { return AccessServiceTokenRule(
   serviceToken: serviceToken ?? this.serviceToken,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

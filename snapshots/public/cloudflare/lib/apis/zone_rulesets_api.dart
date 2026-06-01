@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_zone_ruleset_request.dart';import '../models/create_zone_ruleset_rule_request.dart';import '../models/list_zone_entrypoint_ruleset_versions_response_result.dart';import '../models/list_zone_ruleset_versions_response_result.dart';import '../models/list_zone_rulesets_response_result.dart';import '../models/rulesets_cursor.dart';import '../models/rulesets_per_page.dart';import '../models/rulesets_rule_category.dart';import '../models/rulesets_rule_id.dart';import '../models/rulesets_ruleset_id.dart';import '../models/rulesets_ruleset_phase.dart';import '../models/rulesets_ruleset_version.dart';import '../models/rulesets_zone_id.dart';import '../models/update_zone_entrypoint_ruleset_request.dart';import '../models/update_zone_ruleset_request.dart';import '../models/update_zone_ruleset_rule_request.dart';/// ZoneRulesetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_zone_ruleset_request.dart';import 'package:pub_cloudflare/models/create_zone_ruleset_rule_request.dart';import 'package:pub_cloudflare/models/list_account_entrypoint_ruleset_versions_response/list_account_entrypoint_ruleset_versions_response_result.dart';import 'package:pub_cloudflare/models/rulesets_cursor.dart';import 'package:pub_cloudflare/models/rulesets_per_page.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_id.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_phase.dart';import 'package:pub_cloudflare/models/rulesets_ruleset_version.dart';import 'package:pub_cloudflare/models/rulesets_zone_id.dart';import 'package:pub_cloudflare/models/update_zone_entrypoint_ruleset_request.dart';import 'package:pub_cloudflare/models/update_zone_ruleset_request.dart';import 'package:pub_cloudflare/models/update_zone_ruleset_rule_request.dart';/// ZoneRulesetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneRulesetsApi with ApiExecutor {const ZoneRulesetsApi(this.apiConf
 /// Fetches all rulesets at the zone level.
 ///
 /// `GET /zones/{zone_id}/rulesets`
-Future<ApiResult<List<ListZoneRulesetsResponseResult>, Never>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toString();
@@ -37,7 +37,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ListZoneRulesetsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -205,7 +205,7 @@ return execute(
 /// Fetches the versions of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<List<ListZoneRulesetVersionsResponseResult>, Never>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -218,7 +218,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ListZoneRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -336,7 +336,7 @@ return execute(
 /// Fetches the versions of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<List<ListZoneEntrypointRulesetVersionsResponseResult>, Never>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListAccountEntrypointRulesetVersionsResponseResult>, Never>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -349,7 +349,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ListZoneEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => ListAccountEntrypointRulesetVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

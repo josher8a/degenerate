@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';/// Label Search Result Item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/search_result_text_matches2.dart';/// Label Search Result Item
 @immutable final class LabelSearchResultItem {const LabelSearchResultItem({required this.id, required this.nodeId, required this.url, required this.name, required this.color, required this.$default, required this.description, required this.score, this.textMatches, });
 
 factory LabelSearchResultItem.fromJson(Map<String, dynamic> json) { return LabelSearchResultItem(

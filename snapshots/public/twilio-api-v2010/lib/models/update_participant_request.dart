@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
-@immutable final class UpdateParticipantRequestHoldMethod {const UpdateParticipantRequestHoldMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
+@immutable final class HoldMethod {const HoldMethod._(this.value);
 
-factory UpdateParticipantRequestHoldMethod.fromJson(String json) { return switch (json) {
+factory HoldMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => UpdateParticipantRequestHoldMethod._(json),
+  _ => HoldMethod._(json),
 }; }
 
-static const UpdateParticipantRequestHoldMethod $get = UpdateParticipantRequestHoldMethod._('GET');
+static const HoldMethod $get = HoldMethod._('GET');
 
-static const UpdateParticipantRequestHoldMethod post = UpdateParticipantRequestHoldMethod._('POST');
+static const HoldMethod post = HoldMethod._('POST');
 
-static const List<UpdateParticipantRequestHoldMethod> values = [$get, post];
+static const List<HoldMethod> values = [$get, post];
 
 final String value;
 
@@ -21,59 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestHoldMethod && other.value == value; } 
+    other is HoldMethod && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestHoldMethod($value)'; } 
- }
-/// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class UpdateParticipantRequestAnnounceMethod {const UpdateParticipantRequestAnnounceMethod._(this.value);
-
-factory UpdateParticipantRequestAnnounceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateParticipantRequestAnnounceMethod._(json),
-}; }
-
-static const UpdateParticipantRequestAnnounceMethod $get = UpdateParticipantRequestAnnounceMethod._('GET');
-
-static const UpdateParticipantRequestAnnounceMethod post = UpdateParticipantRequestAnnounceMethod._('POST');
-
-static const List<UpdateParticipantRequestAnnounceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestAnnounceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestAnnounceMethod($value)'; } 
- }
-/// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-@immutable final class UpdateParticipantRequestWaitMethod {const UpdateParticipantRequestWaitMethod._(this.value);
-
-factory UpdateParticipantRequestWaitMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateParticipantRequestWaitMethod._(json),
-}; }
-
-static const UpdateParticipantRequestWaitMethod $get = UpdateParticipantRequestWaitMethod._('GET');
-
-static const UpdateParticipantRequestWaitMethod post = UpdateParticipantRequestWaitMethod._('POST');
-
-static const List<UpdateParticipantRequestWaitMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateParticipantRequestWaitMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateParticipantRequestWaitMethod($value)'; } 
+@override String toString() { return 'HoldMethod($value)'; } 
  }
 @immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
 
@@ -81,11 +31,11 @@ factory UpdateParticipantRequest.fromJson(Map<String, dynamic> json) { return Up
   muted: json['Muted'] as bool?,
   hold: json['Hold'] as bool?,
   holdUrl: json['HoldUrl'] != null ? Uri.parse(json['HoldUrl'] as String) : null,
-  holdMethod: json['HoldMethod'] != null ? UpdateParticipantRequestHoldMethod.fromJson(json['HoldMethod'] as String) : null,
+  holdMethod: json['HoldMethod'] != null ? HoldMethod.fromJson(json['HoldMethod'] as String) : null,
   announceUrl: json['AnnounceUrl'] != null ? Uri.parse(json['AnnounceUrl'] as String) : null,
-  announceMethod: json['AnnounceMethod'] != null ? UpdateParticipantRequestAnnounceMethod.fromJson(json['AnnounceMethod'] as String) : null,
+  announceMethod: json['AnnounceMethod'] != null ? AnnounceMethod.fromJson(json['AnnounceMethod'] as String) : null,
   waitUrl: json['WaitUrl'] != null ? Uri.parse(json['WaitUrl'] as String) : null,
-  waitMethod: json['WaitMethod'] != null ? UpdateParticipantRequestWaitMethod.fromJson(json['WaitMethod'] as String) : null,
+  waitMethod: json['WaitMethod'] != null ? WaitMethod.fromJson(json['WaitMethod'] as String) : null,
   beepOnExit: json['BeepOnExit'] as bool?,
   endConferenceOnExit: json['EndConferenceOnExit'] as bool?,
   coaching: json['Coaching'] as bool?,
@@ -102,19 +52,19 @@ final bool? hold;
 final Uri? holdUrl;
 
 /// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
-final UpdateParticipantRequestHoldMethod? holdMethod;
+final HoldMethod? holdMethod;
 
 /// The URL we call using the `announce_method` for an announcement to the participant. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `<Play>`, `<Say>`, `<Pause>`, or `<Redirect>` verbs.
 final Uri? announceUrl;
 
 /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final UpdateParticipantRequestAnnounceMethod? announceMethod;
+final AnnounceMethod? announceMethod;
 
 /// The URL that Twilio calls using the `wait_method` before the conference has started. The URL may return an MP3 file, a WAV file, or a TwiML document. The default value is the URL of our standard hold music. If you do not want anything to play while waiting for the conference to start, specify an empty string by setting `wait_url` to `''`. For more details on the allowable verbs within the `waitUrl`, see the `waitUrl` attribute in the [`<Conference>` TwiML instruction](https://www.twilio.com/docs/voice/twiml/conference#attributes-waiturl).
 final Uri? waitUrl;
 
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-final UpdateParticipantRequestWaitMethod? waitMethod;
+final WaitMethod? waitMethod;
 
 /// Whether to play a notification beep to the conference when the participant exits. Can be: `true` or `false`.
 final bool? beepOnExit;
@@ -143,7 +93,7 @@ Map<String, dynamic> toJson() { return {
   'CallSidToCoach': ?callSidToCoach,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key)); } 
-UpdateParticipantRequest copyWith({bool Function()? muted, bool Function()? hold, Uri Function()? holdUrl, UpdateParticipantRequestHoldMethod Function()? holdMethod, Uri Function()? announceUrl, UpdateParticipantRequestAnnounceMethod Function()? announceMethod, Uri Function()? waitUrl, UpdateParticipantRequestWaitMethod Function()? waitMethod, bool Function()? beepOnExit, bool Function()? endConferenceOnExit, bool Function()? coaching, String Function()? callSidToCoach, }) { return UpdateParticipantRequest(
+UpdateParticipantRequest copyWith({bool Function()? muted, bool Function()? hold, Uri Function()? holdUrl, HoldMethod Function()? holdMethod, Uri Function()? announceUrl, AnnounceMethod Function()? announceMethod, Uri Function()? waitUrl, WaitMethod Function()? waitMethod, bool Function()? beepOnExit, bool Function()? endConferenceOnExit, bool Function()? coaching, String Function()? callSidToCoach, }) { return UpdateParticipantRequest(
   muted: muted != null ? muted() : this.muted,
   hold: hold != null ? hold() : this.hold,
   holdUrl: holdUrl != null ? holdUrl() : this.holdUrl,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_workspace_one_config_response.dart';/// A value that is one of: `TeamsDevicesWorkspaceOneConfigResponse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_workspace_one_config_response.dart';/// A value that is one of: `TeamsDevicesWorkspaceOneConfigResponse`.
 sealed class TeamsDevicesConfigResponse {const TeamsDevicesConfigResponse();
 
 factory TeamsDevicesConfigResponse.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesWorkspaceOneConfigResponse.canParse(json)) {

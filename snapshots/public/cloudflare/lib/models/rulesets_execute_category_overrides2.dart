@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_execute_sensitivity_level.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';/// A category-level override.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_execute_sensitivity_level.dart';import 'package:pub_cloudflare/models/rulesets_rule_action.dart';import 'package:pub_cloudflare/models/rulesets_rule_category.dart';import 'package:pub_cloudflare/models/rulesets_rule_enabled.dart';/// A category-level override.
 @immutable final class RulesetsExecuteCategoryOverrides2 {const RulesetsExecuteCategoryOverrides2({required this.category, this.action, this.enabled, this.sensitivityLevel, });
 
 factory RulesetsExecuteCategoryOverrides2.fromJson(Map<String, dynamic> json) { return RulesetsExecuteCategoryOverrides2(

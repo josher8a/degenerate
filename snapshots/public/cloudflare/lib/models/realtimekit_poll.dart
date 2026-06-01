@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_poll_options.dart';@immutable final class RealtimekitPoll {const RealtimekitPoll({required this.id, required this.options, required this.question, this.anonymous, this.createdBy, this.hideVotes, this.voted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_poll/realtimekit_poll_options.dart';@immutable final class RealtimekitPoll {const RealtimekitPoll({required this.id, required this.options, required this.question, this.anonymous, this.createdBy, this.hideVotes, this.voted, });
 
 factory RealtimekitPoll.fromJson(Map<String, dynamic> json) { return RealtimekitPoll(
   anonymous: json['anonymous'] as bool?,

@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_custom_cert_and_key.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';@immutable final class TlsCertificatesAndHostnamesSslpostDv {const TlsCertificatesAndHostnamesSslpostDv({this.bundleMethod = BundleMethod.ubiquitous, this.certificateAuthority, this.cloudflareBranding, this.customCertBundle, this.customCertificate, this.customKey, this.method, this.settings, this.type, this.wildcard, });
+
+factory TlsCertificatesAndHostnamesSslpostDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslpostDv(
+  bundleMethod: json.containsKey('bundle_method') ? BundleMethod.fromJson(json['bundle_method'] as String) : BundleMethod.ubiquitous,
+  certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
+  cloudflareBranding: json['cloudflare_branding'] as bool?,
+  customCertBundle: (json['custom_cert_bundle'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomCertAndKey.fromJson(e as Map<String, dynamic>)).toList(),
+  customCertificate: json['custom_certificate'] as String?,
+  customKey: json['custom_key'] as String?,
+  method: json['method'] != null ? DvMethod.fromJson(json['method'] as String) : null,
+  settings: json['settings'] != null ? TlsCertificatesAndHostnamesSslsettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  type: json['type'] != null ? DvType.fromJson(json['type'] as String) : null,
+  wildcard: json['wildcard'] as bool?,
+); }
+
+/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
+final BundleMethod bundleMethod;
+
+/// The Certificate Authority that will issue the certificate
+final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
+
+/// Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true
+final bool? cloudflareBranding;
+
+/// Array of custom certificate and key pairs (1 or 2 pairs allowed)
+final List<TlsCertificatesAndHostnamesCustomCertAndKey>? customCertBundle;
+
+/// If a custom uploaded certificate is used.
+final String? customCertificate;
+
+/// The key for a custom uploaded certificate.
+final String? customKey;
+
+/// Domain control validation (DCV) method used for this hostname.
+final DvMethod? method;
+
+final TlsCertificatesAndHostnamesSslsettings? settings;
+
+/// Level of validation to be used for this hostname. Domain validation (dv) must be used.
+final DvType? type;
+
+/// Indicates whether the certificate covers a wildcard.
+final bool? wildcard;
+
+Map<String, dynamic> toJson() { return {
+  'bundle_method': bundleMethod.toJson(),
+  if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
+  'cloudflare_branding': ?cloudflareBranding,
+  if (customCertBundle != null) 'custom_cert_bundle': customCertBundle?.map((e) => e.toJson()).toList(),
+  'custom_certificate': ?customCertificate,
+  'custom_key': ?customKey,
+  if (method != null) 'method': method?.toJson(),
+  if (settings != null) 'settings': settings?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+  'wildcard': ?wildcard,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'cloudflare_branding', 'custom_cert_bundle', 'custom_certificate', 'custom_key', 'method', 'settings', 'type', 'wildcard'}.contains(key)); } 
+TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority Function()? certificateAuthority, bool Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey> Function()? customCertBundle, String Function()? customCertificate, String Function()? customKey, DvMethod Function()? method, TlsCertificatesAndHostnamesSslsettings Function()? settings, DvType Function()? type, bool Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
+  bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
+  certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
+  cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
+  customCertBundle: customCertBundle != null ? customCertBundle() : this.customCertBundle,
+  customCertificate: customCertificate != null ? customCertificate() : this.customCertificate,
+  customKey: customKey != null ? customKey() : this.customKey,
+  method: method != null ? method() : this.method,
+  settings: settings != null ? settings() : this.settings,
+  type: type != null ? type() : this.type,
+  wildcard: wildcard != null ? wildcard() : this.wildcard,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesSslpostDv &&
+          bundleMethod == other.bundleMethod &&
+          certificateAuthority == other.certificateAuthority &&
+          cloudflareBranding == other.cloudflareBranding &&
+          listEquals(customCertBundle, other.customCertBundle) &&
+          customCertificate == other.customCertificate &&
+          customKey == other.customKey &&
+          method == other.method &&
+          settings == other.settings &&
+          type == other.type &&
+          wildcard == other.wildcard; } 
+@override int get hashCode { return Object.hash(bundleMethod, certificateAuthority, cloudflareBranding, Object.hashAll(customCertBundle ?? const []), customCertificate, customKey, method, settings, type, wildcard); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesSslpostDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, customCertBundle: $customCertBundle, customCertificate: $customCertificate, customKey: $customKey, method: $method, settings: $settings, type: $type, wildcard: $wildcard)'; } 
+ }

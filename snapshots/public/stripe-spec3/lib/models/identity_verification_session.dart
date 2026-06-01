@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_provided_details.dart';import 'gelato_related_person.dart';import 'gelato_session_last_error.dart';import 'gelato_verification_session_options.dart';import 'gelato_verified_outputs.dart';import 'identity_verification_report.dart';import 'identity_verification_session_last_verification_report.dart';import 'verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_provided_details.dart';import 'package:pub_stripe_spec3/models/gelato_related_person.dart';import 'package:pub_stripe_spec3/models/gelato_session_last_error.dart';import 'package:pub_stripe_spec3/models/gelato_verification_session_options.dart';import 'package:pub_stripe_spec3/models/gelato_verified_outputs.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';import 'package:pub_stripe_spec3/models/identity_verification_session/last_verification_report.dart';import 'package:pub_stripe_spec3/models/verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
 
 factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
@@ -53,34 +53,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IdentityVerificationSessionStatus($value)'; } 
  }
-/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
-@immutable final class IdentityVerificationSessionType {const IdentityVerificationSessionType._(this.value);
-
-factory IdentityVerificationSessionType.fromJson(String json) { return switch (json) {
-  'document' => document,
-  'id_number' => idNumber,
-  'verification_flow' => verificationFlow,
-  _ => IdentityVerificationSessionType._(json),
-}; }
-
-static const IdentityVerificationSessionType document = IdentityVerificationSessionType._('document');
-
-static const IdentityVerificationSessionType idNumber = IdentityVerificationSessionType._('id_number');
-
-static const IdentityVerificationSessionType verificationFlow = IdentityVerificationSessionType._('verification_flow');
-
-static const List<IdentityVerificationSessionType> values = [document, idNumber, verificationFlow];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionType($value)'; } 
- }
 /// A VerificationSession guides you through the process of collecting and verifying the identities
 /// of your users. It contains details about the type of verification, such as what [verification
 /// check](/docs/identity/verification-checks) to perform. Only create one VerificationSession for
@@ -111,7 +83,7 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   relatedCustomerAccount: json['related_customer_account'] as String?,
   relatedPerson: json['related_person'] != null ? GelatoRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
   status: IdentityVerificationSessionStatus.fromJson(json['status'] as String),
-  type: IdentityVerificationSessionType.fromJson(json['type'] as String),
+  type: IdentityVerificationReportType.fromJson(json['type'] as String),
   url: json['url'] as String?,
   verificationFlow: json['verification_flow'] as String?,
   verifiedOutputs: json['verified_outputs'] != null ? GelatoVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>) : null,
@@ -133,7 +105,7 @@ final String id;
 final GelatoSessionLastError? lastError;
 
 /// ID of the most recent VerificationReport. [Learn more about accessing detailed verification results.](https://docs.stripe.com/identity/verification-sessions#results)
-final IdentityVerificationSessionLastVerificationReport? lastVerificationReport;
+final LastVerificationReport? lastVerificationReport;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -165,7 +137,7 @@ final GelatoRelatedPerson? relatedPerson;
 final IdentityVerificationSessionStatus status;
 
 /// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed.
-final IdentityVerificationSessionType type;
+final IdentityVerificationReportType type;
 
 /// The short-lived URL that you use to redirect a user to Stripe to submit their identity information. This URL expires after 48 hours and can only be used once. Don’t store it, log it, send it in emails or expose it to anyone other than the user. Refer to our docs on [verifying identity documents](https://docs.stripe.com/identity/verify-identity-documents?platform=web&type=redirect) to learn how to redirect users to Stripe.
 final String? url;
@@ -205,7 +177,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IdentityVerificationSession copyWith({String? Function()? clientReferenceId, String? Function()? clientSecret, int? created, String? id, GelatoSessionLastError? Function()? lastError, IdentityVerificationSessionLastVerificationReport? Function()? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, GelatoVerificationSessionOptions? Function()? options, GelatoProvidedDetails? Function()? providedDetails, VerificationSessionRedaction? Function()? redaction, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, GelatoRelatedPerson Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationSessionType? type, String? Function()? url, String Function()? verificationFlow, GelatoVerifiedOutputs? Function()? verifiedOutputs, }) { return IdentityVerificationSession(
+IdentityVerificationSession copyWith({String? Function()? clientReferenceId, String? Function()? clientSecret, int? created, String? id, GelatoSessionLastError? Function()? lastError, LastVerificationReport? Function()? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, GelatoVerificationSessionOptions? Function()? options, GelatoProvidedDetails? Function()? providedDetails, VerificationSessionRedaction? Function()? redaction, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, GelatoRelatedPerson Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationReportType? type, String? Function()? url, String Function()? verificationFlow, GelatoVerifiedOutputs? Function()? verifiedOutputs, }) { return IdentityVerificationSession(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   created: created ?? this.created,

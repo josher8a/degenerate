@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_sponsorship_maintainer.dart';import 'webhooks_sponsorship_sponsor.dart';import 'webhooks_sponsorship_sponsorable.dart';import 'webhooks_sponsorship_tier.dart';@immutable final class WebhooksSponsorship {const WebhooksSponsorship({required this.createdAt, required this.nodeId, required this.privacyLevel, required this.sponsor, required this.sponsorable, required this.tier, this.maintainer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/maintainer.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/sponsor.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/sponsorable.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship/webhooks_sponsorship_tier.dart';@immutable final class WebhooksSponsorship {const WebhooksSponsorship({required this.createdAt, required this.nodeId, required this.privacyLevel, required this.sponsor, required this.sponsorable, required this.tier, this.maintainer, });
 
 factory WebhooksSponsorship.fromJson(Map<String, dynamic> json) { return WebhooksSponsorship(
   createdAt: json['created_at'] as String,
-  maintainer: json['maintainer'] != null ? WebhooksSponsorshipMaintainer.fromJson(json['maintainer'] as Map<String, dynamic>) : null,
+  maintainer: json['maintainer'] != null ? Maintainer.fromJson(json['maintainer'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   privacyLevel: json['privacy_level'] as String,
-  sponsor: json['sponsor'] != null ? WebhooksSponsorshipSponsor.fromJson(json['sponsor'] as Map<String, dynamic>) : null,
-  sponsorable: json['sponsorable'] != null ? WebhooksSponsorshipSponsorable.fromJson(json['sponsorable'] as Map<String, dynamic>) : null,
+  sponsor: json['sponsor'] != null ? Sponsor.fromJson(json['sponsor'] as Map<String, dynamic>) : null,
+  sponsorable: json['sponsorable'] != null ? Sponsorable.fromJson(json['sponsorable'] as Map<String, dynamic>) : null,
   tier: WebhooksSponsorshipTier.fromJson(json['tier'] as Map<String, dynamic>),
 ); }
 
 final String createdAt;
 
-final WebhooksSponsorshipMaintainer? maintainer;
+final Maintainer? maintainer;
 
 final String nodeId;
 
 final String privacyLevel;
 
-final WebhooksSponsorshipSponsor? sponsor;
+final Sponsor? sponsor;
 
-final WebhooksSponsorshipSponsorable? sponsorable;
+final Sponsorable? sponsorable;
 
 /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
 final WebhooksSponsorshipTier tier;
@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sponsor') &&
       json.containsKey('sponsorable') &&
       json.containsKey('tier'); } 
-WebhooksSponsorship copyWith({String? createdAt, WebhooksSponsorshipMaintainer Function()? maintainer, String? nodeId, String? privacyLevel, WebhooksSponsorshipSponsor? Function()? sponsor, WebhooksSponsorshipSponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
+WebhooksSponsorship copyWith({String? createdAt, Maintainer Function()? maintainer, String? nodeId, String? privacyLevel, Sponsor? Function()? sponsor, Sponsorable? Function()? sponsorable, WebhooksSponsorshipTier? tier, }) { return WebhooksSponsorship(
   createdAt: createdAt ?? this.createdAt,
   maintainer: maintainer != null ? maintainer() : this.maintainer,
   nodeId: nodeId ?? this.nodeId,

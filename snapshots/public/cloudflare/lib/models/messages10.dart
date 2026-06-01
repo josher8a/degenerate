@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages10_functions.dart';import 'messages10_messages.dart';import 'messages10_response_format.dart';import 'messages10_tools.dart';import 'messages10_tools_variant1.dart';import 'messages10_tools_variant2.dart';@immutable final class Messages10 {const Messages10({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages10_functions.dart';import 'package:pub_cloudflare/models/messages/messages10_messages.dart';import 'package:pub_cloudflare/models/messages/messages10_tools.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';import 'package:pub_cloudflare/models/messages/tools_variant1.dart';import 'package:pub_cloudflare/models/messages/tools_variant2.dart';@immutable final class Messages10 {const Messages10({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 2000, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
 
 factory Messages10.fromJson(Map<String, dynamic> json) { return Messages10(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages10Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
+  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 2000,
   messages: (json['messages'] as List<dynamic>).map((e) => Messages10Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   raw: json.containsKey('raw') ? json['raw'] as bool : false,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
-  responseFormat: json['response_format'] != null ? Messages10ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
+  responseFormat: json['response_format'] != null ? MessagesResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   stream: json.containsKey('stream') ? json['stream'] as bool : false,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
-  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Messages10ToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages10ToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
 ); }
@@ -39,7 +39,7 @@ final bool raw;
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
 
-final Messages10ResponseFormat? responseFormat;
+final MessagesResponseFormat? responseFormat;
 
 /// Random seed for reproducibility of the generation.
 final int? seed;
@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages10 copyWith({double Function()? frequencyPenalty, List<Messages10Functions> Function()? functions, int Function()? maxTokens, List<Messages10Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, Messages10ResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages10Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return Messages10(
+Messages10 copyWith({double Function()? frequencyPenalty, List<Messages10Functions> Function()? functions, int Function()? maxTokens, List<Messages10Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, MessagesResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages10Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return Messages10(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

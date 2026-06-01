@@ -1,68 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
-@immutable final class IssuingAuthorizationAuthenticationExemptionClaimedBy {const IssuingAuthorizationAuthenticationExemptionClaimedBy._(this.value);
-
-factory IssuingAuthorizationAuthenticationExemptionClaimedBy.fromJson(String json) { return switch (json) {
-  'acquirer' => acquirer,
-  'issuer' => issuer,
-  _ => IssuingAuthorizationAuthenticationExemptionClaimedBy._(json),
-}; }
-
-static const IssuingAuthorizationAuthenticationExemptionClaimedBy acquirer = IssuingAuthorizationAuthenticationExemptionClaimedBy._('acquirer');
-
-static const IssuingAuthorizationAuthenticationExemptionClaimedBy issuer = IssuingAuthorizationAuthenticationExemptionClaimedBy._('issuer');
-
-static const List<IssuingAuthorizationAuthenticationExemptionClaimedBy> values = [acquirer, issuer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationAuthenticationExemptionClaimedBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationAuthenticationExemptionClaimedBy($value)'; } 
- }
-/// The specific exemption claimed for this authorization.
-@immutable final class IssuingAuthorizationAuthenticationExemptionType {const IssuingAuthorizationAuthenticationExemptionType._(this.value);
-
-factory IssuingAuthorizationAuthenticationExemptionType.fromJson(String json) { return switch (json) {
-  'low_value_transaction' => lowValueTransaction,
-  'transaction_risk_analysis' => transactionRiskAnalysis,
-  'unknown' => unknown,
-  _ => IssuingAuthorizationAuthenticationExemptionType._(json),
-}; }
-
-static const IssuingAuthorizationAuthenticationExemptionType lowValueTransaction = IssuingAuthorizationAuthenticationExemptionType._('low_value_transaction');
-
-static const IssuingAuthorizationAuthenticationExemptionType transactionRiskAnalysis = IssuingAuthorizationAuthenticationExemptionType._('transaction_risk_analysis');
-
-static const IssuingAuthorizationAuthenticationExemptionType unknown = IssuingAuthorizationAuthenticationExemptionType._('unknown');
-
-static const List<IssuingAuthorizationAuthenticationExemptionType> values = [lowValueTransaction, transactionRiskAnalysis, unknown];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationAuthenticationExemptionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationAuthenticationExemptionType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_authentication_exemption/claimed_by.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_authentication_exemption/issuing_authorization_authentication_exemption_type.dart';/// 
 @immutable final class IssuingAuthorizationAuthenticationExemption {const IssuingAuthorizationAuthenticationExemption({required this.claimedBy, required this.type, });
 
 factory IssuingAuthorizationAuthenticationExemption.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationAuthenticationExemption(
-  claimedBy: IssuingAuthorizationAuthenticationExemptionClaimedBy.fromJson(json['claimed_by'] as String),
+  claimedBy: ClaimedBy.fromJson(json['claimed_by'] as String),
   type: IssuingAuthorizationAuthenticationExemptionType.fromJson(json['type'] as String),
 ); }
 
 /// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
-final IssuingAuthorizationAuthenticationExemptionClaimedBy claimedBy;
+final ClaimedBy claimedBy;
 
 /// The specific exemption claimed for this authorization.
 final IssuingAuthorizationAuthenticationExemptionType type;
@@ -73,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('claimed_by') &&
       json.containsKey('type'); } 
-IssuingAuthorizationAuthenticationExemption copyWith({IssuingAuthorizationAuthenticationExemptionClaimedBy? claimedBy, IssuingAuthorizationAuthenticationExemptionType? type, }) { return IssuingAuthorizationAuthenticationExemption(
+IssuingAuthorizationAuthenticationExemption copyWith({ClaimedBy? claimedBy, IssuingAuthorizationAuthenticationExemptionType? type, }) { return IssuingAuthorizationAuthenticationExemption(
   claimedBy: claimedBy ?? this.claimedBy,
   type: type ?? this.type,
 ); } 

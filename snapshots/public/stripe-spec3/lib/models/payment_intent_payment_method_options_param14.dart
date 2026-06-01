@@ -1,57 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param14_financial_connections.dart';import 'payment_intent_payment_method_options_param14_mandate_options.dart';import 'payment_intent_payment_method_options_param14_networks.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param14_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_financial_connections.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_networks.dart';@immutable final class payment_intent_payment_method_options_paramTransactionPurpose {const payment_intent_payment_method_options_paramTransactionPurpose._(this.value);
 
-factory PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._('');
-
-static const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage> values = [$empty, none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam14TransactionPurpose {const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(String json) { return switch (json) {
+factory payment_intent_payment_method_options_paramTransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
   'goods' => goods,
   'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
-  _ => PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(json),
+  _ => payment_intent_payment_method_options_paramTransactionPurpose._(json),
 }; }
 
-static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose $empty = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('');
+static const payment_intent_payment_method_options_paramTransactionPurpose $empty = payment_intent_payment_method_options_paramTransactionPurpose._('');
 
-static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose goods = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('goods');
+static const payment_intent_payment_method_options_paramTransactionPurpose goods = payment_intent_payment_method_options_paramTransactionPurpose._('goods');
 
-static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose $other = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('other');
+static const payment_intent_payment_method_options_paramTransactionPurpose $other = payment_intent_payment_method_options_paramTransactionPurpose._('other');
 
-static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose services = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('services');
+static const payment_intent_payment_method_options_paramTransactionPurpose services = payment_intent_payment_method_options_paramTransactionPurpose._('services');
 
-static const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._('unspecified');
+static const payment_intent_payment_method_options_paramTransactionPurpose unspecified = payment_intent_payment_method_options_paramTransactionPurpose._('unspecified');
 
-static const List<PaymentIntentPaymentMethodOptionsParam14TransactionPurpose> values = [$empty, goods, $other, services, unspecified];
+static const List<payment_intent_payment_method_options_paramTransactionPurpose> values = [$empty, goods, $other, services, unspecified];
 
 final String value;
 
@@ -59,62 +29,35 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14TransactionPurpose && other.value == value; } 
+    other is payment_intent_payment_method_options_paramTransactionPurpose && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14TransactionPurpose($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam14VerificationMethod {const PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(String json) { return switch (json) {
-  'automatic' => automatic,
-  'instant' => instant,
-  'microdeposits' => microdeposits,
-  _ => PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam14VerificationMethod automatic = PaymentIntentPaymentMethodOptionsParam14VerificationMethod._('automatic');
-
-static const PaymentIntentPaymentMethodOptionsParam14VerificationMethod instant = PaymentIntentPaymentMethodOptionsParam14VerificationMethod._('instant');
-
-static const PaymentIntentPaymentMethodOptionsParam14VerificationMethod microdeposits = PaymentIntentPaymentMethodOptionsParam14VerificationMethod._('microdeposits');
-
-static const List<PaymentIntentPaymentMethodOptionsParam14VerificationMethod> values = [automatic, instant, microdeposits];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam14VerificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14VerificationMethod($value)'; } 
+@override String toString() { return 'payment_intent_payment_method_options_paramTransactionPurpose($value)'; } 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14(
-  financialConnections: json['financial_connections'] != null ? PaymentIntentPaymentMethodOptionsParam14FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  financialConnections: json['financial_connections'] != null ? payment_intent_payment_method_options_paramFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam14MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  networks: json['networks'] != null ? PaymentIntentPaymentMethodOptionsParam14Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  networks: json['networks'] != null ? payment_intent_payment_method_options_paramNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-  transactionPurpose: json['transaction_purpose'] != null ? PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,
-  verificationMethod: json['verification_method'] != null ? PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(json['verification_method'] as String) : null,
+  transactionPurpose: json['transaction_purpose'] != null ? payment_intent_payment_method_options_paramTransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,
+  verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
-final PaymentIntentPaymentMethodOptionsParam14FinancialConnections? financialConnections;
+final payment_intent_payment_method_options_paramFinancialConnections? financialConnections;
 
 final PaymentIntentPaymentMethodOptionsParam14MandateOptions? mandateOptions;
 
-final PaymentIntentPaymentMethodOptionsParam14Networks? networks;
+final payment_intent_payment_method_options_paramNetworks? networks;
 
-final PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage? setupFutureUsage;
+final payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
-final PaymentIntentPaymentMethodOptionsParam14TransactionPurpose? transactionPurpose;
+final payment_intent_payment_method_options_paramTransactionPurpose? transactionPurpose;
 
-final PaymentIntentPaymentMethodOptionsParam14VerificationMethod? verificationMethod;
+final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
 Map<String, dynamic> toJson() { return {
   if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
@@ -126,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'setup_future_usage', 'target_date', 'transaction_purpose', 'verification_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParam14FinancialConnections Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam14Networks Function()? networks, PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PaymentIntentPaymentMethodOptionsParam14TransactionPurpose Function()? transactionPurpose, PaymentIntentPaymentMethodOptionsParam14VerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
+PaymentIntentPaymentMethodOptionsParam14 copyWith({payment_intent_payment_method_options_paramFinancialConnections Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions Function()? mandateOptions, payment_intent_payment_method_options_paramNetworks Function()? networks, payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, payment_intent_payment_method_options_paramTransactionPurpose Function()? transactionPurpose, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   networks: networks != null ? networks() : this.networks,

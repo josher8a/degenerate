@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'simple_user.dart';/// A comment made to a gist.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A comment made to a gist.
 @immutable final class GistComment {const GistComment({required this.id, required this.nodeId, required this.url, required this.body, required this.user, required this.createdAt, required this.updatedAt, required this.authorAssociation, });
 
 factory GistComment.fromJson(Map<String, dynamic> json) { return GistComment(

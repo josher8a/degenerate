@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_portals_response_result.dart';@immutable final class UpdatePortalsResponse {const UpdatePortalsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/create_portals_response/create_portals_response_result.dart';@immutable final class UpdatePortalsResponse {const UpdatePortalsResponse({required this.result, required this.success, });
 
 factory UpdatePortalsResponse.fromJson(Map<String, dynamic> json) { return UpdatePortalsResponse(
-  result: UpdatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final UpdatePortalsResponseResult result;
+final CreatePortalsResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-UpdatePortalsResponse copyWith({UpdatePortalsResponseResult? result, bool? success, }) { return UpdatePortalsResponse(
+UpdatePortalsResponse copyWith({CreatePortalsResponseResult? result, bool? success, }) { return UpdatePortalsResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

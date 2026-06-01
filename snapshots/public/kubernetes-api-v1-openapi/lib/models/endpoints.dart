@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'endpoint_subset.dart';import 'object_meta.dart';/// Endpoints is a collection of endpoints that implement the actual service. Example:
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/endpoint_subset.dart';import 'package:pub_kubernetes_api_v1_openapi/models/object_meta.dart';/// Endpoints is a collection of endpoints that implement the actual service. Example:
 /// 
 /// 	 Name: "mysvc",
 /// 	 Subsets: [

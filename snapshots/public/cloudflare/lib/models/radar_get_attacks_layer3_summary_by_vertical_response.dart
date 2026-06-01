@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_summary_by_vertical_response_result.dart';@immutable final class RadarGetAttacksLayer3SummaryByVerticalResponse {const RadarGetAttacksLayer3SummaryByVerticalResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result.dart';@immutable final class RadarGetAttacksLayer3SummaryByVerticalResponse {const RadarGetAttacksLayer3SummaryByVerticalResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3SummaryByVerticalResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByVerticalResponse(
-  result: RadarGetAttacksLayer3SummaryByVerticalResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsSummaryByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetAttacksLayer3SummaryByVerticalResponseResult result;
+final RadarGetAiBotsSummaryByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3SummaryByVerticalResponse copyWith({RadarGetAttacksLayer3SummaryByVerticalResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3SummaryByVerticalResponse(
+RadarGetAttacksLayer3SummaryByVerticalResponse copyWith({RadarGetAiBotsSummaryByUserAgentResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3SummaryByVerticalResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

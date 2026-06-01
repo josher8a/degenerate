@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_invite_components_schemas_identifier.dart';/// The email address of the user who created the invite.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_invite_components_schemas_identifier.dart';/// The email address of the user who created the invite.
 extension type const IamInvitedBy(String value) {
 factory IamInvitedBy.fromJson(String json) => IamInvitedBy(json);
 

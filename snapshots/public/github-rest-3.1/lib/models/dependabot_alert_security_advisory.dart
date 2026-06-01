@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'dependabot_alert_security_advisory_cvss.dart';import 'dependabot_alert_security_advisory_cwes.dart';import 'dependabot_alert_security_advisory_identifiers.dart';import 'dependabot_alert_security_advisory_references.dart';import 'dependabot_alert_security_vulnerability.dart';import 'security_advisory_epss.dart';/// The severity of the advisory.
-@immutable final class DependabotAlertSecurityAdvisorySeverity {const DependabotAlertSecurityAdvisorySeverity._(this.value);
-
-factory DependabotAlertSecurityAdvisorySeverity.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'medium' => medium,
-  'high' => high,
-  'critical' => critical,
-  _ => DependabotAlertSecurityAdvisorySeverity._(json),
-}; }
-
-static const DependabotAlertSecurityAdvisorySeverity low = DependabotAlertSecurityAdvisorySeverity._('low');
-
-static const DependabotAlertSecurityAdvisorySeverity medium = DependabotAlertSecurityAdvisorySeverity._('medium');
-
-static const DependabotAlertSecurityAdvisorySeverity high = DependabotAlertSecurityAdvisorySeverity._('high');
-
-static const DependabotAlertSecurityAdvisorySeverity critical = DependabotAlertSecurityAdvisorySeverity._('critical');
-
-static const List<DependabotAlertSecurityAdvisorySeverity> values = [low, medium, high, critical];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertSecurityAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertSecurityAdvisorySeverity($value)'; } 
- }
-/// Details for the GitHub Security Advisory.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_severity.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/references.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';/// Details for the GitHub Security Advisory.
 @immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities, this.epss, });
 
 factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
@@ -44,9 +13,9 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   cvss: DependabotAlertSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
   cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
   epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
-  cwes: (json['cwes'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
+  cwes: (json['cwes'] as List<dynamic>).map((e) => Cwes.fromJson(e as Map<String, dynamic>)).toList(),
   identifiers: (json['identifiers'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
-  references: (json['references'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryReferences.fromJson(e as Map<String, dynamic>)).toList(),
+  references: (json['references'] as List<dynamic>).map((e) => References.fromJson(e as Map<String, dynamic>)).toList(),
   publishedAt: DateTime.parse(json['published_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
@@ -78,13 +47,13 @@ final CvssSeverities? cvssSeverities;
 final SecurityAdvisoryEpss? epss;
 
 /// Details for the advisory pertaining to Common Weakness Enumeration.
-final List<DependabotAlertSecurityAdvisoryCwes> cwes;
+final List<Cwes> cwes;
 
 /// Values that identify this advisory among security information sources.
 final List<DependabotAlertSecurityAdvisoryIdentifiers> identifiers;
 
 /// Links to additional advisory information.
-final List<DependabotAlertSecurityAdvisoryReferences> references;
+final List<References> references;
 
 /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime publishedAt;
@@ -125,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, SecurityAdvisoryEpss Function()? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'annotation.dart';import 'log_prob.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';sealed class OutputContent {const OutputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

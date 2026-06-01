@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_function_tool.dart';import 'realtime_session_create_response_audio.dart';import 'realtime_session_create_response_max_output_tokens.dart';import 'realtime_session_create_response_tracing.dart';import 'realtime_session_create_response_turn_detection.dart';import 'tracing_configuration4.dart';@immutable final class RealtimeSessionCreateResponseInclude {const RealtimeSessionCreateResponseInclude._(this.value);
-
-factory RealtimeSessionCreateResponseInclude.fromJson(String json) { return switch (json) {
-  'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
-  _ => RealtimeSessionCreateResponseInclude._(json),
-}; }
-
-static const RealtimeSessionCreateResponseInclude itemInputAudioTranscriptionLogprobs = RealtimeSessionCreateResponseInclude._('item.input_audio_transcription.logprobs');
-
-static const List<RealtimeSessionCreateResponseInclude> values = [itemInputAudioTranscriptionLogprobs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionCreateResponseInclude && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionCreateResponseInclude($value)'; } 
- }
-/// A Realtime session configuration object.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_turn_detection.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_response/realtime_session_create_response_audio.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/tracing_configuration.dart';/// A Realtime session configuration object.
 /// 
 @immutable final class RealtimeSessionCreateResponse {const RealtimeSessionCreateResponse({this.id, this.object, this.expiresAt, this.include, this.model, this.outputModalities, this.instructions, this.audio, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.maxOutputTokens, });
 
@@ -29,16 +8,16 @@ factory RealtimeSessionCreateResponse.fromJson(Map<String, dynamic> json) { retu
   id: json['id'] as String?,
   object: json['object'] as String?,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateResponseInclude.fromJson(e as String)).toList(),
+  include: (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   outputModalities: json['output_modalities'],
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeSessionCreateResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => RealtimeSessionCreateResponseTracingVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration4.fromJson(v as Map<String, dynamic>),) : null,
-  turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateResponseTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
+  tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration.fromJson(v as Map<String, dynamic>),) : null,
+  turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeFunctionTool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] as String?,
-  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateResponseMaxOutputTokensVariant2.fromJson(v as String),) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
@@ -54,7 +33,7 @@ final int? expiresAt;
 /// Additional fields to include in server outputs.
 /// - `item.input_audio_transcription.logprobs`: Include logprobs for input audio transcription.
 /// 
-final List<RealtimeSessionCreateResponseInclude>? include;
+final List<Include>? include;
 
 /// The Realtime model used for this session.
 final String? model;
@@ -89,13 +68,13 @@ final RealtimeSessionCreateResponseAudio? audio;
 /// `auto` will create a trace for the session with default values for the
 /// workflow name, group id, and metadata.
 /// 
-final RealtimeSessionCreateResponseTracing? tracing;
+final RealtimeSessionCreateRequestTracing? tracing;
 
 /// Configuration for turn detection. Can be set to `null` to turn off. Server
 /// VAD means that the model will detect the start and end of speech based on
 /// audio volume and respond at the end of user speech.
 /// 
-final RealtimeSessionCreateResponseTurnDetection? turnDetection;
+final RealtimeSessionCreateRequestTurnDetection? turnDetection;
 
 /// Tools (functions) available to the model.
 final List<RealtimeFunctionTool>? tools;
@@ -110,7 +89,7 @@ final String? toolChoice;
 /// limit output tokens, or `inf` for the maximum available tokens for a
 /// given model. Defaults to `inf`.
 /// 
-final RealtimeSessionCreateResponseMaxOutputTokens? maxOutputTokens;
+final MaxOutputTokens? maxOutputTokens;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
@@ -128,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'expires_at', 'include', 'model', 'output_modalities', 'instructions', 'audio', 'tracing', 'turn_detection', 'tools', 'tool_choice', 'max_output_tokens'}.contains(key)); } 
-RealtimeSessionCreateResponse copyWith({String Function()? id, String Function()? object, int Function()? expiresAt, List<RealtimeSessionCreateResponseInclude> Function()? include, String Function()? model, dynamic Function()? outputModalities, String Function()? instructions, RealtimeSessionCreateResponseAudio Function()? audio, RealtimeSessionCreateResponseTracing Function()? tracing, RealtimeSessionCreateResponseTurnDetection Function()? turnDetection, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, RealtimeSessionCreateResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
+RealtimeSessionCreateResponse copyWith({String Function()? id, String Function()? object, int Function()? expiresAt, List<Include> Function()? include, String Function()? model, dynamic Function()? outputModalities, String Function()? instructions, RealtimeSessionCreateResponseAudio Function()? audio, RealtimeSessionCreateRequestTracing Function()? tracing, RealtimeSessionCreateRequestTurnDetection Function()? turnDetection, List<RealtimeFunctionTool> Function()? tools, String Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeSessionCreateResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

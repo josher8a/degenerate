@@ -1,31 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_checkpoint_permission.dart';@immutable final class ListFineTuningCheckpointPermissionResponseObject {const ListFineTuningCheckpointPermissionResponseObject._(this.value);
-
-factory ListFineTuningCheckpointPermissionResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ListFineTuningCheckpointPermissionResponseObject._(json),
-}; }
-
-static const ListFineTuningCheckpointPermissionResponseObject list = ListFineTuningCheckpointPermissionResponseObject._('list');
-
-static const List<ListFineTuningCheckpointPermissionResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListFineTuningCheckpointPermissionResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListFineTuningCheckpointPermissionResponseObject($value)'; } 
- }
-@immutable final class ListFineTuningCheckpointPermissionResponse {const ListFineTuningCheckpointPermissionResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/fine_tuning_checkpoint_permission.dart';@immutable final class ListFineTuningCheckpointPermissionResponse {const ListFineTuningCheckpointPermissionResponse({required this.data, required this.object, required this.hasMore, this.firstId, this.lastId, });
 
 factory ListFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningCheckpointPermissionResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningCheckpointPermission.fromJson(e as Map<String, dynamic>)).toList(),
-  object: ListFineTuningCheckpointPermissionResponseObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
@@ -33,7 +12,7 @@ factory ListFineTuningCheckpointPermissionResponse.fromJson(Map<String, dynamic>
 
 final List<FineTuningCheckpointPermission> data;
 
-final ListFineTuningCheckpointPermissionResponseObject object;
+final ChatCompletionListObject object;
 
 final String? firstId;
 
@@ -51,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('object') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ListFineTuningCheckpointPermissionResponse copyWith({List<FineTuningCheckpointPermission>? data, ListFineTuningCheckpointPermissionResponseObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningCheckpointPermissionResponse(
+ListFineTuningCheckpointPermissionResponse copyWith({List<FineTuningCheckpointPermission>? data, ChatCompletionListObject? object, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ListFineTuningCheckpointPermissionResponse(
   data: data ?? this.data,
   object: object ?? this.object,
   firstId: firstId != null ? firstId() : this.firstId,

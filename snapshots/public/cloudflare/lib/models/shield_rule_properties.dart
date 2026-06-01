@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';@immutable final class ShieldRuleProperties {const ShieldRuleProperties({this.action, this.description, this.enabled, this.expression, this.selector, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_expression.dart';import 'package:pub_cloudflare/models/shield_schemas_description.dart';import 'package:pub_cloudflare/models/shield_schemas_title.dart';import 'package:pub_cloudflare/models/shield_selector.dart';@immutable final class ShieldRuleProperties {const ShieldRuleProperties({this.action, this.description, this.enabled, this.expression, this.selector, this.title, });
 
 factory ShieldRuleProperties.fromJson(Map<String, dynamic> json) { return ShieldRuleProperties(
   action: json['action'] != null ? ShieldAction.fromJson(json['action'] as String) : null,

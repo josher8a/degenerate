@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
 @immutable final class InteractionExpiry {const InteractionExpiry._(this.value);
 
 factory InteractionExpiry.fromJson(String json) { return switch (json) {

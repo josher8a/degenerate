@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';import 'issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/issuing_personalization_design_card_logo.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_carrier_text.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_preferences.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
 
 factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
@@ -100,7 +100,7 @@ final String? name;
 final IssuingPersonalizationDesignObject object;
 
 /// The physical bundle object belonging to this personalization design.
-final IssuingPersonalizationDesignPhysicalBundle physicalBundle;
+final PhysicalBundle physicalBundle;
 
 final IssuingPersonalizationDesignPreferences preferences;
 
@@ -133,7 +133,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('preferences') &&
       json.containsKey('rejection_reasons') &&
       json.containsKey('status'); } 
-IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Function()? cardLogo, IssuingPersonalizationDesignCarrierText? Function()? carrierText, int? created, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? name, IssuingPersonalizationDesignObject? object, IssuingPersonalizationDesignPhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
+IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Function()? cardLogo, IssuingPersonalizationDesignCarrierText? Function()? carrierText, int? created, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? name, IssuingPersonalizationDesignObject? object, PhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   created: created ?? this.created,

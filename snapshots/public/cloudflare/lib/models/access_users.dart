@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id.dart';import 'access_meta.dart';import 'access_users_emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_id.dart';import 'package:pub_cloudflare/models/access_meta.dart';import 'package:pub_cloudflare/models/access_users/emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
 
 factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
   active: json['active'] as bool?,
   displayName: json['displayName'] as String?,
-  emails: (json['emails'] as List<dynamic>?)?.map((e) => AccessUsersEmails.fromJson(e as Map<String, dynamic>)).toList(),
+  emails: (json['emails'] as List<dynamic>?)?.map((e) => Emails.fromJson(e as Map<String, dynamic>)).toList(),
   externalId: json['externalId'] as String?,
   id: json['id'] != null ? AccessId.fromJson(json['id'] as String) : null,
   meta: json['meta'] != null ? AccessMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
@@ -18,7 +18,7 @@ final bool? active;
 /// The name of the SCIM User resource.
 final String? displayName;
 
-final List<AccessUsersEmails>? emails;
+final List<Emails>? emails;
 
 /// The IdP-generated Id of the SCIM resource.
 final String? externalId;
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'schemas': ?schemas,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'displayName', 'emails', 'externalId', 'id', 'meta', 'schemas'}.contains(key)); } 
-AccessUsers copyWith({bool Function()? active, String Function()? displayName, List<AccessUsersEmails> Function()? emails, String Function()? externalId, AccessId Function()? id, AccessMeta Function()? meta, List<String> Function()? schemas, }) { return AccessUsers(
+AccessUsers copyWith({bool Function()? active, String Function()? displayName, List<Emails> Function()? emails, String Function()? externalId, AccessId Function()? id, AccessMeta Function()? meta, List<String> Function()? schemas, }) { return AccessUsers(
   active: active != null ? active() : this.active,
   displayName: displayName != null ? displayName() : this.displayName,
   emails: emails != null ? emails() : this.emails,

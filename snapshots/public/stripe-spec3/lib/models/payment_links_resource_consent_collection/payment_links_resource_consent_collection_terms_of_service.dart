@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set to `required`, it requires cutomers to accept the terms of service before being able to pay. If set to `none`, customers won't be shown a checkbox to accept the terms of service.
+@immutable final class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService._(this.value);
+
+factory PaymentLinksResourceConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'required' => $required,
+  _ => PaymentLinksResourceConsentCollectionTermsOfService._(json),
+}; }
+
+static const PaymentLinksResourceConsentCollectionTermsOfService none = PaymentLinksResourceConsentCollectionTermsOfService._('none');
+
+static const PaymentLinksResourceConsentCollectionTermsOfService $required = PaymentLinksResourceConsentCollectionTermsOfService._('required');
+
+static const List<PaymentLinksResourceConsentCollectionTermsOfService> values = [none, $required];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinksResourceConsentCollectionTermsOfService && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinksResourceConsentCollectionTermsOfService($value)'; } 
+ }

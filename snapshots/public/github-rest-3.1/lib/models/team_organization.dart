@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_organization_plan.dart';/// Team Organization
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_full/organization_full_plan.dart';/// Team Organization
 @immutable final class TeamOrganization {const TeamOrganization({required this.following, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, required this.login, required this.hasOrganizationProjects, required this.hasRepositoryProjects, required this.publicRepos, required this.publicGists, required this.htmlUrl, required this.followers, required this.archivedAt, required this.type, required this.createdAt, required this.updatedAt, this.isVerified, this.email, this.twitterUsername, this.location, this.blog, this.totalPrivateRepos, this.ownedPrivateRepos, this.privateGists, this.diskUsage, this.company, this.billingEmail, this.plan, this.defaultRepositoryPermission, this.membersCanCreateRepositories, this.twoFactorRequirementEnabled, this.membersAllowedRepositoryCreationType, this.membersCanCreatePublicRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreateInternalRepositories, this.membersCanCreatePages, this.membersCanCreatePublicPages, this.membersCanCreatePrivatePages, this.membersCanForkPrivateRepositories, this.webCommitSignoffRequired, this.name, this.collaborators, });
 
 factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrganization(
@@ -38,7 +38,7 @@ factory TeamOrganization.fromJson(Map<String, dynamic> json) { return TeamOrgani
   diskUsage: json['disk_usage'] != null ? (json['disk_usage'] as num).toInt() : null,
   collaborators: json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null,
   billingEmail: json['billing_email'] as String?,
-  plan: json['plan'] != null ? TeamOrganizationPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
+  plan: json['plan'] != null ? OrganizationFullPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
   defaultRepositoryPermission: json['default_repository_permission'] as String?,
   membersCanCreateRepositories: json['members_can_create_repositories'] as bool?,
   twoFactorRequirementEnabled: json['two_factor_requirement_enabled'] as bool?,
@@ -123,7 +123,7 @@ final int? collaborators;
 
 final String? billingEmail;
 
-final TeamOrganizationPlan? plan;
+final OrganizationFullPlan? plan;
 
 final String? defaultRepositoryPermission;
 
@@ -227,7 +227,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('archived_at') && json['archived_at'] is String; } 
-TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String Function()? name, String Function()? company, Uri Function()? blog, String Function()? location, String Function()? email, String? Function()? twitterUsername, bool Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int Function()? totalPrivateRepos, int Function()? ownedPrivateRepos, int? Function()? privateGists, int? Function()? diskUsage, int? Function()? collaborators, String? Function()? billingEmail, TeamOrganizationPlan Function()? plan, String? Function()? defaultRepositoryPermission, bool? Function()? membersCanCreateRepositories, bool? Function()? twoFactorRequirementEnabled, String Function()? membersAllowedRepositoryCreationType, bool Function()? membersCanCreatePublicRepositories, bool Function()? membersCanCreatePrivateRepositories, bool Function()? membersCanCreateInternalRepositories, bool Function()? membersCanCreatePages, bool Function()? membersCanCreatePublicPages, bool Function()? membersCanCreatePrivatePages, bool? Function()? membersCanForkPrivateRepositories, bool Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
+TeamOrganization copyWith({String? login, int? id, String? nodeId, Uri? url, Uri? reposUrl, Uri? eventsUrl, String? hooksUrl, String? issuesUrl, String? membersUrl, String? publicMembersUrl, String? avatarUrl, String? Function()? description, String Function()? name, String Function()? company, Uri Function()? blog, String Function()? location, String Function()? email, String? Function()? twitterUsername, bool Function()? isVerified, bool? hasOrganizationProjects, bool? hasRepositoryProjects, int? publicRepos, int? publicGists, int? followers, int? following, Uri? htmlUrl, DateTime? createdAt, String? type, int Function()? totalPrivateRepos, int Function()? ownedPrivateRepos, int? Function()? privateGists, int? Function()? diskUsage, int? Function()? collaborators, String? Function()? billingEmail, OrganizationFullPlan Function()? plan, String? Function()? defaultRepositoryPermission, bool? Function()? membersCanCreateRepositories, bool? Function()? twoFactorRequirementEnabled, String Function()? membersAllowedRepositoryCreationType, bool Function()? membersCanCreatePublicRepositories, bool Function()? membersCanCreatePrivateRepositories, bool Function()? membersCanCreateInternalRepositories, bool Function()? membersCanCreatePages, bool Function()? membersCanCreatePublicPages, bool Function()? membersCanCreatePrivatePages, bool? Function()? membersCanForkPrivateRepositories, bool Function()? webCommitSignoffRequired, DateTime? updatedAt, DateTime? Function()? archivedAt, }) { return TeamOrganization(
   login: login ?? this.login,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

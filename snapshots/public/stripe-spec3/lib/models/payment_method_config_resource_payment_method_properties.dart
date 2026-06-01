@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_config_resource_display_preference.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_display_preference.dart';/// 
 @immutable final class PaymentMethodConfigResourcePaymentMethodProperties {const PaymentMethodConfigResourcePaymentMethodProperties({required this.available, required this.displayPreference, });
 
 factory PaymentMethodConfigResourcePaymentMethodProperties.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigResourcePaymentMethodProperties(

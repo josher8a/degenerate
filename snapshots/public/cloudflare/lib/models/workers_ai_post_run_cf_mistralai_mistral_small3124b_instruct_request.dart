@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages35.dart';import 'prompt28.dart';typedef WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest = OneOf2<Prompt28,Messages35>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages35.dart';import 'package:pub_cloudflare/models/prompt28.dart';typedef WorkersAiPostRunCfMistralaiMistralSmall3124bInstructRequest = OneOf2<Prompt28,Messages35>;

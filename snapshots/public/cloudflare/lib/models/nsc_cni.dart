@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_account_tag.dart';import 'nsc_bgp_control.dart';import 'nsc_magic_settings.dart';@immutable final class NscCni {const NscCni({required this.account, required this.custIp, required this.id, required this.interconnect, required this.magic, required this.p2pIp, this.bgp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/nsc_account_tag.dart';import 'package:pub_cloudflare/models/nsc_bgp_control.dart';import 'package:pub_cloudflare/models/nsc_magic_settings.dart';@immutable final class NscCni {const NscCni({required this.account, required this.custIp, required this.id, required this.interconnect, required this.magic, required this.p2pIp, this.bgp, });
 
 factory NscCni.fromJson(Map<String, dynamic> json) { return NscCni(
   account: NscAccountTag.fromJson(json['account'] as String),

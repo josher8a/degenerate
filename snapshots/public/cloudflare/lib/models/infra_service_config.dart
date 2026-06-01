@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_service_common.dart';import 'infra_service_host.dart';import 'infra_service_type.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_service_common.dart';import 'package:pub_cloudflare/models/infra_service_host.dart';import 'package:pub_cloudflare/models/infra_service_type.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

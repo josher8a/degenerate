@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'invoice_setting_subscription_schedule_phase_setting.dart';import 'payment_method.dart';import 'schedules_phase_automatic_tax.dart';import 'stackable_discount_with_discount_settings_and_discount_end.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedule_add_invoice_item.dart';import 'subscription_schedule_configuration_item.dart';import 'subscription_schedule_phase_configuration_default_payment_method.dart';import 'subscription_schedule_phase_configuration_on_behalf_of.dart';import 'subscription_transfer_data.dart';import 'tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_subscription_schedule_phase_setting.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/schedules_phase_automatic_tax.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings_and_discount_end.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_configuration_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration/subscription_schedule_phase_configuration_collection_method.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 @immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
 
 factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
@@ -25,59 +25,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)'; } 
  }
-/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-@immutable final class SubscriptionSchedulePhaseConfigurationCollectionMethod {const SubscriptionSchedulePhaseConfigurationCollectionMethod._(this.value);
-
-factory SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(String json) { return switch (json) {
-  'charge_automatically' => chargeAutomatically,
-  'send_invoice' => sendInvoice,
-  _ => SubscriptionSchedulePhaseConfigurationCollectionMethod._(json),
-}; }
-
-static const SubscriptionSchedulePhaseConfigurationCollectionMethod chargeAutomatically = SubscriptionSchedulePhaseConfigurationCollectionMethod._('charge_automatically');
-
-static const SubscriptionSchedulePhaseConfigurationCollectionMethod sendInvoice = SubscriptionSchedulePhaseConfigurationCollectionMethod._('send_invoice');
-
-static const List<SubscriptionSchedulePhaseConfigurationCollectionMethod> values = [chargeAutomatically, sendInvoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationCollectionMethod($value)'; } 
- }
-/// When transitioning phases, controls how prorations are handled (if any). Possible values are `create_prorations`, `none`, and `always_invoice`.
-@immutable final class SubscriptionSchedulePhaseConfigurationProrationBehavior {const SubscriptionSchedulePhaseConfigurationProrationBehavior._(this.value);
-
-factory SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(String json) { return switch (json) {
-  'always_invoice' => alwaysInvoice,
-  'create_prorations' => createProrations,
-  'none' => none,
-  _ => SubscriptionSchedulePhaseConfigurationProrationBehavior._(json),
-}; }
-
-static const SubscriptionSchedulePhaseConfigurationProrationBehavior alwaysInvoice = SubscriptionSchedulePhaseConfigurationProrationBehavior._('always_invoice');
-
-static const SubscriptionSchedulePhaseConfigurationProrationBehavior createProrations = SubscriptionSchedulePhaseConfigurationProrationBehavior._('create_prorations');
-
-static const SubscriptionSchedulePhaseConfigurationProrationBehavior none = SubscriptionSchedulePhaseConfigurationProrationBehavior._('none');
-
-static const List<SubscriptionSchedulePhaseConfigurationProrationBehavior> values = [alwaysInvoice, createProrations, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationProrationBehavior($value)'; } 
- }
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
 @immutable final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, required this.currency, required this.discounts, required this.endDate, required this.items, required this.prorationBehavior, required this.startDate, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.transferData, this.trialEnd, });
 
@@ -98,7 +45,7 @@ factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> jso
   items: (json['items'] as List<dynamic>).map((e) => SubscriptionScheduleConfigurationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  prorationBehavior: SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(json['proration_behavior'] as String),
+  prorationBehavior: DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String),
   startDate: (json['start_date'] as num).toInt(),
   transferData: json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
@@ -125,7 +72,7 @@ final SubscriptionSchedulePhaseConfigurationCollectionMethod? collectionMethod;
 final String currency;
 
 /// ID of the default payment method for the subscription schedule. It must belong to the customer associated with the subscription schedule. If not set, invoices will use the default payment method in the customer's invoice settings.
-final SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod? defaultPaymentMethod;
+final DefaultPaymentMethod? defaultPaymentMethod;
 
 /// The default tax rates to apply to the subscription during this phase of the subscription schedule.
 final List<TaxRate>? defaultTaxRates;
@@ -149,10 +96,10 @@ final List<SubscriptionScheduleConfigurationItem> items;
 final Map<String,String>? metadata;
 
 /// The account (if any) the charge was made on behalf of for charges associated with the schedule's subscription. See the Connect documentation for details.
-final SubscriptionSchedulePhaseConfigurationOnBehalfOf? onBehalfOf;
+final ChargeOnBehalfOf? onBehalfOf;
 
 /// When transitioning phases, controls how prorations are handled (if any). Possible values are `create_prorations`, `none`, and `always_invoice`.
-final SubscriptionSchedulePhaseConfigurationProrationBehavior prorationBehavior;
+final DeleteSubscriptionItemsItemRequestProrationBehavior prorationBehavior;
 
 /// The start of this phase of the subscription schedule.
 final int startDate;
@@ -192,7 +139,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('add_i
       json.containsKey('items') &&
       json.containsKey('proration_behavior') &&
       json.containsKey('start_date') && json['start_date'] is num; } 
-SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, double? Function()? applicationFeePercent, SchedulesPhaseAutomaticTax Function()? automaticTax, SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, String? currency, SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod? Function()? defaultPaymentMethod, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, InvoiceSettingSubscriptionSchedulePhaseSetting? Function()? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Map<String, String>? Function()? metadata, SubscriptionSchedulePhaseConfigurationOnBehalfOf? Function()? onBehalfOf, SubscriptionSchedulePhaseConfigurationProrationBehavior? prorationBehavior, int? startDate, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
+SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, double? Function()? applicationFeePercent, SchedulesPhaseAutomaticTax Function()? automaticTax, SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, String? currency, DefaultPaymentMethod? Function()? defaultPaymentMethod, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, InvoiceSettingSubscriptionSchedulePhaseSetting? Function()? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Map<String, String>? Function()? metadata, ChargeOnBehalfOf? Function()? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, int? startDate, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: addInvoiceItems ?? this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
 @immutable final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);
 
 factory VectorStoreSearchResultsPageObject.fromJson(String json) { return switch (json) {

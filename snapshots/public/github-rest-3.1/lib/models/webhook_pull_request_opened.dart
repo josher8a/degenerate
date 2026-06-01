@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestOpenedAction {const WebhookPullRequestOpenedAction._(this.value);
-
-factory WebhookPullRequestOpenedAction.fromJson(String json) { return switch (json) {
-  'opened' => opened,
-  _ => WebhookPullRequestOpenedAction._(json),
-}; }
-
-static const WebhookPullRequestOpenedAction opened = WebhookPullRequestOpenedAction._('opened');
-
-static const List<WebhookPullRequestOpenedAction> values = [opened];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestOpenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestOpenedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestOpened {const WebhookPullRequestOpened({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issues_opened/webhook_issues_opened_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestOpened {const WebhookPullRequestOpened({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestOpened.fromJson(Map<String, dynamic> json) { return WebhookPullRequestOpened(
-  action: WebhookPullRequestOpenedAction.fromJson(json['action'] as String),
+  action: WebhookIssuesOpenedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: WebhooksNumber.fromJson(json['number'] as num),
@@ -34,7 +13,7 @@ factory WebhookPullRequestOpened.fromJson(Map<String, dynamic> json) { return We
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPullRequestOpenedAction action;
+final WebhookIssuesOpenedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -66,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestOpened copyWith({WebhookPullRequestOpenedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestOpened(
+WebhookPullRequestOpened copyWith({WebhookIssuesOpenedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestOpened(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

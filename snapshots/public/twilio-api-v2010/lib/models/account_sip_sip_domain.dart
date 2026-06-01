@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountSipSipDomainVoiceFallbackMethod {const AccountSipSipDomainVoiceFallbackMethod._(this.value);
-
-factory AccountSipSipDomainVoiceFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountSipSipDomainVoiceFallbackMethod._(json),
-}; }
-
-static const AccountSipSipDomainVoiceFallbackMethod $get = AccountSipSipDomainVoiceFallbackMethod._('GET');
-
-static const AccountSipSipDomainVoiceFallbackMethod post = AccountSipSipDomainVoiceFallbackMethod._('POST');
-
-static const List<AccountSipSipDomainVoiceFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountSipSipDomainVoiceFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainVoiceFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-@immutable final class AccountSipSipDomainVoiceMethod {const AccountSipSipDomainVoiceMethod._(this.value);
-
-factory AccountSipSipDomainVoiceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountSipSipDomainVoiceMethod._(json),
-}; }
-
-static const AccountSipSipDomainVoiceMethod $get = AccountSipSipDomainVoiceMethod._('GET');
-
-static const AccountSipSipDomainVoiceMethod post = AccountSipSipDomainVoiceMethod._('POST');
-
-static const List<AccountSipSipDomainVoiceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountSipSipDomainVoiceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainVoiceMethod($value)'; } 
- }
-/// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
 @immutable final class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod._(this.value);
 
 factory AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
@@ -87,9 +37,9 @@ factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return Account
   friendlyName: json['friendly_name'] as String?,
   sid: json['sid'] as String?,
   uri: json['uri'] as String?,
-  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountSipSipDomainVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
+  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountAddressDependentPhoneNumberVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
   voiceFallbackUrl: json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null,
-  voiceMethod: json['voice_method'] != null ? AccountSipSipDomainVoiceMethod.fromJson(json['voice_method'] as String) : null,
+  voiceMethod: json['voice_method'] != null ? AccountAddressDependentPhoneNumberVoiceMethod.fromJson(json['voice_method'] as String) : null,
   voiceStatusCallbackMethod: json['voice_status_callback_method'] != null ? AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(json['voice_status_callback_method'] as String) : null,
   voiceStatusCallbackUrl: json['voice_status_callback_url'] != null ? Uri.parse(json['voice_status_callback_url'] as String) : null,
   voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
@@ -129,13 +79,13 @@ final String? sid;
 final String? uri;
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final AccountSipSipDomainVoiceFallbackMethod? voiceFallbackMethod;
+final AccountAddressDependentPhoneNumberVoiceFallbackMethod? voiceFallbackMethod;
 
 /// The URL that we call when an error occurs while retrieving or executing the TwiML requested from `voice_url`.
 final Uri? voiceFallbackUrl;
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final AccountSipSipDomainVoiceMethod? voiceMethod;
+final AccountAddressDependentPhoneNumberVoiceMethod? voiceMethod;
 
 /// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
 final AccountSipSipDomainVoiceStatusCallbackMethod? voiceStatusCallbackMethod;
@@ -188,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   'emergency_caller_sid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key)); } 
-AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountSipSipDomainVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountSipSipDomainVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
+AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   authType: authType != null ? authType() : this.authType,

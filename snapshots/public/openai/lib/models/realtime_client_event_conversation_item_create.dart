@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';/// Add a new Item to the Conversation's context, including messages, function
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// Add a new Item to the Conversation's context, including messages, function
 /// calls, and function call responses. This event can be used both to populate a
 /// "history" of the conversation and to add new items mid-stream, but has the
 /// current limitation that it cannot populate assistant audio messages.

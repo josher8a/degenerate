@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_count_response_result.dart';@immutable final class ObservatoryCountResponse {const ObservatoryCountResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_count_response/observatory_count_response_result.dart';@immutable final class ObservatoryCountResponse {const ObservatoryCountResponse({this.result});
 
 factory ObservatoryCountResponse.fromJson(Map<String, dynamic> json) { return ObservatoryCountResponse(
   result: json['result'] != null ? ObservatoryCountResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_default_device_settings_policy.dart';@immutable final class TeamsDevicesDefaultDeviceSettingsResponse {const TeamsDevicesDefaultDeviceSettingsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_default_device_settings_policy.dart';@immutable final class TeamsDevicesDefaultDeviceSettingsResponse {const TeamsDevicesDefaultDeviceSettingsResponse({this.result});
 
 factory TeamsDevicesDefaultDeviceSettingsResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesDefaultDeviceSettingsResponse(
   result: json['result'] != null ? TeamsDevicesDefaultDeviceSettingsPolicy.fromJson(json['result'] as Map<String, dynamic>) : null,

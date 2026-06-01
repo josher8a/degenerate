@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_platform.dart';@immutable final class TeamsDevicesMatchItem {const TeamsDevicesMatchItem({this.platform});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_platform.dart';@immutable final class TeamsDevicesMatchItem {const TeamsDevicesMatchItem({this.platform});
 
 factory TeamsDevicesMatchItem.fromJson(Map<String, dynamic> json) { return TeamsDevicesMatchItem(
   platform: json['platform'] != null ? TeamsDevicesPlatform.fromJson(json['platform'] as String) : null,

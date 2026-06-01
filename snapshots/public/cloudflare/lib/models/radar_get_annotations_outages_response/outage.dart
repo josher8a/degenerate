@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Outage {const Outage({required this.outageCause, required this.outageType, });
+
+factory Outage.fromJson(Map<String, dynamic> json) { return Outage(
+  outageCause: json['outageCause'] as String,
+  outageType: json['outageType'] as String,
+); }
+
+final String outageCause;
+
+final String outageType;
+
+Map<String, dynamic> toJson() { return {
+  'outageCause': outageCause,
+  'outageType': outageType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('outageCause') && json['outageCause'] is String &&
+      json.containsKey('outageType') && json['outageType'] is String; } 
+Outage copyWith({String? outageCause, String? outageType, }) { return Outage(
+  outageCause: outageCause ?? this.outageCause,
+  outageType: outageType ?? this.outageType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Outage &&
+          outageCause == other.outageCause &&
+          outageType == other.outageType; } 
+@override int get hashCode { return Object.hash(outageCause, outageType); } 
+@override String toString() { return 'Outage(outageCause: $outageCause, outageType: $outageType)'; } 
+ }

@@ -1,35 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_shell_exec_action.dart';/// The status of the local shell call.
-/// 
-@immutable final class LocalShellToolCallStatus {const LocalShellToolCallStatus._(this.value);
-
-factory LocalShellToolCallStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'incomplete' => incomplete,
-  _ => LocalShellToolCallStatus._(json),
-}; }
-
-static const LocalShellToolCallStatus inProgress = LocalShellToolCallStatus._('in_progress');
-
-static const LocalShellToolCallStatus completed = LocalShellToolCallStatus._('completed');
-
-static const LocalShellToolCallStatus incomplete = LocalShellToolCallStatus._('incomplete');
-
-static const List<LocalShellToolCallStatus> values = [inProgress, completed, incomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellToolCallStatus($value)'; } 
- }
-/// A tool call to run a command on the local shell.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';/// A tool call to run a command on the local shell.
 /// 
 @immutable final class LocalShellToolCall {const LocalShellToolCall({required this.type, required this.id, required this.callId, required this.action, required this.status, });
 
@@ -38,7 +9,7 @@ factory LocalShellToolCall.fromJson(Map<String, dynamic> json) { return LocalShe
   id: json['id'] as String,
   callId: json['call_id'] as String,
   action: LocalShellExecAction.fromJson(json['action'] as Map<String, dynamic>),
-  status: LocalShellToolCallStatus.fromJson(json['status'] as String),
+  status: ComputerToolCallOutputStatus.fromJson(json['status'] as String),
 ); }
 
 /// The type of the local shell call. Always `local_shell_call`.
@@ -57,7 +28,7 @@ final LocalShellExecAction action;
 
 /// The status of the local shell call.
 /// 
-final LocalShellToolCallStatus status;
+final ComputerToolCallOutputStatus status;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -71,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('action') &&
       json.containsKey('status'); } 
-LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, LocalShellToolCallStatus? status, }) { return LocalShellToolCall(
+LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return LocalShellToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

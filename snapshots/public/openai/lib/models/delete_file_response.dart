@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteFileResponseObject {const DeleteFileResponseObject._(this.value);
-
-factory DeleteFileResponseObject.fromJson(String json) { return switch (json) {
-  'file' => file,
-  _ => DeleteFileResponseObject._(json),
-}; }
-
-static const DeleteFileResponseObject file = DeleteFileResponseObject._('file');
-
-static const List<DeleteFileResponseObject> values = [file];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteFileResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteFileResponseObject($value)'; } 
- }
-@immutable final class DeleteFileResponse {const DeleteFileResponse({required this.id, required this.object, required this.deleted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_file_response/delete_file_response_object.dart';@immutable final class DeleteFileResponse {const DeleteFileResponse({required this.id, required this.object, required this.deleted, });
 
 factory DeleteFileResponse.fromJson(Map<String, dynamic> json) { return DeleteFileResponse(
   id: json['id'] as String,

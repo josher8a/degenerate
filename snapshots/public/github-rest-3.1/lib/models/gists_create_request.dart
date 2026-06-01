@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gists_create_request_files_value.dart';import 'gists_create_request_public.dart';@immutable final class GistsCreateRequest {const GistsCreateRequest({required this.files, this.description, this.public, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gists_create_request/gists_create_request_files_value.dart';import 'package:pub_github_rest_3_1/models/gists_create_request/gists_create_request_public.dart';@immutable final class GistsCreateRequest {const GistsCreateRequest({required this.files, this.description, this.public, });
 
 factory GistsCreateRequest.fromJson(Map<String, dynamic> json) { return GistsCreateRequest(
   description: json['description'] as String?,
   files: (json['files'] as Map<String, dynamic>).map((k, v) => MapEntry(k, GistsCreateRequestFilesValue.fromJson(v as Map<String, dynamic>))),
-  public: json['public'] != null ? OneOf2.parse(json['public'], fromA: (v) => v as bool, fromB: (v) => GistsCreateRequestPublicVariant2.fromJson(v as String),) : null,
+  public: json['public'] != null ? OneOf2.parse(json['public'], fromA: (v) => v as bool, fromB: (v) => PublicVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Description of the gist

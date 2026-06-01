@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_on_demand.dart';import 'addressing_bgp_prefix_identifier.dart';import 'addressing_bgp_signal_opts.dart';import 'addressing_cidr.dart';import 'addressing_timestamp.dart';/// Autonomous System Number (ASN) the prefix will be advertised under.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_asn_prepend_count.dart';import 'package:pub_cloudflare/models/addressing_auto_advertise_withdraw.dart';import 'package:pub_cloudflare/models/addressing_bgp_on_demand.dart';import 'package:pub_cloudflare/models/addressing_bgp_prefix_identifier.dart';import 'package:pub_cloudflare/models/addressing_bgp_signal_opts.dart';import 'package:pub_cloudflare/models/addressing_cidr.dart';import 'package:pub_cloudflare/models/addressing_timestamp.dart';/// Autonomous System Number (ASN) the prefix will be advertised under.
 extension type const AddressingSchemasAsn(int value) {
 factory AddressingSchemasAsn.fromJson(num json) => AddressingSchemasAsn(json.toInt());
 

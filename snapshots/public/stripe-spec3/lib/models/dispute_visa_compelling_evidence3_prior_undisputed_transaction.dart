@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_transaction_shipping_address.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_transaction_shipping_address.dart';/// 
 @immutable final class DisputeVisaCompellingEvidence3PriorUndisputedTransaction {const DisputeVisaCompellingEvidence3PriorUndisputedTransaction({required this.charge, this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.productDescription, this.shippingAddress, });
 
 factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<String, dynamic> json) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(

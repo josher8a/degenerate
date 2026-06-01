@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
 /// 
 @immutable final class ZonesMirageId {const ZonesMirageId._(this.value);

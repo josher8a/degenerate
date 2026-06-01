@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_response_review_scan_object.dart';@immutable final class DnsRecordsDnsResponseReviewScan {const DnsRecordsDnsResponseReviewScan({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_review_scan_object.dart';@immutable final class DnsRecordsDnsResponseReviewScan {const DnsRecordsDnsResponseReviewScan({this.result});
 
 factory DnsRecordsDnsResponseReviewScan.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseReviewScan(
   result: json['result'] != null ? DnsRecordsDnsResponseReviewScanObject.fromJson(json['result'] as Map<String, dynamic>) : null,

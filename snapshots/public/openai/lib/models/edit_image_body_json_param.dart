@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_image_body_json_param_model.dart';import 'image_ref_param.dart';import 'partial_images.dart';@immutable final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_request/create_image_request_moderation.dart';import 'package:pub_openai/models/edit_image_body_json_param/edit_image_body_json_param_model.dart';import 'package:pub_openai/models/image_ref_param.dart';import 'package:pub_openai/models/partial_images.dart';@immutable final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
 
 factory EditImageBodyJsonParamQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -84,91 +84,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamSize($value)'; } 
  }
-@immutable final class EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat._(this.value);
-
-factory EditImageBodyJsonParamOutputFormat.fromJson(String json) { return switch (json) {
-  'png' => png,
-  'jpeg' => jpeg,
-  'webp' => webp,
-  _ => EditImageBodyJsonParamOutputFormat._(json),
-}; }
-
-static const EditImageBodyJsonParamOutputFormat png = EditImageBodyJsonParamOutputFormat._('png');
-
-static const EditImageBodyJsonParamOutputFormat jpeg = EditImageBodyJsonParamOutputFormat._('jpeg');
-
-static const EditImageBodyJsonParamOutputFormat webp = EditImageBodyJsonParamOutputFormat._('webp');
-
-static const List<EditImageBodyJsonParamOutputFormat> values = [png, jpeg, webp];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamOutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamOutputFormat($value)'; } 
- }
-@immutable final class EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration._(this.value);
-
-factory EditImageBodyJsonParamModeration.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'auto' => auto,
-  _ => EditImageBodyJsonParamModeration._(json),
-}; }
-
-static const EditImageBodyJsonParamModeration low = EditImageBodyJsonParamModeration._('low');
-
-static const EditImageBodyJsonParamModeration auto = EditImageBodyJsonParamModeration._('auto');
-
-static const List<EditImageBodyJsonParamModeration> values = [low, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamModeration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamModeration($value)'; } 
- }
-@immutable final class EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground._(this.value);
-
-factory EditImageBodyJsonParamBackground.fromJson(String json) { return switch (json) {
-  'transparent' => transparent,
-  'opaque' => opaque,
-  'auto' => auto,
-  _ => EditImageBodyJsonParamBackground._(json),
-}; }
-
-static const EditImageBodyJsonParamBackground transparent = EditImageBodyJsonParamBackground._('transparent');
-
-static const EditImageBodyJsonParamBackground opaque = EditImageBodyJsonParamBackground._('opaque');
-
-static const EditImageBodyJsonParamBackground auto = EditImageBodyJsonParamBackground._('auto');
-
-static const List<EditImageBodyJsonParamBackground> values = [transparent, opaque, auto];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamBackground($value)'; } 
- }
 /// JSON request body for image edits.
 /// 
 /// Use `images` (array of `ImageRefParam`) instead of multipart `image` uploads.
 /// You can reference images via external URLs, data URLs, or uploaded file IDs.
 /// JSON edits support GPT image models only; DALL-E edits require multipart (`dall-e-2` only).
 /// 
-@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
+@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
   model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,
@@ -180,10 +102,10 @@ factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return Edit
   inputFidelity: json['input_fidelity'] != null ? EditImageBodyJsonParamInputFidelity.fromJson(json['input_fidelity'] as String) : null,
   size: json.containsKey('size') ? json['size'] != null ? EditImageBodyJsonParamSize.fromJson(json['size'] as String) : null : EditImageBodyJsonParamSize.auto,
   user: json['user'] as String?,
-  outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? EditImageBodyJsonParamOutputFormat.fromJson(json['output_format'] as String) : null : EditImageBodyJsonParamOutputFormat.png,
+  outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null : CreateImageEditRequestOutputFormat.png,
   outputCompression: json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null,
-  moderation: json.containsKey('moderation') ? json['moderation'] != null ? EditImageBodyJsonParamModeration.fromJson(json['moderation'] as String) : null : EditImageBodyJsonParamModeration.auto,
-  background: json.containsKey('background') ? json['background'] != null ? EditImageBodyJsonParamBackground.fromJson(json['background'] as String) : null : EditImageBodyJsonParamBackground.auto,
+  moderation: json.containsKey('moderation') ? json['moderation'] != null ? CreateImageRequestModeration.fromJson(json['moderation'] as String) : null : CreateImageRequestModeration.auto,
+  background: json.containsKey('background') ? json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null : CreateImageEditRequestBackground.auto,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
   partialImages: json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null,
 ); }
@@ -220,16 +142,16 @@ final EditImageBodyJsonParamSize? size;
 final String? user;
 
 /// Output image format. Supported for GPT image models.
-final EditImageBodyJsonParamOutputFormat? outputFormat;
+final CreateImageEditRequestOutputFormat? outputFormat;
 
 /// Compression level for `jpeg` or `webp` output.
 final int? outputCompression;
 
 /// Moderation level for GPT image models.
-final EditImageBodyJsonParamModeration? moderation;
+final CreateImageRequestModeration? moderation;
 
 /// Background behavior for generated image output.
-final EditImageBodyJsonParamBackground? background;
+final CreateImageEditRequestBackground? background;
 
 /// Stream partial image results as events.
 final bool? stream;
@@ -255,7 +177,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('images') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel Function()? model, List<ImageRefParam>? images, ImageRefParam Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String Function()? user, EditImageBodyJsonParamOutputFormat? Function()? outputFormat, int? Function()? outputCompression, EditImageBodyJsonParamModeration? Function()? moderation, EditImageBodyJsonParamBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
+EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel Function()? model, List<ImageRefParam>? images, ImageRefParam Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String Function()? user, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
   model: model != null ? model() : this.model,
   images: images ?? this.images,
   mask: mask != null ? mask() : this.mask,

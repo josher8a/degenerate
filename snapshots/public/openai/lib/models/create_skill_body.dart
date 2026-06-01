@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_skill_body_files.dart';/// Uploads a skill either as a directory (multipart `files[]`) or as a single zip file.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_skill_body/create_skill_body_files.dart';/// Uploads a skill either as a directory (multipart `files[]`) or as a single zip file.
 @immutable final class CreateSkillBody {const CreateSkillBody({required this.files});
 
 factory CreateSkillBody.fromJson(Map<String, dynamic> json) { return CreateSkillBody(

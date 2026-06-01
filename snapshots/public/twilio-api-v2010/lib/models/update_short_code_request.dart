@@ -1,64 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `sms_url`. Can be: `GET` or `POST`.
-@immutable final class UpdateShortCodeRequestSmsMethod {const UpdateShortCodeRequestSmsMethod._(this.value);
-
-factory UpdateShortCodeRequestSmsMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateShortCodeRequestSmsMethod._(json),
-}; }
-
-static const UpdateShortCodeRequestSmsMethod $get = UpdateShortCodeRequestSmsMethod._('GET');
-
-static const UpdateShortCodeRequestSmsMethod post = UpdateShortCodeRequestSmsMethod._('POST');
-
-static const List<UpdateShortCodeRequestSmsMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateShortCodeRequestSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateShortCodeRequestSmsMethod($value)'; } 
- }
-/// The HTTP method that we should use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class UpdateShortCodeRequestSmsFallbackMethod {const UpdateShortCodeRequestSmsFallbackMethod._(this.value);
-
-factory UpdateShortCodeRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateShortCodeRequestSmsFallbackMethod._(json),
-}; }
-
-static const UpdateShortCodeRequestSmsFallbackMethod $get = UpdateShortCodeRequestSmsFallbackMethod._('GET');
-
-static const UpdateShortCodeRequestSmsFallbackMethod post = UpdateShortCodeRequestSmsFallbackMethod._('POST');
-
-static const List<UpdateShortCodeRequestSmsFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateShortCodeRequestSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateShortCodeRequestSmsFallbackMethod($value)'; } 
- }
-@immutable final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_sms_method.dart';@immutable final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
 
 factory UpdateShortCodeRequest.fromJson(Map<String, dynamic> json) { return UpdateShortCodeRequest(
   friendlyName: json['FriendlyName'] as String?,
   apiVersion: json['ApiVersion'] as String?,
   smsUrl: json['SmsUrl'] != null ? Uri.parse(json['SmsUrl'] as String) : null,
-  smsMethod: json['SmsMethod'] != null ? UpdateShortCodeRequestSmsMethod.fromJson(json['SmsMethod'] as String) : null,
+  smsMethod: json['SmsMethod'] != null ? CreateApplicationRequestSmsMethod.fromJson(json['SmsMethod'] as String) : null,
   smsFallbackUrl: json['SmsFallbackUrl'] != null ? Uri.parse(json['SmsFallbackUrl'] as String) : null,
-  smsFallbackMethod: json['SmsFallbackMethod'] != null ? UpdateShortCodeRequestSmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null,
+  smsFallbackMethod: json['SmsFallbackMethod'] != null ? CreateApplicationRequestSmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null,
 ); }
 
 /// A descriptive string that you created to describe this resource. It can be up to 64 characters long. By default, the `FriendlyName` is the short code.
@@ -71,13 +21,13 @@ final String? apiVersion;
 final Uri? smsUrl;
 
 /// The HTTP method we should use when calling the `sms_url`. Can be: `GET` or `POST`.
-final UpdateShortCodeRequestSmsMethod? smsMethod;
+final CreateApplicationRequestSmsMethod? smsMethod;
 
 /// The URL that we should call if an error occurs while retrieving or executing the TwiML from `sms_url`.
 final Uri? smsFallbackUrl;
 
 /// The HTTP method that we should use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-final UpdateShortCodeRequestSmsFallbackMethod? smsFallbackMethod;
+final CreateApplicationRequestSmsFallbackMethod? smsFallbackMethod;
 
 Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
@@ -88,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (smsFallbackMethod != null) 'SmsFallbackMethod': smsFallbackMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod'}.contains(key)); } 
-UpdateShortCodeRequest copyWith({String Function()? friendlyName, String Function()? apiVersion, Uri Function()? smsUrl, UpdateShortCodeRequestSmsMethod Function()? smsMethod, Uri Function()? smsFallbackUrl, UpdateShortCodeRequestSmsFallbackMethod Function()? smsFallbackMethod, }) { return UpdateShortCodeRequest(
+UpdateShortCodeRequest copyWith({String Function()? friendlyName, String Function()? apiVersion, Uri Function()? smsUrl, CreateApplicationRequestSmsMethod Function()? smsMethod, Uri Function()? smsFallbackUrl, CreateApplicationRequestSmsFallbackMethod Function()? smsFallbackMethod, }) { return UpdateShortCodeRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   smsUrl: smsUrl != null ? smsUrl() : this.smsUrl,

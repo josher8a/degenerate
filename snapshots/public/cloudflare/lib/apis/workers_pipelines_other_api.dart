@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_pipelines_workers_pipelines_account_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_pipeline_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_sink_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_stream_id.dart';import '../models/pipelines_by_pipeline_id_response_result.dart';import '../models/pipelines_request.dart';import '../models/pipelines_response2_result.dart';import '../models/pipelines_response_result.dart';import '../models/sinks_by_sink_id_response_result.dart';import '../models/sinks_request.dart';import '../models/sinks_response2_result.dart';import '../models/sinks_response_result.dart';import '../models/streams_by_stream_id_request.dart';import '../models/streams_by_stream_id_response2_result.dart';import '../models/streams_by_stream_id_response_result.dart';import '../models/streams_request.dart';import '../models/streams_response2_result.dart';import '../models/streams_response_result.dart';import '../models/validate_sql_request.dart';import '../models/validate_sql_response_result.dart';/// WorkersPipelinesOtherApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_account_id.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline_id.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_sink_id.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_stream_id.dart';import 'package:pub_cloudflare/models/pipelines_by_pipeline_id_response/pipelines_by_pipeline_id_response_result.dart';import 'package:pub_cloudflare/models/pipelines_request.dart';import 'package:pub_cloudflare/models/pipelines_response2/pipelines_response2_result.dart';import 'package:pub_cloudflare/models/sinks_by_sink_id_response/sinks_by_sink_id_response_result.dart';import 'package:pub_cloudflare/models/sinks_request.dart';import 'package:pub_cloudflare/models/sinks_response2/sinks_response2_result.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_request.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_response/streams_by_stream_id_response_result.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_response2/streams_by_stream_id_response2_result.dart';import 'package:pub_cloudflare/models/streams_request.dart';import 'package:pub_cloudflare/models/validate_sql_request.dart';import 'package:pub_cloudflare/models/validate_sql_response/validate_sql_response_result.dart';/// WorkersPipelinesOtherApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersPipelinesOtherApi with ApiExecutor {const WorkersPipelinesOth
 /// List/Filter Pipelines in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<List<PipelinesResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PipelinesResponse2Result>, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,7 +37,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => PipelinesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => PipelinesResponse2Result.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -111,7 +111,7 @@ return execute(
 /// List/Filter Sinks in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<List<SinksResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SinksBySinkIdResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId;
@@ -138,7 +138,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => SinksResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => SinksBySinkIdResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -220,7 +220,7 @@ return execute(
 /// List/Filter Streams in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<List<StreamsResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<StreamsByStreamIdResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId.toString();
@@ -247,7 +247,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>).map((e) => StreamsByStreamIdResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -256,7 +256,7 @@ return execute(
 /// Create a new Stream.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsByStreamIdResponseResult, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -271,7 +271,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
+    return StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

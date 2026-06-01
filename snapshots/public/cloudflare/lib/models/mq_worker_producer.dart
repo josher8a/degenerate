@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqWorkerProducerType {const MqWorkerProducerType._(this.value);
-
-factory MqWorkerProducerType.fromJson(String json) { return switch (json) {
-  'worker' => worker,
-  _ => MqWorkerProducerType._(json),
-}; }
-
-static const MqWorkerProducerType worker = MqWorkerProducerType._('worker');
-
-static const List<MqWorkerProducerType> values = [worker];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqWorkerProducerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqWorkerProducerType($value)'; } 
- }
-@immutable final class MqWorkerProducer {const MqWorkerProducer({this.script, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_worker_producer/mq_worker_producer_type.dart';@immutable final class MqWorkerProducer {const MqWorkerProducer({this.script, this.type, });
 
 factory MqWorkerProducer.fromJson(Map<String, dynamic> json) { return MqWorkerProducer(
   script: json['script'] as String?,

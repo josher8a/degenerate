@@ -1,40 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerRenderingOptionsParamAmountTaxDisplay {const CustomerRenderingOptionsParamAmountTaxDisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_rendering_options_param/amount_tax_display.dart';@immutable final class customer_rendering_options_param {const customer_rendering_options_param({this.amountTaxDisplay, this.template, });
 
-factory CustomerRenderingOptionsParamAmountTaxDisplay.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'exclude_tax' => excludeTax,
-  'include_inclusive_tax' => includeInclusiveTax,
-  _ => CustomerRenderingOptionsParamAmountTaxDisplay._(json),
-}; }
-
-static const CustomerRenderingOptionsParamAmountTaxDisplay $empty = CustomerRenderingOptionsParamAmountTaxDisplay._('');
-
-static const CustomerRenderingOptionsParamAmountTaxDisplay excludeTax = CustomerRenderingOptionsParamAmountTaxDisplay._('exclude_tax');
-
-static const CustomerRenderingOptionsParamAmountTaxDisplay includeInclusiveTax = CustomerRenderingOptionsParamAmountTaxDisplay._('include_inclusive_tax');
-
-static const List<CustomerRenderingOptionsParamAmountTaxDisplay> values = [$empty, excludeTax, includeInclusiveTax];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerRenderingOptionsParamAmountTaxDisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerRenderingOptionsParamAmountTaxDisplay($value)'; } 
- }
-@immutable final class CustomerRenderingOptionsParam {const CustomerRenderingOptionsParam({this.amountTaxDisplay, this.template, });
-
-factory CustomerRenderingOptionsParam.fromJson(Map<String, dynamic> json) { return CustomerRenderingOptionsParam(
-  amountTaxDisplay: json['amount_tax_display'] != null ? CustomerRenderingOptionsParamAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
+factory customer_rendering_options_param.fromJson(Map<String, dynamic> json) { return customer_rendering_options_param(
+  amountTaxDisplay: json['amount_tax_display'] != null ? AmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   template: json['template'] as String?,
 ); }
 
-final CustomerRenderingOptionsParamAmountTaxDisplay? amountTaxDisplay;
+final AmountTaxDisplay? amountTaxDisplay;
 
 final String? template;
 
@@ -43,14 +16,14 @@ Map<String, dynamic> toJson() { return {
   'template': ?template,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'template'}.contains(key)); } 
-CustomerRenderingOptionsParam copyWith({CustomerRenderingOptionsParamAmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return CustomerRenderingOptionsParam(
+customer_rendering_options_param copyWith({AmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return customer_rendering_options_param(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is CustomerRenderingOptionsParam &&
+      other is customer_rendering_options_param &&
           amountTaxDisplay == other.amountTaxDisplay &&
           template == other.template; } 
 @override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'CustomerRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+@override String toString() { return 'customer_rendering_options_param(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
  }

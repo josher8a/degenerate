@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_order_product.dart';import 'climate_product.dart';import 'climate_removals_beneficiary.dart';import 'climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
 @immutable final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);
 
 factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {

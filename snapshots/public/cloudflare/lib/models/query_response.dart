@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'since.dart';import 'until.dart';/// The exact parameters/timestamps the analytics service used to return data.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/since.dart';import 'package:pub_cloudflare/models/until.dart';/// The exact parameters/timestamps the analytics service used to return data.
 @immutable final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
 
 factory QueryResponse.fromJson(Map<String, dynamic> json) { return QueryResponse(

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth2_ssl.dart';import 'bandwidth2_ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bandwidth2/bandwidth2_ssl.dart';import 'package:pub_cloudflare/models/bandwidth2/ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
 @immutable final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });
 
 factory Bandwidth2.fromJson(Map<String, dynamic> json) { return Bandwidth2(
@@ -9,7 +9,7 @@ factory Bandwidth2.fromJson(Map<String, dynamic> json) { return Bandwidth2(
   contentType: json['content_type'] as Map<String, dynamic>?,
   country: json['country'] as Map<String, dynamic>?,
   ssl: json['ssl'] != null ? Bandwidth2Ssl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
-  sslProtocols: json['ssl_protocols'] != null ? Bandwidth2SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
+  sslProtocols: json['ssl_protocols'] != null ? SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,
 ); }
 
@@ -29,7 +29,7 @@ final Map<String,dynamic>? country;
 final Bandwidth2Ssl? ssl;
 
 /// A breakdown of requests by their SSL protocol.
-final Bandwidth2SslProtocols? sslProtocols;
+final SslProtocols? sslProtocols;
 
 /// The number of bytes that were fetched and served from the origin server.
 final int? uncached;
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'ssl', 'ssl_protocols', 'uncached'}.contains(key)); } 
-Bandwidth2 copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Bandwidth2Ssl Function()? ssl, Bandwidth2SslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Bandwidth2(
+Bandwidth2 copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Bandwidth2Ssl Function()? ssl, SslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Bandwidth2(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   contentType: contentType != null ? contentType() : this.contentType,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_ruleset.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryRulesetCreatedAction {const WebhookRepositoryRulesetCreatedAction._(this.value);
-
-factory WebhookRepositoryRulesetCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookRepositoryRulesetCreatedAction._(json),
-}; }
-
-static const WebhookRepositoryRulesetCreatedAction created = WebhookRepositoryRulesetCreatedAction._('created');
-
-static const List<WebhookRepositoryRulesetCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryRulesetCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryRulesetCreatedAction($value)'; } 
- }
-@immutable final class WebhookRepositoryRulesetCreated {const WebhookRepositoryRulesetCreated({required this.action, required this.repositoryRuleset, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryRulesetCreated {const WebhookRepositoryRulesetCreated({required this.action, required this.repositoryRuleset, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetCreated(
-  action: WebhookRepositoryRulesetCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) { re
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookRepositoryRulesetCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository_ruleset') &&
       json.containsKey('sender'); } 
-WebhookRepositoryRulesetCreated copyWith({WebhookRepositoryRulesetCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, RepositoryRuleset? repositoryRuleset, SimpleUser? sender, }) { return WebhookRepositoryRulesetCreated(
+WebhookRepositoryRulesetCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, RepositoryRuleset? repositoryRuleset, SimpleUser? sender, }) { return WebhookRepositoryRulesetCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

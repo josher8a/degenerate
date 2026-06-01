@@ -1,45 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_mandate_options_sepa_debit.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
-/// 
-/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
-/// 
-/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
-/// 
-/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-@immutable final class PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage {const PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage none = PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage> values = [none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_mandate_options_sepa_debit.dart';/// 
 @immutable final class PaymentIntentPaymentMethodOptionsSepaDebit {const PaymentIntentPaymentMethodOptionsSepaDebit({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSepaDebit(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
@@ -52,7 +18,7 @@ final PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit? mandateOptions;
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage? setupFutureUsage;
+final CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 /// Controls when Stripe will attempt to debit the funds from the customer's account. The date must be a string in YYYY-MM-DD format. The date must be in the future and between 3 and 15 calendar days from now.
 final String? targetDate;
@@ -63,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsSepaDebit copyWith({PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit Function()? mandateOptions, PaymentIntentPaymentMethodOptionsSepaDebitSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsSepaDebit(
+PaymentIntentPaymentMethodOptionsSepaDebit copyWith({PaymentIntentPaymentMethodOptionsMandateOptionsSepaDebit Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsSepaDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

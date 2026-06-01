@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response.dart';/// The event type, must be `response.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response.dart';/// The event type, must be `response.done`.
 @immutable final class RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType._(this.value);
 
 factory RealtimeBetaServerEventResponseDoneType.fromJson(String json) { return switch (json) {

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileSystemNodeKind {const FileSystemNodeKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Kind {const Kind._(this.value);
 
-factory FileSystemNodeKind.fromJson(String json) { return switch (json) {
+factory Kind.fromJson(String json) { return switch (json) {
   'file' => file,
   'directory' => directory,
   'symlink' => symlink,
-  _ => FileSystemNodeKind._(json),
+  _ => Kind._(json),
 }; }
 
-static const FileSystemNodeKind file = FileSystemNodeKind._('file');
+static const Kind file = Kind._('file');
 
-static const FileSystemNodeKind directory = FileSystemNodeKind._('directory');
+static const Kind directory = Kind._('directory');
 
-static const FileSystemNodeKind symlink = FileSystemNodeKind._('symlink');
+static const Kind symlink = Kind._('symlink');
 
-static const List<FileSystemNodeKind> values = [file, directory, symlink];
+static const List<Kind> values = [file, directory, symlink];
 
 final String value;
 
@@ -23,15 +23,15 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileSystemNodeKind && other.value == value; } 
+    other is Kind && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileSystemNodeKind($value)'; } 
+@override String toString() { return 'Kind($value)'; } 
  }
 @immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });
 
 factory FileSystemNode.fromJson(Map<String, dynamic> json) { return FileSystemNode(
   name: json['name'] as String,
-  kind: FileSystemNodeKind.fromJson(json['kind'] as String),
+  kind: Kind.fromJson(json['kind'] as String),
   sizeBytes: json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null,
   children: (json['children'] as List<dynamic>?)?.map((e) => FileSystemNode.fromJson(e as Map<String, dynamic>)).toList(),
   symlinkTarget: json['symlinkTarget'] != null ? FileSystemNode.fromJson(json['symlinkTarget'] as Map<String, dynamic>) : null,
@@ -40,7 +40,7 @@ factory FileSystemNode.fromJson(Map<String, dynamic> json) { return FileSystemNo
 
 final String name;
 
-final FileSystemNodeKind kind;
+final Kind kind;
 
 final int? sizeBytes;
 
@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('kind'); } 
-FileSystemNode copyWith({String? name, FileSystemNodeKind? kind, int? Function()? sizeBytes, List<FileSystemNode> Function()? children, FileSystemNode Function()? symlinkTarget, Map<String, String> Function()? metadata, }) { return FileSystemNode(
+FileSystemNode copyWith({String? name, Kind? kind, int? Function()? sizeBytes, List<FileSystemNode> Function()? children, FileSystemNode Function()? symlinkTarget, Map<String, String> Function()? metadata, }) { return FileSystemNode(
   name: name ?? this.name,
   kind: kind ?? this.kind,
   sizeBytes: sizeBytes != null ? sizeBytes() : this.sizeBytes,

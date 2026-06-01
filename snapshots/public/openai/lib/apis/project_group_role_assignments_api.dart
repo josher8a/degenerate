@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/deleted_role_assignment_resource.dart';import '../models/group_role_assignment.dart';import '../models/list_project_group_role_assignments_order.dart';import '../models/public_assign_organization_group_role_body.dart';import '../models/role_list_resource.dart';/// ProjectGroupRoleAssignmentsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/deleted_role_assignment_resource.dart';import 'package:pub_openai/models/group_role_assignment.dart';import 'package:pub_openai/models/list_project_group_role_assignments_order.dart';import 'package:pub_openai/models/public_assign_organization_group_role_body.dart';import 'package:pub_openai/models/role_list_resource.dart';/// ProjectGroupRoleAssignmentsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

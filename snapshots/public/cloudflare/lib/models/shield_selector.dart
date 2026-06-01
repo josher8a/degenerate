@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_selector_exclude.dart';import 'shield_selector_include.dart';/// Select operations covered by this rule.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_selector_exclude.dart';import 'package:pub_cloudflare/models/shield_selector_include.dart';/// Select operations covered by this rule.
 /// 
 /// For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).
 /// 

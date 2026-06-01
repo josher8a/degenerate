@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group_meta.dart';/// A named group of permissions that map to a group of operations against resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group/iam_permission_group_meta.dart';/// A named group of permissions that map to a group of operations against resources.
 @immutable final class IamPermissionGroup {const IamPermissionGroup({required this.id, this.meta, this.name, });
 
 factory IamPermissionGroup.fromJson(Map<String, dynamic> json) { return IamPermissionGroup(

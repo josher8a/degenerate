@@ -1,36 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_text_content.dart';import 'summary_text_content.dart';/// The status of the item. One of `in_progress`, `completed`, or
-/// `incomplete`. Populated when items are returned via API.
-/// 
-@immutable final class ReasoningItemStatus {const ReasoningItemStatus._(this.value);
-
-factory ReasoningItemStatus.fromJson(String json) { return switch (json) {
-  'in_progress' => inProgress,
-  'completed' => completed,
-  'incomplete' => incomplete,
-  _ => ReasoningItemStatus._(json),
-}; }
-
-static const ReasoningItemStatus inProgress = ReasoningItemStatus._('in_progress');
-
-static const ReasoningItemStatus completed = ReasoningItemStatus._('completed');
-
-static const ReasoningItemStatus incomplete = ReasoningItemStatus._('incomplete');
-
-static const List<ReasoningItemStatus> values = [inProgress, completed, incomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningItemStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningItemStatus($value)'; } 
- }
-/// A description of the chain of thought used by a reasoning model while generating
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';/// A description of the chain of thought used by a reasoning model while generating
 /// a response. Be sure to include these items in your `input` to the Responses API
 /// for subsequent turns of a conversation if you are manually
 /// [managing context](/docs/guides/conversation-state).
@@ -43,7 +13,7 @@ factory ReasoningItem.fromJson(Map<String, dynamic> json) { return ReasoningItem
   encryptedContent: json['encrypted_content'] as String?,
   summary: (json['summary'] as List<dynamic>).map((e) => SummaryTextContent.fromJson(e as Map<String, dynamic>)).toList(),
   content: (json['content'] as List<dynamic>?)?.map((e) => ReasoningTextContent.fromJson(e as Map<String, dynamic>)).toList(),
-  status: json['status'] != null ? ReasoningItemStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
 ); }
 
 /// The type of the object. Always `reasoning`.
@@ -70,7 +40,7 @@ final List<ReasoningTextContent>? content;
 /// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final ReasoningItemStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -83,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('summary'); } 
-ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ReasoningItemStatus Function()? status, }) { return ReasoningItem(
+ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ComputerToolCallOutputStatus Function()? status, }) { return ReasoningItem(
   type: type ?? this.type,
   id: id ?? this.id,
   encryptedContent: encryptedContent != null ? encryptedContent() : this.encryptedContent,

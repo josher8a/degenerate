@@ -1,63 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-@immutable final class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject._(this.value);
-
-factory RealtimeConversationItemFunctionCallObject.fromJson(String json) { return switch (json) {
-  'realtime.item' => realtimeItem,
-  _ => RealtimeConversationItemFunctionCallObject._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallObject realtimeItem = RealtimeConversationItemFunctionCallObject._('realtime.item');
-
-static const List<RealtimeConversationItemFunctionCallObject> values = [realtimeItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallObject($value)'; } 
- }
-/// The status of the item. Has no effect on the conversation.
-@immutable final class RealtimeConversationItemFunctionCallStatus {const RealtimeConversationItemFunctionCallStatus._(this.value);
-
-factory RealtimeConversationItemFunctionCallStatus.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'incomplete' => incomplete,
-  'in_progress' => inProgress,
-  _ => RealtimeConversationItemFunctionCallStatus._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallStatus completed = RealtimeConversationItemFunctionCallStatus._('completed');
-
-static const RealtimeConversationItemFunctionCallStatus incomplete = RealtimeConversationItemFunctionCallStatus._('incomplete');
-
-static const RealtimeConversationItemFunctionCallStatus inProgress = RealtimeConversationItemFunctionCallStatus._('in_progress');
-
-static const List<RealtimeConversationItemFunctionCallStatus> values = [completed, incomplete, inProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallStatus($value)'; } 
- }
-/// A function call item in a Realtime conversation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';/// A function call item in a Realtime conversation.
 @immutable final class RealtimeConversationItemFunctionCall {const RealtimeConversationItemFunctionCall({required this.type, required this.name, required this.arguments, this.id, this.object, this.status, this.callId, });
 
 factory RealtimeConversationItemFunctionCall.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCall(
   id: json['id'] as String?,
   object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? RealtimeConversationItemFunctionCallStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
   callId: json['call_id'] as String?,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
@@ -73,7 +23,7 @@ final RealtimeConversationItemFunctionCallObject? object;
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final RealtimeConversationItemFunctionCallStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 /// The ID of the function call.
 final String? callId;
@@ -96,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-RealtimeConversationItemFunctionCall copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, String? type, RealtimeConversationItemFunctionCallStatus Function()? status, String Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall(
+RealtimeConversationItemFunctionCall copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, String? type, ComputerToolCallOutputStatus Function()? status, String Function()? callId, String? name, String? arguments, }) { return RealtimeConversationItemFunctionCall(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

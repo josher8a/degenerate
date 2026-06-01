@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_response_cancelled_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookResponseCancelledObject {const WebhookResponseCancelledObject._(this.value);
-
-factory WebhookResponseCancelledObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookResponseCancelledObject._(json),
-}; }
-
-static const WebhookResponseCancelledObject event = WebhookResponseCancelledObject._('event');
-
-static const List<WebhookResponseCancelledObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookResponseCancelledObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookResponseCancelledObject($value)'; } 
- }
-/// The type of the event. Always `response.cancelled`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `response.cancelled`.
 /// 
 @immutable final class WebhookResponseCancelledType {const WebhookResponseCancelledType._(this.value);
 
@@ -53,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookResponseCancelled.fromJson(Map<String, dynamic> json) { return WebhookResponseCancelled(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
-  data: WebhookResponseCancelledData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookResponseCancelledObject.fromJson(json['object'] as String) : null,
+  data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookResponseCancelledType.fromJson(json['type'] as String),
 ); }
 
@@ -68,11 +45,11 @@ final String id;
 
 /// Event data payload.
 /// 
-final WebhookResponseCancelledData data;
+final WebhookBatchCancelledData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookResponseCancelledObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `response.cancelled`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookResponseCancelled copyWith({int? createdAt, String? id, WebhookResponseCancelledData? data, WebhookResponseCancelledObject Function()? object, WebhookResponseCancelledType? type, }) { return WebhookResponseCancelled(
+WebhookResponseCancelled copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject Function()? object, WebhookResponseCancelledType? type, }) { return WebhookResponseCancelled(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

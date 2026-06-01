@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'charge.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';import 'payment_intent.dart';@immutable final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';@immutable final class EnhancedEligibilityTypes {const EnhancedEligibilityTypes._(this.value);
 
-factory DisputeEnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
+factory EnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
   'visa_compliance' => visaCompliance,
-  _ => DisputeEnhancedEligibilityTypes._(json),
+  _ => EnhancedEligibilityTypes._(json),
 }; }
 
-static const DisputeEnhancedEligibilityTypes visaCompellingEvidence3 = DisputeEnhancedEligibilityTypes._('visa_compelling_evidence_3');
+static const EnhancedEligibilityTypes visaCompellingEvidence3 = EnhancedEligibilityTypes._('visa_compelling_evidence_3');
 
-static const DisputeEnhancedEligibilityTypes visaCompliance = DisputeEnhancedEligibilityTypes._('visa_compliance');
+static const EnhancedEligibilityTypes visaCompliance = EnhancedEligibilityTypes._('visa_compliance');
 
-static const List<DisputeEnhancedEligibilityTypes> values = [visaCompellingEvidence3, visaCompliance];
+static const List<EnhancedEligibilityTypes> values = [visaCompellingEvidence3, visaCompliance];
 
 final String value;
 
@@ -20,9 +20,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityTypes && other.value == value; } 
+    other is EnhancedEligibilityTypes && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityTypes($value)'; } 
+@override String toString() { return 'EnhancedEligibilityTypes($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DisputeObject {const DisputeObject._(this.value);
@@ -102,7 +102,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  enhancedEligibilityTypes: (json['enhanced_eligibility_types'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityTypes.fromJson(e as String)).toList(),
+  enhancedEligibilityTypes: (json['enhanced_eligibility_types'] as List<dynamic>).map((e) => EnhancedEligibilityTypes.fromJson(e as String)).toList(),
   evidence: DisputeEvidence.fromJson(json['evidence'] as Map<String, dynamic>),
   evidenceDetails: DisputeEvidenceDetails.fromJson(json['evidence_details'] as Map<String, dynamic>),
   id: json['id'] as String,
@@ -123,7 +123,7 @@ final int amount;
 final List<BalanceTransaction> balanceTransactions;
 
 /// ID of the charge that's disputed.
-final DisputeCharge charge;
+final ApplicationFeeCharge charge;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -132,7 +132,7 @@ final int created;
 final String currency;
 
 /// List of eligibility types that are included in `enhanced_evidence`.
-final List<DisputeEnhancedEligibilityTypes> enhancedEligibilityTypes;
+final List<EnhancedEligibilityTypes> enhancedEligibilityTypes;
 
 final DisputeEvidence evidence;
 
@@ -154,7 +154,7 @@ final Map<String,String> metadata;
 final DisputeObject object;
 
 /// ID of the PaymentIntent that's disputed.
-final DisputePaymentIntent? paymentIntent;
+final ChargePaymentIntent? paymentIntent;
 
 final DisputePaymentMethodDetails? paymentMethodDetails;
 
@@ -198,7 +198,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('status'); } 
-Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, DisputePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, ChargePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   charge: charge ?? this.charge,

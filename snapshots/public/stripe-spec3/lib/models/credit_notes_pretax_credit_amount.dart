@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction.dart';import 'credit_notes_pretax_credit_amount_credit_balance_transaction.dart';import 'credit_notes_pretax_credit_amount_discount.dart';import 'deleted_discount.dart';import 'discount.dart';/// Type of the pretax credit amount referenced.
-@immutable final class CreditNotesPretaxCreditAmountType {const CreditNotesPretaxCreditAmountType._(this.value);
-
-factory CreditNotesPretaxCreditAmountType.fromJson(String json) { return switch (json) {
-  'credit_balance_transaction' => creditBalanceTransaction,
-  'discount' => discount,
-  _ => CreditNotesPretaxCreditAmountType._(json),
-}; }
-
-static const CreditNotesPretaxCreditAmountType creditBalanceTransaction = CreditNotesPretaxCreditAmountType._('credit_balance_transaction');
-
-static const CreditNotesPretaxCreditAmountType discount = CreditNotesPretaxCreditAmountType._('discount');
-
-static const List<CreditNotesPretaxCreditAmountType> values = [creditBalanceTransaction, discount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNotesPretaxCreditAmountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNotesPretaxCreditAmountType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_credit_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_discount.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount/credit_notes_pretax_credit_amount_type.dart';import 'package:pub_stripe_spec3/models/deleted_discount.dart';import 'package:pub_stripe_spec3/models/discount.dart';/// 
 @immutable final class CreditNotesPretaxCreditAmount {const CreditNotesPretaxCreditAmount({required this.amount, required this.type, this.creditBalanceTransaction, this.discount, });
 
 factory CreditNotesPretaxCreditAmount.fromJson(Map<String, dynamic> json) { return CreditNotesPretaxCreditAmount(

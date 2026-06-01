@@ -1,41 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_options.dart';import 'post_test_helpers_confirmation_tokens_request_shipping.dart';/// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
-/// 
-/// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
-@immutable final class PostTestHelpersConfirmationTokensRequestSetupFutureUsage {const PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(this.value);
-
-factory PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PostTestHelpersConfirmationTokensRequestSetupFutureUsage._(json),
-}; }
-
-static const PostTestHelpersConfirmationTokensRequestSetupFutureUsage offSession = PostTestHelpersConfirmationTokensRequestSetupFutureUsage._('off_session');
-
-static const PostTestHelpersConfirmationTokensRequestSetupFutureUsage onSession = PostTestHelpersConfirmationTokensRequestSetupFutureUsage._('on_session');
-
-static const List<PostTestHelpersConfirmationTokensRequestSetupFutureUsage> values = [offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersConfirmationTokensRequestSetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestSetupFutureUsage($value)'; } 
- }
-@immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_confirmation_tokens_request/post_test_helpers_confirmation_tokens_request_shipping.dart';@immutable final class PostTestHelpersConfirmationTokensRequest {const PostTestHelpersConfirmationTokensRequest({this.expand, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.returnUrl, this.setupFutureUsage, this.shipping, });
 
 factory PostTestHelpersConfirmationTokensRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   paymentMethod: json['payment_method'] as String?,
-  paymentMethodData: json['payment_method_data'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
+  paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
-  setupFutureUsage: json['setup_future_usage'] != null ? PostTestHelpersConfirmationTokensRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   shipping: json['shipping'] != null ? PostTestHelpersConfirmationTokensRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
 ); }
 
@@ -46,7 +19,7 @@ final List<String>? expand;
 final String? paymentMethod;
 
 /// If provided, this hash will be used to create a PaymentMethod.
-final PostTestHelpersConfirmationTokensRequestPaymentMethodData? paymentMethodData;
+final PostPaymentIntentsIntentConfirmRequestPaymentMethodData? paymentMethodData;
 
 /// Payment-method-specific configuration for this ConfirmationToken.
 final PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? paymentMethodOptions;
@@ -57,7 +30,7 @@ final String? returnUrl;
 /// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
-final PostTestHelpersConfirmationTokensRequestSetupFutureUsage? setupFutureUsage;
+final PostPaymentIntentsRequestSetupFutureUsage? setupFutureUsage;
 
 /// Shipping information for this ConfirmationToken.
 final PostTestHelpersConfirmationTokensRequestShipping? shipping;
@@ -72,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequest copyWith({List<String> Function()? expand, String Function()? paymentMethod, PostTestHelpersConfirmationTokensRequestPaymentMethodData Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions Function()? paymentMethodOptions, String Function()? returnUrl, PostTestHelpersConfirmationTokensRequestSetupFutureUsage Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping Function()? shipping, }) { return PostTestHelpersConfirmationTokensRequest(
+PostTestHelpersConfirmationTokensRequest copyWith({List<String> Function()? expand, String Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions Function()? paymentMethodOptions, String Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping Function()? shipping, }) { return PostTestHelpersConfirmationTokensRequest(
   expand: expand != null ? expand() : this.expand,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   paymentMethodData: paymentMethodData != null ? paymentMethodData() : this.paymentMethodData,

@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'users_delete_attestations_bulk_request_variant1.dart';import 'users_delete_attestations_bulk_request_variant2.dart';typedef UsersDeleteAttestationsBulkRequest = OneOf2<UsersDeleteAttestationsBulkRequestVariant1,UsersDeleteAttestationsBulkRequestVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant1.dart';import 'package:pub_github_rest_3_1/models/orgs_delete_attestations_bulk_request/orgs_delete_attestations_bulk_request_variant2.dart';typedef UsersDeleteAttestationsBulkRequest = OneOf2<OrgsDeleteAttestationsBulkRequestVariant1,OrgsDeleteAttestationsBulkRequestVariant2>;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_passive_dns_by_ip.dart';@immutable final class IntelComponentsSchemasSingleResponse {const IntelComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_passive_dns_by_ip.dart';@immutable final class IntelComponentsSchemasSingleResponse {const IntelComponentsSchemasSingleResponse({this.result});
 
 factory IntelComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return IntelComponentsSchemasSingleResponse(
   result: json['result'] != null ? IntelPassiveDnsByIp.fromJson(json['result'] as Map<String, dynamic>) : null,

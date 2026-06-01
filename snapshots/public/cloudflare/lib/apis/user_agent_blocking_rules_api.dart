@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_components_ua_rule_id.dart';import '../models/firewall_description_search.dart';import '../models/firewall_firewalluablock.dart';import '../models/firewall_identifier.dart';import '../models/user_agent_blocking_rules_create_a_user_agent_blocking_rule_request.dart';import '../models/user_agent_blocking_rules_delete_a_user_agent_blocking_rule_response_result.dart';import '../models/user_agent_blocking_rules_update_a_user_agent_blocking_rule_request.dart';/// UserAgentBlockingRulesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/firewall_components_ua_rule_id.dart';import 'package:pub_cloudflare/models/firewall_description_search.dart';import 'package:pub_cloudflare/models/firewall_firewalluablock.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_create_a_user_agent_blocking_rule_request.dart';import 'package:pub_cloudflare/models/user_agent_blocking_rules_update_a_user_agent_blocking_rule_request.dart';/// UserAgentBlockingRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -125,7 +125,7 @@ return execute(
 /// Deletes an existing User Agent Blocking rule.
 ///
 /// `DELETE /zones/{zone_id}/firewall/ua_rules/{ua_rule_id}`
-Future<ApiResult<UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult?, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> userAgentBlockingRulesDeleteAUserAgentBlockingRule({required FirewallComponentsUaRuleId uaRuleId, required FirewallIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,7 +138,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

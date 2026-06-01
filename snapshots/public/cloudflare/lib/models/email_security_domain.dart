@@ -1,135 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_delivery_mode.dart';import 'email_security_disposition_label.dart';import 'email_security_domain_authorization.dart';import 'email_security_domain_emails_processed.dart';import 'email_security_scannable_folder.dart';@immutable final class EmailSecurityDomainDmarcStatus {const EmailSecurityDomainDmarcStatus._(this.value);
-
-factory EmailSecurityDomainDmarcStatus.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'good' => good,
-  'invalid' => invalid,
-  _ => EmailSecurityDomainDmarcStatus._(json),
-}; }
-
-static const EmailSecurityDomainDmarcStatus none = EmailSecurityDomainDmarcStatus._('none');
-
-static const EmailSecurityDomainDmarcStatus good = EmailSecurityDomainDmarcStatus._('good');
-
-static const EmailSecurityDomainDmarcStatus invalid = EmailSecurityDomainDmarcStatus._('invalid');
-
-static const List<EmailSecurityDomainDmarcStatus> values = [none, good, invalid];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainDmarcStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainDmarcStatus($value)'; } 
- }
-@immutable final class EmailSecurityDomainInboxProvider {const EmailSecurityDomainInboxProvider._(this.value);
-
-factory EmailSecurityDomainInboxProvider.fromJson(String json) { return switch (json) {
-  'Microsoft' => microsoft,
-  'Google' => google,
-  _ => EmailSecurityDomainInboxProvider._(json),
-}; }
-
-static const EmailSecurityDomainInboxProvider microsoft = EmailSecurityDomainInboxProvider._('Microsoft');
-
-static const EmailSecurityDomainInboxProvider google = EmailSecurityDomainInboxProvider._('Google');
-
-static const List<EmailSecurityDomainInboxProvider> values = [microsoft, google];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainInboxProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainInboxProvider($value)'; } 
- }
-@immutable final class EmailSecurityDomainRegions {const EmailSecurityDomainRegions._(this.value);
-
-factory EmailSecurityDomainRegions.fromJson(String json) { return switch (json) {
-  'GLOBAL' => global,
-  'AU' => au,
-  'DE' => de,
-  'IN' => $in,
-  'US' => us,
-  _ => EmailSecurityDomainRegions._(json),
-}; }
-
-static const EmailSecurityDomainRegions global = EmailSecurityDomainRegions._('GLOBAL');
-
-static const EmailSecurityDomainRegions au = EmailSecurityDomainRegions._('AU');
-
-static const EmailSecurityDomainRegions de = EmailSecurityDomainRegions._('DE');
-
-static const EmailSecurityDomainRegions $in = EmailSecurityDomainRegions._('IN');
-
-static const EmailSecurityDomainRegions us = EmailSecurityDomainRegions._('US');
-
-static const List<EmailSecurityDomainRegions> values = [global, au, de, $in, us];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainRegions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainRegions($value)'; } 
- }
-@immutable final class EmailSecurityDomainSpfStatus {const EmailSecurityDomainSpfStatus._(this.value);
-
-factory EmailSecurityDomainSpfStatus.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'good' => good,
-  'neutral' => neutral,
-  'open' => open,
-  'invalid' => invalid,
-  _ => EmailSecurityDomainSpfStatus._(json),
-}; }
-
-static const EmailSecurityDomainSpfStatus none = EmailSecurityDomainSpfStatus._('none');
-
-static const EmailSecurityDomainSpfStatus good = EmailSecurityDomainSpfStatus._('good');
-
-static const EmailSecurityDomainSpfStatus neutral = EmailSecurityDomainSpfStatus._('neutral');
-
-static const EmailSecurityDomainSpfStatus open = EmailSecurityDomainSpfStatus._('open');
-
-static const EmailSecurityDomainSpfStatus invalid = EmailSecurityDomainSpfStatus._('invalid');
-
-static const List<EmailSecurityDomainSpfStatus> values = [none, good, neutral, open, invalid];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityDomainSpfStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityDomainSpfStatus($value)'; } 
- }
-@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_domain/authorization.dart';import 'package:pub_cloudflare/models/email_security_domain/dmarc_status.dart';import 'package:pub_cloudflare/models/email_security_domain/email_security_domain_regions.dart';import 'package:pub_cloudflare/models/email_security_domain/emails_processed.dart';import 'package:pub_cloudflare/models/email_security_domain/inbox_provider.dart';import 'package:pub_cloudflare/models/email_security_domain/spf_status.dart';import 'package:pub_cloudflare/models/email_security_scannable_folder.dart';@immutable final class EmailSecurityDomain {const EmailSecurityDomain({required this.allowedDeliveryModes, required this.createdAt, required this.domain, required this.dropDispositions, required this.id, required this.ipRestrictions, required this.lastModified, required this.lookbackHops, required this.regions, required this.transport, this.authorization, this.dmarcStatus, this.emailsProcessed, this.folder, this.inboxProvider, this.integrationId, this.o365TenantId, this.requireTlsInbound, this.requireTlsOutbound, this.spfStatus, });
 
 factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityDomain(
   allowedDeliveryModes: (json['allowed_delivery_modes'] as List<dynamic>).map((e) => EmailSecurityDeliveryMode.fromJson(e as String)).toList(),
-  authorization: json['authorization'] != null ? EmailSecurityDomainAuthorization.fromJson(json['authorization'] as Map<String, dynamic>) : null,
+  authorization: json['authorization'] != null ? Authorization.fromJson(json['authorization'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
-  dmarcStatus: json['dmarc_status'] != null ? EmailSecurityDomainDmarcStatus.fromJson(json['dmarc_status'] as String) : null,
+  dmarcStatus: json['dmarc_status'] != null ? DmarcStatus.fromJson(json['dmarc_status'] as String) : null,
   domain: json['domain'] as String,
   dropDispositions: (json['drop_dispositions'] as List<dynamic>).map((e) => EmailSecurityDispositionLabel.fromJson(e as String)).toList(),
-  emailsProcessed: json['emails_processed'] != null ? EmailSecurityDomainEmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null,
+  emailsProcessed: json['emails_processed'] != null ? EmailsProcessed.fromJson(json['emails_processed'] as Map<String, dynamic>) : null,
   folder: json['folder'] != null ? EmailSecurityScannableFolder.fromJson(json['folder'] as String) : null,
   id: (json['id'] as num).toInt(),
-  inboxProvider: json['inbox_provider'] != null ? EmailSecurityDomainInboxProvider.fromJson(json['inbox_provider'] as String) : null,
+  inboxProvider: json['inbox_provider'] != null ? InboxProvider.fromJson(json['inbox_provider'] as String) : null,
   integrationId: json['integration_id'] as String?,
   ipRestrictions: (json['ip_restrictions'] as List<dynamic>).map((e) => e as String).toList(),
   lastModified: DateTime.parse(json['last_modified'] as String),
@@ -138,30 +21,30 @@ factory EmailSecurityDomain.fromJson(Map<String, dynamic> json) { return EmailSe
   regions: (json['regions'] as List<dynamic>).map((e) => EmailSecurityDomainRegions.fromJson(e as String)).toList(),
   requireTlsInbound: json['require_tls_inbound'] as bool?,
   requireTlsOutbound: json['require_tls_outbound'] as bool?,
-  spfStatus: json['spf_status'] != null ? EmailSecurityDomainSpfStatus.fromJson(json['spf_status'] as String) : null,
+  spfStatus: json['spf_status'] != null ? SpfStatus.fromJson(json['spf_status'] as String) : null,
   transport: json['transport'] as String,
 ); }
 
 final List<EmailSecurityDeliveryMode> allowedDeliveryModes;
 
-final EmailSecurityDomainAuthorization? authorization;
+final Authorization? authorization;
 
 final DateTime createdAt;
 
-final EmailSecurityDomainDmarcStatus? dmarcStatus;
+final DmarcStatus? dmarcStatus;
 
 final String domain;
 
 final List<EmailSecurityDispositionLabel> dropDispositions;
 
-final EmailSecurityDomainEmailsProcessed? emailsProcessed;
+final EmailsProcessed? emailsProcessed;
 
 final EmailSecurityScannableFolder? folder;
 
 /// The unique identifier for the domain.
 final int id;
 
-final EmailSecurityDomainInboxProvider? inboxProvider;
+final InboxProvider? inboxProvider;
 
 final String? integrationId;
 
@@ -179,7 +62,7 @@ final bool? requireTlsInbound;
 
 final bool? requireTlsOutbound;
 
-final EmailSecurityDomainSpfStatus? spfStatus;
+final SpfStatus? spfStatus;
 
 final String transport;
 
@@ -215,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('lookback_hops') && json['lookback_hops'] is num &&
       json.containsKey('regions') &&
       json.containsKey('transport') && json['transport'] is String; } 
-EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, EmailSecurityDomainAuthorization? Function()? authorization, DateTime? createdAt, EmailSecurityDomainDmarcStatus? Function()? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, EmailSecurityDomainEmailsProcessed? Function()? emailsProcessed, EmailSecurityScannableFolder? Function()? folder, int? id, EmailSecurityDomainInboxProvider? Function()? inboxProvider, String? Function()? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, String? Function()? o365TenantId, List<EmailSecurityDomainRegions>? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, EmailSecurityDomainSpfStatus? Function()? spfStatus, String? transport, }) { return EmailSecurityDomain(
+EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryModes, Authorization? Function()? authorization, DateTime? createdAt, DmarcStatus? Function()? dmarcStatus, String? domain, List<EmailSecurityDispositionLabel>? dropDispositions, EmailsProcessed? Function()? emailsProcessed, EmailSecurityScannableFolder? Function()? folder, int? id, InboxProvider? Function()? inboxProvider, String? Function()? integrationId, List<String>? ipRestrictions, DateTime? lastModified, int? lookbackHops, String? Function()? o365TenantId, List<EmailSecurityDomainRegions>? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, SpfStatus? Function()? spfStatus, String? transport, }) { return EmailSecurityDomain(
   allowedDeliveryModes: allowedDeliveryModes ?? this.allowedDeliveryModes,
   authorization: authorization != null ? authorization() : this.authorization,
   createdAt: createdAt ?? this.createdAt,

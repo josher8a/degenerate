@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_webhook_request_config.dart';@immutable final class ReposCreateWebhookRequest {const ReposCreateWebhookRequest({this.name, this.config, this.events, this.active = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_webhook_request/repos_create_webhook_request_config.dart';@immutable final class ReposCreateWebhookRequest {const ReposCreateWebhookRequest({this.name, this.config, this.events, this.active = true, });
 
 factory ReposCreateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposCreateWebhookRequest(
   name: json['name'] as String?,

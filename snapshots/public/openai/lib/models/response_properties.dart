@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_responses.dart';import 'model_ids_shared.dart';import 'prompt.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';/// The truncation strategy to use for the model response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';/// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
 ///   the model's context window size, the model will truncate the
 ///   response to fit the context window by dropping items from the beginning of the conversation.
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-@immutable final class ResponsePropertiesTruncation {const ResponsePropertiesTruncation._(this.value);
+@immutable final class Truncation {const Truncation._(this.value);
 
-factory ResponsePropertiesTruncation.fromJson(String json) { return switch (json) {
+factory Truncation.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
-  _ => ResponsePropertiesTruncation._(json),
+  _ => Truncation._(json),
 }; }
 
-static const ResponsePropertiesTruncation auto = ResponsePropertiesTruncation._('auto');
+static const Truncation auto = Truncation._('auto');
 
-static const ResponsePropertiesTruncation disabled = ResponsePropertiesTruncation._('disabled');
+static const Truncation disabled = Truncation._('disabled');
 
-static const List<ResponsePropertiesTruncation> values = [auto, disabled];
+static const List<Truncation> values = [auto, disabled];
 
 final String value;
 
@@ -27,9 +27,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsePropertiesTruncation && other.value == value; } 
+    other is Truncation && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponsePropertiesTruncation($value)'; } 
+@override String toString() { return 'Truncation($value)'; } 
  }
 @immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
 
@@ -44,7 +44,7 @@ factory ResponseProperties.fromJson(Map<String, dynamic> json) { return Response
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
   prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
-  truncation: json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null,
+  truncation: json['truncation'] != null ? Truncation.fromJson(json['truncation'] as String) : null,
 ); }
 
 /// The unique ID of the previous response to the model. Use this to
@@ -90,7 +90,7 @@ final Prompt? prompt;
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-final ResponsePropertiesTruncation? truncation;
+final Truncation? truncation;
 
 Map<String, dynamic> toJson() { return {
   'previous_response_id': ?previousResponseId,
@@ -106,7 +106,7 @@ Map<String, dynamic> toJson() { return {
   if (truncation != null) 'truncation': truncation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation'}.contains(key)); } 
-ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsResponses Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam Function()? text, List<Tool> Function()? tools, ToolChoiceParam Function()? toolChoice, Prompt Function()? prompt, ResponsePropertiesTruncation? Function()? truncation, }) { return ResponseProperties(
+ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsResponses Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam Function()? text, List<Tool> Function()? tools, ToolChoiceParam Function()? toolChoice, Prompt Function()? prompt, Truncation? Function()? truncation, }) { return ResponseProperties(
   previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
   model: model != null ? model() : this.model,
   reasoning: reasoning != null ? reasoning() : this.reasoning,

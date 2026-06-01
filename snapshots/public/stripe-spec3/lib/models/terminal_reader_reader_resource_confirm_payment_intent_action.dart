@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent.dart';import 'terminal_reader_reader_resource_confirm_config.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action_payment_intent.dart';/// Represents a reader action to confirm a payment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_confirm_config.dart';/// Represents a reader action to confirm a payment
 @immutable final class TerminalReaderReaderResourceConfirmPaymentIntentAction {const TerminalReaderReaderResourceConfirmPaymentIntentAction({required this.paymentIntent, this.confirmConfig, });
 
 factory TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
@@ -11,14 +11,14 @@ factory TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(Map<Stri
 final TerminalReaderReaderResourceConfirmConfig? confirmConfig;
 
 /// Most recent PaymentIntent processed by the reader.
-final TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent paymentIntent;
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent paymentIntent;
 
 Map<String, dynamic> toJson() { return {
   if (confirmConfig != null) 'confirm_config': confirmConfig?.toJson(),
   'payment_intent': paymentIntent.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceConfirmPaymentIntentAction copyWith({TerminalReaderReaderResourceConfirmConfig Function()? confirmConfig, TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent? paymentIntent, }) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
+TerminalReaderReaderResourceConfirmPaymentIntentAction copyWith({TerminalReaderReaderResourceConfirmConfig Function()? confirmConfig, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent, }) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
   confirmConfig: confirmConfig != null ? confirmConfig() : this.confirmConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
 ); } 

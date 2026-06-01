@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_request_locations.dart';@immutable final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_locations.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';@immutable final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
 
 factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) { return switch (json) {
   'clientAuth' => clientAuth,
@@ -23,34 +23,6 @@ bool get isUnknown { return !values.contains(this); }
     other is TeamsDevicesExtendedKeyUsageEnum && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesExtendedKeyUsageEnum($value)'; } 
- }
-/// Operating System.
-@immutable final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);
-
-factory InputRequestOperatingSystem.fromJson(String json) { return switch (json) {
-  'windows' => windows,
-  'mac' => mac,
-  'linux' => linux,
-  _ => InputRequestOperatingSystem._(json),
-}; }
-
-static const InputRequestOperatingSystem windows = InputRequestOperatingSystem._('windows');
-
-static const InputRequestOperatingSystem mac = InputRequestOperatingSystem._('mac');
-
-static const InputRequestOperatingSystem linux = InputRequestOperatingSystem._('linux');
-
-static const List<InputRequestOperatingSystem> values = [windows, mac, linux];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputRequestOperatingSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputRequestOperatingSystem($value)'; } 
  }
 @immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });
 

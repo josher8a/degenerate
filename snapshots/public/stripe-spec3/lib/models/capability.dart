@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'account_capability_future_requirements.dart';import 'account_capability_requirements.dart';import 'capability_account.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_capability_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_capability_requirements.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_account.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CapabilityObject {const CapabilityObject._(this.value);
 
 factory CapabilityObject.fromJson(String json) { return switch (json) {
@@ -70,7 +70,7 @@ factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
 ); }
 
 /// The account for which the capability enables functionality.
-final CapabilityAccount account;
+final BankConnectionsResourceAccountholderAccount account;
 
 final AccountCapabilityFutureRequirements? futureRequirements;
 
@@ -106,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object') &&
       json.containsKey('requested') && json['requested'] is bool &&
       json.containsKey('status'); } 
-Capability copyWith({CapabilityAccount? account, AccountCapabilityFutureRequirements Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, int? Function()? requestedAt, AccountCapabilityRequirements Function()? requirements, CapabilityStatus? status, }) { return Capability(
+Capability copyWith({BankConnectionsResourceAccountholderAccount? account, AccountCapabilityFutureRequirements Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, int? Function()? requestedAt, AccountCapabilityRequirements Function()? requirements, CapabilityStatus? status, }) { return Capability(
   account: account ?? this.account,
   futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,
   id: id ?? this.id,

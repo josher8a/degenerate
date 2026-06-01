@@ -3,12 +3,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/list_model.dart';
-import '../models/object_model.dart';
-import '../models/proto.dart';
-import '../models/string_model.dart';
-import '../models/type_model.dart';
-import '../models/yield_topic.dart';
+import 'package:pub_unhinged/models/list_model.dart';
+import 'package:pub_unhinged/models/object_model.dart';
+import 'package:pub_unhinged/models/proto.dart';
+import 'package:pub_unhinged/models/string_model.dart';
+import 'package:pub_unhinged/models/type_model.dart';
+import 'package:pub_unhinged/models/yield_topic.dart';
 
 /// DefaultApi operations.
 ///

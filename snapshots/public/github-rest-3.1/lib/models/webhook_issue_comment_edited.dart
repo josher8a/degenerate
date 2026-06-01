@@ -1,41 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issue_comment_edited_issue.dart';import 'webhooks_changes.dart';import 'webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentEditedAction {const WebhookIssueCommentEditedAction._(this.value);
-
-factory WebhookIssueCommentEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookIssueCommentEditedAction._(json),
-}; }
-
-static const WebhookIssueCommentEditedAction edited = WebhookIssueCommentEditedAction._('edited');
-
-static const List<WebhookIssueCommentEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueCommentEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueCommentEditedAction($value)'; } 
- }
-@immutable final class WebhookIssueCommentEdited {const WebhookIssueCommentEdited({required this.action, required this.changes, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_issue_comment_created/webhook_issue_comment_created_issue.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment.dart';@immutable final class WebhookIssueCommentEdited {const WebhookIssueCommentEdited({required this.action, required this.changes, required this.comment, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssueCommentEdited.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentEdited(
-  action: WebhookIssueCommentEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhooksChanges.fromJson(json['changes'] as Map<String, dynamic>),
   comment: WebhooksIssueComment.fromJson(json['comment'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  issue: WebhookIssueCommentEditedIssue.fromJson(json['issue'] as Map<String, dynamic>),
+  issue: WebhookIssueCommentCreatedIssue.fromJson(json['issue'] as Map<String, dynamic>),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookIssueCommentEditedAction action;
+final ItemEditedAction action;
 
 final WebhooksChanges changes;
 
@@ -48,7 +27,7 @@ final SimpleInstallation? installation;
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
 /// 
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final WebhookIssueCommentEditedIssue issue;
+final WebhookIssueCommentCreatedIssue issue;
 
 final OrganizationSimpleWebhooks? organization;
 
@@ -73,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssueCommentEdited copyWith({WebhookIssueCommentEditedAction? action, WebhooksChanges? changes, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentEditedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentEdited(
+WebhookIssueCommentEdited copyWith({ItemEditedAction? action, WebhooksChanges? changes, WebhooksIssueComment? comment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssueCommentCreatedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueCommentEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   comment: comment ?? this.comment,

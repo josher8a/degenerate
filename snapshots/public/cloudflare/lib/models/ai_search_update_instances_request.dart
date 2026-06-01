@@ -1,110 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_request_ai_search_model.dart';import 'ai_search_update_instances_request_custom_metadata.dart';import 'ai_search_update_instances_request_embedding_model.dart';import 'ai_search_update_instances_request_metadata.dart';import 'ai_search_update_instances_request_public_endpoint_params.dart';import 'ai_search_update_instances_request_retrieval_options.dart';import 'ai_search_update_instances_request_rewrite_model.dart';import 'ai_search_update_instances_request_source_params.dart';import 'ai_search_update_instances_request_summarization_model.dart';@immutable final class AiSearchUpdateInstancesRequestRerankingModel {const AiSearchUpdateInstancesRequestRerankingModel._(this.value);
-
-factory AiSearchUpdateInstancesRequestRerankingModel.fromJson(String json) { return switch (json) {
-  '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
-  '' => $empty,
-  _ => AiSearchUpdateInstancesRequestRerankingModel._(json),
-}; }
-
-static const AiSearchUpdateInstancesRequestRerankingModel cfBaaiBgeRerankerBase = AiSearchUpdateInstancesRequestRerankingModel._('@cf/baai/bge-reranker-base');
-
-static const AiSearchUpdateInstancesRequestRerankingModel $empty = AiSearchUpdateInstancesRequestRerankingModel._('');
-
-static const List<AiSearchUpdateInstancesRequestRerankingModel> values = [cfBaaiBgeRerankerBase, $empty];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesRequestRerankingModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesRequestRerankingModel($value)'; } 
- }
-@immutable final class AiSearchUpdateInstancesRequestCacheThreshold {const AiSearchUpdateInstancesRequestCacheThreshold._(this.value);
-
-factory AiSearchUpdateInstancesRequestCacheThreshold.fromJson(String json) { return switch (json) {
-  'super_strict_match' => superStrictMatch,
-  'close_enough' => closeEnough,
-  'flexible_friend' => flexibleFriend,
-  'anything_goes' => anythingGoes,
-  _ => AiSearchUpdateInstancesRequestCacheThreshold._(json),
-}; }
-
-static const AiSearchUpdateInstancesRequestCacheThreshold superStrictMatch = AiSearchUpdateInstancesRequestCacheThreshold._('super_strict_match');
-
-static const AiSearchUpdateInstancesRequestCacheThreshold closeEnough = AiSearchUpdateInstancesRequestCacheThreshold._('close_enough');
-
-static const AiSearchUpdateInstancesRequestCacheThreshold flexibleFriend = AiSearchUpdateInstancesRequestCacheThreshold._('flexible_friend');
-
-static const AiSearchUpdateInstancesRequestCacheThreshold anythingGoes = AiSearchUpdateInstancesRequestCacheThreshold._('anything_goes');
-
-static const List<AiSearchUpdateInstancesRequestCacheThreshold> values = [superStrictMatch, closeEnough, flexibleFriend, anythingGoes];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesRequestCacheThreshold && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesRequestCacheThreshold($value)'; } 
- }
-@immutable final class AiSearchUpdateInstancesRequestFusionMethod {const AiSearchUpdateInstancesRequestFusionMethod._(this.value);
-
-factory AiSearchUpdateInstancesRequestFusionMethod.fromJson(String json) { return switch (json) {
-  'max' => max,
-  'rrf' => rrf,
-  _ => AiSearchUpdateInstancesRequestFusionMethod._(json),
-}; }
-
-static const AiSearchUpdateInstancesRequestFusionMethod max = AiSearchUpdateInstancesRequestFusionMethod._('max');
-
-static const AiSearchUpdateInstancesRequestFusionMethod rrf = AiSearchUpdateInstancesRequestFusionMethod._('rrf');
-
-static const List<AiSearchUpdateInstancesRequestFusionMethod> values = [max, rrf];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchUpdateInstancesRequestFusionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchUpdateInstancesRequestFusionMethod($value)'; } 
- }
-@immutable final class AiSearchUpdateInstancesRequest {const AiSearchUpdateInstancesRequest({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchUpdateInstancesRequestCacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchUpdateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.paused = false, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.sourceParams, this.summarization = false, this.summarizationModel, this.systemPromptAiSearch, this.systemPromptIndexSummarization, this.systemPromptRewriteQuery, this.tokenId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_create_instances_request_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant1.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/ai_search_model_variant2.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/cache_threshold.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/custom_metadata.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/embedding_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/public_endpoint_params.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/reranking_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/retrieval_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/rewrite_model.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/source_params.dart';import 'package:pub_cloudflare/models/ai_search_update_instances_request/summarization_model.dart';@immutable final class AiSearchUpdateInstancesRequest {const AiSearchUpdateInstancesRequest({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = CacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = FusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.paused = false, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.sourceParams, this.summarization = false, this.summarizationModel, this.systemPromptAiSearch, this.systemPromptIndexSummarization, this.systemPromptRewriteQuery, this.tokenId, });
 
 factory AiSearchUpdateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequest(
   aiGatewayId: json['ai_gateway_id'] as String?,
-  aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchUpdateInstancesRequestAiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestAiSearchModelVariant2.fromJson(v as String),) : null,
+  aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   cache: json.containsKey('cache') ? json['cache'] as bool : true,
-  cacheThreshold: json.containsKey('cache_threshold') ? AiSearchUpdateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchUpdateInstancesRequestCacheThreshold.closeEnough,
+  cacheThreshold: json.containsKey('cache_threshold') ? CacheThreshold.fromJson(json['cache_threshold'] as String) : CacheThreshold.closeEnough,
   chunk: json.containsKey('chunk') ? json['chunk'] as bool : true,
   chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
   chunkSize: json.containsKey('chunk_size') ? (json['chunk_size'] as num).toInt() : 256,
-  customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchUpdateInstancesRequestCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-  embeddingModel: json['embedding_model'] != null ? OneOf2.parse(json['embedding_model'], fromA: (v) => AiSearchUpdateInstancesRequestEmbeddingModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestEmbeddingModelVariant2.fromJson(v as String),) : null,
-  fusionMethod: json.containsKey('fusion_method') ? AiSearchUpdateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchUpdateInstancesRequestFusionMethod.rrf,
+  customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => CustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
+  embeddingModel: json['embedding_model'] != null ? OneOf2.parse(json['embedding_model'], fromA: (v) => EmbeddingModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
+  fusionMethod: json.containsKey('fusion_method') ? FusionMethod.fromJson(json['fusion_method'] as String) : FusionMethod.rrf,
   hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
   maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  metadata: json['metadata'] != null ? AiSearchUpdateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? AiSearchCreateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   paused: json.containsKey('paused') ? json['paused'] as bool : false,
-  publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchUpdateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
+  publicEndpointParams: json['public_endpoint_params'] != null ? PublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
   reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
-  rerankingModel: json['reranking_model'] != null ? AiSearchUpdateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as String) : null,
-  retrievalOptions: json['retrieval_options'] != null ? AiSearchUpdateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
-  rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchUpdateInstancesRequestRewriteModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestRewriteModelVariant2.fromJson(v as String),) : null,
+  rerankingModel: json['reranking_model'] != null ? RerankingModel.fromJson(json['reranking_model'] as String) : null,
+  retrievalOptions: json['retrieval_options'] != null ? RetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
   scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
-  sourceParams: json['source_params'] != null ? AiSearchUpdateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
+  sourceParams: json['source_params'] != null ? SourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
   summarization: json.containsKey('summarization') ? json['summarization'] as bool : false,
-  summarizationModel: json['summarization_model'] != null ? OneOf2.parse(json['summarization_model'], fromA: (v) => AiSearchUpdateInstancesRequestSummarizationModelVariant1.fromJson(v as String), fromB: (v) => AiSearchUpdateInstancesRequestSummarizationModelVariant2.fromJson(v as String),) : null,
+  summarizationModel: json['summarization_model'] != null ? OneOf2.parse(json['summarization_model'], fromA: (v) => AiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchModelVariant2.fromJson(v as String),) : null,
   systemPromptAiSearch: json['system_prompt_ai_search'] as String?,
   systemPromptIndexSummarization: json['system_prompt_index_summarization'] as String?,
   systemPromptRewriteQuery: json['system_prompt_rewrite_query'] as String?,
@@ -113,11 +35,11 @@ factory AiSearchUpdateInstancesRequest.fromJson(Map<String, dynamic> json) { ret
 
 final String? aiGatewayId;
 
-final AiSearchUpdateInstancesRequestAiSearchModel? aiSearchModel;
+final AiSearchModel? aiSearchModel;
 
 final bool cache;
 
-final AiSearchUpdateInstancesRequestCacheThreshold cacheThreshold;
+final CacheThreshold cacheThreshold;
 
 final bool chunk;
 
@@ -125,39 +47,39 @@ final int chunkOverlap;
 
 final int chunkSize;
 
-final List<AiSearchUpdateInstancesRequestCustomMetadata>? customMetadata;
+final List<CustomMetadata>? customMetadata;
 
-final AiSearchUpdateInstancesRequestEmbeddingModel? embeddingModel;
+final EmbeddingModel? embeddingModel;
 
-final AiSearchUpdateInstancesRequestFusionMethod fusionMethod;
+final FusionMethod fusionMethod;
 
 final bool hybridSearchEnabled;
 
 final int maxNumResults;
 
-final AiSearchUpdateInstancesRequestMetadata? metadata;
+final AiSearchCreateInstancesRequestMetadata? metadata;
 
 final bool paused;
 
-final AiSearchUpdateInstancesRequestPublicEndpointParams? publicEndpointParams;
+final PublicEndpointParams? publicEndpointParams;
 
 final bool reranking;
 
-final AiSearchUpdateInstancesRequestRerankingModel? rerankingModel;
+final RerankingModel? rerankingModel;
 
-final AiSearchUpdateInstancesRequestRetrievalOptions? retrievalOptions;
+final RetrievalOptions? retrievalOptions;
 
-final AiSearchUpdateInstancesRequestRewriteModel? rewriteModel;
+final RewriteModel? rewriteModel;
 
 final bool rewriteQuery;
 
 final double scoreThreshold;
 
-final AiSearchUpdateInstancesRequestSourceParams? sourceParams;
+final SourceParams? sourceParams;
 
 final bool summarization;
 
-final AiSearchUpdateInstancesRequestSummarizationModel? summarizationModel;
+final SummarizationModel? summarizationModel;
 
 final String? systemPromptAiSearch;
 
@@ -198,7 +120,7 @@ Map<String, dynamic> toJson() { return {
   'token_id': ?tokenId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_gateway_id', 'ai_search_model', 'cache', 'cache_threshold', 'chunk', 'chunk_overlap', 'chunk_size', 'custom_metadata', 'embedding_model', 'fusion_method', 'hybrid_search_enabled', 'max_num_results', 'metadata', 'paused', 'public_endpoint_params', 'reranking', 'reranking_model', 'retrieval_options', 'rewrite_model', 'rewrite_query', 'score_threshold', 'source_params', 'summarization', 'summarization_model', 'system_prompt_ai_search', 'system_prompt_index_summarization', 'system_prompt_rewrite_query', 'token_id'}.contains(key)); } 
-AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchUpdateInstancesRequestAiSearchModel Function()? aiSearchModel, bool Function()? cache, AiSearchUpdateInstancesRequestCacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<AiSearchUpdateInstancesRequestCustomMetadata> Function()? customMetadata, AiSearchUpdateInstancesRequestEmbeddingModel Function()? embeddingModel, AiSearchUpdateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, int Function()? maxNumResults, AiSearchUpdateInstancesRequestMetadata Function()? metadata, bool Function()? paused, AiSearchUpdateInstancesRequestPublicEndpointParams Function()? publicEndpointParams, bool Function()? reranking, AiSearchUpdateInstancesRequestRerankingModel Function()? rerankingModel, AiSearchUpdateInstancesRequestRetrievalOptions? Function()? retrievalOptions, AiSearchUpdateInstancesRequestRewriteModel Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, AiSearchUpdateInstancesRequestSourceParams? Function()? sourceParams, bool Function()? summarization, AiSearchUpdateInstancesRequestSummarizationModel Function()? summarizationModel, String? Function()? systemPromptAiSearch, String? Function()? systemPromptIndexSummarization, String? Function()? systemPromptRewriteQuery, String Function()? tokenId, }) { return AiSearchUpdateInstancesRequest(
+AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchModel Function()? aiSearchModel, bool Function()? cache, CacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<CustomMetadata> Function()? customMetadata, EmbeddingModel Function()? embeddingModel, FusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata Function()? metadata, bool Function()? paused, PublicEndpointParams Function()? publicEndpointParams, bool Function()? reranking, RerankingModel Function()? rerankingModel, RetrievalOptions? Function()? retrievalOptions, RewriteModel Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, SourceParams? Function()? sourceParams, bool Function()? summarization, SummarizationModel Function()? summarizationModel, String? Function()? systemPromptAiSearch, String? Function()? systemPromptIndexSummarization, String? Function()? systemPromptRewriteQuery, String Function()? tokenId, }) { return AiSearchUpdateInstancesRequest(
   aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
   cache: cache != null ? cache() : this.cache,

@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_source_config.dart';/// The source control management provider.
-@immutable final class PagesSourceType {const PagesSourceType._(this.value);
-
-factory PagesSourceType.fromJson(String json) { return switch (json) {
-  'github' => github,
-  'gitlab' => gitlab,
-  _ => PagesSourceType._(json),
-}; }
-
-static const PagesSourceType github = PagesSourceType._('github');
-
-static const PagesSourceType gitlab = PagesSourceType._('gitlab');
-
-static const List<PagesSourceType> values = [github, gitlab];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesSourceType($value)'; } 
- }
-/// Configs for the project source control.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_source/pages_source_config.dart';import 'package:pub_cloudflare/models/pages_source/pages_source_type.dart';/// Configs for the project source control.
 @immutable final class PagesSource {const PagesSource({required this.config, required this.type, });
 
 factory PagesSource.fromJson(Map<String, dynamic> json) { return PagesSource(

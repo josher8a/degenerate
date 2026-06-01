@@ -1,88 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_set_payload_default_value.dart';/// The type of the value for the property
-@immutable final class CustomPropertySetPayloadValueType {const CustomPropertySetPayloadValueType._(this.value);
-
-factory CustomPropertySetPayloadValueType.fromJson(String json) { return switch (json) {
-  'string' => string,
-  'single_select' => singleSelect,
-  'multi_select' => multiSelect,
-  'true_false' => trueFalse,
-  'url' => url,
-  _ => CustomPropertySetPayloadValueType._(json),
-}; }
-
-static const CustomPropertySetPayloadValueType string = CustomPropertySetPayloadValueType._('string');
-
-static const CustomPropertySetPayloadValueType singleSelect = CustomPropertySetPayloadValueType._('single_select');
-
-static const CustomPropertySetPayloadValueType multiSelect = CustomPropertySetPayloadValueType._('multi_select');
-
-static const CustomPropertySetPayloadValueType trueFalse = CustomPropertySetPayloadValueType._('true_false');
-
-static const CustomPropertySetPayloadValueType url = CustomPropertySetPayloadValueType._('url');
-
-static const List<CustomPropertySetPayloadValueType> values = [string, singleSelect, multiSelect, trueFalse, url];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertySetPayloadValueType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertySetPayloadValueType($value)'; } 
- }
-/// Who can edit the values of the property
-@immutable final class CustomPropertySetPayloadValuesEditableBy {const CustomPropertySetPayloadValuesEditableBy._(this.value);
-
-factory CustomPropertySetPayloadValuesEditableBy.fromJson(String json) { return switch (json) {
-  'org_actors' => orgActors,
-  'org_and_repo_actors' => orgAndRepoActors,
-  'null' => $null,
-  _ => CustomPropertySetPayloadValuesEditableBy._(json),
-}; }
-
-static const CustomPropertySetPayloadValuesEditableBy orgActors = CustomPropertySetPayloadValuesEditableBy._('org_actors');
-
-static const CustomPropertySetPayloadValuesEditableBy orgAndRepoActors = CustomPropertySetPayloadValuesEditableBy._('org_and_repo_actors');
-
-static const CustomPropertySetPayloadValuesEditableBy $null = CustomPropertySetPayloadValuesEditableBy._('null');
-
-static const List<CustomPropertySetPayloadValuesEditableBy> values = [orgActors, orgAndRepoActors, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertySetPayloadValuesEditableBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertySetPayloadValuesEditableBy($value)'; } 
- }
-/// Custom property set payload
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property/default_value.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/value_type.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/values_editable_by.dart';/// Custom property set payload
 @immutable final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
 
 factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return CustomPropertySetPayload(
-  valueType: CustomPropertySetPayloadValueType.fromJson(json['value_type'] as String),
+  valueType: ValueType.fromJson(json['value_type'] as String),
   $required: json['required'] as bool?,
   defaultValue: json['default_value'] != null ? OneOf2.parse(json['default_value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   description: json['description'] as String?,
   allowedValues: (json['allowed_values'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  valuesEditableBy: json['values_editable_by'] != null ? CustomPropertySetPayloadValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,
+  valuesEditableBy: json['values_editable_by'] != null ? ValuesEditableBy.fromJson(json['values_editable_by'] as String) : null,
   requireExplicitValues: json['require_explicit_values'] as bool?,
 ); }
 
 /// The type of the value for the property
-final CustomPropertySetPayloadValueType valueType;
+final ValueType valueType;
 
 /// Whether the property is required.
 final bool? $required;
 
 /// Default value of the property
-final CustomPropertySetPayloadDefaultValue? defaultValue;
+final DefaultValue? defaultValue;
 
 /// Short description of the property
 final String? description;
@@ -92,7 +30,7 @@ final String? description;
 final List<String>? allowedValues;
 
 /// Who can edit the values of the property
-final CustomPropertySetPayloadValuesEditableBy? valuesEditableBy;
+final ValuesEditableBy? valuesEditableBy;
 
 /// Whether setting properties values is mandatory
 final bool? requireExplicitValues;
@@ -107,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'require_explicit_values': ?requireExplicitValues,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value_type'); } 
-CustomPropertySetPayload copyWith({CustomPropertySetPayloadValueType? valueType, bool Function()? $required, CustomPropertySetPayloadDefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, CustomPropertySetPayloadValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
+CustomPropertySetPayload copyWith({ValueType? valueType, bool Function()? $required, DefaultValue? Function()? defaultValue, String? Function()? description, List<String>? Function()? allowedValues, ValuesEditableBy? Function()? valuesEditableBy, bool Function()? requireExplicitValues, }) { return CustomPropertySetPayload(
   valueType: valueType ?? this.valueType,
   $required: $required != null ? $required() : this.$required,
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,

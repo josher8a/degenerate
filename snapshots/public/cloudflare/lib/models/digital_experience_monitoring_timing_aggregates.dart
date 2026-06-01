@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_aggregate_stat.dart';import 'digital_experience_monitoring_timing_aggregates_over_time.dart';@immutable final class DigitalExperienceMonitoringTimingAggregates {const DigitalExperienceMonitoringTimingAggregates({required this.history, this.avgMs, this.overTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_aggregate_stat.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timing_aggregates/over_time.dart';@immutable final class DigitalExperienceMonitoringTimingAggregates {const DigitalExperienceMonitoringTimingAggregates({required this.history, this.avgMs, this.overTime, });
 
 factory DigitalExperienceMonitoringTimingAggregates.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTimingAggregates(
   avgMs: json['avgMs'] != null ? (json['avgMs'] as num).toInt() : null,
   history: (json['history'] as List<dynamic>).map((e) => DigitalExperienceMonitoringAggregateStat.fromJson(e as Map<String, dynamic>)).toList(),
-  overTime: json['overTime'] != null ? DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(json['overTime'] as Map<String, dynamic>) : null,
+  overTime: json['overTime'] != null ? OverTime.fromJson(json['overTime'] as Map<String, dynamic>) : null,
 ); }
 
 final int? avgMs;
 
 final List<DigitalExperienceMonitoringAggregateStat> history;
 
-final DigitalExperienceMonitoringTimingAggregatesOverTime? overTime;
+final OverTime? overTime;
 
 Map<String, dynamic> toJson() { return {
   'avgMs': ?avgMs,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (overTime != null) 'overTime': overTime?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('history'); } 
-DigitalExperienceMonitoringTimingAggregates copyWith({int? Function()? avgMs, List<DigitalExperienceMonitoringAggregateStat>? history, DigitalExperienceMonitoringTimingAggregatesOverTime? Function()? overTime, }) { return DigitalExperienceMonitoringTimingAggregates(
+DigitalExperienceMonitoringTimingAggregates copyWith({int? Function()? avgMs, List<DigitalExperienceMonitoringAggregateStat>? history, OverTime? Function()? overTime, }) { return DigitalExperienceMonitoringTimingAggregates(
   avgMs: avgMs != null ? avgMs() : this.avgMs,
   history: history ?? this.history,
   overTime: overTime != null ? overTime() : this.overTime,

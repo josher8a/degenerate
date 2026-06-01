@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_token_ice_servers.dart';@immutable final class AccountToken {const AccountToken({this.accountSid, this.dateCreated, this.dateUpdated, this.iceServers, this.password, this.ttl, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_token/ice_servers.dart';@immutable final class AccountToken {const AccountToken({this.accountSid, this.dateCreated, this.dateUpdated, this.iceServers, this.password, this.ttl, this.username, });
 
 factory AccountToken.fromJson(Map<String, dynamic> json) { return AccountToken(
   accountSid: json['account_sid'] as String?,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
-  iceServers: (json['ice_servers'] as List<dynamic>?)?.map((e) => AccountTokenIceServers.fromJson(e as Map<String, dynamic>)).toList(),
+  iceServers: (json['ice_servers'] as List<dynamic>?)?.map((e) => IceServers.fromJson(e as Map<String, dynamic>)).toList(),
   password: json['password'] as String?,
   ttl: json['ttl'] as String?,
   username: json['username'] as String?,
@@ -22,7 +22,7 @@ final String? dateCreated;
 final String? dateUpdated;
 
 /// An array representing the ephemeral credentials and the STUN and TURN server URIs.
-final List<AccountTokenIceServers>? iceServers;
+final List<IceServers>? iceServers;
 
 /// The temporary password that the username will use when authenticating with Twilio.
 final String? password;
@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'username': ?username,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'ice_servers', 'password', 'ttl', 'username'}.contains(key)); } 
-AccountToken copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, List<AccountTokenIceServers>? Function()? iceServers, String? Function()? password, String? Function()? ttl, String? Function()? username, }) { return AccountToken(
+AccountToken copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, List<IceServers>? Function()? iceServers, String? Function()? password, String? Function()? ttl, String? Function()? username, }) { return AccountToken(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,

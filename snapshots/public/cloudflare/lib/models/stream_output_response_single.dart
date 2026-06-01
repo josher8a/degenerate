@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_output.dart';@immutable final class StreamOutputResponseSingle {const StreamOutputResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_output.dart';@immutable final class StreamOutputResponseSingle {const StreamOutputResponseSingle({this.result});
 
 factory StreamOutputResponseSingle.fromJson(Map<String, dynamic> json) { return StreamOutputResponseSingle(
   result: json['result'] != null ? StreamOutput.fromJson(json['result'] as Map<String, dynamic>) : null,

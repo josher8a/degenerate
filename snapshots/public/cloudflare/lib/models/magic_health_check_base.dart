@@ -1,59 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_health_check_base_target.dart';import 'magic_health_check_target.dart';/// How frequent the health check is run. The default value is `mid`.
-@immutable final class MagicHealthCheckBaseRate {const MagicHealthCheckBaseRate._(this.value);
-
-factory MagicHealthCheckBaseRate.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'mid' => mid,
-  'high' => high,
-  _ => MagicHealthCheckBaseRate._(json),
-}; }
-
-static const MagicHealthCheckBaseRate low = MagicHealthCheckBaseRate._('low');
-
-static const MagicHealthCheckBaseRate mid = MagicHealthCheckBaseRate._('mid');
-
-static const MagicHealthCheckBaseRate high = MagicHealthCheckBaseRate._('high');
-
-static const List<MagicHealthCheckBaseRate> values = [low, mid, high];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicHealthCheckBaseRate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicHealthCheckBaseRate($value)'; } 
- }
-/// The type of healthcheck to run, reply or request. The default value is `reply`.
-@immutable final class MagicHealthCheckBaseType {const MagicHealthCheckBaseType._(this.value);
-
-factory MagicHealthCheckBaseType.fromJson(String json) { return switch (json) {
-  'reply' => reply,
-  'request' => request,
-  _ => MagicHealthCheckBaseType._(json),
-}; }
-
-static const MagicHealthCheckBaseType reply = MagicHealthCheckBaseType._('reply');
-
-static const MagicHealthCheckBaseType request = MagicHealthCheckBaseType._('request');
-
-static const List<MagicHealthCheckBaseType> values = [reply, request];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicHealthCheckBaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicHealthCheckBaseType($value)'; } 
- }
-@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_rate.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_target.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_type.dart';import 'package:pub_cloudflare/models/magic_health_check_target.dart';@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
 
 factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_event_description.dart';import 'waitingroom_event_end_time.dart';import 'waitingroom_event_id.dart';import 'waitingroom_event_name.dart';import 'waitingroom_event_prequeue_start_time.dart';import 'waitingroom_event_shuffle_at_event_start.dart';import 'waitingroom_event_start_time.dart';import 'waitingroom_event_suspended.dart';import 'waitingroom_timestamp.dart';extension type const WaitingroomEventDetailsCustomPageHtml(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waitingroom_event_description.dart';import 'package:pub_cloudflare/models/waitingroom_event_end_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_id.dart';import 'package:pub_cloudflare/models/waitingroom_event_name.dart';import 'package:pub_cloudflare/models/waitingroom_event_prequeue_start_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_shuffle_at_event_start.dart';import 'package:pub_cloudflare/models/waitingroom_event_start_time.dart';import 'package:pub_cloudflare/models/waitingroom_event_suspended.dart';import 'package:pub_cloudflare/models/waitingroom_timestamp.dart';extension type const WaitingroomEventDetailsCustomPageHtml(String value) {
 factory WaitingroomEventDetailsCustomPageHtml.fromJson(String json) => WaitingroomEventDetailsCustomPageHtml(json);
 
 String toJson() => value;

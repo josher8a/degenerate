@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/m_tls_certificate_management_upload_m_tls_certificate_request.dart';import '../models/tls_certificates_and_hostnames_association_object.dart';import '../models/tls_certificates_and_hostnames_certificate_object_post.dart';import '../models/tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// MTlsCertificateManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/m_tls_certificate_management_upload_m_tls_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_association_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_object_post.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';/// MTlsCertificateManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

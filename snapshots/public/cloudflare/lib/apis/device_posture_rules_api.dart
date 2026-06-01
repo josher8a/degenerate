@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_posture_rules_create_device_posture_rule_request.dart';import '../models/device_posture_rules_update_device_posture_rule_request.dart';import '../models/teams_devices_device_posture_rules.dart';import '../models/teams_devices_id_response_result.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DevicePostureRulesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/device_posture_rules_create_device_posture_rule_request.dart';import 'package:pub_cloudflare/models/device_posture_rules_update_device_posture_rule_request.dart';import 'package:pub_cloudflare/models/teams_devices_device_posture_rules.dart';import 'package:pub_cloudflare/models/teams_devices_identifier.dart';import 'package:pub_cloudflare/models/teams_devices_uuid.dart';/// DevicePostureRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -105,7 +105,7 @@ return execute(
 /// Deletes a device posture rule.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/{rule_id}`
-Future<ApiResult<TeamsDevicesIdResponseResult?, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> devicePostureRulesDeleteDevicePostureRule({required TeamsDevicesUuid ruleId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -118,7 +118,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TeamsDevicesIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

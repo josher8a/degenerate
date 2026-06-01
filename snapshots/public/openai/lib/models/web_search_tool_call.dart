@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_tool_call_action.dart';/// The status of the web search tool call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';/// The status of the web search tool call.
 /// 
 @immutable final class WebSearchToolCallStatus {const WebSearchToolCallStatus._(this.value);
 

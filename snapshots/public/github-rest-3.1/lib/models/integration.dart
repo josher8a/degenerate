@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise.dart';import 'integration_owner.dart';import 'integration_permissions.dart';import 'simple_user.dart';/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_owner.dart';import 'package:pub_github_rest_3_1/models/apps_create_from_manifest_response/apps_create_from_manifest_response_permissions.dart';import 'package:pub_github_rest_3_1/models/enterprise.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class Integration {const Integration({required this.id, required this.nodeId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.slug, this.clientId, this.installationsCount, });
 
 factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
@@ -15,7 +15,7 @@ factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
   htmlUrl: Uri.parse(json['html_url'] as String),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  permissions: IntegrationPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
+  permissions: AppsCreateFromManifestResponsePermissions.fromJson(json['permissions'] as Map<String, dynamic>),
   events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
   installationsCount: json['installations_count'] != null ? (json['installations_count'] as num).toInt() : null,
 ); }
@@ -30,7 +30,7 @@ final String nodeId;
 
 final String? clientId;
 
-final IntegrationOwner owner;
+final AppsCreateFromManifestResponseOwner owner;
 
 /// The name of the GitHub app
 final String name;
@@ -46,7 +46,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The set of permissions for the GitHub app
-final IntegrationPermissions permissions;
+final AppsCreateFromManifestResponsePermissions permissions;
 
 /// The list of events for the GitHub app. Note that the `installation_target`, `security_advisory`, and `meta` events are not included because they are global events and not specific to an installation.
 final List<String> events;
@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('permissions') &&
       json.containsKey('events'); } 
-Integration copyWith({int? id, String Function()? slug, String? nodeId, String Function()? clientId, IntegrationOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, IntegrationPermissions? permissions, List<String>? events, int Function()? installationsCount, }) { return Integration(
+Integration copyWith({int? id, String Function()? slug, String? nodeId, String Function()? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int Function()? installationsCount, }) { return Integration(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,

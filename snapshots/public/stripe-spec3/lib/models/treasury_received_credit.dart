@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal/treasury_debit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit/treasury_received_credit_status.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_reversal_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
 @immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
@@ -84,31 +84,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TreasuryReceivedCreditObject($value)'; } 
  }
-/// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
-@immutable final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);
-
-factory TreasuryReceivedCreditStatus.fromJson(String json) { return switch (json) {
-  'failed' => failed,
-  'succeeded' => succeeded,
-  _ => TreasuryReceivedCreditStatus._(json),
-}; }
-
-static const TreasuryReceivedCreditStatus failed = TreasuryReceivedCreditStatus._('failed');
-
-static const TreasuryReceivedCreditStatus succeeded = TreasuryReceivedCreditStatus._('succeeded');
-
-static const List<TreasuryReceivedCreditStatus> values = [failed, succeeded];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditStatus($value)'; } 
- }
 /// ReceivedCredits represent funds sent to a [FinancialAccount](https://api.stripe.com#financial_accounts) (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
 @immutable final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.reversalDetails, this.transaction, });
 
@@ -175,7 +150,7 @@ final TreasuryReceivedCreditsResourceReversalDetails? reversalDetails;
 final TreasuryReceivedCreditStatus status;
 
 /// The Transaction associated with this object.
-final TreasuryReceivedCreditTransaction? transaction;
+final TreasuryDebitReversalTransaction? transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -206,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryReceivedCreditTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
+TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

@@ -1,49 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_billing_mode.dart';import 'post_subscription_schedules_request_default_settings.dart';import 'post_subscription_schedules_request_metadata.dart';import 'post_subscription_schedules_request_phases.dart';import 'post_subscription_schedules_request_start_date.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-@immutable final class PostSubscriptionSchedulesRequestEndBehavior {const PostSubscriptionSchedulesRequestEndBehavior._(this.value);
-
-factory PostSubscriptionSchedulesRequestEndBehavior.fromJson(String json) { return switch (json) {
-  'cancel' => cancel,
-  'none' => none,
-  'release' => release,
-  'renew' => renew,
-  _ => PostSubscriptionSchedulesRequestEndBehavior._(json),
-}; }
-
-static const PostSubscriptionSchedulesRequestEndBehavior cancel = PostSubscriptionSchedulesRequestEndBehavior._('cancel');
-
-static const PostSubscriptionSchedulesRequestEndBehavior none = PostSubscriptionSchedulesRequestEndBehavior._('none');
-
-static const PostSubscriptionSchedulesRequestEndBehavior release = PostSubscriptionSchedulesRequestEndBehavior._('release');
-
-static const PostSubscriptionSchedulesRequestEndBehavior renew = PostSubscriptionSchedulesRequestEndBehavior._('renew');
-
-static const List<PostSubscriptionSchedulesRequestEndBehavior> values = [cancel, none, release, renew];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSubscriptionSchedulesRequestEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestEndBehavior($value)'; } 
- }
-@immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_phases.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_start_date.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/start_date_variant2.dart';@immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
 
 factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequest(
   billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
+  defaultSettings: json['default_settings'] != null ? DefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fromSubscription: json['from_subscription'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostSubscriptionSchedulesRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
-  startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSubscriptionSchedulesRequestStartDateVariant2.fromJson(v as String),) : null,
+  startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => StartDateVariant2.fromJson(v as String),) : null,
 ); }
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
@@ -56,7 +25,7 @@ final String? customer;
 final String? customerAccount;
 
 /// Object representing the subscription schedule's default settings.
-final PostSubscriptionSchedulesRequestDefaultSettings? defaultSettings;
+final DefaultSettings? defaultSettings;
 
 /// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 final PostSubscriptionSchedulesRequestEndBehavior? endBehavior;
@@ -68,7 +37,7 @@ final List<String>? expand;
 final String? fromSubscription;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostSubscriptionSchedulesRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// List representing phases of the subscription schedule. Each phase can be customized to have different durations, plans, and coupons. If there are multiple phases, the `end_date` of one phase will always equal the `start_date` of the next phase.
 final List<PostSubscriptionSchedulesRequestPhases>? phases;
@@ -89,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   if (startDate != null) 'start_date': startDate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_mode', 'customer', 'customer_account', 'default_settings', 'end_behavior', 'expand', 'from_subscription', 'metadata', 'phases', 'start_date'}.contains(key)); } 
-PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode Function()? billingMode, String Function()? customer, String Function()? customerAccount, PostSubscriptionSchedulesRequestDefaultSettings Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior Function()? endBehavior, List<String> Function()? expand, String Function()? fromSubscription, PostSubscriptionSchedulesRequestMetadata Function()? metadata, List<PostSubscriptionSchedulesRequestPhases> Function()? phases, PostSubscriptionSchedulesRequestStartDate Function()? startDate, }) { return PostSubscriptionSchedulesRequest(
+PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode Function()? billingMode, String Function()? customer, String Function()? customerAccount, DefaultSettings Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior Function()? endBehavior, List<String> Function()? expand, String Function()? fromSubscription, Metadata Function()? metadata, List<PostSubscriptionSchedulesRequestPhases> Function()? phases, PostSubscriptionSchedulesRequestStartDate Function()? startDate, }) { return PostSubscriptionSchedulesRequest(
   billingMode: billingMode != null ? billingMode() : this.billingMode,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

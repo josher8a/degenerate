@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origins_timeseries_group_response_result.dart';@immutable final class RadarGetOriginsTimeseriesGroupResponse {const RadarGetOriginsTimeseriesGroupResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';@immutable final class RadarGetOriginsTimeseriesGroupResponse {const RadarGetOriginsTimeseriesGroupResponse({required this.result, required this.success, });
 
 factory RadarGetOriginsTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesGroupResponse(
-  result: RadarGetOriginsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetOriginsTimeseriesGroupResponseResult result;
+final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetOriginsTimeseriesGroupResponse copyWith({RadarGetOriginsTimeseriesGroupResponseResult? result, bool? success, }) { return RadarGetOriginsTimeseriesGroupResponse(
+RadarGetOriginsTimeseriesGroupResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) { return RadarGetOriginsTimeseriesGroupResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

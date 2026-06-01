@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_namespace_identifier.dart';import 'workers_kv_namespace_title.dart';@immutable final class WorkersKvNamespace {const WorkersKvNamespace({required this.id, required this.title, this.supportsUrlEncoding, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_identifier.dart';import 'package:pub_cloudflare/models/workers_kv_namespace_title.dart';@immutable final class WorkersKvNamespace {const WorkersKvNamespace({required this.id, required this.title, this.supportsUrlEncoding, });
 
 factory WorkersKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersKvNamespace(
   id: WorkersKvNamespaceIdentifier.fromJson(json['id'] as String),

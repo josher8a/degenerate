@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_item.dart';import 'eval_item.dart';import 'simple_input_message.dart';/// The object type, which is always `label_model`.
-@immutable final class CreateEvalLabelModelGraderType {const CreateEvalLabelModelGraderType._(this.value);
-
-factory CreateEvalLabelModelGraderType.fromJson(String json) { return switch (json) {
-  'label_model' => labelModel,
-  _ => CreateEvalLabelModelGraderType._(json),
-}; }
-
-static const CreateEvalLabelModelGraderType labelModel = CreateEvalLabelModelGraderType._('label_model');
-
-static const List<CreateEvalLabelModelGraderType> values = [labelModel];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalLabelModelGraderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalLabelModelGraderType($value)'; } 
- }
-/// A LabelModelGrader object which uses a model to assign labels to each item
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_item.dart';import 'package:pub_openai/models/create_eval_label_model_grader/create_eval_label_model_grader_type.dart';import 'package:pub_openai/models/eval_item.dart';import 'package:pub_openai/models/simple_input_message.dart';/// A LabelModelGrader object which uses a model to assign labels to each item
 /// in the evaluation.
 /// 
 @immutable final class CreateEvalLabelModelGrader {const CreateEvalLabelModelGrader({required this.type, required this.name, required this.model, required this.input, required this.labels, required this.passingLabels, });

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_submit_excluded_urls.dart';import 'intel_phishing_url_submit_skipped_urls.dart';import 'intel_phishing_url_submit_submitted_urls.dart';@immutable final class IntelPhishingUrlSubmit {const IntelPhishingUrlSubmit({this.excludedUrls, this.skippedUrls, this.submittedUrls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/excluded_urls.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/skipped_urls.dart';import 'package:pub_cloudflare/models/intel_phishing_url_submit/submitted_urls.dart';@immutable final class IntelPhishingUrlSubmit {const IntelPhishingUrlSubmit({this.excludedUrls, this.skippedUrls, this.submittedUrls, });
 
 factory IntelPhishingUrlSubmit.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmit(
-  excludedUrls: (json['excluded_urls'] as List<dynamic>?)?.map((e) => IntelPhishingUrlSubmitExcludedUrls.fromJson(e as Map<String, dynamic>)).toList(),
-  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => IntelPhishingUrlSubmitSkippedUrls.fromJson(e as Map<String, dynamic>)).toList(),
-  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => IntelPhishingUrlSubmitSubmittedUrls.fromJson(e as Map<String, dynamic>)).toList(),
+  excludedUrls: (json['excluded_urls'] as List<dynamic>?)?.map((e) => ExcludedUrls.fromJson(e as Map<String, dynamic>)).toList(),
+  skippedUrls: (json['skipped_urls'] as List<dynamic>?)?.map((e) => SkippedUrls.fromJson(e as Map<String, dynamic>)).toList(),
+  submittedUrls: (json['submitted_urls'] as List<dynamic>?)?.map((e) => SubmittedUrls.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// URLs that were excluded from scanning because their domain is in our no-scan list.
-final List<IntelPhishingUrlSubmitExcludedUrls>? excludedUrls;
+final List<ExcludedUrls>? excludedUrls;
 
 /// URLs that were skipped because the same URL is currently being scanned.
-final List<IntelPhishingUrlSubmitSkippedUrls>? skippedUrls;
+final List<SkippedUrls>? skippedUrls;
 
 /// URLs that were successfully submitted for scanning.
-final List<IntelPhishingUrlSubmitSubmittedUrls>? submittedUrls;
+final List<SubmittedUrls>? submittedUrls;
 
 Map<String, dynamic> toJson() { return {
   if (excludedUrls != null) 'excluded_urls': excludedUrls?.map((e) => e.toJson()).toList(),
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (submittedUrls != null) 'submitted_urls': submittedUrls?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'excluded_urls', 'skipped_urls', 'submitted_urls'}.contains(key)); } 
-IntelPhishingUrlSubmit copyWith({List<IntelPhishingUrlSubmitExcludedUrls> Function()? excludedUrls, List<IntelPhishingUrlSubmitSkippedUrls> Function()? skippedUrls, List<IntelPhishingUrlSubmitSubmittedUrls> Function()? submittedUrls, }) { return IntelPhishingUrlSubmit(
+IntelPhishingUrlSubmit copyWith({List<ExcludedUrls> Function()? excludedUrls, List<SkippedUrls> Function()? skippedUrls, List<SubmittedUrls> Function()? submittedUrls, }) { return IntelPhishingUrlSubmit(
   excludedUrls: excludedUrls != null ? excludedUrls() : this.excludedUrls,
   skippedUrls: skippedUrls != null ? skippedUrls() : this.skippedUrls,
   submittedUrls: submittedUrls != null ? submittedUrls() : this.submittedUrls,

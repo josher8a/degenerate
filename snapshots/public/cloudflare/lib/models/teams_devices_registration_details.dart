@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_policy_summary.dart';/// The summary of a registration.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_policy_summary.dart';/// The summary of a registration.
 @immutable final class TeamsDevicesRegistrationDetails {const TeamsDevicesRegistrationDetails({this.policy});
 
 factory TeamsDevicesRegistrationDetails.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistrationDetails(

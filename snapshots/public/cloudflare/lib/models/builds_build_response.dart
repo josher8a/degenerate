@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_outcome.dart';import 'builds_build_response_pull_request.dart';import 'builds_build_response_trigger.dart';import 'builds_build_trigger_metadata_response.dart';import 'builds_build_uuid.dart';import 'builds_created_on.dart';import 'builds_modified_on.dart';import 'builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_response/builds_build_response_trigger.dart';import 'package:pub_cloudflare/models/builds_build_response/pull_request.dart';import 'package:pub_cloudflare/models/builds_build_trigger_metadata_response.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
 
 factory BuildsBuildStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -39,7 +39,7 @@ factory BuildsBuildResponse.fromJson(Map<String, dynamic> json) { return BuildsB
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,
   initializingOn: json['initializing_on'] != null ? DateTime.parse(json['initializing_on'] as String) : null,
   modifiedOn: json['modified_on'] != null ? BuildsModifiedOn.fromJson(json['modified_on'] as String) : null,
-  pullRequest: json['pull_request'] != null ? BuildsBuildResponsePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
+  pullRequest: json['pull_request'] != null ? PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   runningOn: json['running_on'] != null ? DateTime.parse(json['running_on'] as String) : null,
   status: json['status'] != null ? BuildsBuildStatus.fromJson(json['status'] as String) : null,
   stoppedOn: json['stopped_on'] != null ? BuildsStoppedOn.fromJson(json['stopped_on'] as String) : null,
@@ -58,7 +58,7 @@ final DateTime? initializingOn;
 
 final BuildsModifiedOn? modifiedOn;
 
-final BuildsBuildResponsePullRequest? pullRequest;
+final PullRequest? pullRequest;
 
 final DateTime? runningOn;
 
@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (trigger != null) 'trigger': trigger?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_outcome', 'build_trigger_metadata', 'build_uuid', 'created_on', 'initializing_on', 'modified_on', 'pull_request', 'running_on', 'status', 'stopped_on', 'trigger'}.contains(key)); } 
-BuildsBuildResponse copyWith({BuildsBuildOutcome Function()? buildOutcome, BuildsBuildTriggerMetadataResponse Function()? buildTriggerMetadata, BuildsBuildUuid Function()? buildUuid, BuildsCreatedOn Function()? createdOn, DateTime? Function()? initializingOn, BuildsModifiedOn Function()? modifiedOn, BuildsBuildResponsePullRequest? Function()? pullRequest, DateTime? Function()? runningOn, BuildsBuildStatus Function()? status, BuildsStoppedOn? Function()? stoppedOn, BuildsBuildResponseTrigger Function()? trigger, }) { return BuildsBuildResponse(
+BuildsBuildResponse copyWith({BuildsBuildOutcome Function()? buildOutcome, BuildsBuildTriggerMetadataResponse Function()? buildTriggerMetadata, BuildsBuildUuid Function()? buildUuid, BuildsCreatedOn Function()? createdOn, DateTime? Function()? initializingOn, BuildsModifiedOn Function()? modifiedOn, PullRequest? Function()? pullRequest, DateTime? Function()? runningOn, BuildsBuildStatus Function()? status, BuildsStoppedOn? Function()? stoppedOn, BuildsBuildResponseTrigger Function()? trigger, }) { return BuildsBuildResponse(
   buildOutcome: buildOutcome != null ? buildOutcome() : this.buildOutcome,
   buildTriggerMetadata: buildTriggerMetadata != null ? buildTriggerMetadata() : this.buildTriggerMetadata,
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,

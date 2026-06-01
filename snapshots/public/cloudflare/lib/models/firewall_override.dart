@@ -1,8 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_overrides_id.dart';import 'firewall_rewrite_action.dart';import 'firewall_waf_action.dart';/// An informative summary of the current URI-based WAF override.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_rewrite_action.dart';import 'package:pub_cloudflare/models/firewall_waf_action.dart';/// An informative summary of the current URI-based WAF override.
 extension type const FirewallComponentsSchemasDescription(String value) {
 factory FirewallComponentsSchemasDescription.fromJson(String json) => FirewallComponentsSchemasDescription(json);
+
+String toJson() => value;
+
+}
+/// The unique identifier of the WAF override.
+extension type const FirewallOverridesId(String value) {
+factory FirewallOverridesId.fromJson(String json) => FirewallOverridesId(json);
 
 String toJson() => value;
 

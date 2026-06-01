@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_authorization_controls.dart';import 'issuing_card_fraud_warning.dart';import 'issuing_card_personalization_design.dart';import 'issuing_card_replaced_by.dart';import 'issuing_card_replacement_for.dart';import 'issuing_card_shipping.dart';import 'issuing_card_wallets.dart';import 'issuing_cardholder.dart';import 'issuing_personalization_design.dart';/// The reason why the card was canceled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';/// The reason why the card was canceled.
 @immutable final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
 
 factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
@@ -80,59 +80,6 @@ bool get isUnknown { return !values.contains(this); }
     other is IssuingCardReplacementReason && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardReplacementReason($value)'; } 
- }
-/// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
-@immutable final class IssuingCardStatus {const IssuingCardStatus._(this.value);
-
-factory IssuingCardStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'canceled' => canceled,
-  'inactive' => inactive,
-  _ => IssuingCardStatus._(json),
-}; }
-
-static const IssuingCardStatus active = IssuingCardStatus._('active');
-
-static const IssuingCardStatus canceled = IssuingCardStatus._('canceled');
-
-static const IssuingCardStatus inactive = IssuingCardStatus._('inactive');
-
-static const List<IssuingCardStatus> values = [active, canceled, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardStatus($value)'; } 
- }
-/// The type of the card.
-@immutable final class IssuingCardType {const IssuingCardType._(this.value);
-
-factory IssuingCardType.fromJson(String json) { return switch (json) {
-  'physical' => physical,
-  'virtual' => virtual,
-  _ => IssuingCardType._(json),
-}; }
-
-static const IssuingCardType physical = IssuingCardType._('physical');
-
-static const IssuingCardType virtual = IssuingCardType._('virtual');
-
-static const List<IssuingCardType> values = [physical, virtual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardType($value)'; } 
  }
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
 @immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason, this.cvc, this.financialAccount, this.latestFraudWarning, this.number, this.personalizationDesign, this.replacedBy, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.wallets, });
@@ -214,13 +161,13 @@ final String? number;
 final IssuingCardObject object;
 
 /// The personalization design object belonging to this card.
-final IssuingCardPersonalizationDesign? personalizationDesign;
+final PersonalizationDesign? personalizationDesign;
 
 /// The latest card that replaces this card, if any.
-final IssuingCardReplacedBy? replacedBy;
+final ReplacedBy? replacedBy;
 
 /// The card this card replaces, if any.
-final IssuingCardReplacementFor? replacementFor;
+final ReplacementFor? replacementFor;
 
 /// The reason why the previous card needed to be replaced.
 final IssuingCardReplacementReason? replacementReason;
@@ -284,7 +231,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String Function()? number, IssuingCardObject? object, IssuingCardPersonalizationDesign? Function()? personalizationDesign, IssuingCardReplacedBy? Function()? replacedBy, IssuingCardReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets? Function()? wallets, }) { return IssuingCard(
+IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String Function()? number, IssuingCardObject? object, PersonalizationDesign? Function()? personalizationDesign, ReplacedBy? Function()? replacedBy, ReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets? Function()? wallets, }) { return IssuingCard(
   brand: brand ?? this.brand,
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   cardholder: cardholder ?? this.cardholder,

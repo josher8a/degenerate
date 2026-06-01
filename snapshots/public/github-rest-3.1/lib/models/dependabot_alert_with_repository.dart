@@ -1,80 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_auto_dismissed_at.dart';import 'alert_created_at.dart';import 'alert_dismissed_at.dart';import 'alert_fixed_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'dependabot_alert_dismissal_request_simple.dart';import 'dependabot_alert_security_advisory.dart';import 'dependabot_alert_security_vulnerability.dart';import 'dependabot_alert_with_repository_dependency.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The state of the Dependabot alert.
-@immutable final class DependabotAlertWithRepositoryState {const DependabotAlertWithRepositoryState._(this.value);
-
-factory DependabotAlertWithRepositoryState.fromJson(String json) { return switch (json) {
-  'auto_dismissed' => autoDismissed,
-  'dismissed' => dismissed,
-  'fixed' => fixed,
-  'open' => open,
-  _ => DependabotAlertWithRepositoryState._(json),
-}; }
-
-static const DependabotAlertWithRepositoryState autoDismissed = DependabotAlertWithRepositoryState._('auto_dismissed');
-
-static const DependabotAlertWithRepositoryState dismissed = DependabotAlertWithRepositoryState._('dismissed');
-
-static const DependabotAlertWithRepositoryState fixed = DependabotAlertWithRepositoryState._('fixed');
-
-static const DependabotAlertWithRepositoryState open = DependabotAlertWithRepositoryState._('open');
-
-static const List<DependabotAlertWithRepositoryState> values = [autoDismissed, dismissed, fixed, open];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertWithRepositoryState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertWithRepositoryState($value)'; } 
- }
-/// The reason that the alert was dismissed.
-@immutable final class DependabotAlertWithRepositoryDismissedReason {const DependabotAlertWithRepositoryDismissedReason._(this.value);
-
-factory DependabotAlertWithRepositoryDismissedReason.fromJson(String json) { return switch (json) {
-  'fix_started' => fixStarted,
-  'inaccurate' => inaccurate,
-  'no_bandwidth' => noBandwidth,
-  'not_used' => notUsed,
-  'tolerable_risk' => tolerableRisk,
-  'null' => $null,
-  _ => DependabotAlertWithRepositoryDismissedReason._(json),
-}; }
-
-static const DependabotAlertWithRepositoryDismissedReason fixStarted = DependabotAlertWithRepositoryDismissedReason._('fix_started');
-
-static const DependabotAlertWithRepositoryDismissedReason inaccurate = DependabotAlertWithRepositoryDismissedReason._('inaccurate');
-
-static const DependabotAlertWithRepositoryDismissedReason noBandwidth = DependabotAlertWithRepositoryDismissedReason._('no_bandwidth');
-
-static const DependabotAlertWithRepositoryDismissedReason notUsed = DependabotAlertWithRepositoryDismissedReason._('not_used');
-
-static const DependabotAlertWithRepositoryDismissedReason tolerableRisk = DependabotAlertWithRepositoryDismissedReason._('tolerable_risk');
-
-static const DependabotAlertWithRepositoryDismissedReason $null = DependabotAlertWithRepositoryDismissedReason._('null');
-
-static const List<DependabotAlertWithRepositoryDismissedReason> values = [fixStarted, inaccurate, noBandwidth, notUsed, tolerableRisk, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertWithRepositoryDismissedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertWithRepositoryDismissedReason($value)'; } 
- }
-/// A Dependabot alert.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_auto_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_dismissed_at.dart';import 'package:pub_github_rest_3_1/models/alert_fixed_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dependency.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert/dependabot_alert_state.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A Dependabot alert.
 @immutable final class DependabotAlertWithRepository {const DependabotAlertWithRepository({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, required this.repository, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
 
 factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { return DependabotAlertWithRepository(
   number: AlertNumber.fromJson(json['number'] as num),
-  state: DependabotAlertWithRepositoryState.fromJson(json['state'] as String),
-  dependency: DependabotAlertWithRepositoryDependency.fromJson(json['dependency'] as Map<String, dynamic>),
+  state: DependabotAlertState.fromJson(json['state'] as String),
+  dependency: DependabotAlertDependency.fromJson(json['dependency'] as Map<String, dynamic>),
   securityAdvisory: DependabotAlertSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
   securityVulnerability: DependabotAlertSecurityVulnerability.fromJson(json['security_vulnerability'] as Map<String, dynamic>),
   url: AlertUrl.fromJson(json['url'] as String),
@@ -83,7 +15,7 @@ factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { retu
   updatedAt: AlertUpdatedAt.fromJson(json['updated_at'] as String),
   dismissedAt: json['dismissed_at'] != null ? AlertDismissedAt.fromJson(json['dismissed_at'] as String) : null,
   dismissedBy: json['dismissed_by'] != null ? SimpleUser.fromJson(json['dismissed_by'] as Map<String, dynamic>) : null,
-  dismissedReason: json['dismissed_reason'] != null ? DependabotAlertWithRepositoryDismissedReason.fromJson(json['dismissed_reason'] as String) : null,
+  dismissedReason: json['dismissed_reason'] != null ? DependabotAlertDismissedReason.fromJson(json['dismissed_reason'] as String) : null,
   dismissedComment: json['dismissed_comment'] as String?,
   fixedAt: json['fixed_at'] != null ? AlertFixedAt.fromJson(json['fixed_at'] as String) : null,
   autoDismissedAt: json['auto_dismissed_at'] != null ? AlertAutoDismissedAt.fromJson(json['auto_dismissed_at'] as String) : null,
@@ -96,10 +28,10 @@ factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { retu
 final AlertNumber number;
 
 /// The state of the Dependabot alert.
-final DependabotAlertWithRepositoryState state;
+final DependabotAlertState state;
 
 /// Details for the vulnerable dependency.
-final DependabotAlertWithRepositoryDependency dependency;
+final DependabotAlertDependency dependency;
 
 final DependabotAlertSecurityAdvisory securityAdvisory;
 
@@ -123,7 +55,7 @@ final AlertDismissedAt? dismissedAt;
 final SimpleUser? dismissedBy;
 
 /// The reason that the alert was dismissed.
-final DependabotAlertWithRepositoryDismissedReason? dismissedReason;
+final DependabotAlertDismissedReason? dismissedReason;
 
 /// An optional comment associated with the alert's dismissal.
 final String? dismissedComment;
@@ -176,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_comment') && json['dismissed_comment'] is String &&
       json.containsKey('fixed_at') &&
       json.containsKey('repository'); } 
-DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertWithRepositoryState? state, DependabotAlertWithRepositoryDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertWithRepositoryDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple Function()? dismissalRequest, List<SimpleUser> Function()? assignees, SimpleRepository? repository, }) { return DependabotAlertWithRepository(
+DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple Function()? dismissalRequest, List<SimpleUser> Function()? assignees, SimpleRepository? repository, }) { return DependabotAlertWithRepository(
   number: number ?? this.number,
   state: state ?? this.state,
   dependency: dependency ?? this.dependency,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryArchivedAction {const WebhookRepositoryArchivedAction._(this.value);
-
-factory WebhookRepositoryArchivedAction.fromJson(String json) { return switch (json) {
-  'archived' => archived,
-  _ => WebhookRepositoryArchivedAction._(json),
-}; }
-
-static const WebhookRepositoryArchivedAction archived = WebhookRepositoryArchivedAction._('archived');
-
-static const List<WebhookRepositoryArchivedAction> values = [archived];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryArchivedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryArchivedAction($value)'; } 
- }
-@immutable final class WebhookRepositoryArchived {const WebhookRepositoryArchived({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_archived/item_archived_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryArchived {const WebhookRepositoryArchived({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryArchived.fromJson(Map<String, dynamic> json) { return WebhookRepositoryArchived(
-  action: WebhookRepositoryArchivedAction.fromJson(json['action'] as String),
+  action: ItemArchivedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -32,7 +11,7 @@ factory WebhookRepositoryArchived.fromJson(Map<String, dynamic> json) { return W
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookRepositoryArchivedAction action;
+final ItemArchivedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -55,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookRepositoryArchived copyWith({WebhookRepositoryArchivedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryArchived(
+WebhookRepositoryArchived copyWith({ItemArchivedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryArchived(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

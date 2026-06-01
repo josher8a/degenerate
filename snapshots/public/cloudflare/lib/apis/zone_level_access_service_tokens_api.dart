@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_schemas_create_response_result.dart';import '../models/access_schemas_service_tokens.dart';import '../models/access_uuid.dart';import '../models/zone_level_access_service_tokens_create_a_service_token_request.dart';import '../models/zone_level_access_service_tokens_update_a_service_token_request.dart';/// ZoneLevelAccessServiceTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_create_response/access_create_response_result.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_service_tokens.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/zone_level_access_service_tokens_create_a_service_token_request.dart';import 'package:pub_cloudflare/models/zone_level_access_service_tokens_update_a_service_token_request.dart';/// ZoneLevelAccessServiceTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -35,7 +35,7 @@ return execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to create a new service token.
 ///
 /// `POST /zones/{zone_id}/access/service_tokens`
-Future<ApiResult<AccessSchemasCreateResponseResult?, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCreateResponseResult?, Never>> zoneLevelAccessServiceTokensCreateAServiceToken({required AccessIdentifier zoneId, required ZoneLevelAccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,7 +50,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessSchemasCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

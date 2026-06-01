@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_custom_managed_component.dart';import 'zaraz_managed_component.dart';import 'zaraz_zaraz_config_return_analytics.dart';import 'zaraz_zaraz_config_return_consent.dart';import 'zaraz_zaraz_config_return_settings.dart';import 'zaraz_zaraz_config_return_tools_value.dart';import 'zaraz_zaraz_config_return_triggers_value.dart';import 'zaraz_zaraz_config_return_variables_value.dart';@immutable final class ZarazZarazConfigReturn {const ZarazZarazConfigReturn({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, required this.tools, this.analytics, this.consent, this.historyChange, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_custom_managed_component.dart';import 'package:pub_cloudflare/models/zaraz_managed_component.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/analytics.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/consent.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/triggers_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/variables_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/zaraz_zaraz_config_base_settings.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_body/tools_value.dart';@immutable final class ZarazZarazConfigReturn {const ZarazZarazConfigReturn({required this.dataLayer, required this.debugKey, required this.settings, required this.triggers, required this.variables, required this.zarazVersion, required this.tools, this.analytics, this.consent, this.historyChange, });
 
 factory ZarazZarazConfigReturn.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturn(
-  analytics: json['analytics'] != null ? ZarazZarazConfigReturnAnalytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
-  consent: json['consent'] != null ? ZarazZarazConfigReturnConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
+  analytics: json['analytics'] != null ? Analytics.fromJson(json['analytics'] as Map<String, dynamic>) : null,
+  consent: json['consent'] != null ? Consent.fromJson(json['consent'] as Map<String, dynamic>) : null,
   dataLayer: json['dataLayer'] as bool,
   debugKey: json['debugKey'] as String,
   historyChange: json['historyChange'] as bool?,
-  settings: ZarazZarazConfigReturnSettings.fromJson(json['settings'] as Map<String, dynamic>),
-  triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigReturnTriggersValue.fromJson(v as Map<String, dynamic>))),
-  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ZarazZarazConfigReturnVariablesValue.fromJson(v as Map<String, dynamic>))),
+  settings: ZarazZarazConfigBaseSettings.fromJson(json['settings'] as Map<String, dynamic>),
+  triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, TriggersValue.fromJson(v as Map<String, dynamic>))),
+  variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, VariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
   tools: (json['tools'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ZarazManagedComponent.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazCustomManagedComponent.fromJson(v as Map<String, dynamic>),))),
 ); }
 
 /// Cloudflare Monitoring settings.
-final ZarazZarazConfigReturnAnalytics? analytics;
+final Analytics? analytics;
 
 /// Consent management configuration.
-final ZarazZarazConfigReturnConsent? consent;
+final Consent? consent;
 
 /// Data layer compatibility mode enabled.
 final bool dataLayer;
@@ -31,19 +31,19 @@ final String debugKey;
 final bool? historyChange;
 
 /// General Zaraz settings.
-final ZarazZarazConfigReturnSettings settings;
+final ZarazZarazConfigBaseSettings settings;
 
 /// Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
-final Map<String,ZarazZarazConfigReturnTriggersValue> triggers;
+final Map<String,TriggersValue> triggers;
 
 /// Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
-final Map<String,ZarazZarazConfigReturnVariablesValue> variables;
+final Map<String,VariablesValue> variables;
 
 /// Zaraz internal version of the config.
 final int zarazVersion;
 
 /// Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.
-final Map<String,ZarazZarazConfigReturnToolsValue> tools;
+final Map<String,ToolsValue> tools;
 
 Map<String, dynamic> toJson() { return {
   if (analytics != null) 'analytics': analytics?.toJson(),
@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataL
       json.containsKey('variables') &&
       json.containsKey('zarazVersion') && json['zarazVersion'] is num &&
       json.containsKey('tools'); } 
-ZarazZarazConfigReturn copyWith({ZarazZarazConfigReturnAnalytics Function()? analytics, ZarazZarazConfigReturnConsent Function()? consent, bool? dataLayer, String? debugKey, bool Function()? historyChange, ZarazZarazConfigReturnSettings? settings, Map<String,ZarazZarazConfigReturnTriggersValue>? triggers, Map<String,ZarazZarazConfigReturnVariablesValue>? variables, int? zarazVersion, Map<String,ZarazZarazConfigReturnToolsValue>? tools, }) { return ZarazZarazConfigReturn(
+ZarazZarazConfigReturn copyWith({Analytics Function()? analytics, Consent Function()? consent, bool? dataLayer, String? debugKey, bool Function()? historyChange, ZarazZarazConfigBaseSettings? settings, Map<String,TriggersValue>? triggers, Map<String,VariablesValue>? variables, int? zarazVersion, Map<String,ToolsValue>? tools, }) { return ZarazZarazConfigReturn(
   analytics: analytics != null ? analytics() : this.analytics,
   consent: consent != null ? consent() : this.consent,
   dataLayer: dataLayer ?? this.dataLayer,

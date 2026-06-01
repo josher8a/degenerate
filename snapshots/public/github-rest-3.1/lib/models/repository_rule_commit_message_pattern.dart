@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_commit_message_pattern_parameters.dart';@immutable final class RepositoryRuleCommitMessagePatternType {const RepositoryRuleCommitMessagePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleCommitMessagePatternType {const RepositoryRuleCommitMessagePatternType._(this.value);
 
 factory RepositoryRuleCommitMessagePatternType.fromJson(String json) { return switch (json) {
   'commit_message_pattern' => commitMessagePattern,
@@ -26,19 +26,19 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RepositoryRuleCommitMessagePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitMessagePattern(
   type: RepositoryRuleCommitMessagePatternType.fromJson(json['type'] as String),
-  parameters: json['parameters'] != null ? RepositoryRuleCommitMessagePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  parameters: json['parameters'] != null ? RepositoryRuleBranchNamePatternParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
 ); }
 
 final RepositoryRuleCommitMessagePatternType type;
 
-final RepositoryRuleCommitMessagePatternParameters? parameters;
+final RepositoryRuleBranchNamePatternParameters? parameters;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleCommitMessagePattern copyWith({RepositoryRuleCommitMessagePatternType? type, RepositoryRuleCommitMessagePatternParameters Function()? parameters, }) { return RepositoryRuleCommitMessagePattern(
+RepositoryRuleCommitMessagePattern copyWith({RepositoryRuleCommitMessagePatternType? type, RepositoryRuleBranchNamePatternParameters Function()? parameters, }) { return RepositoryRuleCommitMessagePattern(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

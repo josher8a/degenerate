@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'get_accounts_account_external_accounts_response_data.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetAccountsAccountExternalAccountsResponseObject {const GetAccountsAccountExternalAccountsResponseObject._(this.value);
-
-factory GetAccountsAccountExternalAccountsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetAccountsAccountExternalAccountsResponseObject._(json),
-}; }
-
-static const GetAccountsAccountExternalAccountsResponseObject list = GetAccountsAccountExternalAccountsResponseObject._('list');
-
-static const List<GetAccountsAccountExternalAccountsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetAccountsAccountExternalAccountsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetAccountsAccountExternalAccountsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_external_accounts_response/get_accounts_account_external_accounts_response_data.dart';/// 
 @immutable final class GetAccountsAccountExternalAccountsResponse {const GetAccountsAccountExternalAccountsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetAccountsAccountExternalAccountsResponse.fromJson(Map<String, dynamic> json) { return GetAccountsAccountExternalAccountsResponse(
   data: (json['data'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetAccountsAccountExternalAccountsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -39,7 +17,7 @@ final List<GetAccountsAccountExternalAccountsResponseData> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetAccountsAccountExternalAccountsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetAccountsAccountExternalAccountsResponse copyWith({List<GetAccountsAccountExternalAccountsResponseData>? data, bool? hasMore, GetAccountsAccountExternalAccountsResponseObject? object, String? url, }) { return GetAccountsAccountExternalAccountsResponse(
+GetAccountsAccountExternalAccountsResponse copyWith({List<GetAccountsAccountExternalAccountsResponseData>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetAccountsAccountExternalAccountsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

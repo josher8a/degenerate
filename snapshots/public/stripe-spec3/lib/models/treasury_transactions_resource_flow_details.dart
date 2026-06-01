@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';import 'treasury_credit_reversal.dart';import 'treasury_debit_reversal.dart';import 'treasury_inbound_transfer.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';import 'treasury_received_credit.dart';import 'treasury_received_debit.dart';/// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit.dart';import 'package:pub_stripe_spec3/models/treasury_received_debit.dart';/// Type of the flow that created the Transaction. Set to the same value as `flow_type`.
 @immutable final class TreasuryTransactionsResourceFlowDetailsType {const TreasuryTransactionsResourceFlowDetailsType._(this.value);
 
 factory TreasuryTransactionsResourceFlowDetailsType.fromJson(String json) { return switch (json) {

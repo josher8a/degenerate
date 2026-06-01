@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';@immutable final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({required this.method, required this.url, this.body, this.context, this.cookies, this.headers, this.protocol, this.skipResponse, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request/account_request_tracer_request_trace_request_context.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request/body.dart';@immutable final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({required this.method, required this.url, this.body, this.context, this.cookies, this.headers, this.protocol, this.skipResponse, });
 
 factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequest(
-  body: json['body'] != null ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  body: json['body'] != null ? Body.fromJson(json['body'] as Map<String, dynamic>) : null,
   context: json['context'] != null ? AccountRequestTracerRequestTraceRequestContext.fromJson(json['context'] as Map<String, dynamic>) : null,
   cookies: (json['cookies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -13,7 +13,7 @@ factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> js
   url: json['url'] as String,
 ); }
 
-final AccountRequestTracerRequestTraceRequestBody? body;
+final Body? body;
 
 /// Additional request parameters
 final AccountRequestTracerRequestTraceRequestContext? context;
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') && json['method'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody Function()? body, AccountRequestTracerRequestTraceRequestContext Function()? context, Map<String, String> Function()? cookies, Map<String, String> Function()? headers, String? method, String Function()? protocol, bool Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
+AccountRequestTracerRequestTraceRequest copyWith({Body Function()? body, AccountRequestTracerRequestTraceRequestContext Function()? context, Map<String, String> Function()? cookies, Map<String, String> Function()? headers, String? method, String Function()? protocol, bool Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
   body: body != null ? body() : this.body,
   context: context != null ? context() : this.context,
   cookies: cookies != null ? cookies() : this.cookies,

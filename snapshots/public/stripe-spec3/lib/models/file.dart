@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_links.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file/links.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FileObject {const FileObject._(this.value);
 
 factory FileObject.fromJson(String json) { return switch (json) {
@@ -118,7 +118,7 @@ factory File.fromJson(Map<String, dynamic> json) { return File(
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   filename: json['filename'] as String?,
   id: json['id'] as String,
-  links: json['links'] != null ? FileLinks.fromJson(json['links'] as Map<String, dynamic>) : null,
+  links: json['links'] != null ? Links.fromJson(json['links'] as Map<String, dynamic>) : null,
   object: FileObject.fromJson(json['object'] as String),
   purpose: FilePurpose.fromJson(json['purpose'] as String),
   size: (json['size'] as num).toInt(),
@@ -140,7 +140,7 @@ final String? filename;
 final String id;
 
 /// A list of [file links](https://api.stripe.com#file_links) that point at this file.
-final FileLinks? links;
+final Links? links;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final FileObject object;
@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('purpose') &&
       json.containsKey('size') && json['size'] is num; } 
-File copyWith({int? created, int? Function()? expiresAt, String? Function()? filename, String? id, FileLinks? Function()? links, FileObject? object, FilePurpose? purpose, int? size, String? Function()? title, String? Function()? type, String? Function()? url, }) { return File(
+File copyWith({int? created, int? Function()? expiresAt, String? Function()? filename, String? id, Links? Function()? links, FileObject? object, FilePurpose? purpose, int? size, String? Function()? title, String? Function()? type, String? Function()? url, }) { return File(
   created: created ?? this.created,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   filename: filename != null ? filename() : this.filename,

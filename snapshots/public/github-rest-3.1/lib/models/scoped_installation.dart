@@ -1,35 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
-@immutable final class ScopedInstallationRepositorySelection {const ScopedInstallationRepositorySelection._(this.value);
-
-factory ScopedInstallationRepositorySelection.fromJson(String json) { return switch (json) {
-  'all' => all,
-  'selected' => selected,
-  _ => ScopedInstallationRepositorySelection._(json),
-}; }
-
-static const ScopedInstallationRepositorySelection all = ScopedInstallationRepositorySelection._('all');
-
-static const ScopedInstallationRepositorySelection selected = ScopedInstallationRepositorySelection._('selected');
-
-static const List<ScopedInstallationRepositorySelection> values = [all, selected];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScopedInstallationRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScopedInstallationRepositorySelection($value)'; } 
- }
-@immutable final class ScopedInstallation {const ScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, required this.repositoriesUrl, required this.account, this.hasMultipleSingleFiles, this.singleFilePaths, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions.dart';import 'package:pub_github_rest_3_1/models/authentication_token/authentication_token_repository_selection.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ScopedInstallation {const ScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, required this.repositoriesUrl, required this.account, this.hasMultipleSingleFiles, this.singleFilePaths, });
 
 factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedInstallation(
   permissions: AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
-  repositorySelection: ScopedInstallationRepositorySelection.fromJson(json['repository_selection'] as String),
+  repositorySelection: AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String),
   singleFileName: json['single_file_name'] as String?,
   hasMultipleSingleFiles: json['has_multiple_single_files'] as bool?,
   singleFilePaths: (json['single_file_paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -40,7 +15,7 @@ factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedIn
 final AppPermissions permissions;
 
 /// Describe whether all repositories have been selected or there's a selection involved
-final ScopedInstallationRepositorySelection repositorySelection;
+final AuthenticationTokenRepositorySelection repositorySelection;
 
 final String? singleFileName;
 
@@ -66,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('permi
       json.containsKey('single_file_name') && json['single_file_name'] is String &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('account'); } 
-ScopedInstallation copyWith({AppPermissions? permissions, ScopedInstallationRepositorySelection? repositorySelection, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
+ScopedInstallation copyWith({AppPermissions? permissions, AuthenticationTokenRepositorySelection? repositorySelection, String? Function()? singleFileName, bool Function()? hasMultipleSingleFiles, List<String> Function()? singleFilePaths, Uri? repositoriesUrl, SimpleUser? account, }) { return ScopedInstallation(
   permissions: permissions ?? this.permissions,
   repositorySelection: repositorySelection ?? this.repositorySelection,
   singleFileName: singleFileName != null ? singleFileName() : this.singleFileName,

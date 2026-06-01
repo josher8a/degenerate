@@ -1,41 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_status_branches.dart';import 'webhook_status_commit.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
-@immutable final class WebhookStatusState {const WebhookStatusState._(this.value);
-
-factory WebhookStatusState.fromJson(String json) { return switch (json) {
-  'pending' => pending,
-  'success' => success,
-  'failure' => failure,
-  'error' => error,
-  _ => WebhookStatusState._(json),
-}; }
-
-static const WebhookStatusState pending = WebhookStatusState._('pending');
-
-static const WebhookStatusState success = WebhookStatusState._('success');
-
-static const WebhookStatusState failure = WebhookStatusState._('failure');
-
-static const WebhookStatusState error = WebhookStatusState._('error');
-
-static const List<WebhookStatusState> values = [pending, success, failure, error];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookStatusState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookStatusState($value)'; } 
- }
-@immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repos_create_commit_status_request/repos_create_commit_status_request_state.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_status/branches.dart';import 'package:pub_github_rest_3_1/models/webhook_status/webhook_status_commit.dart';@immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl, this.enterprise, this.installation, this.organization, });
 
 factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
-  branches: (json['branches'] as List<dynamic>).map((e) => WebhookStatusBranches.fromJson(e as Map<String, dynamic>)).toList(),
+  branches: (json['branches'] as List<dynamic>).map((e) => Branches.fromJson(e as Map<String, dynamic>)).toList(),
   commit: WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>),
   context: json['context'] as String,
   createdAt: json['created_at'] as String,
@@ -48,7 +17,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   sha: json['sha'] as String,
-  state: WebhookStatusState.fromJson(json['state'] as String),
+  state: ReposCreateCommitStatusRequestState.fromJson(json['state'] as String),
   targetUrl: json['target_url'] as String?,
   updatedAt: json['updated_at'] as String,
 ); }
@@ -56,7 +25,7 @@ factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus
 final Uri? avatarUrl;
 
 /// An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
-final List<WebhookStatusBranches> branches;
+final List<Branches> branches;
 
 final WebhookStatusCommit commit;
 
@@ -86,7 +55,7 @@ final SimpleUser sender;
 final String sha;
 
 /// The new state. Can be `pending`, `success`, `failure`, or `error`.
-final WebhookStatusState state;
+final ReposCreateCommitStatusRequestState state;
 
 /// The optional link added to the status.
 final String? targetUrl;
@@ -125,7 +94,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('state') &&
       json.containsKey('target_url') && json['target_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookStatus copyWith({Uri? Function()? avatarUrl, List<WebhookStatusBranches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, String? name, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, WebhookStatusState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
+WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, String? name, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, ReposCreateCommitStatusRequestState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   branches: branches ?? this.branches,
   commit: commit ?? this.commit,

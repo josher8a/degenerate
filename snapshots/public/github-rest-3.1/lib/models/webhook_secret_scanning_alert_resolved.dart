@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertResolvedAction {const WebhookSecretScanningAlertResolvedAction._(this.value);
-
-factory WebhookSecretScanningAlertResolvedAction.fromJson(String json) { return switch (json) {
-  'resolved' => resolved,
-  _ => WebhookSecretScanningAlertResolvedAction._(json),
-}; }
-
-static const WebhookSecretScanningAlertResolvedAction resolved = WebhookSecretScanningAlertResolvedAction._('resolved');
-
-static const List<WebhookSecretScanningAlertResolvedAction> values = [resolved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertResolvedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertResolvedAction($value)'; } 
- }
-@immutable final class WebhookSecretScanningAlertResolved {const WebhookSecretScanningAlertResolved({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_action.dart';@immutable final class WebhookSecretScanningAlertResolved {const WebhookSecretScanningAlertResolved({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertResolved(
-  action: WebhookSecretScanningAlertResolvedAction.fromJson(json['action'] as String),
+  action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),
   alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookSecretScanningAlertResolved.fromJson(Map<String, dynamic> json) {
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookSecretScanningAlertResolvedAction action;
+final WebhookPullRequestReviewThreadResolvedAction action;
 
 final SecretScanningAlertWebhook alert;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('alert') &&
       json.containsKey('repository'); } 
-WebhookSecretScanningAlertResolved copyWith({WebhookSecretScanningAlertResolvedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertResolved(
+WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertResolved(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

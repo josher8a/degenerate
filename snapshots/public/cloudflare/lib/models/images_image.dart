@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_identifier.dart';/// Can set the creator field with an internal user ID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/images_image_identifier.dart';/// Can set the creator field with an internal user ID.
 extension type const ImagesImageCreator(String value) {
 factory ImagesImageCreator.fromJson(String json) => ImagesImageCreator(json);
 

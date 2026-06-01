@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_resource.dart';/// The type of object returned, must be `list`.
-@immutable final class ResponseItemListObject {const ResponseItemListObject._(this.value);
-
-factory ResponseItemListObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => ResponseItemListObject._(json),
-}; }
-
-static const ResponseItemListObject list = ResponseItemListObject._('list');
-
-static const List<ResponseItemListObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseItemListObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseItemListObject($value)'; } 
- }
-/// A list of Response items.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/item_resource.dart';/// A list of Response items.
 @immutable final class ResponseItemList {const ResponseItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
 factory ResponseItemList.fromJson(Map<String, dynamic> json) { return ResponseItemList(
-  object: ResponseItemListObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => ItemResource.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
   firstId: json['first_id'] as String,
@@ -34,7 +12,7 @@ factory ResponseItemList.fromJson(Map<String, dynamic> json) { return ResponseIt
 ); }
 
 /// The type of object returned, must be `list`.
-final ResponseItemListObject object;
+final ChatCompletionListObject object;
 
 /// A list of items used to generate this response.
 final List<ItemResource> data;
@@ -60,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String; } 
-ResponseItemList copyWith({ResponseItemListObject? object, List<ItemResource>? data, bool? hasMore, String? firstId, String? lastId, }) { return ResponseItemList(
+ResponseItemList copyWith({ChatCompletionListObject? object, List<ItemResource>? data, bool? hasMore, String? firstId, String? lastId, }) { return ResponseItemList(
   object: object ?? this.object,
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

@@ -1,65 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceBankAccountAccountHolderType {const CustomerPaymentSourceBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';@immutable final class customer_payment_source_bank_account {const customer_payment_source_bank_account({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
 
-factory CustomerPaymentSourceBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => CustomerPaymentSourceBankAccountAccountHolderType._(json),
-}; }
-
-static const CustomerPaymentSourceBankAccountAccountHolderType company = CustomerPaymentSourceBankAccountAccountHolderType._('company');
-
-static const CustomerPaymentSourceBankAccountAccountHolderType individual = CustomerPaymentSourceBankAccountAccountHolderType._('individual');
-
-static const List<CustomerPaymentSourceBankAccountAccountHolderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerPaymentSourceBankAccountAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerPaymentSourceBankAccountAccountHolderType($value)'; } 
- }
-@immutable final class CustomerPaymentSourceBankAccountObject {const CustomerPaymentSourceBankAccountObject._(this.value);
-
-factory CustomerPaymentSourceBankAccountObject.fromJson(String json) { return switch (json) {
-  'bank_account' => bankAccount,
-  _ => CustomerPaymentSourceBankAccountObject._(json),
-}; }
-
-static const CustomerPaymentSourceBankAccountObject bankAccount = CustomerPaymentSourceBankAccountObject._('bank_account');
-
-static const List<CustomerPaymentSourceBankAccountObject> values = [bankAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerPaymentSourceBankAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerPaymentSourceBankAccountObject($value)'; } 
- }
-@immutable final class CustomerPaymentSourceBankAccount {const CustomerPaymentSourceBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
-
-factory CustomerPaymentSourceBankAccount.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceBankAccount(
+factory customer_payment_source_bank_account.fromJson(Map<String, dynamic> json) { return customer_payment_source_bank_account(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
   country: json['country'] as String,
   currency: json['currency'] as String?,
-  object: json['object'] != null ? CustomerPaymentSourceBankAccountObject.fromJson(json['object'] as String) : null,
+  object: json['object'] != null ? BankAccountObject.fromJson(json['object'] as String) : null,
   routingNumber: json['routing_number'] as String?,
 ); }
 
 final String? accountHolderName;
 
-final CustomerPaymentSourceBankAccountAccountHolderType? accountHolderType;
+final customer_payment_source_bank_accountAccountHolderType? accountHolderType;
 
 final String accountNumber;
 
@@ -67,7 +22,7 @@ final String country;
 
 final String? currency;
 
-final CustomerPaymentSourceBankAccountObject? object;
+final BankAccountObject? object;
 
 final String? routingNumber;
 
@@ -82,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-CustomerPaymentSourceBankAccount copyWith({String Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType Function()? accountHolderType, String? accountNumber, String? country, String Function()? currency, CustomerPaymentSourceBankAccountObject Function()? object, String Function()? routingNumber, }) { return CustomerPaymentSourceBankAccount(
+customer_payment_source_bank_account copyWith({String Function()? accountHolderName, customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String? accountNumber, String? country, String Function()? currency, BankAccountObject Function()? object, String Function()? routingNumber, }) { return customer_payment_source_bank_account(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,
@@ -92,7 +47,7 @@ CustomerPaymentSourceBankAccount copyWith({String Function()? accountHolderName,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is CustomerPaymentSourceBankAccount &&
+      other is customer_payment_source_bank_account &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
           accountNumber == other.accountNumber &&
@@ -101,5 +56,5 @@ CustomerPaymentSourceBankAccount copyWith({String Function()? accountHolderName,
           object == other.object &&
           routingNumber == other.routingNumber; } 
 @override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, country, currency, object, routingNumber); } 
-@override String toString() { return 'CustomerPaymentSourceBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, country: $country, currency: $currency, object: $object, routingNumber: $routingNumber)'; } 
+@override String toString() { return 'customer_payment_source_bank_account(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, country: $country, currency: $currency, object: $object, routingNumber: $routingNumber)'; } 
  }

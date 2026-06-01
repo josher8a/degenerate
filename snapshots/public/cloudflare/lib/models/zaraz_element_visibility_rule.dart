@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_element_visibility_rule_settings.dart';@immutable final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule/zaraz_element_visibility_rule_settings.dart';@immutable final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
 
 factory ZarazElementVisibilityRuleAction.fromJson(String json) { return switch (json) {
   'elementVisibility' => elementVisibility,

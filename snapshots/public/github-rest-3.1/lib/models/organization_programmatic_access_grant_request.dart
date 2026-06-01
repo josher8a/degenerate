@@ -1,43 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_programmatic_access_grant_request_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
-@immutable final class OrganizationProgrammaticAccessGrantRequestRepositorySelection {const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(this.value);
-
-factory OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(String json) { return switch (json) {
-  'none' => none,
-  'all' => all,
-  'subset' => subset,
-  _ => OrganizationProgrammaticAccessGrantRequestRepositorySelection._(json),
-}; }
-
-static const OrganizationProgrammaticAccessGrantRequestRepositorySelection none = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('none');
-
-static const OrganizationProgrammaticAccessGrantRequestRepositorySelection all = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('all');
-
-static const OrganizationProgrammaticAccessGrantRequestRepositorySelection subset = OrganizationProgrammaticAccessGrantRequestRepositorySelection._('subset');
-
-static const List<OrganizationProgrammaticAccessGrantRequestRepositorySelection> values = [none, all, subset];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationProgrammaticAccessGrantRequestRepositorySelection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrantRequestRepositorySelection($value)'; } 
- }
-/// Minimal representation of an organization programmatic access grant request for enumerations
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_permissions.dart';import 'package:pub_github_rest_3_1/models/organization_programmatic_access_grant/organization_programmatic_access_grant_repository_selection.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Minimal representation of an organization programmatic access grant request for enumerations
 @immutable final class OrganizationProgrammaticAccessGrantRequest {const OrganizationProgrammaticAccessGrantRequest({required this.id, required this.reason, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
 factory OrganizationProgrammaticAccessGrantRequest.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrantRequest(
   id: (json['id'] as num).toInt(),
   reason: json['reason'] as String?,
   owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
-  repositorySelection: OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(json['repository_selection'] as String),
+  repositorySelection: OrganizationProgrammaticAccessGrantRepositorySelection.fromJson(json['repository_selection'] as String),
   repositoriesUrl: json['repositories_url'] as String,
-  permissions: OrganizationProgrammaticAccessGrantRequestPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
+  permissions: OrganizationProgrammaticAccessGrantPermissions.fromJson(json['permissions'] as Map<String, dynamic>),
   createdAt: json['created_at'] as String,
   tokenId: (json['token_id'] as num).toInt(),
   tokenName: json['token_name'] as String,
@@ -55,13 +27,13 @@ final String? reason;
 final SimpleUser owner;
 
 /// Type of repository selection requested.
-final OrganizationProgrammaticAccessGrantRequestRepositorySelection repositorySelection;
+final OrganizationProgrammaticAccessGrantRepositorySelection repositorySelection;
 
 /// URL to the list of repositories requested to be accessed via fine-grained personal access token. Should only be followed when `repository_selection` is `subset`.
 final String repositoriesUrl;
 
 /// Permissions requested, categorized by type of permission.
-final OrganizationProgrammaticAccessGrantRequestPermissions permissions;
+final OrganizationProgrammaticAccessGrantPermissions permissions;
 
 /// Date and time when the request for access was created.
 final String createdAt;
@@ -107,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('token_expired') && json['token_expired'] is bool &&
       json.containsKey('token_expires_at') && json['token_expires_at'] is String &&
       json.containsKey('token_last_used_at') && json['token_last_used_at'] is String; } 
-OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()? reason, SimpleUser? owner, OrganizationProgrammaticAccessGrantRequestRepositorySelection? repositorySelection, String? repositoriesUrl, OrganizationProgrammaticAccessGrantRequestPermissions? permissions, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return OrganizationProgrammaticAccessGrantRequest(
+OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()? reason, SimpleUser? owner, OrganizationProgrammaticAccessGrantRepositorySelection? repositorySelection, String? repositoriesUrl, OrganizationProgrammaticAccessGrantPermissions? permissions, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return OrganizationProgrammaticAccessGrantRequest(
   id: id ?? this.id,
   reason: reason != null ? reason() : this.reason,
   owner: owner ?? this.owner,

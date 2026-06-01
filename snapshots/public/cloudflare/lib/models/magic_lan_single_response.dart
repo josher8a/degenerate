@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_lan.dart';@immutable final class MagicLanSingleResponse {const MagicLanSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_lan.dart';@immutable final class MagicLanSingleResponse {const MagicLanSingleResponse({this.result});
 
 factory MagicLanSingleResponse.fromJson(Map<String, dynamic> json) { return MagicLanSingleResponse(
   result: json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null,

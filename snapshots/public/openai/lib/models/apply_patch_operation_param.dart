@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_create_file_operation_param.dart';import 'apply_patch_delete_file_operation_param.dart';import 'apply_patch_update_file_operation_param.dart';/// One of the create_file, delete_file, or update_file operations supplied to the apply_patch tool.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_create_file_operation_param.dart';import 'package:pub_openai/models/apply_patch_delete_file_operation_param.dart';import 'package:pub_openai/models/apply_patch_update_file_operation_param.dart';/// One of the create_file, delete_file, or update_file operations supplied to the apply_patch tool.
 sealed class ApplyPatchOperationParam {const ApplyPatchOperationParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.

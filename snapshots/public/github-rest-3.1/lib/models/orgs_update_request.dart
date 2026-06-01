@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Default permission level members have for organization repositories.
-@immutable final class OrgsUpdateRequestDefaultRepositoryPermission {const OrgsUpdateRequestDefaultRepositoryPermission._(this.value);
+@immutable final class DefaultRepositoryPermission {const DefaultRepositoryPermission._(this.value);
 
-factory OrgsUpdateRequestDefaultRepositoryPermission.fromJson(String json) { return switch (json) {
+factory DefaultRepositoryPermission.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   'none' => none,
-  _ => OrgsUpdateRequestDefaultRepositoryPermission._(json),
+  _ => DefaultRepositoryPermission._(json),
 }; }
 
-static const OrgsUpdateRequestDefaultRepositoryPermission read = OrgsUpdateRequestDefaultRepositoryPermission._('read');
+static const DefaultRepositoryPermission read = DefaultRepositoryPermission._('read');
 
-static const OrgsUpdateRequestDefaultRepositoryPermission write = OrgsUpdateRequestDefaultRepositoryPermission._('write');
+static const DefaultRepositoryPermission write = DefaultRepositoryPermission._('write');
 
-static const OrgsUpdateRequestDefaultRepositoryPermission admin = OrgsUpdateRequestDefaultRepositoryPermission._('admin');
+static const DefaultRepositoryPermission admin = DefaultRepositoryPermission._('admin');
 
-static const OrgsUpdateRequestDefaultRepositoryPermission none = OrgsUpdateRequestDefaultRepositoryPermission._('none');
+static const DefaultRepositoryPermission none = DefaultRepositoryPermission._('none');
 
-static const List<OrgsUpdateRequestDefaultRepositoryPermission> values = [read, write, admin, none];
+static const List<DefaultRepositoryPermission> values = [read, write, admin, none];
 
 final String value;
 
@@ -27,28 +27,28 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsUpdateRequestDefaultRepositoryPermission && other.value == value; } 
+    other is DefaultRepositoryPermission && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsUpdateRequestDefaultRepositoryPermission($value)'; } 
+@override String toString() { return 'DefaultRepositoryPermission($value)'; } 
  }
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
-@immutable final class OrgsUpdateRequestMembersAllowedRepositoryCreationType {const OrgsUpdateRequestMembersAllowedRepositoryCreationType._(this.value);
+@immutable final class MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType._(this.value);
 
-factory OrgsUpdateRequestMembersAllowedRepositoryCreationType.fromJson(String json) { return switch (json) {
+factory MembersAllowedRepositoryCreationType.fromJson(String json) { return switch (json) {
   'all' => all,
   'private' => private,
   'none' => none,
-  _ => OrgsUpdateRequestMembersAllowedRepositoryCreationType._(json),
+  _ => MembersAllowedRepositoryCreationType._(json),
 }; }
 
-static const OrgsUpdateRequestMembersAllowedRepositoryCreationType all = OrgsUpdateRequestMembersAllowedRepositoryCreationType._('all');
+static const MembersAllowedRepositoryCreationType all = MembersAllowedRepositoryCreationType._('all');
 
-static const OrgsUpdateRequestMembersAllowedRepositoryCreationType private = OrgsUpdateRequestMembersAllowedRepositoryCreationType._('private');
+static const MembersAllowedRepositoryCreationType private = MembersAllowedRepositoryCreationType._('private');
 
-static const OrgsUpdateRequestMembersAllowedRepositoryCreationType none = OrgsUpdateRequestMembersAllowedRepositoryCreationType._('none');
+static const MembersAllowedRepositoryCreationType none = MembersAllowedRepositoryCreationType._('none');
 
-static const List<OrgsUpdateRequestMembersAllowedRepositoryCreationType> values = [all, private, none];
+static const List<MembersAllowedRepositoryCreationType> values = [all, private, none];
 
 final String value;
 
@@ -56,11 +56,11 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsUpdateRequestMembersAllowedRepositoryCreationType && other.value == value; } 
+    other is MembersAllowedRepositoryCreationType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsUpdateRequestMembersAllowedRepositoryCreationType($value)'; } 
+@override String toString() { return 'MembersAllowedRepositoryCreationType($value)'; } 
  }
-@immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = OrgsUpdateRequestDefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
+@immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = DefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
 
 factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateRequest(
   billingEmail: json['billing_email'] as String?,
@@ -72,12 +72,12 @@ factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdat
   description: json['description'] as String?,
   hasOrganizationProjects: json['has_organization_projects'] as bool?,
   hasRepositoryProjects: json['has_repository_projects'] as bool?,
-  defaultRepositoryPermission: json.containsKey('default_repository_permission') ? OrgsUpdateRequestDefaultRepositoryPermission.fromJson(json['default_repository_permission'] as String) : OrgsUpdateRequestDefaultRepositoryPermission.read,
+  defaultRepositoryPermission: json.containsKey('default_repository_permission') ? DefaultRepositoryPermission.fromJson(json['default_repository_permission'] as String) : DefaultRepositoryPermission.read,
   membersCanCreateRepositories: json.containsKey('members_can_create_repositories') ? json['members_can_create_repositories'] as bool : true,
   membersCanCreateInternalRepositories: json['members_can_create_internal_repositories'] as bool?,
   membersCanCreatePrivateRepositories: json['members_can_create_private_repositories'] as bool?,
   membersCanCreatePublicRepositories: json['members_can_create_public_repositories'] as bool?,
-  membersAllowedRepositoryCreationType: json['members_allowed_repository_creation_type'] != null ? OrgsUpdateRequestMembersAllowedRepositoryCreationType.fromJson(json['members_allowed_repository_creation_type'] as String) : null,
+  membersAllowedRepositoryCreationType: json['members_allowed_repository_creation_type'] != null ? MembersAllowedRepositoryCreationType.fromJson(json['members_allowed_repository_creation_type'] as String) : null,
   membersCanCreatePages: json.containsKey('members_can_create_pages') ? json['members_can_create_pages'] as bool : true,
   membersCanCreatePublicPages: json.containsKey('members_can_create_public_pages') ? json['members_can_create_public_pages'] as bool : true,
   membersCanCreatePrivatePages: json.containsKey('members_can_create_private_pages') ? json['members_can_create_private_pages'] as bool : true,
@@ -123,7 +123,7 @@ final bool? hasOrganizationProjects;
 final bool? hasRepositoryProjects;
 
 /// Default permission level members have for organization repositories.
-final OrgsUpdateRequestDefaultRepositoryPermission defaultRepositoryPermission;
+final DefaultRepositoryPermission defaultRepositoryPermission;
 
 /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.
 final bool membersCanCreateRepositories;
@@ -139,7 +139,7 @@ final bool? membersCanCreatePublicRepositories;
 
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
-final OrgsUpdateRequestMembersAllowedRepositoryCreationType? membersAllowedRepositoryCreationType;
+final MembersAllowedRepositoryCreationType? membersAllowedRepositoryCreationType;
 
 /// Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.
 final bool membersCanCreatePages;
@@ -254,7 +254,7 @@ Map<String, dynamic> toJson() { return {
   'deploy_keys_enabled_for_repositories': ?deployKeysEnabledForRepositories,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_email', 'company', 'email', 'twitter_username', 'location', 'name', 'description', 'has_organization_projects', 'has_repository_projects', 'default_repository_permission', 'members_can_create_repositories', 'members_can_create_internal_repositories', 'members_can_create_private_repositories', 'members_can_create_public_repositories', 'members_allowed_repository_creation_type', 'members_can_create_pages', 'members_can_create_public_pages', 'members_can_create_private_pages', 'members_can_fork_private_repositories', 'web_commit_signoff_required', 'blog', 'advanced_security_enabled_for_new_repositories', 'dependabot_alerts_enabled_for_new_repositories', 'dependabot_security_updates_enabled_for_new_repositories', 'dependency_graph_enabled_for_new_repositories', 'secret_scanning_enabled_for_new_repositories', 'secret_scanning_push_protection_enabled_for_new_repositories', 'secret_scanning_push_protection_custom_link_enabled', 'secret_scanning_push_protection_custom_link', 'deploy_keys_enabled_for_repositories'}.contains(key)); } 
-OrgsUpdateRequest copyWith({String Function()? billingEmail, String Function()? company, String Function()? email, String Function()? twitterUsername, String Function()? location, String Function()? name, String Function()? description, bool Function()? hasOrganizationProjects, bool Function()? hasRepositoryProjects, OrgsUpdateRequestDefaultRepositoryPermission Function()? defaultRepositoryPermission, bool Function()? membersCanCreateRepositories, bool Function()? membersCanCreateInternalRepositories, bool Function()? membersCanCreatePrivateRepositories, bool Function()? membersCanCreatePublicRepositories, OrgsUpdateRequestMembersAllowedRepositoryCreationType Function()? membersAllowedRepositoryCreationType, bool Function()? membersCanCreatePages, bool Function()? membersCanCreatePublicPages, bool Function()? membersCanCreatePrivatePages, bool Function()? membersCanForkPrivateRepositories, bool Function()? webCommitSignoffRequired, String Function()? blog, bool Function()? advancedSecurityEnabledForNewRepositories, bool Function()? dependabotAlertsEnabledForNewRepositories, bool Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool Function()? dependencyGraphEnabledForNewRepositories, bool Function()? secretScanningEnabledForNewRepositories, bool Function()? secretScanningPushProtectionEnabledForNewRepositories, bool Function()? secretScanningPushProtectionCustomLinkEnabled, String Function()? secretScanningPushProtectionCustomLink, bool Function()? deployKeysEnabledForRepositories, }) { return OrgsUpdateRequest(
+OrgsUpdateRequest copyWith({String Function()? billingEmail, String Function()? company, String Function()? email, String Function()? twitterUsername, String Function()? location, String Function()? name, String Function()? description, bool Function()? hasOrganizationProjects, bool Function()? hasRepositoryProjects, DefaultRepositoryPermission Function()? defaultRepositoryPermission, bool Function()? membersCanCreateRepositories, bool Function()? membersCanCreateInternalRepositories, bool Function()? membersCanCreatePrivateRepositories, bool Function()? membersCanCreatePublicRepositories, MembersAllowedRepositoryCreationType Function()? membersAllowedRepositoryCreationType, bool Function()? membersCanCreatePages, bool Function()? membersCanCreatePublicPages, bool Function()? membersCanCreatePrivatePages, bool Function()? membersCanForkPrivateRepositories, bool Function()? webCommitSignoffRequired, String Function()? blog, bool Function()? advancedSecurityEnabledForNewRepositories, bool Function()? dependabotAlertsEnabledForNewRepositories, bool Function()? dependabotSecurityUpdatesEnabledForNewRepositories, bool Function()? dependencyGraphEnabledForNewRepositories, bool Function()? secretScanningEnabledForNewRepositories, bool Function()? secretScanningPushProtectionEnabledForNewRepositories, bool Function()? secretScanningPushProtectionCustomLinkEnabled, String Function()? secretScanningPushProtectionCustomLink, bool Function()? deployKeysEnabledForRepositories, }) { return OrgsUpdateRequest(
   billingEmail: billingEmail != null ? billingEmail() : this.billingEmail,
   company: company != null ? company() : this.company,
   email: email != null ? email() : this.email,

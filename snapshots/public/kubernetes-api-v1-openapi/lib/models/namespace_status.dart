@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_condition.dart';/// NamespaceStatus is information about the current status of a Namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/namespace_condition.dart';/// NamespaceStatus is information about the current status of a Namespace.
 @immutable final class NamespaceStatus {const NamespaceStatus({this.conditions, this.phase, });
 
 factory NamespaceStatus.fromJson(Map<String, dynamic> json) { return NamespaceStatus(

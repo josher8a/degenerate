@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_authentication_method_rule_auth_method.dart';/// Enforce different MFA options
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_authentication_method_rule/access_authentication_method_rule_auth_method.dart';/// Enforce different MFA options
 @immutable final class AccessAuthenticationMethodRule {const AccessAuthenticationMethodRule({required this.authMethod});
 
 factory AccessAuthenticationMethodRule.fromJson(Map<String, dynamic> json) { return AccessAuthenticationMethodRule(

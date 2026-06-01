@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_currency_option.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_rate_currency_option.dart';/// 
 @immutable final class ShippingRateFixedAmount {const ShippingRateFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
 
 factory ShippingRateFixedAmount.fromJson(Map<String, dynamic> json) { return ShippingRateFixedAmount(

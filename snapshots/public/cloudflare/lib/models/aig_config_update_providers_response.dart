@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_providers_response_result.dart';@immutable final class AigConfigUpdateProvidersResponse {const AigConfigUpdateProvidersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_create_providers_response/aig_config_create_providers_response_result.dart';@immutable final class AigConfigUpdateProvidersResponse {const AigConfigUpdateProvidersResponse({required this.result, required this.success, });
 
 factory AigConfigUpdateProvidersResponse.fromJson(Map<String, dynamic> json) { return AigConfigUpdateProvidersResponse(
-  result: AigConfigUpdateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AigConfigUpdateProvidersResponseResult result;
+final AigConfigCreateProvidersResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AigConfigUpdateProvidersResponse copyWith({AigConfigUpdateProvidersResponseResult? result, bool? success, }) { return AigConfigUpdateProvidersResponse(
+AigConfigUpdateProvidersResponse copyWith({AigConfigCreateProvidersResponseResult? result, bool? success, }) { return AigConfigUpdateProvidersResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

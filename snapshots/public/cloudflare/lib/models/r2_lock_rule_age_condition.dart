@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LockRuleAgeConditionType {const R2LockRuleAgeConditionType._(this.value);
-
-factory R2LockRuleAgeConditionType.fromJson(String json) { return switch (json) {
-  'Age' => age,
-  _ => R2LockRuleAgeConditionType._(json),
-}; }
-
-static const R2LockRuleAgeConditionType age = R2LockRuleAgeConditionType._('Age');
-
-static const List<R2LockRuleAgeConditionType> values = [age];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2LockRuleAgeConditionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2LockRuleAgeConditionType($value)'; } 
- }
-/// Condition to apply a lock rule to an object for how long in seconds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition/r2_lifecycle_age_condition_type.dart';/// Condition to apply a lock rule to an object for how long in seconds.
 @immutable final class R2LockRuleAgeCondition {const R2LockRuleAgeCondition({required this.maxAgeSeconds, required this.type, });
 
 factory R2LockRuleAgeCondition.fromJson(Map<String, dynamic> json) { return R2LockRuleAgeCondition(
   maxAgeSeconds: (json['maxAgeSeconds'] as num).toInt(),
-  type: R2LockRuleAgeConditionType.fromJson(json['type'] as String),
+  type: R2LifecycleAgeConditionType.fromJson(json['type'] as String),
 ); }
 
 final int maxAgeSeconds;
 
-final R2LockRuleAgeConditionType type;
+final R2LifecycleAgeConditionType type;
 
 Map<String, dynamic> toJson() { return {
   'maxAgeSeconds': maxAgeSeconds,
@@ -39,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxAgeSeconds') && json['maxAgeSeconds'] is num &&
       json.containsKey('type'); } 
-R2LockRuleAgeCondition copyWith({int? maxAgeSeconds, R2LockRuleAgeConditionType? type, }) { return R2LockRuleAgeCondition(
+R2LockRuleAgeCondition copyWith({int? maxAgeSeconds, R2LifecycleAgeConditionType? type, }) { return R2LockRuleAgeCondition(
   maxAgeSeconds: maxAgeSeconds ?? this.maxAgeSeconds,
   type: type ?? this.type,
 ); } 

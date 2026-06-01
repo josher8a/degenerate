@@ -1,62 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'gelato_data_document_report_date_of_birth.dart';import 'gelato_data_document_report_expiration_date.dart';import 'gelato_data_document_report_issued_date.dart';import 'gelato_document_report_error.dart';/// Sex of the person in the document.
-@immutable final class GelatoDocumentReportSex {const GelatoDocumentReportSex._(this.value);
-
-factory GelatoDocumentReportSex.fromJson(String json) { return switch (json) {
-  '[redacted]' => redacted,
-  'female' => female,
-  'male' => male,
-  'unknown' => unknown,
-  _ => GelatoDocumentReportSex._(json),
-}; }
-
-static const GelatoDocumentReportSex redacted = GelatoDocumentReportSex._('[redacted]');
-
-static const GelatoDocumentReportSex female = GelatoDocumentReportSex._('female');
-
-static const GelatoDocumentReportSex male = GelatoDocumentReportSex._('male');
-
-static const GelatoDocumentReportSex unknown = GelatoDocumentReportSex._('unknown');
-
-static const List<GelatoDocumentReportSex> values = [redacted, female, male, unknown];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoDocumentReportSex && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoDocumentReportSex($value)'; } 
- }
-/// Status of this `document` check.
-@immutable final class GelatoDocumentReportStatus {const GelatoDocumentReportStatus._(this.value);
-
-factory GelatoDocumentReportStatus.fromJson(String json) { return switch (json) {
-  'unverified' => unverified,
-  'verified' => verified,
-  _ => GelatoDocumentReportStatus._(json),
-}; }
-
-static const GelatoDocumentReportStatus unverified = GelatoDocumentReportStatus._('unverified');
-
-static const GelatoDocumentReportStatus verified = GelatoDocumentReportStatus._('verified');
-
-static const List<GelatoDocumentReportStatus> values = [unverified, verified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoDocumentReportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoDocumentReportStatus($value)'; } 
- }
-/// Type of the document.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_date_of_birth.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_expiration_date.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_issued_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_document_report_error.dart';/// Type of the document.
 @immutable final class GelatoDocumentReportType {const GelatoDocumentReportType._(this.value);
 
 factory GelatoDocumentReportType.fromJson(String json) { return switch (json) {
@@ -98,7 +42,7 @@ factory GelatoDocumentReport.fromJson(Map<String, dynamic> json) { return Gelato
   issuingCountry: json['issuing_country'] as String?,
   lastName: json['last_name'] as String?,
   number: json['number'] as String?,
-  sex: json['sex'] != null ? GelatoDocumentReportSex.fromJson(json['sex'] as String) : null,
+  sex: json['sex'] != null ? Sex.fromJson(json['sex'] as String) : null,
   status: GelatoDocumentReportStatus.fromJson(json['status'] as String),
   type: json['type'] != null ? GelatoDocumentReportType.fromJson(json['type'] as String) : null,
   unparsedPlaceOfBirth: json['unparsed_place_of_birth'] as String?,
@@ -136,7 +80,7 @@ final String? lastName;
 final String? number;
 
 /// Sex of the person in the document.
-final GelatoDocumentReportSex? sex;
+final Sex? sex;
 
 /// Status of this `document` check.
 final GelatoDocumentReportStatus status;
@@ -168,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   'unparsed_sex': ?unparsedSex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentReportDateOfBirth? Function()? dob, GelatoDocumentReportError? Function()? error, GelatoDataDocumentReportExpirationDate? Function()? expirationDate, List<String>? Function()? files, String? Function()? firstName, GelatoDataDocumentReportIssuedDate? Function()? issuedDate, String? Function()? issuingCountry, String? Function()? lastName, String? Function()? number, GelatoDocumentReportSex? Function()? sex, GelatoDocumentReportStatus? status, GelatoDocumentReportType? Function()? type, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoDocumentReport(
+GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentReportDateOfBirth? Function()? dob, GelatoDocumentReportError? Function()? error, GelatoDataDocumentReportExpirationDate? Function()? expirationDate, List<String>? Function()? files, String? Function()? firstName, GelatoDataDocumentReportIssuedDate? Function()? issuedDate, String? Function()? issuingCountry, String? Function()? lastName, String? Function()? number, Sex? Function()? sex, GelatoDocumentReportStatus? status, GelatoDocumentReportType? Function()? type, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoDocumentReport(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,
   error: error != null ? error() : this.error,

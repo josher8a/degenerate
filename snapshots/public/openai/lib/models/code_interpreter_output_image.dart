@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output. Always `image`.
-@immutable final class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType._(this.value);
-
-factory CodeInterpreterOutputImageType.fromJson(String json) { return switch (json) {
-  'image' => image,
-  _ => CodeInterpreterOutputImageType._(json),
-}; }
-
-static const CodeInterpreterOutputImageType image = CodeInterpreterOutputImageType._('image');
-
-static const List<CodeInterpreterOutputImageType> values = [image];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterOutputImageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeInterpreterOutputImageType($value)'; } 
- }
-/// The image output from the code interpreter.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image/code_interpreter_output_image_type.dart';/// The image output from the code interpreter.
 @immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image, });
 
 factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(

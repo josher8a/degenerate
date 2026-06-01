@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
 @immutable final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);
 
 factory RealtimeTranscriptionEnumTrack.fromJson(String json) { return switch (json) {
@@ -28,38 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionEnumTrack($value)'; } 
  }
-/// The http method for the status_callback (one of GET, POST).
-@immutable final class CreateRealtimeTranscriptionRequestStatusCallbackMethod {const CreateRealtimeTranscriptionRequestStatusCallbackMethod._(this.value);
-
-factory CreateRealtimeTranscriptionRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => CreateRealtimeTranscriptionRequestStatusCallbackMethod._(json),
-}; }
-
-static const CreateRealtimeTranscriptionRequestStatusCallbackMethod $get = CreateRealtimeTranscriptionRequestStatusCallbackMethod._('GET');
-
-static const CreateRealtimeTranscriptionRequestStatusCallbackMethod post = CreateRealtimeTranscriptionRequestStatusCallbackMethod._('POST');
-
-static const List<CreateRealtimeTranscriptionRequestStatusCallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateRealtimeTranscriptionRequestStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateRealtimeTranscriptionRequestStatusCallbackMethod($value)'; } 
- }
 @immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
 
 factory CreateRealtimeTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateRealtimeTranscriptionRequest(
   name: json['Name'] as String?,
   track: json['Track'] != null ? RealtimeTranscriptionEnumTrack.fromJson(json['Track'] as String) : null,
   statusCallbackUrl: json['StatusCallbackUrl'] != null ? Uri.parse(json['StatusCallbackUrl'] as String) : null,
-  statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateRealtimeTranscriptionRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
+  statusCallbackMethod: json['StatusCallbackMethod'] != null ? CreateApplicationRequestStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null,
   inboundTrackLabel: json['InboundTrackLabel'] as String?,
   outboundTrackLabel: json['OutboundTrackLabel'] as String?,
   partialResults: json['PartialResults'] as bool?,
@@ -83,7 +58,7 @@ final RealtimeTranscriptionEnumTrack? track;
 final Uri? statusCallbackUrl;
 
 /// The http method for the status_callback (one of GET, POST).
-final CreateRealtimeTranscriptionRequestStatusCallbackMethod? statusCallbackMethod;
+final CreateApplicationRequestStatusCallbackMethod? statusCallbackMethod;
 
 /// Friendly name given to the Inbound Track
 final String? inboundTrackLabel;
@@ -136,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   'EnableProviderData': ?enableProviderData,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Name', 'Track', 'StatusCallbackUrl', 'StatusCallbackMethod', 'InboundTrackLabel', 'OutboundTrackLabel', 'PartialResults', 'LanguageCode', 'TranscriptionEngine', 'ProfanityFilter', 'SpeechModel', 'Hints', 'EnableAutomaticPunctuation', 'IntelligenceService', 'EnableProviderData'}.contains(key)); } 
-CreateRealtimeTranscriptionRequest copyWith({String Function()? name, RealtimeTranscriptionEnumTrack Function()? track, Uri Function()? statusCallbackUrl, CreateRealtimeTranscriptionRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? inboundTrackLabel, String Function()? outboundTrackLabel, bool Function()? partialResults, String Function()? languageCode, String Function()? transcriptionEngine, bool Function()? profanityFilter, String Function()? speechModel, String Function()? hints, bool Function()? enableAutomaticPunctuation, String Function()? intelligenceService, bool Function()? enableProviderData, }) { return CreateRealtimeTranscriptionRequest(
+CreateRealtimeTranscriptionRequest copyWith({String Function()? name, RealtimeTranscriptionEnumTrack Function()? track, Uri Function()? statusCallbackUrl, CreateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, String Function()? inboundTrackLabel, String Function()? outboundTrackLabel, bool Function()? partialResults, String Function()? languageCode, String Function()? transcriptionEngine, bool Function()? profanityFilter, String Function()? speechModel, String Function()? hints, bool Function()? enableAutomaticPunctuation, String Function()? intelligenceService, bool Function()? enableProviderData, }) { return CreateRealtimeTranscriptionRequest(
   name: name != null ? name() : this.name,
   track: track != null ? track() : this.track,
   statusCallbackUrl: statusCallbackUrl != null ? statusCallbackUrl() : this.statusCallbackUrl,

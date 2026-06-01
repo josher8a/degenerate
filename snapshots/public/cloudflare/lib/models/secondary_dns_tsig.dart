@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_schemas_identifier.dart';/// TSIG algorithm.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_identifier.dart';/// TSIG algorithm.
 extension type const SecondaryDnsAlgo(String value) {
 factory SecondaryDnsAlgo.fromJson(String json) => SecondaryDnsAlgo(json);
 

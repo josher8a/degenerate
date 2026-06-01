@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fork_event_forkee.dart';@immutable final class ForkEvent {const ForkEvent({required this.action, required this.forkee, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/fork_event/fork_event_forkee.dart';@immutable final class ForkEvent {const ForkEvent({required this.action, required this.forkee, });
 
 factory ForkEvent.fromJson(Map<String, dynamic> json) { return ForkEvent(
   action: json['action'] as String,

@@ -1,43 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_ach_tracking_details.dart';import 'treasury_outbound_transfers_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
-@immutable final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._(this.value);
-
-factory TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType.fromJson(String json) { return switch (json) {
-  'ach' => ach,
-  'us_domestic_wire' => usDomesticWire,
-  _ => TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._(json),
-}; }
-
-static const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType ach = TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._('ach');
-
-static const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType usDomesticWire = TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType._('us_domestic_wire');
-
-static const List<TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType> values = [ach, usDomesticWire];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details_type.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_ach_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfers_resource_us_domestic_wire_tracking_details.dart';/// 
 @immutable final class TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails {const TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
 factory TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails(
   ach: json['ach'] != null ? TreasuryOutboundTransfersResourceAchTrackingDetails.fromJson(json['ach'] as Map<String, dynamic>) : null,
-  type: TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType.fromJson(json['type'] as String),
+  type: TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType.fromJson(json['type'] as String),
   usDomesticWire: json['us_domestic_wire'] != null ? TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
 ); }
 
 final TreasuryOutboundTransfersResourceAchTrackingDetails? ach;
 
 /// The US bank account network used to send funds.
-final TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType type;
+final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType type;
 
 final TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails? usDomesticWire;
 
@@ -47,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails copyWith({TreasuryOutboundTransfersResourceAchTrackingDetails Function()? ach, TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetailsType? type, TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails Function()? usDomesticWire, }) { return TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails(
+TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails copyWith({TreasuryOutboundTransfersResourceAchTrackingDetails Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundTransfersResourceUsDomesticWireTrackingDetails Function()? usDomesticWire, }) { return TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails(
   ach: ach != null ? ach() : this.ach,
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,

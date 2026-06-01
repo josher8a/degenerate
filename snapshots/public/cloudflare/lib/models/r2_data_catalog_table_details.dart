@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_identifier.dart';/// Contains table with metadata.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_identifier.dart';/// Contains table with metadata.
 @immutable final class R2DataCatalogTableDetails {const R2DataCatalogTableDetails({required this.identifier, required this.tableUuid, this.createdAt, this.location, this.metadataLocation, this.updatedAt, });
 
 factory R2DataCatalogTableDetails.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableDetails(

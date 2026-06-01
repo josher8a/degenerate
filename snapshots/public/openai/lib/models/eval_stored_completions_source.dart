@@ -1,33 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source. Always `stored_completions`.
-@immutable final class EvalStoredCompletionsSourceType {const EvalStoredCompletionsSourceType._(this.value);
-
-factory EvalStoredCompletionsSourceType.fromJson(String json) { return switch (json) {
-  'stored_completions' => storedCompletions,
-  _ => EvalStoredCompletionsSourceType._(json),
-}; }
-
-static const EvalStoredCompletionsSourceType storedCompletions = EvalStoredCompletionsSourceType._('stored_completions');
-
-static const List<EvalStoredCompletionsSourceType> values = [storedCompletions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalStoredCompletionsSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalStoredCompletionsSourceType($value)'; } 
- }
-/// A StoredCompletionsRunDataSource configuration describing a set of filters
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_stored_completions_data_source_config/create_eval_stored_completions_data_source_config_type.dart';/// A StoredCompletionsRunDataSource configuration describing a set of filters
 /// 
-@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata, this.model, this.createdAfter, this.createdBefore, this.limit, });
+@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = CreateEvalStoredCompletionsDataSourceConfigType.storedCompletions, this.metadata, this.model, this.createdAfter, this.createdBefore, this.limit, });
 
 factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsSource(
-  type: EvalStoredCompletionsSourceType.fromJson(json['type'] as String),
+  type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   model: json['model'] as String?,
   createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,
@@ -36,7 +14,7 @@ factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The type of source. Always `stored_completions`.
-final EvalStoredCompletionsSourceType type;
+final CreateEvalStoredCompletionsDataSourceConfigType type;
 
 final Map<String,String>? metadata;
 
@@ -61,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'limit': ?limit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalStoredCompletionsSource copyWith({EvalStoredCompletionsSourceType? type, Map<String, String>? Function()? metadata, String? Function()? model, int? Function()? createdAfter, int? Function()? createdBefore, int? Function()? limit, }) { return EvalStoredCompletionsSource(
+EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfigType? type, Map<String, String>? Function()? metadata, String? Function()? model, int? Function()? createdAfter, int? Function()? createdBefore, int? Function()? limit, }) { return EvalStoredCompletionsSource(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   model: model != null ? model() : this.model,

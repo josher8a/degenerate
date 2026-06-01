@@ -1,43 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
-@immutable final class R2EditCustomDomainResponseMinTls {const R2EditCustomDomainResponseMinTls._(this.value);
-
-factory R2EditCustomDomainResponseMinTls.fromJson(String json) { return switch (json) {
-  '1.0' => $10,
-  '1.1' => $11,
-  '1.2' => $12,
-  '1.3' => $13,
-  _ => R2EditCustomDomainResponseMinTls._(json),
-}; }
-
-static const R2EditCustomDomainResponseMinTls $10 = R2EditCustomDomainResponseMinTls._('1.0');
-
-static const R2EditCustomDomainResponseMinTls $11 = R2EditCustomDomainResponseMinTls._('1.1');
-
-static const R2EditCustomDomainResponseMinTls $12 = R2EditCustomDomainResponseMinTls._('1.2');
-
-static const R2EditCustomDomainResponseMinTls $13 = R2EditCustomDomainResponseMinTls._('1.3');
-
-static const List<R2EditCustomDomainResponseMinTls> values = [$10, $11, $12, $13];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EditCustomDomainResponseMinTls && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EditCustomDomainResponseMinTls($value)'; } 
- }
-@immutable final class R2EditCustomDomainResponse {const R2EditCustomDomainResponse({required this.domain, this.ciphers, this.enabled, this.minTls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_add_custom_domain_request/min_tls.dart';@immutable final class R2EditCustomDomainResponse {const R2EditCustomDomainResponse({required this.domain, this.ciphers, this.enabled, this.minTls, });
 
 factory R2EditCustomDomainResponse.fromJson(Map<String, dynamic> json) { return R2EditCustomDomainResponse(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   domain: json['domain'] as String,
   enabled: json['enabled'] as bool?,
-  minTls: json['minTLS'] != null ? R2EditCustomDomainResponseMinTls.fromJson(json['minTLS'] as String) : null,
+  minTls: json['minTLS'] != null ? MinTls.fromJson(json['minTLS'] as String) : null,
 ); }
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
@@ -50,7 +19,7 @@ final String domain;
 final bool? enabled;
 
 /// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
-final R2EditCustomDomainResponseMinTls? minTls;
+final MinTls? minTls;
 
 Map<String, dynamic> toJson() { return {
   'ciphers': ?ciphers,
@@ -59,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (minTls != null) 'minTLS': minTls?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String; } 
-R2EditCustomDomainResponse copyWith({List<String> Function()? ciphers, String? domain, bool Function()? enabled, R2EditCustomDomainResponseMinTls Function()? minTls, }) { return R2EditCustomDomainResponse(
+R2EditCustomDomainResponse copyWith({List<String> Function()? ciphers, String? domain, bool Function()? enabled, MinTls Function()? minTls, }) { return R2EditCustomDomainResponse(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   domain: domain ?? this.domain,
   enabled: enabled != null ? enabled() : this.enabled,

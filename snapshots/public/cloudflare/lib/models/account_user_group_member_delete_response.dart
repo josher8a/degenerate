@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_group_member.dart';@immutable final class AccountUserGroupMemberDeleteResponse {const AccountUserGroupMemberDeleteResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_user_group_member.dart';@immutable final class AccountUserGroupMemberDeleteResponse {const AccountUserGroupMemberDeleteResponse({this.result});
 
 factory AccountUserGroupMemberDeleteResponse.fromJson(Map<String, dynamic> json) { return AccountUserGroupMemberDeleteResponse(
   result: json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null,

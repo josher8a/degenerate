@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertCreatedAction {const WebhookDependabotAlertCreatedAction._(this.value);
-
-factory WebhookDependabotAlertCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookDependabotAlertCreatedAction._(json),
-}; }
-
-static const WebhookDependabotAlertCreatedAction created = WebhookDependabotAlertCreatedAction._('created');
-
-static const List<WebhookDependabotAlertCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertCreatedAction($value)'; } 
- }
-@immutable final class WebhookDependabotAlertCreated {const WebhookDependabotAlertCreated({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDependabotAlertCreated {const WebhookDependabotAlertCreated({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
 factory WebhookDependabotAlertCreated.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertCreated(
-  action: WebhookDependabotAlertCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   alert: DependabotAlert.fromJson(json['alert'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookDependabotAlertCreated.fromJson(Map<String, dynamic> json) { retu
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookDependabotAlertCreatedAction action;
+final ItemCreatedAction action;
 
 final DependabotAlert alert;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('alert') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDependabotAlertCreated copyWith({WebhookDependabotAlertCreatedAction? action, DependabotAlert? alert, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, EnterpriseWebhooks Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertCreated(
+WebhookDependabotAlertCreated copyWith({ItemCreatedAction? action, DependabotAlert? alert, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, EnterpriseWebhooks Function()? enterprise, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDependabotAlertCreated(
   action: action ?? this.action,
   alert: alert ?? this.alert,
   installation: installation != null ? installation() : this.installation,

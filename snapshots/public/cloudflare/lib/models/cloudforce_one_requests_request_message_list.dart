@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';/// Sort order (asc or desc).
-@immutable final class CloudforceOneRequestsRequestMessageListSortOrder {const CloudforceOneRequestsRequestMessageListSortOrder._(this.value);
-
-factory CloudforceOneRequestsRequestMessageListSortOrder.fromJson(String json) { return switch (json) {
-  'asc' => asc,
-  'desc' => desc,
-  _ => CloudforceOneRequestsRequestMessageListSortOrder._(json),
-}; }
-
-static const CloudforceOneRequestsRequestMessageListSortOrder asc = CloudforceOneRequestsRequestMessageListSortOrder._('asc');
-
-static const CloudforceOneRequestsRequestMessageListSortOrder desc = CloudforceOneRequestsRequestMessageListSortOrder._('desc');
-
-static const List<CloudforceOneRequestsRequestMessageListSortOrder> values = [asc, desc];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudforceOneRequestsRequestMessageListSortOrder && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsRequestMessageListSortOrder($value)'; } 
- }
-@immutable final class CloudforceOneRequestsRequestMessageList {const CloudforceOneRequestsRequestMessageList({required this.page, required this.perPage, this.after, this.before, this.sortBy, this.sortOrder, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_request_list/sort_order.dart';import 'package:pub_cloudflare/models/cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestMessageList {const CloudforceOneRequestsRequestMessageList({required this.page, required this.perPage, this.after, this.before, this.sortBy, this.sortOrder, });
 
 factory CloudforceOneRequestsRequestMessageList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestMessageList(
   after: json['after'] != null ? CloudforceOneRequestsTime.fromJson(json['after'] as String) : null,
@@ -33,7 +8,7 @@ factory CloudforceOneRequestsRequestMessageList.fromJson(Map<String, dynamic> js
   page: (json['page'] as num).toInt(),
   perPage: (json['per_page'] as num).toInt(),
   sortBy: json['sort_by'] as String?,
-  sortOrder: json['sort_order'] != null ? CloudforceOneRequestsRequestMessageListSortOrder.fromJson(json['sort_order'] as String) : null,
+  sortOrder: json['sort_order'] != null ? SortOrder.fromJson(json['sort_order'] as String) : null,
 ); }
 
 /// Retrieve mes  ges created after this time.
@@ -52,7 +27,7 @@ final int perPage;
 final String? sortBy;
 
 /// Sort order (asc or desc).
-final CloudforceOneRequestsRequestMessageListSortOrder? sortOrder;
+final SortOrder? sortOrder;
 
 Map<String, dynamic> toJson() { return {
   if (after != null) 'after': after?.toJson(),
@@ -64,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num; } 
-CloudforceOneRequestsRequestMessageList copyWith({CloudforceOneRequestsTime Function()? after, CloudforceOneRequestsTime Function()? before, int? page, int? perPage, String Function()? sortBy, CloudforceOneRequestsRequestMessageListSortOrder Function()? sortOrder, }) { return CloudforceOneRequestsRequestMessageList(
+CloudforceOneRequestsRequestMessageList copyWith({CloudforceOneRequestsTime Function()? after, CloudforceOneRequestsTime Function()? before, int? page, int? perPage, String Function()? sortBy, SortOrder Function()? sortOrder, }) { return CloudforceOneRequestsRequestMessageList(
   after: after != null ? after() : this.after,
   before: before != null ? before() : this.before,
   page: page ?? this.page,

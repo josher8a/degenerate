@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_token_name.dart';import 'builds_cloudflare_token_id.dart';@immutable final class BuildsCreateBuildTokenRequest {const BuildsCreateBuildTokenRequest({required this.buildTokenName, required this.buildTokenSecret, required this.cloudflareTokenId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_cloudflare_token_id.dart';@immutable final class BuildsCreateBuildTokenRequest {const BuildsCreateBuildTokenRequest({required this.buildTokenName, required this.buildTokenSecret, required this.cloudflareTokenId, });
 
 factory BuildsCreateBuildTokenRequest.fromJson(Map<String, dynamic> json) { return BuildsCreateBuildTokenRequest(
   buildTokenName: BuildsBuildTokenName.fromJson(json['build_token_name'] as String),

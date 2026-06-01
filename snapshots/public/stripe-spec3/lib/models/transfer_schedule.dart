@@ -1,39 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TransferScheduleWeeklyPayoutDays {const TransferScheduleWeeklyPayoutDays._(this.value);
-
-factory TransferScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
-  'friday' => friday,
-  'monday' => monday,
-  'thursday' => thursday,
-  'tuesday' => tuesday,
-  'wednesday' => wednesday,
-  _ => TransferScheduleWeeklyPayoutDays._(json),
-}; }
-
-static const TransferScheduleWeeklyPayoutDays friday = TransferScheduleWeeklyPayoutDays._('friday');
-
-static const TransferScheduleWeeklyPayoutDays monday = TransferScheduleWeeklyPayoutDays._('monday');
-
-static const TransferScheduleWeeklyPayoutDays thursday = TransferScheduleWeeklyPayoutDays._('thursday');
-
-static const TransferScheduleWeeklyPayoutDays tuesday = TransferScheduleWeeklyPayoutDays._('tuesday');
-
-static const TransferScheduleWeeklyPayoutDays wednesday = TransferScheduleWeeklyPayoutDays._('wednesday');
-
-static const List<TransferScheduleWeeklyPayoutDays> values = [friday, monday, thursday, tuesday, wednesday];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferScheduleWeeklyPayoutDays && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferScheduleWeeklyPayoutDays($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';/// 
 @immutable final class TransferSchedule {const TransferSchedule({required this.delayDays, required this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory TransferSchedule.fromJson(Map<String, dynamic> json) { return TransferSchedule(
@@ -42,7 +9,7 @@ factory TransferSchedule.fromJson(Map<String, dynamic> json) { return TransferSc
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   weeklyAnchor: json['weekly_anchor'] as String?,
-  weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => TransferScheduleWeeklyPayoutDays.fromJson(e as String)).toList(),
+  weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => WeeklyPayoutDays.fromJson(e as String)).toList(),
 ); }
 
 /// The number of days charges for the account will be held before being paid out.
@@ -61,7 +28,7 @@ final List<int>? monthlyPayoutDays;
 final String? weeklyAnchor;
 
 /// The days of the week when available funds are paid out, specified as an array, for example, [`monday`, `tuesday`]. Only shown if `interval` is weekly.
-final List<TransferScheduleWeeklyPayoutDays>? weeklyPayoutDays;
+final List<WeeklyPayoutDays>? weeklyPayoutDays;
 
 Map<String, dynamic> toJson() { return {
   'delay_days': delayDays,
@@ -73,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay_days') && json['delay_days'] is num &&
       json.containsKey('interval') && json['interval'] is String; } 
-TransferSchedule copyWith({int? delayDays, String? interval, int Function()? monthlyAnchor, List<int> Function()? monthlyPayoutDays, String Function()? weeklyAnchor, List<TransferScheduleWeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return TransferSchedule(
+TransferSchedule copyWith({int? delayDays, String? interval, int Function()? monthlyAnchor, List<int> Function()? monthlyPayoutDays, String Function()? weeklyAnchor, List<WeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return TransferSchedule(
   delayDays: delayDays ?? this.delayDays,
   interval: interval ?? this.interval,
   monthlyAnchor: monthlyAnchor != null ? monthlyAnchor() : this.monthlyAnchor,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_components_schemas_advertised.dart';@immutable final class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest {const IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest({required this.advertised});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/addressing_components_schemas_advertised.dart';@immutable final class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest {const IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest({required this.advertised});
 
 factory IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest(
   advertised: AddressingComponentsSchemasAdvertised.fromJson(json['advertised'] as bool),

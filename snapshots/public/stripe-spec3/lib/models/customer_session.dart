@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'customer_session_customer.dart';import 'customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerSessionObject {const CustomerSessionObject._(this.value);
 
 factory CustomerSessionObject.fromJson(String json) { return switch (json) {
@@ -52,7 +52,7 @@ final CustomerSessionResourceComponents? components;
 final int created;
 
 /// The Customer the Customer Session was created for.
-final CustomerSessionCustomer customer;
+final BankConnectionsResourceAccountholderCustomer customer;
 
 /// The Account that the Customer Session was created for.
 final String? customerAccount;
@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents Function()? components, int? created, CustomerSessionCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
+CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(
   clientSecret: clientSecret ?? this.clientSecret,
   components: components != null ? components() : this.components,
   created: created ?? this.created,

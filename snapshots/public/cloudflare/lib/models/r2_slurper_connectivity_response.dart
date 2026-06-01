@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperConnectivityResponseConnectivityStatus {const R2SlurperConnectivityResponseConnectivityStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConnectivityStatus {const ConnectivityStatus._(this.value);
 
-factory R2SlurperConnectivityResponseConnectivityStatus.fromJson(String json) { return switch (json) {
+factory ConnectivityStatus.fromJson(String json) { return switch (json) {
   'success' => success,
   'error' => error,
-  _ => R2SlurperConnectivityResponseConnectivityStatus._(json),
+  _ => ConnectivityStatus._(json),
 }; }
 
-static const R2SlurperConnectivityResponseConnectivityStatus success = R2SlurperConnectivityResponseConnectivityStatus._('success');
+static const ConnectivityStatus success = ConnectivityStatus._('success');
 
-static const R2SlurperConnectivityResponseConnectivityStatus error = R2SlurperConnectivityResponseConnectivityStatus._('error');
+static const ConnectivityStatus error = ConnectivityStatus._('error');
 
-static const List<R2SlurperConnectivityResponseConnectivityStatus> values = [success, error];
+static const List<ConnectivityStatus> values = [success, error];
 
 final String value;
 
@@ -20,23 +20,23 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SlurperConnectivityResponseConnectivityStatus && other.value == value; } 
+    other is ConnectivityStatus && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SlurperConnectivityResponseConnectivityStatus($value)'; } 
+@override String toString() { return 'ConnectivityStatus($value)'; } 
  }
 @immutable final class R2SlurperConnectivityResponse {const R2SlurperConnectivityResponse({this.connectivityStatus});
 
 factory R2SlurperConnectivityResponse.fromJson(Map<String, dynamic> json) { return R2SlurperConnectivityResponse(
-  connectivityStatus: json['connectivityStatus'] != null ? R2SlurperConnectivityResponseConnectivityStatus.fromJson(json['connectivityStatus'] as String) : null,
+  connectivityStatus: json['connectivityStatus'] != null ? ConnectivityStatus.fromJson(json['connectivityStatus'] as String) : null,
 ); }
 
-final R2SlurperConnectivityResponseConnectivityStatus? connectivityStatus;
+final ConnectivityStatus? connectivityStatus;
 
 Map<String, dynamic> toJson() { return {
   if (connectivityStatus != null) 'connectivityStatus': connectivityStatus?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connectivityStatus'}.contains(key)); } 
-R2SlurperConnectivityResponse copyWith({R2SlurperConnectivityResponseConnectivityStatus Function()? connectivityStatus}) { return R2SlurperConnectivityResponse(
+R2SlurperConnectivityResponse copyWith({ConnectivityStatus Function()? connectivityStatus}) { return R2SlurperConnectivityResponse(
   connectivityStatus: connectivityStatus != null ? connectivityStatus() : this.connectivityStatus,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

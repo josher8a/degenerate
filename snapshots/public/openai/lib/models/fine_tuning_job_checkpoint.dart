@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_checkpoint_metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint/metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
 @immutable final class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject._(this.value);
 
 factory FineTuningJobCheckpointObject.fromJson(String json) { return switch (json) {
@@ -31,7 +31,7 @@ factory FineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) { return Fin
   createdAt: (json['created_at'] as num).toInt(),
   fineTunedModelCheckpoint: json['fine_tuned_model_checkpoint'] as String,
   stepNumber: (json['step_number'] as num).toInt(),
-  metrics: FineTuningJobCheckpointMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
+  metrics: Metrics.fromJson(json['metrics'] as Map<String, dynamic>),
   fineTuningJobId: json['fine_tuning_job_id'] as String,
   object: FineTuningJobCheckpointObject.fromJson(json['object'] as String),
 ); }
@@ -49,7 +49,7 @@ final String fineTunedModelCheckpoint;
 final int stepNumber;
 
 /// Metrics at the step number during the fine-tuning job.
-final FineTuningJobCheckpointMetrics metrics;
+final Metrics metrics;
 
 /// The name of the fine-tuning job that this checkpoint was created from.
 final String fineTuningJobId;
@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('metrics') &&
       json.containsKey('fine_tuning_job_id') && json['fine_tuning_job_id'] is String &&
       json.containsKey('object'); } 
-FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedModelCheckpoint, int? stepNumber, FineTuningJobCheckpointMetrics? metrics, String? fineTuningJobId, FineTuningJobCheckpointObject? object, }) { return FineTuningJobCheckpoint(
+FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedModelCheckpoint, int? stepNumber, Metrics? metrics, String? fineTuningJobId, FineTuningJobCheckpointObject? object, }) { return FineTuningJobCheckpoint(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   fineTunedModelCheckpoint: fineTunedModelCheckpoint ?? this.fineTunedModelCheckpoint,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_acl_components_schemas_name.dart';import 'secondary_dns_components_schemas_identifier.dart';import 'secondary_dns_ip_range.dart';@immutable final class SecondaryDnsAcl {const SecondaryDnsAcl({required this.id, required this.ipRange, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secondary_dns_acl_components_schemas_name.dart';import 'package:pub_cloudflare/models/secondary_dns_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_ip_range.dart';@immutable final class SecondaryDnsAcl {const SecondaryDnsAcl({required this.id, required this.ipRange, required this.name, });
 
 factory SecondaryDnsAcl.fromJson(Map<String, dynamic> json) { return SecondaryDnsAcl(
   id: SecondaryDnsComponentsSchemasIdentifier.fromJson(json['id'] as String),

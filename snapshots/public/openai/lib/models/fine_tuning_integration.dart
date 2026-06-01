@@ -1,32 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_integration_wandb.dart';/// The type of the integration being enabled for the fine-tuning job
-@immutable final class FineTuningIntegrationType {const FineTuningIntegrationType._(this.value);
-
-factory FineTuningIntegrationType.fromJson(String json) { return switch (json) {
-  'wandb' => wandb,
-  _ => FineTuningIntegrationType._(json),
-}; }
-
-static const FineTuningIntegrationType wandb = FineTuningIntegrationType._('wandb');
-
-static const List<FineTuningIntegrationType> values = [wandb];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningIntegrationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningIntegrationType($value)'; } 
- }
-@immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_integration/fine_tuning_integration_type.dart';import 'package:pub_openai/models/fine_tuning_integration/wandb.dart';@immutable final class FineTuningIntegration {const FineTuningIntegration({required this.type, required this.wandb, });
 
 factory FineTuningIntegration.fromJson(Map<String, dynamic> json) { return FineTuningIntegration(
   type: FineTuningIntegrationType.fromJson(json['type'] as String),
-  wandb: FineTuningIntegrationWandb.fromJson(json['wandb'] as Map<String, dynamic>),
+  wandb: Wandb.fromJson(json['wandb'] as Map<String, dynamic>),
 ); }
 
 /// The type of the integration being enabled for the fine-tuning job
@@ -36,7 +14,7 @@ final FineTuningIntegrationType type;
 /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags
 /// to your run, and set a default entity (team, username, etc) to be associated with your run.
 /// 
-final FineTuningIntegrationWandb wandb;
+final Wandb wandb;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -44,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('wandb'); } 
-FineTuningIntegration copyWith({FineTuningIntegrationType? type, FineTuningIntegrationWandb? wandb, }) { return FineTuningIntegration(
+FineTuningIntegration copyWith({FineTuningIntegrationType? type, Wandb? wandb, }) { return FineTuningIntegration(
   type: type ?? this.type,
   wandb: wandb ?? this.wandb,
 ); } 

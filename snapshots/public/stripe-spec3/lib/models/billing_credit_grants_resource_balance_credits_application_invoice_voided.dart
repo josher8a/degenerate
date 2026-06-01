@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'invoice.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// 
 @immutable final class BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided {const BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided({required this.invoice, required this.invoiceLineItem, });
 
 factory BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided(

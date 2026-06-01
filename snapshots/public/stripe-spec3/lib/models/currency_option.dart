@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_unit_amount.dart';import 'price_tier.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-@immutable final class CurrencyOptionTaxBehavior {const CurrencyOptionTaxBehavior._(this.value);
-
-factory CurrencyOptionTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  'unspecified' => unspecified,
-  _ => CurrencyOptionTaxBehavior._(json),
-}; }
-
-static const CurrencyOptionTaxBehavior exclusive = CurrencyOptionTaxBehavior._('exclusive');
-
-static const CurrencyOptionTaxBehavior inclusive = CurrencyOptionTaxBehavior._('inclusive');
-
-static const CurrencyOptionTaxBehavior unspecified = CurrencyOptionTaxBehavior._('unspecified');
-
-static const List<CurrencyOptionTaxBehavior> values = [exclusive, inclusive, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CurrencyOptionTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CurrencyOptionTaxBehavior($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';/// 
 @immutable final class CurrencyOption {const CurrencyOption({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory CurrencyOption.fromJson(Map<String, dynamic> json) { return CurrencyOption(

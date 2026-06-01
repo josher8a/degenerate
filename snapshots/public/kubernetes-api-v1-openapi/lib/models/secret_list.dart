@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'secret.dart';/// SecretList is a list of Secret.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/list_meta.dart';import 'package:pub_kubernetes_api_v1_openapi/models/secret.dart';/// SecretList is a list of Secret.
 @immutable final class SecretList {const SecretList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory SecretList.fromJson(Map<String, dynamic> json) { return SecretList(

@@ -1,70 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_request_budget_alerting.dart';/// The scope of the budget
-@immutable final class BillingUpdateBudgetOrgRequestBudgetScope {const BillingUpdateBudgetOrgRequestBudgetScope._(this.value);
-
-factory BillingUpdateBudgetOrgRequestBudgetScope.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  'repository' => repository,
-  'cost_center' => costCenter,
-  _ => BillingUpdateBudgetOrgRequestBudgetScope._(json),
-}; }
-
-static const BillingUpdateBudgetOrgRequestBudgetScope enterprise = BillingUpdateBudgetOrgRequestBudgetScope._('enterprise');
-
-static const BillingUpdateBudgetOrgRequestBudgetScope organization = BillingUpdateBudgetOrgRequestBudgetScope._('organization');
-
-static const BillingUpdateBudgetOrgRequestBudgetScope repository = BillingUpdateBudgetOrgRequestBudgetScope._('repository');
-
-static const BillingUpdateBudgetOrgRequestBudgetScope costCenter = BillingUpdateBudgetOrgRequestBudgetScope._('cost_center');
-
-static const List<BillingUpdateBudgetOrgRequestBudgetScope> values = [enterprise, organization, repository, costCenter];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingUpdateBudgetOrgRequestBudgetScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingUpdateBudgetOrgRequestBudgetScope($value)'; } 
- }
-/// The type of pricing for the budget
-@immutable final class BillingUpdateBudgetOrgRequestBudgetType {const BillingUpdateBudgetOrgRequestBudgetType._(this.value);
-
-factory BillingUpdateBudgetOrgRequestBudgetType.fromJson(String json) { return switch (json) {
-  'ProductPricing' => productPricing,
-  'SkuPricing' => skuPricing,
-  _ => BillingUpdateBudgetOrgRequestBudgetType._(json),
-}; }
-
-static const BillingUpdateBudgetOrgRequestBudgetType productPricing = BillingUpdateBudgetOrgRequestBudgetType._('ProductPricing');
-
-static const BillingUpdateBudgetOrgRequestBudgetType skuPricing = BillingUpdateBudgetOrgRequestBudgetType._('SkuPricing');
-
-static const List<BillingUpdateBudgetOrgRequestBudgetType> values = [productPricing, skuPricing];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingUpdateBudgetOrgRequestBudgetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingUpdateBudgetOrgRequestBudgetType($value)'; } 
- }
-@immutable final class BillingUpdateBudgetOrgRequest {const BillingUpdateBudgetOrgRequest({this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/billing_update_budget_org_request_budget_alerting.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_scope.dart';import 'package:pub_github_rest_3_1/models/billing_update_budget_org_request/budget_type.dart';@immutable final class BillingUpdateBudgetOrgRequest {const BillingUpdateBudgetOrgRequest({this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
 
 factory BillingUpdateBudgetOrgRequest.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgRequest(
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toInt() : null,
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
   budgetAlerting: json['budget_alerting'] != null ? BillingUpdateBudgetOrgRequestBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null,
-  budgetScope: json['budget_scope'] != null ? BillingUpdateBudgetOrgRequestBudgetScope.fromJson(json['budget_scope'] as String) : null,
+  budgetScope: json['budget_scope'] != null ? BudgetScope.fromJson(json['budget_scope'] as String) : null,
   budgetEntityName: json['budget_entity_name'] as String?,
-  budgetType: json['budget_type'] != null ? BillingUpdateBudgetOrgRequestBudgetType.fromJson(json['budget_type'] as String) : null,
+  budgetType: json['budget_type'] != null ? BudgetType.fromJson(json['budget_type'] as String) : null,
   budgetProductSku: json['budget_product_sku'] as String?,
 ); }
 
@@ -77,13 +21,13 @@ final bool? preventFurtherUsage;
 final BillingUpdateBudgetOrgRequestBudgetAlerting? budgetAlerting;
 
 /// The scope of the budget
-final BillingUpdateBudgetOrgRequestBudgetScope? budgetScope;
+final BudgetScope? budgetScope;
 
 /// The name of the entity to apply the budget to
 final String? budgetEntityName;
 
 /// The type of pricing for the budget
-final BillingUpdateBudgetOrgRequestBudgetType? budgetType;
+final BudgetType? budgetType;
 
 /// A single product or SKU that will be covered in the budget
 final String? budgetProductSku;
@@ -98,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'budget_product_sku': ?budgetProductSku,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
-BillingUpdateBudgetOrgRequest copyWith({int Function()? budgetAmount, bool Function()? preventFurtherUsage, BillingUpdateBudgetOrgRequestBudgetAlerting Function()? budgetAlerting, BillingUpdateBudgetOrgRequestBudgetScope Function()? budgetScope, String Function()? budgetEntityName, BillingUpdateBudgetOrgRequestBudgetType Function()? budgetType, String Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgRequest(
+BillingUpdateBudgetOrgRequest copyWith({int Function()? budgetAmount, bool Function()? preventFurtherUsage, BillingUpdateBudgetOrgRequestBudgetAlerting Function()? budgetAlerting, BudgetScope Function()? budgetScope, String Function()? budgetEntityName, BudgetType Function()? budgetType, String Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgRequest(
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,
   preventFurtherUsage: preventFurtherUsage != null ? preventFurtherUsage() : this.preventFurtherUsage,
   budgetAlerting: budgetAlerting != null ? budgetAlerting() : this.budgetAlerting,

@@ -1,44 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
-@immutable final class SubscriptionsResourcePauseCollectionBehavior {const SubscriptionsResourcePauseCollectionBehavior._(this.value);
-
-factory SubscriptionsResourcePauseCollectionBehavior.fromJson(String json) { return switch (json) {
-  'keep_as_draft' => keepAsDraft,
-  'mark_uncollectible' => markUncollectible,
-  'void' => $void,
-  _ => SubscriptionsResourcePauseCollectionBehavior._(json),
-}; }
-
-static const SubscriptionsResourcePauseCollectionBehavior keepAsDraft = SubscriptionsResourcePauseCollectionBehavior._('keep_as_draft');
-
-static const SubscriptionsResourcePauseCollectionBehavior markUncollectible = SubscriptionsResourcePauseCollectionBehavior._('mark_uncollectible');
-
-static const SubscriptionsResourcePauseCollectionBehavior $void = SubscriptionsResourcePauseCollectionBehavior._('void');
-
-static const List<SubscriptionsResourcePauseCollectionBehavior> values = [keepAsDraft, markUncollectible, $void];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourcePauseCollectionBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourcePauseCollectionBehavior($value)'; } 
- }
-/// The Pause Collection settings determine how we will pause collection for this subscription and for how long the subscription
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/pause_collection_param/pause_collection_param_behavior.dart';/// The Pause Collection settings determine how we will pause collection for this subscription and for how long the subscription
 /// should be paused.
 @immutable final class SubscriptionsResourcePauseCollection {const SubscriptionsResourcePauseCollection({required this.behavior, this.resumesAt, });
 
 factory SubscriptionsResourcePauseCollection.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePauseCollection(
-  behavior: SubscriptionsResourcePauseCollectionBehavior.fromJson(json['behavior'] as String),
+  behavior: pause_collection_paramBehavior.fromJson(json['behavior'] as String),
   resumesAt: json['resumes_at'] != null ? (json['resumes_at'] as num).toInt() : null,
 ); }
 
 /// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
-final SubscriptionsResourcePauseCollectionBehavior behavior;
+final pause_collection_paramBehavior behavior;
 
 /// The time after which the subscription will resume collecting payments.
 final int? resumesAt;
@@ -48,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'resumes_at': ?resumesAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('behavior'); } 
-SubscriptionsResourcePauseCollection copyWith({SubscriptionsResourcePauseCollectionBehavior? behavior, int? Function()? resumesAt, }) { return SubscriptionsResourcePauseCollection(
+SubscriptionsResourcePauseCollection copyWith({pause_collection_paramBehavior? behavior, int? Function()? resumesAt, }) { return SubscriptionsResourcePauseCollection(
   behavior: behavior ?? this.behavior,
   resumesAt: resumesAt != null ? resumesAt() : this.resumesAt,
 ); } 

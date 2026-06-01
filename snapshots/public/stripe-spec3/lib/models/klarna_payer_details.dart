@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'klarna_address.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/klarna_address.dart';/// 
 @immutable final class KlarnaPayerDetails {const KlarnaPayerDetails({this.address});
 
 factory KlarnaPayerDetails.fromJson(Map<String, dynamic> json) { return KlarnaPayerDetails(

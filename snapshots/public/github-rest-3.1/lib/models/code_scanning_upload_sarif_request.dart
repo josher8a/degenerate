@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_analysis_commit_sha.dart';/// The full Git reference, formatted as `refs/heads/<branch name>`,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_commit_sha.dart';/// The full Git reference, formatted as `refs/heads/<branch name>`,
 /// `refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 extension type const CodeScanningRefFull(String value) {
 factory CodeScanningRefFull.fromJson(String json) => CodeScanningRefFull(json);

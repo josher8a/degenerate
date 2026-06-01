@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_forwarding_url_value.dart';/// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';/// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
 /// to [Wildcard matching and referencing](https://developers.cloudflare.com/rules/page-rules/reference/wildcard-matching/).
 /// 
 @immutable final class ZonesForwardingUrlId {const ZonesForwardingUrlId._(this.value);

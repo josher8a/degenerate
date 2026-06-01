@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection34_result_info.dart';import 'secondary_dns_messages2.dart';@immutable final class ResponseCollection34 {const ResponseCollection34({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';import 'package:pub_cloudflare/models/secondary_dns_messages2.dart';@immutable final class ResponseCollection34 {const ResponseCollection34({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection34.fromJson(Map<String, dynamic> json) { return ResponseCollection34(
   errors: (json['errors'] as List<dynamic>).map((e) => SecondaryDnsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SecondaryDnsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? ResponseCollection34ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? D1ListDatabasesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SecondaryDnsMessages2> errors;
@@ -16,7 +16,7 @@ final List<SecondaryDnsMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final ResponseCollection34ResultInfo? resultInfo;
+final D1ListDatabasesResponseResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection34 copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, ResponseCollection34ResultInfo Function()? resultInfo, }) { return ResponseCollection34(
+ResponseCollection34 copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, D1ListDatabasesResponseResultInfo Function()? resultInfo, }) { return ResponseCollection34(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

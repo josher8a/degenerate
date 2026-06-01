@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_gateway_account_config_result.dart';@immutable final class ZeroTrustGatewayGatewayAccountConfig {const ZeroTrustGatewayGatewayAccountConfig({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_gateway_account_config/zero_trust_gateway_gateway_account_config_result.dart';@immutable final class ZeroTrustGatewayGatewayAccountConfig {const ZeroTrustGatewayGatewayAccountConfig({this.result});
 
 factory ZeroTrustGatewayGatewayAccountConfig.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountConfig(
   result: json['result'] != null ? ZeroTrustGatewayGatewayAccountConfigResult.fromJson(json['result'] as Map<String, dynamic>) : null,

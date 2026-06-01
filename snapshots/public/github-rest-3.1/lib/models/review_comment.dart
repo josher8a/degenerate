@@ -1,85 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'reaction_rollup.dart';import 'review_comment_links.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
-@immutable final class ReviewCommentSide {const ReviewCommentSide._(this.value);
-
-factory ReviewCommentSide.fromJson(String json) { return switch (json) {
-  'LEFT' => left,
-  'RIGHT' => right,
-  _ => ReviewCommentSide._(json),
-}; }
-
-static const ReviewCommentSide left = ReviewCommentSide._('LEFT');
-
-static const ReviewCommentSide right = ReviewCommentSide._('RIGHT');
-
-static const List<ReviewCommentSide> values = [left, right];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewCommentSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewCommentSide($value)'; } 
- }
-/// The side of the first line of the range for a multi-line comment.
-@immutable final class ReviewCommentStartSide {const ReviewCommentStartSide._(this.value);
-
-factory ReviewCommentStartSide.fromJson(String json) { return switch (json) {
-  'LEFT' => left,
-  'RIGHT' => right,
-  'null' => $null,
-  _ => ReviewCommentStartSide._(json),
-}; }
-
-static const ReviewCommentStartSide left = ReviewCommentStartSide._('LEFT');
-
-static const ReviewCommentStartSide right = ReviewCommentStartSide._('RIGHT');
-
-static const ReviewCommentStartSide $null = ReviewCommentStartSide._('null');
-
-static const List<ReviewCommentStartSide> values = [left, right, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewCommentStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewCommentStartSide($value)'; } 
- }
-/// The level at which the comment is targeted, can be a diff line or a file.
-@immutable final class ReviewCommentSubjectType {const ReviewCommentSubjectType._(this.value);
-
-factory ReviewCommentSubjectType.fromJson(String json) { return switch (json) {
-  'line' => line,
-  'file' => file,
-  _ => ReviewCommentSubjectType._(json),
-}; }
-
-static const ReviewCommentSubjectType line = ReviewCommentSubjectType._('line');
-
-static const ReviewCommentSubjectType file = ReviewCommentSubjectType._('file');
-
-static const List<ReviewCommentSubjectType> values = [line, file];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewCommentSubjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewCommentSubjectType($value)'; } 
- }
-/// Legacy Review Comment
-@immutable final class ReviewComment {const ReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.inReplyToId, this.bodyText, this.bodyHtml, this.reactions, this.side = ReviewCommentSide.right, this.startSide = ReviewCommentStartSide.right, this.line, this.originalLine, this.startLine, this.originalStartLine, this.subjectType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/pull_request_review_comment_start_side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';import 'package:pub_github_rest_3_1/models/reaction_rollup.dart';import 'package:pub_github_rest_3_1/models/review_comment/review_comment_links.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Legacy Review Comment
+@immutable final class ReviewComment {const ReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.inReplyToId, this.bodyText, this.bodyHtml, this.reactions, this.side = Side.right, this.startSide = PullRequestReviewCommentStartSide.right, this.line, this.originalLine, this.startLine, this.originalStartLine, this.subjectType, });
 
 factory ReviewComment.fromJson(Map<String, dynamic> json) { return ReviewComment(
   url: Uri.parse(json['url'] as String),
@@ -104,13 +26,13 @@ factory ReviewComment.fromJson(Map<String, dynamic> json) { return ReviewComment
   bodyText: json['body_text'] as String?,
   bodyHtml: json['body_html'] as String?,
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-  side: json.containsKey('side') ? ReviewCommentSide.fromJson(json['side'] as String) : ReviewCommentSide.right,
-  startSide: json.containsKey('start_side') ? json['start_side'] != null ? ReviewCommentStartSide.fromJson(json['start_side'] as String) : null : ReviewCommentStartSide.right,
+  side: json.containsKey('side') ? Side.fromJson(json['side'] as String) : Side.right,
+  startSide: json.containsKey('start_side') ? json['start_side'] != null ? PullRequestReviewCommentStartSide.fromJson(json['start_side'] as String) : null : PullRequestReviewCommentStartSide.right,
   line: json['line'] != null ? (json['line'] as num).toInt() : null,
   originalLine: json['original_line'] != null ? (json['original_line'] as num).toInt() : null,
   startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
   originalStartLine: json['original_start_line'] != null ? (json['original_start_line'] as num).toInt() : null,
-  subjectType: json['subject_type'] != null ? ReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null,
+  subjectType: json['subject_type'] != null ? SubjectType.fromJson(json['subject_type'] as String) : null,
 ); }
 
 final Uri url;
@@ -159,10 +81,10 @@ final String? bodyHtml;
 final ReactionRollup? reactions;
 
 /// The side of the first line of the range for a multi-line comment.
-final ReviewCommentSide side;
+final Side side;
 
 /// The side of the first line of the range for a multi-line comment.
-final ReviewCommentStartSide? startSide;
+final PullRequestReviewCommentStartSide? startSide;
 
 /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
 final int? line;
@@ -177,7 +99,7 @@ final int? startLine;
 final int? originalStartLine;
 
 /// The level at which the comment is targeted, can be a diff line or a file.
-final ReviewCommentSubjectType? subjectType;
+final SubjectType? subjectType;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -228,7 +150,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
       json.containsKey('author_association') &&
       json.containsKey('_links'); } 
-ReviewComment copyWith({Uri? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, String? commitId, String? originalCommitId, int Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, ReviewCommentLinks? links, String Function()? bodyText, String Function()? bodyHtml, ReactionRollup Function()? reactions, ReviewCommentSide Function()? side, ReviewCommentStartSide? Function()? startSide, int Function()? line, int Function()? originalLine, int? Function()? startLine, int? Function()? originalStartLine, ReviewCommentSubjectType Function()? subjectType, }) { return ReviewComment(
+ReviewComment copyWith({Uri? url, int? Function()? pullRequestReviewId, int? id, String? nodeId, String? diffHunk, String? path, int? Function()? position, int? originalPosition, String? commitId, String? originalCommitId, int Function()? inReplyToId, SimpleUser? Function()? user, String? body, DateTime? createdAt, DateTime? updatedAt, Uri? htmlUrl, Uri? pullRequestUrl, AuthorAssociation? authorAssociation, ReviewCommentLinks? links, String Function()? bodyText, String Function()? bodyHtml, ReactionRollup Function()? reactions, Side Function()? side, PullRequestReviewCommentStartSide? Function()? startSide, int Function()? line, int Function()? originalLine, int? Function()? startLine, int? Function()? originalStartLine, SubjectType Function()? subjectType, }) { return ReviewComment(
   url: url ?? this.url,
   pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
   id: id ?? this.id,

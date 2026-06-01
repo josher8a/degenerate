@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data.dart';import 'post_products_request_marketing_features.dart';import 'post_products_request_package_dimensions.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_products_request/default_price_data.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_request/post_products_request_package_dimensions.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
   active: json['active'] as bool?,
-  defaultPriceData: json['default_price_data'] != null ? PostProductsRequestDefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>) : null,
+  defaultPriceData: json['default_price_data'] != null ? DefaultPriceData.fromJson(json['default_price_data'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
@@ -24,7 +24,7 @@ factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostPro
 final bool? active;
 
 /// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object. This Price will be set as the default price for this product.
-final PostProductsRequestDefaultPriceData? defaultPriceData;
+final DefaultPriceData? defaultPriceData;
 
 /// The product's description, meant to be displayable to the customer. Use this field to optionally store a long form explanation of the product being sold for your own rendering purposes.
 final String? description;
@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostProductsRequest copyWith({bool Function()? active, PostProductsRequestDefaultPriceData Function()? defaultPriceData, String Function()? description, List<String> Function()? expand, String Function()? id, List<String> Function()? images, List<PostProductsRequestMarketingFeatures> Function()? marketingFeatures, Map<String, String> Function()? metadata, String? name, PostProductsRequestPackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, String Function()? url, }) { return PostProductsRequest(
+PostProductsRequest copyWith({bool Function()? active, DefaultPriceData Function()? defaultPriceData, String Function()? description, List<String> Function()? expand, String Function()? id, List<String> Function()? images, List<PostProductsRequestMarketingFeatures> Function()? marketingFeatures, Map<String, String> Function()? metadata, String? name, PostProductsRequestPackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, String Function()? url, }) { return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,
   description: description != null ? description() : this.description,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'error_model2.dart';import 'eval_run_data_source.dart';import 'eval_run_per_model_usage.dart';import 'eval_run_per_testing_criteria_results.dart';import 'eval_run_result_counts.dart';/// The type of the object. Always "eval.run".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source.dart';import 'package:pub_openai/models/create_eval_run_request/data_source.dart';import 'package:pub_openai/models/error_model2.dart';import 'package:pub_openai/models/eval_run/per_model_usage.dart';import 'package:pub_openai/models/eval_run/per_testing_criteria_results.dart';import 'package:pub_openai/models/eval_run/result_counts.dart';/// The type of the object. Always "eval.run".
 @immutable final class EvalRunObject {const EvalRunObject._(this.value);
 
 factory EvalRunObject.fromJson(String json) { return switch (json) {
@@ -35,9 +35,9 @@ factory EvalRun.fromJson(Map<String, dynamic> json) { return EvalRun(
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   reportUrl: json['report_url'] as String,
-  resultCounts: EvalRunResultCounts.fromJson(json['result_counts'] as Map<String, dynamic>),
-  perModelUsage: (json['per_model_usage'] as List<dynamic>).map((e) => EvalRunPerModelUsage.fromJson(e as Map<String, dynamic>)).toList(),
-  perTestingCriteriaResults: (json['per_testing_criteria_results'] as List<dynamic>).map((e) => EvalRunPerTestingCriteriaResults.fromJson(e as Map<String, dynamic>)).toList(),
+  resultCounts: ResultCounts.fromJson(json['result_counts'] as Map<String, dynamic>),
+  perModelUsage: (json['per_model_usage'] as List<dynamic>).map((e) => PerModelUsage.fromJson(e as Map<String, dynamic>)).toList(),
+  perTestingCriteriaResults: (json['per_testing_criteria_results'] as List<dynamic>).map((e) => PerTestingCriteriaResults.fromJson(e as Map<String, dynamic>)).toList(),
   dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   error: ErrorModel2.fromJson(json['error'] as Map<String, dynamic>),
@@ -68,16 +68,16 @@ final int createdAt;
 final String reportUrl;
 
 /// Counters summarizing the outcomes of the evaluation run.
-final EvalRunResultCounts resultCounts;
+final ResultCounts resultCounts;
 
 /// Usage statistics for each model during the evaluation run.
-final List<EvalRunPerModelUsage> perModelUsage;
+final List<PerModelUsage> perModelUsage;
 
 /// Results per testing criteria applied during the evaluation run.
-final List<EvalRunPerTestingCriteriaResults> perTestingCriteriaResults;
+final List<PerTestingCriteriaResults> perTestingCriteriaResults;
 
 /// Information about the run's data source.
-final EvalRunDataSource dataSource;
+final DataSource dataSource;
 
 final Map<String,String>? metadata;
 
@@ -113,7 +113,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('data_source') &&
       json.containsKey('metadata') &&
       json.containsKey('error'); } 
-EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? status, String? model, String? name, int? createdAt, String? reportUrl, EvalRunResultCounts? resultCounts, List<EvalRunPerModelUsage>? perModelUsage, List<EvalRunPerTestingCriteriaResults>? perTestingCriteriaResults, EvalRunDataSource? dataSource, Map<String, String>? Function()? metadata, ErrorModel2? error, }) { return EvalRun(
+EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? status, String? model, String? name, int? createdAt, String? reportUrl, ResultCounts? resultCounts, List<PerModelUsage>? perModelUsage, List<PerTestingCriteriaResults>? perTestingCriteriaResults, DataSource? dataSource, Map<String, String>? Function()? metadata, ErrorModel2? error, }) { return EvalRun(
   object: object ?? this.object,
   id: id ?? this.id,
   evalId: evalId ?? this.evalId,

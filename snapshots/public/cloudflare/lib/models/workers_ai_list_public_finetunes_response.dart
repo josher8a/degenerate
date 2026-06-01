@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_public_finetunes_response_result.dart';@immutable final class WorkersAiListPublicFinetunesResponse {const WorkersAiListPublicFinetunesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_create_finetune_response/workers_ai_create_finetune_response_result.dart';@immutable final class WorkersAiListPublicFinetunesResponse {const WorkersAiListPublicFinetunesResponse({required this.result, required this.success, });
 
 factory WorkersAiListPublicFinetunesResponse.fromJson(Map<String, dynamic> json) { return WorkersAiListPublicFinetunesResponse(
-  result: (json['result'] as List<dynamic>).map((e) => WorkersAiListPublicFinetunesResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => WorkersAiCreateFinetuneResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<WorkersAiListPublicFinetunesResponseResult> result;
+final List<WorkersAiCreateFinetuneResponseResult> result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersAiListPublicFinetunesResponse copyWith({List<WorkersAiListPublicFinetunesResponseResult>? result, bool? success, }) { return WorkersAiListPublicFinetunesResponse(
+WorkersAiListPublicFinetunesResponse copyWith({List<WorkersAiCreateFinetuneResponseResult>? result, bool? success, }) { return WorkersAiListPublicFinetunesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

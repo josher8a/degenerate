@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_multi_signer.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_presigned.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
 @immutable final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);
 
 factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) { return switch (json) {

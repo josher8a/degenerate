@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_origin_request_access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_origin_request/access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
 @immutable final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });
 
 factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelOriginRequest(
-  access: json['access'] != null ? TunnelOriginRequestAccess.fromJson(json['access'] as Map<String, dynamic>) : null,
+  access: json['access'] != null ? Access.fromJson(json['access'] as Map<String, dynamic>) : null,
   caPool: json['caPool'] as String?,
   connectTimeout: json['connectTimeout'] != null ? (json['connectTimeout'] as num).toInt() : null,
   disableChunkedEncoding: json['disableChunkedEncoding'] as bool?,
@@ -22,7 +22,7 @@ factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelO
 ); }
 
 /// For all L7 requests to this hostname, cloudflared will validate each request's Cf-Access-Jwt-Assertion request header.
-final TunnelOriginRequestAccess? access;
+final Access? access;
 
 /// Path to the certificate authority (CA) for the certificate of your origin. This option should be used only if your certificate is not signed by Cloudflare.
 final String? caPool;
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'tlsTimeout': ?tlsTimeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access', 'caPool', 'connectTimeout', 'disableChunkedEncoding', 'http2Origin', 'httpHostHeader', 'keepAliveConnections', 'keepAliveTimeout', 'matchSNItoHost', 'noHappyEyeballs', 'noTLSVerify', 'originServerName', 'proxyType', 'tcpKeepAlive', 'tlsTimeout'}.contains(key)); } 
-TunnelOriginRequest copyWith({TunnelOriginRequestAccess Function()? access, String Function()? caPool, int Function()? connectTimeout, bool Function()? disableChunkedEncoding, bool Function()? http2Origin, String Function()? httpHostHeader, int Function()? keepAliveConnections, int Function()? keepAliveTimeout, bool Function()? matchSnItoHost, bool Function()? noHappyEyeballs, bool Function()? noTlsVerify, String Function()? originServerName, String Function()? proxyType, int Function()? tcpKeepAlive, int Function()? tlsTimeout, }) { return TunnelOriginRequest(
+TunnelOriginRequest copyWith({Access Function()? access, String Function()? caPool, int Function()? connectTimeout, bool Function()? disableChunkedEncoding, bool Function()? http2Origin, String Function()? httpHostHeader, int Function()? keepAliveConnections, int Function()? keepAliveTimeout, bool Function()? matchSnItoHost, bool Function()? noHappyEyeballs, bool Function()? noTlsVerify, String Function()? originServerName, String Function()? proxyType, int Function()? tcpKeepAlive, int Function()? tlsTimeout, }) { return TunnelOriginRequest(
   access: access != null ? access() : this.access,
   caPool: caPool != null ? caPool() : this.caPool,
   connectTimeout: connectTimeout != null ? connectTimeout() : this.connectTimeout,

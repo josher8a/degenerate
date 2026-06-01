@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_account_id.dart';import 'resource_sharing_created.dart';import 'resource_sharing_modified.dart';import 'resource_sharing_recipient_id.dart';import 'resource_sharing_share_recipient_resource_object.dart';/// Share Recipient association status.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_created.dart';import 'package:pub_cloudflare/models/resource_sharing_modified.dart';import 'package:pub_cloudflare/models/resource_sharing_recipient_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_recipient_resource_object.dart';/// Share Recipient association status.
 @immutable final class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus._(this.value);
 
 factory ResourceSharingRecipientAssociationStatus.fromJson(String json) { return switch (json) {

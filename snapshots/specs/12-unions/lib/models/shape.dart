@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'circle.dart';import 'rectangle.dart';import 'triangle.dart';sealed class Shape {const Shape();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/circle.dart';import 'package:spec_12_unions/models/rectangle.dart';import 'package:spec_12_unions/models/triangle.dart';sealed class Shape {const Shape();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory Shape.fromJson(Map<String, dynamic> json) { return switch (json['type']) {

@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether this rule targets a branch or tag
-@immutable final class DeploymentBranchPolicyNamePatternWithTypeType {const DeploymentBranchPolicyNamePatternWithTypeType._(this.value);
-
-factory DeploymentBranchPolicyNamePatternWithTypeType.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  _ => DeploymentBranchPolicyNamePatternWithTypeType._(json),
-}; }
-
-static const DeploymentBranchPolicyNamePatternWithTypeType branch = DeploymentBranchPolicyNamePatternWithTypeType._('branch');
-
-static const DeploymentBranchPolicyNamePatternWithTypeType tag = DeploymentBranchPolicyNamePatternWithTypeType._('tag');
-
-static const List<DeploymentBranchPolicyNamePatternWithTypeType> values = [branch, tag];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentBranchPolicyNamePatternWithTypeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentBranchPolicyNamePatternWithTypeType($value)'; } 
- }
-@immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment_branch_policy_name_pattern_with_type/deployment_branch_policy_name_pattern_with_type_type.dart';@immutable final class DeploymentBranchPolicyNamePatternWithType {const DeploymentBranchPolicyNamePatternWithType({required this.name, this.type, });
 
 factory DeploymentBranchPolicyNamePatternWithType.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePatternWithType(
   name: json['name'] as String,

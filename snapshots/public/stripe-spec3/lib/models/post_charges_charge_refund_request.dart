@@ -1,40 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_refund_request_metadata.dart';/// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-@immutable final class PostChargesChargeRefundRequestReason {const PostChargesChargeRefundRequestReason._(this.value);
-
-factory PostChargesChargeRefundRequestReason.fromJson(String json) { return switch (json) {
-  'duplicate' => duplicate,
-  'fraudulent' => fraudulent,
-  'requested_by_customer' => requestedByCustomer,
-  _ => PostChargesChargeRefundRequestReason._(json),
-}; }
-
-static const PostChargesChargeRefundRequestReason duplicate = PostChargesChargeRefundRequestReason._('duplicate');
-
-static const PostChargesChargeRefundRequestReason fraudulent = PostChargesChargeRefundRequestReason._('fraudulent');
-
-static const PostChargesChargeRefundRequestReason requestedByCustomer = PostChargesChargeRefundRequestReason._('requested_by_customer');
-
-static const List<PostChargesChargeRefundRequestReason> values = [duplicate, fraudulent, requestedByCustomer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostChargesChargeRefundRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostChargesChargeRefundRequestReason($value)'; } 
- }
-@immutable final class PostChargesChargeRefundRequest {const PostChargesChargeRefundRequest({this.amount, this.expand, this.instructionsEmail, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';@immutable final class PostChargesChargeRefundRequest {const PostChargesChargeRefundRequest({this.amount, this.expand, this.instructionsEmail, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
 factory PostChargesChargeRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   instructionsEmail: json['instructions_email'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRefundRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   paymentIntent: json['payment_intent'] as String?,
   reason: json['reason'] != null ? PostChargesChargeRefundRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
@@ -51,7 +23,7 @@ final List<String>? expand;
 final String? instructionsEmail;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostChargesChargeRefundRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The identifier of the PaymentIntent to refund.
 final String? paymentIntent;
@@ -76,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'instructions_email', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostChargesChargeRefundRequest copyWith({int Function()? amount, List<String> Function()? expand, String Function()? instructionsEmail, PostChargesChargeRefundRequestMetadata Function()? metadata, String Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostChargesChargeRefundRequest(
+PostChargesChargeRefundRequest copyWith({int Function()? amount, List<String> Function()? expand, String Function()? instructionsEmail, Metadata Function()? metadata, String Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostChargesChargeRefundRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   instructionsEmail: instructionsEmail != null ? instructionsEmail() : this.instructionsEmail,

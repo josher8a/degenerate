@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
 /// 
 @immutable final class ZonesRocketLoaderId {const ZonesRocketLoaderId._(this.value);
 

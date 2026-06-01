@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Lodging {const Lodging({this.checkInAt, this.nights, });
+
+factory Lodging.fromJson(Map<String, dynamic> json) { return Lodging(
+  checkInAt: json['check_in_at'] != null ? (json['check_in_at'] as num).toInt() : null,
+  nights: json['nights'] != null ? (json['nights'] as num).toInt() : null,
+); }
+
+final int? checkInAt;
+
+final int? nights;
+
+Map<String, dynamic> toJson() { return {
+  'check_in_at': ?checkInAt,
+  'nights': ?nights,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_in_at', 'nights'}.contains(key)); } 
+Lodging copyWith({int Function()? checkInAt, int Function()? nights, }) { return Lodging(
+  checkInAt: checkInAt != null ? checkInAt() : this.checkInAt,
+  nights: nights != null ? nights() : this.nights,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Lodging &&
+          checkInAt == other.checkInAt &&
+          nights == other.nights; } 
+@override int get hashCode { return Object.hash(checkInAt, nights); } 
+@override String toString() { return 'Lodging(checkInAt: $checkInAt, nights: $nights)'; } 
+ }

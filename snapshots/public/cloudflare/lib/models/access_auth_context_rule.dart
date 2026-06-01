@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_auth_context_rule_auth_context.dart';/// Matches an Azure Authentication Context.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_auth_context_rule/auth_context.dart';/// Matches an Azure Authentication Context.
 /// Requires an Azure identity provider.
 @immutable final class AccessAuthContextRule {const AccessAuthContextRule({required this.authContext});
 
 factory AccessAuthContextRule.fromJson(Map<String, dynamic> json) { return AccessAuthContextRule(
-  authContext: AccessAuthContextRuleAuthContext.fromJson(json['auth_context'] as Map<String, dynamic>),
+  authContext: AuthContext.fromJson(json['auth_context'] as Map<String, dynamic>),
 ); }
 
-final AccessAuthContextRuleAuthContext authContext;
+final AuthContext authContext;
 
 Map<String, dynamic> toJson() { return {
   'auth_context': authContext.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_context'); } 
-AccessAuthContextRule copyWith({AccessAuthContextRuleAuthContext? authContext}) { return AccessAuthContextRule(
+AccessAuthContextRule copyWith({AuthContext? authContext}) { return AccessAuthContextRule(
   authContext: authContext ?? this.authContext,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// A summary of the reasoning performed by the model. This can be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/reasoning_effort.dart';/// A summary of the reasoning performed by the model. This can be
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
 /// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
 /// 
-@immutable final class ReasoningSummary {const ReasoningSummary._(this.value);
+@immutable final class Summary {const Summary._(this.value);
 
-factory ReasoningSummary.fromJson(String json) { return switch (json) {
+factory Summary.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'concise' => concise,
   'detailed' => detailed,
-  _ => ReasoningSummary._(json),
+  _ => Summary._(json),
 }; }
 
-static const ReasoningSummary auto = ReasoningSummary._('auto');
+static const Summary auto = Summary._('auto');
 
-static const ReasoningSummary concise = ReasoningSummary._('concise');
+static const Summary concise = Summary._('concise');
 
-static const ReasoningSummary detailed = ReasoningSummary._('detailed');
+static const Summary detailed = Summary._('detailed');
 
-static const List<ReasoningSummary> values = [auto, concise, detailed];
+static const List<Summary> values = [auto, concise, detailed];
 
 final String value;
 
@@ -29,9 +29,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningSummary && other.value == value; } 
+    other is Summary && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningSummary($value)'; } 
+@override String toString() { return 'Summary($value)'; } 
  }
 /// **Deprecated:** use `summary` instead.
 /// 
@@ -39,22 +39,22 @@ bool get isUnknown { return !values.contains(this); }
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
-@immutable final class ReasoningGenerateSummary {const ReasoningGenerateSummary._(this.value);
+@immutable final class GenerateSummary {const GenerateSummary._(this.value);
 
-factory ReasoningGenerateSummary.fromJson(String json) { return switch (json) {
+factory GenerateSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'concise' => concise,
   'detailed' => detailed,
-  _ => ReasoningGenerateSummary._(json),
+  _ => GenerateSummary._(json),
 }; }
 
-static const ReasoningGenerateSummary auto = ReasoningGenerateSummary._('auto');
+static const GenerateSummary auto = GenerateSummary._('auto');
 
-static const ReasoningGenerateSummary concise = ReasoningGenerateSummary._('concise');
+static const GenerateSummary concise = GenerateSummary._('concise');
 
-static const ReasoningGenerateSummary detailed = ReasoningGenerateSummary._('detailed');
+static const GenerateSummary detailed = GenerateSummary._('detailed');
 
-static const List<ReasoningGenerateSummary> values = [auto, concise, detailed];
+static const List<GenerateSummary> values = [auto, concise, detailed];
 
 final String value;
 
@@ -62,9 +62,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningGenerateSummary && other.value == value; } 
+    other is GenerateSummary && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningGenerateSummary($value)'; } 
+@override String toString() { return 'GenerateSummary($value)'; } 
  }
 /// **gpt-5 and o-series models only**
 /// 
@@ -75,8 +75,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Reasoning.fromJson(Map<String, dynamic> json) { return Reasoning(
   effort: json['effort'] != null ? ReasoningEffort.fromJson(json['effort'] as String) : null,
-  summary: json['summary'] != null ? ReasoningSummary.fromJson(json['summary'] as String) : null,
-  generateSummary: json['generate_summary'] != null ? ReasoningGenerateSummary.fromJson(json['generate_summary'] as String) : null,
+  summary: json['summary'] != null ? Summary.fromJson(json['summary'] as String) : null,
+  generateSummary: json['generate_summary'] != null ? GenerateSummary.fromJson(json['generate_summary'] as String) : null,
 ); }
 
 final ReasoningEffort? effort;
@@ -87,7 +87,7 @@ final ReasoningEffort? effort;
 /// 
 /// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
 /// 
-final ReasoningSummary? summary;
+final Summary? summary;
 
 /// **Deprecated:** use `summary` instead.
 /// 
@@ -95,7 +95,7 @@ final ReasoningSummary? summary;
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
-final ReasoningGenerateSummary? generateSummary;
+final GenerateSummary? generateSummary;
 
 Map<String, dynamic> toJson() { return {
   if (effort != null) 'effort': effort?.toJson(),
@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   if (generateSummary != null) 'generate_summary': generateSummary?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary', 'generate_summary'}.contains(key)); } 
-Reasoning copyWith({ReasoningEffort? Function()? effort, ReasoningSummary? Function()? summary, ReasoningGenerateSummary? Function()? generateSummary, }) { return Reasoning(
+Reasoning copyWith({ReasoningEffort? Function()? effort, Summary? Function()? summary, GenerateSummary? Function()? generateSummary, }) { return Reasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,
   generateSummary: generateSummary != null ? generateSummary() : this.generateSummary,

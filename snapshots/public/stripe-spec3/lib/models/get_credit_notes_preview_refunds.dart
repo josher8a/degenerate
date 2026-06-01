@@ -1,45 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_refunds_payment_record_refund.dart';@immutable final class GetCreditNotesPreviewRefundsType {const GetCreditNotesPreviewRefundsType._(this.value);
-
-factory GetCreditNotesPreviewRefundsType.fromJson(String json) { return switch (json) {
-  'payment_record_refund' => paymentRecordRefund,
-  'refund' => refund,
-  _ => GetCreditNotesPreviewRefundsType._(json),
-}; }
-
-static const GetCreditNotesPreviewRefundsType paymentRecordRefund = GetCreditNotesPreviewRefundsType._('payment_record_refund');
-
-static const GetCreditNotesPreviewRefundsType refund = GetCreditNotesPreviewRefundsType._('refund');
-
-static const List<GetCreditNotesPreviewRefundsType> values = [paymentRecordRefund, refund];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCreditNotesPreviewRefundsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewRefundsType($value)'; } 
- }
-@immutable final class GetCreditNotesPreviewRefunds {const GetCreditNotesPreviewRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds/get_credit_notes_preview_lines_refunds_type.dart';import 'package:pub_stripe_spec3/models/get_credit_notes_preview_lines_refunds/payment_record_refund.dart';@immutable final class GetCreditNotesPreviewRefunds {const GetCreditNotesPreviewRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
 
 factory GetCreditNotesPreviewRefunds.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,
-  paymentRecordRefund: json['payment_record_refund'] != null ? GetCreditNotesPreviewRefundsPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? PaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: json['refund'] as String?,
-  type: json['type'] != null ? GetCreditNotesPreviewRefundsType.fromJson(json['type'] as String) : null,
+  type: json['type'] != null ? GetCreditNotesPreviewLinesRefundsType.fromJson(json['type'] as String) : null,
 ); }
 
 final int? amountRefunded;
 
-final GetCreditNotesPreviewRefundsPaymentRecordRefund? paymentRecordRefund;
+final PaymentRecordRefund? paymentRecordRefund;
 
 final String? refund;
 
-final GetCreditNotesPreviewRefundsType? type;
+final GetCreditNotesPreviewLinesRefundsType? type;
 
 Map<String, dynamic> toJson() { return {
   'amount_refunded': ?amountRefunded,
@@ -48,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_refunded', 'payment_record_refund', 'refund', 'type'}.contains(key)); } 
-GetCreditNotesPreviewRefunds copyWith({int Function()? amountRefunded, GetCreditNotesPreviewRefundsPaymentRecordRefund Function()? paymentRecordRefund, String Function()? refund, GetCreditNotesPreviewRefundsType Function()? type, }) { return GetCreditNotesPreviewRefunds(
+GetCreditNotesPreviewRefunds copyWith({int Function()? amountRefunded, PaymentRecordRefund Function()? paymentRecordRefund, String Function()? refund, GetCreditNotesPreviewLinesRefundsType Function()? type, }) { return GetCreditNotesPreviewRefunds(
   amountRefunded: amountRefunded != null ? amountRefunded() : this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,
   refund: refund != null ? refund() : this.refund,

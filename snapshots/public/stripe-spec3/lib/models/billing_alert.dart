@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thresholds_resource_usage_threshold_config.dart';/// Defines the type of the alert.
-@immutable final class BillingAlertAlertType {const BillingAlertAlertType._(this.value);
-
-factory BillingAlertAlertType.fromJson(String json) { return switch (json) {
-  'usage_threshold' => usageThreshold,
-  _ => BillingAlertAlertType._(json),
-}; }
-
-static const BillingAlertAlertType usageThreshold = BillingAlertAlertType._('usage_threshold');
-
-static const List<BillingAlertAlertType> values = [usageThreshold];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingAlertAlertType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingAlertAlertType($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_alert/alert_type.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingAlertObject {const BillingAlertObject._(this.value);
 
 factory BillingAlertObject.fromJson(String json) { return switch (json) {
@@ -76,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, required this.title, this.status, this.usageThreshold, });
 
 factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
-  alertType: BillingAlertAlertType.fromJson(json['alert_type'] as String),
+  alertType: AlertType.fromJson(json['alert_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingAlertObject.fromJson(json['object'] as String),
@@ -86,7 +64,7 @@ factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
 ); }
 
 /// Defines the type of the alert.
-final BillingAlertAlertType alertType;
+final AlertType alertType;
 
 /// Unique identifier for the object.
 final String id;
@@ -120,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('title') && json['title'] is String; } 
-BillingAlert copyWith({BillingAlertAlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, ThresholdsResourceUsageThresholdConfig? Function()? usageThreshold, }) { return BillingAlert(
+BillingAlert copyWith({AlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, ThresholdsResourceUsageThresholdConfig? Function()? usageThreshold, }) { return BillingAlert(
   alertType: alertType ?? this.alertType,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

@@ -1,29 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_expired_data.dart';/// The object of the event. Always `event`.
-/// 
-@immutable final class WebhookBatchExpiredObject {const WebhookBatchExpiredObject._(this.value);
-
-factory WebhookBatchExpiredObject.fromJson(String json) { return switch (json) {
-  'event' => event,
-  _ => WebhookBatchExpiredObject._(json),
-}; }
-
-static const WebhookBatchExpiredObject event = WebhookBatchExpiredObject._('event');
-
-static const List<WebhookBatchExpiredObject> values = [event];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBatchExpiredObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBatchExpiredObject($value)'; } 
- }
-/// The type of the event. Always `batch.expired`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `batch.expired`.
 /// 
 @immutable final class WebhookBatchExpiredType {const WebhookBatchExpiredType._(this.value);
 
@@ -53,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 factory WebhookBatchExpired.fromJson(Map<String, dynamic> json) { return WebhookBatchExpired(
   createdAt: (json['created_at'] as num).toInt(),
   id: json['id'] as String,
-  data: WebhookBatchExpiredData.fromJson(json['data'] as Map<String, dynamic>),
-  object: json['object'] != null ? WebhookBatchExpiredObject.fromJson(json['object'] as String) : null,
+  data: WebhookBatchCancelledData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookBatchCancelledObject.fromJson(json['object'] as String) : null,
   type: WebhookBatchExpiredType.fromJson(json['type'] as String),
 ); }
 
@@ -68,11 +45,11 @@ final String id;
 
 /// Event data payload.
 /// 
-final WebhookBatchExpiredData data;
+final WebhookBatchCancelledData data;
 
 /// The object of the event. Always `event`.
 /// 
-final WebhookBatchExpiredObject? object;
+final WebhookBatchCancelledObject? object;
 
 /// The type of the event. Always `batch.expired`.
 /// 
@@ -89,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('data') &&
       json.containsKey('type'); } 
-WebhookBatchExpired copyWith({int? createdAt, String? id, WebhookBatchExpiredData? data, WebhookBatchExpiredObject Function()? object, WebhookBatchExpiredType? type, }) { return WebhookBatchExpired(
+WebhookBatchExpired copyWith({int? createdAt, String? id, WebhookBatchCancelledData? data, WebhookBatchCancelledObject Function()? object, WebhookBatchExpiredType? type, }) { return WebhookBatchExpired(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   data: data ?? this.data,

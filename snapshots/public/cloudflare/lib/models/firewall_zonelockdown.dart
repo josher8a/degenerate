@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_lockdowns_components_schemas_id.dart';import 'firewall_modified_on.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';import 'firewall_schemas_paused.dart';/// The timestamp of when the rule was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_configurations2.dart';import 'package:pub_cloudflare/models/firewall_lockdowns_components_schemas_id.dart';import 'package:pub_cloudflare/models/firewall_modified_on.dart';import 'package:pub_cloudflare/models/firewall_schemas_cidr_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_ip_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';/// The timestamp of when the rule was created.
 extension type FirewallCreatedOn(DateTime value) {
 factory FirewallCreatedOn.fromJson(String json) => FirewallCreatedOn(DateTime.parse(json));
 

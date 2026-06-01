@@ -1,115 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team2.dart';import 'user.dart';import 'webhooks_pull_request5_assignee.dart';import 'webhooks_pull_request5_assignees.dart';import 'webhooks_pull_request5_auto_merge.dart';import 'webhooks_pull_request5_base.dart';import 'webhooks_pull_request5_head.dart';import 'webhooks_pull_request5_labels.dart';import 'webhooks_pull_request5_links.dart';import 'webhooks_pull_request5_merged_by.dart';import 'webhooks_pull_request5_milestone.dart';import 'webhooks_pull_request5_requested_reviewers.dart';import 'webhooks_pull_request5_requested_teams.dart';import 'webhooks_pull_request5_user.dart';@immutable final class WebhooksPullRequest5ActiveLockReason {const WebhooksPullRequest5ActiveLockReason._(this.value);
-
-factory WebhooksPullRequest5ActiveLockReason.fromJson(String json) { return switch (json) {
-  'resolved' => resolved,
-  'off-topic' => offTopic,
-  'too heated' => tooHeated,
-  'spam' => spam,
-  'null' => $null,
-  _ => WebhooksPullRequest5ActiveLockReason._(json),
-}; }
-
-static const WebhooksPullRequest5ActiveLockReason resolved = WebhooksPullRequest5ActiveLockReason._('resolved');
-
-static const WebhooksPullRequest5ActiveLockReason offTopic = WebhooksPullRequest5ActiveLockReason._('off-topic');
-
-static const WebhooksPullRequest5ActiveLockReason tooHeated = WebhooksPullRequest5ActiveLockReason._('too heated');
-
-static const WebhooksPullRequest5ActiveLockReason spam = WebhooksPullRequest5ActiveLockReason._('spam');
-
-static const WebhooksPullRequest5ActiveLockReason $null = WebhooksPullRequest5ActiveLockReason._('null');
-
-static const List<WebhooksPullRequest5ActiveLockReason> values = [resolved, offTopic, tooHeated, spam, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5ActiveLockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5ActiveLockReason($value)'; } 
- }
-/// How the author is associated with the repository.
-@immutable final class WebhooksPullRequest5AuthorAssociation {const WebhooksPullRequest5AuthorAssociation._(this.value);
-
-factory WebhooksPullRequest5AuthorAssociation.fromJson(String json) { return switch (json) {
-  'COLLABORATOR' => collaborator,
-  'CONTRIBUTOR' => contributor,
-  'FIRST_TIMER' => firstTimer,
-  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
-  'MANNEQUIN' => mannequin,
-  'MEMBER' => member,
-  'NONE' => none,
-  'OWNER' => owner,
-  _ => WebhooksPullRequest5AuthorAssociation._(json),
-}; }
-
-static const WebhooksPullRequest5AuthorAssociation collaborator = WebhooksPullRequest5AuthorAssociation._('COLLABORATOR');
-
-static const WebhooksPullRequest5AuthorAssociation contributor = WebhooksPullRequest5AuthorAssociation._('CONTRIBUTOR');
-
-static const WebhooksPullRequest5AuthorAssociation firstTimer = WebhooksPullRequest5AuthorAssociation._('FIRST_TIMER');
-
-static const WebhooksPullRequest5AuthorAssociation firstTimeContributor = WebhooksPullRequest5AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
-
-static const WebhooksPullRequest5AuthorAssociation mannequin = WebhooksPullRequest5AuthorAssociation._('MANNEQUIN');
-
-static const WebhooksPullRequest5AuthorAssociation member = WebhooksPullRequest5AuthorAssociation._('MEMBER');
-
-static const WebhooksPullRequest5AuthorAssociation none = WebhooksPullRequest5AuthorAssociation._('NONE');
-
-static const WebhooksPullRequest5AuthorAssociation owner = WebhooksPullRequest5AuthorAssociation._('OWNER');
-
-static const List<WebhooksPullRequest5AuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5AuthorAssociation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5AuthorAssociation($value)'; } 
- }
-/// State of this Pull Request. Either `open` or `closed`.
-@immutable final class WebhooksPullRequest5State {const WebhooksPullRequest5State._(this.value);
-
-factory WebhooksPullRequest5State.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => WebhooksPullRequest5State._(json),
-}; }
-
-static const WebhooksPullRequest5State open = WebhooksPullRequest5State._('open');
-
-static const WebhooksPullRequest5State closed = WebhooksPullRequest5State._('closed');
-
-static const List<WebhooksPullRequest5State> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksPullRequest5State && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksPullRequest5State($value)'; } 
- }
-@immutable final class WebhooksPullRequest5 {const WebhooksPullRequest5({required this.createdAt, required this.activeLockReason, required this.url, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, required this.updatedAt, required this.closedAt, required this.title, required this.commentsUrl, required this.statusesUrl, required this.commitsUrl, required this.links, required this.state, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.reviewCommentsUrl, required this.mergeCommitSha, required this.requestedTeams, required this.requestedReviewers, required this.patchUrl, required this.mergedAt, required this.user, required this.milestone, required this.nodeId, required this.number, required this.reviewCommentUrl, this.rebaseable, this.mergeableState, this.mergeable, this.mergedBy, this.reviewComments, this.maintainerCanModify, this.deletions, this.commits, this.comments, this.changedFiles, this.additions, this.merged, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_author_association.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/team11.dart';import 'package:pub_github_rest_3_1/models/user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_assignee.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_milestone.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/active_lock_reason.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/webhooks_issue2_labels.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_assignees.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_auto_merge.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_base.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_head.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_links.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_merged_by.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_requested_reviewers.dart';import 'package:pub_github_rest_3_1/models/webhooks_pull_request5/webhooks_pull_request5_requested_teams.dart';@immutable final class WebhooksPullRequest5 {const WebhooksPullRequest5({required this.createdAt, required this.activeLockReason, required this.url, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, required this.updatedAt, required this.closedAt, required this.title, required this.commentsUrl, required this.statusesUrl, required this.commitsUrl, required this.links, required this.state, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.reviewCommentsUrl, required this.mergeCommitSha, required this.requestedTeams, required this.requestedReviewers, required this.patchUrl, required this.mergedAt, required this.user, required this.milestone, required this.nodeId, required this.number, required this.reviewCommentUrl, this.rebaseable, this.mergeableState, this.mergeable, this.mergedBy, this.reviewComments, this.maintainerCanModify, this.deletions, this.commits, this.comments, this.changedFiles, this.additions, this.merged, });
 
 factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5(
   links: WebhooksPullRequest5Links.fromJson(json['_links'] as Map<String, dynamic>),
-  activeLockReason: json['active_lock_reason'] != null ? WebhooksPullRequest5ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
+  activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,
-  assignee: json['assignee'] != null ? WebhooksPullRequest5Assignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assignee: json['assignee'] != null ? WebhooksIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   assignees: (json['assignees'] as List<dynamic>).map((e) => WebhooksPullRequest5Assignees.fromJson(e as Map<String, dynamic>)).toList(),
-  authorAssociation: WebhooksPullRequest5AuthorAssociation.fromJson(json['author_association'] as String),
+  authorAssociation: DiscussionAuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: json['auto_merge'] != null ? WebhooksPullRequest5AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhooksPullRequest5Base.fromJson(json['base'] as Map<String, dynamic>),
   body: json['body'] as String?,
@@ -127,7 +26,7 @@ factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return Webhoo
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
   issueUrl: Uri.parse(json['issue_url'] as String),
-  labels: (json['labels'] as List<dynamic>).map((e) => WebhooksPullRequest5Labels.fromJson(e as Map<String, dynamic>)).toList(),
+  labels: (json['labels'] as List<dynamic>).map((e) => WebhooksIssue2Labels.fromJson(e as Map<String, dynamic>)).toList(),
   locked: json['locked'] as bool,
   maintainerCanModify: json['maintainer_can_modify'] as bool?,
   mergeCommitSha: json['merge_commit_sha'] as String?,
@@ -136,36 +35,36 @@ factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return Webhoo
   merged: json['merged'] as bool?,
   mergedAt: json['merged_at'] != null ? DateTime.parse(json['merged_at'] as String) : null,
   mergedBy: json['merged_by'] != null ? WebhooksPullRequest5MergedBy.fromJson(json['merged_by'] as Map<String, dynamic>) : null,
-  milestone: json['milestone'] != null ? WebhooksPullRequest5Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
+  milestone: json['milestone'] != null ? WebhooksIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
   patchUrl: Uri.parse(json['patch_url'] as String),
   rebaseable: json['rebaseable'] as bool?,
-  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => User.fromJson(v as Map<String, dynamic>), fromB: (v) => Team2.fromJson(v as Map<String, dynamic>),)).toList(),
+  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => User.fromJson(v as Map<String, dynamic>), fromB: (v) => Team11.fromJson(v as Map<String, dynamic>),)).toList(),
   requestedTeams: (json['requested_teams'] as List<dynamic>).map((e) => WebhooksPullRequest5RequestedTeams.fromJson(e as Map<String, dynamic>)).toList(),
   reviewCommentUrl: json['review_comment_url'] as String,
   reviewComments: json['review_comments'] != null ? (json['review_comments'] as num).toInt() : null,
   reviewCommentsUrl: Uri.parse(json['review_comments_url'] as String),
-  state: WebhooksPullRequest5State.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   statusesUrl: Uri.parse(json['statuses_url'] as String),
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
-  user: json['user'] != null ? WebhooksPullRequest5User.fromJson(json['user'] as Map<String, dynamic>) : null,
+  user: json['user'] != null ? WebhooksIssueCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
 ); }
 
 final WebhooksPullRequest5Links links;
 
-final WebhooksPullRequest5ActiveLockReason? activeLockReason;
+final ActiveLockReason? activeLockReason;
 
 final int? additions;
 
-final WebhooksPullRequest5Assignee? assignee;
+final WebhooksIssueAssignee? assignee;
 
 final List<WebhooksPullRequest5Assignees?> assignees;
 
 /// How the author is associated with the repository.
-final WebhooksPullRequest5AuthorAssociation authorAssociation;
+final DiscussionAuthorAssociation authorAssociation;
 
 /// The status of auto merging a pull request.
 final WebhooksPullRequest5AutoMerge? autoMerge;
@@ -203,7 +102,7 @@ final int id;
 
 final Uri issueUrl;
 
-final List<WebhooksPullRequest5Labels> labels;
+final List<WebhooksIssue2Labels> labels;
 
 final bool locked;
 
@@ -223,7 +122,7 @@ final DateTime? mergedAt;
 final WebhooksPullRequest5MergedBy? mergedBy;
 
 /// A collection of related issues and pull requests.
-final WebhooksPullRequest5Milestone? milestone;
+final WebhooksIssueMilestone? milestone;
 
 final String nodeId;
 
@@ -245,7 +144,7 @@ final int? reviewComments;
 final Uri reviewCommentsUrl;
 
 /// State of this Pull Request. Either `open` or `closed`.
-final WebhooksPullRequest5State state;
+final IssuesCreateMilestoneRequestState state;
 
 final Uri statusesUrl;
 
@@ -256,7 +155,7 @@ final DateTime updatedAt;
 
 final Uri url;
 
-final WebhooksPullRequest5User? user;
+final WebhooksIssueCommentUser? user;
 
 Map<String, dynamic> toJson() { return {
   '_links': links.toJson(),
@@ -344,7 +243,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_link
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, WebhooksPullRequest5ActiveLockReason? Function()? activeLockReason, int Function()? additions, WebhooksPullRequest5Assignee? Function()? assignee, List<WebhooksPullRequest5Assignees?>? assignees, WebhooksPullRequest5AuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int Function()? changedFiles, DateTime? Function()? closedAt, int Function()? comments, Uri? commentsUrl, int Function()? commits, Uri? commitsUrl, DateTime? createdAt, int Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksPullRequest5Labels>? labels, bool? locked, bool Function()? maintainerCanModify, String? Function()? mergeCommitSha, bool? Function()? mergeable, String Function()? mergeableState, bool? Function()? merged, DateTime? Function()? mergedAt, WebhooksPullRequest5MergedBy? Function()? mergedBy, WebhooksPullRequest5Milestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, bool? Function()? rebaseable, List<WebhooksPullRequest5RequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int Function()? reviewComments, Uri? reviewCommentsUrl, WebhooksPullRequest5State? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksPullRequest5User? Function()? user, }) { return WebhooksPullRequest5(
+WebhooksPullRequest5 copyWith({WebhooksPullRequest5Links? links, ActiveLockReason? Function()? activeLockReason, int Function()? additions, WebhooksIssueAssignee? Function()? assignee, List<WebhooksPullRequest5Assignees?>? assignees, DiscussionAuthorAssociation? authorAssociation, WebhooksPullRequest5AutoMerge? Function()? autoMerge, WebhooksPullRequest5Base? base, String? Function()? body, int Function()? changedFiles, DateTime? Function()? closedAt, int Function()? comments, Uri? commentsUrl, int Function()? commits, Uri? commitsUrl, DateTime? createdAt, int Function()? deletions, Uri? diffUrl, bool? draft, WebhooksPullRequest5Head? head, Uri? htmlUrl, int? id, Uri? issueUrl, List<WebhooksIssue2Labels>? labels, bool? locked, bool Function()? maintainerCanModify, String? Function()? mergeCommitSha, bool? Function()? mergeable, String Function()? mergeableState, bool? Function()? merged, DateTime? Function()? mergedAt, WebhooksPullRequest5MergedBy? Function()? mergedBy, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, Uri? patchUrl, bool? Function()? rebaseable, List<WebhooksPullRequest5RequestedReviewers>? requestedReviewers, List<WebhooksPullRequest5RequestedTeams>? requestedTeams, String? reviewCommentUrl, int Function()? reviewComments, Uri? reviewCommentsUrl, IssuesCreateMilestoneRequestState? state, Uri? statusesUrl, String? title, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, }) { return WebhooksPullRequest5(
   links: links ?? this.links,
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   additions: additions != null ? additions() : this.additions,

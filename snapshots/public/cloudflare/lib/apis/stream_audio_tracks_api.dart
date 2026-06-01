@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_account_identifier.dart';import '../models/stream_additional_audio.dart';import '../models/stream_audio_identifier.dart';import '../models/stream_copy_audio_track.dart';import '../models/stream_edit_audio_track.dart';import '../models/stream_identifier.dart';/// StreamAudioTracksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_account_identifier.dart';import 'package:pub_cloudflare/models/stream_additional_audio.dart';import 'package:pub_cloudflare/models/stream_audio_identifier.dart';import 'package:pub_cloudflare/models/stream_copy_audio_track.dart';import 'package:pub_cloudflare/models/stream_edit_audio_track.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';/// StreamAudioTracksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

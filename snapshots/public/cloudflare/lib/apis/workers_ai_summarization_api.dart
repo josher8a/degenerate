@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_facebook_bart_large_cnn_request.dart';import '../models/workers_ai_post_run_cf_facebook_bart_large_cnn_response400.dart';import '../models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_request.dart';import '../models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_response400.dart';/// WorkersAiSummarizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_bart_large_cnn_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_request.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_facebook_nonomni_bart_large_cnn_response400.dart';/// WorkersAiSummarizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

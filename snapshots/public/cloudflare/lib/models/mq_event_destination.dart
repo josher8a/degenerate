@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
 sealed class MqEventDestination {const MqEventDestination();
 
 factory MqEventDestination.fromJson(Map<String, dynamic> json) {   if (MqEventDestinationQueue.canParse(json)) {

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_zones_zone_id_logpush_jobs_job_id_response_result.dart';import 'logpush_messages2.dart';@immutable final class DeleteZonesZoneIdLogpushJobsJobIdResponse {const DeleteZonesZoneIdLogpushJobsJobIdResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/delete_accounts_account_id_logpush_jobs_job_id_response/delete_accounts_account_id_logpush_jobs_job_id_response_result.dart';import 'package:pub_cloudflare/models/logpush_messages2.dart';@immutable final class DeleteZonesZoneIdLogpushJobsJobIdResponse {const DeleteZonesZoneIdLogpushJobsJobIdResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DeleteZonesZoneIdLogpushJobsJobIdResponse.fromJson(Map<String, dynamic> json) { return DeleteZonesZoneIdLogpushJobsJobIdResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? DeleteZonesZoneIdLogpushJobsJobIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? DeleteAccountsAccountIdLogpushJobsJobIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<LogpushMessages2> errors;
@@ -16,7 +16,7 @@ final List<LogpushMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final DeleteZonesZoneIdLogpushJobsJobIdResponseResult? result;
+final DeleteAccountsAccountIdLogpushJobsJobIdResponseResult? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DeleteZonesZoneIdLogpushJobsJobIdResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, DeleteZonesZoneIdLogpushJobsJobIdResponseResult Function()? result, }) { return DeleteZonesZoneIdLogpushJobsJobIdResponse(
+DeleteZonesZoneIdLogpushJobsJobIdResponse copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, DeleteAccountsAccountIdLogpushJobsJobIdResponseResult Function()? result, }) { return DeleteZonesZoneIdLogpushJobsJobIdResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

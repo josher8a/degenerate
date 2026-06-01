@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_created_on.dart';import 'workers_dispatch_namespace_name.dart';import 'workers_identifier.dart';import 'workers_modified_on.dart';import 'workers_trusted_workers.dart';import 'workers_uuid.dart';/// The current number of scripts in this Dispatch Namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_created_on.dart';import 'package:pub_cloudflare/models/workers_dispatch_namespace_name.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_modified_on.dart';import 'package:pub_cloudflare/models/workers_trusted_workers.dart';import 'package:pub_cloudflare/models/workers_uuid.dart';/// The current number of scripts in this Dispatch Namespace.
 extension type const WorkersScriptCount(int value) {
 factory WorkersScriptCount.fromJson(num json) => WorkersScriptCount(json.toInt());
 

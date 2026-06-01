@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor.dart';import 'audit_log_certificate_created.dart';import 'audit_log_certificate_deleted.dart';import 'audit_log_certificate_updated.dart';import 'audit_log_certificates_activated.dart';import 'audit_log_certificates_deactivated.dart';import 'audit_log_checkpoint_permission_created.dart';import 'audit_log_checkpoint_permission_deleted.dart';import 'audit_log_event_type.dart';import 'audit_log_external_key_registered.dart';import 'audit_log_external_key_removed.dart';import 'audit_log_group_created.dart';import 'audit_log_group_deleted.dart';import 'audit_log_group_updated.dart';import 'audit_log_invite_accepted.dart';import 'audit_log_invite_deleted.dart';import 'audit_log_invite_sent.dart';import 'audit_log_ip_allowlist_config_activated.dart';import 'audit_log_ip_allowlist_config_deactivated.dart';import 'audit_log_ip_allowlist_created.dart';import 'audit_log_ip_allowlist_deleted.dart';import 'audit_log_ip_allowlist_updated.dart';import 'audit_log_key_created.dart';import 'audit_log_key_deleted.dart';import 'audit_log_key_updated.dart';import 'audit_log_login_failed.dart';import 'audit_log_logout_failed.dart';import 'audit_log_organization_updated.dart';import 'audit_log_project.dart';import 'audit_log_project_archived.dart';import 'audit_log_project_created.dart';import 'audit_log_project_deleted.dart';import 'audit_log_project_updated.dart';import 'audit_log_rate_limit_deleted.dart';import 'audit_log_rate_limit_updated.dart';import 'audit_log_role_assignment_created.dart';import 'audit_log_role_assignment_deleted.dart';import 'audit_log_role_created.dart';import 'audit_log_role_deleted.dart';import 'audit_log_role_updated.dart';import 'audit_log_scim_disabled.dart';import 'audit_log_scim_enabled.dart';import 'audit_log_service_account_created.dart';import 'audit_log_service_account_deleted.dart';import 'audit_log_service_account_updated.dart';import 'audit_log_user_added.dart';import 'audit_log_user_deleted.dart';import 'audit_log_user_updated.dart';/// A log of a user action or configuration change within this organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log/audit_log_project.dart';import 'package:pub_openai/models/audit_log/certificate_created.dart';import 'package:pub_openai/models/audit_log/certificate_deleted.dart';import 'package:pub_openai/models/audit_log/certificate_updated.dart';import 'package:pub_openai/models/audit_log/certificates_activated.dart';import 'package:pub_openai/models/audit_log/certificates_deactivated.dart';import 'package:pub_openai/models/audit_log/checkpoint_permission_created.dart';import 'package:pub_openai/models/audit_log/checkpoint_permission_deleted.dart';import 'package:pub_openai/models/audit_log/external_key_registered.dart';import 'package:pub_openai/models/audit_log/external_key_removed.dart';import 'package:pub_openai/models/audit_log/group_created.dart';import 'package:pub_openai/models/audit_log/group_deleted.dart';import 'package:pub_openai/models/audit_log/group_updated.dart';import 'package:pub_openai/models/audit_log/invite_accepted.dart';import 'package:pub_openai/models/audit_log/invite_deleted.dart';import 'package:pub_openai/models/audit_log/invite_sent.dart';import 'package:pub_openai/models/audit_log/ip_allowlist_config_activated.dart';import 'package:pub_openai/models/audit_log/ip_allowlist_config_deactivated.dart';import 'package:pub_openai/models/audit_log/ip_allowlist_created.dart';import 'package:pub_openai/models/audit_log/ip_allowlist_deleted.dart';import 'package:pub_openai/models/audit_log/ip_allowlist_updated.dart';import 'package:pub_openai/models/audit_log/key_created.dart';import 'package:pub_openai/models/audit_log/key_deleted.dart';import 'package:pub_openai/models/audit_log/key_updated.dart';import 'package:pub_openai/models/audit_log/login_failed.dart';import 'package:pub_openai/models/audit_log/logout_failed.dart';import 'package:pub_openai/models/audit_log/organization_updated.dart';import 'package:pub_openai/models/audit_log/project_archived.dart';import 'package:pub_openai/models/audit_log/project_created.dart';import 'package:pub_openai/models/audit_log/project_deleted.dart';import 'package:pub_openai/models/audit_log/project_updated.dart';import 'package:pub_openai/models/audit_log/rate_limit_deleted.dart';import 'package:pub_openai/models/audit_log/rate_limit_updated.dart';import 'package:pub_openai/models/audit_log/role_assignment_created.dart';import 'package:pub_openai/models/audit_log/role_assignment_deleted.dart';import 'package:pub_openai/models/audit_log/role_created.dart';import 'package:pub_openai/models/audit_log/role_deleted.dart';import 'package:pub_openai/models/audit_log/role_updated.dart';import 'package:pub_openai/models/audit_log/scim_disabled.dart';import 'package:pub_openai/models/audit_log/scim_enabled.dart';import 'package:pub_openai/models/audit_log/service_account_created.dart';import 'package:pub_openai/models/audit_log/service_account_deleted.dart';import 'package:pub_openai/models/audit_log/service_account_updated.dart';import 'package:pub_openai/models/audit_log/user_added.dart';import 'package:pub_openai/models/audit_log/user_deleted.dart';import 'package:pub_openai/models/audit_log/user_updated.dart';import 'package:pub_openai/models/audit_log_actor.dart';import 'package:pub_openai/models/audit_log_event_type.dart';/// A log of a user action or configuration change within this organization.
 @immutable final class AuditLog {const AuditLog({required this.id, required this.type, required this.effectiveAt, required this.actor, this.inviteSent, this.apiKeyCreated, this.apiKeyUpdated, this.apiKeyDeleted, this.checkpointPermissionCreated, this.checkpointPermissionDeleted, this.externalKeyRegistered, this.externalKeyRemoved, this.groupCreated, this.groupUpdated, this.groupDeleted, this.scimEnabled, this.scimDisabled, this.project, this.inviteAccepted, this.inviteDeleted, this.ipAllowlistCreated, this.ipAllowlistUpdated, this.ipAllowlistDeleted, this.ipAllowlistConfigActivated, this.ipAllowlistConfigDeactivated, this.loginSucceeded, this.loginFailed, this.logoutSucceeded, this.logoutFailed, this.organizationUpdated, this.projectCreated, this.projectUpdated, this.projectArchived, this.certificatesDeactivated, this.rateLimitUpdated, this.rateLimitDeleted, this.roleCreated, this.roleUpdated, this.roleDeleted, this.roleAssignmentCreated, this.roleAssignmentDeleted, this.serviceAccountCreated, this.serviceAccountUpdated, this.serviceAccountDeleted, this.userAdded, this.userUpdated, this.userDeleted, this.certificateCreated, this.certificateUpdated, this.certificateDeleted, this.certificatesActivated, this.projectDeleted, });
 
 factory AuditLog.fromJson(Map<String, dynamic> json) { return AuditLog(
@@ -9,53 +9,53 @@ factory AuditLog.fromJson(Map<String, dynamic> json) { return AuditLog(
   effectiveAt: (json['effective_at'] as num).toInt(),
   project: json['project'] != null ? AuditLogProject.fromJson(json['project'] as Map<String, dynamic>) : null,
   actor: AuditLogActor.fromJson(json['actor'] as Map<String, dynamic>),
-  apiKeyCreated: json['api_key.created'] != null ? AuditLogKeyCreated.fromJson(json['api_key.created'] as Map<String, dynamic>) : null,
-  apiKeyUpdated: json['api_key.updated'] != null ? AuditLogKeyUpdated.fromJson(json['api_key.updated'] as Map<String, dynamic>) : null,
-  apiKeyDeleted: json['api_key.deleted'] != null ? AuditLogKeyDeleted.fromJson(json['api_key.deleted'] as Map<String, dynamic>) : null,
-  checkpointPermissionCreated: json['checkpoint.permission.created'] != null ? AuditLogCheckpointPermissionCreated.fromJson(json['checkpoint.permission.created'] as Map<String, dynamic>) : null,
-  checkpointPermissionDeleted: json['checkpoint.permission.deleted'] != null ? AuditLogCheckpointPermissionDeleted.fromJson(json['checkpoint.permission.deleted'] as Map<String, dynamic>) : null,
-  externalKeyRegistered: json['external_key.registered'] != null ? AuditLogExternalKeyRegistered.fromJson(json['external_key.registered'] as Map<String, dynamic>) : null,
-  externalKeyRemoved: json['external_key.removed'] != null ? AuditLogExternalKeyRemoved.fromJson(json['external_key.removed'] as Map<String, dynamic>) : null,
-  groupCreated: json['group.created'] != null ? AuditLogGroupCreated.fromJson(json['group.created'] as Map<String, dynamic>) : null,
-  groupUpdated: json['group.updated'] != null ? AuditLogGroupUpdated.fromJson(json['group.updated'] as Map<String, dynamic>) : null,
-  groupDeleted: json['group.deleted'] != null ? AuditLogGroupDeleted.fromJson(json['group.deleted'] as Map<String, dynamic>) : null,
-  scimEnabled: json['scim.enabled'] != null ? AuditLogScimEnabled.fromJson(json['scim.enabled'] as Map<String, dynamic>) : null,
-  scimDisabled: json['scim.disabled'] != null ? AuditLogScimDisabled.fromJson(json['scim.disabled'] as Map<String, dynamic>) : null,
-  inviteSent: json['invite.sent'] != null ? AuditLogInviteSent.fromJson(json['invite.sent'] as Map<String, dynamic>) : null,
-  inviteAccepted: json['invite.accepted'] != null ? AuditLogInviteAccepted.fromJson(json['invite.accepted'] as Map<String, dynamic>) : null,
-  inviteDeleted: json['invite.deleted'] != null ? AuditLogInviteDeleted.fromJson(json['invite.deleted'] as Map<String, dynamic>) : null,
-  ipAllowlistCreated: json['ip_allowlist.created'] != null ? AuditLogIpAllowlistCreated.fromJson(json['ip_allowlist.created'] as Map<String, dynamic>) : null,
-  ipAllowlistUpdated: json['ip_allowlist.updated'] != null ? AuditLogIpAllowlistUpdated.fromJson(json['ip_allowlist.updated'] as Map<String, dynamic>) : null,
-  ipAllowlistDeleted: json['ip_allowlist.deleted'] != null ? AuditLogIpAllowlistDeleted.fromJson(json['ip_allowlist.deleted'] as Map<String, dynamic>) : null,
-  ipAllowlistConfigActivated: json['ip_allowlist.config.activated'] != null ? AuditLogIpAllowlistConfigActivated.fromJson(json['ip_allowlist.config.activated'] as Map<String, dynamic>) : null,
-  ipAllowlistConfigDeactivated: json['ip_allowlist.config.deactivated'] != null ? AuditLogIpAllowlistConfigDeactivated.fromJson(json['ip_allowlist.config.deactivated'] as Map<String, dynamic>) : null,
+  apiKeyCreated: json['api_key.created'] != null ? KeyCreated.fromJson(json['api_key.created'] as Map<String, dynamic>) : null,
+  apiKeyUpdated: json['api_key.updated'] != null ? KeyUpdated.fromJson(json['api_key.updated'] as Map<String, dynamic>) : null,
+  apiKeyDeleted: json['api_key.deleted'] != null ? KeyDeleted.fromJson(json['api_key.deleted'] as Map<String, dynamic>) : null,
+  checkpointPermissionCreated: json['checkpoint.permission.created'] != null ? CheckpointPermissionCreated.fromJson(json['checkpoint.permission.created'] as Map<String, dynamic>) : null,
+  checkpointPermissionDeleted: json['checkpoint.permission.deleted'] != null ? CheckpointPermissionDeleted.fromJson(json['checkpoint.permission.deleted'] as Map<String, dynamic>) : null,
+  externalKeyRegistered: json['external_key.registered'] != null ? ExternalKeyRegistered.fromJson(json['external_key.registered'] as Map<String, dynamic>) : null,
+  externalKeyRemoved: json['external_key.removed'] != null ? ExternalKeyRemoved.fromJson(json['external_key.removed'] as Map<String, dynamic>) : null,
+  groupCreated: json['group.created'] != null ? GroupCreated.fromJson(json['group.created'] as Map<String, dynamic>) : null,
+  groupUpdated: json['group.updated'] != null ? GroupUpdated.fromJson(json['group.updated'] as Map<String, dynamic>) : null,
+  groupDeleted: json['group.deleted'] != null ? GroupDeleted.fromJson(json['group.deleted'] as Map<String, dynamic>) : null,
+  scimEnabled: json['scim.enabled'] != null ? ScimEnabled.fromJson(json['scim.enabled'] as Map<String, dynamic>) : null,
+  scimDisabled: json['scim.disabled'] != null ? ScimDisabled.fromJson(json['scim.disabled'] as Map<String, dynamic>) : null,
+  inviteSent: json['invite.sent'] != null ? InviteSent.fromJson(json['invite.sent'] as Map<String, dynamic>) : null,
+  inviteAccepted: json['invite.accepted'] != null ? InviteAccepted.fromJson(json['invite.accepted'] as Map<String, dynamic>) : null,
+  inviteDeleted: json['invite.deleted'] != null ? InviteDeleted.fromJson(json['invite.deleted'] as Map<String, dynamic>) : null,
+  ipAllowlistCreated: json['ip_allowlist.created'] != null ? IpAllowlistCreated.fromJson(json['ip_allowlist.created'] as Map<String, dynamic>) : null,
+  ipAllowlistUpdated: json['ip_allowlist.updated'] != null ? IpAllowlistUpdated.fromJson(json['ip_allowlist.updated'] as Map<String, dynamic>) : null,
+  ipAllowlistDeleted: json['ip_allowlist.deleted'] != null ? IpAllowlistDeleted.fromJson(json['ip_allowlist.deleted'] as Map<String, dynamic>) : null,
+  ipAllowlistConfigActivated: json['ip_allowlist.config.activated'] != null ? IpAllowlistConfigActivated.fromJson(json['ip_allowlist.config.activated'] as Map<String, dynamic>) : null,
+  ipAllowlistConfigDeactivated: json['ip_allowlist.config.deactivated'] != null ? IpAllowlistConfigDeactivated.fromJson(json['ip_allowlist.config.deactivated'] as Map<String, dynamic>) : null,
   loginSucceeded: json['login.succeeded'] as Map<String, dynamic>?,
-  loginFailed: json['login.failed'] != null ? AuditLogLoginFailed.fromJson(json['login.failed'] as Map<String, dynamic>) : null,
+  loginFailed: json['login.failed'] != null ? LoginFailed.fromJson(json['login.failed'] as Map<String, dynamic>) : null,
   logoutSucceeded: json['logout.succeeded'] as Map<String, dynamic>?,
-  logoutFailed: json['logout.failed'] != null ? AuditLogLogoutFailed.fromJson(json['logout.failed'] as Map<String, dynamic>) : null,
-  organizationUpdated: json['organization.updated'] != null ? AuditLogOrganizationUpdated.fromJson(json['organization.updated'] as Map<String, dynamic>) : null,
-  projectCreated: json['project.created'] != null ? AuditLogProjectCreated.fromJson(json['project.created'] as Map<String, dynamic>) : null,
-  projectUpdated: json['project.updated'] != null ? AuditLogProjectUpdated.fromJson(json['project.updated'] as Map<String, dynamic>) : null,
-  projectArchived: json['project.archived'] != null ? AuditLogProjectArchived.fromJson(json['project.archived'] as Map<String, dynamic>) : null,
-  projectDeleted: json['project.deleted'] != null ? AuditLogProjectDeleted.fromJson(json['project.deleted'] as Map<String, dynamic>) : null,
-  rateLimitUpdated: json['rate_limit.updated'] != null ? AuditLogRateLimitUpdated.fromJson(json['rate_limit.updated'] as Map<String, dynamic>) : null,
-  rateLimitDeleted: json['rate_limit.deleted'] != null ? AuditLogRateLimitDeleted.fromJson(json['rate_limit.deleted'] as Map<String, dynamic>) : null,
-  roleCreated: json['role.created'] != null ? AuditLogRoleCreated.fromJson(json['role.created'] as Map<String, dynamic>) : null,
-  roleUpdated: json['role.updated'] != null ? AuditLogRoleUpdated.fromJson(json['role.updated'] as Map<String, dynamic>) : null,
-  roleDeleted: json['role.deleted'] != null ? AuditLogRoleDeleted.fromJson(json['role.deleted'] as Map<String, dynamic>) : null,
-  roleAssignmentCreated: json['role.assignment.created'] != null ? AuditLogRoleAssignmentCreated.fromJson(json['role.assignment.created'] as Map<String, dynamic>) : null,
-  roleAssignmentDeleted: json['role.assignment.deleted'] != null ? AuditLogRoleAssignmentDeleted.fromJson(json['role.assignment.deleted'] as Map<String, dynamic>) : null,
-  serviceAccountCreated: json['service_account.created'] != null ? AuditLogServiceAccountCreated.fromJson(json['service_account.created'] as Map<String, dynamic>) : null,
-  serviceAccountUpdated: json['service_account.updated'] != null ? AuditLogServiceAccountUpdated.fromJson(json['service_account.updated'] as Map<String, dynamic>) : null,
-  serviceAccountDeleted: json['service_account.deleted'] != null ? AuditLogServiceAccountDeleted.fromJson(json['service_account.deleted'] as Map<String, dynamic>) : null,
-  userAdded: json['user.added'] != null ? AuditLogUserAdded.fromJson(json['user.added'] as Map<String, dynamic>) : null,
-  userUpdated: json['user.updated'] != null ? AuditLogUserUpdated.fromJson(json['user.updated'] as Map<String, dynamic>) : null,
-  userDeleted: json['user.deleted'] != null ? AuditLogUserDeleted.fromJson(json['user.deleted'] as Map<String, dynamic>) : null,
-  certificateCreated: json['certificate.created'] != null ? AuditLogCertificateCreated.fromJson(json['certificate.created'] as Map<String, dynamic>) : null,
-  certificateUpdated: json['certificate.updated'] != null ? AuditLogCertificateUpdated.fromJson(json['certificate.updated'] as Map<String, dynamic>) : null,
-  certificateDeleted: json['certificate.deleted'] != null ? AuditLogCertificateDeleted.fromJson(json['certificate.deleted'] as Map<String, dynamic>) : null,
-  certificatesActivated: json['certificates.activated'] != null ? AuditLogCertificatesActivated.fromJson(json['certificates.activated'] as Map<String, dynamic>) : null,
-  certificatesDeactivated: json['certificates.deactivated'] != null ? AuditLogCertificatesDeactivated.fromJson(json['certificates.deactivated'] as Map<String, dynamic>) : null,
+  logoutFailed: json['logout.failed'] != null ? LogoutFailed.fromJson(json['logout.failed'] as Map<String, dynamic>) : null,
+  organizationUpdated: json['organization.updated'] != null ? OrganizationUpdated.fromJson(json['organization.updated'] as Map<String, dynamic>) : null,
+  projectCreated: json['project.created'] != null ? ProjectCreated.fromJson(json['project.created'] as Map<String, dynamic>) : null,
+  projectUpdated: json['project.updated'] != null ? ProjectUpdated.fromJson(json['project.updated'] as Map<String, dynamic>) : null,
+  projectArchived: json['project.archived'] != null ? ProjectArchived.fromJson(json['project.archived'] as Map<String, dynamic>) : null,
+  projectDeleted: json['project.deleted'] != null ? ProjectDeleted.fromJson(json['project.deleted'] as Map<String, dynamic>) : null,
+  rateLimitUpdated: json['rate_limit.updated'] != null ? RateLimitUpdated.fromJson(json['rate_limit.updated'] as Map<String, dynamic>) : null,
+  rateLimitDeleted: json['rate_limit.deleted'] != null ? RateLimitDeleted.fromJson(json['rate_limit.deleted'] as Map<String, dynamic>) : null,
+  roleCreated: json['role.created'] != null ? RoleCreated.fromJson(json['role.created'] as Map<String, dynamic>) : null,
+  roleUpdated: json['role.updated'] != null ? RoleUpdated.fromJson(json['role.updated'] as Map<String, dynamic>) : null,
+  roleDeleted: json['role.deleted'] != null ? RoleDeleted.fromJson(json['role.deleted'] as Map<String, dynamic>) : null,
+  roleAssignmentCreated: json['role.assignment.created'] != null ? RoleAssignmentCreated.fromJson(json['role.assignment.created'] as Map<String, dynamic>) : null,
+  roleAssignmentDeleted: json['role.assignment.deleted'] != null ? RoleAssignmentDeleted.fromJson(json['role.assignment.deleted'] as Map<String, dynamic>) : null,
+  serviceAccountCreated: json['service_account.created'] != null ? ServiceAccountCreated.fromJson(json['service_account.created'] as Map<String, dynamic>) : null,
+  serviceAccountUpdated: json['service_account.updated'] != null ? ServiceAccountUpdated.fromJson(json['service_account.updated'] as Map<String, dynamic>) : null,
+  serviceAccountDeleted: json['service_account.deleted'] != null ? ServiceAccountDeleted.fromJson(json['service_account.deleted'] as Map<String, dynamic>) : null,
+  userAdded: json['user.added'] != null ? UserAdded.fromJson(json['user.added'] as Map<String, dynamic>) : null,
+  userUpdated: json['user.updated'] != null ? UserUpdated.fromJson(json['user.updated'] as Map<String, dynamic>) : null,
+  userDeleted: json['user.deleted'] != null ? UserDeleted.fromJson(json['user.deleted'] as Map<String, dynamic>) : null,
+  certificateCreated: json['certificate.created'] != null ? CertificateCreated.fromJson(json['certificate.created'] as Map<String, dynamic>) : null,
+  certificateUpdated: json['certificate.updated'] != null ? CertificateUpdated.fromJson(json['certificate.updated'] as Map<String, dynamic>) : null,
+  certificateDeleted: json['certificate.deleted'] != null ? CertificateDeleted.fromJson(json['certificate.deleted'] as Map<String, dynamic>) : null,
+  certificatesActivated: json['certificates.activated'] != null ? CertificatesActivated.fromJson(json['certificates.activated'] as Map<String, dynamic>) : null,
+  certificatesDeactivated: json['certificates.deactivated'] != null ? CertificatesDeactivated.fromJson(json['certificates.deactivated'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ID of this log.
@@ -72,145 +72,145 @@ final AuditLogProject? project;
 final AuditLogActor actor;
 
 /// The details for events with this `type`.
-final AuditLogKeyCreated? apiKeyCreated;
+final KeyCreated? apiKeyCreated;
 
 /// The details for events with this `type`.
-final AuditLogKeyUpdated? apiKeyUpdated;
+final KeyUpdated? apiKeyUpdated;
 
 /// The details for events with this `type`.
-final AuditLogKeyDeleted? apiKeyDeleted;
+final KeyDeleted? apiKeyDeleted;
 
 /// The project and fine-tuned model checkpoint that the checkpoint permission was created for.
-final AuditLogCheckpointPermissionCreated? checkpointPermissionCreated;
+final CheckpointPermissionCreated? checkpointPermissionCreated;
 
 /// The details for events with this `type`.
-final AuditLogCheckpointPermissionDeleted? checkpointPermissionDeleted;
+final CheckpointPermissionDeleted? checkpointPermissionDeleted;
 
 /// The details for events with this `type`.
-final AuditLogExternalKeyRegistered? externalKeyRegistered;
+final ExternalKeyRegistered? externalKeyRegistered;
 
 /// The details for events with this `type`.
-final AuditLogExternalKeyRemoved? externalKeyRemoved;
+final ExternalKeyRemoved? externalKeyRemoved;
 
 /// The details for events with this `type`.
-final AuditLogGroupCreated? groupCreated;
+final GroupCreated? groupCreated;
 
 /// The details for events with this `type`.
-final AuditLogGroupUpdated? groupUpdated;
+final GroupUpdated? groupUpdated;
 
 /// The details for events with this `type`.
-final AuditLogGroupDeleted? groupDeleted;
+final GroupDeleted? groupDeleted;
 
 /// The details for events with this `type`.
-final AuditLogScimEnabled? scimEnabled;
+final ScimEnabled? scimEnabled;
 
 /// The details for events with this `type`.
-final AuditLogScimDisabled? scimDisabled;
+final ScimDisabled? scimDisabled;
 
 /// The details for events with this `type`.
-final AuditLogInviteSent? inviteSent;
+final InviteSent? inviteSent;
 
 /// The details for events with this `type`.
-final AuditLogInviteAccepted? inviteAccepted;
+final InviteAccepted? inviteAccepted;
 
 /// The details for events with this `type`.
-final AuditLogInviteDeleted? inviteDeleted;
+final InviteDeleted? inviteDeleted;
 
 /// The details for events with this `type`.
-final AuditLogIpAllowlistCreated? ipAllowlistCreated;
+final IpAllowlistCreated? ipAllowlistCreated;
 
 /// The details for events with this `type`.
-final AuditLogIpAllowlistUpdated? ipAllowlistUpdated;
+final IpAllowlistUpdated? ipAllowlistUpdated;
 
 /// The details for events with this `type`.
-final AuditLogIpAllowlistDeleted? ipAllowlistDeleted;
+final IpAllowlistDeleted? ipAllowlistDeleted;
 
 /// The details for events with this `type`.
-final AuditLogIpAllowlistConfigActivated? ipAllowlistConfigActivated;
+final IpAllowlistConfigActivated? ipAllowlistConfigActivated;
 
 /// The details for events with this `type`.
-final AuditLogIpAllowlistConfigDeactivated? ipAllowlistConfigDeactivated;
+final IpAllowlistConfigDeactivated? ipAllowlistConfigDeactivated;
 
 /// This event has no additional fields beyond the standard audit log attributes.
 final Map<String,dynamic>? loginSucceeded;
 
 /// The details for events with this `type`.
-final AuditLogLoginFailed? loginFailed;
+final LoginFailed? loginFailed;
 
 /// This event has no additional fields beyond the standard audit log attributes.
 final Map<String,dynamic>? logoutSucceeded;
 
 /// The details for events with this `type`.
-final AuditLogLogoutFailed? logoutFailed;
+final LogoutFailed? logoutFailed;
 
 /// The details for events with this `type`.
-final AuditLogOrganizationUpdated? organizationUpdated;
+final OrganizationUpdated? organizationUpdated;
 
 /// The details for events with this `type`.
-final AuditLogProjectCreated? projectCreated;
+final ProjectCreated? projectCreated;
 
 /// The details for events with this `type`.
-final AuditLogProjectUpdated? projectUpdated;
+final ProjectUpdated? projectUpdated;
 
 /// The details for events with this `type`.
-final AuditLogProjectArchived? projectArchived;
+final ProjectArchived? projectArchived;
 
 /// The details for events with this `type`.
-final AuditLogProjectDeleted? projectDeleted;
+final ProjectDeleted? projectDeleted;
 
 /// The details for events with this `type`.
-final AuditLogRateLimitUpdated? rateLimitUpdated;
+final RateLimitUpdated? rateLimitUpdated;
 
 /// The details for events with this `type`.
-final AuditLogRateLimitDeleted? rateLimitDeleted;
+final RateLimitDeleted? rateLimitDeleted;
 
 /// The details for events with this `type`.
-final AuditLogRoleCreated? roleCreated;
+final RoleCreated? roleCreated;
 
 /// The details for events with this `type`.
-final AuditLogRoleUpdated? roleUpdated;
+final RoleUpdated? roleUpdated;
 
 /// The details for events with this `type`.
-final AuditLogRoleDeleted? roleDeleted;
+final RoleDeleted? roleDeleted;
 
 /// The details for events with this `type`.
-final AuditLogRoleAssignmentCreated? roleAssignmentCreated;
+final RoleAssignmentCreated? roleAssignmentCreated;
 
 /// The details for events with this `type`.
-final AuditLogRoleAssignmentDeleted? roleAssignmentDeleted;
+final RoleAssignmentDeleted? roleAssignmentDeleted;
 
 /// The details for events with this `type`.
-final AuditLogServiceAccountCreated? serviceAccountCreated;
+final ServiceAccountCreated? serviceAccountCreated;
 
 /// The details for events with this `type`.
-final AuditLogServiceAccountUpdated? serviceAccountUpdated;
+final ServiceAccountUpdated? serviceAccountUpdated;
 
 /// The details for events with this `type`.
-final AuditLogServiceAccountDeleted? serviceAccountDeleted;
+final ServiceAccountDeleted? serviceAccountDeleted;
 
 /// The details for events with this `type`.
-final AuditLogUserAdded? userAdded;
+final UserAdded? userAdded;
 
 /// The details for events with this `type`.
-final AuditLogUserUpdated? userUpdated;
+final UserUpdated? userUpdated;
 
 /// The details for events with this `type`.
-final AuditLogUserDeleted? userDeleted;
+final UserDeleted? userDeleted;
 
 /// The details for events with this `type`.
-final AuditLogCertificateCreated? certificateCreated;
+final CertificateCreated? certificateCreated;
 
 /// The details for events with this `type`.
-final AuditLogCertificateUpdated? certificateUpdated;
+final CertificateUpdated? certificateUpdated;
 
 /// The details for events with this `type`.
-final AuditLogCertificateDeleted? certificateDeleted;
+final CertificateDeleted? certificateDeleted;
 
 /// The details for events with this `type`.
-final AuditLogCertificatesActivated? certificatesActivated;
+final CertificatesActivated? certificatesActivated;
 
 /// The details for events with this `type`.
-final AuditLogCertificatesDeactivated? certificatesDeactivated;
+final CertificatesDeactivated? certificatesDeactivated;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -270,7 +270,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('type') &&
       json.containsKey('effective_at') && json['effective_at'] is num &&
       json.containsKey('actor'); } 
-AuditLog copyWith({String? id, AuditLogEventType? type, int? effectiveAt, AuditLogProject Function()? project, AuditLogActor? actor, AuditLogKeyCreated Function()? apiKeyCreated, AuditLogKeyUpdated Function()? apiKeyUpdated, AuditLogKeyDeleted Function()? apiKeyDeleted, AuditLogCheckpointPermissionCreated Function()? checkpointPermissionCreated, AuditLogCheckpointPermissionDeleted Function()? checkpointPermissionDeleted, AuditLogExternalKeyRegistered Function()? externalKeyRegistered, AuditLogExternalKeyRemoved Function()? externalKeyRemoved, AuditLogGroupCreated Function()? groupCreated, AuditLogGroupUpdated Function()? groupUpdated, AuditLogGroupDeleted Function()? groupDeleted, AuditLogScimEnabled Function()? scimEnabled, AuditLogScimDisabled Function()? scimDisabled, AuditLogInviteSent Function()? inviteSent, AuditLogInviteAccepted Function()? inviteAccepted, AuditLogInviteDeleted Function()? inviteDeleted, AuditLogIpAllowlistCreated Function()? ipAllowlistCreated, AuditLogIpAllowlistUpdated Function()? ipAllowlistUpdated, AuditLogIpAllowlistDeleted Function()? ipAllowlistDeleted, AuditLogIpAllowlistConfigActivated Function()? ipAllowlistConfigActivated, AuditLogIpAllowlistConfigDeactivated Function()? ipAllowlistConfigDeactivated, Map<String, dynamic> Function()? loginSucceeded, AuditLogLoginFailed Function()? loginFailed, Map<String, dynamic> Function()? logoutSucceeded, AuditLogLogoutFailed Function()? logoutFailed, AuditLogOrganizationUpdated Function()? organizationUpdated, AuditLogProjectCreated Function()? projectCreated, AuditLogProjectUpdated Function()? projectUpdated, AuditLogProjectArchived Function()? projectArchived, AuditLogProjectDeleted Function()? projectDeleted, AuditLogRateLimitUpdated Function()? rateLimitUpdated, AuditLogRateLimitDeleted Function()? rateLimitDeleted, AuditLogRoleCreated Function()? roleCreated, AuditLogRoleUpdated Function()? roleUpdated, AuditLogRoleDeleted Function()? roleDeleted, AuditLogRoleAssignmentCreated Function()? roleAssignmentCreated, AuditLogRoleAssignmentDeleted Function()? roleAssignmentDeleted, AuditLogServiceAccountCreated Function()? serviceAccountCreated, AuditLogServiceAccountUpdated Function()? serviceAccountUpdated, AuditLogServiceAccountDeleted Function()? serviceAccountDeleted, AuditLogUserAdded Function()? userAdded, AuditLogUserUpdated Function()? userUpdated, AuditLogUserDeleted Function()? userDeleted, AuditLogCertificateCreated Function()? certificateCreated, AuditLogCertificateUpdated Function()? certificateUpdated, AuditLogCertificateDeleted Function()? certificateDeleted, AuditLogCertificatesActivated Function()? certificatesActivated, AuditLogCertificatesDeactivated Function()? certificatesDeactivated, }) { return AuditLog(
+AuditLog copyWith({String? id, AuditLogEventType? type, int? effectiveAt, AuditLogProject Function()? project, AuditLogActor? actor, KeyCreated Function()? apiKeyCreated, KeyUpdated Function()? apiKeyUpdated, KeyDeleted Function()? apiKeyDeleted, CheckpointPermissionCreated Function()? checkpointPermissionCreated, CheckpointPermissionDeleted Function()? checkpointPermissionDeleted, ExternalKeyRegistered Function()? externalKeyRegistered, ExternalKeyRemoved Function()? externalKeyRemoved, GroupCreated Function()? groupCreated, GroupUpdated Function()? groupUpdated, GroupDeleted Function()? groupDeleted, ScimEnabled Function()? scimEnabled, ScimDisabled Function()? scimDisabled, InviteSent Function()? inviteSent, InviteAccepted Function()? inviteAccepted, InviteDeleted Function()? inviteDeleted, IpAllowlistCreated Function()? ipAllowlistCreated, IpAllowlistUpdated Function()? ipAllowlistUpdated, IpAllowlistDeleted Function()? ipAllowlistDeleted, IpAllowlistConfigActivated Function()? ipAllowlistConfigActivated, IpAllowlistConfigDeactivated Function()? ipAllowlistConfigDeactivated, Map<String, dynamic> Function()? loginSucceeded, LoginFailed Function()? loginFailed, Map<String, dynamic> Function()? logoutSucceeded, LogoutFailed Function()? logoutFailed, OrganizationUpdated Function()? organizationUpdated, ProjectCreated Function()? projectCreated, ProjectUpdated Function()? projectUpdated, ProjectArchived Function()? projectArchived, ProjectDeleted Function()? projectDeleted, RateLimitUpdated Function()? rateLimitUpdated, RateLimitDeleted Function()? rateLimitDeleted, RoleCreated Function()? roleCreated, RoleUpdated Function()? roleUpdated, RoleDeleted Function()? roleDeleted, RoleAssignmentCreated Function()? roleAssignmentCreated, RoleAssignmentDeleted Function()? roleAssignmentDeleted, ServiceAccountCreated Function()? serviceAccountCreated, ServiceAccountUpdated Function()? serviceAccountUpdated, ServiceAccountDeleted Function()? serviceAccountDeleted, UserAdded Function()? userAdded, UserUpdated Function()? userUpdated, UserDeleted Function()? userDeleted, CertificateCreated Function()? certificateCreated, CertificateUpdated Function()? certificateUpdated, CertificateDeleted Function()? certificateDeleted, CertificatesActivated Function()? certificatesActivated, CertificatesDeactivated Function()? certificatesDeactivated, }) { return AuditLog(
   id: id ?? this.id,
   type: type ?? this.type,
   effectiveAt: effectiveAt ?? this.effectiveAt,

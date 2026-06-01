@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_id.dart';/// An ISO 8601 timestamp.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_extension_types/models/user_id.dart';/// An ISO 8601 timestamp.
 extension type Timestamp(DateTime value) {
 factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
 

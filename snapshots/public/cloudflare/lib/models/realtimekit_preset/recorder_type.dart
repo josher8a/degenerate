@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the recording peer
+@immutable final class RecorderType {const RecorderType._(this.value);
+
+factory RecorderType.fromJson(String json) { return switch (json) {
+  'RECORDER' => recorder,
+  'LIVESTREAMER' => livestreamer,
+  'NONE' => none,
+  _ => RecorderType._(json),
+}; }
+
+static const RecorderType recorder = RecorderType._('RECORDER');
+
+static const RecorderType livestreamer = RecorderType._('LIVESTREAMER');
+
+static const RecorderType none = RecorderType._('NONE');
+
+static const List<RecorderType> values = [recorder, livestreamer, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RecorderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RecorderType($value)'; } 
+ }

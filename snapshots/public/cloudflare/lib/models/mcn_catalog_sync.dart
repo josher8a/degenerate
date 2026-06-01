@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_id.dart';import 'mcn_catalog_sync_update_mode.dart';import 'mcn_error.dart';extension type const McnCatalogSyncDestinationId(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_destination_type.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_id.dart';import 'package:pub_cloudflare/models/mcn_catalog_sync_update_mode.dart';import 'package:pub_cloudflare/models/mcn_error.dart';extension type const McnCatalogSyncDestinationId(String value) {
 factory McnCatalogSyncDestinationId.fromJson(String json) => McnCatalogSyncDestinationId(json);
 
 String toJson() => value;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'mobile_space_detail_schema.dart';
+import 'package:pub_totem_mobile/models/mobile_space_detail_schema.dart';
 
 @immutable
 final class PagedMobileSpaceDetailSchema {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages32.dart';import 'response_common53_result.dart';@immutable final class ResponseCommon53 {const ResponseCommon53({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages32.dart';import 'package:pub_cloudflare/models/response_common31/response_common31_result.dart';@immutable final class ResponseCommon53 {const ResponseCommon53({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon53.fromJson(Map<String, dynamic> json) { return ResponseCommon53(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages32.fromJson(e as Map<String, dynamic>)).toList(),
@@ -13,7 +13,7 @@ final List<Messages32> errors;
 
 final List<Messages32> messages;
 
-final ResponseCommon53Result result;
+final ResponseCommon31Result result;
 
 /// Whether the API call was successful
 final bool success;
@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCommon53 copyWith({List<Messages32>? errors, List<Messages32>? messages, ResponseCommon53Result? result, bool? success, }) { return ResponseCommon53(
+ResponseCommon53 copyWith({List<Messages32>? errors, List<Messages32>? messages, ResponseCommon31Result? result, bool? success, }) { return ResponseCommon53(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

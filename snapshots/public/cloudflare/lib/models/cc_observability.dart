@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_observability_logs.dart';/// Settings for observability such as logging.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cc_observability_logs.dart';/// Settings for observability such as logging.
 @immutable final class CcObservability {const CcObservability({this.logs});
 
 factory CcObservability.fromJson(Map<String, dynamic> json) { return CcObservability(

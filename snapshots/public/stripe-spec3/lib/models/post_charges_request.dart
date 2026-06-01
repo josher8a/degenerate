@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_card.dart';import 'destination_specs.dart';import 'post_charges_request_card.dart';import 'post_charges_request_destination.dart';import 'post_charges_request_metadata.dart';import 'post_charges_request_radar_options.dart';import 'post_charges_request_shipping.dart';import 'post_charges_request_transfer_data.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/destination_specs.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_destination.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChargesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   capture: json['capture'] as bool?,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => customer_payment_source_card.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => DestinationSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => destination_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
-  radarOptions: json['radar_options'] != null ? PostChargesRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
+  radarOptions: json['radar_options'] != null ? RadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
-  shipping: json['shipping'] != null ? PostChargesRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   source: json['source'] as String?,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
@@ -54,19 +54,19 @@ final PostChargesRequestDestination? destination;
 final List<String>? expand;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostChargesRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// The Stripe account ID for which these funds are intended. You can specify the business of record as the connected account using the `on_behalf_of` attribute on the charge. For details, see [Creating Separate Charges and Transfers](https://docs.stripe.com/connect/separate-charges-and-transfers#settlement-merchant).
 final String? onBehalfOf;
 
 /// Options to configure Radar. See [Radar Session](https://docs.stripe.com/radar/radar-session) for more information.
-final PostChargesRequestRadarOptions? radarOptions;
+final RadarOptions? radarOptions;
 
 /// The email address to which this charge's [receipt](https://docs.stripe.com/dashboard/receipts) will be sent. The receipt will not be sent until the charge is paid, and no receipts will be sent for test mode charges. If this charge is for a [Customer](https://docs.stripe.com/api/customers/object), the email address specified here will override the customer's email address. If `receipt_email` is specified for a charge in live mode, a receipt will be sent regardless of your [email settings](https://dashboard.stripe.com/account/emails).
 final String? receiptEmail;
 
 /// Shipping information for the charge. Helps prevent fraud on charges for physical goods.
-final PostChargesRequestShipping? shipping;
+final PostChargesChargeRequestShipping? shipping;
 
 /// A payment source to be charged. This can be the ID of a [card](https://docs.stripe.com/api#cards) (i.e., credit or debit card), a [bank account](https://docs.stripe.com/api#bank_accounts), a [source](https://docs.stripe.com/api#sources), a [token](https://docs.stripe.com/api#tokens), or a [connected account](https://docs.stripe.com/connect/account-debits#charging-a-connected-account). For certain sources---namely, [cards](https://docs.stripe.com/api#cards), [bank accounts](https://docs.stripe.com/api#bank_accounts), and attached [sources](https://docs.stripe.com/api#sources)---you must also pass the ID of the associated customer.
 final String? source;
@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_group': ?transferGroup,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'capture', 'card', 'currency', 'customer', 'description', 'destination', 'expand', 'metadata', 'on_behalf_of', 'radar_options', 'receipt_email', 'shipping', 'source', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostChargesRequest copyWith({int Function()? amount, int Function()? applicationFee, int Function()? applicationFeeAmount, bool Function()? capture, PostChargesRequestCard Function()? card, String Function()? currency, String Function()? customer, String Function()? description, PostChargesRequestDestination Function()? destination, List<String> Function()? expand, PostChargesRequestMetadata Function()? metadata, String Function()? onBehalfOf, PostChargesRequestRadarOptions Function()? radarOptions, String Function()? receiptEmail, PostChargesRequestShipping Function()? shipping, String Function()? source, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostChargesRequest(
+PostChargesRequest copyWith({int Function()? amount, int Function()? applicationFee, int Function()? applicationFeeAmount, bool Function()? capture, PostChargesRequestCard Function()? card, String Function()? currency, String Function()? customer, String Function()? description, PostChargesRequestDestination Function()? destination, List<String> Function()? expand, Metadata Function()? metadata, String Function()? onBehalfOf, RadarOptions Function()? radarOptions, String Function()? receiptEmail, PostChargesChargeRequestShipping Function()? shipping, String Function()? source, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostChargesRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

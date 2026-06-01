@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';import 'campaign_summary_alert_stats.dart';import 'simple_user.dart';import 'team.dart';/// The campaign metadata and alert stats.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/campaign_state.dart';import 'package:pub_github_rest_3_1/models/campaign_summary/alert_stats.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The campaign metadata and alert stats.
 @immutable final class CampaignSummary {const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, required this.description, required this.managers, required this.endsAt, required this.state, required this.contactLink, this.name, this.teamManagers, this.publishedAt, this.closedAt, this.alertStats, });
 
 factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSummary(
@@ -16,7 +16,7 @@ factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSum
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
   state: CampaignState.fromJson(json['state'] as String),
   contactLink: json['contact_link'] != null ? Uri.parse(json['contact_link'] as String) : null,
-  alertStats: json['alert_stats'] != null ? CampaignSummaryAlertStats.fromJson(json['alert_stats'] as Map<String, dynamic>) : null,
+  alertStats: json['alert_stats'] != null ? AlertStats.fromJson(json['alert_stats'] as Map<String, dynamic>) : null,
 ); }
 
 /// The number of the newly created campaign
@@ -55,7 +55,7 @@ final CampaignState state;
 /// The contact link of the campaign.
 final Uri? contactLink;
 
-final CampaignSummaryAlertStats? alertStats;
+final AlertStats? alertStats;
 
 Map<String, dynamic> toJson() { return {
   'number': number,
@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('ends_at') && json['ends_at'] is String &&
       json.containsKey('state') &&
       json.containsKey('contact_link') && json['contact_link'] is String; } 
-CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt, String Function()? name, String? description, List<SimpleUser>? managers, List<Team> Function()? teamManagers, DateTime Function()? publishedAt, DateTime? endsAt, DateTime? Function()? closedAt, CampaignState? state, Uri? Function()? contactLink, CampaignSummaryAlertStats Function()? alertStats, }) { return CampaignSummary(
+CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt, String Function()? name, String? description, List<SimpleUser>? managers, List<Team> Function()? teamManagers, DateTime Function()? publishedAt, DateTime? endsAt, DateTime? Function()? closedAt, CampaignState? state, Uri? Function()? contactLink, AlertStats Function()? alertStats, }) { return CampaignSummary(
   number: number ?? this.number,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,

@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionUnlockedAction {const WebhookDiscussionUnlockedAction._(this.value);
-
-factory WebhookDiscussionUnlockedAction.fromJson(String json) { return switch (json) {
-  'unlocked' => unlocked,
-  _ => WebhookDiscussionUnlockedAction._(json),
-}; }
-
-static const WebhookDiscussionUnlockedAction unlocked = WebhookDiscussionUnlockedAction._('unlocked');
-
-static const List<WebhookDiscussionUnlockedAction> values = [unlocked];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionUnlockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionUnlockedAction($value)'; } 
- }
-@immutable final class WebhookDiscussionUnlocked {const WebhookDiscussionUnlocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_unlocked/webhook_discussion_unlocked_action.dart';@immutable final class WebhookDiscussionUnlocked {const WebhookDiscussionUnlocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionUnlocked.fromJson(Map<String, dynamic> json) { return WebhookDiscussionUnlocked(
   action: WebhookDiscussionUnlockedAction.fromJson(json['action'] as String),

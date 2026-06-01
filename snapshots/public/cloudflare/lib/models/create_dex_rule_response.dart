@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_rule.dart';@immutable final class CreateDexRuleResponse {const CreateDexRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_rule.dart';@immutable final class CreateDexRuleResponse {const CreateDexRuleResponse({this.result});
 
 factory CreateDexRuleResponse.fromJson(Map<String, dynamic> json) { return CreateDexRuleResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringDexRule.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_alert_dismisser.dart';@immutable final class WebhooksAlertState {const WebhooksAlertState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_alert/webhooks_alert_dismisser.dart';@immutable final class WebhooksAlertState {const WebhooksAlertState._(this.value);
 
 factory WebhooksAlertState.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,

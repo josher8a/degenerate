@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_state.dart';import 'custom_pages_url.dart';extension type CustomPagesTimestamp(DateTime value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_pages_state.dart';import 'package:pub_cloudflare/models/custom_pages_url.dart';extension type CustomPagesTimestamp(DateTime value) {
 factory CustomPagesTimestamp.fromJson(String json) => CustomPagesTimestamp(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();

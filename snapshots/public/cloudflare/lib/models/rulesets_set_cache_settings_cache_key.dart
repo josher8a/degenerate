@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_custom_cache_key.dart';/// Which components of the request are included in or excluded from the cache key Cloudflare uses to store the response in cache.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_custom_cache_key.dart';/// Which components of the request are included in or excluded from the cache key Cloudflare uses to store the response in cache.
 @immutable final class RulesetsSetCacheSettingsCacheKey {const RulesetsSetCacheSettingsCacheKey({this.cacheByDeviceType, this.cacheDeceptionArmor, this.customKey, this.ignoreQueryStringsOrder, });
 
 factory RulesetsSetCacheSettingsCacheKey.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCacheKey(

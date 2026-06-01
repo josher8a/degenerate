@@ -1,76 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam19CaptureMethod {const PaymentIntentPaymentMethodOptionsParam19CaptureMethod._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam19CaptureMethod.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'manual' => manual,
-  _ => PaymentIntentPaymentMethodOptionsParam19CaptureMethod._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam19CaptureMethod $empty = PaymentIntentPaymentMethodOptionsParam19CaptureMethod._('');
-
-static const PaymentIntentPaymentMethodOptionsParam19CaptureMethod manual = PaymentIntentPaymentMethodOptionsParam19CaptureMethod._('manual');
-
-static const List<PaymentIntentPaymentMethodOptionsParam19CaptureMethod> values = [$empty, manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam19CaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam19CaptureMethod($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._('');
-
-static const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage> values = [$empty, none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam19 {const PaymentIntentPaymentMethodOptionsParam19({this.captureMethod, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam19 {const PaymentIntentPaymentMethodOptionsParam19({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam19.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam19(
-  captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsParam19CaptureMethod.fromJson(json['capture_method'] as String) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  captureMethod: json['capture_method'] != null ? payment_intent_paramCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final PaymentIntentPaymentMethodOptionsParam19CaptureMethod? captureMethod;
+final payment_intent_paramCaptureMethod? captureMethod;
 
-final PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage? setupFutureUsage;
+final payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam19 copyWith({PaymentIntentPaymentMethodOptionsParam19CaptureMethod Function()? captureMethod, PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam19(
+PaymentIntentPaymentMethodOptionsParam19 copyWith({payment_intent_paramCaptureMethod Function()? captureMethod, payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam19(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

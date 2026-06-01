@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_payload.dart';import 'integration.dart';import 'simple_user.dart';/// A request for a specific ref(branch,sha,tag) to be deployed
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment/deployment_payload.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A request for a specific ref(branch,sha,tag) to be deployed
 @immutable final class Deployment {const Deployment({required this.url, required this.id, required this.nodeId, required this.sha, required this.ref, required this.task, required this.payload, required this.environment, required this.description, required this.creator, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });
 
 factory Deployment.fromJson(Map<String, dynamic> json) { return Deployment(

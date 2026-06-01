@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'thresholds_resource_usage_alert_filter_customer.dart';@immutable final class ThresholdsResourceUsageAlertFilterType {const ThresholdsResourceUsageAlertFilterType._(this.value);
-
-factory ThresholdsResourceUsageAlertFilterType.fromJson(String json) { return switch (json) {
-  'customer' => customer,
-  _ => ThresholdsResourceUsageAlertFilterType._(json),
-}; }
-
-static const ThresholdsResourceUsageAlertFilterType customer = ThresholdsResourceUsageAlertFilterType._('customer');
-
-static const List<ThresholdsResourceUsageAlertFilterType> values = [customer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThresholdsResourceUsageAlertFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThresholdsResourceUsageAlertFilterType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_alert_filter/thresholds_resource_usage_alert_filter_type.dart';/// 
 @immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer, });
 
 factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
@@ -30,7 +9,7 @@ factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) {
 ); }
 
 /// Limit the scope of the alert to this customer ID
-final ThresholdsResourceUsageAlertFilterCustomer? customer;
+final ConfirmationTokensResourcePaymentMethodPreviewCustomer? customer;
 
 final ThresholdsResourceUsageAlertFilterType type;
 
@@ -39,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ThresholdsResourceUsageAlertFilter copyWith({ThresholdsResourceUsageAlertFilterCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
+ThresholdsResourceUsageAlertFilter copyWith({ConfirmationTokensResourcePaymentMethodPreviewCustomer? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return ThresholdsResourceUsageAlertFilter(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 

@@ -1,42 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
-@immutable final class PaymentMethodOptionsAlmaCaptureMethod {const PaymentMethodOptionsAlmaCaptureMethod._(this.value);
-
-factory PaymentMethodOptionsAlmaCaptureMethod.fromJson(String json) { return switch (json) {
-  'manual' => manual,
-  _ => PaymentMethodOptionsAlmaCaptureMethod._(json),
-}; }
-
-static const PaymentMethodOptionsAlmaCaptureMethod manual = PaymentMethodOptionsAlmaCaptureMethod._('manual');
-
-static const List<PaymentMethodOptionsAlmaCaptureMethod> values = [manual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsAlmaCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsAlmaCaptureMethod($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_capture_method.dart';/// 
 @immutable final class PaymentMethodOptionsAlma {const PaymentMethodOptionsAlma({this.captureMethod});
 
 factory PaymentMethodOptionsAlma.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAlma(
-  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsAlmaCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  captureMethod: json['capture_method'] != null ? CheckoutAffirmPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
 ); }
 
 /// Controls when the funds will be captured from the customer's account.
-final PaymentMethodOptionsAlmaCaptureMethod? captureMethod;
+final CheckoutAffirmPaymentMethodOptionsCaptureMethod? captureMethod;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
-PaymentMethodOptionsAlma copyWith({PaymentMethodOptionsAlmaCaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsAlma(
+PaymentMethodOptionsAlma copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsAlma(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

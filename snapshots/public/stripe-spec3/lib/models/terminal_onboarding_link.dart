@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_onboarding_link_link_options.dart';/// The type of link being generated.
-@immutable final class TerminalOnboardingLinkLinkType {const TerminalOnboardingLinkLinkType._(this.value);
-
-factory TerminalOnboardingLinkLinkType.fromJson(String json) { return switch (json) {
-  'apple_terms_and_conditions' => appleTermsAndConditions,
-  _ => TerminalOnboardingLinkLinkType._(json),
-}; }
-
-static const TerminalOnboardingLinkLinkType appleTermsAndConditions = TerminalOnboardingLinkLinkType._('apple_terms_and_conditions');
-
-static const List<TerminalOnboardingLinkLinkType> values = [appleTermsAndConditions];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalOnboardingLinkLinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalOnboardingLinkLinkType($value)'; } 
- }
-@immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link_link_options.dart';@immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
 
 factory TerminalOnboardingLinkObject.fromJson(String json) { return switch (json) {
   'terminal.onboarding_link' => terminalOnboardingLink,
@@ -48,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return TerminalOnboardingLink(
   linkOptions: TerminalOnboardingLinkLinkOptions.fromJson(json['link_options'] as Map<String, dynamic>),
-  linkType: TerminalOnboardingLinkLinkType.fromJson(json['link_type'] as String),
+  linkType: LinkType.fromJson(json['link_type'] as String),
   object: TerminalOnboardingLinkObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] as String?,
   redirectUrl: json['redirect_url'] as String,
@@ -57,7 +35,7 @@ factory TerminalOnboardingLink.fromJson(Map<String, dynamic> json) { return Term
 final TerminalOnboardingLinkLinkOptions linkOptions;
 
 /// The type of link being generated.
-final TerminalOnboardingLinkLinkType linkType;
+final LinkType linkType;
 
 final TerminalOnboardingLinkObject object;
 
@@ -78,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_
       json.containsKey('link_type') &&
       json.containsKey('object') &&
       json.containsKey('redirect_url') && json['redirect_url'] is String; } 
-TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, TerminalOnboardingLinkLinkType? linkType, TerminalOnboardingLinkObject? object, String? Function()? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
+TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, String? Function()? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,
   object: object ?? this.object,

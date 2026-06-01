@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object deleted in the repository.
-@immutable final class WebhookDeleteRefType {const WebhookDeleteRefType._(this.value);
-
-factory WebhookDeleteRefType.fromJson(String json) { return switch (json) {
-  'tag' => tag,
-  'branch' => branch,
-  _ => WebhookDeleteRefType._(json),
-}; }
-
-static const WebhookDeleteRefType tag = WebhookDeleteRefType._('tag');
-
-static const WebhookDeleteRefType branch = WebhookDeleteRefType._('branch');
-
-static const List<WebhookDeleteRefType> values = [tag, branch];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeleteRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeleteRefType($value)'; } 
- }
-@immutable final class WebhookDelete {const WebhookDelete({required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_create/ref_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_deploy_pusher_type.dart';import 'package:pub_github_rest_3_1/models/webhooks_ref0.dart';@immutable final class WebhookDelete {const WebhookDelete({required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +8,7 @@ factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   pusherType: WebhooksDeployPusherType.fromJson(json['pusher_type'] as String),
   ref: WebhooksRef0.fromJson(json['ref'] as String),
-  refType: WebhookDeleteRefType.fromJson(json['ref_type'] as String),
+  refType: RefType.fromJson(json['ref_type'] as String),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
@@ -51,7 +26,7 @@ final WebhooksDeployPusherType pusherType;
 final WebhooksRef0 ref;
 
 /// The type of Git ref object deleted in the repository.
-final WebhookDeleteRefType refType;
+final RefType refType;
 
 final RepositoryWebhooks repository;
 
@@ -72,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('pushe
       json.containsKey('ref_type') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDelete copyWith({EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, WebhookDeleteRefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDelete(
+WebhookDelete copyWith({EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksDeployPusherType? pusherType, WebhooksRef0? ref, RefType? refType, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookDelete(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,

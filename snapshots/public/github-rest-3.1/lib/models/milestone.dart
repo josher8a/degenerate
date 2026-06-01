@@ -1,32 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The state of the milestone.
-@immutable final class MilestoneState {const MilestoneState._(this.value);
-
-factory MilestoneState.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  _ => MilestoneState._(json),
-}; }
-
-static const MilestoneState open = MilestoneState._('open');
-
-static const MilestoneState closed = MilestoneState._('closed');
-
-static const List<MilestoneState> values = [open, closed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MilestoneState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MilestoneState($value)'; } 
- }
-/// A collection of related issues and pull requests.
-@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, this.state = MilestoneState.open, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issues_create_milestone_request/issues_create_milestone_request_state.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// A collection of related issues and pull requests.
+@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, this.state = IssuesCreateMilestoneRequestState.open, });
 
 factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   url: Uri.parse(json['url'] as String),
@@ -35,7 +10,7 @@ factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  state: MilestoneState.fromJson(json['state'] as String),
+  state: IssuesCreateMilestoneRequestState.fromJson(json['state'] as String),
   title: json['title'] as String,
   description: json['description'] as String?,
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
@@ -61,7 +36,7 @@ final String nodeId;
 final int number;
 
 /// The state of the milestone.
-final MilestoneState state;
+final IssuesCreateMilestoneRequestState state;
 
 /// The title of the milestone.
 final String title;
@@ -116,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('closed_at') && json['closed_at'] is String &&
       json.containsKey('due_on') && json['due_on'] is String; } 
-Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, MilestoneState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
+Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, IssuesCreateMilestoneRequestState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,

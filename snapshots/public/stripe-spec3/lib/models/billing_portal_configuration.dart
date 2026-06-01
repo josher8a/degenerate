@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'billing_portal_configuration_application.dart';import 'deleted_application.dart';import 'portal_business_profile.dart';import 'portal_features.dart';import 'portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);
 
 factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {

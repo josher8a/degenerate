@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/invite.dart';import '../models/invite_delete_response.dart';import '../models/invite_list_response.dart';import '../models/invite_request.dart';/// InvitesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite.dart';import 'package:pub_openai/models/invite_delete_response.dart';import 'package:pub_openai/models/invite_list_response.dart';import 'package:pub_openai/models/invite_request.dart';/// InvitesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

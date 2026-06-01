@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-@immutable final class PaymentAttemptRecordCustomerPresence {const PaymentAttemptRecordCustomerPresence._(this.value);
-
-factory PaymentAttemptRecordCustomerPresence.fromJson(String json) { return switch (json) {
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentAttemptRecordCustomerPresence._(json),
-}; }
-
-static const PaymentAttemptRecordCustomerPresence offSession = PaymentAttemptRecordCustomerPresence._('off_session');
-
-static const PaymentAttemptRecordCustomerPresence onSession = PaymentAttemptRecordCustomerPresence._('on_session');
-
-static const List<PaymentAttemptRecordCustomerPresence> values = [offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordCustomerPresence($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record/reported_by.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_amount.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_shipping_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentAttemptRecordObject {const PaymentAttemptRecordObject._(this.value);
 
 factory PaymentAttemptRecordObject.fromJson(String json) { return switch (json) {
@@ -47,31 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentAttemptRecordObject($value)'; } 
  }
-/// Indicates who reported the payment.
-@immutable final class PaymentAttemptRecordReportedBy {const PaymentAttemptRecordReportedBy._(this.value);
-
-factory PaymentAttemptRecordReportedBy.fromJson(String json) { return switch (json) {
-  'self' => self,
-  'stripe' => stripe,
-  _ => PaymentAttemptRecordReportedBy._(json),
-}; }
-
-static const PaymentAttemptRecordReportedBy self = PaymentAttemptRecordReportedBy._('self');
-
-static const PaymentAttemptRecordReportedBy stripe = PaymentAttemptRecordReportedBy._('stripe');
-
-static const List<PaymentAttemptRecordReportedBy> values = [self, stripe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordReportedBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordReportedBy($value)'; } 
- }
 /// A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.
 /// Each payment attempt tries to collect a fixed amount of money from a fixed customer and payment
 /// method. Payment Attempt Records are attached to Payment Records. Only one attempt per Payment Record
@@ -89,7 +39,7 @@ factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return Paymen
   application: json['application'] as String?,
   created: (json['created'] as num).toInt(),
   customerDetails: json['customer_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  customerPresence: json['customer_presence'] != null ? PaymentAttemptRecordCustomerPresence.fromJson(json['customer_presence'] as String) : null,
+  customerPresence: json['customer_presence'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -98,7 +48,7 @@ factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return Paymen
   paymentMethodDetails: json['payment_method_details'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   paymentRecord: json['payment_record'] as String?,
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
-  reportedBy: PaymentAttemptRecordReportedBy.fromJson(json['reported_by'] as String),
+  reportedBy: ReportedBy.fromJson(json['reported_by'] as String),
   shippingDetails: json['shipping_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
@@ -126,7 +76,7 @@ final int created;
 final PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? customerDetails;
 
 /// Indicates whether the customer was present in your checkout flow during this payment.
-final PaymentAttemptRecordCustomerPresence? customerPresence;
+final InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? customerPresence;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
 final String? description;
@@ -152,7 +102,7 @@ final String? paymentRecord;
 final PaymentsPrimitivesPaymentRecordsResourceProcessorDetails processorDetails;
 
 /// Indicates who reported the payment.
-final PaymentAttemptRecordReportedBy reportedBy;
+final ReportedBy reportedBy;
 
 /// Shipping information for this payment.
 final PaymentsPrimitivesPaymentRecordsResourceShippingDetails? shippingDetails;
@@ -194,7 +144,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
       json.containsKey('reported_by'); } 
-PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, PaymentAttemptRecordCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, String? Function()? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentAttemptRecordReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentAttemptRecord(
+PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, String? Function()? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, ReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentAttemptRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   amountCanceled: amountCanceled ?? this.amountCanceled,

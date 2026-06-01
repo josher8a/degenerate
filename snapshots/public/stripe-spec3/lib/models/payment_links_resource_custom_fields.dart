@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_custom_fields_dropdown.dart';import 'payment_links_resource_custom_fields_label.dart';import 'payment_links_resource_custom_fields_numeric.dart';import 'payment_links_resource_custom_fields_text.dart';/// The type of the field.
-@immutable final class PaymentLinksResourceCustomFieldsType {const PaymentLinksResourceCustomFieldsType._(this.value);
-
-factory PaymentLinksResourceCustomFieldsType.fromJson(String json) { return switch (json) {
-  'dropdown' => dropdown,
-  'numeric' => numeric,
-  'text' => text,
-  _ => PaymentLinksResourceCustomFieldsType._(json),
-}; }
-
-static const PaymentLinksResourceCustomFieldsType dropdown = PaymentLinksResourceCustomFieldsType._('dropdown');
-
-static const PaymentLinksResourceCustomFieldsType numeric = PaymentLinksResourceCustomFieldsType._('numeric');
-
-static const PaymentLinksResourceCustomFieldsType text = PaymentLinksResourceCustomFieldsType._('text');
-
-static const List<PaymentLinksResourceCustomFieldsType> values = [dropdown, numeric, text];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceCustomFieldsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields/payment_links_resource_custom_fields_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_dropdown.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_label.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_numeric.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields_text.dart';/// 
 @immutable final class PaymentLinksResourceCustomFields {const PaymentLinksResourceCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
 factory PaymentLinksResourceCustomFields.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFields(

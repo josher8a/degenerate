@@ -1,128 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param.dart';import 'pending_invoice_item_interval_params.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items.dart';import 'post_customers_customer_subscriptions_request_application_fee_percent.dart';import 'post_customers_customer_subscriptions_request_automatic_tax.dart';import 'post_customers_customer_subscriptions_request_billing_thresholds.dart';import 'post_customers_customer_subscriptions_request_cancel_at.dart';import 'post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'post_customers_customer_subscriptions_request_discounts.dart';import 'post_customers_customer_subscriptions_request_discounts_variant1.dart';import 'post_customers_customer_subscriptions_request_invoice_settings.dart';import 'post_customers_customer_subscriptions_request_items.dart';import 'post_customers_customer_subscriptions_request_metadata.dart';import 'post_customers_customer_subscriptions_request_payment_settings.dart';import 'post_customers_customer_subscriptions_request_pending_invoice_item_interval.dart';import 'post_customers_customer_subscriptions_request_transfer_data.dart';import 'post_customers_customer_subscriptions_request_trial_end.dart';import 'post_customers_customer_subscriptions_request_trial_settings.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-@immutable final class PostCustomersCustomerSubscriptionsRequestCollectionMethod {const PostCustomersCustomerSubscriptionsRequestCollectionMethod._(this.value);
-
-factory PostCustomersCustomerSubscriptionsRequestCollectionMethod.fromJson(String json) { return switch (json) {
-  'charge_automatically' => chargeAutomatically,
-  'send_invoice' => sendInvoice,
-  _ => PostCustomersCustomerSubscriptionsRequestCollectionMethod._(json),
-}; }
-
-static const PostCustomersCustomerSubscriptionsRequestCollectionMethod chargeAutomatically = PostCustomersCustomerSubscriptionsRequestCollectionMethod._('charge_automatically');
-
-static const PostCustomersCustomerSubscriptionsRequestCollectionMethod sendInvoice = PostCustomersCustomerSubscriptionsRequestCollectionMethod._('send_invoice');
-
-static const List<PostCustomersCustomerSubscriptionsRequestCollectionMethod> values = [chargeAutomatically, sendInvoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestCollectionMethod($value)'; } 
- }
-/// Only applies to subscriptions with `collection_method=charge_automatically`.
-/// 
-/// Use `allow_incomplete` to create Subscriptions with `status=incomplete` if the first invoice can't be paid. Creating Subscriptions with this status allows you to manage scenarios where additional customer actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
-/// 
-/// Use `default_incomplete` to create Subscriptions with `status=incomplete` when the first invoice requires payment, otherwise start as active. Subscriptions transition to `status=active` when successfully confirming the PaymentIntent on the first invoice. This allows simpler management of scenarios where additional customer actions are needed to pay a subscription’s invoice, such as failed payments, [SCA regulation](https://docs.stripe.com/billing/migration/strong-customer-authentication), or collecting a mandate for a bank debit payment method. If the PaymentIntent is not confirmed within 23 hours Subscriptions transition to `status=incomplete_expired`, which is a terminal state.
-/// 
-/// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's first invoice can't be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further customer action is needed, this parameter doesn't create a Subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/upgrades#2019-03-14) to learn more.
-/// 
-/// `pending_if_incomplete` is only used with updates and cannot be passed when creating a Subscription.
-/// 
-/// Subscriptions with `collection_method=send_invoice` are automatically activated regardless of the first Invoice status.
-@immutable final class PostCustomersCustomerSubscriptionsRequestPaymentBehavior {const PostCustomersCustomerSubscriptionsRequestPaymentBehavior._(this.value);
-
-factory PostCustomersCustomerSubscriptionsRequestPaymentBehavior.fromJson(String json) { return switch (json) {
-  'allow_incomplete' => allowIncomplete,
-  'default_incomplete' => defaultIncomplete,
-  'error_if_incomplete' => errorIfIncomplete,
-  'pending_if_incomplete' => pendingIfIncomplete,
-  _ => PostCustomersCustomerSubscriptionsRequestPaymentBehavior._(json),
-}; }
-
-static const PostCustomersCustomerSubscriptionsRequestPaymentBehavior allowIncomplete = PostCustomersCustomerSubscriptionsRequestPaymentBehavior._('allow_incomplete');
-
-static const PostCustomersCustomerSubscriptionsRequestPaymentBehavior defaultIncomplete = PostCustomersCustomerSubscriptionsRequestPaymentBehavior._('default_incomplete');
-
-static const PostCustomersCustomerSubscriptionsRequestPaymentBehavior errorIfIncomplete = PostCustomersCustomerSubscriptionsRequestPaymentBehavior._('error_if_incomplete');
-
-static const PostCustomersCustomerSubscriptionsRequestPaymentBehavior pendingIfIncomplete = PostCustomersCustomerSubscriptionsRequestPaymentBehavior._('pending_if_incomplete');
-
-static const List<PostCustomersCustomerSubscriptionsRequestPaymentBehavior> values = [allowIncomplete, defaultIncomplete, errorIfIncomplete, pendingIfIncomplete];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestPaymentBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentBehavior($value)'; } 
- }
-/// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) resulting from the `billing_cycle_anchor`. If no value is passed, the default is `create_prorations`.
-@immutable final class PostCustomersCustomerSubscriptionsRequestProrationBehavior {const PostCustomersCustomerSubscriptionsRequestProrationBehavior._(this.value);
-
-factory PostCustomersCustomerSubscriptionsRequestProrationBehavior.fromJson(String json) { return switch (json) {
-  'always_invoice' => alwaysInvoice,
-  'create_prorations' => createProrations,
-  'none' => none,
-  _ => PostCustomersCustomerSubscriptionsRequestProrationBehavior._(json),
-}; }
-
-static const PostCustomersCustomerSubscriptionsRequestProrationBehavior alwaysInvoice = PostCustomersCustomerSubscriptionsRequestProrationBehavior._('always_invoice');
-
-static const PostCustomersCustomerSubscriptionsRequestProrationBehavior createProrations = PostCustomersCustomerSubscriptionsRequestProrationBehavior._('create_prorations');
-
-static const PostCustomersCustomerSubscriptionsRequestProrationBehavior none = PostCustomersCustomerSubscriptionsRequestProrationBehavior._('none');
-
-static const List<PostCustomersCustomerSubscriptionsRequestProrationBehavior> values = [alwaysInvoice, createProrations, none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerSubscriptionsRequestProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestProrationBehavior($value)'; } 
- }
-@immutable final class PostCustomersCustomerSubscriptionsRequest {const PostCustomersCustomerSubscriptionsRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.backdateStartDate, this.billingCycleAnchor, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.collectionMethod, this.currency, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.transferData, this.trialEnd, this.trialFromPlan, this.trialPeriodDays, this.trialSettings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_thresholds_param.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/payment_behavior.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/pending_invoice_item_interval_params.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/application_fee_percent.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/pending_invoice_item_interval.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_add_invoice_items.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_cancel_at.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_items.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_payment_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_trial_end.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/trial_end_variant1.dart';@immutable final class PostCustomersCustomerSubscriptionsRequest {const PostCustomersCustomerSubscriptionsRequest({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.backdateStartDate, this.billingCycleAnchor, this.billingThresholds, this.cancelAt, this.cancelAtPeriodEnd, this.collectionMethod, this.currency, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.discounts, this.expand, this.invoiceSettings, this.items, this.metadata, this.offSession, this.paymentBehavior, this.paymentSettings, this.pendingInvoiceItemInterval, this.prorationBehavior, this.transferData, this.trialEnd, this.trialFromPlan, this.trialPeriodDays, this.trialSettings, });
 
 factory PostCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequest(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),
-  applicationFeePercent: json['application_fee_percent'] != null ? OneOf2.parse(json['application_fee_percent'], fromA: (v) => (v as num).toDouble(), fromB: (v) => PostCustomersCustomerSubscriptionsRequestApplicationFeePercentVariant2.fromJson(v as String),) : null,
-  automaticTax: json['automatic_tax'] != null ? PostCustomersCustomerSubscriptionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
+  applicationFeePercent: json['application_fee_percent'] != null ? OneOf2.parse(json['application_fee_percent'], fromA: (v) => (v as num).toDouble(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   backdateStartDate: json['backdate_start_date'] != null ? (json['backdate_start_date'] as num).toInt() : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? (json['billing_cycle_anchor'] as num).toInt() : null,
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => BillingThresholdsParam.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerSubscriptionsRequestBillingThresholdsVariant2.fromJson(v as String),) : null,
-  cancelAt: json['cancel_at'] != null ? OneOf2.parse(json['cancel_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => billing_thresholds_param.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  cancelAt: json['cancel_at'] != null ? OneOf2.parse(json['cancel_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => CancelAtVariant2.fromJson(v as String),) : null,
   cancelAtPeriodEnd: json['cancel_at_period_end'] as bool?,
-  collectionMethod: json['collection_method'] != null ? PostCustomersCustomerSubscriptionsRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
+  collectionMethod: json['collection_method'] != null ? InvoiceCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
   defaultSource: json['default_source'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostCustomersCustomerSubscriptionsRequestDefaultTaxRatesVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostCustomersCustomerSubscriptionsRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCustomersCustomerSubscriptionsRequestDiscountsVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => DiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => PostCustomersCustomerSubscriptionsRequestItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCustomersCustomerSubscriptionsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   offSession: json['off_session'] as bool?,
-  paymentBehavior: json['payment_behavior'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
+  paymentBehavior: json['payment_behavior'] != null ? PaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
   paymentSettings: json['payment_settings'] != null ? PostCustomersCustomerSubscriptionsRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
-  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? OneOf2.parse(json['pending_invoice_item_interval'], fromA: (v) => PendingInvoiceItemIntervalParams.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2.fromJson(v as String),) : null,
-  prorationBehavior: json['proration_behavior'] != null ? PostCustomersCustomerSubscriptionsRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
+  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? OneOf2.parse(json['pending_invoice_item_interval'], fromA: (v) => pending_invoice_item_interval_params.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  prorationBehavior: json['proration_behavior'] != null ? DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   transferData: json['transfer_data'] != null ? PostCustomersCustomerSubscriptionsRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
-  trialEnd: json['trial_end'] != null ? OneOf2.parse(json['trial_end'], fromA: (v) => PostCustomersCustomerSubscriptionsRequestTrialEndVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  trialEnd: json['trial_end'] != null ? OneOf2.parse(json['trial_end'], fromA: (v) => TrialEndVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
   trialFromPlan: json['trial_from_plan'] as bool?,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   trialSettings: json['trial_settings'] != null ? PostCustomersCustomerSubscriptionsRequestTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
@@ -132,10 +38,10 @@ factory PostCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> 
 final List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems>? addInvoiceItems;
 
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account. The request must be made by a platform account on a connected account in order to set an application fee percentage. For more information, see the application fees [documentation](https://stripe.com/docs/connect/subscriptions#collecting-fees-on-subscriptions).
-final PostCustomersCustomerSubscriptionsRequestApplicationFeePercent? applicationFeePercent;
+final ApplicationFeePercent? applicationFeePercent;
 
 /// Automatic tax settings for this subscription.
-final PostCustomersCustomerSubscriptionsRequestAutomaticTax? automaticTax;
+final PostCheckoutSessionsRequestAutomaticTax? automaticTax;
 
 /// A past timestamp to backdate the subscription's start date to. If set, the first invoice will contain line items for the timespan between the start date and the current time. Can be combined with trials and the billing cycle anchor.
 final int? backdateStartDate;
@@ -153,7 +59,7 @@ final PostCustomersCustomerSubscriptionsRequestCancelAt? cancelAt;
 final bool? cancelAtPeriodEnd;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final PostCustomersCustomerSubscriptionsRequestCollectionMethod? collectionMethod;
+final InvoiceCollectionMethod? collectionMethod;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String? currency;
@@ -183,7 +89,7 @@ final PostCustomersCustomerSubscriptionsRequestInvoiceSettings? invoiceSettings;
 final List<PostCustomersCustomerSubscriptionsRequestItems>? items;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostCustomersCustomerSubscriptionsRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Indicates if a customer is on or off-session while an invoice payment is attempted. Defaults to `false` (on-session).
 final bool? offSession;
@@ -199,16 +105,16 @@ final bool? offSession;
 /// `pending_if_incomplete` is only used with updates and cannot be passed when creating a Subscription.
 /// 
 /// Subscriptions with `collection_method=send_invoice` are automatically activated regardless of the first Invoice status.
-final PostCustomersCustomerSubscriptionsRequestPaymentBehavior? paymentBehavior;
+final PaymentBehavior? paymentBehavior;
 
 /// Payment settings to pass to invoices created by the subscription.
 final PostCustomersCustomerSubscriptionsRequestPaymentSettings? paymentSettings;
 
 /// Specifies an interval for how often to bill for any pending invoice items. It is analogous to calling [Create an invoice](https://docs.stripe.com/api#create_invoice) for the given subscription at the specified interval.
-final PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInterval? pendingInvoiceItemInterval;
+final PendingInvoiceItemInterval? pendingInvoiceItemInterval;
 
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) resulting from the `billing_cycle_anchor`. If no value is passed, the default is `create_prorations`.
-final PostCustomersCustomerSubscriptionsRequestProrationBehavior? prorationBehavior;
+final DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior;
 
 /// If specified, the funds from the subscription's invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges.
 final PostCustomersCustomerSubscriptionsRequestTransferData? transferData;
@@ -257,7 +163,7 @@ Map<String, dynamic> toJson() { return {
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add_invoice_items', 'application_fee_percent', 'automatic_tax', 'backdate_start_date', 'billing_cycle_anchor', 'billing_thresholds', 'cancel_at', 'cancel_at_period_end', 'collection_method', 'currency', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'discounts', 'expand', 'invoice_settings', 'items', 'metadata', 'off_session', 'payment_behavior', 'payment_settings', 'pending_invoice_item_interval', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_from_plan', 'trial_period_days', 'trial_settings'}.contains(key)); } 
-PostCustomersCustomerSubscriptionsRequest copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems> Function()? addInvoiceItems, PostCustomersCustomerSubscriptionsRequestApplicationFeePercent Function()? applicationFeePercent, PostCustomersCustomerSubscriptionsRequestAutomaticTax Function()? automaticTax, int Function()? backdateStartDate, int Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestCancelAt Function()? cancelAt, bool Function()? cancelAtPeriodEnd, PostCustomersCustomerSubscriptionsRequestCollectionMethod Function()? collectionMethod, String Function()? currency, int Function()? daysUntilDue, String Function()? defaultPaymentMethod, String Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates Function()? defaultTaxRates, PostCustomersCustomerSubscriptionsRequestDiscounts Function()? discounts, List<String> Function()? expand, PostCustomersCustomerSubscriptionsRequestInvoiceSettings Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems> Function()? items, PostCustomersCustomerSubscriptionsRequestMetadata Function()? metadata, bool Function()? offSession, PostCustomersCustomerSubscriptionsRequestPaymentBehavior Function()? paymentBehavior, PostCustomersCustomerSubscriptionsRequestPaymentSettings Function()? paymentSettings, PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemInterval Function()? pendingInvoiceItemInterval, PostCustomersCustomerSubscriptionsRequestProrationBehavior Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData Function()? transferData, PostCustomersCustomerSubscriptionsRequestTrialEnd Function()? trialEnd, bool Function()? trialFromPlan, int Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings Function()? trialSettings, }) { return PostCustomersCustomerSubscriptionsRequest(
+PostCustomersCustomerSubscriptionsRequest copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems> Function()? addInvoiceItems, ApplicationFeePercent Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax Function()? automaticTax, int Function()? backdateStartDate, int Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestCancelAt Function()? cancelAt, bool Function()? cancelAtPeriodEnd, InvoiceCollectionMethod Function()? collectionMethod, String Function()? currency, int Function()? daysUntilDue, String Function()? defaultPaymentMethod, String Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates Function()? defaultTaxRates, PostCustomersCustomerSubscriptionsRequestDiscounts Function()? discounts, List<String> Function()? expand, PostCustomersCustomerSubscriptionsRequestInvoiceSettings Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems> Function()? items, Metadata Function()? metadata, bool Function()? offSession, PaymentBehavior Function()? paymentBehavior, PostCustomersCustomerSubscriptionsRequestPaymentSettings Function()? paymentSettings, PendingInvoiceItemInterval Function()? pendingInvoiceItemInterval, DeleteSubscriptionItemsItemRequestProrationBehavior Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData Function()? transferData, PostCustomersCustomerSubscriptionsRequestTrialEnd Function()? trialEnd, bool Function()? trialFromPlan, int Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings Function()? trialSettings, }) { return PostCustomersCustomerSubscriptionsRequest(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'project_edited_changes.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectEditedAction {const ProjectEditedAction._(this.value);
-
-factory ProjectEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => ProjectEditedAction._(json),
-}; }
-
-static const ProjectEditedAction edited = ProjectEditedAction._('edited');
-
-static const List<ProjectEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectEditedAction($value)'; } 
- }
-@immutable final class ProjectEdited {const ProjectEdited({required this.action, required this.changes, required this.organization, required this.projectsV2, required this.sender, this.installation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/project_edited/project_edited_changes.dart';import 'package:pub_github_rest_3_1/models/projects.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ProjectEdited {const ProjectEdited({required this.action, required this.changes, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectEdited.fromJson(Map<String, dynamic> json) { return ProjectEdited(
-  action: ProjectEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: ProjectEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
@@ -32,7 +11,7 @@ factory ProjectEdited.fromJson(Map<String, dynamic> json) { return ProjectEdited
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final ProjectEditedAction action;
+final ItemEditedAction action;
 
 final ProjectEditedChanges changes;
 
@@ -57,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('projects_v2') &&
       json.containsKey('sender'); } 
-ProjectEdited copyWith({ProjectEditedAction? action, ProjectEditedChanges? changes, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectEdited(
+ProjectEdited copyWith({ItemEditedAction? action, ProjectEditedChanges? changes, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Projects? projectsV2, SimpleUser? sender, }) { return ProjectEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   installation: installation != null ? installation() : this.installation,

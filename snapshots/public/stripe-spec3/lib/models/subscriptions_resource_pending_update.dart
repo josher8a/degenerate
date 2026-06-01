@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_item.dart';/// Pending Updates store the changes pending from a previous update that will be applied
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/subscription_item.dart';/// Pending Updates store the changes pending from a previous update that will be applied
 /// to the Subscription upon successful payment.
 @immutable final class SubscriptionsResourcePendingUpdate {const SubscriptionsResourcePendingUpdate({required this.expiresAt, this.billingCycleAnchor, this.subscriptionItems, this.trialEnd, this.trialFromPlan, });
 

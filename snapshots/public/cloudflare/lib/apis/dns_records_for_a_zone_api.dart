@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_direction.dart';import '../models/dns_records_dns_record_patch.dart';import '../models/dns_records_dns_record_post.dart';import '../models/dns_records_dns_request_batch_object.dart';import '../models/dns_records_dns_request_review_scan_object.dart';import '../models/dns_records_dns_response_batch_object.dart';import '../models/dns_records_dns_response_import_scan_result.dart';import '../models/dns_records_dns_response_review_scan_object.dart';import '../models/dns_records_dns_response_zone_usage_result.dart';import '../models/dns_records_for_a_zone_delete_dns_record_response_result.dart';import '../models/dns_records_for_a_zone_import_dns_records_request.dart';import '../models/dns_records_identifier.dart';import '../models/dns_records_match.dart';import '../models/dns_records_order.dart';import '../models/dns_records_page.dart';import '../models/dns_records_per_page.dart';import '../models/dns_records_proxied.dart';import '../models/dns_records_search.dart';import '../models/dns_records_tag_match.dart';import '../models/dns_records_type.dart';import '../models/response_common25.dart';/// DnsRecordsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/dns_records_direction.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_patch.dart';import 'package:pub_cloudflare/models/dns_records_dns_record_post.dart';import 'package:pub_cloudflare/models/dns_records_dns_request_batch_object.dart';import 'package:pub_cloudflare/models/dns_records_dns_request_review_scan_object.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_batch_object.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_import_scan/dns_records_dns_response_import_scan_result.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_review_scan_object.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_zone_usage/dns_records_dns_response_zone_usage_result.dart';import 'package:pub_cloudflare/models/dns_records_for_a_zone_import_dns_records_request.dart';import 'package:pub_cloudflare/models/dns_records_identifier.dart';import 'package:pub_cloudflare/models/dns_records_match.dart';import 'package:pub_cloudflare/models/dns_records_order.dart';import 'package:pub_cloudflare/models/dns_records_page.dart';import 'package:pub_cloudflare/models/dns_records_per_page.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_search.dart';import 'package:pub_cloudflare/models/dns_records_tag_match.dart';import 'package:pub_cloudflare/models/dns_records_type.dart';import 'package:pub_cloudflare/models/response_common25.dart';/// DnsRecordsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -250,7 +250,7 @@ return execute(
 /// Delete DNS Record
 ///
 /// `DELETE /zones/{zone_id}/dns_records/{dns_record_id}`
-Future<ApiResult<DnsRecordsForAZoneDeleteDnsRecordResponseResult?, Never>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> dnsRecordsForAZoneDeleteDnsRecord({required DnsRecordsIdentifier dnsRecordId, required DnsRecordsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -263,7 +263,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

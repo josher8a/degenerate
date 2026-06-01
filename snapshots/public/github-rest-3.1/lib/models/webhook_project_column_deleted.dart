@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnDeletedAction {const WebhookProjectColumnDeletedAction._(this.value);
-
-factory WebhookProjectColumnDeletedAction.fromJson(String json) { return switch (json) {
-  'deleted' => deleted,
-  _ => WebhookProjectColumnDeletedAction._(json),
-}; }
-
-static const WebhookProjectColumnDeletedAction deleted = WebhookProjectColumnDeletedAction._('deleted');
-
-static const List<WebhookProjectColumnDeletedAction> values = [deleted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectColumnDeletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectColumnDeletedAction($value)'; } 
- }
-@immutable final class WebhookProjectColumnDeleted {const WebhookProjectColumnDeleted({required this.action, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_deleted/item_deleted_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_column.dart';@immutable final class WebhookProjectColumnDeleted {const WebhookProjectColumnDeleted({required this.action, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnDeleted(
-  action: WebhookProjectColumnDeletedAction.fromJson(json['action'] as String),
+  action: ItemDeletedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookProjectColumnDeleted.fromJson(Map<String, dynamic> json) { return
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
-final WebhookProjectColumnDeletedAction action;
+final ItemDeletedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -58,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project_column'); } 
-WebhookProjectColumnDeleted copyWith({WebhookProjectColumnDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookProjectColumnDeleted(
+WebhookProjectColumnDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookProjectColumnDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

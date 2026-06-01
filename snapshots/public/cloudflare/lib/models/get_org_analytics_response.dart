@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_org_analytics_response_data.dart';@immutable final class GetOrgAnalyticsResponse {const GetOrgAnalyticsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/get_org_analytics_response_data.dart';@immutable final class GetOrgAnalyticsResponse {const GetOrgAnalyticsResponse({this.data, this.success, });
 
 factory GetOrgAnalyticsResponse.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponse(
   data: json['data'] != null ? GetOrgAnalyticsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

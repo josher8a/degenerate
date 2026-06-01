@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_health.dart';/// ResourceStatus represents the status of a single resource allocated to a Pod.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_health.dart';/// ResourceStatus represents the status of a single resource allocated to a Pod.
 @immutable final class ResourceStatus {const ResourceStatus({this.name = '', this.resources, });
 
 factory ResourceStatus.fromJson(Map<String, dynamic> json) { return ResourceStatus(

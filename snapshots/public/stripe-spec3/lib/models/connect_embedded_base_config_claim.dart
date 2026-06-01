@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_base_features.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_base_features.dart';/// 
 @immutable final class ConnectEmbeddedBaseConfigClaim {const ConnectEmbeddedBaseConfigClaim({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedBaseConfigClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedBaseConfigClaim(

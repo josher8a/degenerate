@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_dex_test_schemas_data.dart';import 'teams_devices_dex_target_policy.dart';/// Additional details about the test.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_device_dex_test_schemas_data.dart';import 'package:pub_cloudflare/models/teams_devices_dex_target_policy.dart';/// Additional details about the test.
 extension type const TeamsDevicesDeviceDexTestSchemasDescription(String value) {
 factory TeamsDevicesDeviceDexTestSchemasDescription.fromJson(String json) => TeamsDevicesDeviceDexTestSchemasDescription(json);
 

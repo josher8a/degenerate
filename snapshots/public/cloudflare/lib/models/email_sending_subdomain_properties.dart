@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_created.dart';import 'email_modified.dart';import 'email_sending_subdomain_identifier.dart';@immutable final class EmailSendingSubdomainProperties {const EmailSendingSubdomainProperties({required this.emailSendingEnabled, required this.name, required this.tag, this.created, this.emailSendingDkimSelector, this.emailSendingReturnPathDomain, this.enabled, this.modified, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_created.dart';import 'package:pub_cloudflare/models/email_modified.dart';import 'package:pub_cloudflare/models/email_sending_subdomain_identifier.dart';@immutable final class EmailSendingSubdomainProperties {const EmailSendingSubdomainProperties({required this.emailSendingEnabled, required this.name, required this.tag, this.created, this.emailSendingDkimSelector, this.emailSendingReturnPathDomain, this.enabled, this.modified, });
 
 factory EmailSendingSubdomainProperties.fromJson(Map<String, dynamic> json) { return EmailSendingSubdomainProperties(
   created: json['created'] != null ? EmailCreated.fromJson(json['created'] as String) : null,

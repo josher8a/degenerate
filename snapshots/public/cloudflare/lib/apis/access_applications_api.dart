@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_app_id.dart';import '../models/access_app_request.dart';import '../models/access_app_response.dart';import '../models/access_app_settings_request.dart';import '../models/access_app_settings_response.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_policy_check_response_result.dart';/// AccessApplicationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/access_app_id.dart';import 'package:pub_cloudflare/models/access_app_request.dart';import 'package:pub_cloudflare/models/access_app_response.dart';import 'package:pub_cloudflare/models/access_app_settings_request.dart';import 'package:pub_cloudflare/models/access_app_settings_response.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_policy_check_response/access_policy_check_response_result.dart';/// AccessApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -134,7 +134,7 @@ return execute(
 /// Deletes an application from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessIdResponseResult?, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -147,7 +147,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

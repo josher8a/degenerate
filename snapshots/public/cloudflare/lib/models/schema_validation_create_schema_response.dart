@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_schema_issue_notification.dart';@immutable final class SchemaValidationCreateSchemaResponse {const SchemaValidationCreateSchemaResponse({required this.messages, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_schema_issue_notification.dart';@immutable final class SchemaValidationCreateSchemaResponse {const SchemaValidationCreateSchemaResponse({required this.messages, this.errors, });
 
 factory SchemaValidationCreateSchemaResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationCreateSchemaResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ShieldSchemaIssueNotification.fromJson(e as Map<String, dynamic>)).toList(),

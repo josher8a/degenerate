@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_dimensions.dart';import 'price.dart';import 'product_default_price.dart';import 'product_marketing_feature.dart';import 'product_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ProductObject {const ProductObject._(this.value);
-
-factory ProductObject.fromJson(String json) { return switch (json) {
-  'product' => product,
-  _ => ProductObject._(json),
-}; }
-
-static const ProductObject product = ProductObject._('product');
-
-static const List<ProductObject> values = [product];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProductObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProductObject($value)'; } 
- }
-/// Products describe the specific goods or services you offer to your customers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_product/deleted_product_object.dart';import 'package:pub_stripe_spec3/models/package_dimensions.dart';import 'package:pub_stripe_spec3/models/price.dart';import 'package:pub_stripe_spec3/models/product/default_price.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/product_marketing_feature.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// Products describe the specific goods or services you offer to your customers.
 /// For example, you might offer a Standard and Premium version of your goods or service; each version would be a separate Product.
 /// They can be used in conjunction with [Prices](https://api.stripe.com#prices) to configure pricing in Payment Links, Checkout, and Subscriptions.
 /// 
@@ -43,7 +21,7 @@ factory Product.fromJson(Map<String, dynamic> json) { return Product(
   marketingFeatures: (json['marketing_features'] as List<dynamic>).map((e) => ProductMarketingFeature.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
-  object: ProductObject.fromJson(json['object'] as String),
+  object: DeletedProductObject.fromJson(json['object'] as String),
   packageDimensions: json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
@@ -60,7 +38,7 @@ final bool active;
 final int created;
 
 /// The ID of the [Price](https://docs.stripe.com/api/prices) object that is the default price for this product.
-final ProductDefaultPrice? defaultPrice;
+final DefaultPrice? defaultPrice;
 
 /// The product's description, meant to be displayable to the customer. Use this field to optionally store a long form explanation of the product being sold for your own rendering purposes.
 final String? description;
@@ -84,7 +62,7 @@ final Map<String,String> metadata;
 final String name;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final ProductObject object;
+final DeletedProductObject object;
 
 /// The dimensions of this product for shipping purposes.
 final PackageDimensions? packageDimensions;
@@ -137,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num; } 
-Product copyWith({bool? active, int? created, ProductDefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, ProductObject? object, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(
+Product copyWith({bool? active, int? created, DefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, DeletedProductObject? object, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(
   active: active ?? this.active,
   created: created ?? this.created,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,

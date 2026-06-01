@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details_resource_tax_id.dart';import 'tax_product_resource_postal_address.dart';/// The type of customer address provided.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details_resource_tax_id.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_postal_address.dart';/// The type of customer address provided.
 @immutable final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);
 
 factory TaxProductResourceCustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
@@ -25,34 +25,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TaxProductResourceCustomerDetailsAddressSource($value)'; } 
  }
-/// The taxability override used for taxation.
-@immutable final class TaxProductResourceCustomerDetailsTaxabilityOverride {const TaxProductResourceCustomerDetailsTaxabilityOverride._(this.value);
-
-factory TaxProductResourceCustomerDetailsTaxabilityOverride.fromJson(String json) { return switch (json) {
-  'customer_exempt' => customerExempt,
-  'none' => none,
-  'reverse_charge' => reverseCharge,
-  _ => TaxProductResourceCustomerDetailsTaxabilityOverride._(json),
-}; }
-
-static const TaxProductResourceCustomerDetailsTaxabilityOverride customerExempt = TaxProductResourceCustomerDetailsTaxabilityOverride._('customer_exempt');
-
-static const TaxProductResourceCustomerDetailsTaxabilityOverride none = TaxProductResourceCustomerDetailsTaxabilityOverride._('none');
-
-static const TaxProductResourceCustomerDetailsTaxabilityOverride reverseCharge = TaxProductResourceCustomerDetailsTaxabilityOverride._('reverse_charge');
-
-static const List<TaxProductResourceCustomerDetailsTaxabilityOverride> values = [customerExempt, none, reverseCharge];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceCustomerDetailsTaxabilityOverride && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceCustomerDetailsTaxabilityOverride($value)'; } 
- }
 /// 
 @immutable final class TaxProductResourceCustomerDetails {const TaxProductResourceCustomerDetails({required this.taxIds, required this.taxabilityOverride, this.address, this.addressSource, this.ipAddress, });
 
@@ -61,7 +33,7 @@ factory TaxProductResourceCustomerDetails.fromJson(Map<String, dynamic> json) { 
   addressSource: json['address_source'] != null ? TaxProductResourceCustomerDetailsAddressSource.fromJson(json['address_source'] as String) : null,
   ipAddress: json['ip_address'] as String?,
   taxIds: (json['tax_ids'] as List<dynamic>).map((e) => TaxProductResourceCustomerDetailsResourceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
-  taxabilityOverride: TaxProductResourceCustomerDetailsTaxabilityOverride.fromJson(json['taxability_override'] as String),
+  taxabilityOverride: TaxabilityOverride.fromJson(json['taxability_override'] as String),
 ); }
 
 /// The customer's postal address (for example, home or business location).
@@ -77,7 +49,7 @@ final String? ipAddress;
 final List<TaxProductResourceCustomerDetailsResourceTaxId> taxIds;
 
 /// The taxability override used for taxation.
-final TaxProductResourceCustomerDetailsTaxabilityOverride taxabilityOverride;
+final TaxabilityOverride taxabilityOverride;
 
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
@@ -88,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_ids') &&
       json.containsKey('taxability_override'); } 
-TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxProductResourceCustomerDetailsTaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(
+TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,

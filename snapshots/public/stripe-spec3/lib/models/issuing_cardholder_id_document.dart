@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_cardholder_id_document_back.dart';import 'issuing_cardholder_id_document_front.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/back.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_id_document/front.dart';/// 
 @immutable final class IssuingCardholderIdDocument {const IssuingCardholderIdDocument({this.back, this.front, });
 
 factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) { return IssuingCardholderIdDocument(
@@ -9,17 +9,17 @@ factory IssuingCardholderIdDocument.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The back of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final IssuingCardholderIdDocumentBack? back;
+final Back? back;
 
 /// The front of a document returned by a [file upload](https://api.stripe.com#create_file) with a `purpose` value of `identity_document`.
-final IssuingCardholderIdDocumentFront? front;
+final Front? front;
 
 Map<String, dynamic> toJson() { return {
   if (back != null) 'back': back?.toJson(),
   if (front != null) 'front': front?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'front'}.contains(key)); } 
-IssuingCardholderIdDocument copyWith({IssuingCardholderIdDocumentBack? Function()? back, IssuingCardholderIdDocumentFront? Function()? front, }) { return IssuingCardholderIdDocument(
+IssuingCardholderIdDocument copyWith({Back? Function()? back, Front? Function()? front, }) { return IssuingCardholderIdDocument(
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,
 ); } 

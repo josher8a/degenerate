@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_sponsorship_edited_changes.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipEditedAction {const WebhookSponsorshipEditedAction._(this.value);
-
-factory WebhookSponsorshipEditedAction.fromJson(String json) { return switch (json) {
-  'edited' => edited,
-  _ => WebhookSponsorshipEditedAction._(json),
-}; }
-
-static const WebhookSponsorshipEditedAction edited = WebhookSponsorshipEditedAction._('edited');
-
-static const List<WebhookSponsorshipEditedAction> values = [edited];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipEditedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipEditedAction($value)'; } 
- }
-@immutable final class WebhookSponsorshipEdited {const WebhookSponsorshipEdited({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_edited/item_edited_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_sponsorship_edited/webhook_sponsorship_edited_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipEdited {const WebhookSponsorshipEdited({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipEdited(
-  action: WebhookSponsorshipEditedAction.fromJson(json['action'] as String),
+  action: ItemEditedAction.fromJson(json['action'] as String),
   changes: WebhookSponsorshipEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookSponsorshipEdited.fromJson(Map<String, dynamic> json) { return We
   sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
 ); }
 
-final WebhookSponsorshipEditedAction action;
+final ItemEditedAction action;
 
 final WebhookSponsorshipEditedChanges changes;
 
@@ -64,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('changes') &&
       json.containsKey('sender') &&
       json.containsKey('sponsorship'); } 
-WebhookSponsorshipEdited copyWith({WebhookSponsorshipEditedAction? action, WebhookSponsorshipEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipEdited(
+WebhookSponsorshipEdited copyWith({ItemEditedAction? action, WebhookSponsorshipEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

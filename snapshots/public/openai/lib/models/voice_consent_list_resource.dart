@@ -1,37 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'voice_consent_resource.dart';@immutable final class VoiceConsentListResourceObject {const VoiceConsentListResourceObject._(this.value);
-
-factory VoiceConsentListResourceObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => VoiceConsentListResourceObject._(json),
-}; }
-
-static const VoiceConsentListResourceObject list = VoiceConsentListResourceObject._('list');
-
-static const List<VoiceConsentListResourceObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceConsentListResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceConsentListResourceObject($value)'; } 
- }
-@immutable final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, required this.hasMore, this.firstId, this.lastId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_list/chat_completion_list_object.dart';import 'package:pub_openai/models/voice_consent_resource.dart';@immutable final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, required this.hasMore, this.firstId, this.lastId, });
 
 factory VoiceConsentListResource.fromJson(Map<String, dynamic> json) { return VoiceConsentListResource(
-  object: VoiceConsentListResourceObject.fromJson(json['object'] as String),
+  object: ChatCompletionListObject.fromJson(json['object'] as String),
   data: (json['data'] as List<dynamic>).map((e) => VoiceConsentResource.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String?,
   lastId: json['last_id'] as String?,
   hasMore: json['has_more'] as bool,
 ); }
 
-final VoiceConsentListResourceObject object;
+final ChatCompletionListObject object;
 
 final List<VoiceConsentResource> data;
 
@@ -51,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-VoiceConsentListResource copyWith({VoiceConsentListResourceObject? object, List<VoiceConsentResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return VoiceConsentListResource(
+VoiceConsentListResource copyWith({ChatCompletionListObject? object, List<VoiceConsentResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return VoiceConsentListResource(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,

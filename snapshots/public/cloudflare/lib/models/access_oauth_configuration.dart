@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oauth_configuration_dynamic_client_registration.dart';import 'access_oauth_configuration_grant.dart';/// **Beta:** Optional configuration for managing an OAuth authorization flow controlled by Access. When set, Access will act as the OAuth authorization server for this application. Only compatible with OAuth clients that support [RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) (Resource Indicators for OAuth 2.0). This feature is currently in beta.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_oauth_configuration/dynamic_client_registration.dart';import 'package:pub_cloudflare/models/access_oauth_configuration/grant.dart';/// **Beta:** Optional configuration for managing an OAuth authorization flow controlled by Access. When set, Access will act as the OAuth authorization server for this application. Only compatible with OAuth clients that support [RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) (Resource Indicators for OAuth 2.0). This feature is currently in beta.
 /// 
 @immutable final class AccessOauthConfiguration {const AccessOauthConfiguration({this.dynamicClientRegistration, this.enabled = true, this.grant, });
 
 factory AccessOauthConfiguration.fromJson(Map<String, dynamic> json) { return AccessOauthConfiguration(
-  dynamicClientRegistration: json['dynamic_client_registration'] != null ? AccessOauthConfigurationDynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>) : null,
+  dynamicClientRegistration: json['dynamic_client_registration'] != null ? DynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>) : null,
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  grant: json['grant'] != null ? AccessOauthConfigurationGrant.fromJson(json['grant'] as Map<String, dynamic>) : null,
+  grant: json['grant'] != null ? Grant.fromJson(json['grant'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for OAuth dynamic client registration.
-final AccessOauthConfigurationDynamicClientRegistration? dynamicClientRegistration;
+final DynamicClientRegistration? dynamicClientRegistration;
 
 /// Whether the OAuth configuration is enabled for this application. When set to `false`, Access will not handle OAuth for this application. Defaults to `true` if omitted.
 /// 
 final bool enabled;
 
 /// Settings for OAuth grant behavior.
-final AccessOauthConfigurationGrant? grant;
+final Grant? grant;
 
 Map<String, dynamic> toJson() { return {
   if (dynamicClientRegistration != null) 'dynamic_client_registration': dynamicClientRegistration?.toJson(),
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (grant != null) 'grant': grant?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dynamic_client_registration', 'enabled', 'grant'}.contains(key)); } 
-AccessOauthConfiguration copyWith({AccessOauthConfigurationDynamicClientRegistration Function()? dynamicClientRegistration, bool Function()? enabled, AccessOauthConfigurationGrant Function()? grant, }) { return AccessOauthConfiguration(
+AccessOauthConfiguration copyWith({DynamicClientRegistration Function()? dynamicClientRegistration, bool Function()? enabled, Grant Function()? grant, }) { return AccessOauthConfiguration(
   dynamicClientRegistration: dynamicClientRegistration != null ? dynamicClientRegistration() : this.dynamicClientRegistration,
   enabled: enabled != null ? enabled() : this.enabled,
   grant: grant != null ? grant() : this.grant,

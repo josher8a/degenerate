@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_conference.dart';import '../models/conference_enum_status.dart';import '../models/list_conference_response.dart';import '../models/update_conference_request.dart';/// Api20100401ConferenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_conference.dart';import 'package:pub_twilio_api_v2010/models/conference_enum_status.dart';import 'package:pub_twilio_api_v2010/models/list_conference_response.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request.dart';/// Api20100401ConferenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

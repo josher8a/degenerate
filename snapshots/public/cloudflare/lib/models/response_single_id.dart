@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_purge_messages2.dart';import 'response_single_id_result.dart';@immutable final class ResponseSingleId {const ResponseSingleId({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_purge_messages2.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';@immutable final class ResponseSingleId {const ResponseSingleId({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseSingleId.fromJson(Map<String, dynamic> json) { return ResponseSingleId(
   errors: (json['errors'] as List<dynamic>).map((e) => CachePurgeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => CachePurgeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? ResponseSingleIdResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
@@ -13,7 +13,7 @@ final List<CachePurgeMessages2> errors;
 
 final List<CachePurgeMessages2> messages;
 
-final ResponseSingleIdResult? result;
+final ResponseSingleId4Result? result;
 
 /// Indicates the API call's success or failure.
 final bool success;
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingleId copyWith({List<CachePurgeMessages2>? errors, List<CachePurgeMessages2>? messages, ResponseSingleIdResult? Function()? result, bool? success, }) { return ResponseSingleId(
+ResponseSingleId copyWith({List<CachePurgeMessages2>? errors, List<CachePurgeMessages2>? messages, ResponseSingleId4Result? Function()? result, bool? success, }) { return ResponseSingleId(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

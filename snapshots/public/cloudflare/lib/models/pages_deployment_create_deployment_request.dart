@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boolean string indicating if the working directory has uncommitted changes.
-@immutable final class PagesDeploymentCreateDeploymentRequestCommitDirty {const PagesDeploymentCreateDeploymentRequestCommitDirty._(this.value);
+@immutable final class CommitDirty {const CommitDirty._(this.value);
 
-factory PagesDeploymentCreateDeploymentRequestCommitDirty.fromJson(String json) { return switch (json) {
+factory CommitDirty.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
-  _ => PagesDeploymentCreateDeploymentRequestCommitDirty._(json),
+  _ => CommitDirty._(json),
 }; }
 
-static const PagesDeploymentCreateDeploymentRequestCommitDirty $true = PagesDeploymentCreateDeploymentRequestCommitDirty._('true');
+static const CommitDirty $true = CommitDirty._('true');
 
-static const PagesDeploymentCreateDeploymentRequestCommitDirty $false = PagesDeploymentCreateDeploymentRequestCommitDirty._('false');
+static const CommitDirty $false = CommitDirty._('false');
 
-static const List<PagesDeploymentCreateDeploymentRequestCommitDirty> values = [$true, $false];
+static const List<CommitDirty> values = [$true, $false];
 
 final String value;
 
@@ -21,9 +21,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentCreateDeploymentRequestCommitDirty && other.value == value; } 
+    other is CommitDirty && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentCreateDeploymentRequestCommitDirty($value)'; } 
+@override String toString() { return 'CommitDirty($value)'; } 
  }
 @immutable final class PagesDeploymentCreateDeploymentRequest {const PagesDeploymentCreateDeploymentRequest({this.headers, this.redirects, this.routesJson, this.workerBundle, this.workerJs, this.branch, this.commitDirty, this.commitHash, this.commitMessage, this.functionsFilepathRoutingConfigJson, this.manifest, this.pagesBuildOutputDir, this.wranglerConfigHash, });
 
@@ -34,7 +34,7 @@ factory PagesDeploymentCreateDeploymentRequest.fromJson(Map<String, dynamic> jso
   workerBundle: json['_worker.bundle'] != null ? base64Decode(json['_worker.bundle'] as String) : null,
   workerJs: json['_worker.js'] != null ? base64Decode(json['_worker.js'] as String) : null,
   branch: json['branch'] as String?,
-  commitDirty: json['commit_dirty'] != null ? PagesDeploymentCreateDeploymentRequestCommitDirty.fromJson(json['commit_dirty'] as String) : null,
+  commitDirty: json['commit_dirty'] != null ? CommitDirty.fromJson(json['commit_dirty'] as String) : null,
   commitHash: json['commit_hash'] as String?,
   commitMessage: json['commit_message'] as String?,
   functionsFilepathRoutingConfigJson: json['functions-filepath-routing-config.json'] != null ? base64Decode(json['functions-filepath-routing-config.json'] as String) : null,
@@ -67,7 +67,7 @@ final Uint8List? workerJs;
 final String? branch;
 
 /// Boolean string indicating if the working directory has uncommitted changes.
-final PagesDeploymentCreateDeploymentRequestCommitDirty? commitDirty;
+final CommitDirty? commitDirty;
 
 /// Git commit SHA associated with this deployment.
 final String? commitHash;
@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   'wrangler_config_hash': ?wranglerConfigHash,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'_headers', '_redirects', '_routes.json', '_worker.bundle', '_worker.js', 'branch', 'commit_dirty', 'commit_hash', 'commit_message', 'functions-filepath-routing-config.json', 'manifest', 'pages_build_output_dir', 'wrangler_config_hash'}.contains(key)); } 
-PagesDeploymentCreateDeploymentRequest copyWith({Uint8List Function()? headers, Uint8List Function()? redirects, Uint8List Function()? routesJson, Uint8List Function()? workerBundle, Uint8List Function()? workerJs, String Function()? branch, PagesDeploymentCreateDeploymentRequestCommitDirty Function()? commitDirty, String Function()? commitHash, String Function()? commitMessage, Uint8List Function()? functionsFilepathRoutingConfigJson, String Function()? manifest, String Function()? pagesBuildOutputDir, String Function()? wranglerConfigHash, }) { return PagesDeploymentCreateDeploymentRequest(
+PagesDeploymentCreateDeploymentRequest copyWith({Uint8List Function()? headers, Uint8List Function()? redirects, Uint8List Function()? routesJson, Uint8List Function()? workerBundle, Uint8List Function()? workerJs, String Function()? branch, CommitDirty Function()? commitDirty, String Function()? commitHash, String Function()? commitMessage, Uint8List Function()? functionsFilepathRoutingConfigJson, String Function()? manifest, String Function()? pagesBuildOutputDir, String Function()? wranglerConfigHash, }) { return PagesDeploymentCreateDeploymentRequest(
   headers: headers != null ? headers() : this.headers,
   redirects: redirects != null ? redirects() : this.redirects,
   routesJson: routesJson != null ? routesJson() : this.routesJson,

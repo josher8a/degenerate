@@ -1,38 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The layout of the view.
-@immutable final class ProjectsCreateViewForUserRequestLayout {const ProjectsCreateViewForUserRequestLayout._(this.value);
-
-factory ProjectsCreateViewForUserRequestLayout.fromJson(String json) { return switch (json) {
-  'table' => table,
-  'board' => board,
-  'roadmap' => roadmap,
-  _ => ProjectsCreateViewForUserRequestLayout._(json),
-}; }
-
-static const ProjectsCreateViewForUserRequestLayout table = ProjectsCreateViewForUserRequestLayout._('table');
-
-static const ProjectsCreateViewForUserRequestLayout board = ProjectsCreateViewForUserRequestLayout._('board');
-
-static const ProjectsCreateViewForUserRequestLayout roadmap = ProjectsCreateViewForUserRequestLayout._('roadmap');
-
-static const List<ProjectsCreateViewForUserRequestLayout> values = [table, board, roadmap];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectsCreateViewForUserRequestLayout && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectsCreateViewForUserRequestLayout($value)'; } 
- }
-@immutable final class ProjectsCreateViewForUserRequest {const ProjectsCreateViewForUserRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/projects_create_view_for_org_request/layout.dart';@immutable final class ProjectsCreateViewForUserRequest {const ProjectsCreateViewForUserRequest({required this.name, required this.layout, this.filter, this.visibleFields, });
 
 factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateViewForUserRequest(
   name: json['name'] as String,
-  layout: ProjectsCreateViewForUserRequestLayout.fromJson(json['layout'] as String),
+  layout: Layout.fromJson(json['layout'] as String),
   filter: json['filter'] as String?,
   visibleFields: (json['visible_fields'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
 ); }
@@ -41,7 +13,7 @@ factory ProjectsCreateViewForUserRequest.fromJson(Map<String, dynamic> json) { r
 final String name;
 
 /// The layout of the view.
-final ProjectsCreateViewForUserRequestLayout layout;
+final Layout layout;
 
 /// The filter query for the view. See [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.
 final String? filter;
@@ -58,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('layout'); } 
-ProjectsCreateViewForUserRequest copyWith({String? name, ProjectsCreateViewForUserRequestLayout? layout, String Function()? filter, List<int> Function()? visibleFields, }) { return ProjectsCreateViewForUserRequest(
+ProjectsCreateViewForUserRequest copyWith({String? name, Layout? layout, String Function()? filter, List<int> Function()? visibleFields, }) { return ProjectsCreateViewForUserRequest(
   name: name ?? this.name,
   layout: layout ?? this.layout,
   filter: filter != null ? filter() : this.filter,

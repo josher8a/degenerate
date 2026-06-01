@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Count Operator.
-@immutable final class TeamsDevicesKolideInputRequestCountOperator {const TeamsDevicesKolideInputRequestCountOperator._(this.value);
+@immutable final class CountOperator {const CountOperator._(this.value);
 
-factory TeamsDevicesKolideInputRequestCountOperator.fromJson(String json) { return switch (json) {
+factory CountOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => TeamsDevicesKolideInputRequestCountOperator._(json),
+  _ => CountOperator._(json),
 }; }
 
-static const TeamsDevicesKolideInputRequestCountOperator $empty = TeamsDevicesKolideInputRequestCountOperator._('<');
+static const CountOperator $empty = CountOperator._('<');
 
-static const TeamsDevicesKolideInputRequestCountOperator $empty2 = TeamsDevicesKolideInputRequestCountOperator._('<=');
+static const CountOperator $empty2 = CountOperator._('<=');
 
-static const TeamsDevicesKolideInputRequestCountOperator $empty3 = TeamsDevicesKolideInputRequestCountOperator._('>');
+static const CountOperator $empty3 = CountOperator._('>');
 
-static const TeamsDevicesKolideInputRequestCountOperator $empty4 = TeamsDevicesKolideInputRequestCountOperator._('>=');
+static const CountOperator $empty4 = CountOperator._('>=');
 
-static const TeamsDevicesKolideInputRequestCountOperator $empty5 = TeamsDevicesKolideInputRequestCountOperator._('==');
+static const CountOperator $empty5 = CountOperator._('==');
 
-static const List<TeamsDevicesKolideInputRequestCountOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
+static const List<CountOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
 final String value;
 
@@ -30,15 +30,15 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesKolideInputRequestCountOperator && other.value == value; } 
+    other is CountOperator && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesKolideInputRequestCountOperator($value)'; } 
+@override String toString() { return 'CountOperator($value)'; } 
  }
 @immutable final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });
 
 factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesKolideInputRequest(
   connectionId: json['connection_id'] as String,
-  countOperator: TeamsDevicesKolideInputRequestCountOperator.fromJson(json['countOperator'] as String),
+  countOperator: CountOperator.fromJson(json['countOperator'] as String),
   issueCount: json['issue_count'] as String,
 ); }
 
@@ -46,7 +46,7 @@ factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) { ret
 final String connectionId;
 
 /// Count Operator.
-final TeamsDevicesKolideInputRequestCountOperator countOperator;
+final CountOperator countOperator;
 
 /// The Number of Issues.
 final String issueCount;
@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String &&
       json.containsKey('countOperator') &&
       json.containsKey('issue_count') && json['issue_count'] is String; } 
-TeamsDevicesKolideInputRequest copyWith({String? connectionId, TeamsDevicesKolideInputRequestCountOperator? countOperator, String? issueCount, }) { return TeamsDevicesKolideInputRequest(
+TeamsDevicesKolideInputRequest copyWith({String? connectionId, CountOperator? countOperator, String? issueCount, }) { return TeamsDevicesKolideInputRequest(
   connectionId: connectionId ?? this.connectionId,
   countOperator: countOperator ?? this.countOperator,
   issueCount: issueCount ?? this.issueCount,

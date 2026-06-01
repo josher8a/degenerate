@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Requested {const Requested._(this.value);
+
+factory Requested.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  'us_domestic_wire' => usDomesticWire,
+  _ => Requested._(json),
+}; }
+
+static const Requested ach = Requested._('ach');
+
+static const Requested usDomesticWire = Requested._('us_domestic_wire');
+
+static const List<Requested> values = [ach, usDomesticWire];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Requested && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Requested($value)'; } 
+ }
+@immutable final class payment_intent_payment_method_options_paramNetworks {const payment_intent_payment_method_options_paramNetworks({this.requested});
+
+factory payment_intent_payment_method_options_paramNetworks.fromJson(Map<String, dynamic> json) { return payment_intent_payment_method_options_paramNetworks(
+  requested: (json['requested'] as List<dynamic>?)?.map((e) => Requested.fromJson(e as String)).toList(),
+); }
+
+final List<Requested>? requested;
+
+Map<String, dynamic> toJson() { return {
+  if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
+payment_intent_payment_method_options_paramNetworks copyWith({List<Requested> Function()? requested}) { return payment_intent_payment_method_options_paramNetworks(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is payment_intent_payment_method_options_paramNetworks &&
+          listEquals(requested, other.requested); } 
+@override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
+@override String toString() { return 'payment_intent_payment_method_options_paramNetworks(requested: $requested)'; } 
+ }

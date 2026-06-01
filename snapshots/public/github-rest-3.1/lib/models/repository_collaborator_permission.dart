@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'collaborator.dart';/// Repository Collaborator Permission
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/collaborator.dart';/// Repository Collaborator Permission
 @immutable final class RepositoryCollaboratorPermission {const RepositoryCollaboratorPermission({required this.permission, required this.roleName, required this.user, });
 
 factory RepositoryCollaboratorPermission.fromJson(Map<String, dynamic> json) { return RepositoryCollaboratorPermission(

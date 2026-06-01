@@ -1,37 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_set_reader_display_request_cart.dart';/// Type of information to display. Only `cart` is currently supported.
-@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
-
-factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) { return switch (json) {
-  'cart' => cart,
-  _ => PostTerminalReadersReaderSetReaderDisplayRequestType._(json),
-}; }
-
-static const PostTerminalReadersReaderSetReaderDisplayRequestType cart = PostTerminalReadersReaderSetReaderDisplayRequestType._('cart');
-
-static const List<PostTerminalReadersReaderSetReaderDisplayRequestType> values = [cart];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTerminalReadersReaderSetReaderDisplayRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)'; } 
- }
-@immutable final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({required this.type, this.cart, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/cart.dart';import 'package:pub_stripe_spec3/models/post_terminal_readers_reader_set_reader_display_request/post_terminal_readers_reader_set_reader_display_request_type.dart';@immutable final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({required this.type, this.cart, this.expand, });
 
 factory PostTerminalReadersReaderSetReaderDisplayRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequest(
-  cart: json['cart'] != null ? PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
+  cart: json['cart'] != null ? Cart.fromJson(json['cart'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   type: PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(json['type'] as String),
 ); }
 
 /// Cart details to display on the reader screen, including line items, amounts, and currency.
-final PostTerminalReadersReaderSetReaderDisplayRequestCart? cart;
+final Cart? cart;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -45,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTerminalReadersReaderSetReaderDisplayRequest copyWith({PostTerminalReadersReaderSetReaderDisplayRequestCart Function()? cart, List<String> Function()? expand, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) { return PostTerminalReadersReaderSetReaderDisplayRequest(
+PostTerminalReadersReaderSetReaderDisplayRequest copyWith({Cart Function()? cart, List<String> Function()? expand, PostTerminalReadersReaderSetReaderDisplayRequestType? type, }) { return PostTerminalReadersReaderSetReaderDisplayRequest(
   cart: cart != null ? cart() : this.cart,
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,

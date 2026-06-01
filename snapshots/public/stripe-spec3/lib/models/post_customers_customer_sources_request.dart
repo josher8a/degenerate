@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account4.dart';import 'customer_payment_source_card5.dart';import 'post_customers_customer_sources_request_bank_account.dart';import 'post_customers_customer_sources_request_card.dart';@immutable final class PostCustomersCustomerSourcesRequest {const PostCustomersCustomerSourcesRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_card.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_card.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_request/post_customers_customer_bank_accounts_request_bank_account.dart';@immutable final class PostCustomersCustomerSourcesRequest {const PostCustomersCustomerSourcesRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
 
 factory PostCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesRequest(
   alipayAccount: json['alipay_account'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount4.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard5.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => customer_payment_source_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => customer_payment_source_card.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   source: json['source'] as String?,
@@ -15,10 +15,10 @@ factory PostCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> json) 
 final String? alipayAccount;
 
 /// Either a token, like the ones returned by [Stripe.js](https://stripe.com/docs/js), or a dictionary containing a user's bank account details.
-final PostCustomersCustomerSourcesRequestBankAccount? bankAccount;
+final PostCustomersCustomerBankAccountsRequestBankAccount? bankAccount;
 
 /// A token, like the ones returned by [Stripe.js](https://stripe.com/docs/js).
-final PostCustomersCustomerSourcesRequestCard? card;
+final PostChargesRequestCard? card;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alipay_account', 'bank_account', 'card', 'expand', 'metadata', 'source'}.contains(key)); } 
-PostCustomersCustomerSourcesRequest copyWith({String Function()? alipayAccount, PostCustomersCustomerSourcesRequestBankAccount Function()? bankAccount, PostCustomersCustomerSourcesRequestCard Function()? card, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? source, }) { return PostCustomersCustomerSourcesRequest(
+PostCustomersCustomerSourcesRequest copyWith({String Function()? alipayAccount, PostCustomersCustomerBankAccountsRequestBankAccount Function()? bankAccount, PostChargesRequestCard Function()? card, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? source, }) { return PostCustomersCustomerSourcesRequest(
   alipayAccount: alipayAccount != null ? alipayAccount() : this.alipayAccount,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,

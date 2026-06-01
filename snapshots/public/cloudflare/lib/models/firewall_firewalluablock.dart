@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_ua_rule_id.dart';import 'firewall_schemas_configuration.dart';import 'firewall_schemas_paused.dart';/// The action to apply to a matched request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_components_ua_rule_id.dart';import 'package:pub_cloudflare/models/firewall_schemas_configuration.dart';import 'package:pub_cloudflare/models/firewall_schemas_paused.dart';/// The action to apply to a matched request.
 extension type FirewallComponentsSchemasMode(dynamic value) {
 factory FirewallComponentsSchemasMode.fromJson(dynamic json) => FirewallComponentsSchemasMode(json);
 

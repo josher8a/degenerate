@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_resolved_pull_request.dart';import 'webhook_pull_request_review_thread_resolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadResolvedAction {const WebhookPullRequestReviewThreadResolvedAction._(this.value);
-
-factory WebhookPullRequestReviewThreadResolvedAction.fromJson(String json) { return switch (json) {
-  'resolved' => resolved,
-  _ => WebhookPullRequestReviewThreadResolvedAction._(json),
-}; }
-
-static const WebhookPullRequestReviewThreadResolvedAction resolved = WebhookPullRequestReviewThreadResolvedAction._('resolved');
-
-static const List<WebhookPullRequestReviewThreadResolvedAction> values = [resolved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadResolvedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadResolvedAction($value)'; } 
- }
-@immutable final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_action.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_resolved/webhook_pull_request_review_thread_resolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
 
 factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolved(
   action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),

@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount_customer.dart';import 'discount_promotion_code.dart';import 'discount_source.dart';import 'promotion_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DiscountObject {const DiscountObject._(this.value);
-
-factory DiscountObject.fromJson(String json) { return switch (json) {
-  'discount' => discount,
-  _ => DiscountObject._(json),
-}; }
-
-static const DiscountObject discount = DiscountObject._('discount');
-
-static const List<DiscountObject> values = [discount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscountObject($value)'; } 
- }
-/// A discount represents the actual application of a [coupon](https://api.stripe.com#coupons) or [promotion code](https://api.stripe.com#promotion_codes).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_object.dart';import 'package:pub_stripe_spec3/models/deleted_discount/deleted_discount_promotion_code.dart';import 'package:pub_stripe_spec3/models/discount_source.dart';import 'package:pub_stripe_spec3/models/promotion_code.dart';/// A discount represents the actual application of a [coupon](https://api.stripe.com#coupons) or [promotion code](https://api.stripe.com#promotion_codes).
 /// It contains information about when the discount began, when it will end, and what it is applied to.
 /// 
 /// Related guide: [Applying discounts to subscriptions](https://docs.stripe.com/billing/subscriptions/discounts)
@@ -36,7 +14,7 @@ factory Discount.fromJson(Map<String, dynamic> json) { return Discount(
   id: json['id'] as String,
   invoice: json['invoice'] as String?,
   invoiceItem: json['invoice_item'] as String?,
-  object: DiscountObject.fromJson(json['object'] as String),
+  object: DeletedDiscountObject.fromJson(json['object'] as String),
   promotionCode: json['promotion_code'] != null ? OneOf2.parse(json['promotion_code'], fromA: (v) => v as String, fromB: (v) => PromotionCode.fromJson(v as Map<String, dynamic>),) : null,
   source: DiscountSource.fromJson(json['source'] as Map<String, dynamic>),
   start: (json['start'] as num).toInt(),
@@ -48,7 +26,7 @@ factory Discount.fromJson(Map<String, dynamic> json) { return Discount(
 final String? checkoutSession;
 
 /// The ID of the customer associated with this discount.
-final DiscountCustomer? customer;
+final CardCustomer? customer;
 
 /// The ID of the account representing the customer associated with this discount.
 final String? customerAccount;
@@ -66,10 +44,10 @@ final String? invoice;
 final String? invoiceItem;
 
 /// String representing the object's type. Objects of the same type share the same value.
-final DiscountObject object;
+final DeletedDiscountObject object;
 
 /// The promotion code applied to create this discount.
-final DiscountPromotionCode? promotionCode;
+final DeletedDiscountPromotionCode? promotionCode;
 
 final DiscountSource source;
 
@@ -101,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
-Discount copyWith({String? Function()? checkoutSession, DiscountCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? end, String? id, String? Function()? invoice, String? Function()? invoiceItem, DiscountObject? object, DiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return Discount(
+Discount copyWith({String? Function()? checkoutSession, CardCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? end, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return Discount(
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

@@ -1,41 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentLinksResourceTaxIdCollectionRequired {const PaymentLinksResourceTaxIdCollectionRequired._(this.value);
-
-factory PaymentLinksResourceTaxIdCollectionRequired.fromJson(String json) { return switch (json) {
-  'if_supported' => ifSupported,
-  'never' => never,
-  _ => PaymentLinksResourceTaxIdCollectionRequired._(json),
-}; }
-
-static const PaymentLinksResourceTaxIdCollectionRequired ifSupported = PaymentLinksResourceTaxIdCollectionRequired._('if_supported');
-
-static const PaymentLinksResourceTaxIdCollectionRequired never = PaymentLinksResourceTaxIdCollectionRequired._('never');
-
-static const List<PaymentLinksResourceTaxIdCollectionRequired> values = [ifSupported, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourceTaxIdCollectionRequired && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceTaxIdCollectionRequired($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection/required.dart';/// 
 @immutable final class PaymentLinksResourceTaxIdCollection {const PaymentLinksResourceTaxIdCollection({required this.enabled, required this.$required, });
 
 factory PaymentLinksResourceTaxIdCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTaxIdCollection(
   enabled: json['enabled'] as bool,
-  $required: PaymentLinksResourceTaxIdCollectionRequired.fromJson(json['required'] as String),
+  $required: Required.fromJson(json['required'] as String),
 ); }
 
 /// Indicates whether tax ID collection is enabled for the session.
 final bool enabled;
 
-final PaymentLinksResourceTaxIdCollectionRequired $required;
+final Required $required;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
@@ -43,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('required'); } 
-PaymentLinksResourceTaxIdCollection copyWith({bool? enabled, PaymentLinksResourceTaxIdCollectionRequired? $required, }) { return PaymentLinksResourceTaxIdCollection(
+PaymentLinksResourceTaxIdCollection copyWith({bool? enabled, Required? $required, }) { return PaymentLinksResourceTaxIdCollection(
   enabled: enabled ?? this.enabled,
   $required: $required ?? this.$required,
 ); } 

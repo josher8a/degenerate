@@ -23,22 +23,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuningJobEventObject($value)'; } 
  }
 /// The log level of the event.
-@immutable final class FineTuningJobEventLevel {const FineTuningJobEventLevel._(this.value);
+@immutable final class Level {const Level._(this.value);
 
-factory FineTuningJobEventLevel.fromJson(String json) { return switch (json) {
+factory Level.fromJson(String json) { return switch (json) {
   'info' => info,
   'warn' => warn,
   'error' => error,
-  _ => FineTuningJobEventLevel._(json),
+  _ => Level._(json),
 }; }
 
-static const FineTuningJobEventLevel info = FineTuningJobEventLevel._('info');
+static const Level info = Level._('info');
 
-static const FineTuningJobEventLevel warn = FineTuningJobEventLevel._('warn');
+static const Level warn = Level._('warn');
 
-static const FineTuningJobEventLevel error = FineTuningJobEventLevel._('error');
+static const Level error = Level._('error');
 
-static const List<FineTuningJobEventLevel> values = [info, warn, error];
+static const List<Level> values = [info, warn, error];
 
 final String value;
 
@@ -46,9 +46,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobEventLevel && other.value == value; } 
+    other is Level && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobEventLevel($value)'; } 
+@override String toString() { return 'Level($value)'; } 
  }
 /// The type of event.
 @immutable final class FineTuningJobEventType {const FineTuningJobEventType._(this.value);
@@ -82,7 +82,7 @@ factory FineTuningJobEvent.fromJson(Map<String, dynamic> json) { return FineTuni
   object: FineTuningJobEventObject.fromJson(json['object'] as String),
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
-  level: FineTuningJobEventLevel.fromJson(json['level'] as String),
+  level: Level.fromJson(json['level'] as String),
   message: json['message'] as String,
   type: json['type'] != null ? FineTuningJobEventType.fromJson(json['type'] as String) : null,
   data: json['data'] as Map<String, dynamic>?,
@@ -98,7 +98,7 @@ final String id;
 final int createdAt;
 
 /// The log level of the event.
-final FineTuningJobEventLevel level;
+final Level level;
 
 /// The message of the event.
 final String message;
@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('level') &&
       json.containsKey('message') && json['message'] is String; } 
-FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, FineTuningJobEventLevel? level, String? message, FineTuningJobEventType Function()? type, Map<String, dynamic> Function()? data, }) { return FineTuningJobEvent(
+FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? createdAt, Level? level, String? message, FineTuningJobEventType Function()? type, Map<String, dynamic> Function()? data, }) { return FineTuningJobEvent(
   object: object ?? this.object,
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_messages2.dart';import 'response_collection5_result_info.dart';@immutable final class ResponseCollection5 {const ResponseCollection5({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_messages2.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';@immutable final class ResponseCollection5 {const ResponseCollection5({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection5.fromJson(Map<String, dynamic> json) { return ResponseCollection5(
   errors: (json['errors'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? ResponseCollection5ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? D1ListDatabasesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
 
 final List<AlexandriaMessages2> errors;
@@ -16,7 +16,7 @@ final List<AlexandriaMessages2> messages;
 /// Indicates whether the API call was successful.
 final bool success;
 
-final ResponseCollection5ResultInfo? resultInfo;
+final D1ListDatabasesResponseResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection5 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, ResponseCollection5ResultInfo Function()? resultInfo, }) { return ResponseCollection5(
+ResponseCollection5 copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, D1ListDatabasesResponseResultInfo Function()? resultInfo, }) { return ResponseCollection5(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

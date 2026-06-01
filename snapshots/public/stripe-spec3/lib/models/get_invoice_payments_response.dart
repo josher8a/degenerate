@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetInvoicePaymentsResponseObject {const GetInvoicePaymentsResponseObject._(this.value);
-
-factory GetInvoicePaymentsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetInvoicePaymentsResponseObject._(json),
-}; }
-
-static const GetInvoicePaymentsResponseObject list = GetInvoicePaymentsResponseObject._('list');
-
-static const List<GetInvoicePaymentsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetInvoicePaymentsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetInvoicePaymentsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';import 'package:pub_stripe_spec3/models/invoice_payment.dart';/// 
 @immutable final class GetInvoicePaymentsResponse {const GetInvoicePaymentsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetInvoicePaymentsResponse.fromJson(Map<String, dynamic> json) { return GetInvoicePaymentsResponse(
   data: (json['data'] as List<dynamic>).map((e) => InvoicePayment.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetInvoicePaymentsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -39,7 +17,7 @@ final List<InvoicePayment> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetInvoicePaymentsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -54,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetInvoicePaymentsResponse copyWith({List<InvoicePayment>? data, bool? hasMore, GetInvoicePaymentsResponseObject? object, String? url, }) { return GetInvoicePaymentsResponse(
+GetInvoicePaymentsResponse copyWith({List<InvoicePayment>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetInvoicePaymentsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

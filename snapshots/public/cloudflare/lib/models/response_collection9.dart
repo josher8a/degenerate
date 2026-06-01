@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2.dart';import 'response_collection9_result_info.dart';@immutable final class ResponseCollection9 {const ResponseCollection9({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_messages2.dart';@immutable final class ResponseCollection9 {const ResponseCollection9({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection9.fromJson(Map<String, dynamic> json) { return ResponseCollection9(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? ResponseCollection9ResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? D1ListDatabasesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
 
 final List<DigitalExperienceMonitoringMessages2> errors;
@@ -16,7 +16,7 @@ final List<DigitalExperienceMonitoringMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final ResponseCollection9ResultInfo? resultInfo;
+final D1ListDatabasesResponseResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseCollection9 copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, ResponseCollection9ResultInfo Function()? resultInfo, }) { return ResponseCollection9(
+ResponseCollection9 copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, D1ListDatabasesResponseResultInfo Function()? resultInfo, }) { return ResponseCollection9(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnMovedAction {const WebhookProjectColumnMovedAction._(this.value);
-
-factory WebhookProjectColumnMovedAction.fromJson(String json) { return switch (json) {
-  'moved' => moved,
-  _ => WebhookProjectColumnMovedAction._(json),
-}; }
-
-static const WebhookProjectColumnMovedAction moved = WebhookProjectColumnMovedAction._('moved');
-
-static const List<WebhookProjectColumnMovedAction> values = [moved];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookProjectColumnMovedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookProjectColumnMovedAction($value)'; } 
- }
-@immutable final class WebhookProjectColumnMoved {const WebhookProjectColumnMoved({required this.action, required this.projectColumn, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_project_card_moved/webhook_project_card_moved_action.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_column.dart';@immutable final class WebhookProjectColumnMoved {const WebhookProjectColumnMoved({required this.action, required this.projectColumn, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnMoved(
-  action: WebhookProjectColumnMovedAction.fromJson(json['action'] as String),
+  action: WebhookProjectCardMovedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) { return W
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookProjectColumnMovedAction action;
+final WebhookProjectCardMovedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project_column') &&
       json.containsKey('sender'); } 
-WebhookProjectColumnMoved copyWith({WebhookProjectColumnMovedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectColumnMoved(
+WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectColumnMoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

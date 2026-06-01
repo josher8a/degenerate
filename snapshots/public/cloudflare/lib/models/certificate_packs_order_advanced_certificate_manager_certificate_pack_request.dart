@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Type of certificate pack.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validity_days.dart';/// Type of certificate pack.
 @immutable final class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType._(this.value);
 
 factory TlsCertificatesAndHostnamesAdvancedType.fromJson(String json) { return switch (json) {

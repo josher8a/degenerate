@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_secret.dart';@immutable final class ActionsListEnvironmentSecretsResponse {const ActionsListEnvironmentSecretsResponse({required this.totalCount, required this.secrets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_secret.dart';@immutable final class ActionsListEnvironmentSecretsResponse {const ActionsListEnvironmentSecretsResponse({required this.totalCount, required this.secrets, });
 
 factory ActionsListEnvironmentSecretsResponse.fromJson(Map<String, dynamic> json) { return ActionsListEnvironmentSecretsResponse(
   totalCount: (json['total_count'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'public_user_schema.dart';
+import 'package:pub_totem_mobile/models/public_user_schema.dart';
 
 @immutable
 final class BlogPostListSchema {

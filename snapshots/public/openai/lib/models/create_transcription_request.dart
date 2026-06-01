@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_transcription_request_chunking_strategy.dart';import 'create_transcription_request_model.dart';import 'vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
 @immutable final class AudioResponseFormat {const AudioResponseFormat._(this.value);
 
@@ -59,19 +59,19 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TranscriptionInclude($value)'; } 
  }
-@immutable final class CreateTranscriptionRequestTimestampGranularities {const CreateTranscriptionRequestTimestampGranularities._(this.value);
+@immutable final class TimestampGranularities {const TimestampGranularities._(this.value);
 
-factory CreateTranscriptionRequestTimestampGranularities.fromJson(String json) { return switch (json) {
+factory TimestampGranularities.fromJson(String json) { return switch (json) {
   'word' => word,
   'segment' => segment,
-  _ => CreateTranscriptionRequestTimestampGranularities._(json),
+  _ => TimestampGranularities._(json),
 }; }
 
-static const CreateTranscriptionRequestTimestampGranularities word = CreateTranscriptionRequestTimestampGranularities._('word');
+static const TimestampGranularities word = TimestampGranularities._('word');
 
-static const CreateTranscriptionRequestTimestampGranularities segment = CreateTranscriptionRequestTimestampGranularities._('segment');
+static const TimestampGranularities segment = TimestampGranularities._('segment');
 
-static const List<CreateTranscriptionRequestTimestampGranularities> values = [word, segment];
+static const List<TimestampGranularities> values = [word, segment];
 
 final String value;
 
@@ -79,23 +79,23 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionRequestTimestampGranularities && other.value == value; } 
+    other is TimestampGranularities && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateTranscriptionRequestTimestampGranularities($value)'; } 
+@override String toString() { return 'TimestampGranularities($value)'; } 
  }
 @immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });
 
 factory CreateTranscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateTranscriptionRequest(
   file: base64Decode(json['file'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateTranscriptionRequestModelVariant2.fromJson(v as String),),
+  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AudioTranscriptionModelVariant2.fromJson(v as String),),
   language: json['language'] as String?,
   prompt: json['prompt'] as String?,
   responseFormat: json['response_format'] != null ? AudioResponseFormat.fromJson(json['response_format'] as String) : null,
   temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
   include: (json['include'] as List<dynamic>?)?.map((e) => TranscriptionInclude.fromJson(e as String)).toList(),
-  timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => CreateTranscriptionRequestTimestampGranularities.fromJson(e as String)).toList(),
+  timestampGranularities: (json['timestamp_granularities'] as List<dynamic>?)?.map((e) => TimestampGranularities.fromJson(e as String)).toList(),
   stream: json['stream'] as bool?,
-  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => CreateTranscriptionRequestChunkingStrategyVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
+  chunkingStrategy: json['chunking_strategy'] != null ? OneOf2.parse(json['chunking_strategy'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => VadConfig.fromJson(v as Map<String, dynamic>),) : null,
   knownSpeakerNames: (json['known_speaker_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   knownSpeakerReferences: (json['known_speaker_references'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
@@ -106,7 +106,7 @@ final Uint8List file;
 
 /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.
 /// 
-final CreateTranscriptionRequestModel model;
+final AudioTranscriptionModel model;
 
 /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
 /// 
@@ -135,7 +135,7 @@ final List<TranscriptionInclude>? include;
 /// The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
 /// This option is not available for `gpt-4o-transcribe-diarize`.
 /// 
-final List<CreateTranscriptionRequestTimestampGranularities>? timestampGranularities;
+final List<TimestampGranularities>? timestampGranularities;
 
 /// If set to true, the model response data will be streamed to the client
 /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).
@@ -173,7 +173,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('model'); } 
-CreateTranscriptionRequest copyWith({Uint8List? file, CreateTranscriptionRequestModel? model, String Function()? language, String Function()? prompt, AudioResponseFormat Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude> Function()? include, List<CreateTranscriptionRequestTimestampGranularities> Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String> Function()? knownSpeakerNames, List<String> Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
+CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String Function()? language, String Function()? prompt, AudioResponseFormat Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude> Function()? include, List<TimestampGranularities> Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String> Function()? knownSpeakerNames, List<String> Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   language: language != null ? language() : this.language,

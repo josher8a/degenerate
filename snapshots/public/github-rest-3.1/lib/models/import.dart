@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'import_project_choices.dart';@immutable final class ImportStatus {const ImportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/import/project_choices.dart';@immutable final class ImportStatus {const ImportStatus._(this.value);
 
 factory ImportStatus.fromJson(String json) { return switch (json) {
   'auth' => auth,
@@ -85,7 +85,7 @@ factory Import.fromJson(Map<String, dynamic> json) { return Import(
   hasLargeFiles: json['has_large_files'] as bool?,
   largeFilesSize: json['large_files_size'] != null ? (json['large_files_size'] as num).toInt() : null,
   largeFilesCount: json['large_files_count'] != null ? (json['large_files_count'] as num).toInt() : null,
-  projectChoices: (json['project_choices'] as List<dynamic>?)?.map((e) => ImportProjectChoices.fromJson(e as Map<String, dynamic>)).toList(),
+  projectChoices: (json['project_choices'] as List<dynamic>?)?.map((e) => ProjectChoices.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String?,
   authorsCount: json['authors_count'] != null ? (json['authors_count'] as num).toInt() : null,
   url: Uri.parse(json['url'] as String),
@@ -126,7 +126,7 @@ final int? largeFilesSize;
 
 final int? largeFilesCount;
 
-final List<ImportProjectChoices>? projectChoices;
+final List<ProjectChoices>? projectChoices;
 
 final String? message;
 
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('vcs')
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('authors_url') && json['authors_url'] is String &&
       json.containsKey('repository_url') && json['repository_url'] is String; } 
-Import copyWith({String? Function()? vcs, bool Function()? useLfs, String? vcsUrl, String Function()? svcRoot, String Function()? tfvcProject, ImportStatus? status, String? Function()? statusText, String? Function()? failedStep, String? Function()? errorMessage, int? Function()? importPercent, int? Function()? commitCount, int? Function()? pushPercent, bool Function()? hasLargeFiles, int Function()? largeFilesSize, int Function()? largeFilesCount, List<ImportProjectChoices> Function()? projectChoices, String Function()? message, int? Function()? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String Function()? svnRoot, }) { return Import(
+Import copyWith({String? Function()? vcs, bool Function()? useLfs, String? vcsUrl, String Function()? svcRoot, String Function()? tfvcProject, ImportStatus? status, String? Function()? statusText, String? Function()? failedStep, String? Function()? errorMessage, int? Function()? importPercent, int? Function()? commitCount, int? Function()? pushPercent, bool Function()? hasLargeFiles, int Function()? largeFilesSize, int Function()? largeFilesCount, List<ProjectChoices> Function()? projectChoices, String Function()? message, int? Function()? authorsCount, Uri? url, Uri? htmlUrl, Uri? authorsUrl, Uri? repositoryUrl, String Function()? svnRoot, }) { return Import(
   vcs: vcs != null ? vcs() : this.vcs,
   useLfs: useLfs != null ? useLfs() : this.useLfs,
   vcsUrl: vcsUrl ?? this.vcsUrl,

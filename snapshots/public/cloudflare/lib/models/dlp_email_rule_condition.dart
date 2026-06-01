@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_value.dart';@immutable final class DlpEmailRuleOperator {const DlpEmailRuleOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_email_rule_value.dart';@immutable final class DlpEmailRuleOperator {const DlpEmailRuleOperator._(this.value);
 
 factory DlpEmailRuleOperator.fromJson(String json) { return switch (json) {
   'InList' => inList,

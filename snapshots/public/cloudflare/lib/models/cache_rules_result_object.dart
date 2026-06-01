@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_editable.dart';import 'cache_rules_modified_on.dart';import 'cache_rules_setting_id.dart';/// The value of the setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_editable.dart';import 'package:pub_cloudflare/models/cache_rules_modified_on.dart';import 'package:pub_cloudflare/models/cache_rules_setting_id.dart';/// The value of the setting.
 extension type const CacheRulesSettingValue(String value) {
 factory CacheRulesSettingValue.fromJson(String json) => CacheRulesSettingValue(json);
 

@@ -1,58 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Color for the issue type.
-@immutable final class OrganizationCreateIssueTypeColor {const OrganizationCreateIssueTypeColor._(this.value);
-
-factory OrganizationCreateIssueTypeColor.fromJson(String json) { return switch (json) {
-  'gray' => gray,
-  'blue' => blue,
-  'green' => green,
-  'yellow' => yellow,
-  'orange' => orange,
-  'red' => red,
-  'pink' => pink,
-  'purple' => purple,
-  'null' => $null,
-  _ => OrganizationCreateIssueTypeColor._(json),
-}; }
-
-static const OrganizationCreateIssueTypeColor gray = OrganizationCreateIssueTypeColor._('gray');
-
-static const OrganizationCreateIssueTypeColor blue = OrganizationCreateIssueTypeColor._('blue');
-
-static const OrganizationCreateIssueTypeColor green = OrganizationCreateIssueTypeColor._('green');
-
-static const OrganizationCreateIssueTypeColor yellow = OrganizationCreateIssueTypeColor._('yellow');
-
-static const OrganizationCreateIssueTypeColor orange = OrganizationCreateIssueTypeColor._('orange');
-
-static const OrganizationCreateIssueTypeColor red = OrganizationCreateIssueTypeColor._('red');
-
-static const OrganizationCreateIssueTypeColor pink = OrganizationCreateIssueTypeColor._('pink');
-
-static const OrganizationCreateIssueTypeColor purple = OrganizationCreateIssueTypeColor._('purple');
-
-static const OrganizationCreateIssueTypeColor $null = OrganizationCreateIssueTypeColor._('null');
-
-static const List<OrganizationCreateIssueTypeColor> values = [gray, blue, green, yellow, orange, red, pink, purple, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationCreateIssueTypeColor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationCreateIssueTypeColor($value)'; } 
- }
-@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_type/issue_type_color.dart';@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
 
 factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) { return OrganizationCreateIssueType(
   name: json['name'] as String,
   isEnabled: json['is_enabled'] as bool,
   description: json['description'] as String?,
-  color: json['color'] != null ? OrganizationCreateIssueTypeColor.fromJson(json['color'] as String) : null,
+  color: json['color'] != null ? IssueTypeColor.fromJson(json['color'] as String) : null,
 ); }
 
 /// Name of the issue type.
@@ -65,7 +19,7 @@ final bool isEnabled;
 final String? description;
 
 /// Color for the issue type.
-final OrganizationCreateIssueTypeColor? color;
+final IssueTypeColor? color;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -75,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('is_enabled') && json['is_enabled'] is bool; } 
-OrganizationCreateIssueType copyWith({String? name, bool? isEnabled, String? Function()? description, OrganizationCreateIssueTypeColor? Function()? color, }) { return OrganizationCreateIssueType(
+OrganizationCreateIssueType copyWith({String? name, bool? isEnabled, String? Function()? description, IssueTypeColor? Function()? color, }) { return OrganizationCreateIssueType(
   name: name ?? this.name,
   isEnabled: isEnabled ?? this.isEnabled,
   description: description != null ? description() : this.description,

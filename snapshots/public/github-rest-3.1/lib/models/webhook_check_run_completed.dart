@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCheckRunCompletedAction {const WebhookCheckRunCompletedAction._(this.value);
-
-factory WebhookCheckRunCompletedAction.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  _ => WebhookCheckRunCompletedAction._(json),
-}; }
-
-static const WebhookCheckRunCompletedAction completed = WebhookCheckRunCompletedAction._('completed');
-
-static const List<WebhookCheckRunCompletedAction> values = [completed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckRunCompletedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckRunCompletedAction($value)'; } 
- }
-@immutable final class WebhookCheckRunCompleted {const WebhookCheckRunCompleted({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_completed/webhook_check_run_completed_action.dart';@immutable final class WebhookCheckRunCompleted {const WebhookCheckRunCompleted({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
 
 factory WebhookCheckRunCompleted.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCompleted(
   action: json['action'] != null ? WebhookCheckRunCompletedAction.fromJson(json['action'] as String) : null,

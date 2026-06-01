@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_stream_event_thread_created.dart';/// A value that is one of: `ThreadStreamEventThreadCreated`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_stream_event/thread_created.dart';/// A value that is one of: `ThreadCreated`.
 sealed class ThreadStreamEvent {const ThreadStreamEvent();
 
-factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadStreamEventThreadCreated.canParse(json)) {
-    return ThreadStreamEventThreadStreamEventThreadCreated(ThreadStreamEventThreadCreated.fromJson(json));
+factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadCreated.canParse(json)) {
+    return ThreadStreamEventThreadCreated(ThreadCreated.fromJson(json));
   }
   return ThreadStreamEvent$Unknown(json); }
 
@@ -12,15 +12,15 @@ factory ThreadStreamEvent.fromJson(Map<String, dynamic> json) {   if (ThreadStre
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-@immutable final class ThreadStreamEventThreadStreamEventThreadCreated extends ThreadStreamEvent {const ThreadStreamEventThreadStreamEventThreadCreated(this._value);
+@immutable final class ThreadStreamEventThreadCreated extends ThreadStreamEvent {const ThreadStreamEventThreadCreated(this._value);
 
-final ThreadStreamEventThreadCreated _value;
+final ThreadCreated _value;
 
-@override ThreadStreamEventThreadCreated get value { return _value; } 
+@override ThreadCreated get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadStreamEventThreadStreamEventThreadCreated && _value == other._value; } 
+    other is ThreadStreamEventThreadCreated && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ThreadStreamEvent.threadStreamEventThreadCreated($_value)'; } 
+@override String toString() { return 'ThreadStreamEvent.threadCreated($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class ThreadStreamEvent$Unknown extends ThreadStreamEvent {const ThreadStreamEvent$Unknown(this._value);

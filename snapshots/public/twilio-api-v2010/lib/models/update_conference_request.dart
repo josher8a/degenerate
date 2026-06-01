@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';@immutable final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
 
 factory ConferenceEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -21,37 +21,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConferenceEnumUpdateStatus($value)'; } 
  }
-/// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
-@immutable final class UpdateConferenceRequestAnnounceMethod {const UpdateConferenceRequestAnnounceMethod._(this.value);
-
-factory UpdateConferenceRequestAnnounceMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => UpdateConferenceRequestAnnounceMethod._(json),
-}; }
-
-static const UpdateConferenceRequestAnnounceMethod $get = UpdateConferenceRequestAnnounceMethod._('GET');
-
-static const UpdateConferenceRequestAnnounceMethod post = UpdateConferenceRequestAnnounceMethod._('POST');
-
-static const List<UpdateConferenceRequestAnnounceMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateConferenceRequestAnnounceMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateConferenceRequestAnnounceMethod($value)'; } 
- }
 @immutable final class UpdateConferenceRequest {const UpdateConferenceRequest({this.status, this.announceUrl, this.announceMethod, });
 
 factory UpdateConferenceRequest.fromJson(Map<String, dynamic> json) { return UpdateConferenceRequest(
   status: json['Status'] != null ? ConferenceEnumUpdateStatus.fromJson(json['Status'] as String) : null,
   announceUrl: json['AnnounceUrl'] != null ? Uri.parse(json['AnnounceUrl'] as String) : null,
-  announceMethod: json['AnnounceMethod'] != null ? UpdateConferenceRequestAnnounceMethod.fromJson(json['AnnounceMethod'] as String) : null,
+  announceMethod: json['AnnounceMethod'] != null ? AnnounceMethod.fromJson(json['AnnounceMethod'] as String) : null,
 ); }
 
 final ConferenceEnumUpdateStatus? status;
@@ -60,7 +35,7 @@ final ConferenceEnumUpdateStatus? status;
 final Uri? announceUrl;
 
 /// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
-final UpdateConferenceRequestAnnounceMethod? announceMethod;
+final AnnounceMethod? announceMethod;
 
 Map<String, dynamic> toJson() { return {
   if (status != null) 'Status': status?.toJson(),
@@ -68,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (announceMethod != null) 'AnnounceMethod': announceMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Status', 'AnnounceUrl', 'AnnounceMethod'}.contains(key)); } 
-UpdateConferenceRequest copyWith({ConferenceEnumUpdateStatus Function()? status, Uri Function()? announceUrl, UpdateConferenceRequestAnnounceMethod Function()? announceMethod, }) { return UpdateConferenceRequest(
+UpdateConferenceRequest copyWith({ConferenceEnumUpdateStatus Function()? status, Uri Function()? announceUrl, AnnounceMethod Function()? announceMethod, }) { return UpdateConferenceRequest(
   status: status != null ? status() : this.status,
   announceUrl: announceUrl != null ? announceUrl() : this.announceUrl,
   announceMethod: announceMethod != null ? announceMethod() : this.announceMethod,

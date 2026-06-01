@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_toll_free_capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_local/capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
 
 factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree(
   friendlyName: json['friendly_name'] as String?,
@@ -15,7 +15,7 @@ factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree.fromJson(
   isoCountry: json['iso_country'] as String?,
   addressRequirements: json['address_requirements'] as String?,
   beta: json['beta'] as bool?,
-  capabilities: json['capabilities'] != null ? AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
+  capabilities: json['capabilities'] != null ? Capabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
 ); }
 
 /// A formatted version of the phone number.
@@ -55,7 +55,7 @@ final String? addressRequirements;
 final bool? beta;
 
 /// The set of Boolean properties that indicate whether a phone number can receive calls or messages.  Capabilities are: `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
-final AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities? capabilities;
+final Capabilities? capabilities;
 
 Map<String, dynamic> toJson() { return {
   'friendly_name': ?friendlyName,
@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key)); } 
-AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree copyWith({String? Function()? friendlyName, String? Function()? phoneNumber, String? Function()? lata, String? Function()? locality, String? Function()? rateCenter, double? Function()? latitude, double? Function()? longitude, String? Function()? region, String? Function()? postalCode, String? Function()? isoCountry, String? Function()? addressRequirements, bool? Function()? beta, AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities? Function()? capabilities, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree(
+AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree copyWith({String? Function()? friendlyName, String? Function()? phoneNumber, String? Function()? lata, String? Function()? locality, String? Function()? rateCenter, double? Function()? latitude, double? Function()? longitude, String? Function()? region, String? Function()? postalCode, String? Function()? isoCountry, String? Function()? addressRequirements, bool? Function()? beta, Capabilities? Function()? capabilities, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   lata: lata != null ? lata() : this.lata,

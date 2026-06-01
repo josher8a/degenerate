@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not Early Hints is enabled.
-@immutable final class TlsCertificatesAndHostnamesSslsettingsEarlyHints {const TlsCertificatesAndHostnamesSslsettingsEarlyHints._(this.value);
+@immutable final class EarlyHints {const EarlyHints._(this.value);
 
-factory TlsCertificatesAndHostnamesSslsettingsEarlyHints.fromJson(String json) { return switch (json) {
+factory EarlyHints.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => TlsCertificatesAndHostnamesSslsettingsEarlyHints._(json),
+  _ => EarlyHints._(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSslsettingsEarlyHints $on = TlsCertificatesAndHostnamesSslsettingsEarlyHints._('on');
+static const EarlyHints $on = EarlyHints._('on');
 
-static const TlsCertificatesAndHostnamesSslsettingsEarlyHints off = TlsCertificatesAndHostnamesSslsettingsEarlyHints._('off');
+static const EarlyHints off = EarlyHints._('off');
 
-static const List<TlsCertificatesAndHostnamesSslsettingsEarlyHints> values = [$on, off];
+static const List<EarlyHints> values = [$on, off];
 
 final String value;
 
@@ -21,24 +21,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslsettingsEarlyHints && other.value == value; } 
+    other is EarlyHints && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsEarlyHints($value)'; } 
+@override String toString() { return 'EarlyHints($value)'; } 
  }
 /// Whether or not HTTP2 is enabled.
-@immutable final class TlsCertificatesAndHostnamesSslsettingsHttp2 {const TlsCertificatesAndHostnamesSslsettingsHttp2._(this.value);
+@immutable final class Http2 {const Http2._(this.value);
 
-factory TlsCertificatesAndHostnamesSslsettingsHttp2.fromJson(String json) { return switch (json) {
+factory Http2.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => TlsCertificatesAndHostnamesSslsettingsHttp2._(json),
+  _ => Http2._(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSslsettingsHttp2 $on = TlsCertificatesAndHostnamesSslsettingsHttp2._('on');
+static const Http2 $on = Http2._('on');
 
-static const TlsCertificatesAndHostnamesSslsettingsHttp2 off = TlsCertificatesAndHostnamesSslsettingsHttp2._('off');
+static const Http2 off = Http2._('off');
 
-static const List<TlsCertificatesAndHostnamesSslsettingsHttp2> values = [$on, off];
+static const List<Http2> values = [$on, off];
 
 final String value;
 
@@ -46,30 +46,30 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslsettingsHttp2 && other.value == value; } 
+    other is Http2 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsHttp2($value)'; } 
+@override String toString() { return 'Http2($value)'; } 
  }
 /// The minimum TLS version supported.
-@immutable final class TlsCertificatesAndHostnamesSslsettingsMinTlsVersion {const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._(this.value);
+@immutable final class MinTlsVersion {const MinTlsVersion._(this.value);
 
-factory TlsCertificatesAndHostnamesSslsettingsMinTlsVersion.fromJson(String json) { return switch (json) {
+factory MinTlsVersion.fromJson(String json) { return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
-  _ => TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._(json),
+  _ => MinTlsVersion._(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion $10 = TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._('1.0');
+static const MinTlsVersion $10 = MinTlsVersion._('1.0');
 
-static const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion $11 = TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._('1.1');
+static const MinTlsVersion $11 = MinTlsVersion._('1.1');
 
-static const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion $12 = TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._('1.2');
+static const MinTlsVersion $12 = MinTlsVersion._('1.2');
 
-static const TlsCertificatesAndHostnamesSslsettingsMinTlsVersion $13 = TlsCertificatesAndHostnamesSslsettingsMinTlsVersion._('1.3');
+static const MinTlsVersion $13 = MinTlsVersion._('1.3');
 
-static const List<TlsCertificatesAndHostnamesSslsettingsMinTlsVersion> values = [$10, $11, $12, $13];
+static const List<MinTlsVersion> values = [$10, $11, $12, $13];
 
 final String value;
 
@@ -77,24 +77,24 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslsettingsMinTlsVersion && other.value == value; } 
+    other is MinTlsVersion && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsMinTlsVersion($value)'; } 
+@override String toString() { return 'MinTlsVersion($value)'; } 
  }
 /// Whether or not TLS 1.3 is enabled.
-@immutable final class TlsCertificatesAndHostnamesSslsettingsTls13 {const TlsCertificatesAndHostnamesSslsettingsTls13._(this.value);
+@immutable final class Tls13 {const Tls13._(this.value);
 
-factory TlsCertificatesAndHostnamesSslsettingsTls13.fromJson(String json) { return switch (json) {
+factory Tls13.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => TlsCertificatesAndHostnamesSslsettingsTls13._(json),
+  _ => Tls13._(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSslsettingsTls13 $on = TlsCertificatesAndHostnamesSslsettingsTls13._('on');
+static const Tls13 $on = Tls13._('on');
 
-static const TlsCertificatesAndHostnamesSslsettingsTls13 off = TlsCertificatesAndHostnamesSslsettingsTls13._('off');
+static const Tls13 off = Tls13._('off');
 
-static const List<TlsCertificatesAndHostnamesSslsettingsTls13> values = [$on, off];
+static const List<Tls13> values = [$on, off];
 
 final String value;
 
@@ -102,35 +102,35 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSslsettingsTls13 && other.value == value; } 
+    other is Tls13 && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslsettingsTls13($value)'; } 
+@override String toString() { return 'Tls13($value)'; } 
  }
 /// SSL specific settings.
 @immutable final class TlsCertificatesAndHostnamesSslsettings {const TlsCertificatesAndHostnamesSslsettings({this.ciphers, this.earlyHints, this.http2, this.minTlsVersion, this.tls13, });
 
 factory TlsCertificatesAndHostnamesSslsettings.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslsettings(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  earlyHints: json['early_hints'] != null ? TlsCertificatesAndHostnamesSslsettingsEarlyHints.fromJson(json['early_hints'] as String) : null,
-  http2: json['http2'] != null ? TlsCertificatesAndHostnamesSslsettingsHttp2.fromJson(json['http2'] as String) : null,
-  minTlsVersion: json['min_tls_version'] != null ? TlsCertificatesAndHostnamesSslsettingsMinTlsVersion.fromJson(json['min_tls_version'] as String) : null,
-  tls13: json['tls_1_3'] != null ? TlsCertificatesAndHostnamesSslsettingsTls13.fromJson(json['tls_1_3'] as String) : null,
+  earlyHints: json['early_hints'] != null ? EarlyHints.fromJson(json['early_hints'] as String) : null,
+  http2: json['http2'] != null ? Http2.fromJson(json['http2'] as String) : null,
+  minTlsVersion: json['min_tls_version'] != null ? MinTlsVersion.fromJson(json['min_tls_version'] as String) : null,
+  tls13: json['tls_1_3'] != null ? Tls13.fromJson(json['tls_1_3'] as String) : null,
 ); }
 
 /// An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.
 final List<String>? ciphers;
 
 /// Whether or not Early Hints is enabled.
-final TlsCertificatesAndHostnamesSslsettingsEarlyHints? earlyHints;
+final EarlyHints? earlyHints;
 
 /// Whether or not HTTP2 is enabled.
-final TlsCertificatesAndHostnamesSslsettingsHttp2? http2;
+final Http2? http2;
 
 /// The minimum TLS version supported.
-final TlsCertificatesAndHostnamesSslsettingsMinTlsVersion? minTlsVersion;
+final MinTlsVersion? minTlsVersion;
 
 /// Whether or not TLS 1.3 is enabled.
-final TlsCertificatesAndHostnamesSslsettingsTls13? tls13;
+final Tls13? tls13;
 
 Map<String, dynamic> toJson() { return {
   'ciphers': ?ciphers,
@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   if (tls13 != null) 'tls_1_3': tls13?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ciphers', 'early_hints', 'http2', 'min_tls_version', 'tls_1_3'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslsettings copyWith({List<String> Function()? ciphers, TlsCertificatesAndHostnamesSslsettingsEarlyHints Function()? earlyHints, TlsCertificatesAndHostnamesSslsettingsHttp2 Function()? http2, TlsCertificatesAndHostnamesSslsettingsMinTlsVersion Function()? minTlsVersion, TlsCertificatesAndHostnamesSslsettingsTls13 Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(
+TlsCertificatesAndHostnamesSslsettings copyWith({List<String> Function()? ciphers, EarlyHints Function()? earlyHints, Http2 Function()? http2, MinTlsVersion Function()? minTlsVersion, Tls13 Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(
   ciphers: ciphers != null ? ciphers() : this.ciphers,
   earlyHints: earlyHints != null ? earlyHints() : this.earlyHints,
   http2: http2 != null ? http2() : this.http2,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'blog_post_list_schema.dart';
+import 'package:pub_totem_mobile/models/blog_post_list_schema.dart';
 
 @immutable
 final class PagedBlogPostListSchema {

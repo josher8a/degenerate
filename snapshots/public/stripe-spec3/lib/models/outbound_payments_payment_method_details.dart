@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details_financial_account.dart';import 'outbound_payments_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the OutboundPayment.
-@immutable final class OutboundPaymentsPaymentMethodDetailsType {const OutboundPaymentsPaymentMethodDetailsType._(this.value);
-
-factory OutboundPaymentsPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
-  'financial_account' => financialAccount,
-  'us_bank_account' => usBankAccount,
-  _ => OutboundPaymentsPaymentMethodDetailsType._(json),
-}; }
-
-static const OutboundPaymentsPaymentMethodDetailsType financialAccount = OutboundPaymentsPaymentMethodDetailsType._('financial_account');
-
-static const OutboundPaymentsPaymentMethodDetailsType usBankAccount = OutboundPaymentsPaymentMethodDetailsType._('us_bank_account');
-
-static const List<OutboundPaymentsPaymentMethodDetailsType> values = [financialAccount, usBankAccount];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutboundPaymentsPaymentMethodDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutboundPaymentsPaymentMethodDetailsType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details/outbound_payments_payment_method_details_type.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_financial_account.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details_us_bank_account.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_billing_details.dart';/// 
 @immutable final class OutboundPaymentsPaymentMethodDetails {const OutboundPaymentsPaymentMethodDetails({required this.billingDetails, required this.type, this.financialAccount, this.usBankAccount, });
 
 factory OutboundPaymentsPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return OutboundPaymentsPaymentMethodDetails(

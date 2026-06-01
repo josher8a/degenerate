@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_meters_request_customer_mapping.dart';import 'post_billing_meters_request_default_aggregation.dart';import 'post_billing_meters_request_value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/customer_mapping.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/default_aggregation.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
 @immutable final class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow._(this.value);
 
 factory PostBillingMetersRequestEventTimeWindow.fromJson(String json) { return switch (json) {
@@ -28,20 +28,20 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostBillingMetersRequest {const PostBillingMetersRequest({required this.defaultAggregation, required this.displayName, required this.eventName, this.customerMapping, this.eventTimeWindow, this.expand, this.valueSettings, });
 
 factory PostBillingMetersRequest.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequest(
-  customerMapping: json['customer_mapping'] != null ? PostBillingMetersRequestCustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>) : null,
-  defaultAggregation: PostBillingMetersRequestDefaultAggregation.fromJson(json['default_aggregation'] as Map<String, dynamic>),
+  customerMapping: json['customer_mapping'] != null ? CustomerMapping.fromJson(json['customer_mapping'] as Map<String, dynamic>) : null,
+  defaultAggregation: DefaultAggregation.fromJson(json['default_aggregation'] as Map<String, dynamic>),
   displayName: json['display_name'] as String,
   eventName: json['event_name'] as String,
   eventTimeWindow: json['event_time_window'] != null ? PostBillingMetersRequestEventTimeWindow.fromJson(json['event_time_window'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  valueSettings: json['value_settings'] != null ? PostBillingMetersRequestValueSettings.fromJson(json['value_settings'] as Map<String, dynamic>) : null,
+  valueSettings: json['value_settings'] != null ? ValueSettings.fromJson(json['value_settings'] as Map<String, dynamic>) : null,
 ); }
 
 /// Fields that specify how to map a meter event to a customer.
-final PostBillingMetersRequestCustomerMapping? customerMapping;
+final CustomerMapping? customerMapping;
 
 /// The default settings to aggregate a meter's events with.
-final PostBillingMetersRequestDefaultAggregation defaultAggregation;
+final DefaultAggregation defaultAggregation;
 
 /// The meter’s name. Not visible to the customer.
 final String displayName;
@@ -56,7 +56,7 @@ final PostBillingMetersRequestEventTimeWindow? eventTimeWindow;
 final List<String>? expand;
 
 /// Fields that specify how to calculate a meter event's value.
-final PostBillingMetersRequestValueSettings? valueSettings;
+final ValueSettings? valueSettings;
 
 Map<String, dynamic> toJson() { return {
   if (customerMapping != null) 'customer_mapping': customerMapping?.toJson(),
@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_aggregation') &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('event_name') && json['event_name'] is String; } 
-PostBillingMetersRequest copyWith({PostBillingMetersRequestCustomerMapping Function()? customerMapping, PostBillingMetersRequestDefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow Function()? eventTimeWindow, List<String> Function()? expand, PostBillingMetersRequestValueSettings Function()? valueSettings, }) { return PostBillingMetersRequest(
+PostBillingMetersRequest copyWith({CustomerMapping Function()? customerMapping, DefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow Function()? eventTimeWindow, List<String> Function()? expand, ValueSettings Function()? valueSettings, }) { return PostBillingMetersRequest(
   customerMapping: customerMapping != null ? customerMapping() : this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
   displayName: displayName ?? this.displayName,

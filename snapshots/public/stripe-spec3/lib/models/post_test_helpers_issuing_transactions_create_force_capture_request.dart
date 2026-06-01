@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_merchant_data.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequest {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_capture_request/purchase_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequest {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequest({required this.amount, required this.card, this.currency, this.expand, this.merchantData, this.purchaseDetails, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequest(
   amount: (json['amount'] as num).toInt(),
   card: json['card'] as String,
   currency: json['currency'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  merchantData: json['merchant_data'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
-  purchaseDetails: json['purchase_details'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
+  merchantData: json['merchant_data'] != null ? MerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>) : null,
+  purchaseDetails: json['purchase_details'] != null ? PurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The total amount to attempt to capture. This amount is in the provided currency, or defaults to the cards currency, and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
@@ -24,10 +24,10 @@ final String? currency;
 final List<String>? expand;
 
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
-final PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData? merchantData;
+final MerchantData? merchantData;
 
 /// Additional purchase information that is optionally provided by the merchant.
-final PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails? purchaseDetails;
+final PurchaseDetails? purchaseDetails;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('card') && json['card'] is String; } 
-PostTestHelpersIssuingTransactionsCreateForceCaptureRequest copyWith({int? amount, String? card, String Function()? currency, List<String> Function()? expand, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData Function()? merchantData, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequest(
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequest copyWith({int? amount, String? card, String Function()? currency, List<String> Function()? expand, MerchantData Function()? merchantData, PurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequest(
   amount: amount ?? this.amount,
   card: card ?? this.card,
   currency: currency != null ? currency() : this.currency,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';/// The signing key in JWK format.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';import 'package:pub_cloudflare/models/stream_signing_key_created.dart';/// The signing key in JWK format.
 extension type const StreamJwk(String value) {
 factory StreamJwk.fromJson(String json) => StreamJwk(json);
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_snapshot_expiration_config.dart';import 'r2_data_catalog_table_compaction_config.dart';/// Configures maintenance for the table.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_snapshot_expiration_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_compaction_config.dart';/// Configures maintenance for the table.
 @immutable final class R2DataCatalogTableMaintenanceConfig {const R2DataCatalogTableMaintenanceConfig({this.compaction, this.snapshotExpiration, });
 
 factory R2DataCatalogTableMaintenanceConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableMaintenanceConfig(

@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_package_updated_package.dart';@immutable final class WebhookPackageUpdatedAction {const WebhookPackageUpdatedAction._(this.value);
-
-factory WebhookPackageUpdatedAction.fromJson(String json) { return switch (json) {
-  'updated' => updated,
-  _ => WebhookPackageUpdatedAction._(json),
-}; }
-
-static const WebhookPackageUpdatedAction updated = WebhookPackageUpdatedAction._('updated');
-
-static const List<WebhookPackageUpdatedAction> values = [updated];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPackageUpdatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPackageUpdatedAction($value)'; } 
- }
-@immutable final class WebhookPackageUpdated {const WebhookPackageUpdated({required this.action, required this.package, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_custom_property_updated/webhook_custom_property_updated_action.dart';import 'package:pub_github_rest_3_1/models/webhook_package_updated/webhook_package_updated_package.dart';@immutable final class WebhookPackageUpdated {const WebhookPackageUpdated({required this.action, required this.package, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPackageUpdated.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdated(
-  action: WebhookPackageUpdatedAction.fromJson(json['action'] as String),
+  action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookPackageUpdated.fromJson(Map<String, dynamic> json) { return Webho
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookPackageUpdatedAction action;
+final WebhookCustomPropertyUpdatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -61,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('package') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPackageUpdated copyWith({WebhookPackageUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPackageUpdatedPackage? package, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPackageUpdated(
+WebhookPackageUpdated copyWith({WebhookCustomPropertyUpdatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPackageUpdatedPackage? package, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPackageUpdated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

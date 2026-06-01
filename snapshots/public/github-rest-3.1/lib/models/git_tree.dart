@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_tree_tree.dart';/// The hierarchy between files in a Git repository.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_tree/git_tree_tree.dart';/// The hierarchy between files in a Git repository.
 @immutable final class GitTree {const GitTree({required this.sha, required this.truncated, required this.tree, this.url, });
 
 factory GitTree.fromJson(Map<String, dynamic> json) { return GitTree(

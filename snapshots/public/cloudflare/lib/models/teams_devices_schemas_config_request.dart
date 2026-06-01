@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_tls_config_request.dart';/// A value that is one of: `TeamsDevicesTlsConfigRequest`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_tls_config_request.dart';/// A value that is one of: `TeamsDevicesTlsConfigRequest`.
 sealed class TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequest();
 
 factory TeamsDevicesSchemasConfigRequest.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesTlsConfigRequest.canParse(json)) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment_approvals_environments.dart';import 'simple_user.dart';/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/environment_approvals/environment_approvals_environments.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
 @immutable final class EnvironmentApprovalsState {const EnvironmentApprovalsState._(this.value);
 
 factory EnvironmentApprovalsState.fromJson(String json) { return switch (json) {

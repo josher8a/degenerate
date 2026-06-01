@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent.dart';import 'terminal_reader_reader_resource_process_config.dart';import 'terminal_reader_reader_resource_process_payment_intent_action_payment_intent.dart';/// Represents a reader action to process a payment intent
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_config.dart';/// Represents a reader action to process a payment intent
 @immutable final class TerminalReaderReaderResourceProcessPaymentIntentAction {const TerminalReaderReaderResourceProcessPaymentIntentAction({required this.paymentIntent, this.processConfig, });
 
 factory TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessPaymentIntentAction(
@@ -9,7 +9,7 @@ factory TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(Map<Stri
 ); }
 
 /// Most recent PaymentIntent processed by the reader.
-final TerminalReaderReaderResourceProcessPaymentIntentActionPaymentIntent paymentIntent;
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent paymentIntent;
 
 final TerminalReaderReaderResourceProcessConfig? processConfig;
 
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (processConfig != null) 'process_config': processConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent'); } 
-TerminalReaderReaderResourceProcessPaymentIntentAction copyWith({TerminalReaderReaderResourceProcessPaymentIntentActionPaymentIntent? paymentIntent, TerminalReaderReaderResourceProcessConfig Function()? processConfig, }) { return TerminalReaderReaderResourceProcessPaymentIntentAction(
+TerminalReaderReaderResourceProcessPaymentIntentAction copyWith({InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent, TerminalReaderReaderResourceProcessConfig Function()? processConfig, }) { return TerminalReaderReaderResourceProcessPaymentIntentAction(
   paymentIntent: paymentIntent ?? this.paymentIntent,
   processConfig: processConfig != null ? processConfig() : this.processConfig,
 ); } 

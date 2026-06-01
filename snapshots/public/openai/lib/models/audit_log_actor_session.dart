@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_user.dart';/// The session in which the audit logged action was performed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_actor_user.dart';/// The session in which the audit logged action was performed.
 @immutable final class AuditLogActorSession {const AuditLogActorSession({this.user, this.ipAddress, });
 
 factory AuditLogActorSession.fromJson(Map<String, dynamic> json) { return AuditLogActorSession(

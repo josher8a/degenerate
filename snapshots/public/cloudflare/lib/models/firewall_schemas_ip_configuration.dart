@@ -1,36 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
-@immutable final class FirewallSchemasIpConfigurationTarget {const FirewallSchemasIpConfigurationTarget._(this.value);
-
-factory FirewallSchemasIpConfigurationTarget.fromJson(String json) { return switch (json) {
-  'ip' => ip,
-  _ => FirewallSchemasIpConfigurationTarget._(json),
-}; }
-
-static const FirewallSchemasIpConfigurationTarget ip = FirewallSchemasIpConfigurationTarget._('ip');
-
-static const List<FirewallSchemasIpConfigurationTarget> values = [ip];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallSchemasIpConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallSchemasIpConfigurationTarget($value)'; } 
- }
-@immutable final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_ip_configuration/firewall_ip_configuration_target.dart';@immutable final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
 
 factory FirewallSchemasIpConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasIpConfiguration(
-  target: json['target'] != null ? FirewallSchemasIpConfigurationTarget.fromJson(json['target'] as String) : null,
+  target: json['target'] != null ? FirewallIpConfigurationTarget.fromJson(json['target'] as String) : null,
   value: json['value'] as String?,
 ); }
 
 /// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
-final FirewallSchemasIpConfigurationTarget? target;
+final FirewallIpConfigurationTarget? target;
 
 /// The IP address to match. This address will be compared to the IP address of incoming requests.
 final String? value;
@@ -40,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallSchemasIpConfiguration copyWith({FirewallSchemasIpConfigurationTarget Function()? target, String Function()? value, }) { return FirewallSchemasIpConfiguration(
+FirewallSchemasIpConfiguration copyWith({FirewallIpConfigurationTarget Function()? target, String Function()? value, }) { return FirewallSchemasIpConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 

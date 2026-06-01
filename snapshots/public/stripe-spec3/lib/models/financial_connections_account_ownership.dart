@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'financial_connections_account_ownership_owners.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_ownership/owners.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject._(this.value);
 
 factory FinancialConnectionsAccountOwnershipObject.fromJson(String json) { return switch (json) {
@@ -29,7 +29,7 @@ factory FinancialConnectionsAccountOwnership.fromJson(Map<String, dynamic> json)
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   object: FinancialConnectionsAccountOwnershipObject.fromJson(json['object'] as String),
-  owners: FinancialConnectionsAccountOwnershipOwners.fromJson(json['owners'] as Map<String, dynamic>),
+  owners: Owners.fromJson(json['owners'] as Map<String, dynamic>),
 ); }
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
@@ -42,7 +42,7 @@ final String id;
 final FinancialConnectionsAccountOwnershipObject object;
 
 /// A paginated list of owners for this account.
-final FinancialConnectionsAccountOwnershipOwners owners;
+final Owners owners;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('owners'); } 
-FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, FinancialConnectionsAccountOwnershipOwners? owners, }) { return FinancialConnectionsAccountOwnership(
+FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, Owners? owners, }) { return FinancialConnectionsAccountOwnership(
   created: created ?? this.created,
   id: id ?? this.id,
   object: object ?? this.object,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_address.dart';/// The customer's shipping information associated with this payment.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_address.dart';/// The customer's shipping information associated with this payment.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourceShippingDetails {const PaymentsPrimitivesPaymentRecordsResourceShippingDetails({required this.address, this.name, this.phone, });
 
 factory PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceShippingDetails(

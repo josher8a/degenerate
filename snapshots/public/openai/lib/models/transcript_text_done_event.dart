@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_done_event_logprobs.dart';import 'transcript_text_usage_tokens.dart';/// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
 @immutable final class TranscriptTextDoneEvent {const TranscriptTextDoneEvent({required this.type, required this.text, this.logprobs, this.usage, });
 
 factory TranscriptTextDoneEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDoneEvent(
   type: json['type'] as String,
   text: json['text'] as String,
-  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDoneEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
+  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => TranscriptTextDeltaEventLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? TranscriptTextUsageTokens.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
@@ -20,7 +20,7 @@ final String text;
 
 /// The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
 /// 
-final List<TranscriptTextDoneEventLogprobs>? logprobs;
+final List<TranscriptTextDeltaEventLogprobs>? logprobs;
 
 final TranscriptTextUsageTokens? usage;
 
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('text') && json['text'] is String; } 
-TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDoneEventLogprobs> Function()? logprobs, TranscriptTextUsageTokens Function()? usage, }) { return TranscriptTextDoneEvent(
+TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, TranscriptTextUsageTokens Function()? usage, }) { return TranscriptTextDoneEvent(
   type: type ?? this.type,
   text: text ?? this.text,
   logprobs: logprobs != null ? logprobs() : this.logprobs,

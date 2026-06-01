@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_author.dart';import 'commit_commit.dart';import 'commit_committer.dart';import 'commit_parents.dart';import 'commit_stats.dart';import 'diff_entry.dart';import 'empty_object.dart';import 'simple_user.dart';/// Commit
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit/commit_author.dart';import 'package:pub_github_rest_3_1/models/commit/commit_commit.dart';import 'package:pub_github_rest_3_1/models/commit/commit_committer.dart';import 'package:pub_github_rest_3_1/models/commit/commit_parents.dart';import 'package:pub_github_rest_3_1/models/commit/stats.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';import 'package:pub_github_rest_3_1/models/empty_object.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Commit
 @immutable final class Commit {const Commit({required this.url, required this.sha, required this.nodeId, required this.htmlUrl, required this.commentsUrl, required this.commit, required this.author, required this.committer, required this.parents, this.stats, this.files, });
 
 factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
@@ -13,7 +13,7 @@ factory Commit.fromJson(Map<String, dynamic> json) { return Commit(
   author: json['author'] != null ? OneOf2.parse(json['author'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => EmptyObject.fromJson(v as Map<String, dynamic>),) : null,
   committer: json['committer'] != null ? OneOf2.parse(json['committer'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => EmptyObject.fromJson(v as Map<String, dynamic>),) : null,
   parents: (json['parents'] as List<dynamic>).map((e) => CommitParents.fromJson(e as Map<String, dynamic>)).toList(),
-  stats: json['stats'] != null ? CommitStats.fromJson(json['stats'] as Map<String, dynamic>) : null,
+  stats: json['stats'] != null ? Stats.fromJson(json['stats'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -35,7 +35,7 @@ final CommitCommitter? committer;
 
 final List<CommitParents> parents;
 
-final CommitStats? stats;
+final Stats? stats;
 
 final List<DiffEntry>? files;
 
@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('author') &&
       json.containsKey('committer') &&
       json.containsKey('parents'); } 
-Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, CommitStats Function()? stats, List<DiffEntry> Function()? files, }) { return Commit(
+Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, Stats Function()? stats, List<DiffEntry> Function()? files, }) { return Commit(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,

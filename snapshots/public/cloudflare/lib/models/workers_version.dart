@@ -1,57 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_migration_tag_conditions.dart';import 'workers_multiple_step_migrations.dart';import 'workers_placement_info_no_status.dart';import 'workers_placement_info_no_status_smart.dart';import 'workers_placement_info_no_status_targeted.dart';import 'workers_placement_info_no_status_targeted2.dart';import 'workers_placement_info_no_status_targeted3.dart';import 'workers_placement_info_no_status_targeted4.dart';import 'workers_placement_info_no_status_variant2.dart';import 'workers_placement_info_no_status_variant3.dart';import 'workers_placement_info_no_status_variant4.dart';import 'workers_version_annotations.dart';import 'workers_version_assets.dart';import 'workers_version_limits.dart';import 'workers_version_migrations.dart';import 'workers_version_modules.dart';/// Usage model for the version.
-@immutable final class WorkersVersionUsageModel {const WorkersVersionUsageModel._(this.value);
-
-factory WorkersVersionUsageModel.fromJson(String json) { return switch (json) {
-  'standard' => standard,
-  'bundled' => bundled,
-  'unbound' => unbound,
-  _ => WorkersVersionUsageModel._(json),
-}; }
-
-static const WorkersVersionUsageModel standard = WorkersVersionUsageModel._('standard');
-
-static const WorkersVersionUsageModel bundled = WorkersVersionUsageModel._('bundled');
-
-static const WorkersVersionUsageModel unbound = WorkersVersionUsageModel._('unbound');
-
-static const List<WorkersVersionUsageModel> values = [standard, bundled, unbound];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersVersionUsageModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersVersionUsageModel($value)'; } 
- }
-@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel = WorkersVersionUsageModel.standard, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values/pages_deployment_config_values_limits.dart';import 'package:pub_cloudflare/models/pages_deployment_config_values_request/usage_model.dart';import 'package:pub_cloudflare/models/workers_binding_item.dart';import 'package:pub_cloudflare/models/workers_compatibility_date.dart';import 'package:pub_cloudflare/models/workers_compatibility_flag.dart';import 'package:pub_cloudflare/models/workers_migration_tag_conditions.dart';import 'package:pub_cloudflare/models/workers_multiple_step_migrations.dart';import 'package:pub_cloudflare/models/workers_namespace_script_and_version_settings_item/migrations.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/smart.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_targeted4.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant2.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant3.dart';import 'package:pub_cloudflare/models/workers_placement_info_no_status/workers_placement_info_no_status_variant4.dart';import 'package:pub_cloudflare/models/workers_script_and_version_settings_item/workers_script_and_version_settings_item_annotations.dart';import 'package:pub_cloudflare/models/workers_version/assets.dart';import 'package:pub_cloudflare/models/workers_version/modules.dart';@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel = UsageModel.standard, });
 
 factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersion(
-  annotations: json['annotations'] != null ? WorkersVersionAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
-  assets: json['assets'] != null ? WorkersVersionAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
+  annotations: json['annotations'] != null ? WorkersScriptAndVersionSettingsItemAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
+  assets: json['assets'] != null ? Assets.fromJson(json['assets'] as Map<String, dynamic>) : null,
   bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
   createdOn: DateTime.parse(json['created_on'] as String),
   id: json['id'] as String,
-  limits: json['limits'] != null ? WorkersVersionLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
+  limits: json['limits'] != null ? PagesDeploymentConfigValuesLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
   mainModule: json['main_module'] as String?,
   migrations: json['migrations'] != null ? OneOf2.parse(json['migrations'], fromA: (v) => WorkersMigrationTagConditions.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersMultipleStepMigrations.fromJson(v as Map<String, dynamic>),) : null,
-  modules: (json['modules'] as List<dynamic>?)?.map((e) => WorkersVersionModules.fromJson(e as Map<String, dynamic>)).toList(),
+  modules: (json['modules'] as List<dynamic>?)?.map((e) => Modules.fromJson(e as Map<String, dynamic>)).toList(),
   number: (json['number'] as num).toInt(),
-  placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoNoStatusSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
+  placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => Smart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
   source: json['source'] as String?,
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
   urls: (json['urls'] as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),
-  usageModel: json.containsKey('usage_model') ? WorkersVersionUsageModel.fromJson(json['usage_model'] as String) : WorkersVersionUsageModel.standard,
+  usageModel: json.containsKey('usage_model') ? UsageModel.fromJson(json['usage_model'] as String) : UsageModel.standard,
 ); }
 
 /// Metadata about the version.
-final WorkersVersionAnnotations? annotations;
+final WorkersScriptAndVersionSettingsItemAnnotations? annotations;
 
 /// Configuration for assets within a Worker.
 /// 
@@ -59,7 +31,7 @@ final WorkersVersionAnnotations? annotations;
 /// [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files should be
 /// included as modules named `_headers` and `_redirects` with content type `text/plain`.
 /// 
-final WorkersVersionAssets? assets;
+final Assets? assets;
 
 final List<WorkersBindingItem>? bindings;
 
@@ -74,13 +46,13 @@ final DateTime createdOn;
 final String id;
 
 /// Resource limits enforced at runtime.
-final WorkersVersionLimits? limits;
+final PagesDeploymentConfigValuesLimits? limits;
 
 /// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
 final String? mainModule;
 
 /// Migrations for Durable Objects associated with the version. Migrations are applied when the version is deployed.
-final WorkersVersionMigrations? migrations;
+final Migrations? migrations;
 
 /// Code, sourcemaps, and other content used at runtime.
 /// 
@@ -89,7 +61,7 @@ final WorkersVersionMigrations? migrations;
 /// [Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be
 /// included as modules named `_headers` and `_redirects` with content type `text/plain`.
 /// 
-final List<WorkersVersionModules>? modules;
+final List<Modules>? modules;
 
 /// The integer version number, starting from one.
 final int number;
@@ -106,7 +78,7 @@ final int? startupTimeMs;
 final List<Uri> urls;
 
 /// Usage model for the version.
-final WorkersVersionUsageModel usageModel;
+final UsageModel usageModel;
 
 Map<String, dynamic> toJson() { return {
   if (annotations != null) 'annotations': annotations?.toJson(),
@@ -131,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('urls'); } 
-WorkersVersion copyWith({WorkersVersionAnnotations Function()? annotations, WorkersVersionAssets Function()? assets, List<WorkersBindingItem> Function()? bindings, WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, DateTime? createdOn, String? id, WorkersVersionLimits Function()? limits, String Function()? mainModule, WorkersVersionMigrations Function()? migrations, List<WorkersVersionModules> Function()? modules, int? number, WorkersPlacementInfoNoStatus Function()? placement, String Function()? source, int Function()? startupTimeMs, List<Uri>? urls, WorkersVersionUsageModel Function()? usageModel, }) { return WorkersVersion(
+WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations Function()? annotations, Assets Function()? assets, List<WorkersBindingItem> Function()? bindings, WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, DateTime? createdOn, String? id, PagesDeploymentConfigValuesLimits Function()? limits, String Function()? mainModule, Migrations Function()? migrations, List<Modules> Function()? modules, int? number, WorkersPlacementInfoNoStatus Function()? placement, String Function()? source, int Function()? startupTimeMs, List<Uri>? urls, UsageModel Function()? usageModel, }) { return WorkersVersion(
   annotations: annotations != null ? annotations() : this.annotations,
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,

@@ -3,12 +3,12 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import '../models/feedback_schema.dart';
-import '../models/keeper_profile_schema.dart';
-import '../models/public_user_schema.dart';
-import '../models/update_current_user_image_request.dart';
-import '../models/user_schema.dart';
-import '../models/user_update_schema.dart';
+import 'package:pub_totem_mobile/models/feedback_schema.dart';
+import 'package:pub_totem_mobile/models/keeper_profile_schema.dart';
+import 'package:pub_totem_mobile/models/public_user_schema.dart';
+import 'package:pub_totem_mobile/models/update_current_user_image_request.dart';
+import 'package:pub_totem_mobile/models/user_schema.dart';
+import 'package:pub_totem_mobile/models/user_update_schema.dart';
 
 /// UsersApi operations.
 ///

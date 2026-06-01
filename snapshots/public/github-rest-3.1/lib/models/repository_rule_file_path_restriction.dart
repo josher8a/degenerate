@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_file_path_restriction_parameters.dart';@immutable final class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_file_path_restriction/repository_rule_file_path_restriction_parameters.dart';@immutable final class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType._(this.value);
 
 factory RepositoryRuleFilePathRestrictionType.fromJson(String json) { return switch (json) {
   'file_path_restriction' => filePathRestriction,

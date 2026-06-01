@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_timeseries_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesResponse {const RadarGetAttacksLayer7TimeseriesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_attacks_layer7_timeseries_response/radar_get_attacks_layer7_timeseries_response_result.dart';@immutable final class RadarGetAttacksLayer7TimeseriesResponse {const RadarGetAttacksLayer7TimeseriesResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer7TimeseriesResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesResponse(
   result: RadarGetAttacksLayer7TimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

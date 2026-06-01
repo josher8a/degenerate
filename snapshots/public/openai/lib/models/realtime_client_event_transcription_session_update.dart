@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_request.dart';/// The event type, must be `transcription_session.update`.
-@immutable final class RealtimeClientEventTranscriptionSessionUpdateType {const RealtimeClientEventTranscriptionSessionUpdateType._(this.value);
-
-factory RealtimeClientEventTranscriptionSessionUpdateType.fromJson(String json) { return switch (json) {
-  'transcription_session.update' => transcriptionSessionUpdate,
-  _ => RealtimeClientEventTranscriptionSessionUpdateType._(json),
-}; }
-
-static const RealtimeClientEventTranscriptionSessionUpdateType transcriptionSessionUpdate = RealtimeClientEventTranscriptionSessionUpdateType._('transcription_session.update');
-
-static const List<RealtimeClientEventTranscriptionSessionUpdateType> values = [transcriptionSessionUpdate];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventTranscriptionSessionUpdateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeClientEventTranscriptionSessionUpdateType($value)'; } 
- }
-/// Send this event to update a transcription session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_client_event_transcription_session_update/realtime_beta_client_event_transcription_session_update_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request.dart';/// Send this event to update a transcription session.
 /// 
 @immutable final class RealtimeClientEventTranscriptionSessionUpdate {const RealtimeClientEventTranscriptionSessionUpdate({required this.type, required this.session, this.eventId, });
 
 factory RealtimeClientEventTranscriptionSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventTranscriptionSessionUpdate(
   eventId: json['event_id'] as String?,
-  type: RealtimeClientEventTranscriptionSessionUpdateType.fromJson(json['type'] as String),
+  type: RealtimeBetaClientEventTranscriptionSessionUpdateType.fromJson(json['type'] as String),
   session: RealtimeTranscriptionSessionCreateRequest.fromJson(json['session'] as Map<String, dynamic>),
 ); }
 
@@ -36,7 +14,7 @@ factory RealtimeClientEventTranscriptionSessionUpdate.fromJson(Map<String, dynam
 final String? eventId;
 
 /// The event type, must be `transcription_session.update`.
-final RealtimeClientEventTranscriptionSessionUpdateType type;
+final RealtimeBetaClientEventTranscriptionSessionUpdateType type;
 
 final RealtimeTranscriptionSessionCreateRequest session;
 
@@ -47,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('session'); } 
-RealtimeClientEventTranscriptionSessionUpdate copyWith({String Function()? eventId, RealtimeClientEventTranscriptionSessionUpdateType? type, RealtimeTranscriptionSessionCreateRequest? session, }) { return RealtimeClientEventTranscriptionSessionUpdate(
+RealtimeClientEventTranscriptionSessionUpdate copyWith({String Function()? eventId, RealtimeBetaClientEventTranscriptionSessionUpdateType? type, RealtimeTranscriptionSessionCreateRequest? session, }) { return RealtimeClientEventTranscriptionSessionUpdate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,

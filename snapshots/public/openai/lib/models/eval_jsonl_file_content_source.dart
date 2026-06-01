@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_jsonl_file_content_source_content.dart';/// The type of jsonl source. Always `file_content`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source/eval_jsonl_file_content_source_content.dart';/// The type of jsonl source. Always `file_content`.
 @immutable final class EvalJsonlFileContentSourceType {const EvalJsonlFileContentSourceType._(this.value);
 
 factory EvalJsonlFileContentSourceType.fromJson(String json) { return switch (json) {

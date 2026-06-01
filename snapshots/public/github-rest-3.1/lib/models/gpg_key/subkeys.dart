@@ -1,0 +1,101 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/gpg_key/gpg_key_emails.dart';@immutable final class Subkeys {const Subkeys({this.id, this.primaryKeyId, this.keyId, this.publicKey, this.emails, this.subkeys, this.canSign, this.canEncryptComms, this.canEncryptStorage, this.canCertify, this.createdAt, this.expiresAt, this.rawKey, this.revoked, });
+
+factory Subkeys.fromJson(Map<String, dynamic> json) { return Subkeys(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  primaryKeyId: json['primary_key_id'] != null ? (json['primary_key_id'] as num).toInt() : null,
+  keyId: json['key_id'] as String?,
+  publicKey: json['public_key'] as String?,
+  emails: (json['emails'] as List<dynamic>?)?.map((e) => GpgKeyEmails.fromJson(e as Map<String, dynamic>)).toList(),
+  subkeys: (json['subkeys'] as List<dynamic>?)?.map((e) => e).toList(),
+  canSign: json['can_sign'] as bool?,
+  canEncryptComms: json['can_encrypt_comms'] as bool?,
+  canEncryptStorage: json['can_encrypt_storage'] as bool?,
+  canCertify: json['can_certify'] as bool?,
+  createdAt: json['created_at'] as String?,
+  expiresAt: json['expires_at'] as String?,
+  rawKey: json['raw_key'] as String?,
+  revoked: json['revoked'] as bool?,
+); }
+
+final int? id;
+
+final int? primaryKeyId;
+
+final String? keyId;
+
+final String? publicKey;
+
+final List<GpgKeyEmails>? emails;
+
+final List<dynamic>? subkeys;
+
+final bool? canSign;
+
+final bool? canEncryptComms;
+
+final bool? canEncryptStorage;
+
+final bool? canCertify;
+
+final String? createdAt;
+
+final String? expiresAt;
+
+final String? rawKey;
+
+final bool? revoked;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'primary_key_id': ?primaryKeyId,
+  'key_id': ?keyId,
+  'public_key': ?publicKey,
+  if (emails != null) 'emails': emails?.map((e) => e.toJson()).toList(),
+  'subkeys': ?subkeys,
+  'can_sign': ?canSign,
+  'can_encrypt_comms': ?canEncryptComms,
+  'can_encrypt_storage': ?canEncryptStorage,
+  'can_certify': ?canCertify,
+  'created_at': ?createdAt,
+  'expires_at': ?expiresAt,
+  'raw_key': ?rawKey,
+  'revoked': ?revoked,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'primary_key_id', 'key_id', 'public_key', 'emails', 'subkeys', 'can_sign', 'can_encrypt_comms', 'can_encrypt_storage', 'can_certify', 'created_at', 'expires_at', 'raw_key', 'revoked'}.contains(key)); } 
+Subkeys copyWith({int Function()? id, int Function()? primaryKeyId, String Function()? keyId, String Function()? publicKey, List<GpgKeyEmails> Function()? emails, List<dynamic> Function()? subkeys, bool Function()? canSign, bool Function()? canEncryptComms, bool Function()? canEncryptStorage, bool Function()? canCertify, String Function()? createdAt, String? Function()? expiresAt, String? Function()? rawKey, bool Function()? revoked, }) { return Subkeys(
+  id: id != null ? id() : this.id,
+  primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
+  keyId: keyId != null ? keyId() : this.keyId,
+  publicKey: publicKey != null ? publicKey() : this.publicKey,
+  emails: emails != null ? emails() : this.emails,
+  subkeys: subkeys != null ? subkeys() : this.subkeys,
+  canSign: canSign != null ? canSign() : this.canSign,
+  canEncryptComms: canEncryptComms != null ? canEncryptComms() : this.canEncryptComms,
+  canEncryptStorage: canEncryptStorage != null ? canEncryptStorage() : this.canEncryptStorage,
+  canCertify: canCertify != null ? canCertify() : this.canCertify,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  rawKey: rawKey != null ? rawKey() : this.rawKey,
+  revoked: revoked != null ? revoked() : this.revoked,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Subkeys &&
+          id == other.id &&
+          primaryKeyId == other.primaryKeyId &&
+          keyId == other.keyId &&
+          publicKey == other.publicKey &&
+          listEquals(emails, other.emails) &&
+          listEquals(subkeys, other.subkeys) &&
+          canSign == other.canSign &&
+          canEncryptComms == other.canEncryptComms &&
+          canEncryptStorage == other.canEncryptStorage &&
+          canCertify == other.canCertify &&
+          createdAt == other.createdAt &&
+          expiresAt == other.expiresAt &&
+          rawKey == other.rawKey &&
+          revoked == other.revoked; } 
+@override int get hashCode { return Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked); } 
+@override String toString() { return 'Subkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)'; } 
+ }

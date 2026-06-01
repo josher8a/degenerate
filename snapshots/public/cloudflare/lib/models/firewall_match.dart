@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_match_variant1.dart';/// A value that is one of: `FirewallMatchVariant1`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_match/firewall_match_variant1.dart';/// A value that is one of: `FirewallMatchVariant1`.
 sealed class FirewallMatch {const FirewallMatch();
 
 factory FirewallMatch.fromJson(Map<String, dynamic> json) {   if (FirewallMatchVariant1.canParse(json)) {

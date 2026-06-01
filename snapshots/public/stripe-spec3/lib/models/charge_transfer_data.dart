@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'charge_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
 @immutable final class ChargeTransferData {const ChargeTransferData({required this.destination, this.amount, });
 
 factory ChargeTransferData.fromJson(Map<String, dynamic> json) { return ChargeTransferData(

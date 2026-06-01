@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'kick_all_participants_response_data.dart';@immutable final class KickAllParticipantsResponse {const KickAllParticipantsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/kick_all_participants_response/kick_all_participants_response_data.dart';@immutable final class KickAllParticipantsResponse {const KickAllParticipantsResponse({this.data, this.success, });
 
 factory KickAllParticipantsResponse.fromJson(Map<String, dynamic> json) { return KickAllParticipantsResponse(
   data: json['data'] != null ? KickAllParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

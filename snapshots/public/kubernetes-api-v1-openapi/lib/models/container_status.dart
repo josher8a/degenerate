@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_state.dart';import 'container_user.dart';import 'resource_quantity.dart';import 'resource_requirements.dart';import 'resource_status.dart';import 'volume_mount_status.dart';/// ContainerStatus contains details for the current status of this container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_state.dart';import 'package:pub_kubernetes_api_v1_openapi/models/container_user.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_quantity.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_requirements.dart';import 'package:pub_kubernetes_api_v1_openapi/models/resource_status.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_mount_status.dart';/// ContainerStatus contains details for the current status of this container.
 @immutable final class ContainerStatus {const ContainerStatus({this.allocatedResources, this.allocatedResourcesStatus, this.containerId, this.image = '', this.imageId = '', this.lastState, this.name = '', this.ready = false, this.resources, this.restartCount = 0, this.started, this.state, this.stopSignal, this.user, this.volumeMounts, });
 
 factory ContainerStatus.fromJson(Map<String, dynamic> json) { return ContainerStatus(

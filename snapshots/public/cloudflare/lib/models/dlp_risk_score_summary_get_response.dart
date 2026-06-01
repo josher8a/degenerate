@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_summary.dart';@immutable final class DlpRiskScoreSummaryGetResponse {const DlpRiskScoreSummaryGetResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_risk_summary.dart';@immutable final class DlpRiskScoreSummaryGetResponse {const DlpRiskScoreSummaryGetResponse({this.result});
 
 factory DlpRiskScoreSummaryGetResponse.fromJson(Map<String, dynamic> json) { return DlpRiskScoreSummaryGetResponse(
   result: json['result'] != null ? DlpRiskSummary.fromJson(json['result'] as Map<String, dynamic>) : null,

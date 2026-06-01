@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider.dart';@immutable final class McnCreateProviderResponse {const McnCreateProviderResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_provider.dart';@immutable final class McnCreateProviderResponse {const McnCreateProviderResponse({this.result});
 
 factory McnCreateProviderResponse.fromJson(Map<String, dynamic> json) { return McnCreateProviderResponse(
   result: json['result'] != null ? McnProvider.fromJson(json['result'] as Map<String, dynamic>) : null,

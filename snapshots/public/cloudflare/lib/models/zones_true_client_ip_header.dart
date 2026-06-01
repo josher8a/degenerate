@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
 /// 
 @immutable final class ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId._(this.value);
 

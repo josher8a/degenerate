@@ -1,3 +1,0 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';typedef ZonesZoneSettingsResponseCollectionResult = OneOf7<ZonesBase,ZonesCacheRulesAegis,ZonesDevelopmentMode,ZonesCacheRulesOriginH2MaxStreams,ZonesCacheRulesOriginMaxHttpVersion,ZonesSchemasBase,ZonesSslRecommender>;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_client_default.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_ecs_support.dart';import 'zero_trust_gateway_endpoints.dart';import 'zero_trust_gateway_ipv4_network.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_name.dart';/// Indicate the identifier of the pair of IPv4 addresses assigned to this location.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_client_default.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_ecs_support.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_endpoints.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_ipv4_network.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_name.dart';/// Indicate the identifier of the pair of IPv4 addresses assigned to this location.
 extension type const ZeroTrustGatewayDnsDestinationIpsIdRead(String value) {
 factory ZeroTrustGatewayDnsDestinationIpsIdRead.fromJson(String json) => ZeroTrustGatewayDnsDestinationIpsIdRead(json);
 

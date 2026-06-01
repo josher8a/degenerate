@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'subscription.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'test_helpers_test_clock.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-@immutable final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
-
-factory SubscriptionScheduleEndBehavior.fromJson(String json) { return switch (json) {
-  'cancel' => cancel,
-  'none' => none,
-  'release' => release,
-  'renew' => renew,
-  _ => SubscriptionScheduleEndBehavior._(json),
-}; }
-
-static const SubscriptionScheduleEndBehavior cancel = SubscriptionScheduleEndBehavior._('cancel');
-
-static const SubscriptionScheduleEndBehavior none = SubscriptionScheduleEndBehavior._('none');
-
-static const SubscriptionScheduleEndBehavior release = SubscriptionScheduleEndBehavior._('release');
-
-static const SubscriptionScheduleEndBehavior renew = SubscriptionScheduleEndBehavior._('renew');
-
-static const List<SubscriptionScheduleEndBehavior> values = [cancel, none, release, renew];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleEndBehavior($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_customer.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/line_item/line_item_subscription.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_current_phase.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
 
 factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
@@ -102,7 +71,7 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
   customerAccount: json['customer_account'] as String?,
   defaultSettings: SubscriptionSchedulesResourceDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>),
-  endBehavior: SubscriptionScheduleEndBehavior.fromJson(json['end_behavior'] as String),
+  endBehavior: PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -116,7 +85,7 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
 ); }
 
 /// ID of the Connect Application that created the schedule.
-final SubscriptionScheduleApplication? application;
+final BillingPortalConfigurationApplication? application;
 
 final SubscriptionsResourceBillingMode billingMode;
 
@@ -133,7 +102,7 @@ final int created;
 final SubscriptionScheduleCurrentPhase? currentPhase;
 
 /// ID of the customer who owns the subscription schedule.
-final SubscriptionScheduleCustomer customer;
+final BillingCreditGrantCustomer customer;
 
 /// ID of the account who owns the subscription schedule.
 final String? customerAccount;
@@ -141,7 +110,7 @@ final String? customerAccount;
 final SubscriptionSchedulesResourceDefaultSettings defaultSettings;
 
 /// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-final SubscriptionScheduleEndBehavior endBehavior;
+final PostSubscriptionSchedulesRequestEndBehavior endBehavior;
 
 /// Unique identifier for the object.
 final String id;
@@ -168,10 +137,10 @@ final String? releasedSubscription;
 final SubscriptionScheduleStatus status;
 
 /// ID of the subscription managed by the subscription schedule.
-final SubscriptionScheduleSubscription? subscription;
+final LineItemSubscription? subscription;
 
 /// ID of the test clock this subscription schedule belongs to.
-final SubscriptionScheduleTestClock? testClock;
+final TestClock? testClock;
 
 Map<String, dynamic> toJson() { return {
   if (application != null) 'application': application?.toJson(),
@@ -205,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('phases') &&
       json.containsKey('status'); } 
-SubscriptionSchedule copyWith({SubscriptionScheduleApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, SubscriptionScheduleCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, SubscriptionScheduleSubscription? Function()? subscription, SubscriptionScheduleTestClock? Function()? testClock, }) { return SubscriptionSchedule(
+SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, BillingCreditGrantCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, LineItemSubscription? Function()? subscription, TestClock? Function()? testClock, }) { return SubscriptionSchedule(
   application: application != null ? application() : this.application,
   billingMode: billingMode ?? this.billingMode,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

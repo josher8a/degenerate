@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_requested_check_suite.dart';@immutable final class WebhookCheckSuiteRequestedAction {const WebhookCheckSuiteRequestedAction._(this.value);
-
-factory WebhookCheckSuiteRequestedAction.fromJson(String json) { return switch (json) {
-  'requested' => requested,
-  _ => WebhookCheckSuiteRequestedAction._(json),
-}; }
-
-static const WebhookCheckSuiteRequestedAction requested = WebhookCheckSuiteRequestedAction._('requested');
-
-static const List<WebhookCheckSuiteRequestedAction> values = [requested];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRequestedAction($value)'; } 
- }
-@immutable final class WebhookCheckSuiteRequested {const WebhookCheckSuiteRequested({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_action.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite.dart';@immutable final class WebhookCheckSuiteRequested {const WebhookCheckSuiteRequested({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCheckSuiteRequested.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequested(
   action: WebhookCheckSuiteRequestedAction.fromJson(json['action'] as String),

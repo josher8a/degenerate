@@ -1,44 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// `owner` or `member`
-@immutable final class ProjectUserUpdateRequestRole {const ProjectUserUpdateRequestRole._(this.value);
-
-factory ProjectUserUpdateRequestRole.fromJson(String json) { return switch (json) {
-  'owner' => owner,
-  'member' => member,
-  _ => ProjectUserUpdateRequestRole._(json),
-}; }
-
-static const ProjectUserUpdateRequestRole owner = ProjectUserUpdateRequestRole._('owner');
-
-static const ProjectUserUpdateRequestRole member = ProjectUserUpdateRequestRole._('member');
-
-static const List<ProjectUserUpdateRequestRole> values = [owner, member];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectUserUpdateRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectUserUpdateRequestRole($value)'; } 
- }
-@immutable final class ProjectUserUpdateRequest {const ProjectUserUpdateRequest({required this.role});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/project_service_account/project_service_account_role.dart';@immutable final class ProjectUserUpdateRequest {const ProjectUserUpdateRequest({required this.role});
 
 factory ProjectUserUpdateRequest.fromJson(Map<String, dynamic> json) { return ProjectUserUpdateRequest(
-  role: ProjectUserUpdateRequestRole.fromJson(json['role'] as String),
+  role: ProjectServiceAccountRole.fromJson(json['role'] as String),
 ); }
 
 /// `owner` or `member`
-final ProjectUserUpdateRequestRole role;
+final ProjectServiceAccountRole role;
 
 Map<String, dynamic> toJson() { return {
   'role': role.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'); } 
-ProjectUserUpdateRequest copyWith({ProjectUserUpdateRequestRole? role}) { return ProjectUserUpdateRequest(
+ProjectUserUpdateRequest copyWith({ProjectServiceAccountRole? role}) { return ProjectUserUpdateRequest(
   role: role ?? this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

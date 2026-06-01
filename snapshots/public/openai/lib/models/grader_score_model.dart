@@ -1,42 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_item.dart';import 'grader_score_model_sampling_params.dart';/// The object type, which is always `score_model`.
-@immutable final class GraderScoreModelType {const GraderScoreModelType._(this.value);
-
-factory GraderScoreModelType.fromJson(String json) { return switch (json) {
-  'score_model' => scoreModel,
-  _ => GraderScoreModelType._(json),
-}; }
-
-static const GraderScoreModelType scoreModel = GraderScoreModelType._('score_model');
-
-static const List<GraderScoreModelType> values = [scoreModel];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderScoreModelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderScoreModelType($value)'; } 
- }
-/// A ScoreModelGrader object that uses a model to assign a score to the input.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_grader_score_model/eval_grader_score_model_sampling_params.dart';import 'package:pub_openai/models/eval_grader_score_model/eval_grader_score_model_type.dart';import 'package:pub_openai/models/eval_item.dart';/// A ScoreModelGrader object that uses a model to assign a score to the input.
 /// 
 @immutable final class GraderScoreModel {const GraderScoreModel({required this.type, required this.name, required this.model, required this.input, this.samplingParams, this.range, });
 
 factory GraderScoreModel.fromJson(Map<String, dynamic> json) { return GraderScoreModel(
-  type: GraderScoreModelType.fromJson(json['type'] as String),
+  type: EvalGraderScoreModelType.fromJson(json['type'] as String),
   name: json['name'] as String,
   model: json['model'] as String,
-  samplingParams: json['sampling_params'] != null ? GraderScoreModelSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
+  samplingParams: json['sampling_params'] != null ? EvalGraderScoreModelSamplingParams.fromJson(json['sampling_params'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>).map((e) => EvalItem.fromJson(e as Map<String, dynamic>)).toList(),
   range: (json['range'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }
 
 /// The object type, which is always `score_model`.
-final GraderScoreModelType type;
+final EvalGraderScoreModelType type;
 
 /// The name of the grader.
 final String name;
@@ -45,7 +23,7 @@ final String name;
 final String model;
 
 /// The sampling parameters for the model.
-final GraderScoreModelSamplingParams? samplingParams;
+final EvalGraderScoreModelSamplingParams? samplingParams;
 
 /// The input messages evaluated by the grader. Supports text, output text, input image, and input audio content blocks, and may include template strings.
 /// 
@@ -66,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('input'); } 
-GraderScoreModel copyWith({GraderScoreModelType? type, String? name, String? model, GraderScoreModelSamplingParams Function()? samplingParams, List<EvalItem>? input, List<double> Function()? range, }) { return GraderScoreModel(
+GraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams Function()? samplingParams, List<EvalItem>? input, List<double> Function()? range, }) { return GraderScoreModel(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,

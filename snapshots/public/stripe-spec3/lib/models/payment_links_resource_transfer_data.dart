@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'payment_links_resource_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data/payment_links_resource_transfer_data_destination.dart';/// 
 @immutable final class PaymentLinksResourceTransferData {const PaymentLinksResourceTransferData({required this.destination, this.amount, });
 
 factory PaymentLinksResourceTransferData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTransferData(

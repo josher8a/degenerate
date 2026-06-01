@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_refunds_request_metadata.dart';/// Origin of the refund
-@immutable final class PostRefundsRequestOrigin {const PostRefundsRequestOrigin._(this.value);
-
-factory PostRefundsRequestOrigin.fromJson(String json) { return switch (json) {
-  'customer_balance' => customerBalance,
-  _ => PostRefundsRequestOrigin._(json),
-}; }
-
-static const PostRefundsRequestOrigin customerBalance = PostRefundsRequestOrigin._('customer_balance');
-
-static const List<PostRefundsRequestOrigin> values = [customerBalance];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRefundsRequestOrigin && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRefundsRequestOrigin($value)'; } 
- }
-/// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-@immutable final class PostRefundsRequestReason {const PostRefundsRequestReason._(this.value);
-
-factory PostRefundsRequestReason.fromJson(String json) { return switch (json) {
-  'duplicate' => duplicate,
-  'fraudulent' => fraudulent,
-  'requested_by_customer' => requestedByCustomer,
-  _ => PostRefundsRequestReason._(json),
-}; }
-
-static const PostRefundsRequestReason duplicate = PostRefundsRequestReason._('duplicate');
-
-static const PostRefundsRequestReason fraudulent = PostRefundsRequestReason._('fraudulent');
-
-static const PostRefundsRequestReason requestedByCustomer = PostRefundsRequestReason._('requested_by_customer');
-
-static const List<PostRefundsRequestReason> values = [duplicate, fraudulent, requestedByCustomer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostRefundsRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostRefundsRequestReason($value)'; } 
- }
-@immutable final class PostRefundsRequest {const PostRefundsRequest({this.amount, this.charge, this.currency, this.customer, this.expand, this.instructionsEmail, this.metadata, this.origin, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refund_request/post_charges_charge_refund_request_reason.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_refunds_request/origin.dart';@immutable final class PostRefundsRequest {const PostRefundsRequest({this.amount, this.charge, this.currency, this.customer, this.expand, this.instructionsEmail, this.metadata, this.origin, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
 factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefundsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
@@ -59,10 +9,10 @@ factory PostRefundsRequest.fromJson(Map<String, dynamic> json) { return PostRefu
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   instructionsEmail: json['instructions_email'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostRefundsRequestMetadataVariant2.fromJson(v as String),) : null,
-  origin: json['origin'] != null ? PostRefundsRequestOrigin.fromJson(json['origin'] as String) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  origin: json['origin'] != null ? Origin.fromJson(json['origin'] as String) : null,
   paymentIntent: json['payment_intent'] as String?,
-  reason: json['reason'] != null ? PostRefundsRequestReason.fromJson(json['reason'] as String) : null,
+  reason: json['reason'] != null ? PostChargesChargeRefundRequestReason.fromJson(json['reason'] as String) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   reverseTransfer: json['reverse_transfer'] as bool?,
 ); }
@@ -85,16 +35,16 @@ final List<String>? expand;
 final String? instructionsEmail;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
-final PostRefundsRequestMetadata? metadata;
+final Metadata? metadata;
 
 /// Origin of the refund
-final PostRefundsRequestOrigin? origin;
+final Origin? origin;
 
 /// The identifier of the PaymentIntent to refund.
 final String? paymentIntent;
 
 /// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-final PostRefundsRequestReason? reason;
+final PostChargesChargeRefundRequestReason? reason;
 
 /// Boolean indicating whether the application fee should be refunded when refunding this charge. If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded. An application fee can be refunded only by the application that created the charge.
 final bool? refundApplicationFee;
@@ -117,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostRefundsRequest copyWith({int Function()? amount, String Function()? charge, String Function()? currency, String Function()? customer, List<String> Function()? expand, String Function()? instructionsEmail, PostRefundsRequestMetadata Function()? metadata, PostRefundsRequestOrigin Function()? origin, String Function()? paymentIntent, PostRefundsRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostRefundsRequest(
+PostRefundsRequest copyWith({int Function()? amount, String Function()? charge, String Function()? currency, String Function()? customer, List<String> Function()? expand, String Function()? instructionsEmail, Metadata Function()? metadata, Origin Function()? origin, String Function()? paymentIntent, PostChargesChargeRefundRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,
   currency: currency != null ? currency() : this.currency,

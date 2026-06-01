@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer.dart';/// The `funding_type` to get the instructions for.
-@immutable final class PostCustomersCustomerFundingInstructionsRequestFundingType {const PostCustomersCustomerFundingInstructionsRequestFundingType._(this.value);
-
-factory PostCustomersCustomerFundingInstructionsRequestFundingType.fromJson(String json) { return switch (json) {
-  'bank_transfer' => bankTransfer,
-  _ => PostCustomersCustomerFundingInstructionsRequestFundingType._(json),
-}; }
-
-static const PostCustomersCustomerFundingInstructionsRequestFundingType bankTransfer = PostCustomersCustomerFundingInstructionsRequestFundingType._('bank_transfer');
-
-static const List<PostCustomersCustomerFundingInstructionsRequestFundingType> values = [bankTransfer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersCustomerFundingInstructionsRequestFundingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestFundingType($value)'; } 
- }
-@immutable final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, required this.fundingType, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_funding_instructions_request/post_customers_customer_funding_instructions_request_bank_transfer.dart';@immutable final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, required this.fundingType, this.expand, });
 
 factory PostCustomersCustomerFundingInstructionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequest(
   bankTransfer: PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>),
   currency: json['currency'] as String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  fundingType: PostCustomersCustomerFundingInstructionsRequestFundingType.fromJson(json['funding_type'] as String),
+  fundingType: FundingInstructionsFundingType.fromJson(json['funding_type'] as String),
 ); }
 
 /// Additional parameters for `bank_transfer` funding types
@@ -41,7 +19,7 @@ final String currency;
 final List<String>? expand;
 
 /// The `funding_type` to get the instructions for.
-final PostCustomersCustomerFundingInstructionsRequestFundingType fundingType;
+final FundingInstructionsFundingType fundingType;
 
 Map<String, dynamic> toJson() { return {
   'bank_transfer': bankTransfer.toJson(),
@@ -52,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_transfer') &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('funding_type'); } 
-PostCustomersCustomerFundingInstructionsRequest copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransfer? bankTransfer, String? currency, List<String> Function()? expand, PostCustomersCustomerFundingInstructionsRequestFundingType? fundingType, }) { return PostCustomersCustomerFundingInstructionsRequest(
+PostCustomersCustomerFundingInstructionsRequest copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransfer? bankTransfer, String? currency, List<String> Function()? expand, FundingInstructionsFundingType? fundingType, }) { return PostCustomersCustomerFundingInstructionsRequest(
   bankTransfer: bankTransfer ?? this.bankTransfer,
   currency: currency ?? this.currency,
   expand: expand != null ? expand() : this.expand,

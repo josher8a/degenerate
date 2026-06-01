@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_conversation_item_input_audio_transcription_failed/realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.failed`.
 /// 
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._(this.value);

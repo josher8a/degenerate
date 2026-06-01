@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_installments_card.dart';/// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-@immutable final class InvoicePaymentMethodOptionsCardRequestThreeDSecure {const InvoicePaymentMethodOptionsCardRequestThreeDSecure._(this.value);
-
-factory InvoicePaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
-  'any' => any,
-  'automatic' => automatic,
-  'challenge' => challenge,
-  _ => InvoicePaymentMethodOptionsCardRequestThreeDSecure._(json),
-}; }
-
-static const InvoicePaymentMethodOptionsCardRequestThreeDSecure any = InvoicePaymentMethodOptionsCardRequestThreeDSecure._('any');
-
-static const InvoicePaymentMethodOptionsCardRequestThreeDSecure automatic = InvoicePaymentMethodOptionsCardRequestThreeDSecure._('automatic');
-
-static const InvoicePaymentMethodOptionsCardRequestThreeDSecure challenge = InvoicePaymentMethodOptionsCardRequestThreeDSecure._('challenge');
-
-static const List<InvoicePaymentMethodOptionsCardRequestThreeDSecure> values = [any, automatic, challenge];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsCardRequestThreeDSecure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_installments_card.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_card/invoice_payment_method_options_card_request_three_d_secure.dart';/// 
 @immutable final class InvoicePaymentMethodOptionsCard {const InvoicePaymentMethodOptionsCard({this.installments, this.requestThreeDSecure, });
 
 factory InvoicePaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCard(

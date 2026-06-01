@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_origin_request.dart';/// Public hostname
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_origin_request.dart';/// Public hostname
 @immutable final class TunnelIngressRule {const TunnelIngressRule({required this.hostname, required this.service, this.originRequest, this.path, });
 
 factory TunnelIngressRule.fromJson(Map<String, dynamic> json) { return TunnelIngressRule(

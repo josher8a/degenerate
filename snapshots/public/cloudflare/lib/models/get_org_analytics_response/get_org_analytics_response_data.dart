@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/recording_stats.dart';import 'package:pub_cloudflare/models/get_org_analytics_response/session_stats.dart';@immutable final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
+
+factory GetOrgAnalyticsResponseData.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseData(
+  recordingStats: json['recording_stats'] != null ? RecordingStats.fromJson(json['recording_stats'] as Map<String, dynamic>) : null,
+  sessionStats: json['session_stats'] != null ? SessionStats.fromJson(json['session_stats'] as Map<String, dynamic>) : null,
+); }
+
+/// Recording statistics of an App during the range specified
+final RecordingStats? recordingStats;
+
+/// Session statistics of an App during the range specified
+final SessionStats? sessionStats;
+
+Map<String, dynamic> toJson() { return {
+  if (recordingStats != null) 'recording_stats': recordingStats?.toJson(),
+  if (sessionStats != null) 'session_stats': sessionStats?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recording_stats', 'session_stats'}.contains(key)); } 
+GetOrgAnalyticsResponseData copyWith({RecordingStats Function()? recordingStats, SessionStats Function()? sessionStats, }) { return GetOrgAnalyticsResponseData(
+  recordingStats: recordingStats != null ? recordingStats() : this.recordingStats,
+  sessionStats: sessionStats != null ? sessionStats() : this.sessionStats,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetOrgAnalyticsResponseData &&
+          recordingStats == other.recordingStats &&
+          sessionStats == other.sessionStats; } 
+@override int get hashCode { return Object.hash(recordingStats, sessionStats); } 
+@override String toString() { return 'GetOrgAnalyticsResponseData(recordingStats: $recordingStats, sessionStats: $sessionStats)'; } 
+ }

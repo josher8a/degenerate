@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_create_client_secret_request_expires_after.dart';import 'realtime_create_client_secret_request_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// Create a session and client secret for the Realtime API. The request can specify
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_client_event_session_update/realtime_client_event_session_update_session.dart';import 'package:pub_openai/models/realtime_create_client_secret_request/realtime_create_client_secret_request_expires_after.dart';import 'package:pub_openai/models/realtime_session_create_request_ga.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga.dart';/// Create a session and client secret for the Realtime API. The request can specify
 /// either a realtime or a transcription session configuration.
 /// [Learn more about the Realtime API](/docs/guides/realtime).
 /// 
@@ -21,14 +21,14 @@ final RealtimeCreateClientSecretRequestExpiresAfter? expiresAfter;
 /// Session configuration to use for the client secret. Choose either a realtime
 /// session or a transcription session.
 /// 
-final RealtimeCreateClientSecretRequestSession? session;
+final RealtimeClientEventSessionUpdateSession? session;
 
 Map<String, dynamic> toJson() { return {
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   if (session != null) 'session': session?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after', 'session'}.contains(key)); } 
-RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter Function()? expiresAfter, RealtimeCreateClientSecretRequestSession Function()? session, }) { return RealtimeCreateClientSecretRequest(
+RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter Function()? expiresAfter, RealtimeClientEventSessionUpdateSession Function()? session, }) { return RealtimeCreateClientSecretRequest(
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   session: session != null ? session() : this.session,
 ); } 

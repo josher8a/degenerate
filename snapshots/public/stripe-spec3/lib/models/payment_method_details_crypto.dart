@@ -32,22 +32,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCryptoNetwork($value)'; } 
  }
 /// The token currency that the transaction was sent with.
-@immutable final class PaymentMethodDetailsCryptoTokenCurrency {const PaymentMethodDetailsCryptoTokenCurrency._(this.value);
+@immutable final class TokenCurrency {const TokenCurrency._(this.value);
 
-factory PaymentMethodDetailsCryptoTokenCurrency.fromJson(String json) { return switch (json) {
+factory TokenCurrency.fromJson(String json) { return switch (json) {
   'usdc' => usdc,
   'usdg' => usdg,
   'usdp' => usdp,
-  _ => PaymentMethodDetailsCryptoTokenCurrency._(json),
+  _ => TokenCurrency._(json),
 }; }
 
-static const PaymentMethodDetailsCryptoTokenCurrency usdc = PaymentMethodDetailsCryptoTokenCurrency._('usdc');
+static const TokenCurrency usdc = TokenCurrency._('usdc');
 
-static const PaymentMethodDetailsCryptoTokenCurrency usdg = PaymentMethodDetailsCryptoTokenCurrency._('usdg');
+static const TokenCurrency usdg = TokenCurrency._('usdg');
 
-static const PaymentMethodDetailsCryptoTokenCurrency usdp = PaymentMethodDetailsCryptoTokenCurrency._('usdp');
+static const TokenCurrency usdp = TokenCurrency._('usdp');
 
-static const List<PaymentMethodDetailsCryptoTokenCurrency> values = [usdc, usdg, usdp];
+static const List<TokenCurrency> values = [usdc, usdg, usdp];
 
 final String value;
 
@@ -55,9 +55,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCryptoTokenCurrency && other.value == value; } 
+    other is TokenCurrency && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCryptoTokenCurrency($value)'; } 
+@override String toString() { return 'TokenCurrency($value)'; } 
  }
 /// 
 @immutable final class PaymentMethodDetailsCrypto {const PaymentMethodDetailsCrypto({this.buyerAddress, this.network, this.tokenCurrency, this.transactionHash, });
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 factory PaymentMethodDetailsCrypto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCrypto(
   buyerAddress: json['buyer_address'] as String?,
   network: json['network'] != null ? PaymentMethodDetailsCryptoNetwork.fromJson(json['network'] as String) : null,
-  tokenCurrency: json['token_currency'] != null ? PaymentMethodDetailsCryptoTokenCurrency.fromJson(json['token_currency'] as String) : null,
+  tokenCurrency: json['token_currency'] != null ? TokenCurrency.fromJson(json['token_currency'] as String) : null,
   transactionHash: json['transaction_hash'] as String?,
 ); }
 
@@ -76,7 +76,7 @@ final String? buyerAddress;
 final PaymentMethodDetailsCryptoNetwork? network;
 
 /// The token currency that the transaction was sent with.
-final PaymentMethodDetailsCryptoTokenCurrency? tokenCurrency;
+final TokenCurrency? tokenCurrency;
 
 /// The blockchain transaction hash of the crypto payment.
 final String? transactionHash;
@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_hash': ?transactionHash,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_address', 'network', 'token_currency', 'transaction_hash'}.contains(key)); } 
-PaymentMethodDetailsCrypto copyWith({String Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork Function()? network, PaymentMethodDetailsCryptoTokenCurrency Function()? tokenCurrency, String Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(
+PaymentMethodDetailsCrypto copyWith({String Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork Function()? network, TokenCurrency Function()? tokenCurrency, String Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(
   buyerAddress: buyerAddress != null ? buyerAddress() : this.buyerAddress,
   network: network != null ? network() : this.network,
   tokenCurrency: tokenCurrency != null ? tokenCurrency() : this.tokenCurrency,

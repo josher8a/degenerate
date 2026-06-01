@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_fleet_fuel_price_data.dart';import 'issuing_authorization_fleet_non_fuel_price_data.dart';import 'issuing_authorization_fleet_tax_data.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_fuel_price_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_non_fuel_price_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_tax_data.dart';/// 
 @immutable final class IssuingAuthorizationFleetReportedBreakdown {const IssuingAuthorizationFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory IssuingAuthorizationFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetReportedBreakdown(

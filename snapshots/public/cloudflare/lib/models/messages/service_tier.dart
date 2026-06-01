@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ServiceTier {const ServiceTier._(this.value);
+
+factory ServiceTier.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'default' => $default,
+  'flex' => flex,
+  'scale' => scale,
+  'priority' => priority,
+  _ => ServiceTier._(json),
+}; }
+
+static const ServiceTier auto = ServiceTier._('auto');
+
+static const ServiceTier $default = ServiceTier._('default');
+
+static const ServiceTier flex = ServiceTier._('flex');
+
+static const ServiceTier scale = ServiceTier._('scale');
+
+static const ServiceTier priority = ServiceTier._('priority');
+
+static const List<ServiceTier> values = [auto, $default, flex, scale, priority];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ServiceTier && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ServiceTier($value)'; } 
+ }

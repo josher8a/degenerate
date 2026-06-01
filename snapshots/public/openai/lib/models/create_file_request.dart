@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_expiration_after.dart';/// The intended purpose of the uploaded file. One of:
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_expiration_after.dart';/// The intended purpose of the uploaded file. One of:
 /// - `assistants`: Used in the Assistants API
 /// - `batch`: Used in the Batch API
 /// - `fine-tune`: Used for fine-tuning

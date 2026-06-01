@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_tool_message_content.dart';import 'chat_completion_request_tool_message_content_part.dart';@immutable final class ChatCompletionRequestToolMessage {const ChatCompletionRequestToolMessage({required this.role, required this.content, required this.toolCallId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_system_message/chat_completion_request_system_message_content.dart';import 'package:pub_openai/models/chat_completion_request_tool_message_content_part.dart';@immutable final class ChatCompletionRequestToolMessage {const ChatCompletionRequestToolMessage({required this.role, required this.content, required this.toolCallId, });
 
 factory ChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestToolMessage(
   role: json['role'] as String,
@@ -12,7 +12,7 @@ factory ChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) { r
 final String role;
 
 /// The contents of the tool message.
-final ChatCompletionRequestToolMessageContent content;
+final ChatCompletionRequestSystemMessageContent content;
 
 /// Tool call that this message is responding to.
 final String toolCallId;
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&
       json.containsKey('content') &&
       json.containsKey('tool_call_id') && json['tool_call_id'] is String; } 
-ChatCompletionRequestToolMessage copyWith({String? role, ChatCompletionRequestToolMessageContent? content, String? toolCallId, }) { return ChatCompletionRequestToolMessage(
+ChatCompletionRequestToolMessage copyWith({String? role, ChatCompletionRequestSystemMessageContent? content, String? toolCallId, }) { return ChatCompletionRequestToolMessage(
   role: role ?? this.role,
   content: content ?? this.content,
   toolCallId: toolCallId ?? this.toolCallId,

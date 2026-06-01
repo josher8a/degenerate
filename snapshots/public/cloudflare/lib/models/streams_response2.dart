@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'streams_response2_result.dart';@immutable final class StreamsResponse2 {const StreamsResponse2({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_worker_pipelines_common_success.dart';import 'package:pub_cloudflare/models/streams_by_stream_id_response/streams_by_stream_id_response_result.dart';@immutable final class StreamsResponse2 {const StreamsResponse2({required this.result, required this.success, });
 
 factory StreamsResponse2.fromJson(Map<String, dynamic> json) { return StreamsResponse2(
-  result: StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>),
+  result: StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
 ); }
 
-final StreamsResponse2Result result;
+final StreamsByStreamIdResponseResult result;
 
 /// Indicates whether the API call was successful.
 final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success'); } 
-StreamsResponse2 copyWith({StreamsResponse2Result? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return StreamsResponse2(
+StreamsResponse2 copyWith({StreamsByStreamIdResponseResult? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return StreamsResponse2(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

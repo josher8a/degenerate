@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project_update_project_request_build_config.dart';import 'pages_project_update_project_request_deployment_configs.dart';import 'pages_project_update_project_request_source.dart';@immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/build_config.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_deployment_configs.dart';import 'package:pub_cloudflare/models/pages_project_create_project_request/pages_project_create_project_request_source.dart';@immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
 factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(
-  buildConfig: json['build_config'] != null ? PagesProjectUpdateProjectRequestBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
-  deploymentConfigs: json['deployment_configs'] != null ? PagesProjectUpdateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>) : null,
+  buildConfig: json['build_config'] != null ? BuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,
+  deploymentConfigs: json['deployment_configs'] != null ? PagesProjectCreateProjectRequestDeploymentConfigs.fromJson(json['deployment_configs'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productionBranch: json['production_branch'] as String?,
-  source: json['source'] != null ? PagesProjectUpdateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? PagesProjectCreateProjectRequestSource.fromJson(json['source'] as Map<String, dynamic>) : null,
 ); }
 
 /// Configs for the project build process.
-final PagesProjectUpdateProjectRequestBuildConfig? buildConfig;
+final BuildConfig? buildConfig;
 
 /// Configs for deployments in a project.
-final PagesProjectUpdateProjectRequestDeploymentConfigs? deploymentConfigs;
+final PagesProjectCreateProjectRequestDeploymentConfigs? deploymentConfigs;
 
 /// Name of the project.
 final String? name;
@@ -23,7 +23,7 @@ final String? name;
 final String? productionBranch;
 
 /// Configs for the project source control.
-final PagesProjectUpdateProjectRequestSource? source;
+final PagesProjectCreateProjectRequestSource? source;
 
 Map<String, dynamic> toJson() { return {
   if (buildConfig != null) 'build_config': buildConfig?.toJson(),
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_config', 'deployment_configs', 'name', 'production_branch', 'source'}.contains(key)); } 
-PagesProjectUpdateProjectRequest copyWith({PagesProjectUpdateProjectRequestBuildConfig Function()? buildConfig, PagesProjectUpdateProjectRequestDeploymentConfigs Function()? deploymentConfigs, String Function()? name, String Function()? productionBranch, PagesProjectUpdateProjectRequestSource Function()? source, }) { return PagesProjectUpdateProjectRequest(
+PagesProjectUpdateProjectRequest copyWith({BuildConfig Function()? buildConfig, PagesProjectCreateProjectRequestDeploymentConfigs Function()? deploymentConfigs, String Function()? name, String Function()? productionBranch, PagesProjectCreateProjectRequestSource Function()? source, }) { return PagesProjectUpdateProjectRequest(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   deploymentConfigs: deploymentConfigs != null ? deploymentConfigs() : this.deploymentConfigs,
   name: name != null ? name() : this.name,

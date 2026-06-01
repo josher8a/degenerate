@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_maintenance_update_params.dart';import '../models/r2_data_catalog_table_maintenance_config.dart';import '../models/r2_data_catalog_table_maintenance_config_response.dart';import '../models/response_common_failure55.dart';/// TableMaintenanceConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_account_id.dart';import 'package:pub_cloudflare/models/r2_data_catalog_bucket_name.dart';import 'package:pub_cloudflare/models/r2_data_catalog_maintenance_update_params.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_table_maintenance_config_response.dart';import 'package:pub_cloudflare/models/response_common_failure55.dart';/// TableMaintenanceConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

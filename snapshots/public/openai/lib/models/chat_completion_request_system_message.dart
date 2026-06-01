@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_system_message_content.dart';import 'chat_completion_request_system_message_content_part.dart';/// Developer-provided instructions that the model should follow, regardless of
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_system_message/chat_completion_request_system_message_content.dart';import 'package:pub_openai/models/chat_completion_request_system_message_content_part.dart';/// Developer-provided instructions that the model should follow, regardless of
 /// messages sent by the user. With o1 models and newer, use `developer` messages
 /// for this purpose instead.
 /// 

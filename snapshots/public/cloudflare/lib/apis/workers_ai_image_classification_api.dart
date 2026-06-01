@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_microsoft_nonomni_resnet50_response400.dart';import '../models/workers_ai_post_run_cf_microsoft_resnet50_response400.dart';/// WorkersAiImageClassificationApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_microsoft_nonomni_resnet50_response400.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_microsoft_resnet50_response400.dart';/// WorkersAiImageClassificationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,42 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `logs`.
-@immutable final class EvalLogsDataSourceConfigType {const EvalLogsDataSourceConfigType._(this.value);
-
-factory EvalLogsDataSourceConfigType.fromJson(String json) { return switch (json) {
-  'logs' => logs,
-  _ => EvalLogsDataSourceConfigType._(json),
-}; }
-
-static const EvalLogsDataSourceConfigType logs = EvalLogsDataSourceConfigType._('logs');
-
-static const List<EvalLogsDataSourceConfigType> values = [logs];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalLogsDataSourceConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalLogsDataSourceConfigType($value)'; } 
- }
-/// A LogsDataSourceConfig which specifies the metadata property of your logs query.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_logs/code_interpreter_output_logs_type.dart';/// A LogsDataSourceConfig which specifies the metadata property of your logs query.
 /// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
 /// The schema returned by this data source config is used to defined what variables are available in your evals.
 /// `item` and `sample` are both defined when using this data source config.
 /// 
-@immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.schema, this.type = EvalLogsDataSourceConfigType.logs, this.metadata, });
+@immutable final class EvalLogsDataSourceConfig {const EvalLogsDataSourceConfig({required this.schema, this.type = CodeInterpreterOutputLogsType.logs, this.metadata, });
 
 factory EvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalLogsDataSourceConfig(
-  type: EvalLogsDataSourceConfigType.fromJson(json['type'] as String),
+  type: CodeInterpreterOutputLogsType.fromJson(json['type'] as String),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   schema: json['schema'] as Map<String, dynamic>,
 ); }
 
 /// The type of data source. Always `logs`.
-final EvalLogsDataSourceConfigType type;
+final CodeInterpreterOutputLogsType type;
 
 final Map<String,String>? metadata;
 
@@ -52,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('schema'); } 
-EvalLogsDataSourceConfig copyWith({EvalLogsDataSourceConfigType? type, Map<String, String>? Function()? metadata, Map<String,dynamic>? schema, }) { return EvalLogsDataSourceConfig(
+EvalLogsDataSourceConfig copyWith({CodeInterpreterOutputLogsType? type, Map<String, String>? Function()? metadata, Map<String,dynamic>? schema, }) { return EvalLogsDataSourceConfig(
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
   schema: schema ?? this.schema,

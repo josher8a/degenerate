@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_interpreter_tool_param_network_policy.dart';import 'container_memory_limit.dart';/// Always `auto`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_memory_limit.dart';/// Always `auto`.
 @immutable final class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType._(this.value);
 
 factory AutoCodeInterpreterToolParamType.fromJson(String json) { return switch (json) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_label_model.dart';import 'grader_multi_graders.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';/// The object type, which is always `multi`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_multi/graders.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// The object type, which is always `multi`.
 @immutable final class GraderMultiType {const GraderMultiType._(this.value);
 
 factory GraderMultiType.fromJson(String json) { return switch (json) {
@@ -38,7 +38,7 @@ final GraderMultiType type;
 /// The name of the grader.
 final String name;
 
-final GraderMultiGraders graders;
+final Graders graders;
 
 /// A formula to calculate the output based on grader results.
 final String calculateOutput;
@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('graders') &&
       json.containsKey('calculate_output') && json['calculate_output'] is String; } 
-GraderMulti copyWith({GraderMultiType? type, String? name, GraderMultiGraders? graders, String? calculateOutput, }) { return GraderMulti(
+GraderMulti copyWith({GraderMultiType? type, String? name, Graders? graders, String? calculateOutput, }) { return GraderMulti(
   type: type ?? this.type,
   name: name ?? this.name,
   graders: graders ?? this.graders,

@@ -1,38 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-@immutable final class TaxProductResourceTaxTransactionShippingCostTaxBehavior {const TaxProductResourceTaxTransactionShippingCostTaxBehavior._(this.value);
-
-factory TaxProductResourceTaxTransactionShippingCostTaxBehavior.fromJson(String json) { return switch (json) {
-  'exclusive' => exclusive,
-  'inclusive' => inclusive,
-  _ => TaxProductResourceTaxTransactionShippingCostTaxBehavior._(json),
-}; }
-
-static const TaxProductResourceTaxTransactionShippingCostTaxBehavior exclusive = TaxProductResourceTaxTransactionShippingCostTaxBehavior._('exclusive');
-
-static const TaxProductResourceTaxTransactionShippingCostTaxBehavior inclusive = TaxProductResourceTaxTransactionShippingCostTaxBehavior._('inclusive');
-
-static const List<TaxProductResourceTaxTransactionShippingCostTaxBehavior> values = [exclusive, inclusive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxTransactionShippingCostTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxTransactionShippingCostTaxBehavior($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';/// 
 @immutable final class TaxProductResourceTaxTransactionShippingCost {const TaxProductResourceTaxTransactionShippingCost({required this.amount, required this.amountTax, required this.taxBehavior, required this.taxCode, this.shippingRate, });
 
 factory TaxProductResourceTaxTransactionShippingCost.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxTransactionShippingCost(
   amount: (json['amount'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   shippingRate: json['shipping_rate'] as String?,
-  taxBehavior: TaxProductResourceTaxTransactionShippingCostTaxBehavior.fromJson(json['tax_behavior'] as String),
+  taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
 ); }
 
@@ -46,7 +21,7 @@ final int amountTax;
 final String? shippingRate;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final TaxProductResourceTaxTransactionShippingCostTaxBehavior taxBehavior;
+final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// The [tax code](https://docs.stripe.com/tax/tax-categories) ID used for shipping.
 final String taxCode;
@@ -62,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String; } 
-TaxProductResourceTaxTransactionShippingCost copyWith({int? amount, int? amountTax, String Function()? shippingRate, TaxProductResourceTaxTransactionShippingCostTaxBehavior? taxBehavior, String? taxCode, }) { return TaxProductResourceTaxTransactionShippingCost(
+TaxProductResourceTaxTransactionShippingCost copyWith({int? amount, int? amountTax, String Function()? shippingRate, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, }) { return TaxProductResourceTaxTransactionShippingCost(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,

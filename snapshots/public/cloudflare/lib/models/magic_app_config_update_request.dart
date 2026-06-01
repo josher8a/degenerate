@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_account_app_id.dart';import 'magic_identifier.dart';import 'magic_managed_app_id.dart';/// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_account_app_id.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_managed_app_id.dart';/// Whether to breakout traffic to the app's endpoints directly. Null preserves default behavior.
 extension type const MagicAppBreakout(bool value) {
 factory MagicAppBreakout.fromJson(bool json) => MagicAppBreakout(json);
 

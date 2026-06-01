@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-@immutable final class PaymentRecordCustomerPresence {const PaymentRecordCustomerPresence._(this.value);
-
-factory PaymentRecordCustomerPresence.fromJson(String json) { return switch (json) {
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentRecordCustomerPresence._(json),
-}; }
-
-static const PaymentRecordCustomerPresence offSession = PaymentRecordCustomerPresence._('off_session');
-
-static const PaymentRecordCustomerPresence onSession = PaymentRecordCustomerPresence._('on_session');
-
-static const List<PaymentRecordCustomerPresence> values = [offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentRecordCustomerPresence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentRecordCustomerPresence($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record/reported_by.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_amount.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_shipping_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentRecordObject {const PaymentRecordObject._(this.value);
 
 factory PaymentRecordObject.fromJson(String json) { return switch (json) {
@@ -47,31 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentRecordObject($value)'; } 
  }
-/// Indicates who reported the payment.
-@immutable final class PaymentRecordReportedBy {const PaymentRecordReportedBy._(this.value);
-
-factory PaymentRecordReportedBy.fromJson(String json) { return switch (json) {
-  'self' => self,
-  'stripe' => stripe,
-  _ => PaymentRecordReportedBy._(json),
-}; }
-
-static const PaymentRecordReportedBy self = PaymentRecordReportedBy._('self');
-
-static const PaymentRecordReportedBy stripe = PaymentRecordReportedBy._('stripe');
-
-static const List<PaymentRecordReportedBy> values = [self, stripe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentRecordReportedBy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentRecordReportedBy($value)'; } 
- }
 /// A Payment Record is a resource that allows you to represent payments that occur on- or off-Stripe.
 /// For example, you can create a Payment Record to model a payment made on a different payment processor,
 /// in order to mark an Invoice as paid and a Subscription as active. Payment Records consist of one or
@@ -89,7 +39,7 @@ factory PaymentRecord.fromJson(Map<String, dynamic> json) { return PaymentRecord
   application: json['application'] as String?,
   created: (json['created'] as num).toInt(),
   customerDetails: json['customer_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  customerPresence: json['customer_presence'] != null ? PaymentRecordCustomerPresence.fromJson(json['customer_presence'] as String) : null,
+  customerPresence: json['customer_presence'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] as String,
   latestPaymentAttemptRecord: json['latest_payment_attempt_record'] as String?,
@@ -98,7 +48,7 @@ factory PaymentRecord.fromJson(Map<String, dynamic> json) { return PaymentRecord
   object: PaymentRecordObject.fromJson(json['object'] as String),
   paymentMethodDetails: json['payment_method_details'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
-  reportedBy: PaymentRecordReportedBy.fromJson(json['reported_by'] as String),
+  reportedBy: ReportedBy.fromJson(json['reported_by'] as String),
   shippingDetails: json['shipping_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
@@ -126,7 +76,7 @@ final int created;
 final PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? customerDetails;
 
 /// Indicates whether the customer was present in your checkout flow during this payment.
-final PaymentRecordCustomerPresence? customerPresence;
+final InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? customerPresence;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
 final String? description;
@@ -152,7 +102,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? paymentMetho
 final PaymentsPrimitivesPaymentRecordsResourceProcessorDetails processorDetails;
 
 /// Indicates who reported the payment.
-final PaymentRecordReportedBy reportedBy;
+final ReportedBy reportedBy;
 
 /// Shipping information for this payment.
 final PaymentsPrimitivesPaymentRecordsResourceShippingDetails? shippingDetails;
@@ -194,7 +144,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
       json.containsKey('reported_by'); } 
-PaymentRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, PaymentRecordCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, String? Function()? latestPaymentAttemptRecord, bool? livemode, Map<String,String>? metadata, PaymentRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentRecordReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentRecord(
+PaymentRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, String? Function()? latestPaymentAttemptRecord, bool? livemode, Map<String,String>? metadata, PaymentRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, ReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   amountCanceled: amountCanceled ?? this.amountCanceled,

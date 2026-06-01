@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'connect_collection_transfer_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ConnectCollectionTransferObject {const ConnectCollectionTransferObject._(this.value);
 
 factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
@@ -41,7 +41,7 @@ final int amount;
 final String currency;
 
 /// ID of the account that funds are being collected for.
-final ConnectCollectionTransferDestination destination;
+final ChargeTransferDataDestination destination;
 
 /// Unique identifier for the object.
 final String id;
@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-ConnectCollectionTransfer copyWith({int? amount, String? currency, ConnectCollectionTransferDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) { return ConnectCollectionTransfer(
+ConnectCollectionTransfer copyWith({int? amount, String? currency, ChargeTransferDataDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) { return ConnectCollectionTransfer(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   destination: destination ?? this.destination,

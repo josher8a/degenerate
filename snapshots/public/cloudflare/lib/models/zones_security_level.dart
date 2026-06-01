@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_security_level_value.dart';/// Control options for the **Security Level** feature from the **Security** app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';/// Control options for the **Security Level** feature from the **Security** app.
 /// 
 @immutable final class ZonesSecurityLevelId {const ZonesSecurityLevelId._(this.value);
 

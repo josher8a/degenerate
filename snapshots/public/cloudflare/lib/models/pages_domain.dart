@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain_name.dart';import 'pages_domain_validation_data.dart';import 'pages_domain_verification_data.dart';@immutable final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain/validation_data.dart';import 'package:pub_cloudflare/models/pages_domain/verification_data.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';@immutable final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
 
 factory PagesDomainCertificateAuthority.fromJson(String json) { return switch (json) {
   'google' => google,
@@ -69,8 +69,8 @@ factory PagesDomain.fromJson(Map<String, dynamic> json) { return PagesDomain(
   id: json['id'] as String,
   name: PagesDomainName.fromJson(json['name'] as String),
   status: PagesDomainStatus.fromJson(json['status'] as String),
-  validationData: PagesDomainValidationData.fromJson(json['validation_data'] as Map<String, dynamic>),
-  verificationData: PagesDomainVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
+  validationData: ValidationData.fromJson(json['validation_data'] as Map<String, dynamic>),
+  verificationData: VerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
   zoneTag: json['zone_tag'] as String,
 ); }
 
@@ -86,9 +86,9 @@ final PagesDomainName name;
 
 final PagesDomainStatus status;
 
-final PagesDomainValidationData validationData;
+final ValidationData validationData;
 
-final PagesDomainVerificationData verificationData;
+final VerificationData verificationData;
 
 final String zoneTag;
 
@@ -112,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('validation_data') &&
       json.containsKey('verification_data') &&
       json.containsKey('zone_tag') && json['zone_tag'] is String; } 
-PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, String? createdOn, String? domainId, String? id, PagesDomainName? name, PagesDomainStatus? status, PagesDomainValidationData? validationData, PagesDomainVerificationData? verificationData, String? zoneTag, }) { return PagesDomain(
+PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, String? createdOn, String? domainId, String? id, PagesDomainName? name, PagesDomainStatus? status, ValidationData? validationData, VerificationData? verificationData, String? zoneTag, }) { return PagesDomain(
   certificateAuthority: certificateAuthority ?? this.certificateAuthority,
   createdOn: createdOn ?? this.createdOn,
   domainId: domainId ?? this.domainId,

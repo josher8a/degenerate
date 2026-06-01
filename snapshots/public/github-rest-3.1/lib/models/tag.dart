@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tag_commit.dart';/// Tag
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/short_branch/short_branch_commit.dart';/// Tag
 @immutable final class Tag {const Tag({required this.name, required this.commit, required this.zipballUrl, required this.tarballUrl, required this.nodeId, });
 
 factory Tag.fromJson(Map<String, dynamic> json) { return Tag(
   name: json['name'] as String,
-  commit: TagCommit.fromJson(json['commit'] as Map<String, dynamic>),
+  commit: ShortBranchCommit.fromJson(json['commit'] as Map<String, dynamic>),
   zipballUrl: Uri.parse(json['zipball_url'] as String),
   tarballUrl: Uri.parse(json['tarball_url'] as String),
   nodeId: json['node_id'] as String,
@@ -13,7 +13,7 @@ factory Tag.fromJson(Map<String, dynamic> json) { return Tag(
 
 final String name;
 
-final TagCommit commit;
+final ShortBranchCommit commit;
 
 final Uri zipballUrl;
 
@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('zipball_url') && json['zipball_url'] is String &&
       json.containsKey('tarball_url') && json['tarball_url'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-Tag copyWith({String? name, TagCommit? commit, Uri? zipballUrl, Uri? tarballUrl, String? nodeId, }) { return Tag(
+Tag copyWith({String? name, ShortBranchCommit? commit, Uri? zipballUrl, Uri? tarballUrl, String? nodeId, }) { return Tag(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   zipballUrl: zipballUrl ?? this.zipballUrl,

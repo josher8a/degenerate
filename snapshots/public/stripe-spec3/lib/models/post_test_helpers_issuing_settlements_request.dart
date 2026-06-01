@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement. One of `["visa", "maestro"]`
-@immutable final class PostTestHelpersIssuingSettlementsRequestNetwork {const PostTestHelpersIssuingSettlementsRequestNetwork._(this.value);
-
-factory PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(String json) { return switch (json) {
-  'maestro' => maestro,
-  'visa' => visa,
-  _ => PostTestHelpersIssuingSettlementsRequestNetwork._(json),
-}; }
-
-static const PostTestHelpersIssuingSettlementsRequestNetwork maestro = PostTestHelpersIssuingSettlementsRequestNetwork._('maestro');
-
-static const PostTestHelpersIssuingSettlementsRequestNetwork visa = PostTestHelpersIssuingSettlementsRequestNetwork._('visa');
-
-static const List<PostTestHelpersIssuingSettlementsRequestNetwork> values = [maestro, visa];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingSettlementsRequestNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingSettlementsRequestNetwork($value)'; } 
- }
-@immutable final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, required this.netTotalAmount, this.expand, this.interchangeFeesAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_settlement/issuing_settlement_network.dart';@immutable final class PostTestHelpersIssuingSettlementsRequest {const PostTestHelpersIssuingSettlementsRequest({required this.bin, required this.clearingDate, required this.currency, required this.netTotalAmount, this.expand, this.interchangeFeesAmount, this.network, this.networkSettlementIdentifier, this.transactionAmount, this.transactionCount, });
 
 factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingSettlementsRequest(
   bin: json['bin'] as String,
@@ -34,7 +9,7 @@ factory PostTestHelpersIssuingSettlementsRequest.fromJson(Map<String, dynamic> j
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   interchangeFeesAmount: json['interchange_fees_amount'] != null ? (json['interchange_fees_amount'] as num).toInt() : null,
   netTotalAmount: (json['net_total_amount'] as num).toInt(),
-  network: json['network'] != null ? PostTestHelpersIssuingSettlementsRequestNetwork.fromJson(json['network'] as String) : null,
+  network: json['network'] != null ? IssuingSettlementNetwork.fromJson(json['network'] as String) : null,
   networkSettlementIdentifier: json['network_settlement_identifier'] as String?,
   transactionAmount: json['transaction_amount'] != null ? (json['transaction_amount'] as num).toInt() : null,
   transactionCount: json['transaction_count'] != null ? (json['transaction_count'] as num).toInt() : null,
@@ -59,7 +34,7 @@ final int? interchangeFeesAmount;
 final int netTotalAmount;
 
 /// The card network for this settlement. One of `["visa", "maestro"]`
-final PostTestHelpersIssuingSettlementsRequestNetwork? network;
+final IssuingSettlementNetwork? network;
 
 /// The Settlement Identification Number assigned by the network.
 final String? networkSettlementIdentifier;
@@ -86,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('net_total_amount') && json['net_total_amount'] is num; } 
-PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String> Function()? expand, int Function()? interchangeFeesAmount, int? netTotalAmount, PostTestHelpersIssuingSettlementsRequestNetwork Function()? network, String Function()? networkSettlementIdentifier, int Function()? transactionAmount, int Function()? transactionCount, }) { return PostTestHelpersIssuingSettlementsRequest(
+PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String> Function()? expand, int Function()? interchangeFeesAmount, int? netTotalAmount, IssuingSettlementNetwork Function()? network, String Function()? networkSettlementIdentifier, int Function()? transactionAmount, int Function()? transactionCount, }) { return PostTestHelpersIssuingSettlementsRequest(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   currency: currency ?? this.currency,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_connector_id.dart';import 'magic_secondary_connector_id.dart';import 'magic_site_location.dart';import 'magic_site_name.dart';@immutable final class MagicSitesAddSingleRequest {const MagicSitesAddSingleRequest({required this.name, this.connectorId, this.description, this.haMode, this.location, this.secondaryConnectorId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_connector_id.dart';import 'package:pub_cloudflare/models/magic_secondary_connector_id.dart';import 'package:pub_cloudflare/models/magic_site_location.dart';import 'package:pub_cloudflare/models/magic_site_name.dart';@immutable final class MagicSitesAddSingleRequest {const MagicSitesAddSingleRequest({required this.name, this.connectorId, this.description, this.haMode, this.location, this.secondaryConnectorId, });
 
 factory MagicSitesAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicSitesAddSingleRequest(
   connectorId: json['connector_id'] != null ? MagicConnectorId.fromJson(json['connector_id'] as String) : null,

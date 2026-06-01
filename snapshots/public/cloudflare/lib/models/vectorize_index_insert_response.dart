@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeIndexInsertResponse {const VectorizeIndexInsertResponse({this.count, this.ids, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_vector_identifier.dart';@immutable final class VectorizeIndexInsertResponse {const VectorizeIndexInsertResponse({this.count, this.ids, });
 
 factory VectorizeIndexInsertResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInsertResponse(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_source.dart';/// `[DEPRECATED]` Describes the configuration of a pipeline. Use the new streams/sinks/pipelines API instead.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_request_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_pipeline/cloudflare_pipelines_workers_pipelines_pipeline_destination.dart';/// `[DEPRECATED]` Describes the configuration of a pipeline. Use the new streams/sinks/pipelines API instead.
 @immutable final class CloudflarePipelinesWorkersPipelinesPipeline {const CloudflarePipelinesWorkersPipelinesPipeline({required this.destination, required this.endpoint, required this.id, required this.name, required this.source, required this.version, });
 
 factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipeline(
@@ -8,7 +8,7 @@ factory CloudflarePipelinesWorkersPipelinesPipeline.fromJson(Map<String, dynamic
   endpoint: json['endpoint'] as String,
   id: json['id'] as String,
   name: json['name'] as String,
-  source: (json['source'] as List<dynamic>).map((e) => CloudflarePipelinesWorkersPipelinesPipelineSource.fromJson(e as Map<String, dynamic>)).toList(),
+  source: (json['source'] as List<dynamic>).map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.fromJson(e as Map<String, dynamic>)).toList(),
   version: (json['version'] as num).toDouble(),
 ); }
 
@@ -23,7 +23,7 @@ final String id;
 /// Defines the name of the pipeline.
 final String name;
 
-final List<CloudflarePipelinesWorkersPipelinesPipelineSource> source;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource> source;
 
 /// Indicates the version number of last saved configuration.
 final double version;
@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('source') &&
       json.containsKey('version') && json['version'] is num; } 
-CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkersPipelinesPipelineDestination? destination, String? endpoint, String? id, String? name, List<CloudflarePipelinesWorkersPipelinesPipelineSource>? source, double? version, }) { return CloudflarePipelinesWorkersPipelinesPipeline(
+CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkersPipelinesPipelineDestination? destination, String? endpoint, String? id, String? name, List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource>? source, double? version, }) { return CloudflarePipelinesWorkersPipelinesPipeline(
   destination: destination ?? this.destination,
   endpoint: endpoint ?? this.endpoint,
   id: id ?? this.id,

@@ -1,59 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator to evaluate risk_level or eid_last_seen.
-@immutable final class TeamsDevicesTaniumInputRequestOperator {const TeamsDevicesTaniumInputRequestOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on risk level, refer to the Tanium documentation.
+@immutable final class RiskLevel {const RiskLevel._(this.value);
 
-factory TeamsDevicesTaniumInputRequestOperator.fromJson(String json) { return switch (json) {
-  '<' => $empty,
-  '<=' => $empty2,
-  '>' => $empty3,
-  '>=' => $empty4,
-  '==' => $empty5,
-  _ => TeamsDevicesTaniumInputRequestOperator._(json),
-}; }
-
-static const TeamsDevicesTaniumInputRequestOperator $empty = TeamsDevicesTaniumInputRequestOperator._('<');
-
-static const TeamsDevicesTaniumInputRequestOperator $empty2 = TeamsDevicesTaniumInputRequestOperator._('<=');
-
-static const TeamsDevicesTaniumInputRequestOperator $empty3 = TeamsDevicesTaniumInputRequestOperator._('>');
-
-static const TeamsDevicesTaniumInputRequestOperator $empty4 = TeamsDevicesTaniumInputRequestOperator._('>=');
-
-static const TeamsDevicesTaniumInputRequestOperator $empty5 = TeamsDevicesTaniumInputRequestOperator._('==');
-
-static const List<TeamsDevicesTaniumInputRequestOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesTaniumInputRequestOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesTaniumInputRequestOperator($value)'; } 
- }
-/// For more details on risk level, refer to the Tanium documentation.
-@immutable final class TeamsDevicesTaniumInputRequestRiskLevel {const TeamsDevicesTaniumInputRequestRiskLevel._(this.value);
-
-factory TeamsDevicesTaniumInputRequestRiskLevel.fromJson(String json) { return switch (json) {
+factory RiskLevel.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'critical' => critical,
-  _ => TeamsDevicesTaniumInputRequestRiskLevel._(json),
+  _ => RiskLevel._(json),
 }; }
 
-static const TeamsDevicesTaniumInputRequestRiskLevel low = TeamsDevicesTaniumInputRequestRiskLevel._('low');
+static const RiskLevel low = RiskLevel._('low');
 
-static const TeamsDevicesTaniumInputRequestRiskLevel medium = TeamsDevicesTaniumInputRequestRiskLevel._('medium');
+static const RiskLevel medium = RiskLevel._('medium');
 
-static const TeamsDevicesTaniumInputRequestRiskLevel high = TeamsDevicesTaniumInputRequestRiskLevel._('high');
+static const RiskLevel high = RiskLevel._('high');
 
-static const TeamsDevicesTaniumInputRequestRiskLevel critical = TeamsDevicesTaniumInputRequestRiskLevel._('critical');
+static const RiskLevel critical = RiskLevel._('critical');
 
-static const List<TeamsDevicesTaniumInputRequestRiskLevel> values = [low, medium, high, critical];
+static const List<RiskLevel> values = [low, medium, high, critical];
 
 final String value;
 
@@ -61,33 +27,33 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesTaniumInputRequestRiskLevel && other.value == value; } 
+    other is RiskLevel && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesTaniumInputRequestRiskLevel($value)'; } 
+@override String toString() { return 'RiskLevel($value)'; } 
  }
 /// Score Operator.
-@immutable final class TeamsDevicesTaniumInputRequestScoreOperator {const TeamsDevicesTaniumInputRequestScoreOperator._(this.value);
+@immutable final class ScoreOperator {const ScoreOperator._(this.value);
 
-factory TeamsDevicesTaniumInputRequestScoreOperator.fromJson(String json) { return switch (json) {
+factory ScoreOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
   '<=' => $empty2,
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => TeamsDevicesTaniumInputRequestScoreOperator._(json),
+  _ => ScoreOperator._(json),
 }; }
 
-static const TeamsDevicesTaniumInputRequestScoreOperator $empty = TeamsDevicesTaniumInputRequestScoreOperator._('<');
+static const ScoreOperator $empty = ScoreOperator._('<');
 
-static const TeamsDevicesTaniumInputRequestScoreOperator $empty2 = TeamsDevicesTaniumInputRequestScoreOperator._('<=');
+static const ScoreOperator $empty2 = ScoreOperator._('<=');
 
-static const TeamsDevicesTaniumInputRequestScoreOperator $empty3 = TeamsDevicesTaniumInputRequestScoreOperator._('>');
+static const ScoreOperator $empty3 = ScoreOperator._('>');
 
-static const TeamsDevicesTaniumInputRequestScoreOperator $empty4 = TeamsDevicesTaniumInputRequestScoreOperator._('>=');
+static const ScoreOperator $empty4 = ScoreOperator._('>=');
 
-static const TeamsDevicesTaniumInputRequestScoreOperator $empty5 = TeamsDevicesTaniumInputRequestScoreOperator._('==');
+static const ScoreOperator $empty5 = ScoreOperator._('==');
 
-static const List<TeamsDevicesTaniumInputRequestScoreOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
+static const List<ScoreOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
 final String value;
 
@@ -95,18 +61,18 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesTaniumInputRequestScoreOperator && other.value == value; } 
+    other is ScoreOperator && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesTaniumInputRequestScoreOperator($value)'; } 
+@override String toString() { return 'ScoreOperator($value)'; } 
  }
 @immutable final class TeamsDevicesTaniumInputRequest {const TeamsDevicesTaniumInputRequest({required this.connectionId, this.eidLastSeen, this.$operator, this.riskLevel, this.scoreOperator, this.totalScore, });
 
 factory TeamsDevicesTaniumInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesTaniumInputRequest(
   connectionId: json['connection_id'] as String,
   eidLastSeen: json['eid_last_seen'] as String?,
-  $operator: json['operator'] != null ? TeamsDevicesTaniumInputRequestOperator.fromJson(json['operator'] as String) : null,
-  riskLevel: json['risk_level'] != null ? TeamsDevicesTaniumInputRequestRiskLevel.fromJson(json['risk_level'] as String) : null,
-  scoreOperator: json['scoreOperator'] != null ? TeamsDevicesTaniumInputRequestScoreOperator.fromJson(json['scoreOperator'] as String) : null,
+  $operator: json['operator'] != null ? TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(json['operator'] as String) : null,
+  riskLevel: json['risk_level'] != null ? RiskLevel.fromJson(json['risk_level'] as String) : null,
+  scoreOperator: json['scoreOperator'] != null ? ScoreOperator.fromJson(json['scoreOperator'] as String) : null,
   totalScore: json['total_score'] != null ? (json['total_score'] as num).toDouble() : null,
 ); }
 
@@ -117,13 +83,13 @@ final String connectionId;
 final String? eidLastSeen;
 
 /// Operator to evaluate risk_level or eid_last_seen.
-final TeamsDevicesTaniumInputRequestOperator? $operator;
+final TeamsDevicesCrowdstrikeInputRequestOperator? $operator;
 
 /// For more details on risk level, refer to the Tanium documentation.
-final TeamsDevicesTaniumInputRequestRiskLevel? riskLevel;
+final RiskLevel? riskLevel;
 
 /// Score Operator.
-final TeamsDevicesTaniumInputRequestScoreOperator? scoreOperator;
+final ScoreOperator? scoreOperator;
 
 /// For more details on total score, refer to the Tanium documentation.
 final double? totalScore;
@@ -137,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'total_score': ?totalScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
-TeamsDevicesTaniumInputRequest copyWith({String? connectionId, String Function()? eidLastSeen, TeamsDevicesTaniumInputRequestOperator Function()? $operator, TeamsDevicesTaniumInputRequestRiskLevel Function()? riskLevel, TeamsDevicesTaniumInputRequestScoreOperator Function()? scoreOperator, double Function()? totalScore, }) { return TeamsDevicesTaniumInputRequest(
+TeamsDevicesTaniumInputRequest copyWith({String? connectionId, String Function()? eidLastSeen, TeamsDevicesCrowdstrikeInputRequestOperator Function()? $operator, RiskLevel Function()? riskLevel, ScoreOperator Function()? scoreOperator, double Function()? totalScore, }) { return TeamsDevicesTaniumInputRequest(
   connectionId: connectionId ?? this.connectionId,
   eidLastSeen: eidLastSeen != null ? eidLastSeen() : this.eidLastSeen,
   $operator: $operator != null ? $operator() : this.$operator,

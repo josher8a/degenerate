@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_bm_subscription_config_stale_zone_configuration.dart';/// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_bm_subscription_config/bot_management_bm_subscription_config_stale_zone_configuration.dart';/// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 extension type const BotManagementAutoUpdateModel(bool value) {
 factory BotManagementAutoUpdateModel.fromJson(bool json) => BotManagementAutoUpdateModel(json);
 

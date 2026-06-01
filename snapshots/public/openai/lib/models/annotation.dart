@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_file_citation_body.dart';import 'file_citation_body.dart';import 'file_path.dart';import 'url_citation_body.dart';/// An annotation that applies to a span of output text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_file_citation_body.dart';import 'package:pub_openai/models/file_citation_body.dart';import 'package:pub_openai/models/file_path.dart';import 'package:pub_openai/models/url_citation_body.dart';/// An annotation that applies to a span of output text.
 sealed class Annotation {const Annotation();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.

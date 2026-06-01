@@ -1,38 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_simple.dart';/// Determines if the user has a direct, indirect, or mixed relationship to a role
-@immutable final class UserRoleAssignmentAssignment {const UserRoleAssignmentAssignment._(this.value);
-
-factory UserRoleAssignmentAssignment.fromJson(String json) { return switch (json) {
-  'direct' => direct,
-  'indirect' => indirect,
-  'mixed' => mixed,
-  _ => UserRoleAssignmentAssignment._(json),
-}; }
-
-static const UserRoleAssignmentAssignment direct = UserRoleAssignmentAssignment._('direct');
-
-static const UserRoleAssignmentAssignment indirect = UserRoleAssignmentAssignment._('indirect');
-
-static const UserRoleAssignmentAssignment mixed = UserRoleAssignmentAssignment._('mixed');
-
-static const List<UserRoleAssignmentAssignment> values = [direct, indirect, mixed];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserRoleAssignmentAssignment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserRoleAssignmentAssignment($value)'; } 
- }
-/// The Relationship a User has with a role.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_role_assignment/assignment.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// The Relationship a User has with a role.
 @immutable final class UserRoleAssignment {const UserRoleAssignment({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.assignment, this.inheritedFrom, this.name, this.email, this.starredAt, this.userViewType, });
 
 factory UserRoleAssignment.fromJson(Map<String, dynamic> json) { return UserRoleAssignment(
-  assignment: json['assignment'] != null ? UserRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,
+  assignment: json['assignment'] != null ? Assignment.fromJson(json['assignment'] as String) : null,
   inheritedFrom: (json['inherited_from'] as List<dynamic>?)?.map((e) => TeamSimple.fromJson(e as Map<String, dynamic>)).toList(),
   name: json['name'] as String?,
   email: json['email'] as String?,
@@ -59,7 +31,7 @@ factory UserRoleAssignment.fromJson(Map<String, dynamic> json) { return UserRole
 ); }
 
 /// Determines if the user has a direct, indirect, or mixed relationship to a role
-final UserRoleAssignmentAssignment? assignment;
+final Assignment? assignment;
 
 /// Team the user has gotten the role through
 final List<TeamSimple>? inheritedFrom;
@@ -152,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool; } 
-UserRoleAssignment copyWith({UserRoleAssignmentAssignment Function()? assignment, List<TeamSimple> Function()? inheritedFrom, String? Function()? name, String? Function()? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String Function()? starredAt, String Function()? userViewType, }) { return UserRoleAssignment(
+UserRoleAssignment copyWith({Assignment Function()? assignment, List<TeamSimple> Function()? inheritedFrom, String? Function()? name, String? Function()? email, String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String Function()? starredAt, String Function()? userViewType, }) { return UserRoleAssignment(
   assignment: assignment != null ? assignment() : this.assignment,
   inheritedFrom: inheritedFrom != null ? inheritedFrom() : this.inheritedFrom,
   name: name != null ? name() : this.name,

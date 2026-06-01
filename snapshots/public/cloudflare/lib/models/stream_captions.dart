@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_language.dart';/// The status of a generated caption.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_language.dart';/// The status of a generated caption.
 @immutable final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);
 
 factory StreamCaptionStatus.fromJson(String json) { return switch (json) {

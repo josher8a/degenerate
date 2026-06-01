@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_tool_param_environment.dart';/// A tool that allows the model to execute shell commands.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_tool_param/function_shell_tool_param_environment.dart';/// A tool that allows the model to execute shell commands.
 @immutable final class FunctionShellToolParam {const FunctionShellToolParam({this.type = 'shell', this.environment, });
 
 factory FunctionShellToolParam.fromJson(Map<String, dynamic> json) { return FunctionShellToolParam(

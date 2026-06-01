@@ -1,36 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_mailsearch_message_findings.dart';import 'email_security_mailsearch_message_properties.dart';import 'email_security_mailsearch_message_validation.dart';import 'email_security_message_delivery_mode.dart';import 'email_security_postfix_id.dart';@immutable final class EmailSecurityMailsearchMessagePostDeliveryOperations {const EmailSecurityMailsearchMessagePostDeliveryOperations._(this.value);
-
-factory EmailSecurityMailsearchMessagePostDeliveryOperations.fromJson(String json) { return switch (json) {
-  'PREVIEW' => preview,
-  'QUARANTINE_RELEASE' => quarantineRelease,
-  'SUBMISSION' => submission,
-  'MOVE' => move,
-  _ => EmailSecurityMailsearchMessagePostDeliveryOperations._(json),
-}; }
-
-static const EmailSecurityMailsearchMessagePostDeliveryOperations preview = EmailSecurityMailsearchMessagePostDeliveryOperations._('PREVIEW');
-
-static const EmailSecurityMailsearchMessagePostDeliveryOperations quarantineRelease = EmailSecurityMailsearchMessagePostDeliveryOperations._('QUARANTINE_RELEASE');
-
-static const EmailSecurityMailsearchMessagePostDeliveryOperations submission = EmailSecurityMailsearchMessagePostDeliveryOperations._('SUBMISSION');
-
-static const EmailSecurityMailsearchMessagePostDeliveryOperations move = EmailSecurityMailsearchMessagePostDeliveryOperations._('MOVE');
-
-static const List<EmailSecurityMailsearchMessagePostDeliveryOperations> values = [preview, quarantineRelease, submission, move];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailSecurityMailsearchMessagePostDeliveryOperations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailSecurityMailsearchMessagePostDeliveryOperations($value)'; } 
- }
-@immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId, this.deliveryMode, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, this.messageId, this.postDeliveryOperations, this.postfixIdOutbound, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, this.validation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_properties.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/email_security_mailsearch_message_validation.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/findings.dart';import 'package:pub_cloudflare/models/email_security_mailsearch_message/post_delivery_operations.dart';import 'package:pub_cloudflare/models/email_security_message_delivery_mode.dart';import 'package:pub_cloudflare/models/email_security_postfix_id.dart';@immutable final class EmailSecurityMailsearchMessage {const EmailSecurityMailsearchMessage({required this.actionLog, required this.clientRecipients, required this.detectionReasons, required this.isPhishSubmission, required this.isQuarantined, required this.postfixId, required this.properties, required this.ts, required this.id, this.alertId, this.deliveryMode, this.edfHash, this.envelopeFrom, this.envelopeTo, this.finalDisposition, this.findings, this.from, this.fromName, this.htmltextStructureHash, this.messageId, this.postDeliveryOperations, this.postfixIdOutbound, this.replyto, this.sentDate, this.subject, this.threatCategories, this.to, this.toName, this.validation, });
 
 factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessage(
   actionLog: json['action_log'],
@@ -42,14 +12,14 @@ factory EmailSecurityMailsearchMessage.fromJson(Map<String, dynamic> json) { ret
   envelopeFrom: json['envelope_from'] as String?,
   envelopeTo: (json['envelope_to'] as List<dynamic>?)?.map((e) => e as String).toList(),
   finalDisposition: json['final_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['final_disposition'] as String) : null,
-  findings: (json['findings'] as List<dynamic>?)?.map((e) => EmailSecurityMailsearchMessageFindings.fromJson(e as Map<String, dynamic>)).toList(),
+  findings: (json['findings'] as List<dynamic>?)?.map((e) => Findings.fromJson(e as Map<String, dynamic>)).toList(),
   from: json['from'] as String?,
   fromName: json['from_name'] as String?,
   htmltextStructureHash: json['htmltext_structure_hash'] as String?,
   isPhishSubmission: json['is_phish_submission'] as bool,
   isQuarantined: json['is_quarantined'] as bool,
   messageId: json['message_id'] as String?,
-  postDeliveryOperations: (json['post_delivery_operations'] as List<dynamic>?)?.map((e) => EmailSecurityMailsearchMessagePostDeliveryOperations.fromJson(e as String)).toList(),
+  postDeliveryOperations: (json['post_delivery_operations'] as List<dynamic>?)?.map((e) => PostDeliveryOperations.fromJson(e as String)).toList(),
   postfixId: EmailSecurityPostfixId.fromJson(json['postfix_id'] as String),
   postfixIdOutbound: json['postfix_id_outbound'] as String?,
   properties: EmailSecurityMailsearchMessageProperties.fromJson(json['properties'] as Map<String, dynamic>),
@@ -82,7 +52,7 @@ final List<String>? envelopeTo;
 
 final EmailSecurityDispositionLabel? finalDisposition;
 
-final List<EmailSecurityMailsearchMessageFindings>? findings;
+final List<Findings>? findings;
 
 final String? from;
 
@@ -96,7 +66,7 @@ final bool isQuarantined;
 
 final String? messageId;
 
-final List<EmailSecurityMailsearchMessagePostDeliveryOperations>? postDeliveryOperations;
+final List<PostDeliveryOperations>? postDeliveryOperations;
 
 final EmailSecurityPostfixId postfixId;
 
@@ -162,7 +132,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('properties') &&
       json.containsKey('ts') && json['ts'] is String &&
       json.containsKey('id') && json['id'] is String; } 
-EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, String? Function()? alertId, List<String>? clientRecipients, EmailSecurityMessageDeliveryMode? Function()? deliveryMode, List<String>? detectionReasons, String? Function()? edfHash, String? Function()? envelopeFrom, List<String>? Function()? envelopeTo, EmailSecurityDispositionLabel? Function()? finalDisposition, List<EmailSecurityMailsearchMessageFindings>? Function()? findings, String? Function()? from, String? Function()? fromName, String? Function()? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, String? Function()? messageId, List<EmailSecurityMailsearchMessagePostDeliveryOperations> Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, String? Function()? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, String? Function()? replyto, String? Function()? sentDate, String? Function()? subject, List<String>? Function()? threatCategories, List<String>? Function()? to, List<String>? Function()? toName, String? ts, EmailSecurityMailsearchMessageValidation? Function()? validation, String? id, }) { return EmailSecurityMailsearchMessage(
+EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, String? Function()? alertId, List<String>? clientRecipients, EmailSecurityMessageDeliveryMode? Function()? deliveryMode, List<String>? detectionReasons, String? Function()? edfHash, String? Function()? envelopeFrom, List<String>? Function()? envelopeTo, EmailSecurityDispositionLabel? Function()? finalDisposition, List<Findings>? Function()? findings, String? Function()? from, String? Function()? fromName, String? Function()? htmltextStructureHash, bool? isPhishSubmission, bool? isQuarantined, String? Function()? messageId, List<PostDeliveryOperations> Function()? postDeliveryOperations, EmailSecurityPostfixId? postfixId, String? Function()? postfixIdOutbound, EmailSecurityMailsearchMessageProperties? properties, String? Function()? replyto, String? Function()? sentDate, String? Function()? subject, List<String>? Function()? threatCategories, List<String>? Function()? to, List<String>? Function()? toName, String? ts, EmailSecurityMailsearchMessageValidation? Function()? validation, String? id, }) { return EmailSecurityMailsearchMessage(
   actionLog: actionLog != null ? actionLog() : this.actionLog,
   alertId: alertId != null ? alertId() : this.alertId,
   clientRecipients: clientRecipients ?? this.clientRecipients,

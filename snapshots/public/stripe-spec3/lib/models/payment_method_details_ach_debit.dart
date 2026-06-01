@@ -1,35 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of entity that holds the account. This can be either `individual` or `company`.
-@immutable final class PaymentMethodDetailsAchDebitAccountHolderType {const PaymentMethodDetailsAchDebitAccountHolderType._(this.value);
-
-factory PaymentMethodDetailsAchDebitAccountHolderType.fromJson(String json) { return switch (json) {
-  'company' => company,
-  'individual' => individual,
-  _ => PaymentMethodDetailsAchDebitAccountHolderType._(json),
-}; }
-
-static const PaymentMethodDetailsAchDebitAccountHolderType company = PaymentMethodDetailsAchDebitAccountHolderType._('company');
-
-static const PaymentMethodDetailsAchDebitAccountHolderType individual = PaymentMethodDetailsAchDebitAccountHolderType._('individual');
-
-static const List<PaymentMethodDetailsAchDebitAccountHolderType> values = [company, individual];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsAchDebitAccountHolderType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsAchDebitAccountHolderType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_account_holder_type.dart';/// 
 @immutable final class PaymentMethodDetailsAchDebit {const PaymentMethodDetailsAchDebit({this.accountHolderType, this.bankName, this.country, this.fingerprint, this.last4, this.routingNumber, });
 
 factory PaymentMethodDetailsAchDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAchDebit(
-  accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsAchDebitAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   bankName: json['bank_name'] as String?,
   country: json['country'] as String?,
   fingerprint: json['fingerprint'] as String?,
@@ -38,7 +13,7 @@ factory PaymentMethodDetailsAchDebit.fromJson(Map<String, dynamic> json) { retur
 ); }
 
 /// Type of entity that holds the account. This can be either `individual` or `company`.
-final PaymentMethodDetailsAchDebitAccountHolderType? accountHolderType;
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
 
 /// Name of the bank associated with the bank account.
 final String? bankName;
@@ -64,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'routing_number': ?routingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'bank_name', 'country', 'fingerprint', 'last4', 'routing_number'}.contains(key)); } 
-PaymentMethodDetailsAchDebit copyWith({PaymentMethodDetailsAchDebitAccountHolderType? Function()? accountHolderType, String? Function()? bankName, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return PaymentMethodDetailsAchDebit(
+PaymentMethodDetailsAchDebit copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? bankName, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return PaymentMethodDetailsAchDebit(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   bankName: bankName != null ? bankName() : this.bankName,
   country: country != null ? country() : this.country,

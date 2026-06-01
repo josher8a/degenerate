@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_dns.dart';import 'spectrum_config_identifier.dart';import 'spectrum_config_protocol.dart';import 'spectrum_config_timestamp.dart';@immutable final class SpectrumConfigPaygoAppConfig {const SpectrumConfigPaygoAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, this.originDirect, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_config_dns.dart';import 'package:pub_cloudflare/models/spectrum_config_identifier.dart';import 'package:pub_cloudflare/models/spectrum_config_protocol.dart';import 'package:pub_cloudflare/models/spectrum_config_timestamp.dart';@immutable final class SpectrumConfigPaygoAppConfig {const SpectrumConfigPaygoAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, this.originDirect, });
 
 factory SpectrumConfigPaygoAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigPaygoAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),

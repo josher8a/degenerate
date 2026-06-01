@@ -1,34 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';@immutable final class FunctionToolParamType {const FunctionToolParamType._(this.value);
-
-factory FunctionToolParamType.fromJson(String json) { return switch (json) {
-  'function' => function,
-  _ => FunctionToolParamType._(json),
-}; }
-
-static const FunctionToolParamType function = FunctionToolParamType._('function');
-
-static const List<FunctionToolParamType> values = [function];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionToolParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionToolParamType($value)'; } 
- }
-@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = FunctionToolParamType.function, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_tools_function/assistant_tools_function_type.dart';import 'package:pub_openai/models/empty_model_param.dart';@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = AssistantToolsFunctionType.function, });
 
 factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
   name: json['name'] as String,
   description: json['description'] as String?,
   parameters: json['parameters'] != null ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>) : null,
   strict: json['strict'] as bool?,
-  type: FunctionToolParamType.fromJson(json['type'] as String),
+  type: AssistantToolsFunctionType.fromJson(json['type'] as String),
 ); }
 
 final String name;
@@ -39,7 +18,7 @@ final EmptyModelParam? parameters;
 
 final bool? strict;
 
-final FunctionToolParamType type;
+final AssistantToolsFunctionType type;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
@@ -50,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-FunctionToolParam copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, FunctionToolParamType? type, }) { return FunctionToolParam(
+FunctionToolParam copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, AssistantToolsFunctionType? type, }) { return FunctionToolParam(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   parameters: parameters != null ? parameters() : this.parameters,

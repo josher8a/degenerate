@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_image_request.dart';import '../models/create_image_variation_request.dart';import '../models/edit_image_body_json_param.dart';import '../models/image_edit_stream_event.dart';import '../models/image_gen_stream_event.dart';import '../models/images_response.dart';/// ImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_request.dart';import 'package:pub_openai/models/create_image_variation_request.dart';import 'package:pub_openai/models/edit_image_body_json_param.dart';import 'package:pub_openai/models/image_edit_stream_event.dart';import 'package:pub_openai/models/image_gen_stream_event.dart';import 'package:pub_openai/models/images_response.dart';/// ImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

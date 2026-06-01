@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_acl.dart';@immutable final class MagicAclSingleResponse {const MagicAclSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_acl.dart';@immutable final class MagicAclSingleResponse {const MagicAclSingleResponse({this.result});
 
 factory MagicAclSingleResponse.fromJson(Map<String, dynamic> json) { return MagicAclSingleResponse(
   result: json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null,

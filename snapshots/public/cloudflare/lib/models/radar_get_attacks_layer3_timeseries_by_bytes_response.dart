@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_by_bytes_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesByBytesResponse {const RadarGetAttacksLayer3TimeseriesByBytesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_response/radar_get_ai_bots_timeseries_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesByBytesResponse {const RadarGetAttacksLayer3TimeseriesByBytesResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3TimeseriesByBytesResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesByBytesResponse(
-  result: RadarGetAttacksLayer3TimeseriesByBytesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetAttacksLayer3TimeseriesByBytesResponseResult result;
+final RadarGetAiBotsTimeseriesResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetAttacksLayer3TimeseriesByBytesResponse copyWith({RadarGetAttacksLayer3TimeseriesByBytesResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3TimeseriesByBytesResponse(
+RadarGetAttacksLayer3TimeseriesByBytesResponse copyWith({RadarGetAiBotsTimeseriesResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3TimeseriesByBytesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

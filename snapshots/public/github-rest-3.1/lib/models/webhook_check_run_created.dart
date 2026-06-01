@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCheckRunCreatedAction {const WebhookCheckRunCreatedAction._(this.value);
-
-factory WebhookCheckRunCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookCheckRunCreatedAction._(json),
-}; }
-
-static const WebhookCheckRunCreatedAction created = WebhookCheckRunCreatedAction._('created');
-
-static const List<WebhookCheckRunCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckRunCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckRunCreatedAction($value)'; } 
- }
-@immutable final class WebhookCheckRunCreated {const WebhookCheckRunCreated({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookCheckRunCreated {const WebhookCheckRunCreated({required this.checkRun, required this.repository, required this.sender, this.action, this.installation, this.enterprise, this.organization, });
 
 factory WebhookCheckRunCreated.fromJson(Map<String, dynamic> json) { return WebhookCheckRunCreated(
-  action: json['action'] != null ? WebhookCheckRunCreatedAction.fromJson(json['action'] as String) : null,
+  action: json['action'] != null ? ItemCreatedAction.fromJson(json['action'] as String) : null,
   checkRun: CheckRunWithSimpleCheckSuite.fromJson(json['check_run'] as Map<String, dynamic>),
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
@@ -33,7 +12,7 @@ factory WebhookCheckRunCreated.fromJson(Map<String, dynamic> json) { return Webh
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookCheckRunCreatedAction? action;
+final ItemCreatedAction? action;
 
 final CheckRunWithSimpleCheckSuite checkRun;
 
@@ -59,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_run') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookCheckRunCreated copyWith({WebhookCheckRunCreatedAction Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation Function()? installation, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckRunCreated(
+WebhookCheckRunCreated copyWith({ItemCreatedAction Function()? action, CheckRunWithSimpleCheckSuite? checkRun, SimpleInstallation Function()? installation, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookCheckRunCreated(
   action: action != null ? action() : this.action,
   checkRun: checkRun ?? this.checkRun,
   installation: installation != null ? installation() : this.installation,

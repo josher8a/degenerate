@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_browser_families_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse {const RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_timeseries_group_by_user_agent_response/radar_get_ai_bots_timeseries_group_by_user_agent_response_result.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse {const RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse(
-  result: RadarGetHttpTimeseriesGroupByBrowserFamiliesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetHttpTimeseriesGroupByBrowserFamiliesResponseResult result;
+final RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse copyWith({RadarGetHttpTimeseriesGroupByBrowserFamiliesResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse(
+RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse copyWith({RadarGetAiBotsTimeseriesGroupByUserAgentResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupByBrowserFamiliesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

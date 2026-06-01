@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discovery_state_patch.dart';/// Mappings of discovered operations (keys) to objects describing their state
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/discovery_state_patch.dart';/// Mappings of discovered operations (keys) to objects describing their state
 @immutable final class DiscoveryPatchMultipleRequestEntry {const DiscoveryPatchMultipleRequestEntry({this.state});
 
 factory DiscoveryPatchMultipleRequestEntry.fromJson(Map<String, dynamic> json) { return DiscoveryPatchMultipleRequestEntry(

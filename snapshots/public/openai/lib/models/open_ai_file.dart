@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `file`.
-@immutable final class OpenAiFileObject {const OpenAiFileObject._(this.value);
-
-factory OpenAiFileObject.fromJson(String json) { return switch (json) {
-  'file' => file,
-  _ => OpenAiFileObject._(json),
-}; }
-
-static const OpenAiFileObject file = OpenAiFileObject._('file');
-
-static const List<OpenAiFileObject> values = [file];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFileObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFileObject($value)'; } 
- }
-/// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_file_response/delete_file_response_object.dart';/// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
 @immutable final class OpenAiFilePurpose {const OpenAiFilePurpose._(this.value);
 
 factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
@@ -102,7 +80,7 @@ factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
   createdAt: (json['created_at'] as num).toInt(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   filename: json['filename'] as String,
-  object: OpenAiFileObject.fromJson(json['object'] as String),
+  object: DeleteFileResponseObject.fromJson(json['object'] as String),
   purpose: OpenAiFilePurpose.fromJson(json['purpose'] as String),
   status: OpenAiFileStatus.fromJson(json['status'] as String),
   statusDetails: json['status_details'] as String?,
@@ -124,7 +102,7 @@ final int? expiresAt;
 final String filename;
 
 /// The object type, which is always `file`.
-final OpenAiFileObject object;
+final DeleteFileResponseObject object;
 
 /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
 final OpenAiFilePurpose purpose;
@@ -153,7 +131,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object') &&
       json.containsKey('purpose') &&
       json.containsKey('status'); } 
-OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int Function()? expiresAt, String? filename, OpenAiFileObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String Function()? statusDetails, }) { return OpenAiFile(
+OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int Function()? expiresAt, String? filename, DeleteFileResponseObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String Function()? statusDetails, }) { return OpenAiFile(
   id: id ?? this.id,
   bytes: bytes ?? this.bytes,
   createdAt: createdAt ?? this.createdAt,

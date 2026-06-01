@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_transactions_create_reversal_request_line_items.dart';import 'post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
 @immutable final class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode._(this.value);
 
 factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) { return switch (json) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs2_account.dart';import 'aaa_audit_logs2_action.dart';import 'aaa_audit_logs2_actor.dart';import 'aaa_audit_logs2_raw.dart';import 'aaa_audit_logs2_resource.dart';import 'aaa_audit_logs2_zone.dart';/// A unique identifier for the audit log entry.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_account.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_action.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_actor.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_raw.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_resource.dart';import 'package:pub_cloudflare/models/aaa_audit_logs2/aaa_audit_logs2_zone.dart';/// A unique identifier for the audit log entry.
 extension type const AaaSchemasIdentifier(String value) {
 factory AaaSchemasIdentifier.fromJson(String json) => AaaSchemasIdentifier(json);
 

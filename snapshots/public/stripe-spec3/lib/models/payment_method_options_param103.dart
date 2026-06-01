@@ -1,66 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam103AmountIncludesIof {const PaymentMethodOptionsParam103AmountIncludesIof._(this.value);
-
-factory PaymentMethodOptionsParam103AmountIncludesIof.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'never' => never,
-  _ => PaymentMethodOptionsParam103AmountIncludesIof._(json),
-}; }
-
-static const PaymentMethodOptionsParam103AmountIncludesIof always = PaymentMethodOptionsParam103AmountIncludesIof._('always');
-
-static const PaymentMethodOptionsParam103AmountIncludesIof never = PaymentMethodOptionsParam103AmountIncludesIof._('never');
-
-static const List<PaymentMethodOptionsParam103AmountIncludesIof> values = [always, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam103AmountIncludesIof && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam103AmountIncludesIof($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam103SetupFutureUsage {const PaymentMethodOptionsParam103SetupFutureUsage._(this.value);
-
-factory PaymentMethodOptionsParam103SetupFutureUsage.fromJson(String json) { return switch (json) {
-  'none' => none,
-  _ => PaymentMethodOptionsParam103SetupFutureUsage._(json),
-}; }
-
-static const PaymentMethodOptionsParam103SetupFutureUsage none = PaymentMethodOptionsParam103SetupFutureUsage._('none');
-
-static const List<PaymentMethodOptionsParam103SetupFutureUsage> values = [none];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsParam103SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam103SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentMethodOptionsParam103 {const PaymentMethodOptionsParam103({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_pix_payment_method_options/amount_includes_iof.dart';@immutable final class PaymentMethodOptionsParam103 {const PaymentMethodOptionsParam103({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam103.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam103(
-  amountIncludesIof: json['amount_includes_iof'] != null ? PaymentMethodOptionsParam103AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
+  amountIncludesIof: json['amount_includes_iof'] != null ? AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,
   expiresAfterSeconds: json['expires_after_seconds'] != null ? (json['expires_after_seconds'] as num).toInt() : null,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam103SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
-final PaymentMethodOptionsParam103AmountIncludesIof? amountIncludesIof;
+final AmountIncludesIof? amountIncludesIof;
 
 final int? expiresAfterSeconds;
 
 final int? expiresAt;
 
-final PaymentMethodOptionsParam103SetupFutureUsage? setupFutureUsage;
+final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (amountIncludesIof != null) 'amount_includes_iof': amountIncludesIof?.toJson(),
@@ -69,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_includes_iof', 'expires_after_seconds', 'expires_at', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam103 copyWith({PaymentMethodOptionsParam103AmountIncludesIof Function()? amountIncludesIof, int Function()? expiresAfterSeconds, int Function()? expiresAt, PaymentMethodOptionsParam103SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam103(
+PaymentMethodOptionsParam103 copyWith({AmountIncludesIof Function()? amountIncludesIof, int Function()? expiresAfterSeconds, int Function()? expiresAt, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam103(
   amountIncludesIof: amountIncludesIof != null ? amountIncludesIof() : this.amountIncludesIof,
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

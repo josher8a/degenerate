@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_exit_outcome_param.dart';import 'function_shell_call_output_timeout_outcome_param.dart';/// The exit or timeout outcome associated with this shell call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_exit_outcome_param.dart';import 'package:pub_openai/models/function_shell_call_output_timeout_outcome_param.dart';/// The exit or timeout outcome associated with this shell call.
 sealed class FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.

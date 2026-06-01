@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'authorization_app.dart';import 'scoped_installation.dart';import 'simple_user.dart';/// The authorization for an OAuth app, GitHub App, or a Personal Access Token.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/authorization/authorization_app.dart';import 'package:pub_github_rest_3_1/models/scoped_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The authorization for an OAuth app, GitHub App, or a Personal Access Token.
 @immutable final class Authorization {const Authorization({required this.id, required this.url, required this.scopes, required this.token, required this.tokenLastEight, required this.hashedToken, required this.app, required this.note, required this.noteUrl, required this.updatedAt, required this.createdAt, required this.fingerprint, required this.expiresAt, this.user, this.installation, });
 
 factory Authorization.fromJson(Map<String, dynamic> json) { return Authorization(

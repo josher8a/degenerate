@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the 3D Secure authentication request.
-@immutable final class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult._(this.value);
-
-factory IssuingAuthorizationThreeDSecureResult.fromJson(String json) { return switch (json) {
-  'attempt_acknowledged' => attemptAcknowledged,
-  'authenticated' => authenticated,
-  'failed' => failed,
-  'required' => $required,
-  _ => IssuingAuthorizationThreeDSecureResult._(json),
-}; }
-
-static const IssuingAuthorizationThreeDSecureResult attemptAcknowledged = IssuingAuthorizationThreeDSecureResult._('attempt_acknowledged');
-
-static const IssuingAuthorizationThreeDSecureResult authenticated = IssuingAuthorizationThreeDSecureResult._('authenticated');
-
-static const IssuingAuthorizationThreeDSecureResult failed = IssuingAuthorizationThreeDSecureResult._('failed');
-
-static const IssuingAuthorizationThreeDSecureResult $required = IssuingAuthorizationThreeDSecureResult._('required');
-
-static const List<IssuingAuthorizationThreeDSecureResult> values = [attemptAcknowledged, authenticated, failed, $required];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationThreeDSecureResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationThreeDSecureResult($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_three_d_secure/issuing_authorization_three_d_secure_result.dart';/// 
 @immutable final class IssuingAuthorizationThreeDSecure {const IssuingAuthorizationThreeDSecure({required this.result});
 
 factory IssuingAuthorizationThreeDSecure.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationThreeDSecure(

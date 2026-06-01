@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_check_type.dart';@immutable final class MagicTransitEndpointHealthCheck {const MagicTransitEndpointHealthCheck({required this.checkType, required this.endpoint, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_check_type.dart';@immutable final class MagicTransitEndpointHealthCheck {const MagicTransitEndpointHealthCheck({required this.checkType, required this.endpoint, this.name, });
 
 factory MagicTransitEndpointHealthCheck.fromJson(Map<String, dynamic> json) { return MagicTransitEndpointHealthCheck(
   checkType: MagicTransitCheckType.fromJson(json['check_type'] as String),

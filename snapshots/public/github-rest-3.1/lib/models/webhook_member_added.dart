@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_member_added_changes.dart';import 'webhooks_user.dart';@immutable final class WebhookMemberAddedAction {const WebhookMemberAddedAction._(this.value);
-
-factory WebhookMemberAddedAction.fromJson(String json) { return switch (json) {
-  'added' => added,
-  _ => WebhookMemberAddedAction._(json),
-}; }
-
-static const WebhookMemberAddedAction added = WebhookMemberAddedAction._('added');
-
-static const List<WebhookMemberAddedAction> values = [added];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMemberAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMemberAddedAction($value)'; } 
- }
-@immutable final class WebhookMemberAdded {const WebhookMemberAdded({required this.action, required this.member, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_action.dart';import 'package:pub_github_rest_3_1/models/webhook_member_added/webhook_member_added_changes.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookMemberAdded {const WebhookMemberAdded({required this.action, required this.member, required this.repository, required this.sender, this.changes, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMemberAdded.fromJson(Map<String, dynamic> json) { return WebhookMemberAdded(
-  action: WebhookMemberAddedAction.fromJson(json['action'] as String),
+  action: WebhookInstallationRepositoriesAddedAction.fromJson(json['action'] as String),
   changes: json['changes'] != null ? WebhookMemberAddedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
@@ -34,7 +13,7 @@ factory WebhookMemberAdded.fromJson(Map<String, dynamic> json) { return WebhookM
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookMemberAddedAction action;
+final WebhookInstallationRepositoriesAddedAction action;
 
 final WebhookMemberAddedChanges? changes;
 
@@ -64,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('member') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookMemberAdded copyWith({WebhookMemberAddedAction? action, WebhookMemberAddedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMemberAdded(
+WebhookMemberAdded copyWith({WebhookInstallationRepositoriesAddedAction? action, WebhookMemberAddedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMemberAdded(
   action: action ?? this.action,
   changes: changes != null ? changes() : this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

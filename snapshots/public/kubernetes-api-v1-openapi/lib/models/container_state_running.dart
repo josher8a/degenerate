@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ContainerStateRunning is a running state of a container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/time.dart';/// ContainerStateRunning is a running state of a container.
 @immutable final class ContainerStateRunning {const ContainerStateRunning({this.startedAt});
 
 factory ContainerStateRunning.fromJson(Map<String, dynamic> json) { return ContainerStateRunning(

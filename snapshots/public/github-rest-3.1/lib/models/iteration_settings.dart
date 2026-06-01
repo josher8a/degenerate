@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iteration_settings_title.dart';/// An iteration setting for an iteration field
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/iteration_settings/iteration_settings_title.dart';/// An iteration setting for an iteration field
 @immutable final class IterationSettings {const IterationSettings({required this.id, required this.startDate, required this.duration, required this.title, required this.completed, });
 
 factory IterationSettings.fromJson(Map<String, dynamic> json) { return IterationSettings(

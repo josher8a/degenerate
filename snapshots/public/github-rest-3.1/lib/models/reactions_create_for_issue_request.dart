@@ -1,62 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
-@immutable final class ReactionsCreateForIssueRequestContent {const ReactionsCreateForIssueRequestContent._(this.value);
-
-factory ReactionsCreateForIssueRequestContent.fromJson(String json) { return switch (json) {
-  '+1' => plus1,
-  '-1' => minus1,
-  'laugh' => laugh,
-  'confused' => confused,
-  'heart' => heart,
-  'hooray' => hooray,
-  'rocket' => rocket,
-  'eyes' => eyes,
-  _ => ReactionsCreateForIssueRequestContent._(json),
-}; }
-
-static const ReactionsCreateForIssueRequestContent plus1 = ReactionsCreateForIssueRequestContent._('+1');
-
-static const ReactionsCreateForIssueRequestContent minus1 = ReactionsCreateForIssueRequestContent._('-1');
-
-static const ReactionsCreateForIssueRequestContent laugh = ReactionsCreateForIssueRequestContent._('laugh');
-
-static const ReactionsCreateForIssueRequestContent confused = ReactionsCreateForIssueRequestContent._('confused');
-
-static const ReactionsCreateForIssueRequestContent heart = ReactionsCreateForIssueRequestContent._('heart');
-
-static const ReactionsCreateForIssueRequestContent hooray = ReactionsCreateForIssueRequestContent._('hooray');
-
-static const ReactionsCreateForIssueRequestContent rocket = ReactionsCreateForIssueRequestContent._('rocket');
-
-static const ReactionsCreateForIssueRequestContent eyes = ReactionsCreateForIssueRequestContent._('eyes');
-
-static const List<ReactionsCreateForIssueRequestContent> values = [plus1, minus1, laugh, confused, heart, hooray, rocket, eyes];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReactionsCreateForIssueRequestContent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReactionsCreateForIssueRequestContent($value)'; } 
- }
-@immutable final class ReactionsCreateForIssueRequest {const ReactionsCreateForIssueRequest({required this.content});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/reaction/reaction_content.dart';@immutable final class ReactionsCreateForIssueRequest {const ReactionsCreateForIssueRequest({required this.content});
 
 factory ReactionsCreateForIssueRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForIssueRequest(
-  content: ReactionsCreateForIssueRequestContent.fromJson(json['content'] as String),
+  content: ReactionContent.fromJson(json['content'] as String),
 ); }
 
 /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue.
-final ReactionsCreateForIssueRequestContent content;
+final ReactionContent content;
 
 Map<String, dynamic> toJson() { return {
   'content': content.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
-ReactionsCreateForIssueRequest copyWith({ReactionsCreateForIssueRequestContent? content}) { return ReactionsCreateForIssueRequest(
+ReactionsCreateForIssueRequest copyWith({ReactionContent? content}) { return ReactionsCreateForIssueRequest(
   content: content ?? this.content,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_timeseries_group_by_spf_response_result.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfResponse {const RadarGetEmailRoutingTimeseriesGroupBySpfResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_email_routing_timeseries_group_by_arc_response/radar_get_email_routing_timeseries_group_by_arc_response_result.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfResponse {const RadarGetEmailRoutingTimeseriesGroupBySpfResponse({required this.result, required this.success, });
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponse(
-  result: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: RadarGetEmailRoutingTimeseriesGroupByArcResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult result;
+final RadarGetEmailRoutingTimeseriesGroupByArcResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-RadarGetEmailRoutingTimeseriesGroupBySpfResponse copyWith({RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult? result, bool? success, }) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponse(
+RadarGetEmailRoutingTimeseriesGroupBySpfResponse copyWith({RadarGetEmailRoutingTimeseriesGroupByArcResponseResult? result, bool? success, }) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

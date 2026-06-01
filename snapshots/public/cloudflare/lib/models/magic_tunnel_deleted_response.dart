@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_tunnel_deleted_response_result.dart';@immutable final class MagicTunnelDeletedResponse {const MagicTunnelDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_tunnel_deleted_response/magic_tunnel_deleted_response_result.dart';@immutable final class MagicTunnelDeletedResponse {const MagicTunnelDeletedResponse({this.result});
 
 factory MagicTunnelDeletedResponse.fromJson(Map<String, dynamic> json) { return MagicTunnelDeletedResponse(
   result: json['result'] != null ? MagicTunnelDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

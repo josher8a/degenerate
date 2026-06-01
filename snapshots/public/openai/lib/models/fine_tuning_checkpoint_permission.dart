@@ -1,28 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "checkpoint.permission".
-@immutable final class FineTuningCheckpointPermissionObject {const FineTuningCheckpointPermissionObject._(this.value);
-
-factory FineTuningCheckpointPermissionObject.fromJson(String json) { return switch (json) {
-  'checkpoint.permission' => checkpointPermission,
-  _ => FineTuningCheckpointPermissionObject._(json),
-}; }
-
-static const FineTuningCheckpointPermissionObject checkpointPermission = FineTuningCheckpointPermissionObject._('checkpoint.permission');
-
-static const List<FineTuningCheckpointPermissionObject> values = [checkpointPermission];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningCheckpointPermissionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningCheckpointPermissionObject($value)'; } 
- }
-/// The `checkpoint.permission` object represents a permission for a fine-tuned model checkpoint.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_fine_tuning_checkpoint_permission_response/delete_fine_tuning_checkpoint_permission_response_object.dart';/// The `checkpoint.permission` object represents a permission for a fine-tuned model checkpoint.
 /// 
 @immutable final class FineTuningCheckpointPermission {const FineTuningCheckpointPermission({required this.id, required this.createdAt, required this.projectId, required this.object, });
 
@@ -30,7 +8,7 @@ factory FineTuningCheckpointPermission.fromJson(Map<String, dynamic> json) { ret
   id: json['id'] as String,
   createdAt: (json['created_at'] as num).toInt(),
   projectId: json['project_id'] as String,
-  object: FineTuningCheckpointPermissionObject.fromJson(json['object'] as String),
+  object: DeleteFineTuningCheckpointPermissionResponseObject.fromJson(json['object'] as String),
 ); }
 
 /// The permission identifier, which can be referenced in the API endpoints.
@@ -43,7 +21,7 @@ final int createdAt;
 final String projectId;
 
 /// The object type, which is always "checkpoint.permission".
-final FineTuningCheckpointPermissionObject object;
+final DeleteFineTuningCheckpointPermissionResponseObject object;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -55,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('project_id') && json['project_id'] is String &&
       json.containsKey('object'); } 
-FineTuningCheckpointPermission copyWith({String? id, int? createdAt, String? projectId, FineTuningCheckpointPermissionObject? object, }) { return FineTuningCheckpointPermission(
+FineTuningCheckpointPermission copyWith({String? id, int? createdAt, String? projectId, DeleteFineTuningCheckpointPermissionResponseObject? object, }) { return FineTuningCheckpointPermission(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   projectId: projectId ?? this.projectId,

@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response4042_errors.dart';import 'urlscanner_get_scan_har_response4042_task.dart';@immutable final class UrlscannerGetScanHarResponse4042 {const UrlscannerGetScanHarResponse4042({required this.errors, required this.message, required this.status, required this.task, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/urlscanner_create_scan_bulk_response400/urlscanner_create_scan_bulk_response400_errors.dart';import 'package:pub_cloudflare/models/urlscanner_get_scan_dom_response404/urlscanner_get_scan_dom_response404_task.dart';@immutable final class UrlscannerGetScanHarResponse4042 {const UrlscannerGetScanHarResponse4042({required this.errors, required this.message, required this.status, required this.task, });
 
 factory UrlscannerGetScanHarResponse4042.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse4042(
-  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponse4042Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
   status: (json['status'] as num).toInt(),
-  task: UrlscannerGetScanHarResponse4042Task.fromJson(json['task'] as Map<String, dynamic>),
+  task: UrlscannerGetScanDomResponse404Task.fromJson(json['task'] as Map<String, dynamic>),
 ); }
 
-final List<UrlscannerGetScanHarResponse4042Errors> errors;
+final List<UrlscannerCreateScanBulkResponse400Errors> errors;
 
 /// Scan not found or in progress.
 final String message;
@@ -17,7 +17,7 @@ final String message;
 /// Status code.
 final int status;
 
-final UrlscannerGetScanHarResponse4042Task task;
+final UrlscannerGetScanDomResponse404Task task;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('task'); } 
-UrlscannerGetScanHarResponse4042 copyWith({List<UrlscannerGetScanHarResponse4042Errors>? errors, String? message, int? status, UrlscannerGetScanHarResponse4042Task? task, }) { return UrlscannerGetScanHarResponse4042(
+UrlscannerGetScanHarResponse4042 copyWith({List<UrlscannerCreateScanBulkResponse400Errors>? errors, String? message, int? status, UrlscannerGetScanDomResponse404Task? task, }) { return UrlscannerGetScanHarResponse4042(
   errors: errors ?? this.errors,
   message: message ?? this.message,
   status: status ?? this.status,

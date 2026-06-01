@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/secondary_dns_disable_transfer_response.dart';import '../models/secondary_dns_enable_transfer_response.dart';import '../models/secondary_dns_id_response_result.dart';import '../models/secondary_dns_identifier.dart';import '../models/secondary_dns_schemas_force_response.dart';import '../models/secondary_dns_single_request_outgoing.dart';import '../models/secondary_dns_single_response_outgoing_result.dart';/// SecondaryDnsPrimaryZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/secondary_dns_disable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_enable_transfer_response.dart';import 'package:pub_cloudflare/models/secondary_dns_identifier.dart';import 'package:pub_cloudflare/models/secondary_dns_schemas_force_response.dart';import 'package:pub_cloudflare/models/secondary_dns_single_request_outgoing.dart';import 'package:pub_cloudflare/models/secondary_dns_single_response_outgoing/secondary_dns_single_response_outgoing_result.dart';/// SecondaryDnsPrimaryZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -83,7 +83,7 @@ return execute(
 /// Delete primary zone configuration for outgoing zone transfers.
 ///
 /// `DELETE /zones/{zone_id}/secondary_dns/outgoing`
-Future<ApiResult<SecondaryDnsIdResponseResult?, Never>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, Never>> secondaryDnsPrimaryZoneDeletePrimaryZoneConfiguration({required SecondaryDnsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -96,7 +96,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? SecondaryDnsIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

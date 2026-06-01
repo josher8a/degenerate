@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response_result.dart';@immutable final class AiSearchDeleteInstancesResponse {const AiSearchDeleteInstancesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_response/ai_search_create_instances_response_result.dart';@immutable final class AiSearchDeleteInstancesResponse {const AiSearchDeleteInstancesResponse({required this.result, required this.success, });
 
 factory AiSearchDeleteInstancesResponse.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponse(
-  result: AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  result: AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final AiSearchDeleteInstancesResponseResult result;
+final AiSearchCreateInstancesResponseResult result;
 
 final bool success;
 
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-AiSearchDeleteInstancesResponse copyWith({AiSearchDeleteInstancesResponseResult? result, bool? success, }) { return AiSearchDeleteInstancesResponse(
+AiSearchDeleteInstancesResponse copyWith({AiSearchCreateInstancesResponseResult? result, bool? success, }) { return AiSearchDeleteInstancesResponse(
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 

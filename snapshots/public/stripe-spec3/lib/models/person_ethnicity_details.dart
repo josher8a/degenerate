@@ -1,54 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonEthnicityDetailsEthnicity {const PersonEthnicityDetailsEthnicity._(this.value);
-
-factory PersonEthnicityDetailsEthnicity.fromJson(String json) { return switch (json) {
-  'cuban' => cuban,
-  'hispanic_or_latino' => hispanicOrLatino,
-  'mexican' => mexican,
-  'not_hispanic_or_latino' => notHispanicOrLatino,
-  'other_hispanic_or_latino' => otherHispanicOrLatino,
-  'prefer_not_to_answer' => preferNotToAnswer,
-  'puerto_rican' => puertoRican,
-  _ => PersonEthnicityDetailsEthnicity._(json),
-}; }
-
-static const PersonEthnicityDetailsEthnicity cuban = PersonEthnicityDetailsEthnicity._('cuban');
-
-static const PersonEthnicityDetailsEthnicity hispanicOrLatino = PersonEthnicityDetailsEthnicity._('hispanic_or_latino');
-
-static const PersonEthnicityDetailsEthnicity mexican = PersonEthnicityDetailsEthnicity._('mexican');
-
-static const PersonEthnicityDetailsEthnicity notHispanicOrLatino = PersonEthnicityDetailsEthnicity._('not_hispanic_or_latino');
-
-static const PersonEthnicityDetailsEthnicity otherHispanicOrLatino = PersonEthnicityDetailsEthnicity._('other_hispanic_or_latino');
-
-static const PersonEthnicityDetailsEthnicity preferNotToAnswer = PersonEthnicityDetailsEthnicity._('prefer_not_to_answer');
-
-static const PersonEthnicityDetailsEthnicity puertoRican = PersonEthnicityDetailsEthnicity._('puerto_rican');
-
-static const List<PersonEthnicityDetailsEthnicity> values = [cuban, hispanicOrLatino, mexican, notHispanicOrLatino, otherHispanicOrLatino, preferNotToAnswer, puertoRican];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PersonEthnicityDetailsEthnicity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PersonEthnicityDetailsEthnicity($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/person_ethnicity_details/ethnicity.dart';/// 
 @immutable final class PersonEthnicityDetails {const PersonEthnicityDetails({this.ethnicity, this.ethnicityOther, });
 
 factory PersonEthnicityDetails.fromJson(Map<String, dynamic> json) { return PersonEthnicityDetails(
-  ethnicity: (json['ethnicity'] as List<dynamic>?)?.map((e) => PersonEthnicityDetailsEthnicity.fromJson(e as String)).toList(),
+  ethnicity: (json['ethnicity'] as List<dynamic>?)?.map((e) => Ethnicity.fromJson(e as String)).toList(),
   ethnicityOther: json['ethnicity_other'] as String?,
 ); }
 
 /// The persons ethnicity
-final List<PersonEthnicityDetailsEthnicity>? ethnicity;
+final List<Ethnicity>? ethnicity;
 
 /// Please specify your origin, when other is selected.
 final String? ethnicityOther;
@@ -58,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'ethnicity_other': ?ethnicityOther,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ethnicity', 'ethnicity_other'}.contains(key)); } 
-PersonEthnicityDetails copyWith({List<PersonEthnicityDetailsEthnicity>? Function()? ethnicity, String? Function()? ethnicityOther, }) { return PersonEthnicityDetails(
+PersonEthnicityDetails copyWith({List<Ethnicity>? Function()? ethnicity, String? Function()? ethnicityOther, }) { return PersonEthnicityDetails(
   ethnicity: ethnicity != null ? ethnicity() : this.ethnicity,
   ethnicityOther: ethnicityOther != null ? ethnicityOther() : this.ethnicityOther,
 ); } 

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the type of money movement. Currently only `card` is supported.
+@immutable final class MoneyMovementType {const MoneyMovementType._(this.value);
+
+factory MoneyMovementType.fromJson(String json) { return switch (json) {
+  'card' => card,
+  _ => MoneyMovementType._(json),
+}; }
+
+static const MoneyMovementType card = MoneyMovementType._('card');
+
+static const List<MoneyMovementType> values = [card];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MoneyMovementType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MoneyMovementType($value)'; } 
+ }

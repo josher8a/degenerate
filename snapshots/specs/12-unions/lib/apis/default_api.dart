@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bank_account.dart';import '../models/credit_card.dart';import '../models/error_model.dart';import '../models/extended_pet.dart';import '../models/notification.dart';import '../models/order.dart';import '../models/payment_method.dart';import '../models/pet_status.dart';import '../models/send_notification_response.dart';import '../models/shape.dart';import '../models/string_or_int.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/bank_account.dart';import 'package:spec_12_unions/models/credit_card.dart';import 'package:spec_12_unions/models/error_model.dart';import 'package:spec_12_unions/models/extended_pet.dart';import 'package:spec_12_unions/models/notification.dart';import 'package:spec_12_unions/models/order.dart';import 'package:spec_12_unions/models/payment_method.dart';import 'package:spec_12_unions/models/pet_status.dart';import 'package:spec_12_unions/models/send_notification_response.dart';import 'package:spec_12_unions/models/shape.dart';import 'package:spec_12_unions/models/string_or_int.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

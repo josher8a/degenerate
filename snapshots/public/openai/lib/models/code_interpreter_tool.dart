@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_interpreter_tool_param.dart';import 'code_interpreter_tool_container.dart';/// A tool that runs Python code to help generate a response to a prompt.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param.dart';import 'package:pub_openai/models/code_interpreter_tool/code_interpreter_tool_container.dart';/// A tool that runs Python code to help generate a response to a prompt.
 /// 
 @immutable final class CodeInterpreterTool {const CodeInterpreterTool({required this.type, required this.container, });
 

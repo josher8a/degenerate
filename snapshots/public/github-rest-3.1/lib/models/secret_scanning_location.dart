@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_location_details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location/details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 @immutable final class SecretScanningLocationType {const SecretScanningLocationType._(this.value);
 
 factory SecretScanningLocationType.fromJson(String json) { return switch (json) {
@@ -62,20 +62,20 @@ bool get isUnknown { return !values.contains(this); }
 
 factory SecretScanningLocation.fromJson(Map<String, dynamic> json) { return SecretScanningLocation(
   type: json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null,
-  details: json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details'] as Map<String, dynamic>) : null,
+  details: json['details'] != null ? Details.fromJson(json['details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 final SecretScanningLocationType? type;
 
-final SecretScanningLocationDetails? details;
+final Details? details;
 
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (details != null) 'details': details?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'details'}.contains(key)); } 
-SecretScanningLocation copyWith({SecretScanningLocationType Function()? type, SecretScanningLocationDetails Function()? details, }) { return SecretScanningLocation(
+SecretScanningLocation copyWith({SecretScanningLocationType Function()? type, Details Function()? details, }) { return SecretScanningLocation(
   type: type != null ? type() : this.type,
   details: details != null ? details() : this.details,
 ); } 

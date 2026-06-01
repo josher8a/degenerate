@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_conversation_created_conversation.dart';/// Returned when a conversation is created. Emitted right after session creation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_server_event_conversation_created/realtime_server_event_conversation_created_conversation.dart';/// Returned when a conversation is created. Emitted right after session creation.
 /// 
 @immutable final class RealtimeServerEventConversationCreated {const RealtimeServerEventConversationCreated({required this.eventId, required this.type, required this.conversation, });
 

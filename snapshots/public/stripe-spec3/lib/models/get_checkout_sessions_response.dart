@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetCheckoutSessionsResponseObject {const GetCheckoutSessionsResponseObject._(this.value);
-
-factory GetCheckoutSessionsResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetCheckoutSessionsResponseObject._(json),
-}; }
-
-static const GetCheckoutSessionsResponseObject list = GetCheckoutSessionsResponseObject._('list');
-
-static const List<GetCheckoutSessionsResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetCheckoutSessionsResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetCheckoutSessionsResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetCheckoutSessionsResponse {const GetCheckoutSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCheckoutSessionsResponse.fromJson(Map<String, dynamic> json) { return GetCheckoutSessionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => CheckoutSession.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetCheckoutSessionsResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<CheckoutSession> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetCheckoutSessionsResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetCheckoutSessionsResponse copyWith({List<CheckoutSession>? data, bool? hasMore, GetCheckoutSessionsResponseObject? object, String? url, }) { return GetCheckoutSessionsResponse(
+GetCheckoutSessionsResponse copyWith({List<CheckoutSession>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetCheckoutSessionsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

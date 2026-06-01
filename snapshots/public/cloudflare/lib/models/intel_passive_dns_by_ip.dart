@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_passive_dns_by_ip_reverse_records.dart';@immutable final class IntelPassiveDnsByIp {const IntelPassiveDnsByIp({this.count, this.page, this.perPage, this.reverseRecords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_passive_dns_by_ip/reverse_records.dart';@immutable final class IntelPassiveDnsByIp {const IntelPassiveDnsByIp({this.count, this.page, this.perPage, this.reverseRecords, });
 
 factory IntelPassiveDnsByIp.fromJson(Map<String, dynamic> json) { return IntelPassiveDnsByIp(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,
   page: json['page'] != null ? (json['page'] as num).toDouble() : null,
   perPage: json['per_page'] != null ? (json['per_page'] as num).toDouble() : null,
-  reverseRecords: (json['reverse_records'] as List<dynamic>?)?.map((e) => IntelPassiveDnsByIpReverseRecords.fromJson(e as Map<String, dynamic>)).toList(),
+  reverseRecords: (json['reverse_records'] as List<dynamic>?)?.map((e) => ReverseRecords.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// Total results returned based on your search parameters.
@@ -19,7 +19,7 @@ final double? page;
 final double? perPage;
 
 /// Reverse DNS look-ups observed during the time period.
-final List<IntelPassiveDnsByIpReverseRecords>? reverseRecords;
+final List<ReverseRecords>? reverseRecords;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (reverseRecords != null) 'reverse_records': reverseRecords?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'reverse_records'}.contains(key)); } 
-IntelPassiveDnsByIp copyWith({double Function()? count, double Function()? page, double Function()? perPage, List<IntelPassiveDnsByIpReverseRecords> Function()? reverseRecords, }) { return IntelPassiveDnsByIp(
+IntelPassiveDnsByIp copyWith({double Function()? count, double Function()? page, double Function()? perPage, List<ReverseRecords> Function()? reverseRecords, }) { return IntelPassiveDnsByIp(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,

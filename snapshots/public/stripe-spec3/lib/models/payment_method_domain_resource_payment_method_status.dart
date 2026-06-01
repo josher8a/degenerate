@@ -1,40 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_domain_resource_payment_method_status_details.dart';/// The status of the payment method on the domain.
-@immutable final class PaymentMethodDomainResourcePaymentMethodStatusStatus {const PaymentMethodDomainResourcePaymentMethodStatusStatus._(this.value);
-
-factory PaymentMethodDomainResourcePaymentMethodStatusStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'inactive' => inactive,
-  _ => PaymentMethodDomainResourcePaymentMethodStatusStatus._(json),
-}; }
-
-static const PaymentMethodDomainResourcePaymentMethodStatusStatus active = PaymentMethodDomainResourcePaymentMethodStatusStatus._('active');
-
-static const PaymentMethodDomainResourcePaymentMethodStatusStatus inactive = PaymentMethodDomainResourcePaymentMethodStatusStatus._('inactive');
-
-static const List<PaymentMethodDomainResourcePaymentMethodStatusStatus> values = [active, inactive];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDomainResourcePaymentMethodStatusStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDomainResourcePaymentMethodStatusStatus($value)'; } 
- }
-/// Indicates the status of a specific payment method on a payment method domain.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/payment_method_domain_resource_payment_method_status_details.dart';/// Indicates the status of a specific payment method on a payment method domain.
 @immutable final class PaymentMethodDomainResourcePaymentMethodStatus {const PaymentMethodDomainResourcePaymentMethodStatus({required this.status, this.statusDetails, });
 
 factory PaymentMethodDomainResourcePaymentMethodStatus.fromJson(Map<String, dynamic> json) { return PaymentMethodDomainResourcePaymentMethodStatus(
-  status: PaymentMethodDomainResourcePaymentMethodStatusStatus.fromJson(json['status'] as String),
+  status: BillingMeterStatus.fromJson(json['status'] as String),
   statusDetails: json['status_details'] != null ? PaymentMethodDomainResourcePaymentMethodStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The status of the payment method on the domain.
-final PaymentMethodDomainResourcePaymentMethodStatusStatus status;
+final BillingMeterStatus status;
 
 final PaymentMethodDomainResourcePaymentMethodStatusDetails? statusDetails;
 
@@ -43,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PaymentMethodDomainResourcePaymentMethodStatus copyWith({PaymentMethodDomainResourcePaymentMethodStatusStatus? status, PaymentMethodDomainResourcePaymentMethodStatusDetails Function()? statusDetails, }) { return PaymentMethodDomainResourcePaymentMethodStatus(
+PaymentMethodDomainResourcePaymentMethodStatus copyWith({BillingMeterStatus? status, PaymentMethodDomainResourcePaymentMethodStatusDetails Function()? statusDetails, }) { return PaymentMethodDomainResourcePaymentMethodStatus(
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
 ); } 

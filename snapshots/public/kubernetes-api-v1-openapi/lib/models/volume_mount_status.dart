@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_status.dart';/// VolumeMountStatus shows status of volume mounts.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_kubernetes_api_v1_openapi/models/volume_status.dart';/// VolumeMountStatus shows status of volume mounts.
 @immutable final class VolumeMountStatus {const VolumeMountStatus({this.mountPath = '', this.name = '', this.readOnly, this.recursiveReadOnly, this.volumeStatus, });
 
 factory VolumeMountStatus.fromJson(Map<String, dynamic> json) { return VolumeMountStatus(

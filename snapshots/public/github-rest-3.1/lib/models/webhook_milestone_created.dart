@@ -1,30 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_milestone3.dart';@immutable final class WebhookMilestoneCreatedAction {const WebhookMilestoneCreatedAction._(this.value);
-
-factory WebhookMilestoneCreatedAction.fromJson(String json) { return switch (json) {
-  'created' => created,
-  _ => WebhookMilestoneCreatedAction._(json),
-}; }
-
-static const WebhookMilestoneCreatedAction created = WebhookMilestoneCreatedAction._('created');
-
-static const List<WebhookMilestoneCreatedAction> values = [created];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMilestoneCreatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMilestoneCreatedAction($value)'; } 
- }
-@immutable final class WebhookMilestoneCreated {const WebhookMilestoneCreated({required this.action, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/item_created/item_created_action.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3.dart';@immutable final class WebhookMilestoneCreated {const WebhookMilestoneCreated({required this.action, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMilestoneCreated.fromJson(Map<String, dynamic> json) { return WebhookMilestoneCreated(
-  action: WebhookMilestoneCreatedAction.fromJson(json['action'] as String),
+  action: ItemCreatedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   milestone: WebhooksMilestone3.fromJson(json['milestone'] as Map<String, dynamic>),
@@ -33,7 +12,7 @@ factory WebhookMilestoneCreated.fromJson(Map<String, dynamic> json) { return Web
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
-final WebhookMilestoneCreatedAction action;
+final ItemCreatedAction action;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -60,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('milestone') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookMilestoneCreated copyWith({WebhookMilestoneCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksMilestone3? milestone, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneCreated(
+WebhookMilestoneCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksMilestone3? milestone, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMilestoneCreated(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

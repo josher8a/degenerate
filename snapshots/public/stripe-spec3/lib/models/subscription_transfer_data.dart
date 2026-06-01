@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'subscription_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// 
 @immutable final class SubscriptionTransferData {const SubscriptionTransferData({required this.destination, this.amountPercent, });
 
 factory SubscriptionTransferData.fromJson(Map<String, dynamic> json) { return SubscriptionTransferData(
@@ -12,14 +12,14 @@ factory SubscriptionTransferData.fromJson(Map<String, dynamic> json) { return Su
 final double? amountPercent;
 
 /// The account where funds from the payment will be transferred to upon payment success.
-final SubscriptionTransferDataDestination destination;
+final ChargeTransferDataDestination destination;
 
 Map<String, dynamic> toJson() { return {
   'amount_percent': ?amountPercent,
   'destination': destination.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-SubscriptionTransferData copyWith({double? Function()? amountPercent, SubscriptionTransferDataDestination? destination, }) { return SubscriptionTransferData(
+SubscriptionTransferData copyWith({double? Function()? amountPercent, ChargeTransferDataDestination? destination, }) { return SubscriptionTransferData(
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
 ); } 

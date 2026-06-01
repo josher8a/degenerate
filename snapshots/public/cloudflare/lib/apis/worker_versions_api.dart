@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_versions_upload_version_bindings_inherit.dart';import '../models/worker_versions_upload_version_request.dart';import '../models/workers_identifier.dart';import '../models/workers_schemas_script_name.dart';import '../models/workers_version_identifier.dart';import '../models/workers_version_item_full.dart';import '../models/workers_version_item_uploaded.dart';import '../models/workers_versions_list_response_result.dart';/// WorkerVersionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_bindings_inherit.dart';import 'package:pub_cloudflare/models/worker_versions_upload_version_request.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_schemas_script_name.dart';import 'package:pub_cloudflare/models/workers_version_identifier.dart';import 'package:pub_cloudflare/models/workers_version_item_full.dart';import 'package:pub_cloudflare/models/workers_version_item_uploaded.dart';import 'package:pub_cloudflare/models/workers_versions_list_response/workers_versions_list_response_result.dart';/// WorkerVersionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

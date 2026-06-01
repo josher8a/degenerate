@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages9.dart';import 'prompt4.dart';typedef WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest = OneOf2<Prompt4,Messages9>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages10.dart';import 'package:pub_cloudflare/models/prompt.dart';typedef WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bRequest = OneOf2<Prompt,Messages10>;

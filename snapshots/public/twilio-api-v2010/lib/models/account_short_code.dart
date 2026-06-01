@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountShortCodeSmsFallbackMethod {const AccountShortCodeSmsFallbackMethod._(this.value);
-
-factory AccountShortCodeSmsFallbackMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountShortCodeSmsFallbackMethod._(json),
-}; }
-
-static const AccountShortCodeSmsFallbackMethod $get = AccountShortCodeSmsFallbackMethod._('GET');
-
-static const AccountShortCodeSmsFallbackMethod post = AccountShortCodeSmsFallbackMethod._('POST');
-
-static const List<AccountShortCodeSmsFallbackMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountShortCodeSmsFallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountShortCodeSmsFallbackMethod($value)'; } 
- }
-/// The HTTP method we use to call the `sms_url`. Can be: `GET` or `POST`.
-@immutable final class AccountShortCodeSmsMethod {const AccountShortCodeSmsMethod._(this.value);
-
-factory AccountShortCodeSmsMethod.fromJson(String json) { return switch (json) {
-  'GET' => $get,
-  'POST' => post,
-  _ => AccountShortCodeSmsMethod._(json),
-}; }
-
-static const AccountShortCodeSmsMethod $get = AccountShortCodeSmsMethod._('GET');
-
-static const AccountShortCodeSmsMethod post = AccountShortCodeSmsMethod._('POST');
-
-static const List<AccountShortCodeSmsMethod> values = [$get, post];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountShortCodeSmsMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountShortCodeSmsMethod($value)'; } 
- }
-@immutable final class AccountShortCode {const AccountShortCode({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.shortCode, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';@immutable final class AccountShortCode {const AccountShortCode({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.friendlyName, this.shortCode, this.sid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.uri, });
 
 factory AccountShortCode.fromJson(Map<String, dynamic> json) { return AccountShortCode(
   accountSid: json['account_sid'] as String?,
@@ -60,9 +10,9 @@ factory AccountShortCode.fromJson(Map<String, dynamic> json) { return AccountSho
   friendlyName: json['friendly_name'] as String?,
   shortCode: json['short_code'] as String?,
   sid: json['sid'] as String?,
-  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountShortCodeSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
+  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountAddressDependentPhoneNumberSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
   smsFallbackUrl: json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null,
-  smsMethod: json['sms_method'] != null ? AccountShortCodeSmsMethod.fromJson(json['sms_method'] as String) : null,
+  smsMethod: json['sms_method'] != null ? AccountAddressDependentPhoneNumberSmsMethod.fromJson(json['sms_method'] as String) : null,
   smsUrl: json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null,
   uri: json['uri'] as String?,
 ); }
@@ -89,13 +39,13 @@ final String? shortCode;
 final String? sid;
 
 /// The HTTP method we use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-final AccountShortCodeSmsFallbackMethod? smsFallbackMethod;
+final AccountAddressDependentPhoneNumberSmsFallbackMethod? smsFallbackMethod;
 
 /// The URL that we call if an error occurs while retrieving or executing the TwiML from `sms_url`.
 final Uri? smsFallbackUrl;
 
 /// The HTTP method we use to call the `sms_url`. Can be: `GET` or `POST`.
-final AccountShortCodeSmsMethod? smsMethod;
+final AccountAddressDependentPhoneNumberSmsMethod? smsMethod;
 
 /// The URL we call when receiving an incoming SMS message to this short code.
 final Uri? smsUrl;
@@ -118,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'short_code', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'uri'}.contains(key)); } 
-AccountShortCode copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? shortCode, String? Function()? sid, AccountShortCodeSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountShortCodeSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, String? Function()? uri, }) { return AccountShortCode(
+AccountShortCode copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? shortCode, String? Function()? sid, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, String? Function()? uri, }) { return AccountShortCode(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

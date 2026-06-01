@@ -1,71 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_beta_response_create_params_conversation.dart';import 'realtime_beta_response_create_params_max_output_tokens.dart';import 'realtime_beta_response_create_params_tool_choice.dart';import 'realtime_beta_response_create_params_tools.dart';import 'realtime_conversation_item.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeBetaResponseCreateParamsModalities {const RealtimeBetaResponseCreateParamsModalities._(this.value);
-
-factory RealtimeBetaResponseCreateParamsModalities.fromJson(String json) { return switch (json) {
-  'text' => text,
-  'audio' => audio,
-  _ => RealtimeBetaResponseCreateParamsModalities._(json),
-}; }
-
-static const RealtimeBetaResponseCreateParamsModalities text = RealtimeBetaResponseCreateParamsModalities._('text');
-
-static const RealtimeBetaResponseCreateParamsModalities audio = RealtimeBetaResponseCreateParamsModalities._('audio');
-
-static const List<RealtimeBetaResponseCreateParamsModalities> values = [text, audio];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseCreateParamsModalities && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseCreateParamsModalities($value)'; } 
- }
-/// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
-/// 
-@immutable final class RealtimeBetaResponseCreateParamsOutputAudioFormat {const RealtimeBetaResponseCreateParamsOutputAudioFormat._(this.value);
-
-factory RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(String json) { return switch (json) {
-  'pcm16' => pcm16,
-  'g711_ulaw' => g711Ulaw,
-  'g711_alaw' => g711Alaw,
-  _ => RealtimeBetaResponseCreateParamsOutputAudioFormat._(json),
-}; }
-
-static const RealtimeBetaResponseCreateParamsOutputAudioFormat pcm16 = RealtimeBetaResponseCreateParamsOutputAudioFormat._('pcm16');
-
-static const RealtimeBetaResponseCreateParamsOutputAudioFormat g711Ulaw = RealtimeBetaResponseCreateParamsOutputAudioFormat._('g711_ulaw');
-
-static const RealtimeBetaResponseCreateParamsOutputAudioFormat g711Alaw = RealtimeBetaResponseCreateParamsOutputAudioFormat._('g711_alaw');
-
-static const List<RealtimeBetaResponseCreateParamsOutputAudioFormat> values = [pcm16, g711Ulaw, g711Alaw];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaResponseCreateParamsOutputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaResponseCreateParamsOutputAudioFormat($value)'; } 
- }
-/// Create a new Realtime response with these parameters
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/modalities.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_conversation.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Create a new Realtime response with these parameters
 @immutable final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreateParams({this.modalities, this.instructions, this.voice, this.outputAudioFormat, this.tools, this.toolChoice, this.temperature, this.maxOutputTokens, this.conversation, this.metadata, this.prompt, this.input, });
 
 factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParams(
-  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsModalities.fromJson(e as String)).toList(),
+  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Modalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),) : null,
-  outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
+  outputAudioFormat: json['output_audio_format'] != null ? OutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsTools.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeBetaResponseCreateParamsMaxOutputTokensVariant2.fromJson(v as String),) : null,
-  conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => RealtimeBetaResponseCreateParamsConversationVariant2.fromJson(v as String),) : null,
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
+  conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationVariant2.fromJson(v as String),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
@@ -74,7 +21,7 @@ factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { r
 /// The set of modalities the model can respond with. To disable audio,
 /// set this to `["text"]`.
 /// 
-final List<RealtimeBetaResponseCreateParamsModalities>? modalities;
+final List<Modalities>? modalities;
 
 /// The default system instructions (i.e. system message) prepended to model
 /// calls. This field allows the client to guide the model on desired
@@ -101,7 +48,7 @@ final VoiceIdsOrCustomVoice? voice;
 
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final RealtimeBetaResponseCreateParamsOutputAudioFormat? outputAudioFormat;
+final OutputAudioFormat? outputAudioFormat;
 
 /// Tools (functions) available to the model.
 final List<RealtimeBetaResponseCreateParamsTools>? tools;
@@ -120,7 +67,7 @@ final double? temperature;
 /// limit output tokens, or `inf` for the maximum available tokens for a
 /// given model. Defaults to `inf`.
 /// 
-final RealtimeBetaResponseCreateParamsMaxOutputTokens? maxOutputTokens;
+final MaxOutputTokens? maxOutputTokens;
 
 /// Controls which conversation the response is added to. Currently supports
 /// `auto` and `none`, with `auto` as the default value. The `auto` value
@@ -163,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modalities', 'instructions', 'voice', 'output_audio_format', 'tools', 'tool_choice', 'temperature', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeBetaResponseCreateParams copyWith({List<RealtimeBetaResponseCreateParamsModalities> Function()? modalities, String Function()? instructions, VoiceIdsOrCustomVoice Function()? voice, RealtimeBetaResponseCreateParamsOutputAudioFormat Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, double Function()? temperature, RealtimeBetaResponseCreateParamsMaxOutputTokens Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation Function()? conversation, Map<String, String>? Function()? metadata, Prompt Function()? prompt, List<RealtimeConversationItem> Function()? input, }) { return RealtimeBetaResponseCreateParams(
+RealtimeBetaResponseCreateParams copyWith({List<Modalities> Function()? modalities, String Function()? instructions, VoiceIdsOrCustomVoice Function()? voice, OutputAudioFormat Function()? outputAudioFormat, List<RealtimeBetaResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, double Function()? temperature, MaxOutputTokens Function()? maxOutputTokens, RealtimeBetaResponseCreateParamsConversation Function()? conversation, Map<String, String>? Function()? metadata, Prompt Function()? prompt, List<RealtimeConversationItem> Function()? input, }) { return RealtimeBetaResponseCreateParams(
   modalities: modalities != null ? modalities() : this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
   voice: voice != null ? voice() : this.voice,

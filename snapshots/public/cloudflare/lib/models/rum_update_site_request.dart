@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rum_auto_install.dart';import 'package:pub_cloudflare/models/rum_host.dart';import 'package:pub_cloudflare/models/rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
 extension type const RumEnabled(bool value) {
 factory RumEnabled.fromJson(bool json) => RumEnabled(json);
 

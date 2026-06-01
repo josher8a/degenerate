@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The user who created the pull request.
+@immutable final class PullRequestUser {const PullRequestUser({this.id, this.login, this.type, });
+
+factory PullRequestUser.fromJson(Map<String, dynamic> json) { return PullRequestUser(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  login: json['login'] as String?,
+  type: json['type'] as String?,
+); }
+
+/// The unique identifier of the user.
+final int? id;
+
+/// The handle for the GitHub user account.
+final String? login;
+
+/// The type of the user.
+final String? type;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'login': ?login,
+  'type': ?type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'login', 'type'}.contains(key)); } 
+PullRequestUser copyWith({int Function()? id, String Function()? login, String Function()? type, }) { return PullRequestUser(
+  id: id != null ? id() : this.id,
+  login: login != null ? login() : this.login,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestUser &&
+          id == other.id &&
+          login == other.login &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(id, login, type); } 
+@override String toString() { return 'PullRequestUser(id: $id, login: $login, type: $type)'; } 
+ }

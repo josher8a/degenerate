@@ -1,70 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed tool configuration type. Always `allowed_tools`.
-@immutable final class ToolChoiceAllowedType {const ToolChoiceAllowedType._(this.value);
-
-factory ToolChoiceAllowedType.fromJson(String json) { return switch (json) {
-  'allowed_tools' => allowedTools,
-  _ => ToolChoiceAllowedType._(json),
-}; }
-
-static const ToolChoiceAllowedType allowedTools = ToolChoiceAllowedType._('allowed_tools');
-
-static const List<ToolChoiceAllowedType> values = [allowedTools];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolChoiceAllowedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolChoiceAllowedType($value)'; } 
- }
-/// Constrains the tools available to the model to a pre-defined set.
-/// 
-/// `auto` allows the model to pick from among the allowed tools and generate a
-/// message.
-/// 
-/// `required` requires the model to call one or more of the allowed tools.
-/// 
-@immutable final class ToolChoiceAllowedMode {const ToolChoiceAllowedMode._(this.value);
-
-factory ToolChoiceAllowedMode.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'required' => $required,
-  _ => ToolChoiceAllowedMode._(json),
-}; }
-
-static const ToolChoiceAllowedMode auto = ToolChoiceAllowedMode._('auto');
-
-static const ToolChoiceAllowedMode $required = ToolChoiceAllowedMode._('required');
-
-static const List<ToolChoiceAllowedMode> values = [auto, $required];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolChoiceAllowedMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolChoiceAllowedMode($value)'; } 
- }
-/// Constrains the tools available to the model to a pre-defined set.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_allowed_tools/mode.dart';import 'package:pub_openai/models/chat_completion_allowed_tools_choice/chat_completion_allowed_tools_choice_type.dart';/// Constrains the tools available to the model to a pre-defined set.
 /// 
 @immutable final class ToolChoiceAllowed {const ToolChoiceAllowed({required this.type, required this.mode, required this.tools, });
 
 factory ToolChoiceAllowed.fromJson(Map<String, dynamic> json) { return ToolChoiceAllowed(
-  type: ToolChoiceAllowedType.fromJson(json['type'] as String),
-  mode: ToolChoiceAllowedMode.fromJson(json['mode'] as String),
+  type: ChatCompletionAllowedToolsChoiceType.fromJson(json['type'] as String),
+  mode: Mode.fromJson(json['mode'] as String),
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 /// Allowed tool configuration type. Always `allowed_tools`.
-final ToolChoiceAllowedType type;
+final ChatCompletionAllowedToolsChoiceType type;
 
 /// Constrains the tools available to the model to a pre-defined set.
 /// 
@@ -73,7 +20,7 @@ final ToolChoiceAllowedType type;
 /// 
 /// `required` requires the model to call one or more of the allowed tools.
 /// 
-final ToolChoiceAllowedMode mode;
+final Mode mode;
 
 /// A list of tool definitions that the model should be allowed to call.
 /// 
@@ -96,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('mode') &&
       json.containsKey('tools'); } 
-ToolChoiceAllowed copyWith({ToolChoiceAllowedType? type, ToolChoiceAllowedMode? mode, List<Map<String,dynamic>>? tools, }) { return ToolChoiceAllowed(
+ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mode, List<Map<String,dynamic>>? tools, }) { return ToolChoiceAllowed(
   type: type ?? this.type,
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,

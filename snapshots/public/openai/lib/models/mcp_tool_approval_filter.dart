@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_tool_filter.dart';/// Specify which of the MCP server's tools require approval. Can be
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/mcp_tool_filter.dart';/// Specify which of the MCP server's tools require approval. Can be
 /// `always`, `never`, or a filter object associated with tools
 /// that require approval.
 /// 

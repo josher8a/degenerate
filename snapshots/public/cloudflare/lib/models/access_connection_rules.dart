@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_connection_rules_rdp.dart';/// The rules that define how users may connect to targets secured by your application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_connection_rules_rdp.dart';/// The rules that define how users may connect to targets secured by your application.
 @immutable final class AccessConnectionRules {const AccessConnectionRules({this.rdp});
 
 factory AccessConnectionRules.fromJson(Map<String, dynamic> json) { return AccessConnectionRules(

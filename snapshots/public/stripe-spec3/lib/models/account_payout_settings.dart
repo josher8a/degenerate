@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_schedule.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/transfer_schedule.dart';/// 
 @immutable final class AccountPayoutSettings {const AccountPayoutSettings({required this.debitNegativeBalances, required this.schedule, this.statementDescriptor, });
 
 factory AccountPayoutSettings.fromJson(Map<String, dynamic> json) { return AccountPayoutSettings(

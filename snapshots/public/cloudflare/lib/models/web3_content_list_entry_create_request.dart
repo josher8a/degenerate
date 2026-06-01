@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_entry_content.dart';import 'web3_content_list_entry_description.dart';import 'web3_content_list_entry_type.dart';@immutable final class Web3ContentListEntryCreateRequest {const Web3ContentListEntryCreateRequest({required this.content, required this.type, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_content.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_description.dart';import 'package:pub_cloudflare/models/web3_content_list_entry_type.dart';@immutable final class Web3ContentListEntryCreateRequest {const Web3ContentListEntryCreateRequest({required this.content, required this.type, this.description, });
 
 factory Web3ContentListEntryCreateRequest.fromJson(Map<String, dynamic> json) { return Web3ContentListEntryCreateRequest(
   content: Web3ContentListEntryContent.fromJson(json['content'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_tax/provider.dart';import 'package:pub_stripe_spec3/models/customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
 @immutable final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
 
 factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
@@ -31,37 +31,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerTaxAutomaticTax($value)'; } 
  }
-/// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
-@immutable final class CustomerTaxProvider {const CustomerTaxProvider._(this.value);
-
-factory CustomerTaxProvider.fromJson(String json) { return switch (json) {
-  'anrok' => anrok,
-  'avalara' => avalara,
-  'sphere' => sphere,
-  'stripe' => stripe,
-  _ => CustomerTaxProvider._(json),
-}; }
-
-static const CustomerTaxProvider anrok = CustomerTaxProvider._('anrok');
-
-static const CustomerTaxProvider avalara = CustomerTaxProvider._('avalara');
-
-static const CustomerTaxProvider sphere = CustomerTaxProvider._('sphere');
-
-static const CustomerTaxProvider stripe = CustomerTaxProvider._('stripe');
-
-static const List<CustomerTaxProvider> values = [anrok, avalara, sphere, stripe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxProvider($value)'; } 
- }
 /// 
 @immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress, this.location, });
 
@@ -69,7 +38,7 @@ factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
   ipAddress: json['ip_address'] as String?,
   location: json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
-  provider: CustomerTaxProvider.fromJson(json['provider'] as String),
+  provider: Provider.fromJson(json['provider'] as String),
 ); }
 
 /// Surfaces if automatic tax computation is possible given the current customer location information.
@@ -82,7 +51,7 @@ final String? ipAddress;
 final CustomerTaxLocation? location;
 
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
-final CustomerTaxProvider provider;
+final Provider provider;
 
 Map<String, dynamic> toJson() { return {
   'automatic_tax': automaticTax.toJson(),
@@ -92,7 +61,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
       json.containsKey('provider'); } 
-CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation? Function()? location, CustomerTaxProvider? provider, }) { return CustomerTax(
+CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation? Function()? location, Provider? provider, }) { return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   location: location != null ? location() : this.location,

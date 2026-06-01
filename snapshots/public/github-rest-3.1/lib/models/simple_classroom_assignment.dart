@@ -1,38 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_classroom.dart';/// Whether it's a Group Assignment or Individual Assignment.
-@immutable final class SimpleClassroomAssignmentType {const SimpleClassroomAssignmentType._(this.value);
-
-factory SimpleClassroomAssignmentType.fromJson(String json) { return switch (json) {
-  'individual' => individual,
-  'group' => group,
-  _ => SimpleClassroomAssignmentType._(json),
-}; }
-
-static const SimpleClassroomAssignmentType individual = SimpleClassroomAssignmentType._('individual');
-
-static const SimpleClassroomAssignmentType group = SimpleClassroomAssignmentType._('group');
-
-static const List<SimpleClassroomAssignmentType> values = [individual, group];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SimpleClassroomAssignmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SimpleClassroomAssignmentType($value)'; } 
- }
-/// A GitHub Classroom assignment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/classroom_assignment/classroom_assignment_type.dart';import 'package:pub_github_rest_3_1/models/simple_classroom.dart';/// A GitHub Classroom assignment
 @immutable final class SimpleClassroomAssignment {const SimpleClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.classroom, this.maxTeams, this.maxMembers, });
 
 factory SimpleClassroomAssignment.fromJson(Map<String, dynamic> json) { return SimpleClassroomAssignment(
   id: (json['id'] as num).toInt(),
   publicRepo: json['public_repo'] as bool,
   title: json['title'] as String,
-  type: SimpleClassroomAssignmentType.fromJson(json['type'] as String),
+  type: ClassroomAssignmentType.fromJson(json['type'] as String),
   inviteLink: json['invite_link'] as String,
   invitationsEnabled: json['invitations_enabled'] as bool,
   slug: json['slug'] as String,
@@ -59,7 +34,7 @@ final bool publicRepo;
 final String title;
 
 /// Whether it's a Group Assignment or Individual Assignment.
-final SimpleClassroomAssignmentType type;
+final ClassroomAssignmentType type;
 
 /// The link that a student can use to accept the assignment.
 final String inviteLink;
@@ -138,7 +113,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('language') && json['language'] is String &&
       json.containsKey('deadline') && json['deadline'] is String &&
       json.containsKey('classroom'); } 
-SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, SimpleClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
+SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroom? classroom, }) { return SimpleClassroomAssignment(
   id: id ?? this.id,
   publicRepo: publicRepo ?? this.publicRepo,
   title: title ?? this.title,

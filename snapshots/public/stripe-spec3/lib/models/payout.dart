@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'bank_account.dart';import 'card.dart';import 'deleted_bank_account.dart';import 'deleted_card.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payout/original_payout.dart';import 'package:pub_stripe_spec3/models/payout/payout_application_fee.dart';import 'package:pub_stripe_spec3/models/payout/payout_destination.dart';import 'package:pub_stripe_spec3/models/payout/payout_failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payout/reversed_by.dart';import 'package:pub_stripe_spec3/models/payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PayoutObject {const PayoutObject._(this.value);
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
@@ -23,22 +23,22 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PayoutObject($value)'; } 
  }
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
-@immutable final class PayoutReconciliationStatus {const PayoutReconciliationStatus._(this.value);
+@immutable final class ReconciliationStatus {const ReconciliationStatus._(this.value);
 
-factory PayoutReconciliationStatus.fromJson(String json) { return switch (json) {
+factory ReconciliationStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'in_progress' => inProgress,
   'not_applicable' => notApplicable,
-  _ => PayoutReconciliationStatus._(json),
+  _ => ReconciliationStatus._(json),
 }; }
 
-static const PayoutReconciliationStatus completed = PayoutReconciliationStatus._('completed');
+static const ReconciliationStatus completed = ReconciliationStatus._('completed');
 
-static const PayoutReconciliationStatus inProgress = PayoutReconciliationStatus._('in_progress');
+static const ReconciliationStatus inProgress = ReconciliationStatus._('in_progress');
 
-static const PayoutReconciliationStatus notApplicable = PayoutReconciliationStatus._('not_applicable');
+static const ReconciliationStatus notApplicable = ReconciliationStatus._('not_applicable');
 
-static const List<PayoutReconciliationStatus> values = [completed, inProgress, notApplicable];
+static const List<ReconciliationStatus> values = [completed, inProgress, notApplicable];
 
 final String value;
 
@@ -46,9 +46,9 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is PayoutReconciliationStatus && other.value == value; } 
+    other is ReconciliationStatus && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PayoutReconciliationStatus($value)'; } 
+@override String toString() { return 'ReconciliationStatus($value)'; } 
  }
 /// Can be `bank_account` or `card`.
 @immutable final class PayoutType {const PayoutType._(this.value);
@@ -106,7 +106,7 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   object: PayoutObject.fromJson(json['object'] as String),
   originalPayout: json['original_payout'] != null ? OneOf2.parse(json['original_payout'], fromA: (v) => v as String, fromB: (v) => Payout.fromJson(v as Map<String, dynamic>),) : null,
   payoutMethod: json['payout_method'] as String?,
-  reconciliationStatus: PayoutReconciliationStatus.fromJson(json['reconciliation_status'] as String),
+  reconciliationStatus: ReconciliationStatus.fromJson(json['reconciliation_status'] as String),
   reversedBy: json['reversed_by'] != null ? OneOf2.parse(json['reversed_by'], fromA: (v) => v as String, fromB: (v) => Payout.fromJson(v as Map<String, dynamic>),) : null,
   sourceType: json['source_type'] as String,
   statementDescriptor: json['statement_descriptor'] as String?,
@@ -131,7 +131,7 @@ final int arrivalDate;
 final bool automatic;
 
 /// ID of the balance transaction that describes the impact of this payout on your account balance.
-final PayoutBalanceTransaction? balanceTransaction;
+final FeeRefundBalanceTransaction? balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -170,16 +170,16 @@ final String method;
 final PayoutObject object;
 
 /// If the payout reverses another, this is the ID of the original payout.
-final PayoutOriginalPayout? originalPayout;
+final OriginalPayout? originalPayout;
 
 /// ID of the v2 FinancialAccount the funds are sent to.
 final String? payoutMethod;
 
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
-final PayoutReconciliationStatus reconciliationStatus;
+final ReconciliationStatus reconciliationStatus;
 
 /// If the payout reverses, this is the ID of the payout that reverses this payout.
-final PayoutReversedBy? reversedBy;
+final ReversedBy? reversedBy;
 
 /// The source balance this payout came from, which can be one of the following: `card`, `fpx`, or `bank_account`.
 final String sourceType;
@@ -238,7 +238,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('source_type') && json['source_type'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Payout copyWith({int? amount, PayoutApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, PayoutBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, PayoutFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, PayoutOriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, PayoutReconciliationStatus? reconciliationStatus, PayoutReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
+Payout copyWith({int? amount, PayoutApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, FeeRefundBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, PayoutFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, OriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, ReconciliationStatus? reconciliationStatus, ReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
   amount: amount ?? this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

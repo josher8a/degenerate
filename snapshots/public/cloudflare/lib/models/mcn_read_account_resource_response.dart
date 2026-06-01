@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_details.dart';@immutable final class McnReadAccountResourceResponse {const McnReadAccountResourceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_resource_details.dart';@immutable final class McnReadAccountResourceResponse {const McnReadAccountResourceResponse({this.result});
 
 factory McnReadAccountResourceResponse.fromJson(Map<String, dynamic> json) { return McnReadAccountResourceResponse(
   result: json['result'] != null ? McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>) : null,

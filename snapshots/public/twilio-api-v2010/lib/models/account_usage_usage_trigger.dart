@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_recurring.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
 @immutable final class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod._(this.value);
 
 factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) { return switch (json) {

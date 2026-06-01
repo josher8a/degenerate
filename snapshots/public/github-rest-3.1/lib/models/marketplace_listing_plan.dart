@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceListingPlanPriceModel {const MarketplaceListingPlanPriceModel._(this.value);
-
-factory MarketplaceListingPlanPriceModel.fromJson(String json) { return switch (json) {
-  'FREE' => free,
-  'FLAT_RATE' => flatRate,
-  'PER_UNIT' => perUnit,
-  _ => MarketplaceListingPlanPriceModel._(json),
-}; }
-
-static const MarketplaceListingPlanPriceModel free = MarketplaceListingPlanPriceModel._('FREE');
-
-static const MarketplaceListingPlanPriceModel flatRate = MarketplaceListingPlanPriceModel._('FLAT_RATE');
-
-static const MarketplaceListingPlanPriceModel perUnit = MarketplaceListingPlanPriceModel._('PER_UNIT');
-
-static const List<MarketplaceListingPlanPriceModel> values = [free, flatRate, perUnit];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MarketplaceListingPlanPriceModel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MarketplaceListingPlanPriceModel($value)'; } 
- }
-/// Marketplace Listing Plan
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';/// Marketplace Listing Plan
 @immutable final class MarketplaceListingPlan {const MarketplaceListingPlan({required this.url, required this.accountsUrl, required this.id, required this.number, required this.name, required this.description, required this.monthlyPriceInCents, required this.yearlyPriceInCents, required this.priceModel, required this.hasFreeTrial, required this.unitName, required this.state, required this.bullets, });
 
 factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return MarketplaceListingPlan(
@@ -39,7 +12,7 @@ factory MarketplaceListingPlan.fromJson(Map<String, dynamic> json) { return Mark
   description: json['description'] as String,
   monthlyPriceInCents: (json['monthly_price_in_cents'] as num).toInt(),
   yearlyPriceInCents: (json['yearly_price_in_cents'] as num).toInt(),
-  priceModel: MarketplaceListingPlanPriceModel.fromJson(json['price_model'] as String),
+  priceModel: PriceModel.fromJson(json['price_model'] as String),
   hasFreeTrial: json['has_free_trial'] as bool,
   unitName: json['unit_name'] as String?,
   state: json['state'] as String,
@@ -62,7 +35,7 @@ final int monthlyPriceInCents;
 
 final int yearlyPriceInCents;
 
-final MarketplaceListingPlanPriceModel priceModel;
+final PriceModel priceModel;
 
 final bool hasFreeTrial;
 
@@ -100,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('unit_name') && json['unit_name'] is String &&
       json.containsKey('state') && json['state'] is String &&
       json.containsKey('bullets'); } 
-MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, MarketplaceListingPlanPriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) { return MarketplaceListingPlan(
+MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? number, String? name, String? description, int? monthlyPriceInCents, int? yearlyPriceInCents, PriceModel? priceModel, bool? hasFreeTrial, String? Function()? unitName, String? state, List<String>? bullets, }) { return MarketplaceListingPlan(
   url: url ?? this.url,
   accountsUrl: accountsUrl ?? this.accountsUrl,
   id: id ?? this.id,

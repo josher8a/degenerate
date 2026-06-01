@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_zones_zone_identifier_zaraz_history_sort_field.dart';import '../models/get_zones_zone_identifier_zaraz_history_sort_order.dart';import '../models/zaraz_identifier.dart';import '../models/zaraz_zaraz_config_body.dart';import '../models/zaraz_zaraz_config_history_response_result_value.dart';import '../models/zaraz_zaraz_config_return.dart';import '../models/zaraz_zaraz_history_response_result.dart';import '../models/zaraz_zaraz_workflow.dart';/// ZarazApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_zones_zone_identifier_zaraz_history_sort_field.dart';import 'package:pub_cloudflare/models/get_zones_zone_identifier_zaraz_history_sort_order.dart';import 'package:pub_cloudflare/models/zaraz_identifier.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_body.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_history_response/zaraz_zaraz_config_history_response_result_value.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_return.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_history_response/zaraz_zaraz_history_response_result.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_workflow.dart';/// ZarazApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

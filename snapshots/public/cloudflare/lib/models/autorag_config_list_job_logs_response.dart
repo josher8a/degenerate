@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_list_job_logs_response_result.dart';import 'autorag_config_list_job_logs_response_result_info.dart';@immutable final class AutoragConfigListJobLogsResponse {const AutoragConfigListJobLogsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result.dart';import 'package:pub_cloudflare/models/ai_search_instance_list_job_logs_response/ai_search_instance_list_job_logs_response_result_info.dart';@immutable final class AutoragConfigListJobLogsResponse {const AutoragConfigListJobLogsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory AutoragConfigListJobLogsResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobLogsResponse(
-  result: (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
-  resultInfo: AutoragConfigListJobLogsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
+  result: (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  resultInfo: AiSearchInstanceListJobLogsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }
 
-final List<AutoragConfigListJobLogsResponseResult> result;
+final List<AiSearchInstanceListJobLogsResponseResult> result;
 
-final AutoragConfigListJobLogsResponseResultInfo resultInfo;
+final AiSearchInstanceListJobLogsResponseResultInfo resultInfo;
 
 final bool success;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('result_info') &&
       json.containsKey('success') && json['success'] is bool; } 
-AutoragConfigListJobLogsResponse copyWith({List<AutoragConfigListJobLogsResponseResult>? result, AutoragConfigListJobLogsResponseResultInfo? resultInfo, bool? success, }) { return AutoragConfigListJobLogsResponse(
+AutoragConfigListJobLogsResponse copyWith({List<AiSearchInstanceListJobLogsResponseResult>? result, AiSearchInstanceListJobLogsResponseResultInfo? resultInfo, bool? success, }) { return AutoragConfigListJobLogsResponse(
   result: result ?? this.result,
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,

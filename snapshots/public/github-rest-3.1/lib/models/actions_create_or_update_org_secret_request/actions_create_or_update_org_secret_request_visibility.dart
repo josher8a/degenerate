@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a secret
+@immutable final class ActionsCreateOrUpdateOrgSecretRequestVisibility {const ActionsCreateOrUpdateOrgSecretRequestVisibility._(this.value);
+
+factory ActionsCreateOrUpdateOrgSecretRequestVisibility.fromJson(String json) { return switch (json) {
+  'all' => all,
+  'private' => private,
+  'selected' => selected,
+  _ => ActionsCreateOrUpdateOrgSecretRequestVisibility._(json),
+}; }
+
+static const ActionsCreateOrUpdateOrgSecretRequestVisibility all = ActionsCreateOrUpdateOrgSecretRequestVisibility._('all');
+
+static const ActionsCreateOrUpdateOrgSecretRequestVisibility private = ActionsCreateOrUpdateOrgSecretRequestVisibility._('private');
+
+static const ActionsCreateOrUpdateOrgSecretRequestVisibility selected = ActionsCreateOrUpdateOrgSecretRequestVisibility._('selected');
+
+static const List<ActionsCreateOrUpdateOrgSecretRequestVisibility> values = [all, private, selected];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActionsCreateOrUpdateOrgSecretRequestVisibility && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActionsCreateOrUpdateOrgSecretRequestVisibility($value)'; } 
+ }

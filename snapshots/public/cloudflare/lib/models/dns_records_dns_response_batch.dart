@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_response_batch_object.dart';@immutable final class DnsRecordsDnsResponseBatch {const DnsRecordsDnsResponseBatch({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_dns_response_batch_object.dart';@immutable final class DnsRecordsDnsResponseBatch {const DnsRecordsDnsResponseBatch({this.result});
 
 factory DnsRecordsDnsResponseBatch.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsResponseBatch(
   result: json['result'] != null ? DnsRecordsDnsResponseBatchObject.fromJson(json['result'] as Map<String, dynamic>) : null,

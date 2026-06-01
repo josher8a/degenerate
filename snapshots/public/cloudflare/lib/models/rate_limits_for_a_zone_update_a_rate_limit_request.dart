@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';@immutable final class RateLimitsForAZoneUpdateARateLimitRequest {const RateLimitsForAZoneUpdateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_match.dart';import 'package:pub_cloudflare/models/firewall_period.dart';import 'package:pub_cloudflare/models/firewall_threshold.dart';@immutable final class RateLimitsForAZoneUpdateARateLimitRequest {const RateLimitsForAZoneUpdateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
 
 factory RateLimitsForAZoneUpdateARateLimitRequest.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneUpdateARateLimitRequest(
   action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),

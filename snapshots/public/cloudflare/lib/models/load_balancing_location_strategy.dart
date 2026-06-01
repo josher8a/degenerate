@@ -32,25 +32,25 @@ bool get isUnknown { return !values.contains(this); }
 /// - `"never"`: Never prefer ECS.
 /// - `"proximity"`: Prefer ECS only when `steering_policy="proximity"`.
 /// - `"geo"`: Prefer ECS only when `steering_policy="geo"`.
-@immutable final class LoadBalancingLocationStrategyPreferEcs {const LoadBalancingLocationStrategyPreferEcs._(this.value);
+@immutable final class PreferEcs {const PreferEcs._(this.value);
 
-factory LoadBalancingLocationStrategyPreferEcs.fromJson(String json) { return switch (json) {
+factory PreferEcs.fromJson(String json) { return switch (json) {
   'always' => always,
   'never' => never,
   'proximity' => proximity,
   'geo' => geo,
-  _ => LoadBalancingLocationStrategyPreferEcs._(json),
+  _ => PreferEcs._(json),
 }; }
 
-static const LoadBalancingLocationStrategyPreferEcs always = LoadBalancingLocationStrategyPreferEcs._('always');
+static const PreferEcs always = PreferEcs._('always');
 
-static const LoadBalancingLocationStrategyPreferEcs never = LoadBalancingLocationStrategyPreferEcs._('never');
+static const PreferEcs never = PreferEcs._('never');
 
-static const LoadBalancingLocationStrategyPreferEcs proximity = LoadBalancingLocationStrategyPreferEcs._('proximity');
+static const PreferEcs proximity = PreferEcs._('proximity');
 
-static const LoadBalancingLocationStrategyPreferEcs geo = LoadBalancingLocationStrategyPreferEcs._('geo');
+static const PreferEcs geo = PreferEcs._('geo');
 
-static const List<LoadBalancingLocationStrategyPreferEcs> values = [always, never, proximity, geo];
+static const List<PreferEcs> values = [always, never, proximity, geo];
 
 final String value;
 
@@ -58,16 +58,16 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingLocationStrategyPreferEcs && other.value == value; } 
+    other is PreferEcs && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingLocationStrategyPreferEcs($value)'; } 
+@override String toString() { return 'PreferEcs($value)'; } 
  }
 /// Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.
-@immutable final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode = LoadBalancingLocationStrategyMode.pop, this.preferEcs = LoadBalancingLocationStrategyPreferEcs.proximity, });
+@immutable final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode = LoadBalancingLocationStrategyMode.pop, this.preferEcs = PreferEcs.proximity, });
 
 factory LoadBalancingLocationStrategy.fromJson(Map<String, dynamic> json) { return LoadBalancingLocationStrategy(
   mode: json.containsKey('mode') ? LoadBalancingLocationStrategyMode.fromJson(json['mode'] as String) : LoadBalancingLocationStrategyMode.pop,
-  preferEcs: json.containsKey('prefer_ecs') ? LoadBalancingLocationStrategyPreferEcs.fromJson(json['prefer_ecs'] as String) : LoadBalancingLocationStrategyPreferEcs.proximity,
+  preferEcs: json.containsKey('prefer_ecs') ? PreferEcs.fromJson(json['prefer_ecs'] as String) : PreferEcs.proximity,
 ); }
 
 /// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
@@ -80,14 +80,14 @@ final LoadBalancingLocationStrategyMode mode;
 /// - `"never"`: Never prefer ECS.
 /// - `"proximity"`: Prefer ECS only when `steering_policy="proximity"`.
 /// - `"geo"`: Prefer ECS only when `steering_policy="geo"`.
-final LoadBalancingLocationStrategyPreferEcs preferEcs;
+final PreferEcs preferEcs;
 
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
   'prefer_ecs': preferEcs.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode', 'prefer_ecs'}.contains(key)); } 
-LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode Function()? mode, LoadBalancingLocationStrategyPreferEcs Function()? preferEcs, }) { return LoadBalancingLocationStrategy(
+LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode Function()? mode, PreferEcs Function()? preferEcs, }) { return LoadBalancingLocationStrategy(
   mode: mode != null ? mode() : this.mode,
   preferEcs: preferEcs != null ? preferEcs() : this.preferEcs,
 ); } 

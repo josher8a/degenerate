@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_directory2_links.dart';@immutable final class ContentDirectory2Type {const ContentDirectory2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentDirectoryType {const ContentDirectoryType._(this.value);
 
-factory ContentDirectory2Type.fromJson(String json) { return switch (json) {
+factory ContentDirectoryType.fromJson(String json) { return switch (json) {
   'dir' => dir,
   'file' => file,
   'submodule' => submodule,
   'symlink' => symlink,
-  _ => ContentDirectory2Type._(json),
+  _ => ContentDirectoryType._(json),
 }; }
 
-static const ContentDirectory2Type dir = ContentDirectory2Type._('dir');
+static const ContentDirectoryType dir = ContentDirectoryType._('dir');
 
-static const ContentDirectory2Type file = ContentDirectory2Type._('file');
+static const ContentDirectoryType file = ContentDirectoryType._('file');
 
-static const ContentDirectory2Type submodule = ContentDirectory2Type._('submodule');
+static const ContentDirectoryType submodule = ContentDirectoryType._('submodule');
 
-static const ContentDirectory2Type symlink = ContentDirectory2Type._('symlink');
+static const ContentDirectoryType symlink = ContentDirectoryType._('symlink');
 
-static const List<ContentDirectory2Type> values = [dir, file, submodule, symlink];
+static const List<ContentDirectoryType> values = [dir, file, submodule, symlink];
 
 final String value;
 
@@ -26,14 +26,14 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentDirectory2Type && other.value == value; } 
+    other is ContentDirectoryType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentDirectory2Type($value)'; } 
+@override String toString() { return 'ContentDirectoryType($value)'; } 
  }
 @immutable final class ContentDirectory2 {const ContentDirectory2({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, });
 
 factory ContentDirectory2.fromJson(Map<String, dynamic> json) { return ContentDirectory2(
-  type: ContentDirectory2Type.fromJson(json['type'] as String),
+  type: ContentDirectoryType.fromJson(json['type'] as String),
   size: (json['size'] as num).toInt(),
   name: json['name'] as String,
   path: json['path'] as String,
@@ -43,10 +43,10 @@ factory ContentDirectory2.fromJson(Map<String, dynamic> json) { return ContentDi
   gitUrl: json['git_url'] != null ? Uri.parse(json['git_url'] as String) : null,
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   downloadUrl: json['download_url'] != null ? Uri.parse(json['download_url'] as String) : null,
-  links: ContentDirectory2Links.fromJson(json['_links'] as Map<String, dynamic>),
+  links: ContentDirectoryLinks.fromJson(json['_links'] as Map<String, dynamic>),
 ); }
 
-final ContentDirectory2Type type;
+final ContentDirectoryType type;
 
 final int size;
 
@@ -66,7 +66,7 @@ final Uri? htmlUrl;
 
 final Uri? downloadUrl;
 
-final ContentDirectory2Links links;
+final ContentDirectoryLinks links;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('_links'); } 
-ContentDirectory2 copyWith({ContentDirectory2Type? type, int? size, String? name, String? path, String Function()? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectory2Links? links, }) { return ContentDirectory2(
+ContentDirectory2 copyWith({ContentDirectoryType? type, int? size, String? name, String? path, String Function()? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ContentDirectory2(
   type: type ?? this.type,
   size: size ?? this.size,
   name: name ?? this.name,

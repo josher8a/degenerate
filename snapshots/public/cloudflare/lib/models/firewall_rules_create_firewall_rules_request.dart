@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_filter.dart';@immutable final class FirewallRulesCreateFirewallRulesRequest {const FirewallRulesCreateFirewallRulesRequest({required this.action, required this.filter, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_action.dart';import 'package:pub_cloudflare/models/firewall_filter.dart';@immutable final class FirewallRulesCreateFirewallRulesRequest {const FirewallRulesCreateFirewallRulesRequest({required this.action, required this.filter, });
 
 factory FirewallRulesCreateFirewallRulesRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesCreateFirewallRulesRequest(
   action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),

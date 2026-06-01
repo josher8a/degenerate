@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_client_certificates_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';/// The Client Certificate PEM
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_client_certificates_components_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_csr.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_validity_days.dart';/// The Client Certificate PEM
 extension type const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(String value) {
 factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(String json) => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(json);
 

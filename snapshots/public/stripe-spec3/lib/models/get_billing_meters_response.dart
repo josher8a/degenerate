@@ -1,34 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-@immutable final class GetBillingMetersResponseObject {const GetBillingMetersResponseObject._(this.value);
-
-factory GetBillingMetersResponseObject.fromJson(String json) { return switch (json) {
-  'list' => list,
-  _ => GetBillingMetersResponseObject._(json),
-}; }
-
-static const GetBillingMetersResponseObject list = GetBillingMetersResponseObject._('list');
-
-static const List<GetBillingMetersResponseObject> values = [list];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetBillingMetersResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetBillingMetersResponseObject($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter.dart';import 'package:pub_stripe_spec3/models/get_accounts_account_capabilities_response/get_accounts_account_capabilities_response_object.dart';/// 
 @immutable final class GetBillingMetersResponse {const GetBillingMetersResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetBillingMetersResponse.fromJson(Map<String, dynamic> json) { return GetBillingMetersResponse(
   data: (json['data'] as List<dynamic>).map((e) => BillingMeter.fromJson(e as Map<String, dynamic>)).toList(),
   hasMore: json['has_more'] as bool,
-  object: GetBillingMetersResponseObject.fromJson(json['object'] as String),
+  object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,
 ); }
 
@@ -38,7 +16,7 @@ final List<BillingMeter> data;
 final bool hasMore;
 
 /// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final GetBillingMetersResponseObject object;
+final GetAccountsAccountCapabilitiesResponseObject object;
 
 /// The URL where this list can be accessed.
 final String url;
@@ -53,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-GetBillingMetersResponse copyWith({List<BillingMeter>? data, bool? hasMore, GetBillingMetersResponseObject? object, String? url, }) { return GetBillingMetersResponse(
+GetBillingMetersResponse copyWith({List<BillingMeter>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetBillingMetersResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,

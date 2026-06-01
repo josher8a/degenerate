@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single57_result.dart';import 'response_single57_result_info.dart';import 'web3_messages2.dart';@immutable final class ResponseSingle57 {const ResponseSingle57({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common33/response_common33_result.dart';import 'package:pub_cloudflare/models/response_single57/response_single57_result_info.dart';import 'package:pub_cloudflare/models/web3_messages2.dart';@immutable final class ResponseSingle57 {const ResponseSingle57({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseSingle57.fromJson(Map<String, dynamic> json) { return ResponseSingle57(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -15,7 +15,7 @@ final List<Web3Messages2> errors;
 final List<Web3Messages2> messages;
 
 /// Provides the API response.
-final ResponseSingle57Result result;
+final ResponseCommon33Result result;
 
 /// Specifies whether the API call was successful.
 final bool success;
@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingle57 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseSingle57Result? result, bool? success, ResponseSingle57ResultInfo Function()? resultInfo, }) { return ResponseSingle57(
+ResponseSingle57 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, ResponseCommon33Result? result, bool? success, ResponseSingle57ResultInfo Function()? resultInfo, }) { return ResponseSingle57(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

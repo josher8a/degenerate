@@ -1,56 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'deleted_application.dart';import 'payment_link_application.dart';import 'payment_link_line_items.dart';import 'payment_link_on_behalf_of.dart';import 'payment_links_resource_after_completion.dart';import 'payment_links_resource_automatic_tax.dart';import 'payment_links_resource_consent_collection.dart';import 'payment_links_resource_custom_fields.dart';import 'payment_links_resource_custom_text.dart';import 'payment_links_resource_invoice_creation.dart';import 'payment_links_resource_name_collection.dart';import 'payment_links_resource_optional_item.dart';import 'payment_links_resource_payment_intent_data.dart';import 'payment_links_resource_phone_number_collection.dart';import 'payment_links_resource_restrictions.dart';import 'payment_links_resource_shipping_address_collection.dart';import 'payment_links_resource_shipping_option.dart';import 'payment_links_resource_subscription_data.dart';import 'payment_links_resource_tax_id_collection.dart';import 'payment_links_resource_transfer_data.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
-@immutable final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);
-
-factory PaymentLinkBillingAddressCollection.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'required' => $required,
-  _ => PaymentLinkBillingAddressCollection._(json),
-}; }
-
-static const PaymentLinkBillingAddressCollection auto = PaymentLinkBillingAddressCollection._('auto');
-
-static const PaymentLinkBillingAddressCollection $required = PaymentLinkBillingAddressCollection._('required');
-
-static const List<PaymentLinkBillingAddressCollection> values = [auto, $required];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkBillingAddressCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkBillingAddressCollection($value)'; } 
- }
-/// Configuration for Customer creation during checkout.
-@immutable final class PaymentLinkCustomerCreation {const PaymentLinkCustomerCreation._(this.value);
-
-factory PaymentLinkCustomerCreation.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  _ => PaymentLinkCustomerCreation._(json),
-}; }
-
-static const PaymentLinkCustomerCreation always = PaymentLinkCustomerCreation._('always');
-
-static const PaymentLinkCustomerCreation ifRequired = PaymentLinkCustomerCreation._('if_required');
-
-static const List<PaymentLinkCustomerCreation> values = [always, ifRequired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkCustomerCreation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkCustomerCreation($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_restrictions.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_subscription_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentLinkObject {const PaymentLinkObject._(this.value);
 
 factory PaymentLinkObject.fromJson(String json) { return switch (json) {
@@ -71,200 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is PaymentLinkObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentLinkObject($value)'; } 
- }
-/// Configuration for collecting a payment method during checkout. Defaults to `always`.
-@immutable final class PaymentLinkPaymentMethodCollection {const PaymentLinkPaymentMethodCollection._(this.value);
-
-factory PaymentLinkPaymentMethodCollection.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  _ => PaymentLinkPaymentMethodCollection._(json),
-}; }
-
-static const PaymentLinkPaymentMethodCollection always = PaymentLinkPaymentMethodCollection._('always');
-
-static const PaymentLinkPaymentMethodCollection ifRequired = PaymentLinkPaymentMethodCollection._('if_required');
-
-static const List<PaymentLinkPaymentMethodCollection> values = [always, ifRequired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkPaymentMethodCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkPaymentMethodCollection($value)'; } 
- }
-@immutable final class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes._(this.value);
-
-factory PaymentLinkPaymentMethodTypes.fromJson(String json) { return switch (json) {
-  'affirm' => affirm,
-  'afterpay_clearpay' => afterpayClearpay,
-  'alipay' => alipay,
-  'alma' => alma,
-  'au_becs_debit' => auBecsDebit,
-  'bacs_debit' => bacsDebit,
-  'bancontact' => bancontact,
-  'billie' => billie,
-  'blik' => blik,
-  'boleto' => boleto,
-  'card' => card,
-  'cashapp' => cashapp,
-  'eps' => eps,
-  'fpx' => fpx,
-  'giropay' => giropay,
-  'grabpay' => grabpay,
-  'ideal' => ideal,
-  'klarna' => klarna,
-  'konbini' => konbini,
-  'link' => link,
-  'mb_way' => mbWay,
-  'mobilepay' => mobilepay,
-  'multibanco' => multibanco,
-  'oxxo' => oxxo,
-  'p24' => p24,
-  'pay_by_bank' => payByBank,
-  'paynow' => paynow,
-  'paypal' => paypal,
-  'payto' => payto,
-  'pix' => pix,
-  'promptpay' => promptpay,
-  'satispay' => satispay,
-  'sepa_debit' => sepaDebit,
-  'sofort' => sofort,
-  'swish' => swish,
-  'twint' => twint,
-  'us_bank_account' => usBankAccount,
-  'wechat_pay' => wechatPay,
-  'zip' => zip,
-  _ => PaymentLinkPaymentMethodTypes._(json),
-}; }
-
-static const PaymentLinkPaymentMethodTypes affirm = PaymentLinkPaymentMethodTypes._('affirm');
-
-static const PaymentLinkPaymentMethodTypes afterpayClearpay = PaymentLinkPaymentMethodTypes._('afterpay_clearpay');
-
-static const PaymentLinkPaymentMethodTypes alipay = PaymentLinkPaymentMethodTypes._('alipay');
-
-static const PaymentLinkPaymentMethodTypes alma = PaymentLinkPaymentMethodTypes._('alma');
-
-static const PaymentLinkPaymentMethodTypes auBecsDebit = PaymentLinkPaymentMethodTypes._('au_becs_debit');
-
-static const PaymentLinkPaymentMethodTypes bacsDebit = PaymentLinkPaymentMethodTypes._('bacs_debit');
-
-static const PaymentLinkPaymentMethodTypes bancontact = PaymentLinkPaymentMethodTypes._('bancontact');
-
-static const PaymentLinkPaymentMethodTypes billie = PaymentLinkPaymentMethodTypes._('billie');
-
-static const PaymentLinkPaymentMethodTypes blik = PaymentLinkPaymentMethodTypes._('blik');
-
-static const PaymentLinkPaymentMethodTypes boleto = PaymentLinkPaymentMethodTypes._('boleto');
-
-static const PaymentLinkPaymentMethodTypes card = PaymentLinkPaymentMethodTypes._('card');
-
-static const PaymentLinkPaymentMethodTypes cashapp = PaymentLinkPaymentMethodTypes._('cashapp');
-
-static const PaymentLinkPaymentMethodTypes eps = PaymentLinkPaymentMethodTypes._('eps');
-
-static const PaymentLinkPaymentMethodTypes fpx = PaymentLinkPaymentMethodTypes._('fpx');
-
-static const PaymentLinkPaymentMethodTypes giropay = PaymentLinkPaymentMethodTypes._('giropay');
-
-static const PaymentLinkPaymentMethodTypes grabpay = PaymentLinkPaymentMethodTypes._('grabpay');
-
-static const PaymentLinkPaymentMethodTypes ideal = PaymentLinkPaymentMethodTypes._('ideal');
-
-static const PaymentLinkPaymentMethodTypes klarna = PaymentLinkPaymentMethodTypes._('klarna');
-
-static const PaymentLinkPaymentMethodTypes konbini = PaymentLinkPaymentMethodTypes._('konbini');
-
-static const PaymentLinkPaymentMethodTypes link = PaymentLinkPaymentMethodTypes._('link');
-
-static const PaymentLinkPaymentMethodTypes mbWay = PaymentLinkPaymentMethodTypes._('mb_way');
-
-static const PaymentLinkPaymentMethodTypes mobilepay = PaymentLinkPaymentMethodTypes._('mobilepay');
-
-static const PaymentLinkPaymentMethodTypes multibanco = PaymentLinkPaymentMethodTypes._('multibanco');
-
-static const PaymentLinkPaymentMethodTypes oxxo = PaymentLinkPaymentMethodTypes._('oxxo');
-
-static const PaymentLinkPaymentMethodTypes p24 = PaymentLinkPaymentMethodTypes._('p24');
-
-static const PaymentLinkPaymentMethodTypes payByBank = PaymentLinkPaymentMethodTypes._('pay_by_bank');
-
-static const PaymentLinkPaymentMethodTypes paynow = PaymentLinkPaymentMethodTypes._('paynow');
-
-static const PaymentLinkPaymentMethodTypes paypal = PaymentLinkPaymentMethodTypes._('paypal');
-
-static const PaymentLinkPaymentMethodTypes payto = PaymentLinkPaymentMethodTypes._('payto');
-
-static const PaymentLinkPaymentMethodTypes pix = PaymentLinkPaymentMethodTypes._('pix');
-
-static const PaymentLinkPaymentMethodTypes promptpay = PaymentLinkPaymentMethodTypes._('promptpay');
-
-static const PaymentLinkPaymentMethodTypes satispay = PaymentLinkPaymentMethodTypes._('satispay');
-
-static const PaymentLinkPaymentMethodTypes sepaDebit = PaymentLinkPaymentMethodTypes._('sepa_debit');
-
-static const PaymentLinkPaymentMethodTypes sofort = PaymentLinkPaymentMethodTypes._('sofort');
-
-static const PaymentLinkPaymentMethodTypes swish = PaymentLinkPaymentMethodTypes._('swish');
-
-static const PaymentLinkPaymentMethodTypes twint = PaymentLinkPaymentMethodTypes._('twint');
-
-static const PaymentLinkPaymentMethodTypes usBankAccount = PaymentLinkPaymentMethodTypes._('us_bank_account');
-
-static const PaymentLinkPaymentMethodTypes wechatPay = PaymentLinkPaymentMethodTypes._('wechat_pay');
-
-static const PaymentLinkPaymentMethodTypes zip = PaymentLinkPaymentMethodTypes._('zip');
-
-static const List<PaymentLinkPaymentMethodTypes> values = [affirm, afterpayClearpay, alipay, alma, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, eps, fpx, giropay, grabpay, ideal, klarna, konbini, link, mbWay, mobilepay, multibanco, oxxo, p24, payByBank, paynow, paypal, payto, pix, promptpay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkPaymentMethodTypes($value)'; } 
- }
-/// Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button.
-@immutable final class PaymentLinkSubmitType {const PaymentLinkSubmitType._(this.value);
-
-factory PaymentLinkSubmitType.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'book' => book,
-  'donate' => donate,
-  'pay' => pay,
-  'subscribe' => subscribe,
-  _ => PaymentLinkSubmitType._(json),
-}; }
-
-static const PaymentLinkSubmitType auto = PaymentLinkSubmitType._('auto');
-
-static const PaymentLinkSubmitType book = PaymentLinkSubmitType._('book');
-
-static const PaymentLinkSubmitType donate = PaymentLinkSubmitType._('donate');
-
-static const PaymentLinkSubmitType pay = PaymentLinkSubmitType._('pay');
-
-static const PaymentLinkSubmitType subscribe = PaymentLinkSubmitType._('subscribe');
-
-static const List<PaymentLinkSubmitType> values = [auto, book, donate, pay, subscribe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkSubmitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkSubmitType($value)'; } 
  }
 /// A payment link is a shareable URL that will take your customers to a hosted payment page. A payment link can be shared and used multiple times.
 /// 
@@ -290,7 +46,7 @@ factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   id: json['id'] as String,
   inactiveMessage: json['inactive_message'] as String?,
   invoiceCreation: json['invoice_creation'] != null ? PaymentLinksResourceInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
-  lineItems: json['line_items'] != null ? PaymentLinkLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  lineItems: json['line_items'] != null ? CheckoutSessionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   nameCollection: json['name_collection'] != null ? PaymentLinksResourceNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>) : null,
@@ -320,7 +76,7 @@ final PaymentLinksResourceAfterCompletion afterCompletion;
 final bool allowPromotionCodes;
 
 /// The ID of the Connect application that created the Payment Link.
-final PaymentLinkApplication? application;
+final BillingPortalConfigurationApplication? application;
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account.
 final int? applicationFeeAmount;
@@ -357,7 +113,7 @@ final String? inactiveMessage;
 final PaymentLinksResourceInvoiceCreation? invoiceCreation;
 
 /// The line items representing what is being sold.
-final PaymentLinkLineItems? lineItems;
+final CheckoutSessionLineItems? lineItems;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -466,7 +222,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('submit_type') &&
       json.containsKey('tax_id_collection') &&
       json.containsKey('url') && json['url'] is String; } 
-PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, PaymentLinkApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinksResourceConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinksResourceInvoiceCreation? Function()? invoiceCreation, PaymentLinkLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection Function()? nameCollection, PaymentLinkObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinksResourcePaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinksResourceRestrictions? Function()? restrictions, PaymentLinksResourceShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinksResourceSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinksResourceTransferData? Function()? transferData, String? url, }) { return PaymentLink(
+PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, BillingPortalConfigurationApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinksResourceConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinksResourceInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection Function()? nameCollection, PaymentLinkObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinksResourcePaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinksResourceRestrictions? Function()? restrictions, PaymentLinksResourceShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinksResourceSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinksResourceTransferData? Function()? transferData, String? url, }) { return PaymentLink(
   active: active ?? this.active,
   afterCompletion: afterCompletion ?? this.afterCompletion,
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,

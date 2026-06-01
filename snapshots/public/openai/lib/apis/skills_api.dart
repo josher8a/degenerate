@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_skill_body.dart';import '../models/create_skill_version_body.dart';import '../models/deleted_skill_resource.dart';import '../models/deleted_skill_version_resource.dart';import '../models/order_enum.dart';import '../models/set_default_skill_version_body.dart';import '../models/skill_list_resource.dart';import '../models/skill_resource.dart';import '../models/skill_version_list_resource.dart';import '../models/skill_version_resource.dart';/// SkillsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_skill_body.dart';import 'package:pub_openai/models/create_skill_version_body.dart';import 'package:pub_openai/models/deleted_skill_resource.dart';import 'package:pub_openai/models/deleted_skill_version_resource.dart';import 'package:pub_openai/models/order_enum.dart';import 'package:pub_openai/models/set_default_skill_version_body.dart';import 'package:pub_openai/models/skill_list_resource.dart';import 'package:pub_openai/models/skill_resource.dart';import 'package:pub_openai/models/skill_version_list_resource.dart';import 'package:pub_openai/models/skill_version_resource.dart';/// SkillsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

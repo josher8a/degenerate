@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarded_request_header.dart';/// Details about the response from the destination endpoint.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_header.dart';/// Details about the response from the destination endpoint.
 @immutable final class ForwardedResponseDetails {const ForwardedResponseDetails({required this.body, required this.headers, required this.status, });
 
 factory ForwardedResponseDetails.fromJson(Map<String, dynamic> json) { return ForwardedResponseDetails(

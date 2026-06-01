@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';import 'simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 @immutable final class CheckSuiteStatus {const CheckSuiteStatus._(this.value);
 
 factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
@@ -39,54 +39,6 @@ bool get isUnknown { return !values.contains(this); }
     other is CheckSuiteStatus && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckSuiteStatus($value)'; } 
- }
-@immutable final class CheckSuiteConclusion {const CheckSuiteConclusion._(this.value);
-
-factory CheckSuiteConclusion.fromJson(String json) { return switch (json) {
-  'success' => success,
-  'failure' => failure,
-  'neutral' => neutral,
-  'cancelled' => cancelled,
-  'skipped' => skipped,
-  'timed_out' => timedOut,
-  'action_required' => actionRequired,
-  'startup_failure' => startupFailure,
-  'stale' => stale,
-  'null' => $null,
-  _ => CheckSuiteConclusion._(json),
-}; }
-
-static const CheckSuiteConclusion success = CheckSuiteConclusion._('success');
-
-static const CheckSuiteConclusion failure = CheckSuiteConclusion._('failure');
-
-static const CheckSuiteConclusion neutral = CheckSuiteConclusion._('neutral');
-
-static const CheckSuiteConclusion cancelled = CheckSuiteConclusion._('cancelled');
-
-static const CheckSuiteConclusion skipped = CheckSuiteConclusion._('skipped');
-
-static const CheckSuiteConclusion timedOut = CheckSuiteConclusion._('timed_out');
-
-static const CheckSuiteConclusion actionRequired = CheckSuiteConclusion._('action_required');
-
-static const CheckSuiteConclusion startupFailure = CheckSuiteConclusion._('startup_failure');
-
-static const CheckSuiteConclusion stale = CheckSuiteConclusion._('stale');
-
-static const CheckSuiteConclusion $null = CheckSuiteConclusion._('null');
-
-static const List<CheckSuiteConclusion> values = [success, failure, neutral, cancelled, skipped, timedOut, actionRequired, startupFailure, stale, $null];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckSuiteConclusion($value)'; } 
  }
 /// A suite of checks performed on the code of a given code change
 @immutable final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/page_rules_create_a_page_rule_request.dart';import '../models/page_rules_edit_a_page_rule_request.dart';import '../models/page_rules_list_page_rules_direction.dart';import '../models/page_rules_list_page_rules_match.dart';import '../models/page_rules_list_page_rules_order.dart';import '../models/page_rules_list_page_rules_status.dart';import '../models/page_rules_update_a_page_rule_request.dart';import '../models/response_single_id9_result.dart';import '../models/zones_page_rule.dart';import '../models/zones_schemas_identifier.dart';/// PageRulesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_rules_create_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_edit_a_page_rule_request.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_direction.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_match.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_order.dart';import 'package:pub_cloudflare/models/page_rules_list_page_rules_status.dart';import 'package:pub_cloudflare/models/page_rules_update_a_page_rule_request.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/zones_page_rule.dart';import 'package:pub_cloudflare/models/zones_schemas_identifier.dart';/// PageRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -146,7 +146,7 @@ return execute(
 /// Deletes an existing Page Rule.
 ///
 /// `DELETE /zones/{zone_id}/pagerules/{pagerule_id}`
-Future<ApiResult<ResponseSingleId9Result?, Never>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, Never>> pageRulesDeleteAPageRule({required ZonesSchemasIdentifier pageruleId, required ZonesSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -159,7 +159,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? ResponseSingleId9Result.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

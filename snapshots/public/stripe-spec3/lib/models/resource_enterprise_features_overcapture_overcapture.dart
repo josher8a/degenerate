@@ -1,43 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not the authorized amount can be over-captured.
-@immutable final class ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus {const ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._(this.value);
-
-factory ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus.fromJson(String json) { return switch (json) {
-  'available' => available,
-  'unavailable' => unavailable,
-  _ => ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._(json),
-}; }
-
-static const ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus available = ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._('available');
-
-static const ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus unavailable = ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus._('unavailable');
-
-static const List<ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus> values = [available, unavailable];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/resource_enterprise_features_incremental_authorization_incremental_authorization/resource_enterprise_features_incremental_authorization_incremental_authorization_status.dart';/// 
 @immutable final class ResourceEnterpriseFeaturesOvercaptureOvercapture {const ResourceEnterpriseFeaturesOvercaptureOvercapture({required this.maximumAmountCapturable, required this.status, });
 
 factory ResourceEnterpriseFeaturesOvercaptureOvercapture.fromJson(Map<String, dynamic> json) { return ResourceEnterpriseFeaturesOvercaptureOvercapture(
   maximumAmountCapturable: (json['maximum_amount_capturable'] as num).toInt(),
-  status: ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus.fromJson(json['status'] as String),
+  status: ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus.fromJson(json['status'] as String),
 ); }
 
 /// The maximum amount that can be captured.
 final int maximumAmountCapturable;
 
 /// Indicates whether or not the authorized amount can be over-captured.
-final ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus status;
+final ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus status;
 
 Map<String, dynamic> toJson() { return {
   'maximum_amount_capturable': maximumAmountCapturable,
@@ -45,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maximum_amount_capturable') && json['maximum_amount_capturable'] is num &&
       json.containsKey('status'); } 
-ResourceEnterpriseFeaturesOvercaptureOvercapture copyWith({int? maximumAmountCapturable, ResourceEnterpriseFeaturesOvercaptureOvercaptureStatus? status, }) { return ResourceEnterpriseFeaturesOvercaptureOvercapture(
+ResourceEnterpriseFeaturesOvercaptureOvercapture copyWith({int? maximumAmountCapturable, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorizationStatus? status, }) { return ResourceEnterpriseFeaturesOvercaptureOvercapture(
   maximumAmountCapturable: maximumAmountCapturable ?? this.maximumAmountCapturable,
   status: status ?? this.status,
 ); } 

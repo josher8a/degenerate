@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_bad_response.dart';import '../models/mcn_create_provider_request.dart';import '../models/mcn_deleted_provider.dart';import '../models/mcn_good_response.dart';import '../models/mcn_provider.dart';import '../models/mcn_provider_id.dart';import '../models/mcn_provider_initial_setup_response_result.dart';import '../models/mcn_update_provider_request.dart';/// CloudIntegrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_account_id.dart';import 'package:pub_cloudflare/models/mcn_bad_response.dart';import 'package:pub_cloudflare/models/mcn_create_provider_request.dart';import 'package:pub_cloudflare/models/mcn_deleted_provider.dart';import 'package:pub_cloudflare/models/mcn_good_response.dart';import 'package:pub_cloudflare/models/mcn_provider.dart';import 'package:pub_cloudflare/models/mcn_provider_id.dart';import 'package:pub_cloudflare/models/mcn_provider_initial_setup_response/mcn_provider_initial_setup_response_result.dart';import 'package:pub_cloudflare/models/mcn_update_provider_request.dart';/// CloudIntegrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_site.dart';@immutable final class MagicSitesCollectionResponse {const MagicSitesCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_site.dart';@immutable final class MagicSitesCollectionResponse {const MagicSitesCollectionResponse({this.result});
 
 factory MagicSitesCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicSitesCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicSite.fromJson(e as Map<String, dynamic>)).toList(),

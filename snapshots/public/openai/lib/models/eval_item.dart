@@ -1,39 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_item_content.dart';import 'eval_item_content_item.dart';import 'eval_item_content_output_text.dart';import 'eval_item_input_image.dart';import 'input_audio.dart';import 'input_text_content.dart';/// The role of the message input. One of `user`, `assistant`, `system`, or
-/// `developer`.
-/// 
-@immutable final class EvalItemRole {const EvalItemRole._(this.value);
-
-factory EvalItemRole.fromJson(String json) { return switch (json) {
-  'user' => user,
-  'assistant' => assistant,
-  'system' => system,
-  'developer' => developer,
-  _ => EvalItemRole._(json),
-}; }
-
-static const EvalItemRole user = EvalItemRole._('user');
-
-static const EvalItemRole assistant = EvalItemRole._('assistant');
-
-static const EvalItemRole system = EvalItemRole._('system');
-
-static const EvalItemRole developer = EvalItemRole._('developer');
-
-static const List<EvalItemRole> values = [user, assistant, system, developer];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalItemRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalItemRole($value)'; } 
- }
-/// The type of the message input. Always `message`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/eval_item_content.dart';import 'package:pub_openai/models/eval_item_content_item.dart';import 'package:pub_openai/models/eval_item_content_output_text.dart';import 'package:pub_openai/models/eval_item_input_image.dart';import 'package:pub_openai/models/input_audio.dart';import 'package:pub_openai/models/input_text_content.dart';/// The type of the message input. Always `message`.
 /// 
 @immutable final class EvalItemType {const EvalItemType._(this.value);
 
@@ -65,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class EvalItem {const EvalItem({required this.role, required this.content, this.type, });
 
 factory EvalItem.fromJson(Map<String, dynamic> json) { return EvalItem(
-  role: EvalItemRole.fromJson(json['role'] as String),
+  role: EasyInputMessageRole.fromJson(json['role'] as String),
   content: OneOf2.parse(json['content'], fromA: (v) => OneOf5.parse(v, fromA: (v) => EvalItemContentText.fromJson(v as String), fromB: (v) => InputTextContent.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalItemContentOutputText.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalItemInputImage.fromJson(v as Map<String, dynamic>), fromE: (v) => InputAudio.fromJson(v as Map<String, dynamic>),), fromB: (v) => (v as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => EvalItemContentText.fromJson(v as String), fromB: (v) => InputTextContent.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalItemContentOutputText.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalItemInputImage.fromJson(v as Map<String, dynamic>), fromE: (v) => InputAudio.fromJson(v as Map<String, dynamic>),)).toList(),),
   type: json['type'] != null ? EvalItemType.fromJson(json['type'] as String) : null,
 ); }
@@ -73,7 +40,7 @@ factory EvalItem.fromJson(Map<String, dynamic> json) { return EvalItem(
 /// The role of the message input. One of `user`, `assistant`, `system`, or
 /// `developer`.
 /// 
-final EvalItemRole role;
+final EasyInputMessageRole role;
 
 final EvalItemContent content;
 
@@ -88,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-EvalItem copyWith({EvalItemRole? role, EvalItemContent? content, EvalItemType Function()? type, }) { return EvalItem(
+EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalItemType Function()? type, }) { return EvalItem(
   role: role ?? this.role,
   content: content ?? this.content,
   type: type != null ? type() : this.type,

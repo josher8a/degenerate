@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarded_request_context.dart';import 'forwarded_request_details.dart';import 'forwarded_response_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_context.dart';import 'package:pub_stripe_spec3/models/forwarded_request_details.dart';import 'package:pub_stripe_spec3/models/forwarded_response_details.dart';import 'package:pub_stripe_spec3/models/forwarding_request/replacements.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ForwardingRequestObject {const ForwardingRequestObject._(this.value);
 
 factory ForwardingRequestObject.fromJson(String json) { return switch (json) {
@@ -21,39 +21,6 @@ bool get isUnknown { return !values.contains(this); }
     other is ForwardingRequestObject && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ForwardingRequestObject($value)'; } 
- }
-@immutable final class ForwardingRequestReplacements {const ForwardingRequestReplacements._(this.value);
-
-factory ForwardingRequestReplacements.fromJson(String json) { return switch (json) {
-  'card_cvc' => cardCvc,
-  'card_expiry' => cardExpiry,
-  'card_number' => cardNumber,
-  'cardholder_name' => cardholderName,
-  'request_signature' => requestSignature,
-  _ => ForwardingRequestReplacements._(json),
-}; }
-
-static const ForwardingRequestReplacements cardCvc = ForwardingRequestReplacements._('card_cvc');
-
-static const ForwardingRequestReplacements cardExpiry = ForwardingRequestReplacements._('card_expiry');
-
-static const ForwardingRequestReplacements cardNumber = ForwardingRequestReplacements._('card_number');
-
-static const ForwardingRequestReplacements cardholderName = ForwardingRequestReplacements._('cardholder_name');
-
-static const ForwardingRequestReplacements requestSignature = ForwardingRequestReplacements._('request_signature');
-
-static const List<ForwardingRequestReplacements> values = [cardCvc, cardExpiry, cardNumber, cardholderName, requestSignature];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ForwardingRequestReplacements && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ForwardingRequestReplacements($value)'; } 
  }
 /// Instructs Stripe to make a request on your behalf using the destination URL. The destination URL
 /// is activated by Stripe at the time of onboarding. Stripe verifies requests with your credentials
@@ -80,7 +47,7 @@ factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return Forwardin
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: ForwardingRequestObject.fromJson(json['object'] as String),
   paymentMethod: json['payment_method'] as String,
-  replacements: (json['replacements'] as List<dynamic>).map((e) => ForwardingRequestReplacements.fromJson(e as String)).toList(),
+  replacements: (json['replacements'] as List<dynamic>).map((e) => Replacements.fromJson(e as String)).toList(),
   requestContext: json['request_context'] != null ? ForwardedRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null,
   requestDetails: json['request_details'] != null ? ForwardedRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null,
   responseDetails: json['response_details'] != null ? ForwardedResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null,
@@ -106,7 +73,7 @@ final ForwardingRequestObject object;
 final String paymentMethod;
 
 /// The field kinds to be replaced in the forwarded request.
-final List<ForwardingRequestReplacements> replacements;
+final List<Replacements> replacements;
 
 /// Context about the request from Stripe's servers to the destination endpoint.
 final ForwardedRequestContext? requestContext;
@@ -139,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements'); } 
-ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<ForwardingRequestReplacements>? replacements, ForwardedRequestContext? Function()? requestContext, ForwardedRequestDetails? Function()? requestDetails, ForwardedResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
+ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<Replacements>? replacements, ForwardedRequestContext? Function()? requestContext, ForwardedRequestDetails? Function()? requestDetails, ForwardedResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

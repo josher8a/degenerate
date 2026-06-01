@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_form_submission_rule_settings.dart';@immutable final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule/zaraz_form_submission_rule_settings.dart';@immutable final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
 
 factory ZarazFormSubmissionRuleAction.fromJson(String json) { return switch (json) {
   'formSubmission' => formSubmission,

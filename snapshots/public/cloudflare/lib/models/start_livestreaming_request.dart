@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_livestreaming_request_video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/start_livestreaming_request/video_config.dart';@immutable final class StartLivestreamingRequest {const StartLivestreamingRequest({this.name, this.videoConfig, });
 
 factory StartLivestreamingRequest.fromJson(Map<String, dynamic> json) { return StartLivestreamingRequest(
   name: json['name'] as String?,
-  videoConfig: json['video_config'] != null ? StartLivestreamingRequestVideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
+  videoConfig: json['video_config'] != null ? VideoConfig.fromJson(json['video_config'] as Map<String, dynamic>) : null,
 ); }
 
 final String? name;
 
-final StartLivestreamingRequestVideoConfig? videoConfig;
+final VideoConfig? videoConfig;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'video_config'}.contains(key)); } 
-StartLivestreamingRequest copyWith({String? Function()? name, StartLivestreamingRequestVideoConfig Function()? videoConfig, }) { return StartLivestreamingRequest(
+StartLivestreamingRequest copyWith({String? Function()? name, VideoConfig Function()? videoConfig, }) { return StartLivestreamingRequest(
   name: name != null ? name() : this.name,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 

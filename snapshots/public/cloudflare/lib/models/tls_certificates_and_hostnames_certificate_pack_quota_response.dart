@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_quota_response_result.dart';@immutable final class TlsCertificatesAndHostnamesCertificatePackQuotaResponse {const TlsCertificatesAndHostnamesCertificatePackQuotaResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_quota_response/tls_certificates_and_hostnames_certificate_pack_quota_response_result.dart';@immutable final class TlsCertificatesAndHostnamesCertificatePackQuotaResponse {const TlsCertificatesAndHostnamesCertificatePackQuotaResponse({this.result});
 
 factory TlsCertificatesAndHostnamesCertificatePackQuotaResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePackQuotaResponse(
   result: json['result'] != null ? TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

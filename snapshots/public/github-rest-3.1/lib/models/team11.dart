@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team11_parent.dart';@immutable final class Team11Privacy {const Team11Privacy._(this.value);
-
-factory Team11Privacy.fromJson(String json) { return switch (json) {
-  'open' => open,
-  'closed' => closed,
-  'secret' => secret,
-  _ => Team11Privacy._(json),
-}; }
-
-static const Team11Privacy open = Team11Privacy._('open');
-
-static const Team11Privacy closed = Team11Privacy._('closed');
-
-static const Team11Privacy secret = Team11Privacy._('secret');
-
-static const List<Team11Privacy> values = [open, closed, secret];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Team11Privacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Team11Privacy($value)'; } 
- }
-/// Groups of organization members that gives permissions on specified repositories.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_parent.dart';import 'package:pub_github_rest_3_1/models/team/team_privacy.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team11 {const Team11({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
 factory Team11.fromJson(Map<String, dynamic> json) { return Team11(
@@ -38,9 +11,9 @@ factory Team11.fromJson(Map<String, dynamic> json) { return Team11(
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null ? Team11Parent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? TeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   permission: json['permission'] as String?,
-  privacy: json['privacy'] != null ? Team11Privacy.fromJson(json['privacy'] as String) : null,
+  privacy: json['privacy'] != null ? TeamPrivacy.fromJson(json['privacy'] as String) : null,
   repositoriesUrl: json['repositories_url'] != null ? Uri.parse(json['repositories_url'] as String) : null,
   slug: json['slug'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
@@ -63,12 +36,12 @@ final String name;
 
 final String? nodeId;
 
-final Team11Parent? parent;
+final TeamParent? parent;
 
 /// Permission that the team will have for its repositories
 final String? permission;
 
-final Team11Privacy? privacy;
+final TeamPrivacy? privacy;
 
 final Uri? repositoriesUrl;
 
@@ -94,7 +67,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-Team11 copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, Team11Parent? Function()? parent, String Function()? permission, Team11Privacy Function()? privacy, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, }) { return Team11(
+Team11 copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, TeamParent? Function()? parent, String Function()? permission, TeamPrivacy Function()? privacy, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, }) { return Team11(
   deleted: deleted != null ? deleted() : this.deleted,
   description: description != null ? description() : this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

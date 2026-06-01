@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-@immutable final class ReposCreateOrgRulesetRequestTarget {const ReposCreateOrgRulesetRequestTarget._(this.value);
-
-factory ReposCreateOrgRulesetRequestTarget.fromJson(String json) { return switch (json) {
-  'branch' => branch,
-  'tag' => tag,
-  'push' => push,
-  'repository' => repository,
-  _ => ReposCreateOrgRulesetRequestTarget._(json),
-}; }
-
-static const ReposCreateOrgRulesetRequestTarget branch = ReposCreateOrgRulesetRequestTarget._('branch');
-
-static const ReposCreateOrgRulesetRequestTarget tag = ReposCreateOrgRulesetRequestTarget._('tag');
-
-static const ReposCreateOrgRulesetRequestTarget push = ReposCreateOrgRulesetRequestTarget._('push');
-
-static const ReposCreateOrgRulesetRequestTarget repository = ReposCreateOrgRulesetRequestTarget._('repository');
-
-static const List<ReposCreateOrgRulesetRequestTarget> values = [branch, tag, push, repository];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposCreateOrgRulesetRequestTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReposCreateOrgRulesetRequestTarget($value)'; } 
- }
-@immutable final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateOrgRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_rules.dart';import 'package:pub_github_rest_3_1/models/org_ruleset_conditions.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';@immutable final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateOrgRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrgRulesetRequest(
   name: json['name'] as String,

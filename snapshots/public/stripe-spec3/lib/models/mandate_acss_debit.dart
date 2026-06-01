@@ -1,94 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MandateAcssDebitDefaultFor {const MandateAcssDebitDefaultFor._(this.value);
-
-factory MandateAcssDebitDefaultFor.fromJson(String json) { return switch (json) {
-  'invoice' => invoice,
-  'subscription' => subscription,
-  _ => MandateAcssDebitDefaultFor._(json),
-}; }
-
-static const MandateAcssDebitDefaultFor invoice = MandateAcssDebitDefaultFor._('invoice');
-
-static const MandateAcssDebitDefaultFor subscription = MandateAcssDebitDefaultFor._('subscription');
-
-static const List<MandateAcssDebitDefaultFor> values = [invoice, subscription];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateAcssDebitDefaultFor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateAcssDebitDefaultFor($value)'; } 
- }
-/// Payment schedule for the mandate.
-@immutable final class MandateAcssDebitPaymentSchedule {const MandateAcssDebitPaymentSchedule._(this.value);
-
-factory MandateAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
-  'combined' => combined,
-  'interval' => interval,
-  'sporadic' => sporadic,
-  _ => MandateAcssDebitPaymentSchedule._(json),
-}; }
-
-static const MandateAcssDebitPaymentSchedule combined = MandateAcssDebitPaymentSchedule._('combined');
-
-static const MandateAcssDebitPaymentSchedule interval = MandateAcssDebitPaymentSchedule._('interval');
-
-static const MandateAcssDebitPaymentSchedule sporadic = MandateAcssDebitPaymentSchedule._('sporadic');
-
-static const List<MandateAcssDebitPaymentSchedule> values = [combined, interval, sporadic];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateAcssDebitPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateAcssDebitPaymentSchedule($value)'; } 
- }
-/// Transaction type of the mandate.
-@immutable final class MandateAcssDebitTransactionType {const MandateAcssDebitTransactionType._(this.value);
-
-factory MandateAcssDebitTransactionType.fromJson(String json) { return switch (json) {
-  'business' => business,
-  'personal' => personal,
-  _ => MandateAcssDebitTransactionType._(json),
-}; }
-
-static const MandateAcssDebitTransactionType business = MandateAcssDebitTransactionType._('business');
-
-static const MandateAcssDebitTransactionType personal = MandateAcssDebitTransactionType._('personal');
-
-static const List<MandateAcssDebitTransactionType> values = [business, personal];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateAcssDebitTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateAcssDebitTransactionType($value)'; } 
- }
-/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_mandate_options/default_for.dart';import 'package:pub_stripe_spec3/models/mandate_acss_debit/mandate_acss_debit_payment_schedule.dart';import 'package:pub_stripe_spec3/models/mandate_acss_debit/mandate_acss_debit_transaction_type.dart';/// 
 @immutable final class MandateAcssDebit {const MandateAcssDebit({required this.paymentSchedule, required this.transactionType, this.defaultFor, this.intervalDescription, });
 
 factory MandateAcssDebit.fromJson(Map<String, dynamic> json) { return MandateAcssDebit(
-  defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => MandateAcssDebitDefaultFor.fromJson(e as String)).toList(),
+  defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => DefaultFor.fromJson(e as String)).toList(),
   intervalDescription: json['interval_description'] as String?,
   paymentSchedule: MandateAcssDebitPaymentSchedule.fromJson(json['payment_schedule'] as String),
   transactionType: MandateAcssDebitTransactionType.fromJson(json['transaction_type'] as String),
 ); }
 
 /// List of Stripe products where this mandate can be selected automatically.
-final List<MandateAcssDebitDefaultFor>? defaultFor;
+final List<DefaultFor>? defaultFor;
 
 /// Description of the interval. Only required if the 'payment_schedule' parameter is 'interval' or 'combined'.
 final String? intervalDescription;
@@ -107,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_schedule') &&
       json.containsKey('transaction_type'); } 
-MandateAcssDebit copyWith({List<MandateAcssDebitDefaultFor> Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
+MandateAcssDebit copyWith({List<DefaultFor> Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,

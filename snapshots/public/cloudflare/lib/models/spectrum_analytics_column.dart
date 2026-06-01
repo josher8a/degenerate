@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column_metrics.dart';@immutable final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_column/metrics.dart';@immutable final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
 
 factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -9,14 +9,14 @@ factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return Spe
 
 final List<String>? dimensions;
 
-final SpectrumAnalyticsColumnMetrics? metrics;
+final Metrics? metrics;
 
 Map<String, dynamic> toJson() { return {
   'dimensions': ?dimensions,
   if (metrics != null) 'metrics': metrics?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dimensions', 'metrics'}.contains(key)); } 
-SpectrumAnalyticsColumn copyWith({List<String> Function()? dimensions, SpectrumAnalyticsColumnMetrics Function()? metrics, }) { return SpectrumAnalyticsColumn(
+SpectrumAnalyticsColumn copyWith({List<String> Function()? dimensions, Metrics Function()? metrics, }) { return SpectrumAnalyticsColumn(
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   metrics: metrics != null ? metrics() : this.metrics,
 ); } 

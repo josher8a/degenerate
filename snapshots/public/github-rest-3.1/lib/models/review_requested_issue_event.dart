@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';/// Review Requested Issue Event
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// Review Requested Issue Event
 @immutable final class ReviewRequestedIssueEvent {const ReviewRequestedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.reviewRequester, this.requestedTeam, this.requestedReviewer, });
 
 factory ReviewRequestedIssueEvent.fromJson(Map<String, dynamic> json) { return ReviewRequestedIssueEvent(

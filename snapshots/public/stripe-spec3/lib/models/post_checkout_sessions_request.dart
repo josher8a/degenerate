@@ -1,171 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_adaptive_pricing.dart';import 'post_checkout_sessions_request_after_expiration.dart';import 'post_checkout_sessions_request_automatic_tax.dart';import 'post_checkout_sessions_request_branding_settings.dart';import 'post_checkout_sessions_request_consent_collection.dart';import 'post_checkout_sessions_request_custom_fields.dart';import 'post_checkout_sessions_request_custom_text.dart';import 'post_checkout_sessions_request_customer_update.dart';import 'post_checkout_sessions_request_discounts.dart';import 'post_checkout_sessions_request_invoice_creation.dart';import 'post_checkout_sessions_request_line_items.dart';import 'post_checkout_sessions_request_name_collection.dart';import 'post_checkout_sessions_request_optional_items.dart';import 'post_checkout_sessions_request_payment_intent_data.dart';import 'post_checkout_sessions_request_payment_method_data.dart';import 'post_checkout_sessions_request_payment_method_options.dart';import 'post_checkout_sessions_request_permissions.dart';import 'post_checkout_sessions_request_phone_number_collection.dart';import 'post_checkout_sessions_request_saved_payment_method_options.dart';import 'post_checkout_sessions_request_setup_intent_data.dart';import 'post_checkout_sessions_request_shipping_address_collection.dart';import 'post_checkout_sessions_request_shipping_options.dart';import 'post_checkout_sessions_request_subscription_data.dart';import 'post_checkout_sessions_request_tax_id_collection.dart';import 'post_checkout_sessions_request_wallet_options.dart';@immutable final class PostCheckoutSessionsRequestExcludedPaymentMethodTypes {const PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(this.value);
-
-factory PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
-  'acss_debit' => acssDebit,
-  'affirm' => affirm,
-  'afterpay_clearpay' => afterpayClearpay,
-  'alipay' => alipay,
-  'alma' => alma,
-  'amazon_pay' => amazonPay,
-  'au_becs_debit' => auBecsDebit,
-  'bacs_debit' => bacsDebit,
-  'bancontact' => bancontact,
-  'billie' => billie,
-  'blik' => blik,
-  'boleto' => boleto,
-  'card' => card,
-  'cashapp' => cashapp,
-  'crypto' => crypto,
-  'customer_balance' => customerBalance,
-  'eps' => eps,
-  'fpx' => fpx,
-  'giropay' => giropay,
-  'grabpay' => grabpay,
-  'ideal' => ideal,
-  'kakao_pay' => kakaoPay,
-  'klarna' => klarna,
-  'konbini' => konbini,
-  'kr_card' => krCard,
-  'mb_way' => mbWay,
-  'mobilepay' => mobilepay,
-  'multibanco' => multibanco,
-  'naver_pay' => naverPay,
-  'nz_bank_account' => nzBankAccount,
-  'oxxo' => oxxo,
-  'p24' => p24,
-  'pay_by_bank' => payByBank,
-  'payco' => payco,
-  'paynow' => paynow,
-  'paypal' => paypal,
-  'payto' => payto,
-  'pix' => pix,
-  'promptpay' => promptpay,
-  'revolut_pay' => revolutPay,
-  'samsung_pay' => samsungPay,
-  'satispay' => satispay,
-  'sepa_debit' => sepaDebit,
-  'sofort' => sofort,
-  'swish' => swish,
-  'twint' => twint,
-  'us_bank_account' => usBankAccount,
-  'wechat_pay' => wechatPay,
-  'zip' => zip,
-  _ => PostCheckoutSessionsRequestExcludedPaymentMethodTypes._(json),
-}; }
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('acss_debit');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes affirm = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('affirm');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes afterpayClearpay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('afterpay_clearpay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes alipay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('alipay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes alma = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('alma');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes amazonPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('amazon_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes auBecsDebit = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('au_becs_debit');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes bacsDebit = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('bacs_debit');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes bancontact = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('bancontact');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes billie = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('billie');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes blik = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('blik');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes boleto = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('boleto');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes card = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('card');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes cashapp = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('cashapp');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes crypto = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('crypto');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes customerBalance = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('customer_balance');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes eps = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('eps');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes fpx = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('fpx');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes giropay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('giropay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes grabpay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('grabpay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes ideal = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('ideal');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes kakaoPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('kakao_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes klarna = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('klarna');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes konbini = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('konbini');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes krCard = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('kr_card');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes mbWay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('mb_way');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes mobilepay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('mobilepay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes multibanco = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('multibanco');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes naverPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('naver_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes nzBankAccount = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('nz_bank_account');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes oxxo = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('oxxo');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes p24 = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('p24');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes payByBank = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('pay_by_bank');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes payco = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('payco');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes paynow = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('paynow');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes paypal = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('paypal');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes payto = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('payto');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes pix = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('pix');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes promptpay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('promptpay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes revolutPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('revolut_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes samsungPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('samsung_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes satispay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('satispay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes sepaDebit = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('sepa_debit');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes sofort = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('sofort');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes swish = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('swish');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes twint = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('twint');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes usBankAccount = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('us_bank_account');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes wechatPay = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('wechat_pay');
-
-static const PostCheckoutSessionsRequestExcludedPaymentMethodTypes zip = PostCheckoutSessionsRequestExcludedPaymentMethodTypes._('zip');
-
-static const List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestExcludedPaymentMethodTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestExcludedPaymentMethodTypes($value)'; } 
- }
-@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/after_expiration.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/consent_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/phone_number_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_customer_update.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_invoice_creation.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_name_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_optional_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_permissions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_subscription_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/setup_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/tax_id_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/wallet_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -333,64 +168,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodTypes($value)'; } 
  }
-/// Specify whether Checkout should collect the customer's billing address. Defaults to `auto`.
-@immutable final class PostCheckoutSessionsRequestBillingAddressCollection {const PostCheckoutSessionsRequestBillingAddressCollection._(this.value);
-
-factory PostCheckoutSessionsRequestBillingAddressCollection.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'required' => $required,
-  _ => PostCheckoutSessionsRequestBillingAddressCollection._(json),
-}; }
-
-static const PostCheckoutSessionsRequestBillingAddressCollection auto = PostCheckoutSessionsRequestBillingAddressCollection._('auto');
-
-static const PostCheckoutSessionsRequestBillingAddressCollection $required = PostCheckoutSessionsRequestBillingAddressCollection._('required');
-
-static const List<PostCheckoutSessionsRequestBillingAddressCollection> values = [auto, $required];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestBillingAddressCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestBillingAddressCollection($value)'; } 
- }
-/// Configure whether a Checkout Session creates a [Customer](https://docs.stripe.com/api/customers) during Session confirmation.
-/// 
-/// When a Customer is not created, you can still retrieve email, address, and other customer data entered in Checkout
-/// with [customer_details](https://docs.stripe.com/api/checkout/sessions/object#checkout_session_object-customer_details).
-/// 
-/// Sessions that don't create Customers instead are grouped by [guest customers](https://docs.stripe.com/payments/checkout/guest-customers)
-/// in the Dashboard. Promotion codes limited to first time customers will return invalid for these Sessions.
-/// 
-/// Can only be set in `payment` and `setup` mode.
-@immutable final class PostCheckoutSessionsRequestCustomerCreation {const PostCheckoutSessionsRequestCustomerCreation._(this.value);
-
-factory PostCheckoutSessionsRequestCustomerCreation.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  _ => PostCheckoutSessionsRequestCustomerCreation._(json),
-}; }
-
-static const PostCheckoutSessionsRequestCustomerCreation always = PostCheckoutSessionsRequestCustomerCreation._('always');
-
-static const PostCheckoutSessionsRequestCustomerCreation ifRequired = PostCheckoutSessionsRequestCustomerCreation._('if_required');
-
-static const List<PostCheckoutSessionsRequestCustomerCreation> values = [always, ifRequired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestCustomerCreation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomerCreation($value)'; } 
- }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
 @immutable final class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale._(this.value);
 
@@ -533,34 +310,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestLocale($value)'; } 
  }
-/// The mode of the Checkout Session. Pass `subscription` if the Checkout Session includes at least one recurring item.
-@immutable final class PostCheckoutSessionsRequestMode {const PostCheckoutSessionsRequestMode._(this.value);
-
-factory PostCheckoutSessionsRequestMode.fromJson(String json) { return switch (json) {
-  'payment' => payment,
-  'setup' => setup,
-  'subscription' => subscription,
-  _ => PostCheckoutSessionsRequestMode._(json),
-}; }
-
-static const PostCheckoutSessionsRequestMode payment = PostCheckoutSessionsRequestMode._('payment');
-
-static const PostCheckoutSessionsRequestMode setup = PostCheckoutSessionsRequestMode._('setup');
-
-static const PostCheckoutSessionsRequestMode subscription = PostCheckoutSessionsRequestMode._('subscription');
-
-static const List<PostCheckoutSessionsRequestMode> values = [payment, setup, subscription];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestMode($value)'; } 
- }
 /// Where the user is coming from. This informs the optimizations that are applied to the session. You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext._(this.value);
 
@@ -585,102 +334,6 @@ bool get isUnknown { return !values.contains(this); }
     other is PostCheckoutSessionsRequestOriginContext && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestOriginContext($value)'; } 
- }
-/// Specify whether Checkout should collect a payment method. When set to `if_required`, Checkout will not collect a payment method when the total due for the session is 0.
-/// This may occur if the Checkout Session includes a free trial or a discount.
-/// 
-/// Can only be set in `subscription` mode. Defaults to `always`.
-/// 
-/// If you'd like information on how to collect a payment method outside of Checkout, read the guide on configuring [subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
-@immutable final class PostCheckoutSessionsRequestPaymentMethodCollection {const PostCheckoutSessionsRequestPaymentMethodCollection._(this.value);
-
-factory PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  _ => PostCheckoutSessionsRequestPaymentMethodCollection._(json),
-}; }
-
-static const PostCheckoutSessionsRequestPaymentMethodCollection always = PostCheckoutSessionsRequestPaymentMethodCollection._('always');
-
-static const PostCheckoutSessionsRequestPaymentMethodCollection ifRequired = PostCheckoutSessionsRequestPaymentMethodCollection._('if_required');
-
-static const List<PostCheckoutSessionsRequestPaymentMethodCollection> values = [always, ifRequired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodCollection($value)'; } 
- }
-/// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-@immutable final class PostCheckoutSessionsRequestRedirectOnCompletion {const PostCheckoutSessionsRequestRedirectOnCompletion._(this.value);
-
-factory PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'if_required' => ifRequired,
-  'never' => never,
-  _ => PostCheckoutSessionsRequestRedirectOnCompletion._(json),
-}; }
-
-static const PostCheckoutSessionsRequestRedirectOnCompletion always = PostCheckoutSessionsRequestRedirectOnCompletion._('always');
-
-static const PostCheckoutSessionsRequestRedirectOnCompletion ifRequired = PostCheckoutSessionsRequestRedirectOnCompletion._('if_required');
-
-static const PostCheckoutSessionsRequestRedirectOnCompletion never = PostCheckoutSessionsRequestRedirectOnCompletion._('never');
-
-static const List<PostCheckoutSessionsRequestRedirectOnCompletion> values = [always, ifRequired, never];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestRedirectOnCompletion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestRedirectOnCompletion($value)'; } 
- }
-/// Describes the type of transaction being performed by Checkout in order
-/// to customize relevant text on the page, such as the submit button.
-///  `submit_type` can only be specified on Checkout Sessions in
-/// `payment` or `subscription` mode. If blank or `auto`, `pay` is used.
-/// You can't set this parameter if `ui_mode` is `custom`.
-@immutable final class PostCheckoutSessionsRequestSubmitType {const PostCheckoutSessionsRequestSubmitType._(this.value);
-
-factory PostCheckoutSessionsRequestSubmitType.fromJson(String json) { return switch (json) {
-  'auto' => auto,
-  'book' => book,
-  'donate' => donate,
-  'pay' => pay,
-  'subscribe' => subscribe,
-  _ => PostCheckoutSessionsRequestSubmitType._(json),
-}; }
-
-static const PostCheckoutSessionsRequestSubmitType auto = PostCheckoutSessionsRequestSubmitType._('auto');
-
-static const PostCheckoutSessionsRequestSubmitType book = PostCheckoutSessionsRequestSubmitType._('book');
-
-static const PostCheckoutSessionsRequestSubmitType donate = PostCheckoutSessionsRequestSubmitType._('donate');
-
-static const PostCheckoutSessionsRequestSubmitType pay = PostCheckoutSessionsRequestSubmitType._('pay');
-
-static const PostCheckoutSessionsRequestSubmitType subscribe = PostCheckoutSessionsRequestSubmitType._('subscribe');
-
-static const List<PostCheckoutSessionsRequestSubmitType> values = [auto, book, donate, pay, subscribe];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCheckoutSessionsRequestSubmitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubmitType($value)'; } 
  }
 /// The UI mode of the Session. Defaults to `hosted`.
 @immutable final class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode._(this.value);
@@ -713,62 +366,62 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.customerUpdate, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.adaptivePricing, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.walletOptions, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.paymentMethodData, });
 
 factory PostCheckoutSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequest(
-  adaptivePricing: json['adaptive_pricing'] != null ? PostCheckoutSessionsRequestAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
-  afterExpiration: json['after_expiration'] != null ? PostCheckoutSessionsRequestAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
+  adaptivePricing: json['adaptive_pricing'] != null ? AdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
+  afterExpiration: json['after_expiration'] != null ? AfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
   automaticTax: json['automatic_tax'] != null ? PostCheckoutSessionsRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
-  billingAddressCollection: json['billing_address_collection'] != null ? PostCheckoutSessionsRequestBillingAddressCollection.fromJson(json['billing_address_collection'] as String) : null,
-  brandingSettings: json['branding_settings'] != null ? PostCheckoutSessionsRequestBrandingSettings.fromJson(json['branding_settings'] as Map<String, dynamic>) : null,
+  billingAddressCollection: json['billing_address_collection'] != null ? PaymentLinkBillingAddressCollection.fromJson(json['billing_address_collection'] as String) : null,
+  brandingSettings: json['branding_settings'] != null ? BrandingSettings.fromJson(json['branding_settings'] as Map<String, dynamic>) : null,
   cancelUrl: json['cancel_url'] as String?,
   clientReferenceId: json['client_reference_id'] as String?,
-  consentCollection: json['consent_collection'] != null ? PostCheckoutSessionsRequestConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
+  consentCollection: json['consent_collection'] != null ? ConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String?,
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
   customText: json['custom_text'] != null ? PostCheckoutSessionsRequestCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
   customer: json['customer'] as String?,
   customerAccount: json['customer_account'] as String?,
-  customerCreation: json['customer_creation'] != null ? PostCheckoutSessionsRequestCustomerCreation.fromJson(json['customer_creation'] as String) : null,
+  customerCreation: json['customer_creation'] != null ? PaymentLinkCustomerCreation.fromJson(json['customer_creation'] as String) : null,
   customerEmail: json['customer_email'] as String?,
   customerUpdate: json['customer_update'] != null ? PostCheckoutSessionsRequestCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>) : null,
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestDiscounts.fromJson(e as Map<String, dynamic>)).toList(),
-  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
+  excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   invoiceCreation: json['invoice_creation'] != null ? PostCheckoutSessionsRequestInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
   locale: json['locale'] != null ? PostCheckoutSessionsRequestLocale.fromJson(json['locale'] as String) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  mode: json['mode'] != null ? PostCheckoutSessionsRequestMode.fromJson(json['mode'] as String) : null,
+  mode: json['mode'] != null ? CheckoutSessionMode.fromJson(json['mode'] as String) : null,
   nameCollection: json['name_collection'] != null ? PostCheckoutSessionsRequestNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>) : null,
   optionalItems: (json['optional_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestOptionalItems.fromJson(e as Map<String, dynamic>)).toList(),
   originContext: json['origin_context'] != null ? PostCheckoutSessionsRequestOriginContext.fromJson(json['origin_context'] as String) : null,
   paymentIntentData: json['payment_intent_data'] != null ? PostCheckoutSessionsRequestPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
-  paymentMethodCollection: json['payment_method_collection'] != null ? PostCheckoutSessionsRequestPaymentMethodCollection.fromJson(json['payment_method_collection'] as String) : null,
+  paymentMethodCollection: json['payment_method_collection'] != null ? PaymentLinkPaymentMethodCollection.fromJson(json['payment_method_collection'] as String) : null,
   paymentMethodConfiguration: json['payment_method_configuration'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostCheckoutSessionsRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(e as String)).toList(),
   permissions: json['permissions'] != null ? PostCheckoutSessionsRequestPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
-  phoneNumberCollection: json['phone_number_collection'] != null ? PostCheckoutSessionsRequestPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
-  redirectOnCompletion: json['redirect_on_completion'] != null ? PostCheckoutSessionsRequestRedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
+  phoneNumberCollection: json['phone_number_collection'] != null ? PhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
+  redirectOnCompletion: json['redirect_on_completion'] != null ? RedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
   returnUrl: json['return_url'] as String?,
-  savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
-  setupIntentData: json['setup_intent_data'] != null ? PostCheckoutSessionsRequestSetupIntentData.fromJson(json['setup_intent_data'] as Map<String, dynamic>) : null,
+  savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? SavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
+  setupIntentData: json['setup_intent_data'] != null ? SetupIntentData.fromJson(json['setup_intent_data'] as Map<String, dynamic>) : null,
   shippingAddressCollection: json['shipping_address_collection'] != null ? PostCheckoutSessionsRequestShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
   shippingOptions: (json['shipping_options'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestShippingOptions.fromJson(e as Map<String, dynamic>)).toList(),
-  submitType: json['submit_type'] != null ? PostCheckoutSessionsRequestSubmitType.fromJson(json['submit_type'] as String) : null,
+  submitType: json['submit_type'] != null ? PaymentLinkSubmitType.fromJson(json['submit_type'] as String) : null,
   subscriptionData: json['subscription_data'] != null ? PostCheckoutSessionsRequestSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   successUrl: json['success_url'] as String?,
-  taxIdCollection: json['tax_id_collection'] != null ? PostCheckoutSessionsRequestTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
+  taxIdCollection: json['tax_id_collection'] != null ? TaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
   uiMode: json['ui_mode'] != null ? PostCheckoutSessionsRequestUiMode.fromJson(json['ui_mode'] as String) : null,
-  walletOptions: json['wallet_options'] != null ? PostCheckoutSessionsRequestWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
+  walletOptions: json['wallet_options'] != null ? WalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
-final PostCheckoutSessionsRequestAdaptivePricing? adaptivePricing;
+final AdaptivePricing? adaptivePricing;
 
 /// Configure actions after a Checkout Session has expired. You can't set this parameter if `ui_mode` is `custom`.
-final PostCheckoutSessionsRequestAfterExpiration? afterExpiration;
+final AfterExpiration? afterExpiration;
 
 /// Enables user redeemable promotion codes.
 final bool? allowPromotionCodes;
@@ -777,10 +430,10 @@ final bool? allowPromotionCodes;
 final PostCheckoutSessionsRequestAutomaticTax? automaticTax;
 
 /// Specify whether Checkout should collect the customer's billing address. Defaults to `auto`.
-final PostCheckoutSessionsRequestBillingAddressCollection? billingAddressCollection;
+final PaymentLinkBillingAddressCollection? billingAddressCollection;
 
 /// The branding settings for the Checkout Session. This parameter is not allowed if ui_mode is `custom`.
-final PostCheckoutSessionsRequestBrandingSettings? brandingSettings;
+final BrandingSettings? brandingSettings;
 
 /// If set, Checkout displays a back button and customers will be directed to this URL if they decide to cancel payment and return to your website. This parameter is not allowed if ui_mode is `embedded` or `custom`.
 final String? cancelUrl;
@@ -791,7 +444,7 @@ final String? cancelUrl;
 final String? clientReferenceId;
 
 /// Configure fields for the Checkout Session to gather active consent from customers.
-final PostCheckoutSessionsRequestConsentCollection? consentCollection;
+final ConsentCollection? consentCollection;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies). Required in `setup` mode when `payment_method_types` is not set.
 final String? currency;
@@ -827,7 +480,7 @@ final String? customerAccount;
 /// in the Dashboard. Promotion codes limited to first time customers will return invalid for these Sessions.
 /// 
 /// Can only be set in `payment` and `setup` mode.
-final PostCheckoutSessionsRequestCustomerCreation? customerCreation;
+final PaymentLinkCustomerCreation? customerCreation;
 
 /// If provided, this value will be used when the Customer object is created.
 /// If not provided, customers will be asked to enter their email address.
@@ -843,7 +496,7 @@ final PostCheckoutSessionsRequestCustomerUpdate? customerUpdate;
 final List<PostCheckoutSessionsRequestDiscounts>? discounts;
 
 /// A list of the types of payment methods (e.g., `card`) that should be excluded from this Checkout Session. This should only be used when payment methods for this Checkout Session are managed through the [Stripe Dashboard](https://dashboard.stripe.com/settings/payment_methods).
-final List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
+final List<PaymentIntentExcludedPaymentMethodTypes>? excludedPaymentMethodTypes;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -868,7 +521,7 @@ final PostCheckoutSessionsRequestLocale? locale;
 final Map<String,String>? metadata;
 
 /// The mode of the Checkout Session. Pass `subscription` if the Checkout Session includes at least one recurring item.
-final PostCheckoutSessionsRequestMode? mode;
+final CheckoutSessionMode? mode;
 
 /// Controls name collection settings for the session.
 /// 
@@ -902,7 +555,7 @@ final PostCheckoutSessionsRequestPaymentIntentData? paymentIntentData;
 /// Can only be set in `subscription` mode. Defaults to `always`.
 /// 
 /// If you'd like information on how to collect a payment method outside of Checkout, read the guide on configuring [subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
-final PostCheckoutSessionsRequestPaymentMethodCollection? paymentMethodCollection;
+final PaymentLinkPaymentMethodCollection? paymentMethodCollection;
 
 /// The ID of the payment method configuration to use with this Checkout session.
 final String? paymentMethodConfiguration;
@@ -935,10 +588,10 @@ final PostCheckoutSessionsRequestPermissions? permissions;
 /// 
 /// We recommend that you review your privacy policy and check with your legal contacts
 /// before using this feature. Learn more about [collecting phone numbers with Checkout](https://docs.stripe.com/payments/checkout/phone-numbers).
-final PostCheckoutSessionsRequestPhoneNumberCollection? phoneNumberCollection;
+final PhoneNumberCollection? phoneNumberCollection;
 
 /// This parameter applies to `ui_mode: embedded`. Learn more about the [redirect behavior](https://docs.stripe.com/payments/checkout/custom-success-page?payment-ui=embedded-form) of embedded sessions. Defaults to `always`.
-final PostCheckoutSessionsRequestRedirectOnCompletion? redirectOnCompletion;
+final RedirectOnCompletion? redirectOnCompletion;
 
 /// The URL to redirect your customer back to after they authenticate or cancel their payment on the
 /// payment method's app or site. This parameter is required if `ui_mode` is `embedded` or `custom`
@@ -946,10 +599,10 @@ final PostCheckoutSessionsRequestRedirectOnCompletion? redirectOnCompletion;
 final String? returnUrl;
 
 /// Controls saved payment method settings for the session. Only available in `payment` and `subscription` mode.
-final PostCheckoutSessionsRequestSavedPaymentMethodOptions? savedPaymentMethodOptions;
+final SavedPaymentMethodOptions? savedPaymentMethodOptions;
 
 /// A subset of parameters to be passed to SetupIntent creation for Checkout Sessions in `setup` mode.
-final PostCheckoutSessionsRequestSetupIntentData? setupIntentData;
+final SetupIntentData? setupIntentData;
 
 /// When set, provides configuration for Checkout to collect a shipping address from a customer.
 final PostCheckoutSessionsRequestShippingAddressCollection? shippingAddressCollection;
@@ -962,7 +615,7 @@ final List<PostCheckoutSessionsRequestShippingOptions>? shippingOptions;
 ///  `submit_type` can only be specified on Checkout Sessions in
 /// `payment` or `subscription` mode. If blank or `auto`, `pay` is used.
 /// You can't set this parameter if `ui_mode` is `custom`.
-final PostCheckoutSessionsRequestSubmitType? submitType;
+final PaymentLinkSubmitType? submitType;
 
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.
 final PostCheckoutSessionsRequestSubscriptionData? subscriptionData;
@@ -975,13 +628,13 @@ final PostCheckoutSessionsRequestSubscriptionData? subscriptionData;
 final String? successUrl;
 
 /// Controls tax ID collection during checkout.
-final PostCheckoutSessionsRequestTaxIdCollection? taxIdCollection;
+final TaxIdCollection? taxIdCollection;
 
 /// The UI mode of the Session. Defaults to `hosted`.
 final PostCheckoutSessionsRequestUiMode? uiMode;
 
 /// Wallet-specific configuration.
-final PostCheckoutSessionsRequestWalletOptions? walletOptions;
+final WalletOptions? walletOptions;
 
 Map<String, dynamic> toJson() { return {
   if (adaptivePricing != null) 'adaptive_pricing': adaptivePricing?.toJson(),
@@ -1035,7 +688,7 @@ Map<String, dynamic> toJson() { return {
   if (walletOptions != null) 'wallet_options': walletOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adaptive_pricing', 'after_expiration', 'allow_promotion_codes', 'automatic_tax', 'billing_address_collection', 'branding_settings', 'cancel_url', 'client_reference_id', 'consent_collection', 'currency', 'custom_fields', 'custom_text', 'customer', 'customer_account', 'customer_creation', 'customer_email', 'customer_update', 'discounts', 'excluded_payment_method_types', 'expand', 'expires_at', 'invoice_creation', 'line_items', 'locale', 'metadata', 'mode', 'name_collection', 'optional_items', 'origin_context', 'payment_intent_data', 'payment_method_collection', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'permissions', 'phone_number_collection', 'redirect_on_completion', 'return_url', 'saved_payment_method_options', 'setup_intent_data', 'shipping_address_collection', 'shipping_options', 'submit_type', 'subscription_data', 'success_url', 'tax_id_collection', 'ui_mode', 'wallet_options'}.contains(key)); } 
-PostCheckoutSessionsRequest copyWith({PostCheckoutSessionsRequestAdaptivePricing Function()? adaptivePricing, PostCheckoutSessionsRequestAfterExpiration Function()? afterExpiration, bool Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax Function()? automaticTax, PostCheckoutSessionsRequestBillingAddressCollection Function()? billingAddressCollection, PostCheckoutSessionsRequestBrandingSettings Function()? brandingSettings, String Function()? cancelUrl, String Function()? clientReferenceId, PostCheckoutSessionsRequestConsentCollection Function()? consentCollection, String Function()? currency, List<PostCheckoutSessionsRequestCustomFields> Function()? customFields, PostCheckoutSessionsRequestCustomText Function()? customText, String Function()? customer, String Function()? customerAccount, PostCheckoutSessionsRequestCustomerCreation Function()? customerCreation, String Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts> Function()? discounts, List<PostCheckoutSessionsRequestExcludedPaymentMethodTypes> Function()? excludedPaymentMethodTypes, List<String> Function()? expand, int Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems> Function()? lineItems, PostCheckoutSessionsRequestLocale Function()? locale, Map<String, String> Function()? metadata, PostCheckoutSessionsRequestMode Function()? mode, PostCheckoutSessionsRequestNameCollection Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems> Function()? optionalItems, PostCheckoutSessionsRequestOriginContext Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData Function()? paymentIntentData, PostCheckoutSessionsRequestPaymentMethodCollection Function()? paymentMethodCollection, String Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes> Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions Function()? permissions, PostCheckoutSessionsRequestPhoneNumberCollection Function()? phoneNumberCollection, PostCheckoutSessionsRequestRedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, PostCheckoutSessionsRequestSavedPaymentMethodOptions Function()? savedPaymentMethodOptions, PostCheckoutSessionsRequestSetupIntentData Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions> Function()? shippingOptions, PostCheckoutSessionsRequestSubmitType Function()? submitType, PostCheckoutSessionsRequestSubscriptionData Function()? subscriptionData, String Function()? successUrl, PostCheckoutSessionsRequestTaxIdCollection Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode Function()? uiMode, PostCheckoutSessionsRequestWalletOptions Function()? walletOptions, }) { return PostCheckoutSessionsRequest(
+PostCheckoutSessionsRequest copyWith({AdaptivePricing Function()? adaptivePricing, AfterExpiration Function()? afterExpiration, bool Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax Function()? automaticTax, PaymentLinkBillingAddressCollection Function()? billingAddressCollection, BrandingSettings Function()? brandingSettings, String Function()? cancelUrl, String Function()? clientReferenceId, ConsentCollection Function()? consentCollection, String Function()? currency, List<PostCheckoutSessionsRequestCustomFields> Function()? customFields, PostCheckoutSessionsRequestCustomText Function()? customText, String Function()? customer, String Function()? customerAccount, PaymentLinkCustomerCreation Function()? customerCreation, String Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts> Function()? discounts, List<PaymentIntentExcludedPaymentMethodTypes> Function()? excludedPaymentMethodTypes, List<String> Function()? expand, int Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems> Function()? lineItems, PostCheckoutSessionsRequestLocale Function()? locale, Map<String, String> Function()? metadata, CheckoutSessionMode Function()? mode, PostCheckoutSessionsRequestNameCollection Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems> Function()? optionalItems, PostCheckoutSessionsRequestOriginContext Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData Function()? paymentIntentData, PaymentLinkPaymentMethodCollection Function()? paymentMethodCollection, String Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes> Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions Function()? permissions, PhoneNumberCollection Function()? phoneNumberCollection, RedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, SavedPaymentMethodOptions Function()? savedPaymentMethodOptions, SetupIntentData Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions> Function()? shippingOptions, PaymentLinkSubmitType Function()? submitType, PostCheckoutSessionsRequestSubscriptionData Function()? subscriptionData, String Function()? successUrl, TaxIdCollection Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode Function()? uiMode, WalletOptions Function()? walletOptions, }) { return PostCheckoutSessionsRequest(
   adaptivePricing: adaptivePricing != null ? adaptivePricing() : this.adaptivePricing,
   afterExpiration: afterExpiration != null ? afterExpiration() : this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,

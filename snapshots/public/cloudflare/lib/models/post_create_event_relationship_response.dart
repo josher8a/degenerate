@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_create_event_relationship_response_errors.dart';import 'post_create_event_relationship_response_relationships.dart';@immutable final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({required this.message, required this.relationships, required this.success, this.childIds, this.errors, this.relationshipsCreated, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/post_create_event_relationship_response_errors.dart';import 'package:pub_cloudflare/models/post_create_event_relationship_response/relationships.dart';@immutable final class PostCreateEventRelationshipResponse {const PostCreateEventRelationshipResponse({required this.message, required this.relationships, required this.success, this.childIds, this.errors, this.relationshipsCreated, });
 
 factory PostCreateEventRelationshipResponse.fromJson(Map<String, dynamic> json) { return PostCreateEventRelationshipResponse(
   childIds: (json['childIds'] as List<dynamic>?)?.map((e) => e as String).toList(),
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PostCreateEventRelationshipResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   message: json['message'] as String,
-  relationships: (json['relationships'] as List<dynamic>).map((e) => PostCreateEventRelationshipResponseRelationships.fromJson(e as Map<String, dynamic>)).toList(),
+  relationships: (json['relationships'] as List<dynamic>).map((e) => Relationships.fromJson(e as Map<String, dynamic>)).toList(),
   relationshipsCreated: json['relationshipsCreated'] != null ? (json['relationshipsCreated'] as num).toDouble() : null,
   success: json['success'] as bool,
 ); }
@@ -21,7 +21,7 @@ final List<PostCreateEventRelationshipResponseErrors>? errors;
 final String message;
 
 /// Array of successfully created relationship objects
-final List<PostCreateEventRelationshipResponseRelationships> relationships;
+final List<Relationships> relationships;
 
 /// Number of relationships that were successfully created
 final double? relationshipsCreated;
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('relationships') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostCreateEventRelationshipResponse copyWith({List<String> Function()? childIds, List<PostCreateEventRelationshipResponseErrors> Function()? errors, String? message, List<PostCreateEventRelationshipResponseRelationships>? relationships, double Function()? relationshipsCreated, bool? success, }) { return PostCreateEventRelationshipResponse(
+PostCreateEventRelationshipResponse copyWith({List<String> Function()? childIds, List<PostCreateEventRelationshipResponseErrors> Function()? errors, String? message, List<Relationships>? relationships, double Function()? relationshipsCreated, bool? success, }) { return PostCreateEventRelationshipResponse(
   childIds: childIds != null ? childIds() : this.childIds,
   errors: errors != null ? errors() : this.errors,
   message: message ?? this.message,

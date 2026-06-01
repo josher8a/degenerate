@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_content_type.dart';import 'simple_user.dart';/// An item belonging to a project
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item_content_type.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// An item belonging to a project
 @immutable final class ItemWithContent {const ItemWithContent({required this.id, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.projectUrl, this.content, this.creator, this.itemUrl, this.fields, });
 
 factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithContent(

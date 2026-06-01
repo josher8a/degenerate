@@ -1,46 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param12_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._(this.value);
-
-factory PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage.fromJson(String json) { return switch (json) {
-  '' => $empty,
-  'none' => none,
-  'off_session' => offSession,
-  'on_session' => onSession,
-  _ => PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._(json),
-}; }
-
-static const PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._('');
-
-static const PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._('none');
-
-static const PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._('off_session');
-
-static const PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage._('on_session');
-
-static const List<PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage> values = [$empty, none, offSession, onSession];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage($value)'; } 
- }
-@immutable final class PaymentIntentPaymentMethodOptionsParam12 {const PaymentIntentPaymentMethodOptionsParam12({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param12_mandate_options.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam12 {const PaymentIntentPaymentMethodOptionsParam12({this.mandateOptions, this.setupFutureUsage, this.targetDate, });
 
 factory PaymentIntentPaymentMethodOptionsParam12.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam12(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam12MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
 final PaymentIntentPaymentMethodOptionsParam12MandateOptions? mandateOptions;
 
-final PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage? setupFutureUsage;
+final payment_intent_paramSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
@@ -50,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam12 copyWith({PaymentIntentPaymentMethodOptionsParam12MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam12SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam12(
+PaymentIntentPaymentMethodOptionsParam12 copyWith({PaymentIntentPaymentMethodOptionsParam12MandateOptions Function()? mandateOptions, payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam12(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

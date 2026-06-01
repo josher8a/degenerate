@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_debit_reversal/treasury_debit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_failure_details.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
 
 factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
@@ -137,7 +137,7 @@ final TreasuryInboundTransferStatus status;
 final TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions statusTransitions;
 
 /// The Transaction associated with this object.
-final TreasuryInboundTransferTransaction? transaction;
+final TreasuryDebitReversalTransaction? transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransfersResourceFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, InboundTransfers? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryInboundTransferTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
+TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransfersResourceFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, InboundTransfers? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

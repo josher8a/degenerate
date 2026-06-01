@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_response_errors.dart';import 'brapi_post_scrape_response_result.dart';@immutable final class BrapiPostScrapeResponse {const BrapiPostScrapeResponse({required this.result, required this.success, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404/accounts_by_account_id_pipelines_by_pipeline_name_deprecated_response404_errors.dart';import 'package:pub_cloudflare/models/brapi_post_scrape_response/brapi_post_scrape_response_result.dart';@immutable final class BrapiPostScrapeResponse {const BrapiPostScrapeResponse({required this.result, required this.success, this.errors, });
 
 factory BrapiPostScrapeResponse.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponse(
-  errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostScrapeResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
 ); }
 
-final List<BrapiPostScrapeResponseErrors>? errors;
+final List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors>? errors;
 
 final List<BrapiPostScrapeResponseResult> result;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-BrapiPostScrapeResponse copyWith({List<BrapiPostScrapeResponseErrors> Function()? errors, List<BrapiPostScrapeResponseResult>? result, bool? success, }) { return BrapiPostScrapeResponse(
+BrapiPostScrapeResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors> Function()? errors, List<BrapiPostScrapeResponseResult>? result, bool? success, }) { return BrapiPostScrapeResponse(
   errors: errors != null ? errors() : this.errors,
   result: result ?? this.result,
   success: success ?? this.success,

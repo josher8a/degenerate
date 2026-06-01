@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';/// Returned when a conversation item is created. There are several scenarios that produce this event:
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// Returned when a conversation item is created. There are several scenarios that produce this event:
 ///   - The server is generating a Response, which if successful will produce
 ///     either one or two Items, which will be of type `message`
 ///     (role `assistant`) or type `function_call`.

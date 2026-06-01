@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_project_card_creator.dart';@immutable final class WebhooksProjectCard {const WebhooksProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, this.contentUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_milestone3/webhooks_milestone3_creator.dart';@immutable final class WebhooksProjectCard {const WebhooksProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, this.contentUrl, });
 
 factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return WebhooksProjectCard(
   afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,
@@ -9,7 +9,7 @@ factory WebhooksProjectCard.fromJson(Map<String, dynamic> json) { return Webhook
   columnUrl: Uri.parse(json['column_url'] as String),
   contentUrl: json['content_url'] != null ? Uri.parse(json['content_url'] as String) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
-  creator: json['creator'] != null ? WebhooksProjectCardCreator.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  creator: json['creator'] != null ? WebhooksMilestone3Creator.fromJson(json['creator'] as Map<String, dynamic>) : null,
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   note: json['note'] as String?,
@@ -31,7 +31,7 @@ final Uri? contentUrl;
 
 final DateTime createdAt;
 
-final WebhooksProjectCardCreator? creator;
+final WebhooksMilestone3Creator? creator;
 
 /// The project card's ID
 final int id;
@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('project_url') && json['project_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhooksProjectCard copyWith({int? Function()? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri Function()? contentUrl, DateTime? createdAt, WebhooksProjectCardCreator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
+WebhooksProjectCard copyWith({int? Function()? afterId, bool? archived, int? columnId, Uri? columnUrl, Uri Function()? contentUrl, DateTime? createdAt, WebhooksMilestone3Creator? Function()? creator, int? id, String? nodeId, String? Function()? note, Uri? projectUrl, DateTime? updatedAt, Uri? url, }) { return WebhooksProjectCard(
   afterId: afterId != null ? afterId() : this.afterId,
   archived: archived ?? this.archived,
   columnId: columnId ?? this.columnId,

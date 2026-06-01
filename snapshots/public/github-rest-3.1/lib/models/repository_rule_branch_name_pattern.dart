@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_branch_name_pattern/repository_rule_branch_name_pattern_parameters.dart';@immutable final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
 
 factory RepositoryRuleBranchNamePatternType.fromJson(String json) { return switch (json) {
   'branch_name_pattern' => branchNamePattern,

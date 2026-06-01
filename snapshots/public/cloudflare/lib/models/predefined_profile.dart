@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class PredefinedProfileType {const PredefinedProfileType._(this.value);
-
-factory PredefinedProfileType.fromJson(String json) { return switch (json) {
-  'predefined' => predefined,
-  _ => PredefinedProfileType._(json),
-}; }
-
-static const PredefinedProfileType predefined = PredefinedProfileType._('predefined');
-
-static const List<PredefinedProfileType> values = [predefined];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PredefinedProfileType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PredefinedProfileType($value)'; } 
- }
-@immutable final class PredefinedProfile {const PredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, required this.type, this.aiContextEnabled = false, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.ocrEnabled = false, this.openAccess, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/custom_entry.dart';import 'package:pub_cloudflare/models/dlp_confidence.dart';import 'package:pub_cloudflare/models/dlp_context_awareness.dart';import 'package:pub_cloudflare/models/dlp_entry.dart';import 'package:pub_cloudflare/models/document_fingerprint_entry.dart';import 'package:pub_cloudflare/models/exact_data_entry.dart';import 'package:pub_cloudflare/models/integration_entry.dart';import 'package:pub_cloudflare/models/predefined_entry.dart';import 'package:pub_cloudflare/models/predefined_entry/predefined_entry_type.dart';import 'package:pub_cloudflare/models/word_list_entry.dart';@immutable final class PredefinedProfile {const PredefinedProfile({required this.allowedMatchCount, required this.entries, required this.id, required this.name, required this.type, this.aiContextEnabled = false, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.ocrEnabled = false, this.openAccess, });
 
 factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return PredefinedProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
@@ -33,7 +12,7 @@ factory PredefinedProfile.fromJson(Map<String, dynamic> json) { return Predefine
   name: json['name'] as String,
   ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,
   openAccess: json['open_access'] as bool?,
-  type: PredefinedProfileType.fromJson(json['type'] as String),
+  type: PredefinedEntryType.fromJson(json['type'] as String),
 ); }
 
 final bool aiContextEnabled;
@@ -57,7 +36,7 @@ final bool ocrEnabled;
 /// Whether this profile can be accessed by anyone.
 final bool? openAccess;
 
-final PredefinedProfileType type;
+final PredefinedEntryType type;
 
 Map<String, dynamic> toJson() { return {
   'ai_context_enabled': aiContextEnabled,
@@ -76,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-PredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool Function()? openAccess, PredefinedProfileType? type, }) { return PredefinedProfile(
+PredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool Function()? openAccess, PredefinedEntryType? type, }) { return PredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

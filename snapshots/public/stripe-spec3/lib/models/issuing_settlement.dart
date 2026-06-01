@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The card network for this settlement report. One of `["visa", "maestro"]`
-@immutable final class IssuingSettlementNetwork {const IssuingSettlementNetwork._(this.value);
-
-factory IssuingSettlementNetwork.fromJson(String json) { return switch (json) {
-  'maestro' => maestro,
-  'visa' => visa,
-  _ => IssuingSettlementNetwork._(json),
-}; }
-
-static const IssuingSettlementNetwork maestro = IssuingSettlementNetwork._('maestro');
-
-static const IssuingSettlementNetwork visa = IssuingSettlementNetwork._('visa');
-
-static const List<IssuingSettlementNetwork> values = [maestro, visa];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementNetwork($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/issuing_settlement/issuing_settlement_network.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingSettlementObject {const IssuingSettlementObject._(this.value);
 
 factory IssuingSettlementObject.fromJson(String json) { return switch (json) {
@@ -47,31 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingSettlementObject($value)'; } 
  }
-/// The current processing status of this settlement.
-@immutable final class IssuingSettlementStatus {const IssuingSettlementStatus._(this.value);
-
-factory IssuingSettlementStatus.fromJson(String json) { return switch (json) {
-  'complete' => complete,
-  'pending' => pending,
-  _ => IssuingSettlementStatus._(json),
-}; }
-
-static const IssuingSettlementStatus complete = IssuingSettlementStatus._('complete');
-
-static const IssuingSettlementStatus pending = IssuingSettlementStatus._('pending');
-
-static const List<IssuingSettlementStatus> values = [complete, pending];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementStatus($value)'; } 
- }
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.
 @immutable final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
 
@@ -90,7 +40,7 @@ factory IssuingSettlement.fromJson(Map<String, dynamic> json) { return IssuingSe
   networkSettlementIdentifier: json['network_settlement_identifier'] as String,
   object: IssuingSettlementObject.fromJson(json['object'] as String),
   settlementService: json['settlement_service'] as String,
-  status: IssuingSettlementStatus.fromJson(json['status'] as String),
+  status: BillingMeterEventAdjustmentStatus.fromJson(json['status'] as String),
   transactionAmount: (json['transaction_amount'] as num).toInt(),
   transactionCount: (json['transaction_count'] as num).toInt(),
 ); }
@@ -138,7 +88,7 @@ final IssuingSettlementObject object;
 final String settlementService;
 
 /// The current processing status of this settlement.
-final IssuingSettlementStatus status;
+final BillingMeterEventAdjustmentStatus status;
 
 /// The total transaction amount reflected in this settlement.
 final int transactionAmount;
@@ -182,7 +132,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('status') &&
       json.containsKey('transaction_amount') && json['transaction_amount'] is num &&
       json.containsKey('transaction_count') && json['transaction_count'] is num; } 
-IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, IssuingSettlementStatus? status, int? transactionAmount, int? transactionCount, }) { return IssuingSettlement(
+IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, BillingMeterEventAdjustmentStatus? status, int? transactionAmount, int? transactionCount, }) { return IssuingSettlement(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,
   created: created ?? this.created,

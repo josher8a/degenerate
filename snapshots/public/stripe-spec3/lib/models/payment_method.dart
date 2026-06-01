@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details.dart';import 'customer.dart';import 'payment_flows_private_payment_methods_alipay.dart';import 'payment_method_acss_debit.dart';import 'payment_method_affirm.dart';import 'payment_method_afterpay_clearpay.dart';import 'payment_method_alma.dart';import 'payment_method_amazon_pay.dart';import 'payment_method_au_becs_debit.dart';import 'payment_method_bacs_debit.dart';import 'payment_method_bancontact.dart';import 'payment_method_billie.dart';import 'payment_method_blik.dart';import 'payment_method_boleto.dart';import 'payment_method_card.dart';import 'payment_method_card_present.dart';import 'payment_method_cashapp.dart';import 'payment_method_crypto.dart';import 'payment_method_custom.dart';import 'payment_method_customer.dart';import 'payment_method_customer_balance.dart';import 'payment_method_eps.dart';import 'payment_method_fpx.dart';import 'payment_method_giropay.dart';import 'payment_method_grabpay.dart';import 'payment_method_ideal.dart';import 'payment_method_interac_present.dart';import 'payment_method_kakao_pay.dart';import 'payment_method_klarna.dart';import 'payment_method_konbini.dart';import 'payment_method_kr_card.dart';import 'payment_method_link.dart';import 'payment_method_mb_way.dart';import 'payment_method_mobilepay.dart';import 'payment_method_multibanco.dart';import 'payment_method_naver_pay.dart';import 'payment_method_nz_bank_account.dart';import 'payment_method_oxxo.dart';import 'payment_method_p24.dart';import 'payment_method_pay_by_bank.dart';import 'payment_method_payco.dart';import 'payment_method_paynow.dart';import 'payment_method_paypal.dart';import 'payment_method_payto.dart';import 'payment_method_pix.dart';import 'payment_method_promptpay.dart';import 'payment_method_revolut_pay.dart';import 'payment_method_samsung_pay.dart';import 'payment_method_satispay.dart';import 'payment_method_sepa_debit.dart';import 'payment_method_sofort.dart';import 'payment_method_swish.dart';import 'payment_method_twint.dart';import 'payment_method_us_bank_account.dart';import 'payment_method_wechat_pay.dart';import 'payment_method_zip.dart';import 'radar_radar_options.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-@immutable final class PaymentMethodAllowRedisplay {const PaymentMethodAllowRedisplay._(this.value);
-
-factory PaymentMethodAllowRedisplay.fromJson(String json) { return switch (json) {
-  'always' => always,
-  'limited' => limited,
-  'unspecified' => unspecified,
-  _ => PaymentMethodAllowRedisplay._(json),
-}; }
-
-static const PaymentMethodAllowRedisplay always = PaymentMethodAllowRedisplay._('always');
-
-static const PaymentMethodAllowRedisplay limited = PaymentMethodAllowRedisplay._('limited');
-
-static const PaymentMethodAllowRedisplay unspecified = PaymentMethodAllowRedisplay._('unspecified');
-
-static const List<PaymentMethodAllowRedisplay> values = [always, limited, unspecified];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodAllowRedisplay && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodAllowRedisplay($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_type.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_alipay.dart';import 'package:pub_stripe_spec3/models/payment_method/payment_method_customer.dart';import 'package:pub_stripe_spec3/models/payment_method_acss_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_affirm.dart';import 'package:pub_stripe_spec3/models/payment_method_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/payment_method_alma.dart';import 'package:pub_stripe_spec3/models/payment_method_amazon_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bacs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bancontact.dart';import 'package:pub_stripe_spec3/models/payment_method_billie.dart';import 'package:pub_stripe_spec3/models/payment_method_blik.dart';import 'package:pub_stripe_spec3/models/payment_method_boleto.dart';import 'package:pub_stripe_spec3/models/payment_method_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present.dart';import 'package:pub_stripe_spec3/models/payment_method_cashapp.dart';import 'package:pub_stripe_spec3/models/payment_method_crypto.dart';import 'package:pub_stripe_spec3/models/payment_method_custom.dart';import 'package:pub_stripe_spec3/models/payment_method_customer_balance.dart';import 'package:pub_stripe_spec3/models/payment_method_eps.dart';import 'package:pub_stripe_spec3/models/payment_method_fpx.dart';import 'package:pub_stripe_spec3/models/payment_method_giropay.dart';import 'package:pub_stripe_spec3/models/payment_method_grabpay.dart';import 'package:pub_stripe_spec3/models/payment_method_ideal.dart';import 'package:pub_stripe_spec3/models/payment_method_interac_present.dart';import 'package:pub_stripe_spec3/models/payment_method_kakao_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_klarna.dart';import 'package:pub_stripe_spec3/models/payment_method_konbini.dart';import 'package:pub_stripe_spec3/models/payment_method_kr_card.dart';import 'package:pub_stripe_spec3/models/payment_method_link.dart';import 'package:pub_stripe_spec3/models/payment_method_mb_way.dart';import 'package:pub_stripe_spec3/models/payment_method_mobilepay.dart';import 'package:pub_stripe_spec3/models/payment_method_multibanco.dart';import 'package:pub_stripe_spec3/models/payment_method_naver_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_oxxo.dart';import 'package:pub_stripe_spec3/models/payment_method_p24.dart';import 'package:pub_stripe_spec3/models/payment_method_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/payment_method_payco.dart';import 'package:pub_stripe_spec3/models/payment_method_paynow.dart';import 'package:pub_stripe_spec3/models/payment_method_paypal.dart';import 'package:pub_stripe_spec3/models/payment_method_payto.dart';import 'package:pub_stripe_spec3/models/payment_method_pix.dart';import 'package:pub_stripe_spec3/models/payment_method_promptpay.dart';import 'package:pub_stripe_spec3/models/payment_method_revolut_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_satispay.dart';import 'package:pub_stripe_spec3/models/payment_method_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_sofort.dart';import 'package:pub_stripe_spec3/models/payment_method_swish.dart';import 'package:pub_stripe_spec3/models/payment_method_twint.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_wechat_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_zip.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentMethodObject {const PaymentMethodObject._(this.value);
 
 factory PaymentMethodObject.fromJson(String json) { return switch (json) {
@@ -50,184 +22,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodObject($value)'; } 
  }
-/// The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
-@immutable final class PaymentMethodType {const PaymentMethodType._(this.value);
-
-factory PaymentMethodType.fromJson(String json) { return switch (json) {
-  'acss_debit' => acssDebit,
-  'affirm' => affirm,
-  'afterpay_clearpay' => afterpayClearpay,
-  'alipay' => alipay,
-  'alma' => alma,
-  'amazon_pay' => amazonPay,
-  'au_becs_debit' => auBecsDebit,
-  'bacs_debit' => bacsDebit,
-  'bancontact' => bancontact,
-  'billie' => billie,
-  'blik' => blik,
-  'boleto' => boleto,
-  'card' => card,
-  'card_present' => cardPresent,
-  'cashapp' => cashapp,
-  'crypto' => crypto,
-  'custom' => custom,
-  'customer_balance' => customerBalance,
-  'eps' => eps,
-  'fpx' => fpx,
-  'giropay' => giropay,
-  'grabpay' => grabpay,
-  'ideal' => ideal,
-  'interac_present' => interacPresent,
-  'kakao_pay' => kakaoPay,
-  'klarna' => klarna,
-  'konbini' => konbini,
-  'kr_card' => krCard,
-  'link' => link,
-  'mb_way' => mbWay,
-  'mobilepay' => mobilepay,
-  'multibanco' => multibanco,
-  'naver_pay' => naverPay,
-  'nz_bank_account' => nzBankAccount,
-  'oxxo' => oxxo,
-  'p24' => p24,
-  'pay_by_bank' => payByBank,
-  'payco' => payco,
-  'paynow' => paynow,
-  'paypal' => paypal,
-  'payto' => payto,
-  'pix' => pix,
-  'promptpay' => promptpay,
-  'revolut_pay' => revolutPay,
-  'samsung_pay' => samsungPay,
-  'satispay' => satispay,
-  'sepa_debit' => sepaDebit,
-  'sofort' => sofort,
-  'swish' => swish,
-  'twint' => twint,
-  'us_bank_account' => usBankAccount,
-  'wechat_pay' => wechatPay,
-  'zip' => zip,
-  _ => PaymentMethodType._(json),
-}; }
-
-static const PaymentMethodType acssDebit = PaymentMethodType._('acss_debit');
-
-static const PaymentMethodType affirm = PaymentMethodType._('affirm');
-
-static const PaymentMethodType afterpayClearpay = PaymentMethodType._('afterpay_clearpay');
-
-static const PaymentMethodType alipay = PaymentMethodType._('alipay');
-
-static const PaymentMethodType alma = PaymentMethodType._('alma');
-
-static const PaymentMethodType amazonPay = PaymentMethodType._('amazon_pay');
-
-static const PaymentMethodType auBecsDebit = PaymentMethodType._('au_becs_debit');
-
-static const PaymentMethodType bacsDebit = PaymentMethodType._('bacs_debit');
-
-static const PaymentMethodType bancontact = PaymentMethodType._('bancontact');
-
-static const PaymentMethodType billie = PaymentMethodType._('billie');
-
-static const PaymentMethodType blik = PaymentMethodType._('blik');
-
-static const PaymentMethodType boleto = PaymentMethodType._('boleto');
-
-static const PaymentMethodType card = PaymentMethodType._('card');
-
-static const PaymentMethodType cardPresent = PaymentMethodType._('card_present');
-
-static const PaymentMethodType cashapp = PaymentMethodType._('cashapp');
-
-static const PaymentMethodType crypto = PaymentMethodType._('crypto');
-
-static const PaymentMethodType custom = PaymentMethodType._('custom');
-
-static const PaymentMethodType customerBalance = PaymentMethodType._('customer_balance');
-
-static const PaymentMethodType eps = PaymentMethodType._('eps');
-
-static const PaymentMethodType fpx = PaymentMethodType._('fpx');
-
-static const PaymentMethodType giropay = PaymentMethodType._('giropay');
-
-static const PaymentMethodType grabpay = PaymentMethodType._('grabpay');
-
-static const PaymentMethodType ideal = PaymentMethodType._('ideal');
-
-static const PaymentMethodType interacPresent = PaymentMethodType._('interac_present');
-
-static const PaymentMethodType kakaoPay = PaymentMethodType._('kakao_pay');
-
-static const PaymentMethodType klarna = PaymentMethodType._('klarna');
-
-static const PaymentMethodType konbini = PaymentMethodType._('konbini');
-
-static const PaymentMethodType krCard = PaymentMethodType._('kr_card');
-
-static const PaymentMethodType link = PaymentMethodType._('link');
-
-static const PaymentMethodType mbWay = PaymentMethodType._('mb_way');
-
-static const PaymentMethodType mobilepay = PaymentMethodType._('mobilepay');
-
-static const PaymentMethodType multibanco = PaymentMethodType._('multibanco');
-
-static const PaymentMethodType naverPay = PaymentMethodType._('naver_pay');
-
-static const PaymentMethodType nzBankAccount = PaymentMethodType._('nz_bank_account');
-
-static const PaymentMethodType oxxo = PaymentMethodType._('oxxo');
-
-static const PaymentMethodType p24 = PaymentMethodType._('p24');
-
-static const PaymentMethodType payByBank = PaymentMethodType._('pay_by_bank');
-
-static const PaymentMethodType payco = PaymentMethodType._('payco');
-
-static const PaymentMethodType paynow = PaymentMethodType._('paynow');
-
-static const PaymentMethodType paypal = PaymentMethodType._('paypal');
-
-static const PaymentMethodType payto = PaymentMethodType._('payto');
-
-static const PaymentMethodType pix = PaymentMethodType._('pix');
-
-static const PaymentMethodType promptpay = PaymentMethodType._('promptpay');
-
-static const PaymentMethodType revolutPay = PaymentMethodType._('revolut_pay');
-
-static const PaymentMethodType samsungPay = PaymentMethodType._('samsung_pay');
-
-static const PaymentMethodType satispay = PaymentMethodType._('satispay');
-
-static const PaymentMethodType sepaDebit = PaymentMethodType._('sepa_debit');
-
-static const PaymentMethodType sofort = PaymentMethodType._('sofort');
-
-static const PaymentMethodType swish = PaymentMethodType._('swish');
-
-static const PaymentMethodType twint = PaymentMethodType._('twint');
-
-static const PaymentMethodType usBankAccount = PaymentMethodType._('us_bank_account');
-
-static const PaymentMethodType wechatPay = PaymentMethodType._('wechat_pay');
-
-static const PaymentMethodType zip = PaymentMethodType._('zip');
-
-static const List<PaymentMethodType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cardPresent, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, interacPresent, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodType($value)'; } 
- }
 /// PaymentMethod objects represent your customer's payment instruments.
 /// You can use them with [PaymentIntents](https://docs.stripe.com/payments/payment-intents) to collect payments or save them to
 /// Customer objects to store instrument details for future payments.
@@ -240,7 +34,7 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   affirm: json['affirm'] != null ? PaymentMethodAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
   afterpayClearpay: json['afterpay_clearpay'] != null ? PaymentMethodAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
   alipay: json['alipay'] != null ? PaymentFlowsPrivatePaymentMethodsAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
-  allowRedisplay: json['allow_redisplay'] != null ? PaymentMethodAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
+  allowRedisplay: json['allow_redisplay'] != null ? ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
   alma: json['alma'] != null ? PaymentMethodAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
   amazonPay: json['amazon_pay'] != null ? PaymentMethodAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
   auBecsDebit: json['au_becs_debit'] != null ? PaymentMethodAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
@@ -296,7 +90,7 @@ factory PaymentMethod.fromJson(Map<String, dynamic> json) { return PaymentMethod
   sofort: json['sofort'] != null ? PaymentMethodSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
   swish: json['swish'] != null ? PaymentMethodSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
   twint: json['twint'] != null ? PaymentMethodTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
-  type: PaymentMethodType.fromJson(json['type'] as String),
+  type: ConfirmationTokensResourcePaymentMethodPreviewType.fromJson(json['type'] as String),
   usBankAccount: json['us_bank_account'] != null ? PaymentMethodUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
   wechatPay: json['wechat_pay'] != null ? PaymentMethodWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
   zip: json['zip'] != null ? PaymentMethodZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
@@ -311,7 +105,7 @@ final PaymentMethodAfterpayClearpay? afterpayClearpay;
 final PaymentFlowsPrivatePaymentMethodsAlipay? alipay;
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-final PaymentMethodAllowRedisplay? allowRedisplay;
+final ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? allowRedisplay;
 
 final PaymentMethodAlma? alma;
 
@@ -430,7 +224,7 @@ final PaymentMethodSwish? swish;
 final PaymentMethodTwint? twint;
 
 /// The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
-final PaymentMethodType type;
+final ConfirmationTokensResourcePaymentMethodPreviewType type;
 
 final PaymentMethodUsBankAccount? usBankAccount;
 
@@ -510,7 +304,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-PaymentMethod copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMethodAffirm Function()? affirm, PaymentMethodAfterpayClearpay Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay Function()? alipay, PaymentMethodAllowRedisplay Function()? allowRedisplay, PaymentMethodAlma Function()? alma, PaymentMethodAmazonPay Function()? amazonPay, PaymentMethodAuBecsDebit Function()? auBecsDebit, PaymentMethodBacsDebit Function()? bacsDebit, PaymentMethodBancontact Function()? bancontact, PaymentMethodBillie Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik Function()? blik, PaymentMethodBoleto Function()? boleto, PaymentMethodCard Function()? card, PaymentMethodCardPresent Function()? cardPresent, PaymentMethodCashapp Function()? cashapp, int? created, PaymentMethodCrypto Function()? crypto, PaymentMethodCustom Function()? custom, PaymentMethodCustomer? Function()? customer, String? Function()? customerAccount, PaymentMethodCustomerBalance Function()? customerBalance, PaymentMethodEps Function()? eps, PaymentMethodFpx Function()? fpx, PaymentMethodGiropay Function()? giropay, PaymentMethodGrabpay Function()? grabpay, String? id, PaymentMethodIdeal Function()? ideal, PaymentMethodInteracPresent Function()? interacPresent, PaymentMethodKakaoPay Function()? kakaoPay, PaymentMethodKlarna Function()? klarna, PaymentMethodKonbini Function()? konbini, PaymentMethodKrCard Function()? krCard, PaymentMethodLink Function()? link, bool? livemode, PaymentMethodMbWay Function()? mbWay, Map<String, String>? Function()? metadata, PaymentMethodMobilepay Function()? mobilepay, PaymentMethodMultibanco Function()? multibanco, PaymentMethodNaverPay Function()? naverPay, PaymentMethodNzBankAccount Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo Function()? oxxo, PaymentMethodP24 Function()? p24, PaymentMethodPayByBank Function()? payByBank, PaymentMethodPayco Function()? payco, PaymentMethodPaynow Function()? paynow, PaymentMethodPaypal Function()? paypal, PaymentMethodPayto Function()? payto, PaymentMethodPix Function()? pix, PaymentMethodPromptpay Function()? promptpay, RadarRadarOptions Function()? radarOptions, PaymentMethodRevolutPay Function()? revolutPay, PaymentMethodSamsungPay Function()? samsungPay, PaymentMethodSatispay Function()? satispay, PaymentMethodSepaDebit Function()? sepaDebit, PaymentMethodSofort Function()? sofort, PaymentMethodSwish Function()? swish, PaymentMethodTwint Function()? twint, PaymentMethodType? type, PaymentMethodUsBankAccount Function()? usBankAccount, PaymentMethodWechatPay Function()? wechatPay, PaymentMethodZip Function()? zip, }) { return PaymentMethod(
+PaymentMethod copyWith({PaymentMethodAcssDebit Function()? acssDebit, PaymentMethodAffirm Function()? affirm, PaymentMethodAfterpayClearpay Function()? afterpayClearpay, PaymentFlowsPrivatePaymentMethodsAlipay Function()? alipay, ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay Function()? allowRedisplay, PaymentMethodAlma Function()? alma, PaymentMethodAmazonPay Function()? amazonPay, PaymentMethodAuBecsDebit Function()? auBecsDebit, PaymentMethodBacsDebit Function()? bacsDebit, PaymentMethodBancontact Function()? bancontact, PaymentMethodBillie Function()? billie, BillingDetails? billingDetails, PaymentMethodBlik Function()? blik, PaymentMethodBoleto Function()? boleto, PaymentMethodCard Function()? card, PaymentMethodCardPresent Function()? cardPresent, PaymentMethodCashapp Function()? cashapp, int? created, PaymentMethodCrypto Function()? crypto, PaymentMethodCustom Function()? custom, PaymentMethodCustomer? Function()? customer, String? Function()? customerAccount, PaymentMethodCustomerBalance Function()? customerBalance, PaymentMethodEps Function()? eps, PaymentMethodFpx Function()? fpx, PaymentMethodGiropay Function()? giropay, PaymentMethodGrabpay Function()? grabpay, String? id, PaymentMethodIdeal Function()? ideal, PaymentMethodInteracPresent Function()? interacPresent, PaymentMethodKakaoPay Function()? kakaoPay, PaymentMethodKlarna Function()? klarna, PaymentMethodKonbini Function()? konbini, PaymentMethodKrCard Function()? krCard, PaymentMethodLink Function()? link, bool? livemode, PaymentMethodMbWay Function()? mbWay, Map<String, String>? Function()? metadata, PaymentMethodMobilepay Function()? mobilepay, PaymentMethodMultibanco Function()? multibanco, PaymentMethodNaverPay Function()? naverPay, PaymentMethodNzBankAccount Function()? nzBankAccount, PaymentMethodObject? object, PaymentMethodOxxo Function()? oxxo, PaymentMethodP24 Function()? p24, PaymentMethodPayByBank Function()? payByBank, PaymentMethodPayco Function()? payco, PaymentMethodPaynow Function()? paynow, PaymentMethodPaypal Function()? paypal, PaymentMethodPayto Function()? payto, PaymentMethodPix Function()? pix, PaymentMethodPromptpay Function()? promptpay, RadarRadarOptions Function()? radarOptions, PaymentMethodRevolutPay Function()? revolutPay, PaymentMethodSamsungPay Function()? samsungPay, PaymentMethodSatispay Function()? satispay, PaymentMethodSepaDebit Function()? sepaDebit, PaymentMethodSofort Function()? sofort, PaymentMethodSwish Function()? swish, PaymentMethodTwint Function()? twint, ConfirmationTokensResourcePaymentMethodPreviewType? type, PaymentMethodUsBankAccount Function()? usBankAccount, PaymentMethodWechatPay Function()? wechatPay, PaymentMethodZip Function()? zip, }) { return PaymentMethod(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   affirm: affirm != null ? affirm() : this.affirm,
   afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,

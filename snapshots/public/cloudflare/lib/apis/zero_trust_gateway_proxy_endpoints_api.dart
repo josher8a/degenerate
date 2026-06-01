@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_components_schemas_uuid.dart';import '../models/zero_trust_gateway_proxy_endpoints.dart';import '../models/zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_request.dart';import '../models/zero_trust_gateway_proxy_endpoints_update_proxy_endpoint_request.dart';import '../models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayProxyEndpointsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_update_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayProxyEndpointsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.

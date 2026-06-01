@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_permissions.dart';import 'team_simple.dart';/// The ownership type of the team
-@immutable final class TeamType {const TeamType._(this.value);
-
-factory TeamType.fromJson(String json) { return switch (json) {
-  'enterprise' => enterprise,
-  'organization' => organization,
-  _ => TeamType._(json),
-}; }
-
-static const TeamType enterprise = TeamType._('enterprise');
-
-static const TeamType organization = TeamType._('organization');
-
-static const List<TeamType> values = [enterprise, organization];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamType($value)'; } 
- }
-/// Groups of organization members that gives permissions on specified repositories.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team/team_permissions.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_type.dart';import 'package:pub_github_rest_3_1/models/team_simple.dart';/// Groups of organization members that gives permissions on specified repositories.
 @immutable final class Team {const Team({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.type, required this.parent, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
 factory Team.fromJson(Map<String, dynamic> json) { return Team(
@@ -42,7 +17,7 @@ factory Team.fromJson(Map<String, dynamic> json) { return Team(
   htmlUrl: Uri.parse(json['html_url'] as String),
   membersUrl: json['members_url'] as String,
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),
-  type: TeamType.fromJson(json['type'] as String),
+  type: TeamFullType.fromJson(json['type'] as String),
   organizationId: json['organization_id'] != null ? (json['organization_id'] as num).toInt() : null,
   enterpriseId: json['enterprise_id'] != null ? (json['enterprise_id'] as num).toInt() : null,
   parent: json['parent'] != null ? TeamSimple.fromJson(json['parent'] as Map<String, dynamic>) : null,
@@ -75,7 +50,7 @@ final String membersUrl;
 final Uri repositoriesUrl;
 
 /// The ownership type of the team
-final TeamType type;
+final TeamFullType type;
 
 /// Unique identifier of the organization to which this team belongs
 final int? organizationId;
@@ -116,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
       json.containsKey('type') &&
       json.containsKey('parent'); } 
-Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamType? type, int Function()? organizationId, int Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
+Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Function()? description, String Function()? privacy, String Function()? notificationSetting, String? permission, TeamPermissions Function()? permissions, Uri? url, Uri? htmlUrl, String? membersUrl, Uri? repositoriesUrl, TeamFullType? type, int Function()? organizationId, int Function()? enterpriseId, TeamSimple? Function()? parent, }) { return Team(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

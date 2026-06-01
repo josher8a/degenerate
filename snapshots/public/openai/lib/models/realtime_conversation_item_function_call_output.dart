@@ -1,63 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-@immutable final class RealtimeConversationItemFunctionCallOutputObject {const RealtimeConversationItemFunctionCallOutputObject._(this.value);
-
-factory RealtimeConversationItemFunctionCallOutputObject.fromJson(String json) { return switch (json) {
-  'realtime.item' => realtimeItem,
-  _ => RealtimeConversationItemFunctionCallOutputObject._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallOutputObject realtimeItem = RealtimeConversationItemFunctionCallOutputObject._('realtime.item');
-
-static const List<RealtimeConversationItemFunctionCallOutputObject> values = [realtimeItem];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallOutputObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutputObject($value)'; } 
- }
-/// The status of the item. Has no effect on the conversation.
-@immutable final class RealtimeConversationItemFunctionCallOutputStatus {const RealtimeConversationItemFunctionCallOutputStatus._(this.value);
-
-factory RealtimeConversationItemFunctionCallOutputStatus.fromJson(String json) { return switch (json) {
-  'completed' => completed,
-  'incomplete' => incomplete,
-  'in_progress' => inProgress,
-  _ => RealtimeConversationItemFunctionCallOutputStatus._(json),
-}; }
-
-static const RealtimeConversationItemFunctionCallOutputStatus completed = RealtimeConversationItemFunctionCallOutputStatus._('completed');
-
-static const RealtimeConversationItemFunctionCallOutputStatus incomplete = RealtimeConversationItemFunctionCallOutputStatus._('incomplete');
-
-static const RealtimeConversationItemFunctionCallOutputStatus inProgress = RealtimeConversationItemFunctionCallOutputStatus._('in_progress');
-
-static const List<RealtimeConversationItemFunctionCallOutputStatus> values = [completed, incomplete, inProgress];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallOutputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutputStatus($value)'; } 
- }
-/// A function call output item in a Realtime conversation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';/// A function call output item in a Realtime conversation.
 @immutable final class RealtimeConversationItemFunctionCallOutput {const RealtimeConversationItemFunctionCallOutput({required this.type, required this.callId, required this.output, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCallOutput(
   id: json['id'] as String?,
-  object: json['object'] != null ? RealtimeConversationItemFunctionCallOutputObject.fromJson(json['object'] as String) : null,
+  object: json['object'] != null ? RealtimeConversationItemFunctionCallObject.fromJson(json['object'] as String) : null,
   type: json['type'] as String,
-  status: json['status'] != null ? RealtimeConversationItemFunctionCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json['status'] != null ? ComputerToolCallOutputStatus.fromJson(json['status'] as String) : null,
   callId: json['call_id'] as String,
   output: json['output'] as String,
 ); }
@@ -66,13 +16,13 @@ factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic>
 final String? id;
 
 /// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final RealtimeConversationItemFunctionCallOutputObject? object;
+final RealtimeConversationItemFunctionCallObject? object;
 
 /// The type of the item. Always `function_call_output`.
 final String type;
 
 /// The status of the item. Has no effect on the conversation.
-final RealtimeConversationItemFunctionCallOutputStatus? status;
+final ComputerToolCallOutputStatus? status;
 
 /// The ID of the function call this output is for.
 final String callId;
@@ -91,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-RealtimeConversationItemFunctionCallOutput copyWith({String Function()? id, RealtimeConversationItemFunctionCallOutputObject Function()? object, String? type, RealtimeConversationItemFunctionCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
+RealtimeConversationItemFunctionCallOutput copyWith({String Function()? id, RealtimeConversationItemFunctionCallObject Function()? object, String? type, ComputerToolCallOutputStatus Function()? status, String? callId, String? output, }) { return RealtimeConversationItemFunctionCallOutput(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   type: type ?? this.type,

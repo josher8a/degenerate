@@ -1,31 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_invoice.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_setting_quote_setting.dart';import 'quote_application.dart';import 'quote_customer.dart';import 'quote_default_tax_rates.dart';import 'quote_discounts.dart';import 'quote_invoice.dart';import 'quote_line_items.dart';import 'quote_on_behalf_of.dart';import 'quote_subscription.dart';import 'quote_subscription_schedule.dart';import 'quote_test_clock.dart';import 'quotes_resource_automatic_tax.dart';import 'quotes_resource_computed.dart';import 'quotes_resource_from_quote.dart';import 'quotes_resource_status_transitions.dart';import 'quotes_resource_subscription_data_subscription_data.dart';import 'quotes_resource_total_details.dart';import 'quotes_resource_transfer_data.dart';import 'subscription.dart';import 'subscription_schedule.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or on finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-@immutable final class QuoteCollectionMethod {const QuoteCollectionMethod._(this.value);
-
-factory QuoteCollectionMethod.fromJson(String json) { return switch (json) {
-  'charge_automatically' => chargeAutomatically,
-  'send_invoice' => sendInvoice,
-  _ => QuoteCollectionMethod._(json),
-}; }
-
-static const QuoteCollectionMethod chargeAutomatically = QuoteCollectionMethod._('charge_automatically');
-
-static const QuoteCollectionMethod sendInvoice = QuoteCollectionMethod._('send_invoice');
-
-static const List<QuoteCollectionMethod> values = [chargeAutomatically, sendInvoice];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteCollectionMethod($value)'; } 
- }
-/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_subscription.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_quote_setting.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/quote/quote_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/quote/quote_invoice.dart';import 'package:pub_stripe_spec3/models/quote/quote_subscription_schedule.dart';import 'package:pub_stripe_spec3/models/quotes_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/quotes_resource_computed.dart';import 'package:pub_stripe_spec3/models/quotes_resource_from_quote.dart';import 'package:pub_stripe_spec3/models/quotes_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_subscription_data.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';import 'package:pub_stripe_spec3/models/quotes_resource_transfer_data.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class QuoteObject {const QuoteObject._(this.value);
 
 factory QuoteObject.fromJson(String json) { return switch (json) {
@@ -89,7 +64,7 @@ factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: QuotesResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
-  collectionMethod: QuoteCollectionMethod.fromJson(json['collection_method'] as String),
+  collectionMethod: InvoiceCollectionMethod.fromJson(json['collection_method'] as String),
   computed: QuotesResourceComputed.fromJson(json['computed'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
@@ -105,7 +80,7 @@ factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   id: json['id'] as String,
   invoice: json['invoice'] != null ? OneOf3.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedInvoice.fromJson(v as Map<String, dynamic>),) : null,
   invoiceSettings: InvoiceSettingQuoteSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
-  lineItems: json['line_items'] != null ? QuoteLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  lineItems: json['line_items'] != null ? CheckoutSessionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
@@ -128,7 +103,7 @@ final int amountSubtotal;
 final int amountTotal;
 
 /// ID of the Connect Application that created the quote.
-final QuoteApplication? application;
+final BillingPortalConfigurationApplication? application;
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. Only applicable if there are no line items with recurring prices on the quote.
 final int? applicationFeeAmount;
@@ -139,7 +114,7 @@ final double? applicationFeePercent;
 final QuotesResourceAutomaticTax automaticTax;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay invoices at the end of the subscription cycle or on finalization using the default payment method attached to the subscription or customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`. Defaults to `charge_automatically`.
-final QuoteCollectionMethod collectionMethod;
+final InvoiceCollectionMethod collectionMethod;
 
 final QuotesResourceComputed computed;
 
@@ -150,7 +125,7 @@ final int created;
 final String? currency;
 
 /// The customer who received this quote. A customer is required to finalize the quote. Once specified, you can't change it.
-final QuoteCustomer? customer;
+final BankAccountCustomer? customer;
 
 /// The account representing the customer who received this quote. A customer or account is required to finalize the quote. Once specified, you can't change it.
 final String? customerAccount;
@@ -162,7 +137,7 @@ final List<QuoteDefaultTaxRates>? defaultTaxRates;
 final String? description;
 
 /// The discounts applied to this quote.
-final List<QuoteDiscounts> discounts;
+final List<InvoiceitemDiscounts> discounts;
 
 /// The date on which the quote will be canceled if in `open` or `draft` status. Measured in seconds since the Unix epoch.
 final int expiresAt;
@@ -185,7 +160,7 @@ final QuoteInvoice? invoice;
 final InvoiceSettingQuoteSetting invoiceSettings;
 
 /// A list of items the customer is being quoted for.
-final QuoteLineItems? lineItems;
+final CheckoutSessionLineItems? lineItems;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -200,7 +175,7 @@ final String? number;
 final QuoteObject object;
 
 /// The account on behalf of which to charge. See the [Connect documentation](https://support.stripe.com/questions/sending-invoices-on-behalf-of-connected-accounts) for details.
-final QuoteOnBehalfOf? onBehalfOf;
+final PaymentLinkOnBehalfOf? onBehalfOf;
 
 /// The status of the quote.
 final QuoteStatus status;
@@ -208,7 +183,7 @@ final QuoteStatus status;
 final QuotesResourceStatusTransitions statusTransitions;
 
 /// The subscription that was created or updated from this quote.
-final QuoteSubscription? subscription;
+final CheckoutSessionSubscription? subscription;
 
 final QuotesResourceSubscriptionDataSubscriptionData subscriptionData;
 
@@ -216,7 +191,7 @@ final QuotesResourceSubscriptionDataSubscriptionData subscriptionData;
 final QuoteSubscriptionSchedule? subscriptionSchedule;
 
 /// ID of the test clock this quote belongs to.
-final QuoteTestClock? testClock;
+final TestClock? testClock;
 
 final QuotesResourceTotalDetails totalDetails;
 
@@ -278,7 +253,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subscription_data') &&
       json.containsKey('total_details'); } 
-Quote copyWith({int? amountSubtotal, int? amountTotal, QuoteApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, QuoteCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, String? Function()? currency, QuoteCustomer? Function()? customer, String? Function()? customerAccount, List<QuoteDefaultTaxRates> Function()? defaultTaxRates, String? Function()? description, List<QuoteDiscounts>? discounts, int? expiresAt, String? Function()? footer, QuotesResourceFromQuote? Function()? fromQuote, String? Function()? header, String? id, QuoteInvoice? Function()? invoice, InvoiceSettingQuoteSetting? invoiceSettings, QuoteLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, String? Function()? number, QuoteObject? object, QuoteOnBehalfOf? Function()? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, QuoteSubscription? Function()? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, QuoteSubscriptionSchedule? Function()? subscriptionSchedule, QuoteTestClock? Function()? testClock, QuotesResourceTotalDetails? totalDetails, QuotesResourceTransferData? Function()? transferData, }) { return Quote(
+Quote copyWith({int? amountSubtotal, int? amountTotal, BillingPortalConfigurationApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, InvoiceCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, String? Function()? currency, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<QuoteDefaultTaxRates> Function()? defaultTaxRates, String? Function()? description, List<InvoiceitemDiscounts>? discounts, int? expiresAt, String? Function()? footer, QuotesResourceFromQuote? Function()? fromQuote, String? Function()? header, String? id, QuoteInvoice? Function()? invoice, InvoiceSettingQuoteSetting? invoiceSettings, CheckoutSessionLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, String? Function()? number, QuoteObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, CheckoutSessionSubscription? Function()? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, QuoteSubscriptionSchedule? Function()? subscriptionSchedule, TestClock? Function()? testClock, QuotesResourceTotalDetails? totalDetails, QuotesResourceTransferData? Function()? transferData, }) { return Quote(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   application: application != null ? application() : this.application,

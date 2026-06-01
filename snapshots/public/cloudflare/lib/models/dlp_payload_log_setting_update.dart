@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';/// Request model for payload log settings within the DLP settings endpoint.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_payload_log_masking_level.dart';/// Request model for payload log settings within the DLP settings endpoint.
 /// Unlike the legacy endpoint, null and missing are treated identically here
 /// (both mean "not provided" for PATCH, "reset to default" for PUT).
 @immutable final class DlpPayloadLogSettingUpdate {const DlpPayloadLogSettingUpdate({this.maskingLevel = DlpPayloadLogMaskingLevel.$default, this.publicKey, });

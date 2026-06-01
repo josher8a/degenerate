@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount.dart';/// 
 @immutable final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });
 
 factory BalanceDetailUngated.fromJson(Map<String, dynamic> json) { return BalanceDetailUngated(

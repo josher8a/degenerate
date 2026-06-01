@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_settings_account_response_nameservers.dart';@immutable final class DnsSettingsDnsSettingsAccountResponse {const DnsSettingsDnsSettingsAccountResponse({required this.nameservers});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_account_response/dns_settings_dns_settings_account_response_nameservers.dart';@immutable final class DnsSettingsDnsSettingsAccountResponse {const DnsSettingsDnsSettingsAccountResponse({required this.nameservers});
 
 factory DnsSettingsDnsSettingsAccountResponse.fromJson(Map<String, dynamic> json) { return DnsSettingsDnsSettingsAccountResponse(
   nameservers: DnsSettingsDnsSettingsAccountResponseNameservers.fromJson(json['nameservers'] as Map<String, dynamic>),

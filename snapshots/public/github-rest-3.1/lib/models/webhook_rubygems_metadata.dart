@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rubygems_metadata_version_info.dart';@immutable final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_rubygems_metadata/version_info.dart';@immutable final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
 
 factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return WebhookRubygemsMetadata(
   name: json['name'] as String?,
   description: json['description'] as String?,
   readme: json['readme'] as String?,
   homepage: json['homepage'] as String?,
-  versionInfo: json['version_info'] != null ? WebhookRubygemsMetadataVersionInfo.fromJson(json['version_info'] as Map<String, dynamic>) : null,
+  versionInfo: json['version_info'] != null ? VersionInfo.fromJson(json['version_info'] as Map<String, dynamic>) : null,
   platform: json['platform'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   repo: json['repo'] as String?,
@@ -23,7 +23,7 @@ final String? readme;
 
 final String? homepage;
 
-final WebhookRubygemsMetadataVersionInfo? versionInfo;
+final VersionInfo? versionInfo;
 
 final String? platform;
 
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'commit_oid': ?commitOid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'readme', 'homepage', 'version_info', 'platform', 'metadata', 'repo', 'dependencies', 'commit_oid'}.contains(key)); } 
-WebhookRubygemsMetadata copyWith({String Function()? name, String Function()? description, String Function()? readme, String Function()? homepage, WebhookRubygemsMetadataVersionInfo Function()? versionInfo, String Function()? platform, Map<String, String> Function()? metadata, String Function()? repo, List<Map<String, String>> Function()? dependencies, String Function()? commitOid, }) { return WebhookRubygemsMetadata(
+WebhookRubygemsMetadata copyWith({String Function()? name, String Function()? description, String Function()? readme, String Function()? homepage, VersionInfo Function()? versionInfo, String Function()? platform, Map<String, String> Function()? metadata, String Function()? repo, List<Map<String, String>> Function()? dependencies, String Function()? commitOid, }) { return WebhookRubygemsMetadata(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   readme: readme != null ? readme() : this.readme,

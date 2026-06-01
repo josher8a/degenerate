@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule_allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_cors_rule/allowed.dart';@immutable final class R2CorsRule {const R2CorsRule({required this.allowed, this.exposeHeaders, this.id, this.maxAgeSeconds, });
 
 factory R2CorsRule.fromJson(Map<String, dynamic> json) { return R2CorsRule(
-  allowed: R2CorsRuleAllowed.fromJson(json['allowed'] as Map<String, dynamic>),
+  allowed: Allowed.fromJson(json['allowed'] as Map<String, dynamic>),
   exposeHeaders: (json['exposeHeaders'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxAgeSeconds: json['maxAgeSeconds'] != null ? (json['maxAgeSeconds'] as num).toDouble() : null,
 ); }
 
 /// Object specifying allowed origins, methods and headers for this CORS rule.
-final R2CorsRuleAllowed allowed;
+final Allowed allowed;
 
 /// Specifies the headers that can be exposed back, and accessed by, the JavaScript making the cross-origin request. If you need to access headers beyond the safelisted response headers, such as Content-Encoding or cf-cache-status, you must specify it here.
 final List<String>? exposeHeaders;
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'maxAgeSeconds': ?maxAgeSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed'); } 
-R2CorsRule copyWith({R2CorsRuleAllowed? allowed, List<String> Function()? exposeHeaders, String Function()? id, double Function()? maxAgeSeconds, }) { return R2CorsRule(
+R2CorsRule copyWith({Allowed? allowed, List<String> Function()? exposeHeaders, String Function()? id, double Function()? maxAgeSeconds, }) { return R2CorsRule(
   allowed: allowed ?? this.allowed,
   exposeHeaders: exposeHeaders != null ? exposeHeaders() : this.exposeHeaders,
   id: id != null ? id() : this.id,

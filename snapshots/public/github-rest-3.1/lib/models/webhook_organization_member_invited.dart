@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_organization_member_invited_invitation.dart';import 'webhooks_user.dart';@immutable final class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_member_invited/invitation.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction._(this.value);
 
 factory WebhookOrganizationMemberInvitedAction.fromJson(String json) { return switch (json) {
   'member_invited' => memberInvited,
@@ -27,7 +27,7 @@ factory WebhookOrganizationMemberInvited.fromJson(Map<String, dynamic> json) { r
   action: WebhookOrganizationMemberInvitedAction.fromJson(json['action'] as String),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  invitation: WebhookOrganizationMemberInvitedInvitation.fromJson(json['invitation'] as Map<String, dynamic>),
+  invitation: Invitation.fromJson(json['invitation'] as Map<String, dynamic>),
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
@@ -41,7 +41,7 @@ final EnterpriseWebhooks? enterprise;
 final SimpleInstallation? installation;
 
 /// The invitation for the user or email if the action is `member_invited`.
-final WebhookOrganizationMemberInvitedInvitation invitation;
+final Invitation invitation;
 
 final OrganizationSimpleWebhooks organization;
 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('invitation') &&
       json.containsKey('organization') &&
       json.containsKey('sender'); } 
-WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookOrganizationMemberInvitedInvitation? invitation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksUser Function()? user, }) { return WebhookOrganizationMemberInvited(
+WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, Invitation? invitation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksUser Function()? user, }) { return WebhookOrganizationMemberInvited(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

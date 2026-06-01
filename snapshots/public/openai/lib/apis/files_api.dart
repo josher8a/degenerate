@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_file_request.dart';import '../models/delete_file_response.dart';import '../models/list_files_order.dart';import '../models/list_files_response.dart';import '../models/open_ai_file.dart';/// FilesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_file_request.dart';import 'package:pub_openai/models/delete_file_response.dart';import 'package:pub_openai/models/list_files_order.dart';import 'package:pub_openai/models/list_files_response.dart';import 'package:pub_openai/models/open_ai_file.dart';/// FilesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
