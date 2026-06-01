@@ -89,6 +89,7 @@ dynamic toJson() { return value; }
 final AccessAccessGroupRule _value;
 
 @override AccessAccessGroupRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessAccessGroupRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -99,6 +100,7 @@ final AccessAccessGroupRule _value;
 final AccessAnyValidServiceTokenRule _value;
 
 @override AccessAnyValidServiceTokenRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessAnyValidServiceTokenRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -109,6 +111,7 @@ final AccessAnyValidServiceTokenRule _value;
 final AccessAuthContextRule _value;
 
 @override AccessAuthContextRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessAuthContextRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -119,6 +122,7 @@ final AccessAuthContextRule _value;
 final AccessAuthenticationMethodRule _value;
 
 @override AccessAuthenticationMethodRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessAuthenticationMethodRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -129,6 +133,7 @@ final AccessAuthenticationMethodRule _value;
 final AccessAzureGroupRule _value;
 
 @override AccessAzureGroupRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessAzureGroupRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -139,6 +144,7 @@ final AccessAzureGroupRule _value;
 final AccessCertificateRule _value;
 
 @override AccessCertificateRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessCertificateRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -149,6 +155,7 @@ final AccessCertificateRule _value;
 final AccessCommonNameRule _value;
 
 @override AccessCommonNameRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessCommonNameRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -159,6 +166,7 @@ final AccessCommonNameRule _value;
 final AccessCountryRule _value;
 
 @override AccessCountryRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessCountryRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -169,6 +177,7 @@ final AccessCountryRule _value;
 final AccessDevicePostureRule _value;
 
 @override AccessDevicePostureRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessDevicePostureRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -179,6 +188,7 @@ final AccessDevicePostureRule _value;
 final AccessDomainRule _value;
 
 @override AccessDomainRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessDomainRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -189,6 +199,7 @@ final AccessDomainRule _value;
 final AccessEmailListRule _value;
 
 @override AccessEmailListRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessEmailListRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -199,6 +210,7 @@ final AccessEmailListRule _value;
 final AccessEmailRule _value;
 
 @override AccessEmailRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessEmailRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -209,6 +221,7 @@ final AccessEmailRule _value;
 final AccessEveryoneRule _value;
 
 @override AccessEveryoneRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessEveryoneRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -219,6 +232,7 @@ final AccessEveryoneRule _value;
 final AccessExternalEvaluationRule _value;
 
 @override AccessExternalEvaluationRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessExternalEvaluationRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -229,6 +243,7 @@ final AccessExternalEvaluationRule _value;
 final AccessGithubOrganizationRule _value;
 
 @override AccessGithubOrganizationRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessGithubOrganizationRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -239,6 +254,7 @@ final AccessGithubOrganizationRule _value;
 final AccessGsuiteGroupRule _value;
 
 @override AccessGsuiteGroupRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessGsuiteGroupRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -249,6 +265,7 @@ final AccessGsuiteGroupRule _value;
 final AccessLoginMethodRule _value;
 
 @override AccessLoginMethodRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessLoginMethodRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -259,6 +276,7 @@ final AccessLoginMethodRule _value;
 final AccessIpListRule _value;
 
 @override AccessIpListRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessIpListRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -269,6 +287,7 @@ final AccessIpListRule _value;
 final AccessIpRule _value;
 
 @override AccessIpRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessIpRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -279,6 +298,7 @@ final AccessIpRule _value;
 final AccessOktaGroupRule _value;
 
 @override AccessOktaGroupRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessOktaGroupRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -289,6 +309,7 @@ final AccessOktaGroupRule _value;
 final AccessSamlGroupRule _value;
 
 @override AccessSamlGroupRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessSamlGroupRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -299,6 +320,7 @@ final AccessSamlGroupRule _value;
 final AccessOidcClaimRule _value;
 
 @override AccessOidcClaimRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessOidcClaimRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -309,6 +331,7 @@ final AccessOidcClaimRule _value;
 final AccessServiceTokenRule _value;
 
 @override AccessServiceTokenRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessServiceTokenRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -319,6 +342,7 @@ final AccessServiceTokenRule _value;
 final AccessLinkedAppTokenRule _value;
 
 @override AccessLinkedAppTokenRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessLinkedAppTokenRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -329,6 +353,7 @@ final AccessLinkedAppTokenRule _value;
 final AccessUserRiskScoreRule _value;
 
 @override AccessUserRiskScoreRule get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccessRuleAccessUserRiskScoreRule && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

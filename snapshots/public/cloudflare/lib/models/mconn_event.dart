@@ -62,6 +62,7 @@ dynamic toJson() { return value; }
 final MconnEventInit _value;
 
 @override MconnEventInit get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventMconnEventInit && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -72,6 +73,7 @@ final MconnEventInit _value;
 final Leave _value;
 
 @override Leave get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventLeave && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -82,6 +84,7 @@ final Leave _value;
 final StartAttestation _value;
 
 @override StartAttestation get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventStartAttestation && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -92,6 +95,7 @@ final StartAttestation _value;
 final FinishAttestationSuccess _value;
 
 @override FinishAttestationSuccess get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishAttestationSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -102,6 +106,7 @@ final FinishAttestationSuccess _value;
 final FinishAttestationFailure _value;
 
 @override FinishAttestationFailure get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishAttestationFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -112,6 +117,7 @@ final FinishAttestationFailure _value;
 final StartRotateCryptKey _value;
 
 @override StartRotateCryptKey get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventStartRotateCryptKey && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -122,6 +128,7 @@ final StartRotateCryptKey _value;
 final FinishRotateCryptKeySuccess _value;
 
 @override FinishRotateCryptKeySuccess get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishRotateCryptKeySuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -132,6 +139,7 @@ final FinishRotateCryptKeySuccess _value;
 final FinishRotateCryptKeyFailure _value;
 
 @override FinishRotateCryptKeyFailure get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishRotateCryptKeyFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -142,6 +150,7 @@ final FinishRotateCryptKeyFailure _value;
 final StartRotatePki _value;
 
 @override StartRotatePki get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventStartRotatePki && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -152,6 +161,7 @@ final StartRotatePki _value;
 final FinishRotatePkiSuccess _value;
 
 @override FinishRotatePkiSuccess get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishRotatePkiSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -162,6 +172,7 @@ final FinishRotatePkiSuccess _value;
 final FinishRotatePkiFailure _value;
 
 @override FinishRotatePkiFailure get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishRotatePkiFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -172,6 +183,7 @@ final FinishRotatePkiFailure _value;
 final StartUpgrade _value;
 
 @override StartUpgrade get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventStartUpgrade && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -182,6 +194,7 @@ final StartUpgrade _value;
 final FinishUpgradeSuccess _value;
 
 @override FinishUpgradeSuccess get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishUpgradeSuccess && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -192,6 +205,7 @@ final FinishUpgradeSuccess _value;
 final FinishUpgradeFailure _value;
 
 @override FinishUpgradeFailure get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventFinishUpgradeFailure && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -202,6 +216,7 @@ final FinishUpgradeFailure _value;
 final Reconcile _value;
 
 @override Reconcile get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventReconcile && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -212,6 +227,7 @@ final Reconcile _value;
 final ConfigureCloudflaredTunnel _value;
 
 @override ConfigureCloudflaredTunnel get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MconnEventConfigureCloudflaredTunnel && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

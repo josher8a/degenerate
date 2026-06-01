@@ -77,6 +77,7 @@ dynamic toJson() { return value; }
 final RepositoryRuleCreation _value;
 
 @override RepositoryRuleCreation get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCreation && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -87,6 +88,7 @@ final RepositoryRuleCreation _value;
 final RepositoryRuleUpdate _value;
 
 @override RepositoryRuleUpdate get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleUpdate && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -97,6 +99,7 @@ final RepositoryRuleUpdate _value;
 final RepositoryRuleDeletion _value;
 
 @override RepositoryRuleDeletion get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleDeletion && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -107,6 +110,7 @@ final RepositoryRuleDeletion _value;
 final RepositoryRuleRequiredLinearHistory _value;
 
 @override RepositoryRuleRequiredLinearHistory get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleRequiredLinearHistory && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -117,6 +121,7 @@ final RepositoryRuleRequiredLinearHistory _value;
 final RepositoryRuleRequiredDeployments _value;
 
 @override RepositoryRuleRequiredDeployments get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleRequiredDeployments && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -127,6 +132,7 @@ final RepositoryRuleRequiredDeployments _value;
 final RepositoryRuleRequiredSignatures _value;
 
 @override RepositoryRuleRequiredSignatures get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleRequiredSignatures && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -137,6 +143,7 @@ final RepositoryRuleRequiredSignatures _value;
 final RepositoryRulePullRequest _value;
 
 @override RepositoryRulePullRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRulePullRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -147,6 +154,7 @@ final RepositoryRulePullRequest _value;
 final RepositoryRuleRequiredStatusChecks _value;
 
 @override RepositoryRuleRequiredStatusChecks get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleRequiredStatusChecks && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -157,6 +165,7 @@ final RepositoryRuleRequiredStatusChecks _value;
 final RepositoryRuleNonFastForward _value;
 
 @override RepositoryRuleNonFastForward get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleNonFastForward && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -167,6 +176,7 @@ final RepositoryRuleNonFastForward _value;
 final RepositoryRuleCommitMessagePattern _value;
 
 @override RepositoryRuleCommitMessagePattern get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCommitMessagePattern && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -177,6 +187,7 @@ final RepositoryRuleCommitMessagePattern _value;
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
 @override RepositoryRuleCommitAuthorEmailPattern get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCommitAuthorEmailPattern && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -187,6 +198,7 @@ final RepositoryRuleCommitAuthorEmailPattern _value;
 final RepositoryRuleCommitterEmailPattern _value;
 
 @override RepositoryRuleCommitterEmailPattern get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCommitterEmailPattern && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -197,6 +209,7 @@ final RepositoryRuleCommitterEmailPattern _value;
 final RepositoryRuleBranchNamePattern _value;
 
 @override RepositoryRuleBranchNamePattern get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleBranchNamePattern && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -207,6 +220,7 @@ final RepositoryRuleBranchNamePattern _value;
 final RepositoryRuleTagNamePattern _value;
 
 @override RepositoryRuleTagNamePattern get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleTagNamePattern && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -217,6 +231,7 @@ final RepositoryRuleTagNamePattern _value;
 final RepositoryRuleFilePathRestriction _value;
 
 @override RepositoryRuleFilePathRestriction get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleFilePathRestriction && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -227,6 +242,7 @@ final RepositoryRuleFilePathRestriction _value;
 final RepositoryRuleMaxFilePathLength _value;
 
 @override RepositoryRuleMaxFilePathLength get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleMaxFilePathLength && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -237,6 +253,7 @@ final RepositoryRuleMaxFilePathLength _value;
 final RepositoryRuleFileExtensionRestriction _value;
 
 @override RepositoryRuleFileExtensionRestriction get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleFileExtensionRestriction && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -247,6 +264,7 @@ final RepositoryRuleFileExtensionRestriction _value;
 final RepositoryRuleMaxFileSize _value;
 
 @override RepositoryRuleMaxFileSize get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleMaxFileSize && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -257,6 +275,7 @@ final RepositoryRuleMaxFileSize _value;
 final RepositoryRuleWorkflows _value;
 
 @override RepositoryRuleWorkflows get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleWorkflows && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -267,6 +286,7 @@ final RepositoryRuleWorkflows _value;
 final RepositoryRuleCodeScanning _value;
 
 @override RepositoryRuleCodeScanning get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCodeScanning && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -277,6 +297,7 @@ final RepositoryRuleCodeScanning _value;
 final RepositoryRuleCopilotCodeReview _value;
 
 @override RepositoryRuleCopilotCodeReview get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OrgRulesRepositoryRuleCopilotCodeReview && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

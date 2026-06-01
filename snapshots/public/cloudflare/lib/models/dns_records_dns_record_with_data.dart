@@ -53,6 +53,7 @@ dynamic toJson() { return value; }
 final DnsRecordsCaaRecord _value;
 
 @override DnsRecordsCaaRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -63,6 +64,7 @@ final DnsRecordsCaaRecord _value;
 final DnsRecordsCertRecord _value;
 
 @override DnsRecordsCertRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsCertRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -73,6 +75,7 @@ final DnsRecordsCertRecord _value;
 final DnsRecordsDnskeyRecord _value;
 
 @override DnsRecordsDnskeyRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -83,6 +86,7 @@ final DnsRecordsDnskeyRecord _value;
 final DnsRecordsDsRecord _value;
 
 @override DnsRecordsDsRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsDsRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -93,6 +97,7 @@ final DnsRecordsDsRecord _value;
 final DnsRecordsHttpsRecord _value;
 
 @override DnsRecordsHttpsRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -103,6 +108,7 @@ final DnsRecordsHttpsRecord _value;
 final DnsRecordsLocRecord _value;
 
 @override DnsRecordsLocRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsLocRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -113,6 +119,7 @@ final DnsRecordsLocRecord _value;
 final DnsRecordsNaptrRecord _value;
 
 @override DnsRecordsNaptrRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -123,6 +130,7 @@ final DnsRecordsNaptrRecord _value;
 final DnsRecordsSmimeaRecord _value;
 
 @override DnsRecordsSmimeaRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -133,6 +141,7 @@ final DnsRecordsSmimeaRecord _value;
 final DnsRecordsSrvRecord _value;
 
 @override DnsRecordsSrvRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -143,6 +152,7 @@ final DnsRecordsSrvRecord _value;
 final DnsRecordsSshfpRecord _value;
 
 @override DnsRecordsSshfpRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -153,6 +163,7 @@ final DnsRecordsSshfpRecord _value;
 final DnsRecordsSvcbRecord _value;
 
 @override DnsRecordsSvcbRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -163,6 +174,7 @@ final DnsRecordsSvcbRecord _value;
 final DnsRecordsTlsaRecord _value;
 
 @override DnsRecordsTlsaRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -173,6 +185,7 @@ final DnsRecordsTlsaRecord _value;
 final DnsRecordsUriRecord _value;
 
 @override DnsRecordsUriRecord get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DnsRecordsDnsRecordWithDataDnsRecordsUriRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

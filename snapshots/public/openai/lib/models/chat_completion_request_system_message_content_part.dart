@@ -17,6 +17,7 @@ dynamic toJson() { return value; }
 final ChatCompletionRequestMessageContentPartText _value;
 
 @override ChatCompletionRequestMessageContentPartText get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestSystemMessageContentPartChatCompletionRequestMessageContentPartText && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

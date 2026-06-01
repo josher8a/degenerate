@@ -1028,6 +1028,7 @@ dynamic toJson() { return value; }
 final Zones0rttValue _value;
 
 @override Zones0rttValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZones0rttValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1038,6 +1039,7 @@ final Zones0rttValue _value;
 final ZonesAdvancedDdosValue _value;
 
 @override ZonesAdvancedDdosValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesAdvancedDdosValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1048,6 +1050,7 @@ final ZonesAdvancedDdosValue _value;
 final ZonesCacheRulesAegisValue _value;
 
 @override ZonesCacheRulesAegisValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesCacheRulesAegisValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1058,6 +1061,7 @@ final ZonesCacheRulesAegisValue _value;
 final ZonesAlwaysOnlineValue _value;
 
 @override ZonesAlwaysOnlineValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesAlwaysOnlineValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1068,6 +1072,7 @@ final ZonesAlwaysOnlineValue _value;
 final ZonesAlwaysUseHttpsValue _value;
 
 @override ZonesAlwaysUseHttpsValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesAlwaysUseHttpsValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1078,6 +1083,7 @@ final ZonesAlwaysUseHttpsValue _value;
 final ZonesAutomaticHttpsRewritesValue _value;
 
 @override ZonesAutomaticHttpsRewritesValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesAutomaticHttpsRewritesValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1088,6 +1094,7 @@ final ZonesAutomaticHttpsRewritesValue _value;
 final ZonesBrotliValue _value;
 
 @override ZonesBrotliValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesBrotliValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1098,6 +1105,7 @@ final ZonesBrotliValue _value;
 final ZonesBrowserCacheTtlValue _value;
 
 @override ZonesBrowserCacheTtlValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesBrowserCacheTtlValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1108,6 +1116,7 @@ final ZonesBrowserCacheTtlValue _value;
 final ZonesBrowserCheckValue _value;
 
 @override ZonesBrowserCheckValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesBrowserCheckValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1118,6 +1127,7 @@ final ZonesBrowserCheckValue _value;
 final ZonesCacheLevelValue _value;
 
 @override ZonesCacheLevelValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesCacheLevelValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1128,6 +1138,7 @@ final ZonesCacheLevelValue _value;
 final ZonesChallengeTtlValue _value;
 
 @override ZonesChallengeTtlValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesChallengeTtlValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1138,6 +1149,7 @@ final ZonesChallengeTtlValue _value;
 final ZonesChinaNetworkEnabledValue _value;
 
 @override ZonesChinaNetworkEnabledValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesChinaNetworkEnabledValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1148,6 +1160,7 @@ final ZonesChinaNetworkEnabledValue _value;
 final ZonesContentConverterValue _value;
 
 @override ZonesContentConverterValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesContentConverterValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1168,6 +1181,7 @@ final List<String> _value;
 final ZonesCnameFlatteningValue _value;
 
 @override ZonesCnameFlatteningValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesCnameFlatteningValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1178,6 +1192,7 @@ final ZonesCnameFlatteningValue _value;
 final ZonesDevelopmentModeValue _value;
 
 @override ZonesDevelopmentModeValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesDevelopmentModeValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1188,6 +1203,7 @@ final ZonesDevelopmentModeValue _value;
 final ZonesEarlyHintsValue _value;
 
 @override ZonesEarlyHintsValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesEarlyHintsValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1198,6 +1214,7 @@ final ZonesEarlyHintsValue _value;
 final ZonesEdgeCacheTtlValue _value;
 
 @override ZonesEdgeCacheTtlValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesEdgeCacheTtlValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1208,6 +1225,7 @@ final ZonesEdgeCacheTtlValue _value;
 final ZonesEmailObfuscationValue _value;
 
 @override ZonesEmailObfuscationValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesEmailObfuscationValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1218,6 +1236,7 @@ final ZonesEmailObfuscationValue _value;
 final ZonesH2PrioritizationValue _value;
 
 @override ZonesH2PrioritizationValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesH2PrioritizationValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1228,6 +1247,7 @@ final ZonesH2PrioritizationValue _value;
 final ZonesHotlinkProtectionValue _value;
 
 @override ZonesHotlinkProtectionValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesHotlinkProtectionValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1238,6 +1258,7 @@ final ZonesHotlinkProtectionValue _value;
 final ZonesHttp2Value _value;
 
 @override ZonesHttp2Value get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesHttp2Value && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1248,6 +1269,7 @@ final ZonesHttp2Value _value;
 final ZonesHttp3Value _value;
 
 @override ZonesHttp3Value get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesHttp3Value && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1258,6 +1280,7 @@ final ZonesHttp3Value _value;
 final ZonesImageResizingValue _value;
 
 @override ZonesImageResizingValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesImageResizingValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1268,6 +1291,7 @@ final ZonesImageResizingValue _value;
 final ZonesIpGeolocationValue _value;
 
 @override ZonesIpGeolocationValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesIpGeolocationValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1278,6 +1302,7 @@ final ZonesIpGeolocationValue _value;
 final ZonesIpv6Value _value;
 
 @override ZonesIpv6Value get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesIpv6Value && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1288,6 +1313,7 @@ final ZonesIpv6Value _value;
 final ZonesMaxUploadValue _value;
 
 @override ZonesMaxUploadValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesMaxUploadValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1298,6 +1324,7 @@ final ZonesMaxUploadValue _value;
 final ZonesMinTlsVersionValue _value;
 
 @override ZonesMinTlsVersionValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesMinTlsVersionValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1308,6 +1335,7 @@ final ZonesMinTlsVersionValue _value;
 final ZonesMirageValue _value;
 
 @override ZonesMirageValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesMirageValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1318,6 +1346,7 @@ final ZonesMirageValue _value;
 final ZonesNelValue _value;
 
 @override ZonesNelValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesNelValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1328,6 +1357,7 @@ final ZonesNelValue _value;
 final ZonesOpportunisticEncryptionValue _value;
 
 @override ZonesOpportunisticEncryptionValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesOpportunisticEncryptionValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1338,6 +1368,7 @@ final ZonesOpportunisticEncryptionValue _value;
 final ZonesOpportunisticOnionValue _value;
 
 @override ZonesOpportunisticOnionValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesOpportunisticOnionValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1348,6 +1379,7 @@ final ZonesOpportunisticOnionValue _value;
 final ZonesOrangeToOrangeValue _value;
 
 @override ZonesOrangeToOrangeValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesOrangeToOrangeValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1358,6 +1390,7 @@ final ZonesOrangeToOrangeValue _value;
 final ZonesOriginErrorPagePassThruValue _value;
 
 @override ZonesOriginErrorPagePassThruValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesOriginErrorPagePassThruValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1368,6 +1401,7 @@ final ZonesOriginErrorPagePassThruValue _value;
 final ZonesCacheRulesOriginMaxHttpVersionValue _value;
 
 @override ZonesCacheRulesOriginMaxHttpVersionValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1378,6 +1412,7 @@ final ZonesCacheRulesOriginMaxHttpVersionValue _value;
 final ZonesPolishValue _value;
 
 @override ZonesPolishValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesPolishValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1388,6 +1423,7 @@ final ZonesPolishValue _value;
 final ZonesPrefetchPreloadValue _value;
 
 @override ZonesPrefetchPreloadValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesPrefetchPreloadValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1398,6 +1434,7 @@ final ZonesPrefetchPreloadValue _value;
 final ZonesPrivacyPassValue _value;
 
 @override ZonesPrivacyPassValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesPrivacyPassValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1408,6 +1445,7 @@ final ZonesPrivacyPassValue _value;
 final ZonesPseudoIpv4Value _value;
 
 @override ZonesPseudoIpv4Value get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesPseudoIpv4Value && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1418,6 +1456,7 @@ final ZonesPseudoIpv4Value _value;
 final ZonesRedirectsForAiTrainingValue _value;
 
 @override ZonesRedirectsForAiTrainingValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesRedirectsForAiTrainingValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1428,6 +1467,7 @@ final ZonesRedirectsForAiTrainingValue _value;
 final ZonesReplaceInsecureJsValue _value;
 
 @override ZonesReplaceInsecureJsValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesReplaceInsecureJsValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1438,6 +1478,7 @@ final ZonesReplaceInsecureJsValue _value;
 final ZonesResponseBufferingValue _value;
 
 @override ZonesResponseBufferingValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesResponseBufferingValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1448,6 +1489,7 @@ final ZonesResponseBufferingValue _value;
 final ZonesRocketLoaderValue _value;
 
 @override ZonesRocketLoaderValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesRocketLoaderValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1458,6 +1500,7 @@ final ZonesRocketLoaderValue _value;
 final ZonesAutomaticPlatformOptimization _value;
 
 @override ZonesAutomaticPlatformOptimization get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesAutomaticPlatformOptimization && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1468,6 +1511,7 @@ final ZonesAutomaticPlatformOptimization _value;
 final ZonesSecurityHeaderValue _value;
 
 @override ZonesSecurityHeaderValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesSecurityHeaderValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1478,6 +1522,7 @@ final ZonesSecurityHeaderValue _value;
 final ZonesSecurityLevelValue _value;
 
 @override ZonesSecurityLevelValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesSecurityLevelValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1488,6 +1533,7 @@ final ZonesSecurityLevelValue _value;
 final ZonesServerSideExcludeValue _value;
 
 @override ZonesServerSideExcludeValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesServerSideExcludeValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1498,6 +1544,7 @@ final ZonesServerSideExcludeValue _value;
 final ZonesSha1SupportValue _value;
 
 @override ZonesSha1SupportValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesSha1SupportValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1508,6 +1555,7 @@ final ZonesSha1SupportValue _value;
 final ZonesSortQueryStringForCacheValue _value;
 
 @override ZonesSortQueryStringForCacheValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesSortQueryStringForCacheValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1518,6 +1566,7 @@ final ZonesSortQueryStringForCacheValue _value;
 final ZonesSslValue _value;
 
 @override ZonesSslValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesSslValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1528,6 +1577,7 @@ final ZonesSslValue _value;
 final ZonesTls12OnlyValue _value;
 
 @override ZonesTls12OnlyValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesTls12OnlyValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1538,6 +1588,7 @@ final ZonesTls12OnlyValue _value;
 final ZonesTls13Value _value;
 
 @override ZonesTls13Value get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesTls13Value && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1548,6 +1599,7 @@ final ZonesTls13Value _value;
 final ZonesTlsClientAuthValue _value;
 
 @override ZonesTlsClientAuthValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesTlsClientAuthValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1558,6 +1610,7 @@ final ZonesTlsClientAuthValue _value;
 final ZonesTrueClientIpHeaderValue _value;
 
 @override ZonesTrueClientIpHeaderValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesTrueClientIpHeaderValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1568,6 +1621,7 @@ final ZonesTrueClientIpHeaderValue _value;
 final ZonesWafValue _value;
 
 @override ZonesWafValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesWafValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1578,6 +1632,7 @@ final ZonesWafValue _value;
 final ZonesWebpValue _value;
 
 @override ZonesWebpValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesWebpValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -1588,6 +1643,7 @@ final ZonesWebpValue _value;
 final ZonesWebsocketsValue _value;
 
 @override ZonesWebsocketsValue get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingValueZonesWebsocketsValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

@@ -44,6 +44,7 @@ dynamic toJson() { return value; }
 final ThreadRunCreated _value;
 
 @override ThreadRunCreated get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunCreated && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -54,6 +55,7 @@ final ThreadRunCreated _value;
 final ThreadRunQueued _value;
 
 @override ThreadRunQueued get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunQueued && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -64,6 +66,7 @@ final ThreadRunQueued _value;
 final ThreadRunInProgress _value;
 
 @override ThreadRunInProgress get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunInProgress && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -74,6 +77,7 @@ final ThreadRunInProgress _value;
 final ThreadRunRequiresAction _value;
 
 @override ThreadRunRequiresAction get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunRequiresAction && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -84,6 +88,7 @@ final ThreadRunRequiresAction _value;
 final ThreadRunCompleted _value;
 
 @override ThreadRunCompleted get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunCompleted && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -94,6 +99,7 @@ final ThreadRunCompleted _value;
 final ThreadRunIncomplete _value;
 
 @override ThreadRunIncomplete get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunIncomplete && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -104,6 +110,7 @@ final ThreadRunIncomplete _value;
 final ThreadRunFailed _value;
 
 @override ThreadRunFailed get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunFailed && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -114,6 +121,7 @@ final ThreadRunFailed _value;
 final ThreadRunCancelling _value;
 
 @override ThreadRunCancelling get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunCancelling && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -124,6 +132,7 @@ final ThreadRunCancelling _value;
 final ThreadRunCancelled _value;
 
 @override ThreadRunCancelled get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunCancelled && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -134,6 +143,7 @@ final ThreadRunCancelled _value;
 final ThreadRunExpired _value;
 
 @override ThreadRunExpired get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RunStreamEventThreadRunExpired && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

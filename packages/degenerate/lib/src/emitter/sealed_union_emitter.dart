@@ -967,6 +967,7 @@ class UntaggedUnionEmitter {
           ),
         )
         ..methods.addAll([
+          ..._buildVariantToJson(variant),
           buildEqualsOverride(
             'return identical(this, other) ||\n'
             '    other is $className && _value == other._value;',
@@ -977,6 +978,22 @@ class UntaggedUnionEmitter {
           ),
         ]),
     );
+  }
+
+  /// Override `toJson` on a variant when the base class's `return value;`
+  /// wouldn't produce valid JSON (e.g. object variants need `.toJson()`).
+  Iterable<Method> _buildVariantToJson(IrType variant) {
+    final expr = buildToJsonCode(variant, 'value');
+    if (expr == 'value') return const [];
+    return [
+      Method(
+        (m) => m
+          ..name = 'toJson'
+          ..annotations.add(refer('override'))
+          ..returns = refer('dynamic')
+          ..body = Code('return $expr;'),
+      ),
+    ];
   }
 
   Class _buildUnknownVariantClass() {

@@ -629,12 +629,11 @@ class FileEmitter {
     };
 
     /// Deep bytes check (traverses OneOf-eligible unions and refs) - for
-    /// needsConvert.
-    /// Only recurses into OneOf-eligible unions because their parse code is
-    /// inlined
-    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle
-    /// bytes
-    /// in their own fromJson method.
+    /// needsConvert. Only recurses into OneOf-eligible unions because their
+    /// parse code is inlined in the current file. Non-OneOf sealed classes
+    /// handle bytes in their own file (variant toJson overrides) — that
+    /// dart:convert need is detected locally in the IrUntaggedUnion/IrAnyOf
+    /// switch cases below.
     final bytesVisited = <String>{};
     bool hasBytesAnywhere(IrType t) => switch (t) {
       IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
@@ -745,9 +744,11 @@ class FileEmitter {
         names.add(name);
         if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
-          // Typedef/sealed union files only reference direct variant types.
           _collectTopLevelTypeName(variant, names);
           if (isDirectBytes(variant)) needsTypedData = true;
+        }
+        if (!isOneOfEligible(variants) && variants.any(isDirectBytes)) {
+          needsConvert = true;
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);

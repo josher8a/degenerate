@@ -59,6 +59,7 @@ dynamic toJson() { return value; }
 final CreateEvent _value;
 
 @override CreateEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadCreateEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -69,6 +70,7 @@ final CreateEvent _value;
 final DeleteEvent _value;
 
 @override DeleteEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadDeleteEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -79,6 +81,7 @@ final DeleteEvent _value;
 final DiscussionEvent _value;
 
 @override DiscussionEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadDiscussionEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -89,6 +92,7 @@ final DiscussionEvent _value;
 final IssuesEvent _value;
 
 @override IssuesEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadIssuesEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -99,6 +103,7 @@ final IssuesEvent _value;
 final IssueCommentEvent _value;
 
 @override IssueCommentEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadIssueCommentEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -109,6 +114,7 @@ final IssueCommentEvent _value;
 final ForkEvent _value;
 
 @override ForkEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadForkEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -119,6 +125,7 @@ final ForkEvent _value;
 final GollumEvent _value;
 
 @override GollumEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadGollumEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -129,6 +136,7 @@ final GollumEvent _value;
 final MemberEvent _value;
 
 @override MemberEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadMemberEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -149,6 +157,7 @@ final Map<String,dynamic> _value;
 final PushEvent _value;
 
 @override PushEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadPushEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -159,6 +168,7 @@ final PushEvent _value;
 final PullRequestEvent _value;
 
 @override PullRequestEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadPullRequestEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -169,6 +179,7 @@ final PullRequestEvent _value;
 final PullRequestReviewCommentEvent _value;
 
 @override PullRequestReviewCommentEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadPullRequestReviewCommentEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -179,6 +190,7 @@ final PullRequestReviewCommentEvent _value;
 final PullRequestReviewEvent _value;
 
 @override PullRequestReviewEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadPullRequestReviewEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -189,6 +201,7 @@ final PullRequestReviewEvent _value;
 final CommitCommentEvent _value;
 
 @override CommitCommentEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadCommitCommentEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -199,6 +212,7 @@ final CommitCommentEvent _value;
 final ReleaseEvent _value;
 
 @override ReleaseEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadReleaseEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -209,6 +223,7 @@ final ReleaseEvent _value;
 final WatchEvent _value;
 
 @override WatchEvent get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is EventPayloadWatchEvent && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

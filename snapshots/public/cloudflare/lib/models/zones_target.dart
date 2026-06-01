@@ -17,6 +17,7 @@ dynamic toJson() { return value; }
 final ZonesUrlTarget _value;
 
 @override ZonesUrlTarget get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesTargetZonesUrlTarget && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

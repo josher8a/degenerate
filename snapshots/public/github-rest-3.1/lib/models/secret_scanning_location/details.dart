@@ -53,6 +53,7 @@ dynamic toJson() { return value; }
 final SecretScanningLocationCommit _value;
 
 @override SecretScanningLocationCommit get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationCommit && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -63,6 +64,7 @@ final SecretScanningLocationCommit _value;
 final SecretScanningLocationWikiCommit _value;
 
 @override SecretScanningLocationWikiCommit get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationWikiCommit && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -73,6 +75,7 @@ final SecretScanningLocationWikiCommit _value;
 final SecretScanningLocationIssueTitle _value;
 
 @override SecretScanningLocationIssueTitle get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationIssueTitle && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -83,6 +86,7 @@ final SecretScanningLocationIssueTitle _value;
 final SecretScanningLocationIssueBody _value;
 
 @override SecretScanningLocationIssueBody get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationIssueBody && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -93,6 +97,7 @@ final SecretScanningLocationIssueBody _value;
 final SecretScanningLocationIssueComment _value;
 
 @override SecretScanningLocationIssueComment get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationIssueComment && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -103,6 +108,7 @@ final SecretScanningLocationIssueComment _value;
 final SecretScanningLocationDiscussionTitle _value;
 
 @override SecretScanningLocationDiscussionTitle get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationDiscussionTitle && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -113,6 +119,7 @@ final SecretScanningLocationDiscussionTitle _value;
 final SecretScanningLocationDiscussionBody _value;
 
 @override SecretScanningLocationDiscussionBody get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationDiscussionBody && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -123,6 +130,7 @@ final SecretScanningLocationDiscussionBody _value;
 final SecretScanningLocationDiscussionComment _value;
 
 @override SecretScanningLocationDiscussionComment get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationDiscussionComment && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -133,6 +141,7 @@ final SecretScanningLocationDiscussionComment _value;
 final SecretScanningLocationPullRequestTitle _value;
 
 @override SecretScanningLocationPullRequestTitle get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationPullRequestTitle && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -143,6 +152,7 @@ final SecretScanningLocationPullRequestTitle _value;
 final SecretScanningLocationPullRequestBody _value;
 
 @override SecretScanningLocationPullRequestBody get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationPullRequestBody && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -153,6 +163,7 @@ final SecretScanningLocationPullRequestBody _value;
 final SecretScanningLocationPullRequestComment _value;
 
 @override SecretScanningLocationPullRequestComment get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationPullRequestComment && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -163,6 +174,7 @@ final SecretScanningLocationPullRequestComment _value;
 final SecretScanningLocationPullRequestReview _value;
 
 @override SecretScanningLocationPullRequestReview get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationPullRequestReview && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -173,6 +185,7 @@ final SecretScanningLocationPullRequestReview _value;
 final SecretScanningLocationPullRequestReviewComment _value;
 
 @override SecretScanningLocationPullRequestReviewComment get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is DetailsSecretScanningLocationPullRequestReviewComment && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

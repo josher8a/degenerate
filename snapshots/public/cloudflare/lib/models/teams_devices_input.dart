@@ -74,6 +74,7 @@ dynamic toJson() { return value; }
 final TeamsDevicesFileInputRequest _value;
 
 @override TeamsDevicesFileInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesFileInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -84,6 +85,7 @@ final TeamsDevicesFileInputRequest _value;
 final TeamsDevicesUniqueClientIdInputRequest _value;
 
 @override TeamsDevicesUniqueClientIdInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -94,6 +96,7 @@ final TeamsDevicesUniqueClientIdInputRequest _value;
 final TeamsDevicesDomainJoinedInputRequest _value;
 
 @override TeamsDevicesDomainJoinedInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -104,6 +107,7 @@ final TeamsDevicesDomainJoinedInputRequest _value;
 final TeamsDevicesOsVersionInputRequest _value;
 
 @override TeamsDevicesOsVersionInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesOsVersionInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -114,6 +118,7 @@ final TeamsDevicesOsVersionInputRequest _value;
 final TeamsDevicesFirewallInputRequest _value;
 
 @override TeamsDevicesFirewallInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesFirewallInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -124,6 +129,7 @@ final TeamsDevicesFirewallInputRequest _value;
 final TeamsDevicesSentineloneInputRequest _value;
 
 @override TeamsDevicesSentineloneInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesSentineloneInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -134,6 +140,7 @@ final TeamsDevicesSentineloneInputRequest _value;
 final TeamsDevicesCarbonblackInputRequest _value;
 
 @override TeamsDevicesCarbonblackInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCarbonblackInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -144,6 +151,7 @@ final TeamsDevicesCarbonblackInputRequest _value;
 final TeamsDevicesAccessSerialNumberListInputRequest _value;
 
 @override TeamsDevicesAccessSerialNumberListInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -154,6 +162,7 @@ final TeamsDevicesAccessSerialNumberListInputRequest _value;
 final TeamsDevicesDiskEncryptionInputRequest _value;
 
 @override TeamsDevicesDiskEncryptionInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -164,6 +173,7 @@ final TeamsDevicesDiskEncryptionInputRequest _value;
 final TeamsDevicesApplicationInputRequest _value;
 
 @override TeamsDevicesApplicationInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesApplicationInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -174,6 +184,7 @@ final TeamsDevicesApplicationInputRequest _value;
 final TeamsDevicesClientCertificateInputRequest _value;
 
 @override TeamsDevicesClientCertificateInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesClientCertificateInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -184,6 +195,7 @@ final TeamsDevicesClientCertificateInputRequest _value;
 final InputRequest _value;
 
 @override InputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -194,6 +206,7 @@ final InputRequest _value;
 final TeamsDevicesAntivirusInputRequest _value;
 
 @override TeamsDevicesAntivirusInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesAntivirusInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -204,6 +217,7 @@ final TeamsDevicesAntivirusInputRequest _value;
 final TeamsDevicesWorkspaceOneInputRequest _value;
 
 @override TeamsDevicesWorkspaceOneInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -214,6 +228,7 @@ final TeamsDevicesWorkspaceOneInputRequest _value;
 final TeamsDevicesCrowdstrikeInputRequest _value;
 
 @override TeamsDevicesCrowdstrikeInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -224,6 +239,7 @@ final TeamsDevicesCrowdstrikeInputRequest _value;
 final TeamsDevicesIntuneInputRequest _value;
 
 @override TeamsDevicesIntuneInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesIntuneInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -234,6 +250,7 @@ final TeamsDevicesIntuneInputRequest _value;
 final TeamsDevicesKolideInputRequest _value;
 
 @override TeamsDevicesKolideInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesKolideInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -244,6 +261,7 @@ final TeamsDevicesKolideInputRequest _value;
 final TeamsDevicesTaniumInputRequest _value;
 
 @override TeamsDevicesTaniumInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesTaniumInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -254,6 +272,7 @@ final TeamsDevicesTaniumInputRequest _value;
 final TeamsDevicesSentineloneS2sInputRequest _value;
 
 @override TeamsDevicesSentineloneS2sInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -264,6 +283,7 @@ final TeamsDevicesSentineloneS2sInputRequest _value;
 final TeamsDevicesCustomS2sInputRequest _value;
 
 @override TeamsDevicesCustomS2sInputRequest get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is TeamsDevicesInputTeamsDevicesCustomS2sInputRequest && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

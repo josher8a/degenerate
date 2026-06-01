@@ -35,6 +35,7 @@ dynamic toJson() { return value; }
 final ZonesBase _value;
 
 @override ZonesBase get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesBase && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -45,6 +46,7 @@ final ZonesBase _value;
 final ZonesCacheRulesAegis _value;
 
 @override ZonesCacheRulesAegis get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesCacheRulesAegis && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -55,6 +57,7 @@ final ZonesCacheRulesAegis _value;
 final ZonesDevelopmentMode _value;
 
 @override ZonesDevelopmentMode get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesDevelopmentMode && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -65,6 +68,7 @@ final ZonesDevelopmentMode _value;
 final ZonesCacheRulesOriginH2MaxStreams _value;
 
 @override ZonesCacheRulesOriginH2MaxStreams get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesCacheRulesOriginH2MaxStreams && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -75,6 +79,7 @@ final ZonesCacheRulesOriginH2MaxStreams _value;
 final ZonesCacheRulesOriginMaxHttpVersion _value;
 
 @override ZonesCacheRulesOriginMaxHttpVersion get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesCacheRulesOriginMaxHttpVersion && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -85,6 +90,7 @@ final ZonesCacheRulesOriginMaxHttpVersion _value;
 final ZonesSchemasBase _value;
 
 @override ZonesSchemasBase get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesSchemasBase && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -95,6 +101,7 @@ final ZonesSchemasBase _value;
 final ZonesSslRecommender _value;
 
 @override ZonesSslRecommender get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesSettingZonesSslRecommender && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 

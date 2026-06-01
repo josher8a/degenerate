@@ -105,6 +105,7 @@ dynamic toJson() { return value; }
 final AbuseReportsBadActError _value;
 
 @override AbuseReportsBadActError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsBadActError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -115,6 +116,7 @@ final AbuseReportsBadActError _value;
 final AbuseReportsMaxIPsError _value;
 
 @override AbuseReportsMaxIPsError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsMaxIPsError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -125,6 +127,7 @@ final AbuseReportsMaxIPsError _value;
 final AbuseReportsPortsProtocolError _value;
 
 @override AbuseReportsPortsProtocolError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsPortsProtocolError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -135,6 +138,7 @@ final AbuseReportsPortsProtocolError _value;
 final AbuseReportsInternalError _value;
 
 @override AbuseReportsInternalError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsInternalError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -145,6 +149,7 @@ final AbuseReportsInternalError _value;
 final AbuseReportsInvalidNotifyError _value;
 
 @override AbuseReportsInvalidNotifyError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsInvalidNotifyError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -155,6 +160,7 @@ final AbuseReportsInvalidNotifyError _value;
 final AbuseReportsMustNotifyError _value;
 
 @override AbuseReportsMustNotifyError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsMustNotifyError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -165,6 +171,7 @@ final AbuseReportsMustNotifyError _value;
 final AbuseReportsNoAgreeError _value;
 
 @override AbuseReportsNoAgreeError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoAgreeError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -175,6 +182,7 @@ final AbuseReportsNoAgreeError _value;
 final AbuseReportsNoOriginalWorkError _value;
 
 @override AbuseReportsNoOriginalWorkError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -185,6 +193,7 @@ final AbuseReportsNoOriginalWorkError _value;
 final AbuseReportsNoSigError _value;
 
 @override AbuseReportsNoSigError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsNoSigError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -195,6 +204,7 @@ final AbuseReportsNoSigError _value;
 final AbuseReportsUnexpectedActError _value;
 
 @override AbuseReportsUnexpectedActError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUnexpectedActError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -205,6 +215,7 @@ final AbuseReportsUnexpectedActError _value;
 final AbuseReportsUnknownError _value;
 
 @override AbuseReportsUnknownError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUnknownError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -215,6 +226,7 @@ final AbuseReportsUnknownError _value;
 final AbuseReportsUrlNotOrangeError _value;
 
 @override AbuseReportsUrlNotOrangeError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
@@ -225,6 +237,7 @@ final AbuseReportsUrlNotOrangeError _value;
 final AbuseReportsUrlNotvalidError _value;
 
 @override AbuseReportsUrlNotvalidError get value { return _value; } 
+@override dynamic toJson() { return value.toJson(); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsErrorCodeAbuseReportsUrlNotvalidError && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
