@@ -1,0 +1,14 @@
+name: wire_unhinged
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  degenerate_runtime:
+  pub_unhinged:
+    path: ../../../snapshots/public/unhinged
+
+dev_dependencies:
+  test: ^1.25.6
