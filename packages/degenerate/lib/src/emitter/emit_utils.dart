@@ -829,3 +829,17 @@ bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
 /// or explicitly nullable in the spec).
 bool fieldIsNullableInDart(IrField f) =>
     (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
+
+/// Build a toJson map entry string for [f] with the given serialized [key].
+///
+/// [isNullable] controls whether null-guarding is applied. Each emitter
+/// computes this differently (model emitter respects defaults; sealed union
+/// uses simple optionality).
+String toJsonEntry(IrField f, String key, {required bool isNullable}) {
+  if (isNullable) {
+    final value = buildToJsonCode(f.type, f.name, nullable: true);
+    if (value == f.name) return '  $key: ?${f.name},';
+    return '  if (${f.name} != null) $key: $value,';
+  }
+  return '  $key: ${buildToJsonCode(f.type, f.name)},';
+}

@@ -204,19 +204,11 @@ class ModelEmitter {
 
   Method _buildToJson() {
     final entries = model.fields
-        .map((f) {
-          final key = dartStringLiteral(f.originalName);
-
-          if (fieldIsNullableInDart(f)) {
-            final nullableValue =
-                buildToJsonCode(f.type, f.name, nullable: true);
-            if (nullableValue == f.name) {
-              return '  $key: ?${f.name},';
-            }
-            return '  if (${f.name} != null) $key: $nullableValue,';
-          }
-          return '  $key: ${buildToJsonCode(f.type, f.name)},';
-        })
+        .map((f) => toJsonEntry(
+              f,
+              dartStringLiteral(f.originalName),
+              isNullable: fieldIsNullableInDart(f),
+            ))
         .join('\n');
 
     return Method(

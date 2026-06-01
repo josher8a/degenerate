@@ -528,21 +528,12 @@ class DiscriminatedUnionEmitter {
         })
         .join('\n');
 
-    final toJsonEntries = <String>["  '$_discJsonKey': $_discDartName,"];
-    for (final f in fields) {
-      final key = "'${f.originalName}'";
-      final isNullable = !f.isRequired || f.type.isNullable;
-      final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
-      if (!f.isRequired) {
-        if (value == f.name) {
-          toJsonEntries.add('  $key: ?${f.name},');
-        } else {
-          toJsonEntries.add('  if (${f.name} != null) $key: $value,');
-        }
-      } else {
-        toJsonEntries.add('  $key: $value,');
-      }
-    }
+    final toJsonEntries = <String>[
+      "  '$_discJsonKey': $_discDartName,",
+      ...fields.map(
+        (f) => toJsonEntry(f, "'${f.originalName}'", isNullable: !f.isRequired),
+      ),
+    ];
 
     final eqComparisons = fields
         .map(
