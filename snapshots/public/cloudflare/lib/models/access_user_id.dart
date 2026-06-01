@@ -2,7 +2,8 @@
 
 /// The UUID of the authenticating user.
 extension type const AccessUserId(String value) {
-factory AccessUserId.fromJson(String json) => AccessUserId(json);
+factory AccessUserId.fromJson(String json) { if (!RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(json)) throw FormatException('Invalid uuid', json);
+return AccessUserId(json); }
 
 String toJson() => value;
 

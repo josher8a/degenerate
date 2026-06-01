@@ -1,13 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_apply_progress.dart';import 'package:pub_cloudflare/models/mcn_error.dart';import 'package:pub_cloudflare/models/mcn_plan_progress.dart';extension type const McnConduitRouteId(String value) {
-factory McnConduitRouteId.fromJson(String json) => McnConduitRouteId(json);
+factory McnConduitRouteId.fromJson(String json) { if (!RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(json)) throw FormatException('Invalid uuid', json);
+return McnConduitRouteId(json); }
 
 String toJson() => value;
 
 }
 extension type const McnConduitTunnelId(String value) {
-factory McnConduitTunnelId.fromJson(String json) => McnConduitTunnelId(json);
+factory McnConduitTunnelId.fromJson(String json) { if (!RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(json)) throw FormatException('Invalid uuid', json);
+return McnConduitTunnelId(json); }
 
 String toJson() => value;
 

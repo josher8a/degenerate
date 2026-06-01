@@ -1,7 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnPlatformClientId(String value) {
-factory McnPlatformClientId.fromJson(String json) => McnPlatformClientId(json);
+factory McnPlatformClientId.fromJson(String json) { if (!RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(json)) throw FormatException('Invalid uuid', json);
+return McnPlatformClientId(json); }
 
 String toJson() => value;
 

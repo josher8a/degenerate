@@ -20,6 +20,9 @@ import 'package:degenerate/src/ir/ir_types.dart';
 ///   String toJson() => value.toIso8601String();
 /// }
 /// ```
+///
+/// When the inner primitive carries a recognized `format` (uuid, email, etc.),
+/// `fromJson` validates the input — like `DateTime.parse` does for date-time.
 class ExtensionTypeEmitter {
   /// Creates an emitter for the given extension [type].
   const ExtensionTypeEmitter(this.type);
@@ -27,12 +30,31 @@ class ExtensionTypeEmitter {
   /// The extension type IR to emit.
   final IrExtensionType type;
 
+  static const _formatPatterns = {
+    'uuid':
+        r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+    'email': r'^[^\s@]+@[^\s@]+\.[^\s@]+$',
+    'ipv4': r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$',
+    'ipv6': r'^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$',
+    'time': r'^\d{2}:\d{2}(:\d{2}(\.\d+)?)?$',
+  };
+
   /// Emit the extension type as code_builder specs.
   List<Spec> emit() {
     final innerRef = irTypeToReference(type.inner);
     final name = type.name;
     final jsonTypeName = _jsonTypeName(type.inner.kind);
     final jsonTypeRef = refer(jsonTypeName);
+    final format = type.inner.format;
+    final pattern = _formatPatterns[format];
+    final useDateParse = format == 'date';
+    final hasValidation = pattern != null || useDateParse;
+
+    final specs = <Spec>[];
+
+    final fromJsonBody = hasValidation
+        ? _validatingFromJsonBody(name, format!, pattern)
+        : _fromJsonBody(type.inner, name);
 
     final ext = ExtensionType((b) {
       if (type.description != null) {
@@ -59,8 +81,8 @@ class ExtensionTypeEmitter {
                     ..type = jsonTypeRef;
                 }),
               )
-              ..lambda = true
-              ..body = Code(_fromJsonBody(type.inner, name));
+              ..lambda = !hasValidation
+              ..body = Code(fromJsonBody);
           }),
         )
         ..methods.add(
@@ -74,12 +96,23 @@ class ExtensionTypeEmitter {
         );
     });
 
-    return [ext];
+    specs.add(ext);
+    return specs;
   }
 
-  /// The JSON wire type for a primitive kind.
-  /// Most map to themselves, but DateTime/Uri/BigInt are strings in JSON,
-  /// and Duration/bytes are num/string respectively.
+  String _validatingFromJsonBody(
+    String typeName,
+    String format,
+    String? pattern,
+  ) {
+    if (pattern != null) {
+      return "if (!RegExp(r'$pattern').hasMatch(json)) "
+          "throw FormatException('Invalid $format', json);\n"
+          'return $typeName(json);';
+    }
+    return 'DateTime.parse(json);\nreturn $typeName(json);';
+  }
+
   String _jsonTypeName(PrimitiveKind kind) {
     return switch (kind) {
       PrimitiveKind.dynamic_ => 'dynamic',
@@ -93,8 +126,6 @@ class ExtensionTypeEmitter {
     };
   }
 
-  /// Whether the extension type can use `const` (types with object
-  /// representation like DateTime cannot be const).
   bool _canBeConst(PrimitiveKind kind) {
     return switch (kind) {
       PrimitiveKind.string ||
@@ -107,12 +138,7 @@ class ExtensionTypeEmitter {
     };
   }
 
-  /// Build the fromJson body. For simple types just wraps;
-  /// for parsed types (DateTime, Uri, etc.) parses from the JSON wire type.
   String _fromJsonBody(IrPrimitive inner, String typeName) {
-    // Extension type fromJson params are already typed (String, num, etc.),
-    // so use 'json' directly instead of going through primitiveFromJsonExpr
-    // which adds casts for untyped accessors.
     return switch (inner.kind) {
       PrimitiveKind.dateTime => '$typeName(DateTime.parse(json))',
       PrimitiveKind.uri => '$typeName(Uri.parse(json))',
@@ -126,7 +152,6 @@ class ExtensionTypeEmitter {
     };
   }
 
-  /// Build the toJson body. Serializes back to the JSON wire type.
   String _toJsonBody(IrPrimitive inner) =>
       primitiveToJsonExpr(inner.kind, 'value');
 }

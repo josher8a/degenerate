@@ -223,7 +223,7 @@ class RoundtripEmitter {
             ? dartStringLiteral(first)
             : first; // numeric enum values are valid Dart num literals
       case IrExtensionType(:final inner):
-        return _primitiveLiteral(inner.kind);
+        return _formatLiteral(inner.format) ?? _primitiveLiteral(inner.kind);
       case IrList(:final items):
         final el = _sampleLiteral(items, visited);
         // An empty list round-trips trivially when the element can't be made.
@@ -409,6 +409,18 @@ class RoundtripEmitter {
 
   /// A literal for each primitive kind, chosen so `fromJson`→`toJson` is the
   /// identity (canonical ISO date, round-trippable base64, etc.).
+  static const _formatSamples = {
+    'uuid': "'00000000-0000-0000-0000-000000000000'",
+    'email': "'user@example.com'",
+    'date': "'2024-01-02'",
+    'time': "'03:04:05'",
+    'ipv4': "'192.0.2.1'",
+    'ipv6': "'2001:0db8:0000:0000:0000:0000:0000:0001'",
+  };
+
+  String? _formatLiteral(String? format) =>
+      format != null ? _formatSamples[format] : null;
+
   String _primitiveLiteral(PrimitiveKind kind) => switch (kind) {
     PrimitiveKind.dynamic_ => "'dynamic'",
     PrimitiveKind.string => "'string'",

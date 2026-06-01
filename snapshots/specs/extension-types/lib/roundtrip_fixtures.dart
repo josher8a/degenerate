@@ -25,7 +25,7 @@ class RoundtripFixture {
 final List<RoundtripFixture> roundtripFixtures = [
   RoundtripFixture(
     'UserId',
-    'string',
+    '00000000-0000-0000-0000-000000000000',
     (json) => UserId.fromJson(json! as String),
     (value) => (value! as UserId).toJson(),
   ),
@@ -55,7 +55,7 @@ final List<RoundtripFixture> roundtripFixtures = [
   ),
   RoundtripFixture(
     'User',
-    {'id': 'string', 'name': 'string', 'createdAt': '2024-01-02T03:04:05.000Z'},
+    {'id': '00000000-0000-0000-0000-000000000000', 'name': 'string', 'createdAt': '2024-01-02T03:04:05.000Z'},
     (json) => User.fromJson(json! as Map<String, dynamic>),
     (value) => (value! as User).toJson(),
   ),
