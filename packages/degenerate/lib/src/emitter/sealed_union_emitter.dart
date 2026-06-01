@@ -248,32 +248,27 @@ class DiscriminatedUnionEmitter {
     return null;
   }
 
-  /// The Dart expression for the discriminator value when constructing a
-  /// `$ref` variant's payload. Most payloads type the discriminator field as a
-  /// `String` (matching inline variants), but a `$ref` to a schema that
-  /// constrains it with an `enum` keeps that enum type — so a bare `'value'`
-  /// String literal would not type-check. Emit `EnumType.fromJson('value')`
-  /// in that case.
   /// The Dart expression for the discriminator value, given the payload's
   /// discriminator field [discFieldType]. A `String` literal type-checks only
-  /// when the field is a plain `String`; closed string types (generated as a
-  /// Dart `enum`/closed class via [IrEnum] or an `extension type` over `String`
-  /// via [IrExtensionType]) need `Type.fromJson('value')` instead.
+  /// when the field is a plain `String`. Closed string types (a Dart `enum` /
+  /// closed class via [IrEnum] or an `extension type` over `String` via
+  /// [IrExtensionType]) need `Type.fromJson('value')`; a `bool`/`int`/`double`
+  /// discriminator field needs the bare literal (e.g. `disabled: false`).
   String _discValueExpr(IrType discFieldType, String discValue) {
     var t = discFieldType;
     if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
-    final typeName = switch (t) {
+    return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
-        name,
+        "$name.fromJson('$discValue')",
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
-        name,
-      _ => null,
+        "$name.fromJson('$discValue')",
+      IrPrimitive(kind: PrimitiveKind.bool) ||
+      IrPrimitive(kind: PrimitiveKind.int) ||
+      IrPrimitive(kind: PrimitiveKind.double) => discValue,
+      _ => "'$discValue'",
     };
-    return typeName != null
-        ? "$typeName.fromJson('$discValue')"
-        : "'$discValue'";
   }
 
   /// A named factory on the sealed base for building a variant directly,
