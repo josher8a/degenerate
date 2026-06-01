@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $metadata {const $metadata({required this.id, this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Metadata {const Metadata({required this.id, this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
 
-factory $metadata.fromJson(Map<String, dynamic> json) { return $metadata(
+factory Metadata.fromJson(Map<String, dynamic> json) { return Metadata(
   account: json['account'] as String?,
   cloudService: json['cloudService'] as String?,
   coldStart: json['coldStart'] != null ? (json['coldStart'] as num).toInt() : null,
@@ -132,7 +132,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-$metadata copyWith({String Function()? account, String Function()? cloudService, int Function()? coldStart, int Function()? cost, int Function()? duration, int Function()? endTime, String Function()? error, String Function()? errorTemplate, String Function()? fingerprint, String? id, String Function()? level, String Function()? message, String Function()? messageTemplate, String Function()? metricName, String Function()? origin, String Function()? parentSpanId, String Function()? provider, String Function()? region, String Function()? requestId, String Function()? service, String Function()? spanId, String Function()? spanName, String Function()? stackId, int Function()? startTime, int Function()? statusCode, int Function()? traceDuration, String Function()? traceId, String Function()? transactionName, String Function()? trigger, String Function()? type, String Function()? url, }) { return $metadata(
+Metadata copyWith({String Function()? account, String Function()? cloudService, int Function()? coldStart, int Function()? cost, int Function()? duration, int Function()? endTime, String Function()? error, String Function()? errorTemplate, String Function()? fingerprint, String? id, String Function()? level, String Function()? message, String Function()? messageTemplate, String Function()? metricName, String Function()? origin, String Function()? parentSpanId, String Function()? provider, String Function()? region, String Function()? requestId, String Function()? service, String Function()? spanId, String Function()? spanName, String Function()? stackId, int Function()? startTime, int Function()? statusCode, int Function()? traceDuration, String Function()? traceId, String Function()? transactionName, String Function()? trigger, String Function()? type, String Function()? url, }) { return Metadata(
   account: account != null ? account() : this.account,
   cloudService: cloudService != null ? cloudService() : this.cloudService,
   coldStart: coldStart != null ? coldStart() : this.coldStart,
@@ -166,7 +166,7 @@ $metadata copyWith({String Function()? account, String Function()? cloudService,
   url: url != null ? url() : this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is $metadata &&
+      other is Metadata &&
           account == other.account &&
           cloudService == other.cloudService &&
           coldStart == other.coldStart &&
@@ -199,5 +199,5 @@ $metadata copyWith({String Function()? account, String Function()? cloudService,
           type == other.type &&
           url == other.url; } 
 @override int get hashCode { return Object.hashAll([account, cloudService, coldStart, cost, duration, endTime, error, errorTemplate, fingerprint, id, level, message, messageTemplate, metricName, origin, parentSpanId, provider, region, requestId, service, spanId, spanName, stackId, startTime, statusCode, traceDuration, traceId, transactionName, trigger, type, url]); } 
-@override String toString() { return '\$metadata(account: $account, cloudService: $cloudService, coldStart: $coldStart, cost: $cost, duration: $duration, endTime: $endTime, error: $error, errorTemplate: $errorTemplate, fingerprint: $fingerprint, id: $id, level: $level, message: $message, messageTemplate: $messageTemplate, metricName: $metricName, origin: $origin, parentSpanId: $parentSpanId, provider: $provider, region: $region, requestId: $requestId, service: $service, spanId: $spanId, spanName: $spanName, stackId: $stackId, startTime: $startTime, statusCode: $statusCode, traceDuration: $traceDuration, traceId: $traceId, transactionName: $transactionName, trigger: $trigger, type: $type, url: $url)'; } 
+@override String toString() { return 'Metadata(account: $account, cloudService: $cloudService, coldStart: $coldStart, cost: $cost, duration: $duration, endTime: $endTime, error: $error, errorTemplate: $errorTemplate, fingerprint: $fingerprint, id: $id, level: $level, message: $message, messageTemplate: $messageTemplate, metricName: $metricName, origin: $origin, parentSpanId: $parentSpanId, provider: $provider, region: $region, requestId: $requestId, service: $service, spanId: $spanId, spanName: $spanName, stackId: $stackId, startTime: $startTime, statusCode: $statusCode, traceDuration: $traceDuration, traceId: $traceId, transactionName: $transactionName, trigger: $trigger, type: $type, url: $url)'; } 
  }
