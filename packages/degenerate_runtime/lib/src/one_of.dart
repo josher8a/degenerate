@@ -18,6 +18,18 @@ String _oneOfError(Object? json, List<(String, Object)> errors) {
   return 'No variant matched for value ($json):\n$variants';
 }
 
+/// Serializes a held union value to JSON. Primitives pass through;
+/// lists and maps are serialized element-wise (a held `List<T>` has
+/// no `toJson`, so recurse); everything else uses its `toJson()`.
+Object? _oneOfValueToJson(Object? v) {
+  if (v == null || v is String || v is num || v is bool) return v;
+  if (v is List) return v.map(_oneOfValueToJson).toList();
+  if (v is Map) {
+    return v.map((k, val) => MapEntry(k, _oneOfValueToJson(val)));
+  }
+  return (v as dynamic).toJson();
+}
+
 // ─── OneOf2 ──────────────────────────────────────────────────────
 
 /// Typed union of 2 variants.
@@ -62,12 +74,9 @@ final class OneOf2<A, B> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -134,12 +143,9 @@ final class OneOf3<A, B, C> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -217,12 +223,9 @@ final class OneOf4<A, B, C, D> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -310,12 +313,9 @@ final class OneOf5<A, B, C, D, E> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -413,12 +413,9 @@ final class OneOf6<A, B, C, D, E, F> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -526,12 +523,9 @@ final class OneOf7<A, B, C, D, E, F, G> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -651,12 +645,9 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>
@@ -786,12 +777,9 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
   /// The wrapped value.
   final Object? value;
 
-  /// Serializes to JSON. Primitives pass through; objects use `toJson()`.
-  Object? toJson() {
-    final v = value;
-    if (v == null || v is String || v is num || v is bool) return v;
-    return (v as dynamic).toJson();
-  }
+  /// Serializes to JSON. Primitives pass through; lists/maps are
+  /// serialized element-wise; objects use `toJson()`.
+  Object? toJson() => _oneOfValueToJson(value);
 
   @override
   bool operator ==(Object other) =>

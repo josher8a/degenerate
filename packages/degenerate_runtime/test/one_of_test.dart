@@ -149,6 +149,47 @@ void main() {
       );
     });
   });
+
+  group('toJson collection variants', () {
+    test('list of objects is serialized element-wise', () {
+      final v = OneOf2<List<_Point>, String>.from([_Point(1), _Point(2)]);
+      expect(v.toJson(), [
+        {'x': 1},
+        {'x': 2},
+      ]);
+    });
+
+    test('list of primitives passes through', () {
+      final v = OneOf2<List<int>, String>.from(const [1, 2, 3]);
+      expect(v.toJson(), [1, 2, 3]);
+    });
+
+    test('map of objects is serialized value-wise', () {
+      final v = OneOf2<Map<String, _Point>, String>.from({'a': _Point(7)});
+      expect(v.toJson(), {
+        'a': {'x': 7},
+      });
+    });
+
+    test('nested list of lists recurses', () {
+      final v = OneOf2<List<List<int>>, String>.from(const [
+        [1],
+        [2, 3],
+      ]);
+      expect(v.toJson(), [
+        [1],
+        [2, 3],
+      ]);
+    });
+  });
+}
+
+class _Point {
+  _Point(this.x);
+
+  final int x;
+
+  Map<String, dynamic> toJson() => {'x': x};
 }
 
 class _Cat {
