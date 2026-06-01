@@ -65,16 +65,36 @@ class RoundtripEmitter {
         continue;
       }
 
+      // OneOf-eligible union typedef (decode inlines `OneOfN.parse`, encode is
+      // `value.toJson()`). Emit a fixture per variant that `parse` provably
+      // reclaims (see [_parseReclaims]) — `OneOf.parse` is first-match, so a
+      // later variant only round-trips when every earlier one rejects its
+      // sample. variant[0] is always reclaimable (nothing precedes it).
+      final unionVariants = switch (type) {
+        IrUntaggedUnion(:final variants) => variants,
+        IrAnyOf(:final variants) => variants,
+        _ => null,
+      };
+      if (unionVariants != null && _isOneOfTypedef(type)) {
+        final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
+        final encode = buildToJsonCode(type, '(value! as $name)');
+        var any = false;
+        for (var k = 0; k < unionVariants.length; k++) {
+          if (!_isToJsonSafeUnionVariant(unionVariants[k])) continue;
+          if (!_parseReclaims(unionVariants, k)) continue;
+          final sample = _sampleLiteral(unionVariants[k], {});
+          if (sample == null) continue;
+          any = true;
+          fixtures.add(_fixture('$name [$k]', sample, decode, encode));
+        }
+        if (!any) skippedOther++;
+        continue;
+      }
+
       // Other types with a uniform codec get one standalone fixture: classes
-      // with `Name.fromJson(json)`/`value.toJson()`, plus OneOf-eligible union
-      // typedefs (decode inlines `OneOfN.parse`, encode is `value.toJson()`).
-      // Self-referencing OneOf typedefs (parser is `parseName`, not inline) and
-      // anyOf/sealed-union classes are skipped for now.
+      // with `Name.fromJson(json)`/`value.toJson()`.
       final supported =
-          type is IrObject ||
-          type is IrEnum ||
-          type is IrExtensionType ||
-          _isOneOfTypedef(type);
+          type is IrObject || type is IrEnum || type is IrExtensionType;
       if (!supported) {
         if (type is IrUntaggedUnion || type is IrAnyOf) {
           skippedUnion++;
@@ -92,10 +112,8 @@ class RoundtripEmitter {
 
       // The synthesized sample is always non-null, so the closures null-assert
       // their `Object?` parameter before casting — avoiding a
-      // cast_nullable_to_non_nullable lint. Union decode is `OneOfN.parse`,
-      // which takes a nullable `Object?`, so the bang would be redundant there.
-      final accessor = _isOneOfTypedef(type) ? 'json' : 'json!';
-      final decode = buildFromJsonCode(type, accessor, typeRegistry: _registry);
+      // cast_nullable_to_non_nullable lint.
+      final decode = buildFromJsonCode(type, 'json!', typeRegistry: _registry);
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
       fixtures.add(_fixture(name, sample, decode, encode));
     }
@@ -258,6 +276,143 @@ class RoundtripEmitter {
     };
   }
 
+  /// Whether `OneOf.parse` provably reclaims variant [k]'s sample as variant
+  /// [k] (not an earlier variant). Sound — returns true only when proven, so a
+  /// false here just drops a fixture, never produces a failing one.
+  ///
+  /// `parse` runs `if (json is V0) … if (json is V{k-1})` then
+  /// `try fromV0 … try fromV{k-1}` before reaching `fromVk`. So [k] is reclaimed
+  /// iff, for every earlier variant `j`, the sample is NOT `is Vj` AND
+  /// `fromVj(sample)` throws ([_jRejectsK]). variant[0] is trivially reclaimed.
+  bool _parseReclaims(List<IrType> variants, int k) {
+    // Compare against the *effective* sampled type — drill through nested
+    // unions/discriminated unions to the concrete type whose shape the sample
+    // actually has (e.g. a `OneOf<…>` variant samples as its first variant's
+    // object). The earlier variants `Vj` are NOT drilled: their `fromJson` runs
+    // as-is, and a union `Vj` is a permissive nested parse we can't prove
+    // throws — so it correctly blocks the proof.
+    final vk = _effectiveSampleType(variants[k]);
+    for (var j = 0; j < k; j++) {
+      if (!_jRejectsK(_resolve(variants[j]), vk)) return false;
+    }
+    return true;
+  }
+
+  /// The concrete type whose shape `_sampleLiteral` actually produces for [t]:
+  /// a union samples as its first toJson-safe variant; a discriminated union as
+  /// its first variant's payload object; a list as a list of the effective
+  /// element type.
+  IrType _effectiveSampleType(IrType t) {
+    final r = _resolve(t);
+    switch (r) {
+      case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
+        for (final v in variants) {
+          if (_isToJsonSafeUnionVariant(v)) return _effectiveSampleType(v);
+        }
+        return r;
+      case IrDiscriminatedUnion(:final mapping) when mapping.isNotEmpty:
+        final first = _resolve(mapping.values.first);
+        return first is IrObject ? first : r;
+      case IrList(:final items):
+        return IrList(_effectiveSampleType(items));
+      default:
+        return r;
+    }
+  }
+
+  /// Provably true when `Vj`'s parse branch neither type-matches nor
+  /// successfully deserializes `Vk`'s synthesized sample.
+  bool _jRejectsK(IrType vj, IrType vk) =>
+      !_isCheckMayMatch(vj, vk) && _fromThrows(vj, vk);
+
+  /// Could `sample_k is Vj` hold? Conservative (true ⇒ "maybe", blocks the
+  /// proof): dynamic and same-container/same-scalar-family overlaps may match.
+  bool _isCheckMayMatch(IrType vj, IrType vk) {
+    if (vj is IrPrimitive && vj.kind == PrimitiveKind.dynamic_) return true;
+    final jc = _container(vj);
+    final kc = _container(vk);
+    if (jc != kc) return false; // Map isn't List isn't a scalar, etc.
+    return switch (jc) {
+      _Container.object => vj is IrMap, // a Map sample `is Map`; a class, no
+      _Container.list => vj is IrList && _isCheckMayMatch(_elem(vj), _elem(vk)),
+      _Container.scalar => _scalarFamiliesOverlap(vj, vk),
+      _Container.other => true, // unions/maps/dynamic — assume it might
+    };
+  }
+
+  /// Provably true when `fromVj(sample_k)` throws — via an incompatible
+  /// container cast, or (object/list-of-object) a mandatory key of `Vj` absent
+  /// from `Vk`'s sample.
+  bool _fromThrows(IrType vj, IrType vk) {
+    final jc = _container(vj);
+    final kc = _container(vk);
+    // Incompatible containers: `fromVj` casts to its own shape and throws
+    // (e.g. `map as String`, `list as Map`).
+    if (jc != kc) {
+      return jc == _Container.object ||
+          jc == _Container.list ||
+          jc == _Container.scalar;
+    }
+    return switch (jc) {
+      _Container.object => _missingMandatoryKey(vj, vk),
+      _Container.list => _fromThrows(_elem(vj), _elem(vk)),
+      _Container.scalar => !_scalarFamiliesOverlap(vj, vk),
+      _Container.other => false, // enums/ext-types/unions/maps: can't prove
+    };
+  }
+
+  /// Whether `Vj` (an object) has a mandatory JSON key — a required,
+  /// non-nullable, non-defaulted field whose `fromJson` is a bare cast that
+  /// throws when absent — that `Vk`'s sample omits.
+  bool _missingMandatoryKey(IrType vj, IrType vk) {
+    if (vj is! IrObject) return false;
+    final present = _presentKeys(vk);
+    if (present == null) return false;
+    for (final f in vj.fields) {
+      final mandatory =
+          f.isRequired && !f.type.isNullable && !fieldHasDefault(f);
+      if (mandatory && !present.contains(f.originalName)) return true;
+    }
+    return false;
+  }
+
+  /// The JSON keys present in `Vk`'s synthesized sample (its always-emitted
+  /// field keys), or `null` if `Vk` isn't object-shaped.
+  Set<String>? _presentKeys(IrType type) {
+    final t = _resolve(type);
+    if (t is! IrObject) return null;
+    return {
+      for (final f in t.fields)
+        if (f.isRequired || fieldHasDefault(f)) f.originalName,
+    };
+  }
+
+  IrType _resolve(IrType t) => t is IrTypeRef ? (_registry[t.name] ?? t) : t;
+
+  IrType _elem(IrType t) => switch (t) {
+    IrList(:final items) => _resolve(items),
+    _ => t,
+  };
+
+  _Container _container(IrType t) => switch (_resolve(t)) {
+    IrObject() => _Container.object,
+    IrList() => _Container.list,
+    IrPrimitive(:final kind) when kind != PrimitiveKind.dynamic_ =>
+      _Container.scalar,
+    _ => _Container.other, // dynamic, map, enum, ext-type, union
+  };
+
+  bool _scalarFamiliesOverlap(IrType a, IrType b) {
+    String fam(IrType t) => switch (_resolve(t)) {
+      IrPrimitive(:final kind) => switch (kind) {
+        PrimitiveKind.int || PrimitiveKind.double || PrimitiveKind.num => 'num',
+        _ => kind.name,
+      },
+      _ => 'other',
+    };
+    return fam(a) == fam(b);
+  }
+
   /// Whether [type] is a OneOf-eligible union typedef with an inline parser
   /// (i.e. not self-referencing — those use a `parseName` helper instead).
   bool _isOneOfTypedef(IrType type) {
@@ -394,3 +549,6 @@ class RoundtripEmitter {
   /// Escape a type name for use inside a single-quoted Dart string literal.
   String _escapeName(String name) => name.replaceAll(r'$', r'\$');
 }
+
+/// Runtime container shape of a union variant, for parse-disambiguation proofs.
+enum _Container { object, list, scalar, other }
