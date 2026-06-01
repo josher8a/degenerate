@@ -14,6 +14,23 @@ import 'package:degenerate/src/naming.dart'
 ///
 /// Returns a map of relative file path to Dart source content.
 class FileEmitter {
+  /// Package-absolute model imports for the referenced type [names], resolved
+  /// to files via [typeToFile] (de-duplicated and sorted). Shared by model and
+  /// API file emission. Package-absolute so a file's depth in the folder
+  /// hierarchy doesn't require relative-path arithmetic between model files.
+  List<Directive> _modelImports(
+    Iterable<String> names,
+    Map<String, String> typeToFile,
+    String packageName,
+  ) {
+    final files =
+        names.where(typeToFile.containsKey).map((n) => typeToFile[n]!).toSet().toList()
+          ..sort();
+    return files
+        .map((f) => Directive.import('package:$packageName/models/$f.dart'))
+        .toList();
+  }
+
   /// Emit all generated files from the complete IR.
   ///
   /// Returns a Map of relative file path -> Dart source content.
@@ -122,18 +139,11 @@ class FileEmitter {
         }
       }
 
-      final sortedFiles =
-          modelAnalysis.referencedNames
-              .where(typeToFile.containsKey)
-              .map((n) => typeToFile[n]!)
-              .toSet()
-              .toList()
-            ..sort();
-      // Package-absolute imports so depth in the folder hierarchy doesn't
-      // require relative-path arithmetic between model files.
-      final modelImports = sortedFiles
-          .map((f) => Directive.import('package:$packageName/models/$f.dart'))
-          .toList();
+      final modelImports = _modelImports(
+        modelAnalysis.referencedNames,
+        typeToFile,
+        packageName,
+      );
 
       final needsCollection = modelAnalysis.needsCollection;
       final needsTypedData = modelAnalysis.needsTypedData;
@@ -184,16 +194,11 @@ class FileEmitter {
       final analysis = _analyzeApi(api, typeRegistry, unwrapFields);
 
       // Derive imports directly from referenced types using pre-built lookup
-      final sortedApiFiles =
-          analysis.referencedTypes
-              .where(typeToFile.containsKey)
-              .map((n) => typeToFile[n]!)
-              .toSet()
-              .toList()
-            ..sort();
-      final modelImports = sortedApiFiles
-          .map((f) => Directive.import('package:$packageName/models/$f.dart'))
-          .toList();
+      final modelImports = _modelImports(
+        analysis.referencedTypes,
+        typeToFile,
+        packageName,
+      );
 
       final needsConvert = analysis.needsConvert;
       final needsTypedData = analysis.needsTypedData;
