@@ -31,6 +31,7 @@ final Pending pending;
 
 @override String get state { return 'Pending'; } 
 @override Map<String, dynamic> toJson() { return {...pending.toJson(), 'state': state}; } 
+NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(pending ?? this.pending); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoPending && pending == other.pending; } 
 @override int get hashCode { return pending.hashCode; } 
@@ -44,6 +45,9 @@ final Down down;
 
 @override String get state { return 'Down'; } 
 @override Map<String, dynamic> toJson() { return {...down.toJson(), 'state': state}; } 
+NscStatusInfoDown copyWith({String? Function()? reason}) { return NscStatusInfoDown(down.copyWith(
+  reason: reason,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoDown && down == other.down; } 
 @override int get hashCode { return down.hashCode; } 
@@ -57,6 +61,9 @@ final Unhealthy unhealthy;
 
 @override String get state { return 'Unhealthy'; } 
 @override Map<String, dynamic> toJson() { return {...unhealthy.toJson(), 'state': state}; } 
+NscStatusInfoUnhealthy copyWith({String? Function()? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
+  reason: reason,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoUnhealthy && unhealthy == other.unhealthy; } 
 @override int get hashCode { return unhealthy.hashCode; } 
@@ -70,6 +77,7 @@ final Healthy healthy;
 
 @override String get state { return 'Healthy'; } 
 @override Map<String, dynamic> toJson() { return {...healthy.toJson(), 'state': state}; } 
+NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(healthy ?? this.healthy); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoHealthy && healthy == other.healthy; } 
 @override int get hashCode { return healthy.hashCode; } 

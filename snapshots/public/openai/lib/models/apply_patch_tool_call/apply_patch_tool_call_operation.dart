@@ -36,6 +36,10 @@ final ApplyPatchCreateFileOperation applyPatchCreateFileOperation;
 
 @override String get type { return 'create_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchCreateFileOperation.toJson(), 'type': type}; } 
+ApplyPatchToolCallOperationCreateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationCreateFile(applyPatchCreateFileOperation.copyWith(
+  path: path,
+  diff: diff,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationCreateFile && applyPatchCreateFileOperation == other.applyPatchCreateFileOperation; } 
 @override int get hashCode { return applyPatchCreateFileOperation.hashCode; } 
@@ -50,6 +54,9 @@ final ApplyPatchDeleteFileOperation applyPatchDeleteFileOperation;
 
 @override String get type { return 'delete_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchDeleteFileOperation.toJson(), 'type': type}; } 
+ApplyPatchToolCallOperationDeleteFile copyWith({String? path}) { return ApplyPatchToolCallOperationDeleteFile(applyPatchDeleteFileOperation.copyWith(
+  path: path,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationDeleteFile && applyPatchDeleteFileOperation == other.applyPatchDeleteFileOperation; } 
 @override int get hashCode { return applyPatchDeleteFileOperation.hashCode; } 
@@ -64,6 +71,10 @@ final ApplyPatchUpdateFileOperation applyPatchUpdateFileOperation;
 
 @override String get type { return 'update_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchUpdateFileOperation.toJson(), 'type': type}; } 
+ApplyPatchToolCallOperationUpdateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationUpdateFile(applyPatchUpdateFileOperation.copyWith(
+  path: path,
+  diff: diff,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchToolCallOperationUpdateFile && applyPatchUpdateFileOperation == other.applyPatchUpdateFileOperation; } 
 @override int get hashCode { return applyPatchUpdateFileOperation.hashCode; } 

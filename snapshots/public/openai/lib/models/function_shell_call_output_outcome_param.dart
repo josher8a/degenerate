@@ -27,6 +27,7 @@ final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutO
 
 @override String get type { return 'timeout'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type}; } 
+FunctionShellCallOutputOutcomeParamTimeout copyWith({FunctionShellCallOutputTimeoutOutcomeParam? functionShellCallOutputTimeoutOutcomeParam}) { return FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam ?? this.functionShellCallOutputTimeoutOutcomeParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputOutcomeParamTimeout && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcomeParam.hashCode; } 
@@ -40,6 +41,9 @@ final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcome
 
 @override String get type { return 'exit'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type}; } 
+FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam.copyWith(
+  exitCode: exitCode,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputOutcomeParamExit && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputExitOutcomeParam.hashCode; } 

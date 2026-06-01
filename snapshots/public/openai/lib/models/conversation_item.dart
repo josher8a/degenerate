@@ -120,6 +120,12 @@ final Message message;
 
 @override String get type { return 'message'; } 
 @override Map<String, dynamic> toJson() { return {...message.toJson(), 'type': type}; } 
+ConversationItemMessage copyWith({String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return ConversationItemMessage(message.copyWith(
+  id: id,
+  status: status,
+  role: role,
+  content: content,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
@@ -134,6 +140,14 @@ final FunctionToolCall functionToolCall;
 
 @override String get type { return 'FunctionToolCallResource'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
+ConversationItemFunctionToolCallResource copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus Function()? status, }) { return ConversationItemFunctionToolCallResource(functionToolCall.copyWith(
+  id: id,
+  callId: callId,
+  namespace: namespace,
+  name: name,
+  arguments: arguments,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
@@ -148,6 +162,12 @@ final FunctionToolCallOutput functionToolCallOutput;
 
 @override String get type { return 'FunctionToolCallOutputResource'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
+ConversationItemFunctionToolCallOutputResource copyWith({String Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus Function()? status, }) { return ConversationItemFunctionToolCallOutputResource(functionToolCallOutput.copyWith(
+  id: id,
+  callId: callId,
+  output: output,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
@@ -162,6 +182,12 @@ final FileSearchToolCall fileSearchToolCall;
 
 @override String get type { return 'file_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
+ConversationItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ConversationItemFileSearchCall(fileSearchToolCall.copyWith(
+  id: id,
+  status: status,
+  queries: queries,
+  results: results,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
@@ -176,6 +202,11 @@ final WebSearchToolCall webSearchToolCall;
 
 @override String get type { return 'web_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
+ConversationItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ConversationItemWebSearchCall(webSearchToolCall.copyWith(
+  id: id,
+  status: status,
+  action: action,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
@@ -190,6 +221,11 @@ final ImageGenToolCall imageGenToolCall;
 
 @override String get type { return 'image_generation_call'; } 
 @override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
+ConversationItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ConversationItemImageGenerationCall(imageGenToolCall.copyWith(
+  id: id,
+  status: status,
+  result: result,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
@@ -204,6 +240,14 @@ final ComputerToolCall computerToolCall;
 
 @override String get type { return 'computer_call'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
+ConversationItemComputerCall copyWith({String? id, String? callId, ComputerAction Function()? action, List<ComputerAction> Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ConversationItemComputerCall(computerToolCall.copyWith(
+  id: id,
+  callId: callId,
+  action: action,
+  actions: actions,
+  pendingSafetyChecks: pendingSafetyChecks,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
@@ -218,6 +262,13 @@ final ComputerToolCallOutput computerToolCallOutput;
 
 @override String get type { return 'ComputerToolCallOutputResource'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
+ConversationItemComputerToolCallOutputResource copyWith({String Function()? id, String? callId, List<ComputerCallSafetyCheckParam> Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus Function()? status, }) { return ConversationItemComputerToolCallOutputResource(computerToolCallOutput.copyWith(
+  id: id,
+  callId: callId,
+  acknowledgedSafetyChecks: acknowledgedSafetyChecks,
+  output: output,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
@@ -232,6 +283,14 @@ final ToolSearchCall toolSearchCall;
 
 @override String get type { return 'tool_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
+ConversationItemToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String Function()? createdBy, }) { return ConversationItemToolSearchCall(toolSearchCall.copyWith(
+  id: id,
+  callId: callId,
+  execution: execution,
+  arguments: arguments,
+  status: status,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
@@ -246,6 +305,14 @@ final ToolSearchOutput toolSearchOutput;
 
 @override String get type { return 'tool_search_output'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
+ConversationItemToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String Function()? createdBy, }) { return ConversationItemToolSearchOutput(toolSearchOutput.copyWith(
+  id: id,
+  callId: callId,
+  execution: execution,
+  tools: tools,
+  status: status,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
@@ -260,6 +327,13 @@ final ReasoningItem reasoningItem;
 
 @override String get type { return 'reasoning'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
+ConversationItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent> Function()? content, ComputerToolCallOutputStatus Function()? status, }) { return ConversationItemReasoning(reasoningItem.copyWith(
+  id: id,
+  encryptedContent: encryptedContent,
+  summary: summary,
+  content: content,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
@@ -274,6 +348,13 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
 
 @override String get type { return 'code_interpreter_call'; } 
 @override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
+ConversationItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ConversationItemCodeInterpreterCall(codeInterpreterToolCall.copyWith(
+  id: id,
+  status: status,
+  containerId: containerId,
+  code: code,
+  outputs: outputs,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
@@ -288,6 +369,12 @@ final LocalShellToolCall localShellToolCall;
 
 @override String get type { return 'local_shell_call'; } 
 @override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
+ConversationItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ConversationItemLocalShellCall(localShellToolCall.copyWith(
+  id: id,
+  callId: callId,
+  action: action,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
@@ -302,6 +389,11 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override String get type { return 'local_shell_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
+ConversationItemLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ConversationItemLocalShellCallOutput(localShellToolCallOutput.copyWith(
+  id: id,
+  output: output,
+  status: status,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
@@ -316,6 +408,14 @@ final FunctionShellCall functionShellCall;
 
 @override String get type { return 'shell_call'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
+ConversationItemShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String Function()? createdBy, }) { return ConversationItemShellCall(functionShellCall.copyWith(
+  id: id,
+  callId: callId,
+  action: action,
+  status: status,
+  environment: environment,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
@@ -330,6 +430,14 @@ final FunctionShellCallOutput functionShellCallOutput;
 
 @override String get type { return 'shell_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
+ConversationItemShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String Function()? createdBy, }) { return ConversationItemShellCallOutput(functionShellCallOutput.copyWith(
+  id: id,
+  callId: callId,
+  status: status,
+  output: output,
+  maxOutputLength: maxOutputLength,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
@@ -344,6 +452,13 @@ final ApplyPatchToolCall applyPatchToolCall;
 
 @override String get type { return 'apply_patch_call'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
+ConversationItemApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String Function()? createdBy, }) { return ConversationItemApplyPatchCall(applyPatchToolCall.copyWith(
+  id: id,
+  callId: callId,
+  status: status,
+  operation: operation,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
@@ -358,6 +473,13 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override String get type { return 'apply_patch_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
+ConversationItemApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String Function()? createdBy, }) { return ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
+  id: id,
+  callId: callId,
+  status: status,
+  output: output,
+  createdBy: createdBy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
@@ -372,6 +494,12 @@ final McpListTools mcpListTools;
 
 @override String get type { return 'mcp_list_tools'; } 
 @override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
+ConversationItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ConversationItemMcpListTools(mcpListTools.copyWith(
+  id: id,
+  serverLabel: serverLabel,
+  tools: tools,
+  error: error,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
@@ -386,6 +514,12 @@ final McpApprovalRequest mcpApprovalRequest;
 
 @override String get type { return 'mcp_approval_request'; } 
 @override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
+ConversationItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ConversationItemMcpApprovalRequest(mcpApprovalRequest.copyWith(
+  id: id,
+  serverLabel: serverLabel,
+  name: name,
+  arguments: arguments,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
@@ -400,6 +534,12 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 
 @override String get type { return 'mcp_approval_response'; } 
 @override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
+ConversationItemMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ConversationItemMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
+  id: id,
+  approvalRequestId: approvalRequestId,
+  approve: approve,
+  reason: reason,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
@@ -414,6 +554,16 @@ final McpToolCall mcpToolCall;
 
 @override String get type { return 'mcp_call'; } 
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
+ConversationItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus Function()? status, String? Function()? approvalRequestId, }) { return ConversationItemMcpCall(mcpToolCall.copyWith(
+  id: id,
+  serverLabel: serverLabel,
+  name: name,
+  arguments: arguments,
+  output: output,
+  error: error,
+  status: status,
+  approvalRequestId: approvalRequestId,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
@@ -428,6 +578,13 @@ final CustomToolCall customToolCall;
 
 @override String get type { return 'custom_tool_call'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
+ConversationItemCustomToolCall copyWith({String Function()? id, String? callId, String Function()? namespace, String? name, String? input, }) { return ConversationItemCustomToolCall(customToolCall.copyWith(
+  id: id,
+  callId: callId,
+  namespace: namespace,
+  name: name,
+  input: input,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
@@ -442,6 +599,11 @@ final CustomToolCallOutput customToolCallOutput;
 
 @override String get type { return 'custom_tool_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
+ConversationItemCustomToolCallOutput copyWith({String Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ConversationItemCustomToolCallOutput(customToolCallOutput.copyWith(
+  id: id,
+  callId: callId,
+  output: output,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 

@@ -31,6 +31,7 @@ final ActiveStatus activeStatus;
 
 @override String get type { return 'active'; } 
 @override Map<String, dynamic> toJson() { return {...activeStatus.toJson(), 'type': type}; } 
+ThreadResourceStatusActive copyWith({ActiveStatus? activeStatus}) { return ThreadResourceStatusActive(activeStatus ?? this.activeStatus); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusActive && activeStatus == other.activeStatus; } 
 @override int get hashCode { return activeStatus.hashCode; } 
@@ -44,6 +45,9 @@ final LockedStatus lockedStatus;
 
 @override String get type { return 'locked'; } 
 @override Map<String, dynamic> toJson() { return {...lockedStatus.toJson(), 'type': type}; } 
+ThreadResourceStatusLocked copyWith({String? Function()? reason}) { return ThreadResourceStatusLocked(lockedStatus.copyWith(
+  reason: reason,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusLocked && lockedStatus == other.lockedStatus; } 
 @override int get hashCode { return lockedStatus.hashCode; } 
@@ -57,6 +61,9 @@ final ClosedStatus closedStatus;
 
 @override String get type { return 'closed'; } 
 @override Map<String, dynamic> toJson() { return {...closedStatus.toJson(), 'type': type}; } 
+ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return ThreadResourceStatusClosed(closedStatus.copyWith(
+  reason: reason,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusClosed && closedStatus == other.closedStatus; } 
 @override int get hashCode { return closedStatus.hashCode; } 

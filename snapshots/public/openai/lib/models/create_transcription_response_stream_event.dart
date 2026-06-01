@@ -33,6 +33,13 @@ final TranscriptTextSegmentEvent transcriptTextSegmentEvent;
 
 @override String get type { return 'transcript.text.segment'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextSegmentEvent.toJson(), 'type': type}; } 
+CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id, double? start, double? end, String? text, String? speaker, }) { return CreateTranscriptionResponseStreamEventTranscriptTextSegment(transcriptTextSegmentEvent.copyWith(
+  id: id,
+  start: start,
+  end: end,
+  text: text,
+  speaker: speaker,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextSegment && transcriptTextSegmentEvent == other.transcriptTextSegmentEvent; } 
 @override int get hashCode { return transcriptTextSegmentEvent.hashCode; } 
@@ -46,6 +53,11 @@ final TranscriptTextDeltaEvent transcriptTextDeltaEvent;
 
 @override String get type { return 'transcript.text.delta'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextDeltaEvent.toJson(), 'type': type}; } 
+CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, String Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
+  delta: delta,
+  logprobs: logprobs,
+  segmentId: segmentId,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextDelta && transcriptTextDeltaEvent == other.transcriptTextDeltaEvent; } 
 @override int get hashCode { return transcriptTextDeltaEvent.hashCode; } 
@@ -59,6 +71,11 @@ final TranscriptTextDoneEvent transcriptTextDoneEvent;
 
 @override String get type { return 'transcript.text.done'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextDoneEvent.toJson(), 'type': type}; } 
+CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs> Function()? logprobs, TranscriptTextUsageTokens Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
+  text: text,
+  logprobs: logprobs,
+  usage: usage,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseStreamEventTranscriptTextDone && transcriptTextDoneEvent == other.transcriptTextDoneEvent; } 
 @override int get hashCode { return transcriptTextDoneEvent.hashCode; } 

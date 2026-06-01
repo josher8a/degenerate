@@ -29,6 +29,10 @@ final SkillReferenceParam skillReferenceParam;
 
 @override String get type { return 'skill_reference'; } 
 @override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
+SkillsSkillReference copyWith({String? skillId, String Function()? version, }) { return SkillsSkillReference(skillReferenceParam.copyWith(
+  skillId: skillId,
+  version: version,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is SkillsSkillReference && skillReferenceParam == other.skillReferenceParam; } 
 @override int get hashCode { return skillReferenceParam.hashCode; } 
@@ -42,6 +46,11 @@ final InlineSkillParam inlineSkillParam;
 
 @override String get type { return 'inline'; } 
 @override Map<String, dynamic> toJson() { return {...inlineSkillParam.toJson(), 'type': type}; } 
+SkillsInline copyWith({String? name, String? description, InlineSkillSourceParam? source, }) { return SkillsInline(inlineSkillParam.copyWith(
+  name: name,
+  description: description,
+  source: source,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is SkillsInline && inlineSkillParam == other.inlineSkillParam; } 
 @override int get hashCode { return inlineSkillParam.hashCode; } 

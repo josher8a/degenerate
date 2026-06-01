@@ -33,6 +33,12 @@ final ContainerAutoParam containerAutoParam;
 
 @override String get type { return 'container_auto'; } 
 @override Map<String, dynamic> toJson() { return {...containerAutoParam.toJson(), 'type': type}; } 
+FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String> Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy Function()? networkPolicy, List<Skills> Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
+  fileIds: fileIds,
+  memoryLimit: memoryLimit,
+  networkPolicy: networkPolicy,
+  skills: skills,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerAuto && containerAutoParam == other.containerAutoParam; } 
 @override int get hashCode { return containerAutoParam.hashCode; } 
@@ -46,6 +52,9 @@ final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type { return 'local'; } 
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
+FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam> Function()? skills}) { return FunctionShellToolParamEnvironmentLocal(localEnvironmentParam.copyWith(
+  skills: skills,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
@@ -59,6 +68,9 @@ final ContainerReferenceParam containerReferenceParam;
 
 @override String get type { return 'container_reference'; } 
 @override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
+FunctionShellToolParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellToolParamEnvironmentContainerReference(containerReferenceParam.copyWith(
+  containerId: containerId,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 

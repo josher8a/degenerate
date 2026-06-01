@@ -26,6 +26,10 @@ final HyperdriveHyperdriveCachingEnabled hyperdriveHyperdriveCachingEnabled;
 
 @override String get disabled { return 'false'; } 
 @override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled}; } 
+HyperdriveHyperdriveCachingFalse copyWith({int Function()? maxAge, int Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled.copyWith(
+  maxAge: maxAge,
+  staleWhileRevalidate: staleWhileRevalidate,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingEnabled == other.hyperdriveHyperdriveCachingEnabled; } 
 @override int get hashCode { return hyperdriveHyperdriveCachingEnabled.hashCode; } 
@@ -39,6 +43,7 @@ final HyperdriveHyperdriveCachingCommon hyperdriveHyperdriveCachingCommon;
 
 @override String get disabled { return 'true'; } 
 @override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingCommon.toJson(), 'disabled': disabled}; } 
+HyperdriveHyperdriveCachingTrue copyWith({HyperdriveHyperdriveCachingCommon? hyperdriveHyperdriveCachingCommon}) { return HyperdriveHyperdriveCachingTrue(hyperdriveHyperdriveCachingCommon ?? this.hyperdriveHyperdriveCachingCommon); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCachingTrue && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon; } 
 @override int get hashCode { return hyperdriveHyperdriveCachingCommon.hashCode; } 

@@ -29,6 +29,9 @@ final ChatCompletionRequestMessageContentPartText chatCompletionRequestMessageCo
 
 @override String get type { return 'text'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type}; } 
+ChatCompletionRequestAssistantMessageContentPartText copyWith({String? text}) { return ChatCompletionRequestAssistantMessageContentPartText(chatCompletionRequestMessageContentPartText.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartText && chatCompletionRequestMessageContentPartText == other.chatCompletionRequestMessageContentPartText; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartText.hashCode; } 
@@ -42,6 +45,9 @@ final ChatCompletionRequestMessageContentPartRefusal chatCompletionRequestMessag
 
 @override String get type { return 'refusal'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type}; } 
+ChatCompletionRequestAssistantMessageContentPartRefusal copyWith({String? refusal}) { return ChatCompletionRequestAssistantMessageContentPartRefusal(chatCompletionRequestMessageContentPartRefusal.copyWith(
+  refusal: refusal,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartRefusal && chatCompletionRequestMessageContentPartRefusal == other.chatCompletionRequestMessageContentPartRefusal; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartRefusal.hashCode; } 

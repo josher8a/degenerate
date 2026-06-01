@@ -36,6 +36,11 @@ final WebSearchActionSearch webSearchActionSearch;
 
 @override String get type { return 'search'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
+WebSearchToolCallActionSearch copyWith({String? query, List<String> Function()? queries, List<Sources> Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
+  query: query,
+  queries: queries,
+  sources: sources,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
 @override int get hashCode { return webSearchActionSearch.hashCode; } 
@@ -49,6 +54,9 @@ final WebSearchActionOpenPage webSearchActionOpenPage;
 
 @override String get type { return 'open_page'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionOpenPage.toJson(), 'type': type}; } 
+WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
+  url: url,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
 @override int get hashCode { return webSearchActionOpenPage.hashCode; } 
@@ -62,6 +70,10 @@ final WebSearchActionFind webSearchActionFind;
 
 @override String get type { return 'find_in_page'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionFind.toJson(), 'type': type}; } 
+WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
+  url: url,
+  pattern: pattern,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind; } 
 @override int get hashCode { return webSearchActionFind.hashCode; } 

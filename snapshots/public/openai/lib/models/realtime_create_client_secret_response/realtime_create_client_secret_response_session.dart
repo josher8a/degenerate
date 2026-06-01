@@ -33,6 +33,20 @@ final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
 @override String get type { return 'realtime'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeSessionCreateResponseGa.toJson(), 'type': type}; } 
+RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities> Function()? outputModalities, RealtimeSessionCreateRequestGaModel Function()? model, String Function()? instructions, RealtimeSessionCreateResponseGaAudio Function()? audio, List<Include> Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeBetaResponseCreateParamsToolChoice Function()? toolChoice, MaxOutputTokens Function()? maxOutputTokens, RealtimeTruncation Function()? truncation, Prompt Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
+  clientSecret: clientSecret,
+  outputModalities: outputModalities,
+  model: model,
+  instructions: instructions,
+  audio: audio,
+  include: include,
+  tracing: tracing,
+  tools: tools,
+  toolChoice: toolChoice,
+  maxOutputTokens: maxOutputTokens,
+  truncation: truncation,
+  prompt: prompt,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtime && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
@@ -47,6 +61,13 @@ final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionC
 
 @override String get type { return 'transcription'; } 
 @override Map<String, dynamic> toJson() { return {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type}; } 
+RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int Function()? expiresAt, List<Include> Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
+  id: id,
+  object: object,
+  expiresAt: expiresAt,
+  include: include,
+  audio: audio,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionTranscription && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeTranscriptionSessionCreateResponseGa.hashCode; } 

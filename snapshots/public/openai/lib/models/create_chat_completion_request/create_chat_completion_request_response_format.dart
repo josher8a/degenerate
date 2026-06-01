@@ -38,6 +38,7 @@ final ResponseFormatText responseFormatText;
 
 @override String get type { return 'text'; } 
 @override Map<String, dynamic> toJson() { return {...responseFormatText.toJson(), 'type': type}; } 
+CreateChatCompletionRequestResponseFormatText copyWith({ResponseFormatText? responseFormatText}) { return CreateChatCompletionRequestResponseFormatText(responseFormatText ?? this.responseFormatText); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatText && responseFormatText == other.responseFormatText; } 
 @override int get hashCode { return responseFormatText.hashCode; } 
@@ -51,6 +52,9 @@ final ResponseFormatJsonSchema responseFormatJsonSchema;
 
 @override String get type { return 'json_schema'; } 
 @override Map<String, dynamic> toJson() { return {...responseFormatJsonSchema.toJson(), 'type': type}; } 
+CreateChatCompletionRequestResponseFormatJsonSchema copyWith({JsonSchema? jsonSchema}) { return CreateChatCompletionRequestResponseFormatJsonSchema(responseFormatJsonSchema.copyWith(
+  jsonSchema: jsonSchema,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatJsonSchema && responseFormatJsonSchema == other.responseFormatJsonSchema; } 
 @override int get hashCode { return responseFormatJsonSchema.hashCode; } 
@@ -64,6 +68,7 @@ final ResponseFormatJsonObject responseFormatJsonObject;
 
 @override String get type { return 'json_object'; } 
 @override Map<String, dynamic> toJson() { return {...responseFormatJsonObject.toJson(), 'type': type}; } 
+CreateChatCompletionRequestResponseFormatJsonObject copyWith({ResponseFormatJsonObject? responseFormatJsonObject}) { return CreateChatCompletionRequestResponseFormatJsonObject(responseFormatJsonObject ?? this.responseFormatJsonObject); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateChatCompletionRequestResponseFormatJsonObject && responseFormatJsonObject == other.responseFormatJsonObject; } 
 @override int get hashCode { return responseFormatJsonObject.hashCode; } 

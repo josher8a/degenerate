@@ -29,6 +29,9 @@ final CodeInterpreterOutputLogs codeInterpreterOutputLogs;
 
 @override String get type { return 'logs'; } 
 @override Map<String, dynamic> toJson() { return {...codeInterpreterOutputLogs.toJson(), 'type': type}; } 
+CodeInterpreterToolCallOutputsLogs copyWith({String? logs}) { return CodeInterpreterToolCallOutputsLogs(codeInterpreterOutputLogs.copyWith(
+  logs: logs,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputsLogs && codeInterpreterOutputLogs == other.codeInterpreterOutputLogs; } 
 @override int get hashCode { return codeInterpreterOutputLogs.hashCode; } 
@@ -42,6 +45,9 @@ final CodeInterpreterOutputImage codeInterpreterOutputImage;
 
 @override String get type { return 'image'; } 
 @override Map<String, dynamic> toJson() { return {...codeInterpreterOutputImage.toJson(), 'type': type}; } 
+CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpreterToolCallOutputsImage(codeInterpreterOutputImage.copyWith(
+  url: url,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputsImage && codeInterpreterOutputImage == other.codeInterpreterOutputImage; } 
 @override int get hashCode { return codeInterpreterOutputImage.hashCode; } 

@@ -45,6 +45,10 @@ final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessag
 
 @override String get role { return 'developer'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage.copyWith(
+  content: content,
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageDeveloper && chatCompletionRequestDeveloperMessage == other.chatCompletionRequestDeveloperMessage; } 
 @override int get hashCode { return chatCompletionRequestDeveloperMessage.hashCode; } 
@@ -58,6 +62,10 @@ final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
 @override String get role { return 'system'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestSystemMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage.copyWith(
+  content: content,
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageSystem && chatCompletionRequestSystemMessage == other.chatCompletionRequestSystemMessage; } 
 @override int get hashCode { return chatCompletionRequestSystemMessage.hashCode; } 
@@ -71,6 +79,10 @@ final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
 @override String get role { return 'user'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestUserMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageContent? content, String Function()? name, }) { return ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage.copyWith(
+  content: content,
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageUser && chatCompletionRequestUserMessage == other.chatCompletionRequestUserMessage; } 
 @override int get hashCode { return chatCompletionRequestUserMessage.hashCode; } 
@@ -84,6 +96,14 @@ final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessag
 
 @override String get role { return 'assistant'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestAssistantMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2> Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
+  content: content,
+  refusal: refusal,
+  name: name,
+  audio: audio,
+  toolCalls: toolCalls,
+  functionCall: functionCall,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageAssistant && chatCompletionRequestAssistantMessage == other.chatCompletionRequestAssistantMessage; } 
 @override int get hashCode { return chatCompletionRequestAssistantMessage.hashCode; } 
@@ -97,6 +117,10 @@ final ChatCompletionRequestToolMessage chatCompletionRequestToolMessage;
 
 @override String get role { return 'tool'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestToolMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageTool copyWith({ChatCompletionRequestToolMessageContent? content, String? toolCallId, }) { return ChatCompletionRequestMessageTool(chatCompletionRequestToolMessage.copyWith(
+  content: content,
+  toolCallId: toolCallId,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageTool && chatCompletionRequestToolMessage == other.chatCompletionRequestToolMessage; } 
 @override int get hashCode { return chatCompletionRequestToolMessage.hashCode; } 
@@ -110,6 +134,10 @@ final ChatCompletionRequestFunctionMessage chatCompletionRequestFunctionMessage;
 
 @override String get role { return 'function'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestFunctionMessage.toJson(), 'role': role}; } 
+ChatCompletionRequestMessageFunction copyWith({String? Function()? content, String? name, }) { return ChatCompletionRequestMessageFunction(chatCompletionRequestFunctionMessage.copyWith(
+  content: content,
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageFunction && chatCompletionRequestFunctionMessage == other.chatCompletionRequestFunctionMessage; } 
 @override int get hashCode { return chatCompletionRequestFunctionMessage.hashCode; } 

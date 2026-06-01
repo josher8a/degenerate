@@ -34,6 +34,12 @@ final FunctionToolParam functionToolParam;
 
 @override String get type { return 'function'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolParam.toJson(), 'type': type}; } 
+NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
+  name: name,
+  description: description,
+  parameters: parameters,
+  strict: strict,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
@@ -49,6 +55,12 @@ final CustomToolParam customToolParam;
 
 @override String get type { return 'custom'; } 
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
+NamespaceToolParamToolsCustom copyWith({String? name, String Function()? description, CustomToolParamFormat Function()? format, bool Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
+  name: name,
+  description: description,
+  format: format,
+  deferLoading: deferLoading,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 

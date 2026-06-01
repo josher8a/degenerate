@@ -30,6 +30,11 @@ final EasyInputMessage easyInputMessage;
 
 @override String get type { return 'message'; } 
 @override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
+InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
+  role: role,
+  content: content,
+  phase: phase,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemMessage && easyInputMessage == other.easyInputMessage; } 
 @override int get hashCode { return easyInputMessage.hashCode; } 
@@ -43,6 +48,7 @@ final Item item;
 
 @override String get type { return 'Item'; } 
 @override Map<String, dynamic> toJson() { return {...item.toJson(), 'type': type}; } 
+InputItemItem copyWith({Item? item}) { return InputItemItem(item ?? this.item); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItem && item == other.item; } 
 @override int get hashCode { return item.hashCode; } 
@@ -56,6 +62,9 @@ final ItemReferenceParam itemReferenceParam;
 
 @override String get type { return 'ItemReferenceParam'; } 
 @override Map<String, dynamic> toJson() { return {...itemReferenceParam.toJson(), 'type': type}; } 
+InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferenceParam(itemReferenceParam.copyWith(
+  id: id,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam; } 
 @override int get hashCode { return itemReferenceParam.hashCode; } 

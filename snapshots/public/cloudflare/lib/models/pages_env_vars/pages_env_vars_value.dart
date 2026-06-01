@@ -31,6 +31,9 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 
 @override String get type { return 'plain_text'; } 
 @override Map<String, dynamic> toJson() { return {...pagesPlainTextEnvVar.toJson(), 'type': type}; } 
+PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar.copyWith(
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
@@ -45,6 +48,9 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
 
 @override String get type { return 'secret_text'; } 
 @override Map<String, dynamic> toJson() { return {...pagesSecretTextEnvVar.toJson(), 'type': type}; } 
+PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar.copyWith(
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 

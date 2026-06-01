@@ -31,6 +31,9 @@ final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorker
 
 @override String get type { return 'binding'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type}; } 
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWith({CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource.copyWith(
+  format: format,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
@@ -45,6 +48,11 @@ final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPi
 
 @override String get type { return 'http'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool Function()? authentication, Cors Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
+  authentication: authentication,
+  cors: cors,
+  format: format,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 

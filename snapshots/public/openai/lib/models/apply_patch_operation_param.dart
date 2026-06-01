@@ -36,6 +36,10 @@ final ApplyPatchCreateFileOperationParam applyPatchCreateFileOperationParam;
 
 @override String get type { return 'create_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchCreateFileOperationParam.toJson(), 'type': type}; } 
+ApplyPatchOperationParamCreateFile copyWith({String? path, String? diff, }) { return ApplyPatchOperationParamCreateFile(applyPatchCreateFileOperationParam.copyWith(
+  path: path,
+  diff: diff,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchOperationParamCreateFile && applyPatchCreateFileOperationParam == other.applyPatchCreateFileOperationParam; } 
 @override int get hashCode { return applyPatchCreateFileOperationParam.hashCode; } 
@@ -50,6 +54,9 @@ final ApplyPatchDeleteFileOperationParam applyPatchDeleteFileOperationParam;
 
 @override String get type { return 'delete_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchDeleteFileOperationParam.toJson(), 'type': type}; } 
+ApplyPatchOperationParamDeleteFile copyWith({String? path}) { return ApplyPatchOperationParamDeleteFile(applyPatchDeleteFileOperationParam.copyWith(
+  path: path,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchOperationParamDeleteFile && applyPatchDeleteFileOperationParam == other.applyPatchDeleteFileOperationParam; } 
 @override int get hashCode { return applyPatchDeleteFileOperationParam.hashCode; } 
@@ -64,6 +71,10 @@ final ApplyPatchUpdateFileOperationParam applyPatchUpdateFileOperationParam;
 
 @override String get type { return 'update_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchUpdateFileOperationParam.toJson(), 'type': type}; } 
+ApplyPatchOperationParamUpdateFile copyWith({String? path, String? diff, }) { return ApplyPatchOperationParamUpdateFile(applyPatchUpdateFileOperationParam.copyWith(
+  path: path,
+  diff: diff,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ApplyPatchOperationParamUpdateFile && applyPatchUpdateFileOperationParam == other.applyPatchUpdateFileOperationParam; } 
 @override int get hashCode { return applyPatchUpdateFileOperationParam.hashCode; } 

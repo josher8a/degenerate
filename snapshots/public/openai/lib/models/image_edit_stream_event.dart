@@ -41,6 +41,15 @@ final ImageEditPartialImageEvent imageEditPartialImageEvent;
 
 @override String get type { return 'image_edit.partial_image'; } 
 @override Map<String, dynamic> toJson() { return {...imageEditPartialImageEvent.toJson(), 'type': type}; } 
+ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditStreamEventImageEditPartialImage(imageEditPartialImageEvent.copyWith(
+  b64Json: b64Json,
+  createdAt: createdAt,
+  size: size,
+  quality: quality,
+  background: background,
+  outputFormat: outputFormat,
+  partialImageIndex: partialImageIndex,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageEditStreamEventImageEditPartialImage && imageEditPartialImageEvent == other.imageEditPartialImageEvent; } 
 @override int get hashCode { return imageEditPartialImageEvent.hashCode; } 
@@ -60,6 +69,15 @@ final ImageEditCompletedEvent imageEditCompletedEvent;
 
 @override String get type { return 'image_edit.completed'; } 
 @override Map<String, dynamic> toJson() { return {...imageEditCompletedEvent.toJson(), 'type': type}; } 
+ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageEditStreamEventImageEditCompleted(imageEditCompletedEvent.copyWith(
+  b64Json: b64Json,
+  createdAt: createdAt,
+  size: size,
+  quality: quality,
+  background: background,
+  outputFormat: outputFormat,
+  usage: usage,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageEditStreamEventImageEditCompleted && imageEditCompletedEvent == other.imageEditCompletedEvent; } 
 @override int get hashCode { return imageEditCompletedEvent.hashCode; } 

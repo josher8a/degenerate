@@ -41,6 +41,15 @@ final ImageGenPartialImageEvent imageGenPartialImageEvent;
 
 @override String get type { return 'image_generation.partial_image'; } 
 @override Map<String, dynamic> toJson() { return {...imageGenPartialImageEvent.toJson(), 'type': type}; } 
+ImageGenStreamEventImageGenerationPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageGenStreamEventImageGenerationPartialImage(imageGenPartialImageEvent.copyWith(
+  b64Json: b64Json,
+  createdAt: createdAt,
+  size: size,
+  quality: quality,
+  background: background,
+  outputFormat: outputFormat,
+  partialImageIndex: partialImageIndex,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageGenStreamEventImageGenerationPartialImage && imageGenPartialImageEvent == other.imageGenPartialImageEvent; } 
 @override int get hashCode { return imageGenPartialImageEvent.hashCode; } 
@@ -60,6 +69,15 @@ final ImageGenCompletedEvent imageGenCompletedEvent;
 
 @override String get type { return 'image_generation.completed'; } 
 @override Map<String, dynamic> toJson() { return {...imageGenCompletedEvent.toJson(), 'type': type}; } 
+ImageGenStreamEventImageGenerationCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenStreamEventImageGenerationCompleted(imageGenCompletedEvent.copyWith(
+  b64Json: b64Json,
+  createdAt: createdAt,
+  size: size,
+  quality: quality,
+  background: background,
+  outputFormat: outputFormat,
+  usage: usage,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ImageGenStreamEventImageGenerationCompleted && imageGenCompletedEvent == other.imageGenCompletedEvent; } 
 @override int get hashCode { return imageGenCompletedEvent.hashCode; } 

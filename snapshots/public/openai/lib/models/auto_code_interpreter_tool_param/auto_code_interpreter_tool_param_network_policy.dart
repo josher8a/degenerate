@@ -27,6 +27,7 @@ final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
 @override String get type { return 'disabled'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
+AutoCodeInterpreterToolParamNetworkPolicyDisabled copyWith({ContainerNetworkPolicyDisabledParam? containerNetworkPolicyDisabledParam}) { return AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam ?? this.containerNetworkPolicyDisabledParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AutoCodeInterpreterToolParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
@@ -40,6 +41,10 @@ final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
 @override String get type { return 'allowlist'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
+AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam> Function()? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam.copyWith(
+  allowedDomains: allowedDomains,
+  domainSecrets: domainSecrets,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AutoCodeInterpreterToolParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 

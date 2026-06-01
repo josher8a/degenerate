@@ -58,6 +58,9 @@ final InputTextContent inputTextContent;
 
 @override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
+MessageContentInputText copyWith({String? text}) { return MessageContentInputText(inputTextContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
@@ -71,6 +74,11 @@ final OutputTextContent outputTextContent;
 
 @override String get type { return 'output_text'; } 
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
+MessageContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return MessageContentOutputText(outputTextContent.copyWith(
+  text: text,
+  annotations: annotations,
+  logprobs: logprobs,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
@@ -84,6 +92,9 @@ final TextContent textContent;
 
 @override String get type { return 'text'; } 
 @override Map<String, dynamic> toJson() { return {...textContent.toJson(), 'type': type}; } 
+MessageContentText copyWith({String? text}) { return MessageContentText(textContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentText && textContent == other.textContent; } 
 @override int get hashCode { return textContent.hashCode; } 
@@ -97,6 +108,9 @@ final SummaryTextContent summaryTextContent;
 
 @override String get type { return 'summary_text'; } 
 @override Map<String, dynamic> toJson() { return {...summaryTextContent.toJson(), 'type': type}; } 
+MessageContentSummaryText copyWith({String? text}) { return MessageContentSummaryText(summaryTextContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentSummaryText && summaryTextContent == other.summaryTextContent; } 
 @override int get hashCode { return summaryTextContent.hashCode; } 
@@ -110,6 +124,9 @@ final ReasoningTextContent reasoningTextContent;
 
 @override String get type { return 'reasoning_text'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
+MessageContentReasoningText copyWith({String? text}) { return MessageContentReasoningText(reasoningTextContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 
@@ -123,6 +140,9 @@ final RefusalContent refusalContent;
 
 @override String get type { return 'refusal'; } 
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
+MessageContentRefusal copyWith({String? refusal}) { return MessageContentRefusal(refusalContent.copyWith(
+  refusal: refusal,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
@@ -136,6 +156,11 @@ final InputImageContent inputImageContent;
 
 @override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
+MessageContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentInputImage(inputImageContent.copyWith(
+  imageUrl: imageUrl,
+  fileId: fileId,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
@@ -149,6 +174,11 @@ final ComputerScreenshotContent computerScreenshotContent;
 
 @override String get type { return 'computer_screenshot'; } 
 @override Map<String, dynamic> toJson() { return {...computerScreenshotContent.toJson(), 'type': type}; } 
+MessageContentComputerScreenshot copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentComputerScreenshot(computerScreenshotContent.copyWith(
+  imageUrl: imageUrl,
+  fileId: fileId,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentComputerScreenshot && computerScreenshotContent == other.computerScreenshotContent; } 
 @override int get hashCode { return computerScreenshotContent.hashCode; } 
@@ -162,6 +192,13 @@ final InputFileContent inputFileContent;
 
 @override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
+MessageContentInputFile copyWith({String? Function()? fileId, String Function()? filename, String Function()? fileData, String Function()? fileUrl, FileInputDetail Function()? detail, }) { return MessageContentInputFile(inputFileContent.copyWith(
+  fileId: fileId,
+  filename: filename,
+  fileData: fileData,
+  fileUrl: fileUrl,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MessageContentInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 

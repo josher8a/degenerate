@@ -34,6 +34,9 @@ final InputTextContentParam inputTextContentParam;
 
 @override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContentParam.toJson(), 'type': type}; } 
+OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputText(inputTextContentParam.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputText && inputTextContentParam == other.inputTextContentParam; } 
 @override int get hashCode { return inputTextContentParam.hashCode; } 
@@ -47,6 +50,11 @@ final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
 @override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContentParamAutoParam.toJson(), 'type': type}; } 
+OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
+  imageUrl: imageUrl,
+  fileId: fileId,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
 @override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
@@ -60,6 +68,13 @@ final InputFileContentParam inputFileContentParam;
 
 @override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContentParam.toJson(), 'type': type}; } 
+OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
+  fileId: fileId,
+  filename: filename,
+  fileData: fileData,
+  fileUrl: fileUrl,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam; } 
 @override int get hashCode { return inputFileContentParam.hashCode; } 

@@ -30,6 +30,9 @@ final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type { return 'local'; } 
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
+FunctionShellCallItemParamEnvironmentLocal copyWith({List<LocalSkillParam> Function()? skills}) { return FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam.copyWith(
+  skills: skills,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
@@ -43,6 +46,9 @@ final ContainerReferenceParam containerReferenceParam;
 
 @override String get type { return 'container_reference'; } 
 @override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
+FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam.copyWith(
+  containerId: containerId,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 

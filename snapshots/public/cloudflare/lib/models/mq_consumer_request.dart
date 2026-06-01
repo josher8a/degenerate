@@ -32,6 +32,10 @@ final MqHttpConsumerRequest mqHttpConsumerRequest;
 
 @override String get type { return 'http_pull'; } 
 @override Map<String, dynamic> toJson() { return {...mqHttpConsumerRequest.toJson(), 'type': type}; } 
+MqConsumerRequestHttpPull copyWith({MqQueueName Function()? deadLetterQueue, MqHttpConsumerRequestSettings Function()? settings, }) { return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
+  deadLetterQueue: deadLetterQueue,
+  settings: settings,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest; } 
 @override int get hashCode { return mqHttpConsumerRequest.hashCode; } 
@@ -46,6 +50,11 @@ final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
 @override String get type { return 'worker'; } 
 @override Map<String, dynamic> toJson() { return {...mqWorkerConsumerRequest.toJson(), 'type': type}; } 
+MqConsumerRequestWorker copyWith({MqQueueName Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings Function()? settings, }) { return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
+  deadLetterQueue: deadLetterQueue,
+  scriptName: scriptName,
+  settings: settings,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest; } 
 @override int get hashCode { return mqWorkerConsumerRequest.hashCode; } 

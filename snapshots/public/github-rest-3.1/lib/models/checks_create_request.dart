@@ -23,6 +23,7 @@ final ChecksCreateRequestCompleted checksCreateRequestCompleted;
 
 @override String get status { return 'completed'; } 
 @override Map<String, dynamic> toJson() { return {...checksCreateRequestCompleted.toJson(), 'status': status}; } 
+ChecksCreateRequestCompleted$Variant copyWith({ChecksCreateRequestCompleted? checksCreateRequestCompleted}) { return ChecksCreateRequestCompleted$Variant(checksCreateRequestCompleted ?? this.checksCreateRequestCompleted); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestCompleted$Variant && checksCreateRequestCompleted == other.checksCreateRequestCompleted; } 
 @override int get hashCode { return checksCreateRequestCompleted.hashCode; } 
@@ -36,6 +37,7 @@ final ChecksCreateRequestVariant2 checksCreateRequestVariant2;
 
 @override String get status { return 'queued'; } 
 @override Map<String, dynamic> toJson() { return {...checksCreateRequestVariant2.toJson(), 'status': status}; } 
+ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateRequestVariant2}) { return ChecksCreateRequestQueued(checksCreateRequestVariant2 ?? this.checksCreateRequestVariant2); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestQueued && checksCreateRequestVariant2 == other.checksCreateRequestVariant2; } 
 @override int get hashCode { return checksCreateRequestVariant2.hashCode; } 

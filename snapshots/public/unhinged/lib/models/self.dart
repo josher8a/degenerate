@@ -112,6 +112,36 @@ final class SelfType extends Self {
     return {...$true.toJson(), 'type': type};
   }
 
+  SelfType copyWith({
+    bool? $false,
+    dynamic Function()? none,
+    NewNull? $null,
+    New0? $0,
+    String? $empty,
+    String Function()? constructor,
+    String Function()? proto,
+    String Function()? hasOwnProperty,
+    String Function()? $ref,
+    String Function()? $id,
+    String Function()? xExtensionLookalike,
+  }) {
+    return SelfType(
+      $true.copyWith(
+        $false: $false,
+        none: none,
+        $null: $null,
+        $0: $0,
+        $empty: $empty,
+        constructor: constructor,
+        proto: proto,
+        hasOwnProperty: hasOwnProperty,
+        $ref: $ref,
+        $id: $id,
+        xExtensionLookalike: xExtensionLookalike,
+      ),
+    );
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) || other is SelfType && $true == other.$true;
@@ -148,6 +178,22 @@ final class SelfProto extends Self {
     return {...proto.toJson(), 'type': type};
   }
 
+  SelfProto copyWith({
+    New Function()? constructor,
+    String Function()? $toString,
+    int Function()? valueOf,
+    Proto Function()? prototype,
+  }) {
+    return SelfProto(
+      proto.copyWith(
+        constructor: constructor,
+        $toString: $toString,
+        valueOf: valueOf,
+        prototype: prototype,
+      ),
+    );
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) || other is SelfProto && proto == other.proto;
@@ -182,6 +228,22 @@ final class SelfString extends Self {
   @override
   Map<String, dynamic> toJson() {
     return {...stringModel.toJson(), 'type': type};
+  }
+
+  SelfString copyWith({
+    int Function()? length,
+    String? value,
+    String Function()? charAt,
+    bool Function()? trim,
+  }) {
+    return SelfString(
+      stringModel.copyWith(
+        length: length,
+        value: value,
+        charAt: charAt,
+        trim: trim,
+      ),
+    );
   }
 
   @override

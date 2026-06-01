@@ -91,6 +91,10 @@ final class EventAcceptStick extends Event {
     return {...acceptStickEvent.toJson(), 'type': type};
   }
 
+  EventAcceptStick copyWith({AcceptStickEvent? acceptStickEvent}) {
+    return EventAcceptStick(acceptStickEvent ?? this.acceptStickEvent);
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -126,6 +130,12 @@ final class EventBanParticipant extends Event {
   @override
   Map<String, dynamic> toJson() {
     return {...banParticipantEvent.toJson(), 'type': type};
+  }
+
+  EventBanParticipant copyWith({String? participantSlug}) {
+    return EventBanParticipant(
+      banParticipantEvent.copyWith(participantSlug: participantSlug),
+    );
   }
 
   @override
@@ -166,6 +176,10 @@ final class EventEndRoom extends Event {
     return {...endRoomEvent.toJson(), 'type': type};
   }
 
+  EventEndRoom copyWith({EndReason? reason}) {
+    return EventEndRoom(endRoomEvent.copyWith(reason: reason));
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -201,6 +215,10 @@ final class EventForcePassStick extends Event {
   @override
   Map<String, dynamic> toJson() {
     return {...forcePassStickEvent.toJson(), 'type': type};
+  }
+
+  EventForcePassStick copyWith({ForcePassStickEvent? forcePassStickEvent}) {
+    return EventForcePassStick(forcePassStickEvent ?? this.forcePassStickEvent);
   }
 
   @override
@@ -241,6 +259,10 @@ final class EventPassStick extends Event {
     return {...passStickEvent.toJson(), 'type': type};
   }
 
+  EventPassStick copyWith({PassStickEvent? passStickEvent}) {
+    return EventPassStick(passStickEvent ?? this.passStickEvent);
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -276,6 +298,10 @@ final class EventReorder extends Event {
   @override
   Map<String, dynamic> toJson() {
     return {...reorderEvent.toJson(), 'type': type};
+  }
+
+  EventReorder copyWith({List<String>? talkingOrder}) {
+    return EventReorder(reorderEvent.copyWith(talkingOrder: talkingOrder));
   }
 
   @override
@@ -315,6 +341,10 @@ final class EventStartRoom extends Event {
     return {...startRoomEvent.toJson(), 'type': type};
   }
 
+  EventStartRoom copyWith({StartRoomEvent? startRoomEvent}) {
+    return EventStartRoom(startRoomEvent ?? this.startRoomEvent);
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -350,6 +380,12 @@ final class EventUnbanParticipant extends Event {
   @override
   Map<String, dynamic> toJson() {
     return {...unbanParticipantEvent.toJson(), 'type': type};
+  }
+
+  EventUnbanParticipant copyWith({String? participantSlug}) {
+    return EventUnbanParticipant(
+      unbanParticipantEvent.copyWith(participantSlug: participantSlug),
+    );
   }
 
   @override

@@ -38,6 +38,11 @@ final FileCitationBody fileCitationBody;
 
 @override String get type { return 'file_citation'; } 
 @override Map<String, dynamic> toJson() { return {...fileCitationBody.toJson(), 'type': type}; } 
+AnnotationFileCitation copyWith({String? fileId, int? index, String? filename, }) { return AnnotationFileCitation(fileCitationBody.copyWith(
+  fileId: fileId,
+  index: index,
+  filename: filename,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFileCitation && fileCitationBody == other.fileCitationBody; } 
 @override int get hashCode { return fileCitationBody.hashCode; } 
@@ -51,6 +56,12 @@ final UrlCitationBody urlCitationBody;
 
 @override String get type { return 'url_citation'; } 
 @override Map<String, dynamic> toJson() { return {...urlCitationBody.toJson(), 'type': type}; } 
+AnnotationUrlCitation copyWith({String? url, int? startIndex, int? endIndex, String? title, }) { return AnnotationUrlCitation(urlCitationBody.copyWith(
+  url: url,
+  startIndex: startIndex,
+  endIndex: endIndex,
+  title: title,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationUrlCitation && urlCitationBody == other.urlCitationBody; } 
 @override int get hashCode { return urlCitationBody.hashCode; } 
@@ -64,6 +75,13 @@ final ContainerFileCitationBody containerFileCitationBody;
 
 @override String get type { return 'container_file_citation'; } 
 @override Map<String, dynamic> toJson() { return {...containerFileCitationBody.toJson(), 'type': type}; } 
+AnnotationContainerFileCitation copyWith({String? containerId, String? fileId, int? startIndex, int? endIndex, String? filename, }) { return AnnotationContainerFileCitation(containerFileCitationBody.copyWith(
+  containerId: containerId,
+  fileId: fileId,
+  startIndex: startIndex,
+  endIndex: endIndex,
+  filename: filename,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationContainerFileCitation && containerFileCitationBody == other.containerFileCitationBody; } 
 @override int get hashCode { return containerFileCitationBody.hashCode; } 
@@ -77,6 +95,10 @@ final FilePath filePath;
 
 @override String get type { return 'file_path'; } 
 @override Map<String, dynamic> toJson() { return {...filePath.toJson(), 'type': type}; } 
+AnnotationFilePath copyWith({String? fileId, int? index, }) { return AnnotationFilePath(filePath.copyWith(
+  fileId: fileId,
+  index: index,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFilePath && filePath == other.filePath; } 
 @override int get hashCode { return filePath.hashCode; } 

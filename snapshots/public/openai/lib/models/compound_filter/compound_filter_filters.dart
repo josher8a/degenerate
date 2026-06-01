@@ -25,6 +25,10 @@ final ComparisonFilter comparisonFilter;
 
 @override String get type { return 'eq'; } 
 @override Map<String, dynamic> toJson() { return {...comparisonFilter.toJson(), 'type': type}; } 
+CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) { return CompoundFilterFiltersEq(comparisonFilter.copyWith(
+  key: key,
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CompoundFilterFiltersEq && comparisonFilter == other.comparisonFilter; } 
 @override int get hashCode { return comparisonFilter.hashCode; } 

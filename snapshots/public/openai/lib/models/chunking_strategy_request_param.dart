@@ -27,6 +27,7 @@ final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 
 @override String get type { return 'auto'; } 
 @override Map<String, dynamic> toJson() { return {...autoChunkingStrategyRequestParam.toJson(), 'type': type}; } 
+ChunkingStrategyRequestParamAuto copyWith({AutoChunkingStrategyRequestParam? autoChunkingStrategyRequestParam}) { return ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam ?? this.autoChunkingStrategyRequestParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamAuto && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
 @override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
@@ -40,6 +41,9 @@ final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
 
 @override String get type { return 'static'; } 
 @override Map<String, dynamic> toJson() { return {...staticChunkingStrategyRequestParam.toJson(), 'type': type}; } 
+ChunkingStrategyRequestParamStatic copyWith({StaticChunkingStrategy? $static}) { return ChunkingStrategyRequestParamStatic(staticChunkingStrategyRequestParam.copyWith(
+  $static: $static,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamStatic && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
 @override int get hashCode { return staticChunkingStrategyRequestParam.hashCode; } 

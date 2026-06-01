@@ -29,6 +29,11 @@ final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
 
 @override String get type { return 'Json'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesJsonFormat.toJson(), 'type': type}; } 
+CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding Function()? decimalEncoding, CloudflarePipelinesTimestampFormat Function()? timestampFormat, bool Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
+  decimalEncoding: decimalEncoding,
+  timestampFormat: timestampFormat,
+  unstructured: unstructured,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatJson && cloudflarePipelinesJsonFormat == other.cloudflarePipelinesJsonFormat; } 
 @override int get hashCode { return cloudflarePipelinesJsonFormat.hashCode; } 
@@ -42,6 +47,10 @@ final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
 @override String get type { return 'Parquet'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesParquetFormat.toJson(), 'type': type}; } 
+CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
+  compression: compression,
+  rowGroupBytes: rowGroupBytes,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatParquet && cloudflarePipelinesParquetFormat == other.cloudflarePipelinesParquetFormat; } 
 @override int get hashCode { return cloudflarePipelinesParquetFormat.hashCode; } 

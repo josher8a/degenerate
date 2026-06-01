@@ -24,6 +24,7 @@ final ResponseStreamEvent responseStreamEvent;
 
 @override String get type { return 'ResponseStreamEvent'; } 
 @override Map<String, dynamic> toJson() { return {...responseStreamEvent.toJson(), 'type': type}; } 
+ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseStreamEvent}) { return ResponsesServerEventResponseStreamEvent(responseStreamEvent ?? this.responseStreamEvent); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesServerEventResponseStreamEvent && responseStreamEvent == other.responseStreamEvent; } 
 @override int get hashCode { return responseStreamEvent.hashCode; } 

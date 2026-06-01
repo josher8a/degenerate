@@ -29,6 +29,9 @@ final SpeechAudioDeltaEvent speechAudioDeltaEvent;
 
 @override String get type { return 'speech.audio.delta'; } 
 @override Map<String, dynamic> toJson() { return {...speechAudioDeltaEvent.toJson(), 'type': type}; } 
+CreateSpeechResponseStreamEventSpeechAudioDelta copyWith({String? audio}) { return CreateSpeechResponseStreamEventSpeechAudioDelta(speechAudioDeltaEvent.copyWith(
+  audio: audio,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateSpeechResponseStreamEventSpeechAudioDelta && speechAudioDeltaEvent == other.speechAudioDeltaEvent; } 
 @override int get hashCode { return speechAudioDeltaEvent.hashCode; } 
@@ -42,6 +45,9 @@ final SpeechAudioDoneEvent speechAudioDoneEvent;
 
 @override String get type { return 'speech.audio.done'; } 
 @override Map<String, dynamic> toJson() { return {...speechAudioDoneEvent.toJson(), 'type': type}; } 
+CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsage? usage}) { return CreateSpeechResponseStreamEventSpeechAudioDone(speechAudioDoneEvent.copyWith(
+  usage: usage,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateSpeechResponseStreamEventSpeechAudioDone && speechAudioDoneEvent == other.speechAudioDoneEvent; } 
 @override int get hashCode { return speechAudioDoneEvent.hashCode; } 

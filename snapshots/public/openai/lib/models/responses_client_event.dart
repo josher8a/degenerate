@@ -27,6 +27,17 @@ final CreateResponse createResponse;
 
 @override String get type { return 'response.create'; } 
 @override Map<String, dynamic> toJson() { return {...createResponse.toJson(), 'type': type}; } 
+ResponsesClientEventResponseCreate copyWith({InputParam Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return ResponsesClientEventResponseCreate(createResponse.copyWith(
+  input: input,
+  include: include,
+  parallelToolCalls: parallelToolCalls,
+  store: store,
+  instructions: instructions,
+  stream: stream,
+  streamOptions: streamOptions,
+  conversation: conversation,
+  contextManagement: contextManagement,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponsesClientEventResponseCreate && createResponse == other.createResponse; } 
 @override int get hashCode { return createResponse.hashCode; } 

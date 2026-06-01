@@ -41,6 +41,7 @@ final Int32 int32;
 
 @override String get type { return 'int32'; } 
 @override Map<String, dynamic> toJson() { return {...int32.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeInt32 copyWith({Int32? int32}) { return CloudflarePipelinesFieldTypeInt32(int32 ?? this.int32); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt32 && int32 == other.int32; } 
 @override int get hashCode { return int32.hashCode; } 
@@ -54,6 +55,7 @@ final Int64 int64;
 
 @override String get type { return 'int64'; } 
 @override Map<String, dynamic> toJson() { return {...int64.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeInt64 copyWith({Int64? int64}) { return CloudflarePipelinesFieldTypeInt64(int64 ?? this.int64); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt64 && int64 == other.int64; } 
 @override int get hashCode { return int64.hashCode; } 
@@ -67,6 +69,7 @@ final Float32 float32;
 
 @override String get type { return 'float32'; } 
 @override Map<String, dynamic> toJson() { return {...float32.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeFloat32 copyWith({Float32? float32}) { return CloudflarePipelinesFieldTypeFloat32(float32 ?? this.float32); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat32 && float32 == other.float32; } 
 @override int get hashCode { return float32.hashCode; } 
@@ -80,6 +83,7 @@ final Float64 float64;
 
 @override String get type { return 'float64'; } 
 @override Map<String, dynamic> toJson() { return {...float64.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeFloat64 copyWith({Float64? float64}) { return CloudflarePipelinesFieldTypeFloat64(float64 ?? this.float64); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat64 && float64 == other.float64; } 
 @override int get hashCode { return float64.hashCode; } 
@@ -93,6 +97,7 @@ final Bool $bool;
 
 @override String get type { return 'bool'; } 
 @override Map<String, dynamic> toJson() { return {...$bool.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeBool copyWith({Bool? $bool}) { return CloudflarePipelinesFieldTypeBool($bool ?? this.$bool); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBool && $bool == other.$bool; } 
 @override int get hashCode { return $bool.hashCode; } 
@@ -106,6 +111,7 @@ final StringModel stringModel;
 
 @override String get type { return 'string'; } 
 @override Map<String, dynamic> toJson() { return {...stringModel.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeString copyWith({StringModel? stringModel}) { return CloudflarePipelinesFieldTypeString(stringModel ?? this.stringModel); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeString && stringModel == other.stringModel; } 
 @override int get hashCode { return stringModel.hashCode; } 
@@ -119,6 +125,7 @@ final Binary binary;
 
 @override String get type { return 'binary'; } 
 @override Map<String, dynamic> toJson() { return {...binary.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeBinary copyWith({Binary? binary}) { return CloudflarePipelinesFieldTypeBinary(binary ?? this.binary); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBinary && binary == other.binary; } 
 @override int get hashCode { return binary.hashCode; } 
@@ -132,6 +139,9 @@ final CloudflarePipelinesTimestampField cloudflarePipelinesTimestampField;
 
 @override String get type { return 'Timestamp'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesTimestampField.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeTimestamp copyWith({CloudflarePipelinesTimestampUnit Function()? unit}) { return CloudflarePipelinesFieldTypeTimestamp(cloudflarePipelinesTimestampField.copyWith(
+  unit: unit,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeTimestamp && cloudflarePipelinesTimestampField == other.cloudflarePipelinesTimestampField; } 
 @override int get hashCode { return cloudflarePipelinesTimestampField.hashCode; } 
@@ -145,6 +155,7 @@ final Json json;
 
 @override String get type { return 'json'; } 
 @override Map<String, dynamic> toJson() { return {...json.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeJson copyWith({Json? json}) { return CloudflarePipelinesFieldTypeJson(json ?? this.json); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeJson && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
@@ -158,6 +169,10 @@ final CloudflarePipelinesStructField cloudflarePipelinesStructField;
 
 @override String get type { return 'Struct'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesStructField.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeStruct copyWith({List<CloudflarePipelinesSourceField>? fields, String? Function()? name, }) { return CloudflarePipelinesFieldTypeStruct(cloudflarePipelinesStructField.copyWith(
+  fields: fields,
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeStruct && cloudflarePipelinesStructField == other.cloudflarePipelinesStructField; } 
 @override int get hashCode { return cloudflarePipelinesStructField.hashCode; } 
@@ -171,6 +186,9 @@ final CloudflarePipelinesListField cloudflarePipelinesListField;
 
 @override String get type { return 'List'; } 
 @override Map<String, dynamic> toJson() { return {...cloudflarePipelinesListField.toJson(), 'type': type}; } 
+CloudflarePipelinesFieldTypeList copyWith({CloudflarePipelinesSourceField? items}) { return CloudflarePipelinesFieldTypeList(cloudflarePipelinesListField.copyWith(
+  items: items,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeList && cloudflarePipelinesListField == other.cloudflarePipelinesListField; } 
 @override int get hashCode { return cloudflarePipelinesListField.hashCode; } 

@@ -27,6 +27,7 @@ final CustomTextFormatParam customTextFormatParam;
 
 @override String get type { return 'text'; } 
 @override Map<String, dynamic> toJson() { return {...customTextFormatParam.toJson(), 'type': type}; } 
+CustomToolParamFormatText copyWith({CustomTextFormatParam? customTextFormatParam}) { return CustomToolParamFormatText(customTextFormatParam ?? this.customTextFormatParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CustomToolParamFormatText && customTextFormatParam == other.customTextFormatParam; } 
 @override int get hashCode { return customTextFormatParam.hashCode; } 
@@ -40,6 +41,10 @@ final CustomGrammarFormatParam customGrammarFormatParam;
 
 @override String get type { return 'grammar'; } 
 @override Map<String, dynamic> toJson() { return {...customGrammarFormatParam.toJson(), 'type': type}; } 
+CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definition, }) { return CustomToolParamFormatGrammar(customGrammarFormatParam.copyWith(
+  syntax: syntax,
+  definition: definition,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CustomToolParamFormatGrammar && customGrammarFormatParam == other.customGrammarFormatParam; } 
 @override int get hashCode { return customGrammarFormatParam.hashCode; } 

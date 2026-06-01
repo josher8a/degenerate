@@ -30,6 +30,12 @@ final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
 @override String get type { return 'tokens'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextUsageTokens.toJson(), 'type': type}; } 
+CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, TranscriptTextUsageTokensInputTokenDetails Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens.copyWith(
+  inputTokens: inputTokens,
+  inputTokenDetails: inputTokenDetails,
+  outputTokens: outputTokens,
+  totalTokens: totalTokens,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageTokens && transcriptTextUsageTokens == other.transcriptTextUsageTokens; } 
 @override int get hashCode { return transcriptTextUsageTokens.hashCode; } 
@@ -43,6 +49,9 @@ final TranscriptTextUsageDuration transcriptTextUsageDuration;
 
 @override String get type { return 'duration'; } 
 @override Map<String, dynamic> toJson() { return {...transcriptTextUsageDuration.toJson(), 'type': type}; } 
+CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration.copyWith(
+  seconds: seconds,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageDuration && transcriptTextUsageDuration == other.transcriptTextUsageDuration; } 
 @override int get hashCode { return transcriptTextUsageDuration.hashCode; } 

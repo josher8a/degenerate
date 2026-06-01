@@ -30,6 +30,9 @@ final FileAnnotation fileAnnotation;
 
 @override String get type { return 'file'; } 
 @override Map<String, dynamic> toJson() { return {...fileAnnotation.toJson(), 'type': type}; } 
+ResponseOutputTextAnnotationsFile copyWith({FileAnnotationSource? source}) { return ResponseOutputTextAnnotationsFile(fileAnnotation.copyWith(
+  source: source,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsFile && fileAnnotation == other.fileAnnotation; } 
 @override int get hashCode { return fileAnnotation.hashCode; } 
@@ -43,6 +46,9 @@ final UrlAnnotation urlAnnotation;
 
 @override String get type { return 'url'; } 
 @override Map<String, dynamic> toJson() { return {...urlAnnotation.toJson(), 'type': type}; } 
+ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { return ResponseOutputTextAnnotationsUrl(urlAnnotation.copyWith(
+  source: source,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsUrl && urlAnnotation == other.urlAnnotation; } 
 @override int get hashCode { return urlAnnotation.hashCode; } 

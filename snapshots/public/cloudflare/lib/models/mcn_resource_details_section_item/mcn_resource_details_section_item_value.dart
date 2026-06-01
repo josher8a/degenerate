@@ -41,6 +41,9 @@ final McnStringItem mcnStringItem;
 
 @override String get itemType { return 'mcn_string_item'; } 
 @override Map<String, dynamic> toJson() { return {...mcnStringItem.toJson(), 'item_type': itemType}; } 
+McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
+  string: string,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnStringItem && mcnStringItem == other.mcnStringItem; } 
 @override int get hashCode { return mcnStringItem.hashCode; } 
@@ -54,6 +57,9 @@ final McnYamlItem mcnYamlItem;
 
 @override String get itemType { return 'mcn_yaml_item'; } 
 @override Map<String, dynamic> toJson() { return {...mcnYamlItem.toJson(), 'item_type': itemType}; } 
+McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
+  yaml: yaml,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlItem && mcnYamlItem == other.mcnYamlItem; } 
 @override int get hashCode { return mcnYamlItem.hashCode; } 
@@ -67,6 +73,9 @@ final McnYamlDiffItem mcnYamlDiffItem;
 
 @override String get itemType { return 'mcn_yaml_diff_item'; } 
 @override Map<String, dynamic> toJson() { return {...mcnYamlDiffItem.toJson(), 'item_type': itemType}; } 
+McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
+  yamlDiff: yamlDiff,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnYamlDiffItem && mcnYamlDiffItem == other.mcnYamlDiffItem; } 
 @override int get hashCode { return mcnYamlDiffItem.hashCode; } 
@@ -80,6 +89,9 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
 
 @override String get itemType { return 'mcn_resource_preview_item'; } 
 @override Map<String, dynamic> toJson() { return {...mcnResourcePreviewItem.toJson(), 'item_type': itemType}; } 
+McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
+  resourcePreview: resourcePreview,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 
 @override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
@@ -93,6 +105,9 @@ final McnListItem mcnListItem;
 
 @override String get itemType { return 'mcn_list_item'; } 
 @override Map<String, dynamic> toJson() { return {...mcnListItem.toJson(), 'item_type': itemType}; } 
+McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) { return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
+  list: list,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnResourceDetailsSectionItemValueMcnListItem && mcnListItem == other.mcnListItem; } 
 @override int get hashCode { return mcnListItem.hashCode; } 

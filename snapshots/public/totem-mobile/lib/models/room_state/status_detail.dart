@@ -54,6 +54,10 @@ final class StatusDetailActive extends StatusDetail {
     return {...activeDetail.toJson(), 'type': type};
   }
 
+  StatusDetailActive copyWith({ActiveDetail? activeDetail}) {
+    return StatusDetailActive(activeDetail ?? this.activeDetail);
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -91,6 +95,10 @@ final class StatusDetailEnded extends StatusDetail {
     return {...endedDetail.toJson(), 'type': type};
   }
 
+  StatusDetailEnded copyWith({EndReason? reason}) {
+    return StatusDetailEnded(endedDetail.copyWith(reason: reason));
+  }
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -126,6 +134,10 @@ final class StatusDetailWaitingRoom extends StatusDetail {
   @override
   Map<String, dynamic> toJson() {
     return {...waitingRoomDetail.toJson(), 'type': type};
+  }
+
+  StatusDetailWaitingRoom copyWith({WaitingRoomDetail? waitingRoomDetail}) {
+    return StatusDetailWaitingRoom(waitingRoomDetail ?? this.waitingRoomDetail);
   }
 
   @override

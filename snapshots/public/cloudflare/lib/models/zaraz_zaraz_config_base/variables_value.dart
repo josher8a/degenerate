@@ -35,6 +35,10 @@ final ZarazSecretVariable zarazSecretVariable;
 
 @override String get type { return 'secret'; } 
 @override Map<String, dynamic> toJson() { return {...zarazSecretVariable.toJson(), 'type': type}; } 
+VariablesValueSecret copyWith({String? name, String? value, }) { return VariablesValueSecret(zarazSecretVariable.copyWith(
+  name: name,
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueSecret && zarazSecretVariable == other.zarazSecretVariable; } 
 @override int get hashCode { return zarazSecretVariable.hashCode; } 
@@ -49,6 +53,10 @@ final ZarazStringVariable zarazStringVariable;
 
 @override String get type { return 'string'; } 
 @override Map<String, dynamic> toJson() { return {...zarazStringVariable.toJson(), 'type': type}; } 
+VariablesValueString copyWith({String? name, String? value, }) { return VariablesValueString(zarazStringVariable.copyWith(
+  name: name,
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueString && zarazStringVariable == other.zarazStringVariable; } 
 @override int get hashCode { return zarazStringVariable.hashCode; } 
@@ -63,6 +71,10 @@ final ZarazWorkerVariable zarazWorkerVariable;
 
 @override String get type { return 'worker'; } 
 @override Map<String, dynamic> toJson() { return {...zarazWorkerVariable.toJson(), 'type': type}; } 
+VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, }) { return VariablesValueWorker(zarazWorkerVariable.copyWith(
+  name: name,
+  value: value,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is VariablesValueWorker && zarazWorkerVariable == other.zarazWorkerVariable; } 
 @override int get hashCode { return zarazWorkerVariable.hashCode; } 

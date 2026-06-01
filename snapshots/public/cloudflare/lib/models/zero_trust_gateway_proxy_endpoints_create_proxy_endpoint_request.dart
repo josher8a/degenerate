@@ -31,6 +31,9 @@ final ZeroTrustGatewayProxyEndpointIdentityCreate zeroTrustGatewayProxyEndpointI
 
 @override String get kind { return 'identity'; } 
 @override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind}; } 
+ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity copyWith({ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate.copyWith(
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
@@ -45,6 +48,9 @@ final ZeroTrustGatewayProxyEndpointIpCreate zeroTrustGatewayProxyEndpointIpCreat
 
 @override String get kind { return 'ip'; } 
 @override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind}; } 
+ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp copyWith({ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate.copyWith(
+  name: name,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 

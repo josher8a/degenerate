@@ -34,6 +34,7 @@ final List<ContentDirectory2> listContentDirectory2;
 
 @override String get type { return 'array'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
+ReposGetContentResponseArray copyWith({List<ContentDirectory2>? listContentDirectory2}) { return ReposGetContentResponseArray(listContentDirectory2 ?? this.listContentDirectory2); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
 @override int get hashCode { return listContentDirectory2.hashCode; } 
@@ -47,6 +48,21 @@ final ContentFile contentFile;
 
 @override String get type { return 'file'; } 
 @override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
+ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String Function()? target, String Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
+  encoding: encoding,
+  size: size,
+  name: name,
+  path: path,
+  content: content,
+  sha: sha,
+  url: url,
+  gitUrl: gitUrl,
+  htmlUrl: htmlUrl,
+  downloadUrl: downloadUrl,
+  links: links,
+  target: target,
+  submoduleGitUrl: submoduleGitUrl,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseFile && contentFile == other.contentFile; } 
 @override int get hashCode { return contentFile.hashCode; } 
@@ -60,6 +76,18 @@ final ContentSymlink contentSymlink;
 
 @override String get type { return 'symlink'; } 
 @override Map<String, dynamic> toJson() { return {...contentSymlink.toJson(), 'type': type}; } 
+ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSymlink(contentSymlink.copyWith(
+  target: target,
+  size: size,
+  name: name,
+  path: path,
+  sha: sha,
+  url: url,
+  gitUrl: gitUrl,
+  htmlUrl: htmlUrl,
+  downloadUrl: downloadUrl,
+  links: links,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink; } 
 @override int get hashCode { return contentSymlink.hashCode; } 
@@ -73,6 +101,18 @@ final ContentSubmodule contentSubmodule;
 
 @override String get type { return 'submodule'; } 
 @override Map<String, dynamic> toJson() { return {...contentSubmodule.toJson(), 'type': type}; } 
+ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSubmodule(contentSubmodule.copyWith(
+  submoduleGitUrl: submoduleGitUrl,
+  size: size,
+  name: name,
+  path: path,
+  sha: sha,
+  url: url,
+  gitUrl: gitUrl,
+  htmlUrl: htmlUrl,
+  downloadUrl: downloadUrl,
+  links: links,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
 @override int get hashCode { return contentSubmodule.hashCode; } 

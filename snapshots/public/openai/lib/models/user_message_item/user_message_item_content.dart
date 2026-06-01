@@ -32,6 +32,9 @@ final UserMessageInputText userMessageInputText;
 
 @override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...userMessageInputText.toJson(), 'type': type}; } 
+UserMessageItemContentInputText copyWith({String? text}) { return UserMessageItemContentInputText(userMessageInputText.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
@@ -46,6 +49,9 @@ final UserMessageQuotedText userMessageQuotedText;
 
 @override String get type { return 'quoted_text'; } 
 @override Map<String, dynamic> toJson() { return {...userMessageQuotedText.toJson(), 'type': type}; } 
+UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageItemContentQuotedText(userMessageQuotedText.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 

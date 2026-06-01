@@ -39,6 +39,14 @@ final ServerVad serverVad;
 
 @override String get type { return 'ServerVad'; } 
 @override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
+RealtimeTurnDetectionServerVad copyWith({double Function()? threshold, int Function()? prefixPaddingMs, int Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
+  threshold: threshold,
+  prefixPaddingMs: prefixPaddingMs,
+  silenceDurationMs: silenceDurationMs,
+  createResponse: createResponse,
+  interruptResponse: interruptResponse,
+  idleTimeoutMs: idleTimeoutMs,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
 @override int get hashCode { return serverVad.hashCode; } 
@@ -54,6 +62,11 @@ final SemanticVad semanticVad;
 
 @override String get type { return 'SemanticVad'; } 
 @override Map<String, dynamic> toJson() { return {...semanticVad.toJson(), 'type': type}; } 
+RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
+  eagerness: eagerness,
+  createResponse: createResponse,
+  interruptResponse: interruptResponse,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
 @override int get hashCode { return semanticVad.hashCode; } 

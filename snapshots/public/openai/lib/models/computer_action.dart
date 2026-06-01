@@ -51,6 +51,11 @@ final ClickParam clickParam;
 
 @override String get type { return 'click'; } 
 @override Map<String, dynamic> toJson() { return {...clickParam.toJson(), 'type': type}; } 
+ComputerActionClick copyWith({ClickButtonType? button, int? x, int? y, }) { return ComputerActionClick(clickParam.copyWith(
+  button: button,
+  x: x,
+  y: y,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionClick && clickParam == other.clickParam; } 
 @override int get hashCode { return clickParam.hashCode; } 
@@ -64,6 +69,10 @@ final DoubleClickAction doubleClickAction;
 
 @override String get type { return 'double_click'; } 
 @override Map<String, dynamic> toJson() { return {...doubleClickAction.toJson(), 'type': type}; } 
+ComputerActionDoubleClick copyWith({int? x, int? y, }) { return ComputerActionDoubleClick(doubleClickAction.copyWith(
+  x: x,
+  y: y,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDoubleClick && doubleClickAction == other.doubleClickAction; } 
 @override int get hashCode { return doubleClickAction.hashCode; } 
@@ -77,6 +86,9 @@ final DragParam dragParam;
 
 @override String get type { return 'drag'; } 
 @override Map<String, dynamic> toJson() { return {...dragParam.toJson(), 'type': type}; } 
+ComputerActionDrag copyWith({List<CoordParam>? path}) { return ComputerActionDrag(dragParam.copyWith(
+  path: path,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDrag && dragParam == other.dragParam; } 
 @override int get hashCode { return dragParam.hashCode; } 
@@ -90,6 +102,9 @@ final KeyPressAction keyPressAction;
 
 @override String get type { return 'keypress'; } 
 @override Map<String, dynamic> toJson() { return {...keyPressAction.toJson(), 'type': type}; } 
+ComputerActionKeypress copyWith({List<String>? keys}) { return ComputerActionKeypress(keyPressAction.copyWith(
+  keys: keys,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionKeypress && keyPressAction == other.keyPressAction; } 
 @override int get hashCode { return keyPressAction.hashCode; } 
@@ -103,6 +118,10 @@ final MoveParam moveParam;
 
 @override String get type { return 'move'; } 
 @override Map<String, dynamic> toJson() { return {...moveParam.toJson(), 'type': type}; } 
+ComputerActionMove copyWith({int? x, int? y, }) { return ComputerActionMove(moveParam.copyWith(
+  x: x,
+  y: y,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionMove && moveParam == other.moveParam; } 
 @override int get hashCode { return moveParam.hashCode; } 
@@ -116,6 +135,7 @@ final ScreenshotParam screenshotParam;
 
 @override String get type { return 'screenshot'; } 
 @override Map<String, dynamic> toJson() { return {...screenshotParam.toJson(), 'type': type}; } 
+ComputerActionScreenshot copyWith({ScreenshotParam? screenshotParam}) { return ComputerActionScreenshot(screenshotParam ?? this.screenshotParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScreenshot && screenshotParam == other.screenshotParam; } 
 @override int get hashCode { return screenshotParam.hashCode; } 
@@ -129,6 +149,12 @@ final ScrollParam scrollParam;
 
 @override String get type { return 'scroll'; } 
 @override Map<String, dynamic> toJson() { return {...scrollParam.toJson(), 'type': type}; } 
+ComputerActionScroll copyWith({int? x, int? y, int? scrollX, int? scrollY, }) { return ComputerActionScroll(scrollParam.copyWith(
+  x: x,
+  y: y,
+  scrollX: scrollX,
+  scrollY: scrollY,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScroll && scrollParam == other.scrollParam; } 
 @override int get hashCode { return scrollParam.hashCode; } 
@@ -142,6 +168,9 @@ final TypeParam typeParam;
 
 @override String get type { return 'type'; } 
 @override Map<String, dynamic> toJson() { return {...typeParam.toJson(), 'type': type}; } 
+ComputerActionType copyWith({String? text}) { return ComputerActionType(typeParam.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionType && typeParam == other.typeParam; } 
 @override int get hashCode { return typeParam.hashCode; } 
@@ -155,6 +184,7 @@ final WaitParam waitParam;
 
 @override String get type { return 'wait'; } 
 @override Map<String, dynamic> toJson() { return {...waitParam.toJson(), 'type': type}; } 
+ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(waitParam ?? this.waitParam); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionWait && waitParam == other.waitParam; } 
 @override int get hashCode { return waitParam.hashCode; } 

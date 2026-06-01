@@ -33,6 +33,11 @@ final OutputTextContent outputTextContent;
 
 @override String get type { return 'output_text'; } 
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
+OutputContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return OutputContentOutputText(outputTextContent.copyWith(
+  text: text,
+  annotations: annotations,
+  logprobs: logprobs,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
@@ -46,6 +51,9 @@ final RefusalContent refusalContent;
 
 @override String get type { return 'refusal'; } 
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
+OutputContentRefusal copyWith({String? refusal}) { return OutputContentRefusal(refusalContent.copyWith(
+  refusal: refusal,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
@@ -59,6 +67,9 @@ final ReasoningTextContent reasoningTextContent;
 
 @override String get type { return 'reasoning_text'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
+OutputContentReasoningText copyWith({String? text}) { return OutputContentReasoningText(reasoningTextContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 

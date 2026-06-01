@@ -33,6 +33,10 @@ final Circle circle;
 
 @override String get type { return 'circle'; } 
 @override Map<String, dynamic> toJson() { return {...circle.toJson(), 'type': type}; } 
+ShapeCircle copyWith({double? radius, String Function()? color, }) { return ShapeCircle(circle.copyWith(
+  radius: radius,
+  color: color,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeCircle && circle == other.circle; } 
 @override int get hashCode { return circle.hashCode; } 
@@ -46,6 +50,11 @@ final Rectangle rectangle;
 
 @override String get type { return 'rectangle'; } 
 @override Map<String, dynamic> toJson() { return {...rectangle.toJson(), 'type': type}; } 
+ShapeRectangle copyWith({double? width, double? height, String Function()? color, }) { return ShapeRectangle(rectangle.copyWith(
+  width: width,
+  height: height,
+  color: color,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeRectangle && rectangle == other.rectangle; } 
 @override int get hashCode { return rectangle.hashCode; } 
@@ -59,6 +68,11 @@ final Triangle triangle;
 
 @override String get type { return 'triangle'; } 
 @override Map<String, dynamic> toJson() { return {...triangle.toJson(), 'type': type}; } 
+ShapeTriangle copyWith({double? base, double? height, List<double> Function()? angles, }) { return ShapeTriangle(triangle.copyWith(
+  base: base,
+  height: height,
+  angles: angles,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeTriangle && triangle == other.triangle; } 
 @override int get hashCode { return triangle.hashCode; } 

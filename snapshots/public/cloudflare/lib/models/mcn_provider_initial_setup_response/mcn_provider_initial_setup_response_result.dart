@@ -33,6 +33,9 @@ final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
 @override String get itemType { return 'mcn_aws_trust_policy'; } 
 @override Map<String, dynamic> toJson() { return {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType}; } 
+McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy.copyWith(
+  awsTrustPolicy: awsTrustPolicy,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy; } 
 @override int get hashCode { return mcnAwsTrustPolicy.hashCode; } 
@@ -46,6 +49,11 @@ final McnAzureSetup mcnAzureSetup;
 
 @override String get itemType { return 'mcn_azure_setup'; } 
 @override Map<String, dynamic> toJson() { return {...mcnAzureSetup.toJson(), 'item_type': itemType}; } 
+McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup.copyWith(
+  azureConsentUrl: azureConsentUrl,
+  integrationIdentityTag: integrationIdentityTag,
+  tagCliCommand: tagCliCommand,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup; } 
 @override int get hashCode { return mcnAzureSetup.hashCode; } 
@@ -59,6 +67,10 @@ final McnGcpSetup mcnGcpSetup;
 
 @override String get itemType { return 'mcn_gcp_setup'; } 
 @override Map<String, dynamic> toJson() { return {...mcnGcpSetup.toJson(), 'item_type': itemType}; } 
+McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup.copyWith(
+  integrationIdentityTag: integrationIdentityTag,
+  tagCliCommand: tagCliCommand,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup; } 
 @override int get hashCode { return mcnGcpSetup.hashCode; } 

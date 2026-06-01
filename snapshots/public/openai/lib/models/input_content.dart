@@ -33,6 +33,9 @@ final InputTextContent inputTextContent;
 
 @override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
+InputContentInputText copyWith({String? text}) { return InputContentInputText(inputTextContent.copyWith(
+  text: text,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
@@ -46,6 +49,11 @@ final InputImageContent inputImageContent;
 
 @override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
+InputContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
+  imageUrl: imageUrl,
+  fileId: fileId,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
@@ -59,6 +67,13 @@ final InputFileContent inputFileContent;
 
 @override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
+InputContentInputFile copyWith({String? Function()? fileId, String Function()? filename, String Function()? fileData, String Function()? fileUrl, FileInputDetail Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
+  fileId: fileId,
+  filename: filename,
+  fileData: fileData,
+  fileUrl: fileUrl,
+  detail: detail,
+)); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
