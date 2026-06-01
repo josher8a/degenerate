@@ -38,16 +38,42 @@ class RoundtripEmitter {
     for (final type in types) {
       final name = type.emittableName;
       if (name == null) continue;
-      // Types with a uniform codec get a standalone fixture: classes with
-      // `Name.fromJson(json)`/`value.toJson()`, plus OneOf-eligible union
+
+      // A discriminated union dispatches on a distinct discriminator per
+      // variant, so each variant is reclaimed deterministically — emit one
+      // fixture per variant for full per-variant coverage.
+      if (type is IrDiscriminatedUnion) {
+        final decode = buildFromJsonCode(
+          type,
+          'json!',
+          typeRegistry: _registry,
+        );
+        final encode = buildToJsonCode(type, '(value! as ${type.name})');
+        var any = false;
+        for (final entry in type.mapping.entries) {
+          final sample = _discriminatedVariantSample(type, entry, {});
+          if (sample == null) {
+            skippedOther++;
+            continue;
+          }
+          any = true;
+          fixtures.add(
+            _fixture('$name [${entry.key}]', sample, decode, encode),
+          );
+        }
+        if (!any) skippedOther++;
+        continue;
+      }
+
+      // Other types with a uniform codec get one standalone fixture: classes
+      // with `Name.fromJson(json)`/`value.toJson()`, plus OneOf-eligible union
       // typedefs (decode inlines `OneOfN.parse`, encode is `value.toJson()`).
-      // Self-referencing OneOf typedefs (whose runtime parser is `parseName`,
-      // not inline) and anyOf/sealed-union classes are skipped for now.
+      // Self-referencing OneOf typedefs (parser is `parseName`, not inline) and
+      // anyOf/sealed-union classes are skipped for now.
       final supported =
           type is IrObject ||
           type is IrEnum ||
           type is IrExtensionType ||
-          type is IrDiscriminatedUnion ||
           _isOneOfTypedef(type);
       if (!supported) {
         if (type is IrUntaggedUnion || type is IrAnyOf) {
@@ -71,15 +97,14 @@ class RoundtripEmitter {
       final accessor = _isOneOfTypedef(type) ? 'json' : 'json!';
       final decode = buildFromJsonCode(type, accessor, typeRegistry: _registry);
       final encode = buildToJsonCode(type, '(value! as ${irTypeName(type)})');
-      fixtures.add(
-        '  RoundtripFixture(\n'
-        "    '${_escapeName(name)}',\n"
-        '    $sample,\n'
-        '    (json) => $decode,\n'
-        '    (value) => $encode,\n'
-        '  ),',
-      );
+      fixtures.add(_fixture(name, sample, decode, encode));
     }
+
+    // A decode/encode closure for a `bytes` variant calls
+    // base64Decode/base64Encode, which need dart:convert — even when the
+    // synthesized sample uses a different (safe) variant, the closure spans all
+    // of them. Detect it from the emitted code rather than re-walking the IR.
+    final needsConvert = fixtures.any((f) => f.contains('base64'));
 
     final buf = StringBuffer()
       ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
@@ -87,7 +112,11 @@ class RoundtripEmitter {
         '// Round-trip fixtures: ${fixtures.length} synthesized, '
         '${skippedUnion + skippedOther} skipped '
         '($skippedUnion union, $skippedOther other).',
-      )
+      );
+    if (needsConvert) {
+      buf.writeln("import 'dart:convert';");
+    }
+    buf
       ..writeln("import 'package:$packageName/$packageName.dart';")
       ..writeln()
       ..writeln('/// A synthesized round-trip fixture. A correct codec makes')
@@ -119,6 +148,15 @@ class RoundtripEmitter {
     return buf.toString();
   }
 
+  /// One `RoundtripFixture(...)` entry literal.
+  String _fixture(String label, String sample, String decode, String encode) =>
+      '  RoundtripFixture(\n'
+      "    '${_escapeName(label)}',\n"
+      '    $sample,\n'
+      '    (json) => $decode,\n'
+      '    (value) => $encode,\n'
+      '  ),';
+
   /// Synthesize a Dart literal for the JSON wire form of [type], or `null` if
   /// it can't be synthesized with an exact round-trip guarantee. [visited]
   /// holds the names of named types currently being synthesized, to break
@@ -148,29 +186,44 @@ class RoundtripEmitter {
         final target = _registry[name];
         if (target == null || visited.contains(name)) return null;
         return _sampleLiteral(target, {...visited, name});
-      case IrDiscriminatedUnion():
-        return _discriminatedLiteral(type, visited);
-      case IrUntaggedUnion(:final variants):
-        return _unionLiteral(variants, visited);
-      case IrAnyOf(:final variants):
-        return _unionLiteral(variants, visited);
+      case IrDiscriminatedUnion(:final mapping):
+        // As a nested/field value, use the first variant's form.
+        if (mapping.isEmpty) return null;
+        return _discriminatedVariantSample(
+          type,
+          mapping.entries.first,
+          visited,
+        );
+      case IrUntaggedUnion(:final name, :final variants):
+        return _unionLiteral(name, variants, visited);
+      case IrAnyOf(:final name, :final variants):
+        return _unionLiteral(name, variants, visited);
     }
   }
 
-  /// A sample for a OneOf-eligible union: the first variant whose held value
-  /// `OneOf.toJson` can re-serialize (objects/enums/nested unions, or a
-  /// JSON-passthrough scalar) and that we can synthesize. Other variants
-  /// (extension types, raw maps/lists, parsed scalars like DateTime) have no
-  /// `toJson` on their runtime representation, so `OneOf.toJson` would throw —
-  /// skip them. Returns `null` if no variant qualifies.
-  String? _unionLiteral(List<IrType> variants, Set<String> visited) {
-    if (!isOneOfEligible(variants)) return null;
-    for (final v in variants) {
-      if (!_isToJsonSafeUnionVariant(v)) continue;
-      final lit = _sampleLiteral(v, visited);
-      if (lit != null) return lit;
+  /// A sample for a OneOf-eligible union, synthesized from the **first** variant
+  /// only. `OneOf.parse` is first-match — it tries `fromA` before `fromB` — so
+  /// only the first variant's own form is guaranteed to be reclaimed as that
+  /// variant and re-serialized faithfully; a sample built for a later variant
+  /// can be swallowed (often lossily, via a discriminated variant's `$Unknown`
+  /// fallback) by an earlier one. Returns `null` (→ union skipped) unless the
+  /// first variant is `OneOf.toJson`-safe and synthesizable. A failure here is
+  /// then a genuine first-variant codec bug, not a cross-variant artifact.
+  String? _unionLiteral(
+    String name,
+    List<IrType> variants,
+    Set<String> visited,
+  ) {
+    // Only the OneOf typedef form (eligible + non-self-referencing) has an
+    // inline `OneOf.parse`. Self-referencing unions are emitted as sealed
+    // classes whose `fromJson` expects a Map and dispatches via `canParse` —
+    // not synthesizable here.
+    if (!isOneOfEligible(variants) || _isSelfReferencing(name, variants)) {
+      return null;
     }
-    return null;
+    final first = variants.first;
+    if (!_isToJsonSafeUnionVariant(first)) return null;
+    return _sampleLiteral(first, visited);
   }
 
   /// Whether a value of [type], when wrapped in a `OneOfN`, survives
@@ -254,15 +307,19 @@ class RoundtripEmitter {
     return '{${entries.join(', ')}}';
   }
 
-  /// A map literal for a discriminated union: the first variant's payload with
-  /// the discriminator key forced to the variant's mapping key, so `fromJson`
-  /// dispatches to that variant and `toJson` re-emits the same key.
-  String? _discriminatedLiteral(
+  /// A map literal for one discriminated-union variant: the [entry]'s payload
+  /// with the discriminator key forced to its mapping key (in the
+  /// discriminator field's native wire type), so `fromJson` either dispatches
+  /// to this variant (string discriminator) or — for a non-string
+  /// discriminator, whose emitted `switch` only has string cases — falls to the
+  /// `$Unknown` variant, which preserves the raw JSON. Either way it
+  /// round-trips. Returns `null` for a non-object payload or an
+  /// unsynthesizable field.
+  String? _discriminatedVariantSample(
     IrDiscriminatedUnion union,
+    MapEntry<String, IrType> entry,
     Set<String> visited,
   ) {
-    if (union.mapping.isEmpty) return null;
-    final entry = union.mapping.entries.first;
     final discValue = entry.key;
     var variant = entry.value;
     if (variant is IrTypeRef) variant = _registry[variant.name] ?? variant;
@@ -278,9 +335,32 @@ class RoundtripEmitter {
     entries.insert(
       0,
       '${dartStringLiteral(union.discriminatorProperty)}: '
-      '${dartStringLiteral(discValue)}',
+      '${_discWireValue(variant, union.discriminatorProperty, discValue)}',
     );
     return '{${entries.join(', ')}}';
+  }
+
+  /// The discriminator's wire literal. A `bool`/`int`/`double` discriminator
+  /// field needs a bare literal (`false`, `2`); everything else (plain string,
+  /// enum-over-string, extension-type-over-string, or absent) is a string —
+  /// mirroring the variant payload's own discriminator field type.
+  String _discWireValue(IrObject variant, String discProp, String discValue) {
+    IrType? t;
+    for (final f in variant.fields) {
+      if (f.originalName == discProp) {
+        t = f.type;
+        break;
+      }
+    }
+    if (t is IrTypeRef) t = _registry[t.name] ?? t;
+    final native =
+        t is IrPrimitive &&
+        const {
+          PrimitiveKind.bool,
+          PrimitiveKind.int,
+          PrimitiveKind.double,
+        }.contains(t.kind);
+    return native ? discValue : dartStringLiteral(discValue);
   }
 
   /// Build `'key': <literal>` entries for the always-emitted fields, skipping
