@@ -538,9 +538,33 @@ class IrMapper {
     return IrPrimitive(
       kind,
       format: format,
+      constraints: _constraintsFrom(schema),
       description: description,
       isNullable: nullable,
     );
+  }
+
+  /// Reads JSON-Schema validation constraints from a [schema] map. Returns
+  /// [IrConstraints.none] when none are present. (OpenAPI 3.0's boolean
+  /// `exclusiveMinimum`/`exclusiveMaximum` is ignored — only the 3.1/JSON-Schema
+  /// numeric form is read — so no incorrect bound is emitted.)
+  IrConstraints _constraintsFrom(Map<String, dynamic> schema) {
+    num? asNum(Object? v) => v is num ? v : null;
+    int? asInt(Object? v) => v is int ? v : (v is num ? v.toInt() : null);
+    final c = IrConstraints(
+      minLength: asInt(schema['minLength']),
+      maxLength: asInt(schema['maxLength']),
+      pattern: schema['pattern'] as String?,
+      minimum: asNum(schema['minimum']),
+      maximum: asNum(schema['maximum']),
+      exclusiveMinimum: asNum(schema['exclusiveMinimum']),
+      exclusiveMaximum: asNum(schema['exclusiveMaximum']),
+      multipleOf: asNum(schema['multipleOf']),
+      minItems: asInt(schema['minItems']),
+      maxItems: asInt(schema['maxItems']),
+      uniqueItems: schema['uniqueItems'] as bool?,
+    );
+    return c.isEmpty ? IrConstraints.none : c;
   }
 
   PrimitiveKind _primitiveKind(String type, String? format) {
@@ -633,7 +657,12 @@ class IrMapper {
     } else {
       itemsType = const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
     }
-    return IrList(itemsType, description: description, isNullable: nullable);
+    return IrList(
+      itemsType,
+      constraints: _constraintsFrom(schema),
+      description: description,
+      isNullable: nullable,
+    );
   }
 
   // ─── Map ──────────────────────────────────────────────────────

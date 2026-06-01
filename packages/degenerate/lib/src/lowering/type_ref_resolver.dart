@@ -82,6 +82,7 @@ class TypeRefResolver {
         if (identical(resolvedDeep, type.items)) return type;
         return IrList(
           resolvedDeep,
+          constraints: type.constraints,
           description: type.description,
           isNullable: type.isNullable,
         );
@@ -198,6 +199,7 @@ class TypeRefResolver {
         if (identical(deepItems, type.items)) return type;
         return IrList(
           deepItems,
+          constraints: type.constraints,
           description: type.description,
           isNullable: type.isNullable,
         );

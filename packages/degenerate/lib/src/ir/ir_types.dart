@@ -33,12 +33,83 @@ sealed class IrType {
   IrType copyAsNullable();
 }
 
+/// JSON-Schema validation constraints carried on a type, used to emit a
+/// `validate()` method. All fields are null when the schema omits them; an
+/// instance with every field null is considered [isEmpty] and emits nothing.
+final class IrConstraints {
+  /// Creates a constraint set (any subset of fields may be null).
+  const IrConstraints({
+    this.minLength,
+    this.maxLength,
+    this.pattern,
+    this.minimum,
+    this.maximum,
+    this.exclusiveMinimum,
+    this.exclusiveMaximum,
+    this.multipleOf,
+    this.minItems,
+    this.maxItems,
+    this.uniqueItems,
+  });
+
+  /// No constraints.
+  static const none = IrConstraints();
+
+  /// String: minimum length (`minLength`).
+  final int? minLength;
+
+  /// String: maximum length (`maxLength`).
+  final int? maxLength;
+
+  /// String: ECMA-262 regular expression the value must match (`pattern`).
+  final String? pattern;
+
+  /// Number: inclusive lower bound (`minimum`).
+  final num? minimum;
+
+  /// Number: inclusive upper bound (`maximum`).
+  final num? maximum;
+
+  /// Number: exclusive lower bound (`exclusiveMinimum`).
+  final num? exclusiveMinimum;
+
+  /// Number: exclusive upper bound (`exclusiveMaximum`).
+  final num? exclusiveMaximum;
+
+  /// Number: value must be a multiple of this (`multipleOf`).
+  final num? multipleOf;
+
+  /// Array: minimum number of items (`minItems`).
+  final int? minItems;
+
+  /// Array: maximum number of items (`maxItems`).
+  final int? maxItems;
+
+  /// Array: whether all items must be unique (`uniqueItems`).
+  final bool? uniqueItems;
+
+  /// Whether no constraint is set (nothing to validate).
+  bool get isEmpty =>
+      minLength == null &&
+      maxLength == null &&
+      pattern == null &&
+      minimum == null &&
+      maximum == null &&
+      exclusiveMinimum == null &&
+      exclusiveMaximum == null &&
+      multipleOf == null &&
+      minItems == null &&
+      maxItems == null &&
+      uniqueItems == null;
+}
+
 /// A primitive type (string, int, bool, etc.).
 final class IrPrimitive extends IrType {
   /// Creates a primitive IR type for the given [kind].
   const IrPrimitive(
     this.kind, {
     this.format,
+    this.constraints = IrConstraints.none,
     super.description,
     super.isNullable,
   });
@@ -49,12 +120,16 @@ final class IrPrimitive extends IrType {
   /// Original OpenAPI format string for pass-through.
   final String? format;
 
+  /// Validation constraints (minLength/pattern/minimum/…), or [IrConstraints.none].
+  final IrConstraints constraints;
+
   @override
   IrPrimitive copyAsNullable() => isNullable
       ? this
       : IrPrimitive(
           kind,
           format: format,
+          constraints: constraints,
           description: description,
           isNullable: true,
         );
@@ -101,15 +176,28 @@ final class IrEnum extends IrType {
 /// A list/array type with typed items.
 final class IrList extends IrType {
   /// Creates a list IR type wrapping [items].
-  const IrList(this.items, {super.description, super.isNullable});
+  const IrList(
+    this.items, {
+    this.constraints = IrConstraints.none,
+    super.description,
+    super.isNullable,
+  });
 
   /// The element type of this list.
   final IrType items;
 
+  /// Validation constraints (minItems/maxItems/uniqueItems), or [IrConstraints.none].
+  final IrConstraints constraints;
+
   @override
   IrList copyAsNullable() => isNullable
       ? this
-      : IrList(items, description: description, isNullable: true);
+      : IrList(
+          items,
+          constraints: constraints,
+          description: description,
+          isNullable: true,
+        );
 }
 
 /// A map type with string keys and typed values.

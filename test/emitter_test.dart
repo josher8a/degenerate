@@ -361,6 +361,71 @@ void main() {
     });
   });
 
+  // ─── Validation emission ─────────────────────────────────────
+
+  group('ModelEmitter validate()', () {
+    String emit(IrObject model) =>
+        emitRaw(Library((b) => b..body.addAll(ModelEmitter(model).emit())));
+
+    test('emits gated, null-guarded constraint checks', () {
+      const model = IrObject(
+        'Widget',
+        [
+          IrField(
+            'name',
+            'name',
+            IrPrimitive(
+              PrimitiveKind.string,
+              constraints: IrConstraints(minLength: 3, pattern: r'^[a-z]+$'),
+            ),
+            isRequired: true,
+          ),
+          IrField(
+            'score',
+            'score',
+            IrPrimitive(
+              PrimitiveKind.int,
+              constraints: IrConstraints(minimum: 0, maximum: 100),
+            ),
+            isRequired: true,
+          ),
+          IrField(
+            'tags',
+            'tags',
+            IrList(
+              IrPrimitive(PrimitiveKind.string),
+              constraints: IrConstraints(minItems: 1, uniqueItems: true),
+            ),
+          ),
+        ],
+        requiredFields: ['name', 'score'],
+      );
+      final source = emit(model);
+
+      expect(source, contains('List<String> validate()'));
+      // String checks gated to the string field; required → no null guard.
+      expect(source, contains('if (name.length < 3)'));
+      expect(source, contains('RegExp(r\'^[a-z]+\$\').hasMatch(name)'));
+      // Numeric checks (not `.length`) on the int field.
+      expect(source, contains('if (score < 0)'));
+      expect(source, contains('if (score > 100)'));
+      // List field is optional → null-guarded via a captured local.
+      expect(source, contains(r'final tags$ = tags;'));
+      expect(source, contains(r'if (tags$.length < 1)'));
+      expect(source, contains(r'tags$.toSet().length != tags$.length'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('omits validate() entirely when no field is constrained', () {
+      const model = IrObject(
+        'Plain',
+        [IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true)],
+        requiredFields: ['id'],
+      );
+      expect(emit(model), isNot(contains('validate()')));
+    });
+  });
+
   // ─── Enum emission ───────────────────────────────────────────
 
   group('EnumEmitter', () {

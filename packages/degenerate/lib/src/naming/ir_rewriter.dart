@@ -29,6 +29,7 @@ IrType rewriteTypeNames(IrType type, String Function(String) rename) {
     case IrList():
       return IrList(
         rewriteTypeNames(type.items, rename),
+        constraints: type.constraints,
         description: type.description,
         isNullable: type.isNullable,
       );

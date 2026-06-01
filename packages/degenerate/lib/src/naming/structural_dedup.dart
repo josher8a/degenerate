@@ -54,17 +54,29 @@ class StructuralSigner {
     return '${_body(type)}$n';
   }
 
+  /// A stable fingerprint of validation [c] for the structural signature.
+  /// Constraints drive the emitted `validate()`, so two otherwise-identical
+  /// shapes that differ in constraints are NOT interchangeable and must not
+  /// dedupe together. Empty constraints contribute nothing (no false splits).
+  String _constraintSig(IrConstraints c) {
+    if (c.isEmpty) return '';
+    return ':c[${c.minLength},${c.maxLength},${c.pattern ?? ''},'
+        '${c.minimum},${c.maximum},${c.exclusiveMinimum},'
+        '${c.exclusiveMaximum},${c.multipleOf},'
+        '${c.minItems},${c.maxItems},${c.uniqueItems}]';
+  }
+
   String _body(IrType type) {
     switch (type) {
-      case IrPrimitive(:final kind, :final format):
-        return 'p:$kind:${format ?? ''}';
+      case IrPrimitive(:final kind, :final format, :final constraints):
+        return 'p:$kind:${format ?? ''}${_constraintSig(constraints)}';
       case IrEnum(:final values, :final valueKind):
         final v = [...values]..sort();
         return 'e:$valueKind:${v.join(",")}';
       case IrExtensionType(:final inner):
         return 'x[${signatureOf(inner)}]';
-      case IrList(:final items):
-        return 'l[${signatureOf(items)}]';
+      case IrList(:final items, :final constraints):
+        return 'l[${signatureOf(items)}]${_constraintSig(constraints)}';
       case IrMap(:final values):
         return 'm[${signatureOf(values)}]';
       case IrObject(:final fields, :final additionalProperties):

@@ -1,0 +1,14 @@
+name: wire_14_constraints
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  degenerate_runtime:
+  spec_14_constraints:
+    path: ../../../snapshots/specs/14-constraints
+
+dev_dependencies:
+  test: ^1.25.6

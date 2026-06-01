@@ -51,6 +51,7 @@ class ModelEmitter {
           ..fields.addAll(_buildFields())
           ..methods.add(_buildToJson())
           ..methods.add(_buildCanParse())
+          ..methods.addAll(_buildValidate())
           ..methods.add(_buildCopyWith())
           ..methods.add(_buildEquals())
           ..methods.add(_buildHashCode())
@@ -349,6 +350,150 @@ class ModelEmitter {
       },
       _ => null,
     };
+  }
+
+  /// A `validate()` method checking this model's JSON-Schema constraints
+  /// (minLength/pattern/minimum/minItems/…), returning a `List<String>` of
+  /// violations (empty = valid). Emitted only when some field carries a
+  /// constraint. Shallow — own scalar/list fields only; callers recurse into
+  /// nested models via their own `validate()`.
+  Iterable<Method> _buildValidate() {
+    // Local names must dodge field names (a field may be called `errors`),
+    // appending `$` until unique among everything already in scope.
+    final taken = {for (final f in model.fields) f.name};
+    String fresh(String base) {
+      var n = base;
+      while (taken.contains(n)) {
+        n = '$n\$';
+      }
+      taken.add(n);
+      return n;
+    }
+
+    final acc = fresh('errors');
+    final lines = <String>[];
+    for (final f in model.fields) {
+      final c = _constraintsOf(f.type);
+      if (c.isEmpty) continue;
+      final nullableInDart =
+          (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+      // Capture nullable fields to a non-colliding local so the value promotes
+      // to non-null inside the guard.
+      final accessor = nullableInDart ? fresh(f.name) : f.name;
+      final checks = _fieldConstraintChecks(f, accessor, acc, c);
+      if (nullableInDart) {
+        lines
+          ..add('final $accessor = ${f.name};')
+          ..add('if ($accessor != null) {')
+          ..addAll(checks.map((line) => '  $line'))
+          ..add('}');
+      } else {
+        lines.addAll(checks);
+      }
+    }
+    if (lines.isEmpty) return const [];
+    return [
+      Method(
+        (m) => m
+          ..name = 'validate'
+          ..returns = refer('List<String>')
+          ..docs.add(
+            '/// Constraint violations for this value (empty when valid).',
+          )
+          ..body = Code(
+            'final $acc = <String>[];\n${lines.join('\n')}\nreturn $acc;',
+          ),
+      ),
+    ];
+  }
+
+  /// The validation constraints carried by [type], or [IrConstraints.none].
+  IrConstraints _constraintsOf(IrType type) => switch (type) {
+    IrPrimitive(:final constraints) => constraints,
+    IrList(:final constraints) => constraints,
+    _ => IrConstraints.none,
+  };
+
+  /// Constraint-check statements for field [f], reading the value via
+  /// [accessor] and appending violations to the [acc] accumulator. Gated by
+  /// primitive kind so string checks (`.length`/RegExp) never apply to numbers,
+  /// and vice-versa.
+  List<String> _fieldConstraintChecks(
+    IrField f,
+    String accessor,
+    String acc,
+    IrConstraints c,
+  ) {
+    final type = f.type;
+    if (c.isEmpty) return const [];
+
+    String err(String message) =>
+        '$acc.add(${dartStringLiteral('${f.name}: $message')});';
+
+    final out = <String>[];
+    if (type is IrPrimitive) {
+      if (type.kind == PrimitiveKind.string) {
+        if (c.minLength != null) {
+          out.add(
+            'if ($accessor.length < ${c.minLength}) ${err('length must be >= ${c.minLength}')}',
+          );
+        }
+        if (c.maxLength != null) {
+          out.add(
+            'if ($accessor.length > ${c.maxLength}) ${err('length must be <= ${c.maxLength}')}',
+          );
+        }
+        if (c.pattern != null) {
+          out.add(
+            'if (!RegExp(${dartStringLiteral(c.pattern!)}).hasMatch($accessor)) '
+            '${err('must match pattern ${c.pattern}')}',
+          );
+        }
+      } else if (const {
+        PrimitiveKind.int,
+        PrimitiveKind.double,
+        PrimitiveKind.num,
+      }.contains(type.kind)) {
+        if (c.minimum != null) {
+          out.add('if ($accessor < ${c.minimum}) ${err('must be >= ${c.minimum}')}');
+        }
+        if (c.maximum != null) {
+          out.add('if ($accessor > ${c.maximum}) ${err('must be <= ${c.maximum}')}');
+        }
+        if (c.exclusiveMinimum != null) {
+          out.add(
+            'if ($accessor <= ${c.exclusiveMinimum}) ${err('must be > ${c.exclusiveMinimum}')}',
+          );
+        }
+        if (c.exclusiveMaximum != null) {
+          out.add(
+            'if ($accessor >= ${c.exclusiveMaximum}) ${err('must be < ${c.exclusiveMaximum}')}',
+          );
+        }
+        if (c.multipleOf != null) {
+          out.add(
+            'if ($accessor % ${c.multipleOf} != 0) ${err('must be a multiple of ${c.multipleOf}')}',
+          );
+        }
+      }
+    } else if (type is IrList) {
+      if (c.minItems != null) {
+        out.add(
+          'if ($accessor.length < ${c.minItems}) ${err('must have >= ${c.minItems} items')}',
+        );
+      }
+      if (c.maxItems != null) {
+        out.add(
+          'if ($accessor.length > ${c.maxItems}) ${err('must have <= ${c.maxItems} items')}',
+        );
+      }
+      if (c.uniqueItems ?? false) {
+        out.add(
+          'if ($accessor.toSet().length != $accessor.length) ${err('items must be unique')}',
+        );
+      }
+    }
+    return out;
   }
 
   Method _buildCopyWith() {
