@@ -234,6 +234,35 @@ class DiscriminatedUnionEmitter {
     return resolved.fields.where((f) => f.originalName != _discJsonKey).toList();
   }
 
+  /// The IR type of the discriminator field on a `$ref` variant's payload
+  /// (e.g. the `type` field of the referenced schema), or null.
+  IrType? _payloadDiscFieldType(IrType variantType) {
+    var resolved = variantType;
+    if (resolved is IrTypeRef) {
+      resolved = typeRegistry[resolved.name] ?? resolved;
+    }
+    if (resolved is! IrObject) return null;
+    for (final f in resolved.fields) {
+      if (f.originalName == _discJsonKey) return f.type;
+    }
+    return null;
+  }
+
+  /// The Dart expression for the discriminator value when constructing a
+  /// `$ref` variant's payload. Most payloads type the discriminator field as a
+  /// `String` (matching inline variants), but a `$ref` to a schema that
+  /// constrains it with an `enum` keeps that enum type — so a bare `'value'`
+  /// String literal would not type-check. Emit `EnumType.fromJson('value')`
+  /// in that case.
+  String _discValueExpr(IrType variantType, String discValue) {
+    var t = _payloadDiscFieldType(variantType);
+    if (t is IrTypeRef) t = typeRegistry[t.name] ?? t;
+    if (t is IrEnum && t.valueKind == PrimitiveKind.string) {
+      return "${t.name}.fromJson('$discValue')";
+    }
+    return "'$discValue'";
+  }
+
   /// A named factory on the sealed base for building a variant directly,
   /// e.g. `CreateBeneficiaryRequest.business(displayName: …, legalName: …)`.
   /// Flattens the variant's fields and sets the discriminator, so callers
@@ -249,7 +278,8 @@ class DiscriminatedUnionEmitter {
     final String body;
     if (variantType is IrTypeRef) {
       final payload = irTypeName(variantType);
-      final inner = ["$_discDartName: '$discValue'", if (args.isNotEmpty) args]
+      final discExpr = _discValueExpr(variantType, discValue);
+      final inner = ["$_discDartName: $discExpr", if (args.isNotEmpty) args]
           .join(', ');
       body = 'return $variantClass($payload($inner));';
     } else {
