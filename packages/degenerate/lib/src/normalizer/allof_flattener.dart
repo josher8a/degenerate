@@ -101,7 +101,7 @@ class AllOfFlattener {
       }
     }
 
-    if (type != null) result['type'] = type;
+    if (type != null && !result.containsKey('type')) result['type'] = type;
     if (description != null) result['description'] = description;
     if (mergedProperties.isNotEmpty) result['properties'] = mergedProperties;
     if (mergedRequired.isNotEmpty) {
