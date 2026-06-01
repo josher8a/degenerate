@@ -79,6 +79,14 @@ ArgParser buildParser() {
           'instead of the full response envelope.',
       valueHelp: 'field',
     )
+    ..addFlag(
+      'emit-roundtrip-fixtures',
+      help:
+          'Emit a roundtrip_fixtures.dart registry of synthesized JSON\n'
+          'samples + decode/encode closures, for a fromJson/toJson behavior\n'
+          'harness. Test scaffolding; off by default.',
+      negatable: false,
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
@@ -147,6 +155,7 @@ Future<void> main(List<String> arguments) async {
       workspace: workspace,
       stdinContent: stdinContent,
       unwrapFields: results.multiOption('unwrap-fields'),
+      emitRoundtripFixtures: results.flag('emit-roundtrip-fixtures'),
     );
 
     final generator = Generator(config);

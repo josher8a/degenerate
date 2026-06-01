@@ -49,6 +49,7 @@ class GeneratorConfig {
     this.stdinContent,
     this.unwrapFields = const [],
     this.dedupeInlineTypes = true,
+    this.emitRoundtripFixtures = false,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -108,6 +109,12 @@ class GeneratorConfig {
   /// shorten generated names to the shortest unique suffix, grouping the
   /// emitted files into per-root-schema folders.
   final bool dedupeInlineTypes;
+
+  /// Emit a `roundtrip_fixtures.dart` registry of synthesized JSON samples
+  /// paired with each named type's decode/encode closures, for a generic
+  /// `fromJson(sample).toJson() == sample` behavior harness. Off by default —
+  /// it's test scaffolding, not part of the shipped client.
+  final bool emitRoundtripFixtures;
 }
 
 /// The main code generator pipeline.
@@ -341,6 +348,7 @@ class Generator {
       warnings: emitterWarnings,
       unwrapFields: config.unwrapFields,
       typePaths: typePaths,
+      emitRoundtripFixtures: config.emitRoundtripFixtures,
     );
 
     // In workspace mode, Dart source files live under lib/.
@@ -830,7 +838,6 @@ class Generator {
       IrTypeRef(:final name) => 'Ref($name)',
     };
   }
-
 }
 
 /// Exception thrown by the generator pipeline.

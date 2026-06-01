@@ -5,6 +5,7 @@ import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/roundtrip_emitter.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
@@ -24,7 +25,11 @@ class FileEmitter {
     String packageName,
   ) {
     final files =
-        names.where(typeToFile.containsKey).map((n) => typeToFile[n]!).toSet().toList()
+        names
+            .where(typeToFile.containsKey)
+            .map((n) => typeToFile[n]!)
+            .toSet()
+            .toList()
           ..sort();
     return files
         .map((f) => Directive.import('package:$packageName/models/$f.dart'))
@@ -45,6 +50,7 @@ class FileEmitter {
     List<String>? warnings,
     List<String> unwrapFields = const [],
     Map<String, List<String>> typePaths = const {},
+    bool emitRoundtripFixtures = false,
   }) {
     final files = <String, String>{};
 
@@ -256,6 +262,14 @@ class FileEmitter {
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
     );
 
+    // Emit the round-trip fixtures registry (test scaffolding, opt-in).
+    if (emitRoundtripFixtures) {
+      files['roundtrip_fixtures.dart'] = RoundtripEmitter(
+        types,
+        packageName,
+      ).emit();
+    }
+
     // Emit pubspec.yaml only in workspace mode
     if (workspace) {
       files['pubspec.yaml'] = _emitPubspec(
@@ -272,8 +286,10 @@ class FileEmitter {
       IrObject() => ModelEmitter(type, typeRegistry: typeRegistry).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
-      IrDiscriminatedUnion() =>
-        DiscriminatedUnionEmitter(type, typeRegistry: typeRegistry).emit(),
+      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(
+        type,
+        typeRegistry: typeRegistry,
+      ).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>

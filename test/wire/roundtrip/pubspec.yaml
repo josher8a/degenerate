@@ -1,0 +1,22 @@
+name: wire_roundtrip
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  degenerate_runtime:
+  spec_05_components_and_references:
+    path: ../../../snapshots/specs/05-components-and-references
+  spec_08_schema_json_schema_2020_12:
+    path: ../../../snapshots/specs/08-schema-json-schema-2020-12
+  spec_12_unions:
+    path: ../../../snapshots/specs/12-unions
+  spec_14_constraints:
+    path: ../../../snapshots/specs/14-constraints
+  spec_extension_types:
+    path: ../../../snapshots/specs/extension-types
+
+dev_dependencies:
+  test: ^1.25.6
