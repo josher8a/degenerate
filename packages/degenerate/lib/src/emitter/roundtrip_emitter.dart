@@ -227,10 +227,11 @@ class RoundtripEmitter {
   }
 
   /// Whether a value of [type], when wrapped in a `OneOfN`, survives
-  /// `OneOf.toJson` (which passes `String`/`num`/`bool`/`null` through and
-  /// calls `.toJson()` on anything else). Extension types and the
-  /// conversion primitives store a raw representation with no `toJson`, and raw
-  /// maps/lists likewise — all unsafe.
+  /// `OneOf.toJson`. The runtime serializer passes `String`/`num`/`bool`/`null`
+  /// through, recurses element-wise into lists/maps, and calls `.toJson()` on
+  /// anything else. So lists/maps are safe iff their element is; extension
+  /// types and the conversion primitives (DateTime/Uri/BigInt/Duration/bytes)
+  /// store a raw representation with no `toJson` and remain unsafe.
   bool _isToJsonSafeUnionVariant(IrType type) {
     var t = type;
     if (t is IrTypeRef) t = _registry[t.name] ?? t;
@@ -240,6 +241,8 @@ class RoundtripEmitter {
       IrUntaggedUnion() ||
       IrAnyOf() ||
       IrEnum() => true,
+      IrList(:final items) => _isToJsonSafeUnionVariant(items),
+      IrMap(:final values) => _isToJsonSafeUnionVariant(values),
       IrPrimitive(:final kind) => const {
         PrimitiveKind.string,
         PrimitiveKind.int,
