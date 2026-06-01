@@ -323,6 +323,15 @@ String sanitizeDartName(String input) {
   return result;
 }
 
+/// Convert a raw OpenAPI name to a valid PascalCase Dart type name.
+String toTypeName(String raw) => sanitizeDartName(toPascalCase(raw));
+
+/// Look up a name's segment path, falling back to a single-element list.
+List<String> segmentsOf(String name, Map<String, List<String>> paths) {
+  final p = paths[name];
+  return (p == null || p.isEmpty) ? [name] : p;
+}
+
 /// Returns a unique name by appending a numeric suffix if [name] already
 /// exists in [existing].
 ///

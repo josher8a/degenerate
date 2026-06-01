@@ -463,7 +463,7 @@ class IrMapper {
         final enumValues = (flattened['enum'] as List)
             .whereType<String>()
             .toList();
-        final matchName = sanitizeDartName(toPascalCase(title));
+        final matchName = toTypeName(title);
         final existing = typeRegistry[matchName];
         if (existing is IrEnum && _listEquals(existing.values, enumValues)) {
           return IrTypeRef(existing.name, isNullable: nullable);
@@ -932,7 +932,7 @@ class IrMapper {
                 break;
               }
             }
-            dartRefName ??= sanitizeDartName(toPascalCase(rawRefName));
+            dartRefName ??= toTypeName(rawRefName);
           }
           mapping[value] = IrTypeRef(dartRefName);
         } else if (refOrSchema is Map<String, dynamic>) {
@@ -1225,7 +1225,7 @@ class IrMapper {
   /// else a sanitized PascalCase of the raw name. (Used at every `$ref`/
   /// cycle-ref/resolved-ref lowering site.)
   String _dartRefName(String rawRefName) =>
-      _nameMapping[rawRefName] ?? sanitizeDartName(toPascalCase(rawRefName));
+      _nameMapping[rawRefName] ?? toTypeName(rawRefName);
 
   /// The name hint for the [i]-th inline variant of a union named [parentName]:
   /// the variant's `title`, else a single-enum-value hint, else a positional

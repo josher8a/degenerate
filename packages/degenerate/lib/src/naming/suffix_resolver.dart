@@ -10,6 +10,8 @@
 /// and no inline type may shorten onto one.
 library;
 
+import 'package:degenerate/src/naming.dart' show segmentsOf;
+
 /// Resolve final type names from segment paths.
 ///
 /// - [allNames]: every emittable type name in the program.
@@ -25,12 +27,8 @@ Map<String, String> resolveSuffixNames({
   required Map<String, List<String>> paths,
   Set<String> forbidden = const {},
 }) {
-  List<String> segsOf(String n) {
-    final p = paths[n];
-    return (p == null || p.isEmpty) ? [n] : p;
-  }
+  List<String> segsOf(String n) => segmentsOf(n, paths);
 
-  // Every type's segment path, used for the symmetric suffix-uniqueness test.
   final allSegs = [for (final n in allNames) segsOf(n)];
 
   bool endsWith(List<String> full, List<String> suffix) {

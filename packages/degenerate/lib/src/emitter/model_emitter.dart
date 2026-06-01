@@ -136,8 +136,7 @@ class ModelEmitter {
           // OpenAPI).
           // Fields with defaults have non-nullable types, so fromJson must not
           // produce null.
-          final isOptional =
-              (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+          final isOptional = fieldIsNullableInDart(f);
           final code = buildFromJsonCode(
             f.type,
             accessor,
@@ -208,9 +207,7 @@ class ModelEmitter {
         .map((f) {
           final key = dartStringLiteral(f.originalName);
 
-          final isNullableInDart =
-              (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
-          if (isNullableInDart) {
+          if (fieldIsNullableInDart(f)) {
             final nullableValue =
                 buildToJsonCode(f.type, f.name, nullable: true);
             if (nullableValue == f.name) {
@@ -331,10 +328,7 @@ class ModelEmitter {
     for (final f in model.fields) {
       final c = _constraintsOf(f.type);
       if (c.isEmpty) continue;
-      final nullableInDart =
-          (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
-      // Capture nullable fields to a non-colliding local so the value promotes
-      // to non-null inside the guard.
+      final nullableInDart = fieldIsNullableInDart(f);
       final accessor = nullableInDart ? fresh(f.name) : f.name;
       final checks = _fieldConstraintChecks(f, accessor, acc, c);
       if (nullableInDart) {
@@ -515,7 +509,7 @@ class ModelEmitter {
         .map(
           (f) => hashCodeExpr(
             f,
-            isNullable: (!f.isRequired && !_hasDefault(f)) || f.type.isNullable,
+            isNullable: fieldIsNullableInDart(f),
           ),
         )
         .toList();

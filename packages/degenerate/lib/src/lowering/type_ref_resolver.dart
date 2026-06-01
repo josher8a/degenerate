@@ -113,13 +113,7 @@ class TypeRefResolver {
           isNullable: type.isNullable,
         );
       case IrUntaggedUnion():
-        var changed = false;
-        final newVariants = type.variants.map((v) {
-          var resolved = resolveRef(v);
-          resolved = _resolveInType(resolved);
-          if (!identical(resolved, v)) changed = true;
-          return resolved;
-        }).toList();
+        final (newVariants, changed) = _resolveVariants(type.variants);
         if (!changed) return type;
         return IrUntaggedUnion(
           type.name,
@@ -128,13 +122,7 @@ class TypeRefResolver {
           isNullable: type.isNullable,
         );
       case IrAnyOf():
-        var changed = false;
-        final newVariants = type.variants.map((v) {
-          var resolved = resolveRef(v);
-          resolved = _resolveInType(resolved);
-          if (!identical(resolved, v)) changed = true;
-          return resolved;
-        }).toList();
+        final (newVariants, changed) = _resolveVariants(type.variants);
         if (!changed) return type;
         return IrAnyOf(
           type.name,
@@ -145,6 +133,17 @@ class TypeRefResolver {
       default:
         return type;
     }
+  }
+
+  (List<IrType>, bool) _resolveVariants(List<IrType> variants) {
+    var changed = false;
+    final result = variants.map((v) {
+      var resolved = resolveRef(v);
+      resolved = _resolveInType(resolved);
+      if (!identical(resolved, v)) changed = true;
+      return resolved;
+    }).toList();
+    return (result, changed);
   }
 
   /// If [type] is an [IrTypeRef] whose target in the registry is not an

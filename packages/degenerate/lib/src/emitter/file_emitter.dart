@@ -10,7 +10,7 @@ import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
-    show sanitizeDartName, sanitizeFieldName, toPascalCase;
+    show sanitizeFieldName, toTypeName;
 
 /// Orchestrates all emitters to produce the full generated file structure.
 ///
@@ -841,7 +841,7 @@ class FileEmitter {
     required String packageName,
     String? defaultServerUrl,
   }) {
-    final className = '${sanitizeDartName(toPascalCase(packageName))}Api';
+    final className = '${toTypeName(packageName)}Api';
     final buf = StringBuffer();
     buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
     // Collect and sort relative imports alphabetically.
@@ -914,7 +914,7 @@ class FileEmitter {
     required List<IrSecurityRequirement>? globalSecurity,
     required String packageName,
   }) {
-    final className = '${sanitizeDartName(toPascalCase(packageName))}Security';
+    final className = '${toTypeName(packageName)}Security';
     final buf = StringBuffer();
     if (securitySchemes.any(
       (scheme) => scheme.type == 'http' && scheme.scheme == 'basic',
@@ -1105,7 +1105,7 @@ class FileEmitter {
     IrSecurityScheme scheme,
   ) {
     final securityClass =
-        '${sanitizeDartName(toPascalCase(packageName))}Security';
+        '${toTypeName(packageName)}Security';
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';

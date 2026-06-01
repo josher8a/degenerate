@@ -89,6 +89,12 @@ class ApiEmitter {
       final successResponseContent = _successResponseContent(op);
       final errorResponseContent = _errorResponseContent(op);
 
+      void warnUnsupported(String role, (String, IrMediaType) content) {
+        warnings.add(
+          'Operation ${op.operationId} uses unsupported non-JSON $role media type ${content.$1} with type ${irTypeName(content.$2.schema)}.',
+        );
+      }
+
       if (requestBodyContent != null &&
           !isJsonLikeMediaType(requestBodyContent.$1) &&
           !(isMultipartMediaType(requestBodyContent.$1) &&
@@ -96,25 +102,19 @@ class ApiEmitter {
           !(isFormUrlencodedMediaType(requestBodyContent.$1) &&
               _resolveObjectFields(requestBodyContent.$2.schema) != null) &&
           !_supportsNonJsonEncode(requestBodyContent.$2.schema)) {
-        warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON request body media type ${requestBodyContent.$1} with type ${irTypeName(requestBodyContent.$2.schema)}.',
-        );
+        warnUnsupported('request body', requestBodyContent);
       }
 
       if (successResponseContent != null &&
           !isJsonLikeMediaType(successResponseContent.$1) &&
           !_supportsNonJsonDecode(successResponseContent.$2.schema)) {
-        warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON success response media type ${successResponseContent.$1} with type ${irTypeName(successResponseContent.$2.schema)}.',
-        );
+        warnUnsupported('success response', successResponseContent);
       }
 
       if (errorResponseContent != null &&
           !isJsonLikeMediaType(errorResponseContent.$1) &&
           !_supportsNonJsonDecode(errorResponseContent.$2.schema)) {
-        warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON error response media type ${errorResponseContent.$1} with type ${irTypeName(errorResponseContent.$2.schema)}.',
-        );
+        warnUnsupported('error response', errorResponseContent);
       }
     }
     return warnings;
@@ -295,17 +295,7 @@ class ApiEmitter {
       buf.writeln(
         'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
-      for (final p in cookieParams) {
-        final sanitizedName = _paramNameLiteral(p.name);
-        final cookieValue = _toStringExpr(p);
-        if (p.isRequired) {
-          buf.writeln('cookies[$sanitizedName] = $cookieValue;');
-        } else {
-          buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln('  cookies[$sanitizedName] = $cookieValue;');
-          buf.writeln('}');
-        }
-      }
+      _writeStringMapEntries(buf, cookieParams, 'cookies');
       buf.writeln();
     }
 
@@ -316,24 +306,12 @@ class ApiEmitter {
       final mediaType,
       _,
     ) when !isMultipartMediaType(mediaType)) {
-      // Use application/json for wildcard content types since we serialize as
-      // JSON.
       final contentType = normalizeMediaType(mediaType) == '*/*'
           ? 'application/json'
           : mediaType;
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
-    for (final p in headerParams) {
-      final sanitizedName = _paramNameLiteral(p.name);
-      final headerValue = _toStringExpr(p);
-      if (p.isRequired) {
-        buf.writeln('headers[$sanitizedName] = $headerValue;');
-      } else {
-        buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln('  headers[$sanitizedName] = $headerValue;');
-        buf.writeln('}');
-      }
-    }
+    _writeStringMapEntries(buf, headerParams, 'headers');
     buf.writeln();
 
     buf.writeln('final request = ApiRequest(');
@@ -552,28 +530,51 @@ class ApiEmitter {
 
   String _buildDeserializeExpr(String mediaType, IrType returnType) {
     if (isJsonLikeMediaType(mediaType)) {
-      // Named types and extension types all go through .fromJson(Map).
       return _sharedJsonDeserialize(returnType) ??
           'return ${_fromJson(returnType, 'jsonDecode(response.body)')};';
     }
 
     final unsupportedMessage =
         'Cannot decode $mediaType response into ${irTypeName(returnType)}';
+    final primitive = _nonJsonPrimitiveDeserialize(returnType);
+    if (primitive != null) return primitive;
     return switch (returnType) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => "throw UnsupportedError('$unsupportedMessage');",
-      },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
       IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
       _ =>
         "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
     };
+  }
+
+  String? _nonJsonPrimitiveDeserialize(IrType type) => switch (type) {
+    IrPrimitive(:final kind) => switch (kind) {
+      PrimitiveKind.dynamic_ ||
+      PrimitiveKind.string => 'return response.body;',
+      PrimitiveKind.int => 'return int.parse(response.body);',
+      PrimitiveKind.double => 'return double.parse(response.body);',
+      PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
+      PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
+      _ => null,
+    },
+    IrEnum(:final name) => 'return $name.fromJson(response.body);',
+    _ => null,
+  };
+
+  void _writeStringMapEntries(
+    StringBuffer buf,
+    List<IrParameter> params,
+    String mapName,
+  ) {
+    for (final p in params) {
+      final key = _paramNameLiteral(p.name);
+      final value = _toStringExpr(p);
+      if (p.isRequired) {
+        buf.writeln('$mapName[$key] = $value;');
+      } else {
+        buf.writeln('if (${p.dartName} != null) {');
+        buf.writeln('  $mapName[$key] = $value;');
+        buf.writeln('}');
+      }
+    }
   }
 
   /// Convert a parameter to its string representation for headers/query values.
@@ -1016,27 +1017,15 @@ class ApiEmitter {
           switch (errorType) {
             IrEnum(:final name) =>
               'return $name.fromJson(jsonDecode(response.body) as String);',
-            // All named types with .fromJson(Map).
             _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
           };
     }
 
     final unsupportedMessage =
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
-    return switch (errorType) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => 'return null;',
-      },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      _ =>
-        '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;',
-    };
+    final primitive = _nonJsonPrimitiveDeserialize(errorType);
+    if (primitive != null) return primitive;
+    return '// TODO: Unsupported non-JSON error schema $unsupportedMessage\nreturn null;';
   }
 
   (String, IrMediaType)? _successResponseContent(IrOperation op) {

@@ -223,26 +223,22 @@ class DiscriminatedUnionEmitter {
     return sanitizeFieldName(camel.isEmpty ? 'value' : camel);
   }
 
-  /// The data fields a variant's constructor takes (object → own fields;
-  /// `$ref` → the referenced object's fields), excluding the discriminator.
-  List<IrField> _variantPayloadFields(IrType variantType) {
-    var resolved = variantType;
-    if (resolved is IrTypeRef) {
-      resolved = typeRegistry[resolved.name] ?? resolved;
-    }
-    if (resolved is! IrObject) return const [];
-    return resolved.fields.where((f) => f.originalName != _discJsonKey).toList();
+  IrObject? _resolveToObject(IrType type) {
+    var r = type;
+    if (r is IrTypeRef) r = typeRegistry[r.name] ?? r;
+    return r is IrObject ? r : null;
   }
 
-  /// The IR type of the discriminator field on a `$ref` variant's payload
-  /// (e.g. the `type` field of the referenced schema), or null.
+  List<IrField> _variantPayloadFields(IrType variantType) {
+    final obj = _resolveToObject(variantType);
+    if (obj == null) return const [];
+    return obj.fields.where((f) => f.originalName != _discJsonKey).toList();
+  }
+
   IrType? _payloadDiscFieldType(IrType variantType) {
-    var resolved = variantType;
-    if (resolved is IrTypeRef) {
-      resolved = typeRegistry[resolved.name] ?? resolved;
-    }
-    if (resolved is! IrObject) return null;
-    for (final f in resolved.fields) {
+    final obj = _resolveToObject(variantType);
+    if (obj == null) return null;
+    for (final f in obj.fields) {
       if (f.originalName == _discJsonKey) return f.type;
     }
     return null;
@@ -1238,8 +1234,6 @@ class AnyOfEmitter {
     );
   }
 
-  /// Generate a single expression for a primitive AnyOf variant.
-  /// Uses type promotion (is check + direct access) to avoid unnecessary casts.
   /// Generate a single expression for a primitive AnyOf variant.
   /// Uses type checks with promotion to avoid unnecessary casts and to
   /// prevent breaking type promotion across named arguments in constructor

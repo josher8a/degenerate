@@ -20,11 +20,9 @@ class RoundtripEmitter {
     : _registry = {
         for (final t in types)
           if (t.emittableName != null) t.emittableName!: t,
-      },
-      _overlap = VariantOverlapAnalyzer({
-        for (final t in types)
-          if (t.emittableName != null) t.emittableName!: t,
-      });
+      };
+
+  late final _overlap = VariantOverlapAnalyzer(_registry);
 
   /// All top-level lowered types.
   final List<IrType> types;
@@ -33,8 +31,6 @@ class RoundtripEmitter {
   final String packageName;
 
   final Map<String, IrType> _registry;
-
-  final VariantOverlapAnalyzer _overlap;
 
   /// Build the `roundtrip_fixtures.dart` file content.
   String emit() {

@@ -52,23 +52,24 @@ Reference irTypeToReference(
   };
 }
 
+/// The Dart type name for a [PrimitiveKind].
+String primitiveKindName(PrimitiveKind kind) => switch (kind) {
+  PrimitiveKind.dynamic_ => 'dynamic',
+  PrimitiveKind.string => 'String',
+  PrimitiveKind.int => 'int',
+  PrimitiveKind.double => 'double',
+  PrimitiveKind.num => 'num',
+  PrimitiveKind.bool => 'bool',
+  PrimitiveKind.dateTime => 'DateTime',
+  PrimitiveKind.uri => 'Uri',
+  PrimitiveKind.bigInt => 'BigInt',
+  PrimitiveKind.duration => 'Duration',
+  PrimitiveKind.bytes => 'Uint8List',
+};
+
 Reference _primitiveRef(PrimitiveKind kind, bool nullable) {
-  // dynamic is already nullable — never append '?'.
   if (kind == PrimitiveKind.dynamic_) return refer('dynamic');
-  final symbol = switch (kind) {
-    PrimitiveKind.dynamic_ => 'dynamic', // unreachable, handled above
-    PrimitiveKind.string => 'String',
-    PrimitiveKind.int => 'int',
-    PrimitiveKind.double => 'double',
-    PrimitiveKind.num => 'num',
-    PrimitiveKind.bool => 'bool',
-    PrimitiveKind.dateTime => 'DateTime',
-    PrimitiveKind.uri => 'Uri',
-    PrimitiveKind.bigInt => 'BigInt',
-    PrimitiveKind.duration => 'Duration',
-    PrimitiveKind.bytes => 'Uint8List',
-  };
-  return _maybeNullable(refer(symbol), nullable);
+  return _maybeNullable(refer(primitiveKindName(kind)), nullable);
 }
 
 Reference _maybeNullable(Reference ref, bool nullable) {
@@ -89,19 +90,7 @@ Reference _maybeNullable(Reference ref, bool nullable) {
 /// Get the Dart type name string for an [IrType].
 String irTypeName(IrType type) {
   return switch (type) {
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ => 'dynamic',
-      PrimitiveKind.string => 'String',
-      PrimitiveKind.int => 'int',
-      PrimitiveKind.double => 'double',
-      PrimitiveKind.num => 'num',
-      PrimitiveKind.bool => 'bool',
-      PrimitiveKind.dateTime => 'DateTime',
-      PrimitiveKind.uri => 'Uri',
-      PrimitiveKind.bigInt => 'BigInt',
-      PrimitiveKind.duration => 'Duration',
-      PrimitiveKind.bytes => 'Uint8List',
-    },
+    IrPrimitive(:final kind) => primitiveKindName(kind),
     IrEnum(:final name) => name,
     IrList(:final items) => 'List<${irTypeName(items)}>',
     IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
@@ -683,8 +672,7 @@ Method buildToStringOverride(String body) => Method(
 Parameter copyWithParam(IrField f) {
   final usesThunk = !f.isRequired || f.type.isNullable;
   if (usesThunk) {
-    final fieldIsNullable =
-        (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
+    final fieldIsNullable = fieldIsNullableInDart(f);
     final base = irTypeName(f.type);
     // `dynamic` is already nullable — never suffix it.
     final thunkReturn = base == 'dynamic'
@@ -836,3 +824,8 @@ Code? fieldDefaultCode(IrField f) {
 
 /// Whether [f] has a representable Dart constructor default.
 bool fieldHasDefault(IrField f) => fieldDefaultCode(f) != null;
+
+/// Whether [f]'s Dart declaration type is nullable (optional without default,
+/// or explicitly nullable in the spec).
+bool fieldIsNullableInDart(IrField f) =>
+    (!f.isRequired && !fieldHasDefault(f)) || f.type.isNullable;
