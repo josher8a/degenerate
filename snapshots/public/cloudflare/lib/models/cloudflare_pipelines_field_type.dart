@@ -19,13 +19,13 @@ factory CloudflarePipelinesFieldType.fromJson(Map<String, dynamic> json) { retur
 }; }
 
 /// Build the `Timestamp` variant.
-factory CloudflarePipelinesFieldType.timestamp({CloudflarePipelinesTimestampUnit? unit}) { return CloudflarePipelinesFieldTypeTimestamp(CloudflarePipelinesTimestampField(type: 'Timestamp', unit: unit)); }
+factory CloudflarePipelinesFieldType.timestamp({CloudflarePipelinesTimestampUnit? unit}) { return CloudflarePipelinesFieldTypeTimestamp(CloudflarePipelinesTimestampField(unit: unit)); }
 
 /// Build the `Struct` variant.
-factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, String? name, }) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField(type: 'Struct', fields: fields, name: name)); }
+factory CloudflarePipelinesFieldType.struct({required List<CloudflarePipelinesSourceField> fields, String? name, }) { return CloudflarePipelinesFieldTypeStruct(CloudflarePipelinesStructField(fields: fields, name: name)); }
 
 /// Build the `List` variant.
-factory CloudflarePipelinesFieldType.list({required CloudflarePipelinesSourceField items}) { return CloudflarePipelinesFieldTypeList(CloudflarePipelinesListField(type: 'List', items: items)); }
+factory CloudflarePipelinesFieldType.list({required CloudflarePipelinesSourceField items}) { return CloudflarePipelinesFieldTypeList(CloudflarePipelinesListField(items: items)); }
 
 /// The discriminator value identifying this variant.
 String get type;

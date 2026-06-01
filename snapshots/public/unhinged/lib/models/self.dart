@@ -23,9 +23,9 @@ sealed class Self {
 
   /// Build the `type` variant.
   factory Self.type({
-    required bool $false,
+    bool $false = true,
     required dynamic none,
-    required NewNull $null,
+    NewNull $null = NewNull.$null,
     required New0 $0,
     required String $empty,
     String? constructor,
@@ -56,13 +56,12 @@ sealed class Self {
   /// Build the `__proto__` variant.
   factory Self.proto({
     New? constructor,
-    String? $toString,
+    String $toString = '[object Object]',
     int? valueOf,
     Proto? prototype,
   }) {
     return SelfProto(
       Proto(
-        type: '__proto__',
         constructor: constructor,
         $toString: $toString,
         valueOf: valueOf,
@@ -79,13 +78,7 @@ sealed class Self {
     bool? trim,
   }) {
     return SelfString(
-      StringModel(
-        type: 'String',
-        length: length,
-        value: value,
-        charAt: charAt,
-        trim: trim,
-      ),
+      StringModel(length: length, value: value, charAt: charAt, trim: trim),
     );
   }
 

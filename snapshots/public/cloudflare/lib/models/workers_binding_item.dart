@@ -69,7 +69,7 @@ factory WorkersBindingItem.hyperdrive({required String id, required WorkersBindi
 factory WorkersBindingItem.images({required WorkersBindingName name}) { return WorkersBindingItemImages(WorkersBindingKindImages(type: 'images', name: name)); }
 
 /// Build the `inherit` variant.
-factory WorkersBindingItem.inherit({required String name, String? oldName, String? versionId, }) { return WorkersBindingItemInherit(WorkersBindingKindInherit(type: 'inherit', name: name, oldName: oldName, versionId: versionId)); }
+factory WorkersBindingItem.inherit({required String name, String? oldName, String versionId = 'latest', }) { return WorkersBindingItemInherit(WorkersBindingKindInherit(type: 'inherit', name: name, oldName: oldName, versionId: versionId)); }
 
 /// Build the `json` variant.
 factory WorkersBindingItem.json({required Map<String,dynamic> json, required WorkersBindingName name, }) { return WorkersBindingItemJson(WorkersBindingKindJson(type: 'json', json: json, name: name)); }
@@ -108,7 +108,7 @@ factory WorkersBindingItem.secretsStoreSecret({required WorkersBindingName name,
 factory WorkersBindingItem.sendEmail({List<String>? allowedDestinationAddresses, List<String>? allowedSenderAddresses, String? destinationAddress, required WorkersBindingName name, }) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail(type: 'send_email', allowedDestinationAddresses: allowedDestinationAddresses, allowedSenderAddresses: allowedSenderAddresses, destinationAddress: destinationAddress, name: name)); }
 
 /// Build the `service` variant.
-factory WorkersBindingItem.service({String? entrypoint, String? environment, required WorkersBindingName name, required String service, }) { return WorkersBindingItemService(WorkersBindingKindService(type: 'service', entrypoint: entrypoint, environment: environment, name: name, service: service)); }
+factory WorkersBindingItem.service({String? entrypoint, String environment = 'production', required WorkersBindingName name, required String service, }) { return WorkersBindingItemService(WorkersBindingKindService(type: 'service', entrypoint: entrypoint, environment: environment, name: name, service: service)); }
 
 /// Build the `text_blob` variant.
 factory WorkersBindingItem.textBlob({required WorkersBindingName name, required String $part, }) { return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob(type: 'text_blob', name: name, $part: $part)); }

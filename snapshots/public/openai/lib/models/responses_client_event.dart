@@ -11,7 +11,7 @@ factory ResponsesClientEvent.fromJson(Map<String, dynamic> json) { return switch
 }; }
 
 /// Build the `response.create` variant.
-factory ResponsesClientEvent.responseCreate({InputParam? input, List<IncludeEnum>? include, bool? parallelToolCalls, bool? store, String? instructions, bool? stream, ResponseStreamOptions? streamOptions, ConversationParam? conversation, List<ContextManagementParam>? contextManagement, }) { return ResponsesClientEventResponseCreate(CreateResponse(type: 'response.create', input: input, include: include, parallelToolCalls: parallelToolCalls, store: store, instructions: instructions, stream: stream, streamOptions: streamOptions, conversation: conversation, contextManagement: contextManagement)); }
+factory ResponsesClientEvent.responseCreate({InputParam? input, List<IncludeEnum>? include, bool? parallelToolCalls, bool? store, String? instructions, bool? stream, ResponseStreamOptions? streamOptions, ConversationParam? conversation, List<ContextManagementParam>? contextManagement, }) { return ResponsesClientEventResponseCreate(CreateResponse(input: input, include: include, parallelToolCalls: parallelToolCalls, store: store, instructions: instructions, stream: stream, streamOptions: streamOptions, conversation: conversation, contextManagement: contextManagement)); }
 
 /// The discriminator value identifying this variant.
 String get type;

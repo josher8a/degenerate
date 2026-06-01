@@ -10,10 +10,10 @@ factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return s
 }; }
 
 /// Build the `Json` variant.
-factory CloudflarePipelinesFormat.json({CloudflarePipelinesDecimalEncoding? decimalEncoding, CloudflarePipelinesTimestampFormat? timestampFormat, bool? unstructured, }) { return CloudflarePipelinesFormatJson(CloudflarePipelinesJsonFormat(type: 'Json', decimalEncoding: decimalEncoding, timestampFormat: timestampFormat, unstructured: unstructured)); }
+factory CloudflarePipelinesFormat.json({CloudflarePipelinesDecimalEncoding? decimalEncoding, CloudflarePipelinesTimestampFormat? timestampFormat, bool? unstructured, }) { return CloudflarePipelinesFormatJson(CloudflarePipelinesJsonFormat(decimalEncoding: decimalEncoding, timestampFormat: timestampFormat, unstructured: unstructured)); }
 
 /// Build the `Parquet` variant.
-factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, int? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat(type: 'Parquet', compression: compression, rowGroupBytes: rowGroupBytes)); }
+factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, int? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat(compression: compression, rowGroupBytes: rowGroupBytes)); }
 
 /// The discriminator value identifying this variant.
 String get type;
