@@ -76,15 +76,16 @@ class RoundtripEmitter {
         _ => null,
       };
       if (unionVariants != null && _isOneOfTypedef(type)) {
-        // Reason in the same most-specific-first order `OneOf.parse` dispatches.
-        final ordered = orderUnionVariants(unionVariants, _registry);
+        // Variants keep spec order (the typedef's type-arg order); `OneOf.parse`
+        // resolves overlaps by best-match at runtime, ties going to the earliest
+        // (spec-order) variant — so reason about reclaim in that same order.
         final decode = buildFromJsonCode(type, 'json', typeRegistry: _registry);
         final encode = buildToJsonCode(type, '(value! as $name)');
         var any = false;
-        for (var k = 0; k < ordered.length; k++) {
-          if (!_isToJsonSafeUnionVariant(ordered[k])) continue;
-          if (!_parseReclaims(ordered, k)) continue;
-          final sample = _sampleLiteral(ordered[k], {});
+        for (var k = 0; k < unionVariants.length; k++) {
+          if (!_isToJsonSafeUnionVariant(unionVariants[k])) continue;
+          if (!_parseReclaims(unionVariants, k)) continue;
+          final sample = _sampleLiteral(unionVariants[k], {});
           if (sample == null) continue;
           any = true;
           fixtures.add(_fixture('$name [$k]', sample, decode, encode));
@@ -241,12 +242,11 @@ class RoundtripEmitter {
     if (!isOneOfEligible(variants) || _isSelfReferencing(name, variants)) {
       return null;
     }
-    // `OneOf.parse` reclaims the most-specific variant first; sample that one so
-    // the value round-trips back to the same variant.
-    final ordered = orderUnionVariants(variants, _registry);
-    final first = ordered.firstWhere(
+    // As a nested/field value, sample the first toJson-safe variant (spec
+    // order). `OneOf.parse` best-match reclaims whichever variant covers it.
+    final first = variants.firstWhere(
       _isToJsonSafeUnionVariant,
-      orElse: () => ordered.first,
+      orElse: () => variants.first,
     );
     if (!_isToJsonSafeUnionVariant(first)) return null;
     return _sampleLiteral(first, visited);
@@ -315,7 +315,7 @@ class RoundtripEmitter {
     final r = _resolve(t);
     switch (r) {
       case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
-        for (final v in orderUnionVariants(variants, _registry)) {
+        for (final v in variants) {
           if (_isToJsonSafeUnionVariant(v)) return _effectiveSampleType(v);
         }
         return r;

@@ -399,96 +399,36 @@ const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 bool isOneOfEligible(List<IrType> variants) =>
     variants.length >= 2 && variants.length <= 9;
 
-/// Orders union [variants] for `OneOf` dispatch: most-specific first, so a
-/// payload is matched by the variant that actually constrains it before any
-/// looser/catch-all variant can swallow it. `OneOf.parse` is first-match, and a
-/// generated variant `fromJson` only rejects a payload by *throwing* on a
-/// missing required field — so a variant requiring fewer keys is strictly more
-/// permissive and must come later (otherwise it swallows a superset payload,
-/// mis-dispatching it). Stable: equal-specificity variants keep spec order.
+/// Build the `OneOfN<A, B, ...>` type reference for a union's variants.
 ///
-/// Must be applied identically wherever a union's `OneOfN<…>` type or its
-/// `OneOf.parse` call is emitted, so the type-arg order and the `fromA…`
-/// parser order always agree — hence it lives in [oneOfTypeReference] and
-/// [buildOneOfParseCode], the only two such sites.
-List<IrType> orderUnionVariants(
-  List<IrType> variants,
-  Map<String, IrType> typeRegistry,
-) {
-  final indexed = [for (var i = 0; i < variants.length; i++) (i, variants[i])];
-  indexed.sort((a, b) {
-    final sa = _unionVariantSpecificity(a.$2, typeRegistry, {});
-    final sb = _unionVariantSpecificity(b.$2, typeRegistry, {});
-    if (sa != sb) return sb.compareTo(sa); // higher specificity first
-    return a.$1.compareTo(b.$1); // stable on ties
-  });
-  return [for (final e in indexed) e.$2];
-}
-
-/// Lower = more permissive (tried later). `0` is a catch-all that matches an
-/// empty/any object (all-optional object, free-form map, `dynamic`). An object
-/// scores its mandatory-key count; a union takes its loosest variant's score
-/// (it parses if any variant does); lists score by element; scalars/enums/
-/// ext-types never swallow objects, so they rank as most-specific.
-int _unionVariantSpecificity(
-  IrType type,
-  Map<String, IrType> registry,
-  Set<String> visited,
-) {
-  const catchAll = 0;
-  const nonObject = 1 << 20;
-  var t = type;
-  if (t is IrTypeRef) {
-    if (!visited.add(t.name)) return catchAll; // cycle: treat as permissive
-    t = registry[t.name] ?? t;
-  }
-  return switch (t) {
-    IrObject(:final fields) =>
-      fields
-          .where(
-            (f) => f.isRequired && !f.type.isNullable && !fieldHasDefault(f),
-          )
-          .length,
-    IrPrimitive(kind: PrimitiveKind.dynamic_) || IrMap() => catchAll,
-    IrUntaggedUnion(:final variants) || IrAnyOf(:final variants) =>
-      variants
-          .map((v) => _unionVariantSpecificity(v, registry, visited))
-          .fold(nonObject, (m, s) => s < m ? s : m),
-    IrList(:final items) => _unionVariantSpecificity(items, registry, visited),
-    _ => nonObject,
-  };
-}
-
-/// Build the `OneOfN<A, B, ...>` type reference for a union's variants, ordered
-/// by [orderUnionVariants] so the type-arg order matches the parse order.
-Reference oneOfTypeReference(
-  List<IrType> variants, {
-  bool nullable = false,
-  Map<String, IrType> typeRegistry = const {},
-}) {
-  final ordered = orderUnionVariants(variants, typeRegistry);
-  final n = ordered.length;
+/// Variants keep their spec order: the type-arg order is part of the union's
+/// public signature (it binds `OneOfN.a`/`.b` and is what consumers construct
+/// against), so it must not be reordered. Correct dispatch of structurally
+/// overlapping variants is handled at runtime by `OneOf.parse`'s best-match
+/// scoring, not by reordering here.
+Reference oneOfTypeReference(List<IrType> variants, {bool nullable = false}) {
+  final n = variants.length;
   return _maybeNullable(
     TypeReference(
       (b) => b
         ..symbol = 'OneOf$n'
-        ..types.addAll(ordered.map(irTypeToReference)),
+        ..types.addAll(variants.map(irTypeToReference)),
     ),
     nullable,
   );
 }
 
 /// Build the `OneOfN.parse(json, fromA: ..., fromB: ..., ...)` expression
-/// for deserializing a union value. Variants are ordered by
-/// [orderUnionVariants] (most-specific first) — matching the type-arg order.
+/// for deserializing a union value. `fromA…` follow the variants' spec order
+/// (matching the typedef's type-arg order); `OneOf.parse` resolves overlapping
+/// variants by best-match scoring at runtime, not by order.
 String buildOneOfParseCode(
-  List<IrType> rawVariants,
+  List<IrType> variants,
   String accessor, {
   bool isOptional = false,
   Map<String, IrType> typeRegistry = const {},
   Set<String>? resolving,
 }) {
-  final variants = orderUnionVariants(rawVariants, typeRegistry);
   final n = variants.length;
   final args = <String>[];
 
