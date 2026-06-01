@@ -217,7 +217,7 @@ class Generator {
 
     // Build a set of names already in irTypes for deduplication.
     final existingNames = irTypes
-        .map(_irTypeNameOf)
+        .map((t) => t.emittableName)
         .whereType<String>()
         .toSet();
 
@@ -225,7 +225,7 @@ class Generator {
     final inlineTypes = irMapper.inlineTypes;
     var inlineAdded = 0;
     for (final t in inlineTypes) {
-      final name = _irTypeNameOf(t);
+      final name = t.emittableName;
       if (name != null && !existingNames.add(name)) continue;
       irTypes.add(t);
       inlineAdded++;
@@ -237,7 +237,7 @@ class Generator {
     // Add any registered types (e.g., inline enums from inline objects)
     // that aren't already in the results list.
     for (final entry in irMapper.typeRegistry.entries) {
-      final regName = _irTypeNameOf(entry.value);
+      final regName = entry.value.emittableName;
       if (regName != null && !existingNames.add(regName)) continue;
       irTypes.add(entry.value);
     }
@@ -314,7 +314,7 @@ class Generator {
       final reachable = _collectReachableTypes(irApis, irTypes);
       final before = irTypes.length;
       irTypes.retainWhere((t) {
-        final name = _irTypeNameOf(t);
+        final name = t.emittableName;
         return name != null && reachable.contains(name);
       });
       _log('  Tree-shook types: $before → ${irTypes.length}');
@@ -529,15 +529,6 @@ class Generator {
     );
     String rename(String s) => resolution.finalNames[s] ?? s;
 
-    final dumpTo = Platform.environment['DUMP_RENAME_MAP'];
-    if (dumpTo != null) {
-      final lines = [
-        for (final e in resolution.finalNames.entries)
-          if (e.key != e.value) '${e.key} ${e.value}',
-      ]..sort();
-      File(dumpTo).writeAsStringSync(lines.join('\n'));
-    }
-
     // Rewrite type declarations + references, dropping merged-away duplicates
     // (which now collide on their survivor's final name).
     final seen = <String>{};
@@ -652,14 +643,9 @@ class Generator {
         IrRequestBody? reqBody;
         if (op.requestBody != null) {
           final rb = op.requestBody!;
-          var rbChanged = false;
-          final newContent = <String, IrMediaType>{};
-          for (final entry in rb.content.entries) {
-            final resolved = resolver.resolve(entry.value.schema);
-            if (!identical(resolved, entry.value.schema)) rbChanged = true;
-            newContent[entry.key] = IrMediaType(resolved);
-          }
-          if (rbChanged) {
+          final (newContent, changed) =
+              _resolveContentMap(resolver, rb.content);
+          if (changed) {
             opChanged = true;
             reqBody = IrRequestBody(newContent, isRequired: rb.isRequired);
           }
@@ -669,14 +655,9 @@ class Generator {
         var respChanged = false;
         for (final entry in op.responses.entries) {
           final resp = entry.value;
-          var entryChanged = false;
-          final newContent = <String, IrMediaType>{};
-          for (final ce in resp.content.entries) {
-            final resolved = resolver.resolve(ce.value.schema);
-            if (!identical(resolved, ce.value.schema)) entryChanged = true;
-            newContent[ce.key] = IrMediaType(resolved);
-          }
-          if (entryChanged) {
+          final (newContent, changed) =
+              _resolveContentMap(resolver, resp.content);
+          if (changed) {
             respChanged = true;
             responses[entry.key] = IrResponse(
               description: resp.description,
@@ -692,14 +673,9 @@ class Generator {
         IrResponse? defaultResp;
         if (op.defaultResponse != null) {
           final resp = op.defaultResponse!;
-          var drChanged = false;
-          final newContent = <String, IrMediaType>{};
-          for (final ce in resp.content.entries) {
-            final resolved = resolver.resolve(ce.value.schema);
-            if (!identical(resolved, ce.value.schema)) drChanged = true;
-            newContent[ce.key] = IrMediaType(resolved);
-          }
-          if (drChanged) {
+          final (newContent, changed) =
+              _resolveContentMap(resolver, resp.content);
+          if (changed) {
             opChanged = true;
             defaultResp = IrResponse(
               description: resp.description,
@@ -716,6 +692,7 @@ class Generator {
           op.dartMethodName,
           op.method,
           op.path,
+          customMethod: op.customMethod,
           summary: op.summary,
           description: op.description,
           parameters: params,
@@ -729,6 +706,20 @@ class Generator {
       if (!apiChanged) return api;
       return IrApi(api.name, ops);
     }).toList();
+  }
+
+  static (Map<String, IrMediaType>, bool) _resolveContentMap(
+    TypeRefResolver resolver,
+    Map<String, IrMediaType> content,
+  ) {
+    var changed = false;
+    final result = <String, IrMediaType>{};
+    for (final entry in content.entries) {
+      final resolved = resolver.resolve(entry.value.schema);
+      if (!identical(resolved, entry.value.schema)) changed = true;
+      result[entry.key] = IrMediaType(resolved);
+    }
+    return (result, changed);
   }
 
   /// Collect all type names transitively reachable from the given APIs.
@@ -829,9 +820,6 @@ class Generator {
         break;
     }
   }
-
-  /// Extract the emittable type name (if any) for deduplication.
-  static String? _irTypeNameOf(IrType type) => type.emittableName;
 
   String _irTypeName(IrType type) {
     return switch (type) {

@@ -208,20 +208,17 @@ class ModelEmitter {
         .map((f) {
           final key = dartStringLiteral(f.originalName);
 
-          final value = buildToJsonCode(f.type, f.name);
-          // Only use null check if the Dart field type is actually nullable.
-          // Fields with defaults are non-nullable even if not required.
           final isNullableInDart =
               (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
           if (isNullableInDart) {
-            final nullableValue = _toJsonValueNullable(f);
+            final nullableValue =
+                buildToJsonCode(f.type, f.name, nullable: true);
             if (nullableValue == f.name) {
-              // Use null-aware element syntax when value is the field itself.
               return '  $key: ?${f.name},';
             }
             return '  if (${f.name} != null) $key: $nullableValue,';
           }
-          return '  $key: $value,';
+          return '  $key: ${buildToJsonCode(f.type, f.name)},';
         })
         .join('\n');
 
@@ -236,7 +233,7 @@ class ModelEmitter {
   String get _overflowToJsonSpread {
     if (model.additionalProperties == null) return '';
     final valueType = model.additionalProperties!;
-    if (mapValueNeedsToJson(valueType)) {
+    if (listItemNeedsToJson(valueType)) {
       final valueExpr = buildToJsonCode(valueType, 'v');
       if (valueExpr != 'v') {
         return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, $valueExpr)),\n';
@@ -244,47 +241,6 @@ class ModelEmitter {
     }
     return '  ...$_overflowFieldName,\n';
   }
-
-  String _toJsonValueNullable(IrField f) {
-    // For nullable object/complex types we need null-aware call
-    final type = f.type;
-    return switch (type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dateTime => '${f.name}${_q}toIso8601String()',
-        PrimitiveKind.uri => '${f.name}${_q}toString()',
-        PrimitiveKind.bigInt => '${f.name}${_q}toString()',
-        PrimitiveKind.duration => '${f.name}${_q}inMilliseconds',
-        _ => f.name,
-      },
-      IrEnum() => '${f.name}${_q}toJson()',
-      IrList(:final items) => () {
-        if (!listItemNeedsToJson(items)) return f.name;
-        final itemExpr =
-            buildToJsonCode(items, 'e', nullable: items.isNullable);
-        final tearoff = asTearoff(itemExpr, 'e');
-        if (tearoff != null) {
-          return '${f.name}${_q}map($tearoff).toList()';
-        }
-        return '${f.name}${_q}map((e) => $itemExpr).toList()';
-      }(),
-      IrMap(:final values) => () {
-        if (!mapValueNeedsToJson(values)) return f.name;
-        final valueExpr =
-            buildToJsonCode(values, 'v', nullable: values.isNullable);
-        if (valueExpr == 'v') return f.name;
-        return '${f.name}${_q}map((k, v) => MapEntry(k, $valueExpr))';
-      }(),
-      IrObject() => '${f.name}${_q}toJson()',
-      IrTypeRef() => '${f.name}${_q}toJson()',
-      IrDiscriminatedUnion() => '${f.name}${_q}toJson()',
-      IrUntaggedUnion() => '${f.name}${_q}toJson()',
-      IrAnyOf() => '${f.name}${_q}toJson()',
-      IrExtensionType() => '${f.name}${_q}toJson()',
-    };
-  }
-
-  // Null-aware access operator
-  String get _q => '?.';
 
   Method _buildCanParse() {
     final requiredFieldObjects = model.fields

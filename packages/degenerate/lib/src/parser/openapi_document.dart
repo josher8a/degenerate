@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:degenerate/src/parser/yaml_utils.dart';
 import 'package:yaml/yaml.dart';
 
 /// Wraps a parsed OpenAPI spec providing typed accessors and ref resolution.
@@ -10,7 +11,7 @@ class OpenApiDocument {
   /// Parse an OpenAPI spec from a YAML string.
   factory OpenApiDocument.parseYaml(String content) {
     final yamlDoc = loadYaml(content);
-    final map = _convertYamlNode(yamlDoc);
+    final map = convertYamlNode(yamlDoc);
     if (map is! Map<String, dynamic>) {
       throw const FormatException('Expected a YAML mapping at the root');
     }
@@ -109,15 +110,4 @@ class OpenApiDocument {
     return current;
   }
 
-  /// Recursively convert [YamlMap] / [YamlList] into plain Dart collections.
-  static dynamic _convertYamlNode(dynamic node) {
-    if (node is YamlMap) {
-      return node.map<String, dynamic>(
-        (key, value) => MapEntry(key.toString(), _convertYamlNode(value)),
-      );
-    } else if (node is YamlList) {
-      return node.map(_convertYamlNode).toList();
-    }
-    return node;
-  }
 }

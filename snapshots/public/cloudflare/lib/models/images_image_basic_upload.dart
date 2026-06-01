@@ -31,7 +31,7 @@ final String? url;
 
 Map<String, dynamic> toJson() { return {
   'creator': ?creator,
-  'file': ?file,
+  if (file != null) 'file': base64Encode(file!),
   'id': ?id,
   'metadata': ?metadata,
   'requireSignedURLs': requireSignedUrLs,

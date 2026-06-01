@@ -203,10 +203,7 @@ class IrMapper {
       discriminatorProperty: discriminatorProperty,
       namePath: effectivePath,
     );
-    var resolved = _resolver.resolveRef(result);
-    // Recursively resolve type refs within nested types (e.g. list items, map
-    // values).
-    resolved = _resolver.resolveDeep(resolved);
+    var resolved = _resolver.resolve(_resolver.resolveRef(result));
     if (resolved is IrPrimitive) return _wrapFormatType(resolved);
     // Register inline named types so they get emitted as separate files.
     if (resolved is IrObject) {

@@ -115,7 +115,7 @@ class RoundtripEmitter {
             if (!_canParseReclaims(unionVariants, k)) break;
             final sample = _sampleLiteral(unionVariants[k], {});
             if (sample == null) continue;
-            final variantLabel = _resolve(unionVariants[k]).emittableName ??
+            final variantLabel = _overlap.resolve(unionVariants[k]).emittableName ??
                 'variant $k';
             any = true;
             fixtures.add(_fixture('$name [$variantLabel]', sample, decode,
@@ -269,7 +269,7 @@ class RoundtripEmitter {
     // inline `OneOf.parse`. Self-referencing unions are emitted as sealed
     // classes whose `fromJson` expects a Map and dispatches via `canParse` —
     // not synthesizable here.
-    if (!isOneOfEligible(variants) || _isSelfReferencing(name, variants)) {
+    if (!isOneOfEligible(variants) || isSelfReferencingUnion(name, variants)) {
       return null;
     }
     // As a nested/field value, sample the first toJson-safe variant (spec
@@ -332,7 +332,7 @@ class RoundtripEmitter {
     // throws — so it correctly blocks the proof.
     final vk = _effectiveSampleType(variants[k]);
     for (var j = 0; j < k; j++) {
-      if (!_overlap.jRejectsK(_resolve(variants[j]), vk)) return false;
+      if (!_overlap.jRejectsK(_overlap.resolve(variants[j]), vk)) return false;
     }
     return true;
   }
@@ -344,19 +344,12 @@ class RoundtripEmitter {
   bool _canParseReclaims(List<IrType> variants, int k) {
     final vk = _effectiveSampleType(variants[k]);
     for (var j = 0; j < k; j++) {
-      final vj = _resolve(variants[j]);
-      if (_isUnionType(vj)) return false;
+      final vj = _overlap.resolve(variants[j]);
+      if (isUnionType(vj, _registry)) return false;
       if (vj is! IrObject && vj is! IrTypeRef) continue;
-      if (!_overlap.canParseRejectsK(_resolve(variants[j]), vk)) return false;
+      if (!_overlap.canParseRejectsK(_overlap.resolve(variants[j]), vk)) return false;
     }
     return true;
-  }
-
-  bool _isUnionType(IrType type) {
-    final resolved = _resolve(type);
-    return resolved is IrDiscriminatedUnion ||
-        resolved is IrUntaggedUnion ||
-        resolved is IrAnyOf;
   }
 
   /// The concrete type whose shape `_sampleLiteral` actually produces for [t]:
@@ -364,7 +357,7 @@ class RoundtripEmitter {
   /// its first variant's payload object; a list as a list of the effective
   /// element type.
   IrType _effectiveSampleType(IrType t) {
-    final r = _resolve(t);
+    final r = _overlap.resolve(t);
     switch (r) {
       case IrUntaggedUnion(:final variants) || IrAnyOf(:final variants):
         for (final v in variants) {
@@ -372,7 +365,7 @@ class RoundtripEmitter {
         }
         return r;
       case IrDiscriminatedUnion(:final mapping) when mapping.isNotEmpty:
-        final first = _resolve(mapping.values.first);
+        final first = _overlap.resolve(mapping.values.first);
         return first is IrObject ? first : r;
       case IrList(:final items):
         return IrList(_effectiveSampleType(items));
@@ -381,7 +374,6 @@ class RoundtripEmitter {
     }
   }
 
-  IrType _resolve(IrType t) => t is IrTypeRef ? (_registry[t.name] ?? t) : t;
 
   /// Whether [type] is a OneOf-eligible union typedef with an inline parser
   /// (i.e. not self-referencing — those use a `parseName` helper instead).
@@ -392,20 +384,9 @@ class RoundtripEmitter {
       _ => null,
     };
     if (variants == null || !isOneOfEligible(variants)) return false;
-    return !_isSelfReferencing(type.emittableName!, variants);
+    return !isSelfReferencingUnion(type.emittableName!, variants);
   }
 
-  /// Whether any variant (through list/map) references [typeName] — a
-  /// self-referencing union, whose typedef can't carry an inline parser.
-  bool _isSelfReferencing(String typeName, List<IrType> variants) {
-    bool check(IrType t) => switch (t) {
-      IrTypeRef(:final name) => name == typeName,
-      IrList(:final items) => check(items),
-      IrMap(:final values) => check(values),
-      _ => false,
-    };
-    return variants.any(check);
-  }
 
   /// A literal for each primitive kind, chosen so `fromJson`→`toJson` is the
   /// identity (canonical ISO date, round-trippable base64, etc.).

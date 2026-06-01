@@ -90,16 +90,16 @@ final String? pagesBuildOutputDir;
 final String? wranglerConfigHash;
 
 Map<String, dynamic> toJson() { return {
-  '_headers': ?headers,
-  '_redirects': ?redirects,
-  '_routes.json': ?routesJson,
-  '_worker.bundle': ?workerBundle,
-  '_worker.js': ?workerJs,
+  if (headers != null) '_headers': base64Encode(headers!),
+  if (redirects != null) '_redirects': base64Encode(redirects!),
+  if (routesJson != null) '_routes.json': base64Encode(routesJson!),
+  if (workerBundle != null) '_worker.bundle': base64Encode(workerBundle!),
+  if (workerJs != null) '_worker.js': base64Encode(workerJs!),
   'branch': ?branch,
   if (commitDirty != null) 'commit_dirty': commitDirty?.toJson(),
   'commit_hash': ?commitHash,
   'commit_message': ?commitMessage,
-  'functions-filepath-routing-config.json': ?functionsFilepathRoutingConfigJson,
+  if (functionsFilepathRoutingConfigJson != null) 'functions-filepath-routing-config.json': base64Encode(functionsFilepathRoutingConfigJson!),
   'manifest': ?manifest,
   'pages_build_output_dir': ?pagesBuildOutputDir,
   'wrangler_config_hash': ?wranglerConfigHash,

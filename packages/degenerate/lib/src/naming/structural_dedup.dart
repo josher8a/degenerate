@@ -23,15 +23,7 @@ class StructuralSigner {
   final Map<String, String> _cache = {};
   final Set<String> _stack = {};
 
-  static String _declName(IrType t) => switch (t) {
-    IrObject(:final name) => name,
-    IrEnum(:final name) => name,
-    IrDiscriminatedUnion(:final name) => name,
-    IrUntaggedUnion(:final name) => name,
-    IrAnyOf(:final name) => name,
-    IrExtensionType(:final name) => name,
-    _ => '',
-  };
+  static String _declName(IrType t) => t.emittableName ?? '';
 
   /// The structural signature of [type] (two types share it iff their full
   /// recursive shape matches, ignoring all generated names).
@@ -111,22 +103,4 @@ class StructuralSigner {
         return signatureOf(target);
     }
   }
-}
-
-/// Group [names] by their structural signature using a shared, memoized signer.
-///
-/// Returns signature → list of names sharing that shape (each list non-empty).
-/// Names whose type is missing from [registry] are skipped.
-Map<String, List<String>> groupByStructure(
-  Iterable<String> names,
-  Map<String, IrType> registry,
-) {
-  final signer = StructuralSigner(registry);
-  final groups = <String, List<String>>{};
-  for (final name in names) {
-    final type = registry[name];
-    if (type == null) continue;
-    (groups[signer.signatureOf(type)] ??= []).add(name);
-  }
-  return groups;
 }

@@ -488,17 +488,9 @@ class DiscriminatedUnionEmitter {
 
   List<Spec> _buildVariant(String discriminatorValue, IrType variantType) {
     final className = _variantClassName(discriminatorValue);
-
-    // If the variant is an IrObject, emit it as a subclass with all its fields
     if (variantType is IrObject) {
       return [_buildObjectVariant(className, discriminatorValue, variantType)];
     }
-    if (variantType is IrTypeRef) {
-      // For type refs, generate a wrapper subclass
-      return [_buildRefVariant(className, discriminatorValue, variantType)];
-    }
-
-    // Fallback: simple wrapper
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
@@ -764,16 +756,6 @@ class UntaggedUnionEmitter {
   /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
 
-  /// Check if a type (possibly via IrTypeRef) is a union/sealed type.
-  bool _isUnionType(IrType type) {
-    final resolved = type is IrTypeRef && typeRegistry.containsKey(type.name)
-        ? typeRegistry[type.name]!
-        : type;
-    return resolved is IrDiscriminatedUnion ||
-        resolved is IrUntaggedUnion ||
-        resolved is IrAnyOf;
-  }
-
   /// Emit the sealed class hierarchy as code_builder specs.
   List<Spec> emit() {
     final specs = <Spec>[];
@@ -888,7 +870,7 @@ class UntaggedUnionEmitter {
       final className = '${union.name}${toPascalCase(safeTypeName)}';
       if (variant is IrObject || variant is IrTypeRef) {
         final refName = typeName;
-        if (_isUnionType(variant)) {
+        if (isUnionType(variant, typeRegistry)) {
           // Union types don't have canParse - just try fromJson.
           // Their own fromJson handles unknown values, so this is
           // unconditional.
@@ -1072,13 +1054,6 @@ class AnyOfEmitter {
     return type;
   }
 
-  /// Check if a type (possibly via IrTypeRef) is a union/sealed type.
-  bool _isUnionType(IrType type) {
-    final resolved = _resolveType(type);
-    return resolved is IrDiscriminatedUnion ||
-        resolved is IrUntaggedUnion ||
-        resolved is IrAnyOf;
-  }
 
   /// Check if a type resolves to a OneOf-eligible union typedef
   /// (excluding self-referencing types which can't be Dart typedefs).
@@ -1087,26 +1062,16 @@ class AnyOfEmitter {
     return switch (resolved) {
       IrUntaggedUnion(:final name, :final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencingUnion(name, variants) =>
+              !isSelfReferencingUnion(name, variants) =>
         true,
       IrAnyOf(:final name, :final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencingUnion(name, variants) =>
+              !isSelfReferencingUnion(name, variants) =>
         true,
       _ => false,
     };
   }
 
-  /// Check if any variant (recursively through List/Map) references [typeName].
-  static bool _isSelfReferencingUnion(String typeName, List<IrType> variants) {
-    bool check(IrType type) => switch (type) {
-      IrTypeRef(:final name) => name == typeName,
-      IrList(:final items) => check(items),
-      IrMap(:final values) => check(values),
-      _ => false,
-    };
-    return variants.any(check);
-  }
 
   /// Emit the anyOf class as code_builder specs.
   List<Spec> emit() {
@@ -1192,7 +1157,7 @@ class AnyOfEmitter {
           f.type is IrDiscriminatedUnion ||
           f.type is IrUntaggedUnion ||
           f.type is IrAnyOf ||
-          _isUnionType(f.type),
+          isUnionType(f.type, typeRegistry),
     );
     final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
 
@@ -1203,7 +1168,7 @@ class AnyOfEmitter {
         !allObjectLike &&
         fields.any(
           (f) =>
-              f.type is IrObject || f.type is IrTypeRef || _isUnionType(f.type),
+              f.type is IrObject || f.type is IrTypeRef || isUnionType(f.type, typeRegistry),
         );
     final prelude = needsMap
         ? 'final map = json is Map<String, dynamic> ? json : null;\n'
@@ -1222,7 +1187,7 @@ class AnyOfEmitter {
           // Extension types wrap a primitive - deserialize like primitives.
           if (f.type is IrExtensionType) {
             final ext = f.type as IrExtensionType;
-            final jsonType = _extensionTypeJsonType(ext.inner);
+            final jsonType = primitiveJsonWireType(ext.inner.kind);
             return '  ${f.name}: json is $jsonType ? ${f.typeName}.fromJson(json) : null,';
           }
           // Lists/maps don't have canParse/fromJson as static methods.
@@ -1245,7 +1210,7 @@ class AnyOfEmitter {
           }
           // Union/AnyOf types don't have canParse - just try fromJson.
           // If the data doesn't match, it'll parse as the $Unknown variant.
-          if (_isUnionType(f.type)) {
+          if (isUnionType(f.type, typeRegistry)) {
             if (allObjectLike) {
               return '  ${f.name}: ${f.typeName}.fromJson(json),';
             }
@@ -1322,7 +1287,7 @@ class AnyOfEmitter {
           }
           // Sealed/union types have toJson returning Object?, so we can't
           // spread.
-          if (_isUnionType(f.type)) {
+          if (isUnionType(f.type, typeRegistry)) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }
           return '  ...?${f.name}?.toJson(),';
@@ -1337,20 +1302,4 @@ class AnyOfEmitter {
     );
   }
 
-  /// The JSON wire type for an extension type's inner primitive.
-  static String _extensionTypeJsonType(IrPrimitive inner) {
-    return switch (inner.kind) {
-      PrimitiveKind.dateTime ||
-      PrimitiveKind.uri ||
-      PrimitiveKind.bigInt ||
-      PrimitiveKind.bytes ||
-      PrimitiveKind.string => 'String',
-      PrimitiveKind.dynamic_ => 'dynamic',
-      PrimitiveKind.int ||
-      PrimitiveKind.double ||
-      PrimitiveKind.duration ||
-      PrimitiveKind.num => 'num',
-      PrimitiveKind.bool => 'bool',
-    };
-  }
 }

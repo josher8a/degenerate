@@ -3,15 +3,8 @@ import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
-/// Dart type name for an enum's value kind.
-String _dartValueType(PrimitiveKind kind) => switch (kind) {
-  PrimitiveKind.int => 'int',
-  PrimitiveKind.double => 'double',
-  _ => 'String',
-};
-
-/// Dart type name for the JSON parameter in fromJson.
-String _jsonParamType(PrimitiveKind kind) => switch (kind) {
+/// Dart type name for an enum's wire type (value field and fromJson parameter).
+String _enumWireType(PrimitiveKind kind) => switch (kind) {
   PrimitiveKind.int => 'int',
   PrimitiveKind.double => 'double',
   _ => 'String',
@@ -47,7 +40,7 @@ class EnumEmitter {
     final deduped = _deduplicatedValues();
     final className = irEnum.name;
     final isString = irEnum.valueKind == PrimitiveKind.string;
-    final dartType = _dartValueType(irEnum.valueKind);
+    final dartType = _enumWireType(irEnum.valueKind);
 
     return [
       Class(
@@ -126,7 +119,7 @@ class EnumEmitter {
 
   Constructor _buildFromJson(String className, List<(String, String)> deduped) {
     final isString = irEnum.valueKind == PrimitiveKind.string;
-    final jsonType = _jsonParamType(irEnum.valueKind);
+    final jsonType = _enumWireType(irEnum.valueKind);
     // For non-string enums, deduplicate switch cases (e.g. 0 and -0 both → 0).
     final seenCaseKeys = <String>{};
     final cases = deduped
@@ -162,7 +155,7 @@ class EnumEmitter {
   }
 
   Method _buildToJson() {
-    final dartType = _dartValueType(irEnum.valueKind);
+    final dartType = _enumWireType(irEnum.valueKind);
     return Method(
       (m) => m
         ..name = 'toJson'

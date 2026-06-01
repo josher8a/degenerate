@@ -43,7 +43,7 @@ class ExtensionTypeEmitter {
   List<Spec> emit() {
     final innerRef = irTypeToReference(type.inner);
     final name = type.name;
-    final jsonTypeName = _jsonTypeName(type.inner.kind);
+    final jsonTypeName = primitiveJsonWireType(type.inner.kind);
     final jsonTypeRef = refer(jsonTypeName);
     final format = type.inner.format;
     final pattern = _formatPatterns[format];
@@ -113,18 +113,6 @@ class ExtensionTypeEmitter {
     return 'DateTime.parse(json);\nreturn $typeName(json);';
   }
 
-  String _jsonTypeName(PrimitiveKind kind) {
-    return switch (kind) {
-      PrimitiveKind.dynamic_ => 'dynamic',
-      PrimitiveKind.dateTime => 'String',
-      PrimitiveKind.uri => 'String',
-      PrimitiveKind.bigInt => 'String',
-      PrimitiveKind.duration => 'num',
-      PrimitiveKind.bytes => 'String',
-      PrimitiveKind.int || PrimitiveKind.double => 'num',
-      _ => irTypeName(IrPrimitive(kind)),
-    };
-  }
 
   bool _canBeConst(PrimitiveKind kind) {
     return switch (kind) {

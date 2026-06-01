@@ -169,18 +169,18 @@ IrType _resolveOneOfRef(
   return switch (target) {
     IrUntaggedUnion(:final variants)
         when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(type.name, variants) =>
+            !isSelfReferencingUnion(type.name, variants) =>
       target,
     IrAnyOf(:final variants)
         when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(type.name, variants) =>
+            !isSelfReferencingUnion(type.name, variants) =>
       target,
     _ => type,
   };
 }
 
 /// Check if any variant (recursively through List/Map) references [typeName].
-bool _isSelfReferencingUnion(String typeName, List<IrType> variants) {
+bool isSelfReferencingUnion(String typeName, List<IrType> variants) {
   bool check(IrType type) => switch (type) {
     IrTypeRef(:final name) => name == typeName,
     IrList(:final items) => check(items),
@@ -304,7 +304,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
       return '$accessor$q.map((e) => $itemExpr).toList()';
     }(),
     IrMap(:final values) => () {
-      if (!mapValueNeedsToJson(values)) return accessor;
+      if (!listItemNeedsToJson(values)) return accessor;
       final valueExpr = buildToJsonCode(
         values,
         'v',
@@ -347,26 +347,36 @@ bool listItemNeedsToJson(IrType type) {
   };
 }
 
-/// Whether a map value type requires a `.toJson()` call.
-bool mapValueNeedsToJson(IrType type) => listItemNeedsToJson(type);
+
+/// The JSON wire type name for a primitive kind.
+///
+/// E.g. DateTime→String (ISO 8601), int/double→num, bytes→String (base64).
+String primitiveJsonWireType(PrimitiveKind kind) => switch (kind) {
+  PrimitiveKind.dateTime ||
+  PrimitiveKind.uri ||
+  PrimitiveKind.bigInt ||
+  PrimitiveKind.bytes ||
+  PrimitiveKind.string => 'String',
+  PrimitiveKind.dynamic_ => 'dynamic',
+  PrimitiveKind.int ||
+  PrimitiveKind.double ||
+  PrimitiveKind.duration ||
+  PrimitiveKind.num => 'num',
+  PrimitiveKind.bool => 'bool',
+};
 
 /// Cast an accessor to the JSON wire type for an extension type's fromJson.
-///
-/// For most primitives the JSON type matches the Dart type, so a simple cast
-/// suffices. For types like DateTime/Uri the JSON wire type is String.
 String _extensionTypeJsonCast(IrPrimitive inner, String accessor) {
-  final jsonType = switch (inner.kind) {
-    PrimitiveKind.dateTime => 'String',
-    PrimitiveKind.uri => 'String',
-    PrimitiveKind.bigInt => 'String',
-    PrimitiveKind.duration => 'num',
-    PrimitiveKind.bytes => 'String',
-    PrimitiveKind.dynamic_ => 'dynamic',
-    PrimitiveKind.int => 'num',
-    PrimitiveKind.double => 'num',
-    _ => irTypeName(inner),
-  };
-  return '$accessor as $jsonType';
+  return '$accessor as ${primitiveJsonWireType(inner.kind)}';
+}
+
+/// Whether a type resolves to a union through the registry.
+bool isUnionType(IrType type, Map<String, IrType> registry) {
+  final resolved =
+      type is IrTypeRef ? (registry[type.name] ?? type) : type;
+  return resolved is IrDiscriminatedUnion ||
+      resolved is IrUntaggedUnion ||
+      resolved is IrAnyOf;
 }
 
 /// Whether a name in the type registry maps to a OneOf-eligible union
@@ -377,11 +387,11 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
   return switch (target) {
     IrUntaggedUnion(:final variants)
         when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(name, variants) =>
+            !isSelfReferencingUnion(name, variants) =>
       true,
     IrAnyOf(:final variants)
         when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(name, variants) =>
+            !isSelfReferencingUnion(name, variants) =>
       true,
     _ => false,
   };
@@ -767,7 +777,9 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes => 'base64Encode($accessor)',
+  PrimitiveKind.bytes => q.isEmpty
+      ? 'base64Encode($accessor)'
+      : 'base64Encode($accessor!)',
   _ => accessor,
 };
 

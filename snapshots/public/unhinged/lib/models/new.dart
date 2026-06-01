@@ -172,7 +172,7 @@ final class New {
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),
       'return': $return,
-      'void': ?$void,
+      if ($void != null) 'void': base64Encode($void!),
       'package': ?package,
     };
   }

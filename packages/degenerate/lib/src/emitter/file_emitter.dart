@@ -295,7 +295,7 @@ class FileEmitter {
       ).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencing(type.name, variants) =>
+              !isSelfReferencingUnion(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrUntaggedUnion() => UntaggedUnionEmitter(
         type,
@@ -303,7 +303,7 @@ class FileEmitter {
       ).emit(),
       IrAnyOf(:final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencing(type.name, variants) =>
+              !isSelfReferencingUnion(type.name, variants) =>
         _emitOneOfTypedef(type.name, variants, type.description, typeRegistry),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
@@ -328,7 +328,7 @@ class FileEmitter {
       Code('typedef $name = ${oneOfRef.accept(_dartEmitter)};'),
     ];
     // Check if any variant references this type (direct self-reference).
-    if (_isSelfReferencing(name, variants)) {
+    if (isSelfReferencingUnion(name, variants)) {
       final resolving = {name};
       final parseBody = buildOneOfParseCode(
         variants,
@@ -341,16 +341,6 @@ class FileEmitter {
     return specs;
   }
 
-  /// Check if any variant (recursively through List/Map) references [typeName].
-  bool _isSelfReferencing(String typeName, List<IrType> variants) {
-    bool check(IrType type) => switch (type) {
-      IrTypeRef(:final name) => name == typeName,
-      IrList(:final items) => check(items),
-      IrMap(:final values) => check(values),
-      _ => false,
-    };
-    return variants.any(check);
-  }
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
@@ -508,11 +498,11 @@ class FileEmitter {
             switch (typeRegistry[name]) {
               IrUntaggedUnion(:final variants)
                   when isOneOfEligible(variants) &&
-                      !_isSelfReferencing(name, variants) =>
+                      !isSelfReferencingUnion(name, variants) =>
                 true,
               IrAnyOf(:final variants)
                   when isOneOfEligible(variants) &&
-                      !_isSelfReferencing(name, variants) =>
+                      !isSelfReferencingUnion(name, variants) =>
                 true,
               _ => false,
             };
@@ -555,7 +545,7 @@ class FileEmitter {
         final skipUntagged =
             skipInlinedOneOfRefs &&
             isOneOfEligible(variants) &&
-            !_isSelfReferencing(name, variants);
+            !isSelfReferencingUnion(name, variants);
         if (!skipUntagged) {
           names.add(name);
         }
@@ -571,7 +561,7 @@ class FileEmitter {
         final skipAnyOf =
             skipInlinedOneOfRefs &&
             isOneOfEligible(variants) &&
-            !_isSelfReferencing(name, variants);
+            !isSelfReferencingUnion(name, variants);
         if (!skipAnyOf) {
           names.add(name);
         }
@@ -659,21 +649,21 @@ class FileEmitter {
     bool isOneOfType(IrType t) => switch (t) {
       IrUntaggedUnion(:final name, :final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencing(name, variants) =>
+              !isSelfReferencingUnion(name, variants) =>
         true,
       IrAnyOf(:final name, :final variants)
           when isOneOfEligible(variants) &&
-              !_isSelfReferencing(name, variants) =>
+              !isSelfReferencingUnion(name, variants) =>
         true,
       IrTypeRef(:final name) when typeRegistry != null =>
         switch (typeRegistry[name]) {
           IrUntaggedUnion(:final variants)
               when isOneOfEligible(variants) &&
-                  !_isSelfReferencing(name, variants) =>
+                  !isSelfReferencingUnion(name, variants) =>
             true,
           IrAnyOf(:final variants)
               when isOneOfEligible(variants) &&
-                  !_isSelfReferencing(name, variants) =>
+                  !isSelfReferencingUnion(name, variants) =>
             true,
           _ => false,
         },
@@ -752,7 +742,7 @@ class FileEmitter {
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
-        if (isOneOfEligible(variants) && !_isSelfReferencing(name, variants)) {
+        if (isOneOfEligible(variants) && !isSelfReferencingUnion(name, variants)) {
           // OneOf typedef: only direct variant types needed.
           // Typedef files don't contain base64 code, so only needsTypedData.
           needsOneOf = true;

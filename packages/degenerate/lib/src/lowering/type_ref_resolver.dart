@@ -190,30 +190,4 @@ class TypeRefResolver {
     return current;
   }
 
-  /// Recursively resolve IrTypeRef nodes within list items, map values, etc.
-  IrType resolveDeep(IrType type) {
-    switch (type) {
-      case IrList():
-        final resolvedItems = resolveRef(type.items);
-        final deepItems = resolveDeep(resolvedItems);
-        if (identical(deepItems, type.items)) return type;
-        return IrList(
-          deepItems,
-          constraints: type.constraints,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      case IrMap():
-        final resolvedValues = resolveRef(type.values);
-        final deepValues = resolveDeep(resolvedValues);
-        if (identical(deepValues, type.values)) return type;
-        return IrMap(
-          deepValues,
-          description: type.description,
-          isNullable: type.isNullable,
-        );
-      default:
-        return type;
-    }
-  }
 }

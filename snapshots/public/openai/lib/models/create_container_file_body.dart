@@ -16,7 +16,7 @@ final Uint8List? file;
 
 Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
-  'file': ?file,
+  if (file != null) 'file': base64Encode(file!),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'file'}.contains(key)); } 
 CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Function()? file, }) { return CreateContainerFileBody(

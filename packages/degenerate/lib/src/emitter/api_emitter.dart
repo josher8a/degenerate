@@ -593,7 +593,7 @@ class ApiEmitter {
     final style = _queryStyle(p);
     final explode = _queryExplode(p, style);
 
-    if (_canUseSimpleQueryMap(p, style, explode)) {
+    if (_canUseSimpleQueryMap(p)) {
       _writeSimpleQueryMapEntry(buf, p);
       return;
     }
@@ -820,7 +820,7 @@ class ApiEmitter {
     };
   }
 
-  bool _canUseSimpleQueryMap(IrParameter p, String style, bool explode) {
+  bool _canUseSimpleQueryMap(IrParameter p) {
     if (p.allowReserved) return false;
     return switch (p.type) {
       IrPrimitive() || IrEnum() || IrExtensionType() => true,

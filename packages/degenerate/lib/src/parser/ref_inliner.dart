@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:degenerate/src/parser/yaml_utils.dart';
 import 'package:path/path.dart' as p;
 import 'package:yaml/yaml.dart';
 
@@ -302,7 +303,7 @@ class RefInliner {
     if (ext == '.json') {
       parsed = json.decode(content);
     } else {
-      parsed = _convertYamlNode(loadYaml(content));
+      parsed = convertYamlNode(loadYaml(content));
     }
 
     if (parsed is! Map<String, dynamic>) {
@@ -337,15 +338,4 @@ class RefInliner {
     return current;
   }
 
-  /// Recursively convert [YamlMap] / [YamlList] into plain Dart collections.
-  static dynamic _convertYamlNode(dynamic node) {
-    if (node is YamlMap) {
-      return node.map<String, dynamic>(
-        (key, value) => MapEntry(key.toString(), _convertYamlNode(value)),
-      );
-    } else if (node is YamlList) {
-      return node.map(_convertYamlNode).toList();
-    }
-    return node;
-  }
 }
