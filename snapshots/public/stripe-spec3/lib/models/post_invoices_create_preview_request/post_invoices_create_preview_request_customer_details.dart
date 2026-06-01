@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
 
 factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetails(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => OptionalFieldsAddress.fromJson(v as Map<String, dynamic>),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => CustomerShipping.fromJson(v as Map<String, dynamic>),) : null,
   tax: json['tax'] != null ? CustomerDetailsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,
   taxIds: (json['tax_ids'] as List<dynamic>?)?.map((e) => CustomerDetailsTaxIds.fromJson(e as Map<String, dynamic>)).toList(),

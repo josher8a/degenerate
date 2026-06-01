@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory WorkersVariant1.fromJson(Map<String, dynamic> json) { return WorkersVariant1(
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
-  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => (v as List<dynamic>).map((e) => e).toList(), fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool,))),))),))),
+  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as List<dynamic>).map((e) => e).toList(),))),))),))),
   eventType: Variant1EventType.fromJson(json['eventType'] as String),
   executionModel: json['executionModel'] != null ? ExecutionModel.fromJson(json['executionModel'] as String) : null,
   outcome: json['outcome'] as String?,

@@ -33,7 +33,7 @@ factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   active: json['active'] as bool,
   afterCompletion: PaymentLinksResourceAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
   allowPromotionCodes: json['allow_promotion_codes'] as bool,
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>), fromC: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: PaymentLinksResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),

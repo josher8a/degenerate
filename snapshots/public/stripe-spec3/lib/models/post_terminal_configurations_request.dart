@@ -5,16 +5,16 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory PostTerminalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequest(
   bbposWisepad3: json['bbpos_wisepad3'] != null ? PostTerminalConfigurationsRequestBbposWisepad3.fromJson(json['bbpos_wisepad3'] as Map<String, dynamic>) : null,
   bbposWiseposE: json['bbpos_wisepos_e'] != null ? PostTerminalConfigurationsRequestBbposWiseposE.fromJson(json['bbpos_wisepos_e'] as Map<String, dynamic>) : null,
-  cellular: json['cellular'] != null ? OneOf2.parse(json['cellular'], fromA: (v) => Cellular.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  cellular: json['cellular'] != null ? OneOf2.parse(json['cellular'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => Cellular.fromJson(v as Map<String, dynamic>),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   name: json['name'] as String?,
-  offline: json['offline'] != null ? OneOf2.parse(json['offline'], fromA: (v) => Offline.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  offline: json['offline'] != null ? OneOf2.parse(json['offline'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => Offline.fromJson(v as Map<String, dynamic>),) : null,
   rebootWindow: json['reboot_window'] != null ? RebootWindow.fromJson(json['reboot_window'] as Map<String, dynamic>) : null,
   stripeS700: json['stripe_s700'] != null ? StripeS700.fromJson(json['stripe_s700'] as Map<String, dynamic>) : null,
   stripeS710: json['stripe_s710'] != null ? StripeS710.fromJson(json['stripe_s710'] as Map<String, dynamic>) : null,
-  tipping: json['tipping'] != null ? OneOf2.parse(json['tipping'], fromA: (v) => Tipping.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  tipping: json['tipping'] != null ? OneOf2.parse(json['tipping'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => Tipping.fromJson(v as Map<String, dynamic>),) : null,
   verifoneP400: json['verifone_p400'] != null ? VerifoneP400.fromJson(json['verifone_p400'] as Map<String, dynamic>) : null,
-  wifi: json['wifi'] != null ? OneOf2.parse(json['wifi'], fromA: (v) => Wifi.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  wifi: json['wifi'] != null ? OneOf2.parse(json['wifi'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => Wifi.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 /// An object containing device type specific settings for BBPOS WisePad 3 readers.

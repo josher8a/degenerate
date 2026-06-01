@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RunStepDeltaStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsObject(
   type: RunStepDeltaStepDetailsToolCallsObjectType.fromJson(json['type'] as String),
-  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => RunStepDeltaStepDetailsToolCallsFileSearchObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(v as Map<String, dynamic>), fromC: (v) => RunStepDeltaStepDetailsToolCallsFunctionObject.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 /// Always `tool_calls`.

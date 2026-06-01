@@ -7,7 +7,7 @@ factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { retur
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => OutputModalities.fromJson(e as String)).toList(),
   instructions: json['instructions'] as String?,
   audio: json['audio'] != null ? RealtimeResponseCreateParamsAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => McpTool.fromJson(v as Map<String, dynamic>),)).toList(),
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => McpTool.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeFunctionTool.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf3.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>),) : null,
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => MaxOutputTokensVariant2.fromJson(v as String),) : null,
   conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationVariant2.fromJson(v as String),) : null,

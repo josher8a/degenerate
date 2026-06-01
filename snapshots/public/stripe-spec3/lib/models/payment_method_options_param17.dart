@@ -7,7 +7,7 @@ factory PaymentMethodOptionsParam17.fromJson(Map<String, dynamic> json) { return
   onDemand: json['on_demand'] != null ? OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam17PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PaymentMethodOptionsParamSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => PaymentMethodOptionsParamSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(),) : null,
 ); }
 
 final PaymentIntentParamCaptureMethod? captureMethod;

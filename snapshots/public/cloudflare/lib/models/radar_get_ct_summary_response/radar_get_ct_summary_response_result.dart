@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory RadarGetCtSummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResult(
   meta: RadarGetAiBotsSummaryByUserAgentResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
-  summary0: OneOf8.parse(json['summary_0'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => Summary0Variant2.fromJson(v as Map<String, dynamic>), fromC: (v) => Summary0Variant3.fromJson(v as Map<String, dynamic>), fromD: (v) => Summary0Variant4.fromJson(v as Map<String, dynamic>), fromE: (v) => Summary0Variant5.fromJson(v as Map<String, dynamic>), fromF: (v) => Summary0Variant6.fromJson(v as Map<String, dynamic>), fromG: (v) => Summary0Variant7.fromJson(v as Map<String, dynamic>), fromH: (v) => Summary0Variant8.fromJson(v as Map<String, dynamic>),),
+  summary0: OneOf8.parse(json['summary_0'], fromA: (v) => Summary0Variant3.fromJson(v as Map<String, dynamic>), fromB: (v) => Summary0Variant8.fromJson(v as Map<String, dynamic>), fromC: (v) => Summary0Variant7.fromJson(v as Map<String, dynamic>), fromD: (v) => Summary0Variant2.fromJson(v as Map<String, dynamic>), fromE: (v) => Summary0Variant4.fromJson(v as Map<String, dynamic>), fromF: (v) => Summary0Variant5.fromJson(v as Map<String, dynamic>), fromG: (v) => Summary0Variant6.fromJson(v as Map<String, dynamic>), fromH: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),),
 ); }
 
 /// Metadata for the results.

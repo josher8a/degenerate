@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory InfraServiceCommon.fromJson(Map<String, dynamic> json) { return InfraServiceCommon(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
-  host: OneOf4.parse(json['host'], fromA: (v) => InfraIPv4Host.fromJson(v as Map<String, dynamic>), fromB: (v) => InfraIPv6Host.fromJson(v as Map<String, dynamic>), fromC: (v) => InfraDualStackHost.fromJson(v as Map<String, dynamic>), fromD: (v) => InfraHostnameHost.fromJson(v as Map<String, dynamic>),),
+  host: OneOf4.parse(json['host'], fromA: (v) => InfraDualStackHost.fromJson(v as Map<String, dynamic>), fromB: (v) => InfraIPv4Host.fromJson(v as Map<String, dynamic>), fromC: (v) => InfraIPv6Host.fromJson(v as Map<String, dynamic>), fromD: (v) => InfraHostnameHost.fromJson(v as Map<String, dynamic>),),
   name: json['name'] as String,
   serviceId: json['service_id'] as String?,
   type: InfraServiceType.fromJson(json['type'] as String),

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policy_link.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/access_app_req_embedded_policies_policies.dart';import 'package:pub_cloudflare/models/access_app_req_embedded_policies/policies_variant3.dart';import 'package:pub_cloudflare/models/access_schemas_uuid.dart';@immutable final class AccessAppReqEmbeddedPolicies {const AccessAppReqEmbeddedPolicies({this.policies});
 
 factory AccessAppReqEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessAppReqEmbeddedPolicies(
-  policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessAppPolicyLink.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasUuid.fromJson(v as String), fromC: (v) => PoliciesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessSchemasUuid.fromJson(v as String), fromB: (v) => AccessAppPolicyLink.fromJson(v as Map<String, dynamic>), fromC: (v) => PoliciesVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 /// The policies that Access applies to the application, in ascending order of precedence. Items can reference existing policies or create new policies exclusive to the application.

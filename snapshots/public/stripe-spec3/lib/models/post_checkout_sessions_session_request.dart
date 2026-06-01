@@ -6,8 +6,8 @@ factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) {
   collectedInformation: json['collected_information'] != null ? CollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => (v as List<dynamic>).map((e) => ShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
+  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => ShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(),) : null,
 ); }
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.

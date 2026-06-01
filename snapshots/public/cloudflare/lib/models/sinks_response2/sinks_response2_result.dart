@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_connection_schema.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_data_catalog_table.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_r2_table.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_config.dart';import 'package:pub_cloudflare/models/sinks_request/sinks_request_type.dart';@immutable final class SinksResponse2Result {const SinksResponse2Result({required this.createdAt, required this.id, required this.modifiedAt, required this.name, required this.type, this.config, this.format, this.schema, });
 
 factory SinksResponse2Result.fromJson(Map<String, dynamic> json) { return SinksResponse2Result(
-  config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2Table.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2DataCatalogTable.fromJson(v as Map<String, dynamic>),) : null,
+  config: json['config'] != null ? OneOf2.parse(json['config'], fromA: (v) => CloudflarePipelinesR2DataCatalogTable.fromJson(v as Map<String, dynamic>), fromB: (v) => CloudflarePipelinesR2Table.fromJson(v as Map<String, dynamic>),) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   id: json['id'] as String,

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class GetCustomersCustomerSourcesResponse {const GetCustomersCustomerSourcesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCustomersCustomerSourcesResponse.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerSourcesResponse(
-  data: (json['data'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),)).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>),)).toList(),
   hasMore: json['has_more'] as bool,
   object: GetAccountsAccountCapabilitiesResponseObject.fromJson(json['object'] as String),
   url: json['url'] as String,

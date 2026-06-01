@@ -11,7 +11,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorBatchCreateWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   stepCount: (json['step_count'] as num).toInt(),
-  steps: (json['steps'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => StepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => Sleep.fromJson(v as Map<String, dynamic>), fromC: (v) => Termination.fromJson(v as Map<String, dynamic>), fromD: (v) => WaitForEvent.fromJson(v as Map<String, dynamic>),)).toList(),
+  steps: (json['steps'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => StepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => WaitForEvent.fromJson(v as Map<String, dynamic>), fromC: (v) => Sleep.fromJson(v as Map<String, dynamic>), fromD: (v) => Termination.fromJson(v as Map<String, dynamic>),)).toList(),
   success: json['success'] as bool?,
   trigger: ResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,

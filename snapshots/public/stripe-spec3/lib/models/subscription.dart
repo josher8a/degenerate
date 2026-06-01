@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Subscription {const Subscription({required this.status, required this.automaticTax, required this.billingCycleAnchor, required this.billingMode, required this.cancelAtPeriodEnd, required this.collectionMethod, required this.created, required this.currency, required this.customer, required this.discounts, required this.id, required this.invoiceSettings, required this.items, required this.livemode, required this.metadata, required this.object, required this.startDate, this.customerAccount, this.defaultSource, this.defaultTaxRates, this.description, this.canceledAt, this.endedAt, this.cancellationDetails, this.applicationFeePercent, this.billingThresholds, this.latestInvoice, this.cancelAt, this.billingCycleAnchorConfig, this.trialStart, this.application, this.onBehalfOf, this.pauseCollection, this.paymentSettings, this.pendingInvoiceItemInterval, this.pendingSetupIntent, this.pendingUpdate, this.schedule, this.daysUntilDue, this.defaultPaymentMethod, this.testClock, this.transferData, this.trialEnd, this.trialSettings, this.nextPendingInvoiceItemInvoice, });
 
 factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>), fromC: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: SubscriptionAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   billingCycleAnchor: (json['billing_cycle_anchor'] as num).toInt(),
@@ -99,7 +99,7 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   customerAccount: json['customer_account'] as String?,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => Source.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => BankAccount.fromJson(v as Map<String, dynamic>),) : null,
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),

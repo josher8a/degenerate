@@ -6,7 +6,7 @@ factory AigConfigUpdateGatewayDynamicRouteResponseRoute.fromJson(Map<String, dyn
   accountTag: json['account_tag'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   deployment: Deployment.fromJson(json['deployment'] as Map<String, dynamic>),
-  elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Start.fromJson(v as Map<String, dynamic>), fromB: (v) => Conditional.fromJson(v as Map<String, dynamic>), fromC: (v) => Percentage.fromJson(v as Map<String, dynamic>), fromD: (v) => ElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => ElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => End.fromJson(v as Map<String, dynamic>),)).toList(),
+  elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Conditional.fromJson(v as Map<String, dynamic>), fromB: (v) => ElementsRate.fromJson(v as Map<String, dynamic>), fromC: (v) => ElementsModel.fromJson(v as Map<String, dynamic>), fromD: (v) => Start.fromJson(v as Map<String, dynamic>), fromE: (v) => Percentage.fromJson(v as Map<String, dynamic>), fromF: (v) => End.fromJson(v as Map<String, dynamic>),)).toList(),
   gatewayId: json['gateway_id'] as String,
   id: json['id'] as String,
   modifiedAt: DateTime.parse(json['modified_at'] as String),

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountBankAccountsRequest {const PostAccountsAccountBankAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 
 factory PostAccountsAccountBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsRequest(
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => v as String, fromB: (v) => ExternalAccountPayoutBankAccount.fromJson(v as Map<String, dynamic>),) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,

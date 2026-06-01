@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory ResponseCommon75.fromJson(Map<String, dynamic> json) { return ResponseCommon75(
   errors: (json['errors'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String,),
+  result: OneOf3.parse(json['result'], fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>, fromC: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),),
   success: json['success'] as bool,
 ); }
 

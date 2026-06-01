@@ -9,7 +9,7 @@ factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   loginPage: json['login_page'] != null ? LoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
   name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 

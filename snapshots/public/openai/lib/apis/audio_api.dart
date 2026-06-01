@@ -75,7 +75,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -103,7 +103,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

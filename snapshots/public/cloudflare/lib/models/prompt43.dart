@@ -21,7 +21,7 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,
   reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
-  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => Variant1Text.fromJson(v as Map<String, dynamic>), fromB: (v) => JsonObject.fromJson(v as Map<String, dynamic>), fromC: (v) => Variant1JsonSchema.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => Variant1JsonSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => Variant1Text.fromJson(v as Map<String, dynamic>), fromC: (v) => JsonObject.fromJson(v as Map<String, dynamic>),) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
   stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,

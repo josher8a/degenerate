@@ -8,7 +8,7 @@ factory CreateEvalCompletionsRunDataSourceSamplingParams.fromJson(Map<String, dy
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   topP: json.containsKey('top_p') ? (json['top_p'] as num).toDouble() : 1.0,
   seed: json.containsKey('seed') ? (json['seed'] as num).toInt() : 42,
-  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => ChatCompletionTool.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

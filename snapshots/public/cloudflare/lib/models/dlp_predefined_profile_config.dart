@@ -7,7 +7,7 @@ factory DlpPredefinedProfileConfig.fromJson(Map<String, dynamic> json) { return 
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
   confidenceThreshold: json['confidence_threshold'] as String?,
   enabledEntries: (json['enabled_entries'] as List<dynamic>).map((e) => e as String).toList(),
-  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => WordListEntry.fromJson(v as Map<String, dynamic>),)).toList(),
+  entries: (json['entries'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => ExactDataEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomEntry.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationEntry.fromJson(v as Map<String, dynamic>), fromD: (v) => DocumentFingerprintEntry.fromJson(v as Map<String, dynamic>), fromE: (v) => WordListEntry.fromJson(v as Map<String, dynamic>), fromF: (v) => PredefinedEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   id: json['id'] as String,
   name: json['name'] as String,
   ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,

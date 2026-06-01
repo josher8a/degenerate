@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application, this.canceledAt, this.completedAt, this.currentPhase, this.customerAccount, this.metadata, this.releasedAt, this.releasedSubscription, this.subscription, this.testClock, });
 
 factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>), fromC: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,

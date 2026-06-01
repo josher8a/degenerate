@@ -34,7 +34,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),)).toList();
   },
 );
  } 
@@ -56,7 +56,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -102,7 +102,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -124,7 +124,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -148,7 +148,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -194,7 +194,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -216,7 +216,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -240,7 +240,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>),) : null;
+    return json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => IntegrationProfile.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomProfile.fromJson(v as Map<String, dynamic>), fromC: (v) => PredefinedProfile.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 

@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';typedef CurrencyOptions = OneOf2<Map<String,PostPricesRequestCurrencyOptionsValue>,GetPaymentMethodConfigurationsApplicationVariant2>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_prices_request/post_prices_request_currency_options_value.dart';typedef CurrencyOptions = OneOf2<GetPaymentMethodConfigurationsApplicationVariant2,Map<String,PostPricesRequestCurrencyOptionsValue>>;

@@ -28,4 +28,4 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'McpToolApprovalSetting($value)'; } 
  }
-typedef RequireApproval = OneOf2<McpToolApprovalFilter,McpToolApprovalSetting>;
+typedef RequireApproval = OneOf2<McpToolApprovalSetting,McpToolApprovalFilter>;

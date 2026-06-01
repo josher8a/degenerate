@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 factory GraderMulti.fromJson(Map<String, dynamic> json) { return GraderMulti(
   type: GraderMultiType.fromJson(json['type'] as String),
   name: json['name'] as String,
-  graders: OneOf5.parse(json['graders'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>),),
+  graders: OneOf5.parse(json['graders'], fromA: (v) => GraderLabelModel.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderPython.fromJson(v as Map<String, dynamic>),),
   calculateOutput: json['calculate_output'] as String,
 ); }
 

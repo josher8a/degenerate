@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory DiscountsResourceDiscountAmount.fromJson(Map<String, dynamic> json) { return DiscountsResourceDiscountAmount(
   amount: (json['amount'] as num).toInt(),
-  discount: OneOf3.parse(json['discount'], fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),),
+  discount: OneOf3.parse(json['discount'], fromA: (v) => v as String, fromB: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>), fromC: (v) => Discount.fromJson(v as Map<String, dynamic>),),
 ); }
 
 /// The amount, in cents (or local equivalent), of the discount.

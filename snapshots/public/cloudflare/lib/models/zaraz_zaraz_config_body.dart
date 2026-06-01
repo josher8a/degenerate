@@ -12,7 +12,7 @@ factory ZarazZarazConfigBody.fromJson(Map<String, dynamic> json) { return ZarazZ
   triggers: (json['triggers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, TriggersValue.fromJson(v as Map<String, dynamic>))),
   variables: (json['variables'] as Map<String, dynamic>).map((k, v) => MapEntry(k, VariablesValue.fromJson(v as Map<String, dynamic>))),
   zarazVersion: (json['zarazVersion'] as num).toInt(),
-  tools: (json['tools'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ZarazManagedComponent.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazCustomManagedComponent.fromJson(v as Map<String, dynamic>),))),
+  tools: (json['tools'] as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => ZarazCustomManagedComponent.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazManagedComponent.fromJson(v as Map<String, dynamic>),))),
 ); }
 
 /// Cloudflare Monitoring settings.

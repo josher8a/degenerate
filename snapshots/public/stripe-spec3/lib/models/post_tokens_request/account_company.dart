@@ -19,7 +19,7 @@ factory AccountCompany.fromJson(Map<String, dynamic> json) { return AccountCompa
   ownershipDeclarationShownAndSigned: json['ownership_declaration_shown_and_signed'] as bool?,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? CompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => RegistrationDateSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => RegistrationDateSpecs.fromJson(v as Map<String, dynamic>),) : null,
   registrationNumber: json['registration_number'] as String?,
   representativeDeclaration: json['representative_declaration'] != null ? RepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? CompanyStructure.fromJson(json['structure'] as String) : null,

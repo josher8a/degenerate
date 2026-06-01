@@ -38,7 +38,7 @@ factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return Pos
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PaymentIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => FlowDirections.fromJson(e as String)).toList(),
-  mandateData: json['mandate_data'] != null ? OneOf2.parse(json['mandate_data'], fromA: (v) => SecretKeyParam.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  mandateData: json['mandate_data'] != null ? OneOf2.parse(json['mandate_data'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => SecretKeyParam.fromJson(v as Map<String, dynamic>),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   paymentMethod: json['payment_method'] as String?,

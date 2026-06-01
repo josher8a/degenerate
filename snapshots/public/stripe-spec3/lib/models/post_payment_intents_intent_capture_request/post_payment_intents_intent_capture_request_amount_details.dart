@@ -6,9 +6,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
   discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => (v as List<dynamic>).map((e) => LineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => AmountDetailsShippingParam.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
-  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => AmountDetailsTaxParam.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as List<dynamic>).map((e) => LineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => AmountDetailsShippingParam.fromJson(v as Map<String, dynamic>),) : null,
+  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => AmountDetailsTaxParam.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final DiscountAmount? discountAmount;

@@ -396,7 +396,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -431,7 +431,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -496,7 +496,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -708,7 +708,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -743,7 +743,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -808,7 +808,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5989,7 +5989,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6043,7 +6043,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6072,7 +6072,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf4.parse(v, fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6146,7 +6146,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6200,7 +6200,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6229,7 +6229,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf4.parse(v, fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6643,7 +6643,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6677,7 +6677,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf4.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6731,7 +6731,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),);
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -6760,7 +6760,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf4.parse(v, fromA: (v) => Account.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => OneOf2.parse(v, fromA: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),), fromB: (v) => OneOf4.parse(v, fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => Account.fromJson(v as Map<String, dynamic>),),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -7969,7 +7969,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => Card.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

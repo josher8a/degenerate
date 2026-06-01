@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory ToolsCustomCustom.fromJson(Map<String, dynamic> json) { return ToolsCustomCustom(
   description: json['description'] as String?,
-  format: json['format'] != null ? OneOf2.parse(json['format'], fromA: (v) => Variant1Text.fromJson(v as Map<String, dynamic>), fromB: (v) => FormatGrammar.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? OneOf2.parse(json['format'], fromA: (v) => FormatGrammar.fromJson(v as Map<String, dynamic>), fromB: (v) => Variant1Text.fromJson(v as Map<String, dynamic>),) : null,
   name: json['name'] as String,
 ); }
 

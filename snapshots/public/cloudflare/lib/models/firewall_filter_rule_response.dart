@@ -10,7 +10,7 @@ factory FirewallFilterRuleResponse.fromJson(Map<String, dynamic> json) { return 
   priority: json['priority'] != null ? FirewallComponentsSchemasPriority.fromJson(json['priority'] as num) : null,
   products: (json['products'] as List<dynamic>?)?.map((e) => FirewallProducts2.fromJson(e as String)).toList(),
   ref: json['ref'] != null ? FirewallRef.fromJson(json['ref'] as String) : null,
-  filter: json['filter'] != null ? OneOf2.parse(json['filter'], fromA: (v) => FirewallFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallDeletedFilter.fromJson(v as Map<String, dynamic>),) : null,
+  filter: json['filter'] != null ? OneOf2.parse(json['filter'], fromA: (v) => FirewallDeletedFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallFilter.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final FirewallSchemasAction? action;

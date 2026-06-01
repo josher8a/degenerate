@@ -6,7 +6,7 @@ factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> j
   defaultSettings: json['default_settings'] != null ? DefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? DeleteSubscriptionItemsItemRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
 ); }

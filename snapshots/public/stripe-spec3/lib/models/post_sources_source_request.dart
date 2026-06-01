@@ -6,7 +6,7 @@ factory PostSourcesSourceRequest.fromJson(Map<String, dynamic> json) { return Po
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   mandate: json['mandate'] != null ? PostSourcesRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
   owner: json['owner'] != null ? PostCustomersCustomerBankAccountsIdRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   sourceOrder: json['source_order'] != null ? PostSourcesRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
 ); }

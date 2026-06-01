@@ -95,7 +95,7 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf5.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromE: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),) : null,
+  destination: json['destination'] != null ? OneOf5.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromD: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromE: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),) : null,
   failureBalanceTransaction: json['failure_balance_transaction'] != null ? OneOf2.parse(json['failure_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
   failureCode: json['failure_code'] as String?,
   failureMessage: json['failure_message'] as String?,

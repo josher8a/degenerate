@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity, });
 
 factory ResponseTextParam.fromJson(Map<String, dynamic> json) { return ResponseTextParam(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,
   verbosity: json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null,
 ); }
 

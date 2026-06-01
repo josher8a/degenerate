@@ -49,7 +49,7 @@ factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   paymentMethodType: json['payment_method_type'] as String?,
   requestLogUrl: json['request_log_url'] as String?,
   setupIntent: json['setup_intent'] != null ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>) : null,
-  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => Source.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => BankAccount.fromJson(v as Map<String, dynamic>),) : null,
   type: ErrorsType.fromJson(json['type'] as String),
 ); }
 

@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
   active: json['active'] as bool?,
-  currencyOptions: json['currency_options'] != null ? OneOf2.parse(json['currency_options'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, PostPricesRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  currencyOptions: json['currency_options'] != null ? OneOf2.parse(json['currency_options'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, PostPricesRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lookupKey: json['lookup_key'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),) : null,
   nickname: json['nickname'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   transferLookupKey: json['transfer_lookup_key'] as bool?,

@@ -40,7 +40,7 @@ factory WebhookPullRequestAutoMergeEnabledPullRequest.fromJson(Map<String, dynam
   number: (json['number'] as num).toInt(),
   patchUrl: Uri.parse(json['patch_url'] as String),
   rebaseable: json['rebaseable'] as bool?,
-  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => User12.fromJson(v as Map<String, dynamic>), fromB: (v) => Team10.fromJson(v as Map<String, dynamic>),)).toList(),
+  requestedReviewers: (json['requested_reviewers'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => Team10.fromJson(v as Map<String, dynamic>), fromB: (v) => User12.fromJson(v as Map<String, dynamic>),)).toList(),
   requestedTeams: (json['requested_teams'] as List<dynamic>).map((e) => WebhooksPullRequest5RequestedTeams.fromJson(e as Map<String, dynamic>)).toList(),
   reviewCommentUrl: json['review_comment_url'] as String,
   reviewComments: json['review_comments'] != null ? (json['review_comments'] as num).toInt() : null,

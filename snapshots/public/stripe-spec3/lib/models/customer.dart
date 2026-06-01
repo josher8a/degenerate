@@ -12,7 +12,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   customerAccount: json['customer_account'] as String?,
-  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => Source.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => BankAccount.fromJson(v as Map<String, dynamic>),) : null,
   delinquent: json['delinquent'] as bool?,
   description: json['description'] as String?,
   discount: json['discount'] != null ? Discount.fromJson(json['discount'] as Map<String, dynamic>) : null,

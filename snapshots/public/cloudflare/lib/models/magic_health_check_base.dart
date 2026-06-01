@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
   rate: json.containsKey('rate') ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : MagicHealthCheckBaseRate.mid,
-  target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => v as String, fromB: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>),) : null,
   type: json.containsKey('type') ? MagicHealthCheckBaseType.fromJson(json['type'] as String) : MagicHealthCheckBaseType.reply,
 ); }
 
