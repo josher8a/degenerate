@@ -101,16 +101,39 @@ class RoundtripEmitter {
         continue;
       }
 
+      // Non-OneOf sealed class union (>9 or <2 variants, or self-referencing).
+      // Dispatch is first-match via `canParse` on each object/ref variant.
+      // Emit a fixture per variant whose sample is provably not stolen by an
+      // earlier variant's canParse.
+      if (unionVariants != null && !_isOneOfTypedef(type)) {
+        final allPrimitive = unionVariants.every((v) => v is IrPrimitive);
+        if (!allPrimitive) {
+          final decode = '$name.fromJson(json! as Map<String, dynamic>)';
+          final encode = '(value! as $name).toJson()';
+          var any = false;
+          for (var k = 0; k < unionVariants.length; k++) {
+            if (!_canParseReclaims(unionVariants, k)) break;
+            final sample = _sampleLiteral(unionVariants[k], {});
+            if (sample == null) continue;
+            final variantLabel = _resolve(unionVariants[k]).emittableName ??
+                'variant $k';
+            any = true;
+            fixtures.add(_fixture('$name [$variantLabel]', sample, decode,
+                encode));
+          }
+          if (!any) skippedUnion++;
+          continue;
+        }
+        skippedUnion++;
+        continue;
+      }
+
       // Other types with a uniform codec get one standalone fixture: classes
       // with `Name.fromJson(json)`/`value.toJson()`.
       final supported =
           type is IrObject || type is IrEnum || type is IrExtensionType;
       if (!supported) {
-        if (type is IrUntaggedUnion || type is IrAnyOf) {
-          skippedUnion++;
-        } else {
-          skippedOther++;
-        }
+        skippedOther++;
         continue;
       }
 
@@ -312,6 +335,28 @@ class RoundtripEmitter {
       if (!_overlap.jRejectsK(_resolve(variants[j]), vk)) return false;
     }
     return true;
+  }
+
+  /// Whether variant [k] is provably reclaimed by the sealed class's
+  /// `canParse`-based first-match dispatch. Returns false (stops emitting
+  /// further fixtures) when a union-type variant is encountered — it
+  /// swallows all remaining input unconditionally.
+  bool _canParseReclaims(List<IrType> variants, int k) {
+    final vk = _effectiveSampleType(variants[k]);
+    for (var j = 0; j < k; j++) {
+      final vj = _resolve(variants[j]);
+      if (_isUnionType(vj)) return false;
+      if (vj is! IrObject && vj is! IrTypeRef) continue;
+      if (!_overlap.canParseRejectsK(_resolve(variants[j]), vk)) return false;
+    }
+    return true;
+  }
+
+  bool _isUnionType(IrType type) {
+    final resolved = _resolve(type);
+    return resolved is IrDiscriminatedUnion ||
+        resolved is IrUntaggedUnion ||
+        resolved is IrAnyOf;
   }
 
   /// The concrete type whose shape `_sampleLiteral` actually produces for [t]:

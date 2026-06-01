@@ -80,6 +80,30 @@ class VariantOverlapAnalyzer {
     _ => OverlapContainer.other,
   };
 
+  /// Whether variant [vj]'s `canParse` provably rejects [vk]'s sample.
+  ///
+  /// `canParse` checks: (a) all required-field keys exist, or (b) if no
+  /// required fields, at least one known key exists, or (c) if no fields,
+  /// always true. Sound — returns true only when proven.
+  bool canParseRejectsK(IrType vj, IrType vk) {
+    final j = resolve(vj);
+    if (j is! IrObject) return false;
+    final present = presentKeys(vk);
+    if (present == null) return false;
+    final requiredKeys = {
+      for (final f in j.fields)
+        if (f.isRequired) f.originalName,
+    };
+    if (requiredKeys.isNotEmpty) {
+      return requiredKeys.any((k) => !present.contains(k));
+    }
+    if (j.fields.isNotEmpty) {
+      final knownKeys = {for (final f in j.fields) f.originalName};
+      return knownKeys.intersection(present).isEmpty;
+    }
+    return false;
+  }
+
   bool scalarFamiliesOverlap(IrType a, IrType b) {
     String fam(IrType t) => switch (resolve(t)) {
       IrPrimitive(:final kind) => switch (kind) {
