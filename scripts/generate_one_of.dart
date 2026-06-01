@@ -64,6 +64,31 @@ void main() {
   buf.writeln('  }');
   buf.writeln('  return (v as dynamic).toJson();');
   buf.writeln('}');
+  buf.writeln();
+  buf.writeln('/// Scores how well a parsed variant [value] matches [json], to');
+  buf.writeln('/// pick the best `oneOf` candidate. For an object payload: the');
+  buf.writeln('/// number of input keys the variant reproduces (a looser variant');
+  buf.writeln('/// that ignores keys scores lower). For a scalar/list payload: 1');
+  buf.writeln('/// when the value matches without coercion, else 0 — so an exact');
+  buf.writeln('/// `int` beats a variant that stringified it. Defensive: a value');
+  buf.writeln('/// without `toJson` scores 0 rather than disqualifying the parse.');
+  buf.writeln('int _oneOfMatchScore(Object? json, Object? value) {');
+  buf.writeln('  if (json is Map) {');
+  buf.writeln('    Object? encoded;');
+  buf.writeln('    try {');
+  buf.writeln('      encoded = _oneOfValueToJson(value);');
+  buf.writeln('    } on Object {');
+  buf.writeln('      return 0;');
+  buf.writeln('    }');
+  buf.writeln('    if (encoded is! Map) return 0;');
+  buf.writeln('    var covered = 0;');
+  buf.writeln('    for (final key in json.keys) {');
+  buf.writeln('      if (encoded.containsKey(key)) covered++;');
+  buf.writeln('    }');
+  buf.writeln('    return covered;');
+  buf.writeln('  }');
+  buf.writeln('  return identical(value, json) || value == json ? 1 : 0;');
+  buf.writeln('}');
 
   for (var n = 2; n <= maxArity; n++) {
     _writeOneOf(buf, n);
@@ -127,22 +152,36 @@ void _writeOneOf(StringBuffer buf, int n) {
     );
   }
   buf.writeln('  }) {');
-  for (var i = 0; i < n; i++) {
-    buf.writeln('    if (json is ${letters[i]}) return OneOf$n._(json);');
-  }
+  // Best-match dispatch: try every variant, keep the one whose serialized form
+  // covers the most of the input's keys. `oneOf` means exactly one schema
+  // matches, but generated fromJson is lenient (ignores unknown keys), so a
+  // looser variant (its required fields a subset of a richer sibling's) would
+  // otherwise win under first-match and silently drop the extra data. Scoring
+  // by key coverage picks the variant that actually accounts for the payload;
+  // ties keep the earliest (most-specific — see orderUnionVariants) variant.
   buf.writeln('    final errors = <(String, Object)>[];');
+  buf.writeln('    $cls? best;');
+  buf.writeln('    var bestScore = -1;');
   for (var i = 0; i < n; i++) {
     buf.writeln('    try {');
-    buf.writeln('      return OneOf$n._(from${letters[i]}(json!));');
+    buf.writeln(
+      '      final v = OneOf$n<$parseTypeParams>._(from${letters[i]}(json!));',
+    );
+    buf.writeln('      final score = _oneOfMatchScore(json, v.value);');
+    buf.writeln('      if (score > bestScore) {');
+    buf.writeln('        bestScore = score;');
+    buf.writeln('        best = v;');
+    buf.writeln('      }');
     // Catch Object, not just Exception: a variant's fromJson discriminates by
     // casting (e.g. `json['x'] as String`), which throws a TypeError — an
     // Error, not an Exception — when the payload is a different variant. An
     // `on Exception` guard lets that escape and aborts the whole parse instead
-    // of falling through to the next variant.
+    // of trying the next variant.
     buf.writeln('    } on Object catch (e) {');
     buf.writeln("      errors.add(('\$${letters[i]}', e));");
     buf.writeln('    }');
   }
+  buf.writeln('    if (best != null) return best;');
   buf.writeln('    throw ArgumentError(_oneOfError(json, errors));');
   buf.writeln('  }');
   buf.writeln();

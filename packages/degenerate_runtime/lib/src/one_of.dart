@@ -30,6 +30,31 @@ Object? _oneOfValueToJson(Object? v) {
   return (v as dynamic).toJson();
 }
 
+/// Scores how well a parsed variant [value] matches [json], to
+/// pick the best `oneOf` candidate. For an object payload: the
+/// number of input keys the variant reproduces (a looser variant
+/// that ignores keys scores lower). For a scalar/list payload: 1
+/// when the value matches without coercion, else 0 — so an exact
+/// `int` beats a variant that stringified it. Defensive: a value
+/// without `toJson` scores 0 rather than disqualifying the parse.
+int _oneOfMatchScore(Object? json, Object? value) {
+  if (json is Map) {
+    Object? encoded;
+    try {
+      encoded = _oneOfValueToJson(value);
+    } on Object {
+      return 0;
+    }
+    if (encoded is! Map) return 0;
+    var covered = 0;
+    for (final key in json.keys) {
+      if (encoded.containsKey(key)) covered++;
+    }
+    return covered;
+  }
+  return identical(value, json) || value == json ? 1 : 0;
+}
+
 // ─── OneOf2 ──────────────────────────────────────────────────────
 
 /// Typed union of 2 variants.
@@ -55,19 +80,30 @@ final class OneOf2<A, B> {
     required A Function(Object) fromA,
     required B Function(Object) fromB,
   }) {
-    if (json is A) return OneOf2._(json);
-    if (json is B) return OneOf2._(json);
     final errors = <(String, Object)>[];
+    OneOf2<A, B>? best;
+    var bestScore = -1;
     try {
-      return OneOf2._(fromA(json!));
+      final v = OneOf2<A, B>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf2._(fromB(json!));
+      final v = OneOf2<A, B>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -118,25 +154,40 @@ final class OneOf3<A, B, C> {
     required B Function(Object) fromB,
     required C Function(Object) fromC,
   }) {
-    if (json is A) return OneOf3._(json);
-    if (json is B) return OneOf3._(json);
-    if (json is C) return OneOf3._(json);
     final errors = <(String, Object)>[];
+    OneOf3<A, B, C>? best;
+    var bestScore = -1;
     try {
-      return OneOf3._(fromA(json!));
+      final v = OneOf3<A, B, C>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf3._(fromB(json!));
+      final v = OneOf3<A, B, C>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf3._(fromC(json!));
+      final v = OneOf3<A, B, C>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -192,31 +243,50 @@ final class OneOf4<A, B, C, D> {
     required C Function(Object) fromC,
     required D Function(Object) fromD,
   }) {
-    if (json is A) return OneOf4._(json);
-    if (json is B) return OneOf4._(json);
-    if (json is C) return OneOf4._(json);
-    if (json is D) return OneOf4._(json);
     final errors = <(String, Object)>[];
+    OneOf4<A, B, C, D>? best;
+    var bestScore = -1;
     try {
-      return OneOf4._(fromA(json!));
+      final v = OneOf4<A, B, C, D>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf4._(fromB(json!));
+      final v = OneOf4<A, B, C, D>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf4._(fromC(json!));
+      final v = OneOf4<A, B, C, D>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf4._(fromD(json!));
+      final v = OneOf4<A, B, C, D>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -276,37 +346,60 @@ final class OneOf5<A, B, C, D, E> {
     required D Function(Object) fromD,
     required E Function(Object) fromE,
   }) {
-    if (json is A) return OneOf5._(json);
-    if (json is B) return OneOf5._(json);
-    if (json is C) return OneOf5._(json);
-    if (json is D) return OneOf5._(json);
-    if (json is E) return OneOf5._(json);
     final errors = <(String, Object)>[];
+    OneOf5<A, B, C, D, E>? best;
+    var bestScore = -1;
     try {
-      return OneOf5._(fromA(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf5._(fromB(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf5._(fromC(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf5._(fromD(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf5._(fromE(json!));
+      final v = OneOf5<A, B, C, D, E>._(fromE(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$E', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -370,43 +463,70 @@ final class OneOf6<A, B, C, D, E, F> {
     required E Function(Object) fromE,
     required F Function(Object) fromF,
   }) {
-    if (json is A) return OneOf6._(json);
-    if (json is B) return OneOf6._(json);
-    if (json is C) return OneOf6._(json);
-    if (json is D) return OneOf6._(json);
-    if (json is E) return OneOf6._(json);
-    if (json is F) return OneOf6._(json);
     final errors = <(String, Object)>[];
+    OneOf6<A, B, C, D, E, F>? best;
+    var bestScore = -1;
     try {
-      return OneOf6._(fromA(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf6._(fromB(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf6._(fromC(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf6._(fromD(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf6._(fromE(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromE(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf6._(fromF(json!));
+      final v = OneOf6<A, B, C, D, E, F>._(fromF(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$F', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -474,49 +594,80 @@ final class OneOf7<A, B, C, D, E, F, G> {
     required F Function(Object) fromF,
     required G Function(Object) fromG,
   }) {
-    if (json is A) return OneOf7._(json);
-    if (json is B) return OneOf7._(json);
-    if (json is C) return OneOf7._(json);
-    if (json is D) return OneOf7._(json);
-    if (json is E) return OneOf7._(json);
-    if (json is F) return OneOf7._(json);
-    if (json is G) return OneOf7._(json);
     final errors = <(String, Object)>[];
+    OneOf7<A, B, C, D, E, F, G>? best;
+    var bestScore = -1;
     try {
-      return OneOf7._(fromA(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf7._(fromB(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf7._(fromC(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf7._(fromD(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf7._(fromE(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromE(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf7._(fromF(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromF(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf7._(fromG(json!));
+      final v = OneOf7<A, B, C, D, E, F, G>._(fromG(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$G', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -590,55 +741,90 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     required G Function(Object) fromG,
     required H Function(Object) fromH,
   }) {
-    if (json is A) return OneOf8._(json);
-    if (json is B) return OneOf8._(json);
-    if (json is C) return OneOf8._(json);
-    if (json is D) return OneOf8._(json);
-    if (json is E) return OneOf8._(json);
-    if (json is F) return OneOf8._(json);
-    if (json is G) return OneOf8._(json);
-    if (json is H) return OneOf8._(json);
     final errors = <(String, Object)>[];
+    OneOf8<A, B, C, D, E, F, G, H>? best;
+    var bestScore = -1;
     try {
-      return OneOf8._(fromA(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf8._(fromB(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf8._(fromC(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf8._(fromD(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf8._(fromE(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromE(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf8._(fromF(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromF(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf8._(fromG(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromG(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$G', e));
     }
     try {
-      return OneOf8._(fromH(json!));
+      final v = OneOf8<A, B, C, D, E, F, G, H>._(fromH(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$H', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -716,61 +902,100 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     required H Function(Object) fromH,
     required I Function(Object) fromI,
   }) {
-    if (json is A) return OneOf9._(json);
-    if (json is B) return OneOf9._(json);
-    if (json is C) return OneOf9._(json);
-    if (json is D) return OneOf9._(json);
-    if (json is E) return OneOf9._(json);
-    if (json is F) return OneOf9._(json);
-    if (json is G) return OneOf9._(json);
-    if (json is H) return OneOf9._(json);
-    if (json is I) return OneOf9._(json);
     final errors = <(String, Object)>[];
+    OneOf9<A, B, C, D, E, F, G, H, I>? best;
+    var bestScore = -1;
     try {
-      return OneOf9._(fromA(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromA(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$A', e));
     }
     try {
-      return OneOf9._(fromB(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromB(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$B', e));
     }
     try {
-      return OneOf9._(fromC(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromC(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$C', e));
     }
     try {
-      return OneOf9._(fromD(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromD(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$D', e));
     }
     try {
-      return OneOf9._(fromE(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromE(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$E', e));
     }
     try {
-      return OneOf9._(fromF(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromF(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$F', e));
     }
     try {
-      return OneOf9._(fromG(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromG(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$G', e));
     }
     try {
-      return OneOf9._(fromH(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromH(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$H', e));
     }
     try {
-      return OneOf9._(fromI(json!));
+      final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromI(json!));
+      final score = _oneOfMatchScore(json, v.value);
+      if (score > bestScore) {
+        bestScore = score;
+        best = v;
+      }
     } on Object catch (e) {
       errors.add(('$I', e));
     }
+    if (best != null) return best;
     throw ArgumentError(_oneOfError(json, errors));
   }
 

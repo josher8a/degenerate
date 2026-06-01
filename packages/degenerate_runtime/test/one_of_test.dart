@@ -182,6 +182,63 @@ void main() {
       ]);
     });
   });
+
+  group('best-match dispatch', () {
+    test('a richer payload is not swallowed by a looser sibling', () {
+      // _Loose accepts anything (no required fields); _Strict requires both.
+      // First-match would pick _Loose and silently drop `b`; best-match picks
+      // _Strict because it covers more of the payload's keys.
+      final v = OneOf2.parse<_Loose, _Strict>(
+        {'a': 'x', 'b': 'y'},
+        fromA: _Loose.fromJson,
+        fromB: _Strict.fromJson,
+      );
+      expect(v.value, isA<_Strict>());
+    });
+
+    test('a looser variant still wins its own payload', () {
+      final v = OneOf2.parse<_Loose, _Strict>(
+        {'a': 'x'}, // missing 'b' → _Strict throws, _Loose matches
+        fromA: _Loose.fromJson,
+        fromB: _Strict.fromJson,
+      );
+      expect(v.value, isA<_Loose>());
+    });
+
+    test('exact scalar type beats a coercing variant', () {
+      final v = OneOf2.parse<String, int>(
+        42,
+        fromA: (v) => v.toString(), // would coerce 42 -> '42'
+        fromB: (v) => v as int,
+      );
+      expect(v.value, 42);
+    });
+  });
+}
+
+class _Loose {
+  _Loose(this.a);
+
+  factory _Loose.fromJson(Object? json) =>
+      _Loose((json! as Map<String, dynamic>)['a'] as String?);
+
+  final String? a;
+
+  Map<String, dynamic> toJson() => {if (a != null) 'a': a};
+}
+
+class _Strict {
+  _Strict(this.a, this.b);
+
+  factory _Strict.fromJson(Object? json) {
+    final map = json! as Map<String, dynamic>;
+    return _Strict(map['a'] as String, map['b'] as String);
+  }
+
+  final String a;
+  final String b;
+
+  Map<String, dynamic> toJson() => {'a': a, 'b': b};
 }
 
 class _Point {
