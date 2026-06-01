@@ -11,7 +11,7 @@ factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostP
   marketingFeatures: json['marketing_features'] != null ? OneOf2.parse(json['marketing_features'], fromA: (v) => (v as List<dynamic>).map((e) => MarketingFeaturesVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   name: json['name'] as String?,
-  packageDimensions: json['package_dimensions'] != null ? OneOf2.parse(json['package_dimensions'], fromA: (v) => Package_dimensions_specs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  packageDimensions: json['package_dimensions'] != null ? OneOf2.parse(json['package_dimensions'], fromA: (v) => PackageDimensionsSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
   taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,

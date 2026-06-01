@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Custom_text_position_param {const Custom_text_position_param({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomTextPositionParam {const CustomTextPositionParam({required this.message});
 
-factory Custom_text_position_param.fromJson(Map<String, dynamic> json) { return Custom_text_position_param(
+factory CustomTextPositionParam.fromJson(Map<String, dynamic> json) { return CustomTextPositionParam(
   message: json['message'] as String,
 ); }
 
@@ -12,12 +12,12 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-Custom_text_position_param copyWith({String? message}) { return Custom_text_position_param(
+CustomTextPositionParam copyWith({String? message}) { return CustomTextPositionParam(
   message: message ?? this.message,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Custom_text_position_param &&
+      other is CustomTextPositionParam &&
           message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'Custom_text_position_param(message: $message)'; } 
+@override String toString() { return 'CustomTextPositionParam(message: $message)'; } 
  }

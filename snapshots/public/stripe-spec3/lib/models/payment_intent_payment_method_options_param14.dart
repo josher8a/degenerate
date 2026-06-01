@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param14_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_financial_connections.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_networks.dart';@immutable final class Payment_intent_payment_method_options_paramTransactionPurpose {const Payment_intent_payment_method_options_paramTransactionPurpose._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param14_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_financial_connections.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_networks.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose._(this.value);
 
-factory Payment_intent_payment_method_options_paramTransactionPurpose.fromJson(String json) { return switch (json) {
+factory PaymentIntentPaymentMethodOptionsParamTransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
   'goods' => goods,
   'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
-  _ => Payment_intent_payment_method_options_paramTransactionPurpose._(json),
+  _ => PaymentIntentPaymentMethodOptionsParamTransactionPurpose._(json),
 }; }
 
-static const Payment_intent_payment_method_options_paramTransactionPurpose $empty = Payment_intent_payment_method_options_paramTransactionPurpose._('');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $empty = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('');
 
-static const Payment_intent_payment_method_options_paramTransactionPurpose goods = Payment_intent_payment_method_options_paramTransactionPurpose._('goods');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose goods = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('goods');
 
-static const Payment_intent_payment_method_options_paramTransactionPurpose $other = Payment_intent_payment_method_options_paramTransactionPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $other = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('other');
 
-static const Payment_intent_payment_method_options_paramTransactionPurpose services = Payment_intent_payment_method_options_paramTransactionPurpose._('services');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose services = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('services');
 
-static const Payment_intent_payment_method_options_paramTransactionPurpose unspecified = Payment_intent_payment_method_options_paramTransactionPurpose._('unspecified');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('unspecified');
 
-static const List<Payment_intent_payment_method_options_paramTransactionPurpose> values = [$empty, goods, $other, services, unspecified];
+static const List<PaymentIntentPaymentMethodOptionsParamTransactionPurpose> values = [$empty, goods, $other, services, unspecified];
 
 final String value;
 
@@ -29,33 +29,33 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is Payment_intent_payment_method_options_paramTransactionPurpose && other.value == value; } 
+    other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Payment_intent_payment_method_options_paramTransactionPurpose($value)'; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)'; } 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14(
-  financialConnections: json['financial_connections'] != null ? Payment_intent_payment_method_options_paramFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  financialConnections: json['financial_connections'] != null ? PaymentIntentPaymentMethodOptionsParamFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam14MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  networks: json['networks'] != null ? Payment_intent_payment_method_options_paramNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? Payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  networks: json['networks'] != null ? PaymentIntentPaymentMethodOptionsParamNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
-  transactionPurpose: json['transaction_purpose'] != null ? Payment_intent_payment_method_options_paramTransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,
+  transactionPurpose: json['transaction_purpose'] != null ? PaymentIntentPaymentMethodOptionsParamTransactionPurpose.fromJson(json['transaction_purpose'] as String) : null,
   verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
-final Payment_intent_payment_method_options_paramFinancialConnections? financialConnections;
+final PaymentIntentPaymentMethodOptionsParamFinancialConnections? financialConnections;
 
 final PaymentIntentPaymentMethodOptionsParam14MandateOptions? mandateOptions;
 
-final Payment_intent_payment_method_options_paramNetworks? networks;
+final PaymentIntentPaymentMethodOptionsParamNetworks? networks;
 
-final Payment_intent_paramSetupFutureUsage? setupFutureUsage;
+final PaymentIntentParamSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
-final Payment_intent_payment_method_options_paramTransactionPurpose? transactionPurpose;
+final PaymentIntentPaymentMethodOptionsParamTransactionPurpose? transactionPurpose;
 
 final CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? verificationMethod;
 
@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'setup_future_usage', 'target_date', 'transaction_purpose', 'verification_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam14 copyWith({Payment_intent_payment_method_options_paramFinancialConnections Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions Function()? mandateOptions, Payment_intent_payment_method_options_paramNetworks Function()? networks, Payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, Payment_intent_payment_method_options_paramTransactionPurpose Function()? transactionPurpose, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
+PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParamFinancialConnections Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParamNetworks Function()? networks, PaymentIntentParamSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PaymentIntentPaymentMethodOptionsParamTransactionPurpose Function()? transactionPurpose, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   networks: networks != null ? networks() : this.networks,

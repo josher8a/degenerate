@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PaymentIntentPaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam15MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? Payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
   verificationMethod: json['verification_method'] != null ? CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(json['verification_method'] as String) : null,
 ); }
 
 final PaymentIntentPaymentMethodOptionsParam15MandateOptions? mandateOptions;
 
-final Payment_intent_paramSetupFutureUsage? setupFutureUsage;
+final PaymentIntentParamSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam copyWith({PaymentIntentPaymentMethodOptionsParam15MandateOptions Function()? mandateOptions, Payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam(
+PaymentIntentPaymentMethodOptionsParam copyWith({PaymentIntentPaymentMethodOptionsParam15MandateOptions Function()? mandateOptions, PaymentIntentParamSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

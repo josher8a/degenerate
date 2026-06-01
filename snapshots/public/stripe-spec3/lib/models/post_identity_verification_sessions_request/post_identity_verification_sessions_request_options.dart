@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostIdentityVerificationSessionsRequestOptions {const PostIdentityVerificationSessionsRequestOptions({this.document});
 
 factory PostIdentityVerificationSessionsRequestOptions.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestOptions(
-  document: json['document'] != null ? OneOf2.parse(json['document'], fromA: (v) => Document_options.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  document: json['document'] != null ? OneOf2.parse(json['document'], fromA: (v) => DocumentOptions.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
 final OptionsDocument? document;

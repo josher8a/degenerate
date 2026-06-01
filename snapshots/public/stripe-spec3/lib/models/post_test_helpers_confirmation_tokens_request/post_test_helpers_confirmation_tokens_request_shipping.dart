@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostTestHelpersConfirmationTokensRequestShipping {const PostTestHelpersConfirmationTokensRequestShipping({required this.address, required this.name, this.phone, });
 
 factory PostTestHelpersConfirmationTokensRequestShipping.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestShipping(
-  address: Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+  address: CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
   phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final Customer_shippingAddress address;
+final CustomerShippingAddress address;
 
 final String name;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostTestHelpersConfirmationTokensRequestShipping copyWith({Customer_shippingAddress? address, String? name, Phone Function()? phone, }) { return PostTestHelpersConfirmationTokensRequestShipping(
+PostTestHelpersConfirmationTokensRequestShipping copyWith({CustomerShippingAddress? address, String? name, Phone Function()? phone, }) { return PostTestHelpersConfirmationTokensRequestShipping(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,

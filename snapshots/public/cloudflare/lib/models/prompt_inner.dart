@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class Prompt_Inner {const Prompt_Inner({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/messages_response_format.dart';@immutable final class PromptInner {const PromptInner({required this.prompt, this.frequencyPenalty, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.15, this.topK, this.topP, });
 
-factory Prompt_Inner.fromJson(Map<String, dynamic> json) { return Prompt_Inner(
+factory PromptInner.fromJson(Map<String, dynamic> json) { return PromptInner(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   guidedJson: json['guided_json'] as Map<String, dynamic>?,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt_Inner copyWith({double Function()? frequencyPenalty, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, MessagesResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return Prompt_Inner(
+PromptInner copyWith({double Function()? frequencyPenalty, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, double Function()? presencePenalty, String? prompt, bool Function()? raw, double Function()? repetitionPenalty, MessagesResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, int Function()? topK, double Function()? topP, }) { return PromptInner(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
@@ -88,7 +88,7 @@ Prompt_Inner copyWith({double Function()? frequencyPenalty, Map<String, dynamic>
   topP: topP != null ? topP() : this.topP,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Prompt_Inner &&
+      other is PromptInner &&
           frequencyPenalty == other.frequencyPenalty &&
           guidedJson == other.guidedJson &&
           maxTokens == other.maxTokens &&
@@ -103,5 +103,5 @@ Prompt_Inner copyWith({double Function()? frequencyPenalty, Map<String, dynamic>
           topK == other.topK &&
           topP == other.topP; } 
 @override int get hashCode { return Object.hash(frequencyPenalty, guidedJson, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP); } 
-@override String toString() { return 'Prompt_Inner(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)'; } 
+@override String toString() { return 'PromptInner(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)'; } 
  }

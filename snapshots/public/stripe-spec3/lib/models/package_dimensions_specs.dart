@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Package_dimensions_specs {const Package_dimensions_specs({required this.height, required this.length, required this.weight, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackageDimensionsSpecs {const PackageDimensionsSpecs({required this.height, required this.length, required this.weight, required this.width, });
 
-factory Package_dimensions_specs.fromJson(Map<String, dynamic> json) { return Package_dimensions_specs(
+factory PackageDimensionsSpecs.fromJson(Map<String, dynamic> json) { return PackageDimensionsSpecs(
   height: (json['height'] as num).toDouble(),
   length: (json['length'] as num).toDouble(),
   weight: (json['weight'] as num).toDouble(),
@@ -27,18 +27,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('heigh
       json.containsKey('length') && json['length'] is num &&
       json.containsKey('weight') && json['weight'] is num &&
       json.containsKey('width') && json['width'] is num; } 
-Package_dimensions_specs copyWith({double? height, double? length, double? weight, double? width, }) { return Package_dimensions_specs(
+PackageDimensionsSpecs copyWith({double? height, double? length, double? weight, double? width, }) { return PackageDimensionsSpecs(
   height: height ?? this.height,
   length: length ?? this.length,
   weight: weight ?? this.weight,
   width: width ?? this.width,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Package_dimensions_specs &&
+      other is PackageDimensionsSpecs &&
           height == other.height &&
           length == other.length &&
           weight == other.weight &&
           width == other.width; } 
 @override int get hashCode { return Object.hash(height, length, weight, width); } 
-@override String toString() { return 'Package_dimensions_specs(height: $height, length: $length, weight: $weight, width: $width)'; } 
+@override String toString() { return 'PackageDimensionsSpecs(height: $height, length: $length, weight: $weight, width: $width)'; } 
  }

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostCustomersCustomerCardsIdRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCardsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? Customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -23,7 +23,7 @@ factory PostCustomersCustomerCardsIdRequest.fromJson(Map<String, dynamic> json) 
 final String? accountHolderName;
 
 /// The type of entity that holds the account. This can be either `individual` or `company`.
-final Customer_payment_source_bank_accountAccountHolderType? accountHolderType;
+final CustomerPaymentSourceBankAccountAccountHolderType? accountHolderType;
 
 /// City/District/Suburb/Town/Village.
 final String? addressCity;
@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (owner != null) 'owner': owner?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key)); } 
-PostCustomersCustomerCardsIdRequest copyWith({String Function()? accountHolderName, Customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, Metadata Function()? metadata, String Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, }) { return PostCustomersCustomerCardsIdRequest(
+PostCustomersCustomerCardsIdRequest copyWith({String Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType Function()? accountHolderType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, Metadata Function()? metadata, String Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, }) { return PostCustomersCustomerCardsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   addressCity: addressCity != null ? addressCity() : this.addressCity,

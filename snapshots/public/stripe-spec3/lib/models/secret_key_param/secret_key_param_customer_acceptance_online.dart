@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Secret_key_paramCustomerAcceptanceOnline {const Secret_key_paramCustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParamCustomerAcceptanceOnline {const SecretKeyParamCustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
 
-factory Secret_key_paramCustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) { return Secret_key_paramCustomerAcceptanceOnline(
+factory SecretKeyParamCustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) { return SecretKeyParamCustomerAcceptanceOnline(
   ipAddress: json['ip_address'] as String,
   userAgent: json['user_agent'] as String,
 ); }
@@ -17,14 +17,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_address') && json['ip_address'] is String &&
       json.containsKey('user_agent') && json['user_agent'] is String; } 
-Secret_key_paramCustomerAcceptanceOnline copyWith({String? ipAddress, String? userAgent, }) { return Secret_key_paramCustomerAcceptanceOnline(
+SecretKeyParamCustomerAcceptanceOnline copyWith({String? ipAddress, String? userAgent, }) { return SecretKeyParamCustomerAcceptanceOnline(
   ipAddress: ipAddress ?? this.ipAddress,
   userAgent: userAgent ?? this.userAgent,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Secret_key_paramCustomerAcceptanceOnline &&
+      other is SecretKeyParamCustomerAcceptanceOnline &&
           ipAddress == other.ipAddress &&
           userAgent == other.userAgent; } 
 @override int get hashCode { return Object.hash(ipAddress, userAgent); } 
-@override String toString() { return 'Secret_key_paramCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+@override String toString() { return 'SecretKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
  }

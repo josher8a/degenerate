@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/name_collection_params/business.dart';import 'package:pub_stripe_spec3/models/name_collection_params/name_collection_params_individual.dart';@immutable final class Name_collection_params {const Name_collection_params({this.business, this.individual, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/name_collection_params/business.dart';import 'package:pub_stripe_spec3/models/name_collection_params/name_collection_params_individual.dart';@immutable final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
 
-factory Name_collection_params.fromJson(Map<String, dynamic> json) { return Name_collection_params(
+factory NameCollectionParams.fromJson(Map<String, dynamic> json) { return NameCollectionParams(
   business: json['business'] != null ? Business.fromJson(json['business'] as Map<String, dynamic>) : null,
-  individual: json['individual'] != null ? Name_collection_paramsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? NameCollectionParamsIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
 ); }
 
 final Business? business;
 
-final Name_collection_paramsIndividual? individual;
+final NameCollectionParamsIndividual? individual;
 
 Map<String, dynamic> toJson() { return {
   if (business != null) 'business': business?.toJson(),
   if (individual != null) 'individual': individual?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business', 'individual'}.contains(key)); } 
-Name_collection_params copyWith({Business Function()? business, Name_collection_paramsIndividual Function()? individual, }) { return Name_collection_params(
+NameCollectionParams copyWith({Business Function()? business, NameCollectionParamsIndividual Function()? individual, }) { return NameCollectionParams(
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Name_collection_params &&
+      other is NameCollectionParams &&
           business == other.business &&
           individual == other.individual; } 
 @override int get hashCode { return Object.hash(business, individual); } 
-@override String toString() { return 'Name_collection_params(business: $business, individual: $individual)'; } 
+@override String toString() { return 'NameCollectionParams(business: $business, individual: $individual)'; } 
  }

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class Not_received {const Not_received({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class NotReceived {const NotReceived({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
-factory Not_received.fromJson(Map<String, dynamic> json) { return Not_received(
+factory NotReceived.fromJson(Map<String, dynamic> json) { return NotReceived(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   expectedAt: json['expected_at'] != null ? OneOf2.parse(json['expected_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
-Not_received copyWith({CanceledAdditionalDocumentation Function()? additionalDocumentation, ExpectedAt Function()? expectedAt, Explanation Function()? explanation, ProductDescription Function()? productDescription, CanceledProductType Function()? productType, }) { return Not_received(
+NotReceived copyWith({CanceledAdditionalDocumentation Function()? additionalDocumentation, ExpectedAt Function()? expectedAt, Explanation Function()? explanation, ProductDescription Function()? productDescription, CanceledProductType Function()? productType, }) { return NotReceived(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,
   explanation: explanation != null ? explanation() : this.explanation,
@@ -36,12 +36,12 @@ Not_received copyWith({CanceledAdditionalDocumentation Function()? additionalDoc
   productType: productType != null ? productType() : this.productType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Not_received &&
+      other is NotReceived &&
           additionalDocumentation == other.additionalDocumentation &&
           expectedAt == other.expectedAt &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
           productType == other.productType; } 
 @override int get hashCode { return Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType); } 
-@override String toString() { return 'Not_received(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+@override String toString() { return 'NotReceived(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
  }

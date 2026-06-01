@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/g_c_s_source_response_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_source.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_target.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';import 'package:pub_cloudflare/models/r2_source_response_schema.dart';import 'package:pub_cloudflare/models/s3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/gcs_source_response_schema.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_source.dart';import 'package:pub_cloudflare/models/r2_slurper_job_response/r2_slurper_job_response_target.dart';import 'package:pub_cloudflare/models/r2_slurper_job_status.dart';import 'package:pub_cloudflare/models/r2_source_response_schema.dart';import 'package:pub_cloudflare/models/s3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
 
 factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobResponse(
   createdAt: json['createdAt'] as String?,
   finishedAt: json['finishedAt'] as String?,
   id: json['id'] as String?,
   overwrite: json['overwrite'] as bool?,
-  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => S3SourceResponseSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => GCSSourceResponseSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SourceResponseSchema.fromJson(v as Map<String, dynamic>),) : null,
+  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => S3SourceResponseSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => GcsSourceResponseSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SourceResponseSchema.fromJson(v as Map<String, dynamic>),) : null,
   status: json['status'] != null ? R2SlurperJobStatus.fromJson(json['status'] as String) : null,
   target: json['target'] != null ? R2SlurperJobResponseTarget.fromJson(json['target'] as Map<String, dynamic>) : null,
 ); }

@@ -24,9 +24,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Requested($value)'; } 
  }
-@immutable final class Payment_intent_payment_method_options_paramNetworks {const Payment_intent_payment_method_options_paramNetworks({this.requested});
+@immutable final class PaymentIntentPaymentMethodOptionsParamNetworks {const PaymentIntentPaymentMethodOptionsParamNetworks({this.requested});
 
-factory Payment_intent_payment_method_options_paramNetworks.fromJson(Map<String, dynamic> json) { return Payment_intent_payment_method_options_paramNetworks(
+factory PaymentIntentPaymentMethodOptionsParamNetworks.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParamNetworks(
   requested: (json['requested'] as List<dynamic>?)?.map((e) => Requested.fromJson(e as String)).toList(),
 ); }
 
@@ -36,12 +36,12 @@ Map<String, dynamic> toJson() { return {
   if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
-Payment_intent_payment_method_options_paramNetworks copyWith({List<Requested> Function()? requested}) { return Payment_intent_payment_method_options_paramNetworks(
+PaymentIntentPaymentMethodOptionsParamNetworks copyWith({List<Requested> Function()? requested}) { return PaymentIntentPaymentMethodOptionsParamNetworks(
   requested: requested != null ? requested() : this.requested,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Payment_intent_payment_method_options_paramNetworks &&
+      other is PaymentIntentPaymentMethodOptionsParamNetworks &&
           listEquals(requested, other.requested); } 
 @override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
-@override String toString() { return 'Payment_intent_payment_method_options_paramNetworks(requested: $requested)'; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamNetworks(requested: $requested)'; } 
  }

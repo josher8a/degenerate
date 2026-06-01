@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesRequest(
   alipayAccount: json['alipay_account'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => Customer_payment_source_bank_account.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => Customer_payment_source_card.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   source: json['source'] as String?,

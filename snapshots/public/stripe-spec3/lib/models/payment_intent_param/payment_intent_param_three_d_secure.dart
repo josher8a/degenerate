@@ -24,9 +24,9 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ThreeDSecureExemptionIndicator($value)'; } 
  }
-@immutable final class Payment_intent_paramThreeDSecure {const Payment_intent_paramThreeDSecure({required this.cryptogram, required this.transactionId, required this.version, this.aresTransStatus, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, });
+@immutable final class PaymentIntentParamThreeDSecure {const PaymentIntentParamThreeDSecure({required this.cryptogram, required this.transactionId, required this.version, this.aresTransStatus, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, });
 
-factory Payment_intent_paramThreeDSecure.fromJson(Map<String, dynamic> json) { return Payment_intent_paramThreeDSecure(
+factory PaymentIntentParamThreeDSecure.fromJson(Map<String, dynamic> json) { return PaymentIntentParamThreeDSecure(
   aresTransStatus: json['ares_trans_status'] != null ? AresTransStatus.fromJson(json['ares_trans_status'] as String) : null,
   cryptogram: json['cryptogram'] as String,
   electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? ThreeDSecureElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cryptogram') && json['cryptogram'] is String &&
       json.containsKey('transaction_id') && json['transaction_id'] is String &&
       json.containsKey('version'); } 
-Payment_intent_paramThreeDSecure copyWith({AresTransStatus Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator Function()? exemptionIndicator, NetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return Payment_intent_paramThreeDSecure(
+PaymentIntentParamThreeDSecure copyWith({AresTransStatus Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator Function()? exemptionIndicator, NetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return PaymentIntentParamThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram ?? this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,
@@ -77,7 +77,7 @@ Payment_intent_paramThreeDSecure copyWith({AresTransStatus Function()? aresTrans
   version: version ?? this.version,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Payment_intent_paramThreeDSecure &&
+      other is PaymentIntentParamThreeDSecure &&
           aresTransStatus == other.aresTransStatus &&
           cryptogram == other.cryptogram &&
           electronicCommerceIndicator == other.electronicCommerceIndicator &&
@@ -87,5 +87,5 @@ Payment_intent_paramThreeDSecure copyWith({AresTransStatus Function()? aresTrans
           transactionId == other.transactionId &&
           version == other.version; } 
 @override int get hashCode { return Object.hash(aresTransStatus, cryptogram, electronicCommerceIndicator, exemptionIndicator, networkOptions, requestorChallengeIndicator, transactionId, version); } 
-@override String toString() { return 'Payment_intent_paramThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, exemptionIndicator: $exemptionIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)'; } 
+@override String toString() { return 'PaymentIntentParamThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, exemptionIndicator: $exemptionIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)'; } 
  }

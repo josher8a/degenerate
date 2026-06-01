@@ -189,7 +189,7 @@ factory PostPaymentMethodsRequest.fromJson(Map<String, dynamic> json) { return P
   billingDetails: json['billing_details'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   blik: json['blik'] != null ? PostPaymentMethodsRequestBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
   boleto: json['boleto'] != null ? PostPaymentMethodsRequestBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => Card_details_params.fromJson(v as Map<String, dynamic>), fromB: (v) => Token_params.fromJson(v as Map<String, dynamic>),) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CardDetailsParams.fromJson(v as Map<String, dynamic>), fromB: (v) => TokenParams.fromJson(v as Map<String, dynamic>),) : null,
   cashapp: json['cashapp'] != null ? PostPaymentMethodsRequestCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
   crypto: json['crypto'] != null ? PostPaymentMethodsRequestCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
   custom: json['custom'] != null ? PostPaymentMethodsRequestCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,

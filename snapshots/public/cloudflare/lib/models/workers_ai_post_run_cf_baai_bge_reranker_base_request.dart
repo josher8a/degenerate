@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_queryand_contexts/contexts.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequest {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequest({required this.contexts, required this.query, this.topK, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_query_and_contexts/contexts.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequest {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequest({required this.contexts, required this.query, this.topK, });
 
 factory WorkersAiPostRunCfBaaiBgeRerankerBaseRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(
   contexts: (json['contexts'] as List<dynamic>).map((e) => Contexts.fromJson(e as Map<String, dynamic>)).toList(),

@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PaymentMethodOptionsParam110.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam110(
   appId: json['app_id'] as String?,
-  client: json['client'] != null ? Payment_method_options_paramClient.fromJson(json['client'] as String) : null,
+  client: json['client'] != null ? PaymentMethodOptionsParamClient.fromJson(json['client'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 final String? appId;
 
-final Payment_method_options_paramClient? client;
+final PaymentMethodOptionsParamClient? client;
 
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam110 copyWith({String Function()? appId, Payment_method_options_paramClient Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam110(
+PaymentMethodOptionsParam110 copyWith({String Function()? appId, PaymentMethodOptionsParamClient Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam110(
   appId: appId != null ? appId() : this.appId,
   client: client != null ? client() : this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

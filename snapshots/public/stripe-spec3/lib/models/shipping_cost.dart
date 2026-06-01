@@ -1,8 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_cost/shipping_rate_data.dart';@immutable final class Shipping_cost {const Shipping_cost({this.shippingRate, this.shippingRateData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/shipping_cost/shipping_rate_data.dart';/// Settings for the cost of shipping for this invoice.
+@immutable final class ShippingCost {const ShippingCost({this.shippingRate, this.shippingRateData, });
 
-factory Shipping_cost.fromJson(Map<String, dynamic> json) { return Shipping_cost(
+factory ShippingCost.fromJson(Map<String, dynamic> json) { return ShippingCost(
   shippingRate: json['shipping_rate'] as String?,
   shippingRateData: json['shipping_rate_data'] != null ? ShippingRateData.fromJson(json['shipping_rate_data'] as Map<String, dynamic>) : null,
 ); }
@@ -16,14 +17,14 @@ Map<String, dynamic> toJson() { return {
   if (shippingRateData != null) 'shipping_rate_data': shippingRateData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_rate', 'shipping_rate_data'}.contains(key)); } 
-Shipping_cost copyWith({String Function()? shippingRate, ShippingRateData Function()? shippingRateData, }) { return Shipping_cost(
+ShippingCost copyWith({String Function()? shippingRate, ShippingRateData Function()? shippingRateData, }) { return ShippingCost(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   shippingRateData: shippingRateData != null ? shippingRateData() : this.shippingRateData,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Shipping_cost &&
+      other is ShippingCost &&
           shippingRate == other.shippingRate &&
           shippingRateData == other.shippingRateData; } 
 @override int get hashCode { return Object.hash(shippingRate, shippingRateData); } 
-@override String toString() { return 'Shipping_cost(shippingRate: $shippingRate, shippingRateData: $shippingRateData)'; } 
+@override String toString() { return 'ShippingCost(shippingRate: $shippingRate, shippingRateData: $shippingRateData)'; } 
  }

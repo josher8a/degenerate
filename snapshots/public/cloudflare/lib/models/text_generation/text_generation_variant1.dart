@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/text_generation/usage.dart';import 'package:pub_cloudflare/models/text_generation/variant1_tool_calls.dart';@immutable final class TextGeneration2Variant1 {const TextGeneration2Variant1({required this.response, this.toolCalls, this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/text_generation/usage.dart';import 'package:pub_cloudflare/models/text_generation/variant1_tool_calls.dart';@immutable final class TextGenerationVariant1 {const TextGenerationVariant1({required this.response, this.toolCalls, this.usage, });
 
-factory TextGeneration2Variant1.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1(
+factory TextGenerationVariant1.fromJson(Map<String, dynamic> json) { return TextGenerationVariant1(
   response: json['response'] as String,
   toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => Variant1ToolCalls.fromJson(e as Map<String, dynamic>)).toList(),
   usage: json['usage'] != null ? Usage.fromJson(json['usage'] as Map<String, dynamic>) : null,
@@ -23,16 +23,16 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('response') && json['response'] is String; } 
-TextGeneration2Variant1 copyWith({String? response, List<Variant1ToolCalls> Function()? toolCalls, Usage Function()? usage, }) { return TextGeneration2Variant1(
+TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls> Function()? toolCalls, Usage Function()? usage, }) { return TextGenerationVariant1(
   response: response ?? this.response,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   usage: usage != null ? usage() : this.usage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is TextGeneration2Variant1 &&
+      other is TextGenerationVariant1 &&
           response == other.response &&
           listEquals(toolCalls, other.toolCalls) &&
           usage == other.usage; } 
 @override int get hashCode { return Object.hash(response, Object.hashAll(toolCalls ?? const []), usage); } 
-@override String toString() { return 'TextGeneration2Variant1(response: $response, toolCalls: $toolCalls, usage: $usage)'; } 
+@override String toString() { return 'TextGenerationVariant1(response: $response, toolCalls: $toolCalls, usage: $usage)'; } 
  }

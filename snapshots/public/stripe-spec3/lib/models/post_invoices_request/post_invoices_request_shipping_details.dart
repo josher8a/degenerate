@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostInvoicesRequestShippingDetails {const PostInvoicesRequestShippingDetails({required this.address, required this.name, this.phone, });
 
 factory PostInvoicesRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingDetails(
-  address: Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+  address: CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
   phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final Customer_shippingAddress address;
+final CustomerShippingAddress address;
 
 final String name;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostInvoicesRequestShippingDetails copyWith({Customer_shippingAddress? address, String? name, Phone Function()? phone, }) { return PostInvoicesRequestShippingDetails(
+PostInvoicesRequestShippingDetails copyWith({CustomerShippingAddress? address, String? name, Phone Function()? phone, }) { return PostInvoicesRequestShippingDetails(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,

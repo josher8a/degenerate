@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/next_billing.dart';@immutable final class Payment_method_options_paramSubscriptionsVariant1 {const Payment_method_options_paramSubscriptionsVariant1({required this.interval, required this.reference, this.intervalCount, this.name, this.nextBilling, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_prices_recurring/get_prices_recurring_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/next_billing.dart';@immutable final class PaymentMethodOptionsParamSubscriptionsVariant1 {const PaymentMethodOptionsParamSubscriptionsVariant1({required this.interval, required this.reference, this.intervalCount, this.name, this.nextBilling, });
 
-factory Payment_method_options_paramSubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return Payment_method_options_paramSubscriptionsVariant1(
+factory PaymentMethodOptionsParamSubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParamSubscriptionsVariant1(
   interval: GetPricesRecurringInterval.fromJson(json['interval'] as String),
   intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
   name: json['name'] as String?,
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String; } 
-Payment_method_options_paramSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int Function()? intervalCount, String Function()? name, NextBilling Function()? nextBilling, String? reference, }) { return Payment_method_options_paramSubscriptionsVariant1(
+PaymentMethodOptionsParamSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int Function()? intervalCount, String Function()? name, NextBilling Function()? nextBilling, String? reference, }) { return PaymentMethodOptionsParamSubscriptionsVariant1(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
   name: name != null ? name() : this.name,
@@ -37,12 +37,12 @@ Payment_method_options_paramSubscriptionsVariant1 copyWith({GetPricesRecurringIn
   reference: reference ?? this.reference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Payment_method_options_paramSubscriptionsVariant1 &&
+      other is PaymentMethodOptionsParamSubscriptionsVariant1 &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
           name == other.name &&
           nextBilling == other.nextBilling &&
           reference == other.reference; } 
 @override int get hashCode { return Object.hash(interval, intervalCount, name, nextBilling, reference); } 
-@override String toString() { return 'Payment_method_options_paramSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)'; } 
+@override String toString() { return 'PaymentMethodOptionsParamSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)'; } 
  }

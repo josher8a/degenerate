@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Optional_fields_address {const Optional_fields_address({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OptionalFieldsAddress {const OptionalFieldsAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
-factory Optional_fields_address.fromJson(Map<String, dynamic> json) { return Optional_fields_address(
+factory OptionalFieldsAddress.fromJson(Map<String, dynamic> json) { return OptionalFieldsAddress(
   city: json['city'] as String?,
   country: json['country'] as String?,
   line1: json['line1'] as String?,
@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state'}.contains(key)); } 
-Optional_fields_address copyWith({String Function()? city, String Function()? country, String Function()? line1, String Function()? line2, String Function()? postalCode, String Function()? state, }) { return Optional_fields_address(
+OptionalFieldsAddress copyWith({String Function()? city, String Function()? country, String Function()? line1, String Function()? line2, String Function()? postalCode, String Function()? state, }) { return OptionalFieldsAddress(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,
@@ -41,7 +41,7 @@ Optional_fields_address copyWith({String Function()? city, String Function()? co
   state: state != null ? state() : this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Optional_fields_address &&
+      other is OptionalFieldsAddress &&
           city == other.city &&
           country == other.country &&
           line1 == other.line1 &&
@@ -49,5 +49,5 @@ Optional_fields_address copyWith({String Function()? city, String Function()? co
           postalCode == other.postalCode &&
           state == other.state; } 
 @override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
-@override String toString() { return 'Optional_fields_address(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
+@override String toString() { return 'OptionalFieldsAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
  }

@@ -1,32 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_documents.dart';@immutable final class External_account_payout_bank_account {const External_account_payout_bank_account({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.documents, this.object, this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_account_type.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account/external_account_payout_bank_account_documents.dart';@immutable final class ExternalAccountPayoutBankAccount {const ExternalAccountPayoutBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.accountType, this.currency, this.documents, this.object, this.routingNumber, });
 
-factory External_account_payout_bank_account.fromJson(Map<String, dynamic> json) { return External_account_payout_bank_account(
+factory ExternalAccountPayoutBankAccount.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? Customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
-  accountType: json['account_type'] != null ? External_account_payout_bank_accountAccountType.fromJson(json['account_type'] as String) : null,
+  accountType: json['account_type'] != null ? ExternalAccountPayoutBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   country: json['country'] as String,
   currency: json['currency'] as String?,
-  documents: json['documents'] != null ? External_account_payout_bank_accountDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  documents: json['documents'] != null ? ExternalAccountPayoutBankAccountDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   object: json['object'] != null ? BankAccountObject.fromJson(json['object'] as String) : null,
   routingNumber: json['routing_number'] as String?,
 ); }
 
 final String? accountHolderName;
 
-final Customer_payment_source_bank_accountAccountHolderType? accountHolderType;
+final CustomerPaymentSourceBankAccountAccountHolderType? accountHolderType;
 
 final String accountNumber;
 
-final External_account_payout_bank_accountAccountType? accountType;
+final ExternalAccountPayoutBankAccountAccountType? accountType;
 
 final String country;
 
 final String? currency;
 
-final External_account_payout_bank_accountDocuments? documents;
+final ExternalAccountPayoutBankAccountDocuments? documents;
 
 final BankAccountObject? object;
 
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-External_account_payout_bank_account copyWith({String Function()? accountHolderName, Customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String? accountNumber, External_account_payout_bank_accountAccountType Function()? accountType, String? country, String Function()? currency, External_account_payout_bank_accountDocuments Function()? documents, BankAccountObject Function()? object, String Function()? routingNumber, }) { return External_account_payout_bank_account(
+ExternalAccountPayoutBankAccount copyWith({String Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccountAccountType Function()? accountType, String? country, String Function()? currency, ExternalAccountPayoutBankAccountDocuments Function()? documents, BankAccountObject Function()? object, String Function()? routingNumber, }) { return ExternalAccountPayoutBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,
@@ -57,7 +57,7 @@ External_account_payout_bank_account copyWith({String Function()? accountHolderN
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is External_account_payout_bank_account &&
+      other is ExternalAccountPayoutBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
           accountNumber == other.accountNumber &&
@@ -68,5 +68,5 @@ External_account_payout_bank_account copyWith({String Function()? accountHolderN
           object == other.object &&
           routingNumber == other.routingNumber; } 
 @override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, documents, object, routingNumber); } 
-@override String toString() { return 'External_account_payout_bank_account(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, documents: $documents, object: $object, routingNumber: $routingNumber)'; } 
+@override String toString() { return 'ExternalAccountPayoutBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, documents: $documents, object: $object, routingNumber: $routingNumber)'; } 
  }

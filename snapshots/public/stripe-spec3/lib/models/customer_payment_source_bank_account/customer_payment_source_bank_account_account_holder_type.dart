@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Customer_payment_source_bank_accountAccountHolderType {const Customer_payment_source_bank_accountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceBankAccountAccountHolderType {const CustomerPaymentSourceBankAccountAccountHolderType._(this.value);
 
-factory Customer_payment_source_bank_accountAccountHolderType.fromJson(String json) { return switch (json) {
+factory CustomerPaymentSourceBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
   'individual' => individual,
-  _ => Customer_payment_source_bank_accountAccountHolderType._(json),
+  _ => CustomerPaymentSourceBankAccountAccountHolderType._(json),
 }; }
 
-static const Customer_payment_source_bank_accountAccountHolderType company = Customer_payment_source_bank_accountAccountHolderType._('company');
+static const CustomerPaymentSourceBankAccountAccountHolderType company = CustomerPaymentSourceBankAccountAccountHolderType._('company');
 
-static const Customer_payment_source_bank_accountAccountHolderType individual = Customer_payment_source_bank_accountAccountHolderType._('individual');
+static const CustomerPaymentSourceBankAccountAccountHolderType individual = CustomerPaymentSourceBankAccountAccountHolderType._('individual');
 
-static const List<Customer_payment_source_bank_accountAccountHolderType> values = [company, individual];
+static const List<CustomerPaymentSourceBankAccountAccountHolderType> values = [company, individual];
 
 final String value;
 
@@ -20,7 +20,7 @@ String toJson() { return value; }
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is Customer_payment_source_bank_accountAccountHolderType && other.value == value; } 
+    other is CustomerPaymentSourceBankAccountAccountHolderType && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Customer_payment_source_bank_accountAccountHolderType($value)'; } 
+@override String toString() { return 'CustomerPaymentSourceBankAccountAccountHolderType($value)'; } 
  }

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding2_text.dart';@immutable final class InputEmbedding {const InputEmbedding({required this.text, this.truncateInputs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';@immutable final class InputEmbedding {const InputEmbedding({required this.text, this.truncateInputs = false, });
 
 factory InputEmbedding.fromJson(Map<String, dynamic> json) { return InputEmbedding(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
   truncateInputs: json.containsKey('truncate_inputs') ? json['truncate_inputs'] as bool : false,
 ); }
 
-final InputEmbedding2Text text;
+final InputEmbeddingText text;
 
 /// When provided with too long context should the model error out or truncate the context to fit?
 final bool truncateInputs;
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'truncate_inputs': truncateInputs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-InputEmbedding copyWith({InputEmbedding2Text? text, bool Function()? truncateInputs, }) { return InputEmbedding(
+InputEmbedding copyWith({InputEmbeddingText? text, bool Function()? truncateInputs, }) { return InputEmbedding(
   text: text ?? this.text,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
 ); } 

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding2_text.dart';@immutable final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';@immutable final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest({required this.text});
 
 factory WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// Input text to embed. Can be a single string or a list of strings.
-final InputEmbedding2Text text;
+final InputEmbeddingText text;
 
 Map<String, dynamic> toJson() { return {
   'text': text.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest copyWith({InputEmbedding2Text? text}) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(
+WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest copyWith({InputEmbeddingText? text}) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(
   text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

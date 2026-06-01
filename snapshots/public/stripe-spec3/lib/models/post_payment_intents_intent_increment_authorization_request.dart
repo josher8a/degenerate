@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_increment_authorization_request/post_payment_intents_intent_increment_authorization_request_payment_details.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequest {const PostPaymentIntentsIntentIncrementAuthorizationRequest({required this.amount, this.amountDetails, this.applicationFeeAmount, this.description, this.expand, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.transferData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_capture_request/post_charges_charge_capture_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';@immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequest {const PostPaymentIntentsIntentIncrementAuthorizationRequest({required this.amount, this.amountDetails, this.applicationFeeAmount, this.description, this.expand, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.transferData, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
@@ -10,7 +10,7 @@ factory PostPaymentIntentsIntentIncrementAuthorizationRequest.fromJson(Map<Strin
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: json['hooks'] != null ? Hooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
+  paymentDetails: json['payment_details'] != null ? PaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferData: json['transfer_data'] != null ? PostChargesChargeCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
 ); }
@@ -37,7 +37,7 @@ final Hooks? hooks;
 final Map<String,String>? metadata;
 
 /// Provides industry-specific information about the charge.
-final PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails? paymentDetails;
+final PaymentDetails? paymentDetails;
 
 /// Text that appears on the customer's statement as the statement descriptor for a non-card or card charge. This value overrides the account's default statement descriptor. For information about requirements, including the 22-character limit, see [the Statement Descriptor docs](https://docs.stripe.com/get-started/account/statement-descriptors).
 final String? statementDescriptor;
@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
-PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails Function()? amountDetails, int Function()? applicationFeeAmount, String Function()? description, List<String> Function()? expand, Hooks Function()? hooks, Map<String, String> Function()? metadata, PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails Function()? paymentDetails, String Function()? statementDescriptor, PostChargesChargeCaptureRequestTransferData Function()? transferData, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
+PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails Function()? amountDetails, int Function()? applicationFeeAmount, String Function()? description, List<String> Function()? expand, Hooks Function()? hooks, Map<String, String> Function()? metadata, PaymentDetails Function()? paymentDetails, String Function()? statementDescriptor, PostChargesChargeCaptureRequestTransferData Function()? transferData, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

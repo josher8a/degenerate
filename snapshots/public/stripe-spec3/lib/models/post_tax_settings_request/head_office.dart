@@ -4,16 +4,16 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class HeadOffice {const HeadOffice({required this.address});
 
 factory HeadOffice.fromJson(Map<String, dynamic> json) { return HeadOffice(
-  address: Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+  address: CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
 ); }
 
-final Customer_shippingAddress address;
+final CustomerShippingAddress address;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
-HeadOffice copyWith({Customer_shippingAddress? address}) { return HeadOffice(
+HeadOffice copyWith({CustomerShippingAddress? address}) { return HeadOffice(
   address: address ?? this.address,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

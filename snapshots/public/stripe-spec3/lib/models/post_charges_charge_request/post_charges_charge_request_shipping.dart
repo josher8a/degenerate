@@ -4,14 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 @immutable final class PostChargesChargeRequestShipping {const PostChargesChargeRequestShipping({required this.address, required this.name, this.carrier, this.phone, this.trackingNumber, });
 
 factory PostChargesChargeRequestShipping.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequestShipping(
-  address: Customer_shippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+  address: CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   carrier: json['carrier'] as String?,
   name: json['name'] as String,
   phone: json['phone'] as String?,
   trackingNumber: json['tracking_number'] as String?,
 ); }
 
-final Customer_shippingAddress address;
+final CustomerShippingAddress address;
 
 final String? carrier;
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostChargesChargeRequestShipping copyWith({Customer_shippingAddress? address, String Function()? carrier, String? name, String Function()? phone, String Function()? trackingNumber, }) { return PostChargesChargeRequestShipping(
+PostChargesChargeRequestShipping copyWith({CustomerShippingAddress? address, String Function()? carrier, String? name, String Function()? phone, String Function()? trackingNumber, }) { return PostChargesChargeRequestShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,
   name: name ?? this.name,

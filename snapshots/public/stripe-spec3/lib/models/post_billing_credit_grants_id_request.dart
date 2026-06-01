@@ -12,7 +12,7 @@ factory PostBillingCreditGrantsIdRequest.fromJson(Map<String, dynamic> json) { r
 final List<String>? expand;
 
 /// The time when the billing credits created by this credit grant expire. If set to empty, the billing credits never expire.
-final Payment_method_options_paramExpiresAt? expiresAt;
+final PaymentMethodOptionsParamExpiresAt? expiresAt;
 
 /// Set of key-value pairs you can attach to an object. You can use this to store additional information about the object (for example, cost basis) in a structured format.
 final Map<String,String>? metadata;
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'expires_at', 'metadata'}.contains(key)); } 
-PostBillingCreditGrantsIdRequest copyWith({List<String> Function()? expand, Payment_method_options_paramExpiresAt Function()? expiresAt, Map<String, String> Function()? metadata, }) { return PostBillingCreditGrantsIdRequest(
+PostBillingCreditGrantsIdRequest copyWith({List<String> Function()? expand, PaymentMethodOptionsParamExpiresAt Function()? expiresAt, Map<String, String> Function()? metadata, }) { return PostBillingCreditGrantsIdRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   metadata: metadata != null ? metadata() : this.metadata,

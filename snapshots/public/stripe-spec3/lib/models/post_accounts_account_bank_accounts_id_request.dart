@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,
   accountHolderType: json['account_holder_type'] != null ? PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? External_account_payout_bank_accountAccountType.fromJson(json['account_type'] as String) : null,
+  accountType: json['account_type'] != null ? ExternalAccountPayoutBankAccountAccountType.fromJson(json['account_type'] as String) : null,
   addressCity: json['address_city'] as String?,
   addressCountry: json['address_country'] as String?,
   addressLine1: json['address_line1'] as String?,
@@ -13,7 +13,7 @@ factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> j
   addressState: json['address_state'] as String?,
   addressZip: json['address_zip'] as String?,
   defaultForCurrency: json['default_for_currency'] as bool?,
-  documents: json['documents'] != null ? External_account_payout_bank_accountDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  documents: json['documents'] != null ? ExternalAccountPayoutBankAccountDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -28,7 +28,7 @@ final String? accountHolderName;
 final PostAccountsAccountBankAccountsIdRequestAccountHolderType? accountHolderType;
 
 /// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
-final External_account_payout_bank_accountAccountType? accountType;
+final ExternalAccountPayoutBankAccountAccountType? accountType;
 
 /// City/District/Suburb/Town/Village.
 final String? addressCity;
@@ -52,7 +52,7 @@ final String? addressZip;
 final bool? defaultForCurrency;
 
 /// Documents that may be submitted to satisfy various informational requests.
-final External_account_payout_bank_accountDocuments? documents;
+final ExternalAccountPayoutBankAccountDocuments? documents;
 
 /// Two digit number representing the card’s expiration month.
 final String? expMonth;
@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'account_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'default_for_currency', 'documents', 'exp_month', 'exp_year', 'expand', 'metadata', 'name'}.contains(key)); } 
-PostAccountsAccountBankAccountsIdRequest copyWith({String Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType Function()? accountHolderType, External_account_payout_bank_accountAccountType Function()? accountType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, bool Function()? defaultForCurrency, External_account_payout_bank_accountDocuments Function()? documents, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, Metadata Function()? metadata, String Function()? name, }) { return PostAccountsAccountBankAccountsIdRequest(
+PostAccountsAccountBankAccountsIdRequest copyWith({String Function()? accountHolderName, PostAccountsAccountBankAccountsIdRequestAccountHolderType Function()? accountHolderType, ExternalAccountPayoutBankAccountAccountType Function()? accountType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, bool Function()? defaultForCurrency, ExternalAccountPayoutBankAccountDocuments Function()? documents, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, Metadata Function()? metadata, String Function()? name, }) { return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,

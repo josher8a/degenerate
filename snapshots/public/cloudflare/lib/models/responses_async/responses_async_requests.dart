@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses/reasoning.dart';import 'package:pub_cloudflare/models/responses/responses_input.dart';@immutable final class Responses_AsyncRequests {const Responses_AsyncRequests({required this.input, this.reasoning, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/responses/reasoning.dart';import 'package:pub_cloudflare/models/responses/responses_input.dart';@immutable final class ResponsesAsyncRequests {const ResponsesAsyncRequests({required this.input, this.reasoning, });
 
-factory Responses_AsyncRequests.fromJson(Map<String, dynamic> json) { return Responses_AsyncRequests(
+factory ResponsesAsyncRequests.fromJson(Map<String, dynamic> json) { return ResponsesAsyncRequests(
   input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
   reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
 ); }
@@ -17,14 +17,14 @@ Map<String, dynamic> toJson() { return {
   if (reasoning != null) 'reasoning': reasoning?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
-Responses_AsyncRequests copyWith({ResponsesInput? input, Reasoning Function()? reasoning, }) { return Responses_AsyncRequests(
+ResponsesAsyncRequests copyWith({ResponsesInput? input, Reasoning Function()? reasoning, }) { return ResponsesAsyncRequests(
   input: input ?? this.input,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Responses_AsyncRequests &&
+      other is ResponsesAsyncRequests &&
           input == other.input &&
           reasoning == other.reasoning; } 
 @override int get hashCode { return Object.hash(input, reasoning); } 
-@override String toString() { return 'Responses_AsyncRequests(input: $input, reasoning: $reasoning)'; } 
+@override String toString() { return 'ResponsesAsyncRequests(input: $input, reasoning: $reasoning)'; } 
  }

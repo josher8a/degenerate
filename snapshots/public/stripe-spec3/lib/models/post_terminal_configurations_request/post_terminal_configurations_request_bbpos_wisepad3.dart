@@ -7,13 +7,13 @@ factory PostTerminalConfigurationsRequestBbposWisepad3.fromJson(Map<String, dyna
   splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final Bbpos_wise_pad3Splashscreen? splashscreen;
+final BbposWisePad3Splashscreen? splashscreen;
 
 Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
-PostTerminalConfigurationsRequestBbposWisepad3 copyWith({Bbpos_wise_pad3Splashscreen Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWisepad3(
+PostTerminalConfigurationsRequestBbposWisepad3 copyWith({BbposWisePad3Splashscreen Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWisepad3(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

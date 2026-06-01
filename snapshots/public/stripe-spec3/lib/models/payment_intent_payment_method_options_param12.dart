@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PaymentIntentPaymentMethodOptionsParam12.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam12(
   mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam12MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
-  setupFutureUsage: json['setup_future_usage'] != null ? Payment_intent_paramSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   targetDate: json['target_date'] as String?,
 ); }
 
 final PaymentIntentPaymentMethodOptionsParam12MandateOptions? mandateOptions;
 
-final Payment_intent_paramSetupFutureUsage? setupFutureUsage;
+final PaymentIntentParamSetupFutureUsage? setupFutureUsage;
 
 final String? targetDate;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam12 copyWith({PaymentIntentPaymentMethodOptionsParam12MandateOptions Function()? mandateOptions, Payment_intent_paramSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam12(
+PaymentIntentPaymentMethodOptionsParam12 copyWith({PaymentIntentPaymentMethodOptionsParam12MandateOptions Function()? mandateOptions, PaymentIntentParamSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PaymentIntentPaymentMethodOptionsParam12(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

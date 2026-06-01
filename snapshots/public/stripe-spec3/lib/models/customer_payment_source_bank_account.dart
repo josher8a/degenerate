@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';@immutable final class Customer_payment_source_bank_account {const Customer_payment_source_bank_account({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_object.dart';import 'package:pub_stripe_spec3/models/customer_payment_source_bank_account/customer_payment_source_bank_account_account_holder_type.dart';@immutable final class CustomerPaymentSourceBankAccount {const CustomerPaymentSourceBankAccount({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
 
-factory Customer_payment_source_bank_account.fromJson(Map<String, dynamic> json) { return Customer_payment_source_bank_account(
+factory CustomerPaymentSourceBankAccount.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceBankAccount(
   accountHolderName: json['account_holder_name'] as String?,
-  accountHolderType: json['account_holder_type'] != null ? Customer_payment_source_bank_accountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountHolderType: json['account_holder_type'] != null ? CustomerPaymentSourceBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
   accountNumber: json['account_number'] as String,
   country: json['country'] as String,
   currency: json['currency'] as String?,
@@ -14,7 +14,7 @@ factory Customer_payment_source_bank_account.fromJson(Map<String, dynamic> json)
 
 final String? accountHolderName;
 
-final Customer_payment_source_bank_accountAccountHolderType? accountHolderType;
+final CustomerPaymentSourceBankAccountAccountHolderType? accountHolderType;
 
 final String accountNumber;
 
@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-Customer_payment_source_bank_account copyWith({String Function()? accountHolderName, Customer_payment_source_bank_accountAccountHolderType Function()? accountHolderType, String? accountNumber, String? country, String Function()? currency, BankAccountObject Function()? object, String Function()? routingNumber, }) { return Customer_payment_source_bank_account(
+CustomerPaymentSourceBankAccount copyWith({String Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType Function()? accountHolderType, String? accountNumber, String? country, String Function()? currency, BankAccountObject Function()? object, String Function()? routingNumber, }) { return CustomerPaymentSourceBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,
@@ -47,7 +47,7 @@ Customer_payment_source_bank_account copyWith({String Function()? accountHolderN
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Customer_payment_source_bank_account &&
+      other is CustomerPaymentSourceBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
           accountNumber == other.accountNumber &&
@@ -56,5 +56,5 @@ Customer_payment_source_bank_account copyWith({String Function()? accountHolderN
           object == other.object &&
           routingNumber == other.routingNumber; } 
 @override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, country, currency, object, routingNumber); } 
-@override String toString() { return 'Customer_payment_source_bank_account(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, country: $country, currency: $currency, object: $object, routingNumber: $routingNumber)'; } 
+@override String toString() { return 'CustomerPaymentSourceBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, country: $country, currency: $currency, object: $object, routingNumber: $routingNumber)'; } 
  }

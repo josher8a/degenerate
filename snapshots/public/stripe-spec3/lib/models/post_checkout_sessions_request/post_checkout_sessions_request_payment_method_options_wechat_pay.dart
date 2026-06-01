@@ -4,13 +4,13 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay(
   appId: json['app_id'] as String?,
-  client: Payment_method_options_paramClient.fromJson(json['client'] as String),
+  client: PaymentMethodOptionsParamClient.fromJson(json['client'] as String),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutAffirmPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 final String? appId;
 
-final Payment_method_options_paramClient client;
+final PaymentMethodOptionsParamClient client;
 
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client'); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay copyWith({String Function()? appId, Payment_method_options_paramClient? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay(
+PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay copyWith({String Function()? appId, PaymentMethodOptionsParamClient? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay(
   appId: appId != null ? appId() : this.appId,
   client: client ?? this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

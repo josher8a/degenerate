@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding2_text.dart';@immutable final class WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest {const WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';@immutable final class WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest {const WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest({required this.text});
 
 factory WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// Input text to embed. Can be a single string or a list of strings.
-final InputEmbedding2Text text;
+final InputEmbeddingText text;
 
 Map<String, dynamic> toJson() { return {
   'text': text.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest copyWith({InputEmbedding2Text? text}) { return WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(
+WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest copyWith({InputEmbeddingText? text}) { return WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(
   text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

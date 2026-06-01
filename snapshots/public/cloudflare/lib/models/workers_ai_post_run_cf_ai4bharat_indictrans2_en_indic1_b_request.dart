@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding2_text.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/target_language.dart';@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({required this.text, this.targetLanguage = TargetLanguage.hinDeva, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_embedding/input_embedding_text.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request/target_language.dart';@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({required this.text, this.targetLanguage = TargetLanguage.hinDeva, });
 
 factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
   targetLanguage: TargetLanguage.fromJson(json['target_language'] as String),
@@ -11,7 +11,7 @@ factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest.fromJson(Map<Stri
 final TargetLanguage targetLanguage;
 
 /// Input text to translate. Can be a single string or a list of strings.
-final InputEmbedding2Text text;
+final InputEmbeddingText text;
 
 Map<String, dynamic> toJson() { return {
   'target_language': targetLanguage.toJson(),
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_language') &&
       json.containsKey('text'); } 
-WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest copyWith({TargetLanguage? targetLanguage, InputEmbedding2Text? text, }) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
+WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest copyWith({TargetLanguage? targetLanguage, InputEmbeddingText? text, }) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
   targetLanguage: targetLanguage ?? this.targetLanguage,
   text: text ?? this.text,
 ); } 

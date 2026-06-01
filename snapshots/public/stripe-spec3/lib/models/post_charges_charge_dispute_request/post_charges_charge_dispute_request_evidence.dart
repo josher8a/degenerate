@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/enhanced_evidence.dart';/// Evidence to upload, to respond to a dispute. Updating any field in the hash will submit all fields in the hash for review. The combined character count of all fields is limited to 150,000.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_dispute_request/evidence_enhanced_evidence.dart';/// Evidence to upload, to respond to a dispute. Updating any field in the hash will submit all fields in the hash for review. The combined character count of all fields is limited to 150,000.
 @immutable final class PostChargesChargeDisputeRequestEvidence {const PostChargesChargeDisputeRequestEvidence({this.accessActivityLog, this.billingAddress, this.cancellationPolicy, this.cancellationPolicyDisclosure, this.cancellationRebuttal, this.customerCommunication, this.customerEmailAddress, this.customerName, this.customerPurchaseIp, this.customerSignature, this.duplicateChargeDocumentation, this.duplicateChargeExplanation, this.duplicateChargeId, this.enhancedEvidence, this.productDescription, this.receipt, this.refundPolicy, this.refundPolicyDisclosure, this.refundRefusalExplanation, this.serviceDate, this.serviceDocumentation, this.shippingAddress, this.shippingCarrier, this.shippingDate, this.shippingDocumentation, this.shippingTrackingNumber, this.uncategorizedFile, this.uncategorizedText, });
 
 factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> json) { return PostChargesChargeDisputeRequestEvidence(
@@ -17,7 +17,7 @@ factory PostChargesChargeDisputeRequestEvidence.fromJson(Map<String, dynamic> js
   duplicateChargeDocumentation: json['duplicate_charge_documentation'] as String?,
   duplicateChargeExplanation: json['duplicate_charge_explanation'] as String?,
   duplicateChargeId: json['duplicate_charge_id'] as String?,
-  enhancedEvidence: json['enhanced_evidence'] != null ? OneOf2.parse(json['enhanced_evidence'], fromA: (v) => Enhanced_evidence.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
+  enhancedEvidence: json['enhanced_evidence'] != null ? OneOf2.parse(json['enhanced_evidence'], fromA: (v) => EnhancedEvidence.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   productDescription: json['product_description'] as String?,
   receipt: json['receipt'] as String?,
   refundPolicy: json['refund_policy'] as String?,
@@ -60,7 +60,7 @@ final String? duplicateChargeExplanation;
 
 final String? duplicateChargeId;
 
-final EnhancedEvidence? enhancedEvidence;
+final EvidenceEnhancedEvidence? enhancedEvidence;
 
 final String? productDescription;
 
@@ -121,7 +121,7 @@ Map<String, dynamic> toJson() { return {
   'uncategorized_text': ?uncategorizedText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_activity_log', 'billing_address', 'cancellation_policy', 'cancellation_policy_disclosure', 'cancellation_rebuttal', 'customer_communication', 'customer_email_address', 'customer_name', 'customer_purchase_ip', 'customer_signature', 'duplicate_charge_documentation', 'duplicate_charge_explanation', 'duplicate_charge_id', 'enhanced_evidence', 'product_description', 'receipt', 'refund_policy', 'refund_policy_disclosure', 'refund_refusal_explanation', 'service_date', 'service_documentation', 'shipping_address', 'shipping_carrier', 'shipping_date', 'shipping_documentation', 'shipping_tracking_number', 'uncategorized_file', 'uncategorized_text'}.contains(key)); } 
-PostChargesChargeDisputeRequestEvidence copyWith({String Function()? accessActivityLog, String Function()? billingAddress, String Function()? cancellationPolicy, String Function()? cancellationPolicyDisclosure, String Function()? cancellationRebuttal, String Function()? customerCommunication, String Function()? customerEmailAddress, String Function()? customerName, String Function()? customerPurchaseIp, String Function()? customerSignature, String Function()? duplicateChargeDocumentation, String Function()? duplicateChargeExplanation, String Function()? duplicateChargeId, EnhancedEvidence Function()? enhancedEvidence, String Function()? productDescription, String Function()? receipt, String Function()? refundPolicy, String Function()? refundPolicyDisclosure, String Function()? refundRefusalExplanation, String Function()? serviceDate, String Function()? serviceDocumentation, String Function()? shippingAddress, String Function()? shippingCarrier, String Function()? shippingDate, String Function()? shippingDocumentation, String Function()? shippingTrackingNumber, String Function()? uncategorizedFile, String Function()? uncategorizedText, }) { return PostChargesChargeDisputeRequestEvidence(
+PostChargesChargeDisputeRequestEvidence copyWith({String Function()? accessActivityLog, String Function()? billingAddress, String Function()? cancellationPolicy, String Function()? cancellationPolicyDisclosure, String Function()? cancellationRebuttal, String Function()? customerCommunication, String Function()? customerEmailAddress, String Function()? customerName, String Function()? customerPurchaseIp, String Function()? customerSignature, String Function()? duplicateChargeDocumentation, String Function()? duplicateChargeExplanation, String Function()? duplicateChargeId, EvidenceEnhancedEvidence Function()? enhancedEvidence, String Function()? productDescription, String Function()? receipt, String Function()? refundPolicy, String Function()? refundPolicyDisclosure, String Function()? refundRefusalExplanation, String Function()? serviceDate, String Function()? serviceDocumentation, String Function()? shippingAddress, String Function()? shippingCarrier, String Function()? shippingDate, String Function()? shippingDocumentation, String Function()? shippingTrackingNumber, String Function()? uncategorizedFile, String Function()? uncategorizedText, }) { return PostChargesChargeDisputeRequestEvidence(
   accessActivityLog: accessActivityLog != null ? accessActivityLog() : this.accessActivityLog,
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   cancellationPolicy: cancellationPolicy != null ? cancellationPolicy() : this.cancellationPolicy,

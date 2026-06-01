@@ -15,7 +15,7 @@ factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansR
   metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
   meter: json['meter'] as String?,
   nickname: json['nickname'] as String?,
-  product: json['product'] != null ? OneOf2.parse(json['product'], fromA: (v) => Inline_product_params.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  product: json['product'] != null ? OneOf2.parse(json['product'], fromA: (v) => InlineProductParams.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => Tiers.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PostPlansRequestTiersMode.fromJson(json['tiers_mode'] as String) : null,
   transformUsage: json['transform_usage'] != null ? PostPlansRequestTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,

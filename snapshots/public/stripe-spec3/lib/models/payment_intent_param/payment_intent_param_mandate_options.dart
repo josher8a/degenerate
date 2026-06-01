@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/payment_method_options_card_mandate_options_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/supported_types.dart';@immutable final class Payment_intent_paramMandateOptions {const Payment_intent_paramMandateOptions({required this.amount, required this.amountType, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/payment_method_options_card_mandate_options_interval.dart';import 'package:pub_stripe_spec3/models/payment_method_options_card_mandate_options/supported_types.dart';@immutable final class PaymentIntentParamMandateOptions {const PaymentIntentParamMandateOptions({required this.amount, required this.amountType, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
-factory Payment_intent_paramMandateOptions.fromJson(Map<String, dynamic> json) { return Payment_intent_paramMandateOptions(
+factory PaymentIntentParamMandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentParamMandateOptions(
   amount: (json['amount'] as num).toInt(),
   amountType: MandatePaytoAmountType.fromJson(json['amount_type'] as String),
   description: json['description'] as String?,
@@ -48,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('start_date') && json['start_date'] is num; } 
-Payment_intent_paramMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String Function()? description, int Function()? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, int Function()? intervalCount, String? reference, int? startDate, List<SupportedTypes> Function()? supportedTypes, }) { return Payment_intent_paramMandateOptions(
+PaymentIntentParamMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String Function()? description, int Function()? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, int Function()? intervalCount, String? reference, int? startDate, List<SupportedTypes> Function()? supportedTypes, }) { return PaymentIntentParamMandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,
   description: description != null ? description() : this.description,
@@ -60,7 +60,7 @@ Payment_intent_paramMandateOptions copyWith({int? amount, MandatePaytoAmountType
   supportedTypes: supportedTypes != null ? supportedTypes() : this.supportedTypes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-      other is Payment_intent_paramMandateOptions &&
+      other is PaymentIntentParamMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
           description == other.description &&
@@ -71,5 +71,5 @@ Payment_intent_paramMandateOptions copyWith({int? amount, MandatePaytoAmountType
           startDate == other.startDate &&
           listEquals(supportedTypes, other.supportedTypes); } 
 @override int get hashCode { return Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const [])); } 
-@override String toString() { return 'Payment_intent_paramMandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)'; } 
+@override String toString() { return 'PaymentIntentParamMandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)'; } 
  }

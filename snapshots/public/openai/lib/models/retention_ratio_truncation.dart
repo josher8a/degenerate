@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/retentionratiotruncation/token_limits.dart';/// Use retention ratio truncation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/retention_ratio_truncation/token_limits.dart';/// Use retention ratio truncation.
 @immutable final class RetentionRatioTruncationType {const RetentionRatioTruncationType._(this.value);
 
 factory RetentionRatioTruncationType.fromJson(String json) { return switch (json) {

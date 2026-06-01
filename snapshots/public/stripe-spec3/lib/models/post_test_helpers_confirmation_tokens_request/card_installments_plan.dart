@@ -4,15 +4,15 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 
 factory CardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return CardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,
-  interval: json['interval'] != null ? Installment_planInterval.fromJson(json['interval'] as String) : null,
-  type: Installment_planType.fromJson(json['type'] as String),
+  interval: json['interval'] != null ? InstallmentPlanInterval.fromJson(json['interval'] as String) : null,
+  type: InstallmentPlanType.fromJson(json['type'] as String),
 ); }
 
 final int? count;
 
-final Installment_planInterval? interval;
+final InstallmentPlanInterval? interval;
 
-final Installment_planType type;
+final InstallmentPlanType type;
 
 Map<String, dynamic> toJson() { return {
   'count': ?count,
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CardInstallmentsPlan copyWith({int Function()? count, Installment_planInterval Function()? interval, Installment_planType? type, }) { return CardInstallmentsPlan(
+CardInstallmentsPlan copyWith({int Function()? count, InstallmentPlanInterval Function()? interval, InstallmentPlanType? type, }) { return CardInstallmentsPlan(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,
