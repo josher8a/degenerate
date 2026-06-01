@@ -19,6 +19,19 @@ Map<String, dynamic> toJson() { return {
   'to': ?to,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final from$ = from;
+if (from$ != null) {
+  if (from$ < 100) errors.add('from: must be >= 100');
+  if (from$ > 999) errors.add('from: must be <= 999');
+}
+final to$ = to;
+if (to$ != null) {
+  if (to$ < 100) errors.add('to: must be >= 100');
+  if (to$ > 999) errors.add('to: must be <= 999');
+}
+return errors; } 
 StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { return StatusCodeRange(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,

@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   'params': ?params,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'instance_id', 'instance_retention', 'params'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final instanceId$ = instanceId;
+if (instanceId$ != null) {
+  if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(instanceId$)) errors.add(r'instanceId: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
+}
+return errors; } 
 WorCreateNewWorkflowInstanceRequest copyWith({String? Function()? instanceId, InstanceRetention? Function()? instanceRetention, Map<String, dynamic>? Function()? params, }) { return WorCreateNewWorkflowInstanceRequest(
   instanceId: instanceId != null ? instanceId() : this.instanceId,
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,

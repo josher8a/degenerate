@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 200) errors.add('description: length must be <= 200');
+}
+return errors; } 
 SubscriptionPaymentMethodOptionsParamMandateOptions copyWith({int? Function()? amount, MandatePaytoAmountType? Function()? amountType, String? Function()? description, }) { return SubscriptionPaymentMethodOptionsParamMandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

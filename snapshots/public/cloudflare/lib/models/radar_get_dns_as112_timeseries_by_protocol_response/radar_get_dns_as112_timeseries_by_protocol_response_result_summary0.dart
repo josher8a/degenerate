@@ -31,6 +31,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('HTTPS
       json.containsKey('TCP') && json['TCP'] is String &&
       json.containsKey('TLS') && json['TLS'] is String &&
       json.containsKey('UDP') && json['UDP'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(https)) errors.add(r'https: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tcp)) errors.add(r'tcp: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tls)) errors.add(r'tls: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(udp)) errors.add(r'udp: must match pattern ^\d+$');
+return errors; } 
 RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0 copyWith({String? https, String? tcp, String? tls, String? udp, }) { return RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0(
   https: https ?? this.https,
   tcp: tcp ?? this.tcp,

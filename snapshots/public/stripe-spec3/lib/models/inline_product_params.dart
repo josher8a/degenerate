@@ -37,6 +37,26 @@ Map<String, dynamic> toJson() { return {
   'unit_label': ?unitLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final taxCode$ = taxCode;
+if (taxCode$ != null) {
+  if (taxCode$.length > 5000) errors.add('taxCode: length must be <= 5000');
+}
+final unitLabel$ = unitLabel;
+if (unitLabel$ != null) {
+  if (unitLabel$.length > 12) errors.add('unitLabel: length must be <= 12');
+}
+return errors; } 
 InlineProductParams copyWith({bool? Function()? active, String? Function()? id, Map<String, String>? Function()? metadata, String? name, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, }) { return InlineProductParams(
   active: active != null ? active() : this.active,
   id: id != null ? id() : this.id,

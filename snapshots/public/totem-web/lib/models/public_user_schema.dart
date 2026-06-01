@@ -43,6 +43,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_avatar_type') &&
       json.containsKey('date_created') && json['date_created'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 255) errors.add('name: length must be <= 255');
+}
+return errors; } 
 PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Function()? circleCount, String? Function()? name, String? Function()? slug, bool Function()? isStaff, String? Function()? profileAvatarSeed, String? Function()? profileImage, DateTime? dateCreated, }) { return PublicUserSchema(
   profileAvatarType: profileAvatarType ?? this.profileAvatarType,
   circleCount: circleCount != null ? circleCount() : this.circleCount,

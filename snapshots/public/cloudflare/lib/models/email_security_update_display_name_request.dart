@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'is_email_regex', 'name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 1024) errors.add('name: length must be <= 1024');
+}
+return errors; } 
 EmailSecurityUpdateDisplayNameRequest copyWith({String? Function()? email, bool? Function()? isEmailRegex, String? Function()? name, }) { return EmailSecurityUpdateDisplayNameRequest(
   email: email != null ? email() : this.email,
   isEmailRegex: isEmailRegex != null ? isEmailRegex() : this.isEmailRegex,

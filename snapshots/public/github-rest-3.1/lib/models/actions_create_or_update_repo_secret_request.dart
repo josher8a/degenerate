@@ -19,6 +19,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('encrypted_value') && json['encrypted_value'] is String &&
       json.containsKey('key_id') && json['key_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue)) errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$');
+return errors; } 
 ActionsCreateOrUpdateRepoSecretRequest copyWith({String? encryptedValue, String? keyId, }) { return ActionsCreateOrUpdateRepoSecretRequest(
   encryptedValue: encryptedValue ?? this.encryptedValue,
   keyId: keyId ?? this.keyId,

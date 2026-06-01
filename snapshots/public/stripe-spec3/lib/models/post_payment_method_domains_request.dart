@@ -23,6 +23,10 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain_name') && json['domain_name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (domainName.length > 5000) errors.add('domainName: length must be <= 5000');
+return errors; } 
 PostPaymentMethodDomainsRequest copyWith({String? domainName, bool? Function()? enabled, List<String>? Function()? expand, }) { return PostPaymentMethodDomainsRequest(
   domainName: domainName ?? this.domainName,
   enabled: enabled != null ? enabled() : this.enabled,

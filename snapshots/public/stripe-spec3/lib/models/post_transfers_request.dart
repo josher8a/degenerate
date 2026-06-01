@@ -54,6 +54,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('destination') && json['destination'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PostTransfersRequest copyWith({int? Function()? amount, String? currency, String? Function()? description, String? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? sourceTransaction, SourceType? Function()? sourceType, String? Function()? transferGroup, }) { return PostTransfersRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency ?? this.currency,

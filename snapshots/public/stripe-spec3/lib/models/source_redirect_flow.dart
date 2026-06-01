@@ -31,6 +31,16 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('return_url') && json['return_url'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final failureReason$ = failureReason;
+if (failureReason$ != null) {
+  if (failureReason$.length > 5000) errors.add('failureReason: length must be <= 5000');
+}
+if (returnUrl.length > 5000) errors.add('returnUrl: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (url.length > 2048) errors.add('url: length must be <= 2048');
+return errors; } 
 SourceRedirectFlow copyWith({String? Function()? failureReason, String? returnUrl, String? status, String? url, }) { return SourceRedirectFlow(
   failureReason: failureReason != null ? failureReason() : this.failureReason,
   returnUrl: returnUrl ?? this.returnUrl,

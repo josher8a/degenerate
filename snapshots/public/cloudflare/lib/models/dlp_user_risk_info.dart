@@ -37,6 +37,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('email
       json.containsKey('max_risk_level') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('user_id') && json['user_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (eventCount < 0) errors.add('eventCount: must be >= 0');
+return errors; } 
 DlpUserRiskInfo copyWith({String? email, int? eventCount, DateTime? lastEvent, DlpRiskLevel? maxRiskLevel, String? name, String? userId, }) { return DlpUserRiskInfo(
   email: email ?? this.email,
   eventCount: eventCount ?? this.eventCount,

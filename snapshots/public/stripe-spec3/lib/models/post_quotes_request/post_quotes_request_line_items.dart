@@ -28,6 +28,13 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discounts', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 PostQuotesRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? price, PostQuotesQuoteRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, TaxRates? Function()? taxRates, }) { return PostQuotesRequestLineItems(
   discounts: discounts != null ? discounts() : this.discounts,
   price: price != null ? price() : this.price,

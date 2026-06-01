@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'payment_reference': ?paymentReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentReference$ = paymentReference;
+if (paymentReference$ != null) {
+  if (paymentReference$.length > 5000) errors.add('paymentReference: length must be <= 5000');
+}
+return errors; } 
 PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails copyWith({String? Function()? paymentReference}) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
 ); } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/confirmation_number.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/expires_after_days.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/confirmation_number.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/expires_after_days.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_expires_at.dart';import 'package:pub_stripe_spec3/models/payment_method_options_param/payment_method_options_param_product_description.dart';@immutable final class PaymentMethodOptionsParam18 {const PaymentMethodOptionsParam18({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam18.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam18(
   confirmationNumber: json['confirmation_number'] != null ? OneOf2.parse(json['confirmation_number'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -16,7 +16,7 @@ final ExpiresAfterDays? expiresAfterDays;
 
 final PaymentMethodOptionsParamExpiresAt? expiresAt;
 
-final ProductDescription? productDescription;
+final PaymentMethodOptionsParamProductDescription? productDescription;
 
 final CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam18 copyWith({ConfirmationNumber? Function()? confirmationNumber, ExpiresAfterDays? Function()? expiresAfterDays, PaymentMethodOptionsParamExpiresAt? Function()? expiresAt, ProductDescription? Function()? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam18(
+PaymentMethodOptionsParam18 copyWith({ConfirmationNumber? Function()? confirmationNumber, ExpiresAfterDays? Function()? expiresAfterDays, PaymentMethodOptionsParamExpiresAt? Function()? expiresAt, PaymentMethodOptionsParamProductDescription? Function()? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam18(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

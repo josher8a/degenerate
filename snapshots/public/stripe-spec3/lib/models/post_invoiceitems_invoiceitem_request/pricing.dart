@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'price': ?price,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 Pricing copyWith({String? Function()? price}) { return Pricing(
   price: price != null ? price() : this.price,
 ); } 

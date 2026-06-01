@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'reference_status': ?referenceStatus,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'reference_status'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+final referenceStatus$ = referenceStatus;
+if (referenceStatus$ != null) {
+  if (referenceStatus$.length > 5000) errors.add('referenceStatus: length must be <= 5000');
+}
+return errors; } 
 RefundDestinationDetailsMxBankTransfer copyWith({String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsMxBankTransfer(
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,

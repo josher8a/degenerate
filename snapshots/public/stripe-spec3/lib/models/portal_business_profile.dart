@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'terms_of_service_url': ?termsOfServiceUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headline', 'privacy_policy_url', 'terms_of_service_url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final headline$ = headline;
+if (headline$ != null) {
+  if (headline$.length > 5000) errors.add('headline: length must be <= 5000');
+}
+final privacyPolicyUrl$ = privacyPolicyUrl;
+if (privacyPolicyUrl$ != null) {
+  if (privacyPolicyUrl$.length > 5000) errors.add('privacyPolicyUrl: length must be <= 5000');
+}
+final termsOfServiceUrl$ = termsOfServiceUrl;
+if (termsOfServiceUrl$ != null) {
+  if (termsOfServiceUrl$.length > 5000) errors.add('termsOfServiceUrl: length must be <= 5000');
+}
+return errors; } 
 PortalBusinessProfile copyWith({String? Function()? headline, String? Function()? privacyPolicyUrl, String? Function()? termsOfServiceUrl, }) { return PortalBusinessProfile(
   headline: headline != null ? headline() : this.headline,
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,

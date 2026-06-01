@@ -314,6 +314,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reporting_category') && json['reporting_category'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (reportingCategory.length > 5000) errors.add('reportingCategory: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+return errors; } 
 BalanceTransaction copyWith({int? amount, int? availableOn, BalanceType? balanceType, int? created, String? currency, String? Function()? description, double? Function()? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, BalanceTransactionSource? Function()? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
   amount: amount ?? this.amount,
   availableOn: availableOn ?? this.availableOn,

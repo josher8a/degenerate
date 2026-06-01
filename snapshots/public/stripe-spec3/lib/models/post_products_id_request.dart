@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/package_dimensions_specs.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/marketing_features_variant1.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/package_dimensions_specs.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_invoiceitems_invoiceitem_request/post_invoiceitems_invoiceitem_request_tax_code.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/images.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/marketing_features_variant1.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_description.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_marketing_features.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/post_products_id_request_package_dimensions.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/unit_label.dart';import 'package:pub_stripe_spec3/models/post_products_id_request/url.dart';@immutable final class PostProductsIdRequest {const PostProductsIdRequest({this.active, this.defaultPrice, this.description, this.expand, this.images, this.marketingFeatures, this.metadata, this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory PostProductsIdRequest.fromJson(Map<String, dynamic> json) { return PostProductsIdRequest(
   active: json['active'] as bool?,
@@ -26,7 +26,7 @@ final bool? active;
 final String? defaultPrice;
 
 /// The product's description, meant to be displayable to the customer. Use this field to optionally store a long form explanation of the product being sold for your own rendering purposes.
-final Description? description;
+final PostProductsIdRequestDescription? description;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -81,7 +81,22 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'default_price', 'description', 'expand', 'images', 'marketing_features', 'metadata', 'name', 'package_dimensions', 'shippable', 'statement_descriptor', 'tax_code', 'unit_label', 'url'}.contains(key)); } 
-PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, Description? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) { return PostProductsIdRequest(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultPrice$ = defaultPrice;
+if (defaultPrice$ != null) {
+  if (defaultPrice$.length > 5000) errors.add('defaultPrice: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+return errors; } 
+PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) { return PostProductsIdRequest(
   active: active != null ? active() : this.active,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,
   description: description != null ? description() : this.description,

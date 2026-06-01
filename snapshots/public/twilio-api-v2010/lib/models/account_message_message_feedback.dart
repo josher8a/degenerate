@@ -37,6 +37,21 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'message_sid', 'outcome', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final messageSid$ = messageSid;
+if (messageSid$ != null) {
+  if (messageSid$.length < 34) errors.add('messageSid: length must be >= 34');
+  if (messageSid$.length > 34) errors.add('messageSid: length must be <= 34');
+  if (!RegExp(r'^(SM|MM)[0-9a-fA-F]{32}$').hasMatch(messageSid$)) errors.add(r'messageSid: must match pattern ^(SM|MM)[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountMessageMessageFeedback copyWith({String? Function()? accountSid, String? Function()? messageSid, MessageFeedbackEnumOutcome? Function()? outcome, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountMessageMessageFeedback(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   messageSid: messageSid != null ? messageSid() : this.messageSid,

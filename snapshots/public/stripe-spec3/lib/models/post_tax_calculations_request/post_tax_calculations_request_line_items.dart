@@ -36,6 +36,17 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final product$ = product;
+if (product$ != null) {
+  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+}
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 500) errors.add('reference: length must be <= 500');
+}
+return errors; } 
 PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? Function()? metadata, String? Function()? product, int? Function()? quantity, String? Function()? reference, BillingBillResourceInvoicingTaxesTaxTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxCalculationsRequestLineItems(
   amount: amount ?? this.amount,
   metadata: metadata != null ? metadata() : this.metadata,

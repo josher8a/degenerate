@@ -29,6 +29,21 @@ Map<String, dynamic> toJson() { return {
   'status_code': ?statusCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'location', 'message_body', 'status_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final contentType$ = contentType;
+if (contentType$ != null) {
+  if (contentType$.length > 32) errors.add('contentType: length must be <= 32');
+}
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 2048) errors.add('location: length must be <= 2048');
+}
+final messageBody$ = messageBody;
+if (messageBody$ != null) {
+  if (messageBody$.length > 1024) errors.add('messageBody: length must be <= 1024');
+}
+return errors; } 
 FixedResponse copyWith({String? Function()? contentType, String? Function()? location, String? Function()? messageBody, int? Function()? statusCode, }) { return FixedResponse(
   contentType: contentType != null ? contentType() : this.contentType,
   location: location != null ? location() : this.location,

@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final user$ = user;
+if (user$ != null) {
+  if (user$.length > 5000) errors.add('user: length must be <= 5000');
+}
+return errors; } 
 GetAppsSecretsFindScope copyWith({GetAppsSecretsFindScopeType? type, String? Function()? user, }) { return GetAppsSecretsFindScope(
   type: type ?? this.type,
   user: user != null ? user() : this.user,

@@ -29,6 +29,24 @@ Map<String, dynamic> toJson() { return {
   'usage': ?usage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate', 'matching_type', 'selector', 'usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final matchingType$ = matchingType;
+if (matchingType$ != null) {
+  if (matchingType$ < 0) errors.add('matchingType: must be >= 0');
+  if (matchingType$ > 255) errors.add('matchingType: must be <= 255');
+}
+final selector$ = selector;
+if (selector$ != null) {
+  if (selector$ < 0) errors.add('selector: must be >= 0');
+  if (selector$ > 255) errors.add('selector: must be <= 255');
+}
+final usage$ = usage;
+if (usage$ != null) {
+  if (usage$ < 0) errors.add('usage: must be >= 0');
+  if (usage$ > 255) errors.add('usage: must be <= 255');
+}
+return errors; } 
 DnsRecordsSmimeaRecordData copyWith({String? Function()? certificate, double? Function()? matchingType, double? Function()? selector, double? Function()? usage, }) { return DnsRecordsSmimeaRecordData(
   certificate: certificate != null ? certificate() : this.certificate,
   matchingType: matchingType != null ? matchingType() : this.matchingType,

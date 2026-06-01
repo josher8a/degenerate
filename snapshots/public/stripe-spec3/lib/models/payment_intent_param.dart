@@ -68,6 +68,13 @@ Map<String, dynamic> toJson() { return {
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'cvc_token', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji', 'three_d_secure'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cvcToken$ = cvcToken;
+if (cvcToken$ != null) {
+  if (cvcToken$.length > 5000) errors.add('cvcToken: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? cvcToken, InvoicePaymentMethodOptionsParamInstallments? Function()? installments, PaymentIntentParamMandateOptions? Function()? mandateOptions, PaymentIntentParamNetwork? Function()? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParamThreeDSecure? Function()? threeDSecure, }) { return PaymentIntentParam(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,

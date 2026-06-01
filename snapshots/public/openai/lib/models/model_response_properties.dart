@@ -75,6 +75,28 @@ Map<String, dynamic> toJson() { return {
   if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final topLogprobs$ = topLogprobs;
+if (topLogprobs$ != null) {
+  if (topLogprobs$ < 0) errors.add('topLogprobs: must be >= 0');
+  if (topLogprobs$ > 20) errors.add('topLogprobs: must be <= 20');
+}
+final temperature$ = temperature;
+if (temperature$ != null) {
+  if (temperature$ < 0) errors.add('temperature: must be >= 0');
+  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+}
+final topP$ = topP;
+if (topP$ != null) {
+  if (topP$ < 0) errors.add('topP: must be >= 0');
+  if (topP$ > 1) errors.add('topP: must be <= 1');
+}
+final safetyIdentifier$ = safetyIdentifier;
+if (safetyIdentifier$ != null) {
+  if (safetyIdentifier$.length > 64) errors.add('safetyIdentifier: length must be <= 64');
+}
+return errors; } 
 ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,

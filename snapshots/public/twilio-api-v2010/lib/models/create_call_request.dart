@@ -214,6 +214,21 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String &&
       json.containsKey('From') && json['From'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final byoc$ = byoc;
+if (byoc$ != null) {
+  if (byoc$.length < 34) errors.add('byoc: length must be >= 34');
+  if (byoc$.length > 34) errors.add('byoc: length must be <= 34');
+  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byoc$)) errors.add(r'byoc: must match pattern ^BY[0-9a-fA-F]{32}$');
+}
+final applicationSid$ = applicationSid;
+if (applicationSid$ != null) {
+  if (applicationSid$.length < 34) errors.add('applicationSid: length must be >= 34');
+  if (applicationSid$.length > 34) errors.add('applicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(applicationSid$)) errors.add(r'applicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+return errors; } 
 CreateCallRequest copyWith({String? to, String? from, Method? Function()? method, Uri? Function()? fallbackUrl, FallbackMethod? Function()? fallbackMethod, Uri? Function()? statusCallback, List<String>? Function()? statusCallbackEvent, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? sendDigits, int? Function()? timeout, bool? Function()? record, String? Function()? recordingChannels, String? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, List<String>? Function()? recordingStatusCallbackEvent, String? Function()? trim, String? Function()? callerId, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, String? Function()? asyncAmd, Uri? Function()? asyncAmdStatusCallback, AsyncAmdStatusCallbackMethod? Function()? asyncAmdStatusCallbackMethod, String? Function()? byoc, String? Function()? callReason, String? Function()? callToken, String? Function()? recordingTrack, int? Function()? timeLimit, Uri? Function()? clientNotificationUrl, Uri? Function()? url, String? Function()? twiml, String? Function()? applicationSid, }) { return CreateCallRequest(
   to: to ?? this.to,
   from: from ?? this.from,

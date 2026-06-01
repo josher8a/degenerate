@@ -19,6 +19,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('HTTP') && json['HTTP'] is String &&
       json.containsKey('OTHER') && json['OTHER'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(http)) errors.add(r'http: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(other)) errors.add(r'other: must match pattern ^\d+$');
+return errors; } 
 RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 copyWith({String? http, String? other, }) { return RadarGetNetflowsSummaryDeprecatedResponseResultSummary0(
   http: http ?? this.http,
   other: other ?? this.other,

@@ -28,6 +28,21 @@ Map<String, dynamic> toJson() { return {
   'routing_number': ?routingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_number', 'account_type', 'financial_connections_account', 'routing_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountNumber$ = accountNumber;
+if (accountNumber$ != null) {
+  if (accountNumber$.length > 5000) errors.add('accountNumber: length must be <= 5000');
+}
+final financialConnectionsAccount$ = financialConnectionsAccount;
+if (financialConnectionsAccount$ != null) {
+  if (financialConnectionsAccount$.length > 5000) errors.add('financialConnectionsAccount: length must be <= 5000');
+}
+final routingNumber$ = routingNumber;
+if (routingNumber$ != null) {
+  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+}
+return errors; } 
 PostPaymentMethodsRequestUsBankAccount copyWith({CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? accountNumber, UsBankAccountAccountType? Function()? accountType, String? Function()? financialConnectionsAccount, String? Function()? routingNumber, }) { return PostPaymentMethodsRequestUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,

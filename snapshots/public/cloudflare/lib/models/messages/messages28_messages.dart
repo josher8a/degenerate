@@ -22,6 +22,13 @@ Map<String, dynamic> toJson() { return {
   'tool_call_id': ?toolCallId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'role', 'tool_call_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final toolCallId$ = toolCallId;
+if (toolCallId$ != null) {
+  if (!RegExp('[a-zA-Z0-9]{9}').hasMatch(toolCallId$)) errors.add('toolCallId: must match pattern [a-zA-Z0-9]{9}');
+}
+return errors; } 
 Messages28Messages copyWith({Messages28MessagesContent? Function()? content, String? Function()? role, String? Function()? toolCallId, }) { return Messages28Messages(
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,

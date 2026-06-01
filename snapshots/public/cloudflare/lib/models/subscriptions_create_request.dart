@@ -31,6 +31,13 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'enabled', 'events', 'name', 'source'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final events$ = events;
+if (events$ != null) {
+  if (events$.length < 1) errors.add('events: must have >= 1 items');
+}
+return errors; } 
 SubscriptionsCreateRequest copyWith({MqEventDestination? Function()? destination, bool? Function()? enabled, List<String>? Function()? events, String? Function()? name, MqEventSource? Function()? source, }) { return SubscriptionsCreateRequest(
   destination: destination != null ? destination() : this.destination,
   enabled: enabled != null ? enabled() : this.enabled,

@@ -25,6 +25,21 @@ Map<String, dynamic> toJson() { return {
   'payer_id': ?payerId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'payer_email', 'payer_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final payerEmail$ = payerEmail;
+if (payerEmail$ != null) {
+  if (payerEmail$.length > 5000) errors.add('payerEmail: length must be <= 5000');
+}
+final payerId$ = payerId;
+if (payerId$ != null) {
+  if (payerId$.length > 5000) errors.add('payerId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodPaypal copyWith({String? Function()? country, String? Function()? payerEmail, String? Function()? payerId, }) { return PaymentMethodPaypal(
   country: country != null ? country() : this.country,
   payerEmail: payerEmail != null ? payerEmail() : this.payerEmail,

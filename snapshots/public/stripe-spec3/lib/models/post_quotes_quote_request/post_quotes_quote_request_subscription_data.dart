@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request/expires_at_variant3.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/trial_period_days.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/effective_date.dart';/// When creating a subscription or subscription schedule, the specified configuration data will be used. There must be at least one line item with a recurring price for a subscription or subscription schedule to be created. A subscription schedule is created if `subscription_data[effective_date]` is present and in the future, otherwise a subscription is created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_file_links_link_request/expires_at_variant3.dart';import 'package:pub_stripe_spec3/models/post_payment_links_payment_link_request/trial_period_days.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/effective_date.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_description.dart';/// When creating a subscription or subscription schedule, the specified configuration data will be used. There must be at least one line item with a recurring price for a subscription or subscription schedule to be created. A subscription schedule is created if `subscription_data[effective_date]` is present and in the future, otherwise a subscription is created.
 @immutable final class PostQuotesQuoteRequestSubscriptionData {const PostQuotesQuoteRequestSubscriptionData({this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
 factory PostQuotesQuoteRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestSubscriptionData(
@@ -10,7 +10,7 @@ factory PostQuotesQuoteRequestSubscriptionData.fromJson(Map<String, dynamic> jso
   trialPeriodDays: json['trial_period_days'] != null ? OneOf2.parse(json['trial_period_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
 ); }
 
-final Description? description;
+final PostQuotesQuoteRequestDescription? description;
 
 final EffectiveDate? effectiveDate;
 
@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (trialPeriodDays != null) 'trial_period_days': trialPeriodDays?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'effective_date', 'metadata', 'trial_period_days'}.contains(key)); } 
-PostQuotesQuoteRequestSubscriptionData copyWith({Description? Function()? description, EffectiveDate? Function()? effectiveDate, Map<String, String>? Function()? metadata, TrialPeriodDays? Function()? trialPeriodDays, }) { return PostQuotesQuoteRequestSubscriptionData(
+PostQuotesQuoteRequestSubscriptionData copyWith({PostQuotesQuoteRequestDescription? Function()? description, EffectiveDate? Function()? effectiveDate, Map<String, String>? Function()? metadata, TrialPeriodDays? Function()? trialPeriodDays, }) { return PostQuotesQuoteRequestSubscriptionData(
   description: description != null ? description() : this.description,
   effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
   metadata: metadata != null ? metadata() : this.metadata,

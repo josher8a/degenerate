@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_ref/git_ref_object.dart';import 'package:pub_github_rest_3_1/models/git_tag/git_tag_tagger.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Metadata for a Git tag
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_tag/git_tag_object.dart';import 'package:pub_github_rest_3_1/models/git_tag/git_tag_tagger.dart';import 'package:pub_github_rest_3_1/models/verification.dart';/// Metadata for a Git tag
 @immutable final class GitTag {const GitTag({required this.nodeId, required this.tag, required this.sha, required this.url, required this.message, required this.tagger, required this.object, this.verification, });
 
 factory GitTag.fromJson(Map<String, dynamic> json) { return GitTag(
@@ -10,7 +10,7 @@ factory GitTag.fromJson(Map<String, dynamic> json) { return GitTag(
   url: Uri.parse(json['url'] as String),
   message: json['message'] as String,
   tagger: GitTagTagger.fromJson(json['tagger'] as Map<String, dynamic>),
-  object: GitRefObject.fromJson(json['object'] as Map<String, dynamic>),
+  object: GitTagObject.fromJson(json['object'] as Map<String, dynamic>),
   verification: json['verification'] != null ? Verification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
@@ -29,7 +29,7 @@ final String message;
 
 final GitTagTagger tagger;
 
-final GitRefObject object;
+final GitTagObject object;
 
 final Verification? verification;
 
@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('node_
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('tagger') &&
       json.containsKey('object'); } 
-GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? message, GitTagTagger? tagger, GitRefObject? object, Verification? Function()? verification, }) { return GitTag(
+GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? message, GitTagTagger? tagger, GitTagObject? object, Verification? Function()? verification, }) { return GitTag(
   nodeId: nodeId ?? this.nodeId,
   tag: tag ?? this.tag,
   sha: sha ?? this.sha,

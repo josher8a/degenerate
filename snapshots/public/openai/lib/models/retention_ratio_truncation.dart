@@ -48,6 +48,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('retention_ratio') && json['retention_ratio'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (retentionRatio < 0) errors.add('retentionRatio: must be >= 0');
+if (retentionRatio > 1) errors.add('retentionRatio: must be <= 1');
+return errors; } 
 RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? retentionRatio, TokenLimits? Function()? tokenLimits, }) { return RetentionRatioTruncation(
   type: type ?? this.type,
   retentionRatio: retentionRatio ?? this.retentionRatio,

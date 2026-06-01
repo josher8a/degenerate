@@ -288,6 +288,25 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (clientSecret.length > 5000) errors.add('clientSecret: length must be <= 5000');
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+if (flow.length > 5000) errors.add('flow: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+final usage$ = usage;
+if (usage$ != null) {
+  if (usage$.length > 5000) errors.add('usage: length must be <= 5000');
+}
+return errors; } 
 Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, SourceTypeAchDebit? Function()? achDebit, SourceTypeAcssDebit? Function()? acssDebit, SourceTypeAlipay? Function()? alipay, CardAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit? Function()? auBecsDebit, SourceTypeBancontact? Function()? bancontact, SourceTypeCard? Function()? card, SourceTypeCardPresent? Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow? Function()? codeVerification, int? created, String? Function()? currency, String? Function()? customer, SourceTypeEps? Function()? eps, String? flow, SourceTypeGiropay? Function()? giropay, String? id, SourceTypeIdeal? Function()? ideal, SourceTypeKlarna? Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco? Function()? multibanco, SourceObject? object, SourceOwner? Function()? owner, SourceTypeP24? Function()? p24, SourceReceiverFlow? Function()? receiver, SourceRedirectFlow? Function()? redirect, SourceTypeSepaDebit? Function()? sepaDebit, SourceTypeSofort? Function()? sofort, SourceOrder? Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure? Function()? threeDSecure, SourceType$1? type, String? Function()? usage, SourceTypeWechat? Function()? wechat, }) { return Source(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   achDebit: achDebit != null ? achDebit() : this.achDebit,

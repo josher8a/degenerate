@@ -96,6 +96,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('source') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (reason.length > 5000) errors.add('reason: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (type.length > 5000) errors.add('type: length must be <= 5000');
+return errors; } 
 SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Function()? acssDebit, int? Function()? amount, SourceMandateNotificationBacsDebitData? Function()? bacsDebit, int? created, String? id, bool? livemode, SourceMandateNotificationObject? object, String? reason, SourceMandateNotificationSepaDebitData? Function()? sepaDebit, Source? source, String? status, String? type, }) { return SourceMandateNotification(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amount: amount != null ? amount() : this.amount,

@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frame_rate', 'quality'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final frameRate$ = frameRate;
+if (frameRate$ != null) {
+  if (frameRate$ > 30) errors.add('frameRate: must be <= 30');
+}
+return errors; } 
 RealtimekitUpdatePresetConfigMediaVideo copyWith({int? Function()? frameRate, ScreenshareQuality? Function()? quality, }) { return RealtimekitUpdatePresetConfigMediaVideo(
   frameRate: frameRate != null ? frameRate() : this.frameRate,
   quality: quality != null ? quality() : this.quality,

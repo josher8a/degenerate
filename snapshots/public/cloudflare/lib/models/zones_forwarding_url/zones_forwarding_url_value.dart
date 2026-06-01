@@ -48,6 +48,13 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status_code', 'url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 1500) errors.add('url: length must be <= 1500');
+}
+return errors; } 
 ZonesForwardingUrlValue copyWith({ValueStatusCode? Function()? statusCode, String? Function()? url, }) { return ZonesForwardingUrlValue(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   url: url != null ? url() : this.url,

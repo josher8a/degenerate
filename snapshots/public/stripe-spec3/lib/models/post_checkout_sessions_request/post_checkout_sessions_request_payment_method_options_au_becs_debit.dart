@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'setup_future_usage', 'target_date'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final targetDate$ = targetDate;
+if (targetDate$ != null) {
+  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+}
+return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,

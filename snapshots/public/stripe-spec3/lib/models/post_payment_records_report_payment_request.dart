@@ -75,6 +75,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_requested') &&
       json.containsKey('initiated_at') && json['initiated_at'] is num &&
       json.containsKey('payment_method_details'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PostPaymentRecordsReportPaymentRequest copyWith({AmountRequested? amountRequested, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence? Function()? customerPresence, String? Function()? description, List<String>? Function()? expand, Failed? Function()? failed, Guaranteed? Function()? guaranteed, int? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails? Function()? processorDetails, ShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsReportPaymentRequest(
   amountRequested: amountRequested ?? this.amountRequested,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,

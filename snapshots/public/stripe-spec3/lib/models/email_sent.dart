@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_sent_at') && json['email_sent_at'] is num &&
       json.containsKey('email_sent_to') && json['email_sent_to'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (emailSentTo.length > 5000) errors.add('emailSentTo: length must be <= 5000');
+return errors; } 
 EmailSent copyWith({int? emailSentAt, String? emailSentTo, }) { return EmailSent(
   emailSentAt: emailSentAt ?? this.emailSentAt,
   emailSentTo: emailSentTo ?? this.emailSentTo,

@@ -80,6 +80,19 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('training_file') && json['training_file'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final suffix$ = suffix;
+if (suffix$ != null) {
+  if (suffix$.length < 1) errors.add('suffix: length must be >= 1');
+  if (suffix$.length > 64) errors.add('suffix: length must be <= 64');
+}
+final seed$ = seed;
+if (seed$ != null) {
+  if (seed$ < 0) errors.add('seed: must be >= 0');
+  if (seed$ > 2147483647) errors.add('seed: must be <= 2147483647');
+}
+return errors; } 
 CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, String? trainingFile, CreateFineTuningJobRequestHyperparameters? Function()? hyperparameters, String? Function()? suffix, String? Function()? validationFile, List<Integrations>? Function()? integrations, int? Function()? seed, FineTuneMethod? Function()? method, Map<String, String>? Function()? metadata, }) { return CreateFineTuningJobRequest(
   model: model ?? this.model,
   trainingFile: trainingFile ?? this.trainingFile,

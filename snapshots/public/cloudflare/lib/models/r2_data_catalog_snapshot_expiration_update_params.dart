@@ -26,6 +26,17 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_snapshot_age', 'min_snapshots_to_keep', 'state'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxSnapshotAge$ = maxSnapshotAge;
+if (maxSnapshotAge$ != null) {
+  if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge$)) errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$');
+}
+final minSnapshotsToKeep$ = minSnapshotsToKeep;
+if (minSnapshotsToKeep$ != null) {
+  if (minSnapshotsToKeep$ < 1) errors.add('minSnapshotsToKeep: must be >= 1');
+}
+return errors; } 
 R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSnapshotAge, int? Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? Function()? state, }) { return R2DataCatalogSnapshotExpirationUpdateParams(
   maxSnapshotAge: maxSnapshotAge != null ? maxSnapshotAge() : this.maxSnapshotAge,
   minSnapshotsToKeep: minSnapshotsToKeep != null ? minSnapshotsToKeep() : this.minSnapshotsToKeep,

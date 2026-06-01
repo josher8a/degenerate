@@ -103,6 +103,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
       json.containsKey('dismissed_reason') &&
       json.containsKey('dismissed_comment') && json['dismissed_comment'] is String &&
       json.containsKey('fixed_at'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final dismissedComment$ = dismissedComment;
+if (dismissedComment$ != null) {
+  if (dismissedComment$.length > 280) errors.add('dismissedComment: length must be <= 280');
+}
+return errors; } 
 DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, }) { return DependabotAlert(
   number: number ?? this.number,
   state: state ?? this.state,

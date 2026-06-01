@@ -108,6 +108,16 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('voice'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (input.length > 4096) errors.add('input: length must be <= 4096');
+final instructions$ = instructions;
+if (instructions$ != null) {
+  if (instructions$.length > 4096) errors.add('instructions: length must be <= 4096');
+}
+if (speed < 0.25) errors.add('speed: must be >= 0.25');
+if (speed > 4) errors.add('speed: must be <= 4');
+return errors; } 
 CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, StreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
   model: model ?? this.model,
   input: input ?? this.input,

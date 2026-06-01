@@ -30,6 +30,19 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
       json.containsKey('token_requestor_id') && json['token_requestor_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cardReferenceId$ = cardReferenceId;
+if (cardReferenceId$ != null) {
+  if (cardReferenceId$.length > 5000) errors.add('cardReferenceId: length must be <= 5000');
+}
+if (tokenReferenceId.length > 5000) errors.add('tokenReferenceId: length must be <= 5000');
+if (tokenRequestorId.length > 5000) errors.add('tokenRequestorId: length must be <= 5000');
+final tokenRequestorName$ = tokenRequestorName;
+if (tokenRequestorName$ != null) {
+  if (tokenRequestorName$.length > 5000) errors.add('tokenRequestorName: length must be <= 5000');
+}
+return errors; } 
 IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) { return IssuingNetworkTokenMastercard(
   cardReferenceId: cardReferenceId != null ? cardReferenceId() : this.cardReferenceId,
   tokenReferenceId: tokenReferenceId ?? this.tokenReferenceId,

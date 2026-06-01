@@ -195,6 +195,27 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'num_segments', 'direction', 'from', 'to', 'date_updated', 'price', 'error_message', 'uri', 'account_sid', 'num_media', 'status', 'messaging_service_sid', 'sid', 'date_sent', 'date_created', 'error_code', 'price_unit', 'api_version', 'subresource_uris'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final messagingServiceSid$ = messagingServiceSid;
+if (messagingServiceSid$ != null) {
+  if (messagingServiceSid$.length < 34) errors.add('messagingServiceSid: length must be >= 34');
+  if (messagingServiceSid$.length > 34) errors.add('messagingServiceSid: length must be <= 34');
+  if (!RegExp(r'^MG[0-9a-fA-F]{32}$').hasMatch(messagingServiceSid$)) errors.add(r'messagingServiceSid: must match pattern ^MG[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^(SM|MM)[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^(SM|MM)[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountMessage copyWith({String? Function()? body, String? Function()? numSegments, MessageEnumDirection? Function()? direction, String? Function()? from, String? Function()? to, String? Function()? dateUpdated, String? Function()? price, String? Function()? errorMessage, String? Function()? uri, String? Function()? accountSid, String? Function()? numMedia, MessageEnumStatus? Function()? status, String? Function()? messagingServiceSid, String? Function()? sid, String? Function()? dateSent, String? Function()? dateCreated, int? Function()? errorCode, String? Function()? priceUnit, String? Function()? apiVersion, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountMessage(
   body: body != null ? body() : this.body,
   numSegments: numSegments != null ? numSegments() : this.numSegments,

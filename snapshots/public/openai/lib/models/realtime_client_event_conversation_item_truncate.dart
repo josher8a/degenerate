@@ -53,6 +53,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('content_index') && json['content_index'] is num &&
       json.containsKey('audio_end_ms') && json['audio_end_ms'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final eventId$ = eventId;
+if (eventId$ != null) {
+  if (eventId$.length > 512) errors.add('eventId: length must be <= 512');
+}
+return errors; } 
 RealtimeClientEventConversationItemTruncate copyWith({String? Function()? eventId, String? type, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeClientEventConversationItemTruncate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,

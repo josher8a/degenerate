@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultMandate$ = defaultMandate;
+if (defaultMandate$ != null) {
+  if (defaultMandate$.length > 5000) errors.add('defaultMandate: length must be <= 5000');
+}
+return errors; } 
 InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPaymentMethodOptions? Function()? paymentMethodOptions, List<InvoicesPaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, }) { return InvoicesPaymentSettings(
   defaultMandate: defaultMandate != null ? defaultMandate() : this.defaultMandate,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,

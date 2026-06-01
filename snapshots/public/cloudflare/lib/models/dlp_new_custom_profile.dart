@@ -62,6 +62,11 @@ Map<String, dynamic> toJson() { return {
   if (sharedEntries != null) 'shared_entries': sharedEntries?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (allowedMatchCount < 0) errors.add('allowedMatchCount: must be >= 0');
+if (allowedMatchCount > 1000) errors.add('allowedMatchCount: must be <= 1000');
+return errors; } 
 DlpNewCustomProfile copyWith({bool Function()? aiContextEnabled, int Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, String? Function()? description, List<DlpEntryOfNewProfile>? Function()? entries, String? name, bool Function()? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpNewSharedEntry>? Function()? sharedEntries, }) { return DlpNewCustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,

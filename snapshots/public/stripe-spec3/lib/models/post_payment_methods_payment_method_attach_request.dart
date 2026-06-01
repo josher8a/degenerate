@@ -23,6 +23,17 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'customer_account', 'expand'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostPaymentMethodsPaymentMethodAttachRequest(
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

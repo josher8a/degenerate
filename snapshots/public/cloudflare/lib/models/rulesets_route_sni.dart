@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (value.length < 1) errors.add('value: length must be >= 1');
+return errors; } 
 RulesetsRouteSni copyWith({String? value}) { return RulesetsRouteSni(
   value: value ?? this.value,
 ); } 

@@ -17,6 +17,10 @@ Map<String, dynamic> toJson() { return {
   'destination': destination,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') && json['destination'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (destination.length > 5000) errors.add('destination: length must be <= 5000');
+return errors; } 
 PostChargesRequestTransferData copyWith({int? Function()? amount, String? destination, }) { return PostChargesRequestTransferData(
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,

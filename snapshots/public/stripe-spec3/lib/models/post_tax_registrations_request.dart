@@ -35,6 +35,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_options'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+return errors; } 
 PostTaxRegistrationsRequest copyWith({ActiveFrom? activeFrom, String? country, CountryOptions? countryOptions, List<String>? Function()? expand, int? Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,

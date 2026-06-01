@@ -19,6 +19,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('http') && json['http'] is String &&
       json.containsKey('https') && json['https'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(http)) errors.add(r'http: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(https)) errors.add(r'https: must match pattern ^\d+$');
+return errors; } 
 RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 copyWith({String? http, String? https, }) { return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
   http: http ?? this.http,
   https: https ?? this.https,

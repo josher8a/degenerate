@@ -50,6 +50,13 @@ Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final $default$ = $default;
+if ($default$ != null) {
+  if ($default$ < 0) errors.add(r'$default: must be >= 0');
+}
+return errors; } 
 RulesetsSetCacheSettingsBrowserTtl copyWith({int? Function()? $default, RulesetsSetCacheSettingsBrowserTtlMode? mode, }) { return RulesetsSetCacheSettingsBrowserTtl(
   $default: $default != null ? $default() : this.$default,
   mode: mode ?? this.mode,

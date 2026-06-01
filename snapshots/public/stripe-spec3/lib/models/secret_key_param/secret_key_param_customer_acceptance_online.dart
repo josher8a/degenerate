@@ -17,6 +17,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_address') && json['ip_address'] is String &&
       json.containsKey('user_agent') && json['user_agent'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (userAgent.length > 5000) errors.add('userAgent: length must be <= 5000');
+return errors; } 
 SecretKeyParamCustomerAcceptanceOnline copyWith({String? ipAddress, String? userAgent, }) { return SecretKeyParamCustomerAcceptanceOnline(
   ipAddress: ipAddress ?? this.ipAddress,
   userAgent: userAgent ?? this.userAgent,

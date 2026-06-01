@@ -47,6 +47,25 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_
       json.containsKey('bank_name') && json['bank_name'] is String &&
       json.containsKey('branch_code') && json['branch_code'] is String &&
       json.containsKey('last4') && json['last4'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountHolderName$ = accountHolderName;
+if (accountHolderName$ != null) {
+  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+}
+if (bankCode.length > 5000) errors.add('bankCode: length must be <= 5000');
+if (bankName.length > 5000) errors.add('bankName: length must be <= 5000');
+if (branchCode.length > 5000) errors.add('branchCode: length must be <= 5000');
+final expectedDebitDate$ = expectedDebitDate;
+if (expectedDebitDate$ != null) {
+  if (expectedDebitDate$.length > 5000) errors.add('expectedDebitDate: length must be <= 5000');
+}
+if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+final suffix$ = suffix;
+if (suffix$ != null) {
+  if (suffix$.length > 5000) errors.add('suffix: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsNzBankAccount copyWith({String? Function()? accountHolderName, String? bankCode, String? bankName, String? branchCode, String? Function()? expectedDebitDate, String? last4, String? Function()? suffix, }) { return PaymentMethodDetailsNzBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   bankCode: bankCode ?? this.bankCode,

@@ -43,6 +43,27 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'managers', 'team_managers', 'ends_at', 'contact_link', 'state'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length < 1) errors.add('name: length must be >= 1');
+  if (name$.length > 50) errors.add('name: length must be <= 50');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length < 1) errors.add('description: length must be >= 1');
+  if (description$.length > 255) errors.add('description: length must be <= 255');
+}
+final managers$ = managers;
+if (managers$ != null) {
+  if (managers$.length > 10) errors.add('managers: must have <= 10 items');
+}
+final teamManagers$ = teamManagers;
+if (teamManagers$ != null) {
+  if (teamManagers$.length > 10) errors.add('teamManagers: must have <= 10 items');
+}
+return errors; } 
 CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Uri? Function()? contactLink, CampaignState? Function()? state, }) { return CampaignsUpdateCampaignRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

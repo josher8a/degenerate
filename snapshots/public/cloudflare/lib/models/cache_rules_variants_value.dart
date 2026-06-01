@@ -64,6 +64,53 @@ Map<String, dynamic> toJson() { return {
   'webp': ?webp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avif', 'bmp', 'gif', 'jp2', 'jpeg', 'jpg', 'jpg2', 'png', 'tif', 'tiff', 'webp'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final avif$ = avif;
+if (avif$ != null) {
+  if (avif$.toSet().length != avif$.length) errors.add('avif: items must be unique');
+}
+final bmp$ = bmp;
+if (bmp$ != null) {
+  if (bmp$.toSet().length != bmp$.length) errors.add('bmp: items must be unique');
+}
+final gif$ = gif;
+if (gif$ != null) {
+  if (gif$.toSet().length != gif$.length) errors.add('gif: items must be unique');
+}
+final jp2$ = jp2;
+if (jp2$ != null) {
+  if (jp2$.toSet().length != jp2$.length) errors.add('jp2: items must be unique');
+}
+final jpeg$ = jpeg;
+if (jpeg$ != null) {
+  if (jpeg$.toSet().length != jpeg$.length) errors.add('jpeg: items must be unique');
+}
+final jpg$ = jpg;
+if (jpg$ != null) {
+  if (jpg$.toSet().length != jpg$.length) errors.add('jpg: items must be unique');
+}
+final jpg2$ = jpg2;
+if (jpg2$ != null) {
+  if (jpg2$.toSet().length != jpg2$.length) errors.add('jpg2: items must be unique');
+}
+final png$ = png;
+if (png$ != null) {
+  if (png$.toSet().length != png$.length) errors.add('png: items must be unique');
+}
+final tif$ = tif;
+if (tif$ != null) {
+  if (tif$.toSet().length != tif$.length) errors.add('tif: items must be unique');
+}
+final tiff$ = tiff;
+if (tiff$ != null) {
+  if (tiff$.toSet().length != tiff$.length) errors.add('tiff: items must be unique');
+}
+final webp$ = webp;
+if (webp$ != null) {
+  if (webp$.toSet().length != webp$.length) errors.add('webp: items must be unique');
+}
+return errors; } 
 CacheRulesVariantsValue copyWith({List<String>? Function()? avif, List<String>? Function()? bmp, List<String>? Function()? gif, List<String>? Function()? jp2, List<String>? Function()? jpeg, List<String>? Function()? jpg, List<String>? Function()? jpg2, List<String>? Function()? png, List<String>? Function()? tif, List<String>? Function()? tiff, List<String>? Function()? webp, }) { return CacheRulesVariantsValue(
   avif: avif != null ? avif() : this.avif,
   bmp: bmp != null ? bmp() : this.bmp,

@@ -66,6 +66,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('name'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final filters$ = filters;
+if (filters$ != null) {
+  if (filters$.length < 1) errors.add('filters: must have >= 1 items');
+  if (filters$.length > 1) errors.add('filters: must have <= 1 items');
+}
+return errors; } 
 ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) { return ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(
   action: action ?? this.action,
   description: description != null ? description() : this.description,

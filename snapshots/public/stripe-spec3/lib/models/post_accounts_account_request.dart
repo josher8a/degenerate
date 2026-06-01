@@ -90,6 +90,17 @@ Map<String, dynamic> toJson() { return {
   if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_token', 'business_profile', 'business_type', 'capabilities', 'company', 'default_currency', 'documents', 'email', 'expand', 'external_account', 'groups', 'individual', 'metadata', 'settings', 'tos_acceptance'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountToken$ = accountToken;
+if (accountToken$ != null) {
+  if (accountToken$.length > 5000) errors.add('accountToken: length must be <= 5000');
+}
+final externalAccount$ = externalAccount;
+if (externalAccount$ != null) {
+  if (externalAccount$.length > 5000) errors.add('externalAccount: length must be <= 5000');
+}
+return errors; } 
 PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, Capabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, Groups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, Metadata? Function()? metadata, PostAccountsAccountRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, }) { return PostAccountsAccountRequest(
   accountToken: accountToken != null ? accountToken() : this.accountToken,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,

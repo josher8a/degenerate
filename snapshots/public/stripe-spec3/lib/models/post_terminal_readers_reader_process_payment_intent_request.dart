@@ -23,6 +23,10 @@ Map<String, dynamic> toJson() { return {
   if (processConfig != null) 'process_config': processConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (paymentIntent.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+return errors; } 
 PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Function()? expand, String? paymentIntent, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig? Function()? processConfig, }) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,

@@ -25,6 +25,12 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('FAIL') && json['FAIL'] is String &&
       json.containsKey('NONE') && json['NONE'] is String &&
       json.containsKey('PASS') && json['PASS'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(fail)) errors.add(r'fail: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(none)) errors.add(r'none: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(pass)) errors.add(r'pass: must match pattern ^\d+$');
+return errors; } 
 RadarGetEmailRoutingSummaryByArcResponseResultSummary0 copyWith({String? fail, String? none, String? pass, }) { return RadarGetEmailRoutingSummaryByArcResponseResultSummary0(
   fail: fail ?? this.fail,
   none: none ?? this.none,

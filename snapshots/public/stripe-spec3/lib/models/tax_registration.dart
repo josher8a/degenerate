@@ -114,6 +114,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrationsResourceCountryOptions? countryOptions, int? created, int? Function()? expiresAt, String? id, bool? livemode, TaxRegistrationObject? object, TaxRegistrationStatus? status, }) { return TaxRegistration(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,

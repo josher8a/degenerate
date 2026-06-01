@@ -74,6 +74,13 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'expand', 'metadata', 'off_session', 'payment_behavior', 'price', 'price_data', 'proration_behavior', 'proration_date', 'quantity', 'tax_rates'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 PostSubscriptionItemsItemRequest copyWith({PostSubscriptionItemsItemRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, Metadata? Function()? metadata, bool? Function()? offSession, PaymentBehavior? Function()? paymentBehavior, String? Function()? price, PostSubscriptionItemsItemRequestPriceData? Function()? priceData, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, int? Function()? quantity, TaxRates? Function()? taxRates, }) { return PostSubscriptionItemsItemRequest(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,

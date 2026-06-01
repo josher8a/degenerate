@@ -181,6 +181,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final deviceFingerprint$ = deviceFingerprint;
+if (deviceFingerprint$ != null) {
+  if (deviceFingerprint$.length > 5000) errors.add('deviceFingerprint: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+return errors; } 
 IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider? Function()? walletProvider, }) { return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,

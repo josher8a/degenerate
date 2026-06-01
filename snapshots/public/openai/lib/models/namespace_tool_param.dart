@@ -32,6 +32,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('tools'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length < 1) errors.add('name: length must be >= 1');
+if (description.length < 1) errors.add('description: length must be >= 1');
+if (tools.length < 1) errors.add('tools: must have >= 1 items');
+return errors; } 
 NamespaceToolParam copyWith({String? type, String? name, String? description, List<NamespaceToolParamTools>? tools, }) { return NamespaceToolParam(
   type: type ?? this.type,
   name: name ?? this.name,

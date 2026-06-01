@@ -59,6 +59,17 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+return errors; } 
 PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, String? Function()? description, List<String>? Function()? expand, Hooks? Function()? hooks, Map<String, String>? Function()? metadata, PaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, PostChargesChargeCaptureRequestTransferData? Function()? transferData, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,

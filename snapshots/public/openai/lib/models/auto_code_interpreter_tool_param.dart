@@ -50,6 +50,13 @@ Map<String, dynamic> toJson() { return {
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final fileIds$ = fileIds;
+if (fileIds$ != null) {
+  if (fileIds$.length > 50) errors.add('fileIds: must have <= 50 items');
+}
+return errors; } 
 AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,

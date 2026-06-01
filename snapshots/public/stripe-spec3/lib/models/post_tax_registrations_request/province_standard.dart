@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'province': province,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('province') && json['province'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (province.length > 5000) errors.add('province: length must be <= 5000');
+return errors; } 
 ProvinceStandard copyWith({String? province}) { return ProvinceStandard(
   province: province ?? this.province,
 ); } 

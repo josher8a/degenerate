@@ -55,6 +55,17 @@ Map<String, dynamic> toJson() { return {
   'verified_name': ?verifiedName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final verifiedAddress$ = verifiedAddress;
+if (verifiedAddress$ != null) {
+  if (verifiedAddress$.length > 5000) errors.add('verifiedAddress: length must be <= 5000');
+}
+final verifiedName$ = verifiedName;
+if (verifiedName$ != null) {
+  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+}
+return errors; } 
 TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()? verifiedAddress, String? Function()? verifiedName, }) { return TaxIdVerification(
   status: status ?? this.status,
   verifiedAddress: verifiedAddress != null ? verifiedAddress() : this.verifiedAddress,

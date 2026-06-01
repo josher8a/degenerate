@@ -60,6 +60,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('period_end') && json['period_end'] is num &&
       json.containsKey('period_start') && json['period_start'] is num &&
       json.containsKey('tax_deduction_account_number') && json['tax_deduction_account_number'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (taxDeductionAccountNumber.length > 5000) errors.add('taxDeductionAccountNumber: length must be <= 5000');
+return errors; } 
 TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int? periodEnd, int? periodStart, String? taxDeductionAccountNumber, }) { return TaxDeductedAtSource(
   id: id ?? this.id,
   object: object ?? this.object,

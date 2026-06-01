@@ -48,6 +48,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('query') &&
       json.containsKey('rows') && json['rows'] is num &&
       json.containsKey('totals'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (dataLag < 0) errors.add('dataLag: must be >= 0');
+if (rows < 0) errors.add('rows: must be >= 0');
+return errors; } 
 DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsQuery? query, double? rows, Map<String,dynamic>? totals, }) { return DnsAnalyticsResult(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,

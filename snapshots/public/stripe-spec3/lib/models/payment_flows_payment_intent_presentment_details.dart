@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('presentment_amount') && json['presentment_amount'] is num &&
       json.containsKey('presentment_currency') && json['presentment_currency'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (presentmentCurrency.length > 5000) errors.add('presentmentCurrency: length must be <= 5000');
+return errors; } 
 PaymentFlowsPaymentIntentPresentmentDetails copyWith({int? presentmentAmount, String? presentmentCurrency, }) { return PaymentFlowsPaymentIntentPresentmentDetails(
   presentmentAmount: presentmentAmount ?? this.presentmentAmount,
   presentmentCurrency: presentmentCurrency ?? this.presentmentCurrency,

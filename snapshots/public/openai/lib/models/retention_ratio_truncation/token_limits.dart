@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'post_instructions': ?postInstructions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'post_instructions'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final postInstructions$ = postInstructions;
+if (postInstructions$ != null) {
+  if (postInstructions$ < 0) errors.add('postInstructions: must be >= 0');
+}
+return errors; } 
 TokenLimits copyWith({int? Function()? postInstructions}) { return TokenLimits(
   postInstructions: postInstructions != null ? postInstructions() : this.postInstructions,
 ); } 

@@ -59,6 +59,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('case_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (brand.length > 5000) errors.add('brand: length must be <= 5000');
+final networkReasonCode$ = networkReasonCode;
+if (networkReasonCode$ != null) {
+  if (networkReasonCode$.length > 5000) errors.add('networkReasonCode: length must be <= 5000');
+}
+return errors; } 
 DisputePaymentMethodDetailsCard copyWith({String? brand, CaseType? caseType, String? Function()? networkReasonCode, }) { return DisputePaymentMethodDetailsCard(
   brand: brand ?? this.brand,
   caseType: caseType ?? this.caseType,

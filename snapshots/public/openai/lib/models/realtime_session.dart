@@ -176,6 +176,11 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'modalities', 'model', 'instructions', 'voice', 'input_audio_format', 'output_audio_format', 'input_audio_transcription', 'turn_detection', 'input_audio_noise_reduction', 'speed', 'tracing', 'tools', 'tool_choice', 'temperature', 'max_response_output_tokens', 'expires_at', 'prompt', 'include'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (speed < 0.25) errors.add('speed: must be >= 0.25');
+if (speed > 1.5) errors.add('speed: must be <= 1.5');
+return errors; } 
 RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Function()? object, dynamic Function()? modalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, VoiceIdsShared? Function()? voice, InputAudioFormat Function()? inputAudioFormat, OutputAudioFormat Function()? outputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, RealtimeTurnDetection? Function()? turnDetection, InputAudioNoiseReduction? Function()? inputAudioNoiseReduction, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, List<RealtimeFunctionTool>? Function()? tools, String Function()? toolChoice, double Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, int? Function()? expiresAt, Prompt? Function()? prompt, List<Include>? Function()? include, }) { return RealtimeSession(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,

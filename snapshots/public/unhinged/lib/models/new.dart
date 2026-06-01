@@ -187,6 +187,21 @@ final class New {
         json[''] is String;
   }
 
+  /// Constraint violations for this value (empty when valid).
+  List<String> validate() {
+    final errors = <String>[];
+    final package$ = package;
+    if (package$ != null) {
+      if (!RegExp(
+        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
+      ).hasMatch(package$))
+        errors.add(
+          r'package: must match pattern ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
+        );
+    }
+    return errors;
+  }
+
   New copyWith({
     bool? $false,
     dynamic Function()? none,

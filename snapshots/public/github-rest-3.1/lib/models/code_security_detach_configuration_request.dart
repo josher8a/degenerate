@@ -13,6 +13,14 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'selected_repository_ids'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final selectedRepositoryIds$ = selectedRepositoryIds;
+if (selectedRepositoryIds$ != null) {
+  if (selectedRepositoryIds$.length < 1) errors.add('selectedRepositoryIds: must have >= 1 items');
+  if (selectedRepositoryIds$.length > 250) errors.add('selectedRepositoryIds: must have <= 250 items');
+}
+return errors; } 
 CodeSecurityDetachConfigurationRequest copyWith({List<int>? Function()? selectedRepositoryIds}) { return CodeSecurityDetachConfigurationRequest(
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 

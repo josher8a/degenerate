@@ -193,6 +193,29 @@ Map<String, dynamic> toJson() { return {
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'add_invoice_items', 'application_fee_percent', 'automatic_tax', 'backdate_start_date', 'billing_cycle_anchor', 'billing_cycle_anchor_config', 'billing_mode', 'billing_thresholds', 'cancel_at', 'cancel_at_period_end', 'collection_method', 'currency', 'customer', 'customer_account', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'expand', 'invoice_settings', 'items', 'metadata', 'off_session', 'on_behalf_of', 'payment_behavior', 'payment_settings', 'pending_invoice_item_interval', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_from_plan', 'trial_period_days', 'trial_settings'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final defaultPaymentMethod$ = defaultPaymentMethod;
+if (defaultPaymentMethod$ != null) {
+  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+}
+final defaultSource$ = defaultSource;
+if (defaultSource$ != null) {
+  if (defaultSource$.length > 5000) errors.add('defaultSource: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 500) errors.add('description: length must be <= 500');
+}
+return errors; } 
 PostSubscriptionsRequest copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems>? Function()? addInvoiceItems, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? backdateStartDate, int? Function()? billingCycleAnchor, BillingCycleAnchorConfig? Function()? billingCycleAnchorConfig, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, String? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, PostCustomersCustomerSubscriptionsRequestInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? Function()? items, Metadata? Function()? metadata, bool? Function()? offSession, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PaymentBehavior? Function()? paymentBehavior, PostCustomersCustomerSubscriptionsRequestPaymentSettings? Function()? paymentSettings, PendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, PostCustomersCustomerSubscriptionsRequestTrialEnd? Function()? trialEnd, bool? Function()? trialFromPlan, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostSubscriptionsRequest(
   addInvoiceItems: addInvoiceItems != null ? addInvoiceItems() : this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,

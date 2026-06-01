@@ -131,6 +131,33 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'encryption_details', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final callSid$ = callSid;
+if (callSid$ != null) {
+  if (callSid$.length < 34) errors.add('callSid: length must be >= 34');
+  if (callSid$.length > 34) errors.add('callSid: length must be <= 34');
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSid$)) errors.add(r'callSid: must match pattern ^CA[0-9a-fA-F]{32}$');
+}
+final conferenceSid$ = conferenceSid;
+if (conferenceSid$ != null) {
+  if (conferenceSid$.length < 34) errors.add('conferenceSid: length must be >= 34');
+  if (conferenceSid$.length > 34) errors.add('conferenceSid: length must be <= 34');
+  if (!RegExp(r'^CF[0-9a-fA-F]{32}$').hasMatch(conferenceSid$)) errors.add(r'conferenceSid: must match pattern ^CF[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^RE[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, ConferenceRecordingEnumStatus? Function()? status, int Function()? channels, ConferenceRecordingEnumSource? Function()? source, int? Function()? errorCode, dynamic Function()? encryptionDetails, String? Function()? uri, }) { return AccountConferenceConferenceRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

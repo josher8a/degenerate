@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+final value$ = value;
+if (value$ != null) {
+  if (value$.length > 5000) errors.add('value: length must be <= 5000');
+}
+return errors; } 
 PayoutsTraceId copyWith({String? status, String? Function()? value, }) { return PayoutsTraceId(
   status: status ?? this.status,
   value: value != null ? value() : this.value,

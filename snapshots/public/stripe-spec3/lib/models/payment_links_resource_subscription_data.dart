@@ -34,6 +34,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice_settings') &&
       json.containsKey('metadata'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PaymentLinksResourceSubscriptionData copyWith({String? Function()? description, PaymentLinksResourceSubscriptionDataInvoiceSettings? invoiceSettings, Map<String,String>? metadata, int? Function()? trialPeriodDays, SubscriptionsTrialsResourceTrialSettings? Function()? trialSettings, }) { return PaymentLinksResourceSubscriptionData(
   description: description != null ? description() : this.description,
   invoiceSettings: invoiceSettings ?? this.invoiceSettings,

@@ -219,6 +219,25 @@ Map<String, dynamic> toJson() { return {
   'suggested_decision_version': ?suggestedDecisionVersion,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'account_trust_score', 'card_number_source', 'cardholder_address', 'cardholder_name', 'device_trust_score', 'hashed_account_email_address', 'reason_codes', 'suggested_decision', 'suggested_decision_version'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountId$ = accountId;
+if (accountId$ != null) {
+  if (accountId$.length > 5000) errors.add('accountId: length must be <= 5000');
+}
+final cardholderName$ = cardholderName;
+if (cardholderName$ != null) {
+  if (cardholderName$.length > 5000) errors.add('cardholderName: length must be <= 5000');
+}
+final hashedAccountEmailAddress$ = hashedAccountEmailAddress;
+if (hashedAccountEmailAddress$ != null) {
+  if (hashedAccountEmailAddress$.length > 5000) errors.add('hashedAccountEmailAddress: length must be <= 5000');
+}
+final suggestedDecisionVersion$ = suggestedDecisionVersion;
+if (suggestedDecisionVersion$ != null) {
+  if (suggestedDecisionVersion$.length > 5000) errors.add('suggestedDecisionVersion: length must be <= 5000');
+}
+return errors; } 
 IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, CardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<ReasonCodes>? Function()? reasonCodes, SuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(
   accountId: accountId != null ? accountId() : this.accountId,
   accountTrustScore: accountTrustScore != null ? accountTrustScore() : this.accountTrustScore,

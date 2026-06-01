@@ -20,6 +20,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (key.length < 1) errors.add('key: length must be >= 1');
+if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-zA-Z0-9_]+$');
+return errors; } 
 RulesetsRedirectFromList copyWith({String? key, String? name, }) { return RulesetsRedirectFromList(
   key: key ?? this.key,
   name: name ?? this.name,

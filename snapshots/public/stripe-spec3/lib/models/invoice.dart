@@ -572,6 +572,62 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountCountry$ = accountCountry;
+if (accountCountry$ != null) {
+  if (accountCountry$.length > 5000) errors.add('accountCountry: length must be <= 5000');
+}
+final accountName$ = accountName;
+if (accountName$ != null) {
+  if (accountName$.length > 5000) errors.add('accountName: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final customerEmail$ = customerEmail;
+if (customerEmail$ != null) {
+  if (customerEmail$.length > 5000) errors.add('customerEmail: length must be <= 5000');
+}
+final customerName$ = customerName;
+if (customerName$ != null) {
+  if (customerName$.length > 5000) errors.add('customerName: length must be <= 5000');
+}
+final customerPhone$ = customerPhone;
+if (customerPhone$ != null) {
+  if (customerPhone$.length > 5000) errors.add('customerPhone: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final footer$ = footer;
+if (footer$ != null) {
+  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+}
+final hostedInvoiceUrl$ = hostedInvoiceUrl;
+if (hostedInvoiceUrl$ != null) {
+  if (hostedInvoiceUrl$.length > 5000) errors.add('hostedInvoiceUrl: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final invoicePdf$ = invoicePdf;
+if (invoicePdf$ != null) {
+  if (invoicePdf$.length > 5000) errors.add('invoicePdf: length must be <= 5000');
+}
+final number$ = number;
+if (number$ != null) {
+  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+}
+final receiptNumber$ = receiptNumber;
+if (receiptNumber$ != null) {
+  if (receiptNumber$.length > 5000) errors.add('receiptNumber: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+return errors; } 
 Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, BillingPortalConfigurationApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, BillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoicesResourceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, BankAccountCustomer? customer, String? Function()? customerAccount, Address? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, Shipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, DefaultPaymentMethod? Function()? defaultPaymentMethod, CustomerDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoicesResourceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, Errors? Function()? lastFinalizationError, LatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, DeletedInvoiceObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, BillingBillResourceInvoicingParentsInvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments? Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoicesResourceInvoiceRendering? Function()? rendering, InvoicesResourceShippingCost? Function()? shippingCost, Shipping? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, TestClock? Function()? testClock, InvoiceThresholdReason? Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
   accountCountry: accountCountry != null ? accountCountry() : this.accountCountry,
   accountName: accountName != null ? accountName() : this.accountName,

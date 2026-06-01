@@ -25,6 +25,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (code < 1000) errors.add('code: must be >= 1000');
+return errors; } 
 CcMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, AccessMessagesSource? Function()? source, }) { return CcMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,

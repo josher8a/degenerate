@@ -125,6 +125,14 @@ Map<String, dynamic> toJson() { return {
   if (timestampFormat != null) 'timestamp_format': timestampFormat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CVE-2021-44228', 'batch_prefix', 'batch_suffix', 'field_delimiter', 'field_names', 'output_type', 'record_delimiter', 'record_prefix', 'record_suffix', 'record_template', 'sample_rate', 'timestamp_format'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sampleRate$ = sampleRate;
+if (sampleRate$ != null) {
+  if (sampleRate$ < 0) errors.add('sampleRate: must be >= 0');
+  if (sampleRate$ > 1) errors.add('sampleRate: must be <= 1');
+}
+return errors; } 
 LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function()? batchPrefix, String? Function()? batchSuffix, String? Function()? fieldDelimiter, List<String>? Function()? fieldNames, OutputType? Function()? outputType, String? Function()? recordDelimiter, String? Function()? recordPrefix, String? Function()? recordSuffix, String? Function()? recordTemplate, double? Function()? sampleRate, TimestampFormat? Function()? timestampFormat, }) { return LogpushOutputOptions(
   cve202144228: cve202144228 != null ? cve202144228() : this.cve202144228,
   batchPrefix: batchPrefix != null ? batchPrefix() : this.batchPrefix,

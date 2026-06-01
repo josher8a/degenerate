@@ -24,6 +24,14 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'tag', 'value'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final flags$ = flags;
+if (flags$ != null) {
+  if (flags$ < 0) errors.add('flags: must be >= 0');
+  if (flags$ > 255) errors.add('flags: must be <= 255');
+}
+return errors; } 
 DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()? tag, String? Function()? value, }) { return DnsRecordsCaaRecordData(
   flags: flags != null ? flags() : this.flags,
   tag: tag != null ? tag() : this.tag,

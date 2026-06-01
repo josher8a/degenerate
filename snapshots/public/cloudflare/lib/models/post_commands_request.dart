@@ -13,6 +13,10 @@ Map<String, dynamic> toJson() { return {
   'commands': commands.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('commands'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (commands.length > 20) errors.add('commands: must have <= 20 items');
+return errors; } 
 PostCommandsRequest copyWith({List<PostCommandsRequestCommands>? commands}) { return PostCommandsRequest(
   commands: commands ?? this.commands,
 ); } 

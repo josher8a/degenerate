@@ -39,6 +39,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('space
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('date_created') && json['date_created'] is String &&
       json.containsKey('date_modified') && json['date_modified'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final title$ = title;
+if (title$ != null) {
+  if (title$.length > 255) errors.add('title: length must be <= 255');
+}
+return errors; } 
 SessionListSchema copyWith({SpaceSchema? space, String? url, DateTime? Function()? start, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? Function()? title, }) { return SessionListSchema(
   space: space ?? this.space,
   url: url ?? this.url,

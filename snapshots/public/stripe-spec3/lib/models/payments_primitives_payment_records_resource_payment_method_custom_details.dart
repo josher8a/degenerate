@@ -21,6 +21,14 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+final type$ = type;
+if (type$ != null) {
+  if (type$.length > 5000) errors.add('type: length must be <= 5000');
+}
+return errors; } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({String? displayName, String? Function()? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: displayName ?? this.displayName,
   type: type != null ? type() : this.type,

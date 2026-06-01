@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'members': members.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('members'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (members.length > 10) errors.add('members: must have <= 10 items');
+return errors; } 
 BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return BatchCreateMembersRequest(
   members: members ?? this.members,
 ); } 

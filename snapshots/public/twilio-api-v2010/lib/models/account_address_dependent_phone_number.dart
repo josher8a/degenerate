@@ -192,6 +192,45 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'phone_number', 'voice_url', 'voice_method', 'voice_fallback_method', 'voice_fallback_url', 'voice_caller_id_lookup', 'date_created', 'date_updated', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'address_requirements', 'capabilities', 'status_callback', 'status_callback_method', 'api_version', 'sms_application_sid', 'voice_application_sid', 'trunk_sid', 'emergency_status', 'emergency_address_sid', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^PN[0-9a-fA-F]{32}$');
+}
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final smsApplicationSid$ = smsApplicationSid;
+if (smsApplicationSid$ != null) {
+  if (smsApplicationSid$.length < 34) errors.add('smsApplicationSid: length must be >= 34');
+  if (smsApplicationSid$.length > 34) errors.add('smsApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(smsApplicationSid$)) errors.add(r'smsApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final voiceApplicationSid$ = voiceApplicationSid;
+if (voiceApplicationSid$ != null) {
+  if (voiceApplicationSid$.length < 34) errors.add('voiceApplicationSid: length must be >= 34');
+  if (voiceApplicationSid$.length > 34) errors.add('voiceApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(voiceApplicationSid$)) errors.add(r'voiceApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final trunkSid$ = trunkSid;
+if (trunkSid$ != null) {
+  if (trunkSid$.length < 34) errors.add('trunkSid: length must be >= 34');
+  if (trunkSid$.length > 34) errors.add('trunkSid: length must be <= 34');
+  if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$');
+}
+final emergencyAddressSid$ = emergencyAddressSid;
+if (emergencyAddressSid$ != null) {
+  if (emergencyAddressSid$.length < 34) errors.add('emergencyAddressSid: length must be >= 34');
+  if (emergencyAddressSid$.length > 34) errors.add('emergencyAddressSid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(emergencyAddressSid$)) errors.add(r'emergencyAddressSid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? phoneNumber, Uri? Function()? voiceUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, bool? Function()? voiceCallerIdLookup, String? Function()? dateCreated, String? Function()? dateUpdated, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, DependentPhoneNumberEnumAddressRequirement? Function()? addressRequirements, dynamic Function()? capabilities, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? apiVersion, String? Function()? smsApplicationSid, String? Function()? voiceApplicationSid, String? Function()? trunkSid, DependentPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? uri, }) { return AccountAddressDependentPhoneNumber(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

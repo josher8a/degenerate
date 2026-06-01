@@ -29,6 +29,17 @@ Map<String, dynamic> toJson() { return {
   'template_version': ?templateVersion,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final amountTaxDisplay$ = amountTaxDisplay;
+if (amountTaxDisplay$ != null) {
+  if (amountTaxDisplay$.length > 5000) errors.add('amountTaxDisplay: length must be <= 5000');
+}
+final template$ = template;
+if (template$ != null) {
+  if (template$.length > 5000) errors.add('template: length must be <= 5000');
+}
+return errors; } 
 InvoicesResourceInvoiceRendering copyWith({String? Function()? amountTaxDisplay, InvoiceRenderingPdf? Function()? pdf, String? Function()? template, int? Function()? templateVersion, }) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,

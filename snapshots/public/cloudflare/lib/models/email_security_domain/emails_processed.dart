@@ -22,6 +22,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamp') && json['timestamp'] is String &&
       json.containsKey('total_emails_processed') && json['total_emails_processed'] is num &&
       json.containsKey('total_emails_processed_previous') && json['total_emails_processed_previous'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (totalEmailsProcessed < 0) errors.add('totalEmailsProcessed: must be >= 0');
+if (totalEmailsProcessedPrevious < 0) errors.add('totalEmailsProcessedPrevious: must be >= 0');
+return errors; } 
 EmailsProcessed copyWith({DateTime? timestamp, int? totalEmailsProcessed, int? totalEmailsProcessedPrevious, }) { return EmailsProcessed(
   timestamp: timestamp ?? this.timestamp,
   totalEmailsProcessed: totalEmailsProcessed ?? this.totalEmailsProcessed,

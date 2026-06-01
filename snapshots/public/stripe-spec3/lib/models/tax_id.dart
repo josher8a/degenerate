@@ -72,6 +72,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (value.length > 5000) errors.add('value: length must be <= 5000');
+return errors; } 
 TaxId copyWith({String? Function()? country, int? created, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, String? id, bool? livemode, DeletedTaxIdObject? object, TaxIDsOwner? Function()? owner, InvoicesResourceInvoiceTaxIdType? type, String? value, TaxIdVerification? Function()? verification, }) { return TaxId(
   country: country != null ? country() : this.country,
   created: created ?? this.created,

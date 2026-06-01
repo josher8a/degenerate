@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_thresholds_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings_invoice_settings.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings/subscription_schedules_resource_default_settings_billing_cycle_anchor.dart';import 'package:pub_stripe_spec3/models/transfer_data_specs.dart';/// Object representing the subscription schedule's default settings.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_thresholds_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_subscription_exposed_id_request/post_customers_customer_subscriptions_subscription_exposed_id_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_quotes_quote_request/post_quotes_quote_request_description.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/default_settings_invoice_settings.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings/subscription_schedules_resource_default_settings_billing_cycle_anchor.dart';import 'package:pub_stripe_spec3/models/transfer_data_specs.dart';/// Object representing the subscription schedule's default settings.
 @immutable final class DefaultSettings {const DefaultSettings({this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.invoiceSettings, this.onBehalfOf, this.transferData, });
 
 factory DefaultSettings.fromJson(Map<String, dynamic> json) { return DefaultSettings(
@@ -28,7 +28,7 @@ final InvoiceCollectionMethod? collectionMethod;
 
 final String? defaultPaymentMethod;
 
-final Description? description;
+final PostQuotesQuoteRequestDescription? description;
 
 final DefaultSettingsInvoiceSettings? invoiceSettings;
 
@@ -49,7 +49,14 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_percent', 'automatic_tax', 'billing_cycle_anchor', 'billing_thresholds', 'collection_method', 'default_payment_method', 'description', 'invoice_settings', 'on_behalf_of', 'transfer_data'}.contains(key)); } 
-DefaultSettings copyWith({double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, Description? Function()? description, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData? Function()? transferData, }) { return DefaultSettings(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultPaymentMethod$ = defaultPaymentMethod;
+if (defaultPaymentMethod$ != null) {
+  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+}
+return errors; } 
+DefaultSettings copyWith({double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostQuotesQuoteRequestDescription? Function()? description, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData? Function()? transferData, }) { return DefaultSettings(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,

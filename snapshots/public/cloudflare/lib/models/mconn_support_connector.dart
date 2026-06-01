@@ -83,6 +83,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String &&
       json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (interruptWindowDurationHours < 1) errors.add('interruptWindowDurationHours: must be >= 1');
+if (interruptWindowDurationHours > 24) errors.add('interruptWindowDurationHours: must be <= 24');
+if (interruptWindowEmbargoDates.length > 100) errors.add('interruptWindowEmbargoDates: must have <= 100 items');
+return errors; } 
 MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnSupportConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,

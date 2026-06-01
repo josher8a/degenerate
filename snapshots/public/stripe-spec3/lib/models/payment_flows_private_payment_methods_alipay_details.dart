@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'fingerprint', 'transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final buyerId$ = buyerId;
+if (buyerId$ != null) {
+  if (buyerId$.length > 5000) errors.add('buyerId: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentFlowsPrivatePaymentMethodsAlipayDetails copyWith({String? Function()? buyerId, String? Function()? fingerprint, String? Function()? transactionId, }) { return PaymentFlowsPrivatePaymentMethodsAlipayDetails(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

@@ -67,6 +67,21 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final charge$ = charge;
+if (charge$ != null) {
+  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+}
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final paymentIntent$ = paymentIntent;
+if (paymentIntent$ != null) {
+  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+}
+return errors; } 
 PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, String? Function()? instructionsEmail, Metadata? Function()? metadata, Origin? Function()? origin, String? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,

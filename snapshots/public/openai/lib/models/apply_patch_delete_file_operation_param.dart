@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('path') && json['path'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (path.length < 1) errors.add('path: length must be >= 1');
+return errors; } 
 ApplyPatchDeleteFileOperationParam copyWith({String? type, String? path, }) { return ApplyPatchDeleteFileOperationParam(
   type: type ?? this.type,
   path: path ?? this.path,

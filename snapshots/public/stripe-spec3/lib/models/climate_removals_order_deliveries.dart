@@ -35,6 +35,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delivered_at') && json['delivered_at'] is num &&
       json.containsKey('metric_tons') && json['metric_tons'] is String &&
       json.containsKey('supplier'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (metricTons.length > 5000) errors.add('metricTons: length must be <= 5000');
+final registryUrl$ = registryUrl;
+if (registryUrl$ != null) {
+  if (registryUrl$.length > 5000) errors.add('registryUrl: length must be <= 5000');
+}
+return errors; } 
 ClimateRemovalsOrderDeliveries copyWith({int? deliveredAt, ClimateRemovalsLocation? Function()? location, String? metricTons, String? Function()? registryUrl, ClimateSupplier? supplier, }) { return ClimateRemovalsOrderDeliveries(
   deliveredAt: deliveredAt ?? this.deliveredAt,
   location: location != null ? location() : this.location,

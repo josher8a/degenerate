@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   'sold_by': ?soldBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'description', 'sold_by'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final soldBy$ = soldBy;
+if (soldBy$ != null) {
+  if (soldBy$.length > 5000) errors.add('soldBy: length must be <= 5000');
+}
+return errors; } 
 PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions copyWith({PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory? Function()? category, String? Function()? description, String? Function()? soldBy, }) { return PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions(
   category: category != null ? category() : this.category,
   description: description != null ? description() : this.description,

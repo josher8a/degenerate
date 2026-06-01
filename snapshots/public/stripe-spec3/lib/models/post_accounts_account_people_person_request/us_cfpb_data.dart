@@ -21,6 +21,13 @@ Map<String, dynamic> toJson() { return {
   'self_identified_gender': ?selfIdentifiedGender,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ethnicity_details', 'race_details', 'self_identified_gender'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final selfIdentifiedGender$ = selfIdentifiedGender;
+if (selfIdentifiedGender$ != null) {
+  if (selfIdentifiedGender$.length > 5000) errors.add('selfIdentifiedGender: length must be <= 5000');
+}
+return errors; } 
 UsCfpbData copyWith({EthnicityDetails? Function()? ethnicityDetails, RaceDetails? Function()? raceDetails, String? Function()? selfIdentifiedGender, }) { return UsCfpbData(
   ethnicityDetails: ethnicityDetails != null ? ethnicityDetails() : this.ethnicityDetails,
   raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,

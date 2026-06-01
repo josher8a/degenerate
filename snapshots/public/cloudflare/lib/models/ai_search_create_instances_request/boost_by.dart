@@ -49,6 +49,11 @@ Map<String, dynamic> toJson() { return {
   'field': field,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('field') && json['field'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (field.length < 1) errors.add('field: length must be >= 1');
+if (field.length > 64) errors.add('field: length must be <= 64');
+return errors; } 
 BoostBy copyWith({BoostByDirection? Function()? direction, String? field, }) { return BoostBy(
   direction: direction != null ? direction() : this.direction,
   field: field ?? this.field,

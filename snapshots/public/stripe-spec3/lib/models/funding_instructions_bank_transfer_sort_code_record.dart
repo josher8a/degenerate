@@ -36,6 +36,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('bank_address') &&
       json.containsKey('sort_code') && json['sort_code'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (accountHolderName.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+if (accountNumber.length > 5000) errors.add('accountNumber: length must be <= 5000');
+if (sortCode.length > 5000) errors.add('sortCode: length must be <= 5000');
+return errors; } 
 FundingInstructionsBankTransferSortCodeRecord copyWith({Address? accountHolderAddress, String? accountHolderName, String? accountNumber, Address? bankAddress, String? sortCode, }) { return FundingInstructionsBankTransferSortCodeRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,
   accountHolderName: accountHolderName ?? this.accountHolderName,

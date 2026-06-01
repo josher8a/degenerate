@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'reference_status': ?referenceStatus,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network_decline_code', 'reference', 'reference_status'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final networkDeclineCode$ = networkDeclineCode;
+if (networkDeclineCode$ != null) {
+  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+}
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+final referenceStatus$ = referenceStatus;
+if (referenceStatus$ != null) {
+  if (referenceStatus$.length > 5000) errors.add('referenceStatus: length must be <= 5000');
+}
+return errors; } 
 RefundDestinationDetailsSwish copyWith({String? Function()? networkDeclineCode, String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsSwish(
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,
   reference: reference != null ? reference() : this.reference,

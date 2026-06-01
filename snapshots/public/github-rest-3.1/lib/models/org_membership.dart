@@ -83,6 +83,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('organization') &&
       json.containsKey('user'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final enterpriseTeamsProvidingIndirectMembership$ = enterpriseTeamsProvidingIndirectMembership;
+if (enterpriseTeamsProvidingIndirectMembership$ != null) {
+  if (enterpriseTeamsProvidingIndirectMembership$.length > 100) errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items');
+}
+return errors; } 
 OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions? Function()? permissions, }) { return OrgMembership(
   url: url ?? this.url,
   state: state ?? this.state,

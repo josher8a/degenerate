@@ -99,6 +99,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amazo
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('paypal'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (domainName.length > 5000) errors.add('domainName: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? amazonPay, PaymentMethodDomainResourcePaymentMethodStatus? applePay, int? created, String? domainName, bool? enabled, PaymentMethodDomainResourcePaymentMethodStatus? googlePay, String? id, PaymentMethodDomainResourcePaymentMethodStatus? klarna, PaymentMethodDomainResourcePaymentMethodStatus? link, bool? livemode, PaymentMethodDomainObject? object, PaymentMethodDomainResourcePaymentMethodStatus? paypal, }) { return PaymentMethodDomain(
   amazonPay: amazonPay ?? this.amazonPay,
   applePay: applePay ?? this.applePay,

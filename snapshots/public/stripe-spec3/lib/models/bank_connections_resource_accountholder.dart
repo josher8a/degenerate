@@ -28,6 +28,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 BankConnectionsResourceAccountholder copyWith({ApplicationFeeAccount? Function()? account, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, BankConnectionsResourceAccountholderType? type, }) { return BankConnectionsResourceAccountholder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,

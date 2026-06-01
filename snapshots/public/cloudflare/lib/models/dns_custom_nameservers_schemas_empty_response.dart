@@ -12,6 +12,13 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final result$ = result;
+if (result$ != null) {
+  if (result$.length > 0) errors.add('result: must have <= 0 items');
+}
+return errors; } 
 DnsCustomNameserversSchemasEmptyResponse copyWith({List<String>? Function()? result}) { return DnsCustomNameserversSchemasEmptyResponse(
   result: result != null ? result() : this.result,
 ); } 

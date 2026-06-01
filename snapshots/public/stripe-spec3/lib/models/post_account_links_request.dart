@@ -98,6 +98,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (account.length > 5000) errors.add('account: length must be <= 5000');
+return errors; } 
 PostAccountLinksRequest copyWith({String? account, Collect? Function()? collect, CollectionOptions? Function()? collectionOptions, List<String>? Function()? expand, String? Function()? refreshUrl, String? Function()? returnUrl, PostAccountLinksRequestType? type, }) { return PostAccountLinksRequest(
   account: account ?? this.account,
   collect: collect != null ? collect() : this.collect,

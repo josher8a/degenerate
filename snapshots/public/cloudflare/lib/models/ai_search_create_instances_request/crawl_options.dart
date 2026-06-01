@@ -55,6 +55,19 @@ Map<String, dynamic> toJson() { return {
   'source': source.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'depth', 'include_external_links', 'include_subdomains', 'max_age', 'source'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final depth$ = depth;
+if (depth$ != null) {
+  if (depth$ < 1) errors.add('depth: must be >= 1');
+  if (depth$ > 100000) errors.add('depth: must be <= 100000');
+}
+final maxAge$ = maxAge;
+if (maxAge$ != null) {
+  if (maxAge$ < 0) errors.add('maxAge: must be >= 0');
+  if (maxAge$ > 604800) errors.add('maxAge: must be <= 604800');
+}
+return errors; } 
 CrawlOptions copyWith({double? Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double? Function()? maxAge, CrawlOptionsSource Function()? source, }) { return CrawlOptions(
   depth: depth != null ? depth() : this.depth,
   includeExternalLinks: includeExternalLinks != null ? includeExternalLinks() : this.includeExternalLinks,

@@ -51,6 +51,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('financial_addresses') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+return errors; } 
 FundingInstructionsBankTransfer copyWith({String? country, List<FundingInstructionsBankTransferFinancialAddress>? financialAddresses, FundingInstructionsBankTransferType? type, }) { return FundingInstructionsBankTransfer(
   country: country ?? this.country,
   financialAddresses: financialAddresses ?? this.financialAddresses,

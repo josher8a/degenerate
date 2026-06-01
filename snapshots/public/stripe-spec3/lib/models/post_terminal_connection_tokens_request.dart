@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'location': ?location,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'location'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+}
+return errors; } 
 PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, String? Function()? location, }) { return PostTerminalConnectionTokensRequest(
   expand: expand != null ? expand() : this.expand,
   location: location != null ? location() : this.location,

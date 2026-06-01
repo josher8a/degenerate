@@ -28,6 +28,11 @@ Map<String, dynamic> toJson() { return {
   'temperature': temperature,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (temperature < 0) errors.add('temperature: must be >= 0');
+if (temperature > 5) errors.add('temperature: must be <= 5');
+return errors; } 
 WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
   messages: messages ?? this.messages,

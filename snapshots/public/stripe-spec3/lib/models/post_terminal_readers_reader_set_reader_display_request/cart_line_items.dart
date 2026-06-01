@@ -22,6 +22,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (description.length > 5000) errors.add('description: length must be <= 5000');
+return errors; } 
 CartLineItems copyWith({int? amount, String? description, int? quantity, }) { return CartLineItems(
   amount: amount ?? this.amount,
   description: description ?? this.description,

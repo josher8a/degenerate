@@ -60,6 +60,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_ids') &&
       json.containsKey('taxability_override'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ipAddress$ = ipAddress;
+if (ipAddress$ != null) {
+  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+}
+return errors; } 
 TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,

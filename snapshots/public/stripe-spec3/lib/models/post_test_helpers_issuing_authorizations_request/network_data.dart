@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'acquiring_institution_id': ?acquiringInstitutionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acquiring_institution_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final acquiringInstitutionId$ = acquiringInstitutionId;
+if (acquiringInstitutionId$ != null) {
+  if (acquiringInstitutionId$.length > 5000) errors.add('acquiringInstitutionId: length must be <= 5000');
+}
+return errors; } 
 NetworkData copyWith({String? Function()? acquiringInstitutionId}) { return NetworkData(
   acquiringInstitutionId: acquiringInstitutionId != null ? acquiringInstitutionId() : this.acquiringInstitutionId,
 ); } 

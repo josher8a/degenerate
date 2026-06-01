@@ -108,6 +108,25 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionDetails != null) 'subscription_details': subscriptionDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'automatic_tax', 'currency', 'customer', 'customer_account', 'customer_details', 'discounts', 'expand', 'invoice_items', 'issuer', 'on_behalf_of', 'preview_mode', 'schedule', 'schedule_details', 'subscription', 'subscription_details'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final schedule$ = schedule;
+if (schedule$ != null) {
+  if (schedule$.length > 5000) errors.add('schedule: length must be <= 5000');
+}
+final subscription$ = subscription;
+if (subscription$ != null) {
+  if (subscription$.length > 5000) errors.add('subscription: length must be <= 5000');
+}
+return errors; } 
 PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, PostInvoicesCreatePreviewRequestCustomerDetails? Function()? customerDetails, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, List<InvoiceItems>? Function()? invoiceItems, Issuer? Function()? issuer, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PreviewMode? Function()? previewMode, String? Function()? schedule, ScheduleDetails? Function()? scheduleDetails, String? Function()? subscription, SubscriptionDetails? Function()? subscriptionDetails, }) { return PostInvoicesCreatePreviewRequest(
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
   currency: currency != null ? currency() : this.currency,

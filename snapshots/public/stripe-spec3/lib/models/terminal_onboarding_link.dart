@@ -56,6 +56,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_
       json.containsKey('link_type') &&
       json.containsKey('object') &&
       json.containsKey('redirect_url') && json['redirect_url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final onBehalfOf$ = onBehalfOf;
+if (onBehalfOf$ != null) {
+  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+}
+if (redirectUrl.length > 5000) errors.add('redirectUrl: length must be <= 5000');
+return errors; } 
 TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions, LinkType? linkType, TerminalOnboardingLinkObject? object, String? Function()? onBehalfOf, String? redirectUrl, }) { return TerminalOnboardingLink(
   linkOptions: linkOptions ?? this.linkOptions,
   linkType: linkType ?? this.linkType,

@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reason$ = reason;
+if (reason$ != null) {
+  if (reason$.length > 1024) errors.add('reason: length must be <= 1024');
+}
+return errors; } 
 OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestRequest(
   action: action ?? this.action,
   reason: reason != null ? reason() : this.reason,

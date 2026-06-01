@@ -33,6 +33,15 @@ Map<String, dynamic> toJson() { return {
   'secret': ?secret,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated', 'secret'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^SK[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^SK[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountNewSigningKey copyWith({String? Function()? sid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? secret, }) { return AccountNewSigningKey(
   sid: sid != null ? sid() : this.sid,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

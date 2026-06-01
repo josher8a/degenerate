@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final returnUrl$ = returnUrl;
+if (returnUrl$ != null) {
+  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+}
+return errors; } 
 TerminalReaderReaderResourceConfirmConfig copyWith({String? Function()? returnUrl}) { return TerminalReaderReaderResourceConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 

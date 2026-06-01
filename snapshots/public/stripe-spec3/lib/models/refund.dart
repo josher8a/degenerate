@@ -205,6 +205,30 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final failureReason$ = failureReason;
+if (failureReason$ != null) {
+  if (failureReason$.length > 5000) errors.add('failureReason: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final instructionsEmail$ = instructionsEmail;
+if (instructionsEmail$ != null) {
+  if (instructionsEmail$.length > 5000) errors.add('instructionsEmail: length must be <= 5000');
+}
+final receiptNumber$ = receiptNumber;
+if (receiptNumber$ != null) {
+  if (receiptNumber$.length > 5000) errors.add('receiptNumber: length must be <= 5000');
+}
+final status$ = status;
+if (status$ != null) {
+  if (status$.length > 5000) errors.add('status: length must be <= 5000');
+}
+return errors; } 
 Refund copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? Function()? charge, int? created, String? currency, String? Function()? description, RefundDestinationDetails? Function()? destinationDetails, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureReason, String? id, String? Function()? instructionsEmail, Map<String, String>? Function()? metadata, RefundNextAction? Function()? nextAction, RefundObject? object, ChargePaymentIntent? Function()? paymentIntent, PendingReason? Function()? pendingReason, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, RefundReason? Function()? reason, String? Function()? receiptNumber, SourceTransferReversal? Function()? sourceTransferReversal, String? Function()? status, RefundTransferReversal? Function()? transferReversal, }) { return Refund(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,

@@ -305,6 +305,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('status') &&
       json.containsKey('status_details') &&
       json.containsKey('supported_currencies'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final nickname$ = nickname;
+if (nickname$ != null) {
+  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+}
+return errors; } 
 TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<PendingFeatures>? Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<RestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,

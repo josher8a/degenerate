@@ -76,6 +76,13 @@ Map<String, dynamic> toJson() { return {
   'session_policy': sessionPolicy.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_percent', 'default_policy', 'session_percent', 'session_policy'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (defaultPercent < 0) errors.add('defaultPercent: must be >= 0');
+if (defaultPercent > 100) errors.add('defaultPercent: must be <= 100');
+if (sessionPercent < 0) errors.add('sessionPercent: must be >= 0');
+if (sessionPercent > 100) errors.add('sessionPercent: must be <= 100');
+return errors; } 
 LoadBalancingLoadShedding copyWith({double Function()? defaultPercent, DefaultPolicy Function()? defaultPolicy, double Function()? sessionPercent, SessionPolicy Function()? sessionPolicy, }) { return LoadBalancingLoadShedding(
   defaultPercent: defaultPercent != null ? defaultPercent() : this.defaultPercent,
   defaultPolicy: defaultPolicy != null ? defaultPolicy() : this.defaultPolicy,

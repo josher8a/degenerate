@@ -945,6 +945,41 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final city$ = city;
+if (city$ != null) {
+  if (city$.length > 5000) errors.add('city: length must be <= 5000');
+}
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final networkId$ = networkId;
+if (networkId$ != null) {
+  if (networkId$.length > 5000) errors.add('networkId: length must be <= 5000');
+}
+final postalCode$ = postalCode;
+if (postalCode$ != null) {
+  if (postalCode$.length > 5000) errors.add('postalCode: length must be <= 5000');
+}
+final state$ = state;
+if (state$ != null) {
+  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+}
+final terminalId$ = terminalId;
+if (terminalId$ != null) {
+  if (terminalId$.length > 5000) errors.add('terminalId: length must be <= 5000');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 MerchantData copyWith({MerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) { return MerchantData(
   category: category != null ? category() : this.category,
   city: city != null ? city() : this.city,

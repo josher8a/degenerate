@@ -31,6 +31,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr') &&
       json.containsKey('hostnames') &&
       json.containsKey('request_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (hostnames.length < 1) errors.add('hostnames: must have >= 1 items');
+if (hostnames.length > 100) errors.add('hostnames: must have <= 100 items');
+return errors; } 
 OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) { return OriginCaCreateCertificateRequest(
   csr: csr ?? this.csr,
   hostnames: hostnames ?? this.hostnames,

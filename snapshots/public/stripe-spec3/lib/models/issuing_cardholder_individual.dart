@@ -34,6 +34,17 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'dob', 'first_name', 'last_name', 'verification'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final firstName$ = firstName;
+if (firstName$ != null) {
+  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+}
+final lastName$ = lastName;
+if (lastName$ != null) {
+  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+}
+return errors; } 
 IssuingCardholderIndividual copyWith({IssuingCardholderCardIssuing? Function()? cardIssuing, IssuingCardholderIndividualDob? Function()? dob, String? Function()? firstName, String? Function()? lastName, IssuingCardholderVerification? Function()? verification, }) { return IssuingCardholderIndividual(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   dob: dob != null ? dob() : this.dob,

@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'before': ?before,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'before'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final before$ = before;
+if (before$ != null) {
+  if (before$.length > 36) errors.add('before: length must be <= 36');
+}
+return errors; } 
 ShieldBefore copyWith({String? Function()? before}) { return ShieldBefore(
   before: before != null ? before() : this.before,
 ); } 

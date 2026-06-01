@@ -191,6 +191,22 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final defaultCurrency$ = defaultCurrency;
+if (defaultCurrency$ != null) {
+  if (defaultCurrency$.length > 5000) errors.add('defaultCurrency: length must be <= 5000');
+}
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBusinessType? Function()? businessType, AccountCapabilities? Function()? capabilities, bool? Function()? chargesEnabled, LegalEntityCompany? Function()? company, AccountUnificationAccountController? Function()? controller, String? Function()? country, int? Function()? created, String? Function()? defaultCurrency, bool? Function()? detailsSubmitted, String? Function()? email, ExternalAccounts? Function()? externalAccounts, AccountFutureRequirements? Function()? futureRequirements, AccountGroupMembership? Function()? groups, String? id, Person? Function()? individual, Map<String, String>? Function()? metadata, AccountObject? object, bool? Function()? payoutsEnabled, AccountRequirements? Function()? requirements, AccountSettings? Function()? settings, AccountTosAcceptance? Function()? tosAcceptance, AccountType? Function()? type, }) { return Account(
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,
   businessType: businessType != null ? businessType() : this.businessType,

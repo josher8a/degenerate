@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final userAgent$ = userAgent;
+if (userAgent$ != null) {
+  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+}
+return errors; } 
 OwnershipDeclaration copyWith({int? Function()? date, String? Function()? ip, String? Function()? userAgent, }) { return OwnershipDeclaration(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,

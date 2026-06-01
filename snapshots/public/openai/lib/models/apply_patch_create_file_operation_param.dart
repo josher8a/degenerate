@@ -26,6 +26,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('diff') && json['diff'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (path.length < 1) errors.add('path: length must be >= 1');
+if (diff.length > 10485760) errors.add('diff: length must be <= 10485760');
+return errors; } 
 ApplyPatchCreateFileOperationParam copyWith({String? type, String? path, String? diff, }) { return ApplyPatchCreateFileOperationParam(
   type: type ?? this.type,
   path: path ?? this.path,

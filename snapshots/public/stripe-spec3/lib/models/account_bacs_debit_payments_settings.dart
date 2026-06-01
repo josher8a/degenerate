@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'service_user_number': ?serviceUserNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'service_user_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+}
+final serviceUserNumber$ = serviceUserNumber;
+if (serviceUserNumber$ != null) {
+  if (serviceUserNumber$.length > 5000) errors.add('serviceUserNumber: length must be <= 5000');
+}
+return errors; } 
 AccountBacsDebitPaymentsSettings copyWith({String? Function()? displayName, String? Function()? serviceUserNumber, }) { return AccountBacsDebitPaymentsSettings(
   displayName: displayName != null ? displayName() : this.displayName,
   serviceUserNumber: serviceUserNumber != null ? serviceUserNumber() : this.serviceUserNumber,

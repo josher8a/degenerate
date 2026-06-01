@@ -138,6 +138,33 @@ Map<String, dynamic> toJson() { return {
   'emergency_caller_sid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^SD[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^SD[0-9a-fA-F]{32}$');
+}
+final byocTrunkSid$ = byocTrunkSid;
+if (byocTrunkSid$ != null) {
+  if (byocTrunkSid$.length < 34) errors.add('byocTrunkSid: length must be >= 34');
+  if (byocTrunkSid$.length > 34) errors.add('byocTrunkSid: length must be <= 34');
+  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byocTrunkSid$)) errors.add(r'byocTrunkSid: must match pattern ^BY[0-9a-fA-F]{32}$');
+}
+final emergencyCallerSid$ = emergencyCallerSid;
+if (emergencyCallerSid$ != null) {
+  if (emergencyCallerSid$.length < 34) errors.add('emergencyCallerSid: length must be >= 34');
+  if (emergencyCallerSid$.length > 34) errors.add('emergencyCallerSid: length must be <= 34');
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

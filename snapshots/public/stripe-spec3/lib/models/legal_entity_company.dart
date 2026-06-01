@@ -230,6 +230,37 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final exportLicenseId$ = exportLicenseId;
+if (exportLicenseId$ != null) {
+  if (exportLicenseId$.length > 5000) errors.add('exportLicenseId: length must be <= 5000');
+}
+final exportPurposeCode$ = exportPurposeCode;
+if (exportPurposeCode$ != null) {
+  if (exportPurposeCode$.length > 5000) errors.add('exportPurposeCode: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final nameKana$ = nameKana;
+if (nameKana$ != null) {
+  if (nameKana$.length > 5000) errors.add('nameKana: length must be <= 5000');
+}
+final nameKanji$ = nameKanji;
+if (nameKanji$ != null) {
+  if (nameKanji$.length > 5000) errors.add('nameKanji: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final taxIdRegistrar$ = taxIdRegistrar;
+if (taxIdRegistrar$ != null) {
+  if (taxIdRegistrar$.length > 5000) errors.add('taxIdRegistrar: length must be <= 5000');
+}
+return errors; } 
 LegalEntityCompany copyWith({Address? Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, bool? Function()? directorsProvided, LegalEntityDirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, LegalEntityUboDeclaration? Function()? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, LegalEntityRegistrationDate? Function()? registrationDate, LegalEntityRepresentativeDeclaration? Function()? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, LegalEntityCompanyVerification? Function()? verification, }) { return LegalEntityCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,

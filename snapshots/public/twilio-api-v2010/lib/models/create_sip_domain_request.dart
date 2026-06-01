@@ -73,6 +73,21 @@ Map<String, dynamic> toJson() { return {
   'EmergencyCallerSid': ?emergencyCallerSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('DomainName') && json['DomainName'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final byocTrunkSid$ = byocTrunkSid;
+if (byocTrunkSid$ != null) {
+  if (byocTrunkSid$.length < 34) errors.add('byocTrunkSid: length must be >= 34');
+  if (byocTrunkSid$.length > 34) errors.add('byocTrunkSid: length must be <= 34');
+  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byocTrunkSid$)) errors.add(r'byocTrunkSid: must match pattern ^BY[0-9a-fA-F]{32}$');
+}
+final emergencyCallerSid$ = emergencyCallerSid;
+if (emergencyCallerSid$ != null) {
+  if (emergencyCallerSid$.length < 34) errors.add('emergencyCallerSid: length must be >= 34');
+  if (emergencyCallerSid$.length > 34) errors.add('emergencyCallerSid: length must be <= 34');
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$');
+}
+return errors; } 
 CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendlyName, Uri? Function()? voiceUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceStatusCallbackUrl, CreateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return CreateSipDomainRequest(
   domainName: domainName ?? this.domainName,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

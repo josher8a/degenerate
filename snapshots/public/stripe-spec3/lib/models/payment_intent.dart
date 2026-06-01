@@ -360,6 +360,38 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientSecret$ = clientSecret;
+if (clientSecret$ != null) {
+  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final receiptEmail$ = receiptEmail;
+if (receiptEmail$ != null) {
+  if (receiptEmail$.length > 5000) errors.add('receiptEmail: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 5000) errors.add('statementDescriptorSuffix: length must be <= 5000');
+}
+final transferGroup$ = transferGroup;
+if (transferGroup$ != null) {
+  if (transferGroup$.length > 5000) errors.add('transferGroup: length must be <= 5000');
+}
+return errors; } 
 PaymentIntent copyWith({int? Function()? amount, int? Function()? amountCapturable, PaymentIntentAmountDetails? Function()? amountDetails, int? Function()? amountReceived, ApplicationFeeApplication? Function()? application, int? Function()? applicationFeeAmount, PaymentFlowsAutomaticPaymentMethodsPaymentIntent? Function()? automaticPaymentMethods, int? Function()? canceledAt, PaymentIntentCancellationReason? Function()? cancellationReason, PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? clientSecret, ConfirmationMethod? Function()? confirmationMethod, int? created, String? Function()? currency, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, PaymentFlowsPaymentIntentAsyncWorkflows? Function()? hooks, String? id, Errors? Function()? lastPaymentError, LatestCharge? Function()? latestCharge, bool? livemode, Map<String, String>? Function()? metadata, PaymentIntentNextAction? Function()? nextAction, PaymentIntentObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, PaymentFlowsPaymentDetails? Function()? paymentDetails, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, PaymentIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, PaymentIntentProcessing? Function()? processing, String? Function()? receiptEmail, ChargeReview? Function()? review, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, Shipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PaymentIntentStatus? status, TransferData? Function()? transferData, String? Function()? transferGroup, }) { return PaymentIntent(
   amount: amount != null ? amount() : this.amount,
   amountCapturable: amountCapturable != null ? amountCapturable() : this.amountCapturable,

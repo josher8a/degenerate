@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+return errors; } 
 MarketingFeaturesVariant1 copyWith({String? name}) { return MarketingFeaturesVariant1(
   name: name ?? this.name,
 ); } 

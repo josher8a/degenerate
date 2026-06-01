@@ -32,6 +32,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_promotion_codes') && json['allow_promotion_codes'] is bool &&
       json.containsKey('enabled') && json['enabled'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 PaymentPagesCheckoutSessionAfterExpirationRecovery copyWith({bool? allowPromotionCodes, bool? enabled, int? Function()? expiresAt, String? Function()? url, }) { return PaymentPagesCheckoutSessionAfterExpirationRecovery(
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,
   enabled: enabled ?? this.enabled,

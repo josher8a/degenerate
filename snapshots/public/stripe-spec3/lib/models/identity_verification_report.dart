@@ -109,6 +109,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientReferenceId$ = clientReferenceId;
+if (clientReferenceId$ != null) {
+  if (clientReferenceId$.length > 5000) errors.add('clientReferenceId: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final verificationFlow$ = verificationFlow;
+if (verificationFlow$ != null) {
+  if (verificationFlow$.length > 5000) errors.add('verificationFlow: length must be <= 5000');
+}
+final verificationSession$ = verificationSession;
+if (verificationSession$ != null) {
+  if (verificationSession$.length > 5000) errors.add('verificationSession: length must be <= 5000');
+}
+return errors; } 
 IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, String? Function()? verificationSession, }) { return IdentityVerificationReport(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   created: created ?? this.created,

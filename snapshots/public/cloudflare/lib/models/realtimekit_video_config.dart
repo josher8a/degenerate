@@ -58,6 +58,13 @@ Map<String, dynamic> toJson() { return {
   'width': width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'codec', 'export_file', 'height', 'watermark', 'width'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (height < 1) errors.add('height: must be >= 1');
+if (height > 1920) errors.add('height: must be <= 1920');
+if (width < 1) errors.add('width: must be >= 1');
+if (width > 1920) errors.add('width: must be <= 1920');
+return errors; } 
 RealtimekitVideoConfig copyWith({RealtimekitVideoConfigCodec Function()? codec, bool Function()? exportFile, int Function()? height, Watermark? Function()? watermark, int Function()? width, }) { return RealtimekitVideoConfig(
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,

@@ -156,6 +156,33 @@ Map<String, dynamic> toJson() { return {
   'use_stripe_sdk': ?useStripeSdk,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attach_to_self', 'automatic_payment_methods', 'confirm', 'confirmation_token', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'flow_directions', 'mandate_data', 'metadata', 'on_behalf_of', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'return_url', 'single_use', 'usage', 'use_stripe_sdk'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final confirmationToken$ = confirmationToken;
+if (confirmationToken$ != null) {
+  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+}
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+}
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+final paymentMethodConfiguration$ = paymentMethodConfiguration;
+if (paymentMethodConfiguration$ != null) {
+  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+}
+return errors; } 
 PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPaymentMethods? Function()? automaticPaymentMethods, bool? Function()? confirm, String? Function()? confirmationToken, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, List<FlowDirections>? Function()? flowDirections, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, String? Function()? returnUrl, SingleUse? Function()? singleUse, PostSetupIntentsRequestUsage? Function()? usage, bool? Function()? useStripeSdk, }) { return PostSetupIntentsRequest(
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,

@@ -58,6 +58,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 ReserveTransaction copyWith({int? amount, String? currency, String? Function()? description, String? id, ReserveTransactionObject? object, }) { return ReserveTransaction(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

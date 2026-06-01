@@ -35,6 +35,13 @@ Map<String, dynamic> toJson() { return {
   if (usBankTransfer != null) 'us_bank_transfer': usBankTransfer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+return errors; } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? Function()? euBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer? Function()? gbBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer? Function()? jpBankTransfer, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer? Function()? usBankTransfer, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   gbBankTransfer: gbBankTransfer != null ? gbBankTransfer() : this.gbBankTransfer,

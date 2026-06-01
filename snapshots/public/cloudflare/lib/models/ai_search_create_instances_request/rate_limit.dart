@@ -44,6 +44,18 @@ Map<String, dynamic> toJson() { return {
   if (technique != null) 'technique': technique?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final periodMs$ = periodMs;
+if (periodMs$ != null) {
+  if (periodMs$ < 60000) errors.add('periodMs: must be >= 60000');
+  if (periodMs$ > 3600000.0) errors.add('periodMs: must be <= 3600000.0');
+}
+final requests$ = requests;
+if (requests$ != null) {
+  if (requests$ < 1) errors.add('requests: must be >= 1');
+}
+return errors; } 
 RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Technique? Function()? technique, }) { return RateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,

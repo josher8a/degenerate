@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'origins': ?origins,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origins'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final origins$ = origins;
+if (origins$ != null) {
+  if (origins$.length > 5) errors.add('origins: must have <= 5 items');
+}
+return errors; } 
 Cors copyWith({List<String>? Function()? origins}) { return Cors(
   origins: origins != null ? origins() : this.origins,
 ); } 

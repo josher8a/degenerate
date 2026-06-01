@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'idempotency_key': ?idempotencyKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'idempotency_key'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+final idempotencyKey$ = idempotencyKey;
+if (idempotencyKey$ != null) {
+  if (idempotencyKey$.length > 5000) errors.add('idempotencyKey: length must be <= 5000');
+}
+return errors; } 
 NotificationEventRequest copyWith({String? Function()? id, String? Function()? idempotencyKey, }) { return NotificationEventRequest(
   id: id != null ? id() : this.id,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,

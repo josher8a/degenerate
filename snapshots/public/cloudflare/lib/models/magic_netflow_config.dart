@@ -34,6 +34,29 @@ Map<String, dynamic> toJson() { return {
   'sampling_rate': ?samplingRate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('collector_ip') && json['collector_ip'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final activeTimeout$ = activeTimeout;
+if (activeTimeout$ != null) {
+  if (activeTimeout$ < 1) errors.add('activeTimeout: must be >= 1');
+  if (activeTimeout$ > 5400) errors.add('activeTimeout: must be <= 5400');
+}
+final collectorPort$ = collectorPort;
+if (collectorPort$ != null) {
+  if (collectorPort$ < 1) errors.add('collectorPort: must be >= 1');
+  if (collectorPort$ > 65535) errors.add('collectorPort: must be <= 65535');
+}
+final inactiveTimeout$ = inactiveTimeout;
+if (inactiveTimeout$ != null) {
+  if (inactiveTimeout$ < 1) errors.add('inactiveTimeout: must be >= 1');
+  if (inactiveTimeout$ > 5400) errors.add('inactiveTimeout: must be <= 5400');
+}
+final samplingRate$ = samplingRate;
+if (samplingRate$ != null) {
+  if (samplingRate$ < 1) errors.add('samplingRate: must be >= 1');
+  if (samplingRate$ > 10000) errors.add('samplingRate: must be <= 10000');
+}
+return errors; } 
 MagicNetflowConfig copyWith({int? Function()? activeTimeout, String? collectorIp, int? Function()? collectorPort, int? Function()? inactiveTimeout, int? Function()? samplingRate, }) { return MagicNetflowConfig(
   activeTimeout: activeTimeout != null ? activeTimeout() : this.activeTimeout,
   collectorIp: collectorIp ?? this.collectorIp,

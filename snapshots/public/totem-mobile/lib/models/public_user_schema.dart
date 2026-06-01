@@ -70,6 +70,16 @@ final class PublicUserSchema {
         json['date_created'] is String;
   }
 
+  /// Constraint violations for this value (empty when valid).
+  List<String> validate() {
+    final errors = <String>[];
+    final name$ = name;
+    if (name$ != null) {
+      if (name$.length > 255) errors.add('name: length must be <= 255');
+    }
+    return errors;
+  }
+
   PublicUserSchema copyWith({
     ProfileAvatarTypeEnum? profileAvatarType,
     int? Function()? circleCount,

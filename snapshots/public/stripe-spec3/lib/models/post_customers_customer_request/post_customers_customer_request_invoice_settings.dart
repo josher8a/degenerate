@@ -25,6 +25,17 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_fields', 'default_payment_method', 'footer', 'rendering_options'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultPaymentMethod$ = defaultPaymentMethod;
+if (defaultPaymentMethod$ != null) {
+  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+}
+final footer$ = footer;
+if (footer$ != null) {
+  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+}
+return errors; } 
 PostCustomersCustomerRequestInvoiceSettings copyWith({PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? defaultPaymentMethod, String? Function()? footer, InvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PostCustomersCustomerRequestInvoiceSettings(
   customFields: customFields != null ? customFields() : this.customFields,
   defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,

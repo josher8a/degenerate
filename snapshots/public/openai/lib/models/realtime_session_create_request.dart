@@ -123,6 +123,11 @@ Map<String, dynamic> toJson() { return {
   if (prompt != null) 'prompt': prompt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (speed < 0.25) errors.add('speed: must be >= 0.25');
+if (speed > 1.5) errors.add('speed: must be <= 1.5');
+return errors; } 
 RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, dynamic Function()? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, InputAudioTranscription? Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeBetaResponseCreateParamsTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, MaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequest(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities != null ? modalities() : this.modalities,

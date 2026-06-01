@@ -134,6 +134,14 @@ Map<String, dynamic> toJson() { return {
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') && json['invoice'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (invoice.length > 5000) errors.add('invoice: length must be <= 5000');
+final memo$ = memo;
+if (memo$ != null) {
+  if (memo$.length > 5000) errors.add('memo: length must be <= 5000');
+}
+return errors; } 
 PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? creditAmount, int? Function()? effectiveAt, EmailType? Function()? emailType, List<String>? Function()? expand, String? invoice, List<PostCreditNotesRequestLines>? Function()? lines, String? Function()? memo, Map<String, String>? Function()? metadata, int? Function()? outOfBandAmount, PostCreditNotesRequestReason? Function()? reason, int? Function()? refundAmount, List<PostCreditNotesRequestRefunds>? Function()? refunds, PostCreditNotesRequestShippingCost? Function()? shippingCost, }) { return PostCreditNotesRequest(
   amount: amount != null ? amount() : this.amount,
   creditAmount: creditAmount != null ? creditAmount() : this.creditAmount,

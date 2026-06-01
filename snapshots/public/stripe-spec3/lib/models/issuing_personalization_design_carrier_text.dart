@@ -29,6 +29,25 @@ Map<String, dynamic> toJson() { return {
   'header_title': ?headerTitle,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'footer_body', 'footer_title', 'header_body', 'header_title'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final footerBody$ = footerBody;
+if (footerBody$ != null) {
+  if (footerBody$.length > 5000) errors.add('footerBody: length must be <= 5000');
+}
+final footerTitle$ = footerTitle;
+if (footerTitle$ != null) {
+  if (footerTitle$.length > 5000) errors.add('footerTitle: length must be <= 5000');
+}
+final headerBody$ = headerBody;
+if (headerBody$ != null) {
+  if (headerBody$.length > 5000) errors.add('headerBody: length must be <= 5000');
+}
+final headerTitle$ = headerTitle;
+if (headerTitle$ != null) {
+  if (headerTitle$.length > 5000) errors.add('headerTitle: length must be <= 5000');
+}
+return errors; } 
 IssuingPersonalizationDesignCarrierText copyWith({String? Function()? footerBody, String? Function()? footerTitle, String? Function()? headerBody, String? Function()? headerTitle, }) { return IssuingPersonalizationDesignCarrierText(
   footerBody: footerBody != null ? footerBody() : this.footerBody,
   footerTitle: footerTitle != null ? footerTitle() : this.footerTitle,

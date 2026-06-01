@@ -61,6 +61,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('subtitle') && json['subtitle'] is String &&
       json.containsKey('categories') &&
       json.containsKey('recurring') && json['recurring'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (title.length > 255) errors.add('title: length must be <= 255');
+if (subtitle.length > 2000) errors.add('subtitle: length must be <= 2000');
+final shortDescription$ = shortDescription;
+if (shortDescription$ != null) {
+  if (shortDescription$.length > 255) errors.add('shortDescription: length must be <= 255');
+}
+if (recurring.length > 255) errors.add('recurring: length must be <= 255');
+if (content.length > 10000) errors.add('content: length must be <= 10000');
+return errors; } 
 SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, String? Function()? shortDescription, String? recurring, String? Function()? image, String Function()? content, }) { return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,

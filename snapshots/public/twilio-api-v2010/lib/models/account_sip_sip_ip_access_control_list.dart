@@ -43,6 +43,21 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'date_created', 'date_updated', 'subresource_uris', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^AL[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^AL[0-9a-fA-F]{32}$');
+}
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountSipSipIpAccessControlList copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, }) { return AccountSipSipIpAccessControlList(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

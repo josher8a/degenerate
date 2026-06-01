@@ -76,6 +76,22 @@ final class BlogPostListSchema {
     return json.containsKey('title') && json['title'] is String;
   }
 
+  /// Constraint violations for this value (empty when valid).
+  List<String> validate() {
+    final errors = <String>[];
+    if (title.length > 255) errors.add('title: length must be <= 255');
+    final subtitle$ = subtitle;
+    if (subtitle$ != null) {
+      if (subtitle$.length > 2000)
+        errors.add('subtitle: length must be <= 2000');
+    }
+    final summary$ = summary;
+    if (summary$ != null) {
+      if (summary$.length > 2000) errors.add('summary: length must be <= 2000');
+    }
+    return errors;
+  }
+
   BlogPostListSchema copyWith({
     PublicUserSchema? Function()? author,
     String? Function()? headerImageUrl,

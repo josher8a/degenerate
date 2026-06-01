@@ -46,6 +46,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String &&
       json.containsKey('type') &&
       json.containsKey('waitForTags') && json['waitForTags'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (waitForTags < 0) errors.add('waitForTags: must be >= 0');
+return errors; } 
 ZarazClickListenerRuleSettings copyWith({String? selector, SettingsType? type, int? waitForTags, }) { return ZarazClickListenerRuleSettings(
   selector: selector ?? this.selector,
   type: type ?? this.type,

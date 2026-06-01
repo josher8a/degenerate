@@ -23,6 +23,17 @@ Map<String, dynamic> toJson() { return {
   'payment_record': ?paymentRecord,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_intent', 'payment_record'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentIntent$ = paymentIntent;
+if (paymentIntent$ != null) {
+  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+}
+final paymentRecord$ = paymentRecord;
+if (paymentRecord$ != null) {
+  if (paymentRecord$.length > 5000) errors.add('paymentRecord: length must be <= 5000');
+}
+return errors; } 
 PostInvoicesInvoiceAttachPaymentRequest copyWith({List<String>? Function()? expand, String? Function()? paymentIntent, String? Function()? paymentRecord, }) { return PostInvoicesInvoiceAttachPaymentRequest(
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,

@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('frozen_time') && json['frozen_time'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 300) errors.add('name: length must be <= 300');
+}
+return errors; } 
 PostTestHelpersTestClocksRequest copyWith({List<String>? Function()? expand, int? frozenTime, String? Function()? name, }) { return PostTestHelpersTestClocksRequest(
   expand: expand != null ? expand() : this.expand,
   frozenTime: frozenTime ?? this.frozenTime,

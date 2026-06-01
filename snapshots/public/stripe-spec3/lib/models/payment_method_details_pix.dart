@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'bank_transaction_id': ?bankTransactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bankTransactionId$ = bankTransactionId;
+if (bankTransactionId$ != null) {
+  if (bankTransactionId$.length > 5000) errors.add('bankTransactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsPix copyWith({String? Function()? bankTransactionId}) { return PaymentMethodDetailsPix(
   bankTransactionId: bankTransactionId != null ? bankTransactionId() : this.bankTransactionId,
 ); } 

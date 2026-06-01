@@ -13,6 +13,10 @@ Map<String, dynamic> toJson() { return {
   'rules': rules.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('rules'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (rules.length < 1) errors.add('rules: must have >= 1 items');
+return errors; } 
 R2PutEventNotificationConfigRequest copyWith({List<R2Rule>? rules}) { return R2PutEventNotificationConfigRequest(
   rules: rules ?? this.rules,
 ); } 

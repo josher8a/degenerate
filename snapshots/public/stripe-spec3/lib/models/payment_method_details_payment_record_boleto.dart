@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'tax_id': ?taxId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tax_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final taxId$ = taxId;
+if (taxId$ != null) {
+  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsPaymentRecordBoleto copyWith({String? Function()? taxId}) { return PaymentMethodDetailsPaymentRecordBoleto(
   taxId: taxId != null ? taxId() : this.taxId,
 ); } 

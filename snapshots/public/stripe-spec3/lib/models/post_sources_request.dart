@@ -141,6 +141,29 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'flow', 'mandate', 'metadata', 'original_source', 'owner', 'receiver', 'redirect', 'source_order', 'statement_descriptor', 'token', 'type', 'usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 500) errors.add('customer: length must be <= 500');
+}
+final originalSource$ = originalSource;
+if (originalSource$ != null) {
+  if (originalSource$.length > 5000) errors.add('originalSource: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+final token$ = token;
+if (token$ != null) {
+  if (token$.length > 5000) errors.add('token: length must be <= 5000');
+}
+final type$ = type;
+if (type$ != null) {
+  if (type$.length > 5000) errors.add('type: length must be <= 5000');
+}
+return errors; } 
 PostSourcesRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, Flow? Function()? flow, PostSourcesRequestMandate? Function()? mandate, Map<String, String>? Function()? metadata, String? Function()? originalSource, PostCustomersCustomerBankAccountsIdRequestOwner? Function()? owner, Receiver? Function()? receiver, PostSourcesRequestRedirect? Function()? redirect, PostSourcesRequestSourceOrder? Function()? sourceOrder, String? Function()? statementDescriptor, String? Function()? token, String? Function()? type, PostSourcesRequestUsage? Function()? usage, }) { return PostSourcesRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

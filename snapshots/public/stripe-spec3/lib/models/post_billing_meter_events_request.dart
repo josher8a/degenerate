@@ -34,6 +34,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_name') && json['event_name'] is String &&
       json.containsKey('payload'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (eventName.length > 100) errors.add('eventName: length must be <= 100');
+final identifier$ = identifier;
+if (identifier$ != null) {
+  if (identifier$.length > 100) errors.add('identifier: length must be <= 100');
+}
+return errors; } 
 PostBillingMeterEventsRequest copyWith({String? eventName, List<String>? Function()? expand, String? Function()? identifier, Map<String,String>? payload, int? Function()? timestamp, }) { return PostBillingMeterEventsRequest(
   eventName: eventName ?? this.eventName,
   expand: expand != null ? expand() : this.expand,

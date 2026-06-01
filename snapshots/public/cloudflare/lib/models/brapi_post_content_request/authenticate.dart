@@ -18,6 +18,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
       json.containsKey('username') && json['username'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (password.length < 1) errors.add('password: length must be >= 1');
+if (username.length < 1) errors.add('username: length must be >= 1');
+return errors; } 
 Authenticate copyWith({String? password, String? username, }) { return Authenticate(
   password: password ?? this.password,
   username: username ?? this.username,

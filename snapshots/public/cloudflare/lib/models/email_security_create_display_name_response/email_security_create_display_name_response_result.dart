@@ -57,6 +57,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('email
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 1024) errors.add('name: length must be <= 1024');
+return errors; } 
 EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEmailRegex, String? name, String? Function()? comments, DateTime? createdAt, int? Function()? directoryId, int? Function()? directoryNodeId, String? Function()? externalDirectoryNodeId, int? id, DateTime? lastModified, String? Function()? provenance, }) { return EmailSecurityCreateDisplayNameResponseResult(
   email: email ?? this.email,
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,

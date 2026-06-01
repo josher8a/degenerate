@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
   'weight': ?weight,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'weight'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final weight$ = weight;
+if (weight$ != null) {
+  if (weight$ < 0) errors.add('weight: must be >= 0');
+  if (weight$ > 65535) errors.add('weight: must be <= 65535');
+}
+return errors; } 
 DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()? weight, }) { return DnsRecordsUriRecordData(
   target: target != null ? target() : this.target,
   weight: weight != null ? weight() : this.weight,

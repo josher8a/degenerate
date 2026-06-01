@@ -32,6 +32,13 @@ Map<String, dynamic> toJson() { return {
   'original_transaction': ?originalTransaction,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'card_statement', 'cash_receipt', 'check_image', 'explanation', 'original_transaction'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final originalTransaction$ = originalTransaction;
+if (originalTransaction$ != null) {
+  if (originalTransaction$.length > 5000) errors.add('originalTransaction: length must be <= 5000');
+}
+return errors; } 
 Duplicate copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, DuplicateCardStatement? Function()? cardStatement, DuplicateCashReceipt? Function()? cashReceipt, DuplicateCheckImage? Function()? checkImage, Explanation? Function()? explanation, String? Function()? originalTransaction, }) { return Duplicate(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   cardStatement: cardStatement != null ? cardStatement() : this.cardStatement,

@@ -25,6 +25,12 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+final errors$$ = errors;
+if (errors$$ != null) {
+}
+return errors$; } 
 QueuesListConsumersResponse copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, List<MqConsumerResponse>? Function()? result, }) { return QueuesListConsumersResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,

@@ -28,6 +28,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+if (errors.toSet().length != errors.length) errors$.add('errors: items must be unique');
+if (messages.toSet().length != messages.length) errors$.add('messages: items must be unique');
+return errors$; } 
 WorkersKvNamespaceRenameANamespaceResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, WorkersKvNamespace? result, }) { return WorkersKvNamespaceRenameANamespaceResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,

@@ -33,6 +33,13 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'expand', 'metadata', 'refund_application_fee'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PostTransfersIdReversalsRequest copyWith({int? Function()? amount, String? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, bool? Function()? refundApplicationFee, }) { return PostTransfersIdReversalsRequest(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,

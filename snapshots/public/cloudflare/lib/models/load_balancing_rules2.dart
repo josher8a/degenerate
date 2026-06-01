@@ -44,6 +44,14 @@ Map<String, dynamic> toJson() { return {
   'terminates': ?terminates,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 200) errors.add('name: length must be <= 200');
+}
+if (priority < 0) errors.add('priority: must be >= 0');
+return errors; } 
 LoadBalancingRules2 copyWith({String? Function()? condition, bool Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int Function()? priority, bool? Function()? terminates, }) { return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,
   disabled: disabled != null ? disabled() : this.disabled,

@@ -208,6 +208,21 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final configuration$ = configuration;
+if (configuration$ != null) {
+  if (configuration$.length > 5000) errors.add('configuration: length must be <= 5000');
+}
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, FlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
   configuration: configuration != null ? configuration() : this.configuration,
   customer: customer != null ? customer() : this.customer,

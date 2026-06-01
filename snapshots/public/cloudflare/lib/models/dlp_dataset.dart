@@ -69,6 +69,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('colum
       json.containsKey('status') &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('uploads'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (encodingVersion < 0) errors.add('encodingVersion: must be >= 0');
+return errors; } 
 DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? columns, DateTime? createdAt, String? Function()? description, int? encodingVersion, String? id, String? name, int? numCells, bool? secret, DlpDatasetUploadStatus? status, DateTime? updatedAt, List<DlpDatasetUpload>? uploads, }) { return DlpDataset(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   columns: columns ?? this.columns,

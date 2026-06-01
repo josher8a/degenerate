@@ -18,6 +18,10 @@ Map<String, dynamic> toJson() { return {
   'key': key,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp('^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) |^(sk-ssh-ed25519|sk-ecdsa-sha2-nistp256)@openssh.com ').hasMatch(key)) errors.add('key: must match pattern ^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) |^(sk-ssh-ed25519|sk-ecdsa-sha2-nistp256)@openssh.com ');
+return errors; } 
 UsersCreateSshSigningKeyForAuthenticatedUserRequest copyWith({String? Function()? title, String? key, }) { return UsersCreateSshSigningKeyForAuthenticatedUserRequest(
   title: title != null ? title() : this.title,
   key: key ?? this.key,

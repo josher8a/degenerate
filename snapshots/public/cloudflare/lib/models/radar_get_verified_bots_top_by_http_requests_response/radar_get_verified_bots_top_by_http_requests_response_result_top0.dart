@@ -28,6 +28,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('botCa
       json.containsKey('botName') && json['botName'] is String &&
       json.containsKey('botOwner') && json['botOwner'] is String &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(value)) errors.add(r'value: must match pattern ^\d+$');
+return errors; } 
 RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0 copyWith({String? botCategory, String? botName, String? botOwner, String? value, }) { return RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0(
   botCategory: botCategory ?? this.botCategory,
   botName: botName ?? this.botName,

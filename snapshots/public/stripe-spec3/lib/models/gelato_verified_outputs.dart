@@ -64,6 +64,37 @@ Map<String, dynamic> toJson() { return {
   'unparsed_sex': ?unparsedSex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+final firstName$ = firstName;
+if (firstName$ != null) {
+  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+}
+final idNumber$ = idNumber;
+if (idNumber$ != null) {
+  if (idNumber$.length > 5000) errors.add('idNumber: length must be <= 5000');
+}
+final lastName$ = lastName;
+if (lastName$ != null) {
+  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final unparsedPlaceOfBirth$ = unparsedPlaceOfBirth;
+if (unparsedPlaceOfBirth$ != null) {
+  if (unparsedPlaceOfBirth$.length > 5000) errors.add('unparsedPlaceOfBirth: length must be <= 5000');
+}
+final unparsedSex$ = unparsedSex;
+if (unparsedSex$ != null) {
+  if (unparsedSex$.length > 5000) errors.add('unparsedSex: length must be <= 5000');
+}
+return errors; } 
 GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, IdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, Sex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,

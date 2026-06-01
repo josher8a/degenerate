@@ -135,6 +135,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('period') &&
       json.containsKey('subtotal') && json['subtotal'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final invoice$ = invoice;
+if (invoice$ != null) {
+  if (invoice$.length > 5000) errors.add('invoice: length must be <= 5000');
+}
+return errors; } 
 LineItem copyWith({int? amount, String? currency, String? Function()? description, List<DiscountsResourceDiscountAmount>? Function()? discountAmounts, bool? discountable, List<InvoiceitemDiscounts>? discounts, String? id, String? Function()? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent? Function()? parent, InvoiceLineItemPeriod? period, List<InvoicesResourcePretaxCreditAmount>? Function()? pretaxCreditAmounts, BillingBillResourceInvoicingPricingPricing? Function()? pricing, int? Function()? quantity, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? Function()? subscription, int? subtotal, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, }) { return LineItem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

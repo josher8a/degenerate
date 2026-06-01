@@ -119,6 +119,59 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'altitude', 'lat_degrees', 'lat_direction', 'lat_minutes', 'lat_seconds', 'long_degrees', 'long_direction', 'long_minutes', 'long_seconds', 'precision_horz', 'precision_vert', 'size'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final altitude$ = altitude;
+if (altitude$ != null) {
+  if (altitude$ < -100000) errors.add('altitude: must be >= -100000');
+  if (altitude$ > 42849672.95) errors.add('altitude: must be <= 42849672.95');
+}
+final latDegrees$ = latDegrees;
+if (latDegrees$ != null) {
+  if (latDegrees$ < 0) errors.add('latDegrees: must be >= 0');
+  if (latDegrees$ > 90) errors.add('latDegrees: must be <= 90');
+}
+final latMinutes$ = latMinutes;
+if (latMinutes$ != null) {
+  if (latMinutes$ < 0) errors.add('latMinutes: must be >= 0');
+  if (latMinutes$ > 59) errors.add('latMinutes: must be <= 59');
+}
+final latSeconds$ = latSeconds;
+if (latSeconds$ != null) {
+  if (latSeconds$ < 0) errors.add('latSeconds: must be >= 0');
+  if (latSeconds$ > 59.999) errors.add('latSeconds: must be <= 59.999');
+}
+final longDegrees$ = longDegrees;
+if (longDegrees$ != null) {
+  if (longDegrees$ < 0) errors.add('longDegrees: must be >= 0');
+  if (longDegrees$ > 180) errors.add('longDegrees: must be <= 180');
+}
+final longMinutes$ = longMinutes;
+if (longMinutes$ != null) {
+  if (longMinutes$ < 0) errors.add('longMinutes: must be >= 0');
+  if (longMinutes$ > 59) errors.add('longMinutes: must be <= 59');
+}
+final longSeconds$ = longSeconds;
+if (longSeconds$ != null) {
+  if (longSeconds$ < 0) errors.add('longSeconds: must be >= 0');
+  if (longSeconds$ > 59.999) errors.add('longSeconds: must be <= 59.999');
+}
+final precisionHorz$ = precisionHorz;
+if (precisionHorz$ != null) {
+  if (precisionHorz$ < 0) errors.add('precisionHorz: must be >= 0');
+  if (precisionHorz$ > 90000000.0) errors.add('precisionHorz: must be <= 90000000.0');
+}
+final precisionVert$ = precisionVert;
+if (precisionVert$ != null) {
+  if (precisionVert$ < 0) errors.add('precisionVert: must be >= 0');
+  if (precisionVert$ > 90000000.0) errors.add('precisionVert: must be <= 90000000.0');
+}
+final size$ = size;
+if (size$ != null) {
+  if (size$ < 0) errors.add('size: must be >= 0');
+  if (size$ > 90000000.0) errors.add('size: must be <= 90000000.0');
+}
+return errors; } 
 DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function()? latDegrees, LatDirection? Function()? latDirection, double? Function()? latMinutes, double? Function()? latSeconds, double? Function()? longDegrees, LongDirection? Function()? longDirection, double? Function()? longMinutes, double? Function()? longSeconds, double? Function()? precisionHorz, double? Function()? precisionVert, double? Function()? size, }) { return DnsRecordsLocRecordData(
   altitude: altitude != null ? altitude() : this.altitude,
   latDegrees: latDegrees != null ? latDegrees() : this.latDegrees,

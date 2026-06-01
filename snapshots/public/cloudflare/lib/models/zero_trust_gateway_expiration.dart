@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   'expires_at': expiresAt.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_at'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final duration$ = duration;
+if (duration$ != null) {
+  if (duration$ < 5) errors.add('duration: must be >= 5');
+}
+return errors; } 
 ZeroTrustGatewayExpiration copyWith({int? Function()? duration, bool? Function()? expired, ZeroTrustGatewayTimestamp? expiresAt, }) { return ZeroTrustGatewayExpiration(
   duration: duration != null ? duration() : this.duration,
   expired: expired != null ? expired() : this.expired,

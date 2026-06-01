@@ -44,6 +44,37 @@ Map<String, dynamic> toJson() { return {
   'transit_number': ?transitNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'expected_debit_date', 'fingerprint', 'institution_number', 'last4', 'mandate', 'transit_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+final expectedDebitDate$ = expectedDebitDate;
+if (expectedDebitDate$ != null) {
+  if (expectedDebitDate$.length > 5000) errors.add('expectedDebitDate: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final institutionNumber$ = institutionNumber;
+if (institutionNumber$ != null) {
+  if (institutionNumber$.length > 5000) errors.add('institutionNumber: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final mandate$ = mandate;
+if (mandate$ != null) {
+  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+}
+final transitNumber$ = transitNumber;
+if (transitNumber$ != null) {
+  if (transitNumber$.length > 5000) errors.add('transitNumber: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsAcssDebit copyWith({String? Function()? bankName, String? Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String? Function()? mandate, String? Function()? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
   bankName: bankName != null ? bankName() : this.bankName,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,

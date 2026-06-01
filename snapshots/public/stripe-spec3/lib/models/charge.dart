@@ -271,6 +271,54 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('paid') && json['paid'] is bool &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final calculatedStatementDescriptor$ = calculatedStatementDescriptor;
+if (calculatedStatementDescriptor$ != null) {
+  if (calculatedStatementDescriptor$.length > 5000) errors.add('calculatedStatementDescriptor: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 40000) errors.add('description: length must be <= 40000');
+}
+final failureCode$ = failureCode;
+if (failureCode$ != null) {
+  if (failureCode$.length > 5000) errors.add('failureCode: length must be <= 5000');
+}
+final failureMessage$ = failureMessage;
+if (failureMessage$ != null) {
+  if (failureMessage$.length > 5000) errors.add('failureMessage: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+final receiptEmail$ = receiptEmail;
+if (receiptEmail$ != null) {
+  if (receiptEmail$.length > 5000) errors.add('receiptEmail: length must be <= 5000');
+}
+final receiptNumber$ = receiptNumber;
+if (receiptNumber$ != null) {
+  if (receiptNumber$.length > 5000) errors.add('receiptNumber: length must be <= 5000');
+}
+final receiptUrl$ = receiptUrl;
+if (receiptUrl$ != null) {
+  if (receiptUrl$.length > 5000) errors.add('receiptUrl: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 5000) errors.add('statementDescriptorSuffix: length must be <= 5000');
+}
+final transferGroup$ = transferGroup;
+if (transferGroup$ != null) {
+  if (transferGroup$.length > 5000) errors.add('transferGroup: length must be <= 5000');
+}
+return errors; } 
 Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, ApplicationFeeApplication? Function()? application, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, BillingDetails? billingDetails, String? Function()? calculatedStatementDescriptor, bool? captured, int? created, String? currency, BankAccountCustomer? Function()? customer, String? Function()? description, bool? disputed, FailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, ChargeFraudDetails? Function()? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, ChargeOutcome? Function()? outcome, bool? paid, ChargePaymentIntent? Function()? paymentIntent, String? Function()? paymentMethod, PaymentMethodDetails? Function()? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, RadarRadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? receiptNumber, String? Function()? receiptUrl, bool? refunded, ChargeRefunds? Function()? refunds, ChargeReview? Function()? review, Shipping? Function()? shipping, SourceTransfer? Function()? sourceTransfer, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, BankConnectionsResourceBalanceRefreshStatus? status, ChargeTransfer? Function()? transfer, ChargeTransferData? Function()? transferData, String? Function()? transferGroup, }) { return Charge(
   amount: amount ?? this.amount,
   amountCaptured: amountCaptured ?? this.amountCaptured,

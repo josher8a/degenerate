@@ -31,6 +31,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (!RegExp('^/v1/climate/suppliers').hasMatch(url)) errors.add('url: must match pattern ^/v1/climate/suppliers');
+return errors; } 
 GetClimateSuppliersResponse copyWith({List<ClimateSupplier>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetClimateSuppliersResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

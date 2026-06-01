@@ -120,6 +120,20 @@ Map<String, dynamic> toJson() { return {
   'token_id': ?tokenId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_gateway_id', 'ai_search_model', 'cache', 'cache_threshold', 'chunk', 'chunk_overlap', 'chunk_size', 'custom_metadata', 'embedding_model', 'fusion_method', 'hybrid_search_enabled', 'max_num_results', 'metadata', 'paused', 'public_endpoint_params', 'reranking', 'reranking_model', 'retrieval_options', 'rewrite_model', 'rewrite_query', 'score_threshold', 'source_params', 'summarization', 'summarization_model', 'system_prompt_ai_search', 'system_prompt_index_summarization', 'system_prompt_rewrite_query', 'token_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (chunkOverlap < 0) errors.add('chunkOverlap: must be >= 0');
+if (chunkOverlap > 30) errors.add('chunkOverlap: must be <= 30');
+if (chunkSize < 64) errors.add('chunkSize: must be >= 64');
+final customMetadata$ = customMetadata;
+if (customMetadata$ != null) {
+  if (customMetadata$.length > 5) errors.add('customMetadata: must have <= 5 items');
+}
+if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
+if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
+if (scoreThreshold < 0) errors.add('scoreThreshold: must be >= 0');
+if (scoreThreshold > 1) errors.add('scoreThreshold: must be <= 1');
+return errors; } 
 AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchModel? Function()? aiSearchModel, bool Function()? cache, CacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<CustomMetadata>? Function()? customMetadata, EmbeddingModel? Function()? embeddingModel, FusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, bool Function()? paused, PublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, RerankingModel? Function()? rerankingModel, RetrievalOptions? Function()? retrievalOptions, RewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, SourceParams? Function()? sourceParams, bool Function()? summarization, SummarizationModel? Function()? summarizationModel, String? Function()? systemPromptAiSearch, String? Function()? systemPromptIndexSummarization, String? Function()? systemPromptRewriteQuery, String? Function()? tokenId, }) { return AiSearchUpdateInstancesRequest(
   aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,

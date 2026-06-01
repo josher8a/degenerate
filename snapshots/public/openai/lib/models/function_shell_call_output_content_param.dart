@@ -26,6 +26,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('stdout') && json['stdout'] is String &&
       json.containsKey('stderr') && json['stderr'] is String &&
       json.containsKey('outcome'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (stdout.length > 10485760) errors.add('stdout: length must be <= 10485760');
+if (stderr.length > 10485760) errors.add('stderr: length must be <= 10485760');
+return errors; } 
 FunctionShellCallOutputContentParam copyWith({String? stdout, String? stderr, FunctionShellCallOutputOutcomeParam? outcome, }) { return FunctionShellCallOutputContentParam(
   stdout: stdout ?? this.stdout,
   stderr: stderr ?? this.stderr,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_ownership_exemption_reason.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_structure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/directorship_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/ownership_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/registration_date.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/representative_declaration.dart';import 'package:pub_stripe_spec3/models/registration_date_specs.dart';/// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kana.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/address_kanji.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_people_person_request/post_accounts_account_people_person_request_address.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_ownership_exemption_reason.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_structure.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/directorship_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/ownership_declaration.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/registration_date.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/representative_declaration.dart';import 'package:pub_stripe_spec3/models/registration_date_specs.dart';/// Information about the company or business. This field is available for any `business_type`. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsAccountRequestCompany {const PostAccountsAccountRequestCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
 factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCompany(
-  address: json['address'] != null ? CustomerShippingAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? PostAccountsAccountPeoplePersonRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? AddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? AddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   directorsProvided: json['directors_provided'] as bool?,
@@ -29,7 +29,7 @@ factory PostAccountsAccountRequestCompany.fromJson(Map<String, dynamic> json) { 
   verification: json['verification'] != null ? CompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
-final CustomerShippingAddress? address;
+final PostAccountsAccountPeoplePersonRequestAddress? address;
 
 final AddressKana? addressKana;
 
@@ -101,7 +101,50 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'registration_number', 'representative_declaration', 'structure', 'tax_id', 'tax_id_registrar', 'vat_id', 'verification'}.contains(key)); } 
-PostAccountsAccountRequestCompany copyWith({CustomerShippingAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) { return PostAccountsAccountRequestCompany(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final exportLicenseId$ = exportLicenseId;
+if (exportLicenseId$ != null) {
+  if (exportLicenseId$.length > 5000) errors.add('exportLicenseId: length must be <= 5000');
+}
+final exportPurposeCode$ = exportPurposeCode;
+if (exportPurposeCode$ != null) {
+  if (exportPurposeCode$.length > 5000) errors.add('exportPurposeCode: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 100) errors.add('name: length must be <= 100');
+}
+final nameKana$ = nameKana;
+if (nameKana$ != null) {
+  if (nameKana$.length > 100) errors.add('nameKana: length must be <= 100');
+}
+final nameKanji$ = nameKanji;
+if (nameKanji$ != null) {
+  if (nameKanji$.length > 100) errors.add('nameKanji: length must be <= 100');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final registrationNumber$ = registrationNumber;
+if (registrationNumber$ != null) {
+  if (registrationNumber$.length > 5000) errors.add('registrationNumber: length must be <= 5000');
+}
+final taxId$ = taxId;
+if (taxId$ != null) {
+  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+}
+final taxIdRegistrar$ = taxIdRegistrar;
+if (taxIdRegistrar$ != null) {
+  if (taxIdRegistrar$.length > 5000) errors.add('taxIdRegistrar: length must be <= 5000');
+}
+final vatId$ = vatId;
+if (vatId$ != null) {
+  if (vatId$.length > 5000) errors.add('vatId: length must be <= 5000');
+}
+return errors; } 
+PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) { return PostAccountsAccountRequestCompany(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

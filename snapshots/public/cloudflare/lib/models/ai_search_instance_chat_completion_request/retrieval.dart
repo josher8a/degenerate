@@ -73,6 +73,19 @@ Map<String, dynamic> toJson() { return {
   'return_on_failure': returnOnFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final boostBy$ = boostBy;
+if (boostBy$ != null) {
+  if (boostBy$.length > 3) errors.add('boostBy: must have <= 3 items');
+}
+if (contextExpansion < 0) errors.add('contextExpansion: must be >= 0');
+if (contextExpansion > 3) errors.add('contextExpansion: must be <= 3');
+if (matchThreshold < 0) errors.add('matchThreshold: must be >= 0');
+if (matchThreshold > 1) errors.add('matchThreshold: must be <= 1');
+if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
+if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
+return errors; } 
 Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, FusionMethod? Function()? fusionMethod, KeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, RetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return Retrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,

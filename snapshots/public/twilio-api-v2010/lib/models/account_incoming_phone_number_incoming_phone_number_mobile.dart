@@ -241,6 +241,63 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'address_sid', 'address_requirements', 'api_version', 'beta', 'capabilities', 'date_created', 'date_updated', 'friendly_name', 'identity_sid', 'phone_number', 'origin', 'sid', 'sms_application_sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'status_callback', 'status_callback_method', 'trunk_sid', 'uri', 'voice_receive_mode', 'voice_application_sid', 'voice_caller_id_lookup', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_url', 'emergency_status', 'emergency_address_sid', 'emergency_address_status', 'bundle_sid', 'status'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final addressSid$ = addressSid;
+if (addressSid$ != null) {
+  if (addressSid$.length < 34) errors.add('addressSid: length must be >= 34');
+  if (addressSid$.length > 34) errors.add('addressSid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(addressSid$)) errors.add(r'addressSid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+final identitySid$ = identitySid;
+if (identitySid$ != null) {
+  if (identitySid$.length < 34) errors.add('identitySid: length must be >= 34');
+  if (identitySid$.length > 34) errors.add('identitySid: length must be <= 34');
+  if (!RegExp(r'^RI[0-9a-fA-F]{32}$').hasMatch(identitySid$)) errors.add(r'identitySid: must match pattern ^RI[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^PN[0-9a-fA-F]{32}$');
+}
+final smsApplicationSid$ = smsApplicationSid;
+if (smsApplicationSid$ != null) {
+  if (smsApplicationSid$.length < 34) errors.add('smsApplicationSid: length must be >= 34');
+  if (smsApplicationSid$.length > 34) errors.add('smsApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(smsApplicationSid$)) errors.add(r'smsApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final trunkSid$ = trunkSid;
+if (trunkSid$ != null) {
+  if (trunkSid$.length < 34) errors.add('trunkSid: length must be >= 34');
+  if (trunkSid$.length > 34) errors.add('trunkSid: length must be <= 34');
+  if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$');
+}
+final voiceApplicationSid$ = voiceApplicationSid;
+if (voiceApplicationSid$ != null) {
+  if (voiceApplicationSid$.length < 34) errors.add('voiceApplicationSid: length must be >= 34');
+  if (voiceApplicationSid$.length > 34) errors.add('voiceApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(voiceApplicationSid$)) errors.add(r'voiceApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final emergencyAddressSid$ = emergencyAddressSid;
+if (emergencyAddressSid$ != null) {
+  if (emergencyAddressSid$.length < 34) errors.add('emergencyAddressSid: length must be >= 34');
+  if (emergencyAddressSid$.length > 34) errors.add('emergencyAddressSid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(emergencyAddressSid$)) errors.add(r'emergencyAddressSid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+final bundleSid$ = bundleSid;
+if (bundleSid$ != null) {
+  if (bundleSid$.length < 34) errors.add('bundleSid: length must be >= 34');
+  if (bundleSid$.length > 34) errors.add('bundleSid: length must be <= 34');
+  if (!RegExp(r'^BU[0-9a-fA-F]{32}$').hasMatch(bundleSid$)) errors.add(r'bundleSid: must match pattern ^BU[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountIncomingPhoneNumberIncomingPhoneNumberMobile copyWith({String? Function()? accountSid, String? Function()? addressSid, IncomingPhoneNumberMobileEnumAddressRequirement? Function()? addressRequirements, String? Function()? apiVersion, bool? Function()? beta, Capabilities? Function()? capabilities, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? identitySid, String? Function()? phoneNumber, String? Function()? origin, String? Function()? sid, String? Function()? smsApplicationSid, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? trunkSid, String? Function()? uri, IncomingPhoneNumberMobileEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, IncomingPhoneNumberMobileEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, IncomingPhoneNumberMobileEnumEmergencyAddressStatus? Function()? emergencyAddressStatus, String? Function()? bundleSid, String? Function()? status, }) { return AccountIncomingPhoneNumberIncomingPhoneNumberMobile(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   addressSid: addressSid != null ? addressSid() : this.addressSid,

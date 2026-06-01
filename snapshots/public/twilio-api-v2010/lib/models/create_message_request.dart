@@ -245,6 +245,27 @@ Map<String, dynamic> toJson() { return {
   'ContentSid': ?contentSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('To') && json['To'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final applicationSid$ = applicationSid;
+if (applicationSid$ != null) {
+  if (applicationSid$.length < 34) errors.add('applicationSid: length must be >= 34');
+  if (applicationSid$.length > 34) errors.add('applicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(applicationSid$)) errors.add(r'applicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final messagingServiceSid$ = messagingServiceSid;
+if (messagingServiceSid$ != null) {
+  if (messagingServiceSid$.length < 34) errors.add('messagingServiceSid: length must be >= 34');
+  if (messagingServiceSid$.length > 34) errors.add('messagingServiceSid: length must be <= 34');
+  if (!RegExp(r'^MG[0-9a-fA-F]{32}$').hasMatch(messagingServiceSid$)) errors.add(r'messagingServiceSid: must match pattern ^MG[0-9a-fA-F]{32}$');
+}
+final contentSid$ = contentSid;
+if (contentSid$ != null) {
+  if (contentSid$.length < 34) errors.add('contentSid: length must be >= 34');
+  if (contentSid$.length > 34) errors.add('contentSid: length must be <= 34');
+  if (!RegExp(r'^HX[0-9a-fA-F]{32}$').hasMatch(contentSid$)) errors.add(r'contentSid: must match pattern ^HX[0-9a-fA-F]{32}$');
+}
+return errors; } 
 CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, String? Function()? applicationSid, double? Function()? maxPrice, bool? Function()? provideFeedback, int? Function()? attempt, int? Function()? validityPeriod, bool? Function()? forceDelivery, MessageEnumContentRetention? Function()? contentRetention, MessageEnumAddressRetention? Function()? addressRetention, bool? Function()? smartEncoded, List<String>? Function()? persistentAction, MessageEnumTrafficType? Function()? trafficType, bool? Function()? shortenUrls, MessageEnumScheduleType? Function()? scheduleType, DateTime? Function()? sendAt, bool? Function()? sendAsMms, String? Function()? contentVariables, MessageEnumRiskCheck? Function()? riskCheck, String? Function()? from, String? Function()? messagingServiceSid, String? Function()? body, List<Uri>? Function()? mediaUrl, String? Function()? contentSid, }) { return CreateMessageRequest(
   to: to ?? this.to,
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,

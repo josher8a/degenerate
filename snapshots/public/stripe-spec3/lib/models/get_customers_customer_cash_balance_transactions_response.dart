@@ -35,6 +35,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (url.length > 5000) errors.add('url: length must be <= 5000');
+return errors; } 
 GetCustomersCustomerCashBalanceTransactionsResponse copyWith({List<CustomerCashBalanceTransaction>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetCustomersCustomerCashBalanceTransactionsResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

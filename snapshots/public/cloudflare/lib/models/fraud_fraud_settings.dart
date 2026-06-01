@@ -41,6 +41,13 @@ Map<String, dynamic> toJson() { return {
   'username_expressions': ?usernameExpressions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_profiles', 'username_expressions'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final usernameExpressions$ = usernameExpressions;
+if (usernameExpressions$ != null) {
+  if (usernameExpressions$.length > 10) errors.add('usernameExpressions: must have <= 10 items');
+}
+return errors; } 
 FraudFraudSettings copyWith({FraudUserProfilesStatus? Function()? userProfiles, List<String>? Function()? usernameExpressions, }) { return FraudFraudSettings(
   userProfiles: userProfiles != null ? userProfiles() : this.userProfiles,
   usernameExpressions: usernameExpressions != null ? usernameExpressions() : this.usernameExpressions,

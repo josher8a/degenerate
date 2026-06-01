@@ -25,6 +25,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hosted_instructions_url') && json['hosted_instructions_url'] is String &&
       json.containsKey('mobile_auth_url') && json['mobile_auth_url'] is String &&
       json.containsKey('qr_code'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (hostedInstructionsUrl.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
+if (mobileAuthUrl.length > 5000) errors.add('mobileAuthUrl: length must be <= 5000');
+return errors; } 
 PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode copyWith({String? hostedInstructionsUrl, String? mobileAuthUrl, PaymentIntentNextActionCashappQrCode? qrCode, }) { return PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode(
   hostedInstructionsUrl: hostedInstructionsUrl ?? this.hostedInstructionsUrl,
   mobileAuthUrl: mobileAuthUrl ?? this.mobileAuthUrl,

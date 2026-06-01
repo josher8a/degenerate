@@ -107,6 +107,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('devic
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final deviceSwVersion$ = deviceSwVersion;
+if (deviceSwVersion$ != null) {
+  if (deviceSwVersion$.length > 5000) errors.add('deviceSwVersion: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final ipAddress$ = ipAddress;
+if (ipAddress$ != null) {
+  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+}
+if (label.length > 5000) errors.add('label: length must be <= 5000');
+if (serialNumber.length > 5000) errors.add('serialNumber: length must be <= 5000');
+return errors; } 
 TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? action, String? Function()? deviceSwVersion, DeviceType? deviceType, String? id, String? Function()? ipAddress, String? label, int? Function()? lastSeenAt, bool? livemode, Location? Function()? location, Map<String,String>? metadata, DeletedTerminalReaderObject? object, String? serialNumber, TerminalReaderStatus? Function()? status, }) { return TerminalReader(
   action: action != null ? action() : this.action,
   deviceSwVersion: deviceSwVersion != null ? deviceSwVersion() : this.deviceSwVersion,

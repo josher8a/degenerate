@@ -58,6 +58,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is num &&
       json.containsKey('worker_binding'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.length > 128) errors.add('name: length must be <= 128');
+return errors; } 
 StreamsByStreamIdResponseResult copyWith({DateTime? createdAt, Uri? Function()? endpoint, CloudflarePipelinesFormat? Function()? format, Http? http, String? id, DateTime? modifiedAt, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, int? version, WorkerBinding? workerBinding, }) { return StreamsByStreamIdResponseResult(
   createdAt: createdAt ?? this.createdAt,
   endpoint: endpoint != null ? endpoint() : this.endpoint,

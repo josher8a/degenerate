@@ -91,6 +91,18 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invited_member_id') && json['invited_member_id'] is String &&
       json.containsKey('organization_id') && json['organization_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final invitedMemberId$ = invitedMemberId;
+if (invitedMemberId$ != null) {
+  if (invitedMemberId$.length > 32) errors.add('invitedMemberId: length must be <= 32');
+}
+if (organizationId.length > 32) errors.add('organizationId: length must be <= 32');
+final organizationName$ = organizationName;
+if (organizationName$ != null) {
+  if (organizationName$.length > 100) errors.add('organizationName: length must be <= 100');
+}
+return errors; } 
 IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteComponentsSchemasIdentifier? Function()? id, IamInvitedBy? Function()? invitedBy, IamInvitedMemberEmail? Function()? invitedMemberEmail, String? Function()? invitedMemberId, IamInvitedOn? Function()? invitedOn, String? organizationId, bool? Function()? organizationIsEnforcingTwofactor, String? Function()? organizationName, List<String>? Function()? roles, dynamic Function()? status, }) { return IamUserInvite(
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   id: id != null ? id() : this.id,

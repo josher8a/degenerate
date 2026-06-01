@@ -35,6 +35,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('file_path') &&
       json.containsKey('start_index') && json['start_index'] is num &&
       json.containsKey('end_index') && json['end_index'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (startIndex < 0) errors.add('startIndex: must be >= 0');
+if (endIndex < 0) errors.add('endIndex: must be >= 0');
+return errors; } 
 MessageContentTextAnnotationsFilePathObject copyWith({MessageContentTextAnnotationsFilePathObjectType? type, String? text, MessageContentTextAnnotationsFilePathObjectFilePath? filePath, int? startIndex, int? endIndex, }) { return MessageContentTextAnnotationsFilePathObject(
   type: type ?? this.type,
   text: text ?? this.text,

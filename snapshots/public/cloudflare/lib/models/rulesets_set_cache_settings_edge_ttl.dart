@@ -51,6 +51,18 @@ Map<String, dynamic> toJson() { return {
   if (statusCodeTtl != null) 'status_code_ttl': statusCodeTtl?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final $default$ = $default;
+if ($default$ != null) {
+  if ($default$ < 0) errors.add(r'$default: must be >= 0');
+}
+final statusCodeTtl$ = statusCodeTtl;
+if (statusCodeTtl$ != null) {
+  if (statusCodeTtl$.length < 1) errors.add('statusCodeTtl: must have >= 1 items');
+  if (statusCodeTtl$.toSet().length != statusCodeTtl$.length) errors.add('statusCodeTtl: items must be unique');
+}
+return errors; } 
 RulesetsSetCacheSettingsEdgeTtl copyWith({int? Function()? $default, RulesetsSetCacheSettingsEdgeTtlMode? mode, List<RulesetsSetCacheSettingsStatusCodeTtl2>? Function()? statusCodeTtl, }) { return RulesetsSetCacheSettingsEdgeTtl(
   $default: $default != null ? $default() : this.$default,
   mode: mode ?? this.mode,

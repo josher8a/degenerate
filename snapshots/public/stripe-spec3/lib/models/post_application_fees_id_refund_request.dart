@@ -21,6 +21,13 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'directive', 'expand'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final directive$ = directive;
+if (directive$ != null) {
+  if (directive$.length > 5000) errors.add('directive: length must be <= 5000');
+}
+return errors; } 
 PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Function()? directive, List<String>? Function()? expand, }) { return PostApplicationFeesIdRefundRequest(
   amount: amount != null ? amount() : this.amount,
   directive: directive != null ? directive() : this.directive,

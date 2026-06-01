@@ -29,6 +29,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_options') &&
       json.containsKey('link_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final onBehalfOf$ = onBehalfOf;
+if (onBehalfOf$ != null) {
+  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+}
+return errors; } 
 PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, LinkOptions? linkOptions, LinkType? linkType, String? Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(
   expand: expand != null ? expand() : this.expand,
   linkOptions: linkOptions ?? this.linkOptions,

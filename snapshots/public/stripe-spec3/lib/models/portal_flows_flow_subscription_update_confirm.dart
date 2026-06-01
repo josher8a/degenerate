@@ -25,6 +25,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (subscription.length > 5000) errors.add('subscription: length must be <= 5000');
+return errors; } 
 PortalFlowsFlowSubscriptionUpdateConfirm copyWith({List<PortalFlowsSubscriptionUpdateConfirmDiscount>? Function()? discounts, List<PortalFlowsSubscriptionUpdateConfirmItem>? items, String? subscription, }) { return PortalFlowsFlowSubscriptionUpdateConfirm(
   discounts: discounts != null ? discounts() : this.discounts,
   items: items ?? this.items,

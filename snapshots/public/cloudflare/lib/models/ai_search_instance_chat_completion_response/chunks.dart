@@ -35,6 +35,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('text') && json['text'] is String &&
       json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (score < 0) errors.add('score: must be >= 0');
+if (score > 1) errors.add('score: must be <= 1');
+return errors; } 
 Chunks copyWith({String? id, Item? Function()? item, double? score, ScoringDetails? Function()? scoringDetails, String? text, String? type, }) { return Chunks(
   id: id ?? this.id,
   item: item != null ? item() : this.item,

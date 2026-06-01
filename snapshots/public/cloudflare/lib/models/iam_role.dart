@@ -29,6 +29,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('permissions'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 120) errors.add('name: length must be <= 120');
+return errors; } 
 IamRole copyWith({String? description, IamRoleComponentsSchemasIdentifier? id, String? name, IamPermissions? permissions, }) { return IamRole(
   description: description ?? this.description,
   id: id ?? this.id,

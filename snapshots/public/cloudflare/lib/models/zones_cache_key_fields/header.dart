@@ -30,6 +30,24 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'exclude', 'include'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final checkPresence$ = checkPresence;
+if (checkPresence$ != null) {
+  if (checkPresence$.length < 1) errors.add('checkPresence: must have >= 1 items');
+  if (checkPresence$.length > 50) errors.add('checkPresence: must have <= 50 items');
+}
+final exclude$ = exclude;
+if (exclude$ != null) {
+  if (exclude$.length < 1) errors.add('exclude: must have >= 1 items');
+  if (exclude$.length > 50) errors.add('exclude: must have <= 50 items');
+}
+final include$ = include;
+if (include$ != null) {
+  if (include$.length < 1) errors.add('include: must have >= 1 items');
+  if (include$.length > 50) errors.add('include: must have <= 50 items');
+}
+return errors; } 
 Header copyWith({List<String>? Function()? checkPresence, List<String>? Function()? exclude, List<String>? Function()? include, }) { return Header(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   exclude: exclude != null ? exclude() : this.exclude,

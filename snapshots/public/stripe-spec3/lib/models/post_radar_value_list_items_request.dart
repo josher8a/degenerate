@@ -24,6 +24,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String &&
       json.containsKey('value_list') && json['value_list'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (value.length > 800) errors.add('value: length must be <= 800');
+if (valueList.length > 5000) errors.add('valueList: length must be <= 5000');
+return errors; } 
 PostRadarValueListItemsRequest copyWith({List<String>? Function()? expand, String? value, String? valueList, }) { return PostRadarValueListItemsRequest(
   expand: expand != null ? expand() : this.expand,
   value: value ?? this.value,

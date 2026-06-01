@@ -13,6 +13,11 @@ Map<String, dynamic> toJson() { return {
   'max_file_path_length': maxFilePathLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_file_path_length') && json['max_file_path_length'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (maxFilePathLength < 1) errors.add('maxFilePathLength: must be >= 1');
+if (maxFilePathLength > 32767) errors.add('maxFilePathLength: must be <= 32767');
+return errors; } 
 RepositoryRuleMaxFilePathLengthParameters copyWith({int? maxFilePathLength}) { return RepositoryRuleMaxFilePathLengthParameters(
   maxFilePathLength: maxFilePathLength ?? this.maxFilePathLength,
 ); } 

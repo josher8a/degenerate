@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_details_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_name.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/email.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details_address.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/phone.dart';@immutable final class PostPaymentMethodsPaymentMethodRequestBillingDetails {const PostPaymentMethodsPaymentMethodRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_details_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/billing_details_name.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/email.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details_address.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address/recipient_shipping_with_optional_fields_address_phone.dart';@immutable final class PostPaymentMethodsPaymentMethodRequestBillingDetails {const PostPaymentMethodsPaymentMethodRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestBillingDetails(
   address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => BillingDetailsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -14,9 +14,9 @@ final PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? address;
 
 final Email? email;
 
-final PostBillingPortalConfigurationsConfigurationRequestName? name;
+final BillingDetailsName? name;
 
-final Phone? phone;
+final RecipientShippingWithOptionalFieldsAddressPhone? phone;
 
 final String? taxId;
 
@@ -28,7 +28,14 @@ Map<String, dynamic> toJson() { return {
   'tax_id': ?taxId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone', 'tax_id'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequestBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? Function()? address, Email? Function()? email, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, Phone? Function()? phone, String? Function()? taxId, }) { return PostPaymentMethodsPaymentMethodRequestBillingDetails(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final taxId$ = taxId;
+if (taxId$ != null) {
+  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+}
+return errors; } 
+PostPaymentMethodsPaymentMethodRequestBillingDetails copyWith({PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress? Function()? address, Email? Function()? email, BillingDetailsName? Function()? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, String? Function()? taxId, }) { return PostPaymentMethodsPaymentMethodRequestBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

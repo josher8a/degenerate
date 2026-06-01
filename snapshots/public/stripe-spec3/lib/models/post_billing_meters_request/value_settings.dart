@@ -13,6 +13,10 @@ Map<String, dynamic> toJson() { return {
   'event_payload_key': eventPayloadKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_payload_key') && json['event_payload_key'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (eventPayloadKey.length > 100) errors.add('eventPayloadKey: length must be <= 100');
+return errors; } 
 ValueSettings copyWith({String? eventPayloadKey}) { return ValueSettings(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
 ); } 

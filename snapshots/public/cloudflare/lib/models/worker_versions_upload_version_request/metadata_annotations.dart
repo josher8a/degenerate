@@ -23,6 +23,21 @@ Map<String, dynamic> toJson() { return {
   'workers/tag': ?workersTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/alias', 'workers/message', 'workers/tag'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final workersAlias$ = workersAlias;
+if (workersAlias$ != null) {
+  if (workersAlias$.length > 63) errors.add('workersAlias: length must be <= 63');
+}
+final workersMessage$ = workersMessage;
+if (workersMessage$ != null) {
+  if (workersMessage$.length > 100) errors.add('workersMessage: length must be <= 100');
+}
+final workersTag$ = workersTag;
+if (workersTag$ != null) {
+  if (workersTag$.length > 25) errors.add('workersTag: length must be <= 25');
+}
+return errors; } 
 MetadataAnnotations copyWith({String? Function()? workersAlias, String? Function()? workersMessage, String? Function()? workersTag, }) { return MetadataAnnotations(
   workersAlias: workersAlias != null ? workersAlias() : this.workersAlias,
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,

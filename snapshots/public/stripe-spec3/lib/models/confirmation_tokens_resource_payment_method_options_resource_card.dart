@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   if (installments != null) 'installments': installments?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cvc_token', 'installments'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cvcToken$ = cvcToken;
+if (cvcToken$ != null) {
+  if (cvcToken$.length > 5000) errors.add('cvcToken: length must be <= 5000');
+}
+return errors; } 
 ConfirmationTokensResourcePaymentMethodOptionsResourceCard copyWith({String? Function()? cvcToken, ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment? Function()? installments, }) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCard(
   cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,
   installments: installments != null ? installments() : this.installments,

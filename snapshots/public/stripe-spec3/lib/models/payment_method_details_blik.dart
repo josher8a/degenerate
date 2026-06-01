@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'buyer_id': ?buyerId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final buyerId$ = buyerId;
+if (buyerId$ != null) {
+  if (buyerId$.length > 5000) errors.add('buyerId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsBlik copyWith({String? Function()? buyerId}) { return PaymentMethodDetailsBlik(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
 ); } 

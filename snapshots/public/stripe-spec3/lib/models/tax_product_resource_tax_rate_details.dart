@@ -39,6 +39,18 @@ Map<String, dynamic> toJson() { return {
   if (taxType != null) 'tax_type': taxType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+if (percentageDecimal.length > 5000) errors.add('percentageDecimal: length must be <= 5000');
+final state$ = state;
+if (state$ != null) {
+  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+}
+return errors; } 
 TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateFlatAmount? Function()? flatAmount, String? percentageDecimal, RateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
   country: country != null ? country() : this.country,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,

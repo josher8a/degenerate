@@ -177,6 +177,34 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientReferenceId$ = clientReferenceId;
+if (clientReferenceId$ != null) {
+  if (clientReferenceId$.length > 5000) errors.add('clientReferenceId: length must be <= 5000');
+}
+final clientSecret$ = clientSecret;
+if (clientSecret$ != null) {
+  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final relatedCustomer$ = relatedCustomer;
+if (relatedCustomer$ != null) {
+  if (relatedCustomer$.length > 5000) errors.add('relatedCustomer: length must be <= 5000');
+}
+final relatedCustomerAccount$ = relatedCustomerAccount;
+if (relatedCustomerAccount$ != null) {
+  if (relatedCustomerAccount$.length > 5000) errors.add('relatedCustomerAccount: length must be <= 5000');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+final verificationFlow$ = verificationFlow;
+if (verificationFlow$ != null) {
+  if (verificationFlow$.length > 5000) errors.add('verificationFlow: length must be <= 5000');
+}
+return errors; } 
 IdentityVerificationSession copyWith({String? Function()? clientReferenceId, String? Function()? clientSecret, int? created, String? id, GelatoSessionLastError? Function()? lastError, LastVerificationReport? Function()? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, GelatoVerificationSessionOptions? Function()? options, GelatoProvidedDetails? Function()? providedDetails, VerificationSessionRedaction? Function()? redaction, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, GelatoRelatedPerson? Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationReportType? type, String? Function()? url, String? Function()? verificationFlow, GelatoVerifiedOutputs? Function()? verifiedOutputs, }) { return IdentityVerificationSession(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,

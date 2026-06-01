@@ -13,6 +13,12 @@ Map<String, dynamic> toJson() { return {
   'CredentialListSid': credentialListSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('CredentialListSid') && json['CredentialListSid'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (credentialListSid.length < 34) errors.add('credentialListSid: length must be >= 34');
+if (credentialListSid.length > 34) errors.add('credentialListSid: length must be <= 34');
+if (!RegExp(r'^CL[0-9a-fA-F]{32}$').hasMatch(credentialListSid)) errors.add(r'credentialListSid: must match pattern ^CL[0-9a-fA-F]{32}$');
+return errors; } 
 CreateSipAuthRegistrationsCredentialListMappingRequest copyWith({String? credentialListSid}) { return CreateSipAuthRegistrationsCredentialListMappingRequest(
   credentialListSid: credentialListSid ?? this.credentialListSid,
 ); } 

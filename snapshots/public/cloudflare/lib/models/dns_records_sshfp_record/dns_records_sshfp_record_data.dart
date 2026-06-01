@@ -24,6 +24,19 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'fingerprint', 'type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final algorithm$ = algorithm;
+if (algorithm$ != null) {
+  if (algorithm$ < 0) errors.add('algorithm: must be >= 0');
+  if (algorithm$ > 255) errors.add('algorithm: must be <= 255');
+}
+final type$ = type;
+if (type$ != null) {
+  if (type$ < 0) errors.add('type: must be >= 0');
+  if (type$ > 255) errors.add('type: must be <= 255');
+}
+return errors; } 
 DnsRecordsSshfpRecordData copyWith({double? Function()? algorithm, String? Function()? fingerprint, double? Function()? type, }) { return DnsRecordsSshfpRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

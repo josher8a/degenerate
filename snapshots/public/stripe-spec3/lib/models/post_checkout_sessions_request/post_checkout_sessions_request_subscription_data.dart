@@ -85,6 +85,13 @@ Map<String, dynamic> toJson() { return {
   if (trialSettings != null) 'trial_settings': trialSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_percent', 'billing_cycle_anchor', 'billing_mode', 'default_tax_rates', 'description', 'invoice_settings', 'metadata', 'on_behalf_of', 'proration_behavior', 'transfer_data', 'trial_end', 'trial_period_days', 'trial_settings'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 500) errors.add('description: length must be <= 500');
+}
+return errors; } 
 PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, SubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, SubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostCheckoutSessionsRequestSubscriptionData(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,

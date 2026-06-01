@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_duration') && json['destination_duration'] is num &&
       json.containsKey('destination_ip_address') && json['destination_ip_address'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (destinationIpAddress.length > 5000) errors.add('destinationIpAddress: length must be <= 5000');
+return errors; } 
 ForwardedRequestContext copyWith({int? destinationDuration, String? destinationIpAddress, }) { return ForwardedRequestContext(
   destinationDuration: destinationDuration ?? this.destinationDuration,
   destinationIpAddress: destinationIpAddress ?? this.destinationIpAddress,

@@ -29,6 +29,13 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+return errors; } 
 BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBalanceByCurrency, BalanceSettingsResourcePayoutSchedule? Function()? schedule, String? Function()? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(
   minimumBalanceByCurrency: minimumBalanceByCurrency != null ? minimumBalanceByCurrency() : this.minimumBalanceByCurrency,
   schedule: schedule != null ? schedule() : this.schedule,

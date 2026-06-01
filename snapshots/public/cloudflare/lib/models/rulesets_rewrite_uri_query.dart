@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expression', 'value'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final expression$ = expression;
+if (expression$ != null) {
+  if (expression$.length < 1) errors.add('expression: length must be >= 1');
+}
+return errors; } 
 RulesetsRewriteUriQuery copyWith({String? Function()? expression, String? Function()? value, }) { return RulesetsRewriteUriQuery(
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,

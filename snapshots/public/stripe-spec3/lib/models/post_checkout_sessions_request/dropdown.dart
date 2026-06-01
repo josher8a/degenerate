@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'options': options.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultValue$ = defaultValue;
+if (defaultValue$ != null) {
+  if (defaultValue$.length > 100) errors.add('defaultValue: length must be <= 100');
+}
+return errors; } 
 Dropdown copyWith({String? Function()? defaultValue, List<DropdownOptions>? options, }) { return Dropdown(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   options: options ?? this.options,

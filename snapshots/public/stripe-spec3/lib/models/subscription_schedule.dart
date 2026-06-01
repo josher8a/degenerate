@@ -174,6 +174,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('phases') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final releasedSubscription$ = releasedSubscription;
+if (releasedSubscription$ != null) {
+  if (releasedSubscription$.length > 5000) errors.add('releasedSubscription: length must be <= 5000');
+}
+return errors; } 
 SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, BankAccountCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? Function()? subscription, TestClock? Function()? testClock, }) { return SubscriptionSchedule(
   application: application != null ? application() : this.application,
   billingMode: billingMode ?? this.billingMode,

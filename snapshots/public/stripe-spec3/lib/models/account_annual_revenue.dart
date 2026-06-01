@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   'fiscal_year_end': ?fiscalYearEnd,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'fiscal_year_end'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final fiscalYearEnd$ = fiscalYearEnd;
+if (fiscalYearEnd$ != null) {
+  if (fiscalYearEnd$.length > 5000) errors.add('fiscalYearEnd: length must be <= 5000');
+}
+return errors; } 
 AccountAnnualRevenue copyWith({int? Function()? amount, String? Function()? currency, String? Function()? fiscalYearEnd, }) { return AccountAnnualRevenue(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

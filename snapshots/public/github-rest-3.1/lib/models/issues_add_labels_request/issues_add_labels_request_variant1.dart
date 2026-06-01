@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'labels': ?labels,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final labels$ = labels;
+if (labels$ != null) {
+  if (labels$.length < 1) errors.add('labels: must have >= 1 items');
+}
+return errors; } 
 IssuesAddLabelsRequestVariant1 copyWith({List<String>? Function()? labels}) { return IssuesAddLabelsRequestVariant1(
   labels: labels != null ? labels() : this.labels,
 ); } 

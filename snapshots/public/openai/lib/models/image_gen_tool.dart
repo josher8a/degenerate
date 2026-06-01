@@ -136,6 +136,13 @@ Map<String, dynamic> toJson() { return {
   if (action != null) 'action': action?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (outputCompression < 0) errors.add('outputCompression: must be >= 0');
+if (outputCompression > 100) errors.add('outputCompression: must be <= 100');
+if (partialImages < 0) errors.add('partialImages: must be >= 0');
+if (partialImages > 3) errors.add('partialImages: must be <= 3');
+return errors; } 
 ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
   type: type ?? this.type,
   model: model != null ? model() : this.model,

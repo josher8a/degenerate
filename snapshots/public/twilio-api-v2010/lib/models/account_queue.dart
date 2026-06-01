@@ -53,6 +53,21 @@ Map<String, dynamic> toJson() { return {
   'max_size': maxSize,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date_updated', 'current_size', 'friendly_name', 'uri', 'account_sid', 'average_wait_time', 'sid', 'date_created', 'max_size'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^QU[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^QU[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountQueue copyWith({String? Function()? dateUpdated, int Function()? currentSize, String? Function()? friendlyName, String? Function()? uri, String? Function()? accountSid, int Function()? averageWaitTime, String? Function()? sid, String? Function()? dateCreated, int Function()? maxSize, }) { return AccountQueue(
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   currentSize: currentSize != null ? currentSize() : this.currentSize,

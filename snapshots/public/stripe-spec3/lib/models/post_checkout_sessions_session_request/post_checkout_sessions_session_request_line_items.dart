@@ -36,6 +36,17 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adjustable_quantity', 'id', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 PostCheckoutSessionsSessionRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, String? Function()? id, Metadata? Function()? metadata, String? Function()? price, PostCheckoutSessionsRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, TaxRates? Function()? taxRates, }) { return PostCheckoutSessionsSessionRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   id: id != null ? id() : this.id,

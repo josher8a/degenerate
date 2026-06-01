@@ -25,6 +25,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_credits') &&
       json.containsKey('received_debits'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final transaction$ = transaction;
+if (transaction$ != null) {
+  if (transaction$.length > 5000) errors.add('transaction: length must be <= 5000');
+}
+return errors; } 
 IssuingAuthorizationTreasury copyWith({List<String>? receivedCredits, List<String>? receivedDebits, String? Function()? transaction, }) { return IssuingAuthorizationTreasury(
   receivedCredits: receivedCredits ?? this.receivedCredits,
   receivedDebits: receivedDebits ?? this.receivedDebits,

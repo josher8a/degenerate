@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'id_number': ?idNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final idNumber$ = idNumber;
+if (idNumber$ != null) {
+  if (idNumber$.length > 5000) errors.add('idNumber: length must be <= 5000');
+}
+return errors; } 
 Pii copyWith({String? Function()? idNumber}) { return Pii(
   idNumber: idNumber != null ? idNumber() : this.idNumber,
 ); } 

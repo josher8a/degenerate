@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
@@ -14,7 +14,7 @@ factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Ma
 final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? customerDetails;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final Description? description;
+final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? description;
 
 /// Specifies which fields in the response should be expanded.
 final List<String>? expand;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_details', 'description', 'expand', 'metadata', 'shipping_details'}.contains(key)); } 
-PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? Function()? customerDetails, Description? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
+PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? Function()? customerDetails, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,

@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'payer_id': ?payerId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_agreement_id', 'payer_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final billingAgreementId$ = billingAgreementId;
+if (billingAgreementId$ != null) {
+  if (billingAgreementId$.length > 5000) errors.add('billingAgreementId: length must be <= 5000');
+}
+final payerId$ = payerId;
+if (payerId$ != null) {
+  if (payerId$.length > 5000) errors.add('payerId: length must be <= 5000');
+}
+return errors; } 
 MandatePaypal copyWith({String? Function()? billingAgreementId, String? Function()? payerId, }) { return MandatePaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
   payerId: payerId != null ? payerId() : this.payerId,

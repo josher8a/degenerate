@@ -22,6 +22,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_chunk_size_tokens') && json['max_chunk_size_tokens'] is num &&
       json.containsKey('chunk_overlap_tokens') && json['chunk_overlap_tokens'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (maxChunkSizeTokens < 100) errors.add('maxChunkSizeTokens: must be >= 100');
+if (maxChunkSizeTokens > 4096) errors.add('maxChunkSizeTokens: must be <= 4096');
+return errors; } 
 StaticChunkingStrategy copyWith({int? maxChunkSizeTokens, int? chunkOverlapTokens, }) { return StaticChunkingStrategy(
   maxChunkSizeTokens: maxChunkSizeTokens ?? this.maxChunkSizeTokens,
   chunkOverlapTokens: chunkOverlapTokens ?? this.chunkOverlapTokens,

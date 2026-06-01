@@ -81,6 +81,21 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_token', 'date_created', 'date_updated', 'friendly_name', 'owner_account_sid', 'sid', 'status', 'subresource_uris', 'type', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ownerAccountSid$ = ownerAccountSid;
+if (ownerAccountSid$ != null) {
+  if (ownerAccountSid$.length < 34) errors.add('ownerAccountSid: length must be >= 34');
+  if (ownerAccountSid$.length > 34) errors.add('ownerAccountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(ownerAccountSid$)) errors.add(r'ownerAccountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+return errors; } 
 Account copyWith({String? Function()? authToken, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? ownerAccountSid, String? Function()? sid, AccountEnumStatus? Function()? status, Map<String, dynamic>? Function()? subresourceUris, AccountEnumType? Function()? type, String? Function()? uri, }) { return Account(
   authToken: authToken != null ? authToken() : this.authToken,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

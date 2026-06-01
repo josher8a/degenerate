@@ -85,6 +85,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
       json.containsKey('last4') && json['last4'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (brand.length > 5000) errors.add('brand: length must be <= 5000');
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final displayBrand$ = displayBrand;
+if (displayBrand$ != null) {
+  if (displayBrand$.length > 5000) errors.add('displayBrand: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+if (funding.length > 5000) errors.add('funding: length must be <= 5000');
+if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+return errors; } 
 PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? checks, String? Function()? country, String? Function()? displayBrand, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, PaymentMethodCardGeneratedCard? Function()? generatedFrom, String? last4, Networks? Function()? networks, RegulatedStatus? Function()? regulatedStatus, ThreeDSecureUsage? Function()? threeDSecureUsage, PaymentMethodCardWallet? Function()? wallet, }) { return PaymentMethodCard(
   brand: brand ?? this.brand,
   checks: checks != null ? checks() : this.checks,

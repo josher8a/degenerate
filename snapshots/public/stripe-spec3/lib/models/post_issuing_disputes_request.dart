@@ -38,6 +38,13 @@ Map<String, dynamic> toJson() { return {
   if (treasury != null) 'treasury': treasury?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'evidence', 'expand', 'metadata', 'transaction', 'treasury'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final transaction$ = transaction;
+if (transaction$ != null) {
+  if (transaction$.length > 5000) errors.add('transaction: length must be <= 5000');
+}
+return errors; } 
 PostIssuingDisputesRequest copyWith({int? Function()? amount, PostIssuingDisputesDisputeRequestEvidence? Function()? evidence, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? transaction, PostIssuingDisputesRequestTreasury? Function()? treasury, }) { return PostIssuingDisputesRequest(
   amount: amount != null ? amount() : this.amount,
   evidence: evidence != null ? evidence() : this.evidence,

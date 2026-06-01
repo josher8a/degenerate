@@ -17,6 +17,19 @@ Map<String, dynamic> toJson() { return {
   'percentile': ?percentile,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'percentage', 'percentile'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final percentage$ = percentage;
+if (percentage$ != null) {
+  if (percentage$ < 0) errors.add('percentage: must be >= 0');
+  if (percentage$ > 100) errors.add('percentage: must be <= 100');
+}
+final percentile$ = percentile;
+if (percentile$ != null) {
+  if (percentile$ < 0) errors.add('percentile: must be >= 0');
+  if (percentile$ > 100) errors.add('percentile: must be <= 100');
+}
+return errors; } 
 SecurityAdvisoryEpss copyWith({double? Function()? percentage, double? Function()? percentile, }) { return SecurityAdvisoryEpss(
   percentage: percentage != null ? percentage() : this.percentage,
   percentile: percentile != null ? percentile() : this.percentile,

@@ -50,6 +50,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('author_association'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (body.length > 65535) errors.add('body: length must be <= 65535');
+return errors; } 
 GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, }) { return GistComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

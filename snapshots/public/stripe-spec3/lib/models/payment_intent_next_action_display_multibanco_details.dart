@@ -29,6 +29,21 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'expires_at', 'hosted_voucher_url', 'reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final entity$ = entity;
+if (entity$ != null) {
+  if (entity$.length > 5000) errors.add('entity: length must be <= 5000');
+}
+final hostedVoucherUrl$ = hostedVoucherUrl;
+if (hostedVoucherUrl$ != null) {
+  if (hostedVoucherUrl$.length > 5000) errors.add('hostedVoucherUrl: length must be <= 5000');
+}
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionDisplayMultibancoDetails copyWith({String? Function()? entity, int? Function()? expiresAt, String? Function()? hostedVoucherUrl, String? Function()? reference, }) { return PaymentIntentNextActionDisplayMultibancoDetails(
   entity: entity != null ? entity() : this.entity,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

@@ -39,6 +39,25 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'parent', 'quantity', 'type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final currency$ = currency;
+if (currency$ != null) {
+  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final parent$ = parent;
+if (parent$ != null) {
+  if (parent$.length > 5000) errors.add('parent: length must be <= 5000');
+}
+final type$ = type;
+if (type$ != null) {
+  if (type$.length > 5000) errors.add('type: length must be <= 5000');
+}
+return errors; } 
 SourceOrderItem copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int? Function()? quantity, String? Function()? type, }) { return SourceOrderItem(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

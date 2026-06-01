@@ -33,6 +33,18 @@ Map<String, dynamic> toJson() { return {
   'registration_code': registrationCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('registration_code') && json['registration_code'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final label$ = label;
+if (label$ != null) {
+  if (label$.length > 5000) errors.add('label: length must be <= 5000');
+}
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+}
+if (registrationCode.length > 5000) errors.add('registrationCode: length must be <= 5000');
+return errors; } 
 PostTerminalReadersRequest copyWith({List<String>? Function()? expand, String? Function()? label, String? Function()? location, Metadata? Function()? metadata, String? registrationCode, }) { return PostTerminalReadersRequest(
   expand: expand != null ? expand() : this.expand,
   label: label != null ? label() : this.label,

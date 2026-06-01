@@ -34,6 +34,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (calculation.length > 5000) errors.add('calculation: length must be <= 5000');
+if (reference.length > 500) errors.add('reference: length must be <= 500');
+return errors; } 
 PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, List<String>? Function()? expand, Map<String, String>? Function()? metadata, int? Function()? postedAt, String? reference, }) { return PostTaxTransactionsCreateFromCalculationRequest(
   calculation: calculation ?? this.calculation,
   expand: expand != null ? expand() : this.expand,

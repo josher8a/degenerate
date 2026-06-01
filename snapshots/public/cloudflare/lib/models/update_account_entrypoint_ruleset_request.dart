@@ -40,6 +40,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length < 1) errors.add('name: length must be >= 1');
+}
+return errors; } 
 UpdateAccountEntrypointRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, List<RulesetsRequestRule>? Function()? rules, }) { return UpdateAccountEntrypointRulesetRequest(
   description: description != null ? description() : this.description,
   id: id ?? this.id,

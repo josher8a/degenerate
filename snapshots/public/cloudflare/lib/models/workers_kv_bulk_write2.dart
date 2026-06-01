@@ -35,6 +35,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (value.length > 26214400) errors.add('value: length must be <= 26214400');
+return errors; } 
 WorkersKvBulkWrite2 copyWith({bool Function()? base64, WorkersKvExpiration? Function()? expiration, WorkersKvExpirationTtl? Function()? expirationTtl, WorkersKvKeyNameBulk? key, WorkersKvAny? Function()? metadata, String? value, }) { return WorkersKvBulkWrite2(
   base64: base64 != null ? base64() : this.base64,
   expiration: expiration != null ? expiration() : this.expiration,

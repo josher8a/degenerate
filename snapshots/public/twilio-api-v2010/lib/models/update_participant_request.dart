@@ -93,6 +93,15 @@ Map<String, dynamic> toJson() { return {
   'CallSidToCoach': ?callSidToCoach,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Muted', 'Hold', 'HoldUrl', 'HoldMethod', 'AnnounceUrl', 'AnnounceMethod', 'WaitUrl', 'WaitMethod', 'BeepOnExit', 'EndConferenceOnExit', 'Coaching', 'CallSidToCoach'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final callSidToCoach$ = callSidToCoach;
+if (callSidToCoach$ != null) {
+  if (callSidToCoach$.length < 34) errors.add('callSidToCoach: length must be >= 34');
+  if (callSidToCoach$.length > 34) errors.add('callSidToCoach: length must be <= 34');
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidToCoach$)) errors.add(r'callSidToCoach: must match pattern ^CA[0-9a-fA-F]{32}$');
+}
+return errors; } 
 UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? hold, Uri? Function()? holdUrl, HoldMethod? Function()? holdMethod, Uri? Function()? announceUrl, AnnounceMethod? Function()? announceMethod, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? beepOnExit, bool? Function()? endConferenceOnExit, bool? Function()? coaching, String? Function()? callSidToCoach, }) { return UpdateParticipantRequest(
   muted: muted != null ? muted() : this.muted,
   hold: hold != null ? hold() : this.hold,

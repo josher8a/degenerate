@@ -25,6 +25,13 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_details', 'custom', 'payment_method', 'type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+return errors; } 
 PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails copyWith({PaymentMethodDetailsBillingDetails? Function()? billingDetails, PaymentMethodDetailsCustom? Function()? custom, String? Function()? paymentMethod, PaymentLinksResourceCustomFieldsLabelType? Function()? type, }) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   custom: custom != null ? custom() : this.custom,

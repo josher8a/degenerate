@@ -141,6 +141,48 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('prompt'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bestOf$ = bestOf;
+if (bestOf$ != null) {
+  if (bestOf$ < 0) errors.add('bestOf: must be >= 0');
+  if (bestOf$ > 20) errors.add('bestOf: must be <= 20');
+}
+final frequencyPenalty$ = frequencyPenalty;
+if (frequencyPenalty$ != null) {
+  if (frequencyPenalty$ < -2) errors.add('frequencyPenalty: must be >= -2');
+  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+}
+final logprobs$ = logprobs;
+if (logprobs$ != null) {
+  if (logprobs$ < 0) errors.add('logprobs: must be >= 0');
+  if (logprobs$ > 5) errors.add('logprobs: must be <= 5');
+}
+final maxTokens$ = maxTokens;
+if (maxTokens$ != null) {
+  if (maxTokens$ < 0) errors.add('maxTokens: must be >= 0');
+}
+final n$ = n;
+if (n$ != null) {
+  if (n$ < 1) errors.add('n: must be >= 1');
+  if (n$ > 128) errors.add('n: must be <= 128');
+}
+final presencePenalty$ = presencePenalty;
+if (presencePenalty$ != null) {
+  if (presencePenalty$ < -2) errors.add('presencePenalty: must be >= -2');
+  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+}
+final temperature$ = temperature;
+if (temperature$ != null) {
+  if (temperature$ < 0) errors.add('temperature: must be >= 0');
+  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+}
+final topP$ = topP;
+if (topP$ != null) {
+  if (topP$ < 0) errors.add('topP: must be >= 0');
+  if (topP$ > 1) errors.add('topP: must be <= 1');
+}
+return errors; } 
 CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCompletionRequestPrompt? Function()? prompt, int? Function()? bestOf, bool? Function()? echo, double? Function()? frequencyPenalty, Map<String, int>? Function()? logitBias, int? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, double? Function()? presencePenalty, int? Function()? seed, StopConfiguration? Function()? stop, bool? Function()? stream, ChatCompletionStreamOptions? Function()? streamOptions, String? Function()? suffix, double? Function()? temperature, double? Function()? topP, String? Function()? user, }) { return CreateCompletionRequest(
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,

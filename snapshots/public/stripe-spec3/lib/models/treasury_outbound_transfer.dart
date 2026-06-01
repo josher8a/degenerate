@@ -147,6 +147,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final destinationPaymentMethod$ = destinationPaymentMethod;
+if (destinationPaymentMethod$ != null) {
+  if (destinationPaymentMethod$.length > 5000) errors.add('destinationPaymentMethod: length must be <= 5000');
+}
+if (financialAccount.length > 5000) errors.add('financialAccount: length must be <= 5000');
+final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
+if (hostedRegulatoryReceiptUrl$ != null) {
+  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (statementDescriptor.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+return errors; } 
 TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundTransfersPaymentMethodDetails? destinationPaymentMethodDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundTransferObject? object, TreasuryOutboundTransfersResourceReturnedDetails? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundTransfersResourceStatusTransitions? statusTransitions, TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? Function()? trackingDetails, TreasuryCreditReversalTransaction? transaction, }) { return TreasuryOutboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,

@@ -144,6 +144,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
       json.containsKey('reported_by'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final application$ = application;
+if (application$ != null) {
+  if (application$.length > 5000) errors.add('application: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final paymentRecord$ = paymentRecord;
+if (paymentRecord$ != null) {
+  if (paymentRecord$.length > 5000) errors.add('paymentRecord: length must be <= 5000');
+}
+return errors; } 
 PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, String? Function()? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, ReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentAttemptRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,

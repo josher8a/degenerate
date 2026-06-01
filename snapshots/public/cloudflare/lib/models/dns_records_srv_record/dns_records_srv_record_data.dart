@@ -28,6 +28,19 @@ Map<String, dynamic> toJson() { return {
   'weight': ?weight,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'port', 'priority', 'target', 'weight'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final port$ = port;
+if (port$ != null) {
+  if (port$ < 0) errors.add('port: must be >= 0');
+  if (port$ > 65535) errors.add('port: must be <= 65535');
+}
+final weight$ = weight;
+if (weight$ != null) {
+  if (weight$ < 0) errors.add('weight: must be >= 0');
+  if (weight$ > 65535) errors.add('weight: must be <= 65535');
+}
+return errors; } 
 DnsRecordsSrvRecordData copyWith({double? Function()? port, DnsRecordsPriority? Function()? priority, String? Function()? target, double? Function()? weight, }) { return DnsRecordsSrvRecordData(
   port: port != null ? port() : this.port,
   priority: priority != null ? priority() : this.priority,

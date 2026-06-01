@@ -31,6 +31,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('blockingTriggers') &&
       json.containsKey('data') &&
       json.containsKey('firingTriggers'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (firingTriggers.length < 1) errors.add('firingTriggers: must have >= 1 items');
+return errors; } 
 NeoEvents copyWith({String? actionType, List<String>? blockingTriggers, Map<String,dynamic>? data, List<String>? firingTriggers, }) { return NeoEvents(
   actionType: actionType ?? this.actionType,
   blockingTriggers: blockingTriggers ?? this.blockingTriggers,

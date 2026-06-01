@@ -169,6 +169,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('percentage') && json['percentage'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final jurisdiction$ = jurisdiction;
+if (jurisdiction$ != null) {
+  if (jurisdiction$.length > 5000) errors.add('jurisdiction: length must be <= 5000');
+}
+final state$ = state;
+if (state$ != null) {
+  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+}
+return errors; } 
 TaxRate copyWith({bool? active, String? Function()? country, int? created, String? Function()? description, String? displayName, double? Function()? effectivePercentage, TaxRateFlatAmount? Function()? flatAmount, String? id, bool? inclusive, String? Function()? jurisdiction, TaxRateJurisdictionLevel? Function()? jurisdictionLevel, bool? livemode, Map<String, String>? Function()? metadata, TaxRateObject? object, double? percentage, RateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxRate(
   active: active ?? this.active,
   country: country != null ? country() : this.country,

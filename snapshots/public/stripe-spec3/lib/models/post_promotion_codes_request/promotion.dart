@@ -17,6 +17,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final coupon$ = coupon;
+if (coupon$ != null) {
+  if (coupon$.length > 5000) errors.add('coupon: length must be <= 5000');
+}
+return errors; } 
 Promotion copyWith({String? Function()? coupon, DiscountSourceType? type, }) { return Promotion(
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,

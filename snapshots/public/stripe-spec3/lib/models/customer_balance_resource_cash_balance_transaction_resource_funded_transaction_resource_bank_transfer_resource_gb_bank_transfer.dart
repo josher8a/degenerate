@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'sort_code': ?sortCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number_last4', 'sender_name', 'sort_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountNumberLast4$ = accountNumberLast4;
+if (accountNumberLast4$ != null) {
+  if (accountNumberLast4$.length > 5000) errors.add('accountNumberLast4: length must be <= 5000');
+}
+final senderName$ = senderName;
+if (senderName$ != null) {
+  if (senderName$.length > 5000) errors.add('senderName: length must be <= 5000');
+}
+final sortCode$ = sortCode;
+if (sortCode$ != null) {
+  if (sortCode$.length > 5000) errors.add('sortCode: length must be <= 5000');
+}
+return errors; } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer copyWith({String? Function()? accountNumberLast4, String? Function()? senderName, String? Function()? sortCode, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer(
   accountNumberLast4: accountNumberLast4 != null ? accountNumberLast4() : this.accountNumberLast4,
   senderName: senderName != null ? senderName() : this.senderName,

@@ -44,6 +44,11 @@ Map<String, dynamic> toJson() { return {
   'system_prompt': ?systemPrompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
+if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
+return errors; } 
 AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, RankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, bool Function()? stream, String? Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,

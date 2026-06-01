@@ -66,6 +66,15 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cryptogram') && json['cryptogram'] is String &&
       json.containsKey('transaction_id') && json['transaction_id'] is String &&
       json.containsKey('version'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (cryptogram.length > 5000) errors.add('cryptogram: length must be <= 5000');
+final requestorChallengeIndicator$ = requestorChallengeIndicator;
+if (requestorChallengeIndicator$ != null) {
+  if (requestorChallengeIndicator$.length > 2) errors.add('requestorChallengeIndicator: length must be <= 2');
+}
+if (transactionId.length > 5000) errors.add('transactionId: length must be <= 5000');
+return errors; } 
 PaymentIntentParamThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureExemptionIndicator? Function()? exemptionIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? transactionId, ThreeDSecureVersion? version, }) { return PaymentIntentParamThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram ?? this.cryptogram,

@@ -116,6 +116,41 @@ Map<String, dynamic> toJson() { return {
   'test_clock': ?testClock,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'balance', 'business_name', 'cash_balance', 'description', 'email', 'expand', 'individual_name', 'invoice_prefix', 'invoice_settings', 'metadata', 'name', 'next_invoice_sequence', 'payment_method', 'phone', 'preferred_locales', 'shipping', 'source', 'tax', 'tax_exempt', 'tax_id_data', 'test_clock'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 512) errors.add('email: length must be <= 512');
+}
+final invoicePrefix$ = invoicePrefix;
+if (invoicePrefix$ != null) {
+  if (invoicePrefix$.length > 5000) errors.add('invoicePrefix: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 256) errors.add('name: length must be <= 256');
+}
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 20) errors.add('phone: length must be <= 20');
+}
+final source$ = source;
+if (source$ != null) {
+  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+}
+final testClock$ = testClock;
+if (testClock$ != null) {
+  if (testClock$.length > 5000) errors.add('testClock: length must be <= 5000');
+}
+return errors; } 
 PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, BusinessName? Function()? businessName, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? paymentMethod, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, List<TaxIdData>? Function()? taxIdData, String? Function()? testClock, }) { return PostCustomersRequest(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,

@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final file$ = file;
+if (file$ != null) {
+  if (file$.length > 5000) errors.add('file: length must be <= 5000');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 PaymentPagesCheckoutSessionBrandingSettingsIcon copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String? Function()? url, }) { return PaymentPagesCheckoutSessionBrandingSettingsIcon(
   file: file != null ? file() : this.file,
   type: type ?? this.type,

@@ -25,6 +25,17 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'service_agreement', 'user_agent'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final serviceAgreement$ = serviceAgreement;
+if (serviceAgreement$ != null) {
+  if (serviceAgreement$.length > 5000) errors.add('serviceAgreement: length must be <= 5000');
+}
+final userAgent$ = userAgent;
+if (userAgent$ != null) {
+  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+}
+return errors; } 
 PostAccountsAccountRequestTosAcceptance copyWith({int? Function()? date, String? Function()? ip, String? Function()? serviceAgreement, String? Function()? userAgent, }) { return PostAccountsAccountRequestTosAcceptance(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,

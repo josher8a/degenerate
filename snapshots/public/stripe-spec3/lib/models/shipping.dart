@@ -33,6 +33,25 @@ Map<String, dynamic> toJson() { return {
   'tracking_number': ?trackingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'carrier', 'name', 'phone', 'tracking_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final carrier$ = carrier;
+if (carrier$ != null) {
+  if (carrier$.length > 5000) errors.add('carrier: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final trackingNumber$ = trackingNumber;
+if (trackingNumber$ != null) {
+  if (trackingNumber$.length > 5000) errors.add('trackingNumber: length must be <= 5000');
+}
+return errors; } 
 Shipping copyWith({Address? Function()? address, String? Function()? carrier, String? Function()? name, String? Function()? phone, String? Function()? trackingNumber, }) { return Shipping(
   address: address != null ? address() : this.address,
   carrier: carrier != null ? carrier() : this.carrier,

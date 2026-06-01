@@ -147,6 +147,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('service') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final phoneNumber$ = phoneNumber;
+if (phoneNumber$ != null) {
+  if (phoneNumber$.length > 5000) errors.add('phoneNumber: length must be <= 5000');
+}
+final trackingNumber$ = trackingNumber;
+if (trackingNumber$ != null) {
+  if (trackingNumber$.length > 5000) errors.add('trackingNumber: length must be <= 5000');
+}
+final trackingUrl$ = trackingUrl;
+if (trackingUrl$ != null) {
+  if (trackingUrl$.length > 5000) errors.add('trackingUrl: length must be <= 5000');
+}
+return errors; } 
 IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation? Function()? addressValidation, Carrier? Function()? carrier, IssuingCardShippingCustoms? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, Service? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
   address: address ?? this.address,
   addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,

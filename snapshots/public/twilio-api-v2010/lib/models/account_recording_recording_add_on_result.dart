@@ -100,6 +100,39 @@ Map<String, dynamic> toJson() { return {
   'subresource_uris': ?subresourceUris,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'status', 'add_on_sid', 'add_on_configuration_sid', 'date_created', 'date_updated', 'date_completed', 'reference_sid', 'subresource_uris'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^XR[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^XR[0-9a-fA-F]{32}$');
+}
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final addOnSid$ = addOnSid;
+if (addOnSid$ != null) {
+  if (addOnSid$.length < 34) errors.add('addOnSid: length must be >= 34');
+  if (addOnSid$.length > 34) errors.add('addOnSid: length must be <= 34');
+  if (!RegExp(r'^XB[0-9a-fA-F]{32}$').hasMatch(addOnSid$)) errors.add(r'addOnSid: must match pattern ^XB[0-9a-fA-F]{32}$');
+}
+final addOnConfigurationSid$ = addOnConfigurationSid;
+if (addOnConfigurationSid$ != null) {
+  if (addOnConfigurationSid$.length < 34) errors.add('addOnConfigurationSid: length must be >= 34');
+  if (addOnConfigurationSid$.length > 34) errors.add('addOnConfigurationSid: length must be <= 34');
+  if (!RegExp(r'^XE[0-9a-fA-F]{32}$').hasMatch(addOnConfigurationSid$)) errors.add(r'addOnConfigurationSid: must match pattern ^XE[0-9a-fA-F]{32}$');
+}
+final referenceSid$ = referenceSid;
+if (referenceSid$ != null) {
+  if (referenceSid$.length < 34) errors.add('referenceSid: length must be >= 34');
+  if (referenceSid$.length > 34) errors.add('referenceSid: length must be <= 34');
+  if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(referenceSid$)) errors.add(r'referenceSid: must match pattern ^RE[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? Function()? accountSid, RecordingAddOnResultEnumStatus? Function()? status, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? dateCompleted, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

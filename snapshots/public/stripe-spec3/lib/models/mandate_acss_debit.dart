@@ -30,6 +30,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_schedule') &&
       json.containsKey('transaction_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final intervalDescription$ = intervalDescription;
+if (intervalDescription$ != null) {
+  if (intervalDescription$.length > 5000) errors.add('intervalDescription: length must be <= 5000');
+}
+return errors; } 
 MandateAcssDebit copyWith({List<DefaultFor>? Function()? defaultFor, String? Function()? intervalDescription, MandateAcssDebitPaymentSchedule? paymentSchedule, MandateAcssDebitTransactionType? transactionType, }) { return MandateAcssDebit(
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,

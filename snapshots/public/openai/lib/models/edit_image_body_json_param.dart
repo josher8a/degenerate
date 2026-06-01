@@ -177,6 +177,23 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('images') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (images.length < 1) errors.add('images: must have >= 1 items');
+if (images.length > 16) errors.add('images: must have <= 16 items');
+if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.length > 32000) errors.add('prompt: length must be <= 32000');
+final n$ = n;
+if (n$ != null) {
+  if (n$ < 1) errors.add('n: must be >= 1');
+  if (n$ > 10) errors.add('n: must be <= 10');
+}
+final outputCompression$ = outputCompression;
+if (outputCompression$ != null) {
+  if (outputCompression$ < 0) errors.add('outputCompression: must be >= 0');
+  if (outputCompression$ > 100) errors.add('outputCompression: must be <= 100');
+}
+return errors; } 
 EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model, List<ImageRefParam>? images, ImageRefParam? Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String? Function()? user, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
   model: model != null ? model() : this.model,
   images: images ?? this.images,

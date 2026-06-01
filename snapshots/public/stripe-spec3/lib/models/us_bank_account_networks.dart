@@ -43,6 +43,13 @@ Map<String, dynamic> toJson() { return {
   'supported': supported.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('supported'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final preferred$ = preferred;
+if (preferred$ != null) {
+  if (preferred$.length > 5000) errors.add('preferred: length must be <= 5000');
+}
+return errors; } 
 UsBankAccountNetworks copyWith({String? Function()? preferred, List<Supported>? supported, }) { return UsBankAccountNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
   supported: supported ?? this.supported,

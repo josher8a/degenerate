@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'workers/triggered_by': ?workersTriggeredBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final workersMessage$ = workersMessage;
+if (workersMessage$ != null) {
+  if (workersMessage$.length > 100) errors.add('workersMessage: length must be <= 100');
+}
+return errors; } 
 WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) { return WorkersDeploymentAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,

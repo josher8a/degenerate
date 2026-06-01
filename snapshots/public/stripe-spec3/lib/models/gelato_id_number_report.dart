@@ -44,6 +44,21 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final firstName$ = firstName;
+if (firstName$ != null) {
+  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+}
+final idNumber$ = idNumber;
+if (idNumber$ != null) {
+  if (idNumber$.length > 5000) errors.add('idNumber: length must be <= 5000');
+}
+final lastName$ = lastName;
+if (lastName$ != null) {
+  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+}
+return errors; } 
 GelatoIdNumberReport copyWith({GelatoDataIdNumberReportDate? Function()? dob, GelatoIdNumberReportError? Function()? error, String? Function()? firstName, String? Function()? idNumber, IdNumberType? Function()? idNumberType, String? Function()? lastName, GelatoDocumentReportStatus? status, }) { return GelatoIdNumberReport(
   dob: dob != null ? dob() : this.dob,
   error: error != null ? error() : this.error,

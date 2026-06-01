@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding', 'transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsAmazonPay copyWith({AmazonPayUnderlyingPaymentMethodFundingDetails? Function()? funding, String? Function()? transactionId, }) { return PaymentMethodDetailsAmazonPay(
   funding: funding != null ? funding() : this.funding,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

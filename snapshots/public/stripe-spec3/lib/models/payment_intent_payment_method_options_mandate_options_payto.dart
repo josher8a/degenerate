@@ -39,6 +39,13 @@ Map<String, dynamic> toJson() { return {
   if (purpose != null) 'purpose': purpose?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final endDate$ = endDate;
+if (endDate$ != null) {
+  if (endDate$.length > 5000) errors.add('endDate: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({int? Function()? amount, InvoiceMandateOptionsCardAmountType? Function()? amountType, String? Function()? endDate, MandateOptionsPaytoPaymentSchedule? Function()? paymentSchedule, int? Function()? paymentsPerPeriod, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

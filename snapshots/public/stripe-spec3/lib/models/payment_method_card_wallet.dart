@@ -47,6 +47,13 @@ Map<String, dynamic> toJson() { return {
   if (visaCheckout != null) 'visa_checkout': visaCheckout?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final dynamicLast4$ = dynamicLast4;
+if (dynamicLast4$ != null) {
+  if (dynamicLast4$.length > 5000) errors.add('dynamicLast4: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodCardWalletApplePay? Function()? applePay, String? Function()? dynamicLast4, PaymentMethodCardWalletGooglePay? Function()? googlePay, PaymentMethodCardWalletLink? Function()? link, PaymentMethodCardWalletMasterpass? Function()? masterpass, PaymentMethodCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodCardWallet(
   amexExpressCheckout: amexExpressCheckout != null ? amexExpressCheckout() : this.amexExpressCheckout,
   applePay: applePay != null ? applePay() : this.applePay,

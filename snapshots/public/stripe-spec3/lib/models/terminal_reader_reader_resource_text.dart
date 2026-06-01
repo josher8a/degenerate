@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final value$ = value;
+if (value$ != null) {
+  if (value$.length > 5000) errors.add('value: length must be <= 5000');
+}
+return errors; } 
 TerminalReaderReaderResourceText copyWith({String? Function()? value}) { return TerminalReaderReaderResourceText(
   value: value != null ? value() : this.value,
 ); } 

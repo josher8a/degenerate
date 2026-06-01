@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'mandate_reference': ?mandateReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creditor_identifier', 'last4', 'mandate_reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final creditorIdentifier$ = creditorIdentifier;
+if (creditorIdentifier$ != null) {
+  if (creditorIdentifier$.length > 5000) errors.add('creditorIdentifier: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final mandateReference$ = mandateReference;
+if (mandateReference$ != null) {
+  if (mandateReference$.length > 5000) errors.add('mandateReference: length must be <= 5000');
+}
+return errors; } 
 SourceMandateNotificationSepaDebitData copyWith({String? Function()? creditorIdentifier, String? Function()? last4, String? Function()? mandateReference, }) { return SourceMandateNotificationSepaDebitData(
   creditorIdentifier: creditorIdentifier != null ? creditorIdentifier() : this.creditorIdentifier,
   last4: last4 != null ? last4() : this.last4,

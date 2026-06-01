@@ -37,6 +37,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('TLS 1
       json.containsKey('TLS 1.2') && json['TLS 1.2'] is String &&
       json.containsKey('TLS 1.3') && json['TLS 1.3'] is String &&
       json.containsKey('TLS QUIC') && json['TLS QUIC'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(tls10)) errors.add(r'tls10: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tls11)) errors.add(r'tls11: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tls12)) errors.add(r'tls12: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tls13)) errors.add(r'tls13: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(tlsQuic)) errors.add(r'tlsQuic: must match pattern ^\d+$');
+return errors; } 
 RadarGetHttpSummaryByTlsVersionResponseResultSummary0 copyWith({String? tls10, String? tls11, String? tls12, String? tls13, String? tlsQuic, }) { return RadarGetHttpSummaryByTlsVersionResponseResultSummary0(
   tls10: tls10 ?? this.tls10,
   tls11: tls11 ?? this.tls11,

@@ -68,6 +68,17 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('request_three_d_secure'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
+if (statementDescriptorSuffixKana$ != null) {
+  if (statementDescriptorSuffixKana$.length > 5000) errors.add('statementDescriptorSuffixKana: length must be <= 5000');
+}
+final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
+if (statementDescriptorSuffixKanji$ != null) {
+  if (statementDescriptorSuffixKanji$.length > 5000) errors.add('statementDescriptorSuffixKanji: length must be <= 5000');
+}
+return errors; } 
 CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,

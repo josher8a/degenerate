@@ -32,6 +32,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('scripts') &&
       json.containsKey('slug') && json['slug'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^[a-z0-9][a-z0-9-]*[a-z0-9]$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-z0-9][a-z0-9-]*[a-z0-9]$');
+return errors; } 
 DestinationCreateResponseResult copyWith({DestinationCreateResponseResultConfiguration? configuration, bool? enabled, String? name, List<String>? scripts, String? slug, }) { return DestinationCreateResponseResult(
   configuration: configuration ?? this.configuration,
   enabled: enabled ?? this.enabled,

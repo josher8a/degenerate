@@ -93,6 +93,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final issuingCard$ = issuingCard;
+if (issuingCard$ != null) {
+  if (issuingCard$.length > 5000) errors.add('issuingCard: length must be <= 5000');
+}
+return errors; } 
 TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails copyWith({TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance? Function()? balance, TreasurySharedResourceBillingDetails? billingDetails, ReceivedPaymentMethodDetailsFinancialAccount? Function()? financialAccount, String? Function()? issuingCard, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType? type, TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
   balance: balance != null ? balance() : this.balance,
   billingDetails: billingDetails ?? this.billingDetails,

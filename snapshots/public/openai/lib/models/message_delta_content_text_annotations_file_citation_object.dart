@@ -37,6 +37,17 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final startIndex$ = startIndex;
+if (startIndex$ != null) {
+  if (startIndex$ < 0) errors.add('startIndex: must be >= 0');
+}
+final endIndex$ = endIndex;
+if (endIndex$ != null) {
+  if (endIndex$ < 0) errors.add('endIndex: must be >= 0');
+}
+return errors; } 
 MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, MessageContentTextAnnotationsFileCitationObjectType? type, String? Function()? text, MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Function()? fileCitation, int? Function()? startIndex, int? Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFileCitationObject(
   index: index ?? this.index,
   type: type ?? this.type,

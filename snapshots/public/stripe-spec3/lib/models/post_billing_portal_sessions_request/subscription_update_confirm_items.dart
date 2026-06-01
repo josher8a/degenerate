@@ -20,6 +20,14 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 SubscriptionUpdateConfirmItems copyWith({String? id, String? Function()? price, int? Function()? quantity, }) { return SubscriptionUpdateConfirmItems(
   id: id ?? this.id,
   price: price != null ? price() : this.price,

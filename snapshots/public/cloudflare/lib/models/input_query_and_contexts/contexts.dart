@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final text$ = text;
+if (text$ != null) {
+  if (text$.length < 1) errors.add('text: length must be >= 1');
+}
+return errors; } 
 Contexts copyWith({String? Function()? text}) { return Contexts(
   text: text != null ? text() : this.text,
 ); } 

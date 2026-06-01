@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'items': items.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (items.length > 20) errors.add('items: must have <= 20 items');
+return errors; } 
 CreateConversationItemsRequest copyWith({List<InputItem>? items}) { return CreateConversationItemsRequest(
   items: items ?? this.items,
 ); } 

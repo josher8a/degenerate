@@ -143,6 +143,25 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'application_fee_amount', 'auto_advance', 'automatic_tax', 'automatically_finalizes_at', 'collection_method', 'custom_fields', 'days_until_due', 'default_payment_method', 'default_source', 'default_tax_rates', 'description', 'discounts', 'due_date', 'effective_at', 'expand', 'footer', 'issuer', 'metadata', 'number', 'on_behalf_of', 'payment_settings', 'rendering', 'shipping_cost', 'shipping_details', 'statement_descriptor', 'transfer_data'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultPaymentMethod$ = defaultPaymentMethod;
+if (defaultPaymentMethod$ != null) {
+  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1500) errors.add('description: length must be <= 1500');
+}
+final footer$ = footer;
+if (footer$ != null) {
+  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+return errors; } 
 PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceCollectionMethod? Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultSource? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, int? Function()? dueDate, EffectiveAt? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, Number? Function()? number, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, Rendering? Function()? rendering, PostInvoicesInvoiceRequestShippingCost? Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData? Function()? transferData, }) { return PostInvoicesInvoiceRequest(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

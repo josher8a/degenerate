@@ -34,6 +34,17 @@ Map<String, dynamic> toJson() { return {
   'received_at': ?receivedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cancellationReason$ = cancellationReason;
+if (cancellationReason$ != null) {
+  if (cancellationReason$.length > 5000) errors.add('cancellationReason: length must be <= 5000');
+}
+final explanation$ = explanation;
+if (explanation$ != null) {
+  if (explanation$.length > 5000) errors.add('explanation: length must be <= 5000');
+}
+return errors; } 
 IssuingDisputeServiceNotAsDescribedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? canceledAt, String? Function()? cancellationReason, String? Function()? explanation, int? Function()? receivedAt, }) { return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

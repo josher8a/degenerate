@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_intent_data_shipping.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_intent_data_shipping.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
 @immutable final class PostCheckoutSessionsRequestPaymentIntentData {const PostCheckoutSessionsRequestPaymentIntentData({this.applicationFeeAmount, this.captureMethod, this.description, this.metadata, this.onBehalfOf, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentIntentData(
@@ -14,7 +14,7 @@ factory PostCheckoutSessionsRequestPaymentIntentData.fromJson(Map<String, dynami
   shipping: json['shipping'] != null ? PaymentIntentDataShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostInvoicesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 
@@ -38,7 +38,7 @@ final String? statementDescriptor;
 
 final String? statementDescriptorSuffix;
 
-final PostChargesRequestTransferData? transferData;
+final PostInvoicesRequestTransferData? transferData;
 
 final String? transferGroup;
 
@@ -57,7 +57,22 @@ Map<String, dynamic> toJson() { return {
   'transfer_group': ?transferGroup,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_fee_amount', 'capture_method', 'description', 'metadata', 'on_behalf_of', 'receipt_email', 'setup_future_usage', 'shipping', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicationFeeAmount, PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? receiptEmail, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PaymentIntentDataShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostCheckoutSessionsRequestPaymentIntentData(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+}
+return errors; } 
+PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicationFeeAmount, PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? receiptEmail, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PaymentIntentDataShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostInvoicesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostCheckoutSessionsRequestPaymentIntentData(
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   description: description != null ? description() : this.description,

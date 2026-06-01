@@ -38,6 +38,13 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'file', 'id', 'metadata', 'requireSignedURLs', 'url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final creator$ = creator;
+if (creator$ != null) {
+  if (creator$.length > 1024) errors.add('creator: length must be <= 1024');
+}
+return errors; } 
 ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Function()? file, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool Function()? requireSignedUrLs, String? Function()? url, }) { return ImagesImageBasicUpload(
   creator: creator != null ? creator() : this.creator,
   file: file != null ? file() : this.file,

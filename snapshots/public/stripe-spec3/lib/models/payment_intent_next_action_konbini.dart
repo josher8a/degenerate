@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('expires_at') && json['expires_at'] is num &&
       json.containsKey('stores'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final hostedVoucherUrl$ = hostedVoucherUrl;
+if (hostedVoucherUrl$ != null) {
+  if (hostedVoucherUrl$.length > 5000) errors.add('hostedVoucherUrl: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionKonbini copyWith({int? expiresAt, String? Function()? hostedVoucherUrl, PaymentIntentNextActionKonbiniStores? stores, }) { return PaymentIntentNextActionKonbini(
   expiresAt: expiresAt ?? this.expiresAt,
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,

@@ -45,6 +45,17 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'forgive', 'mandate', 'off_session', 'paid_out_of_band', 'payment_method', 'source'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+final source$ = source;
+if (source$ != null) {
+  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+}
+return errors; } 
 PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? Function()? forgive, PostInvoicesInvoicePayRequestMandate? Function()? mandate, bool? Function()? offSession, bool? Function()? paidOutOfBand, String? Function()? paymentMethod, String? Function()? source, }) { return PostInvoicesInvoicePayRequest(
   expand: expand != null ? expand() : this.expand,
   forgive: forgive != null ? forgive() : this.forgive,

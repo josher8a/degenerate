@@ -18,6 +18,12 @@ Map<String, dynamic> toJson() { return {
   'steps': steps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+if (prompt.length > 2048) errors.add('prompt: length must be <= 2048');
+if (steps > 8) errors.add('steps: must be <= 8');
+return errors; } 
 WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, int Function()? steps, }) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: prompt ?? this.prompt,
   steps: steps != null ? steps() : this.steps,

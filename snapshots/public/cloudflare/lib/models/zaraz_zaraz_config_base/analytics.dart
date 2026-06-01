@@ -24,6 +24,14 @@ Map<String, dynamic> toJson() { return {
   'sessionExpTime': ?sessionExpTime,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultPurpose', 'enabled', 'sessionExpTime'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sessionExpTime$ = sessionExpTime;
+if (sessionExpTime$ != null) {
+  if (sessionExpTime$ < 60) errors.add('sessionExpTime: must be >= 60');
+  if (sessionExpTime$ > 86400) errors.add('sessionExpTime: must be <= 86400');
+}
+return errors; } 
 Analytics copyWith({String? Function()? defaultPurpose, bool? Function()? enabled, int? Function()? sessionExpTime, }) { return Analytics(
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,
   enabled: enabled != null ? enabled() : this.enabled,

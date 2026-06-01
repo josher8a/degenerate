@@ -33,6 +33,13 @@ Map<String, dynamic> toJson() { return {
   'requireSignedURLs': requireSignedUrLs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'expiry', 'id', 'metadata', 'requireSignedURLs'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 1024) errors.add('id: length must be <= 1024');
+}
+return errors; } 
 ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,

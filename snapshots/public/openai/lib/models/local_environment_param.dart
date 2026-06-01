@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final skills$ = skills;
+if (skills$ != null) {
+  if (skills$.length > 200) errors.add('skills: must have <= 200 items');
+}
+return errors; } 
 LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) { return LocalEnvironmentParam(
   type: type ?? this.type,
   skills: skills != null ? skills() : this.skills,

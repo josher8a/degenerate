@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   'quantity': quantity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('quantity') && json['quantity'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 PostPaymentLinksRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, String? Function()? price, PostCheckoutSessionsRequestLineItemsPriceData? Function()? priceData, int? quantity, }) { return PostPaymentLinksRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price != null ? price() : this.price,

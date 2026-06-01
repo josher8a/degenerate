@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+return errors; } 
 GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? Function()? error, GelatoDocumentReportStatus? status, }) { return GelatoEmailReport(
   email: email != null ? email() : this.email,
   error: error != null ? error() : this.error,

@@ -20,6 +20,11 @@ Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (matchThreshold < 0) errors.add('matchThreshold: must be >= 0');
+if (matchThreshold > 1) errors.add('matchThreshold: must be <= 1');
+return errors; } 
 AiSearchOptionsReranking copyWith({bool? Function()? enabled, double Function()? matchThreshold, AutoragConfigAiSearchRequestRerankingModel? Function()? model, }) { return AiSearchOptionsReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,

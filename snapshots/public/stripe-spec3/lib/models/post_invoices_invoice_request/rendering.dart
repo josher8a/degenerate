@@ -25,6 +25,13 @@ Map<String, dynamic> toJson() { return {
   if (templateVersion != null) 'template_version': templateVersion?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final template$ = template;
+if (template$ != null) {
+  if (template$.length > 5000) errors.add('template: length must be <= 5000');
+}
+return errors; } 
 Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Function()? pdf, String? Function()? template, TemplateVersion? Function()? templateVersion, }) { return Rendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,

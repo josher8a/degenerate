@@ -76,6 +76,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('backg
       json.containsKey('button_color') && json['button_color'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('font_family') && json['font_family'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (backgroundColor.length > 5000) errors.add('backgroundColor: length must be <= 5000');
+if (buttonColor.length > 5000) errors.add('buttonColor: length must be <= 5000');
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+if (fontFamily.length > 5000) errors.add('fontFamily: length must be <= 5000');
+return errors; } 
 PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, PaymentPagesCheckoutSessionBrandingSettingsIcon? Function()? icon, PaymentPagesCheckoutSessionBrandingSettingsLogo? Function()? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: backgroundColor ?? this.backgroundColor,
   borderStyle: borderStyle ?? this.borderStyle,

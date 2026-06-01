@@ -36,6 +36,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('date_created') && json['date_created'] is String &&
       json.containsKey('date_modified') && json['date_modified'] is String &&
       json.containsKey('subtitle') && json['subtitle'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (title.length > 255) errors.add('title: length must be <= 255');
+if (subtitle.length > 2000) errors.add('subtitle: length must be <= 2000');
+return errors; } 
 SpaceSchema copyWith({PublicUserSchema? author, String? title, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, }) { return SpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,

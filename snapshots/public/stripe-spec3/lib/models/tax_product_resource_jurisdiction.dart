@@ -65,6 +65,15 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('level'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+final state$ = state;
+if (state$ != null) {
+  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+}
+return errors; } 
 TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, String? Function()? state, }) { return TaxProductResourceJurisdiction(
   country: country ?? this.country,
   displayName: displayName ?? this.displayName,

@@ -24,6 +24,25 @@ Map<String, dynamic> toJson() { return {
   'subscription_reference': ?subscriptionReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'product_url', 'reference', 'subscription_reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final imageUrl$ = imageUrl;
+if (imageUrl$ != null) {
+  if (imageUrl$.length > 4096) errors.add('imageUrl: length must be <= 4096');
+}
+final productUrl$ = productUrl;
+if (productUrl$ != null) {
+  if (productUrl$.length > 4096) errors.add('productUrl: length must be <= 4096');
+}
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 255) errors.add('reference: length must be <= 255');
+}
+final subscriptionReference$ = subscriptionReference;
+if (subscriptionReference$ != null) {
+  if (subscriptionReference$.length > 255) errors.add('subscriptionReference: length must be <= 255');
+}
+return errors; } 
 Variant1PaymentMethodOptionsKlarna copyWith({String? Function()? imageUrl, String? Function()? productUrl, String? Function()? reference, String? Function()? subscriptionReference, }) { return Variant1PaymentMethodOptionsKlarna(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   productUrl: productUrl != null ? productUrl() : this.productUrl,

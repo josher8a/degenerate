@@ -35,6 +35,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('original_line_item') && json['original_line_item'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (originalLineItem.length > 5000) errors.add('originalLineItem: length must be <= 5000');
+if (reference.length > 500) errors.add('reference: length must be <= 500');
+return errors; } 
 PostTaxTransactionsCreateReversalRequestLineItems copyWith({int? amount, int? amountTax, Map<String, String>? Function()? metadata, String? originalLineItem, int? Function()? quantity, String? reference, }) { return PostTaxTransactionsCreateReversalRequestLineItems(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,

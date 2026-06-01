@@ -86,6 +86,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('suppliers'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+return errors; } 
 ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>? currentPricesPerMetricTon, int? Function()? deliveryYear, String? id, bool? livemode, String? metricTonsAvailable, String? name, ClimateProductObject? object, List<ClimateSupplier>? suppliers, }) { return ClimateProduct(
   created: created ?? this.created,
   currentPricesPerMetricTon: currentPricesPerMetricTon ?? this.currentPricesPerMetricTon,

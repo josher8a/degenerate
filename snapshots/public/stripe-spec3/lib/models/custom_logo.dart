@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final contentType$ = contentType;
+if (contentType$ != null) {
+  if (contentType$.length > 5000) errors.add('contentType: length must be <= 5000');
+}
+if (url.length > 5000) errors.add('url: length must be <= 5000');
+return errors; } 
 CustomLogo copyWith({String? Function()? contentType, String? url, }) { return CustomLogo(
   contentType: contentType != null ? contentType() : this.contentType,
   url: url ?? this.url,

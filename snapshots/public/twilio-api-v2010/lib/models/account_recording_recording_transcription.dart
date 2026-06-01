@@ -100,6 +100,27 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'duration', 'price', 'price_unit', 'recording_sid', 'sid', 'status', 'transcription_text', 'type', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final recordingSid$ = recordingSid;
+if (recordingSid$ != null) {
+  if (recordingSid$.length < 34) errors.add('recordingSid: length must be >= 34');
+  if (recordingSid$.length > 34) errors.add('recordingSid: length must be <= 34');
+  if (!RegExp(r'^RE[0-9a-fA-F]{32}$').hasMatch(recordingSid$)) errors.add(r'recordingSid: must match pattern ^RE[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^TR[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^TR[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountRecordingRecordingTranscription copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? duration, double? Function()? price, String? Function()? priceUnit, String? Function()? recordingSid, String? Function()? sid, RecordingTranscriptionEnumStatus? Function()? status, String? Function()? transcriptionText, String? Function()? type, String? Function()? uri, }) { return AccountRecordingRecordingTranscription(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

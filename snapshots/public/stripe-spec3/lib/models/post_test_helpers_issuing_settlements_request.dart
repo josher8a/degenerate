@@ -61,6 +61,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('clearing_date') && json['clearing_date'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('net_total_amount') && json['net_total_amount'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (bin.length > 5000) errors.add('bin: length must be <= 5000');
+final networkSettlementIdentifier$ = networkSettlementIdentifier;
+if (networkSettlementIdentifier$ != null) {
+  if (networkSettlementIdentifier$.length > 5000) errors.add('networkSettlementIdentifier: length must be <= 5000');
+}
+return errors; } 
 PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDate, String? currency, List<String>? Function()? expand, int? Function()? interchangeFeesAmount, int? netTotalAmount, IssuingSettlementNetwork? Function()? network, String? Function()? networkSettlementIdentifier, int? Function()? transactionAmount, int? Function()? transactionCount, }) { return PostTestHelpersIssuingSettlementsRequest(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,

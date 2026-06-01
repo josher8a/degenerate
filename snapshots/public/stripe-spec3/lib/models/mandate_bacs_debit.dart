@@ -106,6 +106,19 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('network_status') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+}
+if (reference.length > 5000) errors.add('reference: length must be <= 5000');
+final serviceUserNumber$ = serviceUserNumber;
+if (serviceUserNumber$ != null) {
+  if (serviceUserNumber$.length > 5000) errors.add('serviceUserNumber: length must be <= 5000');
+}
+if (url.length > 5000) errors.add('url: length must be <= 5000');
+return errors; } 
 MandateBacsDebit copyWith({String? Function()? displayName, NetworkStatus? networkStatus, String? reference, RevocationReason? Function()? revocationReason, String? Function()? serviceUserNumber, String? url, }) { return MandateBacsDebit(
   displayName: displayName != null ? displayName() : this.displayName,
   networkStatus: networkStatus ?? this.networkStatus,

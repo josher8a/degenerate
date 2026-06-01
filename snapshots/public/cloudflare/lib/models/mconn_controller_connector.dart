@@ -79,6 +79,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('interrupt_window_hour_of_day') && json['interrupt_window_hour_of_day'] is num &&
       json.containsKey('timezone') && json['timezone'] is String &&
       json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (interruptWindowDurationHours < 1) errors.add('interruptWindowDurationHours: must be >= 1');
+if (interruptWindowDurationHours > 24) errors.add('interruptWindowDurationHours: must be <= 24');
+if (interruptWindowEmbargoDates.length > 100) errors.add('interruptWindowEmbargoDates: must have <= 100 items');
+return errors; } 
 MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, String? Function()? cloudflaredTunnelToken, String? Function()? cohortDesiredVersion, String? Function()? desiredVersion, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? Function()? pinnedVersion, String? timezone, bool? upgradeAsap, }) { return MconnControllerConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,

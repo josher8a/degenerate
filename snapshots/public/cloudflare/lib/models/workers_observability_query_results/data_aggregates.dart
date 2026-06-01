@@ -31,6 +31,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_coun
       json.containsKey('_firstSeen') && json['_firstSeen'] is String &&
       json.containsKey('_interval') && json['_interval'] is num &&
       json.containsKey('_lastSeen') && json['_lastSeen'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (count < 0) errors.add('count: must be >= 0');
+if (interval < 0) errors.add('interval: must be >= 0');
+return errors; } 
 DataAggregates copyWith({int? count, String? firstSeen, int? interval, String? lastSeen, Map<String, dynamic>? Function()? bin, }) { return DataAggregates(
   count: count ?? this.count,
   firstSeen: firstSeen ?? this.firstSeen,

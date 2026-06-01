@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   if (patternType != null) 'pattern_type': patternType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_regex', 'pattern', 'pattern_type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final pattern$ = pattern;
+if (pattern$ != null) {
+  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+}
+return errors; } 
 EmailSecurityUpdateBlockedSender copyWith({String? Function()? comments, bool? Function()? isRegex, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityUpdateBlockedSender(
   comments: comments != null ? comments() : this.comments,
   isRegex: isRegex != null ? isRegex() : this.isRegex,

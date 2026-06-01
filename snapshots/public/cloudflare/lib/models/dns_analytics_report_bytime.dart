@@ -54,6 +54,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('rows') && json['rows'] is num &&
       json.containsKey('totals') &&
       json.containsKey('time_intervals'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (dataLag < 0) errors.add('dataLag: must be >= 0');
+if (rows < 0) errors.add('rows: must be >= 0');
+return errors; } 
 DnsAnalyticsReportBytime copyWith({List<DnsAnalyticsReportBytimeData>? data, double? dataLag, Map<String,dynamic>? max, Map<String,dynamic>? min, DnsAnalyticsReportBytimeQuery? query, double? rows, Map<String,dynamic>? totals, List<List<DateTime>>? timeIntervals, }) { return DnsAnalyticsReportBytime(
   data: data ?? this.data,
   dataLag: dataLag ?? this.dataLag,

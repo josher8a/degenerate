@@ -107,6 +107,65 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final brand$ = brand;
+if (brand$ != null) {
+  if (brand$.length > 5000) errors.add('brand: length must be <= 5000');
+}
+final cardholderName$ = cardholderName;
+if (cardholderName$ != null) {
+  if (cardholderName$.length > 5000) errors.add('cardholderName: length must be <= 5000');
+}
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final emvAuthData$ = emvAuthData;
+if (emvAuthData$ != null) {
+  if (emvAuthData$.length > 5000) errors.add('emvAuthData: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final funding$ = funding;
+if (funding$ != null) {
+  if (funding$.length > 5000) errors.add('funding: length must be <= 5000');
+}
+final generatedCard$ = generatedCard;
+if (generatedCard$ != null) {
+  if (generatedCard$.length > 5000) errors.add('generatedCard: length must be <= 5000');
+}
+final issuer$ = issuer;
+if (issuer$ != null) {
+  if (issuer$.length > 5000) errors.add('issuer: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+}
+final network$ = network;
+if (network$ != null) {
+  if (network$.length > 5000) errors.add('network: length must be <= 5000');
+}
+final networkTransactionId$ = networkTransactionId;
+if (networkTransactionId$ != null) {
+  if (networkTransactionId$.length > 5000) errors.add('networkTransactionId: length must be <= 5000');
+}
+final reader$ = reader;
+if (reader$ != null) {
+  if (reader$.length > 5000) errors.add('reader: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, String? Function()? issuer, String? Function()? last4, String? Function()? location, String? Function()? network, String? Function()? networkTransactionId, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, String? Function()? reader, PaymentMethodDetailsInteracPresentReceipt? Function()? receipt, }) { return PaymentMethodDetailsInteracPresent(
   brand: brand != null ? brand() : this.brand,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,

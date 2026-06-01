@@ -29,6 +29,24 @@ Map<String, dynamic> toJson() { return {
   'key_tag': ?keyTag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'digest', 'digest_type', 'key_tag'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final algorithm$ = algorithm;
+if (algorithm$ != null) {
+  if (algorithm$ < 0) errors.add('algorithm: must be >= 0');
+  if (algorithm$ > 255) errors.add('algorithm: must be <= 255');
+}
+final digestType$ = digestType;
+if (digestType$ != null) {
+  if (digestType$ < 0) errors.add('digestType: must be >= 0');
+  if (digestType$ > 255) errors.add('digestType: must be <= 255');
+}
+final keyTag$ = keyTag;
+if (keyTag$ != null) {
+  if (keyTag$ < 0) errors.add('keyTag: must be >= 0');
+  if (keyTag$ > 65535) errors.add('keyTag: must be <= 65535');
+}
+return errors; } 
 DnsRecordsDsRecordData copyWith({double? Function()? algorithm, String? Function()? digest, double? Function()? digestType, double? Function()? keyTag, }) { return DnsRecordsDsRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   digest: digest != null ? digest() : this.digest,

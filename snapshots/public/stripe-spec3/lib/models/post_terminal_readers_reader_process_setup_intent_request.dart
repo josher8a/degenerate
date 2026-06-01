@@ -29,6 +29,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_redisplay') &&
       json.containsKey('setup_intent') && json['setup_intent'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (setupIntent.length > 5000) errors.add('setupIntent: length must be <= 5000');
+return errors; } 
 PostTerminalReadersReaderProcessSetupIntentRequest copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? allowRedisplay, List<String>? Function()? expand, PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig? Function()? processConfig, String? setupIntent, }) { return PostTerminalReadersReaderProcessSetupIntentRequest(
   allowRedisplay: allowRedisplay ?? this.allowRedisplay,
   expand: expand != null ? expand() : this.expand,

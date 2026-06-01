@@ -13,6 +13,10 @@ Map<String, dynamic> toJson() { return {
   'emails': emails,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('emails'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (emails.length < 1) errors.add('emails: must have >= 1 items');
+return errors; } 
 UsersAddEmailForAuthenticatedUserRequestVariant1 copyWith({List<String>? emails}) { return UsersAddEmailForAuthenticatedUserRequestVariant1(
   emails: emails ?? this.emails,
 ); } 

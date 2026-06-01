@@ -69,6 +69,19 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') &&
       json.containsKey('tcp_established') && json['tcp_established'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cfSpeakerPort$ = cfSpeakerPort;
+if (cfSpeakerPort$ != null) {
+  if (cfSpeakerPort$ < 1) errors.add('cfSpeakerPort: must be >= 1');
+  if (cfSpeakerPort$ > 65535) errors.add('cfSpeakerPort: must be <= 65535');
+}
+final customerSpeakerPort$ = customerSpeakerPort;
+if (customerSpeakerPort$ != null) {
+  if (customerSpeakerPort$ < 1) errors.add('customerSpeakerPort: must be >= 1');
+  if (customerSpeakerPort$ > 65535) errors.add('customerSpeakerPort: must be <= 65535');
+}
+return errors; } 
 MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function()? cfSpeakerIp, int? Function()? cfSpeakerPort, String? Function()? customerSpeakerIp, int? Function()? customerSpeakerPort, MagicBgpStatusWithStateState? state, bool? tcpEstablished, DateTime? updatedAt, }) { return MagicBgpStatusWithState(
   bgpState: bgpState != null ? bgpState() : this.bgpState,
   cfSpeakerIp: cfSpeakerIp != null ? cfSpeakerIp() : this.cfSpeakerIp,

@@ -98,6 +98,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('parameters') &&
       json.containsKey('report_type') && json['report_type'] is String &&
       json.containsKey('status') && json['status'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final error$ = error;
+if (error$ != null) {
+  if (error$.length > 5000) errors.add('error: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (reportType.length > 5000) errors.add('reportType: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+return errors; } 
 ReportingReportRun copyWith({int? created, String? Function()? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, File? Function()? result, String? status, int? Function()? succeededAt, }) { return ReportingReportRun(
   created: created ?? this.created,
   error: error != null ? error() : this.error,

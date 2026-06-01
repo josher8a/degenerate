@@ -47,6 +47,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 128) errors.add('name: length must be <= 128');
+if (!RegExp(r'^(?<token_config_id>[a-z0-9\-]{32,36}):\$(?<json_path>.*?)$').hasMatch(name)) errors.add(r'name: must match pattern ^(?<token_config_id>[a-z0-9\-]{32,36}):\$(?<json_path>.*?)$');
+return errors; } 
 ShieldAuthIdCharacteristicJwtClaim copyWith({String? name, ShieldAuthIdCharacteristicJwtClaimType? type, }) { return ShieldAuthIdCharacteristicJwtClaim(
   name: name ?? this.name,
   type: type ?? this.type,

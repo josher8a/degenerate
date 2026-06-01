@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_return_status.dart';import 'package:pub_stripe_spec3/models/canceled/cancellation_policy_provided.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/product_description.dart';import 'package:pub_stripe_spec3/models/canceled/returned_at.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_additional_documentation.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_at.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_cancellation_reason.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_description.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_product_type.dart';import 'package:pub_stripe_spec3/models/canceled/canceled_return_status.dart';import 'package:pub_stripe_spec3/models/canceled/cancellation_policy_provided.dart';import 'package:pub_stripe_spec3/models/canceled/expected_at.dart';import 'package:pub_stripe_spec3/models/canceled/explanation.dart';import 'package:pub_stripe_spec3/models/canceled/returned_at.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -27,7 +27,7 @@ final ExpectedAt? expectedAt;
 
 final Explanation? explanation;
 
-final ProductDescription? productDescription;
+final CanceledProductDescription? productDescription;
 
 final CanceledProductType? productType;
 
@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_policy_provided', 'cancellation_reason', 'expected_at', 'explanation', 'product_description', 'product_type', 'return_status', 'returned_at'}.contains(key)); } 
-Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, CanceledAt? Function()? canceledAt, CancellationPolicyProvided? Function()? cancellationPolicyProvided, CanceledCancellationReason? Function()? cancellationReason, ExpectedAt? Function()? expectedAt, Explanation? Function()? explanation, ProductDescription? Function()? productDescription, CanceledProductType? Function()? productType, CanceledReturnStatus? Function()? returnStatus, ReturnedAt? Function()? returnedAt, }) { return Canceled(
+Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, CanceledAt? Function()? canceledAt, CancellationPolicyProvided? Function()? cancellationPolicyProvided, CanceledCancellationReason? Function()? cancellationReason, ExpectedAt? Function()? expectedAt, Explanation? Function()? explanation, CanceledProductDescription? Function()? productDescription, CanceledProductType? Function()? productType, CanceledReturnStatus? Function()? returnStatus, ReturnedAt? Function()? returnedAt, }) { return Canceled(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   cancellationPolicyProvided: cancellationPolicyProvided != null ? cancellationPolicyProvided() : this.cancellationPolicyProvided,

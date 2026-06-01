@@ -29,6 +29,25 @@ Map<String, dynamic> toJson() { return {
   'swift_code': ?swiftCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'bank_name', 'routing_number', 'swift_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountNumber$ = accountNumber;
+if (accountNumber$ != null) {
+  if (accountNumber$.length > 5000) errors.add('accountNumber: length must be <= 5000');
+}
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+final routingNumber$ = routingNumber;
+if (routingNumber$ != null) {
+  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+}
+final swiftCode$ = swiftCode;
+if (swiftCode$ != null) {
+  if (swiftCode$.length > 5000) errors.add('swiftCode: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsAchCreditTransfer copyWith({String? Function()? accountNumber, String? Function()? bankName, String? Function()? routingNumber, String? Function()? swiftCode, }) { return PaymentMethodDetailsAchCreditTransfer(
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   bankName: bankName != null ? bankName() : this.bankName,

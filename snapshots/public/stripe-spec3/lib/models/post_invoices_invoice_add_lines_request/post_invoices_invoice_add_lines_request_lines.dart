@@ -56,6 +56,17 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'discountable', 'discounts', 'invoice_item', 'metadata', 'period', 'price_data', 'pricing', 'quantity', 'tax_amounts', 'tax_rates'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final invoiceItem$ = invoiceItem;
+if (invoiceItem$ != null) {
+  if (invoiceItem$.length > 5000) errors.add('invoiceItem: length must be <= 5000');
+}
+return errors; } 
 PostInvoicesInvoiceAddLinesRequestLines copyWith({int? Function()? amount, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? invoiceItem, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, PostInvoicesInvoiceLinesLineItemIdRequestPriceData? Function()? priceData, Pricing? Function()? pricing, int? Function()? quantity, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, }) { return PostInvoicesInvoiceAddLinesRequestLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,

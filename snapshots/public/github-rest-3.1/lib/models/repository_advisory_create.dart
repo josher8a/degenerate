@@ -55,6 +55,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (summary.length > 1024) errors.add('summary: length must be <= 1024');
+if (description.length > 65535) errors.add('description: length must be <= 65535');
+return errors; } 
 RepositoryAdvisoryCreate copyWith({String? summary, String? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, bool Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
   summary: summary ?? this.summary,
   description: description ?? this.description,

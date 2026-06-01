@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final code$ = code;
+if (code$ != null) {
+  if (code$ < 1000) errors.add('code: must be >= 1000');
+}
+return errors; } 
 AaaComponentsSchemasMessages2 copyWith({int? Function()? code, String? message, }) { return AaaComponentsSchemasMessages2(
   code: code != null ? code() : this.code,
   message: message ?? this.message,

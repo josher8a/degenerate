@@ -33,6 +33,13 @@ Map<String, dynamic> toJson() { return {
   'trial_period_days': ?trialPeriodDays,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_mode'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 QuotesResourceSubscriptionDataSubscriptionData copyWith({QuotesResourceSubscriptionDataBillingMode? billingMode, String? Function()? description, int? Function()? effectiveDate, Map<String, String>? Function()? metadata, int? Function()? trialPeriodDays, }) { return QuotesResourceSubscriptionDataSubscriptionData(
   billingMode: billingMode ?? this.billingMode,
   description: description != null ? description() : this.description,

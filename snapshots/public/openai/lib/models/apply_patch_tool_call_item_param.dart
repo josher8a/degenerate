@@ -37,6 +37,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status') &&
       json.containsKey('operation'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (callId.length < 1) errors.add('callId: length must be >= 1');
+if (callId.length > 64) errors.add('callId: length must be <= 64');
+return errors; } 
 ApplyPatchToolCallItemParam copyWith({String? type, String? Function()? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchOperationParam? operation, }) { return ApplyPatchToolCallItemParam(
   type: type ?? this.type,
   id: id != null ? id() : this.id,

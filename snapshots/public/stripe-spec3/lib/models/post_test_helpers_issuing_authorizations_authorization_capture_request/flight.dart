@@ -28,6 +28,17 @@ Map<String, dynamic> toJson() { return {
   'travel_agency': ?travelAgency,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final passengerName$ = passengerName;
+if (passengerName$ != null) {
+  if (passengerName$.length > 5000) errors.add('passengerName: length must be <= 5000');
+}
+final travelAgency$ = travelAgency;
+if (travelAgency$ != null) {
+  if (travelAgency$.length > 5000) errors.add('travelAgency: length must be <= 5000');
+}
+return errors; } 
 Flight copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<Segments>? Function()? segments, String? Function()? travelAgency, }) { return Flight(
   departureAt: departureAt != null ? departureAt() : this.departureAt,
   passengerName: passengerName != null ? passengerName() : this.passengerName,

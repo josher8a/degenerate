@@ -41,6 +41,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('item'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final eventId$ = eventId;
+if (eventId$ != null) {
+  if (eventId$.length > 512) errors.add('eventId: length must be <= 512');
+}
+return errors; } 
 RealtimeClientEventConversationItemCreate copyWith({String? Function()? eventId, String? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeClientEventConversationItemCreate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,

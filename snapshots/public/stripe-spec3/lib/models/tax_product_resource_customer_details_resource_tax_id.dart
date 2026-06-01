@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (value.length > 5000) errors.add('value: length must be <= 5000');
+return errors; } 
 TaxProductResourceCustomerDetailsResourceTaxId copyWith({InvoicesResourceInvoiceTaxIdType? type, String? value, }) { return TaxProductResourceCustomerDetailsResourceTaxId(
   type: type ?? this.type,
   value: value ?? this.value,

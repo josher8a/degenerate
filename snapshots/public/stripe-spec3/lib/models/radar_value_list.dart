@@ -70,6 +70,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('metadata') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (alias.length > 5000) errors.add('alias: length must be <= 5000');
+if (createdBy.length > 5000) errors.add('createdBy: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+return errors; } 
 RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, ItemType? itemType, ListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, DeletedRadarValueListObject? object, }) { return RadarValueList(
   alias: alias ?? this.alias,
   created: created ?? this.created,

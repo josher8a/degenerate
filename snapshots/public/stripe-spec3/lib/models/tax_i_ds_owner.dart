@@ -34,6 +34,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 TaxIDsOwner copyWith({ApplicationFeeAccount? Function()? account, ApplicationFeeApplication? Function()? application, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return TaxIDsOwner(
   account: account != null ? account() : this.account,
   application: application != null ? application() : this.application,

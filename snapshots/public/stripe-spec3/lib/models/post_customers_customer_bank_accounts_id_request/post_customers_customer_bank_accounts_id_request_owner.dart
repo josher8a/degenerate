@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+return errors; } 
 PostCustomersCustomerBankAccountsIdRequestOwner copyWith({CustomerShippingAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return PostCustomersCustomerBankAccountsIdRequestOwner(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,

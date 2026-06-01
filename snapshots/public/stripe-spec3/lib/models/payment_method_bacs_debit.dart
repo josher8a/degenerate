@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'sort_code': ?sortCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'last4', 'sort_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final sortCode$ = sortCode;
+if (sortCode$ != null) {
+  if (sortCode$.length > 5000) errors.add('sortCode: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodBacsDebit copyWith({String? Function()? fingerprint, String? Function()? last4, String? Function()? sortCode, }) { return PaymentMethodBacsDebit(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   last4: last4 != null ? last4() : this.last4,

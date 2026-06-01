@@ -61,6 +61,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
       json.containsKey('provider'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ipAddress$ = ipAddress;
+if (ipAddress$ != null) {
+  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+}
+return errors; } 
 CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation? Function()? location, Provider? provider, }) { return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,

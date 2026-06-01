@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'return_url': returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('return_url') && json['return_url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (returnUrl.length > 5000) errors.add('returnUrl: length must be <= 5000');
+return errors; } 
 PortalFlowsAfterCompletionRedirect copyWith({String? returnUrl}) { return PortalFlowsAfterCompletionRedirect(
   returnUrl: returnUrl ?? this.returnUrl,
 ); } 

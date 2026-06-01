@@ -19,6 +19,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_names') &&
       json.containsKey('properties'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (repositoryNames.length < 1) errors.add('repositoryNames: must have >= 1 items');
+if (repositoryNames.length > 30) errors.add('repositoryNames: must have <= 30 items');
+return errors; } 
 OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest copyWith({List<String>? repositoryNames, List<CustomPropertyValue>? properties, }) { return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest(
   repositoryNames: repositoryNames ?? this.repositoryNames,
   properties: properties ?? this.properties,

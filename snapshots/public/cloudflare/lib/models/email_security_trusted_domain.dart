@@ -52,6 +52,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final comments$ = comments;
+if (comments$ != null) {
+  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+}
+if (pattern.length < 1) errors.add('pattern: length must be >= 1');
+if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
+return errors; } 
 EmailSecurityTrustedDomain copyWith({String? Function()? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, DateTime? createdAt, int? id, DateTime? lastModified, }) { return EmailSecurityTrustedDomain(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent ?? this.isRecent,

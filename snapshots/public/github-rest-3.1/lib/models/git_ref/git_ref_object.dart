@@ -23,6 +23,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (sha.length < 40) errors.add('sha: length must be >= 40');
+if (sha.length > 40) errors.add('sha: length must be <= 40');
+return errors; } 
 GitRefObject copyWith({String? type, String? sha, Uri? url, }) { return GitRefObject(
   type: type ?? this.type,
   sha: sha ?? this.sha,

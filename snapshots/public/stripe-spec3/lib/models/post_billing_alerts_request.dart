@@ -29,6 +29,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert_type') &&
       json.containsKey('title') && json['title'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (title.length > 256) errors.add('title: length must be <= 256');
+return errors; } 
 PostBillingAlertsRequest copyWith({AlertType? alertType, List<String>? Function()? expand, String? title, UsageThreshold? Function()? usageThreshold, }) { return PostBillingAlertsRequest(
   alertType: alertType ?? this.alertType,
   expand: expand != null ? expand() : this.expand,

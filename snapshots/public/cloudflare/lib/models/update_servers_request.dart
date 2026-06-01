@@ -20,6 +20,17 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_credentials', 'description', 'name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 512) errors.add('description: length must be <= 512');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 350) errors.add('name: length must be <= 350');
+}
+return errors; } 
 UpdateServersRequest copyWith({String? Function()? authCredentials, String? Function()? description, String? Function()? name, }) { return UpdateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,
   description: description != null ? description() : this.description,

@@ -43,6 +43,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_returned') && json['amount_returned'] is num &&
       json.containsKey('refund_attributes_method') && json['refund_attributes_method'] is String &&
       json.containsKey('refund_attributes_status') && json['refund_attributes_status'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final address$ = address;
+if (address$ != null) {
+  if (address$.length > 5000) errors.add('address: length must be <= 5000');
+}
+if (refundAttributesMethod.length > 5000) errors.add('refundAttributesMethod: length must be <= 5000');
+if (refundAttributesStatus.length > 5000) errors.add('refundAttributesStatus: length must be <= 5000');
+return errors; } 
 SourceReceiverFlow copyWith({String? Function()? address, int? amountCharged, int? amountReceived, int? amountReturned, String? refundAttributesMethod, String? refundAttributesStatus, }) { return SourceReceiverFlow(
   address: address != null ? address() : this.address,
   amountCharged: amountCharged ?? this.amountCharged,

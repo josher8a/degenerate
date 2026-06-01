@@ -79,6 +79,13 @@ Map<String, dynamic> toJson() { return {
   if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'exemption_indicator', 'exemption_indicator_applied', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 ThreeDSecureDetailsCharge copyWith({AuthenticationFlow? Function()? authenticationFlow, ThreeDSecureDetailsChargeElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureDetailsChargeExemptionIndicator? Function()? exemptionIndicator, bool? Function()? exemptionIndicatorApplied, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult? Function()? result, ResultReason? Function()? resultReason, String? Function()? transactionId, ThreeDSecureDetailsChargeVersion? Function()? version, }) { return ThreeDSecureDetailsCharge(
   authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

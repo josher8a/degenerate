@@ -20,6 +20,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('anchor') &&
       json.containsKey('seconds') && json['seconds'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (seconds < 1) errors.add('seconds: must be >= 1');
+if (seconds > 600) errors.add('seconds: must be <= 600');
+return errors; } 
 ExpiresAfterParam copyWith({BatchFileExpirationAfterAnchor? anchor, int? seconds, }) { return ExpiresAfterParam(
   anchor: anchor ?? this.anchor,
   seconds: seconds ?? this.seconds,

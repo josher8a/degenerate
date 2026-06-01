@@ -20,6 +20,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') &&
       json.containsKey('product') && json['product'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (product.length > 5000) errors.add('product: length must be <= 5000');
+return errors; } 
 BillingBillResourceInvoicingPricingPricingPriceDetails copyWith({BillingBillResourceInvoicingPricingPricingPriceDetailsPrice? price, String? product, }) { return BillingBillResourceInvoicingPricingPricingPriceDetails(
   price: price ?? this.price,
   product: product ?? this.product,

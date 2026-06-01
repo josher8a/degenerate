@@ -253,6 +253,34 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subscription_data') &&
       json.containsKey('total_details'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final currency$ = currency;
+if (currency$ != null) {
+  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final footer$ = footer;
+if (footer$ != null) {
+  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+}
+final header$ = header;
+if (header$ != null) {
+  if (header$.length > 5000) errors.add('header: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final number$ = number;
+if (number$ != null) {
+  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+}
+return errors; } 
 Quote copyWith({int? amountSubtotal, int? amountTotal, BillingPortalConfigurationApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, InvoiceCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, String? Function()? currency, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, String? Function()? description, List<InvoiceitemDiscounts>? discounts, int? expiresAt, String? Function()? footer, QuotesResourceFromQuote? Function()? fromQuote, String? Function()? header, String? id, InvoicePaymentInvoice? Function()? invoice, InvoiceSettingQuoteSetting? invoiceSettings, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, String? Function()? number, QuoteObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? Function()? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, QuoteSubscriptionSchedule? Function()? subscriptionSchedule, TestClock? Function()? testClock, QuotesResourceTotalDetails? totalDetails, QuotesResourceTransferData? Function()? transferData, }) { return Quote(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,

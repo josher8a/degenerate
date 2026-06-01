@@ -29,6 +29,17 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final document$ = document;
+if (document$ != null) {
+  if (document$.length > 5000) errors.add('document: length must be <= 5000');
+}
+final selfie$ = selfie;
+if (selfie$ != null) {
+  if (selfie$.length > 5000) errors.add('selfie: length must be <= 5000');
+}
+return errors; } 
 GelatoSelfieReport copyWith({String? Function()? document, GelatoSelfieReportError? Function()? error, String? Function()? selfie, GelatoDocumentReportStatus? status, }) { return GelatoSelfieReport(
   document: document != null ? document() : this.document,
   error: error != null ? error() : this.error,

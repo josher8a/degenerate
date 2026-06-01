@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'payment_reference': paymentReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_reference') && json['payment_reference'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (paymentReference.length > 5000) errors.add('paymentReference: length must be <= 5000');
+return errors; } 
 PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom copyWith({String? paymentReference}) { return PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom(
   paymentReference: paymentReference ?? this.paymentReference,
 ); } 

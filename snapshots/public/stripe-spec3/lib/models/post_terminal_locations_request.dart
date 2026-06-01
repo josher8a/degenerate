@@ -58,6 +58,25 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'configuration_overrides', 'display_name', 'display_name_kana', 'display_name_kanji', 'expand', 'metadata', 'phone'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final configurationOverrides$ = configurationOverrides;
+if (configurationOverrides$ != null) {
+  if (configurationOverrides$.length > 500) errors.add('configurationOverrides: length must be <= 500');
+}
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 1000) errors.add('displayName: length must be <= 1000');
+}
+final displayNameKana$ = displayNameKana;
+if (displayNameKana$ != null) {
+  if (displayNameKana$.length > 1000) errors.add('displayNameKana: length must be <= 1000');
+}
+final displayNameKanji$ = displayNameKanji;
+if (displayNameKanji$ != null) {
+  if (displayNameKanji$.length > 1000) errors.add('displayNameKanji: length must be <= 1000');
+}
+return errors; } 
 PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, String? Function()? configurationOverrides, String? Function()? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? phone, }) { return PostTerminalLocationsRequest(
   address: address != null ? address() : this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,

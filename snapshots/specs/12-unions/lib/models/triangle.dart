@@ -26,6 +26,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('base') && json['base'] is num &&
       json.containsKey('height') && json['height'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final angles$ = angles;
+if (angles$ != null) {
+  if (angles$.length < 3) errors.add('angles: must have >= 3 items');
+  if (angles$.length > 3) errors.add('angles: must have <= 3 items');
+}
+return errors; } 
 Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) { return Triangle(
   type: type ?? this.type,
   base: base ?? this.base,

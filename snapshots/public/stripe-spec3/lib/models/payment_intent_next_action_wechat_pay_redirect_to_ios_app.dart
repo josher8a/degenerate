@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'native_url': nativeUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('native_url') && json['native_url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (nativeUrl.length > 5000) errors.add('nativeUrl: length must be <= 5000');
+return errors; } 
 PaymentIntentNextActionWechatPayRedirectToIosApp copyWith({String? nativeUrl}) { return PaymentIntentNextActionWechatPayRedirectToIosApp(
   nativeUrl: nativeUrl ?? this.nativeUrl,
 ); } 

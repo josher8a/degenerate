@@ -122,6 +122,51 @@ Map<String, dynamic> toJson() { return {
   'BundleSid': ?bundleSid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final smsApplicationSid$ = smsApplicationSid;
+if (smsApplicationSid$ != null) {
+  if (smsApplicationSid$.length < 34) errors.add('smsApplicationSid: length must be >= 34');
+  if (smsApplicationSid$.length > 34) errors.add('smsApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(smsApplicationSid$)) errors.add(r'smsApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final voiceApplicationSid$ = voiceApplicationSid;
+if (voiceApplicationSid$ != null) {
+  if (voiceApplicationSid$.length < 34) errors.add('voiceApplicationSid: length must be >= 34');
+  if (voiceApplicationSid$.length > 34) errors.add('voiceApplicationSid: length must be <= 34');
+  if (!RegExp(r'^AP[0-9a-fA-F]{32}$').hasMatch(voiceApplicationSid$)) errors.add(r'voiceApplicationSid: must match pattern ^AP[0-9a-fA-F]{32}$');
+}
+final identitySid$ = identitySid;
+if (identitySid$ != null) {
+  if (identitySid$.length < 34) errors.add('identitySid: length must be >= 34');
+  if (identitySid$.length > 34) errors.add('identitySid: length must be <= 34');
+  if (!RegExp(r'^RI[0-9a-fA-F]{32}$').hasMatch(identitySid$)) errors.add(r'identitySid: must match pattern ^RI[0-9a-fA-F]{32}$');
+}
+final addressSid$ = addressSid;
+if (addressSid$ != null) {
+  if (addressSid$.length < 34) errors.add('addressSid: length must be >= 34');
+  if (addressSid$.length > 34) errors.add('addressSid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(addressSid$)) errors.add(r'addressSid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+final emergencyAddressSid$ = emergencyAddressSid;
+if (emergencyAddressSid$ != null) {
+  if (emergencyAddressSid$.length < 34) errors.add('emergencyAddressSid: length must be >= 34');
+  if (emergencyAddressSid$.length > 34) errors.add('emergencyAddressSid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(emergencyAddressSid$)) errors.add(r'emergencyAddressSid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+final trunkSid$ = trunkSid;
+if (trunkSid$ != null) {
+  if (trunkSid$.length < 34) errors.add('trunkSid: length must be >= 34');
+  if (trunkSid$.length > 34) errors.add('trunkSid: length must be <= 34');
+  if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$');
+}
+final bundleSid$ = bundleSid;
+if (bundleSid$ != null) {
+  if (bundleSid$.length < 34) errors.add('bundleSid: length must be >= 34');
+  if (bundleSid$.length > 34) errors.add('bundleSid: length must be <= 34');
+  if (!RegExp(r'^BU[0-9a-fA-F]{32}$').hasMatch(bundleSid$)) errors.add(r'bundleSid: must match pattern ^BU[0-9a-fA-F]{32}$');
+}
+return errors; } 
 CreateIncomingPhoneNumberLocalRequest copyWith({String? phoneNumber, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? smsApplicationSid, CreateApplicationRequestSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, CreateApplicationRequestSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? voiceApplicationSid, bool? Function()? voiceCallerIdLookup, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, Uri? Function()? voiceUrl, String? Function()? identitySid, String? Function()? addressSid, IncomingPhoneNumberLocalEnumEmergencyStatus? Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? trunkSid, IncomingPhoneNumberLocalEnumVoiceReceiveMode? Function()? voiceReceiveMode, String? Function()? bundleSid, }) { return CreateIncomingPhoneNumberLocalRequest(
   phoneNumber: phoneNumber ?? this.phoneNumber,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

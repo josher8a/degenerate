@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'items'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final items$ = items;
+if (items$ != null) {
+  if (items$.length > 20) errors.add('items: must have <= 20 items');
+}
+return errors; } 
 CreateConversationBody copyWith({Map<String, String>? Function()? metadata, List<InputItem>? Function()? items, }) { return CreateConversationBody(
   metadata: metadata != null ? metadata() : this.metadata,
   items: items != null ? items() : this.items,

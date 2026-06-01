@@ -34,6 +34,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('product') && json['product'] is String &&
       json.containsKey('recurring'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (product.length > 5000) errors.add('product: length must be <= 5000');
+return errors; } 
 PostSubscriptionItemsItemRequestPriceData copyWith({String? currency, String? product, DefaultPriceDataRecurring? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostSubscriptionItemsItemRequestPriceData(
   currency: currency ?? this.currency,
   product: product ?? this.product,

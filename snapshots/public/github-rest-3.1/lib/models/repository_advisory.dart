@@ -195,6 +195,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('collaborating_users') &&
       json.containsKey('collaborating_teams') &&
       json.containsKey('private_fork'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (summary.length > 1024) errors.add('summary: length must be <= 1024');
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 65535) errors.add('description: length must be <= 65535');
+}
+return errors; } 
 RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url, Uri? htmlUrl, String? summary, String? Function()? description, PrivateVulnerabilityReportCreateSeverity? Function()? severity, SimpleUser? Function()? author, SimpleUser? Function()? publisher, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, RepositoryAdvisoryState? state, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? publishedAt, DateTime? Function()? closedAt, DateTime? Function()? withdrawnAt, Submission? Function()? submission, List<RepositoryAdvisoryVulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, List<Cwes>? Function()? cwes, List<String>? Function()? cweIds, List<RepositoryAdvisoryCredits>? Function()? credits, List<RepositoryAdvisoryCredit>? Function()? creditsDetailed, List<SimpleUser>? Function()? collaboratingUsers, List<Team>? Function()? collaboratingTeams, SimpleRepository? Function()? privateFork, }) { return RepositoryAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,

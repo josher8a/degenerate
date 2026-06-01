@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'keyword_match_mode': keywordMatchMode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final boostBy$ = boostBy;
+if (boostBy$ != null) {
+  if (boostBy$.length > 3) errors.add('boostBy: must have <= 3 items');
+}
+return errors; } 
 RetrievalOptions copyWith({List<BoostBy>? Function()? boostBy, KeywordMatchMode Function()? keywordMatchMode, }) { return RetrievalOptions(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,

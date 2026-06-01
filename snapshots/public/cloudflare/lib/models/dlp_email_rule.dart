@@ -52,6 +52,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('priority') && json['priority'] is num &&
       json.containsKey('rule_id') && json['rule_id'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (priority < 0) errors.add('priority: must be >= 0');
+return errors; } 
 DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? conditions, DateTime? createdAt, String? Function()? description, bool? enabled, String? name, int? priority, String? ruleId, DateTime? updatedAt, }) { return DlpEmailRule(
   action: action ?? this.action,
   conditions: conditions ?? this.conditions,

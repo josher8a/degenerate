@@ -179,6 +179,77 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final addressCity$ = addressCity;
+if (addressCity$ != null) {
+  if (addressCity$.length > 5000) errors.add('addressCity: length must be <= 5000');
+}
+final addressCountry$ = addressCountry;
+if (addressCountry$ != null) {
+  if (addressCountry$.length > 5000) errors.add('addressCountry: length must be <= 5000');
+}
+final addressLine1$ = addressLine1;
+if (addressLine1$ != null) {
+  if (addressLine1$.length > 5000) errors.add('addressLine1: length must be <= 5000');
+}
+final addressLine1Check$ = addressLine1Check;
+if (addressLine1Check$ != null) {
+  if (addressLine1Check$.length > 5000) errors.add('addressLine1Check: length must be <= 5000');
+}
+final addressLine2$ = addressLine2;
+if (addressLine2$ != null) {
+  if (addressLine2$.length > 5000) errors.add('addressLine2: length must be <= 5000');
+}
+final addressState$ = addressState;
+if (addressState$ != null) {
+  if (addressState$.length > 5000) errors.add('addressState: length must be <= 5000');
+}
+final addressZip$ = addressZip;
+if (addressZip$ != null) {
+  if (addressZip$.length > 5000) errors.add('addressZip: length must be <= 5000');
+}
+final addressZipCheck$ = addressZipCheck;
+if (addressZipCheck$ != null) {
+  if (addressZipCheck$.length > 5000) errors.add('addressZipCheck: length must be <= 5000');
+}
+if (brand.length > 5000) errors.add('brand: length must be <= 5000');
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final cvcCheck$ = cvcCheck;
+if (cvcCheck$ != null) {
+  if (cvcCheck$.length > 5000) errors.add('cvcCheck: length must be <= 5000');
+}
+final dynamicLast4$ = dynamicLast4;
+if (dynamicLast4$ != null) {
+  if (dynamicLast4$.length > 5000) errors.add('dynamicLast4: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+if (funding.length > 5000) errors.add('funding: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final iin$ = iin;
+if (iin$ != null) {
+  if (iin$.length > 5000) errors.add('iin: length must be <= 5000');
+}
+if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final status$ = status;
+if (status$ != null) {
+  if (status$.length > 5000) errors.add('status: length must be <= 5000');
+}
+final tokenizationMethod$ = tokenizationMethod;
+if (tokenizationMethod$ != null) {
+  if (tokenizationMethod$.length > 5000) errors.add('tokenizationMethod: length must be <= 5000');
+}
+return errors; } 
 Card copyWith({ApplicationFeeAccount? Function()? account, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine1Check, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? addressZipCheck, CardAllowRedisplay? Function()? allowRedisplay, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? brand, String? Function()? country, String? Function()? currency, BankAccountCustomer? Function()? customer, String? Function()? cvcCheck, bool? Function()? defaultForCurrency, String? Function()? dynamicLast4, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, String? id, String? Function()? iin, String? last4, Map<String, String>? Function()? metadata, String? Function()? name, TokenCardNetworks? Function()? networks, CardObject? object, RegulatedStatus? Function()? regulatedStatus, String? Function()? status, String? Function()? tokenizationMethod, }) { return Card(
   account: account != null ? account() : this.account,
   addressCity: addressCity != null ? addressCity() : this.addressCity,

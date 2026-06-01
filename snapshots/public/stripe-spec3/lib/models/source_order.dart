@@ -34,6 +34,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+return errors; } 
 SourceOrder copyWith({int? amount, String? currency, String? Function()? email, List<SourceOrderItem>? Function()? items, Shipping? Function()? shipping, }) { return SourceOrder(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

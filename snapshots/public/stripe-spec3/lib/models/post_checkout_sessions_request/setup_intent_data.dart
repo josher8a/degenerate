@@ -21,6 +21,13 @@ Map<String, dynamic> toJson() { return {
   'on_behalf_of': ?onBehalfOf,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'metadata', 'on_behalf_of'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+}
+return errors; } 
 SetupIntentData copyWith({String? Function()? description, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, }) { return SetupIntentData(
   description: description != null ? description() : this.description,
   metadata: metadata != null ? metadata() : this.metadata,

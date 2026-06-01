@@ -20,6 +20,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score') && json['score'] is num &&
       json.containsKey('vector_string') && json['vector_string'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (score < 0) errors.add('score: must be >= 0');
+if (score > 10) errors.add('score: must be <= 10');
+return errors; } 
 DependabotAlertSecurityAdvisoryCvss copyWith({double? score, String? Function()? vectorString, }) { return DependabotAlertSecurityAdvisoryCvss(
   score: score ?? this.score,
   vectorString: vectorString != null ? vectorString() : this.vectorString,

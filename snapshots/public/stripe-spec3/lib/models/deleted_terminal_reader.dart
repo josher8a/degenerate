@@ -38,6 +38,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (serialNumber.length > 5000) errors.add('serialNumber: length must be <= 5000');
+return errors; } 
 DeletedTerminalReader copyWith({bool? deleted, DeviceType? deviceType, String? id, DeletedTerminalReaderObject? object, String? serialNumber, }) { return DeletedTerminalReader(
   deleted: deleted ?? this.deleted,
   deviceType: deviceType ?? this.deviceType,

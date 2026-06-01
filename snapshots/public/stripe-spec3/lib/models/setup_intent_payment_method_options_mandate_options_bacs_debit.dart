@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'reference_prefix': ?referencePrefix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final referencePrefix$ = referencePrefix;
+if (referencePrefix$ != null) {
+  if (referencePrefix$.length > 5000) errors.add('referencePrefix: length must be <= 5000');
+}
+return errors; } 
 SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Function()? referencePrefix}) { return SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 

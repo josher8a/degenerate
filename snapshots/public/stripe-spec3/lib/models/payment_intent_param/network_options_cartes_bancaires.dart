@@ -56,6 +56,13 @@ Map<String, dynamic> toJson() { return {
   'cb_score': ?cbScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_avalgo'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cbExemption$ = cbExemption;
+if (cbExemption$ != null) {
+  if (cbExemption$.length > 4) errors.add('cbExemption: length must be <= 4');
+}
+return errors; } 
 NetworkOptionsCartesBancaires copyWith({CbAvalgo? cbAvalgo, String? Function()? cbExemption, int? Function()? cbScore, }) { return NetworkOptionsCartesBancaires(
   cbAvalgo: cbAvalgo ?? this.cbAvalgo,
   cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,

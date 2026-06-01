@@ -57,6 +57,21 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+final referenceStatus$ = referenceStatus;
+if (referenceStatus$ != null) {
+  if (referenceStatus$.length > 5000) errors.add('referenceStatus: length must be <= 5000');
+}
+final referenceType$ = referenceType;
+if (referenceType$ != null) {
+  if (referenceType$.length > 5000) errors.add('referenceType: length must be <= 5000');
+}
+return errors; } 
 RefundDestinationDetailsCard copyWith({String? Function()? reference, String? Function()? referenceStatus, String? Function()? referenceType, RefundDestinationDetailsCardType? type, }) { return RefundDestinationDetailsCard(
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,

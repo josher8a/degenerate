@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'sender_name': ?senderName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bic', 'iban_last4', 'sender_name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bic$ = bic;
+if (bic$ != null) {
+  if (bic$.length > 5000) errors.add('bic: length must be <= 5000');
+}
+final ibanLast4$ = ibanLast4;
+if (ibanLast4$ != null) {
+  if (ibanLast4$.length > 5000) errors.add('ibanLast4: length must be <= 5000');
+}
+final senderName$ = senderName;
+if (senderName$ != null) {
+  if (senderName$.length > 5000) errors.add('senderName: length must be <= 5000');
+}
+return errors; } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer copyWith({String? Function()? bic, String? Function()? ibanLast4, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer(
   bic: bic != null ? bic() : this.bic,
   ibanLast4: ibanLast4 != null ? ibanLast4() : this.ibanLast4,

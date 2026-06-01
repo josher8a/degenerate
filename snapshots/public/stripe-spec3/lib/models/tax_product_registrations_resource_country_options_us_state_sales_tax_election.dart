@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final jurisdiction$ = jurisdiction;
+if (jurisdiction$ != null) {
+  if (jurisdiction$.length > 5000) errors.add('jurisdiction: length must be <= 5000');
+}
+return errors; } 
 TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection copyWith({String? Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,

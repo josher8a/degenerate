@@ -88,6 +88,17 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_type') &&
       json.containsKey('payment_schedule'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final endDate$ = endDate;
+if (endDate$ != null) {
+  if (endDate$.length > 5000) errors.add('endDate: length must be <= 5000');
+}
+final startDate$ = startDate;
+if (startDate$ != null) {
+  if (startDate$.length > 5000) errors.add('startDate: length must be <= 5000');
+}
+return errors; } 
 MandatePayto copyWith({int? Function()? amount, MandatePaytoAmountType? amountType, String? Function()? endDate, MandatePaytoPaymentSchedule? paymentSchedule, int? Function()? paymentsPerPeriod, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, String? Function()? startDate, }) { return MandatePayto(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType ?? this.amountType,

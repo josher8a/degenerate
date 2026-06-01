@@ -63,6 +63,13 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'logpush', 'migrations', 'observability', 'placement', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final tags$ = tags;
+if (tags$ != null) {
+  if (tags$.length > 10) errors.add('tags: must have <= 10 items');
+}
+return errors; } 
 WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, Migrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersScriptAndVersionSettingsItem(
   annotations: annotations != null ? annotations() : this.annotations,
   bindings: bindings != null ? bindings() : this.bindings,

@@ -88,6 +88,21 @@ Map<String, dynamic> toJson() { return {
   'street_secondary': ?streetSecondary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'city', 'customer_name', 'date_created', 'date_updated', 'friendly_name', 'iso_country', 'postal_code', 'region', 'sid', 'street', 'uri', 'emergency_enabled', 'validated', 'verified', 'street_secondary'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^AD[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^AD[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountAddress copyWith({String? Function()? accountSid, String? Function()? city, String? Function()? customerName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? isoCountry, String? Function()? postalCode, String? Function()? region, String? Function()? sid, String? Function()? street, String? Function()? uri, bool? Function()? emergencyEnabled, bool? Function()? validated, bool? Function()? verified, String? Function()? streetSecondary, }) { return AccountAddress(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   city: city != null ? city() : this.city,

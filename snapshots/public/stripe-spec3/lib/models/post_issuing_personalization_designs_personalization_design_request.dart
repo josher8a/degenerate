@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/carrier_text_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_configurations_configuration_request/post_billing_portal_configurations_configuration_request_name.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/lookup_key.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/post_issuing_personalization_designs_personalization_design_request_card_logo.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/post_issuing_personalization_designs_personalization_design_request_carrier_text.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/preferences.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequest {const PostIssuingPersonalizationDesignsPersonalizationDesignRequest({this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.physicalBundle, this.preferences, this.transferLookupKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/carrier_text_param.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/lookup_key.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/post_issuing_personalization_designs_personalization_design_request_card_logo.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/post_issuing_personalization_designs_personalization_design_request_carrier_text.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/post_issuing_personalization_designs_personalization_design_request_name.dart';import 'package:pub_stripe_spec3/models/post_issuing_personalization_designs_personalization_design_request/preferences.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequest {const PostIssuingPersonalizationDesignsPersonalizationDesignRequest({this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.physicalBundle, this.preferences, this.transferLookupKey, });
 
 factory PostIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsPersonalizationDesignRequest(
   cardLogo: json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => GetPaymentMethodConfigurationsApplicationVariant2.fromJson(v as String),) : null,
@@ -30,7 +30,7 @@ final LookupKey? lookupKey;
 final Map<String,String>? metadata;
 
 /// Friendly display name. Providing an empty string will set the field to null.
-final PostBillingPortalConfigurationsConfigurationRequestName? name;
+final PostIssuingPersonalizationDesignsPersonalizationDesignRequestName? name;
 
 /// The physical bundle object belonging to this personalization design.
 final String? physicalBundle;
@@ -53,7 +53,14 @@ Map<String, dynamic> toJson() { return {
   'transfer_lookup_key': ?transferLookupKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_logo', 'carrier_text', 'expand', 'lookup_key', 'metadata', 'name', 'physical_bundle', 'preferences', 'transfer_lookup_key'}.contains(key)); } 
-PostIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith({PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo? Function()? cardLogo, PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, LookupKey? Function()? lookupKey, Map<String, String>? Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName? Function()? name, String? Function()? physicalBundle, Preferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsPersonalizationDesignRequest(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final physicalBundle$ = physicalBundle;
+if (physicalBundle$ != null) {
+  if (physicalBundle$.length > 5000) errors.add('physicalBundle: length must be <= 5000');
+}
+return errors; } 
+PostIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith({PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo? Function()? cardLogo, PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, LookupKey? Function()? lookupKey, Map<String, String>? Function()? metadata, PostIssuingPersonalizationDesignsPersonalizationDesignRequestName? Function()? name, String? Function()? physicalBundle, Preferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsPersonalizationDesignRequest(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   expand: expand != null ? expand() : this.expand,

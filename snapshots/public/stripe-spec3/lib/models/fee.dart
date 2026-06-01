@@ -36,6 +36,18 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final application$ = application;
+if (application$ != null) {
+  if (application$.length > 5000) errors.add('application: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (type.length > 5000) errors.add('type: length must be <= 5000');
+return errors; } 
 Fee copyWith({int? amount, String? Function()? application, String? currency, String? Function()? description, String? type, }) { return Fee(
   amount: amount ?? this.amount,
   application: application != null ? application() : this.application,

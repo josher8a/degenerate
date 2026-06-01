@@ -102,6 +102,10 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (type.length > 5000) errors.add('type: length must be <= 5000');
+return errors; } 
 SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssDebit? Function()? acssDebit, SetupAttemptPaymentMethodDetailsAmazonPay? Function()? amazonPay, SetupAttemptPaymentMethodDetailsAuBecsDebit? Function()? auBecsDebit, SetupAttemptPaymentMethodDetailsBacsDebit? Function()? bacsDebit, SetupAttemptPaymentMethodDetailsBancontact? Function()? bancontact, SetupAttemptPaymentMethodDetailsBoleto? Function()? boleto, SetupAttemptPaymentMethodDetailsCard? Function()? card, SetupAttemptPaymentMethodDetailsCardPresent? Function()? cardPresent, SetupAttemptPaymentMethodDetailsCashapp? Function()? cashapp, SetupAttemptPaymentMethodDetailsIdeal? Function()? ideal, SetupAttemptPaymentMethodDetailsKakaoPay? Function()? kakaoPay, SetupAttemptPaymentMethodDetailsKlarna? Function()? klarna, SetupAttemptPaymentMethodDetailsKrCard? Function()? krCard, SetupAttemptPaymentMethodDetailsLink? Function()? link, SetupAttemptPaymentMethodDetailsNaverPay? Function()? naverPay, SetupAttemptPaymentMethodDetailsNzBankAccount? Function()? nzBankAccount, SetupAttemptPaymentMethodDetailsPaypal? Function()? paypal, SetupAttemptPaymentMethodDetailsPayto? Function()? payto, SetupAttemptPaymentMethodDetailsRevolutPay? Function()? revolutPay, SetupAttemptPaymentMethodDetailsSepaDebit? Function()? sepaDebit, SetupAttemptPaymentMethodDetailsSofort? Function()? sofort, String? type, SetupAttemptPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return SetupAttemptPaymentMethodDetails(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,

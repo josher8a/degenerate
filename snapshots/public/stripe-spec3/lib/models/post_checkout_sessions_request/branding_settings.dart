@@ -166,6 +166,13 @@ Map<String, dynamic> toJson() { return {
   if (logo != null) 'logo': logo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'border_style', 'button_color', 'display_name', 'font_family', 'icon', 'logo'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+}
+return errors; } 
 BrandingSettings copyWith({BackgroundColor? Function()? backgroundColor, BrandingSettingsBorderStyle? Function()? borderStyle, ButtonColor? Function()? buttonColor, String? Function()? displayName, FontFamily? Function()? fontFamily, BrandingSettingsIcon? Function()? icon, BrandingSettingsLogo? Function()? logo, }) { return BrandingSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   borderStyle: borderStyle != null ? borderStyle() : this.borderStyle,

@@ -26,6 +26,13 @@ Map<String, dynamic> toJson() { return {
   'regex': regex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex') && json['regex'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxMatchBytes$ = maxMatchBytes;
+if (maxMatchBytes$ != null) {
+  if (maxMatchBytes$ < 0) errors.add('maxMatchBytes: must be >= 0');
+}
+return errors; } 
 DlpRegexValidationQuery copyWith({int? Function()? maxMatchBytes, String? regex, }) { return DlpRegexValidationQuery(
   maxMatchBytes: maxMatchBytes != null ? maxMatchBytes() : this.maxMatchBytes,
   regex: regex ?? this.regex,

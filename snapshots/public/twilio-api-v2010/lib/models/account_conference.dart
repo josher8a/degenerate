@@ -100,6 +100,27 @@ Map<String, dynamic> toJson() { return {
   'call_sid_ending_conference': ?callSidEndingConference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'api_version', 'friendly_name', 'region', 'sid', 'status', 'uri', 'subresource_uris', 'reason_conference_ended', 'call_sid_ending_conference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^CF[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^CF[0-9a-fA-F]{32}$');
+}
+final callSidEndingConference$ = callSidEndingConference;
+if (callSidEndingConference$ != null) {
+  if (callSidEndingConference$.length < 34) errors.add('callSidEndingConference: length must be >= 34');
+  if (callSidEndingConference$.length > 34) errors.add('callSidEndingConference: length must be <= 34');
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidEndingConference$)) errors.add(r'callSidEndingConference: must match pattern ^CA[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus? Function()? status, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded? Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

@@ -36,6 +36,14 @@ final class StringModel {
     return json.containsKey('value') && json['value'] is String;
   }
 
+  /// Constraint violations for this value (empty when valid).
+  List<String> validate() {
+    final errors = <String>[];
+    if (value.length < 0) errors.add('value: length must be >= 0');
+    if (value.length > 0) errors.add('value: length must be <= 0');
+    return errors;
+  }
+
   StringModel copyWith({
     int? Function()? length,
     String? value,

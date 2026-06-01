@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/company_verification.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_card_issuing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_dob.dart';/// Additional information about an `individual` cardholder.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_card_issuing.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_dob.dart';import 'package:pub_stripe_spec3/models/post_issuing_cardholders_cardholder_request/individual_verification.dart';/// Additional information about an `individual` cardholder.
 @immutable final class PostIssuingCardholdersCardholderRequestIndividual {const PostIssuingCardholdersCardholderRequestIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory PostIssuingCardholdersCardholderRequestIndividual.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividual(
@@ -8,7 +8,7 @@ factory PostIssuingCardholdersCardholderRequestIndividual.fromJson(Map<String, d
   dob: json['dob'] != null ? IndividualDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   lastName: json['last_name'] as String?,
-  verification: json['verification'] != null ? CompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+  verification: json['verification'] != null ? IndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 final IndividualCardIssuing? cardIssuing;
@@ -19,7 +19,7 @@ final String? firstName;
 
 final String? lastName;
 
-final CompanyVerification? verification;
+final IndividualVerification? verification;
 
 Map<String, dynamic> toJson() { return {
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'dob', 'first_name', 'last_name', 'verification'}.contains(key)); } 
-PostIssuingCardholdersCardholderRequestIndividual copyWith({IndividualCardIssuing? Function()? cardIssuing, IndividualDob? Function()? dob, String? Function()? firstName, String? Function()? lastName, CompanyVerification? Function()? verification, }) { return PostIssuingCardholdersCardholderRequestIndividual(
+PostIssuingCardholdersCardholderRequestIndividual copyWith({IndividualCardIssuing? Function()? cardIssuing, IndividualDob? Function()? dob, String? Function()? firstName, String? Function()? lastName, IndividualVerification? Function()? verification, }) { return PostIssuingCardholdersCardholderRequestIndividual(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   dob: dob != null ? dob() : this.dob,
   firstName: firstName != null ? firstName() : this.firstName,

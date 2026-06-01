@@ -33,6 +33,19 @@ Map<String, dynamic> toJson() { return {
   if (sensitivityLevel != null) 'sensitivity_level': sensitivityLevel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'categories', 'enabled', 'rules', 'sensitivity_level'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final categories$ = categories;
+if (categories$ != null) {
+  if (categories$.length < 1) errors.add('categories: must have >= 1 items');
+  if (categories$.toSet().length != categories$.length) errors.add('categories: items must be unique');
+}
+final rules$ = rules;
+if (rules$ != null) {
+  if (rules$.length < 1) errors.add('rules: must have >= 1 items');
+  if (rules$.toSet().length != rules$.length) errors.add('rules: items must be unique');
+}
+return errors; } 
 RulesetsExecuteOverrides copyWith({RulesetsRuleAction? Function()? action, List<RulesetsExecuteCategoryOverrides2>? Function()? categories, RulesetsRuleEnabled? Function()? enabled, List<RulesetsExecuteRuleOverrides2>? Function()? rules, RulesetsExecuteSensitivityLevel? Function()? sensitivityLevel, }) { return RulesetsExecuteOverrides(
   action: action != null ? action() : this.action,
   categories: categories != null ? categories() : this.categories,

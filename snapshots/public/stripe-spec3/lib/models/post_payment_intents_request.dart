@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent/confirmation_method.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/post_charges_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/off_session.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/automatic_payment_methods.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/secret_key_param.dart';@immutable final class PostPaymentIntentsRequest {const PostPaymentIntentsRequest({required this.amount, required this.currency, this.errorOnRequiresAction, this.automaticPaymentMethods, this.captureMethod, this.confirm, this.confirmationMethod, this.confirmationToken, this.amountDetails, this.customer, this.customerAccount, this.description, this.applicationFeeAmount, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.metadata, this.offSession, this.onBehalfOf, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.useStripeSdk, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, this.paymentMethodData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent/confirmation_method.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_capture_method.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_charges_charge_request/post_charges_charge_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/hooks.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_capture_request/post_payment_intents_intent_capture_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/off_session.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/automatic_payment_methods.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/secret_key_param.dart';@immutable final class PostPaymentIntentsRequest {const PostPaymentIntentsRequest({required this.amount, required this.currency, this.errorOnRequiresAction, this.automaticPaymentMethods, this.captureMethod, this.confirm, this.confirmationMethod, this.confirmationToken, this.amountDetails, this.customer, this.customerAccount, this.description, this.applicationFeeAmount, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.metadata, this.offSession, this.onBehalfOf, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.useStripeSdk, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, this.paymentMethodData, });
 
 factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequest(
   amount: (json['amount'] as num).toInt(),
@@ -37,7 +37,7 @@ factory PostPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return P
   shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
-  transferData: json['transfer_data'] != null ? PostChargesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PostInvoicesRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
 ); }
@@ -169,7 +169,7 @@ final String? statementDescriptorSuffix;
 
 /// The parameters that you can use to automatically create a Transfer.
 /// Learn more about the [use case for connected accounts](https://docs.stripe.com/payments/connected-accounts).
-final PostChargesRequestTransferData? transferData;
+final PostInvoicesRequestTransferData? transferData;
 
 /// A string that identifies the resulting payment as part of a group. Learn more about the [use case for connected accounts](https://docs.stripe.com/connect/separate-charges-and-transfers).
 final String? transferGroup;
@@ -218,7 +218,46 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, AutomaticPaymentMethods? Function()? automaticPaymentMethods, PaymentIntentCaptureMethod? Function()? captureMethod, bool? Function()? confirm, ConfirmationMethod? Function()? confirmationMethod, String? Function()? confirmationToken, String? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? errorOnRequiresAction, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, Hooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, OffSession? Function()? offSession, String? Function()? onBehalfOf, PaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, bool? Function()? useStripeSdk, }) { return PostPaymentIntentsRequest(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final confirmationToken$ = confirmationToken;
+if (confirmationToken$ != null) {
+  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+}
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+}
+final mandate$ = mandate;
+if (mandate$ != null) {
+  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+}
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+final paymentMethodConfiguration$ = paymentMethodConfiguration;
+if (paymentMethodConfiguration$ != null) {
+  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+}
+return errors; } 
+PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, AutomaticPaymentMethods? Function()? automaticPaymentMethods, PaymentIntentCaptureMethod? Function()? captureMethod, bool? Function()? confirm, ConfirmationMethod? Function()? confirmationMethod, String? Function()? confirmationToken, String? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? errorOnRequiresAction, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, Hooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, OffSession? Function()? offSession, String? Function()? onBehalfOf, PaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostInvoicesRequestTransferData? Function()? transferData, String? Function()? transferGroup, bool? Function()? useStripeSdk, }) { return PostPaymentIntentsRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

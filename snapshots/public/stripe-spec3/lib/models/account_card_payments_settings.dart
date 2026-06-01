@@ -28,6 +28,21 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_prefix_kanji': ?statementDescriptorPrefixKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'decline_on', 'statement_descriptor_prefix', 'statement_descriptor_prefix_kana', 'statement_descriptor_prefix_kanji'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptorPrefix$ = statementDescriptorPrefix;
+if (statementDescriptorPrefix$ != null) {
+  if (statementDescriptorPrefix$.length > 5000) errors.add('statementDescriptorPrefix: length must be <= 5000');
+}
+final statementDescriptorPrefixKana$ = statementDescriptorPrefixKana;
+if (statementDescriptorPrefixKana$ != null) {
+  if (statementDescriptorPrefixKana$.length > 5000) errors.add('statementDescriptorPrefixKana: length must be <= 5000');
+}
+final statementDescriptorPrefixKanji$ = statementDescriptorPrefixKanji;
+if (statementDescriptorPrefixKanji$ != null) {
+  if (statementDescriptorPrefixKanji$.length > 5000) errors.add('statementDescriptorPrefixKanji: length must be <= 5000');
+}
+return errors; } 
 AccountCardPaymentsSettings copyWith({AccountDeclineChargeOn? Function()? declineOn, String? Function()? statementDescriptorPrefix, String? Function()? statementDescriptorPrefixKana, String? Function()? statementDescriptorPrefixKanji, }) { return AccountCardPaymentsSettings(
   declineOn: declineOn != null ? declineOn() : this.declineOn,
   statementDescriptorPrefix: statementDescriptorPrefix != null ? statementDescriptorPrefix() : this.statementDescriptorPrefix,

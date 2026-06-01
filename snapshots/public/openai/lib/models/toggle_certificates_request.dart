@@ -12,6 +12,11 @@ Map<String, dynamic> toJson() { return {
   'certificate_ids': certificateIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_ids'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (certificateIds.length < 1) errors.add('certificateIds: must have >= 1 items');
+if (certificateIds.length > 10) errors.add('certificateIds: must have <= 10 items');
+return errors; } 
 ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return ToggleCertificatesRequest(
   certificateIds: certificateIds ?? this.certificateIds,
 ); } 

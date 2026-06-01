@@ -53,6 +53,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('start_date') && json['start_date'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 200) errors.add('description: length must be <= 200');
+}
+if (reference.length > 80) errors.add('reference: length must be <= 80');
+return errors; } 
 CardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<SupportedTypes>? Function()? supportedTypes, }) { return CardMandateOptions(
   amount: amount ?? this.amount,
   amountType: amountType ?? this.amountType,

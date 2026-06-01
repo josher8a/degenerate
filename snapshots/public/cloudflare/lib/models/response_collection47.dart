@@ -27,6 +27,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+if (errors.toSet().length != errors.length) errors$.add('errors: items must be unique');
+if (messages.toSet().length != messages.length) errors$.add('messages: items must be unique');
+return errors$; } 
 ResponseCollection47 copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, WorkersKvResultInfo? Function()? resultInfo, }) { return ResponseCollection47(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,

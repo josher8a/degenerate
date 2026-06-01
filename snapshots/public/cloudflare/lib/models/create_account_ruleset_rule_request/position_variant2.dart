@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'after': ?after,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final after$ = after;
+if (after$ != null) {
+  if (!RegExp(r'^[0-9a-f]{32}$').hasMatch(after$)) errors.add(r'after: must match pattern ^[0-9a-f]{32}$');
+}
+return errors; } 
 PositionVariant2 copyWith({String? Function()? after}) { return PositionVariant2(
   after: after != null ? after() : this.after,
 ); } 

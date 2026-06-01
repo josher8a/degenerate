@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/description.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request/enabled_events.dart';/// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_payment_attempt_informational_request/post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'package:pub_stripe_spec3/models/post_webhook_endpoints_request/enabled_events.dart';/// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
 @immutable final class PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion._(this.value);
 
 factory PostWebhookEndpointsRequestVersion.fromJson(String json) { return switch (json) {
@@ -401,7 +401,7 @@ final PostWebhookEndpointsRequestVersion? apiVersion;
 final bool? connect;
 
 /// An optional description of what the webhook is used for.
-final Description? description;
+final PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? description;
 
 /// The list of events to enable for this endpoint. You may specify `['*']` to enable all events, except those that require explicit selection.
 final List<EnabledEvents> enabledEvents;
@@ -426,7 +426,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_events') &&
       json.containsKey('url') && json['url'] is String; } 
-PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Function()? apiVersion, bool? Function()? connect, Description? Function()? description, List<EnabledEvents>? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
+PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Function()? apiVersion, bool? Function()? connect, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription? Function()? description, List<EnabledEvents>? enabledEvents, List<String>? Function()? expand, Metadata? Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   connect: connect != null ? connect() : this.connect,
   description: description != null ? description() : this.description,

@@ -38,6 +38,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('label') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (key.length > 200) errors.add('key: length must be <= 200');
+return errors; } 
 PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({Dropdown? Function()? dropdown, String? key, CustomFieldsLabel? label, Numeric? Function()? numeric, bool? Function()? optional, CustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,

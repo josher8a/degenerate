@@ -63,6 +63,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('settings'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (customer.length > 5000) errors.add('customer: length must be <= 5000');
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 CashBalance copyWith({Map<String, int>? Function()? available, String? customer, String? Function()? customerAccount, bool? livemode, CashBalanceObject? object, CustomerBalanceCustomerBalanceSettings? settings, }) { return CashBalance(
   available: available != null ? available() : this.available,
   customer: customer ?? this.customer,

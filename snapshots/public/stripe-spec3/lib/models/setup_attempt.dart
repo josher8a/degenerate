@@ -125,6 +125,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (usage.length > 5000) errors.add('usage: length must be <= 5000');
+return errors; } 
 SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool? Function()? attachToSelf, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, List<FlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, CheckoutSessionSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,

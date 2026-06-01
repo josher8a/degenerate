@@ -57,6 +57,12 @@ Map<String, dynamic> toJson() { return {
   'time-limit-min': timeLimitMin,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interfaces', 'max-file-size-mb', 'packet-size-bytes', 'test-all-routes', 'time-limit-min'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (maxFileSizeMb < 1) errors.add('maxFileSizeMb: must be >= 1');
+if (packetSizeBytes < 1) errors.add('packetSizeBytes: must be >= 1');
+if (timeLimitMin < 1) errors.add('timeLimitMin: must be >= 1');
+return errors; } 
 CommandArgs copyWith({List<Interfaces>? Function()? interfaces, double Function()? maxFileSizeMb, double Function()? packetSizeBytes, bool Function()? testAllRoutes, double Function()? timeLimitMin, }) { return CommandArgs(
   interfaces: interfaces != null ? interfaces() : this.interfaces,
   maxFileSizeMb: maxFileSizeMb != null ? maxFileSizeMb() : this.maxFileSizeMb,

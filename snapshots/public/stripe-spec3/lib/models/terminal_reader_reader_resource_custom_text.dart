@@ -29,6 +29,25 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'skip_button', 'submit_button', 'title'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final skipButton$ = skipButton;
+if (skipButton$ != null) {
+  if (skipButton$.length > 5000) errors.add('skipButton: length must be <= 5000');
+}
+final submitButton$ = submitButton;
+if (submitButton$ != null) {
+  if (submitButton$.length > 5000) errors.add('submitButton: length must be <= 5000');
+}
+final title$ = title;
+if (title$ != null) {
+  if (title$.length > 5000) errors.add('title: length must be <= 5000');
+}
+return errors; } 
 TerminalReaderReaderResourceCustomText copyWith({String? Function()? description, String? Function()? skipButton, String? Function()? submitButton, String? Function()? title, }) { return TerminalReaderReaderResourceCustomText(
   description: description != null ? description() : this.description,
   skipButton: skipButton != null ? skipButton() : this.skipButton,

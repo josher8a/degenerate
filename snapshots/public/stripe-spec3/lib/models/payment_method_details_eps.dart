@@ -21,6 +21,13 @@ Map<String, dynamic> toJson() { return {
   'verified_name': ?verifiedName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'verified_name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final verifiedName$ = verifiedName;
+if (verifiedName$ != null) {
+  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsEps copyWith({PaymentMethodDetailsEpsBank? Function()? bank, String? Function()? verifiedName, }) { return PaymentMethodDetailsEps(
   bank: bank != null ? bank() : this.bank,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,

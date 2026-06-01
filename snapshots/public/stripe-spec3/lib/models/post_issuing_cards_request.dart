@@ -120,6 +120,21 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cardholder$ = cardholder;
+if (cardholder$ != null) {
+  if (cardholder$.length > 5000) errors.add('cardholder: length must be <= 5000');
+}
+final personalizationDesign$ = personalizationDesign;
+if (personalizationDesign$ != null) {
+  if (personalizationDesign$.length > 5000) errors.add('personalizationDesign: length must be <= 5000');
+}
+final replacementFor$ = replacementFor;
+if (replacementFor$ != null) {
+  if (replacementFor$.length > 5000) errors.add('replacementFor: length must be <= 5000');
+}
+return errors; } 
 PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? currency, int? Function()? expMonth, int? Function()? expYear, List<String>? Function()? expand, String? Function()? financialAccount, Map<String, String>? Function()? metadata, String? Function()? personalizationDesign, Pin? Function()? pin, String? Function()? replacementFor, PostIssuingCardsRequestReplacementReason? Function()? replacementReason, PostIssuingCardsRequestSecondLine? Function()? secondLine, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, BillingMeterStatus? Function()? status, IssuingCardType? type, }) { return PostIssuingCardsRequest(
   cardholder: cardholder != null ? cardholder() : this.cardholder,
   currency: currency ?? this.currency,

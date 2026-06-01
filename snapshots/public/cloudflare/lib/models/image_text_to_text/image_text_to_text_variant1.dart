@@ -64,6 +64,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('prompt') && json['prompt'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+return errors; } 
 ImageTextToTextVariant1 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant1(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,

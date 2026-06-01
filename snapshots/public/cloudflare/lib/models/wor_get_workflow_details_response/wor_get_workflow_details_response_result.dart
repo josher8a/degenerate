@@ -47,6 +47,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('class
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('script_name') && json['script_name'] is String &&
       json.containsKey('triggered_on') && json['triggered_on'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.length > 64) errors.add('name: length must be <= 64');
+if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
+return errors; } 
 WorGetWorkflowDetailsResponseResult copyWith({String? className, DateTime? createdOn, String? id, Instances? instances, DateTime? modifiedOn, String? name, String? scriptName, DateTime? Function()? triggeredOn, }) { return WorGetWorkflowDetailsResponseResult(
   className: className ?? this.className,
   createdOn: createdOn ?? this.createdOn,

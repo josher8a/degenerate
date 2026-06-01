@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'pay_id': ?payId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'last4', 'pay_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bsbNumber$ = bsbNumber;
+if (bsbNumber$ != null) {
+  if (bsbNumber$.length > 5000) errors.add('bsbNumber: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final payId$ = payId;
+if (payId$ != null) {
+  if (payId$.length > 5000) errors.add('payId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodPayto copyWith({String? Function()? bsbNumber, String? Function()? last4, String? Function()? payId, }) { return PaymentMethodPayto(
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   last4: last4 != null ? last4() : this.last4,

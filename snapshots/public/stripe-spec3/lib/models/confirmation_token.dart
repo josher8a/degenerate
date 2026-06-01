@@ -113,6 +113,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('use_stripe_sdk') && json['use_stripe_sdk'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final paymentIntent$ = paymentIntent;
+if (paymentIntent$ != null) {
+  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+}
+final returnUrl$ = returnUrl;
+if (returnUrl$ != null) {
+  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+}
+final setupIntent$ = setupIntent;
+if (setupIntent$ != null) {
+  if (setupIntent$.length > 5000) errors.add('setupIntent: length must be <= 5000');
+}
+return errors; } 
 ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id, bool? livemode, ConfirmationTokensResourceMandateData? Function()? mandateData, ConfirmationTokenObject? object, String? Function()? paymentIntent, ConfirmationTokensResourcePaymentMethodOptions? Function()? paymentMethodOptions, ConfirmationTokensResourcePaymentMethodPreview? Function()? paymentMethodPreview, String? Function()? returnUrl, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? setupIntent, ConfirmationTokensResourceShipping? Function()? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
   created: created ?? this.created,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

@@ -31,6 +31,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String &&
       json.containsKey('file_name') && json['file_name'] is String &&
       json.containsKey('score') && json['score'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (score < 0) errors.add('score: must be >= 0');
+if (score > 1) errors.add('score: must be <= 1');
+return errors; } 
 RunStepDetailsToolCallsFileSearchResultObject copyWith({String? fileId, String? fileName, double? score, List<RunStepDetailsToolCallsFileSearchResultObjectContent>? Function()? content, }) { return RunStepDetailsToolCallsFileSearchResultObject(
   fileId: fileId ?? this.fileId,
   fileName: fileName ?? this.fileName,

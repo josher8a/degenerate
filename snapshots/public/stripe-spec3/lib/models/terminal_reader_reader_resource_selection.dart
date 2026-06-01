@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('choices'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+final text$ = text;
+if (text$ != null) {
+  if (text$.length > 5000) errors.add('text: length must be <= 5000');
+}
+return errors; } 
 TerminalReaderReaderResourceSelection copyWith({List<TerminalReaderReaderResourceChoice>? choices, String? Function()? id, String? Function()? text, }) { return TerminalReaderReaderResourceSelection(
   choices: choices ?? this.choices,
   id: id != null ? id() : this.id,

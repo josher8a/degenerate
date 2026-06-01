@@ -40,6 +40,13 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'setup_future_usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final code$ = code;
+if (code$ != null) {
+  if (code$.length > 5000) errors.add('code: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam18(
   code: code != null ? code() : this.code,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

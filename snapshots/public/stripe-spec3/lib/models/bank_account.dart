@@ -117,6 +117,37 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountHolderName$ = accountHolderName;
+if (accountHolderName$ != null) {
+  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+}
+final accountHolderType$ = accountHolderType;
+if (accountHolderType$ != null) {
+  if (accountHolderType$.length > 5000) errors.add('accountHolderType: length must be <= 5000');
+}
+final accountType$ = accountType;
+if (accountType$ != null) {
+  if (accountType$.length > 5000) errors.add('accountType: length must be <= 5000');
+}
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+final routingNumber$ = routingNumber;
+if (routingNumber$ != null) {
+  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+}
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+return errors; } 
 BankAccount copyWith({ApplicationFeeAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<AvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
   account: account != null ? account() : this.account,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,

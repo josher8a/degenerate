@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final entity$ = entity;
+if (entity$ != null) {
+  if (entity$.length > 5000) errors.add('entity: length must be <= 5000');
+}
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsMultibanco copyWith({String? Function()? entity, String? Function()? reference, }) { return PaymentMethodDetailsMultibanco(
   entity: entity != null ? entity() : this.entity,
   reference: reference != null ? reference() : this.reference,

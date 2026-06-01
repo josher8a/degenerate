@@ -37,6 +37,13 @@ Map<String, dynamic> toJson() { return {
   if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'seed', 'top_p', 'temperature', 'max_completions_tokens', 'reasoning_effort'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxCompletionsTokens$ = maxCompletionsTokens;
+if (maxCompletionsTokens$ != null) {
+  if (maxCompletionsTokens$ < 1) errors.add('maxCompletionsTokens: must be >= 1');
+}
+return errors; } 
 EvalGraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Function()? topP, double? Function()? temperature, int? Function()? maxCompletionsTokens, ReasoningEffort? Function()? reasoningEffort, }) { return EvalGraderScoreModelSamplingParams(
   seed: seed != null ? seed() : this.seed,
   topP: topP != null ? topP() : this.topP,

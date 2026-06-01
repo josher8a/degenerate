@@ -31,6 +31,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('child
       json.containsKey('datasetId') && json['datasetId'] is String &&
       json.containsKey('parentId') && json['parentId'] is String &&
       json.containsKey('relationshipType'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (childIds.length < 1) errors.add('childIds: must have >= 1 items');
+return errors; } 
 PostCreateEventRelationshipRequest copyWith({List<String>? childIds, String? datasetId, String? parentId, RelationshipType? relationshipType, }) { return PostCreateEventRelationshipRequest(
   childIds: childIds ?? this.childIds,
   datasetId: datasetId ?? this.datasetId,

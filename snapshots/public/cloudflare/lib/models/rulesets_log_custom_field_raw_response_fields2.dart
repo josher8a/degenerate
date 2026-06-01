@@ -19,6 +19,10 @@ Map<String, dynamic> toJson() { return {
   'preserve_duplicates': preserveDuplicates,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length < 1) errors.add('name: length must be >= 1');
+return errors; } 
 RulesetsLogCustomFieldRawResponseFields2 copyWith({String? name, bool Function()? preserveDuplicates, }) { return RulesetsLogCustomFieldRawResponseFields2(
   name: name ?? this.name,
   preserveDuplicates: preserveDuplicates != null ? preserveDuplicates() : this.preserveDuplicates,

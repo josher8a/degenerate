@@ -12,6 +12,13 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 255) errors.add('description: length must be <= 255');
+}
+return errors; } 
 AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) { return AiSearchInstanceCreateJobRequest(
   description: description != null ? description() : this.description,
 ); } 

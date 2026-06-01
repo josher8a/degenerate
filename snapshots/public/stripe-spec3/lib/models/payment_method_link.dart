@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodLink copyWith({String? Function()? email}) { return PaymentMethodLink(
   email: email != null ? email() : this.email,
 ); } 

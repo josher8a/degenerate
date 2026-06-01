@@ -29,6 +29,17 @@ Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customMandateUrl$ = customMandateUrl;
+if (customMandateUrl$ != null) {
+  if (customMandateUrl$.length > 5000) errors.add('customMandateUrl: length must be <= 5000');
+}
+final intervalDescription$ = intervalDescription;
+if (intervalDescription$ != null) {
+  if (intervalDescription$.length > 5000) errors.add('intervalDescription: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String? Function()? customMandateUrl, String? Function()? intervalDescription, CheckoutAcssDebitMandateOptionsPaymentSchedule? Function()? paymentSchedule, CheckoutAcssDebitMandateOptionsTransactionType? Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,

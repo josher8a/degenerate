@@ -25,6 +25,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('encrypted_content') && json['encrypted_content'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (encryptedContent.length > 10485760) errors.add('encryptedContent: length must be <= 10485760');
+return errors; } 
 CompactionSummaryItemParam copyWith({String? Function()? id, String? type, String? encryptedContent, }) { return CompactionSummaryItemParam(
   id: id != null ? id() : this.id,
   type: type ?? this.type,

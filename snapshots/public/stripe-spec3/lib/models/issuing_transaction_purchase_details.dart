@@ -39,6 +39,13 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fleet', 'flight', 'fuel', 'lodging', 'receipt', 'reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+return errors; } 
 IssuingTransactionPurchaseDetails copyWith({IssuingTransactionFleetData? Function()? fleet, IssuingTransactionFlightData? Function()? flight, IssuingTransactionFuelData? Function()? fuel, IssuingTransactionLodgingData? Function()? lodging, List<IssuingTransactionReceiptData>? Function()? receipt, String? Function()? reference, }) { return IssuingTransactionPurchaseDetails(
   fleet: fleet != null ? fleet() : this.fleet,
   flight: flight != null ? flight() : this.flight,

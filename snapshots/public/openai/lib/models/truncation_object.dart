@@ -44,6 +44,13 @@ Map<String, dynamic> toJson() { return {
   'last_messages': ?lastMessages,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final lastMessages$ = lastMessages;
+if (lastMessages$ != null) {
+  if (lastMessages$ < 1) errors.add('lastMessages: must be >= 1');
+}
+return errors; } 
 TruncationObject copyWith({TruncationObjectType? type, int? Function()? lastMessages, }) { return TruncationObject(
   type: type ?? this.type,
   lastMessages: lastMessages != null ? lastMessages() : this.lastMessages,

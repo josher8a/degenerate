@@ -72,6 +72,21 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'discountable', 'discounts', 'invoiceitem', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final invoiceitem$ = invoiceitem;
+if (invoiceitem$ != null) {
+  if (invoiceitem$.length > 5000) errors.add('invoiceitem: length must be <= 5000');
+}
+final price$ = price;
+if (price$ != null) {
+  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+}
+return errors; } 
 InvoiceItems copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, bool? Function()? discountable, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? invoiceitem, Metadata? Function()? metadata, PostInvoiceitemsInvoiceitemRequestPeriod? Function()? period, String? Function()? price, PostInvoiceitemsInvoiceitemRequestPriceData? Function()? priceData, int? Function()? quantity, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, TaxRates? Function()? taxRates, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return InvoiceItems(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

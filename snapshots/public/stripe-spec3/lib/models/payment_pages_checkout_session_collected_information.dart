@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business_name', 'individual_name', 'shipping_details'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final businessName$ = businessName;
+if (businessName$ != null) {
+  if (businessName$.length > 5000) errors.add('businessName: length must be <= 5000');
+}
+final individualName$ = individualName;
+if (individualName$ != null) {
+  if (individualName$.length > 5000) errors.add('individualName: length must be <= 5000');
+}
+return errors; } 
 PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? businessName, String? Function()? individualName, PaymentPagesCheckoutSessionCheckoutAddressDetails? Function()? shippingDetails, }) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: businessName != null ? businessName() : this.businessName,
   individualName: individualName != null ? individualName() : this.individualName,

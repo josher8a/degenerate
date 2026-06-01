@@ -36,6 +36,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('provider') &&
       json.containsKey('repository') && json['repository'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final files$ = files;
+if (files$ != null) {
+  if (files$.length > 2) errors.add('files: must have <= 2 items');
+}
+return errors; } 
 BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile>? Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(
   branch: branch ?? this.branch,
   files: files != null ? files() : this.files,

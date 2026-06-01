@@ -83,6 +83,13 @@ Map<String, dynamic> toJson() { return {
   'dependencies': ?dependencies,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'package_url', 'metadata', 'relationship', 'scope', 'dependencies'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final packageUrl$ = packageUrl;
+if (packageUrl$ != null) {
+  if (!RegExp('^pkg').hasMatch(packageUrl$)) errors.add('packageUrl: must match pattern ^pkg');
+}
+return errors; } 
 Dependency copyWith({String? Function()? packageUrl, Map<String, dynamic>? Function()? metadata, DependencyRelationship? Function()? relationship, DependencyScope? Function()? scope, List<String>? Function()? dependencies, }) { return Dependency(
   packageUrl: packageUrl != null ? packageUrl() : this.packageUrl,
   metadata: metadata != null ? metadata() : this.metadata,

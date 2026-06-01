@@ -30,6 +30,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_certificate_file') && json['client_certificate_file'] is String &&
       json.containsKey('private_key_file') && json['private_key_file'] is String &&
       json.containsKey('ssid') && json['ssid'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final privateKeyFilePassword$ = privateKeyFilePassword;
+if (privateKeyFilePassword$ != null) {
+  if (privateKeyFilePassword$.length > 5000) errors.add('privateKeyFilePassword: length must be <= 5000');
+}
+if (ssid.length > 5000) errors.add('ssid: length must be <= 5000');
+return errors; } 
 EnterpriseEapTls copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) { return EnterpriseEapTls(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,
   clientCertificateFile: clientCertificateFile ?? this.clientCertificateFile,

@@ -70,6 +70,25 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final destinationPaymentMethod$ = destinationPaymentMethod;
+if (destinationPaymentMethod$ != null) {
+  if (destinationPaymentMethod$.length > 5000) errors.add('destinationPaymentMethod: length must be <= 5000');
+}
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+return errors; } 
 PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, DestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, EndUserDetails? Function()? endUserDetails, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) { return PostTreasuryOutboundPaymentsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

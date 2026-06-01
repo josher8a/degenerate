@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'default_asn': defaultAsn,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_asn') && json['default_asn'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (defaultAsn < 0) errors.add('defaultAsn: must be >= 0');
+return errors; } 
 NscSettings copyWith({int? defaultAsn}) { return NscSettings(
   defaultAsn: defaultAsn ?? this.defaultAsn,
 ); } 

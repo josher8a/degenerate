@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'preferred': ?preferred,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('available'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final preferred$ = preferred;
+if (preferred$ != null) {
+  if (preferred$.length > 5000) errors.add('preferred: length must be <= 5000');
+}
+return errors; } 
 Networks copyWith({List<String>? available, String? Function()? preferred, }) { return Networks(
   available: available ?? this.available,
   preferred: preferred != null ? preferred() : this.preferred,

@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final encryptedValue$ = encryptedValue;
+if (encryptedValue$ != null) {
+  if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$');
+}
+return errors; } 
 CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Function()? encryptedValue, String? keyId, List<dynamic>? Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId ?? this.keyId,

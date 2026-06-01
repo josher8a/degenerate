@@ -25,6 +25,14 @@ Map<String, dynamic> toJson() { return {
   if (tokenSources != null) 'token_sources': tokenSources?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'title', 'token_sources'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final tokenSources$ = tokenSources;
+if (tokenSources$ != null) {
+  if (tokenSources$.length < 1) errors.add('tokenSources: must have >= 1 items');
+  if (tokenSources$.length > 4) errors.add('tokenSources: must have <= 4 items');
+}
+return errors; } 
 TokenValidationConfigEditResponseResult copyWith({ShieldDescription? Function()? description, ShieldUuid? Function()? id, ShieldTitle? Function()? title, List<ShieldHeader>? Function()? tokenSources, }) { return TokenValidationConfigEditResponseResult(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

@@ -149,6 +149,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('requirements') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final phoneNumber$ = phoneNumber;
+if (phoneNumber$ != null) {
+  if (phoneNumber$.length > 5000) errors.add('phoneNumber: length must be <= 5000');
+}
+return errors; } 
 IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<PreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
   billing: billing ?? this.billing,
   company: company != null ? company() : this.company,

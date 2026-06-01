@@ -18,6 +18,10 @@ Map<String, dynamic> toJson() { return {
   'max_length': maxLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_text') && json['input_text'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (inputText.length < 1) errors.add('inputText: length must be >= 1');
+return errors; } 
 WorkersAiPostRunCfFacebookBartLargeCnnRequest copyWith({String? inputText, int Function()? maxLength, }) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
   inputText: inputText ?? this.inputText,
   maxLength: maxLength != null ? maxLength() : this.maxLength,

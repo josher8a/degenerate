@@ -38,6 +38,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final nextPage$ = nextPage;
+if (nextPage$ != null) {
+  if (nextPage$.length > 5000) errors.add('nextPage: length must be <= 5000');
+}
+if (url.length > 5000) errors.add('url: length must be <= 5000');
+return errors; } 
 GetProductsSearchResponse copyWith({List<Product>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetProductsSearchResponse(
   data: data ?? this.data,
   hasMore: hasMore ?? this.hasMore,

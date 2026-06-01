@@ -71,6 +71,14 @@ Map<String, dynamic> toJson() { return {
   'idle_timeout_ms': ?idleTimeoutMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final idleTimeoutMs$ = idleTimeoutMs;
+if (idleTimeoutMs$ != null) {
+  if (idleTimeoutMs$ < 5000) errors.add('idleTimeoutMs: must be >= 5000');
+  if (idleTimeoutMs$ > 30000) errors.add('idleTimeoutMs: must be <= 30000');
+}
+return errors; } 
 ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,

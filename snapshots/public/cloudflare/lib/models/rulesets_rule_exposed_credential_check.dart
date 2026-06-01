@@ -20,6 +20,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('password_expression') && json['password_expression'] is String &&
       json.containsKey('username_expression') && json['username_expression'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (passwordExpression.length < 1) errors.add('passwordExpression: length must be >= 1');
+if (usernameExpression.length < 1) errors.add('usernameExpression: length must be >= 1');
+return errors; } 
 RulesetsRuleExposedCredentialCheck copyWith({String? passwordExpression, String? usernameExpression, }) { return RulesetsRuleExposedCredentialCheck(
   passwordExpression: passwordExpression ?? this.passwordExpression,
   usernameExpression: usernameExpression ?? this.usernameExpression,

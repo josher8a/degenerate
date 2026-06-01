@@ -25,6 +25,12 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+final errors$$ = errors;
+if (errors$$ != null) {
+}
+return errors$; } 
 SlurperAbortJobResponse copyWith({List<ErrorModel32>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, String? Function()? result, }) { return SlurperAbortJobResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,

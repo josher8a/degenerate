@@ -31,6 +31,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('Brand
       json.containsKey('CredentialHarvester') && json['CredentialHarvester'] is String &&
       json.containsKey('IdentityDeception') && json['IdentityDeception'] is String &&
       json.containsKey('Link') && json['Link'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(brandImpersonation)) errors.add(r'brandImpersonation: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(credentialHarvester)) errors.add(r'credentialHarvester: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(identityDeception)) errors.add(r'identityDeception: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(link)) errors.add(r'link: must match pattern ^\d+$');
+return errors; } 
 RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 copyWith({String? brandImpersonation, String? credentialHarvester, String? identityDeception, String? link, }) { return RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0(
   brandImpersonation: brandImpersonation ?? this.brandImpersonation,
   credentialHarvester: credentialHarvester ?? this.credentialHarvester,

@@ -18,6 +18,11 @@ Map<String, dynamic> toJson() { return {
   'indicatorType': indicatorType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (indicatorType.length < 1) errors.add('indicatorType: length must be >= 1');
+if (indicatorType.length > 50) errors.add('indicatorType: length must be <= 50');
+return errors; } 
 PostIndicatorTypeCreateRequest copyWith({String? Function()? description, String? indicatorType, }) { return PostIndicatorTypeCreateRequest(
   description: description != null ? description() : this.description,
   indicatorType: indicatorType ?? this.indicatorType,

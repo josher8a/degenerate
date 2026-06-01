@@ -105,6 +105,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final product$ = product;
+if (product$ != null) {
+  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+}
+if (reference.length > 5000) errors.add('reference: length must be <= 5000');
+if (taxCode.length > 5000) errors.add('taxCode: length must be <= 5000');
+return errors; } 
 TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,

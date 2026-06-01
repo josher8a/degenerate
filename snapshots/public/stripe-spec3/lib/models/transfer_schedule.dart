@@ -40,6 +40,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay_days') && json['delay_days'] is num &&
       json.containsKey('interval') && json['interval'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (interval.length > 5000) errors.add('interval: length must be <= 5000');
+final weeklyAnchor$ = weeklyAnchor;
+if (weeklyAnchor$ != null) {
+  if (weeklyAnchor$.length > 5000) errors.add('weeklyAnchor: length must be <= 5000');
+}
+return errors; } 
 TransferSchedule copyWith({int? delayDays, String? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, String? Function()? weeklyAnchor, List<WeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return TransferSchedule(
   delayDays: delayDays ?? this.delayDays,
   interval: interval ?? this.interval,

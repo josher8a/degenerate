@@ -33,6 +33,13 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'default_for_currency', 'expand', 'external_account', 'metadata'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final externalAccount$ = externalAccount;
+if (externalAccount$ != null) {
+  if (externalAccount$.length > 5000) errors.add('externalAccount: length must be <= 5000');
+}
+return errors; } 
 PostAccountsAccountBankAccountsRequest copyWith({PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, bool? Function()? defaultForCurrency, List<String>? Function()? expand, String? Function()? externalAccount, Map<String, String>? Function()? metadata, }) { return PostAccountsAccountBankAccountsRequest(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,

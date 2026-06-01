@@ -35,6 +35,17 @@ Map<String, dynamic> toJson() { return {
   'visibility': visibility.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customagent$ = customagent;
+if (customagent$ != null) {
+  if (customagent$.length > 4096) errors.add('customagent: length must be <= 4096');
+}
+final referer$ = referer;
+if (referer$ != null) {
+  if (referer$.length > 4096) errors.add('referer: length must be <= 4096');
+}
+return errors; } 
 UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanBulkRequestVisibility Function()? visibility, }) { return UrlscannerCreateScanBulkRequest(
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   customagent: customagent != null ? customagent() : this.customagent,

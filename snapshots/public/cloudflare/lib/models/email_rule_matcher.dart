@@ -71,6 +71,13 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final value$ = value;
+if (value$ != null) {
+  if (value$.length > 90) errors.add('value: length must be <= 90');
+}
+return errors; } 
 EmailRuleMatcher copyWith({Field? Function()? field, EmailRuleMatcherType? type, String? Function()? value, }) { return EmailRuleMatcher(
   field: field != null ? field() : this.field,
   type: type ?? this.type,

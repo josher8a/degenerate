@@ -30,6 +30,17 @@ Map<String, dynamic> toJson() { return {
   'use_browser_rendering': useBrowserRendering,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_selector', 'include_headers', 'include_images', 'specific_sitemaps', 'use_browser_rendering'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final contentSelector$ = contentSelector;
+if (contentSelector$ != null) {
+  if (contentSelector$.length > 10) errors.add('contentSelector: must have <= 10 items');
+}
+final specificSitemaps$ = specificSitemaps;
+if (specificSitemaps$ != null) {
+  if (specificSitemaps$.length > 10) errors.add('specificSitemaps: must have <= 10 items');
+}
+return errors; } 
 ParseOptions copyWith({List<ContentSelector>? Function()? contentSelector, Map<String, String>? Function()? includeHeaders, bool Function()? includeImages, List<Uri>? Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return ParseOptions(
   contentSelector: contentSelector != null ? contentSelector() : this.contentSelector,
   includeHeaders: includeHeaders != null ? includeHeaders() : this.includeHeaders,

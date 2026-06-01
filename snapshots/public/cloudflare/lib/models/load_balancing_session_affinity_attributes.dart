@@ -126,6 +126,13 @@ Map<String, dynamic> toJson() { return {
   'zero_downtime_failover': zeroDowntimeFailover.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final headers$ = headers;
+if (headers$ != null) {
+  if (headers$.toSet().length != headers$.length) errors.add('headers: items must be unique');
+}
+return errors; } 
 LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, ZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: drainDuration != null ? drainDuration() : this.drainDuration,
   headers: headers != null ? headers() : this.headers,

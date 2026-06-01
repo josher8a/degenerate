@@ -49,6 +49,13 @@ Map<String, dynamic> toJson() { return {
   'selected_usernames': ?selectedUsernames,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final selectedUsernames$ = selectedUsernames;
+if (selectedUsernames$ != null) {
+  if (selectedUsernames$.length > 100) errors.add('selectedUsernames: must have <= 100 items');
+}
+return errors; } 
 CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequestVisibility? visibility, List<String>? Function()? selectedUsernames, }) { return CodespacesSetCodespacesAccessRequest(
   visibility: visibility ?? this.visibility,
   selectedUsernames: selectedUsernames != null ? selectedUsernames() : this.selectedUsernames,

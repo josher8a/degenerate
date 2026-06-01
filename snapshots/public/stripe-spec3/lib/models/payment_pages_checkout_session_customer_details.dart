@@ -50,6 +50,29 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final businessName$ = businessName;
+if (businessName$ != null) {
+  if (businessName$.length > 150) errors.add('businessName: length must be <= 150');
+}
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+final individualName$ = individualName;
+if (individualName$ != null) {
+  if (individualName$.length > 150) errors.add('individualName: length must be <= 150');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+return errors; } 
 PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, CustomerTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
   address: address != null ? address() : this.address,
   businessName: businessName != null ? businessName() : this.businessName,

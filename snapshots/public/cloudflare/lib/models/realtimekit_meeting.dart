@@ -60,6 +60,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (sessionKeepAliveTimeInSecs < 60) errors.add('sessionKeepAliveTimeInSecs: must be >= 60');
+if (sessionKeepAliveTimeInSecs > 600) errors.add('sessionKeepAliveTimeInSecs: must be <= 600');
+return errors; } 
 RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,

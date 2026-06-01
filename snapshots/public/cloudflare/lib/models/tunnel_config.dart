@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   if (warpRouting != null) 'warp-routing': warpRouting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ingress', 'originRequest', 'warp-routing'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ingress$ = ingress;
+if (ingress$ != null) {
+  if (ingress$.length < 1) errors.add('ingress: must have >= 1 items');
+}
+return errors; } 
 TunnelConfig copyWith({List<TunnelIngressRule>? Function()? ingress, TunnelOriginRequest? Function()? originRequest, WarpRouting? Function()? warpRouting, }) { return TunnelConfig(
   ingress: ingress != null ? ingress() : this.ingress,
   originRequest: originRequest != null ? originRequest() : this.originRequest,

@@ -46,6 +46,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('financial_account') && json['financial_account'] is String &&
       json.containsKey('network'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, InitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

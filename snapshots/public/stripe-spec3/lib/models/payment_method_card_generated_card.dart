@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   if (setupAttempt != null) 'setup_attempt': setupAttempt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'payment_method_details', 'setup_attempt'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final charge$ = charge;
+if (charge$ != null) {
+  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, CardGeneratedFromPaymentMethodDetails? Function()? paymentMethodDetails, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return PaymentMethodCardGeneratedCard(
   charge: charge != null ? charge() : this.charge,
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,

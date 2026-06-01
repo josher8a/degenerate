@@ -49,6 +49,17 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final charge$ = charge;
+if (charge$ != null) {
+  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+}
+final payout$ = payout;
+if (payout$ != null) {
+  if (payout$.length > 5000) errors.add('payout: length must be <= 5000');
+}
+return errors; } 
 PlatformEarningFeeSource copyWith({String? Function()? charge, String? Function()? payout, PlatformEarningFeeSourceType? type, }) { return PlatformEarningFeeSource(
   charge: charge != null ? charge() : this.charge,
   payout: payout != null ? payout() : this.payout,

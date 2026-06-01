@@ -59,6 +59,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('customer') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccountCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
   balances: balances ?? this.balances,
   customer: customer ?? this.customer,

@@ -24,6 +24,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('network_settings_ids'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (networkSettingsIds.length < 1) errors.add('networkSettingsIds: must have >= 1 items');
+if (networkSettingsIds.length > 1) errors.add('networkSettingsIds: must have <= 1 items');
+return errors; } 
 HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, HostedComputeCreateNetworkConfigurationForOrgRequestComputeService? Function()? computeService, List<String>? networkSettingsIds, }) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
   name: name ?? this.name,
   computeService: computeService != null ? computeService() : this.computeService,

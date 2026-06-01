@@ -29,6 +29,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('reference') && json['reference'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 255) errors.add('name: length must be <= 255');
+}
+if (reference.length > 255) errors.add('reference: length must be <= 255');
+return errors; } 
 PaymentMethodOptionsParamSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int? Function()? intervalCount, String? Function()? name, NextBilling? Function()? nextBilling, String? reference, }) { return PaymentMethodOptionsParamSubscriptionsVariant1(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,

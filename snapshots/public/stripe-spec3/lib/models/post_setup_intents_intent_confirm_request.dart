@@ -57,6 +57,21 @@ Map<String, dynamic> toJson() { return {
   'use_stripe_sdk': ?useStripeSdk,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret', 'confirmation_token', 'expand', 'mandate_data', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'use_stripe_sdk'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientSecret$ = clientSecret;
+if (clientSecret$ != null) {
+  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+}
+final confirmationToken$ = confirmationToken;
+if (confirmationToken$ != null) {
+  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+}
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+return errors; } 
 PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostPaymentIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) { return PostSetupIntentsIntentConfirmRequest(
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   confirmationToken: confirmationToken != null ? confirmationToken() : this.confirmationToken,

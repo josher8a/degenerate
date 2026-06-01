@@ -29,6 +29,17 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_address', 'email', 'name', 'shipping_address'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodCardWalletVisaCheckout copyWith({Address? Function()? billingAddress, String? Function()? email, String? Function()? name, Address? Function()? shippingAddress, }) { return PaymentMethodCardWalletVisaCheckout(
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   email: email != null ? email() : this.email,

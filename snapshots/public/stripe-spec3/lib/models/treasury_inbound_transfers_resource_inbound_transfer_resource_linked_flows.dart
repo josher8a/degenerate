@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'received_debit': ?receivedDebit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'received_debit'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final receivedDebit$ = receivedDebit;
+if (receivedDebit$ != null) {
+  if (receivedDebit$.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+}
+return errors; } 
 TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows copyWith({String? Function()? receivedDebit}) { return TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,
 ); } 

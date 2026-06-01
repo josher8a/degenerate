@@ -25,6 +25,13 @@ Map<String, dynamic> toJson() { return {
   'visible': ?visible,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final timeout$ = timeout;
+if (timeout$ != null) {
+  if (timeout$ > 120000) errors.add('timeout: must be <= 120000');
+}
+return errors; } 
 WaitForSelector copyWith({bool? Function()? hidden, String? selector, double? Function()? timeout, bool? Function()? visible, }) { return WaitForSelector(
   hidden: hidden != null ? hidden() : this.hidden,
   selector: selector ?? this.selector,

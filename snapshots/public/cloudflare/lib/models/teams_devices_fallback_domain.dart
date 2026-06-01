@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   'suffix': suffix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('suffix') && json['suffix'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 100) errors.add('description: length must be <= 100');
+}
+return errors; } 
 TeamsDevicesFallbackDomain copyWith({String? Function()? description, List<TeamsDevicesIp>? Function()? dnsServer, String? suffix, }) { return TeamsDevicesFallbackDomain(
   description: description != null ? description() : this.description,
   dnsServer: dnsServer != null ? dnsServer() : this.dnsServer,

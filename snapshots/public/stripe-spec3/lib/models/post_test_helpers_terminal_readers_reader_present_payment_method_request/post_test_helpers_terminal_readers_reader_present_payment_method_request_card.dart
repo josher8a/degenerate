@@ -27,6 +27,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('number') && json['number'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cvc$ = cvc;
+if (cvc$ != null) {
+  if (cvc$.length > 5000) errors.add('cvc: length must be <= 5000');
+}
+if (number.length > 5000) errors.add('number: length must be <= 5000');
+return errors; } 
 PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard copyWith({String? Function()? cvc, int? expMonth, int? expYear, String? number, }) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(
   cvc: cvc != null ? cvc() : this.cvc,
   expMonth: expMonth ?? this.expMonth,

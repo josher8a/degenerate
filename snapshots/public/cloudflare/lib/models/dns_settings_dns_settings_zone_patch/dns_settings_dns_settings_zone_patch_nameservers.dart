@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ns_set', 'type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final nsSet$ = nsSet;
+if (nsSet$ != null) {
+  if (nsSet$ < 1) errors.add('nsSet: must be >= 1');
+  if (nsSet$ > 5) errors.add('nsSet: must be <= 5');
+}
+return errors; } 
 DnsSettingsDnsSettingsZonePatchNameservers copyWith({int? Function()? nsSet, DnsSettingsDnsSettingsZonePatchNameserversType? Function()? type, }) { return DnsSettingsDnsSettingsZonePatchNameservers(
   nsSet: nsSet != null ? nsSet() : this.nsSet,
   type: type != null ? type() : this.type,

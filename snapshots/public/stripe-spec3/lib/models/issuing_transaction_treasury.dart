@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'received_debit': ?receivedDebit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'received_credit', 'received_debit'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final receivedCredit$ = receivedCredit;
+if (receivedCredit$ != null) {
+  if (receivedCredit$.length > 5000) errors.add('receivedCredit: length must be <= 5000');
+}
+final receivedDebit$ = receivedDebit;
+if (receivedDebit$ != null) {
+  if (receivedDebit$.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+}
+return errors; } 
 IssuingTransactionTreasury copyWith({String? Function()? receivedCredit, String? Function()? receivedDebit, }) { return IssuingTransactionTreasury(
   receivedCredit: receivedCredit != null ? receivedCredit() : this.receivedCredit,
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,

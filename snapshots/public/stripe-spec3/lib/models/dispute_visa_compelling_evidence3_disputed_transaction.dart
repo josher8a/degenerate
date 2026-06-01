@@ -74,6 +74,33 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_account_id', 'customer_device_fingerprint', 'customer_device_id', 'customer_email_address', 'customer_purchase_ip', 'merchandise_or_services', 'product_description', 'shipping_address'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccountId$ = customerAccountId;
+if (customerAccountId$ != null) {
+  if (customerAccountId$.length > 5000) errors.add('customerAccountId: length must be <= 5000');
+}
+final customerDeviceFingerprint$ = customerDeviceFingerprint;
+if (customerDeviceFingerprint$ != null) {
+  if (customerDeviceFingerprint$.length > 5000) errors.add('customerDeviceFingerprint: length must be <= 5000');
+}
+final customerDeviceId$ = customerDeviceId;
+if (customerDeviceId$ != null) {
+  if (customerDeviceId$.length > 5000) errors.add('customerDeviceId: length must be <= 5000');
+}
+final customerEmailAddress$ = customerEmailAddress;
+if (customerEmailAddress$ != null) {
+  if (customerEmailAddress$.length > 5000) errors.add('customerEmailAddress: length must be <= 5000');
+}
+final customerPurchaseIp$ = customerPurchaseIp;
+if (customerPurchaseIp$ != null) {
+  if (customerPurchaseIp$.length > 5000) errors.add('customerPurchaseIp: length must be <= 5000');
+}
+final productDescription$ = productDescription;
+if (productDescription$ != null) {
+  if (productDescription$.length > 150000) errors.add('productDescription: length must be <= 150000');
+}
+return errors; } 
 DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, String? Function()? productDescription, DisputeTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3DisputedTransaction(
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,

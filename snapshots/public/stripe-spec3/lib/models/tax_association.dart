@@ -59,6 +59,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('calcu
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (calculation.length > 5000) errors.add('calculation: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (paymentIntent.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+return errors; } 
 TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, List<TaxProductResourceTaxAssociationTransactionAttempts>? Function()? taxTransactionAttempts, }) { return TaxAssociation(
   calculation: calculation ?? this.calculation,
   id: id ?? this.id,

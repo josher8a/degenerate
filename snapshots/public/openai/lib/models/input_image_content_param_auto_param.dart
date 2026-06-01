@@ -58,6 +58,13 @@ Map<String, dynamic> toJson() { return {
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final imageUrl$ = imageUrl;
+if (imageUrl$ != null) {
+  if (imageUrl$.length > 20971520) errors.add('imageUrl: length must be <= 20971520');
+}
+return errors; } 
 InputImageContentParamAutoParam copyWith({EvalItemInputImageType? type, String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return InputImageContentParamAutoParam(
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,

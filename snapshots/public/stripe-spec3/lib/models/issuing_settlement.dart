@@ -132,6 +132,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bin')
       json.containsKey('status') &&
       json.containsKey('transaction_amount') && json['transaction_amount'] is num &&
       json.containsKey('transaction_count') && json['transaction_count'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (bin.length > 5000) errors.add('bin: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (networkSettlementIdentifier.length > 5000) errors.add('networkSettlementIdentifier: length must be <= 5000');
+if (settlementService.length > 5000) errors.add('settlementService: length must be <= 5000');
+return errors; } 
 IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String? currency, String? id, int? interchangeFeesAmount, bool? livemode, Map<String,String>? metadata, int? netTotalAmount, IssuingSettlementNetwork? network, int? networkFeesAmount, String? networkSettlementIdentifier, IssuingSettlementObject? object, String? settlementService, BillingMeterEventAdjustmentStatus? status, int? transactionAmount, int? transactionCount, }) { return IssuingSettlement(
   bin: bin ?? this.bin,
   clearingDate: clearingDate ?? this.clearingDate,

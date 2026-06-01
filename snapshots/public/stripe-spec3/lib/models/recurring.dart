@@ -31,6 +31,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval') &&
       json.containsKey('interval_count') && json['interval_count'] is num &&
       json.containsKey('usage_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final meter$ = meter;
+if (meter$ != null) {
+  if (meter$.length > 5000) errors.add('meter: length must be <= 5000');
+}
+return errors; } 
 Recurring copyWith({GetPricesRecurringInterval? interval, int? intervalCount, String? Function()? meter, UsageType? usageType, }) { return Recurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount ?? this.intervalCount,

@@ -22,6 +22,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('is_email_regex') && json['is_email_regex'] is bool &&
       json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 1024) errors.add('name: length must be <= 1024');
+return errors; } 
 EmailSecurityCreateDisplayName copyWith({String? email, bool? isEmailRegex, String? name, }) { return EmailSecurityCreateDisplayName(
   email: email ?? this.email,
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,

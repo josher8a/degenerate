@@ -35,6 +35,18 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('proration') && json['proration'] is bool &&
       json.containsKey('subscription_item') && json['subscription_item'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final invoiceItem$ = invoiceItem;
+if (invoiceItem$ != null) {
+  if (invoiceItem$.length > 5000) errors.add('invoiceItem: length must be <= 5000');
+}
+final subscription$ = subscription;
+if (subscription$ != null) {
+  if (subscription$.length > 5000) errors.add('subscription: length must be <= 5000');
+}
+if (subscriptionItem.length > 5000) errors.add('subscriptionItem: length must be <= 5000');
+return errors; } 
 BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent copyWith({String? Function()? invoiceItem, bool? proration, BillingBillResourceInvoicingLinesCommonProrationDetails? Function()? prorationDetails, String? Function()? subscription, String? subscriptionItem, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent(
   invoiceItem: invoiceItem != null ? invoiceItem() : this.invoiceItem,
   proration: proration ?? this.proration,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_terminal_locations_location_request/phone.dart';/// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_shipping/customer_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/recipient_shipping_with_optional_fields_address/recipient_shipping_with_optional_fields_address_phone.dart';/// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
 @immutable final class PostInvoicesRequestShippingDetails {const PostInvoicesRequestShippingDetails({required this.address, required this.name, this.phone, });
 
 factory PostInvoicesRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingDetails(
@@ -13,7 +13,7 @@ final CustomerShippingAddress address;
 
 final String name;
 
-final Phone? phone;
+final RecipientShippingWithOptionalFieldsAddressPhone? phone;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
@@ -22,7 +22,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostInvoicesRequestShippingDetails copyWith({CustomerShippingAddress? address, String? name, Phone? Function()? phone, }) { return PostInvoicesRequestShippingDetails(
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+return errors; } 
+PostInvoicesRequestShippingDetails copyWith({CustomerShippingAddress? address, String? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) { return PostInvoicesRequestShippingDetails(
   address: address ?? this.address,
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,

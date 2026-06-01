@@ -62,6 +62,48 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is String &&
       json.containsKey('exp_year') && json['exp_year'] is String &&
       json.containsKey('number') && json['number'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final addressCity$ = addressCity;
+if (addressCity$ != null) {
+  if (addressCity$.length > 5000) errors.add('addressCity: length must be <= 5000');
+}
+final addressCountry$ = addressCountry;
+if (addressCountry$ != null) {
+  if (addressCountry$.length > 5000) errors.add('addressCountry: length must be <= 5000');
+}
+final addressLine1$ = addressLine1;
+if (addressLine1$ != null) {
+  if (addressLine1$.length > 5000) errors.add('addressLine1: length must be <= 5000');
+}
+final addressLine2$ = addressLine2;
+if (addressLine2$ != null) {
+  if (addressLine2$.length > 5000) errors.add('addressLine2: length must be <= 5000');
+}
+final addressState$ = addressState;
+if (addressState$ != null) {
+  if (addressState$.length > 5000) errors.add('addressState: length must be <= 5000');
+}
+final addressZip$ = addressZip;
+if (addressZip$ != null) {
+  if (addressZip$.length > 5000) errors.add('addressZip: length must be <= 5000');
+}
+final currency$ = currency;
+if (currency$ != null) {
+  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+}
+final cvc$ = cvc;
+if (cvc$ != null) {
+  if (cvc$.length > 5000) errors.add('cvc: length must be <= 5000');
+}
+if (expMonth.length > 5000) errors.add('expMonth: length must be <= 5000');
+if (expYear.length > 5000) errors.add('expYear: length must be <= 5000');
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+if (number.length > 5000) errors.add('number: length must be <= 5000');
+return errors; } 
 CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? currency, String? Function()? cvc, String? expMonth, String? expYear, String? Function()? name, CardDetailsParamsNetworks? Function()? networks, String? number, }) { return CreditCardSpecs(
   addressCity: addressCity != null ? addressCity() : this.addressCity,
   addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,

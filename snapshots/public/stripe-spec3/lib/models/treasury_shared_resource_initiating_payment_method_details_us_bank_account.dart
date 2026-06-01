@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'routing_number': ?routingNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'last4', 'routing_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final routingNumber$ = routingNumber;
+if (routingNumber$ != null) {
+  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+}
+return errors; } 
 TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount copyWith({String? Function()? bankName, String? Function()? last4, String? Function()? routingNumber, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(
   bankName: bankName != null ? bankName() : this.bankName,
   last4: last4 != null ? last4() : this.last4,

@@ -66,6 +66,27 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'call_sid', 'name', 'status', 'date_updated', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^GT[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^GT[0-9a-fA-F]{32}$');
+}
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final callSid$ = callSid;
+if (callSid$ != null) {
+  if (callSid$.length < 34) errors.add('callSid: length must be >= 34');
+  if (callSid$.length > 34) errors.add('callSid: length must be <= 34');
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSid$)) errors.add(r'callSid: must match pattern ^CA[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountCallRealtimeTranscription copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? callSid, String? Function()? name, RealtimeTranscriptionEnumStatus? Function()? status, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountCallRealtimeTranscription(
   sid: sid != null ? sid() : this.sid,
   accountSid: accountSid != null ? accountSid() : this.accountSid,

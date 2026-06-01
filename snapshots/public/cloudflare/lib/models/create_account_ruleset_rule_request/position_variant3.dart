@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'index': ?index,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'index'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final index$ = index;
+if (index$ != null) {
+  if (index$ < 1) errors.add('index: must be >= 1');
+}
+return errors; } 
 PositionVariant3 copyWith({int? Function()? index}) { return PositionVariant3(
   index: index != null ? index() : this.index,
 ); } 

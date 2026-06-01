@@ -24,6 +24,15 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'friendly_name', 'date_created', 'date_updated'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^SK[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^SK[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountSigningKey copyWith({String? Function()? sid, String? Function()? friendlyName, String? Function()? dateCreated, String? Function()? dateUpdated, }) { return AccountSigningKey(
   sid: sid != null ? sid() : this.sid,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,

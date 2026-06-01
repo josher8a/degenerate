@@ -23,6 +23,10 @@ Map<String, dynamic> toJson() { return {
   'received_credit': receivedCredit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_credit') && json['received_credit'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (receivedCredit.length > 5000) errors.add('receivedCredit: length must be <= 5000');
+return errors; } 
 PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) { return PostTreasuryCreditReversalsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

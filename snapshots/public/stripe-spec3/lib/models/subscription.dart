@@ -334,6 +334,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('object') &&
       json.containsKey('start_date') && json['start_date'] is num &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 500) errors.add('description: length must be <= 500');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 Subscription copyWith({BillingPortalConfigurationApplication? Function()? application, double? Function()? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, SubscriptionsResourceBillingCycleAnchorConfig? Function()? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, SubscriptionBillingThresholds? Function()? billingThresholds, int? Function()? cancelAt, bool? cancelAtPeriodEnd, int? Function()? canceledAt, CancellationDetails? Function()? cancellationDetails, InvoiceCollectionMethod? collectionMethod, int? created, String? currency, BankAccountCustomer? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, DefaultPaymentMethod? Function()? defaultPaymentMethod, CustomerDefaultSource? Function()? defaultSource, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<InvoiceitemDiscounts>? discounts, int? Function()? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, LatestInvoice? Function()? latestInvoice, bool? livemode, Map<String,String>? metadata, int? Function()? nextPendingInvoiceItemInvoice, SubscriptionObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, SubscriptionsResourcePauseCollection? Function()? pauseCollection, SubscriptionsResourcePaymentSettings? Function()? paymentSettings, SubscriptionPendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, PendingSetupIntent? Function()? pendingSetupIntent, SubscriptionsResourcePendingUpdate? Function()? pendingUpdate, SubscriptionSchedule2? Function()? schedule, int? startDate, SubscriptionStatus? status, TestClock? Function()? testClock, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, SubscriptionsResourceTrialSettingsTrialSettings? Function()? trialSettings, int? Function()? trialStart, }) { return Subscription(
   application: application != null ? application() : this.application,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,

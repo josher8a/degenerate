@@ -29,6 +29,25 @@ Map<String, dynamic> toJson() { return {
   'version': ?version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'device', 'platform', 'version'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final browser$ = browser;
+if (browser$ != null) {
+  if (browser$.length > 5000) errors.add('browser: length must be <= 5000');
+}
+final device$ = device;
+if (device$ != null) {
+  if (device$.length > 5000) errors.add('device: length must be <= 5000');
+}
+final platform$ = platform;
+if (platform$ != null) {
+  if (platform$.length > 5000) errors.add('platform: length must be <= 5000');
+}
+final version$ = version;
+if (version$ != null) {
+  if (version$.length > 5000) errors.add('version: length must be <= 5000');
+}
+return errors; } 
 RadarReviewResourceSession copyWith({String? Function()? browser, String? Function()? device, String? Function()? platform, String? Function()? version, }) { return RadarReviewResourceSession(
   browser: browser != null ? browser() : this.browser,
   device: device != null ? device() : this.device,

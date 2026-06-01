@@ -41,6 +41,13 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final title$ = title;
+if (title$ != null) {
+  if (title$.length > 5000) errors.add('title: length must be <= 5000');
+}
+return errors; } 
 PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? authorizer, bool? Function()? director, bool? Function()? executive, bool? Function()? legalGuardian, bool? Function()? owner, PercentOwnership? Function()? percentOwnership, bool? Function()? representative, String? Function()? title, }) { return PostAccountsAccountPeoplePersonRequestRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,

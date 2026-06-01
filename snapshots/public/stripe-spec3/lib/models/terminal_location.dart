@@ -73,6 +73,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final configurationOverrides$ = configurationOverrides;
+if (configurationOverrides$ != null) {
+  if (configurationOverrides$.length > 5000) errors.add('configurationOverrides: length must be <= 5000');
+}
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+final displayNameKana$ = displayNameKana;
+if (displayNameKana$ != null) {
+  if (displayNameKana$.length > 5000) errors.add('displayNameKana: length must be <= 5000');
+}
+final displayNameKanji$ = displayNameKanji;
+if (displayNameKanji$ != null) {
+  if (displayNameKanji$.length > 5000) errors.add('displayNameKanji: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+return errors; } 
 TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, DeletedTerminalLocationObject? object, String? Function()? phone, }) { return TerminalLocation(
   address: address ?? this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,

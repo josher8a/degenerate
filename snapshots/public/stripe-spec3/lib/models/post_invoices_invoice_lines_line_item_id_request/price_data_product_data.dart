@@ -32,6 +32,22 @@ Map<String, dynamic> toJson() { return {
   'unit_label': ?unitLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 40000) errors.add('description: length must be <= 40000');
+}
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final taxCode$ = taxCode;
+if (taxCode$ != null) {
+  if (taxCode$.length > 5000) errors.add('taxCode: length must be <= 5000');
+}
+final unitLabel$ = unitLabel;
+if (unitLabel$ != null) {
+  if (unitLabel$.length > 12) errors.add('unitLabel: length must be <= 12');
+}
+return errors; } 
 PriceDataProductData copyWith({String? Function()? description, List<String>? Function()? images, Map<String, String>? Function()? metadata, String? name, String? Function()? taxCode, String? Function()? unitLabel, }) { return PriceDataProductData(
   description: description != null ? description() : this.description,
   images: images != null ? images() : this.images,

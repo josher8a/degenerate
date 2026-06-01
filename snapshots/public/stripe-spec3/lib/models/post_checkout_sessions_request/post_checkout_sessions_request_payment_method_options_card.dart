@@ -52,6 +52,17 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'restrictions', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
+if (statementDescriptorSuffixKana$ != null) {
+  if (statementDescriptorSuffixKana$.length > 22) errors.add('statementDescriptorSuffixKana: length must be <= 22');
+}
+final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
+if (statementDescriptorSuffixKanji$ != null) {
+  if (statementDescriptorSuffixKanji$.length > 17) errors.add('statementDescriptorSuffixKanji: length must be <= 17');
+}
+return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, CardRestrictions? Function()? restrictions, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCard(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,

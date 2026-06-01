@@ -51,6 +51,29 @@ Map<String, dynamic> toJson() { return {
   'verified_name': ?verifiedName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bankCode$ = bankCode;
+if (bankCode$ != null) {
+  if (bankCode$.length > 5000) errors.add('bankCode: length must be <= 5000');
+}
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+final bic$ = bic;
+if (bic$ != null) {
+  if (bic$.length > 5000) errors.add('bic: length must be <= 5000');
+}
+final ibanLast4$ = ibanLast4;
+if (ibanLast4$ != null) {
+  if (ibanLast4$.length > 5000) errors.add('ibanLast4: length must be <= 5000');
+}
+final verifiedName$ = verifiedName;
+if (verifiedName$ != null) {
+  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+}
+return errors; } 
 SetupAttemptPaymentMethodDetailsBancontact copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, GeneratedSepaDebit? Function()? generatedSepaDebit, GeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, PaymentMethodDetailsBancontactPreferredLanguage? Function()? preferredLanguage, String? Function()? verifiedName, }) { return SetupAttemptPaymentMethodDetailsBancontact(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   bankName: bankName != null ? bankName() : this.bankName,

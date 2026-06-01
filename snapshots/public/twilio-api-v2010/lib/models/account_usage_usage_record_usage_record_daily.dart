@@ -83,6 +83,15 @@ Map<String, dynamic> toJson() { return {
   'usage_unit': ?usageUnit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountUsageUsageRecordUsageRecordDaily copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordDaily(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

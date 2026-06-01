@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'expand'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 250) errors.add('displayName: length must be <= 250');
+}
+return errors; } 
 PostBillingMetersIdRequest copyWith({String? Function()? displayName, List<String>? Function()? expand, }) { return PostBillingMetersIdRequest(
   displayName: displayName != null ? displayName() : this.displayName,
   expand: expand != null ? expand() : this.expand,

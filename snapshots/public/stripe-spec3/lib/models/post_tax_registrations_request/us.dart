@@ -29,6 +29,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state') && json['state'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (state.length > 5000) errors.add('state: length must be <= 5000');
+return errors; } 
 Us copyWith({LocalAmusementTax? Function()? localAmusementTax, LocalLeaseTax? Function()? localLeaseTax, String? state, StateSalesTax? Function()? stateSalesTax, TaxProductRegistrationsResourceCountryOptionsUnitedStatesType? type, }) { return Us(
   localAmusementTax: localAmusementTax != null ? localAmusementTax() : this.localAmusementTax,
   localLeaseTax: localLeaseTax != null ? localLeaseTax() : this.localLeaseTax,

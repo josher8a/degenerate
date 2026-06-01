@@ -54,6 +54,17 @@ Map<String, dynamic> toJson() { return {
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final fileIds$ = fileIds;
+if (fileIds$ != null) {
+  if (fileIds$.length > 50) errors.add('fileIds: must have <= 50 items');
+}
+final skills$ = skills;
+if (skills$ != null) {
+  if (skills$.length > 200) errors.add('skills: must have <= 200 items');
+}
+return errors; } 
 ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return ContainerAutoParam(
   type: type ?? this.type,
   fileIds: fileIds != null ? fileIds() : this.fileIds,

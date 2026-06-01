@@ -45,6 +45,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 128) errors.add('name: length must be <= 128');
+return errors; } 
 ShieldAuthIdCharacteristic copyWith({String? name, ShieldAuthIdCharacteristicType? type, }) { return ShieldAuthIdCharacteristic(
   name: name ?? this.name,
   type: type ?? this.type,

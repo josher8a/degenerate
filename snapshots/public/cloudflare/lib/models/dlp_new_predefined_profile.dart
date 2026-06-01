@@ -36,6 +36,14 @@ Map<String, dynamic> toJson() { return {
   'profile_id': profileId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('profile_id') && json['profile_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final allowedMatchCount$ = allowedMatchCount;
+if (allowedMatchCount$ != null) {
+  if (allowedMatchCount$ < 0) errors.add('allowedMatchCount: must be >= 0');
+  if (allowedMatchCount$ > 1000) errors.add('allowedMatchCount: must be <= 1000');
+}
+return errors; } 
 DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool Function()? ocrEnabled, String? profileId, }) { return DlpNewPredefinedProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,

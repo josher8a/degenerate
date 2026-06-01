@@ -66,6 +66,44 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('category') && json['category'] is String &&
       json.containsKey('category_code') && json['category_code'] is String &&
       json.containsKey('network_id') && json['network_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (category.length > 5000) errors.add('category: length must be <= 5000');
+if (categoryCode.length > 5000) errors.add('categoryCode: length must be <= 5000');
+final city$ = city;
+if (city$ != null) {
+  if (city$.length > 5000) errors.add('city: length must be <= 5000');
+}
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+if (networkId.length > 5000) errors.add('networkId: length must be <= 5000');
+final postalCode$ = postalCode;
+if (postalCode$ != null) {
+  if (postalCode$.length > 5000) errors.add('postalCode: length must be <= 5000');
+}
+final state$ = state;
+if (state$ != null) {
+  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+}
+final taxId$ = taxId;
+if (taxId$ != null) {
+  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+}
+final terminalId$ = terminalId;
+if (terminalId$ != null) {
+  if (terminalId$.length > 5000) errors.add('terminalId: length must be <= 5000');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 IssuingAuthorizationMerchantData copyWith({String? category, String? categoryCode, String? Function()? city, String? Function()? country, String? Function()? name, String? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? taxId, String? Function()? terminalId, String? Function()? url, }) { return IssuingAuthorizationMerchantData(
   category: category ?? this.category,
   categoryCode: categoryCode ?? this.categoryCode,

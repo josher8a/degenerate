@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'billing_agreement_id': ?billingAgreementId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_agreement_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final billingAgreementId$ = billingAgreementId;
+if (billingAgreementId$ != null) {
+  if (billingAgreementId$.length > 5000) errors.add('billingAgreementId: length must be <= 5000');
+}
+return errors; } 
 SetupIntentPaymentMethodOptionsPaypal copyWith({String? Function()? billingAgreementId}) { return SetupIntentPaymentMethodOptionsPaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
 ); } 

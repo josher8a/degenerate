@@ -132,6 +132,25 @@ Map<String, dynamic> toJson() { return {
   'use_stripe_sdk': ?useStripeSdk,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_details', 'capture_method', 'client_secret', 'confirmation_token', 'error_on_requires_action', 'excluded_payment_method_types', 'expand', 'hooks', 'mandate', 'mandate_data', 'off_session', 'payment_details', 'payment_method', 'payment_method_data', 'payment_method_options', 'payment_method_types', 'radar_options', 'receipt_email', 'return_url', 'setup_future_usage', 'shipping', 'use_stripe_sdk'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientSecret$ = clientSecret;
+if (clientSecret$ != null) {
+  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+}
+final confirmationToken$ = confirmationToken;
+if (confirmationToken$ != null) {
+  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+}
+final mandate$ = mandate;
+if (mandate$ != null) {
+  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+}
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+return errors; } 
 PostPaymentIntentsIntentConfirmRequest copyWith({PostPaymentIntentsIntentConfirmRequestAmountDetails? Function()? amountDetails, PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? clientSecret, String? Function()? confirmationToken, bool? Function()? errorOnRequiresAction, PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, Hooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsIntentConfirmRequestMandateData? Function()? mandateData, OffSession? Function()? offSession, PostPaymentIntentsIntentConfirmRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, RadarOptions? Function()? radarOptions, ReceiptEmail? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsIntentConfirmRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsIntentConfirmRequestShipping? Function()? shipping, bool? Function()? useStripeSdk, }) { return PostPaymentIntentsIntentConfirmRequest(
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,

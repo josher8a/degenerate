@@ -148,6 +148,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('name') &&
       json.containsKey('precedence') &&
       json.containsKey('traffic'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (filters.length < 1) errors.add('filters: must have >= 1 items');
+if (filters.length > 1) errors.add('filters: must have <= 1 items');
+return errors; } 
 ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDeletedAt? Function()? deletedAt, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? filters, ZeroTrustGatewaySchemasUuid? Function()? id, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? precedence, ZeroTrustGatewayReadOnly? Function()? readOnly, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewaySharable? Function()? sharable, ZeroTrustGatewaySourceAccount? Function()? sourceAccount, ZeroTrustGatewayTraffic? traffic, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, ZeroTrustGatewayVersion? Function()? version, ZeroTrustGatewayWarningStatus? Function()? warningStatus, }) { return ZeroTrustGatewayRules(
   action: action ?? this.action,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

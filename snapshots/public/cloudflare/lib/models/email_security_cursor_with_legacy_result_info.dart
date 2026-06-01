@@ -38,6 +38,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
       json.containsKey('total_count') && json['total_count'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (count < 0) errors.add('count: must be >= 0');
+if (page < 0) errors.add('page: must be >= 0');
+if (perPage < 0) errors.add('perPage: must be >= 0');
+if (totalCount < 0) errors.add('totalCount: must be >= 0');
+return errors; } 
 EmailSecurityCursorWithLegacyResultInfo copyWith({int? count, String? Function()? next, int? page, int? perPage, String? Function()? previous, int? totalCount, }) { return EmailSecurityCursorWithLegacyResultInfo(
   count: count ?? this.count,
   next: next != null ? next() : this.next,

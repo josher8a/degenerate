@@ -34,6 +34,17 @@ Map<String, dynamic> toJson() { return {
   if (productType != null) 'product_type': productType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'expected_at', 'explanation', 'product_description', 'product_type'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final explanation$ = explanation;
+if (explanation$ != null) {
+  if (explanation$.length > 5000) errors.add('explanation: length must be <= 5000');
+}
+final productDescription$ = productDescription;
+if (productDescription$ != null) {
+  if (productDescription$.length > 5000) errors.add('productDescription: length must be <= 5000');
+}
+return errors; } 
 IssuingDisputeNotReceivedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? expectedAt, String? Function()? explanation, String? Function()? productDescription, IssuingDisputeCanceledEvidenceProductType? Function()? productType, }) { return IssuingDisputeNotReceivedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,

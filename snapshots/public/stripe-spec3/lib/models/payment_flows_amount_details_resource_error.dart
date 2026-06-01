@@ -44,6 +44,13 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final message$ = message;
+if (message$ != null) {
+  if (message$.length > 5000) errors.add('message: length must be <= 5000');
+}
+return errors; } 
 PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResourceErrorCode? Function()? code, String? Function()? message, }) { return PaymentFlowsAmountDetailsResourceError(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,

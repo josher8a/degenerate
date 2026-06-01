@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'tax_id': taxId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id') && json['tax_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (taxId.length > 5000) errors.add('taxId: length must be <= 5000');
+return errors; } 
 PaymentMethodDetailsBoleto copyWith({String? taxId}) { return PaymentMethodDetailsBoleto(
   taxId: taxId ?? this.taxId,
 ); } 

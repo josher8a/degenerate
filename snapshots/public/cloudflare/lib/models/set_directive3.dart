@@ -24,6 +24,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation') &&
       json.containsKey('value') && json['value'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (value < 0) errors.add('value: must be >= 0');
+return errors; } 
 SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, int? value, }) { return SetDirective3(
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,

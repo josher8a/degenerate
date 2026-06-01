@@ -55,6 +55,17 @@ Map<String, dynamic> toJson() { return {
   'transfer_group': ?transferGroup,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'expand', 'receipt_email', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+}
+return errors; } 
 PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, List<String>? Function()? expand, String? Function()? receiptEmail, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostChargesChargeCaptureRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,

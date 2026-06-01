@@ -72,6 +72,13 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cancellation_reason', 'expand', 'metadata', 'personalization_design', 'pin', 'shipping', 'spending_controls', 'status'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final personalizationDesign$ = personalizationDesign;
+if (personalizationDesign$ != null) {
+  if (personalizationDesign$.length > 5000) errors.add('personalizationDesign: length must be <= 5000');
+}
+return errors; } 
 PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? personalizationDesign, Pin? Function()? pin, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, IssuingCardStatus? Function()? status, }) { return PostIssuingCardsCardRequest(
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,

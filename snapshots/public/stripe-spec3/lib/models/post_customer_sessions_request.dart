@@ -28,6 +28,17 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('components'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+return errors; } 
 PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? components, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, }) { return PostCustomerSessionsRequest(
   components: components ?? this.components,
   customer: customer != null ? customer() : this.customer,

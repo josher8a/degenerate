@@ -34,6 +34,29 @@ Map<String, dynamic> toJson() { return {
   'mandate': ?mandate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'expected_debit_date', 'fingerprint', 'last4', 'mandate'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final bsbNumber$ = bsbNumber;
+if (bsbNumber$ != null) {
+  if (bsbNumber$.length > 5000) errors.add('bsbNumber: length must be <= 5000');
+}
+final expectedDebitDate$ = expectedDebitDate;
+if (expectedDebitDate$ != null) {
+  if (expectedDebitDate$.length > 5000) errors.add('expectedDebitDate: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+}
+final mandate$ = mandate;
+if (mandate$ != null) {
+  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsAuBecsDebit copyWith({String? Function()? bsbNumber, String? Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, String? Function()? mandate, }) { return PaymentMethodDetailsAuBecsDebit(
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,

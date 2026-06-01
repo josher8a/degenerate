@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'eori_number': ?eoriNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eori_number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final eoriNumber$ = eoriNumber;
+if (eoriNumber$ != null) {
+  if (eoriNumber$.length > 5000) errors.add('eoriNumber: length must be <= 5000');
+}
+return errors; } 
 IssuingCardShippingCustoms copyWith({String? Function()? eoriNumber}) { return IssuingCardShippingCustoms(
   eoriNumber: eoriNumber != null ? eoriNumber() : this.eoriNumber,
 ); } 

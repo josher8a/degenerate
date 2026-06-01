@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'explanation': ?explanation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final explanation$ = explanation;
+if (explanation$ != null) {
+  if (explanation$.length > 5000) errors.add('explanation: length must be <= 5000');
+}
+return errors; } 
 IssuingDisputeNoValidAuthorizationEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, }) { return IssuingDisputeNoValidAuthorizationEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,

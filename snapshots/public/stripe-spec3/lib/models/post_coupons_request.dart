@@ -73,6 +73,17 @@ Map<String, dynamic> toJson() { return {
   'redeem_by': ?redeemBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_off', 'applies_to', 'currency', 'currency_options', 'duration', 'duration_in_months', 'expand', 'id', 'max_redemptions', 'metadata', 'name', 'percent_off', 'redeem_by'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 40) errors.add('name: length must be <= 40');
+}
+return errors; } 
 PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? appliesTo, String? Function()? currency, Map<String, PostCouponsCouponRequestCurrencyOptionsValue>? Function()? currencyOptions, CouponDuration? Function()? duration, int? Function()? durationInMonths, List<String>? Function()? expand, String? Function()? id, int? Function()? maxRedemptions, Metadata? Function()? metadata, String? Function()? name, double? Function()? percentOff, int? Function()? redeemBy, }) { return PostCouponsRequest(
   amountOff: amountOff != null ? amountOff() : this.amountOff,
   appliesTo: appliesTo != null ? appliesTo() : this.appliesTo,

@@ -53,6 +53,37 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder_address') &&
       json.containsKey('bank_address'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountHolderName$ = accountHolderName;
+if (accountHolderName$ != null) {
+  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+}
+final accountNumber$ = accountNumber;
+if (accountNumber$ != null) {
+  if (accountNumber$.length > 5000) errors.add('accountNumber: length must be <= 5000');
+}
+final accountType$ = accountType;
+if (accountType$ != null) {
+  if (accountType$.length > 5000) errors.add('accountType: length must be <= 5000');
+}
+final bankCode$ = bankCode;
+if (bankCode$ != null) {
+  if (bankCode$.length > 5000) errors.add('bankCode: length must be <= 5000');
+}
+final bankName$ = bankName;
+if (bankName$ != null) {
+  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+}
+final branchCode$ = branchCode;
+if (branchCode$ != null) {
+  if (branchCode$.length > 5000) errors.add('branchCode: length must be <= 5000');
+}
+final branchName$ = branchName;
+if (branchName$ != null) {
+  if (branchName$.length > 5000) errors.add('branchName: length must be <= 5000');
+}
+return errors; } 
 FundingInstructionsBankTransferZenginRecord copyWith({Address? accountHolderAddress, String? Function()? accountHolderName, String? Function()? accountNumber, String? Function()? accountType, Address? bankAddress, String? Function()? bankCode, String? Function()? bankName, String? Function()? branchCode, String? Function()? branchName, }) { return FundingInstructionsBankTransferZenginRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,

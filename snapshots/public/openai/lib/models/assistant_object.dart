@@ -112,6 +112,32 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('instructions') && json['instructions'] is String &&
       json.containsKey('tools') &&
       json.containsKey('metadata'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 256) errors.add('name: length must be <= 256');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 512) errors.add('description: length must be <= 512');
+}
+final instructions$ = instructions;
+if (instructions$ != null) {
+  if (instructions$.length > 256000) errors.add('instructions: length must be <= 256000');
+}
+if (tools.length > 128) errors.add('tools: must have <= 128 items');
+final temperature$ = temperature;
+if (temperature$ != null) {
+  if (temperature$ < 0) errors.add('temperature: must be >= 0');
+  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+}
+final topP$ = topP;
+if (topP$ != null) {
+  if (topP$ < 0) errors.add('topP: must be >= 0');
+  if (topP$ > 1) errors.add('topP: must be <= 1');
+}
+return errors; } 
 AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return AssistantObject(
   id: id ?? this.id,
   object: object ?? this.object,

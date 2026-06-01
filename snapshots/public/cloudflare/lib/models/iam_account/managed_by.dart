@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'parent_org_name': ?parentOrgName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parent_org_id', 'parent_org_name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final parentOrgId$ = parentOrgId;
+if (parentOrgId$ != null) {
+  if (parentOrgId$.length > 32) errors.add('parentOrgId: length must be <= 32');
+}
+return errors; } 
 ManagedBy copyWith({String? Function()? parentOrgId, String? Function()? parentOrgName, }) { return ManagedBy(
   parentOrgId: parentOrgId != null ? parentOrgId() : this.parentOrgId,
   parentOrgName: parentOrgName != null ? parentOrgName() : this.parentOrgName,

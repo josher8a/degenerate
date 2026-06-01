@@ -30,6 +30,13 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('secret') &&
       json.containsKey('vendor'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final keys$ = keys;
+if (keys$ != null) {
+  if (keys$.length > 10000) errors.add('keys: must have <= 10000 items');
+}
+return errors; } 
 R2SlurperGcsSourceSchema copyWith({String? bucket, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperGcsLikeCredsSchema? secret, GcsSourceResponseSchemaVendor? vendor, }) { return R2SlurperGcsSourceSchema(
   bucket: bucket ?? this.bucket,
   keys: keys != null ? keys() : this.keys,

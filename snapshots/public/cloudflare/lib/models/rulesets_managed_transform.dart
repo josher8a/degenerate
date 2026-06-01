@@ -37,6 +37,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('has_conflict') && json['has_conflict'] is bool &&
       json.containsKey('id'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final conflictsWith$ = conflictsWith;
+if (conflictsWith$ != null) {
+  if (conflictsWith$.length < 1) errors.add('conflictsWith: must have >= 1 items');
+  if (conflictsWith$.toSet().length != conflictsWith$.length) errors.add('conflictsWith: items must be unique');
+}
+return errors; } 
 RulesetsManagedTransform copyWith({List<RulesetsManagedTransformId>? Function()? conflictsWith, bool? enabled, bool? hasConflict, RulesetsManagedTransformId? id, }) { return RulesetsManagedTransform(
   conflictsWith: conflictsWith != null ? conflictsWith() : this.conflictsWith,
   enabled: enabled ?? this.enabled,

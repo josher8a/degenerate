@@ -58,6 +58,17 @@ final class $3Incident {
         json.containsKey('2species');
   }
 
+  /// Constraint violations for this value (empty when valid).
+  List<String> validate() {
+    final errors = <String>[];
+    if ($3DreadLevel < 0) errors.add(r'$3DreadLevel: must be >= 0');
+    if ($3DreadLevel >= 13.00000000000001)
+      errors.add(r'$3DreadLevel: must be < 13.00000000000001');
+    if ($3DreadLevel % 0.000001 != 0)
+      errors.add(r'$3DreadLevel: must be a multiple of 0.000001');
+    return errors;
+  }
+
   $3Incident copyWith({
     String? $1id,
     Phase? $2species,

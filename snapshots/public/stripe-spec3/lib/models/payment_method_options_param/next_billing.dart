@@ -17,6 +17,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('date') && json['date'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (date.length > 5000) errors.add('date: length must be <= 5000');
+return errors; } 
 NextBilling copyWith({int? amount, String? date, }) { return NextBilling(
   amount: amount ?? this.amount,
   date: date ?? this.date,

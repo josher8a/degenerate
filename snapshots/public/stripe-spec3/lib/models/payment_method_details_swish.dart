@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'verified_phone_last4': ?verifiedPhoneLast4,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'payment_reference', 'verified_phone_last4'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final paymentReference$ = paymentReference;
+if (paymentReference$ != null) {
+  if (paymentReference$.length > 5000) errors.add('paymentReference: length must be <= 5000');
+}
+final verifiedPhoneLast4$ = verifiedPhoneLast4;
+if (verifiedPhoneLast4$ != null) {
+  if (verifiedPhoneLast4$.length > 5000) errors.add('verifiedPhoneLast4: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsSwish copyWith({String? Function()? fingerprint, String? Function()? paymentReference, String? Function()? verifiedPhoneLast4, }) { return PaymentMethodDetailsSwish(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,

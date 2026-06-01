@@ -32,6 +32,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length < 1) errors.add('name: length must be >= 1');
+if (name.length > 128) errors.add('name: length must be <= 128');
+return errors; } 
 SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelinesFormat? Function()? format, String? name, CloudflarePipelinesConnectionSchema? Function()? schema, SinksRequestType? type, }) { return SinksRequest(
   config: config != null ? config() : this.config,
   format: format != null ? format() : this.format,

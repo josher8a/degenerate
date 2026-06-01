@@ -97,6 +97,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('api')
       json.containsKey('submittableCertCount') && json['submittableCertCount'] is String &&
       json.containsKey('submittedCertCount') && json['submittedCertCount'] is String &&
       json.containsKey('url') && json['url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final submittableCertCount$ = submittableCertCount;
+if (submittableCertCount$ != null) {
+  if (!RegExp(r'^\d+$').hasMatch(submittableCertCount$)) errors.add(r'submittableCertCount: must match pattern ^\d+$');
+}
+final submittedCertCount$ = submittedCertCount;
+if (submittedCertCount$ != null) {
+  if (!RegExp(r'^\d+$').hasMatch(submittedCertCount$)) errors.add(r'submittedCertCount: must match pattern ^\d+$');
+}
+return errors; } 
 CertificateLog copyWith({Api? api, double? avgThroughput, String? description, DateTime? endExclusive, DateTime? lastUpdate, String? $operator, CertificateLogPerformance? Function()? performance, List<CertificateLogRelated>? related, String? slug, DateTime? startInclusive, CertificateLogState? state, DateTime? stateTimestamp, String? Function()? submittableCertCount, String? Function()? submittedCertCount, String? url, }) { return CertificateLog(
   api: api ?? this.api,
   avgThroughput: avgThroughput ?? this.avgThroughput,

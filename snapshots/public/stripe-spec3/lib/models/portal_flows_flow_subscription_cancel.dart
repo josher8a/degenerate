@@ -19,6 +19,10 @@ Map<String, dynamic> toJson() { return {
   'subscription': subscription,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (subscription.length > 5000) errors.add('subscription: length must be <= 5000');
+return errors; } 
 PortalFlowsFlowSubscriptionCancel copyWith({PortalFlowsRetention? Function()? retention, String? subscription, }) { return PortalFlowsFlowSubscriptionCancel(
   retention: retention != null ? retention() : this.retention,
   subscription: subscription ?? this.subscription,

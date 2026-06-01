@@ -17,6 +17,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (label.length > 100) errors.add('label: length must be <= 100');
+if (value.length > 100) errors.add('value: length must be <= 100');
+return errors; } 
 DropdownOptions copyWith({String? label, String? value, }) { return DropdownOptions(
   label: label ?? this.label,
   value: value ?? this.value,

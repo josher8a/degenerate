@@ -28,6 +28,17 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amounts', 'client_secret', 'descriptor_code', 'expand'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final clientSecret$ = clientSecret;
+if (clientSecret$ != null) {
+  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+}
+final descriptorCode$ = descriptorCode;
+if (descriptorCode$ != null) {
+  if (descriptorCode$.length > 5000) errors.add('descriptorCode: length must be <= 5000');
+}
+return errors; } 
 PostSetupIntentsIntentVerifyMicrodepositsRequest copyWith({List<int>? Function()? amounts, String? Function()? clientSecret, String? Function()? descriptorCode, List<String>? Function()? expand, }) { return PostSetupIntentsIntentVerifyMicrodepositsRequest(
   amounts: amounts != null ? amounts() : this.amounts,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,

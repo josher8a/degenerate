@@ -17,6 +17,13 @@ Map<String, dynamic> toJson() { return {
   if (headers != null) 'headers': headers?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'headers'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final body$ = body;
+if (body$ != null) {
+  if (body$.length > 5000) errors.add('body: length must be <= 5000');
+}
+return errors; } 
 Request copyWith({String? Function()? body, List<Headers>? Function()? headers, }) { return Request(
   body: body != null ? body() : this.body,
   headers: headers != null ? headers() : this.headers,

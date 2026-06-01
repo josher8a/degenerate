@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'cvc_check': ?cvcCheck,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final addressLine1Check$ = addressLine1Check;
+if (addressLine1Check$ != null) {
+  if (addressLine1Check$.length > 5000) errors.add('addressLine1Check: length must be <= 5000');
+}
+final addressPostalCodeCheck$ = addressPostalCodeCheck;
+if (addressPostalCodeCheck$ != null) {
+  if (addressPostalCodeCheck$.length > 5000) errors.add('addressPostalCodeCheck: length must be <= 5000');
+}
+final cvcCheck$ = cvcCheck;
+if (cvcCheck$ != null) {
+  if (cvcCheck$.length > 5000) errors.add('cvcCheck: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsCardChecks copyWith({String? Function()? addressLine1Check, String? Function()? addressPostalCodeCheck, String? Function()? cvcCheck, }) { return PaymentMethodDetailsCardChecks(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,

@@ -38,6 +38,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey(r'$met
       json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('source') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (timestamp < 0) errors.add('timestamp: must be >= 0');
+return errors; } 
 WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic>? Function()? $containers, Metadata? $metadata, Workers? Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
   $containers: $containers != null ? $containers() : this.$containers,
   $metadata: $metadata ?? this.$metadata,

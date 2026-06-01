@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'race_other': ?raceOther,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'race', 'race_other'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final raceOther$ = raceOther;
+if (raceOther$ != null) {
+  if (raceOther$.length > 5000) errors.add('raceOther: length must be <= 5000');
+}
+return errors; } 
 PersonRaceDetails copyWith({List<Race>? Function()? race, String? Function()? raceOther, }) { return PersonRaceDetails(
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,

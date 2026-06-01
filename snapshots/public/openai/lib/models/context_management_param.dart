@@ -18,6 +18,13 @@ Map<String, dynamic> toJson() { return {
   'compact_threshold': ?compactThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final compactThreshold$ = compactThreshold;
+if (compactThreshold$ != null) {
+  if (compactThreshold$ < 1000) errors.add('compactThreshold: must be >= 1000');
+}
+return errors; } 
 ContextManagementParam copyWith({String? type, int? Function()? compactThreshold, }) { return ContextManagementParam(
   type: type ?? this.type,
   compactThreshold: compactThreshold != null ? compactThreshold() : this.compactThreshold,

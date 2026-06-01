@@ -24,6 +24,17 @@ Map<String, dynamic> toJson() { return {
   'number': ?number,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after', 'hosted_voucher_url', 'number'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final hostedVoucherUrl$ = hostedVoucherUrl;
+if (hostedVoucherUrl$ != null) {
+  if (hostedVoucherUrl$.length > 5000) errors.add('hostedVoucherUrl: length must be <= 5000');
+}
+final number$ = number;
+if (number$ != null) {
+  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionDisplayOxxoDetails copyWith({int? Function()? expiresAfter, String? Function()? hostedVoucherUrl, String? Function()? number, }) { return PaymentIntentNextActionDisplayOxxoDetails(
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,

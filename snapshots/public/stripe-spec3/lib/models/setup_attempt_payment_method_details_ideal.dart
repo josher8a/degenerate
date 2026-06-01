@@ -40,6 +40,17 @@ Map<String, dynamic> toJson() { return {
   'verified_name': ?verifiedName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'verified_name'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ibanLast4$ = ibanLast4;
+if (ibanLast4$ != null) {
+  if (ibanLast4$.length > 5000) errors.add('ibanLast4: length must be <= 5000');
+}
+final verifiedName$ = verifiedName;
+if (verifiedName$ != null) {
+  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+}
+return errors; } 
 SetupAttemptPaymentMethodDetailsIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? bank, Bic? Function()? bic, GeneratedSepaDebit? Function()? generatedSepaDebit, GeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, String? Function()? verifiedName, }) { return SetupAttemptPaymentMethodDetailsIdeal(
   bank: bank != null ? bank() : this.bank,
   bic: bic != null ? bic() : this.bic,

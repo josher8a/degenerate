@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'expand', 'metadata'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 350) errors.add('description: length must be <= 350');
+}
+return errors; } 
 PostCustomersCustomerBalanceTransactionsTransactionRequest copyWith({String? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, }) { return PostCustomersCustomerBalanceTransactionsTransactionRequest(
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,

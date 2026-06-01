@@ -75,6 +75,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
       json.containsKey('original_transaction') && json['original_transaction'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (originalTransaction.length > 5000) errors.add('originalTransaction: length must be <= 5000');
+if (reference.length > 500) errors.add('reference: length must be <= 500');
+return errors; } 
 PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) { return PostTaxTransactionsCreateReversalRequest(
   expand: expand != null ? expand() : this.expand,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,

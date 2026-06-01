@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   'minimum_length': ?minimumLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'maximum_length', 'minimum_length'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final defaultValue$ = defaultValue;
+if (defaultValue$ != null) {
+  if (defaultValue$.length > 5000) errors.add('defaultValue: length must be <= 5000');
+}
+return errors; } 
 PaymentLinksResourceCustomFieldsNumeric copyWith({String? Function()? defaultValue, int? Function()? maximumLength, int? Function()? minimumLength, }) { return PaymentLinksResourceCustomFieldsNumeric(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,

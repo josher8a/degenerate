@@ -291,6 +291,46 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
       json.containsKey('last4') && json['last4'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final authorizationCode$ = authorizationCode;
+if (authorizationCode$ != null) {
+  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+}
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final fingerprint$ = fingerprint;
+if (fingerprint$ != null) {
+  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+}
+final iin$ = iin;
+if (iin$ != null) {
+  if (iin$.length > 5000) errors.add('iin: length must be <= 5000');
+}
+final issuer$ = issuer;
+if (issuer$ != null) {
+  if (issuer$.length > 5000) errors.add('issuer: length must be <= 5000');
+}
+if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+final networkAdviceCode$ = networkAdviceCode;
+if (networkAdviceCode$ != null) {
+  if (networkAdviceCode$.length > 5000) errors.add('networkAdviceCode: length must be <= 5000');
+}
+final networkDeclineCode$ = networkDeclineCode;
+if (networkDeclineCode$ != null) {
+  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+}
+final networkTransactionId$ = networkTransactionId;
+if (networkTransactionId$ != null) {
+  if (networkTransactionId$.length > 5000) errors.add('networkTransactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, StoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   brand: brand ?? this.brand,

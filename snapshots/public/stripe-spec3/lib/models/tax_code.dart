@@ -54,6 +54,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (description.length > 5000) errors.add('description: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+return errors; } 
 TaxCode copyWith({String? description, String? id, String? name, TaxCodeObject? object, }) { return TaxCode(
   description: description ?? this.description,
   id: id ?? this.id,

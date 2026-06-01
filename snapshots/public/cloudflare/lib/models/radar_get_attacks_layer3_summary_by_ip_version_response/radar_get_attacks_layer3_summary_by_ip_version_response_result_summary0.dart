@@ -19,6 +19,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IPv4') && json['IPv4'] is String &&
       json.containsKey('IPv6') && json['IPv6'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(iPv4)) errors.add(r'iPv4: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(iPv6)) errors.add(r'iPv6: must match pattern ^\d+$');
+return errors; } 
 RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 copyWith({String? iPv4, String? iPv6, }) { return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
   iPv4: iPv4 ?? this.iPv4,
   iPv6: iPv6 ?? this.iPv6,

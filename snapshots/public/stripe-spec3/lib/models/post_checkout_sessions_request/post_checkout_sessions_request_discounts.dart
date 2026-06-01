@@ -16,6 +16,17 @@ Map<String, dynamic> toJson() { return {
   'promotion_code': ?promotionCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final coupon$ = coupon;
+if (coupon$ != null) {
+  if (coupon$.length > 5000) errors.add('coupon: length must be <= 5000');
+}
+final promotionCode$ = promotionCode;
+if (promotionCode$ != null) {
+  if (promotionCode$.length > 5000) errors.add('promotionCode: length must be <= 5000');
+}
+return errors; } 
 PostCheckoutSessionsRequestDiscounts copyWith({String? Function()? coupon, String? Function()? promotionCode, }) { return PostCheckoutSessionsRequestDiscounts(
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,

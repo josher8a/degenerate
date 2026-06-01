@@ -43,6 +43,10 @@ Map<String, dynamic> toJson() { return {
   'user_risk_score': userRiskScore.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_risk_score'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (userRiskScore.length < 1) errors.add('userRiskScore: must have >= 1 items');
+return errors; } 
 AccessUserRiskScoreRuleUserRiskScore copyWith({List<UserRiskScoreUserRiskScore>? userRiskScore}) { return AccessUserRiskScoreRuleUserRiskScore(
   userRiskScore: userRiskScore ?? this.userRiskScore,
 ); } 

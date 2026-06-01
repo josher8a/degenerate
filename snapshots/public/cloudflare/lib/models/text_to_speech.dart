@@ -18,6 +18,10 @@ Map<String, dynamic> toJson() { return {
   'prompt': prompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (prompt.length < 1) errors.add('prompt: length must be >= 1');
+return errors; } 
 TextToSpeech copyWith({String Function()? lang, String? prompt, }) { return TextToSpeech(
   lang: lang != null ? lang() : this.lang,
   prompt: prompt ?? this.prompt,

@@ -25,6 +25,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('arrival_date') && json['arrival_date'] is num &&
       json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (hostedVerificationUrl.length > 5000) errors.add('hostedVerificationUrl: length must be <= 5000');
+return errors; } 
 PaymentIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, MicrodepositType? Function()? microdepositType, }) { return PaymentIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: arrivalDate ?? this.arrivalDate,
   hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,

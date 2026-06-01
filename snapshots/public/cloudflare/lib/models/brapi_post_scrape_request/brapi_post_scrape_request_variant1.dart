@@ -104,6 +104,19 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('elements') &&
       json.containsKey('html') && json['html'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final actionTimeout$ = actionTimeout;
+if (actionTimeout$ != null) {
+  if (actionTimeout$ > 120000) errors.add('actionTimeout: must be <= 120000');
+}
+if (elements.length < 1) errors.add('elements: must have >= 1 items');
+if (html.length < 1) errors.add('html: length must be >= 1');
+final waitForTimeout$ = waitForTimeout;
+if (waitForTimeout$ != null) {
+  if (waitForTimeout$ > 120000) errors.add('waitForTimeout: must be <= 120000');
+}
+return errors; } 
 BrapiPostScrapeRequestVariant1 copyWith({double? Function()? actionTimeout, List<AddScriptTag>? Function()? addScriptTag, List<AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<AllowResourceTypes>? Function()? allowResourceTypes, Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<Variant1Cookies>? Function()? cookies, List<Variant1Elements>? elements, String? Function()? emulateMediaType, GotoOptions? Function()? gotoOptions, String? html, List<String>? Function()? rejectRequestPattern, List<RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String Function()? userAgent, Viewport? Function()? viewport, WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostScrapeRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,

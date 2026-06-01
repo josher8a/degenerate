@@ -47,6 +47,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
       json.containsKey('token_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (tokenSources.length < 1) errors.add('tokenSources: must have >= 1 items');
+if (tokenSources.length > 4) errors.add('tokenSources: must have <= 4 items');
+return errors; } 
 ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials? credentials, ShieldDescription? description, ShieldUuid? id, ShieldTimestamp? lastUpdated, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return ShieldTokenConfiguration(
   createdAt: createdAt ?? this.createdAt,
   credentials: credentials ?? this.credentials,

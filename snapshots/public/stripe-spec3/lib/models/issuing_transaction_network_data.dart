@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorization_code', 'processing_date', 'transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final authorizationCode$ = authorizationCode;
+if (authorizationCode$ != null) {
+  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+}
+final processingDate$ = processingDate;
+if (processingDate$ != null) {
+  if (processingDate$.length > 5000) errors.add('processingDate: length must be <= 5000');
+}
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, String? Function()? processingDate, String? Function()? transactionId, }) { return IssuingTransactionNetworkData(
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   processingDate: processingDate != null ? processingDate() : this.processingDate,

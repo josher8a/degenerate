@@ -34,6 +34,13 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final targetDate$ = targetDate;
+if (targetDate$ != null) {
+  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+}
+return errors; } 
 CheckoutUsBankAccountPaymentMethodOptions copyWith({LinkedAccountOptionsCommon? Function()? financialConnections, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

@@ -27,6 +27,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+if (result.length < 1) errors$.add('result: must have >= 1 items');
+return errors$; } 
 EmailSecurityDeleteDomainsResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, List<EmailSecurityDeleteAllowPolicyResponseResult>? result, }) { return EmailSecurityDeleteDomainsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_provider.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_app_policies_components_schemas_id_response/access_app_policies_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/access_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_email.dart';import 'package:pub_cloudflare/models/access_groups.dart';import 'package:pub_cloudflare/models/access_groups_name.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_identity_provider.dart';import 'package:pub_cloudflare/models/access_identity_providers.dart';import 'package:pub_cloudflare/models/access_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_response_collection/access_response_collection_result.dart';import 'package:pub_cloudflare/models/access_username.dart';import 'package:pub_cloudflare/models/access_users.dart';import 'package:pub_cloudflare/models/access_users_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_users_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_users_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -119,7 +119,7 @@ return execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AaaIdResponseResult?, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppPoliciesComponentsSchemasIdResponseResult?, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,7 +132,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? AccessAppPoliciesComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -21,6 +21,13 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 PortalLoginPage copyWith({bool? enabled, String? Function()? url, }) { return PortalLoginPage(
   enabled: enabled ?? this.enabled,
   url: url != null ? url() : this.url,

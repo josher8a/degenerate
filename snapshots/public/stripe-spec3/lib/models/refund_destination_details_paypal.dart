@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'network_decline_code': ?networkDeclineCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network_decline_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final networkDeclineCode$ = networkDeclineCode;
+if (networkDeclineCode$ != null) {
+  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+}
+return errors; } 
 RefundDestinationDetailsPaypal copyWith({String? Function()? networkDeclineCode}) { return RefundDestinationDetailsPaypal(
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,
 ); } 

@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'vector_store_ids': ?vectorStoreIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'vector_store_ids'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final vectorStoreIds$ = vectorStoreIds;
+if (vectorStoreIds$ != null) {
+  if (vectorStoreIds$.length > 1) errors.add('vectorStoreIds: must have <= 1 items');
+}
+return errors; } 
 ToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { return ToolResourcesFileSearch(
   vectorStoreIds: vectorStoreIds != null ? vectorStoreIds() : this.vectorStoreIds,
 ); } 

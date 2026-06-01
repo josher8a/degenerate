@@ -72,6 +72,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('payload') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (eventName.length > 100) errors.add('eventName: length must be <= 100');
+if (identifier.length > 5000) errors.add('identifier: length must be <= 5000');
+return errors; } 
 BillingMeterEvent copyWith({int? created, String? eventName, String? identifier, bool? livemode, BillingMeterEventObject? object, Map<String,String>? payload, int? timestamp, }) { return BillingMeterEvent(
   created: created ?? this.created,
   eventName: eventName ?? this.eventName,

@@ -86,6 +86,30 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 40000) errors.add('description: length must be <= 40000');
+}
+final id$ = id;
+if (id$ != null) {
+  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+}
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final unitLabel$ = unitLabel;
+if (unitLabel$ != null) {
+  if (unitLabel$.length > 12) errors.add('unitLabel: length must be <= 12');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) { return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,

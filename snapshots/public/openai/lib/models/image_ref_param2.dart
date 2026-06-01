@@ -17,6 +17,13 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'file_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final imageUrl$ = imageUrl;
+if (imageUrl$ != null) {
+  if (imageUrl$.length > 20971520) errors.add('imageUrl: length must be <= 20971520');
+}
+return errors; } 
 ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) { return ImageRefParam2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,

@@ -69,6 +69,13 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'financial_connections', 'mandate_options', 'networks', 'setup_future_usage', 'target_date', 'transaction_purpose', 'verification_method'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final targetDate$ = targetDate;
+if (targetDate$ != null) {
+  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParamFinancialConnections? Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParamNetworks? Function()? networks, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsParamTransactionPurpose? Function()? transactionPurpose, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,

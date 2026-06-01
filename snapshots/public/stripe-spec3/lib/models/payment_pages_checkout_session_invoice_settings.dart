@@ -44,6 +44,17 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+final footer$ = footer;
+if (footer$ != null) {
+  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+}
+return errors; } 
 PaymentPagesCheckoutSessionInvoiceSettings copyWith({List<InvoiceAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, ConnectAccountReference? Function()? issuer, Map<String, String>? Function()? metadata, InvoiceSettingCheckoutRenderingOptions? Function()? renderingOptions, }) { return PaymentPagesCheckoutSessionInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,

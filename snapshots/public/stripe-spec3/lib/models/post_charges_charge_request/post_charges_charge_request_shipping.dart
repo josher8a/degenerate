@@ -30,6 +30,22 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final carrier$ = carrier;
+if (carrier$ != null) {
+  if (carrier$.length > 5000) errors.add('carrier: length must be <= 5000');
+}
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final trackingNumber$ = trackingNumber;
+if (trackingNumber$ != null) {
+  if (trackingNumber$.length > 5000) errors.add('trackingNumber: length must be <= 5000');
+}
+return errors; } 
 PostChargesChargeRequestShipping copyWith({CustomerShippingAddress? address, String? Function()? carrier, String? name, String? Function()? phone, String? Function()? trackingNumber, }) { return PostChargesChargeRequestShipping(
   address: address ?? this.address,
   carrier: carrier != null ? carrier() : this.carrier,

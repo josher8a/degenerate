@@ -28,6 +28,25 @@ Map<String, dynamic> toJson() { return {
   'record_usage': ?recordUsage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'internal_record_quota', 'internal_record_usage', 'record_quota', 'record_usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final internalRecordQuota$ = internalRecordQuota;
+if (internalRecordQuota$ != null) {
+  if (internalRecordQuota$ < 0) errors.add('internalRecordQuota: must be >= 0');
+}
+final internalRecordUsage$ = internalRecordUsage;
+if (internalRecordUsage$ != null) {
+  if (internalRecordUsage$ < 0) errors.add('internalRecordUsage: must be >= 0');
+}
+final recordQuota$ = recordQuota;
+if (recordQuota$ != null) {
+  if (recordQuota$ < 0) errors.add('recordQuota: must be >= 0');
+}
+final recordUsage$ = recordUsage;
+if (recordUsage$ != null) {
+  if (recordUsage$ < 0) errors.add('recordUsage: must be >= 0');
+}
+return errors; } 
 DnsRecordsDnsResponseAccountUsageResult copyWith({int? Function()? internalRecordQuota, int? Function()? internalRecordUsage, int? Function()? recordQuota, int? Function()? recordUsage, }) { return DnsRecordsDnsResponseAccountUsageResult(
   internalRecordQuota: internalRecordQuota != null ? internalRecordQuota() : this.internalRecordQuota,
   internalRecordUsage: internalRecordUsage != null ? internalRecordUsage() : this.internalRecordUsage,

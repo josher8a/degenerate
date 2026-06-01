@@ -32,6 +32,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+if (errors.length < 1) errors$.add('errors: must have >= 1 items');
+return errors$; } 
 ResponseCommonFailure11 copyWith({List<Message>? errors, List<Message>? Function()? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ResponseCommonFailure11(
   errors: errors ?? this.errors,
   messages: messages != null ? messages() : this.messages,

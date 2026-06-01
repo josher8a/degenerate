@@ -334,6 +334,21 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('From') && json['From'] is String &&
       json.containsKey('To') && json['To'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final callSidToCoach$ = callSidToCoach;
+if (callSidToCoach$ != null) {
+  if (callSidToCoach$.length < 34) errors.add('callSidToCoach: length must be >= 34');
+  if (callSidToCoach$.length > 34) errors.add('callSidToCoach: length must be <= 34');
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(callSidToCoach$)) errors.add(r'callSidToCoach: must match pattern ^CA[0-9a-fA-F]{32}$');
+}
+final byoc$ = byoc;
+if (byoc$ != null) {
+  if (byoc$.length < 34) errors.add('byoc: length must be >= 34');
+  if (byoc$.length > 34) errors.add('byoc: length must be <= 34');
+  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byoc$)) errors.add(r'byoc: must match pattern ^BY[0-9a-fA-F]{32}$');
+}
+return errors; } 
 CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod? Function()? statusCallbackMethod, List<String>? Function()? statusCallbackEvent, String? Function()? label, int? Function()? timeout, bool? Function()? record, bool? Function()? muted, String? Function()? beep, bool? Function()? startConferenceOnEnter, bool? Function()? endConferenceOnExit, Uri? Function()? waitUrl, WaitMethod? Function()? waitMethod, bool? Function()? earlyMedia, int? Function()? maxParticipants, String? Function()? conferenceRecord, String? Function()? conferenceTrim, Uri? Function()? conferenceStatusCallback, ConferenceStatusCallbackMethod? Function()? conferenceStatusCallbackMethod, List<String>? Function()? conferenceStatusCallbackEvent, String? Function()? recordingChannels, Uri? Function()? recordingStatusCallback, RecordingStatusCallbackMethod? Function()? recordingStatusCallbackMethod, String? Function()? sipAuthUsername, String? Function()? sipAuthPassword, String? Function()? region, Uri? Function()? conferenceRecordingStatusCallback, ConferenceRecordingStatusCallbackMethod? Function()? conferenceRecordingStatusCallbackMethod, List<String>? Function()? recordingStatusCallbackEvent, List<String>? Function()? conferenceRecordingStatusCallbackEvent, bool? Function()? coaching, String? Function()? callSidToCoach, String? Function()? jitterBufferSize, String? Function()? byoc, String? Function()? callerId, String? Function()? callReason, String? Function()? recordingTrack, int? Function()? timeLimit, String? Function()? machineDetection, int? Function()? machineDetectionTimeout, int? Function()? machineDetectionSpeechThreshold, int? Function()? machineDetectionSpeechEndThreshold, int? Function()? machineDetectionSilenceTimeout, Uri? Function()? amdStatusCallback, AmdStatusCallbackMethod? Function()? amdStatusCallbackMethod, String? Function()? trim, String? Function()? callToken, Uri? Function()? clientNotificationUrl, String? Function()? callerDisplayName, }) { return CreateParticipantRequest(
   from: from ?? this.from,
   to: to ?? this.to,

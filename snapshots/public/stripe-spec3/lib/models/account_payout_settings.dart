@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('debit_negative_balances') && json['debit_negative_balances'] is bool &&
       json.containsKey('schedule'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+return errors; } 
 AccountPayoutSettings copyWith({bool? debitNegativeBalances, TransferSchedule? schedule, String? Function()? statementDescriptor, }) { return AccountPayoutSettings(
   debitNegativeBalances: debitNegativeBalances ?? this.debitNegativeBalances,
   schedule: schedule ?? this.schedule,

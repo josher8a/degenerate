@@ -49,6 +49,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alpha
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('region') && json['region'] is String &&
       json.containsKey('subregion') && json['subregion'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(latitude)) errors.add(r'latitude: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(longitude)) errors.add(r'longitude: must match pattern ^\d+$');
+return errors; } 
 ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent, String? latitude, String? longitude, String? name, String? region, String? subregion, }) { return ResultLocation(
   alpha2: alpha2 ?? this.alpha2,
   confidenceLevel: confidenceLevel ?? this.confidenceLevel,

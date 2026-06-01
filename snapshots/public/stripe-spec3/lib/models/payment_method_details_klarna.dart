@@ -26,6 +26,17 @@ Map<String, dynamic> toJson() { return {
   'preferred_locale': ?preferredLocale,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payer_details', 'payment_method_category', 'preferred_locale'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentMethodCategory$ = paymentMethodCategory;
+if (paymentMethodCategory$ != null) {
+  if (paymentMethodCategory$.length > 5000) errors.add('paymentMethodCategory: length must be <= 5000');
+}
+final preferredLocale$ = preferredLocale;
+if (preferredLocale$ != null) {
+  if (preferredLocale$.length > 5000) errors.add('preferredLocale: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsKlarna copyWith({KlarnaPayerDetails? Function()? payerDetails, String? Function()? paymentMethodCategory, String? Function()? preferredLocale, }) { return PaymentMethodDetailsKlarna(
   payerDetails: payerDetails != null ? payerDetails() : this.payerDetails,
   paymentMethodCategory: paymentMethodCategory != null ? paymentMethodCategory() : this.paymentMethodCategory,

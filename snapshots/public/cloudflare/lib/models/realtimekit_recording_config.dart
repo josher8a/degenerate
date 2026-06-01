@@ -40,6 +40,14 @@ Map<String, dynamic> toJson() { return {
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_config', 'file_name_prefix', 'live_streaming_config', 'max_seconds', 'realtimekit_bucket_config', 'storage_config', 'video_config'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxSeconds$ = maxSeconds;
+if (maxSeconds$ != null) {
+  if (maxSeconds$ < 60) errors.add('maxSeconds: must be >= 60');
+  if (maxSeconds$ > 86400) errors.add('maxSeconds: must be <= 86400');
+}
+return errors; } 
 RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitLivestreamingConfig? Function()? liveStreamingConfig, double? Function()? maxSeconds, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitStorageConfig? Function()? storageConfig, RealtimekitVideoConfig? Function()? videoConfig, }) { return RealtimekitRecordingConfig(
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,

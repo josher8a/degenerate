@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url', 'url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final returnUrl$ = returnUrl;
+if (returnUrl$ != null) {
+  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+}
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionRedirectToUrl copyWith({String? Function()? returnUrl, String? Function()? url, }) { return PaymentIntentNextActionRedirectToUrl(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   url: url != null ? url() : this.url,

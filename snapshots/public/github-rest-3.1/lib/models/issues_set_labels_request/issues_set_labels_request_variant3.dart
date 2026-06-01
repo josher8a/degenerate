@@ -12,6 +12,13 @@ Map<String, dynamic> toJson() { return {
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labels'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final labels$ = labels;
+if (labels$ != null) {
+  if (labels$.length < 1) errors.add('labels: must have >= 1 items');
+}
+return errors; } 
 IssuesSetLabelsRequestVariant3 copyWith({List<Variant3Labels>? Function()? labels}) { return IssuesSetLabelsRequestVariant3(
   labels: labels != null ? labels() : this.labels,
 ); } 

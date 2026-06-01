@@ -80,6 +80,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (fraudType.length > 5000) errors.add('fraudType: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge, int? created, String? fraudType, String? id, bool? livemode, RadarEarlyFraudWarningObject? object, ChargePaymentIntent? Function()? paymentIntent, }) { return RadarEarlyFraudWarning(
   actionable: actionable ?? this.actionable,
   charge: charge ?? this.charge,

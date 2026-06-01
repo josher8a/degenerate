@@ -35,6 +35,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('payload') && json['payload'] is String &&
       json.containsKey('scope'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (payload.length > 5000) errors.add('payload: length must be <= 5000');
+return errors; } 
 PostAppsSecretsRequest copyWith({List<String>? Function()? expand, int? Function()? expiresAt, String? name, String? payload, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

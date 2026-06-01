@@ -21,6 +21,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (price.length > 5000) errors.add('price: length must be <= 5000');
+return errors; } 
 OptionalItemsVariant1 copyWith({AdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) { return OptionalItemsVariant1(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price ?? this.price,

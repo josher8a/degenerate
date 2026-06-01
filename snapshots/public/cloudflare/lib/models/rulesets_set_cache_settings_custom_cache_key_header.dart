@@ -29,6 +29,19 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'contains', 'exclude_origin', 'include'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final checkPresence$ = checkPresence;
+if (checkPresence$ != null) {
+  if (checkPresence$.length < 1) errors.add('checkPresence: must have >= 1 items');
+  if (checkPresence$.toSet().length != checkPresence$.length) errors.add('checkPresence: items must be unique');
+}
+final include$ = include;
+if (include$ != null) {
+  if (include$.length < 1) errors.add('include: must have >= 1 items');
+  if (include$.toSet().length != include$.length) errors.add('include: items must be unique');
+}
+return errors; } 
 RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()? checkPresence, Map<String, List<String>>? Function()? contains, bool? Function()? excludeOrigin, List<String>? Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   contains: contains != null ? contains() : this.contains,

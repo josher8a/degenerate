@@ -45,6 +45,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+return errors; } 
 ForwardingSettings copyWith({String? Function()? financialAccount, String? Function()? paymentMethod, ForwardingSettingsType? type, }) { return ForwardingSettings(
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,

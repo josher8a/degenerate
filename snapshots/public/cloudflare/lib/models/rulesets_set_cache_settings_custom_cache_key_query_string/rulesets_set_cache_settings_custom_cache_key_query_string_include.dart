@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
   'list': ?list,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'list'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final list$ = list;
+if (list$ != null) {
+  if (list$.length < 1) errors.add('list: must have >= 1 items');
+  if (list$.toSet().length != list$.length) errors.add('list: items must be unique');
+}
+return errors; } 
 RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude copyWith({bool? Function()? all, List<String>? Function()? list, }) { return RulesetsSetCacheSettingsCustomCacheKeyQueryStringInclude(
   all: all != null ? all() : this.all,
   list: list != null ? list() : this.list,

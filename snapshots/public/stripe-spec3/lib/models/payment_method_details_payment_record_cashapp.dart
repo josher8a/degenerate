@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'cashtag', 'transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final buyerId$ = buyerId;
+if (buyerId$ != null) {
+  if (buyerId$.length > 5000) errors.add('buyerId: length must be <= 5000');
+}
+final cashtag$ = cashtag;
+if (cashtag$ != null) {
+  if (cashtag$.length > 5000) errors.add('cashtag: length must be <= 5000');
+}
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsPaymentRecordCashapp copyWith({String? Function()? buyerId, String? Function()? cashtag, String? Function()? transactionId, }) { return PaymentMethodDetailsPaymentRecordCashapp(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   cashtag: cashtag != null ? cashtag() : this.cashtag,

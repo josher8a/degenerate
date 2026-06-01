@@ -29,6 +29,17 @@ Map<String, dynamic> toJson() { return {
   if (front != null) 'front': front?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final details$ = details;
+if (details$ != null) {
+  if (details$.length > 5000) errors.add('details: length must be <= 5000');
+}
+final detailsCode$ = detailsCode;
+if (detailsCode$ != null) {
+  if (detailsCode$.length > 5000) errors.add('detailsCode: length must be <= 5000');
+}
+return errors; } 
 LegalEntityCompanyVerificationDocument copyWith({Back? Function()? back, String? Function()? details, String? Function()? detailsCode, Front? Function()? front, }) { return LegalEntityCompanyVerificationDocument(
   back: back != null ? back() : this.back,
   details: details != null ? details() : this.details,

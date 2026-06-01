@@ -45,6 +45,13 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'payment_method', 'payment_method_data', 'payment_method_options', 'return_url', 'setup_future_usage', 'shipping'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final paymentMethod$ = paymentMethod;
+if (paymentMethod$ != null) {
+  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+}
+return errors; } 
 PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? expand, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostTestHelpersConfirmationTokensRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostTestHelpersConfirmationTokensRequestShipping? Function()? shipping, }) { return PostTestHelpersConfirmationTokensRequest(
   expand: expand != null ? expand() : this.expand,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,

@@ -152,6 +152,10 @@ Map<String, dynamic> toJson() { return {
   if (wallet != null) 'wallet': wallet?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('card') && json['card'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (card.length > 5000) errors.add('card: length must be <= 5000');
+return errors; } 
 PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, PostTestHelpersIssuingAuthorizationsRequestAmountDetails? Function()? amountDetails, AuthorizationMethod? Function()? authorizationMethod, String? card, String? Function()? currency, List<String>? Function()? expand, Fleet? Function()? fleet, FraudDisputabilityLikelihood? Function()? fraudDisputabilityLikelihood, PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel? Function()? fuel, bool? Function()? isAmountControllable, int? Function()? merchantAmount, String? Function()? merchantCurrency, MerchantData? Function()? merchantData, NetworkData? Function()? networkData, RiskAssessment? Function()? riskAssessment, VerificationData? Function()? verificationData, PostTestHelpersIssuingAuthorizationsRequestWallet? Function()? wallet, }) { return PostTestHelpersIssuingAuthorizationsRequest(
   amount: amount != null ? amount() : this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,

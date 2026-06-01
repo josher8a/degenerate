@@ -33,6 +33,18 @@ Map<String, dynamic> toJson() { return {
   'pattern': ?pattern,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_recent', 'is_regex', 'is_similarity', 'pattern'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final comments$ = comments;
+if (comments$ != null) {
+  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+}
+final pattern$ = pattern;
+if (pattern$ != null) {
+  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+  if (pattern$.length > 1024) errors.add('pattern: length must be <= 1024');
+}
+return errors; } 
 EmailSecurityUpdateTrustedDomainRequest copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, }) { return EmailSecurityUpdateTrustedDomainRequest(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent != null ? isRecent() : this.isRecent,

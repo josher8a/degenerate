@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (message.length > 5000) errors.add('message: length must be <= 5000');
+return errors; } 
 SigmaScheduledQueryRunError copyWith({String? message}) { return SigmaScheduledQueryRunError(
   message: message ?? this.message,
 ); } 

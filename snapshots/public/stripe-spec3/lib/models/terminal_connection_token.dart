@@ -49,6 +49,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('secret') && json['secret'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+}
+if (secret.length > 5000) errors.add('secret: length must be <= 5000');
+return errors; } 
 TerminalConnectionToken copyWith({String? Function()? location, TerminalConnectionTokenObject? object, String? secret, }) { return TerminalConnectionToken(
   location: location != null ? location() : this.location,
   object: object ?? this.object,

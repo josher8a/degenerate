@@ -23,6 +23,19 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'include'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final checkPresence$ = checkPresence;
+if (checkPresence$ != null) {
+  if (checkPresence$.length < 1) errors.add('checkPresence: must have >= 1 items');
+  if (checkPresence$.length > 50) errors.add('checkPresence: must have <= 50 items');
+}
+final include$ = include;
+if (include$ != null) {
+  if (include$.length < 1) errors.add('include: must have >= 1 items');
+  if (include$.length > 50) errors.add('include: must have <= 50 items');
+}
+return errors; } 
 Cookie copyWith({List<String>? Function()? checkPresence, List<String>? Function()? include, }) { return Cookie(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   include: include != null ? include() : this.include,

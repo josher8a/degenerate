@@ -84,6 +84,14 @@ Map<String, dynamic> toJson() { return {
   if (orderBy != null) 'orderBy': orderBy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final limit$ = limit;
+if (limit$ != null) {
+  if (limit$ < 0) errors.add('limit: must be >= 0');
+  if (limit$ > 2000) errors.add('limit: must be <= 2000');
+}
+return errors; } 
 TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, FilterCombination? Function()? filterCombination, List<TelemetryKeysListRequestFilters>? Function()? filters, List<GroupBys>? Function()? groupBys, List<Havings>? Function()? havings, int? Function()? limit, Needle? Function()? needle, OrderBy? Function()? orderBy, }) { return TelemetryQueryRequestParameters(
   calculations: calculations != null ? calculations() : this.calculations,
   datasets: datasets != null ? datasets() : this.datasets,

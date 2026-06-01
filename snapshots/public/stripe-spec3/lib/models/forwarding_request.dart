@@ -106,6 +106,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (paymentMethod.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+final url$ = url;
+if (url$ != null) {
+  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+}
+return errors; } 
 ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<Replacements>? replacements, ForwardedRequestContext? Function()? requestContext, ForwardedRequestDetails? Function()? requestDetails, ForwardedResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
   created: created ?? this.created,
   id: id ?? this.id,

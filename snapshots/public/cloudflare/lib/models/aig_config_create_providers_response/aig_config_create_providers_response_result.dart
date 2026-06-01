@@ -56,6 +56,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String &&
       json.containsKey('secret_preview') && json['secret_preview'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (gatewayId.length < 1) errors.add('gatewayId: length must be >= 1');
+if (gatewayId.length > 64) errors.add('gatewayId: length must be <= 64');
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(gatewayId)) errors.add(r'gatewayId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
+return errors; } 
 AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,

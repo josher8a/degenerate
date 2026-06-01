@@ -26,6 +26,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 DeletedTerminalConfiguration copyWith({bool? deleted, String? id, DeletedTerminalConfigurationObject? object, }) { return DeletedTerminalConfiguration(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,

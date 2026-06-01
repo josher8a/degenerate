@@ -15,6 +15,13 @@ Map<String, dynamic> toJson() { return {
   'country': ?country,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final country$ = country;
+if (country$ != null) {
+  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsLink copyWith({String? Function()? country}) { return PaymentMethodDetailsLink(
   country: country != null ? country() : this.country,
 ); } 

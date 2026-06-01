@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final url$ = url;
+if (url$ != null) {
+  if (!RegExp('^data:*').hasMatch(url$)) errors.add('url: must match pattern ^data:*');
+}
+return errors; } 
 MessagesMessagesContentVariant2ImageUrl copyWith({String? Function()? url}) { return MessagesMessagesContentVariant2ImageUrl(
   url: url != null ? url() : this.url,
 ); } 

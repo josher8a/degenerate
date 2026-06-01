@@ -121,6 +121,81 @@ Map<String, dynamic> toJson() { return {
   'uncategorized_text': ?uncategorizedText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_activity_log', 'billing_address', 'cancellation_policy', 'cancellation_policy_disclosure', 'cancellation_rebuttal', 'customer_communication', 'customer_email_address', 'customer_name', 'customer_purchase_ip', 'customer_signature', 'duplicate_charge_documentation', 'duplicate_charge_explanation', 'duplicate_charge_id', 'enhanced_evidence', 'product_description', 'receipt', 'refund_policy', 'refund_policy_disclosure', 'refund_refusal_explanation', 'service_date', 'service_documentation', 'shipping_address', 'shipping_carrier', 'shipping_date', 'shipping_documentation', 'shipping_tracking_number', 'uncategorized_file', 'uncategorized_text'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accessActivityLog$ = accessActivityLog;
+if (accessActivityLog$ != null) {
+  if (accessActivityLog$.length > 20000) errors.add('accessActivityLog: length must be <= 20000');
+}
+final billingAddress$ = billingAddress;
+if (billingAddress$ != null) {
+  if (billingAddress$.length > 5000) errors.add('billingAddress: length must be <= 5000');
+}
+final cancellationPolicyDisclosure$ = cancellationPolicyDisclosure;
+if (cancellationPolicyDisclosure$ != null) {
+  if (cancellationPolicyDisclosure$.length > 20000) errors.add('cancellationPolicyDisclosure: length must be <= 20000');
+}
+final cancellationRebuttal$ = cancellationRebuttal;
+if (cancellationRebuttal$ != null) {
+  if (cancellationRebuttal$.length > 20000) errors.add('cancellationRebuttal: length must be <= 20000');
+}
+final customerEmailAddress$ = customerEmailAddress;
+if (customerEmailAddress$ != null) {
+  if (customerEmailAddress$.length > 5000) errors.add('customerEmailAddress: length must be <= 5000');
+}
+final customerName$ = customerName;
+if (customerName$ != null) {
+  if (customerName$.length > 5000) errors.add('customerName: length must be <= 5000');
+}
+final customerPurchaseIp$ = customerPurchaseIp;
+if (customerPurchaseIp$ != null) {
+  if (customerPurchaseIp$.length > 5000) errors.add('customerPurchaseIp: length must be <= 5000');
+}
+final duplicateChargeExplanation$ = duplicateChargeExplanation;
+if (duplicateChargeExplanation$ != null) {
+  if (duplicateChargeExplanation$.length > 20000) errors.add('duplicateChargeExplanation: length must be <= 20000');
+}
+final duplicateChargeId$ = duplicateChargeId;
+if (duplicateChargeId$ != null) {
+  if (duplicateChargeId$.length > 5000) errors.add('duplicateChargeId: length must be <= 5000');
+}
+final productDescription$ = productDescription;
+if (productDescription$ != null) {
+  if (productDescription$.length > 20000) errors.add('productDescription: length must be <= 20000');
+}
+final refundPolicyDisclosure$ = refundPolicyDisclosure;
+if (refundPolicyDisclosure$ != null) {
+  if (refundPolicyDisclosure$.length > 20000) errors.add('refundPolicyDisclosure: length must be <= 20000');
+}
+final refundRefusalExplanation$ = refundRefusalExplanation;
+if (refundRefusalExplanation$ != null) {
+  if (refundRefusalExplanation$.length > 20000) errors.add('refundRefusalExplanation: length must be <= 20000');
+}
+final serviceDate$ = serviceDate;
+if (serviceDate$ != null) {
+  if (serviceDate$.length > 5000) errors.add('serviceDate: length must be <= 5000');
+}
+final shippingAddress$ = shippingAddress;
+if (shippingAddress$ != null) {
+  if (shippingAddress$.length > 5000) errors.add('shippingAddress: length must be <= 5000');
+}
+final shippingCarrier$ = shippingCarrier;
+if (shippingCarrier$ != null) {
+  if (shippingCarrier$.length > 5000) errors.add('shippingCarrier: length must be <= 5000');
+}
+final shippingDate$ = shippingDate;
+if (shippingDate$ != null) {
+  if (shippingDate$.length > 5000) errors.add('shippingDate: length must be <= 5000');
+}
+final shippingTrackingNumber$ = shippingTrackingNumber;
+if (shippingTrackingNumber$ != null) {
+  if (shippingTrackingNumber$.length > 5000) errors.add('shippingTrackingNumber: length must be <= 5000');
+}
+final uncategorizedText$ = uncategorizedText;
+if (uncategorizedText$ != null) {
+  if (uncategorizedText$.length > 20000) errors.add('uncategorizedText: length must be <= 20000');
+}
+return errors; } 
 PostChargesChargeDisputeRequestEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, String? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, String? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, String? Function()? customerSignature, String? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, EvidenceEnhancedEvidence? Function()? enhancedEvidence, String? Function()? productDescription, String? Function()? receipt, String? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, String? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, String? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, String? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) { return PostChargesChargeDisputeRequestEvidence(
   accessActivityLog: accessActivityLog != null ? accessActivityLog() : this.accessActivityLog,
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,

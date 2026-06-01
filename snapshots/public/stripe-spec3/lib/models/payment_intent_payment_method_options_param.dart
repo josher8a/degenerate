@@ -24,6 +24,13 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final targetDate$ = targetDate;
+if (targetDate$ != null) {
+  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentPaymentMethodOptionsParam copyWith({PaymentIntentPaymentMethodOptionsParam15MandateOptions? Function()? mandateOptions, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

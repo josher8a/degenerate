@@ -17,6 +17,13 @@ Map<String, dynamic> toJson() { return {
   if (shippingRateData != null) 'shipping_rate_data': shippingRateData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_rate', 'shipping_rate_data'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final shippingRate$ = shippingRate;
+if (shippingRate$ != null) {
+  if (shippingRate$.length > 5000) errors.add('shippingRate: length must be <= 5000');
+}
+return errors; } 
 ShippingCost copyWith({String? Function()? shippingRate, ShippingRateData? Function()? shippingRateData, }) { return ShippingCost(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   shippingRateData: shippingRateData != null ? shippingRateData() : this.shippingRateData,

@@ -26,6 +26,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('total_count') && json['total_count'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (perPage < 5) errors.add('perPage: must be >= 5');
+if (perPage > 50) errors.add('perPage: must be <= 50');
+return errors; } 
 AutoragConfigFilesResponseResultInfo copyWith({int? count, int? page, int Function()? perPage, int? totalCount, }) { return AutoragConfigFilesResponseResultInfo(
   count: count ?? this.count,
   page: page ?? this.page,

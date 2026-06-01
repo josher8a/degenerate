@@ -30,6 +30,17 @@ Map<String, dynamic> toJson() { return {
   if (webCrawler != null) 'web_crawler': webCrawler?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude_items', 'include_items', 'prefix', 'r2_jurisdiction', 'web_crawler'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final excludeItems$ = excludeItems;
+if (excludeItems$ != null) {
+  if (excludeItems$.length > 10) errors.add('excludeItems: must have <= 10 items');
+}
+final includeItems$ = includeItems;
+if (includeItems$ != null) {
+  if (includeItems$.length > 10) errors.add('includeItems: must have <= 10 items');
+}
+return errors; } 
 SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String Function()? r2Jurisdiction, WebCrawler? Function()? webCrawler, }) { return SourceParams(
   excludeItems: excludeItems != null ? excludeItems() : this.excludeItems,
   includeItems: includeItems != null ? includeItems() : this.includeItems,

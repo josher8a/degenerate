@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'reason_code': ?reasonCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'case_id', 'reason_code'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final caseId$ = caseId;
+if (caseId$ != null) {
+  if (caseId$.length > 5000) errors.add('caseId: length must be <= 5000');
+}
+final reasonCode$ = reasonCode;
+if (reasonCode$ != null) {
+  if (reasonCode$.length > 5000) errors.add('reasonCode: length must be <= 5000');
+}
+return errors; } 
 DisputePaymentMethodDetailsPaypal copyWith({String? Function()? caseId, String? Function()? reasonCode, }) { return DisputePaymentMethodDetailsPaypal(
   caseId: caseId != null ? caseId() : this.caseId,
   reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,

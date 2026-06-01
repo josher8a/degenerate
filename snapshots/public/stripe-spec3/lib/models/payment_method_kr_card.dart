@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'last4'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final last4$ = last4;
+if (last4$ != null) {
+  if (last4$.length > 4) errors.add('last4: length must be <= 4');
+}
+return errors; } 
 PaymentMethodKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand, String? Function()? last4, }) { return PaymentMethodKrCard(
   brand: brand != null ? brand() : this.brand,
   last4: last4 != null ? last4() : this.last4,

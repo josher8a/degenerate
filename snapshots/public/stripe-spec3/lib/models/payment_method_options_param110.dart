@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_id', 'client', 'setup_future_usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final appId$ = appId;
+if (appId$ != null) {
+  if (appId$.length > 5000) errors.add('appId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodOptionsParam110 copyWith({String? Function()? appId, PaymentMethodOptionsParamClient? Function()? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam110(
   appId: appId != null ? appId() : this.appId,
   client: client != null ? client() : this.client,

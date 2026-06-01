@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip_address', 'user_agent'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final ipAddress$ = ipAddress;
+if (ipAddress$ != null) {
+  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+}
+final userAgent$ = userAgent;
+if (userAgent$ != null) {
+  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+}
+return errors; } 
 ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline copyWith({String? Function()? ipAddress, String? Function()? userAgent, }) { return ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline(
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,

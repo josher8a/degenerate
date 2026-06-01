@@ -26,6 +26,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('percentage_decimal') && json['percentage_decimal'] is String &&
       json.containsKey('tax_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+if (percentageDecimal.length > 5000) errors.add('percentageDecimal: length must be <= 5000');
+return errors; } 
 TaxProductResourceLineItemTaxRateDetails copyWith({String? displayName, String? percentageDecimal, PostTaxRatesRequestTaxType? taxType, }) { return TaxProductResourceLineItemTaxRateDetails(
   displayName: displayName ?? this.displayName,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,

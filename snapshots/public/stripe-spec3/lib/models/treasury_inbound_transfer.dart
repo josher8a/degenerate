@@ -174,6 +174,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+if (financialAccount.length > 5000) errors.add('financialAccount: length must be <= 5000');
+final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
+if (hostedRegulatoryReceiptUrl$ != null) {
+  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final originPaymentMethod$ = originPaymentMethod;
+if (originPaymentMethod$ != null) {
+  if (originPaymentMethod$.length > 5000) errors.add('originPaymentMethod: length must be <= 5000');
+}
+if (statementDescriptor.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+return errors; } 
 TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransfersResourceFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, InboundTransfers? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,

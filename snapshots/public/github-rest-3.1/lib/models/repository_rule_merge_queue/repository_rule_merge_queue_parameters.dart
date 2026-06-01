@@ -102,6 +102,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('merge_method') &&
       json.containsKey('min_entries_to_merge') && json['min_entries_to_merge'] is num &&
       json.containsKey('min_entries_to_merge_wait_minutes') && json['min_entries_to_merge_wait_minutes'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (checkResponseTimeoutMinutes < 1) errors.add('checkResponseTimeoutMinutes: must be >= 1');
+if (checkResponseTimeoutMinutes > 360) errors.add('checkResponseTimeoutMinutes: must be <= 360');
+if (maxEntriesToBuild < 0) errors.add('maxEntriesToBuild: must be >= 0');
+if (maxEntriesToBuild > 100) errors.add('maxEntriesToBuild: must be <= 100');
+if (maxEntriesToMerge < 0) errors.add('maxEntriesToMerge: must be >= 0');
+if (maxEntriesToMerge > 100) errors.add('maxEntriesToMerge: must be <= 100');
+if (minEntriesToMerge < 0) errors.add('minEntriesToMerge: must be >= 0');
+if (minEntriesToMerge > 100) errors.add('minEntriesToMerge: must be <= 100');
+if (minEntriesToMergeWaitMinutes < 0) errors.add('minEntriesToMergeWaitMinutes: must be >= 0');
+if (minEntriesToMergeWaitMinutes > 360) errors.add('minEntriesToMergeWaitMinutes: must be <= 360');
+return errors; } 
 RepositoryRuleMergeQueueParameters copyWith({int? checkResponseTimeoutMinutes, GroupingStrategy? groupingStrategy, int? maxEntriesToBuild, int? maxEntriesToMerge, ParametersMergeMethod? mergeMethod, int? minEntriesToMerge, int? minEntriesToMergeWaitMinutes, }) { return RepositoryRuleMergeQueueParameters(
   checkResponseTimeoutMinutes: checkResponseTimeoutMinutes ?? this.checkResponseTimeoutMinutes,
   groupingStrategy: groupingStrategy ?? this.groupingStrategy,

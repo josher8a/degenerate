@@ -22,6 +22,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('fiscal_year_end') && json['fiscal_year_end'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (fiscalYearEnd.length > 5000) errors.add('fiscalYearEnd: length must be <= 5000');
+return errors; } 
 AnnualRevenue copyWith({int? amount, String? currency, String? fiscalYearEnd, }) { return AnnualRevenue(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,

@@ -13,6 +13,13 @@ Map<String, dynamic> toJson() { return {
   'before': ?before,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'before'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final before$ = before;
+if (before$ != null) {
+  if (!RegExp(r'^[0-9a-f]{32}$').hasMatch(before$)) errors.add(r'before: must match pattern ^[0-9a-f]{32}$');
+}
+return errors; } 
 PositionVariant1 copyWith({String? Function()? before}) { return PositionVariant1(
   before: before != null ? before() : this.before,
 ); } 

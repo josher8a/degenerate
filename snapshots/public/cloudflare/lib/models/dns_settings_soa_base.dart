@@ -44,6 +44,34 @@ Map<String, dynamic> toJson() { return {
   'ttl': ?ttl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expire', 'min_ttl', 'mname', 'refresh', 'retry', 'rname', 'ttl'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final expire$ = expire;
+if (expire$ != null) {
+  if (expire$ < 86400) errors.add('expire: must be >= 86400');
+  if (expire$ > 2419200.0) errors.add('expire: must be <= 2419200.0');
+}
+final minTtl$ = minTtl;
+if (minTtl$ != null) {
+  if (minTtl$ < 60) errors.add('minTtl: must be >= 60');
+  if (minTtl$ > 86400) errors.add('minTtl: must be <= 86400');
+}
+final refresh$ = refresh;
+if (refresh$ != null) {
+  if (refresh$ < 600) errors.add('refresh: must be >= 600');
+  if (refresh$ > 86400) errors.add('refresh: must be <= 86400');
+}
+final retry$ = retry;
+if (retry$ != null) {
+  if (retry$ < 600) errors.add('retry: must be >= 600');
+  if (retry$ > 86400) errors.add('retry: must be <= 86400');
+}
+final ttl$ = ttl;
+if (ttl$ != null) {
+  if (ttl$ < 300) errors.add('ttl: must be >= 300');
+  if (ttl$ > 86400) errors.add('ttl: must be <= 86400');
+}
+return errors; } 
 DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? minTtl, String? Function()? mname, double? Function()? refresh, double? Function()? retry, String? Function()? rname, double? Function()? ttl, }) { return DnsSettingsSoaBase(
   expire: expire != null ? expire() : this.expire,
   minTtl: minTtl != null ? minTtl() : this.minTtl,

@@ -77,6 +77,49 @@ Map<String, dynamic> toJson() { return {
   if (owner != null) 'owner': owner?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountHolderName$ = accountHolderName;
+if (accountHolderName$ != null) {
+  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+}
+final addressCity$ = addressCity;
+if (addressCity$ != null) {
+  if (addressCity$.length > 5000) errors.add('addressCity: length must be <= 5000');
+}
+final addressCountry$ = addressCountry;
+if (addressCountry$ != null) {
+  if (addressCountry$.length > 5000) errors.add('addressCountry: length must be <= 5000');
+}
+final addressLine1$ = addressLine1;
+if (addressLine1$ != null) {
+  if (addressLine1$.length > 5000) errors.add('addressLine1: length must be <= 5000');
+}
+final addressLine2$ = addressLine2;
+if (addressLine2$ != null) {
+  if (addressLine2$.length > 5000) errors.add('addressLine2: length must be <= 5000');
+}
+final addressState$ = addressState;
+if (addressState$ != null) {
+  if (addressState$.length > 5000) errors.add('addressState: length must be <= 5000');
+}
+final addressZip$ = addressZip;
+if (addressZip$ != null) {
+  if (addressZip$.length > 5000) errors.add('addressZip: length must be <= 5000');
+}
+final expMonth$ = expMonth;
+if (expMonth$ != null) {
+  if (expMonth$.length > 5000) errors.add('expMonth: length must be <= 5000');
+}
+final expYear$ = expYear;
+if (expYear$ != null) {
+  if (expYear$.length > 5000) errors.add('expYear: length must be <= 5000');
+}
+final name$ = name;
+if (name$ != null) {
+  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+}
+return errors; } 
 PostCustomersCustomerBankAccountsIdRequest copyWith({String? Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? Function()? addressCity, String? Function()? addressCountry, String? Function()? addressLine1, String? Function()? addressLine2, String? Function()? addressState, String? Function()? addressZip, String? Function()? expMonth, String? Function()? expYear, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner? Function()? owner, }) { return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

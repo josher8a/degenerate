@@ -48,6 +48,13 @@ Map<String, dynamic> toJson() { return {
   if (pii != null) 'pii': pii?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'bank_account', 'card', 'customer', 'cvc_update', 'expand', 'person', 'pii'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+return errors; } 
 PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostTokensRequestBankAccount? Function()? bankAccount, PostTokensRequestCard? Function()? card, String? Function()? customer, CvcUpdate? Function()? cvcUpdate, List<String>? Function()? expand, PostTokensRequestPerson? Function()? person, Pii? Function()? pii, }) { return PostTokensRequest(
   account: account != null ? account() : this.account,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,

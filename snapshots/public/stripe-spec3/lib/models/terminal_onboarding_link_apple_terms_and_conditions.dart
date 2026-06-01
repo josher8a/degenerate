@@ -19,6 +19,10 @@ Map<String, dynamic> toJson() { return {
   'merchant_display_name': merchantDisplayName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('merchant_display_name') && json['merchant_display_name'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (merchantDisplayName.length > 5000) errors.add('merchantDisplayName: length must be <= 5000');
+return errors; } 
 TerminalOnboardingLinkAppleTermsAndConditions copyWith({bool? Function()? allowRelinking, String? merchantDisplayName, }) { return TerminalOnboardingLinkAppleTermsAndConditions(
   allowRelinking: allowRelinking != null ? allowRelinking() : this.allowRelinking,
   merchantDisplayName: merchantDisplayName ?? this.merchantDisplayName,

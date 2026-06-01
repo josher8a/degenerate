@@ -16,6 +16,10 @@ Map<String, dynamic> toJson() { return {
   'amount': ?amount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (account.length > 5000) errors.add('account: length must be <= 5000');
+return errors; } 
 DestinationSpecs copyWith({String? account, int? Function()? amount, }) { return DestinationSpecs(
   account: account ?? this.account,
   amount: amount != null ? amount() : this.amount,

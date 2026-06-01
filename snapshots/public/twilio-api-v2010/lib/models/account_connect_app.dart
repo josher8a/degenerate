@@ -88,6 +88,21 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'authorize_redirect_url', 'company_name', 'deauthorize_callback_method', 'deauthorize_callback_url', 'description', 'friendly_name', 'homepage_url', 'permissions', 'sid', 'uri'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final accountSid$ = accountSid;
+if (accountSid$ != null) {
+  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
+  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+}
+final sid$ = sid;
+if (sid$ != null) {
+  if (sid$.length < 34) errors.add('sid: length must be >= 34');
+  if (sid$.length > 34) errors.add('sid: length must be <= 34');
+  if (!RegExp(r'^CN[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^CN[0-9a-fA-F]{32}$');
+}
+return errors; } 
 AccountConnectApp copyWith({String? Function()? accountSid, Uri? Function()? authorizeRedirectUrl, String? Function()? companyName, AccountConnectAppDeauthorizeCallbackMethod? Function()? deauthorizeCallbackMethod, Uri? Function()? deauthorizeCallbackUrl, String? Function()? description, String? Function()? friendlyName, Uri? Function()? homepageUrl, List<ConnectAppEnumPermission>? Function()? permissions, String? Function()? sid, String? Function()? uri, }) { return AccountConnectApp(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   authorizeRedirectUrl: authorizeRedirectUrl != null ? authorizeRedirectUrl() : this.authorizeRedirectUrl,

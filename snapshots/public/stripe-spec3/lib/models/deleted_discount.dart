@@ -77,6 +77,34 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final checkoutSession$ = checkoutSession;
+if (checkoutSession$ != null) {
+  if (checkoutSession$.length > 5000) errors.add('checkoutSession: length must be <= 5000');
+}
+final customerAccount$ = customerAccount;
+if (customerAccount$ != null) {
+  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final invoice$ = invoice;
+if (invoice$ != null) {
+  if (invoice$.length > 5000) errors.add('invoice: length must be <= 5000');
+}
+final invoiceItem$ = invoiceItem;
+if (invoiceItem$ != null) {
+  if (invoiceItem$.length > 5000) errors.add('invoiceItem: length must be <= 5000');
+}
+final subscription$ = subscription;
+if (subscription$ != null) {
+  if (subscription$.length > 5000) errors.add('subscription: length must be <= 5000');
+}
+final subscriptionItem$ = subscriptionItem;
+if (subscriptionItem$ != null) {
+  if (subscriptionItem$.length > 5000) errors.add('subscriptionItem: length must be <= 5000');
+}
+return errors; } 
 DeletedDiscount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
   checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
   customer: customer != null ? customer() : this.customer,

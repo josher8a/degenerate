@@ -95,6 +95,13 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final comment$ = comment;
+if (comment$ != null) {
+  if (comment$.length > 5000) errors.add('comment: length must be <= 5000');
+}
+return errors; } 
 CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFeedback? Function()? feedback, CancellationDetailsReason? Function()? reason, }) { return CancellationDetails(
   comment: comment != null ? comment() : this.comment,
   feedback: feedback != null ? feedback() : this.feedback,

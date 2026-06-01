@@ -31,6 +31,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('INSEC
       json.containsKey('INVALID') && json['INVALID'] is String &&
       json.containsKey('OTHER') && json['OTHER'] is String &&
       json.containsKey('SECURE') && json['SECURE'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(insecure)) errors.add(r'insecure: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(invalid)) errors.add(r'invalid: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(other)) errors.add(r'other: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(secure)) errors.add(r'secure: must match pattern ^\d+$');
+return errors; } 
 RadarGetDnsSummaryByDnssecResponseResultSummary0 copyWith({String? insecure, String? invalid, String? other, String? secure, }) { return RadarGetDnsSummaryByDnssecResponseResultSummary0(
   insecure: insecure ?? this.insecure,
   invalid: invalid ?? this.invalid,

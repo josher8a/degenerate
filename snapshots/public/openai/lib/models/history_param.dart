@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'recent_threads': ?recentThreads,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'recent_threads'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final recentThreads$ = recentThreads;
+if (recentThreads$ != null) {
+  if (recentThreads$ < 1) errors.add('recentThreads: must be >= 1');
+}
+return errors; } 
 HistoryParam copyWith({bool? Function()? enabled, int? Function()? recentThreads, }) { return HistoryParam(
   enabled: enabled != null ? enabled() : this.enabled,
   recentThreads: recentThreads != null ? recentThreads() : this.recentThreads,

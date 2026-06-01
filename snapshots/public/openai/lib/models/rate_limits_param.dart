@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'max_requests_per_1_minute': ?maxRequestsPer1Minute,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_requests_per_1_minute'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxRequestsPer1Minute$ = maxRequestsPer1Minute;
+if (maxRequestsPer1Minute$ != null) {
+  if (maxRequestsPer1Minute$ < 1) errors.add('maxRequestsPer1Minute: must be >= 1');
+}
+return errors; } 
 RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) { return RateLimitsParam(
   maxRequestsPer1Minute: maxRequestsPer1Minute != null ? maxRequestsPer1Minute() : this.maxRequestsPer1Minute,
 ); } 

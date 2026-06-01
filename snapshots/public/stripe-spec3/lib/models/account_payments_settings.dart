@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_kanji': ?statementDescriptorKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'statement_descriptor', 'statement_descriptor_kana', 'statement_descriptor_kanji'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+final statementDescriptorKana$ = statementDescriptorKana;
+if (statementDescriptorKana$ != null) {
+  if (statementDescriptorKana$.length > 5000) errors.add('statementDescriptorKana: length must be <= 5000');
+}
+final statementDescriptorKanji$ = statementDescriptorKanji;
+if (statementDescriptorKanji$ != null) {
+  if (statementDescriptorKanji$.length > 5000) errors.add('statementDescriptorKanji: length must be <= 5000');
+}
+return errors; } 
 AccountPaymentsSettings copyWith({String? Function()? statementDescriptor, String? Function()? statementDescriptorKana, String? Function()? statementDescriptorKanji, }) { return AccountPaymentsSettings(
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   statementDescriptorKana: statementDescriptorKana != null ? statementDescriptorKana() : this.statementDescriptorKana,

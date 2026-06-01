@@ -33,6 +33,13 @@ Map<String, dynamic> toJson() { return {
   'prompt_cache_key': ?promptCacheKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final promptCacheKey$ = promptCacheKey;
+if (promptCacheKey$ != null) {
+  if (promptCacheKey$.length > 64) errors.add('promptCacheKey: length must be <= 64');
+}
+return errors; } 
 CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? model, CompactResponseMethodPublicBodyInput? Function()? input, String? Function()? previousResponseId, String? Function()? instructions, String? Function()? promptCacheKey, }) { return CompactResponseMethodPublicBody(
   model: model ?? this.model,
   input: input != null ? input() : this.input,

@@ -216,6 +216,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final certificate$ = certificate;
+if (certificate$ != null) {
+  if (certificate$.length > 5000) errors.add('certificate: length must be <= 5000');
+}
+if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, int? Function()? canceledAt, ClimateOrderCancellationReason? Function()? cancellationReason, String? Function()? certificate, int? Function()? confirmedAt, int? created, String? currency, int? Function()? delayedAt, int? Function()? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, int? Function()? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
   amountFees: amountFees ?? this.amountFees,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,

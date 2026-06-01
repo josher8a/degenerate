@@ -34,6 +34,18 @@ Map<String, dynamic> toJson() { return {
   'region': ?region,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final city$ = city;
+if (city$ != null) {
+  if (city$.length > 5000) errors.add('city: length must be <= 5000');
+}
+if (country.length > 5000) errors.add('country: length must be <= 5000');
+final region$ = region;
+if (region$ != null) {
+  if (region$.length > 5000) errors.add('region: length must be <= 5000');
+}
+return errors; } 
 ClimateRemovalsLocation copyWith({String? Function()? city, String? country, double? Function()? latitude, double? Function()? longitude, String? Function()? region, }) { return ClimateRemovalsLocation(
   city: city != null ? city() : this.city,
   country: country ?? this.country,

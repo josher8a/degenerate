@@ -106,6 +106,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('payment') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('status_transitions'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (status.length > 5000) errors.add('status: length must be <= 5000');
+return errors; } 
 InvoicePayment copyWith({int? Function()? amountPaid, int? amountRequested, int? created, String? currency, String? id, InvoicePaymentInvoice? invoice, bool? isDefault, bool? livemode, InvoicePaymentObject? object, InvoicesPaymentsInvoicePaymentAssociatedPayment? payment, String? status, InvoicesPaymentsInvoicePaymentStatusTransitions? statusTransitions, }) { return InvoicePayment(
   amountPaid: amountPaid != null ? amountPaid() : this.amountPaid,
   amountRequested: amountRequested ?? this.amountRequested,

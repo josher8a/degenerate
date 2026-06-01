@@ -65,6 +65,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+final secret$ = secret;
+if (secret$ != null) {
+  if (secret$.length > 5000) errors.add('secret: length must be <= 5000');
+}
+return errors; } 
 EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String? Function()? secret, }) { return EphemeralKey(
   created: created ?? this.created,
   expires: expires ?? this.expires,

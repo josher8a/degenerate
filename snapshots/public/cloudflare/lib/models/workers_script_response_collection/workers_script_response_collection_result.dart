@@ -113,6 +113,13 @@ Map<String, dynamic> toJson() { return {
   if (routes != null) 'routes': routes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model', 'routes'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final tags$ = tags;
+if (tags$ != null) {
+  if (tags$.length > 10) errors.add('tags: must have <= 10 items');
+}
+return errors; } 
 WorkersScriptResponseCollectionResult copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<NamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel? Function()? usageModel, List<WorkersRoute>? Function()? routes, }) { return WorkersScriptResponseCollectionResult(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,

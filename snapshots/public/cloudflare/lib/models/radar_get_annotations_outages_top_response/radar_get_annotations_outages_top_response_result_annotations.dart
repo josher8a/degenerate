@@ -23,6 +23,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('clientCountryAlpha2') && json['clientCountryAlpha2'] is String &&
       json.containsKey('clientCountryName') && json['clientCountryName'] is String &&
       json.containsKey('value') && json['value'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(value)) errors.add(r'value: must match pattern ^\d+$');
+return errors; } 
 RadarGetAnnotationsOutagesTopResponseResultAnnotations copyWith({String? clientCountryAlpha2, String? clientCountryName, String? value, }) { return RadarGetAnnotationsOutagesTopResponseResultAnnotations(
   clientCountryAlpha2: clientCountryAlpha2 ?? this.clientCountryAlpha2,
   clientCountryName: clientCountryName ?? this.clientCountryName,

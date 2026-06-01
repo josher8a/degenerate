@@ -88,6 +88,17 @@ Map<String, dynamic> toJson() { return {
   'transaction_hash': ?transactionHash,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_address', 'network', 'token_currency', 'transaction_hash'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final buyerAddress$ = buyerAddress;
+if (buyerAddress$ != null) {
+  if (buyerAddress$.length > 5000) errors.add('buyerAddress: length must be <= 5000');
+}
+final transactionHash$ = transactionHash;
+if (transactionHash$ != null) {
+  if (transactionHash$.length > 5000) errors.add('transactionHash: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsCrypto copyWith({String? Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork? Function()? network, TokenCurrency? Function()? tokenCurrency, String? Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(
   buyerAddress: buyerAddress != null ? buyerAddress() : this.buyerAddress,
   network: network != null ? network() : this.network,

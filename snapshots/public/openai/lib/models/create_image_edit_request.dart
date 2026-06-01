@@ -179,6 +179,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final n$ = n;
+if (n$ != null) {
+  if (n$ < 1) errors.add('n: must be >= 1');
+  if (n$ > 10) errors.add('n: must be <= 10');
+}
+return errors; } 
 CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, CreateImageEditRequestBackground? Function()? background, CreateImageEditRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String? Function()? user, InputFidelity? Function()? inputFidelity, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
   image: image ?? this.image,
   prompt: prompt ?? this.prompt,

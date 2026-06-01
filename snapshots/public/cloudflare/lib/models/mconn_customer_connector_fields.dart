@@ -38,6 +38,18 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final interruptWindowDurationHours$ = interruptWindowDurationHours;
+if (interruptWindowDurationHours$ != null) {
+  if (interruptWindowDurationHours$ < 1) errors.add('interruptWindowDurationHours: must be >= 1');
+  if (interruptWindowDurationHours$ > 24) errors.add('interruptWindowDurationHours: must be <= 24');
+}
+final interruptWindowEmbargoDates$ = interruptWindowEmbargoDates;
+if (interruptWindowEmbargoDates$ != null) {
+  if (interruptWindowEmbargoDates$.length > 100) errors.add('interruptWindowEmbargoDates: must have <= 100 items');
+}
+return errors; } 
 MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, }) { return MconnCustomerConnectorFields(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,

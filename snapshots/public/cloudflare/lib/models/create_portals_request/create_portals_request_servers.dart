@@ -29,6 +29,12 @@ Map<String, dynamic> toJson() { return {
   if (updatedTools != null) 'updated_tools': updatedTools?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('server_id') && json['server_id'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (serverId.length < 1) errors.add('serverId: length must be >= 1');
+if (serverId.length > 32) errors.add('serverId: length must be <= 32');
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(serverId)) errors.add(r'serverId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
+return errors; } 
 CreatePortalsRequestServers copyWith({bool Function()? defaultDisabled, bool Function()? onBehalf, String? serverId, List<UpdatedPrompts>? Function()? updatedPrompts, List<UpdatedTools>? Function()? updatedTools, }) { return CreatePortalsRequestServers(
   defaultDisabled: defaultDisabled != null ? defaultDisabled() : this.defaultDisabled,
   onBehalf: onBehalf != null ? onBehalf() : this.onBehalf,

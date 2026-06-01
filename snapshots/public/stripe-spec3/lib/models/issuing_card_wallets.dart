@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple_pay') &&
       json.containsKey('google_pay'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final primaryAccountIdentifier$ = primaryAccountIdentifier;
+if (primaryAccountIdentifier$ != null) {
+  if (primaryAccountIdentifier$.length > 5000) errors.add('primaryAccountIdentifier: length must be <= 5000');
+}
+return errors; } 
 IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, String? Function()? primaryAccountIdentifier, }) { return IssuingCardWallets(
   applePay: applePay ?? this.applePay,
   googlePay: googlePay ?? this.googlePay,

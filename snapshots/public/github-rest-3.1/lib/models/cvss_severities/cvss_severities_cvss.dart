@@ -19,6 +19,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && json['vector_string'] is String &&
       json.containsKey('score') && json['score'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final score$ = score;
+if (score$ != null) {
+  if (score$ < 0) errors.add('score: must be >= 0');
+  if (score$ > 10) errors.add('score: must be <= 10');
+}
+return errors; } 
 CvssSeveritiesCvss copyWith({String? Function()? vectorString, double? Function()? score, }) { return CvssSeveritiesCvss(
   vectorString: vectorString != null ? vectorString() : this.vectorString,
   score: score != null ? score() : this.score,

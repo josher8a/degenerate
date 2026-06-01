@@ -66,6 +66,17 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_details', 'amount_to_capture', 'application_fee_amount', 'expand', 'final_capture', 'hooks', 'metadata', 'payment_details', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+}
+final statementDescriptorSuffix$ = statementDescriptorSuffix;
+if (statementDescriptorSuffix$ != null) {
+  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+}
+return errors; } 
 PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? amountToCapture, int? Function()? applicationFeeAmount, List<String>? Function()? expand, bool? Function()? finalCapture, Hooks? Function()? hooks, Metadata? Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, }) { return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   amountToCapture: amountToCapture != null ? amountToCapture() : this.amountToCapture,

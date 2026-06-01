@@ -201,6 +201,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
       json.containsKey('credits'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (summary.length > 1024) errors.add('summary: length must be <= 1024');
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 65535) errors.add('description: length must be <= 65535');
+}
+return errors; } 
 GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<DependabotAlertSecurityAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, CvssSeveritiesCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<Cwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,

@@ -29,6 +29,13 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final provider$ = provider;
+if (provider$ != null) {
+  if (provider$.length > 5000) errors.add('provider: length must be <= 5000');
+}
+return errors; } 
 QuotesResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, AutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,

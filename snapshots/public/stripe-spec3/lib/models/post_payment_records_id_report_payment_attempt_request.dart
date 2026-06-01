@@ -53,6 +53,13 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('initiated_at') && json['initiated_at'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String? Function()? description, List<String>? Function()? expand, Failed? Function()? failed, Guaranteed? Function()? guaranteed, int? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? Function()? paymentMethodDetails, ShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptRequest(
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,

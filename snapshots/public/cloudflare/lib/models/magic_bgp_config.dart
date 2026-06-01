@@ -38,6 +38,10 @@ Map<String, dynamic> toJson() { return {
   'md5_key': ?md5Key,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_asn') && json['customer_asn'] is num; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (customerAsn < 0) errors.add('customerAsn: must be >= 0');
+return errors; } 
 MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefixes, String? Function()? md5Key, }) { return MagicBgpConfig(
   customerAsn: customerAsn ?? this.customerAsn,
   extraPrefixes: extraPrefixes != null ? extraPrefixes() : this.extraPrefixes,

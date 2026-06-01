@@ -38,6 +38,17 @@ Map<String, dynamic> toJson() { return {
   'trial_period_days': ?trialPeriodDays,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'nickname', 'product', 'trial_period_days'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final nickname$ = nickname;
+if (nickname$ != null) {
+  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+}
+final product$ = product;
+if (product$ != null) {
+  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+}
+return errors; } 
 PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,

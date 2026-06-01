@@ -16,6 +16,13 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customer$ = customer;
+if (customer$ != null) {
+  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+}
+return errors; } 
 UsageThresholdFilters copyWith({String? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return UsageThresholdFilters(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,

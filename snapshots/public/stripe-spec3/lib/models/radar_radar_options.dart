@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'session': ?session,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'session'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final session$ = session;
+if (session$ != null) {
+  if (session$.length > 5000) errors.add('session: length must be <= 5000');
+}
+return errors; } 
 RadarRadarOptions copyWith({String? Function()? session}) { return RadarRadarOptions(
   session: session != null ? session() : this.session,
 ); } 

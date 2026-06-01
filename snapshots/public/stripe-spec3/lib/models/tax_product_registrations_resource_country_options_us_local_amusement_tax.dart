@@ -14,6 +14,10 @@ Map<String, dynamic> toJson() { return {
   'jurisdiction': jurisdiction,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('jurisdiction') && json['jurisdiction'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (jurisdiction.length > 5000) errors.add('jurisdiction: length must be <= 5000');
+return errors; } 
 TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) { return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
 ); } 

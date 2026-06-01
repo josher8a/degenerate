@@ -28,6 +28,23 @@ Map<String, dynamic> toJson() { return {
   'vector_score': ?vectorScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keyword_rank', 'keyword_score', 'reranking_score', 'vector_rank', 'vector_score'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final keywordScore$ = keywordScore;
+if (keywordScore$ != null) {
+  if (keywordScore$ < 0) errors.add('keywordScore: must be >= 0');
+}
+final rerankingScore$ = rerankingScore;
+if (rerankingScore$ != null) {
+  if (rerankingScore$ < 0) errors.add('rerankingScore: must be >= 0');
+  if (rerankingScore$ > 1) errors.add('rerankingScore: must be <= 1');
+}
+final vectorScore$ = vectorScore;
+if (vectorScore$ != null) {
+  if (vectorScore$ < 0) errors.add('vectorScore: must be >= 0');
+  if (vectorScore$ > 1) errors.add('vectorScore: must be <= 1');
+}
+return errors; } 
 ScoringDetails copyWith({double? Function()? keywordRank, double? Function()? keywordScore, double? Function()? rerankingScore, double? Function()? vectorRank, double? Function()? vectorScore, }) { return ScoringDetails(
   keywordRank: keywordRank != null ? keywordRank() : this.keywordRank,
   keywordScore: keywordScore != null ? keywordScore() : this.keywordScore,

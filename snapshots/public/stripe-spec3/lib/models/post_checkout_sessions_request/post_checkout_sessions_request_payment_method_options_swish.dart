@@ -12,6 +12,13 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+}
+return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsSwish copyWith({String? Function()? reference}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSwish(
   reference: reference != null ? reference() : this.reference,
 ); } 

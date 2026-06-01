@@ -48,6 +48,17 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final charge$ = charge;
+if (charge$ != null) {
+  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+}
+final paymentIntent$ = paymentIntent;
+if (paymentIntent$ != null) {
+  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+}
+return errors; } 
 PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,

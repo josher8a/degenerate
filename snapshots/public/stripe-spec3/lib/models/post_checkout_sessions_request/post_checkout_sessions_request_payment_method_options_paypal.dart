@@ -28,6 +28,17 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final reference$ = reference;
+if (reference$ != null) {
+  if (reference$.length > 127) errors.add('reference: length must be <= 127');
+}
+final riskCorrelationId$ = riskCorrelationId;
+if (riskCorrelationId$ != null) {
+  if (riskCorrelationId$.length > 32) errors.add('riskCorrelationId: length must be <= 32');
+}
+return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsPaypal copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, PaymentMethodOptionsParam102PreferredLocale? Function()? preferredLocale, String? Function()? reference, String? Function()? riskCorrelationId, PaymentIntentPaymentMethodOptionsParam11SetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

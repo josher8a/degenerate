@@ -24,6 +24,21 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final location$ = location;
+if (location$ != null) {
+  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+}
+final reader$ = reader;
+if (reader$ != null) {
+  if (reader$.length > 5000) errors.add('reader: length must be <= 5000');
+}
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsAffirm copyWith({String? Function()? location, String? Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsAffirm(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,

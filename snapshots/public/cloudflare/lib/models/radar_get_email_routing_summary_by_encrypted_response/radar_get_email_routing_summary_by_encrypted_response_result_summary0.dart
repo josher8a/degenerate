@@ -19,6 +19,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ENCRYPTED') && json['ENCRYPTED'] is String &&
       json.containsKey('NOT_ENCRYPTED') && json['NOT_ENCRYPTED'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (!RegExp(r'^\d+$').hasMatch(encrypted)) errors.add(r'encrypted: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(notEncrypted)) errors.add(r'notEncrypted: must match pattern ^\d+$');
+return errors; } 
 RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 copyWith({String? encrypted, String? notEncrypted, }) { return RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(
   encrypted: encrypted ?? this.encrypted,
   notEncrypted: notEncrypted ?? this.notEncrypted,

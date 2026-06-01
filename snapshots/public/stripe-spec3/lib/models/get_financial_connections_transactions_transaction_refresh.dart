@@ -12,6 +12,10 @@ Map<String, dynamic> toJson() { return {
   'after': after,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (after.length > 5000) errors.add('after: length must be <= 5000');
+return errors; } 
 GetFinancialConnectionsTransactionsTransactionRefresh copyWith({String? after}) { return GetFinancialConnectionsTransactionsTransactionRefresh(
   after: after ?? this.after,
 ); } 

@@ -38,6 +38,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('tools'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final callId$ = callId;
+if (callId$ != null) {
+  if (callId$.length < 1) errors.add('callId: length must be >= 1');
+  if (callId$.length > 64) errors.add('callId: length must be <= 64');
+}
+return errors; } 
 ToolSearchOutputItemParam copyWith({String? Function()? id, String? Function()? callId, String? type, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, FunctionCallItemStatus? Function()? status, }) { return ToolSearchOutputItemParam(
   id: id != null ? id() : this.id,
   callId: callId != null ? callId() : this.callId,

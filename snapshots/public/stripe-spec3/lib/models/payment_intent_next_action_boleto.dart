@@ -29,6 +29,21 @@ Map<String, dynamic> toJson() { return {
   'pdf': ?pdf,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_at', 'hosted_voucher_url', 'number', 'pdf'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final hostedVoucherUrl$ = hostedVoucherUrl;
+if (hostedVoucherUrl$ != null) {
+  if (hostedVoucherUrl$.length > 5000) errors.add('hostedVoucherUrl: length must be <= 5000');
+}
+final number$ = number;
+if (number$ != null) {
+  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+}
+final pdf$ = pdf;
+if (pdf$ != null) {
+  if (pdf$.length > 5000) errors.add('pdf: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionBoleto copyWith({int? Function()? expiresAt, String? Function()? hostedVoucherUrl, String? Function()? number, String? Function()? pdf, }) { return PaymentIntentNextActionBoleto(
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,

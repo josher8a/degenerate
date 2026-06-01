@@ -47,6 +47,10 @@ Map<String, dynamic> toJson() { return {
   if (outcome != null) 'outcome': outcome?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (key.length > 5000) errors.add('key: length must be <= 5000');
+return errors; } 
 InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key, InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome? Function()? outcome, }) { return InsightsResourcesPaymentEvaluationUserInterventionResolved(
   key: key ?? this.key,
   outcome: outcome != null ? outcome() : this.outcome,

@@ -74,6 +74,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('ownership') && json['ownership'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final email$ = email;
+if (email$ != null) {
+  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (ownership.length > 5000) errors.add('ownership: length must be <= 5000');
+final phone$ = phone;
+if (phone$ != null) {
+  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+}
+final rawAddress$ = rawAddress;
+if (rawAddress$ != null) {
+  if (rawAddress$.length > 5000) errors.add('rawAddress: length must be <= 5000');
+}
+return errors; } 
 FinancialConnectionsAccountOwner copyWith({String? Function()? email, String? id, String? name, FinancialConnectionsAccountOwnerObject? object, String? ownership, String? Function()? phone, String? Function()? rawAddress, int? Function()? refreshedAt, }) { return FinancialConnectionsAccountOwner(
   email: email != null ? email() : this.email,
   id: id ?? this.id,

@@ -57,6 +57,14 @@ Map<String, dynamic> toJson() { return {
   'wildcard': ?wildcard,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'cloudflare_branding', 'custom_cert_bundle', 'custom_certificate', 'custom_key', 'method', 'settings', 'type', 'wildcard'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customCertBundle$ = customCertBundle;
+if (customCertBundle$ != null) {
+  if (customCertBundle$.length < 1) errors.add('customCertBundle: must have >= 1 items');
+  if (customCertBundle$.length > 2) errors.add('customCertBundle: must have <= 2 items');
+}
+return errors; } 
 TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,

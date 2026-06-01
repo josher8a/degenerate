@@ -40,6 +40,14 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismiss_stale_reviews') && json['dismiss_stale_reviews'] is bool &&
       json.containsKey('require_code_owner_reviews') && json['require_code_owner_reviews'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final requiredApprovingReviewCount$ = requiredApprovingReviewCount;
+if (requiredApprovingReviewCount$ != null) {
+  if (requiredApprovingReviewCount$ < 0) errors.add('requiredApprovingReviewCount: must be >= 0');
+  if (requiredApprovingReviewCount$ > 6) errors.add('requiredApprovingReviewCount: must be <= 6');
+}
+return errors; } 
 ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, }) { return ProtectedBranchPullRequestReview(
   url: url != null ? url() : this.url,
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,

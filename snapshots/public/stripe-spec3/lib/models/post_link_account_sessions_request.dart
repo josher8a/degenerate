@@ -41,6 +41,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder') &&
       json.containsKey('permissions'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final returnUrl$ = returnUrl;
+if (returnUrl$ != null) {
+  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+}
+return errors; } 
 PostLinkAccountSessionsRequest copyWith({AccountHolder? accountHolder, List<String>? Function()? expand, PostFinancialConnectionsSessionsRequestFilters? Function()? filters, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PostLinkAccountSessionsRequest(
   accountHolder: accountHolder ?? this.accountHolder,
   expand: expand != null ? expand() : this.expand,

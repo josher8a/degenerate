@@ -25,6 +25,17 @@ Map<String, dynamic> toJson() { return {
   'order_reference': ?orderReference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_reference', 'order_reference'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final customerReference$ = customerReference;
+if (customerReference$ != null) {
+  if (customerReference$.length > 5000) errors.add('customerReference: length must be <= 5000');
+}
+final orderReference$ = orderReference;
+if (orderReference$ != null) {
+  if (orderReference$.length > 5000) errors.add('orderReference: length must be <= 5000');
+}
+return errors; } 
 PaymentFlowsPaymentDetails copyWith({String? Function()? customerReference, String? Function()? orderReference, }) { return PaymentFlowsPaymentDetails(
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,

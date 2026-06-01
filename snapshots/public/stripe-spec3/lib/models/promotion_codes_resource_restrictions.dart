@@ -29,6 +29,13 @@ Map<String, dynamic> toJson() { return {
   'minimum_amount_currency': ?minimumAmountCurrency,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('first_time_transaction') && json['first_time_transaction'] is bool; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final minimumAmountCurrency$ = minimumAmountCurrency;
+if (minimumAmountCurrency$ != null) {
+  if (minimumAmountCurrency$.length > 5000) errors.add('minimumAmountCurrency: length must be <= 5000');
+}
+return errors; } 
 PromotionCodesResourceRestrictions copyWith({Map<String, PromotionCodeCurrencyOption>? Function()? currencyOptions, bool? firstTimeTransaction, int? Function()? minimumAmount, String? Function()? minimumAmountCurrency, }) { return PromotionCodesResourceRestrictions(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   firstTimeTransaction: firstTimeTransaction ?? this.firstTimeTransaction,

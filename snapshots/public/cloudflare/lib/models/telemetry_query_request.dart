@@ -141,6 +141,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('queryId') && json['queryId'] is String &&
       json.containsKey('timeframe'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (limit > 2000) errors.add('limit: must be <= 2000');
+return errors; } 
 TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compare, bool Function()? dry, double? Function()? granularity, bool Function()? ignoreSeries, double Function()? limit, String? Function()? offset, double? Function()? offsetBy, String? Function()? offsetDirection, TelemetryQueryRequestParameters? Function()? parameters, PatternType? Function()? patternType, String? queryId, Timeframe? timeframe, View Function()? view, }) { return TelemetryQueryRequest(
   chart: chart != null ? chart() : this.chart,
   compare: compare != null ? compare() : this.compare,

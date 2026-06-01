@@ -49,6 +49,34 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (charge.length > 5000) errors.add('charge: length must be <= 5000');
+final customerAccountId$ = customerAccountId;
+if (customerAccountId$ != null) {
+  if (customerAccountId$.length > 5000) errors.add('customerAccountId: length must be <= 5000');
+}
+final customerDeviceFingerprint$ = customerDeviceFingerprint;
+if (customerDeviceFingerprint$ != null) {
+  if (customerDeviceFingerprint$.length > 5000) errors.add('customerDeviceFingerprint: length must be <= 5000');
+}
+final customerDeviceId$ = customerDeviceId;
+if (customerDeviceId$ != null) {
+  if (customerDeviceId$.length > 5000) errors.add('customerDeviceId: length must be <= 5000');
+}
+final customerEmailAddress$ = customerEmailAddress;
+if (customerEmailAddress$ != null) {
+  if (customerEmailAddress$.length > 5000) errors.add('customerEmailAddress: length must be <= 5000');
+}
+final customerPurchaseIp$ = customerPurchaseIp;
+if (customerPurchaseIp$ != null) {
+  if (customerPurchaseIp$.length > 5000) errors.add('customerPurchaseIp: length must be <= 5000');
+}
+final productDescription$ = productDescription;
+if (productDescription$ != null) {
+  if (productDescription$.length > 150000) errors.add('productDescription: length must be <= 150000');
+}
+return errors; } 
 DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charge, String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, String? Function()? productDescription, DisputeTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
   charge: charge ?? this.charge,
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,

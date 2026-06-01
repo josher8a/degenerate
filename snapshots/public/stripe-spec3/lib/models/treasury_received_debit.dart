@@ -180,6 +180,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (description.length > 5000) errors.add('description: length must be <= 5000');
+final financialAccount$ = financialAccount;
+if (financialAccount$ != null) {
+  if (financialAccount$.length > 5000) errors.add('financialAccount: length must be <= 5000');
+}
+final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
+if (hostedRegulatoryReceiptUrl$ != null) {
+  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedDebitFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? Function()? initiatingPaymentMethodDetails, TreasuryReceivedDebitsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedDebitNetwork? network, TreasuryReceivedDebitObject? object, TreasuryReceivedDebitsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryReceivedDebit(
   amount: amount ?? this.amount,
   created: created ?? this.created,

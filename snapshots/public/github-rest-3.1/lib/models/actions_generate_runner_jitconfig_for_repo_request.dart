@@ -30,6 +30,11 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
       json.containsKey('labels'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (labels.length < 1) errors.add('labels: must have >= 1 items');
+if (labels.length > 100) errors.add('labels: must have <= 100 items');
+return errors; } 
 ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String Function()? workFolder, }) { return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: name ?? this.name,
   runnerGroupId: runnerGroupId ?? this.runnerGroupId,

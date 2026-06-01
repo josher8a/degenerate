@@ -39,6 +39,17 @@ Map<String, dynamic> toJson() { return {
   'returned_at': ?returnedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'received_at', 'return_description', 'return_status', 'returned_at'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final explanation$ = explanation;
+if (explanation$ != null) {
+  if (explanation$.length > 5000) errors.add('explanation: length must be <= 5000');
+}
+final returnDescription$ = returnDescription;
+if (returnDescription$ != null) {
+  if (returnDescription$.length > 5000) errors.add('returnDescription: length must be <= 5000');
+}
+return errors; } 
 IssuingDisputeMerchandiseNotAsDescribedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, int? Function()? receivedAt, String? Function()? returnDescription, IssuingDisputeCanceledEvidenceReturnStatus? Function()? returnStatus, int? Function()? returnedAt, }) { return IssuingDisputeMerchandiseNotAsDescribedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,

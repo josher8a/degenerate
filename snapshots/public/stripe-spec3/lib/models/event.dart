@@ -108,6 +108,23 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
       json.containsKey('type') && json['type'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final account$ = account;
+if (account$ != null) {
+  if (account$.length > 5000) errors.add('account: length must be <= 5000');
+}
+final apiVersion$ = apiVersion;
+if (apiVersion$ != null) {
+  if (apiVersion$.length > 5000) errors.add('apiVersion: length must be <= 5000');
+}
+final context$ = context;
+if (context$ != null) {
+  if (context$.length > 5000) errors.add('context: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (type.length > 5000) errors.add('type: length must be <= 5000');
+return errors; } 
 Event copyWith({String? Function()? account, String? Function()? apiVersion, String? Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, NotificationEventRequest? Function()? request, String? type, }) { return Event(
   account: account != null ? account() : this.account,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

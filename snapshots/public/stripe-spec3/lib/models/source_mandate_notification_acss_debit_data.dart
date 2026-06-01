@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'statement_descriptor'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final statementDescriptor$ = statementDescriptor;
+if (statementDescriptor$ != null) {
+  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+}
+return errors; } 
 SourceMandateNotificationAcssDebitData copyWith({String? Function()? statementDescriptor}) { return SourceMandateNotificationAcssDebitData(
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 

@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final transactionId$ = transactionId;
+if (transactionId$ != null) {
+  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+}
+return errors; } 
 PaymentMethodDetailsFpx copyWith({PaymentMethodDetailsFpxBank? bank, String? Function()? transactionId, }) { return PaymentMethodDetailsFpx(
   bank: bank ?? this.bank,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

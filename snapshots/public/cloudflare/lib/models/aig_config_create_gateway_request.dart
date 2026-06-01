@@ -72,6 +72,34 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
       json.containsKey('rate_limiting_interval') && json['rate_limiting_interval'] is num &&
       json.containsKey('rate_limiting_limit') && json['rate_limiting_limit'] is num &&
       json.containsKey('rate_limiting_technique'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final cacheTtl$ = cacheTtl;
+if (cacheTtl$ != null) {
+  if (cacheTtl$ < 0) errors.add('cacheTtl: must be >= 0');
+}
+if (id.length < 1) errors.add('id: length must be >= 1');
+if (id.length > 64) errors.add('id: length must be <= 64');
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
+final logManagement$ = logManagement;
+if (logManagement$ != null) {
+  if (logManagement$ < 10000) errors.add('logManagement: must be >= 10000');
+  if (logManagement$ > 10000000.0) errors.add('logManagement: must be <= 10000000.0');
+}
+final logpushPublicKey$ = logpushPublicKey;
+if (logpushPublicKey$ != null) {
+  if (logpushPublicKey$.length < 16) errors.add('logpushPublicKey: length must be >= 16');
+  if (logpushPublicKey$.length > 1024) errors.add('logpushPublicKey: length must be <= 1024');
+}
+final rateLimitingInterval$ = rateLimitingInterval;
+if (rateLimitingInterval$ != null) {
+  if (rateLimitingInterval$ < 0) errors.add('rateLimitingInterval: must be >= 0');
+}
+final rateLimitingLimit$ = rateLimitingLimit;
+if (rateLimitingLimit$ != null) {
+  if (rateLimitingLimit$ < 0) errors.add('rateLimitingLimit: must be >= 0');
+}
+return errors; } 
 AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? cacheInvalidateOnUpdate, int? Function()? cacheTtl, bool? collectLogs, String? id, int? Function()? logManagement, LogManagementStrategy? Function()? logManagementStrategy, bool? Function()? logpush, String? Function()? logpushPublicKey, int? Function()? rateLimitingInterval, int? Function()? rateLimitingLimit, RateLimitingTechnique? rateLimitingTechnique, WorkersAiBillingMode Function()? workersAiBillingMode, bool? Function()? zdr, }) { return AigConfigCreateGatewayRequest(
   authentication: authentication != null ? authentication() : this.authentication,
   cacheInvalidateOnUpdate: cacheInvalidateOnUpdate ?? this.cacheInvalidateOnUpdate,

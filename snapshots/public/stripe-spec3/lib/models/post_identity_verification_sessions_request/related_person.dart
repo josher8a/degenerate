@@ -18,6 +18,11 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('person') && json['person'] is String; } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (account.length > 5000) errors.add('account: length must be <= 5000');
+if (person.length > 5000) errors.add('person: length must be <= 5000');
+return errors; } 
 RelatedPerson copyWith({String? account, String? person, }) { return RelatedPerson(
   account: account ?? this.account,
   person: person ?? this.person,

@@ -20,6 +20,13 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+final errors$$ = errors;
+if (errors$$ != null) {
+  if (errors$$.length < 1) errors$.add('errors: must have >= 1 items');
+}
+return errors$; } 
 ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,

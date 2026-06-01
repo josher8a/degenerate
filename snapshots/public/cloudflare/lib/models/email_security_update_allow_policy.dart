@@ -46,6 +46,18 @@ Map<String, dynamic> toJson() { return {
   'verify_sender': ?verifySender,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_acceptable_sender', 'is_exempt_recipient', 'is_regex', 'is_trusted_sender', 'pattern', 'pattern_type', 'verify_sender'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final comments$ = comments;
+if (comments$ != null) {
+  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+}
+final pattern$ = pattern;
+if (pattern$ != null) {
+  if (pattern$.length < 1) errors.add('pattern: length must be >= 1');
+  if (pattern$.length > 1024) errors.add('pattern: length must be <= 1024');
+}
+return errors; } 
 EmailSecurityUpdateAllowPolicy copyWith({String? Function()? comments, bool? Function()? isAcceptableSender, bool? Function()? isExemptRecipient, bool? Function()? isRegex, bool? Function()? isTrustedSender, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, bool? Function()? verifySender, }) { return EmailSecurityUpdateAllowPolicy(
   comments: comments != null ? comments() : this.comments,
   isAcceptableSender: isAcceptableSender != null ? isAcceptableSender() : this.isAcceptableSender,

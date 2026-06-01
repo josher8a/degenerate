@@ -31,6 +31,14 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final currency$ = currency;
+if (currency$ != null) {
+  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+}
+if (id.length > 5000) errors.add('id: length must be <= 5000');
+return errors; } 
 DeletedCard copyWith({String? Function()? currency, bool? deleted, String? id, CardObject? object, }) { return DeletedCard(
   currency: currency != null ? currency() : this.currency,
   deleted: deleted ?? this.deleted,

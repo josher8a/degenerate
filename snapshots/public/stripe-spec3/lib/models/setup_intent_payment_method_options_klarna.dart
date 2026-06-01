@@ -19,6 +19,13 @@ Map<String, dynamic> toJson() { return {
   'preferred_locale': ?preferredLocale,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'preferred_locale'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final preferredLocale$ = preferredLocale;
+if (preferredLocale$ != null) {
+  if (preferredLocale$.length > 5000) errors.add('preferredLocale: length must be <= 5000');
+}
+return errors; } 
 SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, String? Function()? preferredLocale, }) { return SetupIntentPaymentMethodOptionsKlarna(
   currency: currency != null ? currency() : this.currency,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

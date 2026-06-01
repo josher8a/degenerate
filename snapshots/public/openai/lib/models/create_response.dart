@@ -70,6 +70,13 @@ Map<String, dynamic> toJson() { return {
   if (contextManagement != null) 'context_management': contextManagement?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final contextManagement$ = contextManagement;
+if (contextManagement$ != null) {
+  if (contextManagement$.length < 1) errors.add('contextManagement: must have >= 1 items');
+}
+return errors; } 
 CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
   input: input != null ? input() : this.input,
   include: include != null ? include() : this.include,

@@ -19,6 +19,17 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'timezone'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final displayName$ = displayName;
+if (displayName$ != null) {
+  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+}
+final timezone$ = timezone;
+if (timezone$ != null) {
+  if (timezone$.length > 5000) errors.add('timezone: length must be <= 5000');
+}
+return errors; } 
 AccountDashboardSettings copyWith({String? Function()? displayName, String? Function()? timezone, }) { return AccountDashboardSettings(
   displayName: displayName != null ? displayName() : this.displayName,
   timezone: timezone != null ? timezone() : this.timezone,

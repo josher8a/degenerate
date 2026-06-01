@@ -16,6 +16,11 @@ Map<String, dynamic> toJson() { return {
   'score_threshold': scoreThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+if (scoreThreshold < 0) errors.add('scoreThreshold: must be >= 0');
+if (scoreThreshold > 1) errors.add('scoreThreshold: must be <= 1');
+return errors; } 
 RankingOptions copyWith({String? Function()? ranker, double Function()? scoreThreshold, }) { return RankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,

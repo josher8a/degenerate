@@ -58,6 +58,13 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_cycle_anchor') &&
       json.containsKey('invoice_settings'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final description$ = description;
+if (description$ != null) {
+  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+}
+return errors; } 
 SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? applicationFeePercent, SubscriptionSchedulesResourceDefaultSettingsAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, DefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? description, InvoiceSettingSubscriptionScheduleSetting? invoiceSettings, ChargeOnBehalfOf? Function()? onBehalfOf, SubscriptionTransferData? Function()? transferData, }) { return SubscriptionSchedulesResourceDefaultSettings(
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,

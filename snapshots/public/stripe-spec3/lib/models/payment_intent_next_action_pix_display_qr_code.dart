@@ -34,6 +34,25 @@ Map<String, dynamic> toJson() { return {
   'image_url_svg': ?imageUrlSvg,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'expires_at', 'hosted_instructions_url', 'image_url_png', 'image_url_svg'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final data$ = data;
+if (data$ != null) {
+  if (data$.length > 5000) errors.add('data: length must be <= 5000');
+}
+final hostedInstructionsUrl$ = hostedInstructionsUrl;
+if (hostedInstructionsUrl$ != null) {
+  if (hostedInstructionsUrl$.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
+}
+final imageUrlPng$ = imageUrlPng;
+if (imageUrlPng$ != null) {
+  if (imageUrlPng$.length > 5000) errors.add('imageUrlPng: length must be <= 5000');
+}
+final imageUrlSvg$ = imageUrlSvg;
+if (imageUrlSvg$ != null) {
+  if (imageUrlSvg$.length > 5000) errors.add('imageUrlSvg: length must be <= 5000');
+}
+return errors; } 
 PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int? Function()? expiresAt, String? Function()? hostedInstructionsUrl, String? Function()? imageUrlPng, String? Function()? imageUrlSvg, }) { return PaymentIntentNextActionPixDisplayQrCode(
   data: data != null ? data() : this.data,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

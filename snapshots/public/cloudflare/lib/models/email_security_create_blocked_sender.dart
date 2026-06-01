@@ -26,6 +26,15 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String &&
       json.containsKey('pattern_type'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final comments$ = comments;
+if (comments$ != null) {
+  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+}
+if (pattern.length < 1) errors.add('pattern: length must be >= 1');
+if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
+return errors; } 
 EmailSecurityCreateBlockedSender copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityCreateBlockedSender(
   comments: comments != null ? comments() : this.comments,
   isRegex: isRegex ?? this.isRegex,

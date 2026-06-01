@@ -23,6 +23,13 @@ Map<String, dynamic> toJson() { return {
   'qualifiers': ?qualifiers,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final qualifiers$ = qualifiers;
+if (qualifiers$ != null) {
+  if (qualifiers$.toSet().length != qualifiers$.length) errors.add('qualifiers: items must be unique');
+}
+return errors; } 
 SetDirective2 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, List<String>? Function()? qualifiers, }) { return SetDirective2(
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,

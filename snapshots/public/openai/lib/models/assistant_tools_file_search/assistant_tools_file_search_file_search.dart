@@ -21,6 +21,14 @@ Map<String, dynamic> toJson() { return {
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_num_results', 'ranking_options'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final maxNumResults$ = maxNumResults;
+if (maxNumResults$ != null) {
+  if (maxNumResults$ < 1) errors.add('maxNumResults: must be >= 1');
+  if (maxNumResults$ > 50) errors.add('maxNumResults: must be <= 50');
+}
+return errors; } 
 AssistantToolsFileSearchFileSearch copyWith({int? Function()? maxNumResults, FileSearchRankingOptions? Function()? rankingOptions, }) { return AssistantToolsFileSearchFileSearch(
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,

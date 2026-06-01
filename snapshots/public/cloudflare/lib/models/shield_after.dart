@@ -14,6 +14,13 @@ Map<String, dynamic> toJson() { return {
   'after': ?after,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors = <String>[];
+final after$ = after;
+if (after$ != null) {
+  if (after$.length > 36) errors.add('after: length must be <= 36');
+}
+return errors; } 
 ShieldAfter copyWith({String? Function()? after}) { return ShieldAfter(
   after: after != null ? after() : this.after,
 ); } 
