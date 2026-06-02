@@ -3080,4 +3080,214 @@ void main() {
       expect(escapeDartString('a\u200Bb'), r'a\u200Bb');
     });
   });
+
+  // \u2500\u2500\u2500 Fragile emitter behavior tests \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+  group('copyWith nullable field uses closure pattern', () {
+    const model = IrObject('Profile', [
+      IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+          isRequired: true),
+      IrField('bio', 'bio', IrPrimitive(PrimitiveKind.string)),
+    ], requiredFields: ['name']);
+
+    late String source;
+    setUpAll(() {
+      final specs = const ModelEmitter(model).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('required field uses plain T? param', () {
+      expect(source, contains('String? name'));
+    });
+
+    test('optional nullable field uses closure param', () {
+      expect(source, contains('String? Function()? bio'));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
+
+  group('required-nullable field in toJson', () {
+    const model = IrObject('Patch', [
+      IrField('value', 'value', IrPrimitive(PrimitiveKind.string, isNullable: true),
+          isRequired: true),
+    ], requiredFields: ['value']);
+
+    late String source;
+    setUpAll(() {
+      final specs = const ModelEmitter(model).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('always emits key for required-nullable field', () {
+      expect(source, contains("'value': value"));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
+
+  group('toString multi-line threshold', () {
+    IrObject makeModel(int fieldCount) => IrObject(
+          'Wide',
+          List.generate(
+            fieldCount,
+            (i) => IrField('f$i', 'f$i', const IrPrimitive(PrimitiveKind.string)),
+          ),
+        );
+
+    test('\u22648 fields uses single-line toString', () {
+      final specs = ModelEmitter(makeModel(8)).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+      expect(source, isNot(contains(r'\n')));
+    });
+
+    test('>8 fields uses multi-line toString', () {
+      final specs = ModelEmitter(makeModel(9)).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+      expect(source, contains(r'\n'));
+    });
+  });
+
+  group('discriminated union \$Unknown late final caching', () {
+    // Two variants sharing the 'org' field \u2192 hoisted to base, cached on $Unknown
+    const union = IrDiscriminatedUnion('Action', 'type', {
+      'create': IrObject('CreateAction', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('org', 'org', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('name', 'name', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['type', 'org', 'name']),
+      'delete': IrObject('DeleteAction', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('org', 'org', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['type', 'org', 'id']),
+    });
+
+    late String source;
+    setUpAll(() {
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('emits \$Unknown variant class', () {
+      expect(source, contains(r'final class Action$Unknown extends Action'));
+    });
+
+    test('\$Unknown uses late final for shared field "org"', () {
+      expect(source, contains("late final String _org = json['org']"));
+    });
+
+    test('preserves raw JSON in \$Unknown', () {
+      expect(source, contains('Map<String, dynamic> json'));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
+
+  group('discriminated union when<R>() method', () {
+    const union = IrDiscriminatedUnion('Msg', 'type', {
+      'text': IrObject('TextMsg', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('body', 'body', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['type', 'body']),
+      'image': IrObject('ImageMsg', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+        IrField('url', 'url', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['type', 'url']),
+    });
+
+    late String source;
+    setUpAll(() {
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('emits when<R>() on sealed base', () {
+      expect(source, contains('R when<R>({'));
+    });
+
+    test('when has one callback per variant plus unknown', () {
+      expect(source, contains('required R Function(MsgText) text'));
+      expect(source, contains('required R Function(MsgImage) image'));
+      expect(source, contains(r'required R Function(Msg$Unknown) unknown'));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
+
+  group('discriminator factory skips arg when default matches', () {
+    const union = IrDiscriminatedUnion('Vehicle', 'type', {
+      'car': IrObject('Car', [
+        IrField('type', 'type', IrPrimitive(PrimitiveKind.string),
+            isRequired: true, defaultValue: 'car'),
+        IrField('doors', 'doors', IrPrimitive(PrimitiveKind.int),
+            isRequired: true),
+      ], requiredFields: ['type', 'doors']),
+    });
+
+    late String source;
+    setUpAll(() {
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('variant factory omits discriminator param when default matches', () {
+      // factory Vehicle.car({required int doors}) \u2014 no 'type' param
+      expect(source, contains('factory Vehicle.car('));
+      expect(source, contains('required int doors'));
+      final factoryMatch = RegExp(r'factory Vehicle\.car\([^)]*\)').firstMatch(source);
+      expect(factoryMatch, isNotNull);
+      expect(factoryMatch!.group(0), isNot(contains('type')));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
+
+  group('enum isUnknown getter', () {
+    const irEnum = IrEnum('Color', ['red', 'green', 'blue']);
+
+    late String source;
+    setUpAll(() {
+      final specs = const EnumEmitter(irEnum).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      source = emitRaw(library);
+    });
+
+    test('has isUnknown getter', () {
+      expect(source, contains('bool get isUnknown'));
+    });
+
+    test('has raw value round-trip', () {
+      expect(source, contains('final String value'));
+    });
+
+    test('is valid Dart', () {
+      _formatOrFail(source);
+    });
+  });
 }
