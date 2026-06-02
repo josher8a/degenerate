@@ -2083,7 +2083,7 @@ void main() {
       expect(
         sdkFile,
         contains(
-          'withHttpBasic({required String username, required String password})',
+          'withHttpBasic({required String username, required String password, })',
         ),
       );
       expect(

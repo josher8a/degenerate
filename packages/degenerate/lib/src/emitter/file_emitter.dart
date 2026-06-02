@@ -857,70 +857,98 @@ class FileEmitter {
     String? defaultServerUrl,
   }) {
     final className = '${toTypeName(packageName)}Api';
-    final buf = StringBuffer();
-    buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
-    // Collect and sort relative imports alphabetically.
-    final relativeImports = <String>[];
-    if (securitySchemes.isNotEmpty) {
-      relativeImports.add("'${packageName}_security.dart'");
-    }
-    final seenImports = <String>{};
-    for (final api in apis) {
-      final fileName = toSnakeCase(api.name);
-      final importLine = "'../apis/$fileName.dart'";
-      if (seenImports.add(importLine)) {
-        relativeImports.add(importLine);
-      }
-    }
-    relativeImports.sort();
-    for (final imp in relativeImports) {
-      buf.writeln('import $imp;');
-    }
-    buf.writeln();
-    buf.writeln('/// Root SDK client providing access to all API groups.');
-    buf.writeln('///');
-    buf.writeln('/// ```dart');
-    buf.writeln('/// final sdk = $className(ApiConfig(client: myClient));');
-    for (final api in apis) {
-      final fieldName = _facadeFieldName(api.name);
-      final exampleMethod = api.operations.isNotEmpty
-          ? api.operations.first.dartMethodName
+
+    final docs = <String>[
+      '/// Root SDK client providing access to all API groups.',
+      '///',
+      '/// ```dart',
+      '/// final sdk = $className(ApiConfig(client: myClient));',
+    ];
+    if (apis.isNotEmpty) {
+      final fieldName = _facadeFieldName(apis.first.name);
+      final exampleMethod = apis.first.operations.isNotEmpty
+          ? apis.first.operations.first.dartMethodName
           : 'list';
-      buf.writeln('/// sdk.$fieldName.$exampleMethod();');
-      break; // just one example
+      docs.add('/// sdk.$fieldName.$exampleMethod();');
     }
-    buf.writeln('/// ```');
-    buf.writeln('final class $className {');
-    buf.writeln('  $className(this._config);');
-    buf.writeln();
-    if (defaultServerUrl != null) {
-      final escaped = escapeDartString(defaultServerUrl);
-      buf.writeln("  static const defaultBaseUrl = '$escaped';");
-      buf.writeln();
-    }
-    buf.writeln('  final ApiConfig _config;');
-    buf.writeln();
+    docs.add('/// ```');
 
-    // Lazy-initialized API accessors - deduplicate field names.
     final seenFields = <String>{};
-    for (final api in apis) {
-      final fieldName = _facadeFieldName(api.name);
-      if (!seenFields.add(fieldName)) continue;
-      buf.writeln(
-        '  late final ${api.name} $fieldName = ${api.name}(_config);',
+    final library = Library((lib) {
+      lib.comments.addAll(_header);
+      lib.directives.add(
+        Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
       );
-    }
-
-    if (securitySchemes.isNotEmpty) {
-      buf.writeln();
-      for (final scheme in securitySchemes) {
-        final helper = _securityHelperMethod(className, packageName, scheme);
-        if (helper != null) buf.writeln(helper);
+      if (securitySchemes.isNotEmpty) {
+        lib.directives.add(
+          Directive.import('${packageName}_security.dart'),
+        );
       }
-    }
+      for (final api in apis) {
+        final fileName = toSnakeCase(api.name);
+        lib.directives.add(Directive.import('../apis/$fileName.dart'));
+      }
 
-    buf.writeln('}');
-    return _emitWithHeader(buf.toString());
+      lib.body.add(Class((b) {
+        b
+          ..name = className
+          ..modifier = ClassModifier.final$
+          ..docs.addAll(docs)
+          ..constructors.add(Constructor((c) => c
+            ..requiredParameters.add(
+              Parameter((p) => p
+                ..name = '_config'
+                ..toThis = true),
+            )))
+          ..fields.add(Field((f) => f
+            ..name = '_config'
+            ..modifier = FieldModifier.final$
+            ..type = refer('ApiConfig')));
+
+        if (defaultServerUrl != null) {
+          b.fields.add(Field((f) => f
+            ..name = 'defaultBaseUrl'
+            ..static = true
+            ..modifier = FieldModifier.constant
+            ..assignment = Code(dartStringLiteral(defaultServerUrl))));
+        }
+
+        for (final api in apis) {
+          final fieldName = _facadeFieldName(api.name);
+          if (!seenFields.add(fieldName)) continue;
+          b.fields.add(Field((f) => f
+            ..name = fieldName
+            ..late = true
+            ..modifier = FieldModifier.final$
+            ..type = refer(api.name)
+            ..assignment = Code('${api.name}(_config)')));
+        }
+
+        for (final scheme in securitySchemes) {
+          final helper =
+              _securityHelperMethod(className, packageName, scheme);
+          if (helper != null) {
+            final positional = helper.params.where((p) => !p.named);
+            final named = helper.params.where((p) => p.named);
+            b.methods.add(Method((m) => m
+              ..name = helper.name
+              ..returns = refer(className)
+              ..requiredParameters.addAll(positional.map((p) =>
+                  Parameter((pb) => pb
+                    ..name = p.name
+                    ..type = refer(p.type))))
+              ..optionalParameters.addAll(named.map((p) =>
+                  Parameter((pb) => pb
+                    ..name = p.name
+                    ..type = refer(p.type)
+                    ..named = true
+                    ..required = p.required)))
+              ..body = Code(helper.body)));
+          }
+        }
+      }));
+    });
+    return emitRaw(library);
   }
 
   String _emitSecurityFile({
@@ -1114,24 +1142,35 @@ class FileEmitter {
     };
   }
 
-  String? _securityHelperMethod(
+  _HelperMethodInfo? _securityHelperMethod(
     String sdkClassName,
     String packageName,
     IrSecurityScheme scheme,
   ) {
-    final securityClass =
-        '${toTypeName(packageName)}Security';
+    final securityClass = '${toTypeName(packageName)}Security';
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
     return switch (scheme.type) {
-      'apiKey' =>
-        '  $sdkClassName $helperName(String value) => $sdkClassName($securityClass.$applyName(_config, value));',
+      'apiKey' => _HelperMethodInfo(
+          helperName,
+          [_HelperParam('value', 'String')],
+          'return $sdkClassName($securityClass.$applyName(_config, value));',
+        ),
       'http' => switch (scheme.scheme) {
-        'bearer' =>
-          '  $sdkClassName $helperName(String token) => $sdkClassName($securityClass.$applyName(_config, token));',
-        'basic' =>
-          '  $sdkClassName $helperName({required String username, required String password}) => $sdkClassName($securityClass.$applyName(_config, username: username, password: password));',
+        'bearer' => _HelperMethodInfo(
+            helperName,
+            [_HelperParam('token', 'String')],
+            'return $sdkClassName($securityClass.$applyName(_config, token));',
+          ),
+        'basic' => _HelperMethodInfo(
+            helperName,
+            [
+              _HelperParam('username', 'String', named: true, required: true),
+              _HelperParam('password', 'String', named: true, required: true),
+            ],
+            'return $sdkClassName($securityClass.$applyName(_config, username: username, password: password));',
+          ),
         _ => null,
       },
       _ => null,
@@ -1176,4 +1215,19 @@ class FileEmitter {
     buf.writeln('  degenerate_runtime:');
     return buf.toString();
   }
+}
+
+class _HelperMethodInfo {
+  const _HelperMethodInfo(this.name, this.params, this.body);
+  final String name;
+  final List<_HelperParam> params;
+  final String body;
+}
+
+class _HelperParam {
+  const _HelperParam(this.name, this.type, {this.named = false, this.required = false});
+  final String name;
+  final String type;
+  final bool named;
+  final bool required;
 }
