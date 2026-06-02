@@ -12,6 +12,7 @@ import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/ir_validator.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/naming.dart' show toTypeName;
 import 'package:degenerate/src/naming/ir_rewriter.dart';
 import 'package:degenerate/src/naming/name_resolution.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
@@ -52,6 +53,7 @@ class GeneratorConfig {
     this.dedupeInlineTypes = true,
     this.emitRoundtripFixtures = false,
     this.emitTypedFormats = false,
+    this.emitTypedParams = false,
   });
 
   /// Path to the input OpenAPI spec file.
@@ -122,6 +124,11 @@ class GeneratorConfig {
   /// like `uuid`, `email`, `date`, etc. Off by default — changes many field
   /// types from `String` to the wrapper type, which is opinionated.
   final bool emitTypedFormats;
+
+  /// Emit extension type wrappers for path parameters (e.g. `OrgId` for
+  /// `orgId`). Prevents wrong-ID-in-wrong-slot bugs at compile time. Off by
+  /// default — changes API method signatures.
+  final bool emitTypedParams;
 }
 
 /// The main code generator pipeline.
@@ -149,6 +156,10 @@ class Generator {
     }
 
     irApis = _filterOperations(irApis, irTypes);
+
+    if (config.emitTypedParams) {
+      _rewritePathParamsAsTyped(irTypes, irApis);
+    }
 
     try {
       final irWarnings = IrValidator(irTypes, irApis).validate();
@@ -830,6 +841,80 @@ class Generator {
       case IrPrimitive():
         break;
     }
+  }
+
+  /// Collect unique string-typed path parameters across all operations,
+  /// generate extension types for them, and rewrite the parameter IR to
+  /// reference the new types.
+  void _rewritePathParamsAsTyped(List<IrType> irTypes, List<IrApi> irApis) {
+    final existingNames = irTypes
+        .map((t) => t.emittableName)
+        .whereType<String>()
+        .toSet();
+
+    // Collect unique path param names that are plain strings.
+    final paramNames = <String>{};
+    for (final api in irApis) {
+      for (final op in api.operations) {
+        for (final p in op.parameters) {
+          if (p.location != ParameterLocation.path) continue;
+          if (p.type is! IrPrimitive) continue;
+          if ((p.type as IrPrimitive).kind != PrimitiveKind.string) continue;
+          paramNames.add(p.name);
+        }
+      }
+    }
+
+    if (paramNames.isEmpty) return;
+
+    // Generate extension types and build a name mapping.
+    final paramToType = <String, String>{};
+    for (final paramName in paramNames) {
+      var typeName = toTypeName(paramName);
+      if (existingNames.contains(typeName)) {
+        typeName = '${typeName}Param';
+      }
+      if (!existingNames.add(typeName)) continue;
+      paramToType[paramName] = typeName;
+      irTypes.add(IrExtensionType(
+        typeName,
+        const IrPrimitive(PrimitiveKind.string),
+      ));
+    }
+
+    // Rewrite path parameter types to reference the new extension types.
+    for (var a = 0; a < irApis.length; a++) {
+      final api = irApis[a];
+      var changed = false;
+      final newOps = <IrOperation>[];
+      for (final op in api.operations) {
+        var opChanged = false;
+        final newParams = <IrParameter>[];
+        for (final p in op.parameters) {
+          final target = paramToType[p.name];
+          if (p.location == ParameterLocation.path &&
+              target != null &&
+              p.type is IrPrimitive &&
+              (p.type as IrPrimitive).kind == PrimitiveKind.string) {
+            newParams.add(p.withType(IrTypeRef(target)));
+            opChanged = true;
+          } else {
+            newParams.add(p);
+          }
+        }
+        if (opChanged) {
+          changed = true;
+          newOps.add(op.copyWith(parameters: newParams));
+        } else {
+          newOps.add(op);
+        }
+      }
+      if (changed) {
+        irApis[a] = IrApi(api.name, newOps);
+      }
+    }
+
+    _log('  Generated ${paramToType.length} typed path parameter types');
   }
 
   String _irTypeName(IrType type) {

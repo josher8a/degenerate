@@ -95,6 +95,14 @@ ArgParser buildParser() {
           'from String to the wrapper; off by default.',
       negatable: false,
     )
+    ..addFlag(
+      'emit-typed-params',
+      help:
+          'Emit extension type wrappers for path parameters (e.g. OrgId\n'
+          'for orgId). Prevents wrong-ID-in-wrong-slot bugs at compile\n'
+          'time. Changes API method signatures; off by default.',
+      negatable: false,
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
@@ -165,6 +173,7 @@ Future<void> main(List<String> arguments) async {
       unwrapFields: results.multiOption('unwrap-fields'),
       emitRoundtripFixtures: results.flag('emit-roundtrip-fixtures'),
       emitTypedFormats: results.flag('emit-typed-formats'),
+      emitTypedParams: results.flag('emit-typed-params'),
     );
 
     final generator = Generator(config);

@@ -26,6 +26,7 @@ void main() {
     Map<String, dynamic> spec, {
     String name = 'prop_test',
     bool roundtrip = false,
+    bool typedParams = false,
   }) async {
     final specFile = File(p.join(tempDir.path, 'spec.json'));
     specFile.writeAsStringSync(jsonEncode(spec));
@@ -37,6 +38,7 @@ void main() {
       workspace: true,
       quiet: true,
       emitRoundtripFixtures: roundtrip,
+      emitTypedParams: typedParams,
     );
 
     final generator = Generator(config);
@@ -871,6 +873,58 @@ void main() {
       }, name: 'seed_ops_$seed', roundtrip: true);
     }, timeout: const Timeout(Duration(minutes: 2)));
   }
+
+  // ─── Typed path parameters ──────────────────────────────
+
+  test('typed path parameters compile', () async {
+    await generateAndAnalyze({
+      'openapi': '3.1.0',
+      'info': {'title': 'TypedParams', 'version': '1.0.0'},
+      'paths': {
+        '/orgs/{orgId}/items/{itemId}': {
+          'get': {
+            'operationId': 'getItem',
+            'parameters': [
+              {
+                'name': 'orgId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+              {
+                'name': 'itemId',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/Item'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      'components': {
+        'schemas': {
+          'Item': {
+            'type': 'object',
+            'required': ['id', 'name'],
+            'properties': {
+              'id': {'type': 'string'},
+              'name': {'type': 'string'},
+            },
+          },
+        },
+      },
+    }, name: 'typed_params_test', typedParams: true);
+  });
 
   // ─── Determinism ────────────────────────────────────────
 
