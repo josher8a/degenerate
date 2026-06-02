@@ -232,3 +232,16 @@ components:
       type: object
       additionalProperties:
         $ref: "#/components/schemas/BasicObject"
+
+    # ─── Adversarial field names ─────────────────────────────
+    AdversarialKeys:
+      type: object
+      properties:
+        "it's":
+          type: string
+        'key"with"quotes':
+          type: string
+        "$dollar":
+          type: string
+        "back\\slash":
+          type: string

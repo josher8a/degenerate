@@ -200,7 +200,7 @@ class DiscriminatedUnionEmitter {
       ..annotations.add(refer('override'))
       ..returns = irTypeToReference(f.type, forceNullable: !f.isRequired)
       ..body = Code(
-        'return ${buildFromJsonCode(f.type, "json['${f.originalName}']", isOptional: !f.isRequired)};',
+        'return ${buildFromJsonCode(f.type, 'json[${dartStringLiteral(f.originalName)}]', isOptional: !f.isRequired)};',
       ),
   );
 
@@ -404,7 +404,7 @@ class DiscriminatedUnionEmitter {
           '/// Deserialize from JSON, dispatching on the `$_discJsonKey` discriminator.',
         )
         ..body = Code(
-          "return switch (json['$_discJsonKey']) {\n"
+          'return switch (json[${dartStringLiteral(_discJsonKey)}]) {\n'
           '$cases\n'
           '  _ => $unknownClassName(json),\n'
           '};',
@@ -451,7 +451,7 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return json['$_discJsonKey'] as String? ?? '';"),
+              ..body = Code('return json[${dartStringLiteral(_discJsonKey)}] as String? ?? ${dartStringLiteral('')};'),
           ),
         )
         ..methods.add(
@@ -519,16 +519,16 @@ class DiscriminatedUnionEmitter {
 
     final fromJsonArgs = fields
         .map((f) {
-          final accessor = "json['${f.originalName}']";
+          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
           final isOptional = fieldIsNullableInDart(f);
           return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
         })
         .join('\n');
 
     final toJsonEntries = <String>[
-      "  '$_discJsonKey': $_discDartName,",
+      '  ${dartStringLiteral(_discJsonKey)}: $_discDartName,',
       ...fields.map(
-        (f) => toJsonEntry(f, "'${f.originalName}'", isNullable: fieldIsNullableInDart(f)),
+        (f) => toJsonEntry(f, dartStringLiteral(f.originalName), isNullable: fieldIsNullableInDart(f)),
       ),
     ];
 
@@ -625,8 +625,8 @@ class DiscriminatedUnionEmitter {
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
       // Spread first so the discriminator key always wins.
-      IrAnyOf() => "return {...$toJsonExpr, '$_discJsonKey': $_discDartName};",
-      _ => "return {'$_discJsonKey': $_discDartName, 'data': $toJsonExpr};",
+      IrAnyOf() => 'return {...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName};',
+      _ => 'return {${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr};',
     };
   }
 

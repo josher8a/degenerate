@@ -374,4 +374,17 @@ void main() {
       expect((sse.itemSchema as IrTypeRef).name, equals('BasicObject'));
     });
   });
+
+  // ─── Adversarial field names ────────────────────────────
+
+  group('Adversarial keys', () {
+    test('fields with quotes, dollars, and backslashes survive lowering', () {
+      final obj = _findType(types, 'AdversarialKeys') as IrObject;
+      expect(obj.fields.length, equals(4));
+      expect(obj.fields.any((f) => f.originalName == "it's"), isTrue);
+      expect(obj.fields.any((f) => f.originalName == 'key"with"quotes'), isTrue);
+      expect(obj.fields.any((f) => f.originalName == r'$dollar'), isTrue);
+      expect(obj.fields.any((f) => f.originalName == r'back\slash'), isTrue);
+    });
+  });
 }

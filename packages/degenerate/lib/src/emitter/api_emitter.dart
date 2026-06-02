@@ -482,12 +482,11 @@ class ApiEmitter {
       buf.writeln('  onSuccess: (response) {');
       if (unwrappedField != null) {
         // Unwrap: parse full JSON, extract the field, deserialize it.
-        final escaped = escapeDartString(unwrappedField);
         buf.writeln(
           '    final json = jsonDecode(response.body) as Map<String, dynamic>;',
         );
         buf.writeln(
-          "    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};",
+          '    return ${_fromJson(returnType, 'json[${dartStringLiteral(unwrappedField)}]', isOptional: unwrappedFieldIsOptional)};',
         );
       } else {
         final deserialize = _buildDeserializeExpr(
