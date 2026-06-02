@@ -408,13 +408,6 @@ class FileEmitter {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
-    bool isBytesType(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isBytesType(items),
-      IrMap(:final values) => isBytesType(values),
-      _ => false,
-    };
-
     // Unwrap a response type if it matches unwrapFields config.
     IrType maybeUnwrap(IrType type) {
       if (unwrapFields.isEmpty || typeRegistry == null) return type;
@@ -645,14 +638,6 @@ class FileEmitter {
     var needsConvert = false;
     var needsOneOf = false;
 
-    /// Direct bytes check (no union/ref traversal) - for needsTypedData.
-    bool isDirectBytes(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isDirectBytes(items),
-      IrMap(:final values) => isDirectBytes(values),
-      _ => false,
-    };
-
     /// Deep bytes check (traverses OneOf-eligible unions and refs) - for
     /// needsConvert. Only recurses into OneOf-eligible unions because their
     /// parse code is inlined in the current file. Non-OneOf sealed classes
@@ -683,23 +668,17 @@ class FileEmitter {
 
     bool isOneOfType(IrType t) => switch (t) {
       IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(name, variants) =>
+          when isOneOfTypedef(name, variants) =>
         true,
       IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !isSelfReferencingUnion(name, variants) =>
+          when isOneOfTypedef(name, variants) =>
         true,
       IrTypeRef(:final name) when typeRegistry != null =>
         switch (typeRegistry[name]) {
           IrUntaggedUnion(:final variants)
-              when isOneOfEligible(variants) &&
-                  !isSelfReferencingUnion(name, variants) =>
+              when isOneOfTypedef(name, variants) =>
             true,
-          IrAnyOf(:final variants)
-              when isOneOfEligible(variants) &&
-                  !isSelfReferencingUnion(name, variants) =>
-            true,
+          IrAnyOf(:final variants) when isOneOfTypedef(name, variants) => true,
           _ => false,
         },
       IrList(:final items) => isOneOfType(items),
@@ -710,7 +689,7 @@ class FileEmitter {
     void checkField(IrType fieldType) {
       _collectTopLevelTypeName(fieldType, names, typeRegistry);
       if (isListType(fieldType)) needsCollection = true;
-      if (isDirectBytes(fieldType)) {
+      if (isBytesType(fieldType)) {
         needsTypedData = true;
         needsConvert = true;
       } else if (hasBytesAnywhere(fieldType)) {
@@ -744,7 +723,7 @@ class FileEmitter {
               if (isListType(f.type)) needsCollection = true;
             }
           }
-          if (isDirectBytes(variant)) needsTypedData = true;
+          if (isBytesType(variant)) needsTypedData = true;
         }
         // Hoisted base getters and the per-variant factory constructors
         // reference the variants' field types, which must be imported.
@@ -760,7 +739,7 @@ class FileEmitter {
             if (resolved is IrObject) {
               for (final f in resolved.fields) {
                 _collectTopLevelTypeName(f.type, names);
-                if (isDirectBytes(f.type)) needsTypedData = true;
+                if (isBytesType(f.type)) needsTypedData = true;
               }
             }
           }
@@ -770,9 +749,9 @@ class FileEmitter {
         if (isOneOfEligible(variants)) needsOneOf = true;
         for (final variant in variants) {
           _collectTopLevelTypeName(variant, names);
-          if (isDirectBytes(variant)) needsTypedData = true;
+          if (isBytesType(variant)) needsTypedData = true;
         }
-        if (!isOneOfEligible(variants) && variants.any(isDirectBytes)) {
+        if (!isOneOfEligible(variants) && variants.any(isBytesType)) {
           needsConvert = true;
         }
       case IrAnyOf(:final name, :final variants):
@@ -783,7 +762,7 @@ class FileEmitter {
           needsOneOf = true;
           for (final variant in variants) {
             _collectTopLevelTypeName(variant, names);
-            if (isDirectBytes(variant)) needsTypedData = true;
+            if (isBytesType(variant)) needsTypedData = true;
           }
         } else {
           // AnyOf class: fromJson calls .fromJson()/.canParse() on variants,
@@ -791,7 +770,7 @@ class FileEmitter {
           for (final variant in variants) {
             _collectTopLevelTypeName(variant, names, typeRegistry);
             if (isOneOfType(variant)) needsOneOf = true;
-            if (isDirectBytes(variant)) {
+            if (isBytesType(variant)) {
               needsTypedData = true;
               needsConvert = true;
             }
@@ -799,7 +778,7 @@ class FileEmitter {
         }
       case IrExtensionType(:final name, :final inner):
         names.add(name);
-        if (isDirectBytes(inner)) {
+        if (isBytesType(inner)) {
           needsTypedData = true;
           needsConvert = true;
         }

@@ -382,6 +382,16 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
 /// Check whether an [IrType] represents a list (used for equality checks).
 bool isListType(IrType type) => type is IrList;
 
+/// Whether [type] is or contains a `bytes` primitive (recurses through
+/// List/Map wrappers). Used to determine `dart:typed_data` / `dart:convert`
+/// import needs.
+bool isBytesType(IrType type) => switch (type) {
+      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+      IrList(:final items) => isBytesType(items),
+      IrMap(:final values) => isBytesType(values),
+      _ => false,
+    };
+
 // ─── OneOf helpers ──────────────────────────────────────
 
 const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];

@@ -285,6 +285,14 @@ final class IrField {
 
   /// Example value from the schema, if any.
   final Object? example;
+
+  IrField withType(IrType newType) => IrField(
+        name, originalName, newType,
+        isRequired: isRequired,
+        defaultValue: defaultValue,
+        description: description,
+        example: example,
+      );
 }
 
 /// oneOf with discriminator - generates sealed class hierarchy.

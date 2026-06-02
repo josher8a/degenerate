@@ -581,6 +581,12 @@ class Generator {
           : rewriteTypeNames(m.itemSchema!, rename),
       encoding: m.encoding,
     );
+    List<IrField> hdr(List<IrField> h) =>
+        [for (final f in h) f.withType(rewriteTypeNames(f.type, rename))];
+    IrResponse resp(IrResponse r) => r.copyWith(
+          content: {for (final e in r.content.entries) e.key: mt(e.value)},
+          headers: hdr(r.headers),
+        );
     final ops = [
       for (final op in api.operations)
         op.copyWith(
@@ -598,15 +604,10 @@ class Generator {
                   isRequired: op.requestBody!.isRequired,
                 ),
           responses: {
-            for (final e in op.responses.entries)
-              e.key: e.value.copyWith(content: {
-                for (final c in e.value.content.entries) c.key: mt(c.value),
-              }),
+            for (final e in op.responses.entries) e.key: resp(e.value),
           },
-          defaultResponse: op.defaultResponse?.copyWith(content: {
-            for (final e in op.defaultResponse!.content.entries)
-              e.key: mt(e.value),
-          }),
+          defaultResponse:
+              op.defaultResponse == null ? null : resp(op.defaultResponse!),
         ),
     ];
     return IrApi(api.name, ops);
@@ -642,24 +643,18 @@ class Generator {
         final responses = <int, IrResponse>{};
         var respChanged = false;
         for (final entry in op.responses.entries) {
-          final (newContent, changed) =
-              _resolveContentMap(resolver, entry.value.content);
-          if (changed) {
-            respChanged = true;
-            responses[entry.key] = entry.value.copyWith(content: newContent);
-          } else {
-            responses[entry.key] = entry.value;
-          }
+          final resolved = _resolveResponse(resolver, entry.value);
+          if (!identical(resolved, entry.value)) respChanged = true;
+          responses[entry.key] = resolved;
         }
         if (respChanged) opChanged = true;
 
         IrResponse? defaultResp;
         if (op.defaultResponse != null) {
-          final (newContent, changed) =
-              _resolveContentMap(resolver, op.defaultResponse!.content);
-          if (changed) {
+          final resolved = _resolveResponse(resolver, op.defaultResponse!);
+          if (!identical(resolved, op.defaultResponse)) {
             opChanged = true;
-            defaultResp = op.defaultResponse!.copyWith(content: newContent);
+            defaultResp = resolved;
           }
         }
 
@@ -699,6 +694,26 @@ class Generator {
       );
     }
     return (result, changed);
+  }
+
+  static IrResponse _resolveResponse(
+    TypeRefResolver resolver,
+    IrResponse resp,
+  ) {
+    final (newContent, contentChanged) =
+        _resolveContentMap(resolver, resp.content);
+    var headerChanged = false;
+    final headers = resp.headers.map((f) {
+      final resolved = resolver.resolve(f.type);
+      if (identical(resolved, f.type)) return f;
+      headerChanged = true;
+      return f.withType(resolved);
+    }).toList();
+    if (!contentChanged && !headerChanged) return resp;
+    return resp.copyWith(
+      content: contentChanged ? newContent : null,
+      headers: headerChanged ? headers : null,
+    );
   }
 
   /// Collect all type names transitively reachable from the given APIs.
