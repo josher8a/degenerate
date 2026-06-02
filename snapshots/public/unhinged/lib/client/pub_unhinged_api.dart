@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'pub_unhinged_security.dart';
-import '../apis/incidents_api.dart';
-import '../apis/default_api.dart';
 import '../apis/class_api.dart';
+import '../apis/default_api.dart';
+import '../apis/incidents_api.dart';
+import 'pub_unhinged_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///

@@ -870,14 +870,12 @@ class FileEmitter {
       lib.directives.add(
         Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
       );
-      if (securitySchemes.isNotEmpty) {
-        lib.directives.add(
-          Directive.import('${packageName}_security.dart'),
-        );
-      }
-      for (final api in apis) {
-        final fileName = toSnakeCase(api.name);
-        lib.directives.add(Directive.import('../apis/$fileName.dart'));
+      final relativeImports = <String>[
+        if (securitySchemes.isNotEmpty) '${packageName}_security.dart',
+        for (final api in apis) '../apis/${toSnakeCase(api.name)}.dart',
+      ]..sort();
+      for (final path in relativeImports) {
+        lib.directives.add(Directive.import(path));
       }
 
       lib.body.add(Class((b) {
