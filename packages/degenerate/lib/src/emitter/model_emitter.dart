@@ -390,9 +390,10 @@ class ModelEmitter {
           out.add('if ($check) ${err('length must be >= ${c.minLength}')}');
         }
         if (c.maxLength != null) {
-          out.add(
-            'if ($accessor.length > ${c.maxLength}) ${err('length must be <= ${c.maxLength}')}',
-          );
+          final check = c.maxLength == 0
+              ? '$accessor.isNotEmpty'
+              : '$accessor.length > ${c.maxLength}';
+          out.add('if ($check) ${err('length must be <= ${c.maxLength}')}');
         }
         if (c.pattern != null) {
           out.add(
@@ -435,9 +436,10 @@ class ModelEmitter {
         out.add('if ($check) ${err('must have >= ${c.minItems} items')}');
       }
       if (c.maxItems != null) {
-        out.add(
-          'if ($accessor.length > ${c.maxItems}) ${err('must have <= ${c.maxItems} items')}',
-        );
+        final check = c.maxItems == 0
+            ? '$accessor.isNotEmpty'
+            : '$accessor.length > ${c.maxItems}';
+        out.add('if ($check) ${err('must have <= ${c.maxItems} items')}');
       }
       if (c.uniqueItems ?? false) {
         out.add(

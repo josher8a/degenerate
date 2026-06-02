@@ -271,6 +271,8 @@ class DiscriminatedUnionEmitter {
     return null;
   }
 
+
+
   /// The Dart expression for the discriminator value, given the payload's
   /// discriminator field [discFieldType]. A `String` literal type-checks only
   /// when the field is a plain `String`. Closed string types (a Dart `enum` /
